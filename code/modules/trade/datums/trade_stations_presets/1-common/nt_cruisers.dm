@@ -2,8 +2,8 @@
 	icon_states = "nt_cruiser"
 	markup = COMMON_GOODS	// dept-specific stuff should be more expensive for guild
 	name_pool = list(
-		"CAV 'Faith'" = "Church of Absolute Vessel 'Faith': \"We are currently resupplying from Nadezhda, but we can sell a few items from our stock.\"",
-		"CAV 'Hope'" = "Church of Absolute Vessel 'Hope': \"We're in the system for the next few hours before we make a round trip to the confederacy, we're certainly willing to sell our goods.\""
+		"CAV 'Faith'" = "Church of the Absolute Vessel 'Faith': \"We are currently resupplying from Nadezhda, but we can sell a few items from our stock.\"",
+		"CAV 'Hope'" = "Church of the Absolute Vessel 'Hope': \"We're in the system for the next few hours before we make a round trip to the confederacy, we're certainly willing to sell our goods.\""
 		)
 	icon_states = list("nt_frigate", "ship")
 	uid = "nt_basic"
@@ -18,8 +18,8 @@
 	stations_recommended = list("trapper")
 	inventory = list(
 		"Biomatter products" = list(
-			/obj/item/reagent_containers/food/snacks/meat,
-			/obj/item/reagent_containers/food/drinks/milk,
+			/obj/item/reagent_containers/snacks/meat,
+			/obj/item/reagent_containers/drinks/milk,
 			/obj/item/soap/church,
 			/obj/item/storage/pouch/small_generic,
 			/obj/item/storage/pouch/medium_generic,
@@ -35,7 +35,7 @@
 			/obj/item/clothing/accessory/holster/waist,
 			/obj/item/clothing/accessory/holster/hip
 		),
-		"Agro Supply" = list(
+		"Livestock" = list(
 			/obj/structure/largecrate/animal/corgi,
 			/obj/structure/largecrate/animal/cow,
 			/obj/structure/largecrate/animal/goat,
@@ -88,6 +88,12 @@
 			/obj/item/gun/projectile/revolver/lemant,
 			/obj/item/gun/projectile/shotgun/pump/combat,
 			/obj/item/gun/projectile/grenade
+		),
+		"Clothing" = list(
+			/obj/item/clothing/under/color/black = good_data("Black Jumpsuit", list(4, 4), 80),
+			/obj/item/clothing/head/beanie/black = good_data("Black Beanie", list(4, 4), 40),
+			/obj/item/clothing/gloves/thick = good_data("Black Gloves", list(4, 4), 40),
+			/obj/item/clothing/shoes/color/black = good_data("Black Shoes", list(4, 4), 40)
 		)
 	)
 
@@ -119,8 +125,8 @@
 			/obj/item/cell/large/neotheology/plasma
 		),
 		"Wine" = list(
-			/obj/item/reagent_containers/food/drinks/cans/cahors/cargo,
-			/obj/item/reagent_containers/food/drinks/bottle/ntcahors/cargo
+			/obj/item/reagent_containers/drinks/cans/cahors/cargo,
+			/obj/item/reagent_containers/drinks/bottle/ntcahors/cargo
 		),
 		"Seeds and Exodic Seeds" = list(
 			/obj/item/seeds/chiliseed,
@@ -149,20 +155,20 @@
 	offer_types = list(
 		/obj/item/clothing/suit/space/void/NTvoid = offer_data("angel voidsuit", 1250, 15),
 		/obj/item/clothing/shoes/hermes_shoes = offer_data("hermes shoes", 420, 10),
-		/obj/item/reagent_containers/food/snacks/grown = offer_data("spare grown food", 10, 120),
-		/obj/item/reagent_containers/food/snacks/meat = offer_data("meat", 80, 20) //Buys it for less than Dionis/McRonalds, but is willing to buy more of it.
+		/obj/item/reagent_containers/snacks/grown = offer_data("spare grown food", 10, 120),
+		/obj/item/reagent_containers/snacks/meat = offer_data("meat", 80, 20) //Buys it for less than Dionis/McRonalds, but is willing to buy more of it.
 	)
 
-/obj/item/reagent_containers/food/drinks/cans/cahors/cargo
+/obj/item/reagent_containers/drinks/cans/cahors/cargo
 	price_tag = 600
 
-/obj/item/reagent_containers/food/drinks/cans/cahors/cargo/New()
+/obj/item/reagent_containers/drinks/cans/cahors/cargo/New()
 	..()
 	price_tag = 60
 
-/obj/item/reagent_containers/food/drinks/bottle/ntcahors/cargo
+/obj/item/reagent_containers/drinks/bottle/ntcahors/cargo
 	price_tag = 1200
 
-/obj/item/reagent_containers/food/drinks/bottle/ntcahors/cargo/New()
+/obj/item/reagent_containers/drinks/bottle/ntcahors/cargo/New()
 	..()
 	price_tag = 100

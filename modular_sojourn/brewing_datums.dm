@@ -22,7 +22,7 @@
 /datum/brewing_product/beer
 	reagent_to_brew = "beer"
 	display_name = "Beer"
-	needed_crops = list("wheat" = 40, "poppies" = 5)
+	needed_crops = list("wheat" = 40, "poppy" = 5)
 	needed_chems = list("water" = 60)
 
 	price_tag_setter = 1750
@@ -35,18 +35,29 @@
 	display_name = "Sleepy Beer"
 	prerequisite = "beer"
 	brewed_amount = 2 //its beer2
-	needed_crops = list("wheat" = 10, "poppies" = 5)
+	needed_crops = list("wheat" = 10, "poppy" = 5)
 	needed_chems = list("water" = 60, "chloralhydrate" = 5)
 
 	price_tag_setter = 2250
 	brew_timer = 2 MINUTES
+
+//Quick and easy, low strangth, could be used for later "dry" cider maybe if someone wants to do that
+/datum/brewing_product/cider
+	reagent_to_brew = "cider"
+	display_name = "Cider"
+	needed_crops = list("apple" = 20)
+	needed_chems = list("water" = 30, "carbon" = 5)
+
+	price_tag_setter = 1200
+	brew_timer = 1 MINUTES
+	brewed_amount = 6 //6 pack
 
 /datum/brewing_product/melonliquor
 	reagent_to_brew = "melonliquor"
 	display_name = "Melon Liquor"
 
 	brewed_amount = 2
-	needed_crops = list("watermelon" = 80, "towercap" = 15, "poppies" = 35)
+	needed_crops = list("watermelon" = 80, "towercap" = 15, "poppy" = 35)
 	needed_chems = list("water" = 160)
 
 	price_tag_setter = 2000
@@ -57,7 +68,7 @@
 	display_name = "Blue Curacao"
 
 	brewed_amount = 2
-	needed_crops = list("orange" = 80, "towercap" = 15, "poppies" = 35)
+	needed_crops = list("orange" = 80, "towercap" = 15, "poppy" = 35)
 	needed_chems = list("water" = 160)
 
 	price_tag_setter = 2100
@@ -136,7 +147,7 @@
 	reagent_to_brew = "nanatsunoumi"
 	display_name = "Nanatsunoumi"
 	prerequisite = "deadrum"
-	needed_crops = list("rice" = 30, "towercap" = 15, "poppies" = 5)
+	needed_crops = list("rice" = 30, "towercap" = 15, "poppy" = 5)
 	needed_chems = list("water" = 80)
 
 	price_tag_setter = 8000
@@ -216,7 +227,7 @@
 /datum/brewing_product/ale
 	reagent_to_brew = "ale"
 	display_name = "Ale"
-	needed_crops = list("wheat" = 60, "towercap" = 5, "poppies" = 5)
+	needed_crops = list("wheat" = 60, "towercap" = 5, "poppy" = 5)
 	needed_chems = list("water" = 120, "honey" = 5)
 
 	price_tag_setter = 2000
@@ -358,7 +369,7 @@
 	price_tag_setter = 1000
 
 	other_name = "Cheese Wheel"
-	alt_brew_item = /obj/item/reagent_containers/food/snacks/sliceable/cheesewheel
+	alt_brew_item = /obj/item/reagent_containers/snacks/cheesewheel
 	alt_brew_item_amount = 3
 	info_helper = "The bottles will produced Vinegar."
 
@@ -383,7 +394,7 @@
 	bottled_brew_amount = 5 //Just a little bit as a byproduct
 
 	other_name = "Dough"
-	alt_brew_item = /obj/item/reagent_containers/food/snacks/dough
+	alt_brew_item = /obj/item/reagent_containers/snacks/dough
 	alt_brew_item_amount = 6 //Mass production
 	info_helper = "The bottles produced are Ethanol."
 
@@ -410,11 +421,23 @@
 /datum/brewing_product/fernet
 	reagent_to_brew = "fernet"
 	display_name = "Fernet"
-	needed_crops = list("mint" = 20, "thaadra" = 20, "harebell" = 5)
+	needed_crops = list("mint" = 20, "thaadra" = 20, "harebells" = 5)
 	needed_chems = list("water" = 60)
 	brew_timer = 15 MINUTES
 	brewed_amount = 1
 	price_tag_setter = 1500
+
+//Psionic based drink
+/datum/brewing_product/witch_brew
+	reagent_to_brew = "witch_brew"
+	display_name = "Witches Brew"
+	//mint is wool of bat, reishi is toe of frog, herbell is Tongue of dog, lastly blueberries are meant to be eye of newt
+	needed_crops = list("mint" = 5, "reishi" = 10, "harebell" = 5, "blueberries" = 25)
+	needed_chems = list("sugarrush" = 60, "fringeweaver" = 60)
+	brew_timer = 5 MINUTES
+	brewed_amount = 1 //Every 5u is 1 psionic point so this gives you 6 points
+	price_tag_setter = 1000 //Fast and easy also not useful for anyone without psionics
+
 
 //Church exclusive brews
 /datum/brewing_product/ntcahors

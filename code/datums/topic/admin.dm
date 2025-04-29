@@ -248,21 +248,21 @@
 		if("robot")
 			M.change_mob_type( /mob/living/silicon/robot , null, null, delmob )
 		if("cat")
-			M.change_mob_type( /mob/living/simple_animal/cat , null, null, delmob )
+			M.change_mob_type( /mob/living/simple/cat , null, null, delmob )
 		if("runtime")
-			M.change_mob_type( /mob/living/simple_animal/cat/fluff/Runtime , null, null, delmob )
+			M.change_mob_type( /mob/living/simple/cat/fluff/Runtime , null, null, delmob )
 		if("corgi")
-			M.change_mob_type( /mob/living/simple_animal/corgi , null, null, delmob )
+			M.change_mob_type( /mob/living/simple/corgi , null, null, delmob )
 		if("ian")
-			M.change_mob_type( /mob/living/simple_animal/corgi/fluff/Ian , null, null, delmob )
+			M.change_mob_type( /mob/living/simple/corgi/fluff/Ian , null, null, delmob )
 		if("crab")
-			M.change_mob_type( /mob/living/simple_animal/crab , null, null, delmob )
+			M.change_mob_type( /mob/living/simple/crab , null, null, delmob )
 		if("coffee")
-			M.change_mob_type( /mob/living/simple_animal/crab/Coffee , null, null, delmob )
+			M.change_mob_type( /mob/living/simple/crab/Coffee , null, null, delmob )
 		if("parrot")
-			M.change_mob_type( /mob/living/simple_animal/parrot , null, null, delmob )
+			M.change_mob_type( /mob/living/simple/parrot , null, null, delmob )
 		if("polyparrot")
-			M.change_mob_type( /mob/living/simple_animal/parrot/Poly , null, null, delmob )
+			M.change_mob_type( /mob/living/simple/parrot/Poly , null, null, delmob )
 
 
 /datum/admin_topic/unbanf
@@ -1026,8 +1026,8 @@
 		to_chat(usr, "This can only be used on instances of type /mob/living/carbon/human")
 		return
 
-	if(!H.equip_to_slot_or_del( new /obj/item/reagent_containers/food/snacks/cookie(H), slot_l_hand ))
-		if(!H.equip_to_slot_or_del( new /obj/item/reagent_containers/food/snacks/cookie(H), slot_r_hand ))
+	if(!H.equip_to_slot_or_del( new /obj/item/reagent_containers/snacks/cookie(H), slot_l_hand ))
+		if(!H.equip_to_slot_or_del( new /obj/item/reagent_containers/snacks/cookie(H), slot_r_hand ))
 			log_admin("[key_name(H)] has their hands full, so they did not receive their cookie, spawned by [key_name(source.owner)].")
 			message_admins("[key_name(H)] has their hands full, so they did not receive their cookie, spawned by [key_name(source.owner)].")
 			return
@@ -1136,8 +1136,7 @@
 	var/datum/faction/faction = GLOB.factions_list[input["faction"]]
 	var/obj/machinery/photocopier/faxmachine/fax = locate(input["originfax"])
 
-	//todo: sanitize
-	var/msg = input(source.owner, "Please enter a message to reply to [key_name(sender)] via secure connection. NOTE: BBCode does not work, but HTML tags do! Use <br> for line breaks.", "Outgoing message from [faction.name]", "") as message|null
+	var/msg =  sanitize(input(source.owner, "Enter a reply to [key_name(sender)]:", "Outgoing message from [faction.name]", null) as message, MAX_PAPER_MESSAGE_LEN, extra = 0)
 	if(!msg)
 		return
 
@@ -1145,6 +1144,9 @@
 
 	// Create the reply message
 	var/obj/item/paper/P = new /obj/item/paper( null ) //hopefully the null loc won't cause trouble for us
+	var/obj/item/i = usr.get_active_hand()
+	msg = replacetext(msg, "\n", "<BR>")
+	msg = P.parsepencode(msg, i, usr) // Encode everything from pencode to html
 	P.name = "[customname]"
 	P.info = msg
 	P.update_icon()

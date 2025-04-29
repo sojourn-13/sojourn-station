@@ -42,9 +42,9 @@
 	to_chat(user, "<span class='info'>[message]</span>")
 
 /obj/structure/churn/proc/churn(mob/user)
-	if(salt_needed<reagents.get_reagent_amount("sodiumchloride") && milk_requirement<reagents.get_reagent_amount("milk"))
+	if(salt_needed<=reagents.get_reagent_amount("sodiumchloride") && milk_requirement<=reagents.get_reagent_amount("milk"))
 		return TRUE
-	to_chat(user, SPAN_NOTICE("The churn unable to churn do to lacking milk or salt!"))
+	to_chat(user, SPAN_NOTICE("The churn unable to churn due to lacking milk or salt!"))
 	return FALSE
 
 
@@ -62,7 +62,7 @@
 	churns_done = 0
 	reagents.remove_reagent("milk", milk_requirement, 1)
 	reagents.remove_reagent("sodiumchloride", salt_needed, 1)
-	new /obj/item/reagent_containers/food/snacks/sliceable/butterstick(src.loc)
+	new /obj/item/reagent_containers/snacks/butterstick(src.loc)
 
 //Remove and reset
 /obj/structure/churn/proc/clear_out()

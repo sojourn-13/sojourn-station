@@ -97,6 +97,10 @@
 		/*if(istype(O, /obj/structure/scrap_cube))
 			current_item = O
 			return*/
+		if(istype(O, /obj/structure/closet))
+			var/obj/structure/closet/C = O
+			C.populate_contents()
+
 		var/list/materials = result_materials(O)
 		if(!materials?.len || !are_valid_materials(materials))
 			eject(O, refuse_output_side)
@@ -200,6 +204,7 @@
 	if(T.density)
 		return
 	O.loc = T
+	O.reset_plane_and_layer()
 
 /obj/machinery/smelter/proc/eject_material_stack(material)
 	var/obj/item/stack/material/stack_type = material_stack_type(material)

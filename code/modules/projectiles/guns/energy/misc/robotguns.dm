@@ -1,6 +1,6 @@
 //Adding in robot energy powered variants of guns, to avoid the hassle of needing to reload, etc. Centralising them all here for ease of use.
 
-/obj/item/gun/energy/riot_autoshotgun
+/obj/item/gun/energy/riot
 	name = "intergrated \"State\" riot shotgun"
 	desc = "A Seinemetall Defense GmbH riot auto action shotgun, its uncommonly seen deployed in most police operation due to the success of the \"stolen\" \"Regulator\" design. \
 	This particular shotgun has been redesigned many times, never quite reaching a standard everyone was happy with, with some lauding it as confusing for a shotgun. \
@@ -25,7 +25,7 @@
 /obj/item/gun/energy/bsrifle
 	name = "integrated \"STS\" Burst rifle"
 	desc = "A lightweight modified variant of the STS-PARA that has been modified to serve as the main-arm for a combat bot, much of its comfort features have been\
-	removed in order to maximize space for an integral flash-synthesizer hooked directly to its power, keeping it flush with ammo, so long as the power holds."
+	removed in order to optimize space for an integral flash-synthesizer hooked directly to its power, keeping it flush with ammo as long as the power supply is steady."
 	icon = 'icons/obj/robot_items.dmi'
 	icon_state = "security_rifle"
 	item_state = "security_rifle"
@@ -65,7 +65,7 @@
 
 /obj/item/gun/energy/borg/pistol
 	name = "\"Disabler\" pistol"
-	desc = "A standardised ammunition-synthesising pistol superficially resembling an ancient pistol."
+	desc = "A standardised ammunition-synthesizing pistol superficialy resembling an ancient pistol."
 	icon = 'icons/obj/guns/projectile/glock.dmi'
 	icon_state = "glock"
 	item_state = "glock"
@@ -85,7 +85,7 @@
 	icon_state = "armsmg"
 	item_state = null
 	name = "embedded energy SMG"
-	desc = "An energy-based SMG deployed from your arm. A favoured hidden weapon."
+	desc = "An energy-based SMG deployed from your arm. A hidden weapon favoured by many."
 	cell_type = /obj/item/cell/medium/greyson
 	charge_cost = 25
 	self_recharge = 1

@@ -260,9 +260,9 @@
 
 /obj/item/rig_module/datajack/accepts_item(obj/item/input_device, mob/living/user)
 
-	if(istype(input_device, /obj/item/computer_hardware/hard_drive))
+	if(istype(input_device, /obj/item/pc_part/drive))
 		to_chat(user, "You connect the disk to [src].")
-		var/obj/item/computer_hardware/hard_drive/disk = input_device
+		var/obj/item/pc_part/drive/disk = input_device
 		if(disk.used_capacity)
 			if(load_data(disk))
 				to_chat(user, SPAN_NOTICE("Download successful."))
@@ -435,8 +435,8 @@
 		drain_complete(H)
 		return
 
-	// Attempts to drain up to 40kW, determines this value from remaining cell capacity to ensure we don't drain too much..
-	var/to_drain = min(40000, ((holder.cell.maxcharge - holder.cell.charge) / CELLRATE))
+	// Attempts to drain up to 100kW, determines this value from remaining cell capacity to ensure we don't drain too much..
+	var/to_drain = min(100000, ((holder.cell.maxcharge - holder.cell.charge) / CELLRATE))
 	var/target_drained = interfaced_with.drain_power(0,0,to_drain)
 	if(target_drained <= 0)
 		to_chat(H, "<span class = 'danger'>Your power sink flashes a red light; there is no power left in [interfaced_with].</span>")

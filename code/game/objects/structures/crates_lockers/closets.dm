@@ -26,6 +26,7 @@
 	var/max_mob_size = 2
 	var/wall_mounted = FALSE //never solid (You can always pass over it)
 	health = 100
+	maxHealth = 100
 	var/breakout = FALSE //if someone is currently breaking out. mutex
 	var/storage_capacity = 2 * MOB_MEDIUM //This is so that someone can't pack hundreds of items in a locker/crate
 							  //then open it in a populated area to crash clients.
@@ -46,6 +47,7 @@
 	var/has_mobs_to_spawn = FALSE
 	var/chance_old_mobs = 20
 	var/mobs_to_spawn = /obj/random/cluster/roaches
+	var/populated_contents = FALSE
 
 /obj/structure/closet/can_prevent_fall()
 	return TRUE
@@ -53,7 +55,6 @@
 /obj/structure/closet/Initialize(mapload)
 	..()
 
-	populate_contents()
 	update_icon()
 	hack_require = rand(6,8)
 
@@ -95,6 +96,7 @@
 			storage_capacity = content_size + 5
 
 /obj/structure/closet/Destroy()
+	populate_contents()
 	dump_contents()
 	. = ..()
 
@@ -106,16 +108,43 @@
 		for(var/obj/item/I in src.contents)
 			if(!I.anchored)
 				content_size += CEILING(I.w_class * 0.5, 1)
-		if(!content_size)
-			to_chat(user, "It is empty.")
-		else if(storage_capacity > content_size*4)
-			to_chat(user, "It is barely filled.")
-		else if(storage_capacity > content_size*2)
-			to_chat(user, "It is less than half full.")
-		else if(storage_capacity > content_size)
-			to_chat(user, "There is still some free space.")
+		if(populated_contents)
+			if(!content_size)
+				to_chat(user, "It is empty.")
+			else if(storage_capacity > content_size*4)
+				to_chat(user, "It is barely filled.")
+			else if(storage_capacity > content_size*2)
+				to_chat(user, "It is less than half full.")
+			else if(storage_capacity > content_size)
+				to_chat(user, "There is still some free space.")
+			else
+				to_chat(user, "It is full.")
 		else
-			to_chat(user, "It is full.")
+			to_chat(user, "It's hard to tell how full [src] is.")
+
+	if(health > 0)
+		if(isliving(user))
+			var/mob/living/L = user
+			if(L.stats.getPerk(PERK_NO_OBFUSCATION))
+				to_chat(user, "It can take [health] more damage before being destroyed.")
+				return
+			var/health_rate = health / maxHealth
+			if(health == maxHealth)
+				to_chat(user, "[src] is undamaged.")
+				return
+			if(health_rate > 0.8)
+				to_chat(user, "[src] has some signs of damage.")
+				return
+			if(health_rate > 0.5)
+				to_chat(user, "[src] has clear signs of damage.")
+				return
+			if(health_rate > 0.25)
+				to_chat(user, "[src] shows lots of damage and can't take more.")
+				return
+			to_chat(user, "[src] is about to fall apart!")
+			return
+
+
 
 /obj/structure/closet/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
 	if(air_group || (height==0 || wall_mounted)) return 1
@@ -203,6 +232,8 @@
 /obj/structure/closet/proc/open(mob/living/user)
 	if(opened || !can_open(user))
 		return FALSE
+
+	populate_contents()
 
 	if(rigged && (locate(/obj/item/device/radio/electropack) in src) && istype(user))
 		if(user.electrocute_act(20, src))
@@ -336,6 +367,7 @@
 
 // this should probably use dump_contents()
 /obj/structure/closet/ex_act(severity)
+	populate_contents()
 	switch(severity)
 		if(1)
 			for(var/atom/movable/A as mob|obj in src)//pulls everything out of the locker and hits it with an explosion
@@ -355,10 +387,13 @@
 				health -= 50
 
 /obj/structure/closet/proc/populate_contents()
-	return
+	populated_contents = TRUE
+	if(populated_contents)
+		return FALSE
 
 /obj/structure/closet/proc/damage(var/damage)
 	health -= damage
+	populate_contents()
 	if(health <= 0)
 		qdel(src)
 
@@ -395,26 +430,33 @@
 	if(secure && locked)
 		usable_qualities += QUALITY_PULSING
 
+	if(health < maxHealth && health > 0)
+		usable_qualities += QUALITY_SEALING
+
+
 	var/tool_type = I.get_tool_type(user, usable_qualities, src)
 	switch(tool_type)
 		if(QUALITY_WELDING)
-			if(!opened)
-				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_EASY, required_stat = STAT_MEC))
-					welded = !welded
-					update_icon()
-					visible_message(
-						SPAN_NOTICE("[src] has been disassembled by [user]."),
-						"You hear [tool_type]."
-					)
-			else
-				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_EASY, required_stat = STAT_MEC))
-					visible_message(
-						SPAN_NOTICE("\The [src] has been [tool_type == QUALITY_BOLT_TURNING ? "taken" : "cut"] apart by [user] with \the [I]."),
-						"You hear [tool_type]."
-					)
-					drop_materials(drop_location())
-					qdel(src)
-			return
+
+			//Welder qol so we dont keep accidently welding are eyes or deconing
+			if(user.a_intent != I_HELP)
+				if(!opened)
+					if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_EASY, required_stat = STAT_MEC))
+						welded = !welded
+						update_icon()
+						visible_message(
+							SPAN_NOTICE("[src] has been [welded ? "sealed" : "unsealed"] by [user]."),
+							"You hear [tool_type]."
+						)
+				else
+					if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_EASY, required_stat = STAT_MEC))
+						visible_message(
+							SPAN_NOTICE("\The [src] has been cut apart by [user] with \the [I]."),
+							"You hear [tool_type]."
+						)
+						drop_materials(drop_location())
+						qdel(src)
+				return
 
 		if(QUALITY_SAWING, QUALITY_BOLT_TURNING)
 			if(opened && user.a_intent != I_HELP)
@@ -426,6 +468,20 @@
 					drop_materials(drop_location())
 					qdel(src)
 				return
+
+		if(QUALITY_SEALING)
+			if(opened && user.a_intent != I_HELP)
+				var/damage_mod = health - initial(health)
+				damage_mod -= WORKTIME_NORMAL
+				damage_mod *= -1 //So we are possitive number
+				if(I.use_tool(user, src, damage_mod, tool_type, FAILCHANCE_EASY, required_stat = STAT_MEC))
+					visible_message(
+						SPAN_NOTICE("\The [src] has repaired apart by [user] with \the [I]."),
+						"You hear [tool_type]."
+					)
+					health = maxHealth
+				return
+
 
 		if(QUALITY_WIRE_CUTTING)
 			if(rigged)
@@ -563,6 +619,7 @@
 // tk grab then use on self
 /obj/structure/closet/attack_self_tk(mob/user as mob)
 	src.add_fingerprint(user)
+	populate_contents()
 	if(!src.toggle())
 		to_chat(usr, SPAN_NOTICE("It won't budge!"))
 
@@ -571,6 +628,7 @@
 		locked = FALSE
 		broken = TRUE
 		update_icon()
+		populate_contents()
 		playsound(src.loc, "sparks", 60, 1)
 		to_chat(user, SPAN_NOTICE("You unlock \the [src]."))
 		return TRUE
@@ -586,6 +644,7 @@
 			playsound(src.loc, 'sound/effects/sparks4.ogg', 75, 1)
 		broken = TRUE
 	update_icon()
+	populate_contents()
 	..()
 
 /obj/structure/closet/verb/verb_toggleopen()
@@ -705,6 +764,7 @@
 /obj/structure/closet/proc/break_open()
 	welded = 0
 	update_icon()
+	populate_contents()
 	//Do this to prevent contents from being opened into nullspace (read: bluespace)
 	if(istype(loc, /obj/structure/bigDelivery))
 		var/obj/structure/bigDelivery/BD = loc

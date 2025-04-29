@@ -124,7 +124,7 @@
 
 /obj/item/clothing/mask/gas/clown_hat
 	name = "clown wig and mask"
-	desc = "A true prankster's facial attire. A clown is incomplete without their wig and mask. This one contains hologram tech that allows it to change its appearence."
+	desc = "A true prankster's facial attire. A clown is incomplete without their wig and mask. This one contains hologram tech that allows it to change its appearance."
 	icon_state = "clown"
 	item_state = "clown_hat"
 	muffle_voice = FALSE
@@ -195,7 +195,7 @@
 
 /obj/item/clothing/mask/gas/germanmask
 	name = "church gas mask"
-	desc = "A close-fitting tactical mask that can be connected to an air supply. Best for when you need to get out of here. This one bears a small tau cross, noting it as a church branded design."
+	desc = "A close-fitting tactical mask that can be connected to an air supply. This one bears a small tau cross, denoting it as a church branded design."
 	icon_state = "germangasmask"
 	siemens_coefficient = 0.7
 	price_tag = 50
@@ -290,6 +290,13 @@
 	desc = "An industrial gas mask bearing the colors of the artificer's guild."
 	icon_state = "gas_guild" // Sprites by Ezoken/Dromkii
 	armor_list = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 60, rad = 80)
+	is_alts = FALSE
+
+/obj/item/clothing/mask/gas/chemhood
+	name = "chemical corps hood"
+	desc = "A military gas mask fitted with a chemical resistant hood."
+	icon_state = "gas_chem"
+	armor_list = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 100, rad = 80)
 	is_alts = FALSE
 
 /obj/item/clothing/mask/gas/guild_rebreather

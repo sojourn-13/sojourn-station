@@ -1,4 +1,4 @@
-/mob/living/carbon/superior_animal
+/mob/living/carbon/superior
 	name = "superior animal"
 	desc = "You should not see this."
 
@@ -40,7 +40,7 @@
 
 	/// Do we advance?
 	var/advance = TRUE
-	/// Stored var of calculation ran within [/mob/living/carbon/superior_animal/proc/advance_towards]
+	/// Stored var of calculation ran within [/mob/living/carbon/superior/proc/advance_towards]
 	var/advance_steps = 0
 	/// How many tiles we will advance forward from our current position if we can't hit our current target.
 	var/advancement = 1
@@ -174,7 +174,7 @@
 	var/attack_sound_chance = 100
 	var/attack_sound_volume = 90
 
-	var/meat_type = /obj/item/reagent_containers/food/snacks/meat/roachmeat
+	var/meat_type = /obj/item/reagent_containers/snacks/meat/roachmeat
 	var/meat_amount = 3
 	//Lodge related products
 	var/leather_amount = 0 //The amount of leather sheets dropped.
@@ -309,3 +309,24 @@
 	 * final offset of the projectile. Make sure to sync with initial_firing_offset.
 	**/
 	var/current_firing_offset = 2
+
+	/// Used to dictate if the critter is poisonous or not
+	var/poison_per_bite = 0
+	var/poison_type
+
+	var/list/zone_hit_rates = list(BP_HEAD = 10, BP_CHEST = 50, BP_GROIN = 35, BP_R_ARM = 30, BP_L_ARM = 30, BP_R_LEG = 20, BP_L_LEG = 20)
+
+	var/fancy_attack_overlay //Overlay icon for when we attack something
+	var/fancy_attack_shading = "#C4A484" //When a new attack animation is spawned we use this colour -whitescale
+	var/randomize_attack_effect_location = TRUE //Used for fancy_attack_overlay shifting of pixels
+
+//SoJ edit
+/obj/effect/effect/melee/mob_melee_animation
+	icon = 'modular_sojourn/attacks.dmi'
+	anchored = TRUE
+	layer = ABOVE_ALL_MOB_LAYER
+
+/obj/effect/effect/melee/mob_melee_animation/New(fancy_colour)
+	..()
+	if(fancy_colour)
+		color = fancy_colour

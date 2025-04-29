@@ -101,7 +101,7 @@
 /obj/item/gun/projectile/bow/hunting
 	name = "hunting bow"
 	icon_state = "recurve"
-	desc = "A recurve hunting bow, made alternating bands of stalker chitin, animal sinew and wood laminated together."
+	desc = "A recurve hunting bow, made with alternating strands of stalker chitin, animal sinew and wood laminated together."
 	matter = list(MATERIAL_BONE = 10, MATERIAL_WOOD = 10, MATERIAL_PLASTIC = 5)
 	penetration_multiplier = 1.5
 	gun_tags = list(ARROW_FIRING)

@@ -130,8 +130,22 @@
 	flags = GEAR_HAS_COLOR_SELECTION
 
 /datum/gear/accessory/blackshieldpatch
-	display_name = "blackshield arm patch"
-	path = /obj/item/clothing/accessory/patches/blackshield
+	display_name = "blackshield patch selection"
+	description = "A selection of Blackshield patches."
+	path = /obj/item/clothing/accessory/patches
+
+/datum/gear/accessory/blackshieldpatch/New()
+	..()
+	var/patches = list(
+		"blackshield patch"				=	/obj/item/clothing/accessory/patches/blackshield,
+		"blackshield blank patch"		=	/obj/item/clothing/accessory/patches/blackshield_blank,
+		"blackshield volunteer patch"	=	/obj/item/clothing/accessory/patches/blackshield_volunteer,
+		"blackshield trooper patch"		=	/obj/item/clothing/accessory/patches/blackshield_trooper,
+		"blackshield corpsman patch"	=	/obj/item/clothing/accessory/patches/blackshield_corpsman,
+		"blackshield sergeant patch"	=	/obj/item/clothing/accessory/patches/blackshield_sergeant,
+		"blackshield commander patch"	=	/obj/item/clothing/accessory/patches/blackshield_commander,
+	)
+	gear_tweaks += new /datum/gear_tweak/path(patches)
 
 /datum/gear/accessory/pilotharness
 	display_name = "pilot harness"

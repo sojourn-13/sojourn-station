@@ -35,7 +35,7 @@ var/list/mechtoys = list(
 	explosion_resistance = 5
 	var/list/mobs_can_pass = list(
 		/mob/living/carbon/slime,
-		/mob/living/simple_animal/mouse,
+		/mob/living/simple/mouse,
 		/mob/living/silicon/robot/drone
 		)
 	maxHealth = 30 //Weak plastic strips easy to break

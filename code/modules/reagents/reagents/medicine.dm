@@ -60,7 +60,7 @@
 /datum/reagent/medicine/somnadine
 	name = "Somnadine"
 	id = "somnadine"
-	description = "Somnadine a complex treat blunt trauma gel that when a person is asleep and applied to skin will quickly and affectively clear up cuts and other skin level damage, with a out a big risk to OD"
+	description = "Somnadine is a complex blunt trauma gel that is applied to the skin. The patient has to be asleep for it to work. It will quickly and effectively clear up cuts and other skin level damage, with a minimal risk of overdose"
 	taste_description = "bitterness"
 	taste_mult = 1.5
 	reagent_state = LIQUID
@@ -179,7 +179,7 @@
 /datum/reagent/medicine/dermahypnodol
 	name = "Dermahypnodol"
 	id = "dermahypnodol"
-	description = "Dermahypnodol a complex anti-burn gel that when a person is asleep and applied to skin will quickly and affectively clear up burns with a out a big risk to OD"
+	description = "Dermahypnodol is a complex anti-burn gel that gets applied to the skin. The patient has to be asleep for it to work. It will quickly and effectively clear up burns with a minimal risk of overdose"
 	taste_description = "bitterness"
 	taste_mult = 1.5
 	reagent_state = LIQUID
@@ -265,7 +265,7 @@
 		if(prob(5))
 			to_chat(M, "You feel a distinctive ache as something begins to eat away at you from the inside out!")
 		return
-	M.add_chemical_effect(CE_ANTITOX, 3 * removed)
+	M.add_chemical_effect(CE_ANTITOX, 3 * (dose * 0.1)) //every 10u is 3 antitox, starts out slow but rapidly grows
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		var/obj/item/organ/internal/liver/L = H.random_organ_by_process(OP_LIVER)
@@ -1506,6 +1506,23 @@ We don't use this but we might find use for it. Porting it since it was updated 
 		M.sleeping = max(M.sleeping, 20)
 		M.drowsyness = max(M.drowsyness, 60)
 	M.add_chemical_effect(CE_PULSE, -1)
+
+//Welsh -> oh weepless
+/datum/reagent/medicine/o_wylo
+	name = "Owylo"
+	id = "owylo"
+	description = "A SI branded mix of chemicals that are designed to prevent wounds from getting worse."
+	taste_description = "rosted lam"
+	reagent_state = LIQUID
+	color = "#043A5C"
+	scannable = TRUE
+	overdose = REAGENTS_OVERDOSE
+	nerve_system_accumulations = -5
+
+//Just stables, no need to add drawbacks, its a pain to make
+/datum/reagent/medicine/o_wylo/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	M.add_chemical_effect(CE_WOUND_STABLIZE, 1)
+	M.add_chemical_effect(CE_STABLE, 1)
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Meds made from animals. Unga.

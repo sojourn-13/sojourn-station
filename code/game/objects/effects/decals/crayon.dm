@@ -5,7 +5,7 @@
 	layer = TURF_DECAL_LAYER
 	anchored = TRUE
 	random_rotation = 0
-	sanity_damage = 4
+	sanity_damage = 0.04
 	var/is_rune = FALSE
 	var/obj/item/pen/crayon/follow_crayon
 
@@ -19,6 +19,7 @@
 	desc = "A fine mist comes off this rune"
 	alpha = 150
 	is_rune = TRUE //We can infact cast from this rune
+	sanity_damage = 4
 
 /obj/effect/decal/cleanable/crayon/mist/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
 	if(istype(mover, /obj/item/projectile/beam))
@@ -31,6 +32,7 @@
 	desc = "The air shimmers about this rune."
 	alpha = 150
 	is_rune = TRUE //We can infact cast from this rune
+	sanity_damage = 4
 
 /obj/effect/decal/cleanable/crayon/shimmer/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
 	if(istype(mover, /obj/item/projectile) && !istype(mover, /obj/item/projectile/beam))
@@ -43,6 +45,7 @@
 	desc = "The air shimmers about this rune."
 	alpha = 50
 	is_rune = TRUE //We can infact cast from this rune
+	sanity_damage = 4
 	var/playmate = 0
 	var/draw = 1
 
@@ -146,8 +149,9 @@
 			if(follow_crayon)
 				var/old_desc = "[follow_crayon.desc]"
 				follow_crayon.desc = "[old_desc] The strange energies of this planet seem to have infused it with more signicance than before."
-				desc = "A rune drawn in empowered crayon wax."
 				follow_crayon = null
+				desc = "A rune drawn in empowered crayon wax."
+				sanity_damage = 4
 			var/datum/reagent/organic/blood/B = M.get_blood()
 			var/candle_amount = 0
 			for(var/obj/item/flame/candle/mage_candle in oview(3))
@@ -506,7 +510,7 @@
 // Life: Revives a dead animal on top of the rune.
 /obj/effect/decal/cleanable/crayon/proc/life_spell(mob/living/carbon/human/M, able_to_cast = FALSE)
 	var/datum/reagent/organic/blood/B = M.get_blood()
-	for(var/mob/living/carbon/superior_animal/greater in oview(1)) // Must be on the spell circle
+	for(var/mob/living/carbon/superior/greater in oview(1)) // Must be on the spell circle
 
 		if(!body_checks(M))
 			return
@@ -529,7 +533,7 @@
 			return
 		return
 
-	for(var/mob/living/simple_animal/lesser in oview(1)) // Must be on the spell circle
+	for(var/mob/living/simple/lesser in oview(1)) // Must be on the spell circle
 
 		if(!body_checks(M))
 			return
@@ -692,14 +696,14 @@
 
 	M.maxHealth -= 10
 	M.health -= 10
-	for(var/obj/item/reagent_containers/food/snacks/grown/G in oview(5))
+	for(var/obj/item/reagent_containers/snacks/grown/G in oview(5))
 
 		if(!body_checks(M))
 			return
 
 		if(G.name == "sunflower") // Apply all costs ONLY if the plant is the correct one!!!
 			to_chat(M, "<span class='info'>Distant voices scream in agony from every direction: NOT THE BEES!</span>")
-			new /mob/living/carbon/superior_animal/vox/wasp(G.loc)
+			new /mob/living/carbon/superior/vox/wasp(G.loc)
 			B.remove_self(70)
 			M.sanity.changeLevel(4)
 			qdel(G)
@@ -938,22 +942,24 @@
 // Increases your total mutation instability so that you can't spam it
 /obj/effect/decal/cleanable/crayon/proc/drain_spell(mob/living/carbon/human/M, able_to_cast = FALSE)
 	var/datum/reagent/organic/blood/B = M.get_blood()
-	for(var/mob/living/carbon/superior_animal/greater in oview(1))
+	for(var/mob/living/carbon/superior/greater in oview(1))
 
 		if(!body_checks(M))
 			return
 
-		to_chat(M, "<span class='warning'>The sacrifice vanishes to dust before you. You feel an ominous warm wind envelop your form as you absorb its lifeforce unto your own.</span>")
 		if(able_to_cast && M.maxHealth < 200)
+			to_chat(M, "<span class='warning'>The sacrifice vanishes to dust before you. You feel an ominous warm wind envelop your form as you absorb its lifeforce unto your own.</span>")
 			M.maxHealth += 1
 			M.health += 1
 			M.unnatural_mutations.total_instability += 1 //A soft cap
+		else
+			to_chat(M, "<span class='warning'>The sacrifice vanishes to dust before you. Yet you feel nothing. Perhaps you are as healthy as possible.</span>")
 		B.remove_self(70)
 		greater.dust()
 		M.sanity.changeLevel(-20)
 		return
 
-	for(var/mob/living/simple_animal/lesser in oview(1))
+	for(var/mob/living/simple/lesser in oview(1))
 
 		if(!body_checks(M))
 			return
@@ -994,8 +1000,8 @@
 	if(!able_to_cast)
 		return
 
-	var /mob/living/simple_animal/simplemob = /mob/living/simple_animal/hostile/creature
-	var /mob/living/carbon/superior_animal/superiormob = null
+	var /mob/living/simple/simplemob = /mob/living/simple/hostile/creature
+	var /mob/living/carbon/superior/superiormob = null
 	for(var/obj/item/card_carp/carpy in oview(1))
 
 		if(!body_checks(M))
@@ -1004,42 +1010,42 @@
 		to_chat(M, "<span class='warning'>The card rotates 90 degrees then begins to fold, twisting untill it breaks open with a reality-ripping sound. Something crawls out of its interior!</span>")
 
 		// Nonhostile simplemobs. The pets of the colony.
-		if(istype(carpy, /obj/item/card_carp/crab)) simplemob = /mob/living/simple_animal/crab
-		if(istype(carpy, /obj/item/card_carp/cat)) simplemob = /mob/living/simple_animal/cat
-		if(istype(carpy, /obj/item/card_carp/geck)) simplemob = /mob/living/simple_animal/lizard
-		if(istype(carpy, /obj/item/card_carp/goat)) simplemob = /mob/living/simple_animal/hostile/retaliate/goat
-		if(istype(carpy, /obj/item/card_carp/larva)) simplemob = /mob/living/simple_animal/light_geist
+		if(istype(carpy, /obj/item/card_carp/crab)) simplemob = /mob/living/simple/crab
+		if(istype(carpy, /obj/item/card_carp/cat)) simplemob = /mob/living/simple/cat
+		if(istype(carpy, /obj/item/card_carp/geck)) simplemob = /mob/living/simple/lizard
+		if(istype(carpy, /obj/item/card_carp/goat)) simplemob = /mob/living/simple/hostile/retaliate/goat
+		if(istype(carpy, /obj/item/card_carp/larva)) simplemob = /mob/living/simple/light_geist
 		// Corgi
-		if(istype(carpy, /obj/item/card_carp/stunted_wolf) || istype(carpy, /obj/item/card_carp/coyote) ||istype(carpy, /obj/item/card_carp/wolf)) simplemob = /mob/living/simple_animal/corgi
+		if(istype(carpy, /obj/item/card_carp/stunted_wolf) || istype(carpy, /obj/item/card_carp/coyote) ||istype(carpy, /obj/item/card_carp/wolf)) simplemob = /mob/living/simple/corgi
 		// RATS, RATS, WE'RE THE RATS
-		if(istype(carpy, /obj/item/card_carp/ratking) || istype(carpy, /obj/item/card_carp/plaguerat) || istype(carpy, /obj/item/card_carp/kangaroorat) || istype(carpy, /obj/item/card_carp/chipmunk) || istype(carpy, /obj/item/card_carp/fieldmice)) simplemob = /mob/living/simple_animal/mouse
+		if(istype(carpy, /obj/item/card_carp/ratking) || istype(carpy, /obj/item/card_carp/plaguerat) || istype(carpy, /obj/item/card_carp/kangaroorat) || istype(carpy, /obj/item/card_carp/chipmunk) || istype(carpy, /obj/item/card_carp/fieldmice)) simplemob = /mob/living/simple/mouse
 		// Retaliation and hostile mobs
-		if(istype(carpy, /obj/item/card_carp/croaker_lord)) simplemob = /mob/living/simple_animal/hostile/retaliate/croakerlord
-		if(istype(carpy, /obj/item/card_carp/lost_rabbit)) simplemob = /mob/living/simple_animal/hostile/diyaab
-		if(istype(carpy, /obj/item/card_carp/adder)) simplemob = /mob/living/simple_animal/hostile/snake
-		if(istype(carpy, /obj/item/card_carp/grizzly)) simplemob = /mob/living/simple_animal/hostile/bear
-		if(istype(carpy, /obj/item/card_carp/bat)) simplemob = /mob/living/simple_animal/hostile/scarybat
-		if(istype(carpy, /obj/item/card_carp/great_white)) simplemob = /mob/living/simple_animal/hostile/carp/greatwhite
+		if(istype(carpy, /obj/item/card_carp/croaker_lord)) simplemob = /mob/living/simple/hostile/retaliate/croakerlord
+		if(istype(carpy, /obj/item/card_carp/lost_rabbit)) simplemob = /mob/living/simple/hostile/diyaab
+		if(istype(carpy, /obj/item/card_carp/adder)) simplemob = /mob/living/simple/hostile/snake
+		if(istype(carpy, /obj/item/card_carp/grizzly)) simplemob = /mob/living/simple/hostile/bear
+		if(istype(carpy, /obj/item/card_carp/bat)) simplemob = /mob/living/simple/hostile/scarybat
+		if(istype(carpy, /obj/item/card_carp/great_white)) simplemob = /mob/living/simple/hostile/carp/greatwhite
 		// Birbs
-		if(istype(carpy, /obj/item/card_carp/kingfisher) || istype(carpy, /obj/item/card_carp/sparrow) || istype(carpy, /obj/item/card_carp/turkey_vulture) || istype(carpy, /obj/item/card_carp/magpie)) simplemob = /mob/living/simple_animal/jungle_bird
+		if(istype(carpy, /obj/item/card_carp/kingfisher) || istype(carpy, /obj/item/card_carp/sparrow) || istype(carpy, /obj/item/card_carp/turkey_vulture) || istype(carpy, /obj/item/card_carp/magpie)) simplemob = /mob/living/simple/jungle_bird
 		// Sentient tree
-		if(istype(carpy, /obj/item/card_carp/tree) || istype(carpy, /obj/item/card_carp/pinetree)) simplemob = /mob/living/simple_animal/hostile/tree
+		if(istype(carpy, /obj/item/card_carp/tree) || istype(carpy, /obj/item/card_carp/pinetree)) simplemob = /mob/living/simple/hostile/tree
 		// Tindalos
-		if(istype(carpy, /obj/item/card_carp/manti) || istype(carpy, /obj/item/card_carp/manti_lord)) simplemob = /mob/living/simple_animal/tindalos
+		if(istype(carpy, /obj/item/card_carp/manti) || istype(carpy, /obj/item/card_carp/manti_lord)) simplemob = /mob/living/simple/tindalos
 
 		// Superior mobs below
 
 		//roaches
-		if(istype(carpy, /obj/item/card_carp/pupa)) superiormob =  /mob/living/carbon/superior_animal/roach/roachling
-		if(istype(carpy, /obj/item/card_carp/cockroach)) superiormob = /mob/living/carbon/superior_animal/roach
-		if(istype(carpy, /obj/item/card_carp/stinkbug)) superiormob = /mob/living/carbon/superior_animal/roach/toxic
+		if(istype(carpy, /obj/item/card_carp/pupa)) superiormob =  /mob/living/carbon/superior/roach/roachling
+		if(istype(carpy, /obj/item/card_carp/cockroach)) superiormob = /mob/living/carbon/superior/roach
+		if(istype(carpy, /obj/item/card_carp/stinkbug)) superiormob = /mob/living/carbon/superior/roach/toxic
 		//termites for ants
-		if(istype(carpy, /obj/item/card_carp/ant) || istype(carpy, /obj/item/card_carp/peltlice)) superiormob = /mob/living/carbon/superior_animal/termite_no_despawn/iron
-		if(istype(carpy, /obj/item/card_carp/antqueen)) superiormob = /mob/living/carbon/superior_animal/termite_no_despawn/diamond
+		if(istype(carpy, /obj/item/card_carp/ant) || istype(carpy, /obj/item/card_carp/peltlice)) superiormob = /mob/living/carbon/superior/termite_colony/iron
+		if(istype(carpy, /obj/item/card_carp/antqueen)) superiormob = /mob/living/carbon/superior/termite_colony/diamond
 		//superior beasties
-		if(istype(carpy, /obj/item/card_carp/wyrm)) superiormob = /mob/living/carbon/superior_animal/wurm/diamond
+		if(istype(carpy, /obj/item/card_carp/wyrm)) superiormob = /mob/living/carbon/superior/wurm/diamond
 		//golem
-		if(istype(carpy, /obj/item/card_carp/rock) || istype(carpy, /obj/item/card_carp/bloodrock)) superiormob = /mob/living/carbon/superior_animal/ameridian_golem
+		if(istype(carpy, /obj/item/card_carp/rock) || istype(carpy, /obj/item/card_carp/bloodrock)) superiormob = /mob/living/carbon/superior/ameridian_golem
 
 		// End of mob spawns
 
@@ -1069,7 +1075,7 @@
 
 /*
 			Z:/FloppyDisk/TRILBYMOD: //Somethings can not be handled by the common players
-			Z:/FloppyDisk/TRILBYMOD: superiormob = /mob/living/carbon/superior_animal/genetics/fratellis //genetics beastie
+			Z:/FloppyDisk/TRILBYMOD: superiormob = /mob/living/carbon/superior/genetics/fratellis //genetics beastie
 			Z:/FloppyDisk/TRILBYMOD: DEPLOY DAUS NERF
 */
 
@@ -1083,7 +1089,7 @@
 
 		// Code that takes superiormob var and spawns whatever it was set too.
 		if(superiormob != null)
-			var /mob/living/carbon/superior_animal/editme = new superiormob(carpy.loc)
+			var /mob/living/carbon/superior/editme = new superiormob(carpy.loc)
 			editme.colony_friend = TRUE
 			editme.friendly_to_colony = TRUE
 			editme.faction = "Living Dead"
@@ -1094,7 +1100,7 @@
 			M.sanity.changeLevel(1)
 			return //we returned out so it shouldn't double up.
 
-		var /mob/living/simple_animal/changemeupinside = new simplemob(carpy.loc)
+		var /mob/living/simple/changemeupinside = new simplemob(carpy.loc)
 		changemeupinside.colony_friend = TRUE
 		changemeupinside.friendly_to_colony = TRUE
 		changemeupinside.faction = "Living Dead"
@@ -1111,7 +1117,7 @@
 		return
 
 	var/success = FALSE
-	for(var/mob/living/carbon/superior_animal/target in oview(1))
+	for(var/mob/living/carbon/superior/target in oview(1))
 
 		if(!body_checks(M))
 			return
@@ -1127,7 +1133,7 @@
 		to_chat(M, "<span class='warning'>\The [target] sinks down into the rune leaving behind... a small card?!</span>")
 		target.dust()
 
-	for(var/mob/living/simple_animal/simplemtarget in oview(1))
+	for(var/mob/living/simple/simplemtarget in oview(1))
 
 		if(!body_checks(M))
 			return
@@ -1337,7 +1343,7 @@
 // Scrolls can only be used by casters with the Scribe perk!
 /obj/effect/decal/cleanable/crayon/proc/scroll_spell(mob/living/carbon/human/M) // Able to be casted by all. But only filled out by scribes.
 	var/datum/reagent/organic/blood/B = M.get_blood()
-	for(var/mob/living/carbon/superior_animal/target in oview(1))
+	for(var/mob/living/carbon/superior/target in oview(1))
 
 		if(!body_checks(M))
 			return
@@ -1348,7 +1354,7 @@
 		M.sanity.changeLevel(-5)
 		new /obj/item/scroll(src.loc)
 		qdel(target)
-	for(var/mob/living/simple_animal/target in oview(1))
+	for(var/mob/living/simple/target in oview(1))
 
 		if(!body_checks(M))
 			return

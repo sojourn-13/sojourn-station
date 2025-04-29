@@ -27,6 +27,11 @@
 	path = /obj/item/clothing/under/rank/ntdress
 	cost = 0
 
+/datum/gear/factionabsolute/ntedress
+	display_name = "absolutist evening dress"
+	path = /obj/item/clothing/under/rank/ntedress
+	cost = 0
+
 /datum/gear/factionabsolute/toga
 	display_name = "absolutist toga"
 	path = /obj/item/clothing/under/rank/church/toga

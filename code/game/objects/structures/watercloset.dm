@@ -75,7 +75,7 @@
 	if(!open)
 		return
 	var/H = user.get_active_hand()
-	if(istype(H,/obj/item/reagent_containers/glass) || istype(H,/obj/item/reagent_containers/food/drinks))
+	if(istype(H,/obj/item/reagent_containers/glass) || istype(H,/obj/item/reagent_containers/drinks))
 		var/obj/item/reagent_containers/O = user.get_active_hand()
 		if(O.reagents && O.reagents.total_volume)
 			O.reagents.clear_reagents()
@@ -505,6 +505,10 @@
 		to_chat(user, SPAN_WARNING("Someone's already washing here."))
 		return
 
+	if(istype(O, /obj/item/reagent_containers/cwj))
+		to_chat(user, SPAN_WARNING("The [O] doesn‘t seem to accept water directly from the tap. Use a beaker or other proxy to add reagents."))
+		return
+
 	var/obj/item/reagent_containers/RG = O
 	if (istype(RG) && RG.is_refillable())
 		var/amount_to_add = min(RG.volume - RG.reagents.total_volume, RG.amount_per_transfer_from_this)
@@ -580,7 +584,7 @@
 
 /obj/structure/sink/AltClick(var/mob/living/user)
 	var/H = user.get_active_hand()
-	if(istype(H,/obj/item/reagent_containers/glass) || istype(H,/obj/item/reagent_containers/food/drinks))
+	if(istype(H,/obj/item/reagent_containers/glass) || istype(H,/obj/item/reagent_containers/drinks))
 		var/obj/item/reagent_containers/O = user.get_active_hand()
 		if(O.reagents && O.reagents.total_volume)
 			O.reagents.clear_reagents()

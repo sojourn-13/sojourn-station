@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/automatic/drozd
 	name = "Excelsior \"Drozd\" SMG"
-	desc = "\"The supremacy of the proletariat will cause them to vanish still faster.\"\nAn excellent, fully automatic compact submachinegun. \
+	desc = "\"The supremacy of the proletariat will cause the enemy to vanish even faster.\"\nAn excellent, fully automatic compact submachinegun. \
 			Famous for its perfomance in close quarters, and used by communist cells such as Excelsior. \
 			Chambered in 10mm, it takes both pistol and SMG magazines."
 	icon = 'icons/obj/guns/projectile/drozd.dmi'

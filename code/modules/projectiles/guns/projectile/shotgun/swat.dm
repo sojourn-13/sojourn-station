@@ -1,17 +1,14 @@
 /obj/item/gun/projectile/shotgun/pump/swat
 	name = "\"SWAT\" combat shotgun"
 	desc = "The prototype of a Seinemetall Defense GmbH original idea of the \"State\" reinvented to be the be all end all law enforcement shotgun. \
-			The \"SWAT\" main appeal other then pure stopping power is the built in pistol to shoot three round for clearing down range targets trying to run away. \
+			The \"SWAT\"'s main appeal other than pure stopping power is the built in pistol to shoot three rounds for clearing down range targets trying to run away. \
 			Can hold up to 7+1 20mm shells in its tube magazine, and 9 10x24 rounds in its underslung pistol."
 	icon = 'icons/obj/guns/projectile/swat.dmi' //Sprites by Toriate#0657 many loves and thanks to this amazing spriter!
 	icon_state = "swat"
 	item_state = "swat"
 	w_class = ITEM_SIZE_BULKY
-	caliber = CAL_SHOTGUN
-	fire_sound = 'sound/weapons/guns/fire/shotgun.ogg'
 	origin_tech = list(TECH_COMBAT = 7, TECH_MATERIAL = 4)
 	max_shells = 7
-	ammo_type = /obj/item/ammo_casing/shotgun
 	matter = list(MATERIAL_PLASTEEL = 25, MATERIAL_PLASTIC = 12)
 	price_tag = 1500
 	damage_multiplier = 1.3

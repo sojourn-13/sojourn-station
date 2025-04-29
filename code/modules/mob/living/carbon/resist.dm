@@ -41,7 +41,7 @@
 
 		// Update whether or not this mob needs to pass emotes to contents.
 		for(var/atom/A in M.contents)
-			if(istype(A,/mob/living/simple_animal/borer) || istype(A,/obj/item/holder))
+			if(istype(A,/mob/living/simple/borer) || istype(A,/obj/item/holder))
 				return
 		M.status_flags &= ~PASSEMOTES
 
@@ -129,7 +129,7 @@
 	var/breakouttime = 1200 - src.stats.getStat(STAT_ROB) * 10
 	//If you are handcuffed with actual handcuffs... Well what do I know, maybe someone will want to handcuff you with toilet paper in the future...
 	if(istype(HC))
-		breakouttime = HC.breakouttime - src.stats.getStat(STAT_ROB) * 10
+		breakouttime = max(HC.breakouttime - src.stats.getStat(STAT_ROB) * 5, HC.breakouttime *= 0.1)
 
 	var/mob/living/carbon/human/H = src
 	if(istype(H) && H.gloves && istype(H.gloves,/obj/item/clothing/gloves/rig))

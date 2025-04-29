@@ -114,6 +114,7 @@ h1.alert, h2.alert		{color: #000000;}
 .akula					{color: #f8412c}
 .plant					{color: #882d17}
 .opifex					{color: #e96443}
+.crinos					{color: #008000}
 
 .interface				{color: #330033;}
 

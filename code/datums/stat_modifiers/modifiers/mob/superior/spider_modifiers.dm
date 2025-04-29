@@ -1,11 +1,11 @@
-/datum/stat_modifier/mob/living/carbon/superior_animal/lustrous // keeping it here because this just FEELS spider
+/datum/stat_modifier/mob/living/carbon/superior/lustrous // keeping it here because this just FEELS spider
 
 	armor_adjustment = list(
 		energy = 10
 	)
 
 	flash_resistances_increment = 2
-	armor_divisor_increment = 1.25
+	armor_divisor_increment = 0.25
 
 	prefix = "Lustrous"
 
@@ -13,7 +13,7 @@
 
 	description = "This one has a almost chrome sheen to parts of it, allowing to mitigate flashes as well as energy attacks. It also seems to be better at penetrating armor."
 
-/datum/stat_modifier/mob/living/carbon/superior_animal/durable/spider
+/datum/stat_modifier/mob/living/carbon/superior/durable/spider
 
 	armor_adjustment = list(
 		melee = 1,
@@ -22,7 +22,7 @@
 		agony = 7
 	)
 
-	armor_divisor_increment = 1.1
+	armor_divisor_increment = 0.1
 	flash_resistances_increment = 1
 	maxHealth_increment = 20
 
@@ -30,7 +30,7 @@
 
 	prefix = "Durable"
 
-/datum/stat_modifier/mob/living/carbon/superior_animal/young/spider
+/datum/stat_modifier/mob/living/carbon/superior/young/spider
 
 	armor_adjustment = list(
 		melee = -1,
@@ -48,7 +48,7 @@
 
 	prefix = "Young"
 
-/datum/stat_modifier/mob/living/carbon/superior_animal/old/spider
+/datum/stat_modifier/mob/living/carbon/superior/old/spider
 
 	armor_adjustment = list(
 		melee = 1,
@@ -65,7 +65,7 @@
 
 	prefix = "Old"
 
-/datum/stat_modifier/mob/living/carbon/superior_animal/venomous
+/datum/stat_modifier/mob/living/carbon/superior/venomous
 
 	armor_adjustment = list(
 		bomb = 5,

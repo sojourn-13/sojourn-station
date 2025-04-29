@@ -1,7 +1,7 @@
-/mob/living/carbon/superior_animal/attack_ui(slot_id)
+/mob/living/carbon/superior/attack_ui(slot_id)
 	return
 
-/mob/living/carbon/superior_animal/UnarmedAttack(var/atom/A, var/proximity)
+/mob/living/carbon/superior/UnarmedAttack(var/atom/A, var/proximity)
 	if(!..())
 		return
 	if(weakened)
@@ -23,17 +23,27 @@
 	. = A.attack_generic(user = src, damage = damage, attack_message = attacktext, damagetype = melee_damage_type, attack_flag = attacking_armor_type, sharp = melee_sharp, edge = melee_sharp)
 
 	if(.)
+
+		if(fancy_attack_overlay)
+			var/obj/effect/effect/melee/mob_melee_animation/RS = new(get_turf(A), fancy_colour = fancy_attack_shading)
+			RS.dir = dir
+			if(randomize_attack_effect_location)
+				RS.pixel_x = rand(-6,6)
+				RS.pixel_y = rand(-6,8)
+			flick(fancy_attack_overlay, RS)
+			QDEL_IN(RS, 2 SECONDS)
+
 		if (attack_sound && loc && prob(attack_sound_chance))
 			playsound(loc, attack_sound, attack_sound_volume, 1)
 
-/mob/living/carbon/superior_animal/verb/break_around()
+/mob/living/carbon/superior/verb/break_around()
 	set name = "Attack Surroundings "
 	set desc = "Lash out on the your surroundings | Forcefully attack your surroundings."
 	set category = "Mob verbs"
 
 	src.destroySurroundings()
 
-/mob/living/carbon/superior_animal/RangedAttack()
+/mob/living/carbon/superior/RangedAttack()
 	if(!check_if_alive())
 		return
 	if(weakened)
@@ -41,16 +51,16 @@
 	var/atom/targetted_mob = (target_mob?.resolve())
 
 	if(ranged)
-		if(get_dist(src, targetted_mob) <= 6 && !istype(src, /mob/living/simple_animal/hostile/megafauna))
+		if(get_dist(src, targetted_mob) <= 6 && !istype(src, /mob/living/simple/hostile/megafauna))
 			OpenFire(targetted_mob)
 		else
 			set_glide_size(DELAY2GLIDESIZE(move_to_delay))
 			if (stat != DEAD)
 				SSmove_manager.move_to(src, targetted_mob, 1, move_to_delay)
-		if(ranged && istype(src, /mob/living/simple_animal/hostile/megafauna))
-			var/mob/living/simple_animal/hostile/megafauna/megafauna = src
+		if(ranged && istype(src, /mob/living/simple/hostile/megafauna))
+			var/mob/living/simple/hostile/megafauna/megafauna = src
 			sleep(rand(megafauna.megafauna_min_cooldown,megafauna.megafauna_max_cooldown))
-			if(istype(src, /mob/living/simple_animal/hostile/megafauna/one_star))
+			if(istype(src, /mob/living/simple/hostile/megafauna/one_star))
 				if(prob(rand(15,25)))
 					stance = HOSTILE_STANCE_ATTACKING
 					set_glide_size(DELAY2GLIDESIZE(move_to_delay))
@@ -69,7 +79,7 @@
 		else
 			return
 
-/mob/living/carbon/superior_animal/proc/OpenFire(var/atom/firing_target, var/obj/item/projectile/trace_arg)
+/mob/living/carbon/superior/proc/OpenFire(var/atom/firing_target, var/obj/item/projectile/trace_arg)
 	if(!check_if_alive())
 		return
 	if(weakened)
@@ -103,7 +113,7 @@
 
 	return
 
-/mob/living/carbon/superior_animal/proc/handle_ammo_check()
+/mob/living/carbon/superior/proc/handle_ammo_check()
 	if(!limited_ammo)
 		return //Quick return
 	rounds_left -= rounds_per_fire //modular, tho likely will always be one
@@ -113,14 +123,14 @@
 		ranged = FALSE
 		rapid = FALSE
 
-/mob/living/carbon/superior_animal/proc/mob_reload()
+/mob/living/carbon/superior/proc/mob_reload()
 	mags_left -= 1
 	rounds_left = initial(rounds_left)
 	visible_message(reload_message)
 	if(mag_drop)
 		new mag_type(get_turf(src))
 
-/mob/living/carbon/superior_animal/proc/Shoot(var/target, var/start, var/user, var/bullet = 0, var/obj/item/projectile/trace)
+/mob/living/carbon/superior/proc/Shoot(var/target, var/start, var/user, var/bullet = 0, var/obj/item/projectile/trace)
 	if(weakened)
 		return
 	if(target == start)
@@ -132,7 +142,9 @@
 	if(!A)
 		return
 
-	var/def_zone = get_exposed_defense_zone(target)
+	var/def_zone = pickweight(zone_hit_rates)
+
+	//message_admins("pre-fire def_zone = [def_zone]")
 
 	var/datum/penetration_holder/trace_penetration
 
@@ -177,6 +189,7 @@
 			A.original_firer = src
 			if(friendly_to_colony)
 				A.friendly_to_colony = TRUE
+			A.predetermed = def_zone
 			A.launch(target, def_zone, firer_arg = src, angle_offset = offset_temp) //this is where we actually shoot the projectile
 			right_after_firing()
 			SEND_SIGNAL(src, COMSIG_SUPERIOR_FIRED_PROJECTILE, A)
@@ -199,8 +212,8 @@
 				new_trace.penetration_holder = null
 			QDEL_NULL(new_trace)
 
-/// Ran right before A.launch in /mob/living/carbon/superior_animal/proc/Shoot. On base, is used for firing offset calculations.
-/mob/living/carbon/superior_animal/proc/right_before_firing(offset_positive = current_firing_offset, round_offset = FALSE)
+/// Ran right before A.launch in /mob/living/carbon/superior/proc/Shoot. On base, is used for firing offset calculations.
+/mob/living/carbon/superior/proc/right_before_firing(offset_positive = current_firing_offset, round_offset = FALSE)
 	if (round_offset)
 		offset_positive = round(offset_positive) //just to be safe
 
@@ -215,13 +228,13 @@
 
 	return offset_to_return
 
-/// Ran right after A.launch in /mob/living/carbon/superior_animal/proc/Shoot. On base, does nothing.
-/mob/living/carbon/superior_animal/proc/right_after_firing()
+/// Ran right after A.launch in /mob/living/carbon/superior/proc/Shoot. On base, does nothing.
+/mob/living/carbon/superior/proc/right_after_firing()
 	return FALSE
 
-/mob/living/carbon/superior_animal/MiddleClickOn(mob/targetDD as mob) //Letting Mobs Fire when middle clicking as someone controlling it.
+/mob/living/carbon/superior/MiddleClickOn(mob/targetDD as mob) //Letting Mobs Fire when middle clicking as someone controlling it.
 	if(weakened) return
-	var /mob/living/carbon/superior_animal/shooter = src //TODO: Make it work for alt click in perfs like rig code
+	var /mob/living/carbon/superior/shooter = src //TODO: Make it work for alt click in perfs like rig code
 	if(ranged_middlemouse_cooldown >= world.time) //Modula for admins to set them at different things
 		to_chat(src, "You gun isnt ready to fire!.")
 		return

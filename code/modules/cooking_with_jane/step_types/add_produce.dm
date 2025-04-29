@@ -43,24 +43,24 @@
 	log_debug("Called add_produce/check_conditions_met for [added_item] against [required_produce_type]")
 	#endif
 
-	if(!istype(added_item, /obj/item/reagent_containers/food/snacks/grown))
+	if(!istype(added_item, /obj/item/reagent_containers/snacks/grown))
 		return CWJ_CHECK_INVALID
 
-	var/obj/item/reagent_containers/food/snacks/grown/added_produce = added_item
+	var/obj/item/reagent_containers/snacks/grown/added_produce = added_item
 
 	var/datum/seed/produce_seed = plant_controller.seeds[added_produce.plantname]
 
 	//log_debug("[produce_seed.kitchen_tag] against [required_produce_type]")
 
 
-	if(produce_seed != null && (produce_seed.seed_name == required_produce_type || produce_seed.seed_name == "modified "+required_produce_type || produce_seed.seed_name == "mutant "+required_produce_type || produce_seed.kitchen_tag == required_produce_type))
+	if(produce_seed != null && (produce_seed.seed_name == required_produce_type || produce_seed.seed_name == "modified "+required_produce_type || produce_seed.seed_name == "mutant "+required_produce_type || produce_seed.kitchen_tag == required_produce_type || produce_seed.name == required_produce_type || produce_seed.display_name == required_produce_type))
 		return CWJ_CHECK_VALID
 
 	return CWJ_CHECK_INVALID
 
 /datum/cooking_with_jane/recipe_step/add_produce/calculate_quality(var/obj/added_item, var/datum/cooking_with_jane/recipe_tracker/tracker)
 
-	var/obj/item/reagent_containers/food/snacks/grown/added_produce = added_item
+	var/obj/item/reagent_containers/snacks/grown/added_produce = added_item
 
 	var/potency_raw = round(base_quality_award + (added_produce.potency - base_potency) * inherited_quality_modifier)
 

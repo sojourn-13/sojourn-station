@@ -1,4 +1,4 @@
-/mob/living/carbon/superior_animal/xenomorph/warrior/bull/crusher
+/mob/living/carbon/superior/xenomorph/warrior/bull/crusher
 	name = "crusher"
 	desc = "A powerful xenomorph crusher, while it doesn't have the horns a bull does, it does not need them. This behemoth can knock even the toughest man off his feet in one charge."
 	icon_state = "crusher"
@@ -15,16 +15,16 @@
 	melee_damage_upper = 35
 
 	allowed_stat_modifiers = list(
-		/datum/stat_modifier/mob/living/carbon/superior_animal/padded/xeno = 36,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/old/xeno = 26,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/young/xeno = 50,
+		/datum/stat_modifier/mob/living/carbon/superior/padded/xeno = 36,
+		/datum/stat_modifier/mob/living/carbon/superior/old/xeno = 26,
+		/datum/stat_modifier/mob/living/carbon/superior/young/xeno = 50,
 		/datum/stat_modifier/health/mult/positive/low = 5,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/durable/xeno = 22,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish/xeno = 12,
+		/datum/stat_modifier/mob/living/carbon/superior/durable/xeno = 22,
+		/datum/stat_modifier/mob/living/carbon/superior/brutish/xeno = 12,
 		/datum/stat_modifier/mob/living/speed/flat/positive/low = 1
 	)
 
-/mob/living/carbon/superior_animal/xenomorph/warrior/shrike/screecher
+/mob/living/carbon/superior/xenomorph/warrior/shrike/screecher
 	name = "screecher"
 	desc = "A powerful xenomorph screecher, the noisy and evolved version the shrike with a scream so horrid it bests even the most vigilant person."
 	icon_state = "screecher"
@@ -38,16 +38,16 @@
 	melee_damage_upper = 25
 
 	allowed_stat_modifiers = list(
-		/datum/stat_modifier/mob/living/carbon/superior_animal/padded/xeno = 36,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/old/xeno = 26,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/young/xeno = 50,
+		/datum/stat_modifier/mob/living/carbon/superior/padded/xeno = 36,
+		/datum/stat_modifier/mob/living/carbon/superior/old/xeno = 26,
+		/datum/stat_modifier/mob/living/carbon/superior/young/xeno = 50,
 		/datum/stat_modifier/health/mult/positive/low = 5,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/durable/xeno = 22,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish/xeno = 12,
+		/datum/stat_modifier/mob/living/carbon/superior/durable/xeno = 22,
+		/datum/stat_modifier/mob/living/carbon/superior/brutish/xeno = 12,
 		/datum/stat_modifier/mob/living/speed/flat/positive/low = 1
 	)
 
-/mob/living/carbon/superior_animal/xenomorph/runner/ravager
+/mob/living/carbon/superior/xenomorph/runner/ravager
 	name = "ravager"
 	desc = "A powerful xenomorph ravager, the fastest of the hulking xenomorphs with claws sharper than any blade and power to rival renders."
 	icon = 'icons/mob/Xenos_2x2.dmi'
@@ -63,7 +63,7 @@
 
 	attack_sound = list('sound/xenomorph/alien_bite1.ogg', 'sound/xenomorph/alien_bite2.ogg')
 
-/mob/living/carbon/superior_animal/xenomorph/warrior/defiler
+/mob/living/carbon/superior/xenomorph/warrior/defiler
 	name = "defiler"
 	desc = "A powerful xenomorph defiler, toxins drop from claw and maw, promising a venomous side effect with each attack."
 	icon = 'icons/mob/Xenos_2x2.dmi'
@@ -79,16 +79,16 @@
 	poison_per_bite = 5
 
 	allowed_stat_modifiers = list(
-		/datum/stat_modifier/mob/living/carbon/superior_animal/padded/xeno = 36,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/old/xeno = 26,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/young/xeno = 50,
+		/datum/stat_modifier/mob/living/carbon/superior/padded/xeno = 36,
+		/datum/stat_modifier/mob/living/carbon/superior/old/xeno = 26,
+		/datum/stat_modifier/mob/living/carbon/superior/young/xeno = 50,
 		/datum/stat_modifier/health/mult/positive/low = 5,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/durable/xeno = 22,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish/xeno = 12,
+		/datum/stat_modifier/mob/living/carbon/superior/durable/xeno = 22,
+		/datum/stat_modifier/mob/living/carbon/superior/brutish/xeno = 12,
 		/datum/stat_modifier/mob/living/speed/flat/positive/low = 1
 	)
 
-/mob/living/carbon/superior_animal/xenomorph/warrior/hivelord
+/mob/living/carbon/superior/xenomorph/warrior/hivelord
 	name = "hivelord"
 	desc = "A powerful xenomorph hivelord, of all the xenomorph shock troops, the hivelord stands as the most durable titan."
 	icon = 'icons/mob/Xenos_2x2.dmi'
@@ -100,12 +100,12 @@
 	health = 300
 
 	allowed_stat_modifiers = list(
-		/datum/stat_modifier/mob/living/carbon/superior_animal/padded/xeno = 36,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/old/xeno = 26,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/young/xeno = 50,
+		/datum/stat_modifier/mob/living/carbon/superior/padded/xeno = 36,
+		/datum/stat_modifier/mob/living/carbon/superior/old/xeno = 26,
+		/datum/stat_modifier/mob/living/carbon/superior/young/xeno = 50,
 		/datum/stat_modifier/health/mult/positive/low = 5,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/durable/xeno = 22,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish/xeno = 12,
+		/datum/stat_modifier/mob/living/carbon/superior/durable/xeno = 22,
+		/datum/stat_modifier/mob/living/carbon/superior/brutish/xeno = 12,
 		/datum/stat_modifier/mob/living/speed/flat/positive/low = 1
 	)
 

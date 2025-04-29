@@ -161,6 +161,33 @@
 
 	return TRUE
 
+/datum/ritual/cruciform/tessellate/omnitool
+	name = "Touch of the Bleeding-Heart"
+	phrase = "Exaudi clamorem meum, et amplius noli pati." //"Hear my cry, and suffer no more."
+	desc = "Channels the power of your cruciform into an incorporeal omnitool."
+	power = 40
+	cooldown = TRUE
+	cooldown_time = 2 MINUTES
+	cooldown_category = "omnitool_litany"
+	success_message = "Your hand glows with holy light, and you feel more in tune with the workings of flesh."
+
+/datum/ritual/cruciform/tessellate/omnitool/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C)
+	var/stat_bio = 25
+	var/stat_cog = 25
+	var/obj/item/tool/tessellate_omni/tool = new /obj/item/tool/tessellate_omni(src, user)
+	if (user.stats.getStat(STAT_BIO) > 32)
+		stat_bio = user.stats.getStat(STAT_BIO) * 0.8
+		if (user.stats.getStat(STAT_BIO) > 62)
+			stat_bio = 50
+	if (user.stats.getStat(STAT_COG) > 32)
+		stat_cog = user.stats.getStat(STAT_COG) * 0.8
+		if (user.stats.getStat(STAT_COG) > 62)
+			stat_cog = 50
+	tool.tool_qualities = list(QUALITY_CLAMPING = stat_bio, QUALITY_CAUTERIZING = stat_bio, QUALITY_RETRACTING = stat_bio, QUALITY_DRILLING = stat_cog, QUALITY_SAWING = stat_cog, QUALITY_BONE_SETTING = stat_bio, QUALITY_CUTTING = stat_cog, QUALITY_BONE_GRAFTING = stat_bio)
+	usr.put_in_active_hand(tool)
+	set_personal_cooldown(user)
+	return TRUE
+
 //////////////////////////////////////////////////
 /////////         LEMNISCATE             /////////
 //////////////////////////////////////////////////
@@ -549,7 +576,7 @@
 	var/traps
 	var/carrion
 	log_and_message_admins("performed empowered reveal litany")
-	for(var/mob/living/carbon/superior_animal/S in range(longrange, H))
+	for(var/mob/living/carbon/superior/S in range(longrange, H))
 		if (S.stat != DEAD)
 			if(!S.friendly_to_colony) //if something's friendly to the colony e.g. the Commander's beacon roach we don't care
 				was_triggered = TRUE
@@ -581,11 +608,11 @@
 						if(howfar <= closerange)
 							otherclose += 1
 
-	for (var/mob/living/simple_animal/hostile/S in range(longrange, H))
+	for (var/mob/living/simple/hostile/S in range(longrange, H))
 		if (S.stat != DEAD)
 			if(!S.friendly_to_colony) //if something's friendly to the colony e.g. the Commander's beacon roach we don't care
 				howfar = get_dist(H.loc, S.loc)
-				if(istype(S, /mob/living/simple_animal/spider_core) && howfar >= closerange) //Carrions get detected separately
+				if(istype(S, /mob/living/simple/spider_core) && howfar >= closerange) //Carrions get detected separately
 					was_triggered = TRUE
 					carrion = TRUE
 				else
@@ -933,3 +960,51 @@
 		return FALSE
 	anti_cheat = FALSE
 	return TRUE
+
+/datum/ritual/cruciform/factorial/nodrop_magnet
+	name = "Hand of Magnetism"
+	phrase = "Ager attractivus operis mei ad se alligavit." //"Field of attraction bound my work to self."
+	desc = "Harness the Physics of the Absolute. Items sanctified by the Church you are holding are no longer droppable. \
+	Only works with church-based items. \
+	If used on an item that already can't be dropped, it will become droppable. \
+	Does not work with firearms or cells."//To op to have a no drop on command gun sadly
+	power = 15
+	cooldown = FALSE
+	success_message = "The item that you are holding feels impossible to escape the Physics of the Absolute."
+
+/datum/ritual/cruciform/factorial/nodrop_magnet/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C)
+	var/obj/item/O = user.get_active_hand()
+	var/success = FALSE
+	if(O)
+		var/list/can_magnet = list(
+			/obj/item/shield/riot/crusader,
+			/obj/item/shield/buckler/nt,
+			/obj/item/shield/riot/nt,
+			/obj/item/tool/factorial_omni,
+			/obj/item/tool/spear/halberd,
+			/obj/item/tool/knife/dagger/nt,
+			/obj/item/tool/sword/crusader,
+			/obj/item/storage/firstaid/nt,
+			/obj/item/stack/medical/bruise_pack/advanced/nt,
+			/obj/item/stack/medical/ointment/advanced/nt,)
+
+		can_magnet += typesof(/obj/item/tool/sword/nt) - /obj/item/tool/sword/nt/longsword/implant
+		can_magnet += typesof(/obj/item/tool/knife/neotritual) - /obj/item/tool/knife/neotritual/implant
+
+		for(var/list_item in can_magnet)
+			//message_admins("list_item = [list_item] O.type = [O.type]")
+			if(list_item == O.type)
+				O.canremove = !O.canremove
+				success = TRUE
+				break
+		if(O.canremove)
+			success_message = "You destroy the magnetic field binding [O.name] to you."
+		else
+			success_message = "[O.name] that you are holding feels impossible to let go."
+
+	if(!success && O)
+		fail("[O.name] is unable to be magnetized.", user, C)
+	if(!O)
+		fail("Nothing in hand to magnetize.", user, C)
+
+	return success

@@ -86,6 +86,12 @@
 	// Generation behavior
 	var/generation_flags = ORGAN_HAS_BONES | ORGAN_HAS_BLOOD_VESSELS | ORGAN_HAS_MUSCLES | ORGAN_HAS_NERVES
 
+	var/list/markings = list() //EQUINOX EDIT - List of body markings for use in update_icon under organ_icon.dm (per-limb markings)
+
+	//Used for internal wounds, if limb damage is below this value dont progress it.
+	var/internal_wound_suppression = 4 //If you have *more* then this value, wounds progress
+	//When editing IWS ^ make sure to update the organ_description.dm
+
 /obj/item/organ/external/New(mob/living/carbon/human/holder, datum/organ_description/OD)
 	if(OD)
 		set_description(OD)
@@ -123,6 +129,7 @@
 	src.default_bone_type = desc.default_bone_type
 
 	src.max_damage = desc.max_damage
+	src.internal_wound_suppression = desc.internal_wound_suppression
 	src.min_broken_damage = desc.min_broken_damage
 	src.nerve_struck = desc.nerve_struck
 	src.vital = desc.vital

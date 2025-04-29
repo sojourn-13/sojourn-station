@@ -9,15 +9,45 @@
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2) // Multiplied by w_class
 	var/min_malfunction_damage = 20 // Any more damage than that and you start getting nasty random malfunctions
 
+/*	EQUINOX EDIT - No idea why this needs a snowflake override, parent proc already handles robotic limbs no problem, and there's no point copy pasting code for bodymarking caching here.
 /obj/item/organ/external/robotic/get_cache_key()
 	return "Robotic[model]"
+*/
 
 /obj/item/organ/external/robotic/update_icon()
 	var/gender = "m"
 	if(owner)
 		gender = owner.gender == FEMALE ? "f" : "m"
 	icon_state = "[organ_tag]_[gender]"
+
 	mob_icon = icon(force_icon, icon_state)
+
+// EQUINOX EDIT START - furry - apply bodymarkings, copypasta from regular organic limbs.
+	for(var/M in markings)
+		var/datum/sprite_accessory/marking/mark_style = markings[M]["datum"]
+		var/icon/mark_s
+		var/icon/mark_splice	//temporary var to facilitate splicing together feet sprites into leg sprites where relevant
+
+		mark_s = new/icon("icon" = mark_style.icon, "icon_state" = "[mark_style.icon_state]-[organ_tag]")
+
+	// Horrible hackjob to botch together hands and feet into their parent limbs where relevant
+		if(organ_tag == BP_L_LEG && (BP_L_FOOT in mark_style.body_parts))
+			mark_splice = new/icon(mark_style.icon, "[mark_style.icon_state]-l_foot")
+		else if(organ_tag == BP_R_LEG && (BP_R_FOOT in mark_style.body_parts))
+			mark_splice = new/icon(mark_style.icon, "[mark_style.icon_state]-r_foot")
+		else if(organ_tag == BP_L_ARM && (BP_L_HAND in mark_style.body_parts))
+			mark_splice = new/icon(mark_style.icon, "[mark_style.icon_state]-l_hand")
+		else if(organ_tag == BP_R_ARM && (BP_R_HAND in mark_style.body_parts))
+			mark_splice = new/icon(mark_style.icon, "[mark_style.icon_state]-r_hand")
+
+		if(mark_splice && mark_s)
+			mark_s.Blend(mark_splice, ICON_OVERLAY)
+
+		mark_s.Blend(markings[M]["color"], mark_style.blend)
+		add_overlay(mark_s) //So when it's not on your body, it has icons
+		mob_icon.Blend(mark_s, ICON_OVERLAY) //So when it's on your body, it has icons
+// EQUINOX EDIT END
+
 	icon = mob_icon
 	return mob_icon
 

@@ -1,11 +1,11 @@
 
-//NOTE: Don't use this proc for finding specific mobs or a very certain object; ultilize GLOBs instead of view()/mob/living/carbon/superior_animal/proc/getObjectsInView()
-/mob/living/carbon/superior_animal/proc/getObjectsInView()
+//NOTE: Don't use this proc for finding specific mobs or a very certain object; ultilize GLOBs instead of view()/mob/living/carbon/superior/proc/getObjectsInView()
+/mob/living/carbon/superior/proc/getObjectsInView()
 	objectsInView = objectsInView || view(src, viewRange)
 	return objectsInView
 
 //Use this for all mobs per zlevel, get_dist() checked
-/mob/living/carbon/superior_animal/proc/getPotentialTargets()
+/mob/living/carbon/superior/proc/getPotentialTargets()
 	var/turf/T = get_turf(src)
 	if(!T)
 		return //We're contained inside something, a locker perhaps.
@@ -19,7 +19,7 @@
 			list_to_return += thing
 	return list_to_return*/
 
-/mob/living/carbon/superior_animal/proc/findTarget(prioritizeCurrent = FALSE)
+/mob/living/carbon/superior/proc/findTarget(prioritizeCurrent = FALSE)
 
 	if (prioritizeCurrent)
 		if (target_mob)
@@ -75,7 +75,7 @@
 	return filteredTarget
 
 /// Returns a list of objects, using a method dependant on the prioritization_type var of the mob.
-/mob/living/carbon/superior_animal/proc/getTargets(list/L, sourceLocation)
+/mob/living/carbon/superior/proc/getTargets(list/L, sourceLocation)
 	if (L.len == 1)
 		return L.Copy()
 
@@ -87,7 +87,7 @@
 		if (FURTHEST)
 			return getFurthestObjects(L, sourceLocation, viewRange)
 
-/mob/living/carbon/superior_animal/proc/attemptAttackOnTarget()
+/mob/living/carbon/superior/proc/attemptAttackOnTarget()
 	var/atom/targetted_mob = (target_mob?.resolve())
 
 	if(weakened) return
@@ -100,7 +100,7 @@
 
 	return UnarmedAttack(targetted_mob,1)
 
-/mob/living/carbon/superior_animal/proc/prepareAttackOnTarget()
+/mob/living/carbon/superior/proc/prepareAttackOnTarget()
 	var/atom/targetted_mob = (target_mob?.resolve())
 
 	if(weakened) return
@@ -122,7 +122,7 @@
 			addtimer(CALLBACK(src, PROC_REF(attemptAttackOnTarget)), delay_for_melee)
 
 
-/mob/living/carbon/superior_animal/proc/loseTarget(stop_pursuit = TRUE, simply_losetarget = FALSE)
+/mob/living/carbon/superior/proc/loseTarget(stop_pursuit = TRUE, simply_losetarget = FALSE)
 	if (stop_pursuit)
 		stop_automated_movement = 0
 		if (move_packet)
@@ -140,7 +140,7 @@
 	target_mob = null
 	target_location = null
 
-/mob/living/carbon/superior_animal/proc/isValidAttackTarget(atom/O)
+/mob/living/carbon/superior/proc/isValidAttackTarget(atom/O)
 
 //Soj optimizations: Faster returns rather then mega returns
 //Even if this looks a bit more mess and has more lines (sob) - Trilby
@@ -199,7 +199,7 @@
 	return FALSE
 
 
-/mob/living/carbon/superior_animal/proc/destroySurroundings() //todo: make this better - Trilby
+/mob/living/carbon/superior/proc/destroySurroundings() //todo: make this better - Trilby
 /*
 			if (obstacle.dir == reverse_dir[dir]) // this here is so we can target what were are attacking
 */
@@ -289,7 +289,7 @@
 					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),pick(attacktext))
 					return
 
-/mob/living/carbon/superior_animal/hear_say(var/message, var/verb = "says", var/datum/language/language = null, var/alt_name = "", var/italics = 0, var/mob/living/speaker = null, var/sound/speech_sound, var/sound_vol, speech_volume)
+/mob/living/carbon/superior/hear_say(var/message, var/verb = "says", var/datum/language/language = null, var/alt_name = "", var/italics = 0, var/mob/living/speaker = null, var/sound/speech_sound, var/sound_vol, speech_volume)
 	..()
 	if(obey_check(speaker)) // Are we only obeying the one talking?
 		if(findtext(message, "Follow") && findtext(message, "[name]") && !following && !anchored) // Is he telling us to follow?
@@ -301,7 +301,7 @@
 			visible_emote("[stop_message]")
 
 // Check if we obey the person talking.
-/mob/living/carbon/superior_animal/proc/obey_check(var/mob/living/speaker = null)
+/mob/living/carbon/superior/proc/obey_check(var/mob/living/speaker = null)
 	if(!obey_friends) // Are we following anyone who ask?
 		return TRUE // We obey them
 
@@ -311,7 +311,7 @@
 	return FALSE
 
 //Putting this here do to no idea were it would fit other then here
-/mob/living/carbon/superior_animal/verb/toggle_AI()
+/mob/living/carbon/superior/verb/toggle_AI()
 	set name = "Toggle AI"
 	set desc = "Toggles on/off the mobs AI."
 	set category = "Mob verbs"
@@ -334,7 +334,7 @@
  * atom/attacker: The atom that attacked them. Optional.
  * params: A legacy arg that I only added because a proc that would send this signal had that arg.
 **/
-/mob/living/carbon/superior_animal/proc/react_to_attack(var/mob/living/carbon/superior_animal/source = src, var/obj/item/attacked_with, var/atom/attacker, params)
+/mob/living/carbon/superior/proc/react_to_attack(var/mob/living/carbon/superior/source = src, var/obj/item/attacked_with, var/atom/attacker, params)
 	SIGNAL_HANDLER
 
 	if (attacked_with && (isprojectile(attacked_with)))
@@ -363,5 +363,5 @@
 						INVOKE_ASYNC(SSmove_manager, /datum/controller/subsystem/move_manager/proc/move_to, src, target_location, (comfy_range - comfy_distance), move_to_delay)
 
 
-/mob/living/carbon/superior_animal/proc/movement_tech()
+/mob/living/carbon/superior/proc/movement_tech()
 	moved = TRUE

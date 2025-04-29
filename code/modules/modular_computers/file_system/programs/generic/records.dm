@@ -68,6 +68,8 @@
 	if(!F.verify_access_edit(get_record_access(user)))
 		to_chat(user, "<span class='notice'>\The [nano_host()] flashes an \"Access Denied\" warning.</span>")
 		return
+	if(user.ckey)
+		log_and_message_admins("Records Edit: Editor = \"[user.real_name]\" Ckey \"[user.ckey]\" Record holder Name: \"[R.get_name()]\"", location = user.loc)
 	F.ask_value(user)
 
 /datum/nano_module/records/Topic(href, href_list)

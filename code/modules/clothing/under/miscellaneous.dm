@@ -242,6 +242,31 @@
 	permeability_coefficient = 0.50
 	armor_list = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 10, rad = 0)
 
+/obj/item/clothing/under/rank/medspec/gorka_ih_med_g/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["medical specialist gorka"] = "gorka_ih_med_g"
+	options["medical specialist gorka alt"] = "gorka_ih_med_green"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		item_state_slots = null
+		to_chat(M, "You adjust your [choice].")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 /obj/item/clothing/under/rank/medical/gorka_crew_med
 	name = "medical crew gorka"
 	desc = "A durable, baggy grey uniform sporting EMS patches, high vis strips, and stain resistant coating."

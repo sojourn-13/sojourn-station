@@ -168,7 +168,7 @@
 
 /datum/technology/exotic_weaponry
 	name = "Experimental Weaponry"
-	desc = "Remote temperature controling weapon."
+	desc = "Remote temperature controlling weapon, implants and advanced shields."
 	tech_type = RESEARCH_COMBAT
 
 	x = 0.7
@@ -183,7 +183,9 @@
 							/datum/design/research/item/weapon/slimegun,
 							/datum/design/research/item/ammo/shotgun_fire,
 							/datum/design/research/item/ammo/shotgun_laser,
-							/datum/design/research/item/weapon/bastion
+							/datum/design/research/item/weapon/bastion,
+							/datum/design/research/item/mechfab/modules/punch_helper,
+							/datum/design/research/item/mechfab/modules/momentum_speed_adder
 							)
 
 /datum/technology/adv_exotic_weaponry
@@ -347,6 +349,7 @@
 							/datum/design/research/item/weapon/hydrogen_pistol,
 							/datum/design/research/item/weapon/hydrogen_cannon,
 							/datum/design/research/item/mecha/weapon/hydrogen,
+							/datum/design/research/item/weapon/hydrogen_sword,
 							/datum/design/research/item/weapon/hydrogen_welder,
 							/datum/design/research/item/weapon/hydrogrenade,
 							/datum/design/research/item/ammo/hydroflaskette,

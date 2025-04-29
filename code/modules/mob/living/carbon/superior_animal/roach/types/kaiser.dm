@@ -3,7 +3,7 @@ Boss of this maints.
 Has ability of every roach.
 */
 
-/mob/living/carbon/superior_animal/roach/kaiser
+/mob/living/carbon/superior/roach/kaiser
 	name = "Kaiser Roach"
 	desc = "A glorious emperor of roaches."
 	icon = 'icons/mob/64x64.dmi'
@@ -42,7 +42,7 @@ Has ability of every roach.
 
 	blattedin_revives_left = 0
 
-	meat_type = /obj/item/reagent_containers/food/snacks/meat/roachmeat/kaiser
+	meat_type = /obj/item/reagent_containers/snacks/meat/roachmeat/kaiser
 	meat_amount = 15
 	sanity_damage = 3
 	has_special_parts = TRUE
@@ -55,21 +55,24 @@ Has ability of every roach.
 	fire_verb = "spits glowing bile"
 
 	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_RAND_UNSTABLE, MUTATION_RAND_UNSTABLE, MUTATION_RAND_UNSTABLE)
+	fancy_attack_overlay = "kaiser_attack_flick"
+	fancy_attack_shading = "#7C919A"
+	//randomize_attack_effect_location = FALSE Accually quite cool
 
-/mob/living/carbon/superior_animal/roach/kaiser/getTargets()
+/mob/living/carbon/superior/roach/kaiser/getTargets()
 	. = ..()
 
 	rounds_left = 2 //Reload us, after all we are now targeting someone new
 	ranged = TRUE //Were reloaded we can be ranged once more
 
-/mob/living/carbon/superior_animal/roach/kaiser/New()
+/mob/living/carbon/superior/roach/kaiser/New()
 	. = ..()
 	gas_sac = new /datum/reagents(100, src)
 	pixel_x = -16  // For some reason it doesn't work when I overload them in class definition, so here it is.
 	pixel_y = -16
 
 
-/mob/living/carbon/superior_animal/roach/kaiser/handle_ai()
+/mob/living/carbon/superior/roach/kaiser/handle_ai()
 	. = ..()
 
 	if(can_call_reinforcements())
@@ -81,7 +84,7 @@ Has ability of every roach.
 
 
 // TOXIC ABILITIES
-/mob/living/carbon/superior_animal/roach/kaiser/UnarmedAttack(atom/A, proximity)
+/mob/living/carbon/superior/roach/kaiser/UnarmedAttack(atom/A, proximity)
 	. = ..()
 
 	if(isliving(A))
@@ -94,7 +97,7 @@ Has ability of every roach.
 			L.visible_message(SPAN_DANGER("\the [src] globs up some glowing bile all over \the [L]!"))
 
 // SUPPORT ABILITIES
-/mob/living/carbon/superior_animal/roach/kaiser/proc/gas_attack()
+/mob/living/carbon/superior/roach/kaiser/proc/gas_attack()
 	if (!gas_sac.has_reagent("blattedin", 20) || stat != CONSCIOUS)
 		return
 
@@ -112,7 +115,7 @@ Has ability of every roach.
 	return TRUE
 
 // FUHRER ABILITIES
-/mob/living/carbon/superior_animal/roach/kaiser/proc/distress_call()
+/mob/living/carbon/superior/roach/kaiser/proc/distress_call()
 	if (!distress_call_stage)
 		return
 
@@ -130,7 +133,7 @@ Has ability of every roach.
 			B.distress(TRUE)
 
 
-/mob/living/carbon/superior_animal/roach/kaiser/proc/can_call_reinforcements()
+/mob/living/carbon/superior/roach/kaiser/proc/can_call_reinforcements()
 	if(health_marker_1 >= health && health > health_marker_2 && distress_call_stage == 3)
 		return TRUE
 	if(health_marker_2 >= health && health > health_marker_3 && distress_call_stage == 2)
@@ -139,11 +142,11 @@ Has ability of every roach.
 		return TRUE
 	return FALSE
 
-/mob/living/carbon/superior_animal/roach/kaiser/updatehealth()
+/mob/living/carbon/superior/roach/kaiser/updatehealth()
 	..()
 	speed_cycle()
 
-/mob/living/carbon/superior_animal/roach/kaiser/proc/speed_cycle()
+/mob/living/carbon/superior/roach/kaiser/proc/speed_cycle()
 	if(health_marker_1 >= health)
 		move_to_delay = 4
 	if(health_marker_2 >= health)
@@ -151,11 +154,11 @@ Has ability of every roach.
 	if(health_marker_3 >= health)
 		move_to_delay = 2.5
 
-/mob/living/carbon/superior_animal/roach/kaiser/slip(slipped_on)
+/mob/living/carbon/superior/roach/kaiser/slip(slipped_on)
 	return FALSE
 
 //RIDING
-/mob/living/carbon/superior_animal/roach/kaiser/try_tame(mob/living/carbon/user, obj/item/reagent_containers/food/snacks/grown/thefood)
+/mob/living/carbon/superior/roach/kaiser/try_tame(mob/living/carbon/user, obj/item/reagent_containers/snacks/grown/thefood)
 	if(!istype(thefood))
 		return FALSE
 	if(prob(40))
@@ -188,7 +191,7 @@ Has ability of every roach.
 	visible_message("[src] snaps out of its trance and rushes at [user]!")
 	return FALSE
 
-/mob/living/carbon/superior_animal/roach/kaiser/movement_tech()
+/mob/living/carbon/superior/roach/kaiser/movement_tech()
 	moved = TRUE
 	if(!weakened && stat == CONSCIOUS)
 		attemptAttackOnTarget()

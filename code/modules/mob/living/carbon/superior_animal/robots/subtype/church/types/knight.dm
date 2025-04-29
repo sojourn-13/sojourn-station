@@ -1,5 +1,5 @@
 // The Knight Golem is between the Pawn and the Rook in term of durability, damage and speed.
-/mob/living/carbon/superior_animal/robot/church/knight
+/mob/living/carbon/superior/robot/church/knight
 	name = "Knight Golem"
 	desc = "The Knight, a golem made by the church and fashioned after the time honored game of chess by Brynn. Reliable, strong, and quite sturdy compared to pawns and bishops, though not \
 	nearly as much of a power house as the Rook. One of the more common sights among church golems."

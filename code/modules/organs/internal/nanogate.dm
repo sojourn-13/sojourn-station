@@ -19,7 +19,7 @@
 	attack_verb = list("attacked", "slapped", "whacked")
 	price_tag = 12000
 	var/nanite_points = 10
-	var/mob/living/carbon/superior_animal/nanobot/Stand // The personal robot of the owner. I wonder how many people will get the reference... -R4d6
+	var/mob/living/carbon/superior/nanobot/Stand // The personal robot of the owner. I wonder how many people will get the reference... -R4d6
 	var/obj/item/rig/nanite/nanite_rig // The nanite rig you can make
 	//var/list/perk_list = list() //List of activated perks for later removal
 	var/obj/item/modular_computer/tablet/nanogate/vm //The virtual tablet that comes with your nanogate

@@ -65,6 +65,7 @@
 	scannable = TRUE
 	injectable = 1
 	common = TRUE //It's basically sugar
+	price_per_unit = 0.725
 
 /datum/reagent/organic/nutriment/protein
 	name = "Protein"
@@ -73,6 +74,7 @@
 	description = "Essential nutrient for the human body."
 	color = "#440000"
 	common = TRUE //Protein Shake
+	price_per_unit = 0.13
 
 /datum/reagent/organic/nutriment/protein/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	if(VAMPIRE in M.mutations)
@@ -97,6 +99,7 @@
 	common = TRUE //Snacks
 	nutriment_factor = 1
 	regen_factor = 0.2
+	price_per_unit = 0.01
 
 /datum/reagent/organic/nutriment/preservatives/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	if(VAMPIRE in M.mutations)
@@ -119,6 +122,7 @@
 	description = "Store significant amounts of protein and choline"
 	color = "#FFFFAA"
 	common = TRUE //egg
+	price_per_unit = 0.15
 
 /datum/reagent/organic/nutriment/honey
 	name = "Honey"
@@ -128,6 +132,7 @@
 	nutriment_factor = 4
 	color = "#FFFF00"
 	common = TRUE
+	price_per_unit = 0.35
 
 /datum/reagent/organic/nutriment/honey/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	..()
@@ -142,6 +147,7 @@
 	nutriment_factor = 0.4
 	color = "#FFFFFF"
 	common = TRUE
+	price_per_unit = 0.15
 
 /datum/reagent/organic/nutriment/flour/touch_turf(turf/simulated/T)
 	if(!istype(T, /turf/space))
@@ -158,6 +164,7 @@
 	nutriment_factor = 2
 	color = "#302000"
 	common = TRUE
+	price_per_unit = 0.14
 
 /datum/reagent/organic/nutriment/soysauce
 	name = "Soysauce"
@@ -169,6 +176,7 @@
 	nutriment_factor = 0.8
 	color = "#792300"
 	common = TRUE
+	price_per_unit = 0.15
 
 /datum/reagent/organic/nutriment/ketchup
 	name = "Ketchup"
@@ -179,6 +187,7 @@
 	nutriment_factor = 2
 	color = "#ce190c"
 	common = TRUE
+	price_per_unit = 0.175
 
 /datum/reagent/organic/nutriment/vinegar
 	name = "Vinegar"
@@ -189,16 +198,20 @@
 	reagent_state = LIQUID
 	nutriment_factor = 2
 	common = TRUE
+	price_per_unit = 0.2
 
 /datum/reagent/organic/nutriment/bbqsauce
 	name = "Barbecue sauce"
 	id = "bbqsauce"
-	description = "Slather it on pork or chicken to greatly enhance its flavor. Or to whatever food you like, to make it taste better. You are, after all, the big boss of your barbecue sauce." // No cayenne pepper though.
+	description = "Slather it on pork or chicken to greatly enhance its flavor. \
+	Or to whatever food you like, to make it taste better. \
+	You are, after all, the big boss of your barbecue sauce." // No cayenne pepper though.
 	color = "#731008" // Ketchup's old color, to distinguish between the two.
 	taste_description = "barbecue sauce"
 	reagent_state = LIQUID
 	nutriment_factor = 2
 	common = TRUE
+	price_per_unit = 0.3
 
 /datum/reagent/organic/nutriment/rice
 	name = "Rice"
@@ -210,6 +223,7 @@
 	nutriment_factor = 0.4
 	color = "#FFFFFF"
 	common = TRUE
+	price_per_unit = 0.15
 
 /datum/reagent/organic/nutriment/cherryjelly
 	name = "Cherry Jelly"
@@ -221,6 +235,7 @@
 	nutriment_factor = 0.4
 	color = "#801E28"
 	common = TRUE
+	price_per_unit = 0.15
 
 /datum/reagent/organic/nutriment/cornoil
 	name = "Corn Oil"
@@ -232,6 +247,7 @@
 	nutriment_factor = 8
 	color = "#302000"
 	common = TRUE
+	price_per_unit = 0.15
 
 /datum/reagent/organic/nutriment/cornoil/touch_turf(turf/simulated/T)
 	if(!istype(T))
@@ -257,6 +273,7 @@
 	nutriment_factor = 0.4
 	color = "#FF00FF"
 	common = TRUE
+	price_per_unit = 0.75
 
 /datum/reagent/organic/nutriment/mint
 	name = "Mint"
@@ -266,6 +283,7 @@
 	reagent_state = LIQUID
 	color = "#CF3600"
 	common = TRUE
+	price_per_unit = 0.25
 
 /datum/reagent/other/lipozine // The anti-nutriment.
 	name = "Lipozine"
@@ -276,6 +294,7 @@
 	color = "#BBEDA4"
 	overdose = REAGENTS_OVERDOSE
 	scannable = TRUE
+	price_per_unit = 0.2
 
 /datum/reagent/other/lipozine/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.nutrition = max(M.nutrition - 1 * effect_multiplier, 0)
@@ -289,6 +308,7 @@
 	nutriment_factor = 1
 	color = "#302000"
 	common = TRUE
+	price_per_unit = 0.025
 
 /datum/reagent/organic/nutriment/hot_ramen
 	name = "Hot Ramen"
@@ -299,6 +319,7 @@
 	color = "#302000"
 	nutriment_factor = 3
 	common = TRUE
+	price_per_unit = 0.025
 
 /datum/reagent/organic/nutriment/hot_ramen/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	..()
@@ -317,6 +338,7 @@
 	nutriment_factor = "#302000"
 	nutriment_factor = 3.2 //So you have a reason to make these over normal ones.
 	common = TRUE
+	price_per_unit = 0.03
 
 /datum/reagent/organic/nutriment/hell_ramen/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	..()
@@ -335,6 +357,7 @@
 	glass_icon_state = "nothing"
 	glass_name = "nothing"
 	glass_desc = "Absolutely nothing."
+	price_per_unit = 1
 
 /* Non-food stuff like condiments */
 
@@ -350,7 +373,11 @@
 	scannable = TRUE
 	common = TRUE
 
-/datum/reagent/sodiumchloride/affect_blood(mob/living/carbon/M, alien, effect_multiplier) //reasoning: Table salt is usually iodized. Iodine saturates glands. Glands are often getting screwed over by isotopes of iodine if exposed to radiation. Yes its a preventatitve method IRL but this is gamyfictaion.
+//	Reasoning: Table salt is usually iodized. Iodine saturates glands.
+//	Glands are often getting screwed over by isotopes of iodine if exposed to radiation.
+//	Yes its a preventatitve method IRL but this is gamyfictaion.
+
+/datum/reagent/sodiumchloride/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	..()
 	M.radiation = max(M.radiation - (0.3 * effect_multiplier), 0) //10 times less effective than Hyronalin
 
@@ -373,6 +400,7 @@
 	color = "#365E30"
 	overdose = REAGENTS_OVERDOSE
 	common = TRUE
+	price_per_unit = 1.2
 
 /datum/reagent/organic/frostoil
 	name = "Frost Oil"
@@ -382,6 +410,7 @@
 	taste_mult = 1.5
 	reagent_state = LIQUID
 	color = "#B31008"
+	price_per_unit = 0.35
 
 /datum/reagent/organic/frostoil/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.bodytemperature = max(M.bodytemperature - 5 * TEMPERATURE_DAMAGE_COEFFICIENT, 0)
@@ -418,7 +447,7 @@
 		var/mob/living/carbon/human/H = M
 		if(H.frost > 0)
 			H.frost -= 1
-		if(H.species && (H.species.flags & (NO_PAIN)))
+		if((H.species.flags & NO_PAIN) || (PAIN_LESS in H.mutations))
 			return
 	if(dose < agony_dose)
 		if(prob(5) || dose == metabolism) //dose == metabolism is a very hacky way of forcing the message the first time this procs
@@ -445,6 +474,7 @@
 	agony_amount = 4
 	discomfort_message = "<span class='danger'>You feel like your insides are burning!</span>"
 	slime_temp_adj = 15
+	price_per_unit = 0.35
 
 /datum/reagent/organic/capsaicin/condensed/affect_touch(mob/living/carbon/M, alien, effect_multiplier)
 	var/eyes_covered = 0
@@ -457,7 +487,7 @@
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		protection = list(H.head, H.glasses, H.wear_mask)
-		if(H.species && (H.species.flags & NO_PAIN))
+		if((H.species.flags & NO_PAIN) || (PAIN_LESS in H.mutations))
 			no_pain = 1 //TODO: living-level can_feel_pain() proc
 		if(H.frost > 0)
 			H.frost -= 2
@@ -499,7 +529,7 @@
 /datum/reagent/organic/capsaicin/condensed/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-		if(H.species && (H.species.flags & NO_PAIN))
+		if((H.species.flags & NO_PAIN) || (PAIN_LESS in H.mutations))
 			return
 	if(dose == metabolism)
 		to_chat(M, SPAN_DANGER("You feel like your insides are burning!"))
@@ -515,6 +545,7 @@
 	name = "Spider Capsaicin"
 	id = "condensedcapsaicinspider"
 	description = "A strange organic substance with the same effects of Condensed Capsaicin, but only to non-spiders."
+	price_per_unit = 0.5
 
 /datum/reagent/organic/capsaicin/condensed/spider/affect_touch(mob/living/carbon/M, alien, effect_multiplier)
 	if (issuperiorspider(M))
@@ -734,6 +765,7 @@
 	glass_name = "poison berry juice"
 	glass_desc = "Looks like some deadly juice."
 	common = FALSE //Queue to the player: 'Hey maybe don't drink this'
+	price_per_unit = 0.13
 
 /datum/reagent/drink/potato_juice
 	name = "Potato Juice"
@@ -790,6 +822,17 @@
 	glass_name = "pineapple juice"
 	glass_desc = "A tart, yet tropical juice."
 
+/datum/reagent/drink/applejuice
+	name = "Apple Juice"
+	id = "applejuice"
+	description = "A juice made from an apple."
+	taste_description = "liquid apples"
+	color = "#f9d338"
+
+	glass_icon_state = "glass_yellow"
+	glass_name = "apple juice"
+	glass_desc = "A juice made from an apple."
+
 // Everything else
 
 /datum/reagent/drink/milk
@@ -804,6 +847,7 @@
 	glass_icon_state = "glass_white"
 	glass_name = "milk"
 	glass_desc = "White and nutritious goodness!"
+	price_per_unit = 0.15
 
 /datum/reagent/drink/milk/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	..()
@@ -1030,6 +1074,7 @@
 	glass_icon_state = "espresso"
 	glass_name = "shot of espresso"
 	glass_desc = "A strong coffee made by passing nearly boiling water through coffee seeds at high pressure."
+	price_per_unit = 0.13
 
 /datum/reagent/drink/coffee/espresso/overdose(mob/living/carbon/M, alien)
 	M.make_jittery(10) // Stronger coffee, stronger consequences
@@ -1061,6 +1106,7 @@
 	glass_name = "soy latte"
 	glass_desc = "A nice and refreshing beverage to drink while you are reading."
 	glass_center_of_mass = list("x"=15, "y"=9)
+	price_per_unit = 0.13
 
 /datum/reagent/drink/coffee/soy_latte/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	..()
@@ -1079,6 +1125,7 @@
 	glass_name = "cafe latte"
 	glass_desc = "A nice, strong and refreshing beverage to drink while you are reading."
 	glass_center_of_mass = list("x"=15, "y"=9)
+	price_per_unit = 0.13
 
 /datum/reagent/drink/coffee/cafe_latte/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	..()
@@ -1096,6 +1143,7 @@
 	glass_name = "freddo espresso"
 	glass_desc = "Espresso with ice cubes poured over ice."
 	glass_center_of_mass = list("x"=15, "y"=9)
+	price_per_unit = 0.13
 
 /datum/reagent/drink/coffee/caffe_americano
 	name = "Caffe Americano"
@@ -1110,6 +1158,7 @@
 	glass_name = "caffe Americano"
 	glass_desc = "Your average, watered-down coffee."
 	glass_center_of_mass = list("x"=15, "y"=9)
+	price_per_unit = 0.13
 
 /datum/reagent/drink/coffee/flat_white
 	name = "Flat White Espresso"
@@ -1123,6 +1172,7 @@
 	glass_name = "flat white"
 	glass_desc = "Espresso with a bit of steamy hot milk."
 	glass_center_of_mass = list("x"=15, "y"=9)
+	price_per_unit = 0.13
 
 /datum/reagent/drink/coffee/lattemacchiato
 	name = "Latte Macchiato"
@@ -1136,6 +1186,7 @@
 	glass_name = "cafe latte"
 	glass_desc = "A tall glass of foamy milk with espresso poured on top."
 	glass_center_of_mass = list("x"=15, "y"=9)
+	price_per_unit = 0.13
 
 /datum/reagent/drink/coffee/cappuccino
 	name = "Cappuccino"
@@ -1149,6 +1200,7 @@
 	glass_name = "cappuccino"
 	glass_desc = "Espresso with steamed milk foam."
 	glass_center_of_mass = list("x"=15, "y"=9)
+	price_per_unit = 0.13
 
 /datum/reagent/drink/coffee/freddo_cappuccino
 	name = "Freddo Cappuccino"
@@ -1162,6 +1214,7 @@
 	glass_name = "freddo cappuccino"
 	glass_desc = "Espresso with steamed milk foam, on ice."
 	glass_center_of_mass = list("x"=15, "y"=9)
+	price_per_unit = 0.13
 
 /datum/reagent/drink/coffee/macchiato
 	name = "Macchiato"
@@ -1175,6 +1228,7 @@
 	glass_name = "macchiato"
 	glass_desc = "Espresso with milk foam."
 	glass_center_of_mass = list("x"=15, "y"=9)
+	price_per_unit = 0.13
 
 /datum/reagent/drink/coffee/mocaccino
 	name = "Mocaccino"
@@ -1188,11 +1242,13 @@
 	glass_name = "mocaccino"
 	glass_desc = "Espresso with hot milk and chocolate."
 	glass_center_of_mass = list("x"=15, "y"=9)
+	price_per_unit = 0.13
 
 /datum/reagent/drink/coffee/atomicoffee // CDDA reference - Seb
 	name = "Atomic coffee"
 	id = "atomicoffee"
-	description = "Every possible microgram of caffeine and flavor has been carefully extracted for your enjoyment, using the power of the atom. The perfect drink for those that wish to stay awake for days."
+	description = "Every possible microgram of caffeine and flavor has been carefully extracted for your enjoyment, using the power of the atom. \
+	The perfect drink for those that wish to stay awake for days."
 	taste_description = "liquid tar"
 	taste_tag = list(TASTE_BITTER)
 	color =  "#393815" // rgb: 57, 56, 21
@@ -1202,6 +1258,7 @@
 	glass_name = "Atomic Coffee"
 	glass_desc = "A glass of atomically compressed pure caffeine, perfect to stay awake for days fighting off the inevitable cataclysm."
 	glass_center_of_mass = list("x"=15, "y"=9)
+	price_per_unit = 0.25
 
 /datum/reagent/drink/coffee/atomicoffee/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	..()
@@ -1242,6 +1299,7 @@
 	glass_icon_state = "sromshine"
 	glass_name = "cup of Sromshine"
 	glass_desc = "The best part of waking up."
+	price_per_unit = 0.2
 
 /*Aurora coffee ends here*/
 
@@ -1321,6 +1379,7 @@
 	glass_icon_state = "lemonadeglass"
 	glass_name = "lemonade"
 	glass_desc = "Oh the nostalgia..."
+	price_per_unit = 0.13
 
 /datum/reagent/drink/kiraspecial
 	name = "Kira Special"
@@ -1330,6 +1389,7 @@
 	id = "kiraspecial"
 	color = "#CCCC99d0"
 	adj_temp = -5
+	price_per_unit = 0.13
 
 	glass_unique_appearance = TRUE
 	glass_icon_state = "kiraspecial"
@@ -1350,6 +1410,7 @@
 	glass_icon_state = "brownstar"
 	glass_name = "Brown Star"
 	glass_desc = "It's not what it sounds like..."
+	price_per_unit = 0.13
 
 /datum/reagent/drink/rewriter
 	name = "Rewriter"
@@ -1365,6 +1426,7 @@
 	glass_name = "Rewriter"
 	glass_desc = "The secret of the sanctuary of the Librarian..."
 	glass_center_of_mass = list("x"=16, "y"=9)
+	price_per_unit = 0.13
 
 /datum/reagent/drink/rewriter/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	..()
@@ -1386,6 +1448,7 @@
 	glass_name = "Nuka-Cola"
 	glass_desc = "Don't cry, Don't raise your eye, It's only nuclear wasteland"
 	glass_center_of_mass = list("x"=16, "y"=6)
+	price_per_unit = 0.85
 
 /datum/reagent/drink/nuka_cola/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	..()
@@ -1512,6 +1575,7 @@
 	glass_desc = "A healthy mixture of juices, guaranteed to keep you healthy until the next toolboxing takes place."
 	glass_center_of_mass = list("x"=16, "y"=8)
 	common = FALSE //A little too useful for regular people to ID straight off
+	price_per_unit = 0.255
 
 /datum/reagent/drink/doctor_delight/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	..()
@@ -1537,6 +1601,20 @@
 	glass_icon_state = "iceglass"
 	glass_name = "ice"
 	glass_desc = "Generally, you're supposed to put something else in there too..."
+
+/datum/reagent/drink/strawberry_explosive_blast
+	name = "Strawberry Explosive Blast"
+	id = "strawberry_explosive_blast"
+	description = "Sweetened drink with a strawberry flavor and a blast from the past."
+	taste_description = "strawberry soda"
+	taste_tag = list(TASTE_SWEET, TASTE_BUBBLY)
+	color = "#C83F49"
+
+	glass_unique_appearance = TRUE
+	glass_icon_state = "strawberryblast"
+	glass_name = "strawberry explosive blast soda"
+	glass_desc = "Looks like a delicious drink!"
+	price_per_unit = 0.255
 
 /* Alcohol */
 
@@ -1596,9 +1674,9 @@
 /datum/reagent/ethanol/Kvass
 	name = "Kvass"
 	id = "Kvass"
-	description = "A traditonal, and very popular russian drink. Made on the colony."
+	description = "A traditonal, and very popular slavic drink. Made on the colony."
 	taste_description = "sweet, yet very light dark beer."
-	taste_tag = list(TASTE_BUBBLY, TASTE_SWEET)
+	taste_tag = list(TASTE_BUBBLY, TASTE_SWEET, TASTE_UMAMI)
 	color = "#9F3400d0"
 	strength = 60
 	adj_temp = -5
@@ -1606,7 +1684,7 @@
 	glass_unique_appearance = TRUE
 	glass_icon_state = "Kvass_Glass"
 	glass_name = "Kvass"
-	glass_desc = "A traditonal russian drink. This version of Kvass is darker, and a bit bolder than normal."
+	glass_desc = "A traditonal slavic drink. This version of Kvass is darker, and a bit bolder than normal."
 
 /datum/reagent/ethanol/bluecuracao
 	name = "Blue Curacao"
@@ -1700,6 +1778,7 @@
 	glass_name = "rum"
 	glass_desc = "Popular with the sailors. Not very popular with everyone else."
 	glass_center_of_mass = list("x"=16, "y"=12)
+	price_per_unit = 0.155
 
 /datum/reagent/ethanol/deadrum/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	..()
@@ -1795,6 +1874,7 @@
 	glass_name = "sake"
 	glass_desc = "Wine made from rice: it's sake! Perfect to drink at the hot springs after a long hunt."
 	glass_center_of_mass = list("x"=16, "y"=12)
+	price_per_unit = 0.155
 
 /datum/reagent/ethanol/tequilla
 	name = "Tequila"
@@ -1913,6 +1993,7 @@
 	glass_name = "cahors"
 	glass_desc = "It looks like wine, but more dark."
 	glass_center_of_mass = list("x"=15, "y"=7)
+	price_per_unit = 0.25
 
 /datum/reagent/ethanol/ntcahors/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	..()
@@ -1927,6 +2008,21 @@
 		M.adjust_hallucination(-0.9 * effect_multiplier)
 		M.add_chemical_effect(CE_TOXIN, -2.5 * effect_multiplier)
 		M.reagents.remove_reagent("wormwood", 0.8 * effect_multiplier)
+
+/datum/reagent/ethanol/cider
+	name = "Cider"
+	id = "cider"
+	description = "A soft fermented and carbonated apple juice."
+	taste_description = "aged apples"
+	taste_tag = list(TASTE_SWEET)
+	color = "#664300d0"
+	strength = 60 //Not to strong its a soft alcholic drink
+
+	glass_unique_appearance = TRUE
+	glass_icon_state = "cider_glass"
+	glass_name = "Cider"
+	glass_desc = "A soft fermented and carbonated apple juice."
+	glass_center_of_mass = list("x"=16, "y"=12)
 
 // Cocktails
 
@@ -1944,6 +2040,7 @@
 	glass_name = "Acid Spit"
 	glass_desc = "A drink from the company archives. Made from live aliens."
 	glass_center_of_mass = list("x"=16, "y"=7)
+	price_per_unit = 0.155
 
 /datum/reagent/ethanol/alliescocktail
 	name = "Allies Cocktail"
@@ -1959,6 +2056,7 @@
 	glass_name = "Allies cocktail"
 	glass_desc = "A drink made from your allies."
 	glass_center_of_mass = list("x"=17, "y"=8)
+	price_per_unit = 0.155
 
 /datum/reagent/ethanol/aloe
 	name = "Aloe"
@@ -1974,6 +2072,7 @@
 	glass_name = "Aloe"
 	glass_desc = "Very, very, very good."
 	glass_center_of_mass = list("x"=17, "y"=8)
+	price_per_unit = 0.155
 
 /datum/reagent/ethanol/amasec
 	name = "Amasec"
@@ -1990,6 +2089,7 @@
 	glass_name = "Amasec"
 	glass_desc = "Always handy before COMBAT!!!"
 	glass_center_of_mass = list("x"=16, "y"=9)
+	price_per_unit = 0.155
 
 /datum/reagent/ethanol/andalusia
 	name = "Andalusia"
@@ -2005,6 +2105,7 @@
 	glass_name = "Andalusia"
 	glass_desc = "A nice, strange named drink."
 	glass_center_of_mass = list("x"=16, "y"=9)
+	price_per_unit = 0.155
 
 /datum/reagent/ethanol/antifreeze
 	name = "Anti-freeze"
@@ -2022,6 +2123,7 @@
 	glass_name = "Anti-freeze"
 	glass_desc = "The ultimate refreshment."
 	glass_center_of_mass = list("x"=16, "y"=8)
+	price_per_unit = 0.155
 
 /datum/reagent/ethanol/atomicbomb
 	name = "Atomic Bomb"
@@ -2040,6 +2142,7 @@
 	glass_name = "Atomic Bomb"
 	glass_desc = "We cannot take legal responsibility for your actions after imbibing."
 	glass_center_of_mass = list("x"=15, "y"=7)
+	price_per_unit = 0.155
 
 /datum/reagent/ethanol/coffee/b52
 	name = "B-52"
@@ -2056,6 +2159,7 @@
 	glass_icon_state = "b52glass"
 	glass_name = "B-52"
 	glass_desc = "Kahlua, Irish cream, and Cognac. You will get bombed."
+	price_per_unit = 0.175
 
 /datum/reagent/ethanol/bahama_mama
 	name = "Bahama mama"
@@ -2072,6 +2176,7 @@
 	glass_name = "Bahama Mama"
 	glass_desc = "Tropical cocktail"
 	glass_center_of_mass = list("x"=16, "y"=5)
+	price_per_unit = 0.175
 
 /datum/reagent/ethanol/bananahonk
 	name = "Banana Mama"
@@ -2089,6 +2194,7 @@
 	glass_name = "Banana Honk"
 	glass_desc = "A drink from Banana Heaven."
 	glass_center_of_mass = list("x"=16, "y"=8)
+	price_per_unit = 0.275
 
 /datum/reagent/ethanol/barefoot
 	name = "Barefoot"
@@ -2104,6 +2210,7 @@
 	glass_name = "Barefoot"
 	glass_desc = "Barefoot and pregnant"
 	glass_center_of_mass = list("x"=17, "y"=8)
+	price_per_unit = 0.275
 
 /datum/reagent/ethanol/beepsky_smash
 	name = "Beepsky Smash"
@@ -2120,6 +2227,7 @@
 	glass_name = "Beepsky Smash"
 	glass_desc = "Heavy, hot and strong. Just like the Iron fist of the LAW."
 	glass_center_of_mass = list("x"=18, "y"=10)
+	price_per_unit = 0.275
 
 /datum/reagent/ethanol/beepsky_smash/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	..()
@@ -2130,7 +2238,7 @@
 	id = "bilk"
 	description = "This appears to be beer mixed with milk. Disgusting."
 	taste_description = "desperation and lactate"
-	taste_tag = list(TASTE_BUBBLY,TASTE_BITTER)
+	taste_tag = list(TASTE_BUBBLY,TASTE_BITTER,TASTE_UMAMI)
 	color = "#895C4C"
 	strength = 40
 	nutriment_factor = 2
@@ -2139,6 +2247,7 @@
 	glass_icon_state = "glass_brown"
 	glass_name = "bilk"
 	glass_desc = "A brew of milk and beer. For those alcoholics who fear osteoporosis."
+	price_per_unit = 0.13
 
 /datum/reagent/ethanol/black_russian
 	name = "Black Russian"
@@ -2155,13 +2264,14 @@
 	glass_name = "Black Russian"
 	glass_desc = "For the lactose-intolerant. Still as classy as a White Russian."
 	glass_center_of_mass = list("x"=16, "y"=9)
+	price_per_unit = 0.13
 
 /datum/reagent/ethanol/bloody_mary
 	name = "Bloody Mary"
 	id = "bloodymary"
 	description = "A strange yet pleasurable mixture made of vodka, tomato and lime juice. Tastes like liquid murder"
 	taste_description = "tomatoes with a hint of lime"
-	taste_tag = list(TASTE_SALTY,TASTE_REFRESHING)
+	taste_tag = list(TASTE_SALTY,TASTE_REFRESHING, TASTE_UMAMI)
 	color = "#660000d0"
 	strength = 15
 
@@ -2169,6 +2279,7 @@
 	glass_icon_state = "bloodymaryglass"
 	glass_name = "Bloody Mary"
 	glass_desc = "Tomato juice, mixed with Vodka and a lil' bit of lime. Tastes like liquid murder."
+	price_per_unit = 0.13
 
 /datum/reagent/ethanol/booger
 	name = "Booger"
@@ -2183,6 +2294,7 @@
 	glass_icon_state = "booger"
 	glass_name = "Booger"
 	glass_desc = "Ewww..."
+	price_per_unit = 0.13
 
 /datum/reagent/ethanol/coffee/brave_bull
 	name = "Brave Bull"
@@ -2199,13 +2311,14 @@
 	glass_name = "Brave Bull"
 	glass_desc = "Tequilla and coffee liquor, brought together in a mouthwatering mixture. Drink up."
 	glass_center_of_mass = list("x"=15, "y"=8)
+	price_per_unit = 0.25
 
 /datum/reagent/ethanol/changelingsting
 	name = "Changeling Sting"
 	id = "changelingsting"
 	description = "You take a tiny sip and feel a burning sensation..."
 	taste_description = "your brain coming out your nose"
-	taste_tag = list(TASTE_STRONG,TASTE_SOUR)
+	taste_tag = list(TASTE_STRONG,TASTE_SOUR,TASTE_UMAMI)
 	color = "#2E6671"
 	strength = 5
 
@@ -2213,6 +2326,7 @@
 	glass_icon_state = "changelingsting"
 	glass_name = "Changeling Sting"
 	glass_desc = "A stingy drink."
+	price_per_unit = 0.13
 
 /datum/reagent/ethanol/martini
 	name = "Classic Martini"
@@ -2228,6 +2342,7 @@
 	glass_name = "classic martini"
 	glass_desc = "Damn, the bartender even stirred it, not shook it."
 	glass_center_of_mass = list("x"=17, "y"=8)
+	price_per_unit = 0.13
 
 /datum/reagent/ethanol/cuba_libre
 	name = "Cuba Libre"
@@ -2243,6 +2358,7 @@
 	glass_name = "Cuba Libre"
 	glass_desc = "A classic mix of rum and cola. Makes you want to scream 'VIVA!' at the top of your lungs."
 	glass_center_of_mass = list("x"=16, "y"=8)
+	price_per_unit = 0.15
 
 /datum/reagent/ethanol/demonsblood
 	name = "Demons' Blood"
@@ -2260,6 +2376,7 @@
 	glass_name = "Demons' Blood"
 	glass_desc = "Just looking at this thing makes the hair at the back of your neck stand up."
 	glass_center_of_mass = list("x"=16, "y"=2)
+	price_per_unit = 0.15
 
 /datum/reagent/ethanol/devilskiss
 	name = "Devil's Kiss"
@@ -2275,6 +2392,7 @@
 	glass_name = "Devil's Kiss"
 	glass_desc = "Creepy time!"
 	glass_center_of_mass = list("x"=16, "y"=8)
+	price_per_unit = 0.15
 
 /datum/reagent/ethanol/driestmartini
 	name = "Driest Martini"
@@ -2291,6 +2409,7 @@
 	glass_name = "Driest Martini"
 	glass_desc = "Only for the experienced. You think you see sand floating in the glass."
 	glass_center_of_mass = list("x"=17, "y"=8)
+	price_per_unit = 0.45
 
 /datum/reagent/ethanol/ginfizz
 	name = "Gin Fizz"
@@ -2306,6 +2425,7 @@
 	glass_name = "gin fizz"
 	glass_desc = "Refreshingly lemony, deliciously dry."
 	glass_center_of_mass = list("x"=16, "y"=7)
+	price_per_unit = 0.15
 
 /datum/reagent/ethanol/grog
 	name = "Grog"
@@ -2321,6 +2441,7 @@
 	glass_icon_state = "grogglass"
 	glass_name = "grog"
 	glass_desc = "A fine and cepa drink for Space."
+	price_per_unit = 0.13
 
 /datum/reagent/ethanol/erikasurprise
 	name = "Erika Surprise"
@@ -2336,6 +2457,7 @@
 	glass_name = "Erika Surprise"
 	glass_desc = "The surprise is, it's green!"
 	glass_center_of_mass = list("x"=16, "y"=9)
+	price_per_unit = 0.15
 
 /datum/reagent/ethanol/gargle_blaster
 	name = "Pan-Galactic Gargle Blaster"
@@ -2354,6 +2476,7 @@
 	glass_name = "Pan-Galactic Gargle Blaster"
 	glass_desc = "Does... does this mean that Arthur and Ford are on the colony? Oh joy."
 	glass_center_of_mass = list("x"=17, "y"=6)
+	price_per_unit = 1
 
 /datum/reagent/ethanol/gintonic
 	name = "Gin and Tonic"
@@ -2369,6 +2492,7 @@
 	glass_name = "gin and tonic"
 	glass_desc = "A mild but still great cocktail. Drink up, like a true Englishman."
 	glass_center_of_mass = list("x"=16, "y"=7)
+	price_per_unit = 0.15
 
 /datum/reagent/ethanol/goldschlager
 	name = "Goldschlager"
@@ -2402,6 +2526,7 @@
 	glass_name = "Hippie's Delight"
 	glass_desc = "A drink enjoyed by people during the 1960's."
 	glass_center_of_mass = list("x"=16, "y"=8)
+	price_per_unit = 0.6
 
 /datum/reagent/ethanol/hooch
 	name = "Hooch"
@@ -2417,6 +2542,7 @@
 	glass_icon_state = "hoochbottle"
 	glass_name = "Hooch"
 	glass_desc = "Prohibition can bite my shiny positronic behind."
+	price_per_unit = 0.75
 
 /datum/reagent/ethanol/iced_beer
 	name = "Iced Beer"
@@ -2433,6 +2559,7 @@
 	glass_name = "iced beer"
 	glass_desc = "A beer so frosty, the air around it freezes."
 	glass_center_of_mass = list("x"=16, "y"=7)
+	price_per_unit = 0.13
 
 /datum/reagent/ethanol/irishcarbomb
 	name = "Irish Car Bomb"
@@ -2449,6 +2576,7 @@
 	glass_name = "Irish Car Bomb"
 	glass_desc = "An irish car bomb."
 	glass_center_of_mass = list("x"=16, "y"=8)
+	price_per_unit = 0.25
 
 /datum/reagent/ethanol/coffee/irishcoffee
 	name = "Irish Coffee"
@@ -2464,6 +2592,7 @@
 	glass_name = "Irish coffee"
 	glass_desc = "Coffee and alcohol. More fun than a Mimosa to drink in the morning."
 	glass_center_of_mass = list("x"=15, "y"=10)
+	price_per_unit = 0.15
 
 /datum/reagent/ethanol/irish_cream
 	name = "Irish Cream"
@@ -2479,6 +2608,7 @@
 	glass_name = "Irish cream"
 	glass_desc = "It's cream, mixed with whiskey. What else would you expect from the Irish?"
 	glass_center_of_mass = list("x"=16, "y"=9)
+	price_per_unit = 0.15
 
 /datum/reagent/ethanol/longislandicedtea
 	name = "Long Island Iced Tea"
@@ -2495,6 +2625,7 @@
 	glass_name = "Long Island iced tea"
 	glass_desc = "The liquor cabinet, brought together in a delicious mix. Intended for middle-aged alcoholic women only."
 	glass_center_of_mass = list("x"=16, "y"=8)
+	price_per_unit = 0.13
 
 /datum/reagent/ethanol/manhattan
 	name = "Manhattan"
@@ -2510,6 +2641,7 @@
 	glass_name = "Manhattan"
 	glass_desc = "The Ranger's undercover drink of choice. They never could stomach gin..."
 	glass_center_of_mass = list("x"=17, "y"=8)
+	price_per_unit = 0.13
 
 /datum/reagent/ethanol/manhattan_proj
 	name = "Manhattan Project"
@@ -2526,6 +2658,7 @@
 	glass_name = "Manhattan Project"
 	glass_desc = "A scientist's drink of choice, for pondering ways to blow up the colony."
 	glass_center_of_mass = list("x"=17, "y"=8)
+	price_per_unit = 0.45
 
 /datum/reagent/ethanol/manly_dorf
 	name = "The Manly Dorf"
@@ -2540,6 +2673,7 @@
 	glass_icon_state = "manlydorfglass"
 	glass_name = "The Manly Dorf"
 	glass_desc = "A manly concoction made from Ale and Beer. Intended for true men only."
+	price_per_unit = 0.13
 
 /datum/reagent/ethanol/margarita
 	name = "Margarita"
@@ -2555,6 +2689,7 @@
 	glass_name = "margarita"
 	glass_desc = "On the rocks with salt on the rim. Arriba~!"
 	glass_center_of_mass = list("x"=16, "y"=8)
+	price_per_unit = 0.13
 
 /datum/reagent/ethanol/mead
 	name = "Mead"
@@ -2572,6 +2707,7 @@
 	glass_name = "mead"
 	glass_desc = "A Viking's beverage, though a cheap one."
 	glass_center_of_mass = list("x"=17, "y"=10)
+	price_per_unit = 0.5
 
 /datum/reagent/ethanol/moonshine
 	name = "Moonshine"
@@ -2587,6 +2723,7 @@
 	glass_icon_state = "moonshinebottle"
 	glass_name = "moonshine"
 	glass_desc = "You've really hit rock bottom now... your liver packed its bags and left last night."
+	price_per_unit = 0.5
 
 /datum/reagent/ethanol/neurotoxin
 	name = "Neurotoxin"
@@ -2605,6 +2742,7 @@
 	glass_desc = "A drink that is guaranteed to knock you silly."
 	glass_center_of_mass = list("x"=16, "y"=8)
 	common = FALSE //The fact you don't know what it is should be a tip-off not to drink it.
+	price_per_unit = 0.75
 
 /datum/reagent/ethanol/neurotoxin/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	..()
@@ -2625,6 +2763,7 @@
 	glass_name = "Patron"
 	glass_desc = "Drinking patron in the bar, with all the sub-par ladies."
 	glass_center_of_mass = list("x"=7, "y"=8)
+	price_per_unit = 0.13
 
 /datum/reagent/ethanol/pwine
 	name = "Poison Wine"
@@ -2644,6 +2783,7 @@
 	glass_center_of_mass = list("x"=16, "y"=5)
 	common = FALSE //The fact you don't know what it is should be a tip-off not to drink it.
 	illegal = TRUE
+	price_per_unit = 1.5
 
 /datum/reagent/ethanol/pwine/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	..()
@@ -2672,6 +2812,7 @@
 	glass_name = "red mead"
 	glass_desc = "A true Viking's beverage, though its color is strange."
 	glass_center_of_mass = list("x"=17, "y"=10)
+	price_per_unit = 0.13
 
 /datum/reagent/ethanol/riotjuice
 	name = "Riot Juice"
@@ -2686,6 +2827,7 @@
 	glass_name = "Riot Juice"
 	glass_desc = "A very strong mixed drink. Perfect for sporting events, or plasma tag. Not for bug bites."
 	glass_center_of_mass = list("x"=16, "y"=8)
+	price_per_unit = 0.2
 
 /datum/reagent/ethanol/sbiten
 	name = "Sbiten"
@@ -2703,6 +2845,7 @@
 	glass_name = "Sbiten"
 	glass_desc = "A spicy mix of Vodka and Peppers. Very hot."
 	glass_center_of_mass = list("x"=17, "y"=8)
+	price_per_unit = 0.13
 
 /datum/reagent/ethanol/screwdrivercocktail
 	name = "Screwdriver"
@@ -2718,6 +2861,7 @@
 	glass_name = "Screwdriver"
 	glass_desc = "A simple, yet superb mixture of Vodka and orange juice. Just the thing for the tired Adept."
 	glass_center_of_mass = list("x"=15, "y"=10)
+	price_per_unit = 0.13
 
 /datum/reagent/ethanol/silencer
 	name = "Silencer"
@@ -2737,6 +2881,7 @@
 	glass_desc = "A drink from mime Heaven."
 	glass_center_of_mass = list("x"=16, "y"=9)
 	common = FALSE //What even is this
+	price_per_unit = 0.85
 
 /datum/reagent/ethanol/singulo
 	name = "Singulo"
@@ -2753,6 +2898,7 @@
 	glass_name = "Singulo"
 	glass_desc = "A blue-space beverage."
 	glass_center_of_mass = list("x"=17, "y"=4)
+	price_per_unit = 0.85
 
 /datum/reagent/ethanol/snowwhite
 	name = "Snow White"
@@ -2768,6 +2914,7 @@
 	glass_name = "Snow White"
 	glass_desc = "A cold refreshment."
 	glass_center_of_mass = list("x"=16, "y"=8)
+	price_per_unit = 0.25
 
 /datum/reagent/ethanol/suidream
 	name = "Sui Dream"
@@ -2783,6 +2930,7 @@
 	glass_name = "Sui Dream"
 	glass_desc = "A froofy, fruity, and sweet mixed drink. Understanding the name only brings shame."
 	glass_center_of_mass = list("x"=16, "y"=5)
+	price_per_unit = 0.85
 
 /datum/reagent/ethanol/syndicatebomb
 	name = "Syndicate Bomb"
@@ -2798,6 +2946,7 @@
 	glass_name = "Syndicate Bomb"
 	glass_desc = "Tastes like terrorism!"
 	glass_center_of_mass = list("x"=16, "y"=4)
+	price_per_unit = 0.85
 
 /datum/reagent/ethanol/tequilla_sunrise
 	name = "Tequila Sunrise"
@@ -2812,6 +2961,7 @@
 	glass_icon_state = "tequillasunriseglass"
 	glass_name = "Tequilla Sunrise"
 	glass_desc = "Oh great, now you feel nostalgic about sunrises back on Sol...if you ever lived there."
+	price_per_unit = 0.25
 
 /datum/reagent/ethanol/threemileisland
 	name = "Three Mile Island Iced Tea"
@@ -2829,6 +2979,7 @@
 	glass_name = "Three Mile Island iced tea"
 	glass_desc = "A glass of this is sure to prevent a meltdown."
 	glass_center_of_mass = list("x"=16, "y"=2)
+	price_per_unit = 0.25
 
 /datum/reagent/ethanol/toxins_special
 	name = "Toxins Special"
@@ -2847,6 +2998,7 @@
 	glass_icon_state = "toxinsspecialglass"
 	glass_name = "Toxins Special"
 	glass_desc = "Woah, this thing is on FIRE"
+	price_per_unit = 0.25
 
 /datum/reagent/ethanol/vodkamartini
 	name = "Vodka Martini"
@@ -2862,6 +3014,7 @@
 	glass_name = "vodka martini"
 	glass_desc ="A bastardization of the classic martini. Still great."
 	glass_center_of_mass = list("x"=17, "y"=8)
+	price_per_unit = 0.15
 
 /datum/reagent/ethanol/vodkatonic
 	name = "Vodka and Tonic"
@@ -2893,6 +3046,7 @@
 	glass_name = "White Russian"
 	glass_desc = "A very nice looking drink. But that's just, like, your opinion, man."
 	glass_center_of_mass = list("x"=16, "y"=9)
+	price_per_unit = 0.15
 
 /datum/reagent/ethanol/whiskey_cola
 	name = "Whiskey Cola"
@@ -2907,6 +3061,7 @@
 	glass_name = "whiskey cola"
 	glass_desc = "An innocent-looking mixture of cola and Whiskey. Delicious."
 	glass_center_of_mass = list("x"=16, "y"=9)
+	price_per_unit = 0.13
 
 /datum/reagent/ethanol/whiskeysoda
 	name = "Whiskey Soda"
@@ -2921,6 +3076,7 @@
 	glass_name = "whiskey soda"
 	glass_desc = "Ultimate refreshment."
 	glass_center_of_mass = list("x"=16, "y"=9)
+	price_per_unit = 0.13
 
 /datum/reagent/ethanol/atomic_vodka
 	name = "Atomic Vodka"
@@ -2938,6 +3094,7 @@
 	glass_name = "atomic vodka"
 	glass_desc = "Booze for true drunkards."
 	glass_center_of_mass = list("x"=16, "y"=12)
+	price_per_unit = 0.25
 
 /datum/reagent/ethanol/atomic_vodka/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	..()
@@ -2958,6 +3115,7 @@
 	glass_name = "Special Blend Whiskey"
 	glass_desc = "Just when you thought regular colony whiskey was good... This silky, amber goodness has to come along and ruin everything."
 	glass_center_of_mass = list("x"=16, "y"=12)
+	price_per_unit = 0.25
 
 /datum/reagent/ethanol/schnapps // Inside the hacked vendor, only exist since Lonestar sells to Kriosan Space and this is a highly requested drink there
 	name = "Jaeger Schnapps"
@@ -2972,6 +3130,7 @@
 	glass_name = "raspberry schnapps"
 	glass_desc = "A crystal clear glass that stings your senses with sub-par berries and acrid spirits. Finally, some real schnapps."
 	glass_center_of_mass = list("x"=16, "y"=6)
+	price_per_unit = 0.1
 
 /datum/reagent/ethanol/daiquiri
 	name = "Daiquiri"
@@ -2986,6 +3145,7 @@
 	glass_unique_appearance = TRUE
 	glass_name = "Daiquiri"
 	glass_desc = "Refreshing rum and citrus. Time for a tropical getaway."
+	price_per_unit = 0.13
 
 /datum/reagent/ethanol/daiquiri_strawberry
 	name = "Daiquiri Pink"
@@ -3000,6 +3160,7 @@
 
 	glass_name = "Daiquiri Pink"
 	glass_desc = "Refreshing rum and strawberry juice. Time for a tropical get away, even if its too fruity."
+	price_per_unit = 0.13
 
 /datum/reagent/ethanol/whiskeysour
 	name = "Whiskey Sour"
@@ -3014,6 +3175,7 @@
 
 	glass_name = "Whiskey Sour"
 	glass_desc = "A smokey, refreshing lemon whiskey."
+	price_per_unit = 0.13
 
 /datum/reagent/ethanol/mojito
 	name = "Mojito"
@@ -3027,6 +3189,7 @@
 	glass_icon_state = "mojito"
 	glass_name = "Mojito"
 	glass_desc = "Minty rum and citrus, made for sailing."
+	price_per_unit = 0.13
 
 /datum/reagent/ethanol/balloon
 	name = "Balloon"
@@ -3041,6 +3204,7 @@
 	glass_unique_appearance = TRUE
 	glass_name = "Balloon"
 	glass_desc = "A strange drink invented in the aerostats of Venus."
+	price_per_unit = 0.13
 
 /datum/reagent/drink/triplecitrus
 	name = "Triple Citrus" // This one's for you, Duffy.
@@ -3054,6 +3218,7 @@
 	glass_icon_state = "triplecitrus"
 	glass_name = "Triple Citrus"
 	glass_desc = "A mixture of citrus juices. Tangy, yet smooth."
+	price_per_unit = 0.1
 
 /datum/reagent/drink/sugarrush
 	name = "Sugar Rush"
@@ -3068,6 +3233,7 @@
 	glass_icon_state = "sugarrush"
 	glass_name = "Sugar Rush"
 	glass_desc = "Sweet, light, and fruity - as girly as it gets."
+	price_per_unit = 0.1
 
 /datum/reagent/drink/crevicespike
 	name = "Crevice Spike"
@@ -3081,6 +3247,7 @@
 	glass_icon_state = "crevice_spike"
 	glass_name = "Crevice Spike"
 	glass_desc = "It will knock the drunkenness out of you or knock you out cold."
+	price_per_unit = 0.13
 
 /datum/reagent/drink/crevicespike/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	..()
@@ -3105,6 +3272,7 @@
 	glass_icon_state = "fringeweaver"
 	glass_name =  "Fringe Weaver"
 	glass_desc = "It's like drinking ethylic alcohol with a spoonful of sugar."
+	price_per_unit = 0.05
 
 /datum/reagent/ethanol/pianowoman
 	name = "Piano Woman"
@@ -3118,6 +3286,7 @@
 	glass_icon_state = "pianowoman"
 	glass_name = "Piano Woman"
 	glass_desc = "A rename of a classic mix, the favorite drink of certain robots and biosynths for some reason..."
+	price_per_unit = 0.13
 
 /datum/reagent/ethanol/fernet
 	name = "Fernet"
@@ -3158,6 +3327,7 @@
 	glass_icon_state = "godlyblend"
 	glass_name = "sawn-off bottle of Fernet cola"
 	glass_desc = "Fernet mixed with cola, served on a sawn-off bottle as per tradition. A smooth digestif for when you've eaten more than you could chew."
+	price_per_unit = 0.13
 
 /datum/reagent/ethanol/fernetcola/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	M.nutrition = max(M.nutrition - 1 * effect_multiplier, 0)
@@ -3173,6 +3343,7 @@
 	glass_icon_state = "fanciulli"
 	glass_name = "Fanciulli"
 	glass_desc = "What if the Manhattan cocktail <b>actually</b> used a digestif? Helps you sober up, but makes you sluggish."
+	price_per_unit = 0.13
 
 /datum/reagent/drink/fanciulli/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	..()
@@ -3194,6 +3365,7 @@
 	glass_name = "jager bomb shot"
 	glass_desc = "A shot glass of bitter herb digestif dropped into a glass of Claw energy drink \
 				makes for a drink beloved by sleep deprived paramedics and Lodge Huntmasters alike. \n Tradition dictates that you must drink this all in one go!"
+	price_per_unit = 0.75
 
 /datum/reagent/ethanol/jagerbomb/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	..()
@@ -3213,7 +3385,7 @@
 	glass_icon_state = "antidepresant"
 	glass_name = "Antidepressant"
 	glass_desc = "A Bright red cocktail, chill as an empty chimney, yet bright and soothing as a smile. Non-alcoholic. A soul lightener, you can't stay sad at the taste of this."
-
+	price_per_unit = 1
 
 /datum/reagent/drink/blendedmint
 	name = "Blended Mint"
@@ -3228,6 +3400,7 @@
 	glass_icon_state = "booger"
 	glass_name = "blended mint leaves"
 	glass_desc = "Very dry and bland, but with a minty aftertaste! Not the best thing to be \"drinking\" though."
+	price_per_unit = 0.13
 
 /datum/reagent/drink/cinnamonpowder
 	name = "Cinnamon Powder"
@@ -3237,7 +3410,6 @@
 	taste_tag = list(TASTE_BITTER)
 	taste_mult = 0.5
 	color = "#D78F5F"
-
 
 	glass_icon_state = "glass_brown"
 	glass_name = "cinnamon powder"
@@ -3285,6 +3457,7 @@
 	glass_icon_state = "sake"
 	glass_name = "Southern Sake"
 	glass_desc = "Best served warm and in a shallow bowl for lapping."
+	price_per_unit = 0.2
 
 /datum/reagent/ethanol/nothern_mead
 	name = "Nothern Mead"
@@ -3299,6 +3472,7 @@
 	glass_icon_state = "tankardlidfull"
 	glass_name = "Nothern Mead"
 	glass_desc = "Said to make even the strongest of accents all the more unintelligible."
+	price_per_unit = 0.2
 
 /datum/reagent/ethanol/life_line
 	name = "Life Line"
@@ -3313,6 +3487,7 @@
 	glass_icon_state = "lifeline"
 	glass_name = "Life Line"
 	glass_desc = "A perfect drink for mass casualties."
+	price_per_unit = 0.2
 
 /datum/reagent/ethanol/posicell
 	name = "Posicell"
@@ -3327,6 +3502,7 @@
 	glass_icon_state = "posicell"
 	glass_name = "Posicell"
 	glass_desc = "The only drink that is shockingly annoying to make in and out of the house."
+	price_per_unit = 0.2
 
 /datum/reagent/ethanol/nickle_n_dime
 	name = "Nickel And Dime"
@@ -3340,6 +3516,7 @@
 	glass_icon_state = "nickleanddime"
 	glass_name = "Nickle And Dime"
 	glass_desc = "For those with a rich taste."
+	price_per_unit = 0.510 // a nickle, and a dime
 
 /datum/reagent/ethanol/arcscrewdriver
 	name = "Arc screwdriver"
@@ -3354,6 +3531,7 @@
 	glass_icon_state = "arcscrewdriver"
 	glass_name = "Arc screwdriver"
 	glass_desc = "For one a regular one doesn't cut it."
+	price_per_unit = 0.2
 
 /datum/reagent/ethanol/whiskey_rocks
 	name = "Whiskey Rocks"
@@ -3368,6 +3546,7 @@
 	glass_icon_state = "noirbase"
 	glass_name = "Whiskey Rocks"
 	glass_desc = "Whiskey but for people that like things cold and watered down."
+	price_per_unit = 0.2
 
 /datum/reagent/ethanol/nior
 	name = "Noir"
@@ -3382,6 +3561,7 @@
 	glass_icon_state = "noir"
 	glass_name = "Noir"
 	glass_desc = "For when things aren't always black and white."
+	price_per_unit = 0.2
 
 /datum/reagent/ethanol/duress
 	name = "Duress"
@@ -3396,6 +3576,7 @@
 	glass_icon_state = "buzzkill"
 	glass_name = "Duress"
 	glass_desc = "A good way to get people talking."
+	price_per_unit = 0.2
 
 /datum/reagent/ethanol/ocular
 	name = "Ocular"
@@ -3410,6 +3591,7 @@
 	glass_icon_state = "marquadrink"
 	glass_name = "Ocular"
 	glass_desc = "Don't make eye contact, a favorite of the Mar qua."
+	price_per_unit = 0.2
 
 /datum/reagent/ethanol/saint_pio
 	name = "Saint Pio"
@@ -3424,6 +3606,7 @@
 	glass_icon_state = "saint_pio"
 	glass_name = "Saint Pio"
 	glass_desc = "An absolutely perfect choice."
+	price_per_unit = 0.2
 
 /datum/reagent/ethanol/rusty_special
 	name = "Rusty Special"
@@ -3438,6 +3621,7 @@
 	glass_icon_state = "buckshot"
 	glass_name = "Rusty Special"
 	glass_desc = "Both Barrels."
+	price_per_unit = 0.2
 
 /datum/reagent/ethanol/western_escargot
 	name = "Western Escargot"
@@ -3452,6 +3636,7 @@
 	glass_icon_state = "slug"
 	glass_name = "Western Escargot"
 	glass_desc = "The kinda slugs a free man can appreciate."
+	price_per_unit = 0.2
 
 /datum/reagent/ethanol/prospie
 	name = "Prospie"
@@ -3466,6 +3651,7 @@
 	glass_icon_state = "prospie"
 	glass_name = "Prospie"
 	glass_desc = "Tastes how it looks, like it's namesake."
+	price_per_unit = 0.2
 
 /datum/reagent/ethanol/friendlyfire
 	name = "Friendly Fire"
@@ -3480,3 +3666,32 @@
 	glass_icon_state = "friendlyfire"
 	glass_name = "Friendly Fire"
 	glass_desc = "Watch your back when you take a swig."
+	price_per_unit = 0.2
+
+//Psionic drink
+/datum/reagent/ethanol/witch_brew
+	name = "Witches Brew"
+	id = "witch_brew"
+	description = "A long sit-mixed tonic that also happens to be ethanol based. The drink was made in the Soteria Research and Brewing Department to help psionics reach ballmer peak."
+	taste_description = "wool of bat and eye of newt"
+	taste_tag = list(TASTE_BUBBLY)
+	color = "#E0CE8A" // rgb(88, 81, 54)
+	strength = 30
+
+	glass_unique_appearance = TRUE
+	glass_icon_state = "witch_brew"
+	glass_name = "Witches Brew"
+	glass_desc = "A long sit-mixed tonic that also happens to be ethanol based. The drink was made in the Soteria Research and Brewing Department to help psionics reach ballmer peak."
+	price_per_unit = 2
+
+/datum/reagent/ethanol/witch_brew/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
+	var/mob/living/carbon/human/H = M
+	var/obj/item/organ/internal/psionic_tumor/C = H.random_organ_by_process(BP_PSION)
+	var/effective_dose = dose
+	if(effective_dose >= 5 && H.random_organ_by_process(BP_PSION)) //We require 5 or more
+		if(C.psi_points >= C.max_psi_points)
+			return
+		C.psi_points += 1
+		dose -= 5
+
+

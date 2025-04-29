@@ -102,16 +102,16 @@ GLOBAL_LIST_EMPTY(all_obelisk)
 		for(var/mob/living/A in affected)
 			//if(!(get_dist(src, A) <= area_radius))
 			//	continue
-			if(istype(A, /mob/living/carbon/superior_animal))
-				var/mob/living/carbon/superior_animal/animal = A
+			if(istype(A, /mob/living/carbon/superior))
+				var/mob/living/carbon/superior/animal = A
 				if(animal.stat != DEAD &! animal.colony_friend) //got roach, spider, xenos, but not colony pets
 					animal.take_overall_damage(damage)
 					if(animal.stat == DEAD)
 						eotp.addObservation(5)
 					if(!--to_fire)
 						return
-			else if(istype(A, /mob/living/simple_animal/hostile))
-				var/mob/living/simple_animal/hostile/animal = A
+			else if(istype(A, /mob/living/simple/hostile))
+				var/mob/living/simple/hostile/animal = A
 				if(animal.stat != DEAD &! animal.colony_friend) //got misc things like tango but not colony pets
 					animal.take_overall_damage(damage)
 					if(animal.stat == DEAD)

@@ -270,6 +270,12 @@
 	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay"
 	requires_power = TRUE
 
+/area/nadezhda/dungeon/outside/prepper/alpha
+	name = "Site Alpha-09"
+	icon_state = "erisblue"
+	narrate = "The remnants of an outpost, once a beacon of a great corporation, it now lies in decay"
+	requires_power = TRUE
+
 /area/nadezhda/dungeon/outside/prepper/delta/turret_powered_tile
 	name = "Site DELTA-09"
 	icon_state = "erisred"
@@ -361,6 +367,11 @@
 	icon_state = "erisblue"
 	dynamic_lighting = TRUE
 
+/area/nadezhda/outside/forest/river_forest_nightmare
+	name = "Hunting plains dark forest"
+	icon_state = "erisblue"
+	dynamic_lighting = TRUE
+
 /area/nadezhda/outside/forest/swamp_hut
 	name = "Swamp Hut"
 	icon_state = "erisblue"
@@ -378,6 +389,10 @@
 
 /area/nadezhda/outside/forest/river_forest_lake
 	name = "Hunting Plains River"
+	icon_state = "hammerblue"
+
+/area/nadezhda/outside/forest/carp_lair
+	name = "Carp Lair"
 	icon_state = "hammerblue"
 
 /area/nadezhda/outside/forest/river_forest_cabin

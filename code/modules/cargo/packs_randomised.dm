@@ -10,7 +10,7 @@
 					/obj/item/seeds/kudzuseed,
 					/obj/item/storage/pill_bottle/happy,
 					/obj/item/contraband/poster,
-					/obj/item/reagent_containers/food/drinks/bottle/pwine)
+					/obj/item/reagent_containers/drinks/bottle/pwine)
 	cost = 1200
 	containertype = /obj/structure/closet/crate
 	crate_name = "unlabelled crate"

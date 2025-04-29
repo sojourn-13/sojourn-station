@@ -186,11 +186,11 @@
 
 /datum/design/autolathe/gun/riot_shotgun
 	name = "Seinemetall Defense GmbH SG \"State\""
-	build_path = /obj/item/gun/projectile/automatic/riot_autoshotgun
+	build_path = /obj/item/gun/projectile/shotgun/riot
 
 /datum/design/autolathe/gun/sbaw
 	name = "SF ASG \"Mjolnir\""
-	build_path = /obj/item/gun/projectile/automatic/sbaw
+	build_path = /obj/item/gun/projectile/shotgun/sbaw
 
 /datum/design/autolathe/gun/sixshot
 	name = "SA \"Six Shooter\" revolving shotgun"
@@ -198,11 +198,11 @@
 
 /datum/design/autolathe/gun/buffalo
 	name = "BR \"Buffalo\" tactical shotgun"
-	build_path = /obj/item/gun/projectile/automatic/buff_autoshotgun
+	build_path = /obj/item/gun/projectile/shotgun/buffalo
 
 /datum/design/autolathe/gun/opshot
 	name = "NM \"Operator\" tactical shotgun"
-	build_path = /obj/item/gun/projectile/automatic/riot_autoshotgun/opshot
+	build_path = /obj/item/gun/projectile/shotgun/riot/opshot
 
 /datum/design/autolathe/gun/ak47_saiga
 	name = "SA CAR 20mm \"Saiga\""
@@ -329,6 +329,10 @@
 	name = "NM 7.62x39mm \"Copperhead\" rifle"
 	build_path = /obj/item/gun/projectile/automatic/mamba/copperhead
 
+/datum/design/autolathe/gun/viper
+	name = "NM 7.62x39mm \"Viper\" DMR"
+	build_path = /obj/item/gun/projectile/automatic/mamba/viper
+
 /datum/design/autolathe/gun/python
 	name = "NM 7.62x39mm \"Python\" heavy sniper"
 	build_path = /obj/item/gun/projectile/automatic/mamba/python
@@ -367,6 +371,10 @@
 /datum/design/autolathe/gun/custer
 	name = "H&S 8.6x70mm \"Custer\""
 	build_path = /obj/item/gun/projectile/boltgun/lever/custer
+
+/datum/design/autolathe/gun/shepherd
+	name = "OT MR 8.6x70mm \"Shepherd\""
+	build_path = /obj/item/gun/projectile/automatic/shepherd
 
 // 10mm rifles
 

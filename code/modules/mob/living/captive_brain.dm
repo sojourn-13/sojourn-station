@@ -14,7 +14,7 @@
 		if (src.client.handle_spam_prevention(message,MUTE_IC))
 			return
 
-	if(istype(src.loc,/mob/living/simple_animal/borer))
+	if(istype(src.loc,/mob/living/simple/borer))
 		if (!message)
 			return
 		log_say("[key_name(src)] : [message]")
@@ -26,7 +26,7 @@
 				to_chat(src, "You don't know the codes, pal.")
 				return
 
-		var/mob/living/simple_animal/borer/B = src.loc
+		var/mob/living/simple/borer/B = src.loc
 		to_chat(src, "You whisper silently, \"[message]\"")
 		to_chat(B.host, "The captive mind of [src] whispers, \"[message]\"")
 
@@ -65,8 +65,8 @@
 
 /mob/living/captive_brain/process_resist()
 	//Resisting control by an alien mind.
-	if(istype(src.loc,/mob/living/simple_animal/borer))
-		var/mob/living/simple_animal/borer/B = src.loc
+	if(istype(src.loc,/mob/living/simple/borer))
+		var/mob/living/simple/borer/B = src.loc
 		var/mob/living/captive_brain/H = src
 
 		to_chat(H, SPAN_DANGER("You begin doggedly resisting the parasite's control (this will take approximately sixty seconds)."))

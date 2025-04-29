@@ -1,4 +1,4 @@
-/mob/living/carbon/superior_animal/roach/golden
+/mob/living/carbon/superior/roach/golden
 	name = "golden roach"
 	desc = "A weighty insect almost identical to some of the roaches that inhabit the colony. Though it seems related to the local roaches, it lacks many of features that make them an annoyance to colonists."
 	icon = 'icons/mob/genetics/seuche_gold.dmi'
@@ -15,7 +15,7 @@
 	inherent_mutations = list()
 	sanity_damage = 0 //they are peaceful thus not damaging sanity
 
-/mob/living/carbon/superior_animal/roach/golden/blattin
+/mob/living/carbon/superior/roach/golden/blattin
 	name = "Adept Blattin"
 	desc = "Adept Blattin is a golden roach, an special and harmless breed that was made by soteria to be pets and in general help with the trash problem without being a nuisance to the colony. \
 	But this one was adopted by the guild and being called 'Adept Blattin'. \
@@ -27,10 +27,10 @@
 	icon = 'icons/obj/genetics/g_roach_egg.dmi'
 	icon_state = "gold_egg"
 	preloaded_reagents = list("egg" = 9)
-	spawn_type = /mob/living/carbon/superior_animal/roach/roachling_gold
+	spawn_type = /mob/living/carbon/superior/roach/roachling_gold
 
 
-/mob/living/carbon/superior_animal/roach/roachling_gold
+/mob/living/carbon/superior/roach/roachling_gold
 	name = "Golden Roachling"
 	desc = "A tiny cockroach, colored a shimmering gold. It never stays still for long."
 	icon = 'icons/mob/genetics/roachling_gold.dmi'
@@ -47,7 +47,7 @@
 
 	armor = list(melee = 1, bullet = 0, energy = 0, bomb = 0, bio = 5, rad = 0, agony = 0)
 
-	meat_type = /obj/item/reagent_containers/food/snacks/meat/roachmeat
+	meat_type = /obj/item/reagent_containers/snacks/meat/roachmeat
 	meat_amount = 1
 	eating_time = 30 SECONDS //Takes less time
 	life_cycles_before_sleep = 800 //We need more time to eat
@@ -61,11 +61,11 @@
 	inherent_mutations = list()
 
 
-/mob/living/carbon/superior_animal/roach/roachling_gold/Life()
+/mob/living/carbon/superior/roach/roachling_gold/Life()
 	.=..()
 	if(!stat)
 		if(amount_grown >= 50 && fed > 0) // Old enough to turn into an adult
-			var/mob/living/carbon/superior_animal/roach/golden/roach = new (src.loc, src)
+			var/mob/living/carbon/superior/roach/golden/roach = new (src.loc, src)
 			roach.unnatural_mutations = src.unnatural_mutations.Copy()
 			qdel(src)
 		else

@@ -6,7 +6,7 @@
 /obj/landmark/costume/chicken/New()
 	new /obj/item/clothing/suit/costume/animal/chicken(src.loc)
 	new /obj/item/clothing/head/costume/animal/chicken(src.loc)
-	new /obj/item/reagent_containers/food/snacks/egg(src.loc)
+	new /obj/item/reagent_containers/snacks/egg(src.loc)
 
 /obj/landmark/costume/gladiator/New()
 	new /obj/item/clothing/under/costume/history/gladiator(src.loc)

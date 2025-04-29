@@ -1,4 +1,4 @@
-/mob/living/carbon/superior_animal/ameridian_golem
+/mob/living/carbon/superior/ameridian_golem
 	name = "ameridian golem"
 	desc = "A weird creature made of ameridian"
 	icon = 'icons/obj/ameridian.dmi'
@@ -15,7 +15,7 @@
 	mob_classification = CLASSIFICATION_SYNTHETIC
 	status_flags = CANPUSH // Cannot be stun, weakened or paralyzed
 
-	armor = list(melee = 7, bullet = 4, energy = 8, bomb = 30, bio = 100, rad = 100) //We want to be gunned down, not lasered
+	armor = list(melee = 3, bullet = 0, energy = 4, bomb = 30, bio = 100, rad = 100) //We want to be gunned down, not lasered
 
 	do_gibs = FALSE
 
@@ -44,23 +44,28 @@
 	never_stimulate_air = TRUE
 
 	allowed_stat_modifiers = list(
-		/datum/stat_modifier/mob/living/carbon/superior_animal/durable = 5,
+		/datum/stat_modifier/mob/living/carbon/superior/durable = 5,
 		/datum/stat_modifier/health/flat/negative/low = 5,
 		/datum/stat_modifier/health/flat/positive/low = 5,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/armor/mult/negative/low = 5,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish = 5,
+		/datum/stat_modifier/mob/living/carbon/superior/armor/mult/negative/low = 5,
+		/datum/stat_modifier/mob/living/carbon/superior/brutish = 5,
 		/datum/stat_modifier/mob/living/damage/negative/mixed/flat/low = 5,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/brutal = 5,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/aggressive/savage = 1,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/aggressive = 10
+		/datum/stat_modifier/mob/living/carbon/superior/brutal = 5,
+		/datum/stat_modifier/mob/living/carbon/superior/aggressive/savage = 1,
+		/datum/stat_modifier/mob/living/carbon/superior/aggressive = 10
 	)
 
-/mob/living/carbon/superior_animal/ameridian_golem/add_initial_transforms()
+	//Golems in general to make shotguns more affective for them use ablative armor
+	mob_ablative_armor = 8
+	ablative_retaining = ABLATION_SOFT
+
+
+/mob/living/carbon/superior/ameridian_golem/add_initial_transforms()
 	. = ..()
 
 	add_new_transformation(/datum/transform_type/modular, list(size_factor, size_factor, flag = AMERIDIAN_GOLEM_INITIAL_SCALE_TRANSFORM, priority = AMERIDIAN_GOLEM_INITIAL_SCALE_TRANSFORM_PRIORITY))
 
-/mob/living/carbon/superior_animal/ameridian_golem/death()
+/mob/living/carbon/superior/ameridian_golem/death()
 	. = ..()
 	playsound(get_turf(src), "sound/effects/crumble[pick(1, 2, 3, 4, 5)].ogg", 50)
 	if(drop_amount)
@@ -68,10 +73,10 @@
 		loot.amount = drop_amount
 	qdel(src)
 
-/mob/living/carbon/superior_animal/ameridian_golem/Destroy()
+/mob/living/carbon/superior/ameridian_golem/Destroy()
 	. = ..()
 
-/mob/living/carbon/superior_animal/ameridian_golem/bullet_act(var/obj/item/projectile/P, var/def_zone)
+/mob/living/carbon/superior/ameridian_golem/bullet_act(var/obj/item/projectile/P, var/def_zone)
 	if(istype(P, /obj/item/projectile/sonic_bolt))
 		if (!(P.testing))
 			var/obj/item/projectile/sonic_bolt/SB = P
@@ -82,12 +87,12 @@
 
 	addtimer(CALLBACK(src, PROC_REF(maintain_drop_amount)), 100 MILLISECONDS) //consider converting this to ticks?
 
-/mob/living/carbon/superior_animal/ameridian_golem/proc/maintain_drop_amount()
+/mob/living/carbon/superior/ameridian_golem/proc/maintain_drop_amount()
 	if (!is_dead(src)) // We're still alive!
 		drop_amount = initial(drop_amount) // So we still have loot
 
 // Stole this code from 'code/__HELPERS/matrices.dm' because otherwise the golems shrink during the shake animation. -R4d6
-/mob/living/carbon/superior_animal/ameridian_golem/shake_animation(var/intensity = 8)
+/mob/living/carbon/superior/ameridian_golem/shake_animation(var/intensity = 8)
 	var/init_px = pixel_x
 	var/shake_dir = pick(-1, 1)
 	animate(src, transform=turn(matrix(), intensity*shake_dir)*size_factor, pixel_x=init_px + 2*shake_dir, time=1)

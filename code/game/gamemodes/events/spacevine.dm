@@ -3,6 +3,7 @@
 	The plant is vulnerable to fire and cutting weapons
 
 	It's not really dangerous, it doesn't eat you like the blob, so it has a lower cost
+*/
 
 /datum/storyevent/spacevine
 	id = "spacevine"
@@ -13,6 +14,11 @@
 	event_pools = list(EVENT_LEVEL_MAJOR = POOL_THRESHOLD_MAJOR*0.6)
 
 	tags = list(TAG_DESTRUCTIVE, TAG_NEGATIVE, TAG_COMBAT)
+
+	//Disables it but still allows admins to call it
+	ocurrences = 1
+	ocurrences_max = 1
+
 
 /var/global/spacevines_spawned = 0
 
@@ -30,4 +36,3 @@
 	level_six_announcement()
 
 
-*/ //Vines are laggy, spawn randomly including outside and generally? Suck major ass. Don't see a good reason to actually have this event at this time particularly given the issues with it spawning outside the gate

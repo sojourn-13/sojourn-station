@@ -42,7 +42,7 @@ Unused file of cryo pods that on click dont even work, these are not used and ar
 					justequip(spawnmob, spawn_faction, spawn_role, outfit_type)
 					add_stats(spawnmob)
 		if(!spawnmob)
-			spawnmob = new /mob/living/carbon/superior_animal/roach(src.loc)
+			spawnmob = new /mob/living/carbon/superior/roach(src.loc)
 
 /obj/structure/cryopod_spawner/ironhammer
 	outfit_type = /decl/hierarchy/outfit/job/security/ihoper

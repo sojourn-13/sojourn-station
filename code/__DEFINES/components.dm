@@ -128,7 +128,7 @@
 #define COMSIG_HUMAN_SANITY "human_sanity"						//from /datum/sanity/proc/onLife()
 #define COMSIG_HUMAN_INSTALL_IMPLANT "human_install_implant"
 
-// /mob/living/carbon/superior_animal signals
+// /mob/living/carbon/superior signals
 #define COMSIG_SUPERIOR_FIRED_PROJECTILE "superior_fired_projectile"
 #define COMSIG_ATTACKED "attacked" // Soj edit, feel free to adapt this to other types
 

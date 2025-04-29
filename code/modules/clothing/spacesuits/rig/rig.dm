@@ -249,6 +249,14 @@
 			continue
 		if(armor_list)
 			piece.armor = armor
+		piece.name = "[suit_type] [initial(piece.name)]"
+		piece.min_cold_protection_temperature = min_cold_protection_temperature
+		piece.max_heat_protection_temperature = max_heat_protection_temperature
+		if(piece.siemens_coefficient > siemens_coefficient) //So that insulated gloves keep their insulation.
+			piece.siemens_coefficient = siemens_coefficient
+		piece.permeability_coefficient = permeability_coefficient
+		piece.unacidable = unacidable
+
 
 		if(canremove)
 			piece.item_flags &= ~(STOPPRESSUREDAMAGE|AIRTIGHT)
@@ -687,9 +695,8 @@
 	if(!check_slot.armor_list || check_slot == wearer.shoes || check_slot == wearer.gloves)
 		return TRUE
 	for(var/i in check_slot.armor_list)
-		var/a = check_slot.armor_list[i]
-		for(a in armor)
-			if(check_slot.armor_list[i] > 2)
+		for(var/a in armor)
+			if(check_slot.armor_list[i] > 2 && i == a)
 				return FALSE
 	if(check_slot.armor_list[ARMOR_BIO] > 75) //Let the nerds keep the labcoat drip
 		return FALSE
@@ -984,20 +991,6 @@
 	var/obj/glasses = getCurrentGlasses()
 	if(glasses)
 		glasses.clean_blood()
-
-/obj/item/rig/decontaminate()
-	..()
-	if(chest)
-		chest.decontaminate()
-	if(boots)
-		boots.decontaminate()
-	if(helmet)
-		helmet.decontaminate()
-	if(gloves)
-		gloves.decontaminate()
-	var/obj/item/glasses = getCurrentGlasses()
-	if(glasses)
-		glasses.decontaminate()
 
 /obj/item/rig/make_young()
 	..()

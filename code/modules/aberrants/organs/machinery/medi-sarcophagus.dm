@@ -74,7 +74,7 @@
 
 /obj/machinery/sleeper/sarcophagus/hive/Initialize()
 	. = ..()
-	horror_occupant = pick(subtypesof(/mob/living/simple_animal/hostile/hivemind))
+	horror_occupant = pick(subtypesof(/mob/living/simple/hostile/hivemind))
 	update_icon()
 
 // To be placed on the map
@@ -84,7 +84,7 @@
 /obj/machinery/sleeper/sarcophagus/random/Initialize()
 	. = ..()
 	if(prob(50))
-		horror_occupant = pick(subtypesof(/mob/living/simple_animal/hostile/hivemind))
+		horror_occupant = pick(subtypesof(/mob/living/simple/hostile/hivemind))
 		accompanying_loot = /obj/item/storage/freezer/medical/contains_teratomas
 	else
 		horror_occupant = null

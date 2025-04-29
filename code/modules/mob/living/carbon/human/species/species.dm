@@ -427,3 +427,5 @@
 		H.add_language(LANGUAGE_BLORP)
 	if(H.species.reagent_tag == IS_CINDARITE)
 		H.add_language(LANGUAGE_WEH)
+	if(H.species.reagent_tag == IS_TAJ)
+		H.add_language(LANGUAGE_SABLEKYNE)

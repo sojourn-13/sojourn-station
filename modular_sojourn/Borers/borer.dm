@@ -3,7 +3,7 @@
 #define BORER_EXP_LEVEL_3 80
 #define BORER_EXP_LEVEL_4 100 
 #define BORER_EXP_LEVEL_5 120
-/mob/living/simple_animal/borer
+/mob/living/simple/borer
 	name = "cortical borer"
 	real_name = "cortical borer"
 	desc = "A small, quivering sluglike creature."
@@ -48,25 +48,25 @@
 	var/list/abilities_standalone = list(
 		/mob/living/proc/ventcrawl,
 		/mob/living/proc/hide,
-		/mob/living/simple_animal/borer/proc/paralyze_victim,
+		/mob/living/simple/borer/proc/paralyze_victim,
 		/mob/living/carbon/human/proc/commune,
-		/mob/living/simple_animal/borer/proc/infest
+		/mob/living/simple/borer/proc/infest
 		)
 
 	// Abilities borer can use when inside the host, but not in control
 	var/list/abilities_in_host = list(
-		/mob/living/simple_animal/borer/proc/secrete_chemicals,
-		/mob/living/simple_animal/borer/proc/assume_control,
-		/mob/living/simple_animal/borer/proc/read_mind,
-		/mob/living/simple_animal/borer/proc/write_mind,
-		/mob/living/simple_animal/borer/proc/release_host,
+		/mob/living/simple/borer/proc/secrete_chemicals,
+		/mob/living/simple/borer/proc/assume_control,
+		/mob/living/simple/borer/proc/read_mind,
+		/mob/living/simple/borer/proc/write_mind,
+		/mob/living/simple/borer/proc/release_host,
 		/mob/living/carbon/human/proc/commune,
-		/mob/living/simple_animal/borer/proc/reproduce,
-		/mob/living/simple_animal/borer/proc/sample_blood
+		/mob/living/simple/borer/proc/reproduce,
+		/mob/living/simple/borer/proc/sample_blood
 	)
 
 	// Abilities borer can use when controlling the host
-	// (keep in mind that those have to be abilities of /mob/living/carbon, not /mob/living/simple_animal/borer)
+	// (keep in mind that those have to be abilities of /mob/living/carbon, not /mob/living/simple/borer)
 	var/list/abilities_in_control = list(
 		/mob/living/carbon/proc/release_control,
 		/mob/living/carbon/proc/talk_host,
@@ -81,16 +81,16 @@
 		"hyperzine", "tramadol", "space_drugs"
 		)
 
-/mob/living/simple_animal/borer/roundstart
+/mob/living/simple/borer/roundstart
 	roundstart = 1
 
-/mob/living/simple_animal/borer/Login()
+/mob/living/simple/borer/Login()
 	..()
 	if(!roundstart && mind && !mind.antagonist.len)
 		var/datum/antagonist/A = create_antag_instance(ROLE_BORER_REPRODUCED)
 		A.create_antagonist(mind,update = FALSE)
 
-/mob/living/simple_animal/borer/New()
+/mob/living/simple/borer/New()
 	..()
 
 	add_language(LANGUAGE_CORTICAL)
@@ -100,7 +100,7 @@
 
 	if(!roundstart) request_player()
 
-/mob/living/simple_animal/borer/proc/ghost_enter(mob/user)
+/mob/living/simple/borer/proc/ghost_enter(mob/user)
 	if(stat || key)
 		return FALSE
 	var/confirmation = alert("Would you like to occupy \the [src]?", "", "Yes", "No")
@@ -112,13 +112,13 @@
 	key = user.key
 	return TRUE
 
-/mob/living/simple_animal/borer/attack_ghost(mob/user)
+/mob/living/simple/borer/attack_ghost(mob/user)
 	. = ..()
 	if(!.)
 		. = ghost_enter(user)
 
 
-/mob/living/simple_animal/borer/proc/update_abilities(force_host=FALSE)
+/mob/living/simple/borer/proc/update_abilities(force_host=FALSE)
 	// Remove all abilities
 	remove_verb(src, abilities_standalone)
 	remove_verb(src, abilities_in_host)
@@ -138,10 +138,10 @@
 	Stat()
 
 // If borer is controlling a host directly, send messages to host instead of borer
-/mob/living/simple_animal/borer/proc/get_borer_control()
+/mob/living/simple/borer/proc/get_borer_control()
 	return (host && controlling) ? host : src
 
-/mob/living/simple_animal/borer/Life()
+/mob/living/simple/borer/Life()
 	..()
 
 	if((chemicals < max_chemicals) && !invisibility)
@@ -186,7 +186,7 @@
 	for(var/mob/living/L in view(7)) //Sucks to put this here, but otherwise mobs will ignore them
 		L.try_activate_ai()
 
-/mob/living/simple_animal/borer/get_status_tab_items()
+/mob/living/simple/borer/get_status_tab_items()
 	. = ..()
 	. += "Evolution Level: [borer_level]"
 	. += "Chemicals: [host ? "[chemicals] / [max_chemicals_inhost]" : "[chemicals] / [max_chemicals]"]"
@@ -194,7 +194,7 @@
 		. += "Host health: [host.stat == DEAD ? "Deceased" : host.health]"
 		. += "Host brain damage: [host.getBrainLoss()]"
 
-/mob/living/simple_animal/borer/proc/detatch()
+/mob/living/simple/borer/proc/detatch()
 
 	if(!host || !controlling) return
 
@@ -243,7 +243,7 @@
 
 	qdel(host_brain)
 
-/mob/living/simple_animal/borer/proc/leave_host()
+/mob/living/simple/borer/proc/leave_host()
 	if(!host) return
 
 	if(host.mind)
@@ -263,27 +263,27 @@
 	update_abilities()
 
 //Procs for grabbing players.
-/mob/living/simple_animal/borer/proc/request_player()
+/mob/living/simple/borer/proc/request_player()
 	var/datum/ghosttrap/G = get_ghost_trap("cortical borer")
 	G.request_player(src, "A cortical borer needs a player.", ANIMAL)
 
-/mob/living/simple_animal/borer/proc/borer_add_exp(var/num)
+/mob/living/simple/borer/proc/borer_add_exp(var/num)
 	borer_exp += num
 	update_borer_level()
 
-/mob/living/simple_animal/borer/proc/update_borer_level()
+/mob/living/simple/borer/proc/update_borer_level()
 	if((borer_exp >= BORER_EXP_LEVEL_1) && (borer_level < 1))
 		var/level = 1
 		var/added_reagents = list("inaprovaline", "tricordrazine", "synaptizine", "imidazoline", "hyronalin", "citalopram", "glucose") //Eclipse Edit: Added Citalopram and Nutriment //Eclipse Edit: Replaced Nutriment with Glucose, which is injectable
-		var/abilities_IH = list(/mob/living/simple_animal/borer/proc/say_host, /mob/living/simple_animal/borer/proc/whisper_host, /mob/living/simple_animal/borer/proc/commune)
-		var/abilities_SL = list(/mob/living/simple_animal/borer/proc/commune)
+		var/abilities_IH = list(/mob/living/simple/borer/proc/say_host, /mob/living/simple/borer/proc/whisper_host, /mob/living/simple/borer/proc/commune)
+		var/abilities_SL = list(/mob/living/simple/borer/proc/commune)
 
 		level_up(level, added_reagents, abilities_IH, abilities_SL)
 
 	if((borer_exp >= BORER_EXP_LEVEL_2) && (borer_level < 2))
 		var/level = 2
 		var/added_reagents = list("spaceacillin", "quickclot", "detox", "purger", "arithrazine", "ethylredoxrazine") //Eclipse Edit: Added ethylredoxrazine
-		var/abilities_SL = list(/mob/living/simple_animal/borer/proc/biograde)
+		var/abilities_SL = list(/mob/living/simple/borer/proc/biograde)
 		var/abilities_IC = list(/mob/living/carbon/human/proc/commune)
 
 		level_up(level, added_reagents, null, abilities_SL, abilities_IC)
@@ -291,7 +291,7 @@
 	if((borer_exp >= BORER_EXP_LEVEL_3) && (borer_level < 3))
 		var/level = 3
 		var/added_reagents = list("meralyne", "dermaline", "dexalinp", "oxycodone", "ryetalyn", "adrenaline", "paroxetine") //Eclipse Edit: Added Adrenaline and Paroxetine
-		var/abilities_SL = list(/mob/living/simple_animal/borer/proc/invisible)
+		var/abilities_SL = list(/mob/living/simple/borer/proc/invisible)
 
 		level_up(level, added_reagents, null, abilities_SL)
 
@@ -307,11 +307,11 @@
 	if((borer_exp >= BORER_EXP_LEVEL_5) && (borer_level < 5))
 		var/level = 5
 		var/added_reagents = list("violence", "steady", "bouncer", "prosurgeon", "cherry drops", "machine binding ritual")
-		var/abilities_IH = list(/mob/living/simple_animal/borer/proc/jumpstart)
+		var/abilities_IH = list(/mob/living/simple/borer/proc/jumpstart)
 
 		level_up(level, added_reagents, abilities_IH)
 
-/mob/living/simple_animal/borer/proc/level_up(level, added_reagents = list(), abilities_IH= list(), abilities_SL= list(), abilities_IC= list())
+/mob/living/simple/borer/proc/level_up(level, added_reagents = list(), abilities_IH= list(), abilities_SL= list(), abilities_IC= list())
 	borer_level = level
 
 	produced_reagents += added_reagents
@@ -325,16 +325,16 @@
 	max_chemicals += (borer_level * 10)
 	max_chemicals_inhost = max_chemicals * 5
 
-/mob/living/simple_animal/borer/cannot_use_vents()
+/mob/living/simple/borer/cannot_use_vents()
 	return
 
-/mob/living/simple_animal/borer/death()
+/mob/living/simple/borer/death()
 	.=..()
 	if(invisibility)
 		alpha = 255
 		invisibility = 0
 
-/mob/living/simple_animal/borer/update_sight()
+/mob/living/simple/borer/update_sight()
 	if(stat == DEAD || eyeobj)
 		update_dead_sight()
 	else

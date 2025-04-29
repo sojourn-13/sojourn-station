@@ -128,6 +128,8 @@
 	var/wounding_mult = 1 // A multiplier on damage inflicted to and damage blocked by mobs
 
 	var/ignition_source = TRUE //Used for deciding if a projectile should blow up a benzin.
+	var/predetermed = null //Used for NPCs to sudo rng, uses define zones directly
+
 
 /obj/item/projectile/New()
 
@@ -176,6 +178,9 @@
 
 /obj/item/projectile/add_projectile_penetration(newmult)
 	armor_divisor = initial(armor_divisor) + newmult
+
+/obj/item/projectile/wound_mult_adder(newadd)
+	wounding_mult += newadd
 
 /obj/item/projectile/multiply_pierce_penetration(newmult)
 	penetrating = initial(penetrating) + newmult
@@ -391,7 +396,6 @@
 	//roll to-hit
 	miss_modifier = 0
 	var/hit_zone = check_zone(def_zone)
-
 	var/result = PROJECTILE_FORCE_MISS
 	if(hit_zone)
 		def_zone = hit_zone //set def_zone, so if the projectile ends up hitting someone else later (to be implemented), it is more likely to hit the same part
@@ -715,11 +719,11 @@
 						if(istargetloc(target_mob) == 0)
 							def_zone = pick(BP_R_ARM, BP_L_ARM, BP_CHEST, BP_HEAD)
 						//head
-
-
+			//message_admins("predetermed = [predetermed] def_zone = [def_zone]")
+			if(predetermed)
+				def_zone = predetermed
 
 			result = target_mob.bullet_act(src, def_zone)//this returns mob's armor_check and another - see modules/mob/living/living_defense.dm
-
 
 	if(result == PROJECTILE_FORCE_MISS)
 		if (!testing) //doesnt matter, we collided with something, NIKO COME BACK HERE AND REVIEW THIS

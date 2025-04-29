@@ -13,6 +13,7 @@
 	hidden_inv_threshold = 2000
 	recommendation_threshold = 3500
 	stations_recommended = list("illegal2")
+	icon_states = list("oberth_cruiser", "object")
 	recommendations_needed = 3
 	inventory = list(
 		"Syndicate Gear" = list(
@@ -51,6 +52,8 @@
 			/obj/item/clothing/suit/space/syndicate = custom_good_amount_range(list(1, 1)),
 			/obj/item/clothing/head/helmet/space/syndicate = custom_good_amount_range(list(1, 1)),
 			/obj/item/clothing/suit/armor/vest/breach1 = custom_good_amount_range(list(2, 3)),
+			/obj/item/clothing/mask/gas/chemhood = custom_good_amount_range(list(2, 3)),
+			/obj/item/clothing/head/helmet/hazcap = custom_good_amount_range(list(2, 3)),
 			/obj/item/clothing/glasses/powered/night = custom_good_amount_range(list(1, 1))
 		),
 		"Syndicate Gun Mods" = list(

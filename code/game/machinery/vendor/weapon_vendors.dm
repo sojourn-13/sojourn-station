@@ -226,7 +226,7 @@
 					/obj/item/tool/knife/tacknife = 4,
 					/obj/item/tool/baton/mini = 6)
 
-	contraband = list(/obj/item/reagent_containers/food/snacks/donut/normal = 12)
+	contraband = list(/obj/item/reagent_containers/snacks/donut/normal = 12)
 	auto_price = FALSE
 
 /obj/machinery/vending/theomat
@@ -239,7 +239,7 @@
 	products = list(/obj/item/book/ritual/cruciform = 10,
 					/obj/item/storage/fancy/candle_box = 10,
 					/obj/item/storage/fancy/cigarettes/faith = 10,
-					/obj/item/reagent_containers/food/drinks/bottle/ntcahors = 20,
+					/obj/item/reagent_containers/drinks/bottle/ntcahors = 20,
 					/obj/item/tool_upgrade/augment/sanctifier = 5,
 					/obj/item/soap/church = 5,
 					/obj/item/storage/wallet = 5,
@@ -268,19 +268,19 @@
 					/obj/item/tool/knife/dagger/nt = 3,
 					/obj/item/tool/sword/nt/shortsword = 3,
 					/obj/item/gun/energy/ntpistol = 3,
-					/obj/item/computer_hardware/hard_drive/portable/design/nt/lemant = 2,
-					/obj/item/computer_hardware/hard_drive/portable/design/nt/mk58 = 2,
-					/obj/item/computer_hardware/hard_drive/portable/design/nt/old_guns = 2,
-					/obj/item/computer_hardware/hard_drive/portable/design/nt/new_guns = 2,
-					/obj/item/computer_hardware/hard_drive/portable/design/nt/basic_arms/public = 2,
-					/obj/item/computer_hardware/hard_drive/portable/design/nt/basic_utility/public = 3)
+					/obj/item/pc_part/drive/disk/design/nt/lemant = 2,
+					/obj/item/pc_part/drive/disk/design/nt/mk58 = 2,
+					/obj/item/pc_part/drive/disk/design/nt/old_guns = 2,
+					/obj/item/pc_part/drive/disk/design/nt/new_guns = 2,
+					/obj/item/pc_part/drive/disk/design/nt/basic_arms/public = 2,
+					/obj/item/pc_part/drive/disk/design/nt/basic_utility/public = 3)
 	contraband = list(/obj/item/tool/knife/neotritual = 3,
 					/obj/item/gun/matter/launcher/nt_sprayer = 3)
 
 	prices = list(/obj/item/book/ritual/cruciform = 5,
 					/obj/item/storage/fancy/candle_box = 30,
 					/obj/item/storage/fancy/cigarettes/faith = 65, //Some healing chems
-					/obj/item/reagent_containers/food/drinks/bottle/ntcahors = 100,
+					/obj/item/reagent_containers/drinks/bottle/ntcahors = 100,
 					/obj/item/tool_upgrade/augment/sanctifier = 80,
 					/obj/item/soap/church = 50,
 					/obj/item/storage/wallet = 15,
@@ -310,12 +310,12 @@
 					/obj/item/tool/knife/dagger/nt = 50,
 					/obj/item/tool/sword/nt = 100,
 					/obj/item/gun/energy/ntpistol = 120,
-					/obj/item/computer_hardware/hard_drive/portable/design/nt/lemant = 600,
-					/obj/item/computer_hardware/hard_drive/portable/design/nt/mk58 = 550,
-					/obj/item/computer_hardware/hard_drive/portable/design/nt/old_guns = 950,
-					/obj/item/computer_hardware/hard_drive/portable/design/nt/new_guns = 800,
-					/obj/item/computer_hardware/hard_drive/portable/design/nt/basic_arms/public = 100,
-					/obj/item/computer_hardware/hard_drive/portable/design/nt/basic_utility/public = 100,
+					/obj/item/pc_part/drive/disk/design/nt/lemant = 600,
+					/obj/item/pc_part/drive/disk/design/nt/mk58 = 550,
+					/obj/item/pc_part/drive/disk/design/nt/old_guns = 950,
+					/obj/item/pc_part/drive/disk/design/nt/new_guns = 800,
+					/obj/item/pc_part/drive/disk/design/nt/basic_arms/public = 100,
+					/obj/item/pc_part/drive/disk/design/nt/basic_utility/public = 100,
 					/obj/item/tool/knife/neotritual = 250,
 					/obj/item/gun/matter/launcher/nt_sprayer = 500)
 	//custom_vendor = TRUE // So they can sell pouches and other printed goods, if they bother to stock them - Turns out they just abuse it to get free stuff, and they just make a custom vendor if they want to sell
@@ -361,7 +361,7 @@
 	icon_state = "serbomat"
 	product_ads = "For Tsar and Country.;Have you fulfilled your nutrition quota today?;Very nice!;We are simple people, for this is all we eat.;If there is a person, there is a problem. If there is no person, then there is no problem."
 	products = list(
-					/obj/item/reagent_containers/food/drinks/bottle/vodka = 30, // ghetto antihacking, have fun
+					/obj/item/reagent_containers/drinks/bottle/vodka = 30, // ghetto antihacking, have fun
 					/obj/item/storage/deferred/crate/uniform_green = 4,
 					/obj/item/storage/deferred/crate/uniform_brown = 4,
 					/obj/item/storage/deferred/crate/uniform_black = 4,
@@ -373,7 +373,7 @@
 					/obj/item/ammo_magazine/speed_loader_rifle_75 = 20
 					)
 	prices = list(
-					/obj/item/reagent_containers/food/drinks/bottle/vodka = 5,
+					/obj/item/reagent_containers/drinks/bottle/vodka = 5,
 					/obj/item/storage/deferred/crate/uniform_green = 200,
 					/obj/item/storage/deferred/crate/uniform_brown = 200,
 					/obj/item/storage/deferred/crate/uniform_black = 200,

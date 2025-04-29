@@ -853,7 +853,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/tool/weldingtool/robotic/weaker(src) //cracks and the like.
 	src.modules += new /obj/item/tool/knife/tacknife/robo(src)
 	src.modules += new /obj/item/taperoll/police(src)
-	src.modules += new /obj/item/gun/energy/riot_autoshotgun(src)
+	src.modules += new /obj/item/gun/energy/riot(src)
 	src.modules += new /obj/item/gripper/ammo(src)
 	src.modules += new /obj/item/gripper/upgrade(src)
 	src.modules += new /obj/item/device/gps(src)
@@ -958,7 +958,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/device/scanner/price(src)
 	src.modules += new /obj/item/gripper/service(src)
 	src.modules += new /obj/item/soap/deluxe(src)
-	src.modules += new /obj/item/storage/bag/robotic/trash(src)
+	src.modules += new /obj/item/storage/bag/trash/big/robotic(src)
 	src.modules += new /obj/item/mop(src)
 	src.modules += new /obj/item/device/lightreplacer(src)
 	src.modules += new /obj/item/reagent_containers/glass/bucket(src) // a hydroponist's bucket
@@ -1063,7 +1063,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/storage/bag/robotic/produce(src)
 	src.modules += new /obj/item/robot_harvester(src)
 	src.modules += new /obj/item/material/kitchen/rollingpin(src)
-	src.modules += new /obj/item/reagent_containers/food/condiment/enzyme(src)
+	src.modules += new /obj/item/reagent_containers/condiment/enzyme(src)
 	src.modules += new /obj/item/flame/lighter/zippo(src)
 	src.modules += new /obj/item/soap(src) // a cheap bar of soap
 	src.modules += new /obj/item/reagent_containers/glass/rag(src) // a rag for.. yeah.. the primary tool of bartender
@@ -1093,7 +1093,7 @@ var/global/list/robot_modules = list(
 
 	src.modules += new /obj/item/tray/robotray(src)
 	src.modules += new /obj/item/reagent_containers/borghypo/service(src)
-	src.emag += new /obj/item/reagent_containers/food/drinks/bottle/small/beer_two(src)
+	src.emag += new /obj/item/reagent_containers/drinks/bottle/small/beer_two(src)
 
 	//Seller and cleaner mix, so quite and knowing the deal!
 	R?.stats?.addPerk(PERK_QUIET_AS_MOUSE)
@@ -1104,10 +1104,10 @@ var/global/list/robot_modules = list(
 
 /obj/item/robot_module/service/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
 	..()
-	var/obj/item/reagent_containers/food/condiment/enzyme/E = locate() in src.modules
+	var/obj/item/reagent_containers/condiment/enzyme/E = locate() in src.modules
 	E?.reagents?.add_reagent("enzyme", 2 * amount)
 	if(src.emag)
-		var/obj/item/reagent_containers/food/drinks/bottle/small/beer_two/B = locate() in src.emag
+		var/obj/item/reagent_containers/drinks/bottle/small/beer_two/B = locate() in src.emag
 		B?.reagents?.add_reagent("beer2", 2 * amount)
 
 /obj/item/robot_module/miner
@@ -1174,7 +1174,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/gripper/no_use/loader(src) //They have to sell materials over desks at times.
 	src.modules += new /obj/item/device/scanner/mining(src)
 	src.modules += new /obj/item/device/t_scanner(src)
-	src.modules += new /obj/item/gun/energy/riot_autoshotgun(src)
+	src.modules += new /obj/item/gun/energy/riot(src)
 	src.modules += new /obj/item/gripper/ammo(src)
 	src.modules += new /obj/item/gripper/upgrade(src)
 	src.modules += new /obj/item/device/scanner/price(src)

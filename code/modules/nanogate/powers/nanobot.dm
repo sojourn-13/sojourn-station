@@ -26,7 +26,7 @@ List of powers in this page :
 		var/bot_name = input(src, "Choose your nanobot's name : ", "Nanobot Name", "Nanobot") as text
 		if(organ.pay_power_cost(2))
 			to_chat(src, "You permanently assign some of your nanites to form a nanobot.")
-			organ.Stand = new /mob/living/carbon/superior_animal/nanobot(loc)
+			organ.Stand = new /mob/living/carbon/superior/nanobot(loc)
 			organ.Stand.name = bot_name
 			organ.Stand.creator += src
 			organ.Stand.friends += src

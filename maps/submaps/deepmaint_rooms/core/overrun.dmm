@@ -54,7 +54,7 @@
 "az" = (
 /obj/random/material,
 /obj/item/trash/mre,
-/mob/living/carbon/superior_animal/psi_monster/mind_gazer,
+/obj/random/mob/psi_monster,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/deepmaint)
 "aA" = (
@@ -356,7 +356,7 @@
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/deepmaint)
 "hS" = (
-/mob/living/carbon/superior_animal/psi_monster/flesh_tower,
+/obj/random/mob/psi_monster,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/deepmaint)
 "iD" = (
@@ -484,15 +484,11 @@
 /area/deepmaint)
 "ud" = (
 /obj/item/stack/material/plasteel/random,
-/mob/living/carbon/superior_animal/psi_monster/cerebral_crusher,
+/obj/random/mob/psi_monster,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/deepmaint)
 "uf" = (
 /obj/item/material/shard,
-/turf/simulated/floor/tiled/dark/brown_perforated,
-/area/deepmaint)
-"ug" = (
-/mob/living/carbon/superior_animal/psi_monster/cerebral_crusher,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/deepmaint)
 "uN" = (
@@ -522,14 +518,14 @@
 /obj/item/stack/material/plasteel/random,
 /obj/item/stack/material/plastic/random,
 /obj/item/trash/material/metal,
-/mob/living/carbon/superior_animal/psi_monster/flesh_tower,
+/obj/random/mob/psi_monster,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/deepmaint)
 "yK" = (
 /obj/random/voidsuit/damaged,
 /obj/random/gun_normal,
 /obj/random/material_rare,
-/mob/living/carbon/superior_animal/psi_monster/mind_gazer,
+/obj/random/mob/psi_monster,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/deepmaint)
 "zi" = (
@@ -600,7 +596,7 @@
 /area/deepmaint)
 "Hi" = (
 /obj/item/ammo_magazine/light_rifle_257/empty,
-/mob/living/carbon/superior_animal/psi_monster/flesh_tower,
+/obj/random/mob/psi_monster,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/deepmaint)
 "Ip" = (
@@ -687,7 +683,7 @@
 /area/deepmaint)
 "ST" = (
 /obj/item/stack/rods,
-/mob/living/carbon/superior_animal/psi_monster/flesh_tower,
+/obj/random/mob/psi_monster,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/deepmaint)
 "Tf" = (
@@ -722,7 +718,7 @@
 /obj/random/material_rare,
 /obj/item/trash/mre_candy,
 /obj/random/cluster/psi_monster,
-/mob/living/carbon/superior_animal/psi_monster/mind_gazer,
+/obj/random/mob/psi_monster,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/deepmaint)
 "Yf" = (
@@ -1029,13 +1025,13 @@ bU
 OI
 bi
 cg
-ug
+hS
 zi
 Op
 bN
 aA
 bN
-ug
+hS
 cg
 bW
 ah

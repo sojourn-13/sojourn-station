@@ -30,7 +30,7 @@
 /turf/simulated/floor/tiled/derelict,
 /area/crawler)
 "i" = (
-/mob/living/simple_animal/hostile/megafauna/one_star,
+/mob/living/simple/hostile/megafauna/one_star,
 /turf/simulated/floor/tiled/derelict,
 /area/crawler)
 "j" = (

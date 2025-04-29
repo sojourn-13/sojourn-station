@@ -15,7 +15,7 @@
 	init_firemodes = list(
 		list(mode_name="induce mutations", mode_desc="Make your crops weird and wonderful", projectile_type=/obj/item/projectile/energy/floramut, modifystate="floramut", item_modifystate="mut", icon="kill"),
 		list(mode_name="increase yield",   mode_desc="More fruit for your labour",  projectile_type=/obj/item/projectile/energy/florayield, modifystate="florayield", item_modifystate="yield", icon="stun"),
-		list(mode_name="induce evolution", mode_desc="Trys to force an evolution in the plant", projectile_type=/obj/item/projectile/energy/floraevolve, modifystate="floraevo", item_modifystate="evo", icon="destroy"),
+		list(mode_name="induce evolution", mode_desc="Tries to force an evolution in the plant", projectile_type=/obj/item/projectile/energy/floraevolve, modifystate="floraevo", item_modifystate="evo", icon="destroy"),
 		)
 	serial_type = "INDEX"
 	serial_shown = FALSE

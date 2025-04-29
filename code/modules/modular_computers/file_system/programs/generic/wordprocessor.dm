@@ -30,7 +30,7 @@
 		F = create_file(filename, loaded_data, /datum/computer_file/data/text)
 		return !isnull(F)
 	var/datum/computer_file/data/backup = F.clone()
-	var/obj/item/computer_hardware/hard_drive/HDD = computer.hard_drive
+	var/obj/item/pc_part/drive/HDD = computer.hard_drive
 	if(!HDD)
 		return
 	HDD.remove_file(F)

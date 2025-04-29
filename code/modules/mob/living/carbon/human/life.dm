@@ -800,16 +800,6 @@
 		if(!(CE_ALCOHOL in chem_effects) && stats.getPerk(PERK_INSPIRATION))
 			stats.removePerk(PERK_ACTIVE_INSPIRATION)
 
-		var/total_plasmaloss = 0
-		for(var/obj/item/I in src)
-			if(I.contaminated)
-				if(isarmor(I) && I.is_worn())
-					total_plasmaloss += vsc.plc.CONTAMINATION_LOSS
-				else
-					total_plasmaloss += vsc.plc.CONTAMINATION_LOSS * min(1,(100 - getarmor(null,ARMOR_BIO)))
-		if(!(status_flags & GODMODE) && prob(10))
-			bloodstr.add_reagent("plasma", total_plasmaloss)
-
 	if(status_flags & GODMODE)
 		return FALSE	//godmode
 
@@ -919,7 +909,7 @@
 			ear_deaf = max(ear_deaf, 1)
 		else if(ear_deaf)			//deafness, heals slowly over time
 			ear_deaf = max(ear_deaf-1, 0)
-		else if(istype(l_ear, /obj/item/clothing/ears/earmuffs) || istype(r_ear, /obj/item/clothing/ears/earmuffs))	//resting your ears with earmuffs heals ear damage faster
+		else if(earcheck())	//resting your ears with earmuffs heals ear damage faster
 			ear_damage = max(ear_damage-0.15, 0)
 			ear_deaf = max(ear_deaf, 1)
 		else if(ear_damage < 25)	//ear damage heals slowly under this threshold. otherwise you'll need earmuffs
@@ -1076,7 +1066,7 @@
 		else if(status_flags & XENO_HOST)
 			holder.icon_state = "hudxeno"
 		else if(has_brain_worms())
-			var/mob/living/simple_animal/borer/B = has_brain_worms()
+			var/mob/living/simple/borer/B = has_brain_worms()
 			if(B.controlling)
 				holder.icon_state = "hudbrainworm"
 			else
@@ -1170,7 +1160,7 @@
 	return slurring
 
 /mob/living/carbon/human/handle_stunned()
-	if(species.flags & NO_PAIN)
+	if((species.flags & NO_PAIN) || (PAIN_LESS in mutations))
 		stunned = 0
 		return 0
 	if(..())
@@ -1182,8 +1172,26 @@
 		speech_problem_flag = 1
 	return stuttering
 
-/* not being activated now, only gettign in the way of burn damage, in case of doubt look at any handle_fire above this
 /mob/living/carbon/human/handle_fire()
+	//feedback for being on fire!
+
+	if((species.flags & NO_PAIN) || (PAIN_LESS in mutations))
+		..() //We are painless so just fast track back to taking the damage
+
+	if(stat == CONSCIOUS) //if we are dead then dont scream, same as if we are knocked out
+		var/burn_temperature = fire_burn_temperature()
+		var/thermal_protection = get_heat_protection(burn_temperature)
+
+		//no need to scream if we are not taking damage or are fireproof
+		if(thermal_protection < 1 && bodytemperature < burn_temperature && on_fire)
+			if(world.time >= next_onfire_brn)
+				if(prob(1 + fire_stacks) && fire_stacks > 0) //We are on fire, so sometimes force some screams, runs a lot so dont make it happen to often
+					emote("painscream") //We are taking fire damage! AHHHHHHH
+
+	..()
+
+/* not being activated now, only gettign in the way of burn damage, in case of doubt look at any handle_fire above this
+
 	if(..())
 		return
 

@@ -93,7 +93,7 @@
 	can_hold = list(
 		/obj/item/implanter,
 		/obj/item/device/spy_sensor,
-		/obj/item/computer_hardware/hard_drive,
+		/obj/item/pc_part/drive,
 		/obj/item/reagent_containers,
 		/obj/item/spacecash,
 		/obj/item/device/mind_fryer,

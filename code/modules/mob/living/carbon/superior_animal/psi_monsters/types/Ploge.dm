@@ -1,7 +1,6 @@
 //EXTREMELY RARE able heck some people up or do events with
 //Requires chaos level 3 or admins
-
-/mob/living/carbon/superior_animal/psi_monster/ploge
+/mob/living/carbon/superior/psi/ploge
 	name = "Ploge"
 	desc = "Hideous mass of flesh and dreams, this monstrosity was once just another body lost to the deep, but now has been bent and molded for a new purpose."
 
@@ -42,7 +41,7 @@
 	can_leave = TRUE
 
 // BUMP!
-/mob/living/carbon/superior_animal/psi_monster/ploge/UnarmedAttack(atom/A, proximity)
+/mob/living/carbon/superior/psi/ploge/UnarmedAttack(atom/A, proximity)
 	if(isliving(A))
 		var/mob/living/L = A
 		if(istype(L) && prob(knockdown_odds))
@@ -53,7 +52,7 @@
 				L.visible_message(SPAN_DANGER("\the [src] uses its mass to knock over \the [L]!"))
 	. = ..()
 
-/mob/living/carbon/superior_animal/psi_monster/ploge/Life()
+/mob/living/carbon/superior/psi/ploge/Life()
 	. = ..()
 	if(health <= (maxHealth * 0.66) && transform_ed == FALSE)
 		icon_state = "ploge"
@@ -66,16 +65,12 @@
 		projectiletype = /obj/item/projectile/tether/lash
 		for(var/mob/living/target in targets_in_range(in_hear_range = TRUE))
 			if(target.stat == CONSCIOUS && target.faction != "psi_monster")
-				if(isdeaf(target))
+				if(target.earcheck() >= 2) //ear muffs or headset + helm
 					continue
-				if(ishuman(target))
-					var/mob/living/carbon/human/H = target
-					if(istype(H.l_ear, /obj/item/clothing/ears/earmuffs) && istype(H.r_ear, /obj/item/clothing/ears/earmuffs))
-						continue
-					use_ability(target)
-					playsound(src, 'sound/xenomorph/4_xeno_roars.ogg', 200, 1)
+				use_ability(target)
+				playsound(src, 'sound/xenomorph/4_xeno_roars.ogg', 200, 1)
 
-/mob/living/carbon/superior_animal/psi_monster/ploge/proc/use_ability(mob/living/target)
+/mob/living/carbon/superior/psi/ploge/proc/use_ability(mob/living/target)
 	if(target.faction == "psi_monster")
 		return
 	if(target == src)
@@ -92,7 +87,7 @@
 		target.Weaken(4)
 		to_chat(target, SPAN_WARNING("A horrifying roar of primal soul-less terror sears through your mind!"))
 
-/mob/living/carbon/superior_animal/psi_monster/ploge/proc/targets_in_range(range = world.view, in_hear_range = FALSE)
+/mob/living/carbon/superior/psi/ploge/proc/targets_in_range(range = world.view, in_hear_range = FALSE)
 	var/list/range_list = list()
 	var/list/target_list = list()
 	if(in_hear_range)
@@ -106,14 +101,14 @@
 	return target_list
 
 
-/mob/living/carbon/superior_animal/psi_monster/ploge/proc/regain_range()
+/mob/living/carbon/superior/psi/ploge/proc/regain_range()
 	ranged = TRUE
 
 
-/mob/living/carbon/superior_animal/psi_monster/ploge/right_after_firing(atom/firing_target, obj/item/projectile/trace_arg)
+/mob/living/carbon/superior/psi/ploge/right_after_firing(atom/firing_target, obj/item/projectile/trace_arg)
 	ranged = FALSE
 	addtimer(CALLBACK(src, PROC_REF(regain_range)), 60) // gives some time for the monster to run upto or attack the mob
 
-/mob/living/carbon/superior_animal/psi_monster/ploge/UnarmedAttack(atom/A, proximity)
+/mob/living/carbon/superior/psi/ploge/UnarmedAttack(atom/A, proximity)
 	..()
 	ranged = TRUE

@@ -2,7 +2,7 @@
 	name = "\"Sunrise\" laser SMG"
 	desc = "The \"Sunrise\" laser SMG is a Nadezhda Marshal's special in terms of its creation.\
 	This once dated SMG design has been completely stripped down and shoved full of hardware from a Firestorm and Discolaser.\
-	However parts themselves appear to have been modified to allow for the beams to keep much of their power through high-focused lenses!\
+	However the parts themselves are modified to allow for the beams to keep much of their power through high-focused lenses!\
 	Etched into the guns receiver on the left side is a script \"M\" letter."
 	icon = 'icons/obj/guns/energy/sunrise.dmi'
 	icon_state = "sunrise"
@@ -19,9 +19,9 @@
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_STEEL = 20, MATERIAL_PLASTIC = 10, MATERIAL_SILVER = 4, MATERIAL_GLASS = 10, MATERIAL_URANIUM = 2)
 	init_recoil = CARBINE_RECOIL(0.1)
-	damage_multiplier = 0.75
+	damage_multiplier = 0.7
 	penetration_multiplier = 1
-	max_upgrades = 0 //we're good enough as is.
+	max_upgrades = 2 //You can have 2 as a treat since no upgrade port.
 	price_tag = 1500
 	charge_cost = 20
 	gun_tags = list(GUN_LASER, GUN_ENERGY)
@@ -30,6 +30,9 @@
 		FULL_AUTO_600
 		)
 	serial_type = "NM"
+
+	//Blacklisted so you can't make the gun take more than 2 attachments.
+	blacklist_upgrades = list(/obj/item/tool_upgrade/augment/expansion = TRUE)
 
 /obj/item/gun/energy/sunrise/update_icon()
 	..()

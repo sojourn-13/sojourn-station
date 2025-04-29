@@ -54,3 +54,4 @@
 #define SLOT_UNDERBARREL "underbarrel"
 #define SLOT_MECHANICS "mechanics"
 #define SLOT_MAGWELL "magwell"
+

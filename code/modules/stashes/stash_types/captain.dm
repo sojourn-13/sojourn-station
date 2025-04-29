@@ -10,7 +10,7 @@
 	contents_list_extra = list()
 	contents_list_random = list(/obj/item/tank/jetpack/oxygen = 55,
 	/obj/item/tool/chainofcommand = 65,
-	/obj/item/reagent_containers/food/drinks/flask = 50,
+	/obj/item/reagent_containers/drinks/flask = 50,
 	/obj/item/gun/energy/captain = 65,
 	/obj/item/device/radio/headset/heads/captain = 40,
 	/obj/item/bedsheet/captain = 30,

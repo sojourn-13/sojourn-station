@@ -1,7 +1,7 @@
 /obj/item/gun/projectile/automatic/bren
 	name = "\"Kalashnabren\" light machinegun"
 	desc = "A mutilated Kalash model that has been jury rigged to load its magazines from the top. Why, you may ask? Only god knows. No serial numbers nor publishing logos can even be found on the rifle.\
-		The trigger mechanism is attached by a cord externally to create large bursts of fire. Despite this thing looking like it might explode at any second, it can really shoot fast!"
+		The trigger mechanism is attached by a cord externally to allow long bursts of fire. Despite this thing looking like it might explode at any second, it can shoot really fast!"
 	icon = 'icons/obj/guns/projectile/bren.dmi'
 	icon_state = "bren"
 	item_state = "bren"

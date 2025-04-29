@@ -189,7 +189,7 @@
 
 	var/slab_name = occupant.name
 	var/slab_count = 0
-	var/slab_type = /obj/item/reagent_containers/food/snacks/meat
+	var/slab_type = /obj/item/reagent_containers/snacks/meat
 	var/slab_nutrition = 20
 	if(iscarbon(occupant))
 		var/mob/living/carbon/C = occupant
@@ -197,12 +197,12 @@
 
 	// Some mobs have specific meat item types.
 	if(isanimal(src.occupant))
-		var/mob/living/simple_animal/critter = src.occupant
+		var/mob/living/simple/critter = src.occupant
 		if(critter.meat_amount)
 			slab_count = critter.meat_amount
 		if(critter.meat_type)
 			slab_type = critter.meat_type
-		if(!ispath(critter.meat_type, /obj/item/reagent_containers/food/snacks/meat) || slab_count == 0)
+		if(!ispath(critter.meat_type, /obj/item/reagent_containers/snacks/meat) || slab_count == 0)
 			var/mob/living/to_delete = occupant
 			occupant = null
 			qdel(to_delete)
@@ -211,10 +211,10 @@
 			return
 
 	else if(issuperioranimal(occupant))
-		var/mob/living/carbon/superior_animal/s_animal = occupant
+		var/mob/living/carbon/superior/s_animal = occupant
 		slab_type = s_animal.meat_type
 		slab_count = s_animal.meat_amount
-		if(!ispath(s_animal.meat_type, /obj/item/reagent_containers/food/snacks/meat) || slab_count == 0)
+		if(!ispath(s_animal.meat_type, /obj/item/reagent_containers/snacks/meat) || slab_count == 0)
 			var/mob/living/to_delete = occupant
 			occupant = null
 			qdel(to_delete)
@@ -236,7 +236,7 @@
 	spawn(gib_time)
 		if(occupant) //Escape in time?
 			for(var/i=1 to slab_count)
-				var/obj/item/reagent_containers/food/snacks/meat/new_meat = new slab_type(src)
+				var/obj/item/reagent_containers/snacks/meat/new_meat = new slab_type(src)
 				new_meat.name = "[slab_name] [new_meat.name]"
 				new_meat.reagents.add_reagent("nutriment",slab_nutrition)
 				new_meat.initialize_genetics(occupant)

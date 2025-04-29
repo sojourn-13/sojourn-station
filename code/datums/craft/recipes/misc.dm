@@ -110,10 +110,10 @@
 	result = /obj/item/toy/consumer/product/toaster
 	steps = list(
 		list(/obj/item/toy/consumer/kit/toaster, 1, "time" = 50),
-		list(QUALITY_SCREW_DRIVING, 35, "time" = 170),
-		list(QUALITY_BOLT_TURNING, 35, "time" =  200),
-		list(QUALITY_SCREW_DRIVING, 35, "time" = 170),
-		list(QUALITY_PRYING, 35, "time" = 170)
+		list(QUALITY_SCREW_DRIVING, 35, "time" = 50),
+		list(QUALITY_BOLT_TURNING, 35, "time" =  100),
+		list(QUALITY_SCREW_DRIVING, 35, "time" = 50),
+		list(QUALITY_PRYING, 35, "time" = 60)
 	)
 
 /datum/craft_recipe/consumer/bottling_kit
@@ -123,4 +123,29 @@
 		list(CRAFT_MATERIAL, 10, MATERIAL_WOOD),
 		list(CRAFT_MATERIAL, 10, MATERIAL_GLASS),
 		list(/obj/item/circuitboard/autolathe, 1)
+	)
+
+/datum/craft_recipe/consumer/cement_bag
+	name = "Bag: Quick-Cement"
+	result = /obj/item/stack/cement_bag
+	flags = CRAFT_BATCH
+	steps = list(
+		list(/obj/item/stack/ore, 2, "time" = 2),
+	)
+
+/datum/craft_recipe/consumer/hydro_tray_plant_bag_water
+	name = "Bag: Woodchips"
+	result = /obj/item/hydro_tray_plant_bag_water
+	steps = list(
+		list(CRAFT_MATERIAL, 10, MATERIAL_WOOD, "time" = 15),
+		list(QUALITY_CUTTING, 5, 5)
+	)
+
+/datum/craft_recipe/consumer/hydro_tray_plant_bag_nutrient
+	name = "Bag: Mealworms"
+	result = /obj/item/hydro_tray_plant_bag_nutrient
+	steps = list(
+		list(/obj/item/stack/ore, 2, "time" = 15),
+		list(/obj/item/reagent_containers/snacks/meat, 2, "time" = 2),
+		list(QUALITY_CUTTING, 10, 10)
 	)

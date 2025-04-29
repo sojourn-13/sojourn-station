@@ -482,7 +482,7 @@
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/outside/mountainsolars)
 "cc" = (
-/mob/living/simple_animal/jungle_bird,
+/mob/living/simple/jungle_bird,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/mountainsolars)
 "cd" = (
@@ -796,7 +796,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/mountainsolars)
 "df" = (
-/mob/living/simple_animal/snail,
+/mob/living/simple/snail,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/mountainsolars)
 "dg" = (
@@ -816,7 +816,7 @@
 "dj" = (
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
-/mob/living/simple_animal/frog,
+/mob/living/simple/frog,
 /turf/simulated/floor/beach/water/shallow,
 /area/nadezhda/outside/mountainsolars)
 "dk" = (
@@ -842,7 +842,7 @@
 "dp" = (
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
-/mob/living/simple_animal/crab,
+/mob/living/simple/crab,
 /turf/simulated/floor/beach/water/shallow,
 /area/nadezhda/outside/mountainsolars)
 "dq" = (
@@ -877,7 +877,7 @@
 "dx" = (
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
-/mob/living/simple_animal/goose,
+/mob/living/simple/goose,
 /turf/simulated/floor/beach/water/shallow,
 /area/nadezhda/outside/mountainsolars)
 "dy" = (
@@ -1448,7 +1448,7 @@
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/outside/mountainsolars)
 "ox" = (
-/obj/item/reagent_containers/food/drinks/bottle/small/beer_two,
+/obj/item/reagent_containers/drinks/bottle/small/beer_two,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/mountainsolars)
 "oG" = (
@@ -1871,7 +1871,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/glass,
-/obj/item/reagent_containers/food/drinks/bottle/small/beer,
+/obj/item/reagent_containers/drinks/bottle/small/beer,
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/outside/mountainsolars)
 "xg" = (
@@ -2815,7 +2815,7 @@
 /turf/simulated/floor/carpet/oracarpet,
 /area/nadezhda/engineering/dorm)
 "Rb" = (
-/obj/item/reagent_containers/food/drinks/bottle/small/beer_two,
+/obj/item/reagent_containers/drinks/bottle/small/beer_two,
 /obj/structure/flora/small/bushc3,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/mountainsolars)

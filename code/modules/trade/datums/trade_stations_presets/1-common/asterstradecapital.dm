@@ -6,6 +6,9 @@
 		list(24, 26),
 		list(30, 30)
 	)
+
+	icon_states = list("capital", "station")
+
 	uid = "asterstradecapital"
 	tree_x = 0.58
 	tree_y = 0.9
@@ -22,7 +25,7 @@
 			/obj/item/clothing/suit/storage/hazardvest,
 			/obj/item/storage/pouch/small_generic,
 			/obj/item/storage/pouch/ammo,
-			/obj/item/storage/belt/utility,
+			/obj/item/storage/belt/utility = good_data("empty toolbelt", list(5, 20), 70),
 			/obj/item/device/lighting/toggleable/flashlight,
 			/obj/item/device/lighting/toggleable/flashlight/heavy,
 			/obj/item/device/lightreplacer,
@@ -35,7 +38,18 @@
 			/obj/item/tool/weldingtool,
 			/obj/item/tool/tape_roll,
 			/obj/item/device/geiger,
-			/obj/item/device/toner
+			/obj/item/device/toner,
+			/obj/item/reagent_containers/drinks/cans/monocan = good_data("Mono-Can", list(1, 10), 35),
+			/obj/item/reagent_containers/drinks/cans/moonwatercan = good_data("Moon-Can", list(1, 10), 35)
+		),
+		"Storage Utilities" = list(
+			/obj/item/storage/hcases/ammo,
+			/obj/item/storage/hcases/parts,
+			/obj/item/storage/hcases/med,
+			/obj/item/storage/hcases/engi,
+			/obj/item/storage/bag/produce,
+			/obj/item/storage/bag/sheetsnatcher,
+			/obj/item/storage/bag/chemistry
 		),
 		"Lonestar Cells" = list(
 			/obj/item/cell/small,
@@ -48,7 +62,7 @@
 			/obj/item/cell/large/high,
 			/obj/item/cell/large/super
 		),
-		"Lonestar Grenade" = list(
+		"Lonestar Grenades" = list(
 			/obj/item/grenade/chem_grenade/antiweed,
 			/obj/item/grenade/chem_grenade/cleaner,
 			/obj/item/grenade/chem_grenade/metalfoam
@@ -82,7 +96,9 @@
 			/obj/item/toy/figure/character/bobblehead/red_soldier,
 			/obj/item/toy/figure/character/bobblehead/metacat,
 			/obj/item/toy/figure/character/bobblehead/shitcurity,
-			/obj/item/toy/figure/character/bobblehead/metro_patrolman
+			/obj/item/toy/figure/character/bobblehead/metro_patrolman,
+			/obj/item/gun/projectile/revolver/capgun,
+			/obj/item/storage/box/blanks
 		),
 		"Holland and Sullivan Sidearms & Ammunition" = list(
 			/obj/item/clothing/accessory/holster,
@@ -102,14 +118,14 @@
 			/obj/item/ammo_magazine/ammobox/pistol_35/rubber
 		),
 		"Solnishko 'Guns-from-Home' Parts" = list(
-			/obj/item/computer_hardware/hard_drive/portable/design/gun_parts/bootleg = good_data("Solnishko Distrubtion - Homemade Parts", list(1, 1), 600),
+			/obj/item/pc_part/drive/disk/design/gun_parts/bootleg = good_data("Solnishko Distrubtion - Homemade Parts", list(1, 1), 600),
 			/obj/item/part/gun/grip/wood,
 			/obj/item/part/gun/mechanism/pistol,
 			/obj/item/part/gun/mechanism/revolver,
 			/obj/item/part/gun/barrel/pistol,
 			/obj/item/part/gun/barrel/magnum
 		),
-		"Miscellanous" = list(
+		"Miscellaneous" = list(
 			/obj/item/device/camera,
 			/obj/item/device/camera_film,
 			/obj/item/storage/photo_album,
@@ -162,7 +178,7 @@
 			/obj/structure/synthesized_instrument/synthesizer/piano = good_data("Piano", list(-4, 2), 1200),
 			/obj/item/media/boombox = good_data("NT Boom Box", list(-400000000, -399999999), 300) //When will K5 fix this???
 		),
-		"Nicknacks & Bobbles" = list(
+		"Trinkets & Baubles" = list(
 			/obj/item/oddity/ls/collector_coin = custom_good_amount_range(list(3, 6)),
 			/obj/item/oddity/ls/pamphlet = custom_good_amount_range(list(3, 6)),
 			/obj/item/oddity/ls/rod_figure = custom_good_amount_range(list(3, 6)),
@@ -185,7 +201,7 @@
 
 	offer_types = list(
 		/obj/item/tool/knife = offer_data("spare knifes", 30, 20),
-		/obj/item/reagent_containers/food/snacks/grown = offer_data("spare grown food", 10, 120), //10 credits a grown item basicl
+		/obj/item/reagent_containers/snacks/grown = offer_data("spare grown food", 10, 120), //10 credits a grown item basicl
 		/datum/reagent/organic/nutriment/honey = offer_data("Honey bottle (60u)", 800, 1),
 		/obj/item/organ/external/robotic/one_star = offer_data("grayson external prosthetic", 1800, 4),
 		/obj/item/toy/consumer/product/toaster = offer_data("toolbox toaster", 250, 4)

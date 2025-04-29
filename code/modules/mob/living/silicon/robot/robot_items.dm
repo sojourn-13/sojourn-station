@@ -147,7 +147,7 @@
 
 		var addedSomething = 0
 
-		for(var/obj/item/reagent_containers/food/I in pickup)
+		for(var/obj/item/reagent_containers/I in pickup)
 
 
 			if( I != src && !I.anchored && !istype(I, /obj/item/clothing/under) && !istype(I, /obj/item/clothing/suit) && !istype(I, /obj/item/projectile) )
@@ -766,35 +766,14 @@
 	can_hold = list(
 		/obj/item/seeds,
 		/obj/item/grown,
-		/obj/item/reagent_containers/food/snacks/grown,
-		/obj/item/reagent_containers/food/snacks/egg,
-		/obj/item/reagent_containers/food/snacks/meat
+		/obj/item/reagent_containers/snacks/grown,
+		/obj/item/reagent_containers/snacks/egg,
+		/obj/item/reagent_containers/snacks/meat
 	)
 
-/obj/item/storage/bag/robotic/trash
+/obj/item/storage/bag/trash/big/robotic
 	name = "internal trash container"
 	desc = "An internalized trash container for gathering trash. Become a walking trash can, today!"
-	icon = 'icons/obj/janitor.dmi'
-	icon_state = "trashbag0"
-	item_state = "trashbag"
-	w_class = ITEM_SIZE_BULKY
-	max_storage_space = DEFAULT_BULKY_STORAGE * 2
-	max_w_class = ITEM_SIZE_SMALL
-	can_hold = list(/obj/item) //hacky fix maybe to let them pick up items
-	cant_hold = list(/obj/item/disk/nuclear)
-
-/obj/item/storage/bag/robotic/trash/autoload(mob/user as mob)
-	return //Prevent the trash bag from autoloading everything during movement, for sanity.
-
-/obj/item/storage/bag/robotic/trash/update_icon()
-	if(contents.len == 0)
-		icon_state = "trashbag0"
-	else if(contents.len < 24)
-		icon_state = "trashbag1"
-	else if(contents.len < 42)
-		icon_state = "trashbag2"
-	else
-		icon_state = "trashbag3"
 
 /obj/item/storage/bag/robotic/sheetsnatcher
 	name = "heavy-duty sheet snatcher"
@@ -816,11 +795,11 @@
 	matter = list(MATERIAL_STEEL = 4, MATERIAL_GOLD = 4, MATERIAL_DIAMOND = 2, MATERIAL_URANIUM = 2)
 	origin_tech = list(TECH_BLUESPACE = 4)
 	can_hold = list(/obj/item/stack/ore,
-	                /obj/item/reagent_containers/food/snacks/grown,
+	                /obj/item/reagent_containers/snacks/grown,
 	                /obj/item/seeds,
 	                /obj/item/grown,
-	                /obj/item/reagent_containers/food/snacks/egg,
-	                /obj/item/reagent_containers/food/snacks/meat)
+	                /obj/item/reagent_containers/snacks/egg,
+	                /obj/item/reagent_containers/snacks/meat)
 
 /obj/item/storage/bag/ore/holding/New()
 	..()

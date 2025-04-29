@@ -456,7 +456,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 
 
 	//find a viable mouse candidate
-	var/mob/living/simple_animal/mouse/host
+	var/mob/living/simple/mouse/host
 	var/obj/machinery/atmospherics/unary/vent_pump/spawnpoint
 	if (response == "Random")
 		spawnpoint = find_mouse_random_spawnpoint(T.z)
@@ -464,7 +464,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		spawnpoint = find_mouse_near_spawnpoint(T)
 
 	if (spawnpoint)
-		host = new /mob/living/simple_animal/mouse(spawnpoint.loc)
+		host = new /mob/living/simple/mouse(spawnpoint.loc)
 	else
 		to_chat(src, "<span class='warning'>Unable to find any safe, unwelded vents to spawn mice at. The colony must be quite a mess!  Trying again might work, if you think there's still a safe place. </span>")
 

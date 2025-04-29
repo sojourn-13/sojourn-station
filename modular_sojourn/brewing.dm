@@ -37,14 +37,14 @@
 		var/obj/item/bottle_kit/BK = I
 		bottle(BK.glass_colour)
 
-	if(istype(I, /obj/item/reagent_containers/food/snacks/grown))
+	if(istype(I, /obj/item/reagent_containers/snacks/grown))
 		produce_list = list(I)
 
 	if(istype(I, /obj/item/storage/bag/produce))
 		POUCH = I
 		produce_list = POUCH.contents
 
-	for(var/obj/item/reagent_containers/food/snacks/grown/G in produce_list)
+	for(var/obj/item/reagent_containers/snacks/grown/G in produce_list)
 		if(G.seed.name in selected_recipe?.needed_crops)
 			var/amount = recipe_crop_stocks[G.seed.name] || 0
 			recipe_crop_stocks[G.seed.name] = amount + 1
@@ -227,7 +227,7 @@
 
 			var/bottlecaps
 			for(bottlecaps=0, bottlecaps<selected_recipe.brewed_amount, bottlecaps++)
-				var/obj/item/reagent_containers/food/drinks/bottle/small/brewing_bottle/bottle_made = new /obj/item/reagent_containers/food/drinks/bottle/small/brewing_bottle(get_turf(src))
+				var/obj/item/reagent_containers/drinks/bottle/small/brewing_bottle/bottle_made = new /obj/item/reagent_containers/drinks/bottle/small/brewing_bottle(get_turf(src))
 				bottle_made.icon_state = "[glass_colour]"
 				bottle_made.reagents.add_reagent("[selected_recipe.reagent_to_brew]", selected_recipe.bottled_brew_amount)
 				bottle_made.icon_state_full = "[glass_colour]"

@@ -143,14 +143,6 @@
 	pass_flags = PASSTABLE | PASSGLASS | PASSGRILLE
 	hitscan = FALSE
 
-/obj/item/projectile/slime_death/on_impact(atom/target)//These two could likely check temp protection on the mob
-	if (!testing)
-		if(isliving(target))
-			if(isslime(target))
-				var/mob/living/carbon/slime/cute = target
-				nodamage = FALSE
-				cute.death() // The cute slime dies.
-
 /obj/item/projectile/meteor
 	name = "meteor"
 	icon = 'icons/obj/meteor.dmi'
@@ -351,6 +343,7 @@
 
 		//blind adjacent people with enhanced vision
 		for (var/mob/living/carbon/M in viewers(T, flash_range))
+			M.update_equipment_vision()
 			if(M.eyecheck() < FLASH_PROTECTION_NONE)
 				flash(0, FALSE,FALSE,FALSE)
 

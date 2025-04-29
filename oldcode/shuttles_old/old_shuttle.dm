@@ -108,7 +108,7 @@
 	for(var/mob/living/carbon/bug in destination)
 		bug.gib()
 
-	for(var/mob/living/simple_animal/pest in destination)
+	for(var/mob/living/simple/pest in destination)
 		pest.gib()
 
 	origin.move_contents_to(destination, direction=direction)
@@ -136,7 +136,7 @@
 		break
 
 	for(var/obj/structure/plasticflaps/mining/F in destination)
-		F.update_turf_underneath(1)	//костыли вы мои костылики
+		F.update_turf_underneath(1)	//пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 
 	if(update_power)
 		makepowernets()

@@ -1,5 +1,5 @@
 //Fuhrer roach is a colossal, slow moving leader
-/mob/living/carbon/superior_animal/roach/fuhrer
+/mob/living/carbon/superior/roach/fuhrer
 	name = "Fuhrer Roach"
 	desc = "A glorious leader of cockroaches. Literally Hitler."
 	icon_state = "fuhrer"
@@ -25,21 +25,21 @@
 	armor = list(melee = 3, bullet = 1, energy = 0, bomb = 5, bio = 20, rad = 0, agony = 0)
 	armor_divisor = 1.25
 
-	meat_type = /obj/item/reagent_containers/food/snacks/meat/roachmeat/fuhrer
+	meat_type = /obj/item/reagent_containers/snacks/meat/roachmeat/fuhrer
 	meat_amount = 6
 
 	sanity_damage = 1
 
 	inherent_mutations = list(MUTATION_ROACH_BLOOD, MUTATION_ROACH_FRIEND, MUTATION_DEAF, MUTATION_TOURETTES, MUTATION_EPILEPSY)
+	fancy_attack_shading = "#FFFFED"
 
 
-
-/mob/living/carbon/superior_animal/roach/fuhrer/bullet_act(var/obj/item/projectile/P)
+/mob/living/carbon/superior/roach/fuhrer/bullet_act(var/obj/item/projectile/P)
 	.=..()
 	if (!(P.testing))
 		distress_call()
 
-/mob/living/carbon/superior_animal/roach/fuhrer/attackby()
+/mob/living/carbon/superior/roach/fuhrer/attackby()
 	.=..()
 	distress_call()
 
@@ -51,7 +51,7 @@ flood into this room and surrounding ones.
 
 Each leader can only call reinforcements once in its life. But it can also sound an evacuation once. If it has no
 reinforcements left it will attempt to evacuate*/
-/mob/living/carbon/superior_animal/roach/fuhrer/proc/distress_call()
+/mob/living/carbon/superior/roach/fuhrer/proc/distress_call()
 	if(stat != CONSCIOUS) // if the roach is conscious
 		return
 
@@ -108,5 +108,5 @@ reinforcements left it will attempt to evacuate*/
 				B.evacuate()
 
 // Fuhrers won't slip over on water or soap.
-/mob/living/carbon/superior_animal/roach/fuhrer/slip(var/slipped_on,stun_duration=8)
+/mob/living/carbon/superior/roach/fuhrer/slip(var/slipped_on,stun_duration=8)
 	return FALSE

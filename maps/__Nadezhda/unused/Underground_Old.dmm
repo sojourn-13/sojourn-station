@@ -1889,7 +1889,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/generic,
 /obj/effect/decal/cleanable/filth,
-/mob/living/simple_animal/hostile/naniteswarm{
+/mob/living/simple/hostile/naniteswarm{
 	desc = "A swarm of disgusting mini locusts infested with disease and hatred.";
 	name = "infested miniroach cluster"
 	},
@@ -2549,7 +2549,7 @@
 /obj/effect/decal/cleanable/cobweb2,
 /obj/effect/floor_decal/rust,
 /obj/random/lowkeyrandom/low_chance,
-/mob/living/simple_animal/hostile/naniteswarm{
+/mob/living/simple/hostile/naniteswarm{
 	desc = "A swarm of disgusting mini locusts infested with disease and hatred.";
 	name = "infested miniroach cluster"
 	},
@@ -3823,7 +3823,7 @@
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/command/merchant)
 "aki" = (
-/mob/living/simple_animal/hostile/jelly/bloat,
+/mob/living/simple/hostile/jelly/bloat,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/maintenance/northcave)
 "akj" = (
@@ -7892,7 +7892,7 @@
 /obj/structure/flora/small/trailrockb4,
 /obj/effect/decal/cleanable/rubble,
 /obj/effect/floor_decal/rust,
-/mob/living/simple_animal/hostile/naniteswarm{
+/mob/living/simple/hostile/naniteswarm{
 	desc = "A swarm of disgusting mini locusts infested with disease and hatred.";
 	name = "infested miniroach cluster"
 	},
@@ -7930,7 +7930,7 @@
 /obj/structure/railing,
 /obj/effect/floor_decal/spline/plain,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/naniteswarm{
+/mob/living/simple/hostile/naniteswarm{
 	desc = "A swarm of disgusting mini locusts infested with disease and hatred.";
 	name = "infested miniroach cluster"
 	},
@@ -11125,7 +11125,7 @@
 "aDm" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/mob/living/simple_animal/cat/fluff/Runtime,
+/mob/living/simple/cat/fluff/Runtime,
 /turf/simulated/floor/carpet/blucarpet,
 /area/nadezhda/command/cbo)
 "aDn" = (
@@ -12131,7 +12131,7 @@
 /area/nadezhda/maintenance/undergroundfloor1central)
 "aFL" = (
 /obj/structure/table/glass,
-/obj/item/reagent_containers/food/snacks/sliceable/pizza/margherita{
+/obj/item/reagent_containers/snacks/pizza/margherita{
 	desc = "No one knows how long this has been here.";
 	name = "old cold pizza"
 	},
@@ -12668,11 +12668,11 @@
 /turf/simulated/floor/carpet/sblucarpet,
 /area/nadezhda/medical/medbreak)
 "aGV" = (
-/obj/item/reagent_containers/food/drinks/cans/dr_gibb{
+/obj/item/reagent_containers/drinks/cans/dr_gibb{
 	pixel_x = -3;
 	pixel_y = -1
 	},
-/obj/item/reagent_containers/food/drinks/cans/dr_gibb{
+/obj/item/reagent_containers/drinks/cans/dr_gibb{
 	pixel_x = 4;
 	pixel_y = 3
 	},
@@ -13184,7 +13184,7 @@
 /turf/simulated/floor/tiled/white/cargo,
 /area/nadezhda/rnd/xenobiology)
 "aIh" = (
-/mob/living/simple_animal/mouse,
+/mob/living/simple/mouse,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1central)
 "aIi" = (
@@ -13587,7 +13587,7 @@
 "aJd" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/generic,
-/mob/living/simple_animal/mouse,
+/mob/living/simple/mouse,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/quartermaster/disposaldrop)
 "aJe" = (
@@ -14809,7 +14809,7 @@
 	},
 /obj/item/trash/plate,
 /obj/random/junkfood/rotten,
-/obj/item/reagent_containers/food/condiment/saltshaker,
+/obj/item/reagent_containers/condiment/saltshaker,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1central)
 "aMq" = (
@@ -14826,7 +14826,7 @@
 /area/nadezhda/maintenance/undergroundfloor1central)
 "aMs" = (
 /obj/structure/kitchenspike,
-/obj/item/reagent_containers/food/snacks/meat/corgi,
+/obj/item/reagent_containers/snacks/meat/corgi,
 /obj/effect/decal/cleanable/blood,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint,
@@ -14990,14 +14990,14 @@
 /area/nadezhda/maintenance/undergroundfloor1central)
 "aMN" = (
 /obj/structure/table/steel,
-/obj/item/reagent_containers/food/condiment/peppermill,
-/obj/item/reagent_containers/food/drinks/dry_ramen,
+/obj/item/reagent_containers/condiment/peppermill,
+/obj/item/reagent_containers/drinks/dry_ramen,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1central)
 "aMO" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/constructable_frame/machine_frame,
-/obj/item/reagent_containers/food/snacks/badrecipe,
+/obj/item/reagent_containers/snacks/badrecipe,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/maintenance/undergroundfloor1central)
 "aMP" = (
@@ -15489,19 +15489,19 @@
 /area/nadezhda/maintenance/undergroundfloor1central)
 "aOe" = (
 /obj/structure/table/steel,
-/obj/item/reagent_containers/food/drinks/dry_ramen,
+/obj/item/reagent_containers/drinks/dry_ramen,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/maintenance/undergroundfloor1central)
 "aOf" = (
 /obj/structure/table/steel,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/reagent_containers/food/drinks/dry_ramen,
+/obj/item/reagent_containers/drinks/dry_ramen,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/maintenance/undergroundfloor1central)
 "aOg" = (
 /obj/structure/table/steel,
 /obj/item/trash/tray,
-/obj/item/reagent_containers/food/snacks/human/kabob,
+/obj/item/reagent_containers/snacks/human/kabob,
 /obj/random/junkfood/rotten,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/maintenance/undergroundfloor1central)
@@ -15840,19 +15840,19 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/steel,
 /obj/item/trash/tray,
-/obj/item/reagent_containers/food/snacks/kampferburger,
+/obj/item/reagent_containers/snacks/kampferburger,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/maintenance/undergroundfloor1central)
 "aOS" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/steel,
-/obj/item/reagent_containers/food/snacks/meat/human,
+/obj/item/reagent_containers/snacks/meat/human,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/maintenance/undergroundfloor1central)
 "aOT" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/steel,
-/obj/item/reagent_containers/food/condiment/flour,
+/obj/item/reagent_containers/condiment/flour,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/maintenance/undergroundfloor1central)
 "aOU" = (
@@ -17651,7 +17651,7 @@
 "aUe" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/cow,
+/mob/living/simple/cow,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/maintenance/undergroundfloor1oldgarden)
 "aUf" = (
@@ -17672,7 +17672,7 @@
 /area/nadezhda/maintenance/undergroundfloor1oldgarden)
 "aUi" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/scarybat,
+/mob/living/simple/hostile/scarybat,
 /turf/simulated/floor/rock,
 /area/nadezhda/maintenance/undergroundfloor1oldgarden)
 "aUj" = (
@@ -19096,7 +19096,7 @@
 /area/nadezhda/maintenance/undergroundfloor1east)
 "aYe" = (
 /obj/structure/closet/cabinet,
-/obj/item/reagent_containers/food/drinks/bottle/vodka,
+/obj/item/reagent_containers/drinks/bottle/vodka,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "aYf" = (
@@ -19195,8 +19195,8 @@
 /area/nadezhda/crew_quarters/cafeteria)
 "aYt" = (
 /obj/structure/table/standard,
-/obj/item/reagent_containers/food/condiment/peppermill,
-/obj/item/reagent_containers/food/condiment/saltshaker{
+/obj/item/reagent_containers/condiment/peppermill,
+/obj/item/reagent_containers/condiment/saltshaker{
 	pixel_x = 8
 	},
 /turf/simulated/floor/tiled/cafe,
@@ -21217,7 +21217,7 @@
 /area/nadezhda/maintenance/undergroundfloor1oldgarden)
 "bdB" = (
 /obj/structure/flora/ausbushes/fullgrass,
-/mob/living/simple_animal/chicken,
+/mob/living/simple/chicken,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/maintenance/undergroundfloor1oldgarden)
 "bdC" = (
@@ -21334,8 +21334,8 @@
 /area/nadezhda/crew_quarters/cafeteria)
 "bdM" = (
 /obj/structure/table/standard,
-/obj/item/reagent_containers/food/condiment/peppermill,
-/obj/item/reagent_containers/food/condiment/saltshaker{
+/obj/item/reagent_containers/condiment/peppermill,
+/obj/item/reagent_containers/condiment/saltshaker{
 	pixel_x = 8
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
@@ -24627,7 +24627,7 @@
 /area/nadezhda/command/fo)
 "blK" = (
 /obj/random/contraband/low_chance,
-/mob/living/simple_animal/mouse,
+/mob/living/simple/mouse,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor2south)
 "blL" = (
@@ -25028,7 +25028,7 @@
 /area/nadezhda/maintenance/undergroundfloor2south)
 "bmU" = (
 /obj/structure/closet/cabinet,
-/obj/item/reagent_containers/food/drinks/bottle/vodka,
+/obj/item/reagent_containers/drinks/bottle/vodka,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/maintenance/undergroundfloor2south)
 "bmV" = (
@@ -25542,7 +25542,7 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/naniteswarm{
+/mob/living/simple/hostile/naniteswarm{
 	desc = "A swarm of disgusting mini locusts infested with disease and hatred.";
 	name = "infested miniroach cluster"
 	},
@@ -26646,7 +26646,7 @@
 /area/nadezhda/maintenance/undergroundfloor2south)
 "brr" = (
 /obj/effect/damagedfloor/rust,
-/mob/living/simple_animal/hostile/naniteswarm{
+/mob/living/simple/hostile/naniteswarm{
 	desc = "A swarm of disgusting mini locusts infested with disease and hatred.";
 	name = "infested miniroach cluster"
 	},
@@ -27725,17 +27725,17 @@
 /area/nadezhda/engineering/engine_room)
 "btY" = (
 /obj/structure/closet/crate/freezer/rations,
-/obj/item/reagent_containers/food/snacks/liquidfood,
-/obj/item/reagent_containers/food/snacks/liquidfood,
-/obj/item/reagent_containers/food/snacks/liquidfood,
-/obj/item/reagent_containers/food/snacks/liquidfood,
-/obj/item/reagent_containers/food/snacks/liquidfood,
-/obj/item/reagent_containers/food/snacks/liquidfood,
-/obj/item/reagent_containers/food/snacks/tastybread,
-/obj/item/reagent_containers/food/snacks/tastybread,
-/obj/item/reagent_containers/food/snacks/tastybread,
-/obj/item/reagent_containers/food/snacks/tastybread,
-/obj/item/reagent_containers/food/snacks/tastybread,
+/obj/item/reagent_containers/snacks/liquidfood,
+/obj/item/reagent_containers/snacks/liquidfood,
+/obj/item/reagent_containers/snacks/liquidfood,
+/obj/item/reagent_containers/snacks/liquidfood,
+/obj/item/reagent_containers/snacks/liquidfood,
+/obj/item/reagent_containers/snacks/liquidfood,
+/obj/item/reagent_containers/snacks/tastybread,
+/obj/item/reagent_containers/snacks/tastybread,
+/obj/item/reagent_containers/snacks/tastybread,
+/obj/item/reagent_containers/snacks/tastybread,
+/obj/item/reagent_containers/snacks/tastybread,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/command/panic_room)
 "btZ" = (
@@ -34434,11 +34434,11 @@
 /turf/simulated/open,
 /area/nadezhda/maintenance/undergroundfloor2north)
 "bKv" = (
-/mob/living/simple_animal/frog/rare,
+/mob/living/simple/frog/rare,
 /turf/simulated/floor/beach/water/shallow,
 /area/nadezhda/hallway/side/f2section1)
 "bKw" = (
-/mob/living/simple_animal/crab/Coffee,
+/mob/living/simple/crab/Coffee,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/hallway/side/f2section1)
 "bKx" = (
@@ -34976,10 +34976,10 @@
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "bLJ" = (
-/obj/item/gun/projectile/shotgun/bull{
+/obj/item/gun/projectile/shotgun/pump/bull{
 	pixel_y = 8
 	},
-/obj/item/gun/projectile/shotgun/bull,
+/obj/item/gun/projectile/shotgun/pump/bull,
 /obj/structure/closet/crate/secure/weapon{
 	name = "shotgun crate"
 	},
@@ -35467,8 +35467,8 @@
 /area/nadezhda/command/fo)
 "bMM" = (
 /obj/structure/table/reinforced,
-/obj/item/computer_hardware/hard_drive/portable/design/nonlethal_ammo,
-/obj/item/computer_hardware/hard_drive/portable/design/lethal_ammo,
+/obj/item/pc_part/drive/disk/design/nonlethal_ammo,
+/obj/item/pc_part/drive/disk/design/lethal_ammo,
 /obj/random/lathe_disk/advanced/low_chance,
 /turf/simulated/floor/tiled/white/gray_perforated,
 /area/nadezhda/command/fo)
@@ -36140,10 +36140,10 @@
 /area/nadezhda/command/captain/quarters)
 "bOj" = (
 /obj/structure/table/standard,
-/obj/item/reagent_containers/food/condiment/saltshaker{
+/obj/item/reagent_containers/condiment/saltshaker{
 	pixel_x = 4
 	},
-/obj/item/reagent_containers/food/condiment/peppermill{
+/obj/item/reagent_containers/condiment/peppermill{
 	pixel_x = -4
 	},
 /obj/item/material/kitchen/rollingpin,
@@ -36159,7 +36159,7 @@
 /area/nadezhda/command/captain)
 "bOm" = (
 /obj/structure/disposalpipe/segment,
-/mob/living/simple_animal/corgi/Ian,
+/mob/living/simple/corgi/Ian,
 /turf/simulated/floor/carpet/blucarpet,
 /area/nadezhda/command/captain)
 "bOn" = (
@@ -36307,7 +36307,7 @@
 	dir = 1
 	},
 /obj/structure/table/standard,
-/mob/living/simple_animal/parrot/Poly,
+/mob/living/simple/parrot/Poly,
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/command/gmaster)
 "bOE" = (
@@ -36530,11 +36530,11 @@
 	icon_state = "0-2"
 	},
 /obj/structure/table/reinforced,
-/obj/item/computer_hardware/hard_drive/portable/design/misc,
-/obj/item/computer_hardware/hard_drive/portable/design/circuits,
-/obj/item/computer_hardware/hard_drive/portable/design/components,
-/obj/item/computer_hardware/hard_drive/portable/design/engineering,
-/obj/item/computer_hardware/hard_drive/portable/design/misc,
+/obj/item/pc_part/drive/disk/design/misc,
+/obj/item/pc_part/drive/disk/design/circuits,
+/obj/item/pc_part/drive/disk/design/components,
+/obj/item/pc_part/drive/disk/design/engineering,
+/obj/item/pc_part/drive/disk/design/misc,
 /obj/item/stack/material/steel/full,
 /obj/item/stack/material/glass{
 	amount = 120
@@ -36631,7 +36631,7 @@
 /turf/simulated/floor/wood,
 /area/nadezhda/crew_quarters/dorm4)
 "bPi" = (
-/mob/living/simple_animal/mouse,
+/mob/living/simple/mouse,
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/nadezhda/maintenance/undergroundfloor1central)
 "bPj" = (
@@ -37416,7 +37416,7 @@
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/crew_quarters/podrooms2)
 "bQX" = (
-/obj/item/reagent_containers/food/snacks/stewedsoymeat{
+/obj/item/reagent_containers/snacks/stewedsoymeat{
 	desc = "Purrfect for any feline dinning!";
 	name = "Runtime's wet food"
 	},
@@ -43148,7 +43148,7 @@
 "ced" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/mob/living/simple_animal/lizard,
+/mob/living/simple/lizard,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/quartermaster/hangarsupply)
 "cee" = (
@@ -46850,8 +46850,8 @@
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/reception)
 "cmu" = (
-/obj/item/reagent_containers/food/condiment/peppermill,
-/obj/item/reagent_containers/food/condiment/saltshaker{
+/obj/item/reagent_containers/condiment/peppermill,
+/obj/item/reagent_containers/condiment/saltshaker{
 	pixel_x = 8
 	},
 /obj/structure/table/woodentable,
@@ -47680,7 +47680,7 @@
 /area/nadezhda/command/cbo)
 "cox" = (
 /obj/structure/table/glass,
-/obj/item/reagent_containers/food/drinks/cans/waterbottle,
+/obj/item/reagent_containers/drinks/cans/waterbottle,
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/crew_quarters/hydroponics)
 "coy" = (
@@ -49183,9 +49183,9 @@
 /area/nadezhda/quartermaster/hangarsupply)
 "crM" = (
 /obj/structure/table/woodentable,
-/obj/item/reagent_containers/food/drinks/teapot,
-/obj/item/reagent_containers/food/drinks/mug/teacup,
-/obj/item/reagent_containers/food/drinks/mug/teacup{
+/obj/item/reagent_containers/drinks/teapot,
+/obj/item/reagent_containers/drinks/mug/teacup,
+/obj/item/reagent_containers/drinks/mug/teacup{
 	pixel_x = 6;
 	pixel_y = 8
 	},
@@ -51598,8 +51598,8 @@
 /turf/simulated/floor/wood,
 /area/nadezhda/crew_quarters/bar)
 "cxp" = (
-/obj/item/reagent_containers/food/condiment/peppermill,
-/obj/item/reagent_containers/food/condiment/saltshaker{
+/obj/item/reagent_containers/condiment/peppermill,
+/obj/item/reagent_containers/condiment/saltshaker{
 	pixel_x = 8
 	},
 /obj/structure/table/woodentable,
@@ -51637,8 +51637,8 @@
 /turf/simulated/floor/tiled/steel/gray_platform,
 /area/nadezhda/storage/primary)
 "cxu" = (
-/obj/item/reagent_containers/food/condiment/peppermill,
-/obj/item/reagent_containers/food/condiment/saltshaker{
+/obj/item/reagent_containers/condiment/peppermill,
+/obj/item/reagent_containers/condiment/saltshaker{
 	pixel_x = 8
 	},
 /obj/structure/table/woodentable,
@@ -52646,7 +52646,7 @@
 "czA" = (
 /obj/random/junkfood/low_chance,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/mouse/white,
+/mob/living/simple/mouse/white,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/rnd/xenobiology)
 "czB" = (
@@ -54969,9 +54969,9 @@
 /obj/structure/closet/secure_closet/freezer/kitchen{
 	name = "fridge"
 	},
-/obj/item/reagent_containers/food/drinks/milk,
-/obj/item/reagent_containers/food/drinks/milk,
-/obj/item/reagent_containers/food/drinks/milk,
+/obj/item/reagent_containers/drinks/milk,
+/obj/item/reagent_containers/drinks/milk,
+/obj/item/reagent_containers/drinks/milk,
 /obj/item/storage/fancy/egg_box,
 /obj/item/storage/fancy/egg_box,
 /turf/simulated/floor/tiled/cafe,
@@ -55007,14 +55007,14 @@
 /obj/structure/closet{
 	name = "pantry"
 	},
-/obj/item/reagent_containers/food/snacks/spagetti,
-/obj/item/reagent_containers/food/snacks/spagetti,
-/obj/item/reagent_containers/food/snacks/spagetti,
-/obj/item/reagent_containers/food/snacks/spagetti,
-/obj/item/reagent_containers/food/drinks/soymilk,
-/obj/item/reagent_containers/food/drinks/dry_ramen,
-/obj/item/reagent_containers/food/drinks/dry_ramen,
-/obj/item/reagent_containers/food/drinks/dry_ramen,
+/obj/item/reagent_containers/snacks/spagetti,
+/obj/item/reagent_containers/snacks/spagetti,
+/obj/item/reagent_containers/snacks/spagetti,
+/obj/item/reagent_containers/snacks/spagetti,
+/obj/item/reagent_containers/drinks/soymilk,
+/obj/item/reagent_containers/drinks/dry_ramen,
+/obj/item/reagent_containers/drinks/dry_ramen,
+/obj/item/reagent_containers/drinks/dry_ramen,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/crew_quarters/kitchen)
 "cFE" = (
@@ -55312,7 +55312,7 @@
 /turf/simulated/floor/tiled/dark/cargo,
 /area/nadezhda/rnd/circuitlab)
 "cGp" = (
-/obj/item/reagent_containers/food/drinks/shaker,
+/obj/item/reagent_containers/drinks/shaker,
 /obj/machinery/light,
 /obj/structure/table/marble,
 /obj/machinery/button/remote/blast_door{
@@ -55673,7 +55673,7 @@
 	dir = 8;
 	icon_state = "warning"
 	},
-/obj/item/computer_hardware/hard_drive/portable/design/misc,
+/obj/item/pc_part/drive/disk/design/misc,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/rnd/robotics)
 "cHj" = (
@@ -56106,11 +56106,11 @@
 /area/nadezhda/maintenance/undergroundfloor2south)
 "cIv" = (
 /obj/structure/closet/cabinet,
-/obj/item/reagent_containers/food/drinks/bottle/wine,
-/obj/item/reagent_containers/food/drinks/drinkingglass,
-/obj/item/reagent_containers/food/drinks/drinkingglass,
-/obj/item/reagent_containers/food/drinks/drinkingglass,
-/obj/item/reagent_containers/food/snacks/sliceable/bread,
+/obj/item/reagent_containers/drinks/bottle/wine,
+/obj/item/reagent_containers/drinks/drinkingglass,
+/obj/item/reagent_containers/drinks/drinkingglass,
+/obj/item/reagent_containers/drinks/drinkingglass,
+/obj/item/reagent_containers/snacks/bread,
 /obj/item/tool/knife,
 /obj/item/storage/fancy/candle_box,
 /obj/item/storage/fancy/candle_box,
@@ -56195,8 +56195,8 @@
 /area/nadezhda/crew_quarters/bar)
 "cIF" = (
 /obj/structure/closet/gmcloset,
-/obj/item/reagent_containers/food/drinks/flask/barflask,
-/obj/item/reagent_containers/food/drinks/flask/barflask,
+/obj/item/reagent_containers/drinks/flask/barflask,
+/obj/item/reagent_containers/drinks/flask/barflask,
 /obj/machinery/camera/network/third_section{
 	dir = 4
 	},
@@ -56223,7 +56223,7 @@
 /turf/simulated/floor/wood,
 /area/nadezhda/crew_quarters/barbackroom)
 "cIJ" = (
-/mob/living/simple_animal/frog,
+/mob/living/simple/frog,
 /turf/simulated/floor/beach/water/flooded,
 /area/nadezhda/maintenance/undergroundfloor1oldgarden)
 "cIK" = (
@@ -56582,7 +56582,7 @@
 /area/nadezhda/rnd/rbreakroom)
 "cJL" = (
 /obj/structure/table/glass,
-/obj/item/reagent_containers/food/drinks/cans/dr_gibb{
+/obj/item/reagent_containers/drinks/cans/dr_gibb{
 	pixel_x = 4;
 	pixel_y = 3
 	},
@@ -58077,7 +58077,7 @@
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/engineering/foyer)
 "cNx" = (
-/mob/living/simple_animal/cow{
+/mob/living/simple/cow{
 	name = "Betsy"
 	},
 /turf/simulated/floor/asteroid/grass,
@@ -59247,9 +59247,9 @@
 	pixel_x = 3;
 	pixel_y = -3
 	},
-/obj/item/computer_hardware/hard_drive/portable/design/circuits,
-/obj/item/computer_hardware/hard_drive/portable/design/components,
-/obj/item/computer_hardware/hard_drive/portable/design/misc,
+/obj/item/pc_part/drive/disk/design/circuits,
+/obj/item/pc_part/drive/disk/design/components,
+/obj/item/pc_part/drive/disk/design/misc,
 /turf/simulated/floor/tiled/steel/gray_platform,
 /area/nadezhda/engineering/workshop)
 "cQl" = (
@@ -60473,7 +60473,7 @@
 	},
 /obj/item/reagent_containers/glass/beaker,
 /obj/item/reagent_containers/pill/floorpill,
-/obj/item/reagent_containers/food/condiment/enzyme,
+/obj/item/reagent_containers/condiment/enzyme,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor2south)
 "cTo" = (
@@ -60731,7 +60731,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor2south)
 "cTQ" = (
-/mob/living/simple_animal/frog,
+/mob/living/simple/frog,
 /turf/simulated/floor/beach/water/jungledeep,
 /area/nadezhda/maintenance/undergroundfloor1oldgarden)
 "cTR" = (
@@ -66440,7 +66440,7 @@
 /obj/structure/table/woodentable,
 /obj/item/storage/box/matches,
 /obj/item/clothing/mask/smokable/cigarette/cigar/havana,
-/obj/item/reagent_containers/food/drinks/flask{
+/obj/item/reagent_containers/drinks/flask{
 	pixel_x = 8
 	},
 /obj/item/tool/tape_roll,
@@ -67288,13 +67288,13 @@
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/crew_quarters/cafeteria)
 "diV" = (
-/obj/item/reagent_containers/food/condiment/sugar,
+/obj/item/reagent_containers/condiment/sugar,
 /obj/structure/table/marble,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/crew_quarters/kitchen)
 "diW" = (
 /obj/item/reagent_containers/glass/beaker/large,
-/obj/item/reagent_containers/food/condiment/enzyme,
+/obj/item/reagent_containers/condiment/enzyme,
 /obj/structure/table/marble,
 /obj/machinery/reagentgrinder/portable,
 /turf/simulated/floor/tiled/cafe,
@@ -67407,8 +67407,8 @@
 /turf/simulated/floor/plating,
 /area/nadezhda/maintenance/substation/bridge)
 "djl" = (
-/obj/item/reagent_containers/food/condiment/peppermill,
-/obj/item/reagent_containers/food/condiment/saltshaker{
+/obj/item/reagent_containers/condiment/peppermill,
+/obj/item/reagent_containers/condiment/saltshaker{
 	pixel_x = 8
 	},
 /obj/structure/table/marble,
@@ -67916,10 +67916,10 @@
 /area/nadezhda/medical/medbay2)
 "dku" = (
 /obj/structure/closet/secure_closet/freezer/kitchen,
-/obj/item/reagent_containers/food/condiment/sugar,
-/obj/item/reagent_containers/food/condiment/flour,
-/obj/item/reagent_containers/food/condiment/enzyme,
-/obj/item/reagent_containers/food/drinks/milk,
+/obj/item/reagent_containers/condiment/sugar,
+/obj/item/reagent_containers/condiment/flour,
+/obj/item/reagent_containers/condiment/enzyme,
+/obj/item/reagent_containers/drinks/milk,
 /obj/item/storage/fancy/egg_box,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/command/captain/quarters)
@@ -68778,7 +68778,7 @@
 /turf/simulated/floor/tiled/steel/panels,
 /area/nadezhda/engineering/foyer)
 "dmz" = (
-/obj/item/reagent_containers/food/condiment/flour,
+/obj/item/reagent_containers/condiment/flour,
 /obj/structure/table/marble,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/crew_quarters/kitchen)
@@ -68815,7 +68815,7 @@
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/crew_quarters/kitchen)
 "dmC" = (
-/mob/living/simple_animal/chicken{
+/mob/living/simple/chicken{
 	name = "Commander Clucky"
 	},
 /turf/simulated/floor/asteroid/grass,
@@ -70833,8 +70833,8 @@
 /obj/item/circuitboard/teleporter,
 /obj/item/device/aicard,
 /obj/structure/closet/secure_closet/reinforced/RD,
-/obj/item/computer_hardware/hard_drive/portable/design/rped/rd,
-/obj/item/computer_hardware/hard_drive/portable/design/computer/rd,
+/obj/item/pc_part/drive/disk/design/rped/rd,
+/obj/item/pc_part/drive/disk/design/computer/rd,
 /turf/simulated/floor/wood,
 /area/nadezhda/command/cro/quarters)
 "drd" = (
@@ -71432,7 +71432,7 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/chicken,
+/mob/living/simple/chicken,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/maintenance/undergroundfloor1oldgarden)
 "dsw" = (
@@ -71632,8 +71632,8 @@
 /obj/structure/closet/cabinet,
 /obj/random/booze,
 /obj/random/booze,
-/obj/item/reagent_containers/food/drinks/drinkingglass,
-/obj/item/reagent_containers/food/drinks/drinkingglass,
+/obj/item/reagent_containers/drinks/drinkingglass,
+/obj/item/reagent_containers/drinks/drinkingglass,
 /turf/simulated/floor/wood,
 /area/nadezhda/medical/psych)
 "dsV" = (
@@ -71905,7 +71905,7 @@
 /area/nadezhda/crew_quarters/sleep/cryo2)
 "dtF" = (
 /obj/structure/closet/secure_closet/reinforced/CMO,
-/obj/item/computer_hardware/hard_drive/portable/design/medical/cmo,
+/obj/item/pc_part/drive/disk/design/medical/cmo,
 /turf/simulated/floor/wood,
 /area/nadezhda/command/cbo)
 "dtG" = (
@@ -72166,7 +72166,7 @@
 	name = "plastic table frame"
 	},
 /obj/machinery/recharger,
-/obj/item/computer_hardware/hard_drive/portable/design/misc,
+/obj/item/pc_part/drive/disk/design/misc,
 /turf/simulated/floor/tiled/steel/gray_platform,
 /area/nadezhda/storage/primary)
 "duw" = (
@@ -75050,7 +75050,7 @@
 /area/nadezhda/quartermaster/office)
 "dAT" = (
 /obj/structure/table/standard,
-/obj/item/computer_hardware/hard_drive/portable/design/misc,
+/obj/item/pc_part/drive/disk/design/misc,
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/quartermaster/office)
 "dAU" = (
@@ -78441,7 +78441,7 @@
 /obj/structure/flora/small/trailrockb4,
 /obj/effect/decal/cleanable/rubble,
 /obj/effect/floor_decal/rust,
-/mob/living/simple_animal/hostile/naniteswarm{
+/mob/living/simple/hostile/naniteswarm{
 	desc = "A swarm of disgusting mini locusts infested with disease and hatred.";
 	name = "infested miniroach cluster"
 	},
@@ -80388,7 +80388,7 @@
 "dNo" = (
 /obj/structure/catwalk,
 /obj/structure/table/bench/steel,
-/obj/item/reagent_containers/food/snacks/stew,
+/obj/item/reagent_containers/snacks/stew,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1central)
 "dNp" = (
@@ -80460,7 +80460,7 @@
 /area/nadezhda/maintenance/undergroundfloor1central)
 "dNx" = (
 /obj/structure/table/standard,
-/obj/item/reagent_containers/food/snacks/milosoup{
+/obj/item/reagent_containers/snacks/milosoup{
 	desc = "A dubious mix of... stuff in broth.";
 	name = "hobo stew"
 	},
@@ -80774,7 +80774,7 @@
 	dir = 4;
 	pixel_y = 0
 	},
-/mob/living/simple_animal/mouse,
+/mob/living/simple/mouse,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1central)
 "dOk" = (
@@ -81490,7 +81490,7 @@
 	icon_state = "railing0";
 	tag = "icon-railing0 (EAST)"
 	},
-/mob/living/simple_animal/chicken,
+/mob/living/simple/chicken,
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/nadezhda/maintenance/undergroundfloor1oldgarden)
 "dPX" = (

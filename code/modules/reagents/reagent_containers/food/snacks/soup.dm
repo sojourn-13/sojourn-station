@@ -1,4 +1,4 @@
-/obj/item/reagent_containers/food/snacks/meatballsoup
+/obj/item/reagent_containers/snacks/meatballsoup
 	name = "meatball soup"
 	desc = "A heavy soup with meat and vegetables."
 	icon_state = "meatballsoup"
@@ -11,7 +11,7 @@
 	cooked = TRUE
 	matter = list(MATERIAL_BIOMATTER = 13)
 
-/obj/item/reagent_containers/food/snacks/slimesoup
+/obj/item/reagent_containers/snacks/slimesoup
 	name = "slime soup"
 	desc = "A soup that consists of mostly slime and water."
 	icon_state = "rorosoup" //nonexistant?
@@ -21,7 +21,7 @@
 	preloaded_reagents = list("slimejelly" = 5, "water" = 10)
 	matter = list(MATERIAL_BIOMATTER = 9)
 
-/obj/item/reagent_containers/food/snacks/bloodsoup
+/obj/item/reagent_containers/snacks/bloodsoup
 	name = "vampire soup"
 	desc = "A soup sourced from blood."
 	taste_tag = list(UMAMI_FOOD)
@@ -32,7 +32,7 @@
 	preloaded_reagents = list("protein" = 2, "blood" = 10, "water" = 5)
 	matter = list(MATERIAL_BIOMATTER = 8)
 
-/obj/item/reagent_containers/food/snacks/clownstears
+/obj/item/reagent_containers/snacks/clownstears
 	name = "clown's tears"
 	desc = "Not very funny."
 	icon_state = "clownstears"
@@ -45,7 +45,7 @@
 	preloaded_reagents = list("banana" = 5, "water" = 10)
 	matter = list(MATERIAL_BIOMATTER = 13)
 
-/obj/item/reagent_containers/food/snacks/vegetablesoup
+/obj/item/reagent_containers/snacks/vegetablesoup
 	name = "vegetable soup"
 	desc = "A soup of vegetables."
 	icon_state = "vegetablesoup"
@@ -60,7 +60,7 @@
 	cooked = TRUE
 	matter = list(MATERIAL_BIOMATTER = 13)
 
-/obj/item/reagent_containers/food/snacks/nettlesoup
+/obj/item/reagent_containers/snacks/nettlesoup
 	name = "nettle soup"
 	desc = "A soup made with nettle and vegetables."
 	icon_state = "nettlesoup"
@@ -75,7 +75,7 @@
 	cooked = TRUE
 	matter = list(MATERIAL_BIOMATTER = 18)
 
-/obj/item/reagent_containers/food/snacks/mysterysoup
+/obj/item/reagent_containers/snacks/mysterysoup
 	name = "mystery soup"
 	desc = "A soup made by using random seasonings."
 	icon_state = "mysterysoup"
@@ -86,7 +86,7 @@
 	nutriment_desc = list("backwash" = 1)
 	nutriment_amt = 1
 	bitesize = 5
-/obj/item/reagent_containers/food/snacks/mysterysoup/Initialize(mapload)
+/obj/item/reagent_containers/snacks/mysterysoup/Initialize(mapload)
 	. = ..()
 	var/mysteryselect = pick(1,2,3,4,5,6,7,8,9,10)
 	switch(mysteryselect)
@@ -135,7 +135,7 @@
 			reagents.add_reagent("imidazoline", 5)
 			matter = list(MATERIAL_BIOMATTER = 13)
 
-/obj/item/reagent_containers/food/snacks/wishsoup
+/obj/item/reagent_containers/snacks/wishsoup
 	name = "wish soup"
 	desc = "Boiled water with a dash of salt."
 	icon_state = "wishsoup"
@@ -147,7 +147,7 @@
 	preloaded_reagents = list("water" = 10)
 	matter = list(MATERIAL_BIOMATTER = 1) //The bowl
 
-/obj/item/reagent_containers/food/snacks/wishsoup/Initialize(mapload)
+/obj/item/reagent_containers/snacks/wishsoup/Initialize(mapload)
 	. = ..()
 	if(prob(25))
 		sleep(10)
@@ -155,7 +155,7 @@
 		reagents.add_reagent("nutriment", 8)
 		nutriment_desc = list("something good" = 8)
 
-/obj/item/reagent_containers/food/snacks/hotchili
+/obj/item/reagent_containers/snacks/hotchili
 	name = "hot chili"
 	desc = "A soup made with chili and other spicy seasoning."
 	icon_state = "hotchili"
@@ -170,7 +170,7 @@
 	cooked = TRUE
 	matter = list(MATERIAL_BIOMATTER = 13)
 
-/obj/item/reagent_containers/food/snacks/coldchili
+/obj/item/reagent_containers/snacks/coldchili
 	name = "cold chili"
 	desc = "A soup made of ice chili tends to stay cold."
 	icon_state = "coldchili"
@@ -185,7 +185,7 @@
 	cooked = TRUE
 	matter = list(MATERIAL_BIOMATTER = 15)
 
-/obj/item/reagent_containers/food/snacks/bearchili
+/obj/item/reagent_containers/snacks/bearchili
 	name = "bear meat chili"
 	desc = "A chili mixed with stewed bear meat."
 	icon_state = "bearchili"
@@ -196,7 +196,7 @@
 	bitesize = 5
 	preloaded_reagents = list("protein" = 12, "capsaicin" = 3, "hyperzine" = 5) // Inherits from bear meat
 
-/obj/item/reagent_containers/food/snacks/tomatosoup
+/obj/item/reagent_containers/snacks/tomatosoup
 	name = "tomato soup"
 	desc = "A simple soup made from tomato."
 	icon_state = "tomatosoup"
@@ -211,7 +211,7 @@
 	cooked = TRUE
 	matter = list(MATERIAL_BIOMATTER = 6)
 
-/obj/item/reagent_containers/food/snacks/stew
+/obj/item/reagent_containers/snacks/stew
 	name = "stew"
 	desc = "A simple and warm stew."
 	icon_state = "stew"
@@ -225,7 +225,7 @@
 	cooked = TRUE
 	matter = list(MATERIAL_BIOMATTER = 17)
 
-/obj/item/reagent_containers/food/snacks/milosoup
+/obj/item/reagent_containers/snacks/milosoup
 	name = "milo soup"
 	desc = "A salty and soup made with soybeans."
 	icon_state = "milosoup"
@@ -239,7 +239,7 @@
 	cooked = TRUE
 	matter = list(MATERIAL_BIOMATTER = 8)
 
-/obj/item/reagent_containers/food/snacks/mushroomsoup
+/obj/item/reagent_containers/snacks/mushroomsoup
 	name = "chantrelle soup"
 	desc = "A hearty mushroom soup."
 	icon_state = "mushroomsoup"
@@ -253,7 +253,7 @@
 	cooked = TRUE
 	matter = list(MATERIAL_BIOMATTER = 9)
 
-/obj/item/reagent_containers/food/snacks/beetsoup
+/obj/item/reagent_containers/snacks/beetsoup
 	name = "beet soup"
 	desc = "A soup made from beets and other vegetables, has many different spellings."
 	icon_state = "beetsoup"
@@ -267,7 +267,7 @@
 	matter = list(MATERIAL_BIOMATTER = 11)
 	cooked = TRUE
 
-/obj/item/reagent_containers/food/snacks/beetsoup/Initialize(mapload)
+/obj/item/reagent_containers/snacks/beetsoup/Initialize(mapload)
 	. = ..()
 	name = pick(list("borsch","bortsch","borstch","borsh","borshch","borscht"))
 

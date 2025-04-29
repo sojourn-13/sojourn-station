@@ -3,8 +3,8 @@
 	desc = "A haphazard amalgamation of the practical experience of blackshield and the gunsmithing expertise of the marshals came to create this compact SMG. \
 	With the average trooper in mind, the 'Buckler' was designed for flexibility and low maintenance, \
 	with an extendable stock it can easily be stored and kept out of the hands of certain prospectors. \
-	Although the focus on ease-of-use and durability resulted in a slightly lackluster performance and muzzle velocity, \
-	causing issues with use in longer-range engagements."
+	The focus on ease-of-use and durability resulted in a slightly lackluster performance and muzzle velocity, \
+	causing issues in long-range engagements."
 	icon = 'icons/obj/guns/projectile/buckler.dmi'
 	icon_state = "buckler"
 	item_state = "buckler"

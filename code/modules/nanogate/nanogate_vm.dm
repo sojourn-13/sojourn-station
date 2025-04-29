@@ -12,7 +12,7 @@
 /obj/item/modular_computer/tablet/nanogate/emp_act(severity)
 	return
 
-/obj/item/computer_hardware/network_card/advanced/satlink
+/obj/item/pc_part/network_card/advanced/satlink
 	name = "satellite uplink"
 	desc = "A highly advanced satellite uplink that works anywhere on the planet."
 	ethernet = TRUE //Unlimited connection range.
@@ -30,10 +30,10 @@
 //TODO: Make variants for each type of nanogate.
 /obj/item/modular_computer/tablet/nanogate/install_default_hardware()
 	. = ..()
-	processor_unit = new/obj/item/computer_hardware/processor_unit/small(src)
-	tesla_link = new/obj/item/computer_hardware/tesla_link(src)
-	hard_drive = new/obj/item/computer_hardware/hard_drive/small/adv(src)
-	network_card = new/obj/item/computer_hardware/network_card/advanced/satlink(src)
+	processor_unit = new/obj/item/pc_part/processor_unit/small(src)
+	tesla_link = new/obj/item/pc_part/tesla_link(src)
+	hard_drive = new/obj/item/pc_part/drive/small/adv(src)
+	network_card = new/obj/item/pc_part/network_card/advanced/satlink(src)
 	cell = new suitable_cell(src)
 
 /obj/item/modular_computer/tablet/nanogate/Initialize()

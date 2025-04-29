@@ -1,4 +1,4 @@
-/mob/living/simple_animal/hostile/jelly
+/mob/living/simple/hostile/jelly
 	name = "jelly blob"
 	desc = "Some sort of undulating blob of slime."
 	icon = 'icons/mob/mobs-monster.dmi'
@@ -19,7 +19,7 @@
 	armor = list(melee = 8, bullet = 20, energy = 2, bomb = 25, bio = 100, rad = 100) //Were basiclly ballastic jell
 
 
-/mob/living/simple_animal/hostile/jelly/bloat
+/mob/living/simple/hostile/jelly/bloat
 	name = "jelly bloat"
 	desc = "Some sort of undulating blob of slime. This one has feasted recently."
 	icon_state = "jellybig"

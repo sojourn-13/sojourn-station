@@ -75,7 +75,15 @@
 	can_breach = 1
 	supporting_limbs = list()
 	retract_while_active = TRUE
-	extra_allowed = list(/obj/item/storage/backpack)
+	extra_allowed = list(/obj/item/storage/backpack, /obj/item/tool/cannibal_scythe)
+	blacklisted_allowed = list(
+		/obj/item/tool/knife/psionic_blade,
+		/obj/item/tool/hammer/telekinetic_fist,
+		/obj/item/flame/pyrokinetic_spark,
+		/obj/item/tool/psionic_omnitool,
+		/obj/item/shield/riot/crusader/psionic,
+		/obj/item/gun/kinetic_blaster
+		)
 	max_upgrades = 0 //RIG modules are upgraded, not the rig pieces
 	matter = list(MATERIAL_STEEL = 1)
 

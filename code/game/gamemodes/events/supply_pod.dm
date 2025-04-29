@@ -96,8 +96,8 @@
 
 //Some mobs too!
 /datum/event/supply_pod/proc/add_guardians()
-	var/list/possible_mobs = list(/mob/living/simple_animal/hostile/hivebot,
-	/mob/living/simple_animal/hostile/scarybat,
+	var/list/possible_mobs = list(/mob/living/simple/hostile/hivebot,
+	/mob/living/simple/hostile/scarybat,
 	/obj/random/mob/spiders,
 	/obj/random/mob/roaches,
 	/obj/random/mob/carp,

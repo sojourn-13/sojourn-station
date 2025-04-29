@@ -1,6 +1,6 @@
 // OneStar patrol borg that defends OneStar facilities
 // Sprites by Keereere
-/mob/living/carbon/superior_animal/robot/greyson/stalker
+/mob/living/carbon/superior/robot/gp/stalker
 	name = "\"Iron Lock Security\" Stalker Mk1"
 	desc = "A ruthless patrol borg that defends Greyson facilities. This one has a single \"Scaffold\" caseless rifle, still enough to kill pesky intruders."
 	icon_state = "stalker_mk1"
@@ -36,20 +36,21 @@
 	times_to_get_stat_modifiers = 2 //two prefixes
 
 	allowed_stat_modifiers = list(
-		/datum/stat_modifier/mob/living/carbon/superior_animal/durable = 25,
+		/datum/stat_modifier/mob/living/carbon/superior/durable = 25,
 		/datum/stat_modifier/mob/living/damage/positive/mixed/mult/low = 5,
 		/datum/stat_modifier/mob/living/damage/negative/mixed/mult/low = 5,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/armor/flat/negative/low = 10,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/armor/flat/negative/medium = 5,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/armor/flat/negative/high = 1,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/old/robotic = 20, //these guys are old
-		/datum/stat_modifier/mob/living/carbon/superior_animal/brutal/robotic = 5,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/aggressive = 5,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/aggressive/savage/robotic = 1,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/deadeye = 10,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/slowaimed = 5,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/triggerfinger/robotic = 5,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/quickdraw = 5,
+		/datum/stat_modifier/mob/living/carbon/superior/armor/flat/negative/low = 10,
+		/datum/stat_modifier/mob/living/carbon/superior/armor/flat/negative/medium = 5,
+		/datum/stat_modifier/mob/living/carbon/superior/armor/flat/negative/high = 1,
+		/datum/stat_modifier/mob/living/carbon/superior/old/robotic = 20, //these guys are old
+		/datum/stat_modifier/mob/living/carbon/superior/brutal/robotic = 5,
+		/datum/stat_modifier/mob/living/carbon/superior/aggressive = 5,
+		/datum/stat_modifier/mob/living/carbon/superior/aggressive/savage/robotic = 1,
+		/datum/stat_modifier/mob/living/carbon/superior/deadeye = 10,
+		/datum/stat_modifier/mob/living/carbon/superior/slowaimed = 5,
+		/datum/stat_modifier/mob/living/carbon/superior/triggerfinger/robotic = 5,
+		/datum/stat_modifier/mob/living/carbon/superior/quickdraw = 5,
+		/datum/stat_modifier/mob/living/carbon/superior/headhunter = 1
 	)
 
 	contaminant_immunity = TRUE
@@ -75,7 +76,7 @@
 	comfy_range = 5
 	range_telegraph = "'s servos begin to spool up, aiming at"
 
-/mob/living/carbon/superior_animal/robot/greyson/stalker/New()
+/mob/living/carbon/superior/robot/gp/stalker/New()
 	. = ..()
 	pixel_x = 0
 	pixel_y = 0
@@ -84,7 +85,7 @@
 	if(prob(30) && (!cell_drop))
 		cell_drop = /obj/item/cell/large
 
-/mob/living/carbon/superior_animal/robot/greyson/stalker/dual
+/mob/living/carbon/superior/robot/gp/stalker/dual
 	name = "\"Iron Lock Security\" Stalker Mk2"
 	desc = "A ruthless patrol borg that defends Greyson facilities. This one is an upgraded version with dual \"Scaffold\" caseless rifles, don\'t stand in front of it for too long."
 	icon_state = "stalker_mk2"
@@ -98,7 +99,7 @@
 	rapid_fire_shooting_amount = 3
 
 
-/mob/living/carbon/superior_animal/robot/greyson/stalker/dual/New()
+/mob/living/carbon/superior/robot/gp/stalker/dual/New()
 	. = ..()
 	if(prob(1) && (!drop2))
 		drop2 = /obj/item/gun/projectile/automatic/scaffold
@@ -127,7 +128,7 @@
 	preloaded_reagents = null
 
 // mini-boss enemy that demands attention or else they will nuke someone. VERY POWERFUL
-/mob/living/carbon/superior_animal/robot/greyson/stalker/dual/plasma_cannon
+/mob/living/carbon/superior/robot/gp/stalker/dual/plasma_cannon
 	name = "\"Iron Lock Security\" Assault Stalker Mk2"
 	desc = "A ruthless patrol borg that defends Greyson facilities. This one has a pair of massively oversized plasma cannons, and has been fitted with thick layers of ablative plating, as well as bomb shielding, although at the cost of it's mobility. This will destroy you."
 
@@ -171,7 +172,7 @@
 
 	move_to_delay = 11 //slow as hell due to it's armor and weapons. also balance reasons.
 
-/mob/living/carbon/superior_animal/robot/greyson/stalker/dual/plasma_cannon/New()
+/mob/living/carbon/superior/robot/gp/stalker/dual/plasma_cannon/New()
 	. = ..()
 
 	drop1 = null
@@ -187,10 +188,10 @@
 		cell_drop = /obj/item/cell/large/greyson
 
 
-/mob/living/carbon/superior_animal/robot/greyson/stalker/dual/plasma_cannon/ex_act(severity) // we dont want it to bomb itself
+/mob/living/carbon/superior/robot/gp/stalker/dual/plasma_cannon/ex_act(severity) // we dont want it to bomb itself
 	return FALSE
 
-/mob/living/carbon/superior_animal/robot/greyson/stalker/dual/plasma_cannon/death()
+/mob/living/carbon/superior/robot/gp/stalker/dual/plasma_cannon/death()
 
 	explosion(src.loc, 0, 1, 2, 3)
 

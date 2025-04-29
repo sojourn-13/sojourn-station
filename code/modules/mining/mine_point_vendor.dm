@@ -9,9 +9,9 @@
 	circuit = /obj/item/circuitboard/mining_equipment_vendor
 	var/obj/item/card/id/inserted_id
 	var/list/prize_list = list(
-		new /datum/data/mining_equipment("Ale",													/obj/item/reagent_containers/food/drinks/bottle/small/ale,			50),
-		new /datum/data/mining_equipment("Whiskey",												/obj/item/reagent_containers/food/drinks/bottle/whiskey,			125),
-		new /datum/data/mining_equipment("Absinthe",											/obj/item/reagent_containers/food/drinks/bottle/absinthe,			125),
+		new /datum/data/mining_equipment("Ale",													/obj/item/reagent_containers/drinks/bottle/small/ale,			50),
+		new /datum/data/mining_equipment("Whiskey",												/obj/item/reagent_containers/drinks/bottle/whiskey,			125),
+		new /datum/data/mining_equipment("Absinthe",											/obj/item/reagent_containers/drinks/bottle/absinthe,			125),
 		new /datum/data/mining_equipment("Random Booze",										/obj/random/booze,													125),
 		new /datum/data/mining_equipment("Cigar",												/obj/item/clothing/mask/smokable/cigarette/cigar/havana,			150),
 		new /datum/data/mining_equipment("Soap",												/obj/item/soap/nanotrasen,											200),
@@ -20,7 +20,7 @@
 		new /datum/data/mining_equipment("GPS Device",											/obj/item/device/gps/mining,										100),
 		new /datum/data/mining_equipment("Fuel Canister",										/obj/item/weldpack/canister,										250),
 		new /datum/data/mining_equipment("Ore Sonar Device",									/obj/item/device/ore_sonar,											500),
-		new /datum/data/mining_equipment("Aether Mining Drone ",								/mob/living/carbon/superior_animal/robot/mining/aether,				1200),
+		new /datum/data/mining_equipment("Aether Mining Drone ",								/mob/living/carbon/superior/robot/mining/aether,				1200),
 		new /datum/data/mining_equipment("500 Point Transfer Card",								/obj/item/card/mining_point_card,									500),
 		new /datum/data/mining_equipment("1000 Point Transfer Card",							/obj/item/card/mining_point_card/onethou,							1000),
 		new /datum/data/mining_equipment("2000 Point Transfer Card",							/obj/item/card/mining_point_card/twothou,							2000),

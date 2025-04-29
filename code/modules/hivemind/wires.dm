@@ -6,8 +6,7 @@
 	layer = 2
 	health = 		80
 	max_health = 	80 		//we are a little bit durable
-	spread_chance = 85
-	var/list/killer_reagents = list("pacid", "sacid", "hclacid", "chlorine")
+	var/list/killer_reagents = list("pacid", "sacid", "hclacid")
 	//internals
 	var/obj/machinery/hivemind_machine/node/master_node
 	var/list/wires_connections = list("0", "0", "0", "0")
@@ -44,6 +43,7 @@
 /obj/effect/plant/hivemind/after_spread(obj/effect/plant/child, turf/target_turf)
 	if(master_node)
 		master_node.add_wireweed(child)
+		seed.set_trait(TRAIT_POTENCY,50 * master_node.threat_scale) //how fast we spread
 	spawn(1)
 		child.dir = get_dir(loc, target_turf) //actually this means nothing for wires, but need for animation
 		flick("spread_anim", child)
@@ -54,8 +54,22 @@
 		if(prob(30))
 			die_off()
 	else
-		if(prob(5)) //5% per spred tile to spawn a mob, this makes hivemins in open areas more deadly
-			new /obj/random/structures/hivemind_mob(src.loc)
+		if(hive_mind_ai)
+			if(prob((GLOB.hive_data_float["hivemind_mob_spawn_odds"] + hive_mind_ai.evo_level)) * master_node.threat_scale) //5->10ish% per spred tile to spawn a mob, this makes hivemins in open areas more deadly
+				new /obj/random/structures/hivemind_mob(src.loc)
+			var/already_build = FALSE
+			for(var/obj/machinery/hivemind_machine/HM in loc.contents)
+				if(HM)
+					already_build = TRUE
+					break
+			if(!already_build)
+				if(prob(GLOB.hive_data_float["hivemind_machine_spawn_odds"] - hive_mind_ai.evo_level)) //5->0% per spred tile to spawn a machine, this makes hivemins in open areas more deadly and helps starting hivemind be a bit more beefy
+					new /obj/random/structures/hivemind_machine(src.loc)
+				if(hive_mind_ai.evo_level && GLOB.hive_data_float["hivemind_cover_spawn_odds"])
+					var/cover_odds = GLOB.hive_data_float["hivemind_cover_spawn_odds"] / hive_mind_ai.evo_level
+					cover_odds = round(cover_odds)
+					if(prob(cover_odds))
+						new /obj/machinery/hivemind_machine/cover(src.loc)
 
 /obj/effect/plant/hivemind/proc/try_to_assimilate()
 	for(var/obj/machinery/machine_on_my_tile in loc)
@@ -187,10 +201,14 @@
 			door_interaction(door_on_my_tile)
 	else
 		//slow vanishing after node death
-		health -= 10
+		health -= 20 //Faster die off
 		alpha = 255 * health/max_health
 		check_health()
+		find_new_master()
 
+/obj/effect/plant/hivemind/proc/find_new_master()
+	if(hive_mind_ai)
+		master_node = pick(hive_mind_ai.hives)
 
 /obj/effect/plant/hivemind/is_mature()
 	return TRUE
@@ -358,7 +376,7 @@
 		if(istype(subject, /obj/machinery))
 			var/obj/machinery/victim = subject
 			if(prob(15) && victim.circuit)
-				new /mob/living/simple_animal/hostile/hivemind/mechiver(get_turf(subject))
+				new /mob/living/simple/hostile/hivemind/mechiver(get_turf(subject))
 				new victim.circuit.type(get_turf(subject))
 				qdel(subject)
 				return
@@ -400,10 +418,10 @@
 
 		//robot corpses
 		else if(issilicon(subject)) //If you're a borg... sucks to suck? I don't feel like reworking this, you're too mechanical to prevent hivemind taking over you
-			new /mob/living/simple_animal/hostile/hivemind/hiborg(loc)
+			new /mob/living/simple/hostile/hivemind/hiborg(loc)
 		//other dead bodies
 		else
-			var/mob/living/simple_animal/hostile/hivemind/resurrected/transformed_mob =  new(loc)
+			var/mob/living/simple/hostile/hivemind/resurrected/transformed_mob =  new(loc)
 			transformed_mob.take_appearance(subject)
 
 		qdel(subject)
@@ -413,7 +431,7 @@
 		return
 	for(var/obj/item/W in L)
 		L.drop_from_inventory(W)
-	var/M = pick(/mob/living/simple_animal/hostile/hivemind/himan, /mob/living/simple_animal/hostile/hivemind/phaser)
+	var/M = pick(/mob/living/simple/hostile/hivemind/himan, /mob/living/simple/hostile/hivemind/phaser)
 	new M(loc)
 
 	L.dust()
@@ -458,8 +476,14 @@
 //emp is effective too
 //it causes electricity failure, so our wireweeds just blowing up inside, what makes them fragile
 /obj/effect/plant/hivemind/emp_act(severity)
-	if(severity)
-		die_off()
+	if(GLOB.hive_data_float["hivemind_emp_mult"] > 0)
+		if(severity && prob(100 * GLOB.hive_data_float["hivemind_emp_mult"]))//If emp mult is 0.5 it makes it a coin flip
+			die_off()
+		health -= 40 * GLOB.hive_data_float["hivemind_emp_mult"]
+		check_health()
+	else
+		health = 5 * -GLOB.hive_data_float["hivemind_emp_mult"] //Small healing if negitive
+		check_health()
 
 
 //Some acid and there's no problem

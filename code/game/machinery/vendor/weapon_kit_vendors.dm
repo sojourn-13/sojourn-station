@@ -84,7 +84,8 @@
 					"Duty Kit" = /obj/item/storage/box/bs_kit/duty,
 					"Cog Kit" = /obj/item/storage/box/bs_kit/cog,
 					"Ekaterina SMG Kit" = /obj/item/storage/box/bs_kit/ekaterina,
-					"Bounty Kit" = /obj/item/storage/box/bs_kit/bounty)
+					"Bounty Kit" = /obj/item/storage/box/bs_kit/bounty,
+					"Second Secondary" = /obj/item/voucher/blackshield/secondary)
 	var/selection = items[input(redeemer, "Pick your primary weapon", "Blackshield Voucher Redemption") as null|anything in items]
 	if(selection)
 		new selection(loc)
@@ -102,7 +103,8 @@
 					"Triage Kit" = /obj/item/storage/box/bs_kit/triage,
 					"Ekaterina SMG Kit" = /obj/item/storage/box/bs_kit/ekaterina,
 					"Drozd SMG Kit" = /obj/item/storage/box/bs_kit/drozd,
-					"Bounty Kit" = /obj/item/storage/box/bs_kit/bounty)
+					"Bounty Kit" = /obj/item/storage/box/bs_kit/bounty,
+					"Second Secondary" = /obj/item/voucher/blackshield/secondary)
 	var/selection = items[input(redeemer, "Pick your primary weapon", "Blackshield Voucher Redemption") as null|anything in items]
 	if(selection)
 		new selection(loc)
@@ -118,7 +120,8 @@
 					"Lascore kit" = /obj/item/storage/box/bs_kit/lascore,
 					"Warthog Omni Kit" = /obj/item/storage/box/bs_kit/rds_omnicarbine,
 					"Vintorez DMR Kit" = /obj/item/storage/box/bs_kit/vintorez,
-					"Saiga Kit" = /obj/item/storage/box/bs_kit/saiga)
+					"Saiga Kit" = /obj/item/storage/box/bs_kit/saiga,
+					"Second Secondary" = /obj/item/voucher/blackshield/secondary)
 	var/selection = items[input(redeemer, "Pick your primary weapon", "Blackshield Voucher Redemption") as null|anything in items]
 	if(selection)
 		new selection(loc)
@@ -252,7 +255,8 @@
 					"Breacher-hammer Kit" = /obj/item/storage/box/m_kit/breacher,
 					"Operator Kit" = /obj/item/storage/box/m_kit/opshotkit,
 					"Mamba Kit" = /obj/item/storage/box/m_kit/mamba,
-					"Gear Laser Carbine Kit" = /obj/item/storage/box/m_kit/gear_lasgun)
+					"Gear Laser Carbine Kit" = /obj/item/storage/box/m_kit/gear_lasgun,
+					"Second Secondary" = /obj/item/voucher/marshal/secondary)
 	var/selection = items[input(redeemer, "Pick your primary weapon", "Marshal Voucher Redemption") as null|anything in items]
 	if(selection)
 		new selection(loc)
@@ -266,7 +270,8 @@
 					"State Auto-Shotgun Kit" = /obj/item/storage/box/m_kit/state_auto,
 					"Copperhead Kit" = /obj/item/storage/box/m_kit/copperhead,
 					"Gear Laser Carbine Kit" = /obj/item/storage/box/m_kit/gear_lasgun,
-					"Sunrise Las-SMG Kit" = /obj/item/storage/box/m_kit/typewriter)
+					"Sunrise Las-SMG Kit" = /obj/item/storage/box/m_kit/typewriter,
+					"Second Secondary" = /obj/item/voucher/marshal/secondary)
 	var/selection = items[input(redeemer, "Pick your primary weapon", "Marshal Voucher Redemption") as null|anything in items]
 	if(selection)
 		new selection(loc)
@@ -278,8 +283,10 @@
 /obj/machinery/vending/marshal_kit/proc/RedeemRangerPrimary(obj/item/voucher/voucher, mob/redeemer)
 	var/items = list(
 					"Spec-Op Kit" = /obj/item/storage/box/m_kit/specop,
+					"Viper Kit" = /obj/item/storage/box/m_kit/viper,
 					"Custer Kit" = /obj/item/storage/box/m_kit/custer,
-					"Peacekeeper Kit" = /obj/item/storage/box/m_kit/peacekeeper)
+					"Peacekeeper Kit" = /obj/item/storage/box/m_kit/peacekeeper,
+					"Second Secondary" = /obj/item/voucher/marshal/rangersecondary)
 	var/selection = items[input(redeemer, "Pick your primary weapon", "Marshal Voucher Redemption") as null|anything in items]
 	if(selection)
 		new selection(loc)

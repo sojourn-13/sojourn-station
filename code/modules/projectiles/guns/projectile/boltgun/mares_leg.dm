@@ -6,7 +6,7 @@
 	item_state = "mares"
 	w_class = ITEM_SIZE_BULKY
 	caliber = CAL_SHOTGUN
-	fire_sound = 'sound/weapons/guns/fire/shotgun.ogg'
+	fire_sound = 'sound/weapons/guns/fire/shotgun_fire.ogg'
 	max_shells = 6
 	price_tag = 650
 	init_recoil = HMG_RECOIL(1.0)
@@ -17,7 +17,7 @@
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_WOOD = 6, MATERIAL_PLASTEEL = 7)
 	serial_type = "INDEX"
 	extra_bulk = -2
-	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_SCOPE)
+	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_SCOPE, GUN_KNIFE)		//Allows bayonet. Too far? Maybe, but still. Gives it more use.
 
 /obj/item/gun/projectile/boltgun/lever/shotgun/bounty
 	name = "\"Bounty\" repeating shotgun"
@@ -30,3 +30,4 @@
 	price_tag = 950
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_PLASTIC = 6, MATERIAL_PLASTEEL = 7)
 	serial_type = "NM"
+	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_SCOPE)		//No more bayonet for you.

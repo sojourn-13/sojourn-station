@@ -99,50 +99,43 @@
 /obj/structure/table/bench/standard
 	icon_state = "plain_preview"
 	color = "#EEEEEE"
-
-/obj/structure/table/bench/standard/New()
-	material = get_material_by_name(MATERIAL_PLASTIC)
-	..()
+	New()
+		material = get_material_by_name(MATERIAL_PLASTIC)
+		..()
 
 /obj/structure/table/bench/steel
 	icon_state = "plain_preview"
 	color = "#666666"
-
-/obj/structure/table/bench/steel/New()
-	material = get_material_by_name(MATERIAL_STEEL)
-	..()
+	New()
+		material = get_material_by_name(MATERIAL_STEEL)
+		..()
 
 
 /obj/structure/table/bench/marble
 	icon_state = "stone_preview"
 	color = "#CCCCCC"
-
-/obj/structure/table/bench/marble/New()
-	material = get_material_by_name(MATERIAL_MARBLE)
-	..()
+	New()
+		material = get_material_by_name(MATERIAL_MARBLE)
+		..()
 
 /obj/structure/table/bench/wooden
-	icon_state = "plain_preview"
+	icon_state = "wood_preview"
 	color = "#824B28"
-
-/obj/structure/table/bench/wooden/New()
-	material = get_material_by_name(MATERIAL_WOOD)
-	..()
+	New()
+		material = get_material_by_name(MATERIAL_WOOD)
+		..()
 
 /obj/structure/table/bench/padded
 	icon_state = "padded_preview"
 	color = "#760B0B"
-
-/obj/structure/table/bench/padded/New()
-	material = get_material_by_name(MATERIAL_CARPET)
-
-	..()
+	New()
+		material = get_material_by_name(MATERIAL_CARPET)
+		..()
 
 /obj/structure/table/bench/glass
 	icon_state = "plain_preview"
 	color = "#00E1FF"
 	alpha = 77 // 0.3 * 255
-
-/obj/structure/table/bench/glass/New()
-	material = get_material_by_name(MATERIAL_GLASS)
-	..()
+	New()
+		material = get_material_by_name(MATERIAL_GLASS)
+		..()

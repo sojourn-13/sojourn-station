@@ -137,14 +137,14 @@
 						handle_ignition(input)
 
 /obj/machinery/cooking_with_jane/grill/proc/handle_burning(input)
-	if(!(items[input] && istype(items[input], /obj/item/reagent_containers/cooking_with_jane/cooking_container)))
+	if(!(items[input] && istype(items[input], /obj/item/reagent_containers/cwj/container)))
 		return
 
-	var/obj/item/reagent_containers/cooking_with_jane/cooking_container/container = items[input]
+	var/obj/item/reagent_containers/cwj/container/container = items[input]
 	container.handle_burning()
 
 /obj/machinery/cooking_with_jane/grill/proc/handle_ignition(input)
-	if(!(items && istype(items, /obj/item/reagent_containers/cooking_with_jane/cooking_container)))
+	if(!(items && istype(items, /obj/item/reagent_containers/cwj/container)))
 		return
 
 	//Initial burst of smoke so it matches the fire alarm
@@ -222,7 +222,7 @@
 	if(istype(used_item, /obj/item/gripper))
 		var/obj/item/gripper/gripper = used_item
 		if(!gripper.wrapped && items[input])
-			var/obj/item/reagent_containers/cooking_with_jane/cooking_container/container = items[input]
+			var/obj/item/reagent_containers/cwj/container/container = items[input]
 			var/turf/T = get_turf(src)
 			container.forceMove(T)
 			items[input] = null
@@ -230,14 +230,14 @@
 			return
 
 	if(items[input] != null)
-		var/obj/item/reagent_containers/cooking_with_jane/cooking_container/container = items[input]
+		var/obj/item/reagent_containers/cwj/container/container = items[input]
 
 		if(istype(used_item, /obj/item/spatula))
 			container.do_empty(user, target=src, reagent_clear = FALSE)
 		else
 			container.process_item(used_item, params)
 
-	else if(istype(used_item, /obj/item/reagent_containers/cooking_with_jane/cooking_container/grill_grate))
+	else if(istype(used_item, /obj/item/reagent_containers/cwj/container/grill_grate))
 		to_chat(usr, SPAN_NOTICE("You put a [used_item] on the grill."))
 		if(usr.canUnEquip(used_item))
 			usr.unEquip(used_item, src)
@@ -358,10 +358,10 @@
 
 /obj/machinery/cooking_with_jane/grill/proc/handle_cooking(var/mob/user, var/input, set_timer=FALSE)
 
-	if(!(items[input] && istype(items[input], /obj/item/reagent_containers/cooking_with_jane/cooking_container)))
+	if(!(items[input] && istype(items[input], /obj/item/reagent_containers/cwj/container)))
 		return
 
-	var/obj/item/reagent_containers/cooking_with_jane/cooking_container/container = items[input]
+	var/obj/item/reagent_containers/cwj/container/container = items[input]
 	if(set_timer)
 		reference_time = timer[input]
 	else

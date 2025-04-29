@@ -7,6 +7,9 @@
 	markup = UNIQUE_GOODS
 	recommendations_needed = 1
 	name_pool = list("B-42-Alpha" = "Unknown signature, bluespace traces interfere with sensors. Unable to triangulate object.")
+	icon_states = list("ring_active", "ring")
+
+
 	inventory = list(
 		"#$285@$532#$@" = list(
 			/obj/item/circuitboard/teleporter,
@@ -30,6 +33,6 @@
 	offer_types = list(
 		/obj/item/bluespace_crystal = offer_data("bluespace crystal", 2000, 10),
 		/obj/item/oddity/si_bluespace_scanner = offer_data("Bluespace Tuning Device", 2400, 3),	// Significantly higher material cost per piece, longer production time per piece, more diverse mat req hence increase in sale price
-		/obj/item/reagent_containers/food/snacks/csandwich = offer_data("sandwich", 400, 1),
+		/obj/item/reagent_containers/snacks/toastedsandwich = offer_data("toasted sandwich", 400, 1),
 		/obj/item/gun/energy/plasma/stranger = offer_data("unknown plasma gun", 5000, 1)
 	)

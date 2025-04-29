@@ -23,6 +23,7 @@
 	slot_flags = SLOT_BELT
 	structure_damage_factor = STRUCTURE_DAMAGE_BLADE
 	var/backstab_damage = 10
+	var/can_remove = TRUE 	//For bayonet gunmod usage.
 
 	has_alt_mode = TRUE
 	alt_mode_damagetype = HALLOSS
@@ -30,6 +31,20 @@
 	alt_mode_verbs = list("bashes", "stunts", "wacks", "blunts")
 	alt_mode_toggle = "switches their stance to avoid using the blade of their weapon"
 	alt_mode_lossrate = 0.7
+
+//Handles attaching bayonets to guns capable of taking them. Think of bayonet lugs.
+/obj/item/tool/knife/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.weapon_upgrades = list(
+		GUN_UPGRADE_BAYONET = TRUE,
+		GUN_UPGRADE_MELEE_DAMAGE_ADDITIVE = 10,
+		GUN_UPGRADE_MELEEPENETRATION = ARMOR_PEN_MODERATE,
+		GUN_UPGRADE_OFFSET = 4
+		)
+	I.gun_loc_tag = GUN_UNDERBARREL
+	I.req_gun_tags = list(GUN_KNIFE)
+	I.prefix = "bayonetted"
 
 /obj/item/tool/knife/resolve_attackby(atom/target, mob/user)
 	. = ..()
@@ -140,6 +155,8 @@
 	max_upgrades = 3
 	embed_mult = 6
 	price_tag = 24
+
+/obj/item/tool/knife/neotritual/implant
 
 /obj/item/tool/knife/neotritual/equipped(mob/living/H)
 	. = ..()

@@ -40,7 +40,7 @@
 /turf/simulated/floor/plating,
 /area/template_noop)
 "az" = (
-/mob/living/simple_animal/hostile/hivebot/range,
+/mob/living/simple/hostile/hivebot/range,
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/template_noop)
 "aH" = (
@@ -77,7 +77,7 @@
 /turf/template_noop,
 /area/template_noop)
 "bl" = (
-/mob/living/simple_animal/hostile/hivebot,
+/mob/living/simple/hostile/hivebot,
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/template_noop)
 "bB" = (
@@ -113,7 +113,7 @@
 /turf/simulated/floor/tiled/steel,
 /area/template_noop)
 "ff" = (
-/mob/living/simple_animal/hostile/hivebot/range,
+/mob/living/simple/hostile/hivebot/range,
 /turf/template_noop,
 /area/template_noop)
 "fH" = (
@@ -130,7 +130,7 @@
 /turf/simulated/floor/plating/under,
 /area/template_noop)
 "fT" = (
-/mob/living/simple_animal/hostile/hivebot,
+/mob/living/simple/hostile/hivebot,
 /turf/simulated/floor/plating/under,
 /area/template_noop)
 "gJ" = (
@@ -185,7 +185,7 @@
 /area/template_noop)
 "ke" = (
 /obj/structure/lattice,
-/mob/living/simple_animal/hostile/hivebot/range,
+/mob/living/simple/hostile/hivebot/range,
 /turf/template_noop,
 /area/template_noop)
 "kf" = (
@@ -260,7 +260,7 @@
 /turf/simulated/floor/tiled/dark/cargo,
 /area/template_noop)
 "rp" = (
-/mob/living/simple_animal/hostile/hivebot,
+/mob/living/simple/hostile/hivebot,
 /turf/simulated/floor/tiled/dark,
 /area/template_noop)
 "ru" = (
@@ -312,7 +312,7 @@
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/template_noop)
 "vA" = (
-/mob/living/simple_animal/hostile/hivebot,
+/mob/living/simple/hostile/hivebot,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/template_noop)
 "wD" = (
@@ -340,7 +340,7 @@
 /obj/structure/table/standard,
 /obj/item/dice,
 /obj/item/dice,
-/obj/item/reagent_containers/food/drinks/bottle/small/beer{
+/obj/item/reagent_containers/drinks/bottle/small/beer{
 	pixel_x = -6;
 	pixel_y = 5
 	},
@@ -370,7 +370,7 @@
 /area/template_noop)
 "zm" = (
 /obj/random/junk/low_chance,
-/mob/living/simple_animal/hostile/hivebot,
+/mob/living/simple/hostile/hivebot,
 /turf/template_noop,
 /area/template_noop)
 "zE" = (
@@ -455,7 +455,7 @@
 /area/template_noop)
 "Fw" = (
 /obj/structure/lattice,
-/mob/living/simple_animal/hostile/hivebot,
+/mob/living/simple/hostile/hivebot,
 /turf/template_noop,
 /area/template_noop)
 "FL" = (
@@ -471,7 +471,7 @@
 /turf/template_noop,
 /area/template_noop)
 "Hl" = (
-/mob/living/simple_animal/hostile/hivebot,
+/mob/living/simple/hostile/hivebot,
 /turf/template_noop,
 /area/template_noop)
 "Hn" = (
@@ -483,7 +483,7 @@
 /turf/simulated/floor/tiled/dark/cargo,
 /area/template_noop)
 "IK" = (
-/mob/living/simple_animal/hostile/hivebot/range,
+/mob/living/simple/hostile/hivebot/range,
 /turf/simulated/floor/wood,
 /area/template_noop)
 "Jl" = (
@@ -534,7 +534,7 @@
 /turf/simulated/floor/tiled/steel,
 /area/template_noop)
 "OW" = (
-/mob/living/simple_animal/hostile/hivebot/range,
+/mob/living/simple/hostile/hivebot/range,
 /turf/simulated/floor/tiled/steel,
 /area/template_noop)
 "Pa" = (
@@ -551,7 +551,7 @@
 /area/template_noop)
 "Qv" = (
 /obj/random/techpart/low_chance,
-/mob/living/simple_animal/hostile/hivebot/range,
+/mob/living/simple/hostile/hivebot/range,
 /turf/simulated/floor/tiled/dark,
 /area/template_noop)
 "Qw" = (
@@ -575,7 +575,7 @@
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/template_noop)
 "SR" = (
-/mob/living/simple_animal/hostile/hivebot/range,
+/mob/living/simple/hostile/hivebot/range,
 /turf/simulated/floor/tiled/dark,
 /area/template_noop)
 "Vq" = (
@@ -596,7 +596,7 @@
 /area/template_noop)
 "VJ" = (
 /obj/structure/table/woodentable,
-/obj/item/reagent_containers/food/drinks/flask/barflask,
+/obj/item/reagent_containers/drinks/flask/barflask,
 /turf/simulated/floor/wood,
 /area/template_noop)
 "WH" = (
@@ -608,7 +608,7 @@
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/template_noop)
 "WY" = (
-/mob/living/simple_animal/hostile/hivebot,
+/mob/living/simple/hostile/hivebot,
 /turf/simulated/floor/tiled/steel,
 /area/template_noop)
 "Yj" = (

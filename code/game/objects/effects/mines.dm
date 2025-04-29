@@ -83,7 +83,7 @@
 		call(src,triggerproc)(M)
 		return
 
-	if(istype(M, /mob/living/simple_animal/hostile/poporavtomat))
+	if(istype(M, /mob/living/simple/hostile/poporavtomat))
 		visible_message(SPAN_NOTICE("[M] steps over the \the [src] but still triggeres its payload."))
 		triggered = 1
 		call(src,triggerproc)(M)
@@ -114,6 +114,14 @@
 /obj/item/spider_shadow_trap/Bumped(AM as mob|obj)
 	Crossed(AM)
 */
+
+/obj/item/spider_shadow_trap/attackby(obj/item/I, mob/user)
+	..()
+	//Get ambushed stupid
+	if(istype(I, /obj/item/reagent_containers/snacks/meat))
+		ambush(null)
+		return
+
 /obj/item/spider_shadow_trap/attack_hand(mob/user as mob)
 	Crossed(user)
 
@@ -129,8 +137,9 @@
 /obj/item/spider_shadow_trap/proc/ambush(var/mob/living/M)
 	triggered = 1
 	playsound(src.loc, 'sound/sanity/screech.ogg', 300, 1)
-	M.Weaken(3)
-	new /mob/living/carbon/superior_animal/giant_spider/tarantula/emperor(src.loc)
+	if(M)
+		M.Weaken(3)
+	new /mob/living/carbon/superior/spider/fortress/emperor(src.loc)
 	qdel(src)
 
 /obj/item/spider_shadow_trap/burrowing
@@ -154,8 +163,9 @@
 /obj/item/spider_shadow_trap/burrowing/ambush(var/mob/living/M)
 	triggered = 1
 	playsound(src.loc, 'sound/effects/impacts/rumble2.ogg', 300, 1)
-	M.Weaken(3)
-	new /mob/living/carbon/superior_animal/giant_spider/tarantula/burrowing(src.loc)
+	if(M)
+		M.Weaken(3)
+	new /mob/living/carbon/superior/spider/fortress/burrowing(src.loc)
 	qdel(src)
 
 /obj/item/spider_shadow_trap/burrowing/New()

@@ -1036,12 +1036,12 @@
 	name = "Holy Guidance"
 	phrase = "Fortitudo mea, et laus mea Dominus, et factus est mihi in salutem." //"The Lord is my strength and my defense; he has become my salvation."
 	desc = "Make an appeal to the Will of the Protector by offering an oddity and forty grown fruits to guide its power towards enhancing cruciform power restoration among disciples. Your offering also increases the protectors armanents reserves."
-	req_offerings = list(/obj/item/oddity = 1, /obj/item/reagent_containers/food/snacks/grown = 40)
+	req_offerings = list(/obj/item/oddity = 1, /obj/item/reagent_containers/snacks/grown = 40)
 	miracles = list(ENERGY_REWARD)
 
 /datum/ritual/cruciform/priest/offering/alert
 	name = "Discern Malcontents"
 	phrase = "Nam etsi ambulavero in medio umbrae mortis, non timebo mala, quoniam tu mecum es. Virga tua, et baculus tuus, ipsa me consolata sunt." //"Even though I walk through the darkest valley, I will fear no evil, for you are with me; your rod and your staff, they comfort me."
 	desc = "Make an appeal to the Will of the Protector by offering one hundred and twenty biomatter and twenty grown fruits to guide its power towards potentially discovering evil creatures. Your offering also increases the protectors armanents reserves."
-	req_offerings = list(/obj/item/stack/material/biomatter = 120, /obj/item/reagent_containers/food/snacks/grown = 20)
+	req_offerings = list(/obj/item/stack/material/biomatter = 120, /obj/item/reagent_containers/snacks/grown = 20)
 	miracles = list(ALERT)

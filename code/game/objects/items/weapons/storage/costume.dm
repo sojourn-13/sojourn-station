@@ -503,10 +503,20 @@
 	new /obj/item/clothing/shoes/leather/regal(src)
 	new /obj/item/clothing/suit/storage/suitjacket/livesey(src)
 	new /obj/item/clothing/head/costume/livesey(src)
-	new /obj/item/reagent_containers/food/drinks/bottle/rombuty(src) // The words "Rum"...
+	new /obj/item/reagent_containers/drinks/bottle/rombuty(src) // The words "Rum"...
 	new /obj/item/toy/badtothebone(src) // ...and "death" mean the same to you.
 	new /obj/item/tool/sword/saber(src)
 	new /obj/item/clothing/accessory/holster/saber(src)
+
+/obj/item/storage/box/costume/roman
+	name = "roman outfit box"
+	desc = "A box containing the full set of roman live action roleplaying gear."
+	icon_state = "box_of_doom_big"
+
+/obj/item/storage/box/costume/roman/populate_contents()
+	new /obj/item/clothing/under/costume/history/centurion(src)
+	new /obj/item/clothing/shoes/costume/history/centurion(src)
+	new /obj/item/toy/weapon/sword(src)
 
 /obj/item/storage/box/costume/rando
 	name = "warlord costume box"
@@ -517,9 +527,9 @@
 	new /obj/item/clothing/under/pants/black/outlaw(src)
 	new /obj/item/clothing/suit/storage/rando(src)
 	new /obj/item/clothing/head/costume/halloween/rando(src)
-	new /obj/item/reagent_containers/food/snacks/donkpocket(src)
-	new /obj/item/reagent_containers/food/snacks/donkpocket(src)
-	new /obj/item/reagent_containers/food/snacks/donkpocket(src) // Rando rations.
+	new /obj/item/reagent_containers/snacks/donkpocket(src)
+	new /obj/item/reagent_containers/snacks/donkpocket(src)
+	new /obj/item/reagent_containers/snacks/donkpocket(src) // Rando rations.
 
 /obj/item/storage/box/costume/randoarmy
 	name = "outlaw biker costume"

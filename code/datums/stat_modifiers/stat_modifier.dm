@@ -55,6 +55,9 @@
 	/// Any modifier typepaths in this will have their prob on our holder set to 0 if we're added, and their original prob stored as the value of the typepath, for use in remove().
 	var/list/mutually_exclusive_with = list()
 
+	var/list/zone_hit_rates_setter = null
+
+
 	//todo: store the vars we change for more accurate removal
 
 /// Inverts all effects the modifier provided, and optionally qdeletes it. Needs to have effects manually added.
@@ -97,6 +100,14 @@
 					LAZYSET(holder.allowed_stat_modifiers, typepath, mutually_exclusive_with[typepath]) // ...we use our stored value to restore it!
 
 	holder = null //we no longer have a holder
+
+	if(zone_hit_rates_setter)
+		if(istype(holder, /mob/living/simple/hostile))
+			var/mob/living/simple/hostile/H = holder
+			H.zone_hit_rates = initial(H.zone_hit_rates)
+		if(issuperioranimal(holder))
+			var/mob/living/carbon/superior/SA
+			SA.zone_hit_rates = initial(SA.zone_hit_rates)
 
 	if (qdel_src)
 		qdel(src)
@@ -178,6 +189,16 @@
 	if (prefix && target.get_prefix) // do we have a prefix, and does our target want a prefix?
 		LAZYADD(target.name_prefixes, prefix) // if so, lets add ours to their prefix list...
 		target.update_prefixes() // ...and regenerate their prefixes
+
+	if(zone_hit_rates_setter)
+		if(istype(holder, /mob/living/simple/hostile))
+			var/mob/living/simple/hostile/H = target
+			H.zone_hit_rates = zone_hit_rates_setter
+		if(issuperioranimal(holder))
+			var/mob/living/carbon/superior/SA = target
+			SA.zone_hit_rates = zone_hit_rates_setter
+
+
 
 	return TRUE
 

@@ -57,6 +57,7 @@
 	add_language(LANGUAGE_MERP)
 	add_language(LANGUAGE_BLORP)
 	add_language(LANGUAGE_WEH)
+	add_language(LANGUAGE_SABLEKYNE)
 	init_id()
 	init_subsystems()
 
@@ -266,11 +267,14 @@
 	set name = "Recalibrate Hotkeys"
 	set desc = "Makes you use the correct borg based hotkeys."
 	set category = "OOC"
-
+/*
 	if(client.get_preference_value(/datum/client_preference/stay_in_hotkey_mode) == GLOB.PREF_YES)
 		winset(client, null, "mainwindow.macro=borgmacro hotkey_toggle.is-checked=true mapwindow.map.focus=true")
 	else
 		winset(client, null, "mainwindow.macro=borgmacro hotkey_toggle.is-checked=false input.focus=true")
+*/
+
+	winset(client, null, "mainwindow.macro=borgmacro hotkey_toggle.is-checked=false input.focus=true")
 
 /mob/living/silicon/verb/set_flavor()
 	set name = "Set Flavour Text"

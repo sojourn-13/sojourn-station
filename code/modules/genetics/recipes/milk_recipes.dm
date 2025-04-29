@@ -1,3 +1,4 @@
+//A-Z required
 /datum/genetics/mutation_recipe/irradiation/milk_c
 	required_mutations = list(MUTATION_MOO)
 	result_path = MUTATION_CHOC_MILK

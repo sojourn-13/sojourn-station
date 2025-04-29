@@ -5,6 +5,9 @@
 	req_access = list(access_medical_equip)
 
 /obj/structure/closet/secure_closet/medicine/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	new /obj/item/storage/box/autoinjectors(src)
 	new /obj/item/storage/box/syringes(src)
 	new /obj/item/reagent_containers/dropper(src)
@@ -24,6 +27,9 @@
 	req_access = list(access_moebius)
 
 /obj/structure/closet/secure_closet/anesthetics/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	new /obj/item/tank/anesthetic(src)
 	new /obj/item/tank/anesthetic(src)
 	new /obj/item/tank/anesthetic(src)
@@ -39,6 +45,9 @@
 	icon_state = "med"
 
 /obj/structure/closet/secure_closet/personal/doctor/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	if(prob(50))
 		new /obj/item/storage/backpack/medical(src)
 	else
@@ -85,6 +94,9 @@
 
 
 /obj/structure/closet/secure_closet/personal/paramedic/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	if(prob(50))
 		new /obj/item/storage/backpack/medical(src)
 	else
@@ -125,6 +137,9 @@
 
 
 /obj/structure/closet/secure_closet/personal/orderly/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	if(prob(50))
 		new /obj/item/storage/backpack/medical(src)
 	else
@@ -153,6 +168,9 @@
 	icon_state = "cmo"
 
 /obj/structure/closet/secure_closet/reinforced/CMO/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	if(prob(50))
 		new /obj/item/storage/backpack/medical(src)
 	else
@@ -184,8 +202,8 @@
 	new /obj/item/storage/pouch/medical_supply(src)
 	new /obj/item/clothing/shoes/reinforced/medical(src)
 	new /obj/item/clothing/gloves/latex/nitrile(src)
-	new /obj/item/computer_hardware/hard_drive/portable/design/medical/advanced/cmo(src)
-	new /obj/item/computer_hardware/hard_drive/portable/design/xenobio/rd(src)
+	new /obj/item/pc_part/drive/disk/design/medical/advanced/cmo(src)
+	new /obj/item/pc_part/drive/disk/design/xenobio/rd(src)
 	new /obj/item/device/defib_kit/compact/combat/adv/loaded/cbo(src)
 	new /obj/item/circuitboard/sleeper/hyper(src)
 	new /obj/item/oddity/chem_book(src)
@@ -198,6 +216,9 @@
 	icon_state = "sec"
 
 /obj/structure/closet/secure_closet/animal/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	new /obj/item/device/assembly/signaler(src)
 	new /obj/item/device/radio/electropack(src)
 	new /obj/item/device/radio/electropack(src)
@@ -211,6 +232,9 @@
 	req_access = list(access_chemistry)
 
 /obj/structure/closet/secure_closet/chemical/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	new /obj/item/storage/box/pillbottles(src)
 	new /obj/item/storage/box/pillbottles(src)
 	new /obj/item/storage/pouch/tubular/vial(src)

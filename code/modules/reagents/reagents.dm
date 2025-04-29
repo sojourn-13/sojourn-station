@@ -62,7 +62,7 @@
 	// Catalog stuff
 	var/appear_in_default_catalog = TRUE
 	var/reagent_type = "404: ERROR FILE NOT FOUND!"
-	var/price_per_unit = 0.125 //por cargo rework
+	var/price_per_unit = 0.125 //for cargo rework / Celler
 	var/safty_process = 0 //This is used for when your metabolism is to low
 
 /datum/reagent/proc/remove_self(amount) // Shortcut
@@ -265,12 +265,12 @@
 /datum/reagent/proc/addiction_act_stage3(mob/living/carbon/human/M)
 	if(prob(30))
 		to_chat(M, SPAN_DANGER("You have an intense craving for [name]."))
-		M.sanity.changeLevel(-5)
+		M.sanity.changeLevel(-1)
 
 /datum/reagent/proc/addiction_act_stage4(mob/living/carbon/human/M)
 	if(prob(30))
 		to_chat(M, SPAN_DANGER("You're not feeling good at all! You really need some [name]."))
-		M.sanity.changeLevel(-10)
+		M.sanity.changeLevel(-2)
 
 /datum/reagent/proc/addiction_end(mob/living/carbon/human/M)
 	to_chat(M, SPAN_NOTICE("You feel like you've gotten over your need for [name]."))

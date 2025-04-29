@@ -49,7 +49,7 @@
 			return
 
 		for(var/mob/M in range(trigger_range, T))
-			if(istype(M,/mob/living/carbon/human) || istype(M, /mob/living/silicon) || istype(M, /mob/living/simple_animal/hostile/poporavtomat))
+			if(istype(M,/mob/living/carbon/human) || istype(M, /mob/living/silicon) || istype(M, /mob/living/simple/hostile/poporavtomat))
 				cooldown_timer = world.time
 				empulse(T, emp_range, emp_range, TRUE)
 				break

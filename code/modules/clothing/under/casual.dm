@@ -525,3 +525,9 @@
 	desc = "Sweat stains not included."
 	icon_state = "sports"
 	item_state = "sports"
+
+/obj/item/clothing/under/rank/ntedress
+	name = "Absolutist evening dress"
+	desc = "A white and gold evening gown, produced and often worn by Abolutists"
+	icon_state = "eveningdress_nt"
+	item_state = "eveningdress_nt"

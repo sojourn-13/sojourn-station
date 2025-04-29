@@ -420,7 +420,7 @@
 	log_and_message_admins("[key_name(occupant)]" + "[occupant.mind ? " ([occupant.mind.assigned_role])" : ""]" + " entered cryostorage.")
 
 	if(cryo_announcement)
-		announce.autosay("[occupant.real_name]" + "[occupant.mind ? ", [occupant.mind.assigned_role]" : ""]" + ", [on_store_message]", "[on_store_name]")
+		announce.autosay("[occupant.real_name]" + "[occupant.mind ? ", [occupant.mind.role_alt_title ? occupant.mind.role_alt_title : occupant.mind.assigned_role]" : ""]" + ", [on_store_message]", "[on_store_name]")
 
 	visible_message("<span class='notice'>\The [initial(name)] hums and hisses as it moves [occupant.real_name] into storage.</span>")
 

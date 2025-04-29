@@ -1,4 +1,4 @@
-/datum/stat_modifier/mob/living/carbon/superior_animal/durable
+/datum/stat_modifier/mob/living/carbon/superior/durable
 
 	armor_adjustment = list(
 	melee = 1,
@@ -15,7 +15,7 @@
 
 	description = "This one looks somewhat more sturdy than others. It'll likely be slightly more resistant to damage and pain."
 
-/datum/stat_modifier/mob/living/carbon/superior_animal/brutish
+/datum/stat_modifier/mob/living/carbon/superior/brutish
 
 	armor_adjustment = list(
 		melee = 1,
@@ -28,7 +28,7 @@
 	melee_damage_lower_increment = 2
 	melee_damage_upper_increment = 2
 	maxHealth_increment = 5
-	armor_divisor_increment = 1.25
+	armor_divisor_increment = 0.5
 
 	stattags = DEFENSE_STATTAG | MELEE_STATTAG
 
@@ -39,7 +39,7 @@
 
 	prefix = "Brutish"
 
-/datum/stat_modifier/mob/living/carbon/superior_animal/padded
+/datum/stat_modifier/mob/living/carbon/superior/padded
 
 	armor_adjustment = list(
 		melee = 2,
@@ -56,7 +56,7 @@
 
 	description = "This one seems to be a bit 'puffier' than others. It looks like your attacks will do somewhat less on it."
 
-/datum/stat_modifier/mob/living/carbon/superior_animal/old
+/datum/stat_modifier/mob/living/carbon/superior/old
 
 	armor_adjustment = list(
 		melee = 1,
@@ -76,7 +76,7 @@
 
 	description = "This one seems old - lethargic, but seasoned. It's likely to be slower but harder to kill."
 
-/datum/stat_modifier/mob/living/carbon/superior_animal/young
+/datum/stat_modifier/mob/living/carbon/superior/young
 
 	armor_adjustment = list(
 		melee = -1,
@@ -98,7 +98,7 @@
 	description = "This one seems to be more active and energetic than the others, but somewhat smaller. It's likely to be more fragile, but quicker."
 
 /// slower, deadlier, significantly tanker -- a significant buff
-/datum/stat_modifier/mob/living/carbon/superior_animal/brutal
+/datum/stat_modifier/mob/living/carbon/superior/brutal
 
 	armor_adjustment = list(
 		melee = 3,

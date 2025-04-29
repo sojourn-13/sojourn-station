@@ -54,7 +54,7 @@
 	desc = "The standard Marshal box kit containing a Operator shotgun, a folding stock shotgun for only TRUE operators!"
 
 	populate_contents()
-		new /obj/item/gun/projectile/automatic/riot_autoshotgun/opshot(src)
+		new /obj/item/gun/projectile/shotgun/riot/opshot(src)
 		new /obj/item/ammo_magazine/speed_loader_shotgun/beanbag/pepperball(src)
 		new /obj/item/ammo_magazine/speed_loader_shotgun(src)
 		new /obj/item/ammo_magazine/speed_loader_shotgun(src)
@@ -77,7 +77,7 @@
 	desc = "The standard Marshal box kit containing a state auto shotgun. What is lacks in penetration it makes up for with ammo capacity and fire rate."
 
 	populate_contents()
-		new /obj/item/gun/projectile/automatic/riot_autoshotgun(src)
+		new /obj/item/gun/projectile/shotgun/riot(src)
 		new /obj/item/ammo_casing/shotgun/beanbag/pepperball/prespawned(src)
 		new /obj/item/ammo_casing/shotgun/prespawned(src)
 		new /obj/item/ammo_casing/shotgun/prespawned(src)
@@ -92,11 +92,13 @@
 		new /obj/item/ammo_magazine/rifle_75/rubber(src)
 		new /obj/item/ammo_magazine/rifle_75(src)
 		new /obj/item/ammo_magazine/rifle_75(src)
+		new /obj/item/ammo_casing/grenade(src)	//One flash, one baton shell for actual use on the copperhead.
+		new /obj/item/ammo_casing/grenade/flash(src)
 		new /obj/item/storage/pouch/ammo(src)
 
 //Ranger kits
 /obj/item/storage/box/m_kit/custer
-	name = "Custer Kit"
+	name = "Custer lever action kit"
 	desc = "The standard Marshal box kit containing a Custer lever action rifle, a variant of the famous Armstrong repeating rifle chambered in 8.6mm."
 
 	populate_contents()
@@ -104,6 +106,17 @@
 		new /obj/item/ammo_magazine/speed_loader_heavy_rifle_408(src)
 		new /obj/item/ammo_magazine/speed_loader_heavy_rifle_408(src)
 		new /obj/item/ammo_magazine/speed_loader_heavy_rifle_408(src) //Still a full packet this way
+		new /obj/item/storage/pouch/ammo(src)
+
+/obj/item/storage/box/m_kit/viper
+	name = "Viper marksman rifle kit"
+	desc = "The standard Marshal box kit containing a Viper DMR, a variant of the typical Mamba frame but in 7.62 with a recoil compensating stock. Perfect for marksmen."
+
+	populate_contents()
+		new /obj/item/gun/projectile/automatic/mamba/viper(src)
+		new /obj/item/ammo_magazine/rifle_75/rubber(src)
+		new /obj/item/ammo_magazine/rifle_75(src)
+		new /obj/item/ammo_magazine/rifle_75(src)
 		new /obj/item/storage/pouch/ammo(src)
 
 /obj/item/storage/box/m_kit/specop

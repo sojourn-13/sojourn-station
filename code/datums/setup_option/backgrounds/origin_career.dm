@@ -264,3 +264,21 @@
 		STAT_MEC = 0,
 		STAT_COG = 0
 	)
+
+/datum/category_item/setup_option/background/career/overbreath
+	name = "Thrill Seeker"
+	desc = "Boring desk jobs or hard labour never gave you the breath of life as much as being in danger, \
+	leading to development of skills for handling perilous situations. \
+	Sadly the fields that require such skills are not to keen on allowing self improvement."
+	perks = list(PERK_OVERBREATH)
+	//Basically you worked in high risk jobs where you got hurt a lot so some self treatment happens
+	//This is meant to be jobs in the field of running into burning buildings to pull out people, or needing to handle people drunk in a bar ect ect.
+	stat_modifiers = list(
+		STAT_ROB = 3,
+		STAT_TGH = 2,
+		STAT_VIG = -10,
+		STAT_BIO = 5,
+		STAT_MEC = -3,
+		STAT_COG = -6,
+		STAT_VIV = -15
+	)

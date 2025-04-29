@@ -6,17 +6,14 @@
 	item_state = "dshotgun"
 	//SPEEDLOADER because rapid unloading.
 	//In principle someone could make a speedloader for it, so it makes sense.
-	load_method = SINGLE_CASING|SPEEDLOADER
 	handle_casings = CYCLE_CASINGS
 	max_shells = 2
 	w_class = ITEM_SIZE_HUGE
 	force = WEAPON_FORCE_PAINFUL
-	flags = CONDUCT
 	slot_flags = SLOT_BACK
-	caliber = CAL_SHOTGUN
 	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 1)
+	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_KNIFE) //Tape-on bayonet sprite; doing this to replace axe shotgun which looks bad.. I regret it.
 	ammo_type = /obj/item/ammo_casing/shotgun/beanbag
-	bulletinsert_sound 	= 'sound/weapons/guns/interact/shotgun_insert.ogg'
 	fire_sound = 'sound/weapons/guns/fire/max_sawn_off.ogg' //Actual double barrel sound
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 10)
 	price_tag = 600
@@ -52,6 +49,9 @@
 
 	if (bolt_open)
 		iconstring += "_open"
+
+	if (bayonet)
+		iconstring += "_b"
 
 	icon_state = iconstring
 
@@ -110,7 +110,6 @@
 	gun_parts = list(/obj/item/stack/material/wood = 2, /obj/item/part/gun/mechanism/shotgun = 1, /obj/item/stack/material/plasteel = 2)
 	slot_flags = SLOT_BELT|SLOT_HOLSTER
 	can_dual = TRUE
-	caliber = CAL_SHOTGUN
 	ammo_type = /obj/item/ammo_casing/shotgun/pellet
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_WOOD = 10)
 	w_class = ITEM_SIZE_NORMAL

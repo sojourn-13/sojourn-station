@@ -121,7 +121,7 @@
 
 // A flask that breaks if thrown on harm intent, spilling its contents offensively all over their target
 // They are also small 5u containers for health potions and the like
-/obj/item/reagent_containers/food/drinks/bottle/alchemy
+/obj/item/reagent_containers/drinks/bottle/alchemy
 	name = "throwing flask"
 	desc = "A fragile, conical flask meant to be filled with harmful (or beneficial) chemicals and thrown to provoke its contents' effects."
 	icon_state = "throwing_flask"
@@ -132,13 +132,13 @@
 	rag_underlay = "rag_flask"
 	filling_states = "20;40;60;80;100"
 
-/obj/item/reagent_containers/food/drinks/bottle/alchemy/Initialize()
+/obj/item/reagent_containers/drinks/bottle/alchemy/Initialize()
 	. = ..()
 	update_icon()
 	if(isGlass)
 		unacidable = TRUE
 
-/obj/item/reagent_containers/food/drinks/bottle/alchemy/update_icon()
+/obj/item/reagent_containers/drinks/bottle/alchemy/update_icon()
 	underlays.Cut()
 	cut_overlays()
 	if(reagents && reagents.total_volume)
@@ -166,7 +166,7 @@
 	storage_slots = 5 // Five flasks
 	sliding_behavior = TRUE // Fast access!
 	can_hold = list(
-		/obj/item/reagent_containers/food/drinks/bottle/alchemy,
+		/obj/item/reagent_containers/drinks/bottle/alchemy,
 		/obj/item/reagent_containers/glass/beaker/flask_alchemy,
 		/obj/item/weldpack/canister/oil
 		)

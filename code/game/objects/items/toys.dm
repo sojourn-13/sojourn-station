@@ -734,7 +734,7 @@
 
 /obj/item/toy/figure/character/bobblehead/acolyte
 	name = "acolyte figurine"
-	desc = "Church of Absolute \"New Faith Life\" brand figurine of a vector, hooded both physically and spiritually from that which would lead them astray."
+	desc = "Church of the Absolute \"New Faith Life\" brand figurine of a vector, hooded both physically and spiritually from that which would lead them astray."
 	icon_state = "acolyte"
 	toysay = "\"Brotherhood.\""
 
@@ -1432,6 +1432,10 @@
 	name = "dipping bird model"
 	desc = "A favorite amongst clerks and desk jockeys."
 	icon_state= "dippybird"
+
+/obj/item/toy/desk/dippingbird/branded
+	name = "spector brand dipping bird model"
+	desc = "A favorite amongst clerks and desk jockeys. This one has a nigh impossible to remove 'Spector Station' sticker on the bottom of the base."
 
 //Consumer!!!
 

@@ -204,9 +204,11 @@
 	return
 
 /mob/living/carbon/human/adjustHalLoss(amount)
-    if(species.flags & NO_PAIN)
-        return FALSE    //lmao pain
-    ..()
+	if(species.flags & NO_PAIN)
+		return FALSE    //lmao pain
+	if(PAIN_LESS in mutations)
+		return FALSE    //lmao pain
+	..()
 
 ////////////////////////////////////////////
 
@@ -348,7 +350,7 @@ This function restores all organs.
 	//Handle other types of damage
 
 	if(damagetype != BRUTE && damagetype != BURN)
-		if(damagetype == HALLOSS && !(species && (species.flags & NO_PAIN)))
+		if(damagetype == HALLOSS && !((species.flags & NO_PAIN) || (PAIN_LESS in mutations)))
 			if(!stat && (damage > 25 && prob(20)) || (damage > 50 && prob(60)))
 				emote("painscream")
 

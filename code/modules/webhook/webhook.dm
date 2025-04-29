@@ -35,7 +35,7 @@ ADMIN_VERB_ADD(/client/proc/discord_msg, R_ADMIN, TRUE)
 		lobby_message(message = msg, color = "#79FE5F")
 
 
-/proc/send2adminchat(var/initiator, var/original_msg)
+/proc/send2adminchat_webhook(var/initiator, var/original_msg)
 	if (!config.webhook_url || !config.webhook_key)
 		return
 

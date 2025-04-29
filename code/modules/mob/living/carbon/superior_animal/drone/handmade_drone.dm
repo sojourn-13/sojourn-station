@@ -1,4 +1,4 @@
-/mob/living/carbon/superior_animal/handmade
+/mob/living/carbon/superior/handmade
 	name = "Custom-made Drone"
 	desc = "Built from the Soteria robotics division's craftsmanship, and gathered designs of Greyson positronics, each of these fully robotic automatons is a unique, handmade, heavily armored assembly."
 	icon = 'icons/mob/custom_bot.dmi' //roomba in this file was created by Toriate#0657
@@ -45,7 +45,7 @@
 	var/list/creator = list() // Who's the bot's creator.
 	never_stimulate_air = TRUE
 
-/mob/living/carbon/superior_animal/robot/death()
+/mob/living/carbon/superior/robot/death()
 	..()
 	new /obj/effect/decal/cleanable/blood/gibs/robot(src.loc)
 	var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
@@ -55,7 +55,7 @@
 	return
 
 
-/mob/living/carbon/superior_animal/handmade/examine(mob/user)
+/mob/living/carbon/superior/handmade/examine(mob/user)
 	..()
 	if(exam_message)
 		to_chat(user, SPAN_NOTICE("[exam_message]"))
@@ -82,7 +82,7 @@
 		else if (health < maxHealth)
 			to_chat(user, SPAN_WARNING("It has a few cuts and bruses."))
 
-/mob/living/carbon/superior_animal/handmade/Move(NewLoc, Dir = 0, step_x = 0, step_y = 0, var/glide_size_override = 0) //WE CLEAN!
+/mob/living/carbon/superior/handmade/Move(NewLoc, Dir = 0, step_x = 0, step_y = 0, var/glide_size_override = 0) //WE CLEAN!
 	. = ..()
 	if(cleaning)
 		var/turf/tile = loc
@@ -113,12 +113,12 @@
 						cleaned_human.clean_blood(1)
 						to_chat(cleaned_human, SPAN_DANGER("[src] cleans your face!"))
 
-/mob/living/carbon/superior_animal/handmade/emp_act(severity)
+/mob/living/carbon/superior/handmade/emp_act(severity)
 	..()
 	take_overall_damage(0, 50 * severity)
 
 // For repairing damage to the synths.
-/mob/living/carbon/superior_animal/handmade/attackby(obj/item/W as obj, mob/user as mob)
+/mob/living/carbon/superior/handmade/attackby(obj/item/W as obj, mob/user as mob)
 	var/obj/item/T // Define the tool variable early on to avoid compilation problem and to allow us to use tool-unique variables
 	if(user.a_intent == I_HELP) // Are we helping ?
 

@@ -1,28 +1,28 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "aa" = (
-/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol,
+/mob/living/carbon/superior/robot/gp/synth/epistol,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/template_noop)
 "ab" = (
-/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/heavy,
+/mob/living/carbon/superior/robot/gp/synth/epistol/heavy,
 /turf/simulated/floor/tiled/derelict,
 /area/template_noop)
 "ac" = (
-/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol,
+/mob/living/carbon/superior/robot/gp/synth/epistol,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/template_noop)
 "ad" = (
-/mob/living/carbon/superior_animal/robot/greyson/roomba/gun_ba,
-/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol,
+/mob/living/carbon/superior/robot/gp/roomba/gun_ba,
+/mob/living/carbon/superior/robot/gp/synth/epistol,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/template_noop)
 "ae" = (
-/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/rifle,
+/mob/living/carbon/superior/robot/gp/synth/epistol/rifle,
 /turf/simulated/floor/tiled/cafe,
 /area/template_noop)
 "af" = (
-/mob/living/carbon/superior_animal/robot/greyson/roomba/gun_ba,
-/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/esmg,
+/mob/living/carbon/superior/robot/gp/roomba/gun_ba,
+/mob/living/carbon/superior/robot/gp/synth/epistol/esmg,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/template_noop)
 "ag" = (
@@ -180,7 +180,7 @@
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/template_noop)
 "cK" = (
-/mob/living/carbon/superior_animal/robot/greyson/roomba/gun_ba,
+/mob/living/carbon/superior/robot/gp/roomba/gun_ba,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/template_noop)
 "dO" = (
@@ -192,7 +192,7 @@
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/template_noop)
 "dY" = (
-/mob/living/carbon/superior_animal/robot/greyson/roomba/trip/armored,
+/mob/living/carbon/superior/robot/gp/roomba/trip/armored,
 /obj/random/junk/low_chance,
 /turf/simulated/floor/tiled/derelict,
 /area/template_noop)
@@ -201,7 +201,7 @@
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/template_noop)
 "fa" = (
-/mob/living/carbon/superior_animal/robot/greyson/roomba/slayer,
+/mob/living/carbon/superior/robot/gp/roomba/slayer,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/template_noop)
 "fy" = (
@@ -218,7 +218,7 @@
 /turf/template_noop,
 /area/template_noop)
 "ge" = (
-/mob/living/carbon/superior_animal/robot/greyson/custodian/engineer,
+/mob/living/carbon/superior/robot/gp/custodian/engineer,
 /turf/simulated/floor/plating/under,
 /area/template_noop)
 "gy" = (
@@ -255,7 +255,7 @@
 /area/template_noop)
 "kj" = (
 /obj/structure/lattice,
-/mob/living/carbon/superior_animal/robot/greyson/custodian/engineer,
+/mob/living/carbon/superior/robot/gp/custodian/engineer,
 /turf/template_noop,
 /area/template_noop)
 "ku" = (
@@ -278,7 +278,7 @@
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/template_noop)
 "lj" = (
-/mob/living/carbon/superior_animal/robot/greyson/roomba/boomba,
+/mob/living/carbon/superior/robot/gp/roomba/boomba,
 /turf/simulated/floor/tiled/derelict/white_red_edges,
 /area/template_noop)
 "lQ" = (
@@ -331,7 +331,7 @@
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/template_noop)
 "oJ" = (
-/mob/living/carbon/superior_animal/robot/greyson/custodian/engineer,
+/mob/living/carbon/superior/robot/gp/custodian/engineer,
 /turf/template_noop,
 /area/template_noop)
 "pa" = (
@@ -490,7 +490,7 @@
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/template_noop)
 "Bj" = (
-/mob/living/carbon/superior_animal/robot/greyson/roomba/slayer,
+/mob/living/carbon/superior/robot/gp/roomba/slayer,
 /turf/simulated/floor/tiled/cafe,
 /area/template_noop)
 "BH" = (
@@ -499,7 +499,7 @@
 /area/template_noop)
 "BI" = (
 /obj/effect/floor_decal/industrial/warning,
-/mob/living/carbon/superior_animal/robot/greyson/roomba/boomba,
+/mob/living/carbon/superior/robot/gp/roomba/boomba,
 /turf/simulated/floor/tiled/derelict,
 /area/template_noop)
 "Cs" = (
@@ -518,7 +518,7 @@
 /turf/template_noop,
 /area/template_noop)
 "Dc" = (
-/mob/living/carbon/superior_animal/robot/greyson/roomba/boomba,
+/mob/living/carbon/superior/robot/gp/roomba/boomba,
 /turf/simulated/floor/tiled/derelict,
 /area/template_noop)
 "DA" = (
@@ -544,7 +544,7 @@
 /turf/simulated/wall/untinted/onestar_reinforced,
 /area/template_noop)
 "Fa" = (
-/mob/living/carbon/superior_animal/robot/greyson/roomba/trip/armored,
+/mob/living/carbon/superior/robot/gp/roomba/trip/armored,
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/template_noop)
 "Fb" = (
@@ -677,7 +677,7 @@
 /obj/structure/sign/department/medbay{
 	pixel_x = 32
 	},
-/mob/living/carbon/superior_animal/robot/greyson/roomba/slayer,
+/mob/living/carbon/superior/robot/gp/roomba/slayer,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/template_noop)
 "NH" = (
@@ -758,12 +758,12 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/mob/living/carbon/superior_animal/robot/greyson/roomba/boomba,
+/mob/living/carbon/superior/robot/gp/roomba/boomba,
 /obj/random/material_rare,
 /turf/simulated/floor/tiled/cafe,
 /area/template_noop)
 "SO" = (
-/mob/living/carbon/superior_animal/robot/greyson/roomba/trip/armored,
+/mob/living/carbon/superior/robot/gp/roomba/trip/armored,
 /turf/simulated/floor/tiled/derelict,
 /area/template_noop)
 "SV" = (
@@ -819,7 +819,7 @@
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/template_noop)
 "Yc" = (
-/mob/living/carbon/superior_animal/robot/greyson/roomba/trip/armored,
+/mob/living/carbon/superior/robot/gp/roomba/trip/armored,
 /turf/simulated/floor/plating/under,
 /area/template_noop)
 "Yy" = (

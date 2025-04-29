@@ -136,6 +136,21 @@
 	var/alt_mode_lossrate = 0.5
 	var/alt_mode_sharp = FALSE
 
+	var/swing_icon_mod = "" //Used for when you make a swing attack, some items may get fancy icons for it
+
+	//sound based vars
+	var/pickup_sound
+	var/pickup_volume = 60
+	var/pickup_volume_extra_range = 1 //Picking something up is quite silent
+	var/pickup_volume_dropoff = -1 //so that we dont let everyone 4 tiles away from us know
+
+	var/dropped_sound
+	var/dropped_sound_volume = 60
+	var/dropped_sound_volume_extra_range = 1
+	var/dropped_sound_volume_dropoff = -1
+
+	var/thrown_sound
+
 /obj/item/Initialize()
 
 	for (var/upgrade_typepath in initialized_upgrades)
@@ -291,6 +306,8 @@
 		if((target != old_loc) && (target != old_loc.get_holding_mob()))
 			do_pickup_animation(target,old_loc)
 	add_hud_actions(target)
+	if(pickup_sound)
+		playsound(src, pickup_sound, pickup_volume, pickup_volume_extra_range, pickup_volume_dropoff)
 
 /obj/item/attack_ai(mob/user as mob)
 	if(istype(loc, /obj/item/robot_module))
@@ -754,3 +771,14 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 	attack_verb = LAZYCOPY(alt_mode_verbs)
 	sharp = alt_mode_sharp
 	flags |= NOBLOODY
+
+/obj/item/post_thrown_hit()
+	if(thrown_sound)
+		//Same volume as if you missed
+		playsound(src, thrown_sound, 50, 1, -6)
+
+/obj/item/dropped()
+	..()
+
+	if(dropped_sound)
+		playsound(src, dropped_sound, dropped_sound_volume, dropped_sound_volume_extra_range, dropped_sound_volume_dropoff)

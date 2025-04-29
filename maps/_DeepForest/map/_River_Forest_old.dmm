@@ -28,28 +28,28 @@
 /obj/item/stack/material/bone,
 /obj/effect/decal/cleanable/rubble,
 /obj/effect/decal/cleanable/rubble,
-/mob/living/carbon/superior_animal/wurm,
+/mob/living/carbon/superior/wurm,
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/river_forest_underground)
 "ag" = (
 /obj/effect/decal/cleanable/rubble,
-/mob/living/carbon/superior_animal/wurm/osmium,
+/mob/living/carbon/superior/wurm/osmium,
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/river_forest_underground)
 "ah" = (
 /obj/effect/decal/cleanable/rubble,
-/mob/living/carbon/superior_animal/wurm,
+/mob/living/carbon/superior/wurm,
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/river_forest_underground)
 "ai" = (
 /obj/effect/decal/cleanable/rubble,
-/mob/living/carbon/superior_animal/wurm/osmium,
+/mob/living/carbon/superior/wurm/osmium,
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/river_forest_underground)
 "aj" = (
 /obj/item/oddity/common/broken_glass,
 /obj/effect/decal/cleanable/rubble,
-/mob/living/carbon/superior_animal/wurm/osmium,
+/mob/living/carbon/superior/wurm/osmium,
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/river_forest_underground)
 "ak" = (
@@ -65,13 +65,13 @@
 "al" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/effect/decal/cleanable/rubble,
-/mob/living/carbon/superior_animal/wurm,
+/mob/living/carbon/superior/wurm,
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/river_forest_underground)
 "am" = (
 /obj/item/oddity/common/broken_glass,
 /obj/effect/decal/cleanable/rubble,
-/mob/living/carbon/superior_animal/wurm,
+/mob/living/carbon/superior/wurm,
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/river_forest_underground)
 "an" = (
@@ -235,7 +235,7 @@
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/river_forest_underground)
 "cK" = (
-/mob/living/simple_animal/hostile/dino{
+/mob/living/simple/hostile/dino{
 	faction = "deathclaw"
 	},
 /turf/simulated/floor/rock/grey,
@@ -245,7 +245,7 @@
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star/fo_internal)
 "cO" = (
-/mob/living/carbon/superior_animal/xenomorph/runner/panther,
+/mob/living/carbon/superior/xenomorph/runner/panther,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/nadezhda/outside/one_star/fo_internal)
 "cR" = (
@@ -271,7 +271,7 @@
 /turf/simulated/floor/reinforced,
 /area/nadezhda/outside/forest/river_forest_light)
 "dc" = (
-/mob/living/simple_animal/hostile/bear/mukwah,
+/mob/living/simple/hostile/bear/mukwah,
 /turf/simulated/floor/beach/water/jungledeep{
 	desc = "Filthy, stinking bilge water.";
 	name = "murky water"
@@ -282,7 +282,7 @@
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/nadezhda/outside/forest/river_forest_underground)
 "dE" = (
-/mob/living/simple_animal/hostile/dino{
+/mob/living/simple/hostile/dino{
 	faction = "deathclaw"
 	},
 /turf/simulated/floor/asteroid/dirt/mud,
@@ -308,7 +308,7 @@
 /turf/simulated/floor/rock/dark,
 /area/nadezhda/outside/forest/river_forest_underground)
 "ee" = (
-/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/rifle,
+/mob/living/carbon/superior/robot/gp/synth/epistol/rifle,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/nadezhda/outside/one_star/fo_internal)
 "ei" = (
@@ -566,9 +566,9 @@
 "kg" = (
 /obj/structure/table/rack/shelf,
 /obj/machinery/door/blast/shutters/glass,
-/obj/item/reagent_containers/food/snacks/openable/can,
-/obj/item/reagent_containers/food/snacks/openable/can,
-/obj/item/reagent_containers/food/snacks/openable/can,
+/obj/item/reagent_containers/snacks/openable/can,
+/obj/item/reagent_containers/snacks/openable/can,
+/obj/item/reagent_containers/snacks/openable/can,
 /turf/simulated/floor/wood/wild4,
 /area/nadezhda/outside/forest/river_forest_light)
 "kj" = (
@@ -729,7 +729,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/river_forest_light)
 "lY" = (
-/mob/living/simple_animal/hostile/bear/mukwah,
+/mob/living/simple/hostile/bear/mukwah,
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/river_forest_underground)
 "lZ" = (
@@ -742,7 +742,7 @@
 /turf/unsimulated/mineral,
 /area/nadezhda/outside/forest/river_forest_underground)
 "mi" = (
-/mob/living/simple_animal/hostile/snake{
+/mob/living/simple/hostile/snake{
 	layer = 3.8;
 	name = "tree jumping viper"
 	},
@@ -763,7 +763,7 @@
 /area/nadezhda/outside/forest/river_forest_dark)
 "mo" = (
 /obj/structure/table/onestar,
-/obj/item/computer_hardware/hard_drive/portable/design/surgery,
+/obj/item/pc_part/drive/disk/design/surgery,
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star/fo_internal)
 "mr" = (
@@ -802,7 +802,7 @@
 /area/nadezhda/outside/forest/river_forest_dark)
 "mZ" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/drinks/teapot,
+/obj/item/reagent_containers/drinks/teapot,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/river_forest_light)
 "ne" = (
@@ -840,7 +840,7 @@
 /area/nadezhda/outside/forest/river_forest_dark)
 "ns" = (
 /obj/structure/flora/small/trailrocka1,
-/obj/item/reagent_containers/food/snacks/monkeykabob,
+/obj/item/reagent_containers/snacks/monkeykabob,
 /turf/simulated/floor/asteroid/dirt/burned,
 /area/nadezhda/outside/forest/river_forest_light)
 "nt" = (
@@ -976,12 +976,12 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/river_forest_light)
 "pb" = (
-/mob/living/carbon/superior_animal/robot/greyson/roomba,
+/mob/living/carbon/superior/robot/gp/roomba,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/nadezhda/outside/one_star/fo_internal)
 "pf" = (
 /obj/item/stack/ore,
-/obj/item/reagent_containers/food/snacks/amanita_pie,
+/obj/item/reagent_containers/snacks/amanita_pie,
 /turf/simulated/floor/rock/dark,
 /area/nadezhda/outside/forest/river_forest_dark)
 "ph" = (
@@ -1018,8 +1018,8 @@
 /area/nadezhda/outside/forest/river_forest_light)
 "py" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/drinks/mug/teacup,
-/obj/item/reagent_containers/food/snacks/chocolatepiece/truffle,
+/obj/item/reagent_containers/drinks/mug/teacup,
+/obj/item/reagent_containers/snacks/chocolatepiece/truffle,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/river_forest_light)
 "pB" = (
@@ -1166,7 +1166,7 @@
 /turf/simulated/floor/rock/alt,
 /area/nadezhda/outside/forest/river_forest_dark)
 "rs" = (
-/mob/living/carbon/superior_animal/robot/greyson/roomba/slayer,
+/mob/living/carbon/superior/robot/gp/roomba/slayer,
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star/fo_internal)
 "rt" = (
@@ -1175,7 +1175,7 @@
 /turf/unsimulated/mineral,
 /area/nadezhda/outside/forest/river_forest_dark)
 "ru" = (
-/mob/living/simple_animal/hostile/diyaab,
+/mob/living/simple/hostile/diyaab,
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/outside/forest/river_forest_light)
 "rv" = (
@@ -1218,7 +1218,7 @@
 /area/nadezhda/outside/forest/river_forest_light)
 "rQ" = (
 /obj/item/stack/ore,
-/obj/item/reagent_containers/food/snacks/chocolatepiece,
+/obj/item/reagent_containers/snacks/chocolatepiece,
 /turf/simulated/floor/rock/dark,
 /area/nadezhda/outside/forest/river_forest_dark)
 "rR" = (
@@ -1246,7 +1246,7 @@
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/river_forest_light)
 "sf" = (
-/obj/item/reagent_containers/food/drinks/bottle/pwine,
+/obj/item/reagent_containers/drinks/bottle/pwine,
 /turf/simulated/floor/carpet/gaycarpet,
 /area/nadezhda/outside/forest/river_forest_light)
 "sh" = (
@@ -1313,7 +1313,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/river_forest_light)
 "sH" = (
-/mob/living/carbon/superior_animal/robot/greyson/roomba/slayer,
+/mob/living/carbon/superior/robot/gp/roomba/slayer,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/nadezhda/outside/one_star/fo_internal)
 "sJ" = (
@@ -1351,17 +1351,17 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/river_forest_light)
 "sZ" = (
-/obj/item/reagent_containers/food/snacks/chocolatepiece,
+/obj/item/reagent_containers/snacks/chocolatepiece,
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/river_forest_dark)
 "ta" = (
-/mob/living/simple_animal/hostile/dino{
+/mob/living/simple/hostile/dino{
 	faction = "deathclaw"
 	},
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/river_forest_underground)
 "tb" = (
-/mob/living/simple_animal/hostile/carp/pike,
+/mob/living/simple/hostile/carp/pike,
 /turf/simulated/floor/beach/water/ocean,
 /area/nadezhda/outside/forest/river_forest_light)
 "th" = (
@@ -1426,7 +1426,7 @@
 /turf/simulated/wall/wood_old,
 /area/nadezhda/outside/forest/river_forest_underground)
 "tX" = (
-/obj/item/reagent_containers/food/snacks/applepie,
+/obj/item/reagent_containers/snacks/applepie,
 /turf/simulated/floor/rock/dark,
 /area/nadezhda/outside/forest/river_forest_dark)
 "tZ" = (
@@ -1522,7 +1522,7 @@
 /turf/simulated/floor/wood/wild4,
 /area/nadezhda/outside/forest/river_forest_light)
 "va" = (
-/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/esmg,
+/mob/living/carbon/superior/robot/gp/synth/epistol/esmg,
 /turf/simulated/floor/asteroid/grass/colonialjungle2,
 /area/nadezhda/outside/forest/river_forest_light)
 "vc" = (
@@ -1538,7 +1538,7 @@
 /turf/simulated/floor/beach/water/jungle,
 /area/nadezhda/outside/forest/river_forest_light)
 "vi" = (
-/obj/item/reagent_containers/food/drinks/cans/cola,
+/obj/item/reagent_containers/drinks/cans/cola,
 /obj/item/arrow,
 /obj/structure/table/bench/marble,
 /turf/simulated/floor/asteroid/grass/jungle,
@@ -1614,7 +1614,7 @@
 /turf/simulated/floor/reinforced,
 /area/nadezhda/outside/forest/river_forest_light)
 "vM" = (
-/obj/item/reagent_containers/food/snacks/amanita_pie,
+/obj/item/reagent_containers/snacks/amanita_pie,
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/river_forest_dark)
 "vS" = (
@@ -1627,7 +1627,7 @@
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/river_forest_dark)
 "vV" = (
-/mob/living/simple_animal/hostile/diyaab,
+/mob/living/simple/hostile/diyaab,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/river_forest_light)
 "vZ" = (
@@ -1654,7 +1654,7 @@
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/river_forest_underground)
 "wi" = (
-/obj/item/reagent_containers/food/drinks/bottle/small/beer,
+/obj/item/reagent_containers/drinks/bottle/small/beer,
 /obj/random/junk/cigbutt,
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/nadezhda/outside/forest/river_forest_light)
@@ -1705,17 +1705,17 @@
 /turf/simulated/floor/beach/water/shallow,
 /area/nadezhda/outside/forest/river_forest_light)
 "wK" = (
-/obj/item/reagent_containers/food/snacks/egg/green{
+/obj/item/reagent_containers/snacks/egg/green{
 	name = "snake egg"
 	},
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/nadezhda/outside/forest/river_forest_light)
 "wL" = (
-/mob/living/carbon/superior_animal/wurm,
+/mob/living/carbon/superior/wurm,
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/river_forest_underground)
 "wM" = (
-/mob/living/simple_animal/hostile/dino{
+/mob/living/simple/hostile/dino{
 	faction = "deathclaw"
 	},
 /turf/simulated/floor/rock/dark,
@@ -1775,7 +1775,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/river_forest_light)
 "xC" = (
-/mob/living/simple_animal/hostile/giant_snake,
+/mob/living/simple/hostile/giant_snake,
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/nadezhda/outside/forest/river_forest_light)
 "xE" = (
@@ -1936,7 +1936,7 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/river_forest_light)
 "zb" = (
-/mob/living/simple_animal/hostile/render,
+/mob/living/simple/hostile/render,
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/river_forest_underground)
 "zc" = (
@@ -1979,15 +1979,15 @@
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/river_forest_dark)
 "zt" = (
-/mob/living/simple_animal/hostile/carp,
+/mob/living/simple/hostile/carp,
 /turf/simulated/floor/beach/water/jungle,
 /area/nadezhda/outside/forest/river_forest_dark)
 "zv" = (
 /obj/structure/table/rack/shelf,
 /obj/machinery/door/blast/shutters/glass,
-/obj/item/reagent_containers/food/snacks/openable/candy,
-/obj/item/reagent_containers/food/snacks/openable/candy,
-/obj/item/reagent_containers/food/snacks/openable/candy,
+/obj/item/reagent_containers/snacks/openable/candy,
+/obj/item/reagent_containers/snacks/openable/candy,
+/obj/item/reagent_containers/snacks/openable/candy,
 /turf/simulated/floor/wood/wild4,
 /area/nadezhda/outside/forest/river_forest_light)
 "zz" = (
@@ -2040,7 +2040,7 @@
 /area/nadezhda/outside/forest/river_forest_dark)
 "Ae" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/condiment/sugar,
+/obj/item/reagent_containers/condiment/sugar,
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/outside/forest/river_forest_light)
 "Ai" = (
@@ -2126,7 +2126,7 @@
 /area/nadezhda/outside/forest/river_forest_light)
 "AX" = (
 /obj/structure/table/bench/wooden,
-/obj/item/reagent_containers/food/drinks/cans/cola,
+/obj/item/reagent_containers/drinks/cans/cola,
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/nadezhda/outside/forest/river_forest_light)
 "AZ" = (
@@ -2310,7 +2310,7 @@
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/river_forest_dark)
 "Df" = (
-/mob/living/simple_animal/hostile/carp/baby,
+/mob/living/simple/hostile/carp/baby,
 /turf/simulated/floor/beach/water/jungle,
 /area/nadezhda/outside/forest/river_forest_dark)
 "Dh" = (
@@ -2335,7 +2335,7 @@
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/nadezhda/outside/one_star/fo_internal)
 "Dy" = (
-/mob/living/simple_animal/hostile/bear/mukwah,
+/mob/living/simple/hostile/bear/mukwah,
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/river_forest_underground)
 "Dz" = (
@@ -2433,7 +2433,7 @@
 /area/nadezhda/outside/forest/river_forest_light)
 "Ex" = (
 /obj/effect/decal/cleanable/rubble,
-/obj/item/reagent_containers/food/snacks/cherrypie,
+/obj/item/reagent_containers/snacks/cherrypie,
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/river_forest_dark)
 "EC" = (
@@ -2451,7 +2451,7 @@
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/forest/river_forest_underground)
 "EJ" = (
-/mob/living/simple_animal/hostile/carp,
+/mob/living/simple/hostile/carp,
 /turf/simulated/floor/beach/water/shallow,
 /area/nadezhda/outside/forest/river_forest_light)
 "EN" = (
@@ -2459,7 +2459,7 @@
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/nadezhda/outside/forest/river_forest_light)
 "EV" = (
-/mob/living/simple_animal/hostile/carp/greatwhite,
+/mob/living/simple/hostile/carp/greatwhite,
 /turf/simulated/floor/beach/water/jungle,
 /area/nadezhda/outside/forest/river_forest_dark)
 "EW" = (
@@ -2470,11 +2470,11 @@
 /turf/simulated/floor/wood/wild4,
 /area/nadezhda/outside/forest/river_forest_underground)
 "Fd" = (
-/mob/living/simple_animal/hostile/carp/baby,
+/mob/living/simple/hostile/carp/baby,
 /turf/simulated/floor/beach/water/shallow,
 /area/nadezhda/outside/forest/river_forest_light)
 "Fg" = (
-/mob/living/simple_animal/hostile/diyaab,
+/mob/living/simple/hostile/diyaab,
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/nadezhda/outside/forest/river_forest_light)
 "Fh" = (
@@ -2508,7 +2508,7 @@
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/river_forest_underground)
 "Fs" = (
-/mob/living/simple_animal/hostile/carp/pike,
+/mob/living/simple/hostile/carp/pike,
 /turf/simulated/floor/beach/water/jungle,
 /area/nadezhda/outside/forest/river_forest_dark)
 "Fu" = (
@@ -2523,9 +2523,9 @@
 "Fx" = (
 /obj/structure/table/rack/shelf,
 /obj/machinery/door/blast/shutters/glass,
-/obj/item/reagent_containers/food/snacks/openable,
-/obj/item/reagent_containers/food/snacks/openable,
-/obj/item/reagent_containers/food/snacks/openable,
+/obj/item/reagent_containers/snacks/openable,
+/obj/item/reagent_containers/snacks/openable,
+/obj/item/reagent_containers/snacks/openable,
 /turf/simulated/floor/wood/wild4,
 /area/nadezhda/outside/forest/river_forest_light)
 "Fy" = (
@@ -2551,7 +2551,7 @@
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/nadezhda/outside/forest/river_forest_light)
 "FL" = (
-/mob/living/simple_animal/hostile/render,
+/mob/living/simple/hostile/render,
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/river_forest_underground)
 "FN" = (
@@ -2673,7 +2673,7 @@
 /turf/simulated/floor/wood/wild4,
 /area/nadezhda/outside/forest/river_forest_underground)
 "Hh" = (
-/obj/item/reagent_containers/food/snacks/openable/chips,
+/obj/item/reagent_containers/snacks/openable/chips,
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/nadezhda/outside/forest/river_forest_light)
 "Hi" = (
@@ -2705,7 +2705,7 @@
 /obj/item/gun/projectile/rivet,
 /obj/item/remains,
 /obj/item/ammo_magazine/magnum_40/hv,
-/mob/living/carbon/superior_animal/xenomorph/runner,
+/mob/living/carbon/superior/xenomorph/runner,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/nadezhda/outside/one_star/fo_internal)
 "HC" = (
@@ -2771,7 +2771,7 @@
 /area/nadezhda/outside/forest/river_forest_dark)
 "Id" = (
 /obj/structure/table/bench/wooden,
-/obj/item/reagent_containers/food/drinks/cans/cola,
+/obj/item/reagent_containers/drinks/cans/cola,
 /obj/item/clothing/mask/costume/halloween/demon,
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/nadezhda/outside/forest/river_forest_light)
@@ -2790,7 +2790,7 @@
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/nadezhda/outside/one_star/fo_internal)
 "Im" = (
-/obj/item/reagent_containers/food/drinks/bottle/small/beer,
+/obj/item/reagent_containers/drinks/bottle/small/beer,
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/nadezhda/outside/forest/river_forest_light)
 "Io" = (
@@ -2882,7 +2882,7 @@
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/river_forest_underground)
 "JQ" = (
-/mob/living/simple_animal/hostile/carp/greatwhite,
+/mob/living/simple/hostile/carp/greatwhite,
 /turf/simulated/floor/beach/water/ocean,
 /area/nadezhda/outside/forest/river_forest_light)
 "JS" = (
@@ -3040,7 +3040,7 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/river_forest_light)
 "LJ" = (
-/obj/item/reagent_containers/food/snacks/applepie,
+/obj/item/reagent_containers/snacks/applepie,
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/river_forest_dark)
 "LL" = (
@@ -3221,7 +3221,7 @@
 /turf/simulated/floor/rock/alt,
 /area/nadezhda/outside/forest/river_forest_dark)
 "Nt" = (
-/mob/living/carbon/superior_animal/wurm/osmium,
+/mob/living/carbon/superior/wurm/osmium,
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/river_forest_underground)
 "Nx" = (
@@ -3354,7 +3354,7 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/river_forest_light)
 "Ph" = (
-/mob/living/carbon/superior_animal/robot/greyson/synthetic,
+/mob/living/carbon/superior/robot/gp/synth,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/nadezhda/outside/one_star/fo_internal)
 "Pj" = (
@@ -3464,7 +3464,7 @@
 /area/nadezhda/outside/forest/river_forest_underground)
 "Rf" = (
 /obj/structure/table/bench/wooden,
-/obj/item/reagent_containers/food/snacks/openable/chips,
+/obj/item/reagent_containers/snacks/openable/chips,
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/nadezhda/outside/forest/river_forest_light)
 "Ri" = (
@@ -3537,7 +3537,7 @@
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/river_forest_dark)
 "RY" = (
-/mob/living/simple_animal/hostile/bear/mukwah,
+/mob/living/simple/hostile/bear/mukwah,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/forest/river_forest_underground)
 "Sa" = (
@@ -3606,7 +3606,7 @@
 /turf/simulated/floor/rock/dark,
 /area/nadezhda/outside/forest/river_forest_underground)
 "SY" = (
-/obj/item/reagent_containers/food/drinks/cans/cola,
+/obj/item/reagent_containers/drinks/cans/cola,
 /obj/structure/table/bench/marble,
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/nadezhda/outside/forest/river_forest_light)
@@ -3665,7 +3665,7 @@
 /turf/simulated/floor/rock/alt,
 /area/nadezhda/outside/forest/river_forest_dark)
 "TI" = (
-/mob/living/carbon/superior_animal/robot/greyson/roomba/trip,
+/mob/living/carbon/superior/robot/gp/roomba/trip,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/nadezhda/outside/one_star/fo_internal)
 "TK" = (
@@ -3681,7 +3681,7 @@
 /turf/simulated/floor/rock/dark,
 /area/nadezhda/outside/forest/river_forest_dark)
 "TO" = (
-/mob/living/carbon/superior_animal/robot/greyson/custodian,
+/mob/living/carbon/superior/robot/gp/custodian,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/nadezhda/outside/one_star/fo_internal)
 "TR" = (
@@ -3904,7 +3904,7 @@
 /area/nadezhda/outside/forest/river_forest_underground)
 "Wn" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/condiment/flour,
+/obj/item/reagent_containers/condiment/flour,
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/outside/forest/river_forest_light)
 "Wp" = (
@@ -3923,7 +3923,7 @@
 /area/nadezhda/outside/forest/river_forest_light)
 "Wy" = (
 /obj/structure/mopbucket,
-/mob/living/carbon/superior_animal/robot/greyson/custodian,
+/mob/living/carbon/superior/robot/gp/custodian,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/nadezhda/outside/one_star/fo_internal)
 "WA" = (
@@ -3979,11 +3979,11 @@
 /turf/simulated/floor/rock/alt,
 /area/nadezhda/outside/forest/river_forest_dark)
 "WU" = (
-/obj/item/reagent_containers/food/snacks/cherrypie,
+/obj/item/reagent_containers/snacks/cherrypie,
 /turf/simulated/floor/rock/dark,
 /area/nadezhda/outside/forest/river_forest_dark)
 "Xc" = (
-/mob/living/simple_animal/hostile/carp,
+/mob/living/simple/hostile/carp,
 /turf/simulated/floor/beach/water/ocean,
 /area/nadezhda/outside/forest/river_forest_light)
 "Xg" = (
@@ -4005,7 +4005,7 @@
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/forest/river_forest_light)
 "Xq" = (
-/obj/item/reagent_containers/food/drinks/drinkingglass/soda,
+/obj/item/reagent_containers/drinks/drinkingglass/soda,
 /turf/simulated/floor/carpet/gaycarpet,
 /area/nadezhda/outside/forest/river_forest_light)
 "Xr" = (
@@ -4084,7 +4084,7 @@
 /area/nadezhda/outside/forest/river_forest_light)
 "Yb" = (
 /obj/machinery/light/floor/built,
-/mob/living/simple_animal/hostile/diyaab,
+/mob/living/simple/hostile/diyaab,
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/outside/forest/river_forest_light)
 "Yc" = (
@@ -4138,7 +4138,7 @@
 "YG" = (
 /obj/item/trash/plate,
 /obj/item/material/kitchen/utensil/fork/plastic,
-/obj/item/reagent_containers/food/snacks/appletart,
+/obj/item/reagent_containers/snacks/appletart,
 /turf/simulated/floor/carpet/gaycarpet,
 /area/nadezhda/outside/forest/river_forest_light)
 "YK" = (
@@ -4166,7 +4166,7 @@
 /obj/structure/sink/kitchen{
 	pixel_y = 29
 	},
-/obj/item/reagent_containers/food/condiment/sugar,
+/obj/item/reagent_containers/condiment/sugar,
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/outside/forest/river_forest_light)
 "YY" = (
@@ -4180,7 +4180,7 @@
 /area/nadezhda/outside/forest/river_forest_underground)
 "Zm" = (
 /obj/effect/decal/cleanable/rubble,
-/mob/living/carbon/superior_animal/wurm,
+/mob/living/carbon/superior/wurm,
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/river_forest_underground)
 "Zo" = (

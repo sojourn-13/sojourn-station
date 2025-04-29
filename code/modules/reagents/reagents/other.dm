@@ -304,9 +304,6 @@
 	M.stats.addTempStat(STAT_TGH, STAT_LEVEL_ADEPT * effect_multiplier, STIM_TIME, "adrenaline")
 	M.add_chemical_effect(CE_TOXIN, 3)
 
-/datum/reagent/adrenaline/withdrawal_act(mob/living/carbon/M)
-	M.adjustOxyLoss(15)
-
 /datum/reagent/other/viroputine
 	name = "Viroputine"
 	id = "viroputine"
@@ -315,6 +312,7 @@
 	reagent_state = LIQUID
 	color = "#A5F0EE"
 	addiction_chance = 5
+	withdrawal_threshold = 8 //gives you chances to purge it
 
 /datum/reagent/other/viroputine/withdrawal_act(mob/living/carbon/M)
 	M.drowsyness = max(M.drowsyness, 20)
@@ -556,6 +554,15 @@
 	reagent_state = LIQUID
 	color = "#B97A57"
 	common = TRUE //Wood pulp is identifiable at a glance
+
+/datum/reagent/other/clothfiber
+	name = "Cellulose Fibers"
+	id = "clothfiber"
+	description = "A bunch of loose fibers."
+	taste_description = "cloth"
+	reagent_state = SOLID
+	color = "#e7ded0"
+	common = TRUE
 
 /datum/reagent/other/luminol
 	name = "Luminol"

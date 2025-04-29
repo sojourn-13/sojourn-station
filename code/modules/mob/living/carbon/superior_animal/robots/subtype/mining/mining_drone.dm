@@ -2,7 +2,7 @@
 #define GATHER_MODE 2 // Do we pick up the ore?
 #define MINER_MODE 4 // Do we mine rocks?
 
-/mob/living/carbon/superior_animal/robot/mining
+/mob/living/carbon/superior/robot/mining
 	name = "Generic Mining Drone"
 	desc = "A small, unbranded drone, it has a drill and a deep thirst for shiny rocks."
 	gender = NEUTER
@@ -29,10 +29,10 @@
 	var/target // Where we want to go
 	var/mining_modes = 7 // Bitflags for the AI. They start activated
 
-/mob/living/carbon/superior_animal/robot/mining/examine(mob/user)
+/mob/living/carbon/superior/robot/mining/examine(mob/user)
 	..()
 
-/mob/living/carbon/superior_animal/robot/mining/Life()
+/mob/living/carbon/superior/robot/mining/Life()
 	..()
 	if(!client) // If there's anyone controlling the bot, this AI part won't run
 		if(!look_around() && (mining_modes & WANDER_MODE) && !in_use) // If we didn't find anything of value and can (mining_modes & WANDER_MODE) and someoen isn't using our UI
@@ -59,17 +59,17 @@
 		SSmove_manager.stop_looping(src) // Stop automated movement
 		target = null // No targets to go to
 
-/mob/living/carbon/superior_animal/robot/mining/death()
+/mob/living/carbon/superior/robot/mining/death()
 	drop_loot()
 	//new /obj/item/tool/pickaxe/diamonddrill(loc) // So we can use the drill to make another one // Miners destroy the bot round-start to get the drill...
 	..()
 
-/mob/living/carbon/superior_animal/robot/mining/attack_hand(mob/user as mob)
+/mob/living/carbon/superior/robot/mining/attack_hand(mob/user as mob)
 	if(user.a_intent == I_HELP) // Are we on help intent?
 		interact(user)
 	else ..()
 
-/mob/living/carbon/superior_animal/robot/mining/attackby(obj/item/W as obj, mob/user as mob)
+/mob/living/carbon/superior/robot/mining/attackby(obj/item/W as obj, mob/user as mob)
 	var/obj/item/T // Define the tool variable early on to avoid compilation problem and to allow us to use tool-unique variables
 	if(user.a_intent == I_HELP) // Are we helping ?
 		// If it is a tool, assign it to the tool variable defined earlier.
@@ -96,7 +96,7 @@
 	// If nothing was ever triggered, continue as normal
 	..()
 
-/mob/living/carbon/superior_animal/robot/mining/proc/look_around()
+/mob/living/carbon/superior/robot/mining/proc/look_around()
 	for(var/O in oview(1, src)) // Check our surroundings.
 		if((mining_modes & MINER_MODE) && istype(O, /turf/simulated/mineral)) // Is it a turf?
 			var/turf/simulated/mineral/M = O
@@ -131,13 +131,13 @@
 
 
 // Mine a tile
-/mob/living/carbon/superior_animal/robot/mining/proc/mine(turf/simulated/mineral/M)
+/mob/living/carbon/superior/robot/mining/proc/mine(turf/simulated/mineral/M)
 	//visible_message("[src] mine [M]") // For some reasons the messages do not combine and spam the chat.
 	M.GetDrilled() // Mine the turf
 	return TRUE
 
 // Pick an ore and put it in the contents.
-/mob/living/carbon/superior_animal/robot/mining/proc/pick_ore(obj/item/stack/ore/O)
+/mob/living/carbon/superior/robot/mining/proc/pick_ore(obj/item/stack/ore/O)
 	//visible_message("[src] pick up [O]") // For some reasons the messages do not combine and spam the chat.
 	O.loc = src
 	contents += O // Pick up the item
@@ -145,7 +145,7 @@
 	return TRUE
 
 // Drop all the loot that the bot gathered on the ground.
-/mob/living/carbon/superior_animal/robot/mining/proc/drop_loot()
+/mob/living/carbon/superior/robot/mining/proc/drop_loot()
 	visible_message("[src] empties \his storage bin.")
 	for(var/obj/O in contents) // Empty everything
 		contents -= O
@@ -153,7 +153,7 @@
 	updateDialog()
 	return TRUE
 
-/mob/living/carbon/superior_animal/robot/mining/interact(mob/user as mob)
+/mob/living/carbon/superior/robot/mining/interact(mob/user as mob)
 	if((get_dist(src, user) > 1) || (stat & (BROKEN|NOPOWER)))
 		if(!isAI(user))
 			user.unset_machine()
@@ -166,7 +166,7 @@
 	onclose(user, "MiningDrone")
 	return
 
-/mob/living/carbon/superior_animal/robot/mining/proc/handle_ui()
+/mob/living/carbon/superior/robot/mining/proc/handle_ui()
 	var/dat = ""
 	dat += "<head><title>[name]</title></head>"
 	dat += "[name]<BR>"
@@ -198,7 +198,7 @@
 
 	return dat
 
-/mob/living/carbon/superior_animal/robot/mining/Topic(href, href_list)
+/mob/living/carbon/superior/robot/mining/Topic(href, href_list)
 	..()
 
 	if(href_list["close"])
@@ -233,7 +233,7 @@
 	return
 
 // Ghost-specific verbs.
-/mob/living/carbon/superior_animal/robot/mining/verb/mine_nearby()
+/mob/living/carbon/superior/robot/mining/verb/mine_nearby()
 	set name = "Mine"
 	set desc = "Mine every rock around you that has ores."
 	set category = "Mining Bot"
@@ -244,7 +244,7 @@
 			mine(M) // Mine the turf
 			continue
 
-/mob/living/carbon/superior_animal/robot/mining/verb/gather_nearby()
+/mob/living/carbon/superior/robot/mining/verb/gather_nearby()
 	set name = "Gather"
 	set desc = "Gather all the ore around you."
 	set category = "Mining Bot"
@@ -255,7 +255,7 @@
 			pick_ore(Ore) // Pick it up
 			continue
 
-/mob/living/carbon/superior_animal/robot/mining/verb/dump_loot()
+/mob/living/carbon/superior/robot/mining/verb/dump_loot()
 	set name = "Empty"
 	set desc = "Dump all the ore you gathered on the ground."
 	set category = "Mining Bot"

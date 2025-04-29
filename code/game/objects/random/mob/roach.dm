@@ -2,26 +2,26 @@
 	name = "random roach"
 	icon_state = "hostilemob-brown"
 	alpha = 128
-	mobs = list(/mob/living/carbon/superior_animal/roach = 9,
-				// /mob/living/carbon/superior_animal/roach/fat = 2,
-				/mob/living/carbon/superior_animal/roach/tank = 2,
-				/mob/living/carbon/superior_animal/roach/toxic = 2,
-				/mob/living/carbon/superior_animal/roach/glowing = 2,
-				/mob/living/carbon/superior_animal/roach/nanite = 2,
-				/mob/living/carbon/superior_animal/roach/glowing = 1,
-				/mob/living/carbon/superior_animal/roach/hunter = 4,
-				/mob/living/carbon/superior_animal/roach/support = 4
+	mobs = list(/mob/living/carbon/superior/roach = 9,
+				// /mob/living/carbon/superior/roach/fat = 2,
+				/mob/living/carbon/superior/roach/tank = 2,
+				/mob/living/carbon/superior/roach/toxic = 2,
+				/mob/living/carbon/superior/roach/glowing = 2,
+				/mob/living/carbon/superior/roach/nanite = 2,
+				/mob/living/carbon/superior/roach/glowing = 1,
+				/mob/living/carbon/superior/roach/hunter = 4,
+				/mob/living/carbon/superior/roach/support = 4
 				)
 
 /obj/random/mob/roaches/item_to_spawn()
 	if(GLOB.chaos_level > 0) //Higher weights as chaose increase
-		mobs += list(/mob/living/carbon/superior_animal/roach/fuhrer = (0.5 * GLOB.chaos_level))
+		mobs += list(/mob/living/carbon/superior/roach/fuhrer = (0.5 * GLOB.chaos_level))
 	if(GLOB.chaos_level > 1)
-		mobs += list(/mob/living/carbon/superior_animal/roach/nitro = (0.5 * GLOB.chaos_level))
+		mobs += list(/mob/living/carbon/superior/roach/nitro = (0.5 * GLOB.chaos_level))
 	if(GLOB.chaos_level > 2)
-		mobs += list(/mob/living/carbon/superior_animal/roach/elektromagnetisch = (0.1 * GLOB.chaos_level))
+		mobs += list(/mob/living/carbon/superior/roach/elektromagnetisch = (0.1 * GLOB.chaos_level))
 	if(GLOB.chaos_level > 4)
-		mobs += list(/mob/living/carbon/superior_animal/roach/kaiser = (0.02 * GLOB.chaos_level)) //0.1 then 0.12 ect ect 
+		mobs += list(/mob/living/carbon/superior/roach/kaiser = (0.02 * GLOB.chaos_level)) //0.1 then 0.12 ect ect 
 
 	return pickweight(mobs)
 
@@ -64,4 +64,4 @@
 
 // For Scrap Beacon
 /obj/random/cluster/roaches/beacon/item_to_spawn()
-	return /mob/living/carbon/superior_animal/roach/nanite
+	return /mob/living/carbon/superior/roach/nanite

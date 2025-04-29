@@ -1,7 +1,7 @@
 //mre food
 
 
-/obj/item/reagent_containers/food/snacks/openable
+/obj/item/reagent_containers/snacks/openable
 	name = "chips"
 	desc = "A closed bag of chips, ready to be opened."
 	icon_state = "lays"
@@ -24,7 +24,7 @@
 	matter = list(MATERIAL_BIOMATTER = 6)
 	junk_food = TRUE
 
-/obj/item/reagent_containers/food/snacks/openable/update_icon()
+/obj/item/reagent_containers/snacks/openable/update_icon()
 	..()
 
 	var/iconstring = initial(icon_state)
@@ -42,7 +42,7 @@
 
 	icon_state = iconstring
 
-/obj/item/reagent_containers/food/snacks/openable/attack(mob/M as mob, mob/user as mob, def_zone)
+/obj/item/reagent_containers/snacks/openable/attack(mob/M as mob, mob/user as mob, def_zone)
 	. = ..()
 	if(!open)
 		open()
@@ -53,7 +53,7 @@
 		//So we dont need to run update icon every attack
 		bitten_icon_alt = FALSE
 
-/obj/item/reagent_containers/food/snacks/openable/proc/heat()
+/obj/item/reagent_containers/snacks/openable/proc/heat()
 	for(var/reagent in heated_reagents)
 		reagents.add_reagent(reagent, heated_reagents[reagent])
 	bitesize = 6
@@ -62,13 +62,13 @@
 		trash = null
 		new /obj/item/trash/os_wrapper(get_turf(src))
 
-/obj/item/reagent_containers/food/snacks/openable/proc/open(mob/user)
+/obj/item/reagent_containers/snacks/openable/proc/open(mob/user)
 	desc = alt_desc
 	open = TRUE
 	reagent_flags |= REFILLABLE
 	update_icon()
 
-/obj/item/reagent_containers/food/snacks/openable/attack_self(mob/user)
+/obj/item/reagent_containers/snacks/openable/attack_self(mob/user)
 	if(!open)
 		open()
 		to_chat(user, SPAN_NOTICE("You tear \the [src] open."))
@@ -86,14 +86,14 @@
 			to_chat(user, "You think \the [src] is ready to eat about now.")
 			heat()
 
-/obj/item/reagent_containers/food/snacks/openable/chips_alt
+/obj/item/reagent_containers/snacks/openable/chips_alt
 	name = "chips"
 	desc = "A closed bag of chips, ready to be opened."
 	taste_tag = list(SALTY_FOOD)
 	icon_state = "lays_green"
 	trash = /obj/item/trash/chips_green
 
-/obj/item/reagent_containers/food/snacks/openable/mre
+/obj/item/reagent_containers/snacks/openable/mre
 	name = "mre"
 	desc = "A closed mre, ready to be opened."
 	alt_desc = "A plethora of steaming beans mixed with meat, ready for consumption."
@@ -112,7 +112,7 @@
 	matter = list(MATERIAL_BIOMATTER = 6)
 	can_warm = TRUE
 
-/obj/item/reagent_containers/food/snacks/openable/mre/alt
+/obj/item/reagent_containers/snacks/openable/mre/alt
 	desc = "A closed mre, ready to be opened. This one is a wok mre mix."
 	alt_desc = "A nice mix of noodles and herbs all waiting to be eaten."
 	icon_state = "wok"
@@ -120,7 +120,7 @@
 	trash = /obj/item/trash/mre/alt
 	nutriment_desc = list("pasta" = 1, "salt" = 3, "herbs" = 3)
 
-/obj/item/reagent_containers/food/snacks/openable/mre/os
+/obj/item/reagent_containers/snacks/openable/mre/os
 	name = "GP Fast Noodles"
 	desc = "A closed wok, ready to be opened."
 	taste_tag = list(UMAMI_FOOD, SPICY_FOOD)
@@ -132,7 +132,7 @@
 	heated_reagents = list("dermaline" = 5)
 	nutriment_desc = list("pasta" = 1, "salt" = 3, "herbs" = 3)
 
-/obj/item/reagent_containers/food/snacks/openable/can
+/obj/item/reagent_containers/snacks/openable/can
 	name = "ration can"
 	desc = "Can of stew meat, tab right on top for easy opening."
 	alt_desc = "An opened can of stewed meat, ready for consumption."
@@ -147,7 +147,7 @@
 	matter = list(MATERIAL_BIOMATTER = 12)
 	can_warm = TRUE
 
-/obj/item/reagent_containers/food/snacks/openable/candy
+/obj/item/reagent_containers/snacks/openable/candy
 	name = "morale bar"
 	desc = "Some brand of non-melting military chocolate."
 	alt_desc = "Some brand of non-melting military chocolate. This one is open, and still unmelted."
@@ -158,7 +158,7 @@
 	preloaded_reagents = list("sugar" = 3, "coco" = 2)
 	junk_food = FALSE //Helps with morale
 
-/obj/item/reagent_containers/food/snacks/openable/candy/shokoladka
+/obj/item/reagent_containers/snacks/openable/candy/shokoladka
 	desc = "Shokoladka branded non-melting military chocolate."
 	alt_desc = "Shokoladka branded non-melting military chocolate. This one is open, and still unmelted."
 	taste_tag = list(SWEET_FOOD)
@@ -166,7 +166,7 @@
 	trash = /obj/item/trash/mre_shokoladka
 	bitten_icon_alt = TRUE
 
-/obj/item/reagent_containers/food/snacks/openable/candy/dalococh
+/obj/item/reagent_containers/snacks/openable/candy/dalococh
 	desc = "Dalococh branded non-melting military chocolate."
 	alt_desc = "Dalococh branded non-melting military chocolate. This one is open, and still unmelted."
 	taste_tag = list(SWEET_FOOD)
@@ -174,7 +174,7 @@
 	trash = /obj/item/trash/mre_dalococh
 	bitten_icon_alt = TRUE
 
-/obj/item/reagent_containers/food/snacks/openable/candy/os
+/obj/item/reagent_containers/snacks/openable/candy/os
 	desc = "GP branded non-melting chocolate."
 	alt_desc = "GP branded non-melting chocolate. This one is open, and still unmelted."
 	taste_tag = list(SWEET_FOOD)
@@ -182,7 +182,7 @@
 	trash = /obj/item/trash/os_coco_wrapper
 	bitten_icon_alt = FALSE
 
-/obj/item/reagent_containers/food/snacks/openable/candy/os/Initialize(mapload)
+/obj/item/reagent_containers/snacks/openable/candy/os/Initialize(mapload)
 	. = ..()
 	switch (pickweight(list("chocolate_milk" = 1,
 	"chocolate_grape" = 1,
@@ -246,7 +246,7 @@
 			icon_state = "chocolate"
 			return
 
-/obj/item/reagent_containers/food/snacks/openable/os_meat
+/obj/item/reagent_containers/snacks/openable/os_meat
 	name = "Cubed Steak"
 	desc = "A self heating packet with commpressed meat in the form of a steak."
 	alt_desc = "A fresh-ish commpressed meat steak."
@@ -262,7 +262,7 @@
 	can_warm = TRUE
 	throw_away_wrapper = TRUE
 
-/obj/item/reagent_containers/food/snacks/openable/os_meat/Initialize(mapload)
+/obj/item/reagent_containers/snacks/openable/os_meat/Initialize(mapload)
 	. = ..()
 	if(prob(50))
 		icon_state = "steak_green"
@@ -271,7 +271,7 @@
 		preloaded_reagents = list("protein" = 6, "egg" = 2)
 		heated_reagents = list("bicaridine" = 5, "dexalinp" = 5)
 
-/obj/item/reagent_containers/food/snacks/openable/os_bun
+/obj/item/reagent_containers/snacks/openable/os_bun
 	name = "Hot Bun"
 	desc = "A loaf of bread in a self heating container."
 	alt_desc = "A fluffy soft and sweet bread bun."
@@ -288,7 +288,7 @@
 	can_warm = TRUE
 	throw_away_wrapper = TRUE
 
-/obj/item/reagent_containers/food/snacks/openable/os_heart
+/obj/item/reagent_containers/snacks/openable/os_heart
 	name = "Hearty Meal"
 	desc = "A prepacked full heart?"
 	alt_desc = "A gummy heart made with three chambers of different flavours."
@@ -305,7 +305,7 @@
 	can_warm = TRUE
 	throw_away_wrapper = TRUE
 
-/obj/item/reagent_containers/food/snacks/openable/os_liver
+/obj/item/reagent_containers/snacks/openable/os_liver
 	name = "Liver Meal"
 	desc = "A prepacked full liver?"
 	alt_desc = "A gummy liver made two main lobes of flavour."
@@ -322,7 +322,7 @@
 	can_warm = TRUE
 	throw_away_wrapper = TRUE
 
-/obj/item/reagent_containers/food/snacks/openable/os_soypack
+/obj/item/reagent_containers/snacks/openable/os_soypack
 	name = "GP portable SoyPack."
 	desc = "GP portable SoyPack."
 	alt_desc = "GP portable SoyPack."
@@ -330,7 +330,7 @@
 	taste_tag = list(UMAMI_FOOD)
 	trash = /obj/item/trash/os_soypack
 
-/obj/item/reagent_containers/food/snacks/openable/os_soypack/Initialize(mapload)
+/obj/item/reagent_containers/snacks/openable/os_soypack/Initialize(mapload)
 	. = ..()
 	switch (pickweight(list("soylent_orange" = 1,
 	"soylent_fish" = 1,
@@ -391,7 +391,7 @@
 //Other mre food items
 
 
-/obj/item/reagent_containers/food/snacks/mre_paste
+/obj/item/reagent_containers/snacks/mre_paste
 	name = "nutrient paste"
 	desc = "A peachy looking paste."
 	icon_state = "paste"
@@ -405,7 +405,7 @@
 	matter = list(MATERIAL_BIOMATTER = 3)
 	junk_food = TRUE
 
-/obj/item/reagent_containers/food/snacks/os_paste
+/obj/item/reagent_containers/snacks/os_paste
 	name = "GP nutrient paste"
 	desc = "A chalky looking paste tube."
 	icon_state = "os_paste"
@@ -419,7 +419,7 @@
 	matter = list(MATERIAL_BIOMATTER = 3)
 	junk_food = TRUE
 
-/obj/item/reagent_containers/food/snacks/canned_peaches
+/obj/item/reagent_containers/snacks/canned_peaches
 	name = "canned peaches"
 	desc = "A can of peaches."
 	icon_state = "peachcan"
@@ -433,7 +433,7 @@
 	matter = list(MATERIAL_BIOMATTER = 9)
 	junk_food = TRUE
 
-/obj/item/reagent_containers/food/snacks/mre_cracker
+/obj/item/reagent_containers/snacks/mre_cracker
 	name = "enriched cracker"
 	desc = "It's a salted cracker, the surface looks saturated with oil."
 	icon_state = "mre_cracker"

@@ -131,14 +131,14 @@ avoid code duplication. This includes items that may sometimes act as a standard
 	playsound(loc, 'sound/effects/swoosh.ogg', 50, 1, -1)
 	switch(holdinghand)
 		if(slot_l_hand)
-			flick("left_swing", S)
+			flick("left_swing[swing_icon_mod]", S)
 			var/dmg_modifier = 1
 			dmg_modifier = tileattack(user, L, modifier = 1)
 			dmg_modifier = tileattack(user, C, modifier = dmg_modifier, original_target = A)
 			tileattack(user, R, modifier = dmg_modifier)
 			QDEL_IN(S, 2 SECONDS)
 		if(slot_r_hand)
-			flick("right_swing", S)
+			flick("right_swing[swing_icon_mod]", S)
 			var/dmg_modifier = 1
 			dmg_modifier = tileattack(user, R, modifier = 1)
 			dmg_modifier = tileattack(user, C, modifier = dmg_modifier, original_target = A)
@@ -282,12 +282,20 @@ avoid code duplication. This includes items that may sometimes act as a standard
 		var/i
 		for(i=0,tiles_to_check>i, i++)
 			//message_admins("tiles_to_check = [tiles_to_check], T = [T], i = [i]")
-			if(!i==0)
-				T = get_step(T, get_dir(user, A))
+			T = get_step(T, get_dir(user, A))
+			if(iscarbon(user))
+				var/mob/living/carbon/C = user
+				if(C.stats.getPerk(PERK_NATURAL_STYLE))
+					force = force * 0.9 //10% less damage each step forwards
+					armor_divisor -= 0.1 //Lower AD a little, per tile
+				else
+					//message_admins("No Perk")
+					force = force * 0.8 //20% less damage each step forwards
+					armor_divisor -= 0.2 //Lower AD a little, per tile
+			else
+				//message_admins("Not carbon")
 				force = force * 0.8 //20% less damage each step forwards
 				armor_divisor -= 0.2 //Lower AD a little, per tile
-			//else
-				//message_admins("0th tile bypassed")
 
 			//message_admins("second T = [T], T.density = [T.density]")
 			if(T.density)

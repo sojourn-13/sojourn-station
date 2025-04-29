@@ -27,7 +27,7 @@
 
 	//var/types = target.get_classification()
 	if(ismouse(target))
-		var/mob/living/simple_animal/mouse/M = target
+		var/mob/living/simple/mouse/M = target
 		visible_message("<span class='danger'>SPLAT!</span>")
 		M.splat()
 	else

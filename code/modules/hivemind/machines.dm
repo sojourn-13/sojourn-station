@@ -96,6 +96,7 @@
 	if(istype(victim, /obj/machinery))
 		var/obj/machinery/target = victim
 		target.stat |= BROKEN
+		target.density = FALSE //So we dont shoot are victum
 		if(istype(victim, /obj/machinery/power/apc)) //APCs would be deleted
 			assimilated_machinery = null
 			qdel(victim)
@@ -106,6 +107,7 @@
 		assimilated_machinery.alpha 		= 	initial(assimilated_machinery.alpha)
 		assimilated_machinery.mouse_opacity = 	initial(assimilated_machinery.mouse_opacity)
 		assimilated_machinery.anchored 		= 	initial(assimilated_machinery.anchored)
+		assimilated_machinery.density 		= 	initial(assimilated_machinery.density)
 		if(istype(assimilated_machinery, /obj/machinery))
 			var/obj/machinery/consumed = assimilated_machinery
 			consumed.stat &= ~BROKEN
@@ -256,6 +258,8 @@
 
 /obj/machinery/hivemind_machine/bullet_act(obj/item/projectile/Proj)
 	if (!(Proj.testing))
+		if(istype(Proj, /obj/item/projectile/goo))
+			return PROJECTILE_FORCE_MISS
 		take_damage(Proj.get_structure_damage())
 	if(istype(Proj, /obj/item/projectile/ion))
 		Proj.on_hit(loc)
@@ -300,11 +304,11 @@
 /obj/machinery/hivemind_machine/emp_act(severity)
 	switch(severity)
 		if(1)
-			take_damage(30)
-			stun(10)
+			take_damage(30 * GLOB.hive_data_float["hivemind_emp_mult"])
+			stun(10 * GLOB.hive_data_float["hivemind_emp_mult"])
 		if(2)
-			take_damage(10)
-			stun(5)
+			take_damage(10 * GLOB.hive_data_float["hivemind_emp_mult"])
+			stun(5 * GLOB.hive_data_float["hivemind_emp_mult"])
 	..()
 
 
@@ -322,6 +326,7 @@
 	resistance = RESISTANCE_TOUGH
 	can_regenerate = FALSE
 	wireweeds_required = FALSE
+	var/threat_scale = 1
 	//internals
 	var/list/my_wireweeds = list()
 	var/list/reward_item = list(
@@ -343,11 +348,12 @@
 	state("leaves behind a weird looking tie!")
 	new /obj/item/oddity/rare/eldritch_tie(get_turf(loc))
 
-/obj/machinery/hivemind_machine/node/New(loc, _name, _surname)
+/obj/machinery/hivemind_machine/node/New(loc, _name, _surname, threat_scale)
 	if(!hive_mind_ai)
-		hive_mind_ai = new /datum/hivemind(_name, _surname)
+		hive_mind_ai = new /datum/hivemind(_name, _surname, threat_scale)
 	..()
 
+	threat_scale = hive_mind_ai.threat_scale
 	hive_mind_ai.hives.Add(src)
 	hive_mind_ai.level_up()
 
@@ -444,7 +450,7 @@
 /obj/machinery/hivemind_machine/turret
 	name = "projector"
 	desc = "This mass of machinery is topped with some sort of nozzle."
-	max_health = 220
+	max_health = 200
 	resistance = RESISTANCE_IMPROVED
 	icon_state = "turret"
 	cooldown_time = 1 SECONDS
@@ -550,10 +556,10 @@
 	name = "random hivemob"
 
 /obj/random/mob/assembled/item_to_spawn() //list of spawnable mobs
-	return pickweight(list(/mob/living/simple_animal/hostile/hivemind/stinger = 5,
-							/mob/living/simple_animal/hostile/hivemind/bomber = 4,
-							/mob/living/simple_animal/hostile/hivemind/lobber = 3,
-							/mob/living/simple_animal/hostile/hivemind/hiborg = 1))
+	return pickweight(list(/mob/living/simple/hostile/hivemind/stinger = 5,
+							/mob/living/simple/hostile/hivemind/bomber = 4,
+							/mob/living/simple/hostile/hivemind/lobber = 3,
+							/mob/living/simple/hostile/hivemind/hiborg = 1))
 
 /obj/machinery/hivemind_machine/mob_spawner/Initialize()
 	..()
@@ -589,7 +595,7 @@
 		total_mobs += GLOB.hivemind_mobs[i]
 	if(!GLOB.hive_data_bool["maximum_existing_mobs"] || GLOB.hive_data_float["maximum_existing_mobs"] > total_mobs)
 		var/obj/randomcatcher/CATCH = new /obj/randomcatcher(src)
-		var/mob/living/simple_animal/hostile/hivemind/spawned_mob = CATCH.get_item(mob_to_spawn)
+		var/mob/living/simple/hostile/hivemind/spawned_mob = CATCH.get_item(mob_to_spawn)
 		spawned_mob.loc = loc
 		spawned_creatures.Add(spawned_mob)
 		spawned_mob.master = src
@@ -670,7 +676,7 @@
 	name = "tormentor"
 	desc = "A head impaled on a metal tendril. Still twitching, still living, still screaming."
 	icon_state = "head"
-	max_health = 100
+	max_health = 30
 	evo_level_required = 3
 	cooldown_time = 20 SECONDS
 	spawn_weight  =	35
@@ -686,10 +692,8 @@
 			can_scream = TRUE
 			if(isdeaf(target))
 				continue
-			if(ishuman(target))
-				var/mob/living/carbon/human/H = target
-				if(istype(H.l_ear, /obj/item/clothing/ears/earmuffs) && istype(H.r_ear, /obj/item/clothing/ears/earmuffs))
-					continue
+			if(target.earcheck() >= 2) //ear muffs or headset + helm
+				continue
 			use_ability(target)
 	if(can_scream)
 		flick("[icon_state]-anim", src)
@@ -699,10 +703,10 @@
 
 /obj/machinery/hivemind_machine/screamer/use_ability(mob/living/target)
 
-	var/mob/living/carbon/human/H = target
-	if(istype(H))
+	if(ishuman(target))
+		var/mob/living/carbon/human/H = target
 		if(prob(100 - H.stats.getStat(STAT_VIG)))
-			H.Weaken(5)
+			H.Weaken(3 - H.earcheck())
 			to_chat(H, SPAN_WARNING("A terrible howl tears through your mind, the voice senseless, soulless."))
 		else
 			to_chat(H, SPAN_NOTICE("A terrible howl tears through your mind, but you refuse to listen to it!"))
@@ -790,8 +794,21 @@
 	flick("[icon_state]-anim", src)
 
 
+//Simple Wall
+//helps block bullets
+/obj/machinery/hivemind_machine/cover
+	name = "cover"
+	desc = "A complex weaving of wires and metal rods."
+	max_health = 350
+	evo_level_required = 0
+	spawn_weight = 0 //We get spawned when wires run rampet
+	icon_state = "coverted_cover"
 
-
+/obj/machinery/hivemind_machine/cover/Initialize()
+	. = ..()
+	if(hive_mind_ai?.evo_level)//If this is the first hivemind wire then we accually runtime
+		max_health /= hive_mind_ai.evo_level
+		health /= hive_mind_ai.evo_level
 
 #undef REGENERATION_SPEED
 #undef TURRET_PRIORITY_TARGET

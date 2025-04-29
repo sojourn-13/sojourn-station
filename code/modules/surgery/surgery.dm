@@ -185,7 +185,7 @@
 
 			//legs, waring an over suit is less punishing then shoes
 			if(BP_R_LEG, BP_L_LEG, BP_L_FOOT, BP_R_FOOT)
-				if(H.shoes)
+				if(H.shoes && !istype(H.shoes, /obj/item/clothing/shoes/claws_hoofs_paws))
 					difficulty_adjust += 10
 					time_adjust += 20
 					to_chat(user, SPAN_WARNING("[H.shoes] gets in the way."))

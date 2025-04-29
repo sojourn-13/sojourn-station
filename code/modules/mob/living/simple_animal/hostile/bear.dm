@@ -1,5 +1,5 @@
 //Space bears!
-/mob/living/simple_animal/hostile/bear
+/mob/living/simple/hostile/bear
 	name = "black bear"
 	desc = "A bear of the common black bear variety."
 	icon = 'icons/mob/mobs-bear.dmi'
@@ -11,7 +11,7 @@
 	speak_chance = 1
 	turns_per_move = 5
 	see_in_dark = 6
-	meat_type = /obj/item/reagent_containers/food/snacks/meat/bearmeat
+	meat_type = /obj/item/reagent_containers/snacks/meat/bearmeat
 	response_help  = "pets"
 	response_disarm = "gently pushes aside"
 	response_harm   = "pokes"
@@ -29,12 +29,12 @@
 	var/horror_modifer = TRUE // For-admins to turn this off
 	var/rawr_cooldown = FALSE
 
-/mob/living/simple_animal/hostile/bear/FindTarget()
+/mob/living/simple/hostile/bear/FindTarget()
 	. = ..()
 	if(.)
 		playsound(src, 'sound/effects/creatures/bear.ogg', 100, 1, -3)
 
-/mob/living/simple_animal/hostile/bear/proc/rawr_xd()
+/mob/living/simple/hostile/bear/proc/rawr_xd()
 	if(health >= 15) //to weak to rawr if less then 15 health
 		visible_message(SPAN_DANGER("[src] stands up and roars!"))
 		playsound(src, 'sound/effects/creatures/bear.ogg', 100, 1, -3)
@@ -62,15 +62,15 @@
 		addtimer(CALLBACK(src, PROC_REF(unanchor)), 10)
 
 
-/mob/living/simple_animal/hostile/bear/proc/unanchor()
+/mob/living/simple/hostile/bear/proc/unanchor()
 	anchored = FALSE
 	addtimer(CALLBACK(src, PROC_REF(rawr_xd_recharge)), 120) //should be tolds of time for people to kill the bear
 
-/mob/living/simple_animal/hostile/bear/proc/rawr_xd_recharge()
+/mob/living/simple/hostile/bear/proc/rawr_xd_recharge()
 	rawr_cooldown = FALSE
 
 //Copy pasted for hostile.dm more complicated verson
-/mob/living/simple_animal/hostile/bear/MoveToTarget()
+/mob/living/simple/hostile/bear/MoveToTarget()
 	var/mob/living/targetted_mob = (target_mob?.resolve())
 
 	stop_automated_movement = TRUE
@@ -95,7 +95,7 @@
 		rawr_cooldown = TRUE
 	return FALSE
 
-/mob/living/simple_animal/hostile/bear/hudson
+/mob/living/simple/hostile/bear/hudson
 	name = "Hudson"
 	desc = "A legendary black space bear. It's quite sparkly."
 	response_help  = "pets"
@@ -109,7 +109,7 @@
 	melee_damage_lower = 30
 	melee_damage_upper = 40
 
-/mob/living/simple_animal/hostile/bear/brown
+/mob/living/simple/hostile/bear/brown
 	name = "brown bear"
 	desc = "A bear of the common brown bear variety."
 	response_help  = "pets"
@@ -119,7 +119,7 @@
 	icon_gib = "brownbear_gib"
 	icon_dead = "brownbear_dead"
 
-/mob/living/simple_animal/hostile/bear/polar
+/mob/living/simple/hostile/bear/polar
 	name = "polar bear"
 	desc = "A bear of the uncommon polar bear variety."
 	response_help  = "pets"
@@ -129,7 +129,7 @@
 	icon_gib = "brownbear_gib"
 	icon_dead = "polarbear_dead"
 
-/mob/living/simple_animal/hostile/bear/excelsior
+/mob/living/simple/hostile/bear/excelsior
 	name = "excelsior armored bear"
 	desc = "A huge bear outfitted with armor and trained by the excelsior judging from the markings on his armor. Who comes up with this shit?"
 	response_help  = "pets"
@@ -147,7 +147,7 @@
 	special_parts = list(/obj/item/animal_part/wolf_tooth,/obj/item/animal_part/wolf_tooth)
 
 // Credit to scar#1579 for the sprite.
-/mob/living/simple_animal/hostile/bear/mukwah
+/mob/living/simple/hostile/bear/mukwah
 	name = "mukwah"
 	desc = "A bear that escaped from the abandoned zoo labs before mutating into a creature known as a mukwah. Unlike a standard bear, a mukwah is much more powerful, a heavy hitter that is \
 	slow but with a strength that exceeds even other powerful fauna."

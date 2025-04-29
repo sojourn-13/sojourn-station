@@ -19,7 +19,7 @@
 /mob/living/proc/damage_through_armor(damage = 0, damagetype = BRUTE, def_zone, attack_flag = ARMOR_MELEE, armor_divisor = 0, used_weapon, sharp = FALSE, edge = FALSE, wounding_multiplier, list/dmg_types = list(), return_continuation = FALSE, dir_mult = 1)
 	if(damage) // If damage is defined, we add it to the list
 		if(!dmg_types[damagetype])
-			dmg_types += damagetype
+			dmg_types[damagetype] = 0 // Should make damage be a numerical value that other damage can be added too - Ryuu
 		dmg_types[damagetype] += damage
 
 	if(armor_divisor <= 0)
@@ -93,7 +93,7 @@
 			else
 				dmg = max(dmg - remaining_armor - remaining_ablative, 0)
 
-			if(istype(src,/mob/living/simple_animal/) || istype(src,/mob/living/carbon/superior_animal/)) //This code is kept as a bit of a dinosaur from GDR but is tweaked for allowing halloss=damage on mobs.
+			if(istype(src,/mob/living/simple/) || istype(src,/mob/living/carbon/superior/)) //This code is kept as a bit of a dinosaur from GDR but is tweaked for allowing halloss=damage on mobs.
 				var/mob_agony_armor = src.getarmor(def_zone, "agony")
 				var/guaranteed_damage_red = armor * 0.1 //0.1 is the former GDR value, tweak this to tweak the whole formulae
 				var/effective_damage = damage - guaranteed_damage_red
@@ -203,9 +203,13 @@
 	return FALSE
 
 /mob/living/proc/getarmorablative(var/def_zone, var/type)
-	return FALSE
+	return mob_ablative_armor
 
 /mob/living/proc/damageablative(var/def_zone, var/damage)
+	if(mob_ablative_armor)
+		mob_ablative_armor = round(mob_ablative_armor - damage / ablative_retaining)
+	if(mob_ablative_armor < 0)
+		mob_ablative_armor = 0
 	return FALSE
 
 /mob/living/proc/hit_impact(damage, dir)
@@ -334,7 +338,7 @@
 
 		if (prob(miss_chance))
 			visible_message("\blue \The [O] misses [src] narrowly!")
-			playsound(src, "miss_sound", 50, 1, -6)
+			playsound(src, get_sfx("miss_sound"), 50, 1, -6)
 			return
 
 		if (O.is_hot() >= HEAT_MOBIGNITE_THRESHOLD)
@@ -345,6 +349,7 @@
 		damage_through_armor(throw_damage, dtype, null, ARMOR_MELEE, O.armor_divisor, used_weapon = O, sharp = is_sharp(O), edge = has_edge(O))
 
 		O.throwing = 0		//it hit, so stop moving
+		O.post_thrown_hit(src)
 
 		if(ismob(O.thrower))
 			var/mob/M = O.thrower
@@ -435,6 +440,8 @@
 		on_fire = TRUE
 		set_light(light_range + 3, l_color = COLOR_RED)
 		update_fire()
+		add_overlay(image("icon"='icons/mob/OnFire.dmi', "icon_state"="Generic_mob_burning"))
+
 
 /mob/living/proc/ExtinguishMob()
 	if(on_fire)
@@ -442,6 +449,7 @@
 		fire_stacks = 0
 		set_light(max(0, light_range - 3))
 		update_fire()
+		cut_overlay(image("icon"='icons/mob/OnFire.dmi', "icon_state"="Generic_mob_burning"))
 
 /mob/living/proc/update_fire()
 	return

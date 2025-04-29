@@ -1,7 +1,8 @@
 /datum/trade_station/station_zarya
 	name_pool = list(
-		"FTB 'Zarya'" = "Free Trade Beacon 'Zarya': \"Privet, this is the trade beacon 'Zarya'. We sell electronics, construction, and anything related to engineering! If you are looking for a more general shop, you should contact our main station: FTS 'Solnishko'"
+		"FTB 'Zarya'" = "Free Trade Beacon 'Zarya': \"Privet, this is the trade beacon 'Zarya'. We sell electronics, construction goods, and anything related to engineering! If you are looking for a more general shop, you should contact our main station: FTS 'Solnishko'"
 	)
+	icon_states = list("nt_destroyer", "ship")
 	uid = "techno_basic"
 	tree_x = 0.18
 	tree_y = 0.9
@@ -15,7 +16,7 @@
 	recommendation_threshold = 1500
 	stations_recommended = list("techno_adv")
 	inventory = list(
-		"Vozduh" = list(
+		"Vozdukh" = list(
 			/obj/machinery/portable_atmospherics/canister/sleeping_agent,
 			/obj/machinery/portable_atmospherics/canister/nitrogen,
 			/obj/machinery/portable_atmospherics/canister/oxygen,
@@ -39,25 +40,26 @@
 			/obj/machinery/atmospherics/binary/circulator,
 			/obj/item/clothing/gloves/insulated
 		),
-		"Vsyakoe" = list(
+		"Vsyakoye" = list(
 			/obj/structure/reagent_dispensers/watertank,
 			/obj/item/storage/briefcase/inflatable/empty,
 			/obj/item/inflatable/door,
 			/obj/item/inflatable/wall,
-			/obj/item/stack/material/steel/full = good_data("steel sheets (x120)", list(3, 5), 660), //Better deal here
+			/obj/item/stack/material/steel/full = good_data("steel sheets (x120)", list(3, 5), 660), //Worse deal here
 			/obj/item/stack/material/glass/plasmaglass = good_data("borosilicate glass sheets (x120)", list(3, 5), 3200),
-			/obj/item/storage/belt/utility/full,
+			/obj/item/storage/belt/utility/full = good_data("equipped toolbelt", list(1, 5), 150),
 			/obj/item/clothing/head/welding,
 			/obj/item/tool/omnitool,
 			/obj/item/device/geiger,
 			/obj/structure/reagent_dispensers/fueltank,
-			/obj/machinery/floodlight
+			/obj/machinery/floodlight,
+			/obj/item/device/floor_painter
 		)
 	)
 
 	hidden_inventory = list(
 		"Sverkhmateriya" = list(
-			/obj/machinery/power/supermatter
+			/obj/machinery/power/supermatter = good_data("supermatter", list(1, 2), 8500) //The 'unsolicited supermatter shipment' play has gone on long enough. It's time we end it. -Wilson
 		),
 
 		"Bystroye Stroitel'stvo" = list(
@@ -68,11 +70,11 @@
 
 		"Antiveshchestvo" = list(
 			/obj/item/am_containment = good_data("Antimatter Fuel Jar", list(3, 5), 500),
-			/obj/item/am_shielding_container = good_data("Antimatter Sheilding Kit", list(3, 5), 300)
+			/obj/item/am_shielding_container = good_data("Antimatter Shielding Kit", list(3, 5), 300)
 		),
 		"Plokhiye Idei" = list(
 			/obj/item/am_containment = good_data("Antimatter Fuel Jar", list(3, 5), 500),
-			/obj/item/am_shielding_container = good_data("Antimatter Sheilding Kit", list(3, 5), 300),
+			/obj/item/am_shielding_container = good_data("Antimatter Shielding Kit", list(3, 5), 300),
 			/obj/machinery/power/emitter,
 			/obj/machinery/field_generator,
 			/obj/machinery/shieldwallgen,

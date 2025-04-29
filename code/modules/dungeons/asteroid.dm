@@ -105,7 +105,7 @@
 	New()
 		..()
 		spot_add(2,2,/obj/random/contraband) //EXTRA loot!
-		spot_add(2,2,/mob/living/simple_animal/hostile/alien) //GRRR
+		spot_add(2,2,/mob/living/simple/hostile/alien) //GRRR
 
 //Longer cargo container for higher difficulties
 /datum/rogue/asteroid/predef/cargo_large
@@ -139,7 +139,7 @@
 		spot_add(4,3,/obj/random/contraband) //Right loot
 
 		if(prob(30))
-			spot_add(3,3,/mob/living/simple_animal/hostile/alien) //And maybe a friend.
+			spot_add(3,3,/mob/living/simple/hostile/alien) //And maybe a friend.
 
 
 /datum/rogue/asteroid/predef/teleporter
@@ -177,12 +177,12 @@
 	var/list/obj/rogue_mobspawner/mobspawns = list()
 
 	var/mobgenlist = list(
-	/mob/living/simple_animal/hostile/bear,
-	/mob/living/simple_animal/hostile/carp,
-	/mob/living/simple_animal/hostile/carp,
-	/mob/living/simple_animal/hostile/carp,
-	/mob/living/simple_animal/hostile/hivebot,
-	/mob/living/simple_animal/hostile/carp/pike)
+	/mob/living/simple/hostile/bear,
+	/mob/living/simple/hostile/carp,
+	/mob/living/simple/hostile/carp,
+	/mob/living/simple/hostile/carp,
+	/mob/living/simple/hostile/hivebot,
+	/mob/living/simple/hostile/carp/pike)
 
 	var/prefabs = list(
 	/datum/rogue/asteroid/predef/cargo,

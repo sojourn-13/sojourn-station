@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/revolver/lemant
 	name = "\"Pilgrim\" magnum revolver"
-	desc = "Designed by the Old Testament to have good utility and plenty of shots, at the cost of requireing each spent shell individually be removed, and can't be speed loaded. \
+	desc = "Designed by the Old Testament to have good utility and plenty of shots at the cost of requiring each spent shell to individually be removed, and can't be speed loaded. \
 	This signature weapon from New Byzantine holds nine 10mm rounds and one single action underslung 20mm shell."
 	icon = 'icons/obj/guns/projectile/lemant.dmi'
 	icon_state = "lemant"
@@ -33,7 +33,7 @@
 /obj/item/gun/projectile/revolver/lemant/belt
 	name = "\"Pilgrim Devout\" magnum revolver"
 	desc = "Artificer Guild's revamped design of the Pilgrim to have even more shots before requiring to reload. \
-	Even with the belt design this revolver requires each spent shell individually be removed, and can't be speed loaded. \
+	Even with the belt design this revolver requires each spent shell to individually be removed, and can't be speed loaded. \
 	Holds seventeen 10mm rounds and one single action underslung 20mm shell."
 	icon = 'icons/obj/guns/projectile/lemant_way.dmi'
 	icon_state = "lemant_way"
@@ -55,7 +55,7 @@
 /obj/item/gun/projectile/revolver/lemant/claw
 	name = "\"Pilgrim Claw\" magnum revolver"
 	desc = "Once a legendary frontier weapon on old earth, hailing from its second greatest empire, this signature weapon holds nine 10mm rounds and one single action underslung 20mm shell. \
-	This particular model is crafted by the New Testament, having good utility and plenty of shots, but is painstaking to reload since it requires removing each spent shell individually. \
+	This particular model is crafted by the New Testament, having good utility and plenty of shots, but is painstakingly slow to reload since it requires removing each spent shell individually. \
 	Someone added a spike to the grip, allowing it to function as a rather deadly knife when pistol whipping, handy given how long it takes to reload."
 	icon = 'icons/obj/guns/projectile/lemant_claw.dmi'
 	icon_state = "lemant_claw"
@@ -68,7 +68,7 @@
 /obj/item/gun/projectile/revolver/lemant/uppercut
 	name = "\"Pilgrim Hero\" kurtz revolver"
 	desc = "Once a legendary frontier weapon on old earth, hailing from its second greatest empire, this signature weapon holds six 12mm rounds and one single action underslung 20mm shell. \
-	This particular model is crafted by the New Testament, having good utility and plenty of shots, but is painstaking to reload since it requires removing each spent shell individually. \
+	This particular model is crafted by the New Testament, having good utility and plenty of shots, but is painstakingly slow to reload since it requires removing each spent shell individually. \
 	This model is a conversion, known as the pilgrim hero, its caliber is converted to 12mm but it loses ammo capacity due to the larger shells and lacks the \
 	physical weight to give it better recoil control compared to other revolvers in its weight class. Underslung still works at least."
 	icon = 'icons/obj/guns/projectile/lemant_hero.dmi'
@@ -87,7 +87,7 @@
 /obj/item/gun/projectile/underslung_shotgun
 	name = "underslung shotgun"
 	desc = "Not much more than a tube and a firing mechanism, this shotgun is designed to be fitted to another gun."
-	fire_sound = 'sound/weapons/guns/fire/shotgun.ogg'
+	fire_sound = 'sound/weapons/guns/fire/shotgun_fire.ogg'
 	bulletinsert_sound = 'sound/weapons/guns/interact/shotgun_insert.ogg'
 	w_class = ITEM_SIZE_NORMAL
 	matter = null

@@ -152,7 +152,7 @@
 
 	)
 
-/decl/hierarchy/outfit/sri_ert
+/decl/hierarchy/outfit/si_ert
 	name = "Ethics Committee investigator"
 	l_ear = /obj/item/device/radio/headset/heads/rd
 	mask = /obj/item/clothing/mask/gas
@@ -200,7 +200,7 @@
 	back = /obj/item/storage/backpack/satchel/security
 	backpack_contents = list(/obj/item/ammo_magazine/ammobox/heavy_rifle_408_small = 2, /obj/item/ammo_magazine/ammobox/kurtz_50 = 2, /obj/item/device/binoculars = 1, \
 	/obj/item/device/radio = 1, /obj/item/tool_upgrade/productivity/ergonomic_grip = 1, /obj/item/tool_upgrade/refinement/laserguide = 1, /obj/item/clothing/accessory/holster/leg = 1, \
-	/obj/item/tool/knife/boot = 1, /obj/item/reagent_containers/food/snacks/openable/mre = 1, /obj/item/clothing/mask/gas = 1)
+	/obj/item/tool/knife/boot = 1, /obj/item/reagent_containers/snacks/openable/mre = 1, /obj/item/clothing/mask/gas = 1)
 	l_pocket = /obj/item/storage/pouch/ammo
 
 //Solfed shit. Use sparingly.

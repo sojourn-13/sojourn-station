@@ -181,10 +181,11 @@
 
 /obj/screen/item_action/top_bar/clothing_info
 	icon = 'icons/mob/screen/gun_actions.dmi'
-	screen_loc = "8,1:13"
+	screen_loc = "7.95,1.4"
 	minloc = "7,2:13"
 	name = "Clothing information"
 	icon_state = "info"
+	ErisOptimized_minloc = "16,10.3"
 
 /obj/item/clothing/refresh_upgrades()
 	var/obj/item/clothing/referencecarmor = new type()
@@ -656,7 +657,7 @@ BLIND     // can't see anything
 		/obj/item/reagent_containers/spray,
 		/obj/item/device/lighting/toggleable/flashlight,
 		/obj/item/storage/box/matches,
-		/obj/item/reagent_containers/food/drinks/flask,
+		/obj/item/reagent_containers/drinks/flask,
 		/obj/item/device/radio,
 		/obj/item/clothing/mask,
 		/obj/item/storage/backpack/guncase,
@@ -672,7 +673,8 @@ BLIND     // can't see anything
 		/obj/item/flame/pyrokinetic_spark,
 		/obj/item/tool/psionic_omnitool,
 		/obj/item/shield/riot/crusader/psionic,
-		/obj/item/gun/kinetic_blaster
+		/obj/item/gun/kinetic_blaster,
+		/obj/item/tool/cannibal_scythe
 		)
 	equip_delay = 1 SECONDS
 

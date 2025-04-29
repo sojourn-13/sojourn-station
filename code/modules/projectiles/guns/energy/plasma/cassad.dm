@@ -1,6 +1,6 @@
 /obj/item/gun/energy/pulse/cassad
 	name = "\"Cassad\" energy rifle"
-	desc = "\"Holland & Sullivan\" brand energy assault rifle, capable of prolonged combat. When surrender is not an option."
+	desc = "\"Holland & Sullivan\" brand energy assault rifle, capable of prolonged combat. For when surrender is not an option."
 	icon = 'icons/obj/guns/energy/cassad.dmi'
 	icon_state = "cassad"
 	item_state = "cassad"
@@ -16,8 +16,8 @@
 	zoom_factors = list()
 	slot_flags = SLOT_BACK
 	init_firemodes = list(
-		list(mode_name="Melt", mode_desc="A reliable plasma round, for stripping away armor", projectile_type=/obj/item/projectile/plasma, fire_sound='sound/weapons/energy/burn.ogg', burst=1, fire_delay = 9, charge_cost=25, icon="kill", projectile_color = "#00AAFF"),
-		list(mode_name="Pulse", mode_desc="A plasma round configured to explode violently on impact, and cause a pulse of EMP", projectile_type=/obj/item/projectile/plasma/aoe/ion, fire_sound='sound/weapons/energy/taser.ogg', burst=1, fire_delay=12, charge_cost=150, icon="stun", projectile_color = "#00FFFF")
+		list(mode_name="Melt", mode_desc="A reliable plasma round for stripping away armor", projectile_type=/obj/item/projectile/plasma, fire_sound='sound/weapons/energy/burn.ogg', burst=1, fire_delay = 9, charge_cost=25, icon="kill", projectile_color = "#00AAFF"),
+		list(mode_name="Pulse", mode_desc="A plasma round configured to explode violently on impact and cause a pulse of EMP", projectile_type=/obj/item/projectile/plasma/aoe/ion, fire_sound='sound/weapons/energy/taser.ogg', burst=1, fire_delay=12, charge_cost=150, icon="stun", projectile_color = "#00FFFF")
 	)
 	gun_tags = list(GUN_ENERGY, GUN_SCOPE)
 	twohanded = TRUE
@@ -28,7 +28,7 @@
 
 /obj/item/gun/energy/pulse/cassad/marqua
 	name = "\"Railroad\" Pulse Carbine"
-	desc = "A Mar'quaian long smooth alloyed carbine, loading M-cells, and pulsing their release along its lengthy rails, forming a well burning arc before dispatching it forth towards its target. Often with deadly accuracy."
+	desc = "A Mar'quaian long smooth-alloyed carbine, loading M-cells. Channels the energy along its lengthy rails, forming a burning arc before releasing it forth towards its target. Often with deadly accuracy."
 	icon = 'icons/obj/guns/plasma/marqua.dmi'
 	icon_state = "skrell_carbine"
 	item_state = "skrell_carbine"

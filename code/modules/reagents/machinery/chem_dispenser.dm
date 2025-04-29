@@ -265,8 +265,8 @@
 	if(beaker)
 		to_chat(user, "Something is already loaded into the machine.")
 		return
-	if(istype(B, /obj/item/reagent_containers/glass) || istype(B, /obj/item/reagent_containers/food))
-		if(accept_beaker && istype(B, /obj/item/reagent_containers/food))
+	if(istype(B, /obj/item/reagent_containers/glass) || istype(B, /obj/item/reagent_containers))
+		if(accept_beaker && istype(B, /obj/item/reagent_containers))
 			to_chat(user, SPAN_NOTICE("This machine only accepts beakers"))
 		src.beaker =  B
 		if (user.unEquip(B, src))
@@ -296,7 +296,8 @@
 	simple_machinery = TRUE
 	level0 = list(
 		"water","ice","icetea","icegreentea","cola","spacemountainwind","dr_gibb","space_up",
-		"tonic","sodawater","lemon_lime","sugar","orangejuice","limejuice","lemonjuice", "pineapplejuice", "berryjuice","grapesoda","watermelonjuice")
+		"tonic","sodawater","lemon_lime","sugar","orangejuice","limejuice","lemonjuice", "pineapplejuice",
+		"berryjuice","grapesoda","watermelonjuice","strawberryjuice","applejuice")
 
 	level1 = list("capsaicin", "carbon")
 	level2 = list("banana", "triplecitrus")
@@ -377,7 +378,7 @@
 		"lemon_lime","sugar","orangejuice","limejuice",
 		"sodawater","tonic","beer","kahlua","whiskey",
 		"wine","vodka","gin","rum","tequilla","vermouth",
-		"cognac","ale","mead", "fernet")
+		"cognac","ale","mead", "fernet", "cider")
 
 	level1 = list("melonliquor", "bluecuracao", "ethanol")
 	level2 = list("sake", "irishcream")

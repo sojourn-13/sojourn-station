@@ -1,6 +1,6 @@
 var/global/ntnet_card_uid = 1
 
-/obj/item/computer_hardware/network_card
+/obj/item/pc_part/network_card
 	name = "basic network card"
 	desc = "A basic network card for usage with standard NTNet frequencies."
 	power_usage = 10
@@ -16,17 +16,17 @@ var/global/ntnet_card_uid = 1
 	var/frequency = 1457
 	malfunction_probability = 1
 
-/obj/item/computer_hardware/network_card/Initialize()
+/obj/item/pc_part/network_card/Initialize()
 	. = ..()
 	identification_id = ntnet_card_uid
 	ntnet_card_uid++
 	set_frequency(frequency)
 
-/obj/item/computer_hardware/network_card/Destroy()
+/obj/item/pc_part/network_card/Destroy()
 	SSradio.remove_object(src, frequency)
 	return ..()
 
-/obj/item/computer_hardware/network_card/diagnostics(var/mob/user)
+/obj/item/pc_part/network_card/diagnostics(var/mob/user)
 	..()
 	to_chat(user, "NIX Unique ID: [identification_id]")
 	to_chat(user, "NIX User Tag: [identification_string]")
@@ -37,7 +37,7 @@ var/global/ntnet_card_uid = 1
 	if(ethernet)
 		to_chat(user, "OpenEth (Physical Connection) - Physical network connection port")
 
-/obj/item/computer_hardware/network_card/proc/set_frequency(new_frequency)
+/obj/item/pc_part/network_card/proc/set_frequency(new_frequency)
 	if(ethernet || !new_frequency || !frequency)
 		return
 
@@ -48,7 +48,7 @@ var/global/ntnet_card_uid = 1
 	frequency = sanitize_frequency(new_frequency, RADIO_LOW_FREQ, RADIO_HIGH_FREQ)
 	radio_connection = SSradio.add_object(src, frequency, RADIO_CHAT)
 
-/obj/item/computer_hardware/network_card/proc/signal(new_frequency, code)
+/obj/item/pc_part/network_card/proc/signal(new_frequency, code)
 	if(!radio_connection || !check_functionality())
 		return
 
@@ -61,7 +61,7 @@ var/global/ntnet_card_uid = 1
 	spawn(0)
 		radio_connection.post_signal(src, signal)
 
-/obj/item/computer_hardware/network_card/receive_signal(datum/signal/signal)
+/obj/item/pc_part/network_card/receive_signal(datum/signal/signal)
 	if(!check_functionality() || !holder2 || !holder2.enabled)
 		return
 
@@ -70,7 +70,7 @@ var/global/ntnet_card_uid = 1
 
 
 
-/obj/item/computer_hardware/network_card/advanced
+/obj/item/pc_part/network_card/advanced
 	name = "advanced network card"
 	desc = "An advanced network card for usage with standard frequencies. It's transmitter is strong enough to connect even when far away."
 	long_range = TRUE
@@ -81,7 +81,7 @@ var/global/ntnet_card_uid = 1
 	hardware_size = 1
 	price_tag = 100
 
-/obj/item/computer_hardware/network_card/wired
+/obj/item/pc_part/network_card/wired
 	name = "wired network card"
 	desc = "An advanced network card for usage with standard frequencies. This one supports wired connection."
 	ethernet = TRUE
@@ -90,7 +90,7 @@ var/global/ntnet_card_uid = 1
 	icon_state = "netcard_ethernet"
 	hardware_size = 3
 
-/obj/item/computer_hardware/network_card/adv_wired
+/obj/item/pc_part/network_card/adv_wired
 	name = "advanced wired network card"
 	desc = "An advanced network card for usage with standard frequencies. This one supports wired connection and it's transmitter is strong enough to connect even when far away."
 	long_range = TRUE
@@ -101,14 +101,14 @@ var/global/ntnet_card_uid = 1
 	hardware_size = 3
 
 // Returns a string identifier of this network card
-/obj/item/computer_hardware/network_card/proc/get_network_tag()
+/obj/item/pc_part/network_card/proc/get_network_tag()
 	return "[identification_string] (NID [identification_id])"
 
-/obj/item/computer_hardware/network_card/proc/is_banned()
+/obj/item/pc_part/network_card/proc/is_banned()
 	return ntnet_global.check_banned(identification_id)
 
 // 0 - No signal, 1 - Low signal, 2 - High signal. 3 - Wired Connection
-/obj/item/computer_hardware/network_card/proc/get_signal(var/specific_action = 0)
+/obj/item/pc_part/network_card/proc/get_signal(var/specific_action = 0)
 	if(!holder2) // Hardware is not installed in anything. No signal. How did this even get called?
 		return 0
 

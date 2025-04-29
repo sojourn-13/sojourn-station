@@ -443,7 +443,7 @@
 					M.emote("painscream")
 				else
 					var/mob/living/carbon/C = M
-					if (!(C.species && (C.species.flags & NO_PAIN)))
+					if (!((C.species.flags & NO_PAIN) || (PAIN_LESS in C.mutations)))
 						C.emote("painscream")
 
 			//Logging for this causes runtimes resulting in the cremator locking up. Commenting it out until that's figured out.

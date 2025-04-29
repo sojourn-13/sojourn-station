@@ -871,6 +871,24 @@ area/space/atmosalert()
 	has_gravity = 1
 	requires_power = 0
 	area_light_color = COLOR_NAVY_BLUE //That is below is that of above
+	var/has_late_game_spawned_for_folks = FALSE
+
+
+/area/deepmaint/Entered(A)
+	..()
+	if(has_late_game_spawned_for_folks)
+		return
+	if(!ishuman(A))
+		return
+	has_late_game_spawned_for_folks = TRUE
+	spawn_mobs()
+
+/area/deepmaint/proc/spawn_mobs()
+	for(var/obj/random/cluster/psi_monster/spawners in src)
+		spawners.late_handling()
+
+	for(var/obj/random/mob/psi_monster/clust_spawners in src)
+		clust_spawners.late_handling()
 
 // This area is mostly there to prevent the initial crystals from processing when there is no one nearby.
 // In an ideal situation, it would be wider than the potential full size of the field to prevent any escapes. -R4d6
@@ -888,7 +906,7 @@ area/space/atmosalert()
 		Process()
 
 /area/crystal_field/Entered(atom/movable/Obj, atom/newloc)
-	if(istype(Obj, /mob/living) && !istype(Obj, /mob/living/carbon/superior_animal/ameridian_golem)) // If a mob enter the area, start processing, except if it is a golem
+	if(istype(Obj, /mob/living) && !istype(Obj, /mob/living/carbon/superior/ameridian_golem)) // If a mob enter the area, start processing, except if it is a golem
 		start_crystal_processing()
 		//to_chat(usr, "The crystals seems to wake up") // TODO, better sentence and have it only be visible to psions -R4d6
 
@@ -909,7 +927,7 @@ area/space/atmosalert()
 /area/crystal_field/proc/check_contents()
 	. = FALSE // Default return value is false by default
 	for(var/mob/living/L in contents) // Check every mob
-		if(!istype(L, /mob/living/carbon/superior_animal/ameridian_golem) && L.stat != DEAD) // Ignore golems & dead people
+		if(!istype(L, /mob/living/carbon/superior/ameridian_golem) && L.stat != DEAD) // Ignore golems & dead people
 			. = TRUE
 			break // No need to check further
 

@@ -11,7 +11,7 @@
 	spawn_always = TRUE
 	markup = UNCOMMON_GOODS
 	offer_limit = 5
-	base_income = 3200
+	base_income = 800
 	hidden_inv_threshold = 2000
 	recommendation_threshold = 3500
 	stations_recommended = list("illegal2")
@@ -19,12 +19,12 @@
 	inventory = list(
 		"Roach Cubes and Eggs" = list(
 			/obj/item/storage/deferred/roacheggs,	// make egg box
-			/obj/item/reagent_containers/food/snacks/cube/roach/roachling = custom_good_amount_range(list(1, 5)),
-			/obj/item/reagent_containers/food/snacks/cube/roach = custom_good_amount_range(list(1, 5)),
-			/obj/item/reagent_containers/food/snacks/cube/roach/jager = custom_good_amount_range(list(1, 5)),
-			/obj/item/reagent_containers/food/snacks/cube/roach/seuche = custom_good_amount_range(list(1, 5)),
-			/obj/item/reagent_containers/food/snacks/cube/roach/panzer = custom_good_amount_range(list(1, 5)),
-			/obj/item/reagent_containers/food/snacks/cube/roach/grestrahlte = custom_good_amount_range(list(1, 5))
+			/obj/item/reagent_containers/snacks/cube/roach/roachling = custom_good_amount_range(list(1, 2)),
+			/obj/item/reagent_containers/snacks/cube/roach = custom_good_amount_range(list(1, 2)),
+			/obj/item/reagent_containers/snacks/cube/roach/jager = custom_good_amount_range(list(1, 2)),
+			/obj/item/reagent_containers/snacks/cube/roach/seuche = custom_good_amount_range(list(1, 2)),
+			/obj/item/reagent_containers/snacks/cube/roach/panzer = custom_good_amount_range(list(1, 2)),
+			/obj/item/reagent_containers/snacks/cube/roach/grestrahlte = custom_good_amount_range(list(1, 2))
 		),
 		"Roach Toxins" = list(
 			/obj/item/reagent_containers/glass/bottle/trade/blattedin = good_data("blattedin bottle", list(-1, 2), 600),
@@ -43,14 +43,14 @@
 	)
 	hidden_inventory = list(
 		"High-End Roach Product" = list(
-			/obj/item/reagent_containers/food/snacks/cube/roach/kraftwerk = custom_good_amount_range(list(1, 5)),
-			/obj/item/reagent_containers/glass/bottle/trade/fuhrerole = good_data("fuhrerole bottle", list(1, 1), 900),
-			/obj/item/reagent_containers/glass/bottle/trade/kaiseraurum = good_data("kaiseraurum bottle", list(1, 1), 1000)
+			/obj/item/reagent_containers/snacks/cube/roach/kraftwerk = custom_good_amount_range(list(1, 2)),
+			/obj/item/reagent_containers/glass/bottle/trade/fuhrerole = good_data("fuhrerole bottle", list(1, 1), 900)
+//			/obj/item/reagent_containers/glass/bottle/trade/kaiseraurum = good_data("kaiseraurum bottle", list(1, 1), 1000) Kaiseraurum doesn't exist here, you just get an empty bottle
 		),
 		"Just Spiders" = list(
-			/mob/living/carbon/superior_animal/giant_spider = custom_good_amount_range(list(2, 3)),
-			/mob/living/carbon/superior_animal/giant_spider/nurse = custom_good_amount_range(list(-2, 3)),
-			/mob/living/carbon/superior_animal/giant_spider/hunter = custom_good_amount_range(list(1, 2))
+			/mob/living/carbon/superior/spider = custom_good_amount_range(list(0, 1)),
+			/mob/living/carbon/superior/spider/nurse = custom_good_amount_range(list(-2, 1)),
+			/mob/living/carbon/superior/spider/hunter = custom_good_amount_range(list(0, 1))
 		)
 	)
 	//Types of items bought by the station
@@ -58,5 +58,5 @@
 		/obj/item/mine = offer_data("landmine", 1200, 3),
 		/obj/item/beartrap = offer_data("mechanical trap", 600, 5),
 		/obj/item/device/assembly/mousetrap = offer_data("mousetrap", 200, 10),
-		/datum/reagent/toxin/zombiepowder = offer_data("zombie powder bottle(60u)", 800, 2)
+		/datum/reagent/toxin/zombiepowder = offer_data("zombie powder bottle(60u)", 1200, 2)
 	)

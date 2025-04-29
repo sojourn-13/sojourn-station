@@ -36,7 +36,7 @@
 /datum/chemical_reaction/tofu/on_reaction(var/datum/reagents/holder, var/created_volume)
 	var/location = get_turf(holder.my_atom)
 	for(var/i = 1, i <= created_volume, i++)
-		new /obj/item/reagent_containers/food/snacks/tofu(location)
+		new /obj/item/reagent_containers/snacks/tofu(location)
 
 /* Deprecated form of making chocolate_bar via chemical mix - Chocolate bar is now made in a Pot, recipe in VIRK
 /datum/chemical_reaction/chocolate_bar
@@ -49,7 +49,7 @@
 /datum/chemical_reaction/chocolate_bar/on_reaction(var/datum/reagents/holder, var/created_volume)
 	var/location = get_turf(holder.my_atom)
 	for(var/i = 1, i <= created_volume, i++)
-		new /obj/item/reagent_containers/food/snacks/chocolatebar(location)
+		new /obj/item/reagent_containers/snacks/chocolatebar(location)
 
 /datum/chemical_reaction/chocolate_bar2
 	result = null
@@ -61,7 +61,7 @@
 /datum/chemical_reaction/chocolate_bar2/on_reaction(var/datum/reagents/holder, var/created_volume)
 	var/location = get_turf(holder.my_atom)
 	for(var/i = 1, i <= created_volume, i++)
-		new /obj/item/reagent_containers/food/snacks/chocolatebar(location)
+		new /obj/item/reagent_containers/snacks/chocolatebar(location)
 */
 
 /datum/chemical_reaction/icecreambase
@@ -80,7 +80,7 @@
 /datum/chemical_reaction/honey_icecream/on_reaction(var/datum/reagents/holder, var/created_volume)
 	var/location = get_turf(holder.my_atom)
 	for(var/i = 1, i <= created_volume, i++)
-		new /obj/item/reagent_containers/food/snacks/honey_icecream(location)
+		new /obj/item/reagent_containers/snacks/honey_icecream(location)
 
 /datum/chemical_reaction/hot_coco
 	result = "hot_coco"
@@ -118,7 +118,7 @@
 /datum/chemical_reaction/cheesewheel/on_reaction(var/datum/reagents/holder, var/created_volume)
 	var/location = get_turf(holder.my_atom)
 	for(var/i = 1, i <= created_volume, i++)
-		new /obj/item/reagent_containers/food/snacks/sliceable/cheesewheel(location)
+		new /obj/item/reagent_containers/snacks/cheesewheel(location)
 
 /* Deprecated form of making meatball via chemical mix - Meatball is made in prep bowl, VIRK recipe
 /datum/chemical_reaction/meatball
@@ -131,7 +131,7 @@
 /datum/chemical_reaction/meatball/on_reaction(var/datum/reagents/holder, var/created_volume)
 	var/location = get_turf(holder.my_atom)
 	for(var/i = 1, i <= created_volume, i++)
-		new /obj/item/reagent_containers/food/snacks/rawmeatball(location)
+		new /obj/item/reagent_containers/snacks/rawmeatball(location)
 */
 
 /datum/chemical_reaction/dough
@@ -144,7 +144,7 @@
 /datum/chemical_reaction/dough/on_reaction(var/datum/reagents/holder, var/created_volume)
 	var/location = get_turf(holder.my_atom)
 	for(var/i = 1, i <= created_volume, i++)
-		new /obj/item/reagent_containers/food/snacks/dough(location)
+		new /obj/item/reagent_containers/snacks/dough(location)
 
 /datum/chemical_reaction/syntiflesh
 	result = null
@@ -156,7 +156,7 @@
 /datum/chemical_reaction/syntiflesh/on_reaction(var/datum/reagents/holder, var/created_volume)
 	var/location = get_turf(holder.my_atom)
 	for(var/i = 1, i <= created_volume, i++)
-		new /obj/item/reagent_containers/food/snacks/meat/syntiflesh(location)
+		new /obj/item/reagent_containers/snacks/meat/syntiflesh(location)
 
 /datum/chemical_reaction/hot_ramen
 	result = "hot_ramen"
@@ -178,7 +178,7 @@
 /datum/chemical_reaction/butter/on_reaction(var/datum/reagents/holder, var/created_volume)
 	var/location = get_turf(holder.my_atom)
 	for(var/i = 1, i <= created_volume, i++)
-		new /obj/item/reagent_containers/food/snacks/sliceable/butterstick(location)
+		new /obj/item/reagent_containers/snacks/butterstick(location)
 
 /datum/chemical_reaction/vanillaicecream
 	result = null
@@ -190,7 +190,7 @@
 /datum/chemical_reaction/vanillaicecream/on_reaction(var/datum/reagents/holder, var/created_volume)
 	var/location = get_turf(holder.my_atom)
 	for(var/i = 1, i <= created_volume, i++)
-		new /obj/item/reagent_containers/food/snacks/icecream(location)
+		new /obj/item/reagent_containers/snacks/icecream(location)
 
 /datum/chemical_reaction/chocolateicecream
 	result = null
@@ -202,11 +202,11 @@
 /datum/chemical_reaction/chocolateicecream/on_reaction(var/datum/reagents/holder, var/created_volume)
 	var/location = get_turf(holder.my_atom)
 	for(var/i = 1, i <= created_volume, i++)
-		new /obj/item/reagent_containers/food/snacks/chocoicecream(location)
+		new /obj/item/reagent_containers/snacks/chocoicecream(location)
 
 /datum/chemical_reaction/strawberryicecream
 	result = null
-	required_reagents = list("icecreambase" = 10, "berryjuice" = 5)
+	required_reagents = list("icecreambase" = 10, "strawberryjuice" = 5)
 	result_amount = 1
 	blacklist_containers = list(/mob, /obj/machinery/microwave)
 	mix_message = "The solution freezes into icecream!"
@@ -214,7 +214,7 @@
 /datum/chemical_reaction/strawberryicecream/on_reaction(var/datum/reagents/holder, var/created_volume)
 	var/location = get_turf(holder.my_atom)
 	for(var/i = 1, i <= created_volume, i++)
-		new /obj/item/reagent_containers/food/snacks/strawberryicecream(location)
+		new /obj/item/reagent_containers/snacks/strawberryicecream(location)
 
 /* Aurora's Coffee */
 
@@ -787,7 +787,7 @@
 
 /datum/chemical_reaction/strawberrymilk
 	result = "strawberrymilk"
-	required_reagents = list("berryjuice" = 1, "milk" = 1)
+	required_reagents = list("strawberryjuice" = 1, "milk" = 1)
 	result_amount = 2
 
 /datum/chemical_reaction/drinks/fernetcola
@@ -896,6 +896,11 @@
 /datum/chemical_reaction/drinks/friendlyfire
 	result = "friendlyfire"
 	required_reagents = list("rum" = 2, "iron" = 1, "vodka" = 1)
+	result_amount = 3
+
+/datum/chemical_reaction/drinks/strawberry_explosive_blast
+	result = "strawberry_explosive_blast"
+	required_reagents = list("strawberryjuice" = 2, "cola" = 1)
 	result_amount = 3
 
 

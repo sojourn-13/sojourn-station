@@ -114,6 +114,10 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_pm_panel, R_ADMIN|R_MOD|R_MENTOR, FALSE)
 	log_adminPMHistory(C.ckey, src.ckey, msg)
 
 
+	// Send the message to achat. TGS
+	var/category = "PM: [key_name(src)] -> [key_name(C)]"
+	send2adminchat(category, msg)
+
 	//we don't use message_admins here because the sender/receiver might get it too
 	for(var/client/X in admins)
 		//check client/X is an admin and isn't the sender or recipient

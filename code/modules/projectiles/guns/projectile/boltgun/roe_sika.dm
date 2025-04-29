@@ -14,7 +14,7 @@
 	sharp = FALSE
 	caliber = CAL_LRIFLE
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_WOOD = 10, MATERIAL_GLASS = 10)
-	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_SILENCABLE)
+	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_SILENCABLE, GUN_KNIFE)	//Can take bayonet.
 	saw_off = TRUE
 	sawn = /obj/item/gun/projectile/boltgun/sawn/light
 	serial_type = "Hunt Inc"
@@ -22,7 +22,7 @@
 
 /obj/item/gun/projectile/boltgun/sawn/light
 	name = "\"obrez\" light boltgun"
-	desc = "A crudly mangled and sawn-down 6.5mm bolt action rifle. Rifle was fine."
+	desc = "A crudely mangled and sawn-down 6.5mm bolt action rifle. The rifle was fine before."
 	icon = 'icons/obj/guns/projectile/sawnoff/boltgun_wood.dmi'
 	icon_state = "obrez"
 	item_state = "obrez"
@@ -30,6 +30,7 @@
 	load_method = SINGLE_CASING
 	init_recoil = HMG_RECOIL(0.6)
 	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_WOOD = 5)
+	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_SILENCABLE)	//No more bayonet.
 	max_shells = 10
 	saw_off = FALSE
 	serial_type = "Hunt Inc"

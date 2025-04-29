@@ -1,4 +1,4 @@
-/mob/living/carbon/superior_animal/roach/glowing
+/mob/living/carbon/superior/roach/glowing
 	name = "Gluhend Roach"
 	desc = "A huge dog-sized roach that been evolved to produce small amouts of uranium in its glad, becoming stronger and glowing sickly green."
 	icon_state = "glowingroach"
@@ -12,7 +12,7 @@
 
 	flash_resistances = 10 //We are the light
 
-	meat_type = /obj/item/reagent_containers/food/snacks/meat/roachmeat/glowing
+	meat_type = /obj/item/reagent_containers/snacks/meat/roachmeat/glowing
 
 	armor = list(melee = 8, bullet = 1, energy = 1, bomb = 5, bio = 20, rad = 100, agony = 0)
 
@@ -24,7 +24,7 @@
 	melee_damage_upper = 7 //Weaker than hunter
 	armor_divisor = 1
 
-/mob/living/carbon/superior_animal/roach/glowing/UnarmedAttack(var/atom/A, var/proximity)
+/mob/living/carbon/superior/roach/glowing/UnarmedAttack(var/atom/A, var/proximity)
 	. = ..()
 
 	if(isliving(A))
@@ -35,17 +35,19 @@
 			playsound(src, 'sound/voice/insect_battle_screeching.ogg', 30, 1, -3)
 			L.visible_message(SPAN_DANGER("\the [src] pinches hard, chemically burning \the [L]!"))
 		if(prob(5))
-			var/mob/living/carbon/C = L
-			var/safety = C.eyecheck()
-			if(safety < FLASH_PROTECTION_MINOR)
-				var/flash_strength = 5
-				if(ishuman(L))
-					var/mob/living/carbon/human/H = L
-					flash_strength *= H.flash_mod
-				if(flash_strength > 0)
-					L.Weaken(flash_strength)
-					if (L.HUDtech.Find("flash"))
-						flick("e_flash", L.HUDtech["flash"])
-					L.visible_message(SPAN_DANGER("\the [src] flashes a bright green, blinding \ [L]!"))
+			if(iscarbon(L))
+				var/mob/living/carbon/C = L
+				C.update_equipment_vision()
+				var/safety = C.eyecheck()
+				if(safety < FLASH_PROTECTION_MINOR)
+					var/flash_strength = 5
+					if(ishuman(L))
+						var/mob/living/carbon/human/H = L
+						flash_strength *= H.flash_mod
+					if(flash_strength > 0)
+						L.Weaken(flash_strength)
+						if (L.HUDtech.Find("flash"))
+							flick("e_flash", L.HUDtech["flash"])
+						L.visible_message(SPAN_DANGER("\the [src] flashes a bright green, blinding \ [L]!"))
 			else
 				L.visible_message(SPAN_DANGER("\the [src] fails to blind \ [L]!"))

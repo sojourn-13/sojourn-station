@@ -2,7 +2,7 @@
 #define EATING_TARGET 2
 #define LAYING_EGG 3
 
-/mob/living/carbon/superior_animal/roach/proc/GiveUp(var/C)
+/mob/living/carbon/superior/roach/proc/GiveUp(var/C)
 	spawn(100)
 		if(busy == MOVING_TO_TARGET)
 			if(eat_target == C && get_dist(src,eat_target) > 1)
@@ -10,7 +10,7 @@
 				busy = 0
 				stop_automated_movement = 0
 
-/mob/living/carbon/superior_animal/roach/handle_ai()
+/mob/living/carbon/superior/roach/handle_ai()
 	..()
 	if(stance == HOSTILE_STANCE_IDLE)
 		switch(busy)
@@ -21,7 +21,7 @@
 					var/turf/our_turf = get_turf(src)
 					if (our_turf) //If we're not in anything, continue
 						for(var/mob/living/carbon/C as anything in hearers(src, viewRange))
-							if ((C.stat == DEAD) && ((istype(C, /mob/living/carbon/human)) || (istype(C, /mob/living/carbon/superior_animal))))
+							if ((C.stat == DEAD) && ((istype(C, /mob/living/carbon/human)) || (istype(C, /mob/living/carbon/superior))))
 								eatTargets += C
 
 						for(var/obj/effect/spider/S in view(src, viewRange)) //S for Spider
@@ -29,7 +29,7 @@
 								eatTargets += S
 
 						if(snacker)
-							for(var/obj/item/reagent_containers/food/snacks/food in view(src,3))
+							for(var/obj/item/reagent_containers/snacks/food in view(src,3))
 								if(istype(food.loc, /turf))
 									eatTargets += food
 
@@ -104,9 +104,9 @@
 									src.visible_message(SPAN_WARNING("\The [src] finishes eating \the [eat_target], leaving only bones."))
 									// Get fed
 									fed += rand(4,6)
-								else if (istype(M, /mob/living/carbon/superior_animal) && (M.icon)) // Eating a spider or roach
+								else if (istype(M, /mob/living/carbon/superior) && (M.icon)) // Eating a spider or roach
 									// Gib victim
-									var/mob/living/carbon/superior_animal/tasty = M
+									var/mob/living/carbon/superior/tasty = M
 									M.gib(null, FALSE)
 									gibs(targetTurf, null, /obj/effect/gibspawner/generic, fleshcolor, bloodcolor)
 									// End message
@@ -114,15 +114,15 @@
 									// Get fed
 									fed += rand(1,tasty.meat_amount)
 									if (isroach(tasty))
-										var/mob/living/carbon/superior_animal/roach/cannibalism = tasty
+										var/mob/living/carbon/superior/roach/cannibalism = tasty
 										fed += cannibalism.fed
-									if(istype(src, /mob/living/carbon/superior_animal/roach/roachling))
+									if(istype(src, /mob/living/carbon/superior/roach/roachling))
 										if(tasty.meat_amount >= 6)// ate a fuhrer or kaiser
-											var/mob/living/carbon/superior_animal/roach/roachling/bigboss = src
+											var/mob/living/carbon/superior/roach/roachling/bigboss = src
 											bigboss.big_boss = TRUE
-						else if(snacker && istype(eat_target, /obj/item/reagent_containers/food/snacks))
+						else if(snacker && istype(eat_target, /obj/item/reagent_containers/snacks))
 							src.visible_message(SPAN_WARNING("\The [src] finishes eating \the [eat_target]."))
-							var/obj/item/reagent_containers/food/snacks/snack = eat_target
+							var/obj/item/reagent_containers/snacks/snack = eat_target
 							if(snack.trash)
 								if(ispath(snack.trash,/obj/item))
 									var/obj/item/TrashItem = new snack.trash()
@@ -136,12 +136,12 @@
 
 			if(LAYING_EGG)
 				if (world.timeofday >= busy_start_time + eating_time * 0.5) //Takes half as long to lay an egg then it is to eat a dead body
-					if (istype(src, /mob/living/carbon/superior_animal/roach/kaiser))// kaiser roaches now lay roachcubes
-						var/roachcube = pick(subtypesof(/obj/item/reagent_containers/food/snacks/cube/roach))
+					if (istype(src, /mob/living/carbon/superior/roach/kaiser))// kaiser roaches now lay roachcubes
+						var/roachcube = pick(subtypesof(/obj/item/reagent_containers/snacks/cube/roach))
 						new roachcube(get_turf(src))
 					else
 						var/obj/item/roach_egg/egg
-						if (istype(src, /mob/living/carbon/superior_animal/roach/golden))// kaiser roaches now lay roachcubes
+						if (istype(src, /mob/living/carbon/superior/roach/golden))// kaiser roaches now lay roachcubes
 							egg = new /obj/item/roach_egg/gold(loc, src)
 						else
 							egg = new /obj/item/roach_egg(loc, src)

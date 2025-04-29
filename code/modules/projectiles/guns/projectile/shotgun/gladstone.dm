@@ -7,11 +7,9 @@
 	item_state = "gladstone"
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2)
 	max_shells = 7
-	caliber = CAL_SHOTGUN
 	damage_multiplier = 1.1
 	penetration_multiplier = 1.1 //Combat shotgun shouldn't be worse than makeshift shotgun
-	ammo_type = /obj/item/ammo_casing/shotgun
-	fire_sound = 'sound/weapons/guns/fire/shotgun.ogg'
+	fire_sound = 'sound/weapons/guns/fire/shotgun_fire.ogg'
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 6)
 	price_tag = 850
 	init_recoil = RIFLE_RECOIL(1.2)
@@ -63,10 +61,8 @@
 	item_state = "queen"
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2)
 	max_shells = 14 //half a box in this massive gun
-	caliber = CAL_SHOTGUN
 	w_class = ITEM_SIZE_HUGE
 	damage_multiplier = 1.1
-	ammo_type = /obj/item/ammo_casing/shotgun
 	matter = list(MATERIAL_PLASTEEL = 25, MATERIAL_PLASTIC = 26)
 	price_tag = 20000 //Its amazing!
 	init_recoil = RIFLE_RECOIL(1.1)

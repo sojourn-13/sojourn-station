@@ -1,6 +1,6 @@
 /obj/item/gun/energy/xray
 	name = "\"X-RAY\" laser rifle"
-	desc = "A brandless modern laser rifle capable of delivering powered blasts even across solid surfaces accompanied by signature high pitched screech. Due to this it has been banned from commercial use but still finds itself in hands of many mercenary groups."
+	desc = "An unbranded modern laser rifle capable of delivering powerful blasts even through solid surfaces accompanied by a signature high pitched screech. Due to this it has been banned from commercial use but still finds itself in the hands of many mercenary groups."
 	icon = 'icons/obj/guns/energy/xray.dmi'
 	icon_state = "xray"
 	item_state = "xray"
@@ -18,7 +18,8 @@
 
 /obj/item/gun/energy/IRKDissolver //IRK = Irkalla, marker so people can have an easier time saying what I made
 	name = "\"TRR-II\" Dissolver" //Tactical Radiation Rifle Dissolver or for the whole 3 Star Trek enjoyers with us Thalaron Radiation Rifle
-	desc = "The fruit of a collaboration of SI and Guild; The TRR-II Dissolver is build upon an EBR-4 Nuclear rifle. Using several components of SI and Guild this weapon effectively looses its stun mode but gains a penetrating beam mode of some sort. Some quirk with the enhancements provided by SI with the Guilds ingenuity resulted in the weapon also being able to fire debilitating kinetic blasts. Every setting but DEBILITATE seems to irradiate any target hit. It is unclear how exactly the reactor of the weapon works."
+	desc = "The fruit of a collaboration between SI and the Artificer Guild; The TRR-II Dissolver is build upon an EBR-4 Nuclear rifle. Using several components of SI and the Guild this weapon effectively loses its stun mode but gains a penetrating beam. \
+	Some quirks with the enhancements provided by SI with the Guild's ingenuity resulted in the weapon also being able to fire debilitating kinetic blasts. Every setting but DEBILITATE seems to irradiate any target hit. It is unclear how exactly the reactor of the weapon works."
 	icon = 'icons/obj/guns/energy/nucgun2.dmi'
 	icon_state = "nucgun2"
 	item_charge_meter = TRUE

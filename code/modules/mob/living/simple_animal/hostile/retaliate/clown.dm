@@ -1,4 +1,4 @@
-/mob/living/simple_animal/hostile/retaliate/clown
+/mob/living/simple/hostile/retaliate/clown
 	name = "Clown"
 	desc = "A denizen of clown planet."
 	icon = 'icons/mob/64x64.dmi'
@@ -43,7 +43,7 @@
 	var/attack_reagent
 
 
-/mob/living/simple_animal/hostile/retaliate/clown/Life()
+/mob/living/simple/hostile/retaliate/clown/Life()
 	. = ..()
 	if(banana_time && banana_time < world.time)
 		var/turf/T = get_turf(src)
@@ -51,7 +51,7 @@
 		new banana_type(pick(adjacent))
 		banana_time = world.time + rand(30,60)
 
-/mob/living/simple_animal/hostile/retaliate/clown/AttackingTarget()
+/mob/living/simple/hostile/retaliate/clown/AttackingTarget()
 	var/mob/living/targetted_mob = (target_mob?.resolve())
 
 	. = ..()
@@ -60,7 +60,7 @@
 		if(L.reagents)
 			L.reagents.add_reagent(attack_reagent, rand(1,5))
 
-/mob/living/simple_animal/hostile/retaliate/clown/death()
+/mob/living/simple/hostile/retaliate/clown/death()
 	..()
 	visible_message("<b>[src]</b> explodes in a shower of banana guts!")
 	new /obj/effect/gibspawner/clown(src.loc)
@@ -69,7 +69,7 @@
 	return
 
 
-/mob/living/simple_animal/hostile/retaliate/clown/lube
+/mob/living/simple/hostile/retaliate/clown/lube
 	name = "Living Lube"
 	desc = "A puddle of lube brought to life by the honkmother."
 	icon_state = "lube"
@@ -81,13 +81,13 @@
 	emote_see = list("bubbles.", "oozes.")
 	attack_reagent = "arectine"
 
-/mob/living/simple_animal/hostile/retaliate/clown/giggles
+/mob/living/simple/hostile/retaliate/clown/giggles
 	name = "Giggles"
 	desc = "Why?"
 	icon_state = "giggles"
 	icon_living = "giggles"
 
-/mob/living/simple_animal/hostile/retaliate/clown/banana
+/mob/living/simple/hostile/retaliate/clown/banana
 	name = "Clownana"
 	desc = "A fusion of clown and banana DNA birthed from a botany experiment gone wrong."
 	icon_state = "banana tree"
@@ -103,7 +103,7 @@
 	speed = -10
 	banana_time = 20
 
-/mob/living/simple_animal/hostile/retaliate/clown/pie
+/mob/living/simple/hostile/retaliate/clown/pie
 	name = "Pie spewer"
 	desc = "He loves giving out creampies."
 	icon_state = "pie spewer"
@@ -115,9 +115,9 @@
 	health = 250
 	speed = -10
 	banana_time = 40
-	banana_type = /obj/item/reagent_containers/food/snacks/pie
+	banana_type = /obj/item/reagent_containers/snacks/pie
 
-/mob/living/simple_animal/hostile/retaliate/clown/honkling
+/mob/living/simple/hostile/retaliate/clown/honkling
 	name = "Honkling"
 	desc = "A divine being sent by the Honkmother to spread joy. It's not dangerous, but it's a bit of a nuisance."
 	icon_state = "honkling"
@@ -131,7 +131,7 @@
 	melee_damage_upper = 1
 	attacktext = "cheers up"
 
-/mob/living/simple_animal/hostile/retaliate/clown/stacked
+/mob/living/simple/hostile/retaliate/clown/stacked
 	name = "Clowns"
 	desc = "You can hear them humming circus music."
 	icon_state = "clowns"
@@ -146,7 +146,7 @@
 	attacktext = "punches in unison"
 	pixel_x = -20
 
-/mob/living/simple_animal/hostile/retaliate/clown/fleshclown
+/mob/living/simple/hostile/retaliate/clown/fleshclown
 	name = "Fleshclown"
 	desc = "A being forged out of the pure essence of pranking, cursed into existence by a cruel maker."
 	icon_state = "fleshclown"
@@ -163,7 +163,7 @@
 	melee_damage_upper = 15
 	attacktext = "limply slaps"
 
-/mob/living/simple_animal/hostile/retaliate/clown/longface
+/mob/living/simple/hostile/retaliate/clown/longface
 	name = "Longface"
 	desc = "Often found walking into the bar."
 	icon_state = "long face"
@@ -183,7 +183,7 @@
 	melee_damage_lower = 5
 	attacktext = "YA-HONKs"
 
-/mob/living/simple_animal/hostile/retaliate/clown/scary
+/mob/living/simple/hostile/retaliate/clown/scary
 	name = "Copyright Infringement"
 	desc = "Somebody is going to get fucking sued. Oh and this clown is stupidly deadly."
 	icon_state = "scary_clown"
@@ -202,7 +202,7 @@
 	melee_damage_lower = 40
 	attacktext = "copyright claims"
 
-/mob/living/simple_animal/hostile/retaliate/clown/clownhulk
+/mob/living/simple/hostile/retaliate/clown/clownhulk
 	name = "Honk Hulk"
 	desc = "A cruel and fearsome clown. Don't make him angry."
 	icon_state = "honkhulk"
@@ -221,7 +221,7 @@
 	melee_damage_upper = 50
 	attacktext = "pummels"
 
-/mob/living/simple_animal/hostile/retaliate/clown/clownhulk/chlown
+/mob/living/simple/hostile/retaliate/clown/clownhulk/chlown
 	name = "Chlown"
 	desc = "A real lunkhead who somehow gets all the girls."
 	icon_state = "chlown"
@@ -239,7 +239,7 @@
 	attacktext = "steals the girlfriend of"
 	attack_sound = 'sound/items/Airhorn.ogg'
 
-/mob/living/simple_animal/hostile/retaliate/clown/clownhulk/honcmunculus
+/mob/living/simple/hostile/retaliate/clown/clownhulk/honcmunculus
 	name = "Honkmunculus"
 	desc = "A slender wiry figure of alchemical origin."
 	icon_state = "honkmunculus"
@@ -257,7 +257,7 @@
 	attacktext = "ferociously mauls"
 	attack_reagent = "mindbreaker"
 
-/mob/living/simple_animal/hostile/retaliate/clown/clownhulk/destroyer
+/mob/living/simple/hostile/retaliate/clown/clownhulk/destroyer
 	name = "The Destroyer"
 	desc = "An ancient being born of arcane honking."
 	icon_state = "destroyer"
@@ -272,7 +272,7 @@
 	melee_damage_upper = 40
 	attacktext = "acts out divine vengeance on"
 
-/mob/living/simple_animal/hostile/retaliate/clown/mutant
+/mob/living/simple/hostile/retaliate/clown/mutant
 	name = "Unknown"
 	desc = "Kill it for its own sake."
 	icon_state = "mutant"
@@ -292,7 +292,7 @@
 	melee_damage_upper = 20
 	attacktext = "awkwardly flails at"
 
-/mob/living/simple_animal/hostile/retaliate/clown/mutant/blob
+/mob/living/simple/hostile/retaliate/clown/mutant/blob
 	name = "Something that was once a clown"
 	desc = "A grotesque bulging figure far mutated from it's original state."
 	icon_state = "blob"

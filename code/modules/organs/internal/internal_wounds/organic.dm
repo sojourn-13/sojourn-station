@@ -9,7 +9,7 @@
 	treatments_tool = list(QUALITY_CAUTERIZING = FAILCHANCE_NORMAL)
 	treatments_chem = list(CE_BLOODCLOT = 0.55)	// Tricordrazine/polystem + bicaridine + meralyne OR quickclot OD + any brute heal
 	severity = 0
-	severity_max = 5
+	severity_max = 2
 	hal_damage = IWOUND_MEDIUM_DAMAGE
 
 /datum/component/internal_wound/organic/blunt/rupture
@@ -34,7 +34,7 @@
 	treatments_tool = list(QUALITY_CAUTERIZING = FAILCHANCE_NORMAL)
 	treatments_chem = list(CE_BLOODCLOT = 0.85)	// Brute heal chem mix + quickclot OD
 	severity = 0
-	severity_max = 5
+	severity_max = 2
 	next_wound = /datum/component/internal_wound/organic/swelling
 	hal_damage = IWOUND_MEDIUM_DAMAGE
 
@@ -60,7 +60,7 @@
 	treatments_tool = list(QUALITY_CAUTERIZING = FAILCHANCE_NORMAL)
 	treatments_chem = list(CE_BLOODCLOT = 0.85)	// Brute heal chem mix + quickclot OD
 	severity = 0
-	severity_max = 5
+	severity_max = 2
 	next_wound = /datum/component/internal_wound/organic/swelling
 	hal_damage = IWOUND_MEDIUM_DAMAGE
 
@@ -87,7 +87,7 @@
 	treatments_chem = list(CE_STABLE = 1, CE_DEBRIDEMENT = 1)	// Inaprov will only keep it from killing you
 	scar = /datum/component/internal_wound/organic/necrosis_start
 	severity = 0
-	severity_max = 5
+	severity_max = 2
 	next_wound = /datum/component/internal_wound/organic/infection
 	hal_damage = IWOUND_MEDIUM_DAMAGE
 
@@ -137,6 +137,7 @@
 	severity = 0
 	severity_max = 3
 	hal_damage = IWOUND_LIGHT_DAMAGE
+	progress_while_healthy = TRUE
 
 /datum/component/internal_wound/organic/poisoning/pustule
 	name = "pustule"
@@ -167,6 +168,7 @@
 	blood_req_multiplier = 0.50
 	nutriment_req_multiplier = 0.50
 	oxygen_req_multiplier = 0.50
+	progress_while_healthy = TRUE
 
 /datum/component/internal_wound/organic/heavy_poisoning/toxin
 	name = "toxin accumulation"
@@ -186,6 +188,7 @@
 	severity_max = 1
 	hal_damage = IWOUND_LIGHT_DAMAGE
 	status_flag = ORGAN_WOUNDED|ORGAN_MUTATED
+	progress_while_healthy = TRUE
 
 /datum/component/internal_wound/organic/radiation/benign
 	name = "benign tumor"
@@ -207,6 +210,7 @@
 	next_wound = /datum/component/internal_wound/organic/infection
 	hal_damage = IWOUND_LIGHT_DAMAGE
 	specific_organ_size_multiplier = 0.2
+	progress_while_healthy = TRUE
 
 /datum/component/internal_wound/organic/swelling/normal
 	name = "swelling"
@@ -220,6 +224,7 @@
 	severity = 0
 	severity_max = IORGAN_MAX_HEALTH
 	progression_threshold = IWOUND_1_MINUTE	// Kills small organs in 7 minutes, normal in 14
+	progress_while_healthy = TRUE
 
 /datum/component/internal_wound/organic/oxy/blood_loss
 	name = "blood loss"
@@ -234,6 +239,7 @@
 	hal_damage = IWOUND_LIGHT_DAMAGE
 	spread_threshold = IORGAN_SMALL_HEALTH
 	status_flag = ORGAN_WOUNDED|ORGAN_INFECTED
+	progress_while_healthy = TRUE
 
 /datum/component/internal_wound/organic/infection/standard
 	name = "infection"

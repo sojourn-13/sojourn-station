@@ -9,7 +9,7 @@
 	spawn_always = TRUE
 	markup = UNCOMMON_GOODS
 	offer_limit = 1
-	base_income = 1600
+	base_income = 1200
 	wealth = 0
 	hidden_inv_threshold = 2000
 	recommendation_threshold = 3000
@@ -17,9 +17,9 @@
 	recommendations_needed = 1
 	inventory = list(
 		"Scientific Surplus" = list(
-			/obj/item/storage/deferred/slime = custom_good_amount_range(list(1, 3)),
-			/obj/item/storage/deferred/xenobotany = custom_good_amount_range(list(1, 3)),
-			/obj/item/storage/deferred/rnd = custom_good_amount_range(list(-1, 2)),
+			/obj/item/storage/deferred/slime = custom_good_amount_range(list(0, 1)),
+			/obj/item/storage/deferred/xenobotany = custom_good_amount_range(list(2, 5)),
+			/obj/item/storage/deferred/rnd = custom_good_amount_range(list(-1, 1)),
 			/obj/item/storage/part_replacer/mini,
 			/obj/item/device/geiger
 		),
@@ -34,13 +34,15 @@
 			/obj/item/reagent_containers/glass/bottle/trade/bicaridine = good_data("bicaridine bottle", list(1, 3), 200),
 			/obj/item/reagent_containers/glass/bottle/trade/cronexidone = good_data("cronexidone bottle", list(1, 3), 800),
 			/obj/item/reagent_containers/glass/bottle/trade/imidazoline = good_data("imidazoline bottle", list(1, 3), 400),
-			/obj/item/reagent_containers/glass/bottle/trade/alkysine = good_data("alkysine bottle", list(1, 3), 400)
+			/obj/item/reagent_containers/glass/bottle/trade/alkysine = good_data("alkysine bottle", list(1, 3), 400),
+			/obj/item/reagent_containers/glass/beaker/vial/nanites = good_data("Raw Nanites Vial", list(-2, 2), 1200),
+			/obj/item/reagent_containers/glass/beaker/vial/uncapnanites = good_data("Raw Uncapped Nanites Vial", list(-1, 1), 1500)
 		)
 	)
 	hidden_inventory = list(
 		"Upgraded Organs" = list(
-			/obj/item/computer_hardware/hard_drive/portable/design/surgery = good_data("back alley organs disk", list(1, 2), 1200),
-			/obj/item/computer_hardware/hard_drive/portable/research_points= good_data("research data disk", list(1, 2), 2000),
+			/obj/item/pc_part/drive/disk/design/surgery = good_data("back alley organs disk", list(1, 2), 1200),
+			/obj/item/pc_part/drive/disk/research_points= good_data("research data disk", list(1, 2), 2000),
 			/obj/item/organ_module/active/simple/armshield,
 			/obj/item/organ_module/active/simple/armsmg
 		),

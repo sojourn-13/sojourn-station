@@ -1,4 +1,4 @@
-/mob/living/simple_animal/hostile/megafauna/one_star
+/mob/living/simple/hostile/megafauna/one_star
 	name = "Type - 0315"
 	desc = "Love and concrete."
 
@@ -30,7 +30,7 @@
 
 	projectiletype = /obj/item/projectile/bullet/light_rifle_257/nomuzzle
 
-/mob/living/simple_animal/hostile/megafauna/one_star/death(gibbed, var/list/force_grant)
+/mob/living/simple/hostile/megafauna/one_star/death(gibbed, var/list/force_grant)
 	if(health <= death_threshold)
 		visible_message("<b>[src]</b> blows apart in an explosion!")
 		explosion(src.loc, 0,1,3)
@@ -38,18 +38,20 @@
 		var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
 		s.set_up(3, 1, src)
 		s.start()
+		if(prob(10))
+			new /obj/item/gun_upgrade/mechanism/greyson_master_catalyst(src.loc)
 		..()
 
 
-/mob/living/simple_animal/hostile/megafauna/one_star/LoseTarget()
+/mob/living/simple/hostile/megafauna/one_star/LoseTarget()
 	..()
 	icon_state = initial(icon_state)
 
-/mob/living/simple_animal/hostile/megafauna/one_star/LostTarget()
+/mob/living/simple/hostile/megafauna/one_star/LostTarget()
 	..()
 	icon_state = initial(icon_state)
 
-/mob/living/simple_animal/hostile/megafauna/one_star/FindTarget()
+/mob/living/simple/hostile/megafauna/one_star/FindTarget()
 	if(istype(src.loc, /turf))
 		var/turf/TURF = src.loc
 		if(TURF.get_lumcount() < 1)
@@ -64,7 +66,7 @@
 	else
 		icon_state = initial(icon_state)
 
-/mob/living/simple_animal/hostile/megafauna/one_star/AttackingTarget()
+/mob/living/simple/hostile/megafauna/one_star/AttackingTarget()
 	var/mob/living/targetted_mob = (target_mob?.resolve())
 
 	if(!Adjacent(targetted_mob))
@@ -86,7 +88,7 @@
 		P.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
 		return P
 
-/mob/living/simple_animal/hostile/megafauna/one_star/proc/shoot_rocket(turf/marker, set_angle)
+/mob/living/simple/hostile/megafauna/one_star/proc/shoot_rocket(turf/marker, set_angle)
 	if(!isnum(set_angle) && (!marker || marker == loc))
 		return
 	var/turf/startloc = get_turf(src)
@@ -97,7 +99,7 @@
 	P.launch( get_step(marker, pick(SOUTH, NORTH, WEST, EAST, SOUTHEAST, SOUTHWEST, NORTHEAST, NORTHWEST)) )
 
 
-/mob/living/simple_animal/hostile/megafauna/one_star/OpenFire()
+/mob/living/simple/hostile/megafauna/one_star/OpenFire()
 	var/mob/living/targetted_mob = (target_mob?.resolve())
 
 	anger_modifier = CLAMP(((maxHealth - health)/50),0,20)

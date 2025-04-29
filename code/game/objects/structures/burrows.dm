@@ -19,7 +19,7 @@
 	//Any failed attempt to collapse it will reduce the health, making future attempts easier
 	health = 100
 
-	var/isSealed = TRUE	// borrow spawns as cracks and becomes a hole when critters emerge
+	var/isSealed = TRUE	// burrow spawns as cracks and becomes a hole when critters emerge
 
 	var/isRevealed = FALSE // when burrow is revealed it prevents interactions with turf and is not hiden anymore
 
@@ -94,7 +94,7 @@
 	if(prob(3) && T.z == 2) //Bottom floor of maints only
 		deepmaint_entry_point = TRUE
 
-	if(deepmaint_entry_point) //so we can tell at a glace what is a deep maints borrow
+	if(deepmaint_entry_point) //so we can tell at a glace what is a deep maints burrow
 		desc = "There appears to be an entrance here, covered by rubble and dirt. Collapsing it would take some serious tools and time."
 
 //Lets remove ourselves from the global list and cleanup any held references
@@ -164,7 +164,7 @@
 		return FALSE
 
 	//Kaisers are too fat, they can't fit in
-	if(istype(L, /mob/living/carbon/superior_animal/roach/kaiser))
+	if(istype(L, /mob/living/carbon/superior/roach/kaiser))
 		return FALSE
 
 	return TRUE
@@ -241,7 +241,7 @@ percentage is a value in the range 0..1 that determines what portion of this mob
 		//Alright now how do we make this mob come to us?
 		if (issuperioranimal(L))
 			//If its a superior animal, then we'll set their mob target to this burrow
-			var/mob/living/carbon/superior_animal/SA = L
+			var/mob/living/carbon/superior/SA = L
 			SA.activate_ai()
 			SA.target_mob = WEAKREF(src) //Tell them to target this burrow
 			SA.stance = HOSTILE_STANCE_ATTACK //This should make them walk over and attack it
@@ -533,8 +533,15 @@ percentage is a value in the range 0..1 that determines what portion of this mob
 	//We record the time to prevent exploits of starting and quickly cancelling
 	var/start = world.time
 	var/target_time = WORKTIME_FAST+ 2*health
+	var/health_mod = 0.66
 
-	if (I.use_tool(user, src, target_time, QUALITY_DIGGING, health * 0.66, list(STAT_MEC, STAT_ROB), forced_sound = WORKSOUND_PICKAXE))
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		if(MINING in H.mutations)
+			target_time *= 0.5
+			health_mod = 0.33
+
+	if (I.use_tool(user, src, target_time, QUALITY_DIGGING, health * health_mod, list(STAT_MEC, STAT_ROB), forced_sound = WORKSOUND_PICKAXE))
 		//On success, the hole is destroyed!
 		new /obj/random/scrap/sparse_weighted(get_turf(user))
 		user.visible_message("[user] collapses [src] with \the [I] and dumps trash which was in the way.", "You collapse [src] with \the [I] and dump trash which was in the way.")
@@ -565,7 +572,7 @@ percentage is a value in the range 0..1 that determines what portion of this mob
 	health -= (I.get_tool_quality(QUALITY_DIGGING)*time_mult)
 
 
-//Seal up cracks in a borrow.
+//Seal up cracks in a burrow.
 /obj/structure/burrow/proc/crack_removal(obj/item/I, mob/user)
 	//Safty check
 	if(!isRevealed)
@@ -685,7 +692,7 @@ percentage is a value in the range 0..1 that determines what portion of this mob
 	if (is_valid(user))
 		enter_burrow(user)
 	if (issuperioranimal(user))//So they don't carry burrow's reference and never qdel
-		var/mob/living/carbon/superior_animal/SA = user
+		var/mob/living/carbon/superior/SA = user
 		SA.target_mob = null
 
 

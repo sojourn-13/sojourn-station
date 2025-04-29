@@ -36,7 +36,7 @@
 		crew_data["suffocation"] = round(H.getOxyLoss())
 		crew_data["burns"] = round(H.getFireLoss())
 		crew_data["trauma"] = round(H.getBruteLoss())
-		crew_data["poisoning"] = round(H.getToxLoss())
+		crew_data["poisoning"] = round(H.chem_effects[CE_TOXIN])
 
 		if(H.getOxyLoss() >= 10)
 			crew_data["alert"] = TRUE
@@ -44,7 +44,7 @@
 			crew_data["alert"] = TRUE
 		if(H.getFireLoss() >= 50)
 			crew_data["alert"] = TRUE
-		if(H.getToxLoss() >= 50)
+		if(H.chem_effects[CE_TOXIN] >= 5)
 			crew_data["alert"] = TRUE
 
 	crew_data["bodytemp"] = H.bodytemperature - T0C

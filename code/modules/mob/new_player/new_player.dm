@@ -158,7 +158,7 @@
 			spawning = 1
 			sound_to(src, sound(null, repeat = 0, wait = 0, volume = 85, channel = GLOB.lobby_sound_channel))
 
-			observer.started_as_observer = 1
+			observer.started_as_observer = TRUE
 			close_spawn_windows()
 			var/turf/T = pick_spawn_location("Observer")
 			if(istype(T))
@@ -315,7 +315,7 @@
 	close_spawn_windows()
 
 	SSjob.AssignRole(src, rank, 1)
-	var/datum/job/job = src.mind.assigned_job
+	var/datum/job/job = src.mind?.assigned_job
 	var/mob/living/character = create_character()	//creates the human and transfers vars and mind
 
 	// AIs don't need a spawnpoint, they must spawn at an empty core
@@ -419,7 +419,7 @@ GLOBAL_VAR_CONST(TGUI_LATEJOIN_EVAC_NONE, "None")
 			for(var/list/department in dept_data)
 				if(job.department_flag & department["flag"])
 					departments += department["key"]
-		
+
 			jobs += list(list(
 				"title" = job.title,
 				"departments" = departments,

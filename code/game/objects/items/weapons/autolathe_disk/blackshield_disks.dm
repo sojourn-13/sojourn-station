@@ -1,5 +1,5 @@
 //Blackshield
-/obj/item/computer_hardware/hard_drive/portable/design/blackshield
+/obj/item/pc_part/drive/disk/design/blackshield
 	disk_name = ""
 	name = "Blackshield 'Shall-not-be-Infringed' Pack"
 	icon_state = "blackshield"
@@ -31,7 +31,7 @@
 		/datum/design/autolathe/container/ammocan_ih = 0,
 		)
 
-/obj/item/computer_hardware/hard_drive/portable/design/blackshieldammo
+/obj/item/pc_part/drive/disk/design/blackshieldammo
 	name = "Blackshield Ammo Sovereignty Pack"
 	disk_name = ""
 	icon_state = "blackshield"
@@ -123,7 +123,7 @@
 		/datum/design/autolathe/container/ammocan_ih,
 		)
 
-/obj/item/computer_hardware/hard_drive/portable/design/blackshield/luger
+/obj/item/pc_part/drive/disk/design/blackshield/luger
 	name = "No-Publisher 9mm \"Vintovka Lyugera\" carbine"
 	disk_name = ""
 	icon_state = "blackshield"
@@ -142,7 +142,7 @@
 		/datum/design/autolathe/ammo/pistol,
 		)
 
-/obj/item/computer_hardware/hard_drive/portable/design/blackshield/semyonovich
+/obj/item/pc_part/drive/disk/design/blackshield/semyonovich
 	name = "NM - 9mm PPV \"Semyonovich\""
 	disk_name = ""
 	icon_state = "blackshield"
@@ -156,7 +156,7 @@
 		/datum/design/autolathe/ammo/pistol_35_drum/lethal = 2
 		)
 
-/obj/item/computer_hardware/hard_drive/portable/design/blackshield/triage
+/obj/item/pc_part/drive/disk/design/blackshield/triage
 	name = "NM - 10mm Triage SMG"
 	disk_name = ""
 	icon_state = "blackshield"
@@ -170,7 +170,7 @@
 		/datum/design/autolathe/ammo/smg_magnum_40_practice = 0
 		)
 
-/obj/item/computer_hardware/hard_drive/portable/design/blackshield/watchtower
+/obj/item/pc_part/drive/disk/design/blackshield/watchtower
 	name = "NM - 7.62mm \"Watchtower\""
 	disk_name = ""
 	icon_state = "blackshield"
@@ -184,7 +184,7 @@
 		/datum/design/autolathe/ammo/rifle_lethal = 2
 		)
 
-/obj/item/computer_hardware/hard_drive/portable/design/blackshield/dp
+/obj/item/pc_part/drive/disk/design/blackshield/dp
 	name = "NM - \"Pulemyot Degtyaryova\" LMG"
 	disk_name = ""
 	icon_state = "blackshield"
@@ -195,7 +195,7 @@
 		/datum/design/autolathe/ammo/maxim = 1
 		)
 
-/obj/item/computer_hardware/hard_drive/portable/design/blackshield/duty
+/obj/item/pc_part/drive/disk/design/blackshield/duty
 	name = "NM - 6.5mm Duty Carbine"
 	disk_name = ""
 	icon_state = "blackshield"
@@ -214,7 +214,7 @@
 		/datum/design/autolathe/ammo/lrifle_speed_loader
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/design/blackshield/bounty_lever
+/obj/item/pc_part/drive/disk/design/blackshield/bounty_lever
 	name = "NM - 20mm Bounty Lever Shotgun"
 	disk_name = ""
 	icon_state = "blackshield"
@@ -227,7 +227,7 @@
 		/datum/design/autolathe/ammo/shotgun_illumination
 		)
 
-/obj/item/computer_hardware/hard_drive/portable/design/blackshield/heroic
+/obj/item/pc_part/drive/disk/design/blackshield/heroic
 	name = "NM - 7.62 Heroic LMG"
 	disk_name = ""
 	icon_state = "blackshield"

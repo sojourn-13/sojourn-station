@@ -43,7 +43,7 @@
 /obj/machinery/autolathe/organ_fabricator/proc/rip_disk()
 	if(!disk)
 		return
-	if(!istype(disk, /obj/item/computer_hardware/hard_drive/portable/design/omg))
+	if(!istype(disk, /obj/item/pc_part/drive/disk/design/omg))
 		return
 
 	for(var/design_file in disk.find_files_by_type(/datum/computer_file/binary/design))
@@ -55,7 +55,7 @@
 
 	audible_message(SPAN_NOTICE("The contents of \the [disk] have been saved to \the [src]'s drive."))
 
-/obj/machinery/autolathe/organ_fabricator/insert_disk(mob/living/user, obj/item/computer_hardware/hard_drive/portable/inserted_disk)
+/obj/machinery/autolathe/organ_fabricator/insert_disk(mob/living/user, obj/item/pc_part/drive/disk/inserted_disk)
 	. = ..()
 	for(var/design_file in disk.find_files_by_type(/datum/computer_file/binary/design))
 		var/datum/computer_file/binary/design/DF = design_file

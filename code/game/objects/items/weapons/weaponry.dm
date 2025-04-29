@@ -24,7 +24,7 @@
 	if(T)
 		var/obj/effect/energy_net/net = new net_type(T)
 		net.layer = M.layer+1
-		M.captured = 1
+		buckle_mob(M)
 		net.affecting = M
 		T.visible_message("[M] was caught in an energy net!")
 		qdel(src)
@@ -62,7 +62,7 @@
 	if(affecting)
 		var/mob/living/carbon/M = affecting
 		M.anchored = initial(affecting.anchored)
-		M.captured = 0
+		M.buckled = null
 		to_chat(M, "You are free of the net!")
 
 	STOP_PROCESSING(SSobj, src)
@@ -117,12 +117,28 @@
 	else
 		health -= rand(5,8)
 
-	to_chat(H, "<span class='danger'>You claw at the energy net.</span>")
+	to_chat(H, SPAN_DANGER("You claw at the energy net."))
 
 	healthCheck()
 	return
 
 /obj/effect/energy_net/attackby(obj/item/W as obj, mob/user as mob)
-	health -= W.force
+	if(QUALITY_CUTTING in W.tool_qualities)
+		user.visible_message(
+			SPAN_WARNING("\The [user] starts to saw at \the [src]!"),
+			SPAN_WARNING("You start sawing at \the [src]!"),
+			"You hear the sound of a knife rubbing against flesh!")
+		if(W.use_tool(user, src, WORKTIME_FAST, QUALITY_CUTTING, FAILCHANCE_EASY, required_stat = STAT_TGH))
+			to_chat(user, SPAN_NOTICE("You manage to destroy \the [src]."))
+			health = 0
+	else
+		health -= W.force/2
+
 	healthCheck()
 	..()
+
+/obj/effect/energy_net/resist_buckle(var/mob/user)
+	if (affecting == user)
+		to_chat(affecting, SPAN_WARNING("\The [src] seems impossible to wriggle through without a cutting tool or some help!"))
+
+	return FALSE

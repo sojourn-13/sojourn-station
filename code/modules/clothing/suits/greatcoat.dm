@@ -59,8 +59,8 @@
 	stiffness = LIGHT_STIFFNESS
 
 /obj/item/clothing/suit/greatcoat/absolutecoat
-	name = "absolutist coat"
-	desc = "A comfortable, decorated coat for the Absolutist faith and its supporters. Not as armored but just as ostentatious"
+	name = "absolutist greatcoat"
+	desc = "A comfortable, decorated coat for the absolutists and their supporters. Not as armored but just as ostentatious"
 	icon_state = "absolutecoat"
 	item_state = "absolutecoat"
 	blood_overlay_type = "coat"
@@ -80,7 +80,7 @@
 
 /obj/item/clothing/suit/greatcoat/nt_wintercoat //Sprite recolour from a Civ13 open github skyrim hidden piece with a few change ups to match our pallet -Dongels
 	name = "absolutist wintercoat"
-	desc = "A comfortably warm, and thick decorated wintercoat for the Absolutist faith and its supporters. Keeping the faithfull warm in the Amethyn heat since 2652."
+	desc = "A comfortably warm and thick decorated wintercoat for the absolutists and their supporters. Keeping the faithful warm in the Amethyn heat since 2652."
 	icon_state = "nt_wintercoat"
 	item_state = "nt_wintercoat"
 	blood_overlay_type = "coat"

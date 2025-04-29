@@ -144,6 +144,7 @@
 			if(ishuman(usr) && (usr.stat || usr.stunned || usr.lying))
 				return FALSE
 			toggle_piece(params["piece"], usr)
+			updateArmor()
 			. = TRUE
 		if("interact_module")
 			var/module_index = text2num(params["module"])

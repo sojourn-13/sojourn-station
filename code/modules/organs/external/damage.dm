@@ -50,7 +50,7 @@
 	switch(damage_type)
 		if(BRUTE)
 			if(status & ORGAN_BROKEN && prob(40))
-				if(owner && !(owner.species && (owner.species.flags & NO_PAIN)))
+				if(owner && !((owner.species.flags & NO_PAIN) || (PAIN_LESS in owner.mutations)))
 					owner.emote("scream")	//getting hit on broken hand hurts
 
 			if(sharp && !BP_IS_ROBOTIC(src))

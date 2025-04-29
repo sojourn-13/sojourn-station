@@ -1,14 +1,14 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "aa" = (
-/mob/living/carbon/superior_animal/human/voidwolf/ranged/aerotrooper,
+/mob/living/carbon/superior/human/voidwolf/ranged/aerotrooper,
 /turf/simulated/floor,
 /area/template_noop)
 "ab" = (
-/mob/living/carbon/superior_animal/human/voidwolf/ranged,
+/mob/living/carbon/superior/human/voidwolf/ranged,
 /turf/simulated/floor/reinforced,
 /area/template_noop)
 "ac" = (
-/mob/living/carbon/superior_animal/human/voidwolf/fieldtech,
+/mob/living/carbon/superior/human/voidwolf/fieldtech,
 /turf/simulated/floor/plating/under,
 /area/template_noop)
 "ad" = (
@@ -18,7 +18,7 @@
 /turf/simulated/floor/reinforced,
 /area/template_noop)
 "ae" = (
-/mob/living/carbon/superior_animal/human/voidwolf/ranged,
+/mob/living/carbon/superior/human/voidwolf/ranged,
 /turf/simulated/floor/plating/under,
 /area/template_noop)
 "af" = (
@@ -26,7 +26,7 @@
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/template_noop)
 "ag" = (
-/mob/living/carbon/superior_animal/human/voidwolf,
+/mob/living/carbon/superior/human/voidwolf,
 /turf/simulated/floor,
 /area/template_noop)
 "ah" = (
@@ -40,19 +40,19 @@
 /obj/structure/urinal{
 	pixel_y = 32
 	},
-/mob/living/carbon/superior_animal/human/voidwolf/fieldtech/ranged,
+/mob/living/carbon/superior/human/voidwolf/fieldtech/ranged,
 /turf/simulated/floor/tiled/dark/cargo,
 /area/template_noop)
 "ak" = (
-/mob/living/carbon/superior_animal/human/voidwolf/ranged/aerotrooper,
+/mob/living/carbon/superior/human/voidwolf/ranged/aerotrooper,
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/template_noop)
 "al" = (
-/mob/living/carbon/superior_animal/human/voidwolf/captain,
+/mob/living/carbon/superior/human/voidwolf/captain,
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/template_noop)
 "am" = (
-/mob/living/carbon/superior_animal/human/voidwolf,
+/mob/living/carbon/superior/human/voidwolf,
 /turf/simulated/floor/plating/under,
 /area/template_noop)
 "ao" = (
@@ -102,7 +102,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/mob/living/carbon/superior_animal/human/voidwolf,
+/mob/living/carbon/superior/human/voidwolf,
 /turf/simulated/floor,
 /area/template_noop)
 "el" = (
@@ -188,10 +188,10 @@
 "oi" = (
 /obj/structure/table/standard,
 /obj/item/packageWrap,
-/obj/item/reagent_containers/food/condiment/enzyme{
+/obj/item/reagent_containers/condiment/enzyme{
 	layer = 5
 	},
-/obj/item/reagent_containers/food/condiment/enzyme{
+/obj/item/reagent_containers/condiment/enzyme{
 	layer = 5
 	},
 /obj/structure/cable/green,
@@ -219,19 +219,19 @@
 /area/template_noop)
 "uv" = (
 /obj/structure/table/standard,
-/obj/item/reagent_containers/food/drinks/bottle/vodka{
+/obj/item/reagent_containers/drinks/bottle/vodka{
 	pixel_x = 5;
 	pixel_y = 17
 	},
-/obj/item/reagent_containers/food/drinks/bottle/vodka{
+/obj/item/reagent_containers/drinks/bottle/vodka{
 	pixel_x = 6;
 	pixel_y = 7
 	},
-/obj/item/reagent_containers/food/drinks/drinkingglass{
+/obj/item/reagent_containers/drinks/drinkingglass{
 	pixel_x = -5;
 	pixel_y = 1
 	},
-/obj/item/reagent_containers/food/drinks/drinkingglass{
+/obj/item/reagent_containers/drinks/drinkingglass{
 	pixel_x = -5;
 	pixel_y = 15
 	},
@@ -353,16 +353,16 @@
 "Fb" = (
 /obj/structure/bed,
 /obj/item/bedsheet/hos,
-/obj/item/reagent_containers/food/drinks/bottle/vodka,
+/obj/item/reagent_containers/drinks/bottle/vodka,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/template_noop)
 "Gt" = (
 /obj/structure/table/standard,
-/obj/item/reagent_containers/food/snacks/mint,
-/obj/item/reagent_containers/food/condiment/saltshaker{
+/obj/item/reagent_containers/snacks/mint,
+/obj/item/reagent_containers/condiment/saltshaker{
 	pixel_x = -3
 	},
-/obj/item/reagent_containers/food/condiment/peppermill{
+/obj/item/reagent_containers/condiment/peppermill{
 	pixel_x = 3
 	},
 /obj/machinery/light,
@@ -466,7 +466,7 @@
 /area/template_noop)
 "Pc" = (
 /obj/structure/table/woodentable,
-/obj/item/reagent_containers/food/drinks/flask/barflask,
+/obj/item/reagent_containers/drinks/flask/barflask,
 /turf/simulated/floor/reinforced,
 /area/template_noop)
 "PT" = (
@@ -498,7 +498,7 @@
 "Rz" = (
 /obj/structure/lattice,
 /obj/random/material/low_chance,
-/mob/living/carbon/superior_animal/human/voidwolf/fieldtech/ranged,
+/mob/living/carbon/superior/human/voidwolf/fieldtech/ranged,
 /turf/simulated/floor/plating/under,
 /area/template_noop)
 "SV" = (
@@ -519,7 +519,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/mob/living/carbon/superior_animal/human/voidwolf,
+/mob/living/carbon/superior/human/voidwolf,
 /turf/simulated/floor,
 /area/template_noop)
 "Ur" = (
@@ -542,7 +542,7 @@
 /turf/template_noop,
 /area/template_noop)
 "Vg" = (
-/mob/living/carbon/superior_animal/human/voidwolf/fieldtech,
+/mob/living/carbon/superior/human/voidwolf/fieldtech,
 /turf/template_noop,
 /area/template_noop)
 "VG" = (
@@ -568,7 +568,7 @@
 /area/template_noop)
 "Xg" = (
 /obj/structure/lattice,
-/mob/living/carbon/superior_animal/human/voidwolf/fieldtech,
+/mob/living/carbon/superior/human/voidwolf/fieldtech,
 /turf/template_noop,
 /area/template_noop)
 "XL" = (

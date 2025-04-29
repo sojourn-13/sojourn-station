@@ -4,7 +4,7 @@
 #define ENVIRONMENT_SMASH_RWALLS		(1<<2)	//rwalls
 var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST, SOUTHEAST)
 
-/mob/living/simple_animal/hostile
+/mob/living/simple/hostile
 	faction = "hostile"
 	var/stance = HOSTILE_STANCE_IDLE	//Used to determine behavior
 
@@ -34,13 +34,18 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 	var/aggro_vision_range = 9 //If a mob is aggro, we search in this radius. Defaults to 9 to keep in line with original simple mob aggro radius
 	var/approaching_target = FALSE //We should dodge now
 
-/mob/living/simple_animal/hostile/Destroy()
+	var/poison_per_bite = 0 //To handle poisonous bigguns
+	var/poison_type
+
+	var/list/zone_hit_rates = list(BP_HEAD = 10, BP_CHEST = 50, BP_GROIN = 35, BP_R_ARM = 30, BP_L_ARM = 30, BP_R_LEG = 20, BP_L_LEG = 20)
+
+/mob/living/simple/hostile/Destroy()
 	target_mob = null
 
 	. = ..()
 
 
-/mob/living/simple_animal/hostile/proc/FindTarget()
+/mob/living/simple/hostile/proc/FindTarget()
 	var/atom/T = null
 	stop_automated_movement = 0
 	for(var/atom/A in ListTargets(vision_range))
@@ -61,10 +66,11 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 				continue
 			else if(L in friends)
 				continue
-			else if(L.target_dummy) //So we target these over normal lists
+			if(L.target_dummy) //So we target these over normal lists
 				if(!SA_attackable(L))
 					stance = HOSTILE_STANCE_ATTACK
 					T = L
+					break
 			else
 				if(!SA_attackable(L))
 					stance = HOSTILE_STANCE_ATTACK
@@ -95,36 +101,36 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 	return T
 
 
-/mob/living/simple_animal/hostile/proc/Found(var/atom/A)
+/mob/living/simple/hostile/proc/Found(var/atom/A)
 	return
 
-/mob/living/simple_animal/hostile/proc/MoveToTarget()
-	var/mob/living/targetted_mob = (target_mob?.resolve())
+/mob/living/simple/hostile/proc/MoveToTarget()
+	var/mob/living/target = (target_mob?.resolve())
 
 	stop_automated_movement = TRUE
-	if(!targetted_mob || SA_attackable(targetted_mob))
+	if(!target || SA_attackable(target))
 		stance = HOSTILE_STANCE_IDLE
-	if(targetted_mob in ListTargets(10))
+	if(target in ListTargets(10))
 		if(!anchored)
 			if(ranged)
 				if(prob(45))
 					stance = HOSTILE_STANCE_ATTACKING
 					set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-					SSmove_manager.move_to(src, targetted_mob, 1, move_to_delay)
+					SSmove_manager.move_to(src, target, 1, move_to_delay)
 				else
-					OpenFire(targetted_mob)
+					OpenFire(target)
 			else
 				stance = HOSTILE_STANCE_ATTACKING
 				set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-				SSmove_manager.move_to(src, targetted_mob, 1, move_to_delay)
+				SSmove_manager.move_to(src, target, 1, move_to_delay)
 	return FALSE
 
-/mob/living/simple_animal/hostile/proc/DestroyPathToTarget()
-	var/mob/living/targetted_mob = (target_mob?.resolve())
+/mob/living/simple/hostile/proc/DestroyPathToTarget()
+	var/mob/living/target = (target_mob?.resolve())
 
 	if(environment_smash)
 		EscapeConfinement()
-		var/dir_to_target = get_dir(targets_from, targetted_mob)
+		var/dir_to_target = get_dir(targets_from, target)
 		var/dir_list = list()
 		if(dir_to_target in mydirs) //it's diagonal, so we need two directions to hit
 			for(var/direction in mydirs)
@@ -135,12 +141,12 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 		for(var/direction in dir_list) //now we hit all of the directions we got in this fashion, since it's the only directions we should actually need
 			DestroyObjectsInDirection(direction)
 
-/mob/living/simple_animal/hostile/proc/EscapeConfinement()
+/mob/living/simple/hostile/proc/EscapeConfinement()
 	if(!isturf(targets_from.loc) && targets_from.loc != null)//Did someone put us in something?
 		var/atom/A = targets_from.loc
 		UnarmedAttack(A)//Bang on it till we get out
 
-/mob/living/simple_animal/hostile/proc/DestroyObjectsInDirection(direction)
+/mob/living/simple/hostile/proc/DestroyObjectsInDirection(direction)
 	var/turf/T = get_step(targets_from, direction)
 	if(QDELETED(T))
 		return
@@ -154,67 +160,74 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 			UnarmedAttack(O)
 			return
 
-/mob/living/simple_animal/hostile/proc/AttackTarget()
-	var/mob/living/targetted_mob = (target_mob?.resolve())
+/mob/living/simple/hostile/proc/AttackTarget()
+	var/atom/target = (target_mob?.resolve())
 
 	stop_automated_movement = 1
-	if(!targetted_mob || SA_attackable(targetted_mob))
+	if(!target || SA_attackable(target))
 		LoseTarget()
 		return 0
-	if(!(targetted_mob in ListTargets(10)))
+	if(!(target in ListTargets(10)))
 		LostTarget()
 		return 0
-	if(get_dist(src, targetted_mob) <= 1)	//Attacking
+	if(get_dist(src, target) <= 1)	//Attacking
 		AttackingTarget()
 		return 1
 
-/mob/living/simple_animal/hostile/proc/AttackingTarget()
-	var/mob/living/targetted_mob = (target_mob?.resolve())
+/mob/living/simple/hostile/proc/AttackingTarget()
+	var/atom/target = (target_mob?.resolve())
 
-	if(!Adjacent(targetted_mob))
+	if(!Adjacent(target))
 		return
-	if(isliving(targetted_mob))
-		var/mob/living/L = targetted_mob
-		if(istype(targetted_mob, /mob/living/carbon/human))
-			var/mob/living/carbon/human/target_human = targetted_mob
-			if(target_human.check_shields(rand(melee_damage_lower,melee_damage_upper), null, src, null, attacktext)) //Do they block us?
-				return L
-		L.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
+	if(isliving(target))
+		if(ishuman(target))
+			var/mob/living/carbon/human/H = target
+			if(H.check_shields(rand(melee_damage_lower,melee_damage_upper), null, src, null, attacktext)) //Do they block us?
+				return H
+
+			if(poison_per_bite > 0)
+				if(H.reagents)
+					var/zone_armor =  H.getarmor(targeted_organ, ARMOR_MELEE)
+					var/poison_injected = zone_armor ? poison_per_bite * (-0.01 * zone_armor + 1) : poison_per_bite
+					H.reagents.add_reagent(poison_type, poison_injected)
+
+		target.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
 		playsound(src.loc, attack_sound, 50, 1)
-		return L
-	if(istype(targetted_mob,/obj/mecha))
-		var/obj/mecha/M = targetted_mob
+		return target
+
+	if(istype(target,/obj/mecha))
+		var/obj/mecha/M = target
 		M.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
 		playsound(src.loc, attack_sound, 50, 1)
 		return M
-	if(istype(targetted_mob,/obj/machinery/bot))
-		var/obj/machinery/bot/B = targetted_mob
+	if(istype(target,/obj/machinery/bot))
+		var/obj/machinery/bot/B = target
 		B.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
 		playsound(src.loc, attack_sound, 50, 1)
 		return B
-	if(istype(targetted_mob,/obj/machinery/porta_turret))
-		var/obj/machinery/porta_turret/P = targetted_mob
+	if(istype(target,/obj/machinery/porta_turret))
+		var/obj/machinery/porta_turret/P = target
 		P.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
 		playsound(src.loc, attack_sound, 50, 1)
 		return P
-	if(istype(targetted_mob,/obj/machinery/tesla_turret))
-		var/obj/machinery/tesla_turret/T = targetted_mob
+	if(istype(target,/obj/machinery/tesla_turret))
+		var/obj/machinery/tesla_turret/T = target
 		T.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
 		playsound(src.loc, attack_sound, 50, 1)
 		return T
 
 
-/mob/living/simple_animal/hostile/proc/LoseTarget()
+/mob/living/simple/hostile/proc/LoseTarget()
 	stance = HOSTILE_STANCE_IDLE
 	target_mob = null
 	SSmove_manager.stop_looping(src)
 
-/mob/living/simple_animal/hostile/proc/LostTarget()
+/mob/living/simple/hostile/proc/LostTarget()
 	stance = HOSTILE_STANCE_IDLE
 	SSmove_manager.stop_looping(src)
 
 
-/mob/living/simple_animal/hostile/proc/ListTargets(var/dist = 7)
+/mob/living/simple/hostile/proc/ListTargets(var/dist = 7)
 	var/list/L = hearers(src, dist)
 
 	for (var/obj/mecha/M in GLOB.mechas_list)
@@ -223,7 +236,7 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 
 	return L
 
-/mob/living/simple_animal/hostile/Life()
+/mob/living/simple/hostile/Life()
 	. = ..()
 
 	if(ckey)
@@ -251,7 +264,7 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 						DestroySurroundings()
 					AttackTarget()
 
-/mob/living/simple_animal/hostile/proc/OpenFire(atom/target_mob)
+/mob/living/simple/hostile/proc/OpenFire(atom/target_mob)
 	var/target = target_mob
 
 	if(QDELETED(target_mob))
@@ -284,30 +297,31 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 	target_mob = null
 	return
 
-/mob/living/simple_animal/hostile/proc/Shoot(var/target, var/start, var/user, var/bullet = 0)
+/mob/living/simple/hostile/proc/Shoot(var/target, var/start, var/user, var/bullet = 0)
 	if(target == start)
 		return
 
 	var/obj/item/projectile/A = new projectiletype(src.loc)
 	playsound(user, projectilesound, 100, 1)
 	if(!A)	return
-	var/def_zone = get_exposed_defense_zone(target)
+	var/def_zone = pickweight(zone_hit_rates)
 	A.original_firer = src
+	A.predetermed = def_zone
 	A.launch(target, def_zone)
 
-/mob/living/simple_animal/hostile/MiddleClickOn(mob/targetDD as mob) //Letting Mobs Fire when middle clicking as someone controlling it.
-	var /mob/living/simple_animal/hostile/shooter = src //TODO: Make it work for alt click in perfs like rig code
+/mob/living/simple/hostile/MiddleClickOn(mob/targetDD as mob) //Letting Mobs Fire when middle clicking as someone controlling it.
+	var /mob/living/simple/hostile/shooter = src //TODO: Make it work for alt click in perfs like rig code
 	if(ranged_cooldown >= world.time) //Modula for admins to set them at different things
 		to_chat(src, "You gun isnt ready to fire!.")
 		return
 	if(shooter.ranged ==1)
 		shooter.OpenFire(targetDD)
 
-/mob/living/simple_animal/hostile/proc/DestroySurroundings()
-	var/mob/living/targetted_mob = (target_mob?.resolve())
+/mob/living/simple/hostile/proc/DestroySurroundings()
+	var/atom/target = (target_mob?.resolve())
 
-	if(istype(src, /mob/living/simple_animal/hostile/megafauna))
-		set_dir(get_dir(src,targetted_mob))
+	if(istype(src, /mob/living/simple/hostile/megafauna))
+		set_dir(get_dir(src,target))
 		for(var/turf/simulated/wall/obstacle in get_step(src, dir))
 			if(prob(35))
 				obstacle.dismantle_wall(1)
@@ -407,7 +421,7 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
 					return
 
-/mob/living/simple_animal/hostile/verb/break_around()
+/mob/living/simple/hostile/verb/break_around()
 	set name = "Attack Surroundings "
 	set desc = "Lash out on the your surroundings | Forcefully attack your surroundings."
 	set category = "Mob verbs"

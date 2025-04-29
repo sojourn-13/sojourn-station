@@ -109,7 +109,7 @@
 					/obj/item/clothing/gloves/thick/combat,
 					/obj/item/clothing/shoes/combat,
 					/obj/item/clothing/under/johnny,
-					/obj/item/reagent_containers/food/snacks/candy_drop_blue)
+					/obj/item/reagent_containers/snacks/candy_drop_blue)
 	cost = 1900
 	containertype = /obj/structure/closet/crate/secure/weapon
 	crate_name = "LS Time to Kick Ass Specialty Crate"
@@ -236,8 +236,8 @@
 
 /datum/supply_pack/ammo_disks_1
 	name = "SA Always prepared Ammunition Disks Pack"
-	contains = list(/obj/item/computer_hardware/hard_drive/portable/design/lethal_ammo,
-					/obj/item/computer_hardware/hard_drive/portable/design/ammo_boxes_rifle)
+	contains = list(/obj/item/pc_part/drive/disk/design/lethal_ammo,
+					/obj/item/pc_part/drive/disk/design/ammo_boxes_rifle)
 	cost = 2200
 	crate_name = "Standard Ammunition Disks Crate"
 	group = "Enforcement"
@@ -270,7 +270,7 @@
 
 /datum/supply_pack/exotic_ammo_disk
 	name = "SA Exotic Ammunition Disk Pack"
-	contains = list(/obj/item/computer_hardware/hard_drive/portable/design/exotic_ammo)
+	contains = list(/obj/item/pc_part/drive/disk/design/exotic_ammo)
 
 	cost = 1500
 	crate_name = "Exotic Ammunition Disk Crate"
@@ -440,12 +440,12 @@
 					/obj/item/reagent_containers/pill/happy,
 					/obj/item/seeds/ambrosiadeusseed,
 					/obj/item/seeds/ambrosiavulgarisseed,
-					/obj/item/reagent_containers/food/snacks/grown/ambrosiadeus,
-					/obj/item/reagent_containers/food/snacks/grown/ambrosiadeus,
-					/obj/item/reagent_containers/food/snacks/grown/ambrosiadeus,
-					/obj/item/reagent_containers/food/snacks/grown/ambrosiavulgaris,
-					/obj/item/reagent_containers/food/snacks/grown/ambrosiavulgaris,
-					/obj/item/reagent_containers/food/snacks/grown/ambrosiavulgaris)
+					/obj/item/reagent_containers/snacks/grown/ambrosiadeus,
+					/obj/item/reagent_containers/snacks/grown/ambrosiadeus,
+					/obj/item/reagent_containers/snacks/grown/ambrosiadeus,
+					/obj/item/reagent_containers/snacks/grown/ambrosiavulgaris,
+					/obj/item/reagent_containers/snacks/grown/ambrosiavulgaris,
+					/obj/item/reagent_containers/snacks/grown/ambrosiavulgaris)
 	cost = 600
 	containertype = /obj/structure/closet/crate/serbcrate
 	crate_name = "Void Wolf Recreations Crate"

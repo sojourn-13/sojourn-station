@@ -1,5 +1,5 @@
 
-/obj/item/reagent_containers/food/snacks/candy
+/obj/item/reagent_containers/snacks/candy
 	name = "candy bar"
 	desc = "An unbranded nougat candy bar. Sugary."
 	icon_state = "candy"
@@ -14,11 +14,11 @@
 	matter = list(MATERIAL_BIOMATTER = 3)
 	junk_food = TRUE
 
-/obj/item/reagent_containers/food/snacks/chocolatebar
+/obj/item/reagent_containers/snacks/chocolatebar
 	name = "chocolate bar"
 	desc = "Such sweet, fattening food."
 	icon_state = "chocolatebar"
-	taste_tag = list(SWEET_FOOD)
+	taste_tag = list(SWEET_FOOD, COCO_FOOD)
 	filling_color = "#7D5F46"
 	bitesize = 2
 	center_of_mass = list("x"=15, "y"=15)
@@ -27,7 +27,7 @@
 	preloaded_reagents = list("sugar" = 2, "coco" = 2, "preservatives" = 2)
 	junk_food = TRUE
 
-/obj/item/reagent_containers/food/snacks/candy/donor
+/obj/item/reagent_containers/snacks/candy/donor
 	name = "donor candy"
 	desc = "A little treat for blood donors."
 	taste_tag = list(SWEET_FOOD)
@@ -37,7 +37,7 @@
 	preloaded_reagents = list("nutriment" = 6, "sugar" = 6, "preservatives" = 4)
 	matter = list(MATERIAL_BIOMATTER = 2)
 
-/obj/item/reagent_containers/food/snacks/candy/proteinbar
+/obj/item/reagent_containers/snacks/candy/proteinbar
 	name = "protein bar"
 	desc = "SwoleMAX brand protein bars, guaranteed to get you feeling perfectly overconfident."
 	icon_state = "proteinbar"
@@ -48,7 +48,7 @@
 	matter = list(MATERIAL_BIOMATTER = 3)
 	junk_food = TRUE
 
-/obj/item/reagent_containers/food/snacks/candy/pistachios_pack
+/obj/item/reagent_containers/snacks/candy/pistachios_pack
 	name = "pistachios pack"
 	desc = "A packet of pistachios with added salt. A somewhat healthy light snack."
 	icon_state = "pistachios_pack"
@@ -60,7 +60,7 @@
 	matter = list(MATERIAL_BIOMATTER = 3)
 	junk_food = TRUE
 
-/obj/item/reagent_containers/food/snacks/candy/sunflowerseeds
+/obj/item/reagent_containers/snacks/candy/sunflowerseeds
 	name = "sunflower fried seed pack"
 	desc = "Bag of sunflower seeds that have been baked and salted for people that like to chew their food for way to long."
 	icon_state = "semki_pack"
@@ -71,7 +71,7 @@
 	matter = list(MATERIAL_BIOMATTER = 3)
 	junk_food = TRUE
 
-/obj/item/reagent_containers/food/snacks/candy/energybar
+/obj/item/reagent_containers/snacks/candy/energybar
 	name = "energy bar"
 	desc = "A chewy candy bar that has many warnings about its surgar contents for quick energy."
 	icon_state = "energybar"
@@ -83,7 +83,7 @@
 	matter = list(MATERIAL_BIOMATTER = 1)
 	junk_food = TRUE
 
-/obj/item/reagent_containers/food/snacks/candy_corn
+/obj/item/reagent_containers/snacks/candy_corn
 	name = "candy corn"
 	desc = "A large candy corn."
 	icon_state = "candy_corn"
@@ -96,7 +96,7 @@
 	preloaded_reagents = list("nutriment" = 4, "sugar" = 2, "preservatives" = 2)
 	junk_food = TRUE
 
-/obj/item/reagent_containers/food/snacks/candy_drop_blue
+/obj/item/reagent_containers/snacks/candy_drop_blue
 	name = "\improper red gum stick"
 	desc = "A small slab of gum for chewing."
 	icon_state = "gumdrop_blue"
@@ -109,7 +109,7 @@
 	matter = list(MATERIAL_BIOMATTER = 2)
 	junk_food = TRUE
 
-/obj/item/reagent_containers/food/snacks/candy_drop_red
+/obj/item/reagent_containers/snacks/candy_drop_red
 	name = "\improper blue gum stick"
 	desc = "A small slab of gum for chewing. Wait, they come in blue now?"
 	icon_state = "gumdrop_red"
@@ -122,7 +122,7 @@
 	matter = list(MATERIAL_BIOMATTER = 12)
 	junk_food = TRUE
 
-/obj/item/reagent_containers/food/snacks/sosjerky
+/obj/item/reagent_containers/snacks/sosjerky
 	name = "Scaredy's Beef Jerky"
 	icon_state = "sosjerky"
 	taste_tag = list(SALTY_FOOD)
@@ -135,7 +135,7 @@
 	matter = list(MATERIAL_BIOMATTER = 6)
 	junk_food = TRUE
 
-/obj/item/reagent_containers/food/snacks/cheesiehonkers
+/obj/item/reagent_containers/snacks/cheesiehonkers
 	name = "Cheesie Honkers"
 	icon_state = "cheesie_honkers"
 	taste_tag = list(CHEESE_FOOD)
@@ -150,7 +150,7 @@
 	matter = list(MATERIAL_BIOMATTER = 4)
 	junk_food = TRUE
 
-/obj/item/reagent_containers/food/snacks/dogtreats
+/obj/item/reagent_containers/snacks/dogtreats
 	name = "\improper Kriosan treats"
 	desc = "A biscuit imported directly from Krios, well loved for their long shelf life and nutrition density, all in a fun and convenient shape!"
 	icon_state = "dogtreat_single"
@@ -167,7 +167,7 @@
 
 ////////////////////////////////////////////////Openable
 
-/obj/item/reagent_containers/food/snacks/openable/chips
+/obj/item/reagent_containers/snacks/openable/chips
 	name = "chips packet"
 	desc = "An unbranded packet of crisps. Salty."
 	icon_state = "lays"
@@ -181,7 +181,7 @@
 	matter = list(MATERIAL_BIOMATTER = 2)
 	junk_food = TRUE
 
-/obj/item/reagent_containers/food/snacks/openable/gamerchips
+/obj/item/reagent_containers/snacks/openable/gamerchips
 	name = "boritos crips packet"
 	desc = "An branded packet of crisps. Its marketing for people that like to play competitive arcade games."
 	icon_state = "boritos"
@@ -196,7 +196,7 @@
 	preloaded_reagents = list("preservatives" = 2)
 	junk_food = TRUE
 
-/obj/item/reagent_containers/food/snacks/openable/syndicake
+/obj/item/reagent_containers/snacks/openable/syndicake
 	name = "syndi-cakes"
 	icon_state = "syndi_cakes" //Sprite by Michiyamenotehifunana
 	taste_tag = list(SWEET_FOOD)
@@ -212,7 +212,7 @@
 	matter = list(MATERIAL_BIOMATTER = 12)
 	junk_food = TRUE
 
-/obj/item/reagent_containers/food/snacks/openable/no_raisin
+/obj/item/reagent_containers/snacks/openable/no_raisin
 	name = "4No Raisins"
 	icon_state = "4no_raisins" //Sprite by Michiyamenotehifunana
 	desc = "A brand of boxed raisins. Dry but tasty."
@@ -226,7 +226,7 @@
 	matter = list(MATERIAL_BIOMATTER = 6)
 	junk_food = TRUE
 
-/obj/item/reagent_containers/food/snacks/openable/spacetwinkie
+/obj/item/reagent_containers/snacks/openable/spacetwinkie
 	name = "Space Twinkie"
 	icon_state = "space_twinkie" //Sprite by Michiyamenotehifunana
 	desc = "A golden sponge cake with a creamy filling."
@@ -241,7 +241,7 @@
 	matter = list(MATERIAL_BIOMATTER = 2)
 	junk_food = TRUE
 
-/obj/item/reagent_containers/food/snacks/openable/liquidfood
+/obj/item/reagent_containers/snacks/openable/liquidfood
 	name = "\improper liquidfood ration"
 	desc = "A prepackaged grey slurry of all the essential nutrients for a spacefarer on the go."
 	alt_desc = "A prepackaged grey slurry of all the essential nutrients for a spacefarer on the go. Has a quick shelf life after being opend."
@@ -257,7 +257,7 @@
 	matter = list(MATERIAL_BIOMATTER = 8)
 	junk_food = TRUE
 
-/obj/item/reagent_containers/food/snacks/openable/tastybread
+/obj/item/reagent_containers/snacks/openable/tastybread
 	name = "bread tube"
 	desc = "Bread in a tube. Chewy and light as a snack."
 	alt_desc = "Bread halfway in a tube. Chewy and light as a snack."
@@ -275,7 +275,7 @@
 
 ////////////////////////////////////////////////Donks
 
-/obj/item/reagent_containers/food/snacks/donkpocket
+/obj/item/reagent_containers/snacks/donkpocket
 	name = "donk-pocket"
 	desc = "Researches suggest that you might want to put a banging donk on it."
 	icon_state = "donkpocket"
@@ -308,7 +308,7 @@
 						for(var/reagent in heated_reagents)
 							src.reagents.del_reagent(reagent)
 
-/obj/item/reagent_containers/food/snacks/donkpocket/sinpocket
+/obj/item/reagent_containers/snacks/donkpocket/sinpocket
 	name = "\improper sin-pocket"
 	desc = "The food of choice for the veteran. Do <B>NOT</B> overconsume."
 	taste_tag = list(UMAMI_FOOD)
@@ -317,7 +317,7 @@
 	var/has_been_heated = 0
 	junk_food = TRUE
 
-/obj/item/reagent_containers/food/snacks/donkpocket/sinpocket/attack_self(mob/user)
+/obj/item/reagent_containers/snacks/donkpocket/sinpocket/attack_self(mob/user)
 	if(has_been_heated)
 		to_chat(user, SPAN_NOTICE("The heating chemicals have already been spent."))
 		return

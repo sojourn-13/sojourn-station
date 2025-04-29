@@ -59,25 +59,41 @@
 
 /obj/item/tool/make_old()
 	.=..()
-	if (.)
-		adjustToolHealth(-(rand(20, 60) * degradation))
-		precision -= rand(0,10)
-		workspeed = workspeed*(rand(5,10)/10) //50% less speed max
-		degradation += rand(0,4)
-		health = rand(10, max_health)
+	if(.)
+		var/list/trash_mods = TRASH_TOOLMODS
+		while(trash_mods.len)
+			var/trash_mod_path = pick_n_take(trash_mods)
+			var/obj/item/trash_mod = new trash_mod_path
+			if(LEGACY_SEND_SIGNAL(trash_mod, COMSIG_IATTACK, src, null))
+				break
+			QDEL_NULL(trash_mod)
+	health = rand(10, max_health)
+	refresh_upgrades() //So we dont null upgrades.
+	if(prob(60) && cell)
+		QDEL_NULL(cell)
+	if(prob(60) && use_fuel_cost)
+		var/random = rand(0, max_fuel)
+		consume_fuel(random, forced = TRUE)
+		update_icon()
 
-/obj/item/tool/make_young()
-	if(!oldified)
-		return
-	workspeed = initial(workspeed)
-	precision = initial(precision)
-	degradation = initial(degradation)
-	refresh_upgrades() //So we dont null upgrades
-	..()
+/obj/item/device/scanner/make_old()
+	.=..()
+	if(prob(60))
+		QDEL_NULL(cell)
+
+/obj/item/device/t_scanner/make_old()
+	.=..()
+	if(prob(60))
+		QDEL_NULL(cell)
 
 /obj/item/gun/make_old()
 	. = ..()
-	if(. && prob(60))
+	refresh_upgrades() //So we dont null upgrades.
+
+//Two rolls for bad mods!
+/obj/item/gun/projectile/make_old()
+	. = ..()
+	if(.)
 		var/list/trash_mods = TRASH_GUNMODS
 		while(trash_mods.len)
 			var/trash_mod_path = pick_n_take(trash_mods)
@@ -85,36 +101,18 @@
 			if(LEGACY_SEND_SIGNAL(trash_mod, COMSIG_IATTACK, src, null))
 				break
 			QDEL_NULL(trash_mod)
-	else
-		fire_delay += rand(0,3)
-		init_recoil = OLDIFED_RECOIL(pick(1.5, 1.8, 2, 2.3, 2.6, 3.2, 3.3, 4))
-		damage_multiplier = damage_multiplier*(rand(8,10)/10) //20% less damage max
-		penetration_multiplier = penetration_multiplier*(rand(8,10)/10) //20% less damage penetration
 	refresh_upgrades() //So we dont null upgrades.
-
-/obj/item/gun/make_young()
-	if(!oldified)
-		return
-	fire_delay = initial(fire_delay)
-	damage_multiplier = initial(damage_multiplier)
-	penetration_multiplier = initial(penetration_multiplier)
-	refresh_upgrades() //So we dont null upgrades
-	..()
 
 /obj/item/gun/energy/make_old()
 	. = ..()
-	charge_cost+= rand(0,250)
-	overcharge_max-= rand(0,5) //This is infact a number you want to go up
-	overcharge_rate-= rand(0,5)
-
-/obj/item/gun/energy/make_young()
-	if(!oldified)
-		return
-	charge_cost = initial(charge_cost)
-	overcharge_max = initial(overcharge_max)
-	overcharge_rate = initial(overcharge_rate)
-	refresh_upgrades() //So we dont null upgrades. Do it again...
-	..()
+	if(.)
+		var/list/trash_mods = TRASH_GUNMODS_ENERGY
+		while(trash_mods.len)
+			var/trash_mod_path = pick_n_take(trash_mods)
+			var/obj/item/trash_mod = new trash_mod_path
+			if(LEGACY_SEND_SIGNAL(trash_mod, COMSIG_IATTACK, src, null))
+				break
+	refresh_upgrades() //So we dont null upgrades.
 
 /obj/item/storage/make_old()
 	.=..()
@@ -171,7 +169,7 @@
 			desc += " The label is unreadable."
 
 //Sealed survival food, always edible
-/obj/item/reagent_containers/food/snacks/openable/liquidfood/make_old()
+/obj/item/reagent_containers/snacks/openable/liquidfood/make_old()
 	return
 
 /obj/item/ammo_magazine/make_old()
@@ -211,7 +209,7 @@
 /obj/item/stack/ore/make_old()
 	return
 
-/obj/item/computer_hardware/hard_drive/portable/design/make_old()
+/obj/item/pc_part/drive/disk/design/make_old()
 	..()
 	if(license >= 1)
 		license = round(license / pick(1, 1, 1, 1.1, 1.1, 1.1, 1.1, 1.2, 1.3)) //This looses a lot when unlucky
@@ -275,8 +273,6 @@
 			heat_protection = rand(0, round(heat_protection * 0.5))
 		if(prob(40))
 			cold_protection = rand(0, round(cold_protection * 0.5))
-		if(prob(20))
-			contaminate()
 		if(prob(15))
 			add_blood()
 		if(prob(60)) // I mean, the thing is ew gross.

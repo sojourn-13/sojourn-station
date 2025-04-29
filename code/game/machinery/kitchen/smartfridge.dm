@@ -121,7 +121,7 @@
 	density = FALSE // For placing atop tables as a proper storage, like on the old layout. - Seb
 
 /obj/machinery/smartfridge/drinks/accept_check(var/obj/item/O as obj)
-	if(istype(O,/obj/item/reagent_containers/glass) || istype(O,/obj/item/reagent_containers/food/drinks) || istype(O,/obj/item/reagent_containers/food/condiment))
+	if(istype(O,/obj/item/reagent_containers/glass) || istype(O,/obj/item/reagent_containers/drinks) || istype(O,/obj/item/reagent_containers/condiment))
 		return 1
 
 /obj/machinery/smartfridge/drinks/update_icon()
@@ -153,8 +153,8 @@
 	var/currently_drying = FALSE
 
 /obj/machinery/smartfridge/drying_rack/accept_check(var/obj/item/O as obj)
-	if(istype(O, /obj/item/reagent_containers/food/snacks/))
-		var/obj/item/reagent_containers/food/snacks/S = O
+	if(istype(O, /obj/item/reagent_containers/snacks/))
+		var/obj/item/reagent_containers/snacks/S = O
 		if (S.dried_type)
 			return 1
 	return 0
@@ -179,7 +179,7 @@
 
 /obj/machinery/smartfridge/drying_rack/proc/dry()
 	var/drying_something = FALSE //While we're here, check if anything is undried and still processing
-	for(var/obj/item/reagent_containers/food/snacks/S in contents)
+	for(var/obj/item/reagent_containers/snacks/S in contents)
 		if(S.dry)
 			continue
 		S.dryness += drying_power
@@ -191,8 +191,8 @@
 			else
 				var/D = S.dried_type
 				D = new D(src)
-				if (istype(D, /obj/item/reagent_containers/food/snacks))
-					var/obj/item/reagent_containers/food/snacks/SD = D
+				if (istype(D, /obj/item/reagent_containers/snacks))
+					var/obj/item/reagent_containers/snacks/SD = D
 					SD.dry = TRUE //So we dont get stuck in an endless loop of drying, transforming and drying again
 				qdel(S)
 		else
@@ -217,7 +217,7 @@
 	icon_state = "disktoaster" // Sprites by Jamini
 
 /obj/machinery/smartfridge/disk/accept_check(var/obj/item/O as obj)
-	if(istype(O,/obj/item/computer_hardware/hard_drive/portable))
+	if(istype(O,/obj/item/pc_part/drive/disk))
 		return 1
 	return 0
 
@@ -247,7 +247,7 @@
 	return ..()
 
 /obj/machinery/smartfridge/proc/accept_check(var/obj/item/O as obj)
-	if(istype(O,/obj/item/reagent_containers/food/snacks/grown/) || istype(O,/obj/item/seeds/) || istype(O,/obj/item/reagent_containers/food/snacks/meat/) || istype(O,/obj/item/reagent_containers/food/snacks/egg/ || istype(O,/obj/item/reagent_containers/food/snacks/chickenbreast)))
+	if(istype(O,/obj/item/reagent_containers/snacks/grown/) || istype(O,/obj/item/seeds/) || istype(O,/obj/item/reagent_containers/snacks/meat/) || istype(O,/obj/item/reagent_containers/snacks/egg/ || istype(O,/obj/item/reagent_containers/snacks/chickenbreast)))
 		return 1
 	return 0
 

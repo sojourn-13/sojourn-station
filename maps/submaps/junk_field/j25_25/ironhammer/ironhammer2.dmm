@@ -7,11 +7,11 @@
 /turf/simulated/floor/plating/under,
 /area/template_noop)
 "am" = (
-/mob/living/simple_animal/hostile/hivebot,
+/mob/living/simple/hostile/hivebot,
 /turf/simulated/floor/tiled/dark,
 /area/template_noop)
 "ap" = (
-/mob/living/simple_animal/hostile/hivebot,
+/mob/living/simple/hostile/hivebot,
 /turf/simulated/floor/plating/under,
 /area/template_noop)
 "ay" = (
@@ -126,7 +126,7 @@
 /turf/simulated/floor/tiled/steel/bluecorner,
 /area/template_noop)
 "kO" = (
-/mob/living/simple_animal/hostile/hivebot/range,
+/mob/living/simple/hostile/hivebot/range,
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/template_noop)
 "kS" = (
@@ -157,7 +157,7 @@
 /turf/simulated/floor/carpet,
 /area/template_noop)
 "oP" = (
-/mob/living/simple_animal/hostile/hivebot/range,
+/mob/living/simple/hostile/hivebot/range,
 /turf/simulated/floor/plating/under,
 /area/template_noop)
 "oS" = (
@@ -196,7 +196,7 @@
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/template_noop)
 "rI" = (
-/mob/living/simple_animal/hostile/hivebot/range,
+/mob/living/simple/hostile/hivebot/range,
 /turf/template_noop,
 /area/template_noop)
 "rN" = (
@@ -214,7 +214,7 @@
 /turf/simulated/floor/tiled/steel/cargo,
 /area/template_noop)
 "tA" = (
-/mob/living/simple_animal/hostile/hivebot,
+/mob/living/simple/hostile/hivebot,
 /obj/random/junk/low_chance,
 /turf/simulated/floor/tiled/steel/bluecorner,
 /area/template_noop)
@@ -301,7 +301,7 @@
 /turf/simulated/floor/wood,
 /area/template_noop)
 "Av" = (
-/mob/living/simple_animal/hostile/hivebot/range,
+/mob/living/simple/hostile/hivebot/range,
 /turf/simulated/floor/carpet,
 /area/template_noop)
 "Ax" = (
@@ -356,7 +356,7 @@
 /turf/simulated/floor/tiled/steel/bluecorner,
 /area/template_noop)
 "FY" = (
-/mob/living/simple_animal/hostile/hivebot/range,
+/mob/living/simple/hostile/hivebot/range,
 /obj/random/material/low_chance,
 /turf/template_noop,
 /area/template_noop)
@@ -387,7 +387,7 @@
 /turf/simulated/floor/plating/under,
 /area/template_noop)
 "II" = (
-/mob/living/simple_animal/hostile/hivebot/range,
+/mob/living/simple/hostile/hivebot/range,
 /turf/simulated/floor/wood,
 /area/template_noop)
 "Jd" = (
@@ -448,7 +448,7 @@
 /turf/simulated/floor/tiled/steel/bluecorner,
 /area/template_noop)
 "Mf" = (
-/mob/living/simple_animal/hostile/hivebot,
+/mob/living/simple/hostile/hivebot,
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/template_noop)
 "ME" = (
@@ -489,7 +489,7 @@
 /turf/simulated/floor/carpet,
 /area/template_noop)
 "NL" = (
-/mob/living/simple_animal/hostile/hivebot/range,
+/mob/living/simple/hostile/hivebot/range,
 /turf/simulated/floor/tiled/steel,
 /area/template_noop)
 "NQ" = (
@@ -539,13 +539,13 @@
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/template_noop)
 "RS" = (
-/mob/living/simple_animal/hostile/hivebot/range,
+/mob/living/simple/hostile/hivebot/range,
 /obj/random/junk/low_chance,
 /obj/random/material/low_chance,
 /turf/template_noop,
 /area/template_noop)
 "SV" = (
-/obj/item/reagent_containers/food/drinks/drinkingglass/soda,
+/obj/item/reagent_containers/drinks/drinkingglass/soda,
 /turf/simulated/floor/tiled/steel/bluecorner,
 /area/template_noop)
 "Th" = (
@@ -581,7 +581,7 @@
 /area/template_noop)
 "Wm" = (
 /obj/structure/lattice,
-/mob/living/simple_animal/hostile/hivebot/range,
+/mob/living/simple/hostile/hivebot/range,
 /obj/random/material/low_chance,
 /turf/template_noop,
 /area/template_noop)
@@ -592,7 +592,7 @@
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/template_noop)
 "Xd" = (
-/mob/living/simple_animal/hostile/hivebot,
+/mob/living/simple/hostile/hivebot,
 /turf/simulated/floor/tiled/steel/bluecorner,
 /area/template_noop)
 "XE" = (
@@ -617,8 +617,8 @@
 /area/template_noop)
 "Yy" = (
 /obj/structure/table/woodentable,
-/obj/item/reagent_containers/food/drinks/flask/detflask,
-/obj/item/reagent_containers/food/drinks/flask/detflask,
+/obj/item/reagent_containers/drinks/flask/detflask,
+/obj/item/reagent_containers/drinks/flask/detflask,
 /obj/random/lowkeyrandom,
 /turf/simulated/floor/carpet,
 /area/template_noop)
@@ -637,7 +637,7 @@
 /area/template_noop)
 "ZN" = (
 /obj/structure/lattice,
-/mob/living/simple_animal/hostile/hivebot/range,
+/mob/living/simple/hostile/hivebot/range,
 /turf/template_noop,
 /area/template_noop)
 

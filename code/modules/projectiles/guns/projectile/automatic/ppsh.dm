@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/automatic/ppsh
 	name = "Excelsior \"Shpagin\" assault SMG"
-	desc = "\"We are spiritual wanderers, poor in spirit. What do we live on? We live from the pure hatred we feel. We cannot love anyone. We destroy things, we shout them, we burn them.\"\nAn experimental sub-machine gun design made for urban combat with a built in silencer and chambered in 9mm. For the union, for the future."
+	desc = "\"We are spiritual wanderers, poor in spirit. What do we live on? We live on the pure hatred we feel. We cannot love. We destroy. We shout. We burn.\"\nAn experimental sub-machine gun design made for urban combat with a built in silencer and chambered in 9mm. For the union, for the future."
 	icon = 'icons/obj/guns/projectile/ppsh.dmi'
 	icon_state = "ppsh"
 	item_state = "ppsh"
@@ -56,7 +56,7 @@
 
 /obj/item/gun/projectile/automatic/ppsh/ppv
 	name = "\"Semyonovich\" assault SMG"
-	desc = "Some madmans bastardized yet idealized version of the past; improved yet its meaning and worth lost to time. \
+	desc = "Some madmans bastardized yet idealized version of the past; while improved, its meaning and worth are lost to time. \
 		 An experimental sub-machine gun design made for urban combat with a built in silencer and chambered in 9mm." // Don't add communist spiel on de-excelsiored guns for consistency, please.
 	icon = 'icons/obj/guns/projectile/ppv.dmi'
 	icon_state = "ppv"

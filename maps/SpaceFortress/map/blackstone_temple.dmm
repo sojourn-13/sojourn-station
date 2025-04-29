@@ -12,7 +12,7 @@
 /area/outpost/abandoned_fortress)
 "aI" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/condiment/enzyme,
+/obj/item/reagent_containers/condiment/enzyme,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "aS" = (
@@ -22,8 +22,8 @@
 /obj/item/trash/icecreambowl,
 /obj/item/trash/plate,
 /obj/item/trash/plate,
-/obj/item/reagent_containers/food/drinks/drinkingglass/wineglass,
-/obj/item/reagent_containers/food/drinks/drinkingglass/wineglass,
+/obj/item/reagent_containers/drinks/drinkingglass/wineglass,
+/obj/item/reagent_containers/drinks/drinkingglass/wineglass,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "aW" = (
@@ -57,7 +57,7 @@
 /area/outpost/abandoned_fortress)
 "cz" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/drinks/bottle/redcandywine,
+/obj/item/reagent_containers/drinks/bottle/redcandywine,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "cB" = (
@@ -82,7 +82,7 @@
 /area/outpost/abandoned_fortress)
 "cZ" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/drinks/drinkingglass/wineglass,
+/obj/item/reagent_containers/drinks/drinkingglass/wineglass,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "da" = (
@@ -93,7 +93,7 @@
 "dd" = (
 /obj/item/tool/knife/butch,
 /obj/structure/kitchenspike,
-/mob/living/simple_animal/cow,
+/mob/living/simple/cow,
 /turf/simulated/floor/rock/manmade/concrete,
 /area/outpost/abandoned_fortress)
 "dn" = (
@@ -118,11 +118,11 @@
 /turf/simulated/floor/rock/manmade/concrete,
 /area/outpost/abandoned_fortress)
 "dJ" = (
-/mob/living/simple_animal/hostile/madminer/cultist,
+/mob/living/simple/hostile/madminer/cultist,
 /turf/simulated/floor/rock/manmade/asphalt,
 /area/outpost/abandoned_fortress)
 "el" = (
-/mob/living/simple_animal/chicken,
+/mob/living/simple/chicken,
 /turf/simulated/floor/asteroid/grass,
 /area/outpost/abandoned_fortress)
 "eq" = (
@@ -163,7 +163,7 @@
 /area/outpost/abandoned_fortress)
 "fB" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/snacks/meat/chicken/vox,
+/obj/item/reagent_containers/snacks/meat/chicken/vox,
 /turf/simulated/floor/rock/manmade/concrete,
 /area/outpost/abandoned_fortress)
 "fE" = (
@@ -183,11 +183,11 @@
 /area/outpost/abandoned_fortress)
 "gf" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/snacks/meat/chicken,
-/obj/item/reagent_containers/food/snacks/meat/chicken,
-/obj/item/reagent_containers/food/snacks/meat/chicken,
-/obj/item/reagent_containers/food/snacks/meat/chicken,
-/obj/item/reagent_containers/food/snacks/meat/chicken,
+/obj/item/reagent_containers/snacks/meat/chicken,
+/obj/item/reagent_containers/snacks/meat/chicken,
+/obj/item/reagent_containers/snacks/meat/chicken,
+/obj/item/reagent_containers/snacks/meat/chicken,
+/obj/item/reagent_containers/snacks/meat/chicken,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "gi" = (
@@ -235,7 +235,7 @@
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "hh" = (
-/obj/item/reagent_containers/food/snacks/candy/sunflowerseeds,
+/obj/item/reagent_containers/snacks/candy/sunflowerseeds,
 /turf/simulated/floor/asteroid/grass,
 /area/outpost/abandoned_fortress)
 "hr" = (
@@ -289,7 +289,7 @@
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "iW" = (
-/obj/item/reagent_containers/food/snacks/chocolatepiece/truffle,
+/obj/item/reagent_containers/snacks/chocolatepiece/truffle,
 /turf/simulated/floor/asteroid/dirt/flood/plough,
 /area/outpost/abandoned_fortress)
 "jd" = (
@@ -301,7 +301,7 @@
 /turf/simulated/floor/asteroid/grass/dry,
 /area/outpost/abandoned_fortress)
 "js" = (
-/mob/living/simple_animal/cow,
+/mob/living/simple/cow,
 /turf/simulated/floor/asteroid/grass,
 /area/outpost/abandoned_fortress)
 "jv" = (
@@ -310,7 +310,7 @@
 /area/outpost/abandoned_fortress)
 "jy" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/condiment/peppermill,
+/obj/item/reagent_containers/condiment/peppermill,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "jO" = (
@@ -359,13 +359,13 @@
 /area/outpost/abandoned_fortress)
 "kA" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/snacks/meatsteak,
-/obj/item/reagent_containers/food/snacks/meatsteak,
+/obj/item/reagent_containers/snacks/meatsteak,
+/obj/item/reagent_containers/snacks/meatsteak,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "kC" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/drinks/bottle/wine,
+/obj/item/reagent_containers/drinks/bottle/wine,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "kG" = (
@@ -430,10 +430,10 @@
 "lQ" = (
 /obj/structure/table/marble,
 /obj/item/soap/hunters,
-/obj/item/reagent_containers/food/drinks/drinkingglass/wineglass,
-/obj/item/reagent_containers/food/drinks/drinkingglass/wineglass,
-/obj/item/reagent_containers/food/drinks/drinkingglass/wineglass,
-/obj/item/reagent_containers/food/drinks/drinkingglass/wineglass,
+/obj/item/reagent_containers/drinks/drinkingglass/wineglass,
+/obj/item/reagent_containers/drinks/drinkingglass/wineglass,
+/obj/item/reagent_containers/drinks/drinkingglass/wineglass,
+/obj/item/reagent_containers/drinks/drinkingglass/wineglass,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "lS" = (
@@ -459,7 +459,7 @@
 "mj" = (
 /obj/item/flame/candle,
 /obj/effect/decal/cleanable/crayon,
-/obj/item/reagent_containers/food/snacks/meat/chicken/vox,
+/obj/item/reagent_containers/snacks/meat/chicken/vox,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "mo" = (
@@ -474,8 +474,8 @@
 /area/outpost/abandoned_fortress)
 "mv" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/snacks/icecream,
-/obj/item/reagent_containers/food/snacks/icecream,
+/obj/item/reagent_containers/snacks/icecream,
+/obj/item/reagent_containers/snacks/icecream,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "mw" = (
@@ -493,24 +493,24 @@
 /area/outpost/abandoned_fortress)
 "mB" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/snacks/chickensteak,
+/obj/item/reagent_containers/snacks/chickensteak,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "mH" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/snacks/meat/carp,
-/obj/item/reagent_containers/food/snacks/meat/carp,
-/obj/item/reagent_containers/food/snacks/meat/carp,
+/obj/item/reagent_containers/snacks/meat/carp,
+/obj/item/reagent_containers/snacks/meat/carp,
+/obj/item/reagent_containers/snacks/meat/carp,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "mK" = (
 /obj/structure/table/rack/shelf,
-/obj/item/reagent_containers/food/drinks/bottle/redcandywine,
-/obj/item/reagent_containers/food/drinks/bottle/redcandywine,
+/obj/item/reagent_containers/drinks/bottle/redcandywine,
+/obj/item/reagent_containers/drinks/bottle/redcandywine,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "mS" = (
-/mob/living/simple_animal/pig,
+/mob/living/simple/pig,
 /turf/simulated/floor/asteroid/dirt/flood/plough,
 /area/outpost/abandoned_fortress)
 "mT" = (
@@ -539,9 +539,9 @@
 /area/outpost/abandoned_fortress)
 "nV" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/snacks/meat/monkey,
-/obj/item/reagent_containers/food/snacks/meat/monkey,
-/obj/item/reagent_containers/food/snacks/meat/monkey,
+/obj/item/reagent_containers/snacks/meat/monkey,
+/obj/item/reagent_containers/snacks/meat/monkey,
+/obj/item/reagent_containers/snacks/meat/monkey,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "or" = (
@@ -553,8 +553,8 @@
 /area/outpost/abandoned_fortress)
 "ov" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/snacks/chocoicecream,
-/obj/item/reagent_containers/food/snacks/chocoicecream,
+/obj/item/reagent_containers/snacks/chocoicecream,
+/obj/item/reagent_containers/snacks/chocoicecream,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "ox" = (
@@ -590,7 +590,7 @@
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "pS" = (
-/mob/living/simple_animal/chicken,
+/mob/living/simple/chicken,
 /turf/simulated/floor/rock/manmade/concrete,
 /area/outpost/abandoned_fortress)
 "qa" = (
@@ -616,7 +616,7 @@
 "qn" = (
 /obj/structure/table/marble,
 /obj/plant_spawner/ambrosiavulgaris,
-/obj/item/reagent_containers/food/snacks/tomatomeat,
+/obj/item/reagent_containers/snacks/tomatomeat,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "qv" = (
@@ -676,8 +676,8 @@
 /area/outpost/abandoned_fortress)
 "sh" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/snacks/meat,
-/obj/item/reagent_containers/food/snacks/meat,
+/obj/item/reagent_containers/snacks/meat,
+/obj/item/reagent_containers/snacks/meat,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "sr" = (
@@ -725,8 +725,8 @@
 /area/outpost/abandoned_fortress)
 "tp" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/snacks/chickensteak,
-/obj/item/reagent_containers/food/snacks/chickensteak,
+/obj/item/reagent_containers/snacks/chickensteak,
+/obj/item/reagent_containers/snacks/chickensteak,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "ts" = (
@@ -734,14 +734,14 @@
 /area/outpost/abandoned_fortress)
 "tD" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/snacks/breadslice,
-/obj/item/reagent_containers/food/snacks/breadslice,
-/obj/item/reagent_containers/food/snacks/flatbread,
+/obj/item/reagent_containers/snacks/breadslice,
+/obj/item/reagent_containers/snacks/breadslice,
+/obj/item/reagent_containers/snacks/flatbread,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "tN" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/snacks/flatbread,
+/obj/item/reagent_containers/snacks/flatbread,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "tP" = (
@@ -750,7 +750,7 @@
 	name = "Altar"
 	},
 /obj/item/tool/knife/dagger/nt,
-/obj/item/reagent_containers/food/snacks/meat/chicken/vox,
+/obj/item/reagent_containers/snacks/meat/chicken/vox,
 /turf/simulated/floor/rock/manmade/concrete,
 /area/outpost/abandoned_fortress)
 "tS" = (
@@ -772,7 +772,7 @@
 /area/outpost/abandoned_fortress)
 "vm" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/snacks/sliceable/bread,
+/obj/item/reagent_containers/snacks/bread,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "vq" = (
@@ -782,12 +782,12 @@
 "vy" = (
 /obj/structure/table/marble,
 /obj/item/tool/knife/ritual,
-/obj/item/reagent_containers/food/drinks/drinkingglass/wineglass,
+/obj/item/reagent_containers/drinks/drinkingglass/wineglass,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "vH" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/condiment/saltshaker,
+/obj/item/reagent_containers/condiment/saltshaker,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "vL" = (
@@ -796,8 +796,8 @@
 /area/outpost/abandoned_fortress)
 "vS" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/condiment/cookingoil,
-/obj/item/reagent_containers/food/condiment/sugar,
+/obj/item/reagent_containers/condiment/cookingoil,
+/obj/item/reagent_containers/condiment/sugar,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "wn" = (
@@ -818,7 +818,7 @@
 /area/outpost/abandoned_fortress)
 "wN" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/snacks/meat/monkey,
+/obj/item/reagent_containers/snacks/meat/monkey,
 /turf/simulated/floor/rock/manmade/concrete,
 /area/outpost/abandoned_fortress)
 "wR" = (
@@ -826,10 +826,10 @@
 /area/outpost/abandoned_fortress)
 "xQ" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/drinks/drinkingglass/wineglass,
-/obj/item/reagent_containers/food/drinks/drinkingglass/wineglass,
-/obj/item/reagent_containers/food/drinks/drinkingglass/wineglass,
-/obj/item/reagent_containers/food/drinks/drinkingglass/wineglass,
+/obj/item/reagent_containers/drinks/drinkingglass/wineglass,
+/obj/item/reagent_containers/drinks/drinkingglass/wineglass,
+/obj/item/reagent_containers/drinks/drinkingglass/wineglass,
+/obj/item/reagent_containers/drinks/drinkingglass/wineglass,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "xS" = (
@@ -837,7 +837,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/outpost/abandoned_fortress)
 "yu" = (
-/obj/item/reagent_containers/food/snacks/stuffing,
+/obj/item/reagent_containers/snacks/stuffing,
 /turf/simulated/floor/asteroid/dirt/flood/plough,
 /area/outpost/abandoned_fortress)
 "yE" = (
@@ -852,7 +852,7 @@
 /obj/item/trash/icecreambowl,
 /obj/item/trash/icecreambowl,
 /obj/item/trash/plate,
-/obj/item/reagent_containers/food/drinks/drinkingglass/wineglass,
+/obj/item/reagent_containers/drinks/drinkingglass/wineglass,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "yN" = (
@@ -868,7 +868,7 @@
 "zs" = (
 /obj/item/tool/knife/butch,
 /obj/structure/kitchenspike,
-/mob/living/simple_animal/pig,
+/mob/living/simple/pig,
 /obj/effect/decal/cleanable/blood,
 /turf/simulated/floor/rock/manmade/concrete,
 /area/outpost/abandoned_fortress)
@@ -895,7 +895,7 @@
 /area/outpost/abandoned_fortress)
 "zX" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/drinks/bottle/pwine,
+/obj/item/reagent_containers/drinks/bottle/pwine,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "zY" = (
@@ -930,7 +930,7 @@
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "Bl" = (
-/mob/living/simple_animal/pig,
+/mob/living/simple/pig,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/outpost/abandoned_fortress)
 "BC" = (
@@ -943,7 +943,7 @@
 /area/outpost/abandoned_fortress)
 "Cb" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/condiment/sugar,
+/obj/item/reagent_containers/condiment/sugar,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "Cf" = (
@@ -961,7 +961,7 @@
 /area/outpost/abandoned_fortress)
 "Cy" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/condiment/cookingoil,
+/obj/item/reagent_containers/condiment/cookingoil,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "CE" = (
@@ -981,12 +981,12 @@
 /area/outpost/abandoned_fortress)
 "De" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/snacks/meat/pork,
+/obj/item/reagent_containers/snacks/meat/pork,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "Df" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/snacks/meat/pork,
+/obj/item/reagent_containers/snacks/meat/pork,
 /obj/item/tool/weldingtool/oil_burner,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
@@ -1027,8 +1027,8 @@
 /area/outpost/abandoned_fortress)
 "EM" = (
 /obj/structure/table/rack/shelf,
-/obj/item/reagent_containers/food/drinks/bottle/wine,
-/obj/item/reagent_containers/food/drinks/bottle/wine,
+/obj/item/reagent_containers/drinks/bottle/wine,
+/obj/item/reagent_containers/drinks/bottle/wine,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "EV" = (
@@ -1040,7 +1040,7 @@
 /obj/structure/table/marble,
 /obj/item/trash/icecreambowl,
 /obj/item/trash/plate,
-/obj/item/reagent_containers/food/drinks/drinkingglass/wineglass,
+/obj/item/reagent_containers/drinks/drinkingglass/wineglass,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "Fd" = (
@@ -1064,11 +1064,11 @@
 /area/outpost/abandoned_fortress)
 "Fq" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/snacks/meat/chicken/vox,
-/obj/item/reagent_containers/food/snacks/meat/chicken/vox,
-/obj/item/reagent_containers/food/snacks/meat/chicken/vox,
-/obj/item/reagent_containers/food/snacks/meat/chicken/vox,
-/obj/item/reagent_containers/food/snacks/meat/chicken/vox,
+/obj/item/reagent_containers/snacks/meat/chicken/vox,
+/obj/item/reagent_containers/snacks/meat/chicken/vox,
+/obj/item/reagent_containers/snacks/meat/chicken/vox,
+/obj/item/reagent_containers/snacks/meat/chicken/vox,
+/obj/item/reagent_containers/snacks/meat/chicken/vox,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "Fs" = (
@@ -1089,8 +1089,8 @@
 /area/outpost/abandoned_fortress)
 "FO" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/snacks/meat/carp,
-/obj/item/reagent_containers/food/snacks/meat/carp,
+/obj/item/reagent_containers/snacks/meat/carp,
+/obj/item/reagent_containers/snacks/meat/carp,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "FX" = (
@@ -1116,13 +1116,13 @@
 /obj/item/trash/icecreambowl,
 /obj/item/trash/plate,
 /obj/item/trash/plate,
-/obj/item/reagent_containers/food/drinks/drinkingglass/wineglass,
-/obj/item/reagent_containers/food/drinks/drinkingglass/wineglass,
+/obj/item/reagent_containers/drinks/drinkingglass/wineglass,
+/obj/item/reagent_containers/drinks/drinkingglass/wineglass,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "Gq" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/snacks/meat,
+/obj/item/reagent_containers/snacks/meat,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "Gr" = (
@@ -1156,12 +1156,12 @@
 /area/outpost/abandoned_fortress)
 "Hf" = (
 /obj/effect/decal/cleanable/crayon,
-/obj/item/reagent_containers/food/snacks/meat/chicken/vox,
+/obj/item/reagent_containers/snacks/meat/chicken/vox,
 /turf/simulated/floor/rock/manmade/concrete,
 /area/outpost/abandoned_fortress)
 "Hj" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/snacks/meatsteak,
+/obj/item/reagent_containers/snacks/meatsteak,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "Ho" = (
@@ -1182,7 +1182,7 @@
 /area/outpost/abandoned_fortress)
 "HQ" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/snacks/breadslice,
+/obj/item/reagent_containers/snacks/breadslice,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "Ig" = (
@@ -1199,7 +1199,7 @@
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "IT" = (
-/mob/living/simple_animal/cow,
+/mob/living/simple/cow,
 /obj/plant_spawner/grass,
 /obj/plant_spawner/wheat,
 /turf/simulated/floor/asteroid/grass,
@@ -1229,8 +1229,8 @@
 	name = "ice basion";
 	desc = "A deep basin of polished stone that has been pre-filled with fresh ice."
 	},
-/obj/item/reagent_containers/food/snacks/meat/chicken/vox,
-/obj/item/reagent_containers/food/snacks/meat/chicken/vox,
+/obj/item/reagent_containers/snacks/meat/chicken/vox,
+/obj/item/reagent_containers/snacks/meat/chicken/vox,
 /turf/simulated/floor/rock/manmade/concrete,
 /area/outpost/abandoned_fortress)
 "JH" = (
@@ -1241,11 +1241,11 @@
 /area/outpost/abandoned_fortress)
 "JK" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/drinks/mug/gold,
+/obj/item/reagent_containers/drinks/mug/gold,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "JV" = (
-/obj/item/reagent_containers/food/snacks/stuffing,
+/obj/item/reagent_containers/snacks/stuffing,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/outpost/abandoned_fortress)
 "Kw" = (
@@ -1256,8 +1256,8 @@
 /area/outpost/abandoned_fortress)
 "Kx" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/snacks/breadslice,
-/obj/item/reagent_containers/food/snacks/breadslice,
+/obj/item/reagent_containers/snacks/breadslice,
+/obj/item/reagent_containers/snacks/breadslice,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "KC" = (
@@ -1341,7 +1341,7 @@
 /area/outpost/abandoned_fortress)
 "Mz" = (
 /obj/structure/table/rack/shelf,
-/obj/item/reagent_containers/food/drinks/drinkingglass/wineglass,
+/obj/item/reagent_containers/drinks/drinkingglass/wineglass,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "MC" = (
@@ -1359,8 +1359,8 @@
 /area/outpost/abandoned_fortress)
 "Nh" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/snacks/strawberryicecream,
-/obj/item/reagent_containers/food/snacks/strawberryicecream,
+/obj/item/reagent_containers/snacks/strawberryicecream,
+/obj/item/reagent_containers/snacks/strawberryicecream,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "Nn" = (
@@ -1379,8 +1379,8 @@
 /area/outpost/abandoned_fortress)
 "Ol" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/snacks/tossedsalad,
-/obj/item/reagent_containers/food/snacks/tossedsalad,
+/obj/item/reagent_containers/snacks/tossedsalad,
+/obj/item/reagent_containers/snacks/tossedsalad,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "Ot" = (
@@ -1394,9 +1394,9 @@
 	name = "ice basion";
 	desc = "A deep basin of polished stone that has been pre-filled with fresh ice."
 	},
-/obj/item/reagent_containers/food/snacks/meat/carp,
-/obj/item/reagent_containers/food/snacks/meat/carp,
-/obj/item/reagent_containers/food/snacks/meat/carp,
+/obj/item/reagent_containers/snacks/meat/carp,
+/obj/item/reagent_containers/snacks/meat/carp,
+/obj/item/reagent_containers/snacks/meat/carp,
 /turf/simulated/floor/rock/manmade/concrete,
 /area/outpost/abandoned_fortress)
 "Pj" = (
@@ -1405,7 +1405,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/outpost/abandoned_fortress)
 "Pz" = (
-/obj/item/reagent_containers/food/snacks/chocolatepiece/truffle,
+/obj/item/reagent_containers/snacks/chocolatepiece/truffle,
 /obj/plant_spawner/wheat,
 /turf/simulated/floor/asteroid/dirt/flood/plough,
 /area/outpost/abandoned_fortress)
@@ -1457,7 +1457,7 @@
 /area/outpost/abandoned_fortress)
 "Rk" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/snacks/tomatomeat,
+/obj/item/reagent_containers/snacks/tomatomeat,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "Rn" = (
@@ -1471,7 +1471,7 @@
 /area/outpost/abandoned_fortress)
 "RC" = (
 /obj/structure/table/rack/shelf,
-/obj/item/reagent_containers/food/drinks/bottle/pwine,
+/obj/item/reagent_containers/drinks/bottle/pwine,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "RD" = (
@@ -1530,7 +1530,7 @@
 "Tf" = (
 /obj/structure/table/marble,
 /obj/item/trash/snack_bowl,
-/obj/item/reagent_containers/food/snacks/tomatosoup,
+/obj/item/reagent_containers/snacks/tomatosoup,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "Ti" = (
@@ -1576,8 +1576,8 @@
 	name = "ice basion";
 	desc = "A deep basin of polished stone that has been pre-filled with fresh ice."
 	},
-/obj/item/reagent_containers/food/snacks/meat/carp,
-/obj/item/reagent_containers/food/snacks/meat/carp,
+/obj/item/reagent_containers/snacks/meat/carp,
+/obj/item/reagent_containers/snacks/meat/carp,
 /turf/simulated/floor/rock/manmade/concrete,
 /area/outpost/abandoned_fortress)
 "Ui" = (
@@ -1620,7 +1620,7 @@
 "Vb" = (
 /obj/structure/table/marble,
 /obj/item/tool/knife,
-/obj/item/reagent_containers/food/drinks/drinkingglass/wineglass,
+/obj/item/reagent_containers/drinks/drinkingglass/wineglass,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "Vc" = (
@@ -1630,8 +1630,8 @@
 /area/outpost/abandoned_fortress)
 "Ve" = (
 /obj/structure/table/rack/shelf,
-/obj/item/reagent_containers/food/drinks/drinkingglass/wineglass,
-/obj/item/reagent_containers/food/drinks/drinkingglass/wineglass,
+/obj/item/reagent_containers/drinks/drinkingglass/wineglass,
+/obj/item/reagent_containers/drinks/drinkingglass/wineglass,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "Vm" = (
@@ -1639,9 +1639,9 @@
 /area/outpost/abandoned_fortress)
 "Vp" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/snacks/sliceable/bread,
-/obj/item/reagent_containers/food/snacks/sliceable/bread,
-/obj/item/reagent_containers/food/snacks/sliceable/bread,
+/obj/item/reagent_containers/snacks/bread,
+/obj/item/reagent_containers/snacks/bread,
+/obj/item/reagent_containers/snacks/bread,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "VD" = (
@@ -1668,9 +1668,9 @@
 /area/outpost/abandoned_fortress)
 "WU" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/snacks/meat,
-/obj/item/reagent_containers/food/snacks/meat,
-/obj/item/reagent_containers/food/snacks/meat,
+/obj/item/reagent_containers/snacks/meat,
+/obj/item/reagent_containers/snacks/meat,
+/obj/item/reagent_containers/snacks/meat,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "Xb" = (
@@ -1694,7 +1694,7 @@
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "XD" = (
-/mob/living/simple_animal/cow,
+/mob/living/simple/cow,
 /obj/plant_spawner/grass,
 /turf/simulated/floor/asteroid/grass,
 /area/outpost/abandoned_fortress)
@@ -1748,7 +1748,7 @@
 /area/outpost/abandoned_fortress)
 "Ze" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/snacks/twobread,
+/obj/item/reagent_containers/snacks/twobread,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "Zf" = (
@@ -1765,7 +1765,7 @@
 /area/outpost/abandoned_fortress)
 "ZL" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/snacks/tossedsalad,
+/obj/item/reagent_containers/snacks/tossedsalad,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 

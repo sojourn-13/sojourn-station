@@ -31,7 +31,7 @@
 /datum/uplink_item/item/tools/hackergum
 	name = "Hacker Stimulant"
 	item_cost = 1
-	path = /obj/item/reagent_containers/food/snacks/candy_drop_red
+	path = /obj/item/reagent_containers/snacks/candy_drop_red
 	desc = "A blue stick of gum injected with a hacker stumulant to help focus."
 
 /datum/uplink_item/item/tools/clerical

@@ -235,6 +235,12 @@
 
 /obj/mecha/proc/reload_gun()
 	var/obj/item/mech_ammo_box/MAB
+
+	if(istype(selected, /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/missile_rack)) // Does it use bullets?
+		var/obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/missile_rack/missile = selected
+		missile.rearm()
+		return TRUE
+
 	if(!istype(selected, /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic)) // Does it use bullets?
 		return FALSE
 
@@ -246,16 +252,35 @@
 
 	if(MAB) // Only proceed if MAB isn't null, AKA we got a valid box to draw from
 		while(gun.max_ammo > gun.projectiles) // Keep loading until we're full or the box's empty
-			if(MAB.ammo_amount_left < MAB.amount_per_click) // Check if there's enough ammo left
+
+			if(gun.projectiles + MAB.amount_per_click > gun.max_ammo) //Check to see if we are going to overload a gun
+				MAB.amount_per_click = gun.max_ammo - gun.projectiles //Make it so we reload the gun to its fulliest amount and not a shell more
+
+			//Prevents negitive numbers or cheating magic ammo
+			if(MAB.amount_per_click > MAB.ammo_amount_left) //Check to see if we would add more ammo then we have
+				MAB.amount_per_click = MAB.ammo_amount_left //Make it so we add the last of are ammo
+
+			MAB.ammo_amount_left -= MAB.amount_per_click // Remove the ammo from the box
+			gun.projectiles += MAB.amount_per_click // Put the ammo in the gun
+
+			if(MAB.ammo_amount_left <= 0) // Check if there's enough ammo left
+				occupant_message(SPAN_WARNING("[MAB.name] depleted, auto dropping.")) //Let the user know that we dropped ammo
 				MAB.forceMove(loc) // Drop the empty ammo box
 				for(var/i = ammo.len to 1 step -1) // Check each spot in the ammobox list
 					if(ammo[i] == MAB) // Is it the same box?
 						ammo[i] = null // It is no longer there
-						MAB = null
-				return FALSE
-			MAB.ammo_amount_left -= MAB.amount_per_click // Remove the ammo from the box
-			gun.projectiles += MAB.amount_per_click // Put the ammo in the box
+						MAB = null //Null this out so we later down dont need to do the initial ammo
+
+			if(MAB) //Check to see if we are still around
+				MAB.amount_per_click = initial(MAB.amount_per_click) //Reset are amount per click in cases of non-standered ammo adding
+
+
+			occupant_message(SPAN_WARNING("[selected.name] reloaded successfully.")) //Let the user know they infact reloaded their gun
 		return TRUE
+
+	occupant_message(SPAN_WARNING("No Ammo Detected for Selected Weapon."))
+	//This means we dont have ammo stored for are weapon
+	return FALSE
 
 ////////////////////////
 ////// Helpers /////////
@@ -627,7 +652,7 @@
 		var/obj/machinery/atmospherics/portables_connector/possible_port = locate() in loc
 		if(possible_port)
 			var/obj/screen/alert/mech_port_available/A = occupant.throw_alert("mechaport", /obj/screen/alert/mech_port_available)
-			if(A) 
+			if(A)
 				A.target = possible_port
 		else
 			occupant.clear_alert("mechaport")
@@ -1194,7 +1219,7 @@ assassination method if you time it right*/
 				ammo[i] = I
 				user.visible_message("[user] attaches [I] to [src].", "You attach [I] to [src]")
 				log_message("Ammobox [I] inserted by [user]")
-		return
+				return
 
 	else
 		log_message("Attacked by [I]. Attacker - [user]")
@@ -1504,12 +1529,12 @@ assassination method if you time it right*/
 	anchored = FALSE
 	if(!step(src, inertial_movement) || check_for_support() || (thruster && thruster.do_move()))
 		inertial_movement = 0
-	anchored = TRUE 
+	anchored = TRUE
 
 /obj/mecha/proc/regulate_temp()
 	if(hasInternalDamage(MECHA_INT_TEMP_CONTROL))
 		return
-	
+
 	if(cabin_air && cabin_air.volume > 0)
 		var/delta = cabin_air.temperature - T20C
 		cabin_air.temperature -= max(-10, min(10, round(delta/4,0.1)))
@@ -1593,19 +1618,19 @@ assassination method if you time it right*/
 
 	if(prob(probability))
 		use_internal_tank = !use_internal_tank // Flip internal tank mode on or off
-	
+
 	if(prob(probability))
 		toggle_lights() // toggle the lights
-	
+
 	if(prob(probability)) // Some settings to screw up the radio
 		radio.broadcasting = !radio.broadcasting
-	
+
 	if(prob(probability))
 		radio.listening = !radio.listening
-	
+
 	if(prob(probability))
 		radio.set_frequency(rand(PUBLIC_LOW_FREQ,PUBLIC_HIGH_FREQ))
-	
+
 	if(prob(probability))
 		maint_access = 0 // Disallow maintenance mode
 	else
@@ -1643,7 +1668,7 @@ assassination method if you time it right*/
 		occupant_message(SPAN_DANGER("You disable [src] defense mode."))
 	log_message("Toggled defence mode.")
 
-// Radial UI 
+// Radial UI
 /obj/mecha/CtrlClick(mob/living/L)
 	if(occupant != L || !istype(L))
 		return ..()

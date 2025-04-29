@@ -1,5 +1,5 @@
 // superior_animal and definition moved to superior_defines.dm
-/mob/living/carbon/superior_animal/New()
+/mob/living/carbon/superior/New()
 	..()
 	if(!icon_living)
 		icon_living = icon_state
@@ -20,7 +20,7 @@
 	for(var/language as anything in known_languages)
 		add_language(language)
 
-/mob/living/carbon/superior_animal/Initialize(var/mapload)
+/mob/living/carbon/superior/Initialize(var/mapload)
 	if (get_stat_modifier)
 		for (var/key as anything in allowed_stat_modifiers)
 			var/datum/stat_modifier/mod = key
@@ -47,7 +47,7 @@
 
 	RegisterSignal(src, COMSIG_ATTACKED, PROC_REF(react_to_attack))
 
-/mob/living/carbon/superior_animal/Destroy()
+/mob/living/carbon/superior/Destroy()
 	GLOB.superior_animal_list -= src
 
 	target_mob = null
@@ -62,16 +62,16 @@
 	known_languages = null
 	. = ..()
 
-/mob/living/carbon/superior_animal/u_equip(obj/item/W as obj)
+/mob/living/carbon/superior/u_equip(obj/item/W as obj)
 	return
 
-/mob/living/carbon/superior_animal/proc/visible_emote(message)
+/mob/living/carbon/superior/proc/visible_emote(message)
 	if(islist(message))
 		message = safepick(message)
 	if(message)
 		visible_message("<span class='name'>[src]</span> [message]")
 
-/mob/living/carbon/superior_animal/update_icons()
+/mob/living/carbon/superior/update_icons()
 	. = ..()
 	if (stat == DEAD)
 		icon_state = icon_dead
@@ -87,14 +87,14 @@
 		if (icon_living)
 			icon_state = icon_living
 
-/mob/living/carbon/superior_animal/regenerate_icons()
+/mob/living/carbon/superior/regenerate_icons()
 	. = ..()
 	update_icons()
 
-/mob/living/carbon/superior_animal/updateicon()
+/mob/living/carbon/superior/updateicon()
 	. = ..()
 
-/mob/living/carbon/superior_animal/examine(mob/user)
+/mob/living/carbon/superior/examine(mob/user)
 	..()
 	if (is_dead(src))
 		to_chat(user, SPAN_DANGER("It is completely motionless, likely dead."))
@@ -132,7 +132,7 @@
  *
  * out_of_viewrange_line_distance_mult the distance from said distance to the target.
 **/
-/mob/living/carbon/superior_animal/proc/target_outside_of_view_range(var/atom/target, distance = get_dist(src, target), target_mode = target_out_of_sight_mode)
+/mob/living/carbon/superior/proc/target_outside_of_view_range(var/atom/target, distance = get_dist(src, target), target_mode = target_out_of_sight_mode)
 
 	var/tiles_out_of_viewrange = (distance - viewRange) //self explanatory
 	if (tiles_out_of_viewrange <= 0)
@@ -176,41 +176,11 @@
 
 	return safepick(possible_locations) //return one at random
 
-// Same as breath but with innecesarry code removed and damage tripled. Environment pressure damage moved here since we handle moles.
-
-/mob/living/carbon/superior_animal/handle_breath(datum/gas_mixture/breath as anything)
-	var/breath_pressure = (breath.total_moles*R_IDEAL_GAS_EQUATION*breath.temperature)/BREATH_VOLUME
-	var/breath_required = breath_pressure > 15 && (breath_required_type || breath_poison_type)
-	if(!breath_required) // 15 KPA Minimum
-		return FALSE
-	adjustOxyLoss(breath.gas[breath_required_type] ? 0 : ((((breath.gas[breath_required_type] / breath.total_moles) * breath_pressure) < min_breath_required_type) ? 0 : 6))
-	adjustToxLoss(breath.gas[breath_poison_type] ? 0 : ((((breath.gas[breath_poison_type] / breath.total_moles) * breath_pressure) < min_breath_poison_type) ? 0 : 6))
-
-/mob/living/carbon/superior_animal/handle_environment(datum/gas_mixture/environment as anything)
-	var/pressure = environment.return_pressure()
-	var/enviro_damage = (bodytemperature < min_bodytemperature) || (pressure < min_air_pressure) || (pressure > max_air_pressure)
-	if(enviro_damage) // its like this to avoid extra processing further below without using goto
-		bodytemperature += (bodytemperature - environment.temperature) * (environment.total_moles / MOLES_CELLSTANDARD) * (bodytemperature < min_bodytemperature ? 1 - heat_protection : -1 + cold_protection)
-		adjustFireLoss(bodytemperature < min_bodytemperature ? 0 : 15)
-		adjustBruteLoss((pressure < min_air_pressure  || pressure > max_air_pressure) ? 0 : 6)
-		bad_environment = TRUE
-		return FALSE
-	bad_environment = FALSE
-	if (!contaminant_immunity)
-		for(var/g in environment.gas)
-			if(gas_data.flags[g] & XGM_GAS_CONTAMINANT && environment.gas[g] > gas_data.overlay_limit[g] + 1)
-				pl_effects()
-				break
-
-	if (overkill_dust && (getFireLoss() >= maxHealth*2))
-		dust()
-		return FALSE
-
 // branchless isincapacited check made for roaches.
-/mob/living/carbon/superior_animal/proc/cheap_incapacitation_check() // This works based off constants ,override it if you want it to be dynamic . Based off isincapacited
+/mob/living/carbon/superior/proc/cheap_incapacitation_check() // This works based off constants ,override it if you want it to be dynamic . Based off isincapacited
 	return stunned > 0 || weakened > 0 || resting || pinned.len > 0 || stat || paralysis || sleeping || (status_flags & FAKEDEATH) || buckled() > 0
 
-/*/mob/living/carbon/superior_animal/update_lying_buckled_and_verb_status()
+/*/mob/living/carbon/superior/update_lying_buckled_and_verb_status()
 
 	if(cheap_incapacitation_check())
 		lying = FALSE
@@ -228,19 +198,19 @@
 		canmove = TRUE
 		set_density(initial(density))*/
 
-/mob/living/carbon/superior_animal/proc/adjustFiringOffset(var/value)
+/mob/living/carbon/superior/proc/adjustFiringOffset(var/value)
 
 	current_firing_offset += value
 
 	return TRUE
 
-/mob/living/carbon/superior_animal/proc/resetFiringOffset()
+/mob/living/carbon/superior/proc/resetFiringOffset()
 
 	current_firing_offset = initial_firing_offset
 
 	return TRUE
 
-/mob/living/carbon/superior_animal/proc/handle_ai()
+/mob/living/carbon/superior/proc/handle_ai()
 
 	if(weakened)
 		return
@@ -302,7 +272,7 @@
 	if(speak_chance && prob(speak_chance))
 		visible_emote(emote_see)
 
-/mob/living/carbon/superior_animal/proc/handle_hostile_stance(var/atom/targetted_mob) //here so we can jump instantly to it if hostile stance is established
+/mob/living/carbon/superior/proc/handle_hostile_stance(var/atom/targetted_mob) //here so we can jump instantly to it if hostile stance is established
 	var/already_destroying_surroundings = FALSE
 	var/calculated_walk = (comfy_range - comfy_distance) //the distance for walk_to() we will use on ranged mobs
 	var/can_see = TRUE
@@ -350,7 +320,7 @@
 			SSmove_manager.move_to(src, targetted_mob, 1, move_to_delay)
 	handle_attacking_stance(targetted_mob, already_destroying_surroundings, can_see, ran_see_check)
 
-/mob/living/carbon/superior_animal/proc/handle_attacking_stance(var/atom/targetted_mob, var/already_destroying_surroundings = FALSE, can_see = TRUE, ran_see_check = FALSE)
+/mob/living/carbon/superior/proc/handle_attacking_stance(var/atom/targetted_mob, var/already_destroying_surroundings = FALSE, can_see = TRUE, ran_see_check = FALSE)
 	var/calculated_walk = (comfy_range - comfy_distance) //the distance for walk_to() we will use on ranged mobs
 	var/fire_through_lost_sight = FALSE //will we continue to fire, even if we cant see them?
 	var/mob/targetted_mob_real = null // the true value of target_mob?.resolve(), if its a mob, needed for determining if we will use hearers or can_see in our see check
@@ -483,7 +453,7 @@
 		if (stat != DEAD)
 			SSmove_manager.move_to(src, targetted_mob, 1, move_to_delay)
 
-/mob/living/carbon/superior_animal/proc/get_turf_at_edge_of_viewRange(var/atom/target, view_range = viewRange)
+/mob/living/carbon/superior/proc/get_turf_at_edge_of_viewRange(var/atom/target, view_range = viewRange)
 	var/turf/viewrange_edge = get_turf(src)
 	if (!target)
 		return null
@@ -492,7 +462,7 @@
 
 	return viewrange_edge
 
-/mob/living/carbon/superior_animal/proc/can_see_check(var/atom/targetted_mob, var/mob/living/targetted_mob_real, can_see = FALSE, use_hearers = FALSE)
+/mob/living/carbon/superior/proc/can_see_check(var/atom/targetted_mob, var/mob/living/targetted_mob_real, can_see = FALSE, use_hearers = FALSE)
 
 	if (!see_through_walls) // we can skip these checks if we can always see our target
 		var/distance = (min(get_dist(src, targetted_mob), viewRange))
@@ -523,7 +493,7 @@
 	return FALSE
 
 // Same as overridden proc but -3 instead of -1 since its 3 times less frequently envoked, if checks removed
-/mob/living/carbon/superior_animal/handle_status_effects()
+/mob/living/carbon/superior/handle_status_effects()
 	paralysis = max(paralysis-3,0)
 
 	if (stunned)
@@ -536,7 +506,7 @@
 		if(!weakened)
 			update_icons()
 
-/mob/living/carbon/superior_animal/handle_regular_status_updates()
+/mob/living/carbon/superior/handle_regular_status_updates()
 	health = maxHealth - oxyloss - toxloss - fireloss - bruteloss - cloneloss - halloss
 	if(health <= death_threshold && stat != DEAD)
 		death()
@@ -545,7 +515,7 @@
 		return TRUE
 	return FALSE
 
-/mob/living/carbon/superior_animal/handle_chemicals_in_body()
+/mob/living/carbon/superior/handle_chemicals_in_body()
 	if(reagents)
 		chem_effects.Cut()
 		if(touching)
@@ -569,7 +539,7 @@
 	updatehealth()
 	*/
 
-/mob/living/carbon/superior_animal/Life()
+/mob/living/carbon/superior/Life()
 	ticks_processed++
 	handle_regular_hud_updates()
 	if(!reagent_immune)
@@ -585,14 +555,10 @@
 		if (!AI_inactive)
 			handle_status_effects()
 			update_lying_buckled_and_verb_status()
-		if(!never_stimulate_air)
-			var/datum/gas_mixture/environment = loc.return_air_for_internal_lifeform()
-			var/datum/gas_mixture/breath = environment.remove_volume(BREATH_VOLUME)
-			handle_breath(breath)
-			handle_environment(environment) //it should be pretty safe to move this out of ai inactive if this causes problems.
-			if (can_burrow && bad_environment)
-				evacuate()
-			//Fire handling , not passing the whole list because thats unefficient.
+		if(!never_stimulate_air && stat != DEAD)//Dead things dont breath
+			sa_handle_breath()
+		//Fire handling , not passing the whole list because thats unefficient.
+		if(on_fire)
 			handle_fire()
 		// this one in particular im very unhappy about. every 3 ticks, if a superior mob is dead to something that doesnt directly apply damage, it dies. i hate this.
 		handle_regular_status_updates() // we should probably still do this even if we're dead or something
@@ -642,7 +608,7 @@
  *	cast_beam-Boolean. If true, a beam will be cast from src to targetted_mob as a visual telegraph.
  *	atom/movable/targetted-The target of the telegraphs.
 **/
-/mob/living/carbon/superior_animal/proc/prepareAttackPrecursor(attack_type, telegraph = TRUE, cast_beam = TRUE, var/atom/movable/targetted)
+/mob/living/carbon/superior/proc/prepareAttackPrecursor(attack_type, telegraph = TRUE, cast_beam = TRUE, var/atom/movable/targetted)
 	if (check_if_alive()) //sanity
 		var/time_to_expire
 		var/attack_telegraph
@@ -683,7 +649,7 @@
 		return FALSE
 
 /// Called in findTarget() if the found target is not the same as the one we already have.
-/mob/living/carbon/superior_animal/proc/doTargetMessage()
+/mob/living/carbon/superior/proc/doTargetMessage()
 	return
 
 /**
@@ -697,7 +663,7 @@
  * obj/item/projectile/trace: The trace we are registered to.
  * atom/impact_atom: The atom the trace impacted.
 **/
-/mob/living/carbon/superior_animal/proc/handle_trace_impact(var/obj/item/projectile/trace, var/delete_trace = TRUE)
+/mob/living/carbon/superior/proc/handle_trace_impact(var/obj/item/projectile/trace, var/delete_trace = TRUE)
 
 	if (stat == DEAD)
 		return FALSE
@@ -722,7 +688,7 @@
 		advance_towards(targetted_mob)
 	return boolean
 
-/mob/living/carbon/superior_animal/proc/advance_towards(var/atom/target)
+/mob/living/carbon/superior/proc/advance_towards(var/atom/target)
 
 	var/calculated_walk = (comfy_range - comfy_distance)
 
@@ -735,7 +701,21 @@
 			SSmove_manager.move_to(src, target, advance_steps, move_to_delay) //advance forward, forcing us to pathfind
 		advancement_timer = (world.time += advancement_increment) // we dont want this overridden instantly
 
-/mob/living/carbon/superior_animal/CanPass(atom/mover)
+/mob/living/carbon/superior/CanPass(atom/mover)
 	if(istype(mover, /obj/item/projectile))
 		return stat ? TRUE : FALSE
 	. = ..()
+
+/mob/living/carbon/superior/UnarmedAttack(atom/A, proximity)
+	. = ..()
+	if(!.)
+		return
+
+	if(poison_per_bite > 0)
+
+		if(isliving(A))
+			var/mob/living/L = A
+			if(istype(L) && L.reagents)
+				var/zone_armor =  L.getarmor(targeted_organ, ARMOR_MELEE)
+				var/poison_injected = zone_armor ? poison_per_bite * (-0.01 * zone_armor + 1) : poison_per_bite
+				L.reagents.add_reagent(poison_type, poison_injected)

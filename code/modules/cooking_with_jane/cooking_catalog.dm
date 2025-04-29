@@ -77,7 +77,7 @@
 	var/list/data = ..()
 	data["name"] = recipe.name
 	data["id"] = recipe.type
-	var/datum/asset/spritesheet/cooking_icons/sprites = get_asset_datum(/datum/asset/spritesheet/cooking_icons)	
+	var/datum/asset/spritesheet/cooking_icons/sprites = get_asset_datum(/datum/asset/spritesheet/cooking_icons)
 	data["icon"] = sprites.icon_class_name(recipe.icon_image_file)
 	data["product_is_reagent"] = 0
 	if(recipe.product_name)
@@ -109,7 +109,7 @@
 	data["id"] = recipe.type
 
 	var/icon = recipe.icon_image_file
-	var/datum/asset/spritesheet/cooking_icons/sprites = get_asset_datum(/datum/asset/spritesheet/cooking_icons)	
+	var/datum/asset/spritesheet/cooking_icons/sprites = get_asset_datum(/datum/asset/spritesheet/cooking_icons)
 	icon = sprites.icon_class_name(icon)
 	#ifdef CWJ_DEBUG
 	log_debug("Retrieved [icon] for [recipe.icon_image_file]")
@@ -179,7 +179,7 @@
 			sprite_name = sanitize_css_class_name("[our_recipe.product_type]")
 			I = getFlatTypeIcon(our_recipe.product_type)
 		else if(our_recipe.reagent_id)
-			var/obj/item/reagent_containers/food/snacks/dollop/test_dollop = new(null, our_recipe.reagent_id, 1)
+			var/obj/item/reagent_containers/snacks/dollop/test_dollop = new(null, our_recipe.reagent_id, 1)
 
 			sprite_name = sanitize_css_class_name("[test_dollop.type][test_dollop.color]")
 			I = getFlatIcon(test_dollop)
@@ -187,8 +187,8 @@
 		if(I)
 			Insert(sprite_name, I)
 			our_recipe.icon_image_file = sprite_name
-			#ifdef CWJ_DEBUG
-			log_debug("Created cooking icon under file name [filename]")
-			#endif
+			//#ifdef CWJ_DEBUG
+			//log_debug("Created cooking icon under file name [filename]")
+			//#endif
 
 

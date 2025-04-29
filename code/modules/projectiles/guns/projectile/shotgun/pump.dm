@@ -7,15 +7,11 @@
 	max_shells = 4
 	w_class = ITEM_SIZE_HUGE
 	force = WEAPON_FORCE_PAINFUL
-	flags = CONDUCT
 	slot_flags = SLOT_BACK
-	caliber = CAL_SHOTGUN
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2)
-	load_method = SINGLE_CASING|SPEEDLOADER
+	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_KNIFE) //Unlike base shotguns, can take a bayonet. Why? Because trench shotgun funni.
 	ammo_type = /obj/item/ammo_casing/shotgun/beanbag
 	handle_casings = HOLD_CASINGS
-	fire_sound = 'sound/weapons/guns/fire/shotgunp_fire.ogg'
-	bulletinsert_sound 	= 'sound/weapons/guns/interact/shotgun_insert.ogg'
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 10)
 	price_tag = 600
 	damage_multiplier = 1 //Baseline shotgun
@@ -40,6 +36,17 @@
 	mechanismvar = /obj/item/part/gun/mechanism/shotgun
 	barrelvars = list(/obj/item/part/gun/barrel/shotgun)
 
+//Snowflake update-icon code for bayonets.
+/obj/item/gun/projectile/shotgun/pump/update_icon()
+	..()
+	cut_overlays()
+	var/iconstring = initial(icon_state)
+
+	if (bayonet)
+		add_overlay("bayonet")
+
+	icon_state = iconstring
+
 /obj/item/gun/projectile/shotgun/pump/consume_next_projectile()
 	if(chambered)
 		return chambered.BB
@@ -52,7 +59,7 @@
 
 /obj/item/gun/projectile/shotgun/pump/proc/pump(mob/M as mob)
 	var/turf/newloc = get_turf(src)
-	playsound(M, pumpshotgun_sound, 60, 1)
+	playsound(M, cocked_sound, 60, 1)
 
 	if(chambered)//We have a shell in the chamber
 		chambered.forceMove(newloc) //Eject casing

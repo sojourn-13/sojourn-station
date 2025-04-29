@@ -1,6 +1,6 @@
 //tatonka
 //Two headed cow that produces milk+ Credit to scar#1579 for the sprite.
-/mob/living/carbon/superior_animal/lodge/tatonka
+/mob/living/carbon/superior/lodge/tatonka
 	name = "tatonka"
 	desc = "When cows brought by the colony escape into the wilds they tend to mutate rapidly, the most stable strain growing a second head and losing much of its coloration. Useful for the \
 	absurdly regenerative vitality contained in its body, if you know how to utilize it. Despite its dimorphic ancestry tatonkas are capable of asexual reproduction when fed on a proper diet, \
@@ -32,12 +32,12 @@
 	var/offspring_left = 0
 	var/milk_type = "tatonka_milk"
 
-/mob/living/carbon/superior_animal/lodge/tatonka/New()
+/mob/living/carbon/superior/lodge/tatonka/New()
 	udder = new(50)
 	udder.my_atom = src
 	..()
 
-/mob/living/carbon/superior_animal/lodge/tatonka/attackby(var/obj/item/O as obj, var/mob/user as mob)
+/mob/living/carbon/superior/lodge/tatonka/attackby(var/obj/item/O as obj, var/mob/user as mob)
 	var/obj/item/reagent_containers/G = O
 	if(stat == CONSCIOUS && istype(G) && G.is_refillable())
 		user.visible_message(SPAN_NOTICE("[user] milks [src] using \the [O]."))
@@ -49,9 +49,9 @@
 	else
 		..()
 
-/mob/living/carbon/superior_animal/lodge/tatonka/attackby(var/obj/item/O as obj, var/mob/user as mob)
-	if(istype(O, /obj/item/reagent_containers/food/snacks/grown)) //feedin' dem chickens
-		var/obj/item/reagent_containers/food/snacks/grown/G = O
+/mob/living/carbon/superior/lodge/tatonka/attackby(var/obj/item/O as obj, var/mob/user as mob)
+	if(istype(O, /obj/item/reagent_containers/snacks/grown)) //feedin' dem chickens
+		var/obj/item/reagent_containers/snacks/grown/G = O
 		if(G.seed && G.seed.kitchen_tag == "wheat")
 			if(!stat && offspring_left < 1)
 				user.visible_message("\blue [user] feeds [O] to [name]! It moos happily.","\blue You feed [O] to [name]! It moos happily.")
@@ -65,7 +65,7 @@
 	else
 		..()
 
-/mob/living/carbon/superior_animal/lodge/tatonka/attack_hand(mob/living/carbon/M as mob)
+/mob/living/carbon/superior/lodge/tatonka/attack_hand(mob/living/carbon/M as mob)
 	if(!stat && M.a_intent == I_DISARM && icon_state != icon_dead)
 		M.visible_message(SPAN_WARNING("[M] tips over [src]."),SPAN_NOTICE("You tip over [src]."))
 		Weaken(30)
@@ -81,7 +81,7 @@
 	else
 		..()
 
-/mob/living/carbon/superior_animal/lodge/tatonka/Life()
+/mob/living/carbon/superior/lodge/tatonka/Life()
 	. = ..()
 	if(!.)
 		return
@@ -100,14 +100,14 @@
 	if(!stat && prob(3) && offspring_left > 0)
 		visible_message("[src] [pick("squats down and moos.","begins making a huge racket.","begins mooing raucously.")]")
 		offspring_left--
-		var/mob/living/carbon/superior_animal/lodge/baby_tatonka/E = new(get_turf(src))
+		var/mob/living/carbon/superior/lodge/baby_tatonka/E = new(get_turf(src))
 		START_PROCESSING(SSmobs, E)
 	default_pixel_x = -16
 	pixel_x = -16
 
 //Baby Tatonka
 //Grows into a tatonka or a tangu. Credit to scar#1579 for the sprite.
-/mob/living/carbon/superior_animal/lodge/baby_tatonka
+/mob/living/carbon/superior/lodge/baby_tatonka
 	name = "\improper tatonka calf"
 	desc = "Adorable! Four sets of big brown eyes and cute little horns."
 	icon = 'icons/mob/64x64.dmi'
@@ -124,16 +124,16 @@
 	pixel_x = -16
 	randpixel = 0
 
-/mob/living/carbon/superior_animal/lodge/baby_tatonka/Initialize(mapload)
+/mob/living/carbon/superior/lodge/baby_tatonka/Initialize(mapload)
 	pixel_x = -16
 	. = ..()
 
-/mob/living/carbon/superior_animal/lodge/baby_tatonka/add_initial_transforms()
+/mob/living/carbon/superior/lodge/baby_tatonka/add_initial_transforms()
 	. = ..()
 
 	add_new_transformation(/datum/transform_type/modular, list(0.5, 0.5, flag = BABY_TANTONKA_INITIAL_SCALE_TRANSFORM, priority = BABY_TANTONKA_INITIAL_SCALE_TRANSFORM_PRIORITY))
 
-/mob/living/carbon/superior_animal/lodge/baby_tatonka/Life()
+/mob/living/carbon/superior/lodge/baby_tatonka/Life()
 	. =..()
 	if(!.)
 		return
@@ -141,15 +141,15 @@
 		amount_grown += rand(1,2)
 		if(amount_grown >= 100)
 			if(prob(10))
-				new /mob/living/carbon/superior_animal/lodge/tatonka/tangu(src.loc)
+				new /mob/living/carbon/superior/lodge/tatonka/tangu(src.loc)
 			else
-				new /mob/living/carbon/superior_animal/lodge/tatonka(src.loc)
+				new /mob/living/carbon/superior/lodge/tatonka(src.loc)
 			qdel(src)
 	default_pixel_x = -16
 	pixel_x = -16
 
 //Tangu, the improved version of tatonka and thus rarer to produce. Credit to scar#1579 for the sprite.
-/mob/living/carbon/superior_animal/lodge/tatonka/tangu
+/mob/living/carbon/superior/lodge/tatonka/tangu
 	name = "tangu"
 	desc = "Tangu are a mutant strand of tatonka who have grown larger with thick shaggy coats. While rarer than tatonka they are highly prized for their more robust milk and for their horns, \
 	which can be ground into powder and mixed with bone marrow to create powerful universal healing medicine."

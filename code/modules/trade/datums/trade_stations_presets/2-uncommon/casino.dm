@@ -10,6 +10,7 @@
 	wealth = 0
 	hidden_inv_threshold = 1000
 	recommendation_threshold = 3000
+	icon_states = list("ihs_capital", "planet")
 	stations_recommended = list("illegal1", "greyson")
 	recommendations_needed = 1
 	inventory = list(

@@ -309,7 +309,7 @@
 	result = /obj/item/gun/energy/laser/railgun/gauss
 	icon_state = "gun"
 	steps = list(
-		list(CRAFT_MATERIAL, 40, MATERIAL_PLASTEEL, "time" = 60),
+		list(CRAFT_MATERIAL, 30, MATERIAL_PLASTEEL, "time" = 60),
 		list(CRAFT_MATERIAL, 8, MATERIAL_GOLD, "time" = 20),
 		list(CRAFT_MATERIAL, 10, MATERIAL_SILVER, "time" = 20),
 		list(CRAFT_MATERIAL, 4, MATERIAL_PLATINUM, "time" = 20),
@@ -361,9 +361,9 @@
 
 /datum/craft_recipe/guild/guild_bull
 	name = "bison double barrel shotgun"
-	result = /obj/item/gun/projectile/shotgun/bull/bison
+	result = /obj/item/gun/projectile/shotgun/pump/bull/bison
 	steps = list(
-		list(/obj/item/gun/projectile/shotgun/bull, 1, "time" = 80),
+		list(/obj/item/gun/projectile/shotgun/pump/bull, 1, "time" = 80),
 		list(/obj/item/gun_upgrade/barrel/bore, 1, "time" = 60),
 		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTEEL, "time" = 60),
 		list(QUALITY_DRILLING, 60, "time" = 90),
@@ -412,7 +412,7 @@
 		list(CRAFT_MATERIAL, 6, MATERIAL_RGLASS, "time" = 10),
 		list(/obj/item/stock_parts/capacitor/adv, 1, "time" = 10),
 		list(/obj/item/stock_parts/micro_laser/high, 1, "time" = 10),
-		list(/obj/item/computer_hardware/tesla_link, 1, "time" = 10),
+		list(/obj/item/pc_part/tesla_link, 1, "time" = 10),
 		list(QUALITY_SCREW_DRIVING, 40, "time" = 20),
 		list(CRAFT_MATERIAL, 1, MATERIAL_PLASMAGLASS, "time" = 20),
 		list(CRAFT_MATERIAL, 1, MATERIAL_URANIUM, "time" = 20),
@@ -851,7 +851,7 @@
 	result = /obj/item/circuitboard/artificer_turret
 	icon_state = "electronic"
 	steps = list(
-		list(/obj/item/computer_hardware/processor_unit/adv, 1, "time" = 30),
+		list(/obj/item/pc_part/processor_unit/adv, 1, "time" = 30),
 		list(/obj/item/stack/cable_coil, 5, "time" = 20),
 		list(QUALITY_SCREW_DRIVING, 40, "time" = 90),
 		list(QUALITY_WELDING, 40, "time" = 90)
@@ -866,7 +866,7 @@ My deeplest sorrow for this keepsake of the rnd's hoard
 	result = /obj/item/circuitboard/autolathe_industrial
 	icon_state = "electronic"
 	steps = list(
-		list(/obj/item/computer_hardware/processor_unit, 2, "time" = 30),
+		list(/obj/item/pc_part/processor_unit, 2, "time" = 30),
 		list(CRAFT_MATERIAL, 1, MATERIAL_GOLD),
 		list(CRAFT_MATERIAL, 1, MATERIAL_SILVER),
 		list(/obj/item/circuitboard/autolathe, 1, "time" = 30),
@@ -893,7 +893,7 @@ My deeplest sorrow for this keepsake of the rnd's hoard
 	name = "Black Box: Matter Nano-Forge"
 	result = /obj/item/oddity/blackbox_nanoforge
 	steps = list(
-		list(/obj/item/computer_hardware/processor_unit, 1, "time" = 120),
+		list(/obj/item/pc_part/processor_unit, 1, "time" = 120),
 		list(QUALITY_SCREW_DRIVING, 20, 70, "time" = 10),
 		list(CRAFT_MATERIAL, 12, MATERIAL_PLASTEEL, "time" = 90),
 		list(CRAFT_MATERIAL, 2, MATERIAL_RGLASS, "time" = 20),
@@ -932,7 +932,7 @@ My deeplest sorrow for this keepsake of the rnd's hoard
 		list(CRAFT_MATERIAL, 10, MATERIAL_STEEL, "time" = 30),
 		list(QUALITY_WELDING, 45, "time" = 40),
 		list(QUALITY_BOLT_TURNING, 40, 70),
-		list(/obj/item/computer_hardware/tesla_link, 2, "time" = 60),
+		list(/obj/item/pc_part/tesla_link, 2, "time" = 60),
 		list(QUALITY_SCREW_DRIVING, 40, 70),
 		list(/obj/item/stack/cable_coil, 15, "time" = 90),
 		list(QUALITY_WIRE_CUTTING, 25, "time" = 90),

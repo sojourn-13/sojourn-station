@@ -1,4 +1,4 @@
-/mob/living/carbon/superior_animal/robot/church/pawm
+/mob/living/carbon/superior/robot/church/pawm
 	name = "Pawn Golem"
 	desc = "The Pawn, a golem made by the church and fashioned after the time honored game of chess by Brynn. Those who underestimate pawns always lose, being the weakest of church golems, \
 	their twin blades and light armor make them an extremely fast and heavy striker."

@@ -79,7 +79,7 @@
 		else if(patient.status_flags & XENO_HOST)
 			holder.icon_state = "hudxeno"
 		else if(patient.has_brain_worms())
-			var/mob/living/simple_animal/borer/B = patient.has_brain_worms()
+			var/mob/living/simple/borer/B = patient.has_brain_worms()
 			if(B.controlling)
 				holder.icon_state = "hudbrainworm"
 			else

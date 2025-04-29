@@ -38,7 +38,7 @@ uniquic_armor_act
 		//Shrapnel
 		if(P.can_embed() && (check_absorb < 2) && !src.stats.getPerk(PERK_IRON_FLESH))
 			var/armor = getarmor_organ(organ, ARMOR_BULLET)
-			if(prob((20 + max(P.damage_types[BRUTE] - armor, -10) * P.embed_mult)))
+			if(prob((10 + max(P.damage_types[BRUTE] - (armor * (3 - P.wounding_mult)), -10) * P.embed_mult))) //Good/high armor can fully protect against sharpnal
 				if(!P.shrapnel_type)
 					var/obj/item/material/shard/shrapnel/SP = new()
 					SP.name = (P.name != "shrapnel")? "[P.name] shrapnel" : "shrapnel"
@@ -86,7 +86,7 @@ uniquic_armor_act
 					emote("pain", 1, "drops what they were holding, their [affected.name] malfunctioning!")
 				else
 					var/emote_scream = pick("screams in pain and ", "lets out a sharp cry and ", "cries out and ")
-					emote("painscream", 1, "[(species && species.flags & NO_PAIN) ? "" : emote_scream ]drops what they were holding in their [affected.name]!")
+					emote("painscream", 1, "[((species.flags & NO_PAIN) || (PAIN_LESS in mutations)) ? "" : emote_scream ]drops what they were holding in their [affected.name]!")
 
 	..(stun_amount, agony_amount, def_zone)
 
@@ -113,22 +113,72 @@ uniquic_armor_act
 	return (armorval/max(total, 1))
 
 /mob/living/carbon/human/getarmorablative(var/def_zone, var/type)
-
+	var/total = 0
 	var/obj/item/rig/R = get_equipped_item(slot_back)
 	if(istype(R))
 		if(R.ablative_armor && (type in list(ARMOR_MELEE, ARMOR_BULLET, ARMOR_ENERGY, ARMOR_BOMB)))
-			return R.ablative_armor
-	return FALSE
+			total += R.ablative_armor
+
+	total += mob_ablative_armor
+	//Blocking gives of affectively free armor based on TGH + item in hand
+	if(blocking)
+		var/item_punishment = 0
+
+		if(get_active_hand())//are we blocking with an item?
+			var/obj/item/I = get_active_hand()
+			if(istype(I))
+				if(I.force)
+					var/math_var = clamp(0, (I.force * 0.05) + (I.w_class * 0.5), 10)
+					total += math_var
+					item_punishment = clamp(0, math_var, 8)
+
+/*			this dosnt work! recoil never goes back down for some reason
+			if(istype(I, /obj/item/gun))
+				var/obj/item/gun/G = I
+				if(G.recoil)
+					external_recoil(G.recoil.getRating(RECOIL_BASE) + 12) //small delay of it to line up with when you get hit
+			*/
+
+		if(stats.getStat(STAT_TGH) > 0)
+			total += clamp(0, round(stats.getStat(STAT_TGH)/(12 + item_punishment)), 10)
+
+	if(stats.getPerk(PERK_OVERBREATH))
+		var/health_deficiency = (maxHealth - health)
+		//Anti-scaling, as with this perk your nullifing slowdown ontop of giving a speed boost
+		if(health_deficiency > 0)
+			//Less scailing but still noticeable
+			total += (health_deficiency * 0.015)
+		else
+			//When we are closer to death.
+			total -= (health_deficiency * 0.018)
+
+	if(stats.getPerk(PERK_RESILIENCE))
+		total += 3 //smoll universal armor boost
+
+	if(stats.getPerk(PERK_TANK_RESILIENCE))
+		var/slown_down = movement_delay()
+		if(slown_down > 0)
+			total += slown_down * 0.5 //Anti-Scaling as you can get a lot of slowdown fast
+
+
+	return total
 
 //Returns true if the ablative armor successfully took damage
 /mob/living/carbon/human/damageablative(var/def_zone, var/damage_taken)
-
+	var/damaged_armor = FALSE
+	//Rig ablative armor goes first
 	var/obj/item/rig/R = get_equipped_item(slot_back)
 	if(istype(R))
 		if(R.ablative_armor)
 			R.ablative_armor = max(R.ablative_armor - damage_taken / R.ablation, 0)
-			return TRUE
-	return FALSE
+			damage_taken = max(damage_taken / R.ablation, 0)
+			damaged_armor = TRUE
+
+	if(mob_ablative_armor && damage_taken > 0)
+		mob_ablative_armor = max(mob_ablative_armor - damage_taken / ablative_retaining, 0)
+		damaged_armor = TRUE
+
+	return damaged_armor
 
 //this proc returns the Siemens coefficient of electrical resistivity for a particular external organ.
 /mob/living/carbon/human/proc/get_siemens_coefficient_organ(obj/item/organ/external/def_zone)
@@ -427,6 +477,7 @@ uniquic_armor_act
 			return
 
 		O.throwing = 0		//it hit, so stop moving
+		O.post_thrown_hit(src)
 
 		/// Get hit with glass shards , your fibers are on them now, or with a rod idk.
 		O.add_fibers(src)
@@ -565,15 +616,38 @@ uniquic_armor_act
 
 	return perm
 
-
 //soj edit
 //This atm only has 1 armor in it thus its coding is trash and snowflake
+//user
 /mob/living/carbon/human/proc/unique_armor_check(atom/A, mob/user, EF)
-	//message_admins("unique_armor_check([user.name]) EF [EF]")
-	//Optimiation based on only 1 suit being this check, no point in asking for 99.99% of the time past this by types
-	if(!wear_suit)
-		//message_admins("No suit found")
-		return EF
+	//message_admins("unique_armor_check(A [A] user [user]) EF [EF]")
+	if(istype(shoes, /obj/item/clothing/shoes/crimsoncross_warp))
+		//message_admins("SHOES FOUND!!!!")
+		var/obj/item/clothing/shoes/crimsoncross_warp/CW = shoes
+		CW.harm_charge += EF
+		if(0<CW.harm_charge && !EF)
+			CW.squeaking = CW.harm_charge * 0.002 //ENDLESS growth after all
+			var/fear = sanity.level
+			if(fear > 0)
+				fear = fear / sanity.max_level
+				if(fear != 1)
+					fear += 1
+				//So that sanity
+				//message_admins("fear1 [fear]")
+				fear += (fear * sanity.level / sanity.max_level)
+				//message_admins("fear2 [fear]")
+				fear += (fear * sanity.level / sanity.max_level)
+				//message_admins("fear3 [fear]")
+			//Mile stones for increase penitles for speed reduction
+			if(CW.harm_charge >= 1200)
+				fear += 3
+			if(CW.harm_charge >= 800)
+				fear += 2
+			if(CW.harm_charge >= 400)
+				fear += 1
+			CW.harm_charge -= (CW.squeaking * 2) * fear //Higher sanity = more draw!
+			CW.drain = (CW.squeaking * 2) * fear //Feedback for a perk (and debugging!)
+			return CW.squeaking
 	//We at this moment only have one outfit that we check and its by path for now.
 	if(istype(wear_suit,/obj/item/clothing/suit/crimsoncross_regaloutfit))
 		//message_admins("Suit found")
@@ -585,22 +659,22 @@ uniquic_armor_act
 		//message_admins("bluecross_regaloutfit (Pass)")
 		//Hopefully this is all the types of things that are robotic and harm - likely isnt, oh well
 		var/list/mobs_we_hitless = list(
-			/mob/living/carbon/superior_animal/robot,
-			/mob/living/simple_animal/hostile/hivebot,
+			/mob/living/carbon/superior/robot,
+			/mob/living/simple/hostile/hivebot,
 			/obj/machinery/porta_turret,
 			/obj/machinery/power/os_turret,
-			/mob/living/simple_animal/hostile/megafauna/hivemind_tyrant,
-			/mob/living/simple_animal/hostile/megafauna/one_star,
-			/mob/living/simple_animal/hostile/republicon,
-			/mob/living/carbon/superior_animal/sentinal_seeker,
-			/mob/living/carbon/superior_animal/roach/elektromagnetisch, //beep boop
-			/mob/living/carbon/superior_animal/roach/nanite,
-			/mob/living/simple_animal/hostile/naniteswarm,
-			/mob/living/simple_animal/hostile/commanded/nanomachine,
-			/mob/living/simple_animal/hostile/viscerator,
+			/mob/living/simple/hostile/megafauna/hivemind_tyrant,
+			/mob/living/simple/hostile/megafauna/one_star,
+			/mob/living/simple/hostile/republicon,
+			/mob/living/carbon/superior/sentinal_seeker,
+			/mob/living/carbon/superior/roach/elektromagnetisch, //beep boop
+			/mob/living/carbon/superior/roach/nanite,
+			/mob/living/simple/hostile/naniteswarm,
+			/mob/living/simple/hostile/commanded/nanomachine,
+			/mob/living/simple/hostile/viscerator,
 			/mob/living/silicon,
-			/mob/living/simple_animal/hostile/hivemind,
-			/mob/living/simple_animal/hostile/retaliate/malf_drone
+			/mob/living/simple/hostile/hivemind,
+			/mob/living/simple/hostile/retaliate/malf_drone
 			)
 		if(A)
 			if(istype(A, /obj/item/projectile))

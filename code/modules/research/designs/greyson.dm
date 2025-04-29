@@ -99,10 +99,10 @@
 	build_path = /obj/item/gun_upgrade/mechanism/glass_widow
 	category = CAT_GUNMODS
 
-/datum/design/research/item/greyson/unmaker
-	name = "GP \"Master Unmaker\" infuser"
-	build_path = /obj/item/gun_upgrade/mechanism/greyson_master_catalyst
-	category = CAT_GUNMODS
+//datum/design/research/item/greyson/unmaker
+//	name = "GP \"Master Unmaker\" infuser"
+//	build_path = /obj/item/gun_upgrade/mechanism/greyson_master_catalyst
+//	category = CAT_GUNMODS
 
 /datum/design/research/item/powercell/large/grayson
 	name = "GP-SI \"Posi-cell 16000L\""

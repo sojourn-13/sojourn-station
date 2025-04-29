@@ -1,4 +1,4 @@
-/obj/item/gun/projectile/automatic/riot_autoshotgun
+/obj/item/gun/projectile/shotgun/riot
 	name = "\"State\" riot shotgun" //With correct mods this can be better then the pug
 	desc = "A Seinemetall Defense GmbH riot auto action shotgun, its uncommonly seen deployed in most police operation due to the success of the \"stolen\" \"Regulator\" design. \
 	This particular shotgun has been redesigned many times, never quite reaching a standard everyone was happy with, with some lauding it as confusing for a shotgun. \
@@ -11,21 +11,19 @@
 	force = WEAPON_FORCE_PAINFUL
 	flags = CONDUCT
 	slot_flags = SLOT_BACK
-	caliber = CAL_SHOTGUN
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2)
-	load_method = SINGLE_CASING|SPEEDLOADER
 	ammo_type = /obj/item/ammo_casing/shotgun/beanbag
 	handle_casings = EJECT_CASINGS
-	fire_sound = 'sound/weapons/guns/fire/shotgun_combat.ogg'
-	bulletinsert_sound 	= 'sound/weapons/guns/interact/shotgun_insert.ogg'
+	fire_sound = 'sound/weapons/guns/fire/state_fire.ogg'
+	bulletinsert_sound 	= 'sound/weapons/guns/interact/state_insert.ogg'
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10)
 	price_tag = 1250
 	damage_multiplier = 1.2
-	init_recoil = RIFLE_RECOIL(1.3)
-	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
+	init_recoil = RIFLE_RECOIL(1)	//Less than a Siaga, but has less ammo capacity.
 
 	init_firemodes = list(
-		list(mode_name="semiauto", mode_desc="Shoot once per pull after chambering", burst=1, fire_delay=5, move_delay=null, icon="semi")
+		FULL_AUTO_200_NOLOSS,		//Less capacity + no external loader mags so, you get slower fire than Siaga/Pug but no damage reduction.
+		SEMI_AUTO_NODELAY
 		)
 	serial_type = "SD GmbH"
 
@@ -33,7 +31,7 @@
 	wield_delay_factor = 0.4 // 40 vig
 	gun_parts = list(/obj/item/part/gun/frame/opshot = 1, /obj/item/part/gun/grip/rubber = 1, /obj/item/part/gun/mechanism/shotgun = 1, /obj/item/part/gun/barrel/shotgun = 1)
 
-/obj/item/gun/projectile/automatic/riot_autoshotgun/robo
+/obj/item/gun/projectile/shotgun/riot/robo
 	name = "intergrated \"State\" riot shotgun"
 	desc = "A Seinemetall Defense GmbH riot auto action shotgun, its uncommonly seen deployed in most police operation due to the success of the \"stolen\" \"Regulator\" design. \
 	This particular shotgun has been redesigned many times, never quite reaching a standard everyone was happy with, with some lauding it as confusing for a shotgun. \
@@ -46,7 +44,7 @@
 	max_shells = 6
 	load_method = SINGLE_CASING|SPEEDLOADER //So boxes of ammo work
 
-/obj/item/gun/projectile/automatic/riot_autoshotgun/robo/single_shot
+/obj/item/gun/projectile/shotgun/riot/robo/single_shot
 	name = "intergrated single barrel shotgun"
 	desc = "A auto ejecting single barrel shotgun for mining borgs to handle pesky critters in the underground."
 	icon_state = "miner_shotgun"
@@ -54,26 +52,29 @@
 	damage_multiplier = 1
 	max_shells = 1
 
-/obj/item/gun/projectile/automatic/riot_autoshotgun/opshot
+/obj/item/gun/projectile/shotgun/riot/opshot
 	name = "\"Operator\" combat shotgun"
 	desc = "The \"Operator\" shotgun appears to be a well designed model of shotgun complete with a polymer grip, holographic sights and a collapsing stock.  \
 			Designed by Nadezhda Marshal gunsmiths and surplus parts of the \"Mamba\" series of firearms, this shotgun appears to be perfect for both close and medium range engagements."
 	icon = 'icons/obj/guns/projectile/operator.dmi'
 	icon_state = "operator"
 	item_state = "oporator"
-	fire_sound = 'sound/weapons/guns/fire/regulator.ogg'
+	fire_sound = 'sound/weapons/guns/fire/regulator_fire.ogg'
 	w_class = ITEM_SIZE_BULKY
 	origin_tech = list(TECH_COMBAT = 7, TECH_MATERIAL = 4)
 	max_shells = 7
-	ammo_type = /obj/item/ammo_casing/shotgun
 	matter = list(MATERIAL_PLASTEEL = 25, MATERIAL_PLASTIC = 12)
 	price_tag = 1000
-	damage_multiplier = 0.8
+	damage_multiplier = 0.8		//You get the damage back by unfolding the stock.
 	penetration_multiplier = 1
 	zoom_factors = list(0.2)
 	init_recoil = RIFLE_RECOIL(1.4)
 	folding_stock = TRUE //we can fold our stocks
 	can_dual = FALSE
+
+	init_firemodes = list(
+		SEMI_AUTO_NODELAY		//No full auto for you.
+		)
 
 	wield_delay = 0.8 SECOND
 	wield_delay_factor = 0.4 // 40 vig , after all its designed for CQC
@@ -83,14 +84,15 @@
 	name = "Operator frame"
 	desc = "An Operator revolver frame. For the slickest of operators."
 	icon_state = "frame_gladstone"
-	result = /obj/item/gun/projectile/automatic/riot_autoshotgun/opshot
+	result = /obj/item/gun/projectile/shotgun/riot/opshot
 	gripvars = list(/obj/item/part/gun/grip/black, /obj/item/part/gun/grip/rubber)
 	mechanismvar = /obj/item/part/gun/mechanism/shotgun
 	barrelvars = list(/obj/item/part/gun/barrel/shotgun)
-	resultvars = list(/obj/item/gun/projectile/automatic/riot_autoshotgun/opshot, /obj/item/gun/projectile/automatic/riot_autoshotgun)
+	resultvars = list(/obj/item/gun/projectile/shotgun/riot/opshot, /obj/item/gun/projectile/shotgun/riot)
 
-/obj/item/gun/projectile/automatic/riot_autoshotgun/opshot/update_icon()
+/obj/item/gun/projectile/shotgun/riot/opshot/update_icon()
 	..()
+	cut_overlays()
 	var/iconstring = initial(icon_state)
 	var/itemstring = ""
 
@@ -100,6 +102,8 @@
 	if(wielded)
 		itemstring += "_doble"
 
+	if (bayonet)
+		add_overlay("bayonet")
 
 	icon_state = iconstring
 	set_item_state(itemstring)

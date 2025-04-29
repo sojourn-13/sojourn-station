@@ -40,7 +40,7 @@
 "ak" = (
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/flora/ausbushes/ppflowers,
-/mob/living/simple_animal/goose{
+/mob/living/simple/goose{
 	desc = "This bird has a sense of smug superiority and missing eye.";
 	name = "Jea Junior"
 	},
@@ -262,7 +262,7 @@
 /turf/simulated/floor/beach/water/flooded,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "bs" = (
-/mob/living/carbon/superior_animal/lodge/clucker,
+/mob/living/carbon/superior/lodge/clucker,
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/forest/hunting_lodge)
 "bt" = (
@@ -328,7 +328,7 @@
 	name = "fridge";
 	req_access = list()
 	},
-/obj/item/reagent_containers/food/drinks/milk,
+/obj/item/reagent_containers/drinks/milk,
 /obj/item/storage/fancy/egg_box,
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/outside/forest/hunting_lodge)
@@ -500,7 +500,7 @@
 /area/nadezhda/outside/forest/hunting_lodge)
 "cG" = (
 /obj/structure/table/woodentable,
-/obj/item/reagent_containers/food/drinks/shaker,
+/obj/item/reagent_containers/drinks/shaker,
 /turf/simulated/floor/asteroid/grass/colonialjungle2,
 /area/nadezhda/outside/forest/hunting_lodge)
 "cJ" = (
@@ -547,7 +547,7 @@
 /turf/simulated/floor/wood/wild2,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "cV" = (
-/mob/living/simple_animal/yithian,
+/mob/living/simple/yithian,
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/nadezhda/outside/forest/hunting_lodge)
 "cZ" = (
@@ -654,9 +654,9 @@
 /obj/item/tool_upgrade/productivity/whetstone,
 /obj/item/reagent_containers/spray/cleaner,
 /obj/structure/closet/secure_closet/freezer,
-/obj/item/reagent_containers/food/snacks/meat,
-/obj/item/reagent_containers/food/snacks/meat,
-/obj/item/reagent_containers/food/snacks/meat,
+/obj/item/reagent_containers/snacks/meat,
+/obj/item/reagent_containers/snacks/meat,
+/obj/item/reagent_containers/snacks/meat,
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/outside/forest/hunting_lodge)
 "dA" = (
@@ -835,10 +835,10 @@
 /area/nadezhda/outside/forest/hunting_lodge)
 "er" = (
 /obj/structure/table/woodentable,
-/obj/item/reagent_containers/food/condiment/saltshaker{
+/obj/item/reagent_containers/condiment/saltshaker{
 	pixel_x = 4
 	},
-/obj/item/reagent_containers/food/condiment/peppermill{
+/obj/item/reagent_containers/condiment/peppermill{
 	pixel_x = -4
 	},
 /turf/simulated/floor/asteroid/grass/colonial1,
@@ -950,11 +950,11 @@
 /area/nadezhda/outside/forest/hunting_lodge)
 "fl" = (
 /obj/structure/table/rack/shelf,
-/obj/item/computer_hardware/hard_drive/portable/design/misc,
-/obj/item/computer_hardware/hard_drive/portable/design/janitor,
-/obj/item/computer_hardware/hard_drive/portable/basic,
-/obj/item/computer_hardware/hard_drive/portable/design/security,
-/obj/item/computer_hardware/hard_drive/portable/design/medical,
+/obj/item/pc_part/drive/disk/design/misc,
+/obj/item/pc_part/drive/disk/design/janitor,
+/obj/item/pc_part/drive/disk/basic,
+/obj/item/pc_part/drive/disk/design/security,
+/obj/item/pc_part/drive/disk/design/medical,
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "fr" = (
@@ -1015,11 +1015,11 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/hunting_lodge)
 "fB" = (
-/mob/living/simple_animal/chicken,
+/mob/living/simple/chicken,
 /turf/simulated/floor/asteroid/grass/colonial1,
 /area/nadezhda/outside/forest/hunting_lodge)
 "fE" = (
-/mob/living/simple_animal/cow,
+/mob/living/simple/cow,
 /turf/simulated/floor/asteroid/grass/colonial2,
 /area/nadezhda/outside/forest/hunting_lodge)
 "fF" = (
@@ -1056,11 +1056,11 @@
 /area/nadezhda/outside/forest/hunting_lodge)
 "fR" = (
 /obj/structure/table/rack/shelf,
-/obj/item/computer_hardware/hard_drive/portable/design/misc,
-/obj/item/computer_hardware/hard_drive/portable/design/janitor,
-/obj/item/computer_hardware/hard_drive/portable/basic,
-/obj/item/computer_hardware/hard_drive/portable/design/security,
-/obj/item/computer_hardware/hard_drive/portable/design/medical,
+/obj/item/pc_part/drive/disk/design/misc,
+/obj/item/pc_part/drive/disk/design/janitor,
+/obj/item/pc_part/drive/disk/basic,
+/obj/item/pc_part/drive/disk/design/security,
+/obj/item/pc_part/drive/disk/design/medical,
 /obj/structure/railing{
 	desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops.";
 	dir = 4;
@@ -1243,7 +1243,7 @@
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "gL" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/drinks/shaker,
+/obj/item/reagent_containers/drinks/shaker,
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/outside/forest/hunting_lodge)
 "gM" = (
@@ -1577,7 +1577,7 @@
 /turf/simulated/floor/hull,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "jn" = (
-/mob/living/simple_animal/fennec,
+/mob/living/simple/fennec,
 /turf/simulated/floor/asteroid/grass/colonial1,
 /area/nadezhda/outside/forest/hunting_lodge)
 "jq" = (
@@ -1684,7 +1684,7 @@
 /area/nadezhda/outside/forest/hunting_lodge)
 "kf" = (
 /obj/structure/table/woodentable,
-/obj/item/reagent_containers/food/drinks/mug/teacup,
+/obj/item/reagent_containers/drinks/mug/teacup,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "ko" = (
@@ -2064,7 +2064,7 @@
 /turf/simulated/floor/wood/wild2,
 /area/nadezhda/outside/forest/hunting_lodge)
 "tu" = (
-/mob/living/simple_animal/pig,
+/mob/living/simple/pig,
 /turf/simulated/floor/asteroid/grass/colonial2,
 /area/nadezhda/outside/forest/hunting_lodge)
 "tz" = (
@@ -2108,7 +2108,7 @@
 /turf/simulated/floor/asteroid/grass/colonial1,
 /area/nadezhda/outside/forest/hunting_lodge)
 "ux" = (
-/mob/living/simple_animal/redpanda/fae,
+/mob/living/simple/redpanda/fae,
 /turf/simulated/floor/asteroid/grass/colonial1,
 /area/nadezhda/outside/forest/hunting_lodge)
 "uy" = (
@@ -2495,7 +2495,7 @@
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "EU" = (
-/mob/living/carbon/superior_animal/lodge/tatonka,
+/mob/living/carbon/superior/lodge/tatonka,
 /turf/simulated/floor/asteroid/grass/colonial1,
 /area/nadezhda/outside/forest/hunting_lodge)
 "Fe" = (
@@ -2522,7 +2522,7 @@
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "FU" = (
-/mob/living/simple_animal/fennec/fennix,
+/mob/living/simple/fennec/fennix,
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "FW" = (
@@ -2629,9 +2629,9 @@
 /area/nadezhda/outside/forest/hunting_lodge)
 "HR" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/condiment/flour,
+/obj/item/reagent_containers/condiment/flour,
 /obj/item/material/kitchen/rollingpin,
-/obj/item/reagent_containers/food/condiment/flour,
+/obj/item/reagent_containers/condiment/flour,
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/outside/forest/hunting_lodge)
 "IB" = (
@@ -2714,7 +2714,7 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/hunting_lodge)
 "Kt" = (
-/mob/living/simple_animal/tindalos,
+/mob/living/simple/tindalos,
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/nadezhda/outside/forest/hunting_lodge)
 "Ky" = (
@@ -2868,7 +2868,7 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/hunting_lodge)
 "Pu" = (
-/mob/living/simple_animal/schlorgo,
+/mob/living/simple/schlorgo,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "Px" = (
@@ -3023,7 +3023,7 @@
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "Sb" = (
-/mob/living/carbon/superior_animal/lodge/cerberus,
+/mob/living/carbon/superior/lodge/cerberus,
 /turf/simulated/floor/asteroid/dirt/burned,
 /area/nadezhda/outside/forest/hunting_lodge)
 "St" = (
@@ -3073,7 +3073,7 @@
 "TE" = (
 /obj/structure/table/woodentable,
 /obj/item/reagent_containers/dropper,
-/obj/item/reagent_containers/food/condiment/cookingoil,
+/obj/item/reagent_containers/condiment/cookingoil,
 /turf/simulated/floor/asteroid/grass/colonial1,
 /area/nadezhda/outside/forest/hunting_lodge)
 "TS" = (
@@ -3261,7 +3261,7 @@
 /area/nadezhda/outside/forest/hunting_lodge)
 "YX" = (
 /obj/structure/table/woodentable,
-/obj/item/reagent_containers/food/drinks/teapot,
+/obj/item/reagent_containers/drinks/teapot,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "Zi" = (
@@ -3312,7 +3312,7 @@
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "ZR" = (
-/mob/living/simple_animal/crab,
+/mob/living/simple/crab,
 /turf/simulated/floor/beach/water/shallow,
 /area/nadezhda/outside/forest/hunting_lodge)
 

@@ -3,6 +3,7 @@
 		"ITR 'Lancer'" = "IRS Trash Railgun 'Lancer': \"Hoho, you want some Trash?\""
 	)
 	uid = "trash"
+	icon_states = list("planetcracker", "object")
 	tree_x = 0.1
 	tree_y = 0.8
 	start_discovered = FALSE
@@ -37,29 +38,29 @@
 	)
 	hidden_inventory = list(
 		"Premium Trash" = list(
-			/obj/structure/scrap = custom_good_amount_range(list(2,5)),
-			/obj/structure/scrap/large = custom_good_amount_range(list(2,5)),
-			/obj/structure/scrap/medical = custom_good_amount_range(list(2,5)),
-			/obj/structure/scrap/medical/large = custom_good_amount_range(list(2,5)),
-			/obj/structure/scrap/vehicle = custom_good_amount_range(list(2,5)),
-			/obj/structure/scrap/vehicle/large = custom_good_amount_range(list(2,5)),
-			/obj/structure/scrap/food = custom_good_amount_range(list(2,5)),
-			/obj/structure/scrap/food/large = custom_good_amount_range(list(2,5)),
-			/obj/structure/scrap/guns = custom_good_amount_range(list(2,5)),
-			/obj/structure/scrap/guns/large = custom_good_amount_range(list(2,5)),
-			/obj/structure/scrap/science = custom_good_amount_range(list(2,5)),
-			/obj/structure/scrap/science/large = custom_good_amount_range(list(2,5)),
-			/obj/structure/scrap/cloth = custom_good_amount_range(list(2,5)),			// Could be a concern with the armor part offer, but it's locked behind discovery and a secret inventory. Something to watch for.
-			/obj/structure/scrap/cloth/large = custom_good_amount_range(list(2,5)),
-			/obj/structure/scrap/poor = custom_good_amount_range(list(2,5)),
-			/obj/structure/scrap/poor/large = custom_good_amount_range(list(2,5))
+			/obj/structure/scrap = custom_good_amount_range(list(1,2)),
+			/obj/structure/scrap/large = custom_good_amount_range(list(1,2)),
+			/obj/structure/scrap/medical = custom_good_amount_range(list(1,2)),
+			/obj/structure/scrap/medical/large = custom_good_amount_range(list(1,2)),
+			/obj/structure/scrap/vehicle = custom_good_amount_range(list(1,2)),
+			/obj/structure/scrap/vehicle/large = custom_good_amount_range(list(1,2)),
+			/obj/structure/scrap/food = custom_good_amount_range(list(1,2)),
+			/obj/structure/scrap/food/large = custom_good_amount_range(list(1,2)),
+			/obj/structure/scrap/guns = custom_good_amount_range(list(1,2)),
+			/obj/structure/scrap/guns/large = custom_good_amount_range(list(1,2)),
+			/obj/structure/scrap/science = custom_good_amount_range(list(1,2)),
+			/obj/structure/scrap/science/large = custom_good_amount_range(list(1,2)),
+			/obj/structure/scrap/cloth = custom_good_amount_range(list(1,2)),			// Could be a concern with the armor part offer, but it's locked behind discovery and a secret inventory. Something to watch for.
+			/obj/structure/scrap/cloth/large = custom_good_amount_range(list(1,2)),
+			/obj/structure/scrap/poor = custom_good_amount_range(list(1,2)),
+			/obj/structure/scrap/poor/large = custom_good_amount_range(list(1,2))
 		)
 	)
 	// TODO: offers
 	offer_types = list(
 		/obj/structure/scrap_cube = offer_data("compressed scrap cube", 80, 3),
-		/obj/item/reagent_containers/food/snacks/baconburger = offer_data("bacon burger", 500, 4),
-		/obj/item/reagent_containers/food/snacks/blt = offer_data("blt sandwich", 500, 4),
+		/obj/item/reagent_containers/snacks/baconburger = offer_data("bacon burger", 500, 4),
+		/obj/item/reagent_containers/snacks/blt = offer_data("blt sandwich", 500, 4),
 		/obj/item/storage/bag/sheetsnatcher = offer_data("sheet snatcher", 300, 4),
 		/datum/reagent/drug/mindbreaker = offer_data("mindbreaker toxin bottle(60u)", 850, 2)
 	)

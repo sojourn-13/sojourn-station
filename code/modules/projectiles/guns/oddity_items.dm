@@ -34,11 +34,8 @@
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these items are known to vanish and reappear when left alone. \
 	The replication of a prized legendary royal shotgun wielded by a king that was once prophesized to have used it for their own undoing."
 	icon_state = "shotgun"
-	load_method = SINGLE_CASING|SPEEDLOADER
 	handle_casings = CYCLE_CASINGS
-	flags = CONDUCT
 	slot_flags = SLOT_BACK
-	caliber = CAL_SHOTGUN
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_STEEL = 10)
 	max_shells = 1
 	damage_multiplier = 2
@@ -498,45 +495,115 @@
 /obj/item/tool/nailstick/ogre
 	name = "\"Oni\" Greatclub"
 	desc = "An anomalous clothing created by rivals of the unknown person(or group?) of the bluecross, their work marked by a crimson cross, these items are known to vanish and reappear when left alone. \
-			A wooden club inscribed with several symbols of jana, though they make no sense put together. The steel is of unusual qualities. \
-			The more harmed you are harder it is to swing but the rubys glow more, melting through armor and flesh alike."
+			A stone club inscribed with several symbols of jana, though they make no sense put together. The steel is of unusual qualities. \
+			When swinging against a tile or open air, a gemstone will hover in the air, hit it again to hit the gem at a nearby hostile target. \
+			The more hurt the user is the sharper the gemstone will be."
 	icon_state = "oni" //Sprite by cupofmothium
 	damtype = BURN
-	force = WEAPON_FORCE_HARMLESS
-	throwforce = WEAPON_FORCE_HARMLESS
+	force = WEAPON_FORCE_ROBUST
+	throwforce = WEAPON_FORCE_ROBUST
 	w_class = ITEM_SIZE_NORMAL
 	armor_divisor = ARMOR_PEN_HALF
 	structure_damage_factor = STRUCTURE_DAMAGE_DESTRUCTIVE
 	tool_qualities = list(QUALITY_HAMMERING = 20)
-	max_upgrades = 2
+	max_upgrades = 4 //Not that good
 	price_tag = 3500
 	matter = list(MATERIAL_STEEL = 4, MATERIAL_MARBLE = 1)
 
+	var/GemCooldown = FALSE
+	var/GemCooldown_timer = 1 SECONDS
+	var/GemColor = "#ff0000"
+	var/GemType = /obj/item/projectile/blood_gen
+	var/GemDamage_Boost = 0
+	var/friendly_fire_protection = TRUE
+
+	embed_mult = 0
+
+/obj/item/tool/nailstick/ogre/attack_self(mob/user)
+	friendly_fire_protection = !friendly_fire_protection
+	if(friendly_fire_protection)
+		to_chat(user, SPAN_NOTICE("Gemstones will now care about friendly fire."))
+	else
+		to_chat(user, SPAN_NOTICE("Gemstones will not care about same faction or colony allies."))
+
+
+/obj/item/tool/nailstick/ogre/afterattack(atom/target, mob/user, proximity_flag, params)
+	. = ..()
+	if(proximity_flag && isturf(target))
+		var/turf/T = get_turf(target)
+		for(var/obj/item/projectile/blood_gen/BG in T.contents)
+			var/obj/item/projectile/blood_gen/GB = BG
+			for(var/mob/M in view(5, user))
+				if(M.stat != DEAD)
+					if(friendly_fire_protection)
+						if(M.faction != user.faction && M.colony_friend != user.colony_friend && M.friendly_to_colony != user.friendly_to_colony)
+							GB.launch(M)
+							GB.def_zone = BP_CHEST
+							GB.original_firer = user
+							GB.firer = user
+							GB.friendly_faction = user.faction
+							break
+						continue
+					if(M != user)
+						GB.launch(M)
+						GB.firer = user
+						GB.def_zone = BP_CHEST
+						GB.original_firer = user
+
+		if(!GemCooldown)
+			GemCooldown = TRUE
+			addtimer(CALLBACK(src, PROC_REF(clear_cooldown)), GemCooldown_timer)
+			new GemType(T, src, GemColor, rand(0, 36) * 10, GemDamage_Boost)
+			playsound(T, 'sound/weapons/metal_disk_fick.ogg', 100)
+
+/obj/item/tool/nailstick/ogre/proc/clear_cooldown()
+	GemCooldown = FALSE
+
+/obj/item/projectile/blood_gen
+	var/time2activate = 7 SECONDS
+	icon_state = "gemstone"
+	icon = 'icons/obj/spatial_cut.dmi'
+	color = "#ff0000"
+	alpha = 150
+
+	damage_types = list(BURN = 5)
+	armor_divisor = 5
+
+	var/qdel_timer
+	var/friendly_faction = ""
+
+/obj/item/projectile/blood_gen/attack_mob(mob/living/target_mob, distance, miss_modifier=0)
+	//Anti-FF
+	if(friendly_faction == target_mob.faction)
+		return FALSE // so these pass through friends of the o.g shooter
+	if(original_firer == target_mob)
+		return FALSE // so these pass through the o.g shooter
+	..()
+
+/obj/item/projectile/blood_gen/Initialize(mapload, obj/item/tool/nailstick/ogre/C, _color = color, _angle, GemDamage_Boost)
+	. = ..()
+	color = _color
+	qdel_timer = QDEL_IN(src, time2activate)
+	damage_types = list(BURN = 10, BRUTE = GemDamage_Boost)
+
 /obj/item/tool/nailstick/ogre/resolve_attackby(atom/target, mob/user)
-	//Little icky but it works
-	var/safty_math =  user.health - user.maxHealth
-	var/safty_health = max(1, user.health)
-	var/real_mod = 0
-	var/delay_adder = user.maxHealth / safty_health
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		GemDamage_Boost = 0
+		var/damages = H.getOxyLoss() + H.getBruteLoss() + H.getFireLoss()
 
-//	message_admins("1ogre: safty_math [safty_math] safty_health [safty_health]  delay_adder [delay_adder]")
+		if(damages)
+			damages *= 0.2
 
+			GemDamage_Boost = damages
 
-	delay_adder = round(delay_adder)
-	delay_adder = clamp(delay_adder, 0, 8)
-//	message_admins("2ogre: safty_math [safty_math] safty_health [safty_health]  delay_adder [delay_adder]")
-	real_mod += -safty_math
-	real_mod *= 0.5 //Insanely op
+			GemCooldown_timer = (1.5 + (damages / 10)) SECONDS
 
-//	message_admins("3ogre: safty_math [safty_math] safty_health [safty_health]  delay_adder [delay_adder]")
-//	message_admins("4ogre: armor_divisor [armor_divisor]")
-	armor_divisor += real_mod
-//	message_admins("5ogre: armor_divisor [armor_divisor]")
-	clickdelay_offset = delay_adder
+		else
+
+			GemCooldown_timer = 2 SECONDS //Rack em up!
 
 	.=..()
-	refresh_upgrades()
-
 
 /obj/item/tool/knife/dagger/vail_render
 	name = "\"Vail Render\" dagger"
@@ -692,7 +759,7 @@
 			able_to_use = TRUE
 		if(istype(H.get_organ(BP_R_ARM), /obj/item/organ/external/stump))
 			able_to_use = TRUE
-		//Robo *lim* bypasses needing only 1 arm, but having 2 robo lims cancle one another out
+		//Robo *lim* bypasses needing only 1 arm, but having 2 robo limbs cancle one another out
 		if(istype(H.get_organ(BP_L_ARM), /obj/item/organ/external/robotic))
 			robo_lim += 1
 		if(istype(H.get_organ(BP_R_ARM), /obj/item/organ/external/robotic))
@@ -999,5 +1066,21 @@
 	stiffness = 0 //You are above the red tape
 	price_tag = 3500 //Silk and gold
 	//all its affects are in human_defense.dm
+
+/obj/item/clothing/shoes/crimsoncross_warp
+	name = "\"Warp\" Running shoes"
+	desc = "An anomalous clothing created by rivals of the unknown person(or group?) of the bluecross, their work marked by a crimson cross, these items are known to vanish and reappear when left alone. \
+	A pair of shoes that the more the wearer gets hurt the more charge it builds up. When running, they automatically spend charge to gain a speed boost. Walking doesn't use charge."
+	icon_state = "wcorp"
+	item_state = "wcorp"
+	var/harm_charge = 0
+	var/squeaking = 0
+	var/drain = 0
+
+/obj/item/clothing/shoes/crimsoncross_warp/examine(mob/user)
+	..()
+	if(ishuman(user))
+		if(user.stats.getPerk(PERK_NO_OBFUSCATION))
+			to_chat(user, SPAN_WARNING("The shoes have a charge rating of [harm_charge], last speedboost value was [squeaking]. Last charge use from running was [drain]."))
 
 //Tools and tool mods (these are for things not intended for fighting but for actual tools)

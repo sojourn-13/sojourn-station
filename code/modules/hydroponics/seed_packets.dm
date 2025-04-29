@@ -146,7 +146,7 @@ var/global/list/plant_seed_sprites = list()
 	seed_type = "corn"
 
 /obj/item/seeds/poppyseed
-	seed_type = "poppies"
+	seed_type = "poppy"
 
 /obj/item/seeds/potatoseed
 	seed_type = "potato"
@@ -162,6 +162,9 @@ var/global/list/plant_seed_sprites = list()
 
 /obj/item/seeds/riceseed
 	seed_type = "rice"
+
+/obj/item/seeds/linenseed
+	seed_type = "linen"
 
 /obj/item/seeds/carrotseed
 	seed_type = "carrot"

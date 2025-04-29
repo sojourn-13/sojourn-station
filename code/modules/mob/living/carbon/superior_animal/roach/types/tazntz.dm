@@ -1,4 +1,4 @@
-/mob/living/carbon/superior_animal/roach/tazntz
+/mob/living/carbon/superior/roach/tazntz
 	name = "Tazntz Roach"
 	desc = "A mass of twitching and squirming limbs, the seemingly apperent abomination of a frog and roach melded together. It seems to despise all life, even its own."
 	icon_state = "tzantz"
@@ -18,5 +18,5 @@
 	armor_divisor = 1.3
 
 // frogs dont slip over on water or soap.
-/mob/living/carbon/superior_animal/roach/tazntz/slip(slipped_on,stun_duration=8)
+/mob/living/carbon/superior/roach/tazntz/slip(slipped_on,stun_duration=8)
 	return FALSE

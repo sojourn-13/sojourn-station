@@ -1,7 +1,7 @@
 /obj/item/gun/hydrogen/pistol
 	name = "\improper \"Classia\" hydrogen-plasma pistol"
 	desc = "A volatile but powerful weapon that uses hydrogen flasks to fire destructive plasma bolts. The brainchild of Soteria Director Nakharan Mkne, meant to compete with and exceed capabilities of Absolutist \
-	own plasma weapon designs, it succeeded. However, it did so by being extremely dangerous, requiring an intelligent and careful operator who can correctly manage the weapon's extreme heat generation over heating without being \
+	plasma weapon designs. It succeeded. However, it did so by being extremely dangerous, requiring an intelligent and careful operator who can correctly manage the weapon's extreme heat generation without being \
 	burnt to a crisp. This variant is a pistol, capable of fitting a holster for discrete travel and easy drawing."
 	icon = 'icons/obj/guns/plasma/hydrogen.dmi'
 	icon_state = "pistol"
@@ -89,7 +89,7 @@
 	set category = "Object"
 
 	if(!welder) // Safety check if there isn't a welder.
-		welder = new /obj/item/tool/plasma_torch(src)
+		welder = new /obj/item/tool/plasma_torch/no_starting_fuel(src) //So we dont spawn a second flask
 		welder.gun = src
 	if(flask) // Give the welder the same flask the gun has, but only if there's a flask.
 		welder.flask = flask // Link the flask to the welder

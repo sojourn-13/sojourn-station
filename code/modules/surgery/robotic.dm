@@ -76,15 +76,12 @@
 	)
 	organ.take_damage(5, 0)
 
-
-
 /datum/surgery_step/robotic/remove_item
 	required_tool_quality = QUALITY_PRYING
-
 	duration = 90
 
 /datum/surgery_step/robotic/remove_item/can_use(mob/living/user, obj/item/organ/external/organ, obj/item/tool, atom/movable/target)
-	return ..() && organ.is_open() && organ.can_remove_item(target)
+	return organ.is_open() && organ.can_remove_item(target)
 
 /datum/surgery_step/robotic/remove_item/begin_step(mob/living/user, obj/item/organ/external/organ, obj/item/tool, atom/movable/target)
 	user.visible_message(

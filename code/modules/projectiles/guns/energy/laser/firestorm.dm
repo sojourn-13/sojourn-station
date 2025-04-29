@@ -1,6 +1,6 @@
 /obj/item/gun/energy/firestorm
 	name = "\"Firestorm\" assault SMG"
-	desc = "A front loading laser SMG made for close quarter and medium range combat, its compactness and its high rate of fire leaving its targets aflame has earned its nickname. Luckily it appears to make up for its charge usage by taking medium cell batteries.\
+	desc = "A front loading laser SMG made for close-quarter and medium range combat, its compactness and its high rate of fire setting its target ablaze has earned its nickname. Luckily it appears to make up for its charge usage by taking medium cell batteries.\
 	On the side of the gun under the barrel appears to be an 'H&S' marking. Surprising considering the quality of the weapon!"
 	icon = 'icons/obj/guns/energy/firestorm.dmi'
 	icon_state = "firestorm"
@@ -17,7 +17,6 @@
 	price_tag = 850
 	damage_multiplier = 0.8
 	init_recoil = CARBINE_RECOIL(0.2)
-	projectile_type = /obj/item/projectile/beam
 	cell_type = /obj/item/cell/small
 	charge_cost = 40
 	gun_tags = list(GUN_LASER, GUN_ENERGY, GUN_SCOPE)

@@ -1,5 +1,5 @@
 //Reavers, the void wolf elite.
-/mob/living/carbon/superior_animal/human/voidwolf/elite
+/mob/living/carbon/superior/human/voidwolf/elite
 	// basetype, dont use
 	name = "Void Reaver Stormtrooper"
 	desc = "A void wolf reaver stormtrooper, vatgrown and given bionic enhancements, with far better equipment and decades of experience raiding ships and killing men under the command of a true reaver."
@@ -24,17 +24,22 @@
 	armor_divisor = 3
 	armor = list(melee = 15, bullet = 13, energy = 12, bomb = 75, bio = 100, rad = 25) //Legitmently their armor
 
-/mob/living/carbon/superior_animal/human/voidwolf/elite/New()
+	fancy_attack_overlay = "voidwolf_gun_melee_flick"
+	fancy_attack_shading = "#2975A7" //Sapphire
+
+
+
+/mob/living/carbon/superior/human/voidwolf/elite/New()
 	..()
 	reload_message = "[name] ejects a depleted cell and rapidly reloads a new one!"
 
-/mob/living/carbon/superior_animal/human/voidwolf/elite/Initialize()
+/mob/living/carbon/superior/human/voidwolf/elite/Initialize()
 
-	allowed_stat_modifiers[/datum/stat_modifier/mob/living/carbon/superior_animal/aggressive/savage] += 10 //10% extra chance to be a glass cannon
+	allowed_stat_modifiers[/datum/stat_modifier/mob/living/carbon/superior/aggressive/savage] += 10 //10% extra chance to be a glass cannon
 
 	. = ..()
 
-/mob/living/carbon/superior_animal/human/voidwolf/elite/laserak
+/mob/living/carbon/superior/human/voidwolf/elite/laserak
 	projectiletype = /obj/item/projectile/beam/weak/ap/reaver
 	drop_items = list(/obj/item/gun/energy/firestorm/reaver_modded,/obj/random/cloth/assault/reaver)
 
@@ -55,7 +60,7 @@
 								/obj/item/tool_upgrade/refinement/stabilized_grip, // max is 5
 								)
 
-/mob/living/carbon/superior_animal/human/voidwolf/elite/c20r
+/mob/living/carbon/superior/human/voidwolf/elite/c20r
 	icon_state = "reaver_bulldog"
 	projectilesound = 'sound/weapons/guns/fire/smg_fire.ogg'
 	projectiletype = /obj/item/projectile/bullet/pistol_35
@@ -71,7 +76,7 @@
 	melee_sharp = FALSE
 	armor_divisor = 1
 
-/mob/living/carbon/superior_animal/human/voidwolf/elite/c20r/mob_reload()
+/mob/living/carbon/superior/human/voidwolf/elite/c20r/mob_reload()
 	..()
 	var/mob/living/targetted_mob = (target_mob?.resolve())
 	if(targetted_mob)
@@ -101,16 +106,16 @@
 								/obj/item/gun_upgrade/barrel/forged,
 								)
 
-/mob/living/carbon/superior_animal/human/voidwolf/elite/c20r/New()
+/mob/living/carbon/superior/human/voidwolf/elite/c20r/New()
 	..()
 	reload_message = "[name] rapidly reloads before the empty mag hits the ground!"
 
-/mob/living/carbon/superior_animal/human/voidwolf/elite/c20r/emp_act(severity)
+/mob/living/carbon/superior/human/voidwolf/elite/c20r/emp_act(severity)
 	return
 /*
-/mob/living/carbon/superior_animal/human/voidwolf/elite/gyrojet
+/mob/living/carbon/superior/human/voidwolf/elite/gyrojet
 	icon_state = "reaver_gyro"
-	projectilesound = 'sound/weapons/guns/fire/ubgl.ogg'
+	projectilesound = 'sound/weapons/guns/fire/ubgl_fire.ogg'
 	projectiletype = /obj/item/projectile/bullet/gyro
 	drop_items = list(/obj/random/cloth/assault/reaver/*,obj/item/gun/projectile/gyropistol*/)
 	rapid = FALSE
@@ -124,14 +129,14 @@ casingtype = /obj/item/ammo_casing/a75/spent
 	melee_sharp = FALSE
 	armor_divisor = 1
 
-/mob/living/carbon/superior_animal/human/voidwolf/elite/gyrojet/New()
+/mob/living/carbon/superior/human/voidwolf/elite/gyrojet/New()
 	..()
 	reload_message = "[name] rapidly reloads before the empty mag hits the ground!"// You should be panicing
 
-/mob/living/carbon/superior_animal/human/voidwolf/elite/gyrojet/emp_act(severity)
+/mob/living/carbon/superior/human/voidwolf/elite/gyrojet/emp_act(severity)
 	return
 */
-/mob/living/carbon/superior_animal/human/voidwolf/elite/myrmidon
+/mob/living/carbon/superior/human/voidwolf/elite/myrmidon
 	icon_state = "reaver_melee"
 	melee_damage_lower = 35
 	melee_damage_upper = 40
@@ -144,22 +149,24 @@ casingtype = /obj/item/ammo_casing/a75/spent
 	armor_divisor = 3
 	var/block_chance = 65
 	move_and_attack = TRUE
+	fancy_attack_overlay = "voidwolf_slash_flick"
+	fancy_attack_shading = "#9b111e" //Ruby
 
-/mob/living/carbon/superior_animal/human/voidwolf/elite/myrmidon/New()
+/mob/living/carbon/superior/human/voidwolf/elite/myrmidon/New()
 	..()
 	reload_message = "[name] rapidly reloads?!"
 
-/mob/living/carbon/superior_animal/human/voidwolf/elite/myrmidon/emp_act(severity)
+/mob/living/carbon/superior/human/voidwolf/elite/myrmidon/emp_act(severity)
 	return
 
-/mob/living/carbon/superior_animal/human/voidwolf/elite/myrmidon/attackby(var/obj/item/O as obj, var/mob/user as mob)
+/mob/living/carbon/superior/human/voidwolf/elite/myrmidon/attackby(var/obj/item/O as obj, var/mob/user as mob)
 	if(prob(block_chance) || moved)
 		moved = FALSE
 		visible_message("\red \b [src] blocks the [O]!")
 		return
 	..()
 
-/mob/living/carbon/superior_animal/human/voidwolf/elite/myrmidon/bullet_act(var/obj/item/projectile/Proj)
+/mob/living/carbon/superior/human/voidwolf/elite/myrmidon/bullet_act(var/obj/item/projectile/Proj)
 	if(!Proj)
 		return
 	if(prob(block_chance))
@@ -168,7 +175,7 @@ casingtype = /obj/item/ammo_casing/a75/spent
 		visible_message("\red <B>[src] blocks [Proj] with its shield!</B>")
 	return TRUE
 
-/mob/living/carbon/superior_animal/human/voidwolf/elite/captain
+/mob/living/carbon/superior/human/voidwolf/elite/captain
 	name = "Void Reaver Captain"
 	desc = "A void wolf reaver captain, vatgrown and given bionic enhancements, with far better equipment and decades of experience raiding ships and killing men under the command of a true reaver."
 	icon_state = "reaver_cap_elite"
@@ -188,7 +195,7 @@ casingtype = /obj/item/ammo_casing/a75/spent
 	mag_type = /obj/item/cell/small/high/depleted
 	mags_left = 1
 
-/mob/living/carbon/superior_animal/human/voidwolf/elite/captain/attackby(var/obj/item/O as obj, var/mob/user as mob)
+/mob/living/carbon/superior/human/voidwolf/elite/captain/attackby(var/obj/item/O as obj, var/mob/user as mob)
 	if(prob(block_chance) || moved)
 		moved = FALSE
 		visible_message("\red \b [src] evades the [O]!")
@@ -196,7 +203,7 @@ casingtype = /obj/item/ammo_casing/a75/spent
 		return
 	..()
 
-/mob/living/carbon/superior_animal/human/voidwolf/elite/captain/bullet_act(var/obj/item/projectile/Proj)
+/mob/living/carbon/superior/human/voidwolf/elite/captain/bullet_act(var/obj/item/projectile/Proj)
 	if(!Proj)
 		return
 	if(prob(block_chance))
@@ -206,17 +213,17 @@ casingtype = /obj/item/ammo_casing/a75/spent
 		flick("reaver_cap_elite_evade",src)
 	return TRUE
 
-/mob/living/carbon/superior_animal/human/voidwolf/elite/captain/Initialize()
+/mob/living/carbon/superior/human/voidwolf/elite/captain/Initialize()
 	..()
 	icon_state = "reaver_cap_elite"
 
 
-/mob/living/carbon/superior_animal/human/voidwolf/elite/Initialize()
+/mob/living/carbon/superior/human/voidwolf/elite/Initialize()
 	..()
 	if(prob(50))
 		icon_state = "[icon_state]_elite"
 
-/mob/living/carbon/superior_animal/human/voidwolf/elite/death(gibbed, deathmessage = "drops its weapon as it explodes in a shower of gore when their death implant detonates!")
+/mob/living/carbon/superior/human/voidwolf/elite/death(gibbed, deathmessage = "drops its weapon as it explodes in a shower of gore when their death implant detonates!")
 	..()
 	new /obj/effect/gibspawner/human(src.loc)
 	playsound(src, 'sound/effects/Explosion2.ogg', 75, 1, -3)

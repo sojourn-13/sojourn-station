@@ -173,9 +173,9 @@
 	item_state = "gauss"
 	fire_sound = 'sound/weapons/guns/fire/gaussrifle.ogg'
 	w_class = ITEM_SIZE_HUGE
-	matter = list(MATERIAL_PLASTEEL = 40, MATERIAL_SILVER = 10, MATERIAL_GOLD = 8, MATERIAL_PLATINUM = 4)
-	charge_cost = 750
-	fire_delay = 20
+	matter = list(MATERIAL_PLASTEEL = 30, MATERIAL_SILVER = 10, MATERIAL_GOLD = 8, MATERIAL_PLATINUM = 4)
+	charge_cost = 500
+	fire_delay = 20		//Boo-womp
 	init_recoil = HMG_RECOIL(1)
 	zoom_factors = list(1.8)
 	extra_damage_mult_scoped = 0.4
@@ -189,9 +189,9 @@
 	)
 	serial_type = "AG"
 	consume_cell = FALSE
-	price_tag = 6000
+	price_tag = 5000
 
-	var/max_stored_matter = 6
+	var/max_stored_matter = 10
 	var/stored_matter = 0
 	var/matter_type = "refined scrap pieces"
 

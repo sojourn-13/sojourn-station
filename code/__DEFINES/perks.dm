@@ -41,6 +41,9 @@
 #define PERK_INSPIRING /datum/perk/oddity/inspiring
 #define PERK_HOLY_LIGHT /datum/perk/nt_oddity/holy_light
 #define PERK_SIDE_LOADING /datum/perk/oddity/side_loading
+#define PERK_OVERBREATH /datum/perk/oddity/overbreath
+#define PERK_RESILIENCE /datum/perk/oddity/resilience
+#define PERK_TANK_RESILIENCE /datum/perk/oddity/tank_resilience
 
 //roundstart perks (job / backgrounds)
 #define PERK_NOBLE /datum/perk/noble
@@ -99,6 +102,8 @@
 #define PERK_NO_OBFUSCATION /datum/perk/no_obfuscation //isekai perk?
 #define PERK_BLOOD_LUST /datum/perk/blood_lust
 #define PERK_NATURAL_STYLE /datum/perk/natural_style
+#define PERK_MAP_MAKER /datum/perk/map_maker
+#define PERK_NO_INSPIRO /datum/perk/no_inspiro
 
 #define PERK_REZ_SICKNESS /datum/perk/rezsickness
 #define PERK_REZ_SICKNESS_SEVERE /datum/perk/rezsickness/severe

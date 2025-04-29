@@ -43,10 +43,19 @@
 			if(holy_healing)
 				healed_by_faith += heal_burn
 
-		if(affecting.open == 0)
-			if(affecting.is_salved())
+		if(affecting.open == 0 || always_useful)
+			if(affecting.is_salved() && !always_useful)
 				to_chat(user, SPAN_WARNING("The wounds on [M]'s [affecting.name] have already been salved."))
 				return TRUE
+			if(prevent_wasting)
+				var/stop = TRUE
+				if(affecting.burn_dam && heal_burn)
+					stop = FALSE
+				if(affecting.brute_dam && heal_brute)
+					stop = FALSE
+				if(stop)
+					to_chat(user, SPAN_WARNING("The wounds on [affecting.name] cant be healed more with [src]."))
+					return TRUE
 			user.visible_message(
 				SPAN_NOTICE("\The [user] starts salving wounds on [M]'s [affecting.name]."),
 				SPAN_NOTICE("You start salving the wounds on [M]'s [affecting.name].")
@@ -167,7 +176,7 @@
 	singular_name = "Absolutism Burnpack"
 	desc = "An advanced treatment kit for severe burns. Created by the will of God and made far easier to use than normal advanced kits."
 	icon_state = "nt_burnkit"
-	heal_brute = 5
+	heal_burn = 5
 	automatic_charge_overlays = FALSE
 	matter = list(MATERIAL_BIOMATTER = 2)
 	origin_tech = list(TECH_BIO = 4)
@@ -183,3 +192,70 @@
 	if(fancy_icon)
 		icon_state = "[initial(icon_state)][amount]"
 	..()
+
+/obj/item/stack/medical/ointment/psionic
+	name = "Mindplasm"
+	singular_name = "Mindplasm drop"
+	desc = "A odd floating goo made out of thoughtstuff, capable of cleaning wounds and mending burns, it takes next to no skill to use."
+	icon_state = "spidergoo"
+	fancy_icon = FALSE
+	heal_burn = 5
+	bio_requirement = -15
+	needed_perk = PERK_PSION
+	stacktype_alt = null
+	amount = 3
+	max_amount = 9
+	color = "#5B0E4F" //spooooky!!!!!
+	consumable = FALSE //So we dont mess with dropping it
+	var/mob/living/carbon/holder // The one that prevent the tool from fading
+
+/obj/item/stack/medical/ointment/psionic/New(loc, mob/living/carbon/Maker)
+	..()
+	holder = Maker
+	START_PROCESSING(SSobj, src)
+
+/obj/item/stack/medical/ointment/psionic/Process()
+	if(loc != holder) // We're no longer in the psionic's hand.
+		visible_message("The [src.name] fades into nothingness.")
+		STOP_PROCESSING(SSobj, src)
+		qdel(src)
+		return
+
+/obj/item/stack/medical/ointment/psionic/update_icon()
+	color = "#5B0E4F"
+
+//MAX is 37.5 healing, MIN is 5
+/obj/item/stack/medical/ointment/psionic/grabbed_medical_skill(mob/living/carbon/user)
+	if(ishuman(user))
+		var/psionic_things = 0
+		psionic_things += round(clamp((user.stats.getStat(STAT_BIO) * 0.1), 0, 15))
+		if(user.stats.getPerk(PERK_PSI_HARMONY))
+			psionic_things += 5
+		if(user.stats.getPerk(PERK_PSI_ATTUNEMENT))
+			psionic_things += 5
+		if(user.stats.getPerk(PERK_PSI_PEACE))
+			psionic_things += 5
+		if(user.stats.getPerk(PERK_PSI_PSYCHOLOGIST))
+			psionic_things *= 1.25
+		return psionic_things
+	else
+		return FALSE
+
+/obj/item/stack/medical/ointment/greyson
+	name = "Greyson Advanced Burn-Treatment Pack" //G(P)ABTP
+	singular_name = "Greyson Advanced Burn-Treatment Pack"
+	desc = "A packet of nanites with silicon and ethanol that quickly treats burns. \
+	Due to GP-programming these nanites are able to be used on already sealed or healed wounds as long as they are able to detect still-present damage. \
+	Works on robotic limbs."
+	icon_state = "medigel_big_brute"
+	icon = 'icons/obj/stack/medical_big.dmi'
+	origin_tech = list(TECH_BIO = 8)
+	heal_burn = 3 //15 hp per packet, 9 packets in a kit, 135 hp total
+	preloaded_reagents = list("uncap nanites" = 4, "ethanol" = 8, "silicon" = 2, "glue" = 26) //Has a lot of stuff
+	fancy_icon = TRUE
+	amount = 5
+	max_amount = 5
+	use_timer = 60 //These are compelx things
+	always_useful = TRUE
+	extra_bulk = 2
+	prevent_wasting = TRUE

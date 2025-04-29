@@ -73,6 +73,8 @@
 	var/precision = 0	//Subtracted from failure rates
 	var/workspeed = 1	//Worktimes are divided by this
 
+	var/spawn_full = TRUE
+
 
 /******************************
 	/* Core Procs */
@@ -80,15 +82,16 @@
 //Fuel and cell spawn
 /obj/item/tool/New()
 	..()
-	if(cell)
+	if(cell && spawn_full)
 		cell = new cell(src) //So when we have a cell spawn it spawns a cell, otherwise it will pick a suitable cell
 
-	if(!cell && suitable_cell)
+	if(!cell && suitable_cell && spawn_full)
 		cell = new suitable_cell(src) //No cell? We add are suitable cell
 
 	if(use_fuel_cost)
 		create_reagents(max_fuel)
-		reagents.add_reagent(my_fuel, max_fuel)
+		if(spawn_full)
+			reagents.add_reagent(my_fuel, max_fuel)
 
 	if(use_stock_cost)
 		stock = max_stock
@@ -109,7 +112,7 @@
 /obj/item/tool/Created()
 	QDEL_NULL(cell)
 	if(use_fuel_cost)
-		consume_fuel(get_fuel())
+		consume_fuel(get_fuel(), forced = TRUE)
 
 
 
@@ -911,7 +914,11 @@
 /obj/item/proc/get_fuel()
 	return ( reagents ? reagents.get_reagent_amount(my_fuel) : 0 )
 
-/obj/item/tool/proc/consume_fuel(volume)
+/obj/item/tool/proc/consume_fuel(volume, forced)
+	if(forced)
+		reagents.remove_reagent(my_fuel, volume)
+		return TRUE
+
 	//Fixes tool off-state behavior
 	if(toggleable && !switched_on)
 		return TRUE
@@ -1074,8 +1081,8 @@
 				var/obj/item/weldpack/P = O
 				P.explode()
 			return
-		else if(istype(O, /mob/living/carbon/superior_animal/roach/nitro))
-			var/mob/living/carbon/superior_animal/roach/nitro/B = O
+		else if(istype(O, /mob/living/carbon/superior/roach/nitro))
+			var/mob/living/carbon/superior/roach/nitro/B = O
 			if(B.stat != DEAD)
 				if(has_quality(QUALITY_WELDING))
 					B.fire_act()
@@ -1146,30 +1153,28 @@
 		if(BP_IS_ROBOTIC(E))
 			to_chat(H, SPAN_WARNING("The world suddenly dims in response to the blindingly bright light, protecting you from its shine."))
 			return
+		//so that way mob lag dosnt cheat folks into eye damage
+		H.update_equipment_vision()
 		var/safety = H.eyecheck()
 		switch(safety)
 			if(FLASH_PROTECTION_MINOR)
-				to_chat(H, SPAN_WARNING("Your eyes sting a little."))
-				E.take_damage(1, BURN)
-				if(E.damage > 12)
-					H.eye_blurry += rand(3,6)
-			if(FLASH_PROTECTION_MINOR)
 				to_chat(H, SPAN_WARNING("The searing light burns your eyes through your insufficient protection."))
-				E.take_damage(rand(3, 6), BURN)
-				if(E.damage > 11)
-					E.take_damage(rand(4, 6), BURN)
+				E.take_damage(1, BURN)
+				H.eye_blurry += rand(3,6)
 			if(FLASH_PROTECTION_NONE)
 				to_chat(H, SPAN_WARNING("Your eyes burn."))
-				E.take_damage(rand(4, 6), BURN)
-				if(E.damage > 10)
-					E.take_damage(rand(2, 6))
+				E.take_damage(rand(1, 2), BURN)
+				H.eye_blurry += rand(6,8)
 			if(FLASH_PROTECTION_REDUCED)
 				to_chat(H, SPAN_DANGER("Your equipment intensify the welder's glow. Your eyes itch and burn severely."))
 				H.eye_blurry += rand(12,20)
-				E.take_damage(rand(8, 16))
+				E.take_damage(rand(4, 6))
+			if(FLASH_PROTECTION_VULNERABLE)
+				to_chat(H, SPAN_DANGER("Your equipment intensify the welder's glow. Your eyes itch and burn severely."))
+				H.eye_blurry += rand(16,26)
+				E.take_damage(rand(6, 8))
 		if(safety<FLASH_PROTECTION_MAJOR)
-			if(E.damage > 10)
-				to_chat(user, SPAN_WARNING("Your eyes are really starting to hurt. This can't be good for you!"))
+			to_chat(user, SPAN_WARNING("Your eyes are really starting to hurt. This can't be good for you!"))
 
 
 /obj/item/tool/attack(mob/living/M, mob/living/user, var/target_zone)
@@ -1215,7 +1220,7 @@
 	if(use_power_cost)
 		var/ratio = 0
 		//make sure that rounding down will not give us the empty state even if we have charge for a shot left.
-		if(cell && cell.charge >= use_power_cost)
+		if(cell && cell.charge >= use_power_cost && cell.maxcharge > 0) // Makes sure cell.maxcharge is greater than 0, or it will divide by 0 - Ryuu
 			ratio = cell.charge / cell.maxcharge
 			ratio = max(round(ratio, 0.25) * 100, 25)
 			add_overlay("[icon_state]-[ratio]")
@@ -1223,7 +1228,7 @@
 	if(use_fuel_cost)
 		var/ratio = 0
 		//make sure that rounding down will not give us the empty state even if we have charge for a shot left.
-		if(get_fuel() >= use_fuel_cost)
+		if(get_fuel() >= use_fuel_cost && max_fuel > 0) // Makes sure that max_fuel is greater than 0, or it will divide by 0 - Ryuu
 			ratio = get_fuel() / max_fuel
 			ratio = max(round(ratio, 0.25) * 100, 25)
 			add_overlay("[icon_state]-[ratio]")
@@ -1276,8 +1281,9 @@
 
 /obj/screen/item_action/top_bar/tool_info
 	icon = 'icons/mob/screen/gun_actions.dmi'
-	screen_loc = "8,1:13"
+	screen_loc = "7.95,1.4"
 	minloc = "7,2:13"
+	ErisOptimized_minloc = "16,10.3"
 	name = "Tool information"
 	icon_state = "info"
 

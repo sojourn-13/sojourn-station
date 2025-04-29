@@ -144,6 +144,7 @@
 	var/b_loss
 	var/f_loss
 	var/bomb_defense = getarmor(null, ARMOR_BOMB) + mob_bomb_defense
+	var/ear_protection = earcheck()
 	switch (severity)
 		if (1.0)
 			b_loss += 500
@@ -161,13 +162,13 @@
 			if (!shielded)
 				b_loss += 150
 
-			if (!istype(l_ear, /obj/item/clothing/ears/earmuffs) && !istype(r_ear, /obj/item/clothing/ears/earmuffs))
+			if (ear_protection < 2)
 				ear_damage += 30
 				ear_deaf += 120
 
 		if(3.0)
 			b_loss += 100
-			if (!istype(l_ear, /obj/item/clothing/ears/earmuffs) && !istype(r_ear, /obj/item/clothing/ears/earmuffs))
+			if (ear_protection < 1)
 				ear_damage += 15
 				ear_deaf += 60
 
@@ -656,6 +657,40 @@ var/list/rank_prefix = list(\
 
 	return flash_protection
 
+///earcheck()
+///Returns a number
+/mob/living/carbon/human/earcheck()
+	var/ear_protection_questionmark = 0
+
+	if(istype(l_ear, /obj/item/clothing/ears/earmuffs) && istype(r_ear, /obj/item/clothing/ears/earmuffs))
+		ear_protection_questionmark += 2
+
+	if(istype(head, /obj/item/clothing/head/helmet))
+		ear_protection_questionmark += 1
+
+	//we already speak loudly so we are used to it
+	if(HULK in mutations)
+		ear_protection_questionmark += 1
+
+	if(sdisabilities & DEAF)
+		ear_protection_questionmark += 10 //Your deaf
+
+	if(isdeaf(src))
+		ear_protection_questionmark += 10 //Your deaf
+
+	if(istype(l_ear, /obj/item/device/radio/headset/headset_sec/bowman) || istype(r_ear, /obj/item/device/radio/headset/headset_sec/bowman))
+		ear_protection_questionmark += 1
+	if(istype(l_ear, /obj/item/device/radio/headset/heads/hos/bowman) || istype(r_ear, /obj/item/device/radio/headset/heads/hos/bowman))
+		ear_protection_questionmark += 1
+
+	// D:
+	if(stats.getPerk(PERK_EAR_OF_QUICKSILVER))
+		ear_protection_questionmark *= 0.5
+		ear_protection_questionmark = round(ear_protection_questionmark)
+		ear_protection_questionmark -= 1
+
+	return ear_protection_questionmark
+
 //Used by various things that knock people out by applying blunt trauma to the head.
 //Checks that the species has a "head" (brain containing organ) and that hit_zone refers to it.
 /mob/living/carbon/human/proc/headcheck(var/target_zone, var/brain_tag = BP_BRAIN)
@@ -982,6 +1017,8 @@ var/list/rank_prefix = list(\
 		if(organ.status & ORGAN_SPLINTED) //Splints prevent movement.
 			continue
 
+		//Small pity system to half the amount of damage done by stacks of sharpnal. Has to be exstreamly unlucky to use it.
+		var/pity = FALSE
 		for(var/obj/item/O in organ.implants)
 			// Shrapnel hurts when you move, and implanting knives is a bad idea
 			if(prob(5) && is_sharp(O))
@@ -1001,7 +1038,11 @@ var/list/rank_prefix = list(\
 					if(species.reagent_tag == IS_SYNTHETIC && istype(organ, /obj/item/organ/external/chest))
 						continue
 
-					organ.take_damage(3, BRUTE, organ.max_damage, 6.7, TRUE, TRUE)	// When the limb is at 60% of max health, internal organs start taking damage.
+					if(!pity)
+						organ.take_damage(3, BRUTE, organ.max_damage, 1.3, TRUE, TRUE)
+						pity = TRUE
+					else
+						pity = FALSE
 					if(organ.setBleeding())
 						organ.take_damage(2, BRUTE) //Extra 2 damage
 					if(species.reagent_tag == IS_CHTMANT)
@@ -1511,7 +1552,7 @@ var/list/rank_prefix = list(\
 		if(!istype(check_organ))
 			return 0
 		return check_organ.organ_can_feel_pain() */ //TODO: This also doesn't work on Eris :))
-	return !(species.flags & NO_PAIN)
+	return !((species.flags & NO_PAIN) || (PAIN_LESS in mutations))
 
 /mob/living/carbon/human/proc/check_self_for_injuries()
 	if(stat)
@@ -1707,6 +1748,24 @@ var/list/rank_prefix = list(\
 
 
 #undef SLIME_TRANSPARENCY
+
+//Appendix value!
+//Appendix's help in a *small way* acting as helper in the following chem affects giving a boost
+//Downside is of course having an appendix
+/mob/living/carbon/human/add_chemical_effect(var/effect, var/magnitude = 1, var/limited = FALSE)
+	var/appendix_value = get_organ_efficiency(OP_APPENDIX)
+
+	if(appendix_value)
+		appendix_value *= 0.001 // 100 -> 0.1
+		if(effect == CE_ANTIBIOTIC)
+			magnitude += appendix_value
+		if(effect == CE_ANTITOX)
+			magnitude += appendix_value
+		if(effect == CE_STABLE)
+			magnitude += appendix_value
+
+	..()
+
 
 //Typically works to set yourself on the top of same layers
 /mob/living/carbon/human/verb/move_to_top()

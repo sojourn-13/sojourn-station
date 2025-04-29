@@ -61,12 +61,12 @@
 
 /obj/random/lathe_disk/bolt_gun/item_to_spawn()
 	return pickweight(list(
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/heavysniper = 1,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/armstrong = 6,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/custer = 4,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/roe = 4,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/boltgun_sa = 6,
-				/obj/item/computer_hardware/hard_drive/portable/design/blackshield/bounty_lever = 2))
+				/obj/item/pc_part/drive/disk/design/guns/heavysniper = 1,
+				/obj/item/pc_part/drive/disk/design/guns/armstrong = 6,
+				/obj/item/pc_part/drive/disk/design/guns/custer = 4,
+				/obj/item/pc_part/drive/disk/design/guns/roe = 4,
+				/obj/item/pc_part/drive/disk/design/guns/boltgun_sa = 6,
+				/obj/item/pc_part/drive/disk/design/blackshield/bounty_lever = 2))
 
 /obj/random/lathe_disk/lmg
 	name = "random lmg lathe disk"
@@ -79,12 +79,12 @@
 
 /obj/random/lathe_disk/lmg/item_to_spawn()
 	return pickweight(list(
-				/obj/item/computer_hardware/hard_drive/portable/design/blackshield/dp = 3,
-				/obj/item/computer_hardware/hard_drive/portable/design/blackshield/semyonovich = 4,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/sa_pk = 2,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/tk = 1.5,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/ex_ppsh = 1,
-				/obj/item/computer_hardware/hard_drive/portable/design/nt/concillium = 2))
+				/obj/item/pc_part/drive/disk/design/blackshield/dp = 3,
+				/obj/item/pc_part/drive/disk/design/blackshield/semyonovich = 4,
+				/obj/item/pc_part/drive/disk/design/guns/sa_pk = 2,
+				/obj/item/pc_part/drive/disk/design/guns/tk = 1.5,
+				/obj/item/pc_part/drive/disk/design/guns/ex_ppsh = 1,
+				/obj/item/pc_part/drive/disk/design/nt/concillium = 2))
 
 
 /obj/random/lathe_disk/smg
@@ -98,15 +98,15 @@
 
 /obj/random/lathe_disk/smg/item_to_spawn()
 	return pickweight(list(
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/texan = 6,
-				/obj/item/computer_hardware/hard_drive/portable/design/blackshield/semyonovich = 5,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/bastard = 3,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/thompson = 4,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/freedom = 2,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/vector = 3,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/specop = 2,
-				/obj/item/computer_hardware/hard_drive/portable/design/blackshield/triage = 2,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/ex_drozd = 1))
+				/obj/item/pc_part/drive/disk/design/guns/texan = 6,
+				/obj/item/pc_part/drive/disk/design/blackshield/semyonovich = 5,
+				/obj/item/pc_part/drive/disk/design/guns/bastard = 3,
+				/obj/item/pc_part/drive/disk/design/guns/thompson = 4,
+				/obj/item/pc_part/drive/disk/design/guns/freedom = 2,
+				/obj/item/pc_part/drive/disk/design/guns/vector = 3,
+				/obj/item/pc_part/drive/disk/design/guns/specop = 2,
+				/obj/item/pc_part/drive/disk/design/blackshield/triage = 2,
+				/obj/item/pc_part/drive/disk/design/guns/ex_drozd = 1))
 
 /obj/random/lathe_disk/rifle
 	name = "random assault rifle lathe disk"
@@ -119,19 +119,19 @@
 
 /obj/random/lathe_disk/rifle/item_to_spawn()
 	return pickweight(list(
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/bulldog = 4,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/sol = 4,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/ostwind = 5,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/pulse_rifle = 1,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/sa_kalashnikov = 2,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/tac_kalashnikov = 1,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/python = 1,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/copperhead = 2,
-				/obj/item/computer_hardware/hard_drive/portable/design/blackshield/luger = 3,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/bulldog = 3,
-				/obj/item/computer_hardware/hard_drive/portable/design/blackshield/duty = 1,
-				/obj/item/computer_hardware/hard_drive/portable/design/blackshield/watchtower = 2,
-				/obj/item/computer_hardware/hard_drive/portable/design/strelki = 3,))
+				/obj/item/pc_part/drive/disk/design/guns/bulldog = 4,
+				/obj/item/pc_part/drive/disk/design/guns/sol = 4,
+				/obj/item/pc_part/drive/disk/design/guns/ostwind = 5,
+				/obj/item/pc_part/drive/disk/design/guns/pulse_rifle = 1,
+				/obj/item/pc_part/drive/disk/design/guns/sa_kalashnikov = 2,
+				/obj/item/pc_part/drive/disk/design/guns/tac_kalashnikov = 1,
+				/obj/item/pc_part/drive/disk/design/guns/viper = 1,
+				/obj/item/pc_part/drive/disk/design/guns/copperhead = 2,
+				/obj/item/pc_part/drive/disk/design/blackshield/luger = 3,
+				/obj/item/pc_part/drive/disk/design/guns/bulldog = 3,
+				/obj/item/pc_part/drive/disk/design/blackshield/duty = 1,
+				/obj/item/pc_part/drive/disk/design/blackshield/watchtower = 2,
+				/obj/item/pc_part/drive/disk/design/strelki = 3,))
 
 /obj/random/lathe_disk/rifle_heavy
 	name = "random heavy rifle lathe disk"
@@ -139,8 +139,10 @@
 
 /obj/random/lathe_disk/rifle_heavy/item_to_spawn()
 	return pickweight(list(
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/omni/longarm,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/omni = 4))
+				/obj/item/pc_part/drive/disk/design/nt/shepherd,
+				/obj/item/pc_part/drive/disk/design/guns/omni/longarm,
+				/obj/item/pc_part/drive/disk/design/guns/omni = 4))
+
 
 
 /obj/random/lathe_disk/pistol
@@ -154,15 +156,15 @@
 
 /obj/random/lathe_disk/pistol/item_to_spawn()
 	return pickweight(list(
-				/obj/item/computer_hardware/hard_drive/portable/design/nt/mk58 = 5,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/colt = 5,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/rafale = 2,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/lamia = 2,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/basilisk = 1,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/cheap_guns = 6,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/liberty = 2,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/glock = 2,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/judiciary =2))
+				/obj/item/pc_part/drive/disk/design/nt/mk58 = 5,
+				/obj/item/pc_part/drive/disk/design/guns/colt = 5,
+				/obj/item/pc_part/drive/disk/design/guns/rafale = 2,
+				/obj/item/pc_part/drive/disk/design/guns/lamia = 2,
+				/obj/item/pc_part/drive/disk/design/guns/basilisk = 1,
+				/obj/item/pc_part/drive/disk/design/guns/cheap_guns = 6,
+				/obj/item/pc_part/drive/disk/design/guns/liberty = 2,
+				/obj/item/pc_part/drive/disk/design/guns/glock = 2,
+				/obj/item/pc_part/drive/disk/design/guns/judiciary =2))
 
 /obj/random/lathe_disk/grande
 	name = "random grenade based weapon lathe disk"
@@ -175,11 +177,11 @@
 
 /obj/random/lathe_disk/grande/item_to_spawn()
 	return pickweight(list(
-				/obj/item/computer_hardware/hard_drive/portable/design/nt/protector = 3,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/lenar = 2,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/china = 4,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/pitbull = 2,
-				/obj/item/computer_hardware/hard_drive/portable/design/nt/antebellum = 1))
+				/obj/item/pc_part/drive/disk/design/nt/protector = 3,
+				/obj/item/pc_part/drive/disk/design/guns/lenar = 2,
+				/obj/item/pc_part/drive/disk/design/guns/china = 4,
+				/obj/item/pc_part/drive/disk/design/guns/pitbull = 2,
+				/obj/item/pc_part/drive/disk/design/nt/antebellum = 1))
 
 /obj/random/lathe_disk/shotgun
 	name = "random shotgun lathe disk"
@@ -192,14 +194,14 @@
 
 /obj/random/lathe_disk/shotgun/item_to_spawn()
 	return pickweight(list(
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/doublebarrel = 5,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/grizzly = 7,
-				/obj/item/computer_hardware/hard_drive/portable/design/nt/regulator = 4,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/gladstone = 5,
-				/obj/item/computer_hardware/hard_drive/portable/design/nt/lemant = 2, //Has a built in shotgun, so low odds but still here
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/state = 4,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/pug = 3,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/sbaw = 0.7)) // Should be rarer as it has become too good.
+				/obj/item/pc_part/drive/disk/design/guns/doublebarrel = 5,
+				/obj/item/pc_part/drive/disk/design/guns/grizzly = 7,
+				/obj/item/pc_part/drive/disk/design/nt/regulator = 4,
+				/obj/item/pc_part/drive/disk/design/guns/gladstone = 5,
+				/obj/item/pc_part/drive/disk/design/nt/lemant = 2, //Has a built in shotgun, so low odds but still here
+				/obj/item/pc_part/drive/disk/design/guns/state = 4,
+				/obj/item/pc_part/drive/disk/design/guns/pug = 3,
+				/obj/item/pc_part/drive/disk/design/guns/sbaw = 0.7)) // Should be rarer as it has become too good.
 
 /obj/random/lathe_disk/revolver
 	name = "random revolver lathe disk"
@@ -212,14 +214,14 @@
 
 /obj/random/lathe_disk/revolver/item_to_spawn()
 	return pickweight(list(
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/cheap_guns = 5,
-				/obj/item/computer_hardware/hard_drive/portable/design/nt/lemant = 5,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/rex10 = 5,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/rev10 = 3,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/revolver = 4,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/stun_revolver = 2,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/sixshot = 2,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/mateba = 1))
+				/obj/item/pc_part/drive/disk/design/guns/cheap_guns = 5,
+				/obj/item/pc_part/drive/disk/design/nt/lemant = 5,
+				/obj/item/pc_part/drive/disk/design/guns/rex10 = 5,
+				/obj/item/pc_part/drive/disk/design/guns/rev10 = 3,
+				/obj/item/pc_part/drive/disk/design/guns/revolver = 4,
+				/obj/item/pc_part/drive/disk/design/guns/stun_revolver = 2,
+				/obj/item/pc_part/drive/disk/design/guns/sixshot = 2,
+				/obj/item/pc_part/drive/disk/design/guns/mateba = 1))
 
 /obj/random/lathe_disk/ammo
 	name = "random ammo lathe disk"
@@ -232,11 +234,11 @@
 
 /obj/random/lathe_disk/ammo/item_to_spawn()
 	return pickweight(list(
-				/obj/item/computer_hardware/hard_drive/portable/design/nonlethal_ammo = 3,
-				/obj/item/computer_hardware/hard_drive/portable/design/exotic_ammo = 1,
-				/obj/item/computer_hardware/hard_drive/portable/design/lethal_ammo = 2,
-				/obj/item/computer_hardware/hard_drive/portable/design/ammo_boxes_smallarms = 2,
-				/obj/item/computer_hardware/hard_drive/portable/design/ammo_boxes_rifle = 2))
+				/obj/item/pc_part/drive/disk/design/nonlethal_ammo = 3,
+				/obj/item/pc_part/drive/disk/design/exotic_ammo = 1,
+				/obj/item/pc_part/drive/disk/design/lethal_ammo = 2,
+				/obj/item/pc_part/drive/disk/design/ammo_boxes_smallarms = 2,
+				/obj/item/pc_part/drive/disk/design/ammo_boxes_rifle = 2))
 
 /obj/random/lathe_disk/laser_gun
 	name = "random laser gun lathe disk"
@@ -249,27 +251,27 @@
 
 /obj/random/lathe_disk/laser_gun/item_to_spawn()
 	return pickweight(list(
-				/obj/item/computer_hardware/hard_drive/portable/design/nt/counselor = 6,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/spiderrose = 4,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/martin = 4,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/firestorm = 3,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/lasercore = 2,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/lasercannon = 2,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/sunrise = 1,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/centauri = 1,
+				/obj/item/pc_part/drive/disk/design/nt/counselor = 6,
+				/obj/item/pc_part/drive/disk/design/guns/spiderrose = 4,
+				/obj/item/pc_part/drive/disk/design/guns/martin = 4,
+				/obj/item/pc_part/drive/disk/design/guns/firestorm = 3,
+				/obj/item/pc_part/drive/disk/design/guns/lasercore = 2,
+				/obj/item/pc_part/drive/disk/design/guns/lasercannon = 2,
+				/obj/item/pc_part/drive/disk/design/guns/sunrise = 1,
+				/obj/item/pc_part/drive/disk/design/guns/centauri = 1,
 
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/stun_revolver = 1,
+				/obj/item/pc_part/drive/disk/design/guns/stun_revolver = 1,
 
-				/obj/item/computer_hardware/hard_drive/portable/design/nt/nemesis = 2,
-				/obj/item/computer_hardware/hard_drive/portable/design/nt/themis = 4,
-				/obj/item/computer_hardware/hard_drive/portable/design/nt/lightfall = 4,
-				/obj/item/computer_hardware/hard_drive/portable/design/nt/carpedie = 1,
-				/obj/item/computer_hardware/hard_drive/portable/design/nt/valkirye = 2,
+				/obj/item/pc_part/drive/disk/design/nt/nemesis = 2,
+				/obj/item/pc_part/drive/disk/design/nt/themis = 4,
+				/obj/item/pc_part/drive/disk/design/nt/lightfall = 4,
+				/obj/item/pc_part/drive/disk/design/nt/carpedie = 1,
+				/obj/item/pc_part/drive/disk/design/nt/valkirye = 2,
 				/obj/random/lathe_disk/ion_gun/low_chance = 2,
 
-				/obj/item/computer_hardware/hard_drive/portable/design/nt/dominion = 2,
-				/obj/item/computer_hardware/hard_drive/portable/design/nt/purger = 2,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/cassad = 1))
+				/obj/item/pc_part/drive/disk/design/nt/dominion = 2,
+				/obj/item/pc_part/drive/disk/design/nt/purger = 2,
+				/obj/item/pc_part/drive/disk/design/guns/cassad = 1))
 
 /obj/random/lathe_disk/ion_gun
 	name = "random ion gun lathe disk"
@@ -282,5 +284,5 @@
 
 /obj/random/lathe_disk/ion_gun/item_to_spawn()
 	return pickweight(list(
-				/obj/item/computer_hardware/hard_drive/portable/design/nt/halicon = 2,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/ion_pistol = 1))
+				/obj/item/pc_part/drive/disk/design/nt/halicon = 2,
+				/obj/item/pc_part/drive/disk/design/guns/ion_pistol = 1))

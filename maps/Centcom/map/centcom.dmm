@@ -1034,7 +1034,7 @@
 /area/shuttle/skipjack_area)
 "dv" = (
 /obj/structure/table/steel,
-/obj/item/computer_hardware/hard_drive/portable/advanced/shady,
+/obj/item/pc_part/drive/disk/adv/shady,
 /turf/simulated/floor/reinforced,
 /area/shuttle/skipjack_area)
 "dw" = (
@@ -1229,10 +1229,10 @@
 "ee" = (
 /obj/structure/table/steel,
 /obj/item/storage/box/donkpockets,
-/obj/item/reagent_containers/food/condiment/saltshaker{
+/obj/item/reagent_containers/condiment/saltshaker{
 	pixel_x = 4
 	},
-/obj/item/reagent_containers/food/condiment/peppermill{
+/obj/item/reagent_containers/condiment/peppermill{
 	pixel_x = -4
 	},
 /turf/simulated/floor/reinforced,
@@ -2119,10 +2119,10 @@
 /area/space)
 "gv" = (
 /obj/structure/table/steel,
-/obj/item/computer_hardware/hard_drive/portable/design/security,
-/obj/item/computer_hardware/hard_drive/portable/design/lethal_ammo,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/lamia,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/ladon/dark,
+/obj/item/pc_part/drive/disk/design/security,
+/obj/item/pc_part/drive/disk/design/lethal_ammo,
+/obj/item/pc_part/drive/disk/design/guns/lamia,
+/obj/item/pc_part/drive/disk/design/guns/ladon/dark,
 /turf/simulated/floor/tiled/dark/golden,
 /area/shuttle/skipjack_area)
 "gw" = (
@@ -2557,7 +2557,7 @@
 	dir = 4
 	},
 /obj/structure/table/steel,
-/obj/item/computer_hardware/hard_drive/portable/design/misc,
+/obj/item/pc_part/drive/disk/design/misc,
 /turf/simulated/floor/tiled/dark/golden,
 /area/shuttle/skipjack_area)
 "hv" = (
@@ -2580,33 +2580,33 @@
 /area/centcom/evac)
 "hz" = (
 /obj/structure/table/reinforced,
-/obj/item/reagent_containers/food/snacks/meat,
-/obj/item/reagent_containers/food/snacks/meat,
-/obj/item/reagent_containers/food/snacks/meat,
-/obj/item/reagent_containers/food/snacks/meat,
-/obj/item/reagent_containers/food/snacks/meat,
-/obj/item/reagent_containers/food/snacks/meat,
-/obj/item/reagent_containers/food/snacks/meat,
-/obj/item/reagent_containers/food/snacks/meat,
-/obj/item/reagent_containers/food/snacks/meat,
-/obj/item/reagent_containers/food/snacks/meat,
-/obj/item/reagent_containers/food/snacks/meat,
-/obj/item/reagent_containers/food/snacks/meat,
-/obj/item/reagent_containers/food/snacks/meat,
-/obj/item/reagent_containers/food/snacks/meat,
-/obj/item/reagent_containers/food/snacks/meat,
-/obj/item/reagent_containers/food/snacks/meat,
-/obj/item/reagent_containers/food/snacks/meat,
-/obj/item/reagent_containers/food/snacks/meat,
-/obj/item/reagent_containers/food/snacks/meat,
-/obj/item/reagent_containers/food/snacks/meat,
-/obj/item/reagent_containers/food/snacks/meat,
-/obj/item/reagent_containers/food/snacks/meat,
-/obj/item/reagent_containers/food/snacks/meat,
-/obj/item/reagent_containers/food/snacks/meat,
-/obj/item/reagent_containers/food/snacks/meat,
-/obj/item/reagent_containers/food/snacks/meat,
-/obj/item/reagent_containers/food/snacks/meat,
+/obj/item/reagent_containers/snacks/meat,
+/obj/item/reagent_containers/snacks/meat,
+/obj/item/reagent_containers/snacks/meat,
+/obj/item/reagent_containers/snacks/meat,
+/obj/item/reagent_containers/snacks/meat,
+/obj/item/reagent_containers/snacks/meat,
+/obj/item/reagent_containers/snacks/meat,
+/obj/item/reagent_containers/snacks/meat,
+/obj/item/reagent_containers/snacks/meat,
+/obj/item/reagent_containers/snacks/meat,
+/obj/item/reagent_containers/snacks/meat,
+/obj/item/reagent_containers/snacks/meat,
+/obj/item/reagent_containers/snacks/meat,
+/obj/item/reagent_containers/snacks/meat,
+/obj/item/reagent_containers/snacks/meat,
+/obj/item/reagent_containers/snacks/meat,
+/obj/item/reagent_containers/snacks/meat,
+/obj/item/reagent_containers/snacks/meat,
+/obj/item/reagent_containers/snacks/meat,
+/obj/item/reagent_containers/snacks/meat,
+/obj/item/reagent_containers/snacks/meat,
+/obj/item/reagent_containers/snacks/meat,
+/obj/item/reagent_containers/snacks/meat,
+/obj/item/reagent_containers/snacks/meat,
+/obj/item/reagent_containers/snacks/meat,
+/obj/item/reagent_containers/snacks/meat,
+/obj/item/reagent_containers/snacks/meat,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/centcom/evac)
 "hA" = (
@@ -2659,7 +2659,7 @@
 "hH" = (
 /obj/structure/table/reinforced,
 /obj/item/modular_computer/tablet/preset/custom_loadout/advanced,
-/obj/item/computer_hardware/hard_drive/portable/advanced/shady,
+/obj/item/pc_part/drive/disk/adv/shady,
 /turf/simulated/floor/tiled/white/gray_perforated,
 /area/shuttle/mercshuttle_area)
 "hI" = (
@@ -2861,7 +2861,7 @@
 	pixel_x = 1;
 	pixel_y = 4
 	},
-/obj/item/reagent_containers/food/snacks/human/kabob,
+/obj/item/reagent_containers/snacks/human/kabob,
 /obj/machinery/light{
 	dir = 1
 	},
@@ -2950,7 +2950,7 @@
 /area/shuttle/skipjack_area)
 "iy" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
-/obj/item/reagent_containers/food/snacks/human/kabob,
+/obj/item/reagent_containers/snacks/human/kabob,
 /turf/simulated/floor/tiled/cafe,
 /area/centcom/merc_base)
 "iz" = (
@@ -3141,15 +3141,15 @@
 /area/centcom/merc_base)
 "iZ" = (
 /obj/structure/table/reinforced,
-/obj/item/reagent_containers/food/drinks/bottle/vodka{
+/obj/item/reagent_containers/drinks/bottle/vodka{
 	pixel_x = 3;
 	pixel_y = 12
 	},
-/obj/item/reagent_containers/food/drinks/bottle/wine{
+/obj/item/reagent_containers/drinks/bottle/wine{
 	pixel_x = -1;
 	pixel_y = 8
 	},
-/obj/item/reagent_containers/food/snacks/human/kabob,
+/obj/item/reagent_containers/snacks/human/kabob,
 /turf/simulated/floor/tiled/cafe,
 /area/centcom/merc_base)
 "ja" = (
@@ -3192,7 +3192,7 @@
 /area/shuttle/skipjack_area)
 "jf" = (
 /obj/structure/table/reinforced,
-/obj/item/device/scanner/soteria_scanner,
+/obj/item/device/scanner/gene_debug_scanner,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/centcom/evac)
 "jg" = (
@@ -3212,8 +3212,8 @@
 /area/shuttle/skipjack_area)
 "ji" = (
 /obj/structure/table/reinforced,
-/obj/item/computer_hardware/hard_drive/portable/design/genetics_kit,
-/obj/item/computer_hardware/hard_drive/portable/design/rped,
+/obj/item/pc_part/drive/disk/design/genetics_kit,
+/obj/item/pc_part/drive/disk/design/rped,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/centcom/evac)
 "jj" = (
@@ -4686,7 +4686,7 @@
 	pixel_x = -3;
 	pixel_y = 8
 	},
-/obj/item/reagent_containers/food/drinks/flask/barflask,
+/obj/item/reagent_containers/drinks/flask/barflask,
 /obj/item/device/radio/intercom/syndicate{
 	dir = 8;
 	pixel_x = 22
@@ -4699,9 +4699,9 @@
 	},
 /obj/structure/table/standard,
 /obj/effect/floor_decal/industrial/hatch,
-/obj/item/computer_hardware/hard_drive/portable/design/lethal_ammo,
-/obj/item/computer_hardware/hard_drive/portable/design/security,
-/obj/item/computer_hardware/hard_drive/portable/design/robustcells,
+/obj/item/pc_part/drive/disk/design/lethal_ammo,
+/obj/item/pc_part/drive/disk/design/security,
+/obj/item/pc_part/drive/disk/design/robustcells,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/shuttle/mercshuttle_area)
 "mL" = (
@@ -4946,7 +4946,7 @@
 "ns" = (
 /obj/structure/table/woodentable,
 /obj/structure/table/woodentable,
-/obj/item/reagent_containers/food/snacks/milosoup,
+/obj/item/reagent_containers/snacks/milosoup,
 /turf/unsimulated/floor{
 	dir = 8;
 	icon_state = "wood"
@@ -5030,7 +5030,7 @@
 /area/shuttle/mercshuttle_area)
 "nE" = (
 /obj/structure/table/woodentable,
-/obj/item/reagent_containers/food/snacks/chawanmushi,
+/obj/item/reagent_containers/snacks/chawanmushi,
 /turf/unsimulated/floor{
 	dir = 8;
 	icon_state = "wood"
@@ -5373,7 +5373,7 @@
 /turf/simulated/floor/wood/wild1,
 /area/centcom/evac)
 "oD" = (
-/mob/living/simple_animal/hostile/bioshock,
+/mob/living/simple/hostile/bioshock,
 /turf/simulated/floor/fixed/fgrass,
 /area/centcom/evac)
 "oE" = (
@@ -5393,42 +5393,42 @@
 /area/centcom/evac)
 "oL" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/snacks/meat,
+/obj/item/reagent_containers/snacks/meat,
 /turf/simulated/floor/tiled/cafe,
 /area/centcom/evac)
 "oM" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/cooking_with_jane/cooking_container/pot,
+/obj/item/reagent_containers/cwj/container/pot,
 /turf/simulated/floor/tiled/cafe,
 /area/centcom/evac)
 "oN" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/cooking_with_jane/cooking_container/oven,
+/obj/item/reagent_containers/cwj/container/oven,
 /turf/simulated/floor/tiled/cafe,
 /area/centcom/evac)
 "oO" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/cooking_with_jane/cooking_container/deep_basket,
+/obj/item/reagent_containers/cwj/container/deep_basket,
 /turf/simulated/floor/tiled/cafe,
 /area/centcom/evac)
 "oP" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/cooking_with_jane/cooking_container/air_basket,
+/obj/item/reagent_containers/cwj/container/air_basket,
 /turf/simulated/floor/tiled/cafe,
 /area/centcom/evac)
 "oQ" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/cooking_with_jane/cooking_container/board,
+/obj/item/reagent_containers/cwj/container/board,
 /turf/simulated/floor/tiled/cafe,
 /area/centcom/evac)
 "oR" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/cooking_with_jane/cooking_container/bowl,
+/obj/item/reagent_containers/cwj/container/bowl,
 /turf/simulated/floor/tiled/cafe,
 /area/centcom/evac)
 "oS" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/cooking_with_jane/cooking_container/grill_grate,
+/obj/item/reagent_containers/cwj/container/grill_grate,
 /turf/simulated/floor/tiled/cafe,
 /area/centcom/evac)
 "oT" = (
@@ -5577,6 +5577,11 @@
 /obj/item/book/ritual/cruciform/priest,
 /obj/item/book/ritual/cruciform/priest,
 /turf/simulated/floor/wood/wild3,
+/area/centcom/evac)
+"pB" = (
+/obj/machinery/computer/rdconsole/unlicensed,
+/obj/item/pc_part/drive/disk/research_points/rare,
+/turf/simulated/floor/tiled/dark/gray_perforated,
 /area/centcom/evac)
 "pC" = (
 /obj/structure/railing{
@@ -5740,7 +5745,7 @@
 /turf/simulated/floor/wood/wild3,
 /area/centcom/merc_base)
 "rq" = (
-/mob/living/carbon/superior_animal/genetics/fratellis,
+/mob/living/carbon/superior/genetics/fratellis,
 /turf/simulated/floor/fixed/fgrass,
 /area/centcom/evac)
 "rr" = (
@@ -5949,6 +5954,10 @@
 /obj/effect/floor_decal/industrial/outline,
 /turf/simulated/floor/wood/wild3,
 /area/centcom/merc_base)
+"tb" = (
+/obj/machinery/autolathe/mechfab/loaded,
+/turf/simulated/floor/tiled/dark/gray_perforated,
+/area/centcom/evac)
 "ti" = (
 /obj/machinery/light{
 	dir = 1
@@ -5994,6 +6003,12 @@
 	pixel_x = -5
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
+/area/centcom/evac)
+"ts" = (
+/obj/item/device/scanner/health,
+/obj/item/storage/firstaid/surgery/si,
+/obj/structure/table/glass,
+/turf/simulated/floor/tiled/white/monofloor,
 /area/centcom/evac)
 "tt" = (
 /obj/structure/table/standard,
@@ -6164,6 +6179,11 @@
 	},
 /turf/simulated/floor/wood/wild3,
 /area/centcom/evac)
+"uP" = (
+/obj/item/pc_part/drive/disk/research_points/rare,
+/obj/structure/table/glass,
+/turf/simulated/floor/tiled/dark/gray_perforated,
+/area/centcom/evac)
 "uS" = (
 /obj/machinery/embedded_controller/radio/simple_docking_controller{
 	frequency = 1380;
@@ -6326,7 +6346,7 @@
 /area/centcom/agentoffice)
 "wx" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/snacks/dough,
+/obj/item/reagent_containers/snacks/dough,
 /turf/simulated/floor/tiled/cafe,
 /area/centcom/evac)
 "wz" = (
@@ -6360,7 +6380,7 @@
 "xg" = (
 /obj/structure/table/marble,
 /obj/item/seeds/tomatoseed,
-/obj/item/reagent_containers/food/snacks/dollop,
+/obj/item/reagent_containers/snacks/dollop,
 /turf/simulated/floor/tiled/cafe,
 /area/centcom/evac)
 "xl" = (
@@ -6502,9 +6522,9 @@
 /obj/random/junkfood/onlyburger,
 /obj/random/junkfood,
 /obj/item/storage/box/drinkingglasses,
-/obj/item/reagent_containers/food/drinks/bottle/ntcahors,
-/obj/item/reagent_containers/food/drinks/bottle/ntcahors,
-/obj/item/reagent_containers/food/drinks/bottle/ntcahors,
+/obj/item/reagent_containers/drinks/bottle/ntcahors,
+/obj/item/reagent_containers/drinks/bottle/ntcahors,
+/obj/item/reagent_containers/drinks/bottle/ntcahors,
 /turf/simulated/floor/wood/wild3,
 /area/centcom/evac)
 "yN" = (
@@ -6675,7 +6695,7 @@
 /turf/simulated/floor/tiled/techmaint_panels,
 /area/centcom/raider_base)
 "Bl" = (
-/obj/item/computer_hardware/hard_drive/portable/design/omg/basic_organ_mods,
+/obj/item/pc_part/drive/disk/design/omg/basic_organ_mods,
 /obj/structure/table/glass,
 /turf/simulated/floor/tiled/white/monofloor,
 /area/centcom/evac)
@@ -6686,10 +6706,10 @@
 /area/centcom/evac)
 "Bo" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/snacks/sandwich,
-/obj/item/reagent_containers/food/snacks/sandwich,
-/obj/item/reagent_containers/food/snacks/sandwich,
-/obj/item/reagent_containers/food/snacks/sandwich,
+/obj/item/reagent_containers/snacks/sandwich,
+/obj/item/reagent_containers/snacks/sandwich,
+/obj/item/reagent_containers/snacks/sandwich,
+/obj/item/reagent_containers/snacks/sandwich,
 /turf/simulated/floor/tiled/cafe,
 /area/centcom/evac)
 "Bp" = (
@@ -6806,7 +6826,7 @@
 /area/centcom/evac)
 "BW" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/cooking_with_jane/cooking_container/plate,
+/obj/item/reagent_containers/cwj/container/plate,
 /turf/simulated/floor/tiled/cafe,
 /area/centcom/evac)
 "BX" = (
@@ -6905,6 +6925,10 @@
 /obj/structure/grille,
 /turf/space,
 /area/space)
+"CD" = (
+/obj/machinery/autolathe/rnd/protolathe/loaded,
+/turf/simulated/floor/tiled/dark/gray_perforated,
+/area/centcom/evac)
 "CM" = (
 /obj/machinery/door/airlock/engineering{
 	name = "Guild Prep"
@@ -7045,7 +7069,7 @@
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/centcom/evac)
 "Ek" = (
-/obj/item/computer_hardware/hard_drive/portable/design/omg/simple,
+/obj/item/pc_part/drive/disk/design/omg/simple,
 /obj/structure/table/glass,
 /obj/machinery/light{
 	dir = 8;
@@ -7209,7 +7233,7 @@
 "FZ" = (
 /obj/structure/table/marble,
 /obj/structure/table/marble,
-/obj/item/reagent_containers/cooking_with_jane/cooking_container/plate,
+/obj/item/reagent_containers/cwj/container/plate,
 /turf/simulated/floor/tiled/cafe,
 /area/centcom/evac)
 "Ga" = (
@@ -7395,7 +7419,7 @@
 /turf/simulated/floor/tiled/cafe,
 /area/centcom/evac)
 "Hp" = (
-/obj/item/computer_hardware/hard_drive/portable/design/omg/diy_organs,
+/obj/item/pc_part/drive/disk/design/omg/diy_organs,
 /obj/structure/table/glass,
 /turf/simulated/floor/tiled/white/monofloor,
 /area/centcom/evac)
@@ -7526,9 +7550,9 @@
 /area/centcom/raider_base)
 "Ie" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/snacks/tofu,
-/obj/item/reagent_containers/food/snacks/tofu,
-/obj/item/reagent_containers/food/snacks/tofu,
+/obj/item/reagent_containers/snacks/tofu,
+/obj/item/reagent_containers/snacks/tofu,
+/obj/item/reagent_containers/snacks/tofu,
 /turf/simulated/floor/tiled/cafe,
 /area/centcom/evac)
 "Ij" = (
@@ -7546,14 +7570,14 @@
 /area/centcom/evac)
 "Ir" = (
 /obj/structure/table/rack/shelf,
-/obj/item/reagent_containers/food/drinks/drinkingglass{
+/obj/item/reagent_containers/drinks/drinkingglass{
 	pixel_y = -4
 	},
-/obj/item/reagent_containers/food/drinks/drinkingglass{
+/obj/item/reagent_containers/drinks/drinkingglass{
 	pixel_x = 5;
 	pixel_y = 6
 	},
-/obj/item/reagent_containers/food/drinks/drinkingglass{
+/obj/item/reagent_containers/drinks/drinkingglass{
 	pixel_x = -5;
 	pixel_y = 6
 	},
@@ -7561,7 +7585,7 @@
 /turf/simulated/floor/tiled/cafe,
 /area/centcom/evac)
 "Is" = (
-/obj/item/computer_hardware/hard_drive/portable/design/omg/alcoholic,
+/obj/item/pc_part/drive/disk/design/omg/alcoholic,
 /obj/structure/table/glass,
 /obj/machinery/light{
 	dir = 8;
@@ -7590,15 +7614,12 @@
 /area/centcom/evac)
 "II" = (
 /obj/structure/table/rack/shelf,
-/obj/item/gun/projectile/automatic/omnirifle/scoped,
-/obj/item/gun/projectile/automatic/omnirifle/scoped{
-	pixel_y = 8
+/obj/item/gun/projectile/automatic/omnirifle/scoped/fancy{
+	pixel_y = 5
 	},
-/obj/item/gun/projectile/automatic/omnirifle/scoped{
-	pixel_y = -4
-	},
-/obj/item/gun/projectile/automatic/omnirifle/scoped{
-	pixel_y = 4
+/obj/item/gun/projectile/automatic/omnirifle/scoped/fancy,
+/obj/item/gun/projectile/automatic/omnirifle/scoped/fancy{
+	pixel_y = -5
 	},
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/centcom/evac)
@@ -7915,13 +7936,13 @@
 /turf/simulated/floor/wood/wild1,
 /area/centcom/evac)
 "LZ" = (
-/obj/item/computer_hardware/hard_drive/portable/design/omg/addict,
+/obj/item/pc_part/drive/disk/design/omg/addict,
 /obj/structure/table/glass,
 /turf/simulated/floor/tiled/white/monofloor,
 /area/centcom/evac)
 "Mb" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/cooking_with_jane/cooking_container/pan,
+/obj/item/reagent_containers/cwj/container/pan,
 /turf/simulated/floor/tiled/cafe,
 /area/centcom/evac)
 "Mc" = (
@@ -8022,8 +8043,8 @@
 /area/centcom/evac)
 "Nn" = (
 /obj/structure/table/rack,
-/obj/item/computer_hardware/hard_drive/portable/design/nt/cells/plus,
-/obj/item/computer_hardware/hard_drive/portable/design/nt/caustic_rounds/plus,
+/obj/item/pc_part/drive/disk/design/nt/cells/plus,
+/obj/item/pc_part/drive/disk/design/nt/caustic_rounds/plus,
 /turf/simulated/floor/tiled/dark/golden,
 /area/centcom/evac)
 "Np" = (
@@ -8097,8 +8118,8 @@
 "NR" = (
 /obj/structure/closet/secure_closet/freezer,
 /obj/item/storage/box/drinkingglasses,
-/obj/item/reagent_containers/food/drinks/bottle/ntcahors,
-/obj/item/reagent_containers/food/drinks/bottle/ntcahors,
+/obj/item/reagent_containers/drinks/bottle/ntcahors,
+/obj/item/reagent_containers/drinks/bottle/ntcahors,
 /turf/simulated/floor/wood/wild3,
 /area/centcom/evac)
 "NT" = (
@@ -8116,9 +8137,9 @@
 /area/centcom/merc_base)
 "Oc" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/snacks/cutlet,
-/obj/item/reagent_containers/food/snacks/cutlet,
-/obj/item/reagent_containers/food/snacks/cutlet,
+/obj/item/reagent_containers/snacks/cutlet,
+/obj/item/reagent_containers/snacks/cutlet,
+/obj/item/reagent_containers/snacks/cutlet,
 /turf/simulated/floor/tiled/cafe,
 /area/centcom/evac)
 "Og" = (
@@ -8158,6 +8179,10 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/reagent_dispensers/fueltank/huge,
 /turf/simulated/floor/tiled/steel/gray_perforated,
+/area/centcom/evac)
+"Or" = (
+/obj/machinery/autolathe/rnd/imprinter/loaded,
+/turf/simulated/floor/tiled/dark/gray_perforated,
 /area/centcom/evac)
 "Ot" = (
 /obj/effect/step_trigger/thrower{
@@ -8230,6 +8255,10 @@
 /obj/item/clothing/mask/gas/wolf,
 /turf/simulated/floor/tiled/white/gray_perforated,
 /area/centcom/merc_base)
+"OQ" = (
+/obj/machinery/r_n_d/destructive_analyzer,
+/turf/simulated/floor/tiled/dark/gray_perforated,
+/area/centcom/evac)
 "OU" = (
 /turf/simulated/floor/tiled/white/gray_perforated,
 /area/centcom/merc_base)
@@ -8374,6 +8403,10 @@
 /obj/structure/table/woodentable,
 /turf/simulated/floor/tiled/dark/golden,
 /area/centcom/agentoffice)
+"PM" = (
+/obj/item/research,
+/turf/simulated/floor/tiled/dark/gray_perforated,
+/area/centcom/evac)
 "PN" = (
 /obj/structure/table/standard,
 /obj/machinery/computer/cryopod{
@@ -8797,8 +8830,8 @@
 /turf/simulated/floor/carpet/gaycarpet,
 /area/centcom/raider_base)
 "Tt" = (
-/obj/item/computer_hardware/hard_drive/portable/design/omg/teratoma,
-/obj/item/computer_hardware/hard_drive/portable/design/omg/teratoma_rare,
+/obj/item/pc_part/drive/disk/design/omg/teratoma,
+/obj/item/pc_part/drive/disk/design/omg/teratoma_rare,
 /obj/structure/table/glass,
 /turf/simulated/floor/tiled/white/monofloor,
 /area/centcom/evac)
@@ -8887,21 +8920,21 @@
 /obj/item/cell/medium/high{
 	pixel_y = -4
 	},
-/obj/item/computer_hardware/hard_drive/portable/design/nt/mk58,
-/obj/item/computer_hardware/hard_drive/portable/design/nt/plasma_shells,
-/obj/item/computer_hardware/hard_drive/portable/design/nt/counselor,
-/obj/item/computer_hardware/hard_drive/portable/design/nt/nemesis,
-/obj/item/computer_hardware/hard_drive/portable/design/nt/valkirye,
-/obj/item/computer_hardware/hard_drive/portable/design/nt/themis,
-/obj/item/computer_hardware/hard_drive/portable/design/nt/concillium,
-/obj/item/computer_hardware/hard_drive/portable/design/nt/old_guns,
-/obj/item/computer_hardware/hard_drive/portable/design/nt/new_guns,
-/obj/item/computer_hardware/hard_drive/portable/design/nt/halicon,
-/obj/item/computer_hardware/hard_drive/portable/design/nt/lightfall,
-/obj/item/computer_hardware/hard_drive/portable/design/nt/regulator,
-/obj/item/computer_hardware/hard_drive/portable/design/nt/dominion,
-/obj/item/computer_hardware/hard_drive/portable/design/nt/purger,
-/obj/item/computer_hardware/hard_drive/portable/design/nt/grenades,
+/obj/item/pc_part/drive/disk/design/nt/mk58,
+/obj/item/pc_part/drive/disk/design/nt/plasma_shells,
+/obj/item/pc_part/drive/disk/design/nt/counselor,
+/obj/item/pc_part/drive/disk/design/nt/nemesis,
+/obj/item/pc_part/drive/disk/design/nt/valkirye,
+/obj/item/pc_part/drive/disk/design/nt/themis,
+/obj/item/pc_part/drive/disk/design/nt/concillium,
+/obj/item/pc_part/drive/disk/design/nt/old_guns,
+/obj/item/pc_part/drive/disk/design/nt/new_guns,
+/obj/item/pc_part/drive/disk/design/nt/halicon,
+/obj/item/pc_part/drive/disk/design/nt/lightfall,
+/obj/item/pc_part/drive/disk/design/nt/regulator,
+/obj/item/pc_part/drive/disk/design/nt/dominion,
+/obj/item/pc_part/drive/disk/design/nt/purger,
+/obj/item/pc_part/drive/disk/design/nt/grenades,
 /obj/item/cell/large/high,
 /obj/item/cell/large/high,
 /obj/item/cell/large/high,
@@ -8919,12 +8952,12 @@
 /area/centcom/raider_base)
 "Ut" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/snacks/breadslice,
-/obj/item/reagent_containers/food/snacks/breadslice,
-/obj/item/reagent_containers/food/snacks/breadslice,
-/obj/item/reagent_containers/food/snacks/breadslice,
-/obj/item/reagent_containers/food/snacks/breadslice,
-/obj/item/reagent_containers/food/snacks/breadslice,
+/obj/item/reagent_containers/snacks/breadslice,
+/obj/item/reagent_containers/snacks/breadslice,
+/obj/item/reagent_containers/snacks/breadslice,
+/obj/item/reagent_containers/snacks/breadslice,
+/obj/item/reagent_containers/snacks/breadslice,
+/obj/item/reagent_containers/snacks/breadslice,
 /turf/simulated/floor/tiled/cafe,
 /area/centcom/evac)
 "Uw" = (
@@ -8971,7 +9004,7 @@
 /area/centcom/evac)
 "VC" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/condiment/saltshaker,
+/obj/item/reagent_containers/condiment/saltshaker,
 /turf/simulated/floor/tiled/cafe,
 /area/centcom/evac)
 "VE" = (
@@ -9221,8 +9254,8 @@
 /area/centcom/evac)
 "Yf" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/snacks/sandwich,
-/obj/item/reagent_containers/cooking_with_jane/cooking_container/grill_grate,
+/obj/item/reagent_containers/snacks/sandwich,
+/obj/item/reagent_containers/cwj/container/grill_grate,
 /turf/simulated/floor/tiled/cafe,
 /area/centcom/evac)
 "Yk" = (
@@ -26091,10 +26124,10 @@ KR
 KR
 KR
 KR
-qH
-qH
-qH
-ab
+Or
+aD
+uP
+KR
 ho
 Es
 aD
@@ -26292,11 +26325,11 @@ qH
 qH
 qH
 qH
-qH
-qH
-qH
-qH
-ab
+KR
+CD
+aD
+uP
+KR
 ho
 ho
 ho
@@ -26494,11 +26527,11 @@ qH
 qH
 qH
 qH
-qH
-qH
-qH
-qH
-ab
+KR
+pB
+aD
+uP
+KR
 KR
 KR
 KR
@@ -26696,11 +26729,11 @@ qH
 qH
 qH
 qH
-qH
-qH
-qH
-qH
-qH
+KR
+OQ
+PM
+ts
+KR
 qH
 qH
 qH
@@ -26898,11 +26931,11 @@ qH
 qH
 qH
 qH
-qH
-qH
-qH
-qH
-qH
+KR
+tb
+aD
+Ua
+KR
 qH
 qH
 qH
@@ -27100,11 +27133,11 @@ qH
 qH
 qH
 qH
-qH
-qH
-qH
-qH
-qH
+KR
+KR
+KR
+KR
+KR
 qH
 qH
 qH

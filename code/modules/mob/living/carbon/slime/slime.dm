@@ -172,6 +172,10 @@
 /mob/living/carbon/slime/bullet_act(var/obj/item/projectile/Proj)
 	if (!(Proj.testing))
 		attacked += 10
+	//Fast return for this as we always hit and always kill
+	if(istype(Proj, /obj/item/projectile/slime_death))
+		death() //We just die
+		return TRUE
 	..(Proj)
 	if (!(Proj.testing))
 		handle_regular_status_updates()

@@ -1,6 +1,6 @@
 /datum/trade_station/kriosanconfederacy
 	name_pool = list(
-		"Kriosan 'Quill' Sporting" = "A common Federacy trade ship looking for the latest game to hunt. They're sending a message. \"Greeting. Please amuse yourself with our stock.\""
+		"Kriosan 'Quill' Sporting" = "A common Federacy trade ship looking for the latest game to hunt. They're sending a message. \"Greetings. Please amuse yourself with our stock.\""
 	)
 	icon_states = list("htu_destroyer", "ship")
 	uid = "kriosanconfederacy"
@@ -11,7 +11,7 @@
 	base_income = 1600
 	wealth = 0
 	markup = COMMON_GOODS
-	hidden_inv_threshold = 32000
+	hidden_inv_threshold = 3000
 	start_discovered = TRUE //WE KNOW WERE ARE OVERHOUNDS ARE
 	spawn_always = TRUE //Were right next door
 	inventory = list(
@@ -24,6 +24,11 @@
 			/obj/item/gun/projectile/shotgun/pump,
 			/obj/item/tool/knife/dagger
 		),
+		"Hunting Provisions" = list(
+			/obj/item/reagent_containers/drinks/bottle/applejuice,
+			/obj/item/reagent_containers/drinks/bottle/cider,
+			/obj/item/storage/fancy/dogtreats = good_data("Hunting Snacks", list(1, 2), 110) //Cheaper then vender
+		),
 		"Ammo" = list(
 			/obj/item/ammo_magazine/ammobox/rifle_75_small,
 			/obj/item/ammo_magazine/ammobox/light_rifle_257_small,
@@ -32,10 +37,10 @@
 			/obj/item/ammo_magazine/ammobox/shotgun
 		),
 		"Pets" = list(
-			/mob/living/simple_animal/corgi = good_data("Noble Corgi", list(4, 5), 500),
-			/mob/living/simple_animal/corgi/puppy = good_data("Young Corgi", list(3, 5), 250),
-			/mob/living/simple_animal/lizard = good_data("Crate Pusher", list(2, 5), 100),
-			/mob/living/simple_animal/cat = good_data("Rat Slayer", list(4, 5), 150)
+			/mob/living/simple/corgi = good_data("Noble Corgi", list(1, 2), 500),
+			/mob/living/simple/corgi/puppy = good_data("Young Corgi", list(1, 2), 250),
+			/mob/living/simple/lizard = good_data("Crate Pusher", list(1, 2), 100),
+			/mob/living/simple/cat = good_data("Rat Slayer", list(1, 2), 150)
 		),
 		"Assault Armor" = list(
 			/obj/item/clothing/suit/space/void/assault = good_data("Assault Armor", list(3, 5), 20000)
@@ -52,16 +57,16 @@
 			/obj/item/gun/projectile/boltgun/scout = custom_good_amount_range(list(-3, 1)),
 			/obj/item/tool/sword/saber = custom_good_amount_range(list(-1, 3)),
 			/obj/item/tool/sword/machete,
-			/obj/item/tool/spear //Useless other then to hand craft and sell it back to them
+			/obj/item/tool/spear //Useless other than to hand craft and sell it back to them
 		)
 	)
 	offer_types = list(
-		/mob/living/simple_animal/hostile/helldiver = offer_data("helldiver", 1500, 2),
-		/mob/living/carbon/superior_animal/lodge/tatonka = offer_data("tatonka", 1000, 2),
-		/mob/living/carbon/superior_animal/lodge/tatonka/tangu = offer_data("tangu", 1500, 1),
-		/mob/living/carbon/superior_animal/lodge/clucker = offer_data("clucker", 500, 3),
-		/mob/living/carbon/superior_animal/lodge/cerberus = offer_data("cerberus", 1200, 1),
-		/mob/living/carbon/superior_animal/lodge/cerberus/chimera = offer_data("chimera", 3000, 1),
+		/mob/living/simple/hostile/helldiver = offer_data("helldiver", 1500, 2),
+		/mob/living/carbon/superior/lodge/tatonka = offer_data("tatonka", 1000, 2),
+		/mob/living/carbon/superior/lodge/tatonka/tangu = offer_data("tangu", 1500, 1),
+		/mob/living/carbon/superior/lodge/clucker = offer_data("clucker", 500, 3),
+		/mob/living/carbon/superior/lodge/cerberus = offer_data("cerberus", 1200, 1),
+		/mob/living/carbon/superior/lodge/cerberus/chimera = offer_data("chimera", 3000, 1),
 		/obj/item/animal_part/tatonka_tongue = offer_data("tatonka tongue", 120, 10),
 		/obj/item/animal_part/tatonka_horn = offer_data("tatonka horn", 100, 10),
 		/obj/item/animal_part/tangu_horn = offer_data("tangu horn", 200, 10),

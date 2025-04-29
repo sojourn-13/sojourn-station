@@ -50,6 +50,7 @@
 	sharp = FALSE
 	step_delay = 0.65
 	recoil = 5
+	embed_mult = 1.5
 
 /obj/item/projectile/bullet/pistol_35/rubber
 	name = "rubber bullet"
@@ -182,6 +183,7 @@
 	sharp = FALSE
 	step_delay = 0.5
 	recoil = 7
+	embed_mult = 1.5
 
 /obj/item/projectile/bullet/magnum_40/rubber
 	name = "rubber bullet"
@@ -321,6 +323,7 @@
 	can_ricochet = FALSE
 	step_delay = 0.8
 	recoil = 14
+	embed_mult = 2
 
 /obj/item/projectile/bullet/kurtz_50/hv
 	name = "AV bullet"
@@ -343,9 +346,9 @@
 
 /obj/item/projectile/bullet/light_rifle_257
 	icon_state = "bullet_carbine"
-	damage_types = list(BRUTE = 21)
+	damage_types = list(BRUTE = 25)
 	armor_divisor = 1
-	wounding_mult = WOUNDING_SMALL
+	wounding_mult = WOUNDING_NORMAL
 	penetrating = 1
 	can_ricochet = TRUE
 	step_delay = 0.3
@@ -363,7 +366,7 @@
 	recoil = 4
 
 /obj/item/projectile/bullet/light_rifle_257/hv
-	damage_types = list(BRUTE = 17)
+	damage_types = list(BRUTE = 19)
 	armor_divisor = 2.5
 	penetrating = 2
 	hitscan = TRUE
@@ -409,15 +412,16 @@
 
 /obj/item/projectile/bullet/light_rifle_257/lethal
 	name = "hollow-point bullet"
-	damage_types = list(BRUTE = 17)
+	damage_types = list(BRUTE = 19)
 	armor_divisor = 0.5
-	wounding_mult = WOUNDING_SERIOUS
+	wounding_mult = WOUNDING_WIDE
 	penetrating = 0
 	can_ricochet = FALSE
 	embed = TRUE
 	sharp = FALSE
 	step_delay = 0.6
 	recoil = 5
+	embed_mult = 2 //We suck and get blocked by must armor
 
 /obj/item/projectile/bullet/light_rifle_257/incend
 	name = "incendiary bullet"
@@ -433,7 +437,7 @@
 	recoil = 7
 
 /obj/item/projectile/bullet/light_rifle_257/scrap
-	damage_types = list(BRUTE = 14)
+	damage_types = list(BRUTE = 15)
 	armor_divisor = 0.5
 	affective_damage_range = 4
 	affective_ap_range = 4
@@ -445,7 +449,7 @@
 /// 7.62x39mm Rifle ///
 
 /obj/item/projectile/bullet/rifle_75
-	damage_types = list(BRUTE = 25)
+	damage_types = list(BRUTE = 27)
 	armor_divisor = 1.25
 	wounding_mult = WOUNDING_SERIOUS
 	penetrating = 1
@@ -456,7 +460,7 @@
 	recoil = 10
 
 /obj/item/projectile/bullet/rifle_75/hv
-	damage_types = list(BRUTE = 19)
+	damage_types = list(BRUTE = 21)
 	armor_divisor = 3
 	penetrating = 2
 	hitscan = TRUE
@@ -510,15 +514,16 @@
 
 /obj/item/projectile/bullet/rifle_75/lethal
 	name = "hollow-point bullet"
-	damage_types = list(BRUTE = 19)
+	damage_types = list(BRUTE = 21)
 	armor_divisor = 0.65
-	wounding_mult = WOUNDING_WIDE
+	wounding_mult = WOUNDING_EXTREME
 	penetrating = 0
 	can_ricochet = FALSE
 	embed = TRUE
 	sharp = FALSE
 	step_delay = 0.8
 	recoil = 10
+	embed_mult = 1.5
 
 /obj/item/projectile/bullet/rifle_75/incend
 	name = "incendiary bullet"
@@ -532,7 +537,7 @@
 	recoil = 9
 
 /obj/item/projectile/bullet/rifle_75/scrap
-	damage_types = list(BRUTE = 14)
+	damage_types = list(BRUTE = 17)
 	armor_divisor = 0.5
 	affective_damage_range = 3
 	affective_ap_range = 3
@@ -542,9 +547,9 @@
 
 /obj/item/projectile/bullet/heavy_rifle_408
 	icon_state = "bullet_heavy"
-	damage_types = list(BRUTE = 28)
+	damage_types = list(BRUTE = 30)
 	armor_divisor = 1.4
-	wounding_mult = WOUNDING_SERIOUS
+	wounding_mult = WOUNDING_WIDE
 	penetrating = 2
 	can_ricochet = TRUE
 	step_delay = 0.3
@@ -579,7 +584,7 @@
 
 /obj/item/projectile/bullet/heavy_rifle_408/hv
 	name = "sabot penetrator"
-	damage_types = list(BRUTE = 20)
+	damage_types = list(BRUTE = 24)
 	armor_divisor = 3.5
 	penetrating = 3
 	hitscan = TRUE
@@ -591,15 +596,16 @@
 
 /obj/item/projectile/bullet/heavy_rifle_408/lethal
 	name = "hollow-point bullet"
-	damage_types = list(BRUTE = 20)
+	damage_types = list(BRUTE = 24)
 	armor_divisor = 0.7
-	wounding_mult = WOUNDING_WIDE
+	wounding_mult = WOUNDING_DEVESTATING
 	penetrating = 0
 	can_ricochet = FALSE
 	embed = TRUE
 	sharp = FALSE
 	step_delay = 0.5
 	recoil = 16
+	embed_mult = 2
 
 /obj/item/projectile/bullet/heavy_rifle_408/incend
 	name = "incendiary bullet"
@@ -614,7 +620,7 @@
 	recoil = 15
 
 /obj/item/projectile/bullet/heavy_rifle_408/scrap
-	damage_types = list(BRUTE = 15)
+	damage_types = list(BRUTE = 20)
 	armor_divisor = 0.75
 	affective_damage_range = 4
 	affective_ap_range = 4
@@ -623,7 +629,7 @@
 ///Snowflake  ///
 
 /obj/item/projectile/bullet/c10x24
-	damage_types = list(BRUTE = 20)
+	damage_types = list(BRUTE = 25)
 	armor_divisor = 2
 	wounding_mult = WOUNDING_SMALL
 	penetrating = 2
@@ -678,6 +684,7 @@
 	affective_ap_range = 9
 	penetrating = -5
 	recoil = 20
+	embed_mult = 3 //this round is designed for this.
 
 /obj/item/projectile/bullet/antim/incend
 	damage_types = list(BURN = 45)
@@ -753,17 +760,20 @@
 
 	can_ricochet = FALSE
 	embed = TRUE
-	sharp = FALSE
+	sharp = FALSE //Flak is for exploding near target rather than penetrating
 
 	affective_damage_range = 8
-	affective_ap_range = 9 //Anti-Air
+	affective_ap_range = 8 //Anti-Air
 	recoil = 2
+	embed_mult = 1.5
 
 /obj/item/projectile/bullet/pellet/mech_flak/military //Scatter-Shot Autocannon
+	damage_types = list(BRUTE = 22)
 	range_step = 8		//projectile will lose a fragment each time it travels this distance.
 	base_spread = 90	//lower means the pellets spread more across body parts.
 	spread_step = 1	//higher means the pellets spread more across body parts with distance
 	pellets = 8
+	wounding_mult = WOUNDING_SERIOUS //Faster moving
 	affective_damage_range = 11
 	affective_ap_range = 11  //Anti-Air
 
@@ -772,38 +782,42 @@
 	icon_state = "bullet_heavy"
 	damage_types = list(BRUTE = 21)
 	wounding_mult = WOUNDING_SERIOUS
-	armor_divisor = 1.25 //To keep it somewhat fair towards the handhelds considering it has higher ammo capacity
+	armor_divisor = ARMOR_PEN_MODERATE //To keep it somewhat fair towards the handhelds considering it has higher ammo capacity
 	penetrating = 1
 
 	can_ricochet = TRUE
 
 	affective_damage_range = 6
 	affective_ap_range = 6 //Blarge rifle caliber
-	recoil = 8
+	recoil = 4 //It's mounted into a mech as well as the deviation already screws it over pretty badly - Lamasmaster
 
 /obj/item/projectile/bullet/mech_autocannon //Autocannon
 	name = "gigantic round"
 	icon_state = "slug"
-	damage_types = list(BRUTE = 56)
-	armor_divisor = 4 //Tally ho
-	wounding_mult = WOUNDING_EXTREME
-	penetrating = 3 //tank sized round
+	damage_types = list(BRUTE = 50)
+	armor_divisor = 5 //Tally ho
+	wounding_mult = WOUNDING_DEVESTATING //You don't want to get hit by a tank round presumably - Lamasmaster
+	penetrating = 2 //tank sized round
+	nocap_structures = TRUE //anit-wall/door
 
 	can_ricochet = FALSE
+	//embed = FALSE - If it becomes too much of a problem uncomment this
 
-	affective_damage_range = 8
-	affective_ap_range = 8 //Heavy blarge caliber meaning bit less range
-	recoil = 2
+	affective_damage_range = 7
+	affective_ap_range = 7 //Heavy blarge caliber meaning bit less range
+	recoil = 1
 
 /obj/item/projectile/bullet/mech_burstcannon //Burst-Fire Autocannon
 	name = "humongous round"
 	icon_state = "bullet_kurtz"
-	damage_types = list(BRUTE = 26)
-	armor_divisor = 3 //This fires 2 in a row so keep that in mind
-	wounding_mult = WOUNDING_SERIOUS
+	damage_types = list(BRUTE = 30)
+	armor_divisor = 3 //This fires 2 in a row so keep that in mind / It is technically armor defeating but for sake of it being the niche kill hordes gun alongside HMG it will stay this way - Lamasmaster
+	wounding_mult = WOUNDING_WIDE
 	penetrating = 3 //tank sized round
+	nocap_structures = TRUE //anit-wall/door
 
 	can_ricochet = FALSE
+	//embed = FALSE - If it becomes too much of a problem uncomment this
 
 	affective_damage_range = 10
 	affective_ap_range = 10 //Heavy blarge caliber but not as much as regular
@@ -864,7 +878,7 @@
 		create_reagents(10)
 		reagents.add_reagent(spray, 10)
 
-/obj/item/projectile/bullet/shotgun/beanbag/on_hit(atom/target, def_zone = null)
+/obj/item/projectile/bullet/shotgun/beanbag/pepperball/on_hit(atom/target, def_zone = null)
 	if (!testing)
 		if(isliving(target))
 			var/mob/living/L = target
@@ -941,6 +955,83 @@
 	check_armour = ARMOR_BIO //duh.
 	recoil = 8//much less damage than slug, much less recoil.
 
+//Fancy ammo that is exspensive
+/obj/item/projectile/bullet/shotgun/relay
+	name = "greyson relay shot"
+	damage_types = list(BRUTE = 22)
+	armor_divisor = 8
+	wounding_mult = WOUNDING_NORMAL
+	penetrating = 0
+	can_ricochet = FALSE
+	embed = FALSE
+	sharp = FALSE
+	step_delay = 0.95
+	check_armour = ARMOR_BIO
+	recoil = 6
+	var/allow_relay = TRUE
+	serial_type_index_bullet = "GP"
+	var/faction_shooter
+
+/obj/item/projectile/bullet/shotgun/relay/gp_npc
+	faction_shooter = "greyson"
+
+//Relay a new shot!
+/obj/item/projectile/bullet/shotgun/relay/attack_mob(mob/living/target_mob, distance, miss_modifier=0)
+	//message_admins("health 1     [target_mob.health]")
+	//We need it here so that way if we gib the mob we still relay
+	var/enemy_turf = get_turf(target_mob)
+	. = ..()
+	//message_admins("health 2     [target_mob.health]")
+	if(!testing && allow_relay)
+		for(var/mob/living/M in view(5, enemy_turf)) //We base are view based on the turf to again allow non
+			if(M.stat == DEAD || M == target_mob)
+				continue
+			if(!enemy_turf)
+				continue
+
+			if(original_firer)
+				if(M.faction != original_firer.faction \
+				&& M.colony_friend != original_firer.colony_friend \
+				&& M.friendly_to_colony != original_firer.friendly_to_colony)
+
+					var/obj/item/projectile/bullet/shotgun/relay/relayed = new type(enemy_turf)
+
+					if(health >= 1)
+						//message_admins("dont relay")
+
+						relayed.allow_relay = FALSE
+
+					relayed.relay_shoting(M, original_firer)
+
+					//message_admins("health 4     [target_mob.health]")
+					break
+
+			if(faction_shooter)
+
+				if(M.faction != faction_shooter)
+
+					var/obj/item/projectile/bullet/shotgun/relay/relayed = new type(enemy_turf)
+
+					if(health >= 1)
+						//message_admins("dont relay")
+
+						relayed.allow_relay = FALSE
+
+					relayed.relay_shoting(M, original_firer)
+
+					//message_admins("health 4     [target_mob.health]")
+					break
+
+
+/obj/item/projectile/bullet/shotgun/relay/proc/relay_shoting(mob/living/target_mob, second_shooter)
+	layer = ABOVE_ALL_MOB_LAYER
+	def_zone = BP_CHEST
+	if(ismob(second_shooter))
+		original_firer = second_shooter
+		firer = second_shooter
+	else
+		faction_shooter = second_shooter
+	launch(target_mob)
 
 //Railgun
 /obj/item/projectile/bullet/shotgun/railgun
@@ -1033,7 +1124,7 @@
 	armor_divisor = 0.6
 	wounding_mult = WOUNDING_SMALL //lotta relatively smaller pellets.
 	pellets = 4
-	range_step = 1
+	range_step = 2	//Range step of 1 includes base-tile..
 	spread_step = 10
 	knockback = 0 //We do not knockback do to issues with bullet douping
 	step_delay = 0.9
@@ -1180,6 +1271,7 @@
 	affective_ap_range = 7
 	create_type = null
 	recoil = 10
+	embed_mult = 1.5
 
 
 /obj/item/projectile/bullet/reusable/rod_bolt/rcd
@@ -1206,6 +1298,7 @@
 	affective_damage_range = 7
 	affective_ap_range = 7
 	create_type = null
+	embed_mult = 2
 
 
 /obj/item/projectile/bullet/reusable/arrow

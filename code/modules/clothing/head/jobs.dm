@@ -65,7 +65,7 @@
 
 /obj/item/clothing/head/preacher
 	name = "preacher hat"
-	desc = "Useful for hiding disdainful eyes from the godless masses."
+	desc = "A Prime's headdress that comes in many forms. It also serves to hide their distain for the faithless."
 	armor_list = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 100, rad = 0)
 	icon_state = "church_hat"
 
@@ -515,7 +515,7 @@ obj/item/clothing/head/beret/syndicate/verb/toggle_style()
 
 /obj/item/clothing/head/rank/divisor
 	name = "divisor cap"
-	desc = "A styled black divisor cap for showing everyone you are so steadfast in the name of god you don't need a helmet."
+	desc = "A black divisor cap for leisure. Who needs protection if the Absolute is your shield?"
 	icon_state = "divisor_cap"
 	item_state = "divisor_cap"
 

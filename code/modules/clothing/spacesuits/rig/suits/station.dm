@@ -168,6 +168,7 @@ Advanced Voidsuit: Guild Master
 	initial_modules = list(
 		/obj/item/rig_module/ai_container,
 		/obj/item/rig_module/maneuvering_jets,
+		/obj/item/rig_module/power_sink,
 		/obj/item/rig_module/device/rcd,
 		/obj/item/rig_module/vision/meson,
 		/obj/item/rig_module/cargo_clamp,
@@ -187,8 +188,8 @@ Advanced Voidsuit: Guild Master
 Technomancer RIG
 ***************************************/
 /obj/item/rig/techno
-	name = "technomancer suit control module"
-	suit_type = "technomancer RIG suit"
+	name = "Artificers suit control module"
+	suit_type = "Artificers RIG suit"
 	desc = "An advanced RIG suit that protects against hazardous, low pressure and high temperature environments."
 	icon_state = "techno_rig"
 	armor_list = list(
@@ -222,6 +223,7 @@ Technomancer RIG
 /obj/item/rig/techno/equipped
 	initial_modules = list(
 		/obj/item/rig_module/storage/large,
+		/obj/item/rig_module/power_sink,
 		/obj/item/rig_module/maneuvering_jets,
 		/obj/item/rig_module/cargo_clamp,
 		)
@@ -237,7 +239,7 @@ Technomancer RIG
 	mag_slow = 1
 
 /***************************************
-	Hazmat: Chief Research Overseer
+	Hazmat: Anomalous
 ****************************************/
 /obj/item/rig/hazmat
 	name = "AMI control module"
@@ -281,7 +283,7 @@ Technomancer RIG
 
 /obj/item/rig/hazmat/equipped
 
-	req_access = list(access_rd)
+	req_access = list(access_xenoarch)
 
 	initial_modules = list(
 		/obj/item/rig_module/ai_container,
@@ -341,6 +343,14 @@ Technomancer RIG
 
 /obj/item/clothing/head/helmet/space/rig/advhazmat
 	camera_networks = list(NETWORK_RESEARCH)
+
+/obj/item/rig/advhazmat/equipped
+	req_access = list(access_xenoarch)
+	initial_modules = list(
+		/obj/item/rig_module/ai_container,
+		/obj/item/rig_module/maneuvering_jets,
+		/obj/item/rig_module/device/anomaly_scanner,
+		)
 
 /***************************************
 	Medical

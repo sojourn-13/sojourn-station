@@ -88,7 +88,7 @@
 		OP_KIDNEY_LEFT  = /obj/item/organ/internal/kidney/left/exalt,
 		OP_KIDNEY_RIGHT = /obj/item/organ/internal/kidney/right/exalt,
 		BP_BRAIN        = /obj/item/organ/internal/vital/brain,
-		OP_APPENDIX     = /obj/item/organ/internal/appendix,
+		OP_APPENDIX     = /obj/item/organ/internal/appendix/exalt,
 		OP_EYES         = /obj/item/organ/internal/eyes
 	)
 
@@ -101,6 +101,7 @@
 	name = "Sablekyne"
 	name_plural = "Sablekynes"
 	default_form = FORM_SABLEKYNE
+	reagent_tag = IS_TAJ
 	obligate_form = TRUE
 	unarmed_types = list(/datum/unarmed_attack/claws/strong, /datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite/strong, /datum/unarmed_attack/horns)
 	darksight = 8
@@ -220,7 +221,7 @@
 		OP_KIDNEY_LEFT  = /obj/item/organ/internal/kidney,
 		OP_KIDNEY_RIGHT = /obj/item/organ/internal/kidney,
 		BP_BRAIN        = /obj/item/organ/internal/vital/brain,
-		OP_APPENDIX     = /obj/item/organ/internal/appendix,
+		OP_APPENDIX     = /obj/item/organ/internal/appendix/marqua,
 		OP_EYES         = /obj/item/organ/internal/eyes/marqua
 	)
 
@@ -364,6 +365,18 @@
 		STAT_ROB = 10,
 		STAT_VIG = -10,
 		STAT_COG = -10
+	)
+
+	has_process = list(    // which required-organ checks are conducted.
+		OP_HEART        = /obj/item/organ/internal/vital/heart,
+		OP_LUNGS        = /obj/item/organ/internal/vital/lungs,
+		OP_STOMACH      = /obj/item/organ/internal/stomach,
+		OP_LIVER        = /obj/item/organ/internal/liver,
+		OP_KIDNEY_LEFT  = /obj/item/organ/internal/kidney/left,
+		OP_KIDNEY_RIGHT = /obj/item/organ/internal/kidney/right,
+		BP_BRAIN        = /obj/item/organ/internal/vital/brain,
+		OP_APPENDIX     = /obj/item/organ/internal/appendix/naramad,
+		OP_EYES         = /obj/item/organ/internal/eyes
 	)
 
 	dark_color = "#ffff00"
@@ -568,7 +581,7 @@
 		OP_KIDNEY_LEFT =  /obj/item/organ/internal/kidney/left/cindarite,
 		OP_KIDNEY_RIGHT = /obj/item/organ/internal/kidney/right/cindarite,
 		BP_BRAIN =    /obj/item/organ/internal/vital/brain,
-		OP_APPENDIX = /obj/item/organ/internal/appendix,
+		OP_APPENDIX = /obj/item/organ/internal/appendix/cindarite,
 		OP_EYES =     /obj/item/organ/internal/eyes
 		)
 

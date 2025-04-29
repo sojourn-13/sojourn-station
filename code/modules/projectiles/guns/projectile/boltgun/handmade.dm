@@ -10,7 +10,7 @@
 	damage_multiplier = 1
 	penetration_multiplier = 1
 	max_shells = 5
-	fire_sound = 'sound/weapons/guns/fire/mosin.ogg'
+	fire_sound = 'sound/weapons/guns/fire/mosin_fire.ogg'
 	reload_sound = 'sound/weapons/guns/interact/rifle_load.ogg'
 	price_tag = 150 // so we dont make a market on the cargo shuttle for these
 	init_recoil = HMG_RECOIL(0.2)

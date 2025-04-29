@@ -247,7 +247,7 @@
 
 /obj/item/tool/baton/slimebaton
 	name = "xenobio baton"
-	desc = "A stunbaton that is designed against slimes and other lab misstakes."
+	desc = "A stunbaton that is designed against slimes and other lab mistakes."
 	icon_state = "prod_si"
 	item_state = "prod_si"
 	force = WEAPON_FORCE_NORMAL

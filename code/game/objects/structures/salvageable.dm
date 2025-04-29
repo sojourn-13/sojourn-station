@@ -95,14 +95,14 @@
 		/obj/item/trash/material/metal = 60,
 		/obj/item/stock_parts/capacitor = 60,
 		/obj/item/stock_parts/capacitor = 60,
-		/obj/item/computer_hardware/network_card = 40,
-		/obj/item/computer_hardware/network_card = 40,
-		/obj/item/computer_hardware/processor_unit = 40,
-		/obj/item/computer_hardware/processor_unit = 40,
-		/obj/item/computer_hardware/card_slot = 40,
-		/obj/item/computer_hardware/card_slot = 40,
+		/obj/item/pc_part/network_card = 40,
+		/obj/item/pc_part/network_card = 40,
+		/obj/item/pc_part/processor_unit = 40,
+		/obj/item/pc_part/processor_unit = 40,
+		/obj/item/pc_part/card_slot = 40,
+		/obj/item/pc_part/card_slot = 40,
 		/obj/item/stock_parts/capacitor/adv = 30,
-		/obj/item/computer_hardware/network_card/advanced = 20,
+		/obj/item/pc_part/network_card/advanced = 20,
 		/obj/item/stock_parts/capacitor/super = 5
 	)
 
@@ -210,19 +210,19 @@ obj/structure/salvageable/implant_container/Initialize()
 		/obj/item/trash/material/circuit = 60,
 		/obj/item/trash/material/metal = 60,
 		/obj/item/implant/uplink = 0.01,
-		/obj/item/computer_hardware/network_card = 40,
-		/obj/item/computer_hardware/network_card = 40,
-		/obj/item/computer_hardware/processor_unit = 40,
-		/obj/item/computer_hardware/processor_unit = 40,
-		/obj/item/computer_hardware/hard_drive = 50,
-		/obj/item/computer_hardware/hard_drive = 50,
-		/obj/item/computer_hardware/hard_drive = 50,
-		/obj/item/computer_hardware/hard_drive = 50,
-		/obj/item/computer_hardware/hard_drive = 50,
-		/obj/item/computer_hardware/hard_drive = 50,
-		/obj/item/computer_hardware/hard_drive/advanced = 30,
-		/obj/item/computer_hardware/hard_drive/advanced = 30,
-		/obj/item/computer_hardware/network_card/advanced = 20
+		/obj/item/pc_part/network_card = 40,
+		/obj/item/pc_part/network_card = 40,
+		/obj/item/pc_part/processor_unit = 40,
+		/obj/item/pc_part/processor_unit = 40,
+		/obj/item/pc_part/drive = 50,
+		/obj/item/pc_part/drive = 50,
+		/obj/item/pc_part/drive = 50,
+		/obj/item/pc_part/drive = 50,
+		/obj/item/pc_part/drive = 50,
+		/obj/item/pc_part/drive = 50,
+		/obj/item/pc_part/drive/advanced = 30,
+		/obj/item/pc_part/drive/advanced = 30,
+		/obj/item/pc_part/network_card/advanced = 20
 	)
 
 obj/structure/salvageable/data/Initialize()
@@ -243,10 +243,10 @@ obj/structure/salvageable/data/Initialize()
 		/obj/item/trash/material/circuit = 60,
 		/obj/item/trash/material/metal = 60,
 		/obj/item/implant/uplink = 0.01,
-		/obj/item/computer_hardware/network_card = 40,
-		/obj/item/computer_hardware/network_card = 40,
-		/obj/item/computer_hardware/processor_unit = 40,
-		/obj/item/computer_hardware/processor_unit = 40,
+		/obj/item/pc_part/network_card = 40,
+		/obj/item/pc_part/network_card = 40,
+		/obj/item/pc_part/processor_unit = 40,
+		/obj/item/pc_part/processor_unit = 40,
 		/obj/item/stock_parts/subspace/amplifier = 40,
 		/obj/item/stock_parts/subspace/amplifier = 40,
 		/obj/item/stock_parts/subspace/analyzer = 40,
@@ -257,7 +257,7 @@ obj/structure/salvageable/data/Initialize()
 		/obj/item/stock_parts/subspace/transmitter = 40,
 		/obj/item/stock_parts/subspace/crystal = 30,
 		/obj/item/stock_parts/subspace/crystal = 30,
-		/obj/item/computer_hardware/network_card/advanced = 20
+		/obj/item/pc_part/network_card/advanced = 20
 	)
 
 obj/structure/salvageable/server/Initialize()
@@ -272,22 +272,22 @@ obj/structure/salvageable/server/Initialize()
 		/obj/item/scrap_lump = 50,
 		/obj/item/scrap_lump = 30,
 		/obj/item/stack/cable_coil{amount = 5} = 90,
-		/obj/item/computer_hardware/led = 40,
-		/obj/item/computer_hardware/led/adv = 40,
+		/obj/item/pc_part/led = 40,
+		/obj/item/pc_part/led/adv = 40,
 		/obj/item/stack/material/glass{amount = 5} = 70,
 		/obj/item/trash/material/circuit = 60,
 		/obj/item/trash/material/metal = 60,
 		/obj/item/implant/uplink = 0.0001,
-		/obj/item/computer_hardware/network_card = 60,
-		/obj/item/computer_hardware/network_card/advanced = 40,
-		/obj/item/computer_hardware/network_card/wired = 40,
-		/obj/item/computer_hardware/card_slot = 40,
-		/obj/item/computer_hardware/processor_unit = 60,
-		/obj/item/computer_hardware/processor_unit/small = 50,
-		/obj/item/computer_hardware/processor_unit/adv = 40,
-		/obj/item/computer_hardware/processor_unit/adv/small = 30,
-		/obj/item/computer_hardware/hard_drive = 60,
-		/obj/item/computer_hardware/hard_drive/advanced = 40,
+		/obj/item/pc_part/network_card = 60,
+		/obj/item/pc_part/network_card/advanced = 40,
+		/obj/item/pc_part/network_card/wired = 40,
+		/obj/item/pc_part/card_slot = 40,
+		/obj/item/pc_part/processor_unit = 60,
+		/obj/item/pc_part/processor_unit/small = 50,
+		/obj/item/pc_part/processor_unit/adv = 40,
+		/obj/item/pc_part/processor_unit/adv/small = 30,
+		/obj/item/pc_part/drive = 60,
+		/obj/item/pc_part/drive/advanced = 40,
 		/obj/random/lathe_disk = 50,
 		/obj/random/lathe_disk/advanced = 30,
 	)
@@ -304,10 +304,10 @@ obj/structure/salvageable/personal/Initialize()
 		/obj/item/stock_parts/console_screen = 90,
 		/obj/item/stack/cable_coil{amount = 5} = 90,
 		/obj/item/implant/uplink = 0.05,
-		/obj/item/computer_hardware/processor_unit/adv = 60,
-		/obj/item/computer_hardware/hard_drive/cluster = 50,
-		/obj/item/computer_hardware/hard_drive/portable/advanced/shady = 50,
-		/obj/item/computer_hardware/hard_drive/portable/advanced/nuke = 50,
+		/obj/item/pc_part/processor_unit/adv = 60,
+		/obj/item/pc_part/drive/cluster = 50,
+		/obj/item/pc_part/drive/disk/adv/shady = 50,
+		/obj/item/pc_part/drive/disk/adv/nuke = 50,
 		/obj/item/stock_parts/capacitor/excelsior = 20,
 		/obj/item/stock_parts/scanning_module/excelsior = 20,
 		/obj/item/stock_parts/manipulator/excelsior = 20,
@@ -417,11 +417,11 @@ obj/structure/salvageable/bliss/Initialize()
 		/obj/item/stack/material/glass{amount = 5} = 90,
 		/obj/item/stock_parts/capacitor/one_star = 60,
 		/obj/item/stock_parts/capacitor/one_star = 60,
-		/obj/item/computer_hardware/processor_unit/super = 40,
-		/obj/item/computer_hardware/processor_unit/super = 40,
-		/obj/item/computer_hardware/card_slot = 40,
-		/obj/item/computer_hardware/card_slot = 40,
-		/obj/item/computer_hardware/network_card/advanced = 40,
+		/obj/item/pc_part/processor_unit/super = 40,
+		/obj/item/pc_part/processor_unit/super = 40,
+		/obj/item/pc_part/card_slot = 40,
+		/obj/item/pc_part/card_slot = 40,
+		/obj/item/pc_part/network_card/advanced = 40,
 		/obj/random/lathe_disk/advanced/onestar = 5
 	)
 
@@ -474,12 +474,12 @@ obj/structure/salvageable/bliss/Initialize()
 		/obj/item/implant/uplink = 0.001,
 		/obj/item/stack/cable_coil{amount = 5} = 90,
 		/obj/item/stack/material/glass{amount = 5} = 90,
-		/obj/item/computer_hardware/processor_unit/adv = 60,
-		/obj/item/computer_hardware/processor_unit/super = 50,
-		/obj/item/computer_hardware/hard_drive/super = 50,
-		/obj/item/computer_hardware/hard_drive/super = 50,
-		/obj/item/computer_hardware/hard_drive/cluster = 50,
-		/obj/item/computer_hardware/network_card/wired = 40,
+		/obj/item/pc_part/processor_unit/adv = 60,
+		/obj/item/pc_part/processor_unit/super = 50,
+		/obj/item/pc_part/drive/super = 50,
+		/obj/item/pc_part/drive/super = 50,
+		/obj/item/pc_part/drive/cluster = 50,
+		/obj/item/pc_part/network_card/wired = 40,
 		/obj/random/lathe_disk/advanced/onestar = 10
 	)
 
@@ -497,10 +497,10 @@ obj/structure/salvageable/bliss/Initialize()
 		/obj/item/implant/uplink = 0.001,
 		/obj/item/stack/cable_coil{amount = 5} = 90,
 		/obj/item/stack/material/glass{amount = 5} = 90,
-		/obj/item/computer_hardware/network_card/wired = 40,
-		/obj/item/computer_hardware/network_card/wired = 40,
-		/obj/item/computer_hardware/processor_unit/super = 40,
-		/obj/item/computer_hardware/processor_unit/super = 40,
+		/obj/item/pc_part/network_card/wired = 40,
+		/obj/item/pc_part/network_card/wired = 40,
+		/obj/item/pc_part/processor_unit/super = 40,
+		/obj/item/pc_part/processor_unit/super = 40,
 		/obj/item/stock_parts/subspace/amplifier = 40,
 		/obj/item/stock_parts/subspace/amplifier = 40,
 		/obj/item/stock_parts/subspace/analyzer = 40,
@@ -511,7 +511,7 @@ obj/structure/salvageable/bliss/Initialize()
 		/obj/item/stock_parts/subspace/transmitter = 40,
 		/obj/item/stock_parts/subspace/crystal = 30,
 		/obj/item/stock_parts/subspace/crystal = 30,
-		/obj/item/computer_hardware/network_card/wired = 20
+		/obj/item/pc_part/network_card/wired = 20
 	)
 
 /obj/structure/salvageable/console_os
@@ -519,8 +519,8 @@ obj/structure/salvageable/bliss/Initialize()
 	desc = "Despite being in pristine condition this console doesn't respond to anything, but looks like you can still salvage something from this."
 	icon_state = "os_console"
 	salvageable_parts = list(
-		/obj/item/computer_hardware/hard_drive/portable/research_points = 60,
-		/obj/item/computer_hardware/hard_drive/portable/research_points/rare = 25,
+		/obj/item/pc_part/drive/disk/research_points = 60,
+		/obj/item/pc_part/drive/disk/research_points/rare = 25,
 		/obj/item/scrap_lump = 30,
 		/obj/item/scrap_lump = 25,
 		/obj/item/scrap_lump = 20,
@@ -532,11 +532,11 @@ obj/structure/salvageable/bliss/Initialize()
 		/obj/item/stock_parts/console_screen = 80,
 		/obj/item/stock_parts/capacitor/one_star = 60,
 		/obj/item/stock_parts/capacitor/one_star = 60,
-		/obj/item/computer_hardware/processor_unit/super = 40,
-		/obj/item/computer_hardware/processor_unit/super = 40,
-		/obj/item/computer_hardware/card_slot = 40,
-		/obj/item/computer_hardware/card_slot = 40,
-		/obj/item/computer_hardware/network_card/advanced = 40,
+		/obj/item/pc_part/processor_unit/super = 40,
+		/obj/item/pc_part/processor_unit/super = 40,
+		/obj/item/pc_part/card_slot = 40,
+		/obj/item/pc_part/card_slot = 40,
+		/obj/item/pc_part/network_card/advanced = 40,
 		/obj/random/lathe_disk/advanced/onestar = 25
 	)
 
@@ -544,8 +544,8 @@ obj/structure/salvageable/bliss/Initialize()
 	name = "broken console"
 	icon_state = "os_console_broken"
 	salvageable_parts = list(
-		/obj/item/computer_hardware/hard_drive/portable/research_points = 30,
-		/obj/item/computer_hardware/hard_drive/portable/research_points/rare = 15,
+		/obj/item/pc_part/drive/disk/research_points = 30,
+		/obj/item/pc_part/drive/disk/research_points/rare = 15,
 		/obj/item/scrap_lump = 60,
 		/obj/item/scrap_lump = 50,
 		/obj/item/scrap_lump = 50,
@@ -558,11 +558,11 @@ obj/structure/salvageable/bliss/Initialize()
 		/obj/item/stock_parts/console_screen = 80,
 		/obj/item/stock_parts/capacitor/one_star = 60,
 		/obj/item/stock_parts/capacitor/one_star = 60,
-		/obj/item/computer_hardware/processor_unit/super = 40,
-		/obj/item/computer_hardware/processor_unit/super = 40,
-		/obj/item/computer_hardware/card_slot = 40,
-		/obj/item/computer_hardware/card_slot = 40,
-		/obj/item/computer_hardware/network_card/advanced = 40,
+		/obj/item/pc_part/processor_unit/super = 40,
+		/obj/item/pc_part/processor_unit/super = 40,
+		/obj/item/pc_part/card_slot = 40,
+		/obj/item/pc_part/card_slot = 40,
+		/obj/item/pc_part/network_card/advanced = 40,
 		/obj/random/lathe_disk/advanced/onestar = 15
 	)
 
@@ -616,7 +616,7 @@ obj/structure/salvageable/bliss/Initialize()
 /obj/structure/salvageable/deepmaints_cryopod/Initialize()
 	. = ..()
 	if(prob(80))
-		occupant = pick(subtypesof(/mob/living/simple_animal/hostile/hivemind))
+		occupant = pick(subtypesof(/mob/living/simple/hostile/hivemind))
 
 	if(prob(40))
 		on = TRUE

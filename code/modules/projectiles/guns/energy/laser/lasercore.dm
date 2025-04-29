@@ -1,6 +1,6 @@
 /obj/item/gun/energy/lasercore
 	name = "\"Laser Core\" laser carbine"
-	desc = "A high-powered laser carbine made by H&S. It was hailed back in its prime for its high-powered shots and compactness. However, it really consumes power."
+	desc = "A high-powered laser carbine made by H&S. It was hailed back in its prime for its high-powered shots and compactness. It consumes a lot of charge, however."
 	icon = 'icons/obj/guns/energy/lasercore.dmi'
 	icon_state = "lcore"
 	item_state = "lcore"
@@ -57,7 +57,8 @@
 
 /obj/item/gun/energy/lasercore/militia
 	name = "Blackshield \"Laser Core\" carbine"
-	desc = "A high-powered laser carbine made by H&S and modified by the Marshals. Hailed in its prime for its high power and compactness, notable improvements have been made to its energy efficiency and it bears blackshield IFF stripes. however it is somewhat slower to fire."
+	desc = "A high-powered laser carbine made by H&S and modified by the Marshals. Hailed in its prime for its high power and compactness, notable improvements have been made to its energy efficiency. \
+	It bears blackshield IFF stripes. This variant has a slower rate of fire."
 	icon = 'icons/obj/guns/energy/lasercore_bs.dmi'
 	icon_state = "lcore"
 	item_state = "lcore"
@@ -75,9 +76,8 @@
 /obj/item/gun/energy/lasercore/militia/blaster
 	name = "\"Gleam\" Laser Rifle"
 	desc = "An old and venerable design from arms giants H&S. Originally pitched as a high-end upgrade to the 'Laser Core' available to those Federation forces \
-	with both the need and finances to afford it. Insanely tempermental, these weapons while an improvement in almost every way over their base platform are infamous \
-	for its high maintenance, requiring both frequent and expensive parts replacement to remain up to spec. This one still bears the scar of its H&S serial which appears\
-	to have been 'drawn over' with an electro-stensil."
+	with both the need and finances to afford it. Insanely tempermental, these weapons, while an improvement in almost every way over their base platform, are infamous \
+	for their high maintenance, requiring both frequent and expensive parts replacement to remain up to spec. This one still bears the scar of its H&S serial looking to be 'drawn over' with an electro-stencil."
 	icon = 'icons/obj/guns/energy/gleam.dmi' //Credit to Aurora for the sprite that I shamelessly kitbashed to serve my costs.
 	icon_state = "gleam"
 	item_state = "gleam"

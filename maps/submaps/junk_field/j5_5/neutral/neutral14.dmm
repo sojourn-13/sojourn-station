@@ -20,7 +20,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/template_noop)
 "h" = (
-/mob/living/simple_animal/hostile/hivebot/range,
+/mob/living/simple/hostile/hivebot/range,
 /turf/simulated/floor/tiled/techmaint,
 /area/template_noop)
 "i" = (

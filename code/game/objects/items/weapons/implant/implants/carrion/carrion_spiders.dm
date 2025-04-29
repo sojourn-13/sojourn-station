@@ -42,7 +42,7 @@
 /obj/item/implant/carrion_spider/Process()
 	if(ready_to_attack && (last_stun_time <= world.time - 4 SECONDS))
 		for(var/mob/living/L in living_mobs_in_view(1, src))
-			if(istype(L, /mob/living/simple_animal) || istype(L, /mob/living/carbon))
+			if(istype(L, /mob/living/simple) || istype(L, /mob/living/carbon))
 				if(is_carrion(L))
 					continue
 				install(L)
@@ -75,7 +75,7 @@
 	qdel(src)
 
 /obj/item/implant/carrion_spider/attack(mob/living/M, mob/living/user)
-	if(!(istype(M, /mob/living/simple_animal) || istype(M, /mob/living/carbon)))
+	if(!(istype(M, /mob/living/simple) || istype(M, /mob/living/carbon)))
 		to_chat(user, SPAN_WARNING("You can't implant spiders into robots."))
 		return
 	user.drop_item()

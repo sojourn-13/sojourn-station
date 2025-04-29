@@ -121,7 +121,7 @@
 		to_chat(user, "There is no portable device connected to \the [src].")
 		return
 
-	var/obj/item/computer_hardware/hard_drive/portable/PD = portable_drive
+	var/obj/item/pc_part/drive/disk/PD = portable_drive
 
 	uninstall_component(portable_drive, user)
 	user.put_in_hands(PD)
@@ -210,7 +210,7 @@
 	if(!modifiable)
 		return ..()
 
-	if(istype(W, suitable_cell) || istype(W, /obj/item/computer_hardware))
+	if(istype(W, suitable_cell) || istype(W, /obj/item/pc_part))
 		try_install_component(W, user)
 
 
@@ -261,7 +261,7 @@
 				if(!Adjacent(usr))
 					return
 				if(tool.use_tool(user, src, WORKTIME_FAST, QUALITY_SCREW_DRIVING, FAILCHANCE_VERY_EASY, required_stat = STAT_COG))
-					var/obj/item/computer_hardware/H = find_hardware_by_name(choice)
+					var/obj/item/pc_part/H = find_hardware_by_name(choice)
 					if(!H)
 						return
 					uninstall_component(H, user)

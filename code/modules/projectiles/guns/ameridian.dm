@@ -2,7 +2,7 @@
 
 /obj/item/gun/ameridian
 	name = "ameridian cog"
-	desc = "A gun using liquid ameridian to shoot a beam of deadly radiation. It require an ameridian core & liquid ameridian to work.\
+	desc = "A gun using liquid ameridian to shoot a beam of deadly radiation. It requires an ameridian core & liquid ameridian to work.\
 			It looks awfully similar to a cog."
 	icon = 'icons/obj/guns/ameridian/ameridian_cog.dmi'
 	icon_state = "ameridian_cog"
@@ -70,7 +70,7 @@
 // Ameridian shard launcher. Launches solid fragment of ameridian that can embed
 /obj/item/gun/matter/ameridian
 	name = "ameridian shard launcher"
-	desc = "A gun that fire shards of solid ameridian."
+	desc = "A gun that fires shards of solid ameridian."
 	icon = 'icons/obj/guns/ameridian/ameridian_cog.dmi'
 	icon_state = "ameridian_cog"
 	item_state = "ameridian_cog"

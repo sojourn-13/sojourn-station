@@ -181,6 +181,9 @@
 		to_chat(user, SPAN_WARNING("This hardsuit can't fit any more modifications!"))
 		return FALSE
 
+	if(!required_qualities.len)
+		return FALSE
+
 	if(required_qualities.len)
 		var/qmatch = FALSE
 		for (var/q in required_qualities)
@@ -197,6 +200,9 @@
 /datum/component/item_upgrade/proc/check_armor(var/obj/item/clothing/T, var/mob/living/user)
 	if(LAZYLEN(T.item_upgrades) >= T.max_upgrades)
 		to_chat(user, SPAN_WARNING("This armor can't fit anymore modifications!"))
+		return FALSE
+
+	if(!required_qualities.len)
 		return FALSE
 
 	if(required_qualities.len)
@@ -419,6 +425,8 @@
 		G.move_delay *= weapon_upgrades[GUN_UPGRADE_MOVE_DELAY_MULT]
 	if(weapon_upgrades[GUN_UPGRADE_RECOIL])
 		G.recoil = G.recoil.modifyAllRatings(weapon_upgrades[GUN_UPGRADE_RECOIL])
+	if(weapon_upgrades[GUN_UPGRADE_PICKUP_RECOIL])
+		G.pickup_recoil *= weapon_upgrades[GUN_UPGRADE_PICKUP_RECOIL]
 	if(weapon_upgrades[GUN_UPGRADE_MUZZLEFLASH])
 		G.muzzle_flash *= weapon_upgrades[GUN_UPGRADE_MUZZLEFLASH]
 	if(tool_upgrades[UPGRADE_BULK])
@@ -472,6 +480,15 @@
 			user.update_action_buttons()
 	if(weapon_upgrades[GUN_UPGRADE_THERMAL])
 		G.vision_flags = SEE_MOBS
+
+	if(weapon_upgrades[GUN_UPGRADE_BAYONET])
+		G.attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
+		G.sharp = TRUE
+		G.bayonet = weapon_upgrades[GUN_UPGRADE_BAYONET]
+	if(weapon_upgrades[GUN_UPGRADE_MELEE_DAMAGE_ADDITIVE])
+		G.force += weapon_upgrades[GUN_UPGRADE_MELEE_DAMAGE_ADDITIVE]
+	if(weapon_upgrades[GUN_UPGRADE_MELEEPENETRATION])
+		G.armor_divisor += weapon_upgrades[GUN_UPGRADE_MELEEPENETRATION]
 
 	if(weapon_upgrades[GUN_UPGRADE_DNALOCK])
 		G.dna_compare_samples = TRUE
@@ -598,6 +615,20 @@
 		if(weapon_upgrades[GUN_UPGRADE_DAMAGE_BASE])
 			to_chat(user, SPAN_NOTICE("Increases projectile damage multiplier by [weapon_upgrades[GUN_UPGRADE_DAMAGE_BASE]]"))
 
+		if(weapon_upgrades[GUN_UPGRADE_MELEE_DAMAGE_ADDITIVE])
+			var/amount = weapon_upgrades[GUN_UPGRADE_MELEE_DAMAGE_ADDITIVE]
+			if(amount > 0)
+				to_chat(user, SPAN_NOTICE("Increases melee damage by [amount]"))
+			else
+				to_chat(user, SPAN_NOTICE("Decreases melee damage by [abs(amount)]"))
+
+		if(weapon_upgrades[GUN_UPGRADE_MELEEPENETRATION])
+			var/amount = weapon_upgrades[GUN_UPGRADE_MELEEPENETRATION]-1
+			if(amount > 0)
+				to_chat(user, SPAN_NOTICE("Increases melee damage by [amount*100]%"))
+			else
+				to_chat(user, SPAN_NOTICE("Decreases melee damage by [abs(amount*100)]%"))
+
 
 		if(weapon_upgrades[GUN_UPGRADE_PAIN_MULT])
 			var/amount = weapon_upgrades[GUN_UPGRADE_PAIN_MULT]-1
@@ -693,6 +724,13 @@
 				to_chat(user, SPAN_WARNING("Increases kickback by [amount*100]%"))
 			else
 				to_chat(user, SPAN_NOTICE("Decreases kickback by [abs(amount*100)]%"))
+
+		if(weapon_upgrades[GUN_UPGRADE_PICKUP_RECOIL])
+			var/amount = weapon_upgrades[GUN_UPGRADE_PICKUP_RECOIL]-1
+			if(amount > 0)
+				to_chat(user, SPAN_WARNING("Increases equipping recoil by [amount*100]%"))
+			else
+				to_chat(user, SPAN_NOTICE("Decreases equipping recoil by [abs(amount*100)]%"))
 
 		if(weapon_upgrades[GUN_UPGRADE_MUZZLEFLASH])
 			var/amount = weapon_upgrades[GUN_UPGRADE_MUZZLEFLASH]-1

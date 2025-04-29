@@ -227,9 +227,12 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 	if (!current_runlevel)
 		SetRunLevel(1)
 
-	world.TgsInitializationComplete()
+	//	SOJOURN: TGS integration: start
+	if(tgs_prime)
+		world.TgsInitializationComplete()
 
-	world.TgsTargetedChatBroadcast(new /datum/tgs_message_content(text = "A new round has begun!"))
+	//world.TgsTargetedChatBroadcast(new /datum/tgs_message_content(text = config.message_announce_new_game))
+	//	SOJOURN: TGS integration: end
 
 	// Sort subsystems by display setting for easy access.
 	sortTim(subsystems, GLOBAL_PROC_REF(cmp_subsystem_display))

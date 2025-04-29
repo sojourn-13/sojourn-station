@@ -1,4 +1,4 @@
-/mob/living/carbon/superior_animal/human/stranger
+/mob/living/carbon/superior/human/stranger
 	name = "Stranger"
 	desc = "A stranger from an unknown place."
 	icon = 'icons/mob/mobs-humanoid.dmi'
@@ -30,15 +30,15 @@
 	var/prob_tele = 20
 	never_stimulate_air = TRUE
 
-/mob/living/carbon/superior_animal/human/Initialize(mapload)
+/mob/living/carbon/superior/human/Initialize(mapload)
 	. = ..()
 	do_sparks(3, 0, src.loc)
 
-/mob/living/carbon/superior_animal/human/stranger/right_before_firing()
+/mob/living/carbon/superior/human/stranger/right_before_firing()
 	flick("strangerranged_shooter",src)
 	..()
 
-/mob/living/carbon/superior_animal/human/stranger/death()
+/mob/living/carbon/superior/human/stranger/death()
 	. = ..()
 	var/obj/item/gun/energy/plasma/stranger/S = new (src.loc)
 	S.cell = new S.suitable_cell(S)
@@ -58,7 +58,7 @@
 	qdel(src)
 	qdel(animation)
 
-/mob/living/carbon/superior_animal/human/stranger/attack_generic(mob/user, damage, attack_message, damagetype = BRUTE, attack_flag = ARMOR_MELEE, sharp = FALSE, edge = FALSE)
+/mob/living/carbon/superior/human/stranger/attack_generic(mob/user, damage, attack_message, damagetype = BRUTE, attack_flag = ARMOR_MELEE, sharp = FALSE, edge = FALSE)
 	var/mob/living/targetted_mob = (target_mob?.resolve())
 
 	if(!damage || !istype(user))
@@ -73,7 +73,7 @@
 		return FALSE
 	. = ..()
 
-/mob/living/carbon/superior_animal/human/stranger/attackby(obj/item/W, mob/user, params)
+/mob/living/carbon/superior/human/stranger/attackby(obj/item/W, mob/user, params)
 	var/mob/living/targetted_mob = (target_mob?.resolve())
 
 	if(prob(prob_tele))
@@ -86,7 +86,7 @@
 		return FALSE
 	. = ..()
 
-/mob/living/carbon/superior_animal/human/stranger/attack_hand(mob/living/carbon/M)
+/mob/living/carbon/superior/human/stranger/attack_hand(mob/living/carbon/M)
 	var/mob/living/targetted_mob = (target_mob?.resolve())
 
 	if(M.a_intent != I_HELP && prob(prob_tele))
@@ -99,7 +99,7 @@
 		return FALSE
 	. = ..()
 
-/mob/living/carbon/superior_animal/human/stranger/bullet_act(obj/item/projectile/P, def_zone)
+/mob/living/carbon/superior/human/stranger/bullet_act(obj/item/projectile/P, def_zone)
 	var/mob/living/targetted_mob = (target_mob?.resolve())
 
 	if (!(P.testing))
@@ -113,7 +113,7 @@
 			return FALSE
 	. = ..()
 
-/mob/living/carbon/superior_animal/human/stranger/Life()
+/mob/living/carbon/superior/human/stranger/Life()
 	var/mob/living/targetted_mob = (target_mob?.resolve())
 
 	. = ..()

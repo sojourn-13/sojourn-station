@@ -1,6 +1,6 @@
 /obj/item/gun/energy/gun
 	name = "\"Spider Rose\" energy pistol"
-	desc = "Spider Rose is a versatile energy based sidearm, capable of switching between low and high capacity projectile settings. In other words: Stun or Kill."
+	desc = "The Spider Rose is a versatile energy based sidearm, capable of switching between low and high capacity projectile settings. In other words: Stun or Kill."
 	icon = 'icons/obj/guns/energy/egun.dmi'
 	icon_state = "energystun100"
 	item_state = null	//so the human update icon uses the icon_state instead.
@@ -35,7 +35,7 @@
 
 /obj/item/gun/energy/gun/martin
 	name = "\"Martin\" energy pistol"
-	desc = "Martin is essentialy a downscaled Spider Rose, made for security employees and civilians to use it as a personal self defence weapon."
+	desc = "The Martin is essentialy a downscaled Spider Rose, made for security personnel and civilians as a personal defence weapon."
 	icon = 'icons/obj/guns/energy/pdw.dmi'
 	icon_state = "PDW"
 	item_state = "gun"
@@ -73,7 +73,7 @@
 
 /obj/item/gun/energy/gun/martin/upgraded
 	name = "Overclocked \"Martin\" energy pistol"
-	desc = "An overclocked varient of the Martin energy pistol, allowing for more efficent energy consumption and a slightly intensified lens."
+	desc = "An overclocked varient of the Martin energy pistol, allowing for more efficent energy consumption through a slightly intensified lens."
 	icon_state = "PDWU"
 	charge_cost = 25
 	matter = list(MATERIAL_PLASTEEL = 6, MATERIAL_PLASTIC = 4, MATERIAL_SILVER = 2, MATERIAL_URANIUM = 1)
@@ -93,7 +93,8 @@
 		
 /obj/item/gun/energy/ntpistol
 	name = "\"Serenity\" energy pistol"
-	desc = "\"New Testament\" brand laser pistol. Small and easily concealable, it's still a reasonable punch for a laser weapon. Refurbished after numerous copyright allegations."
+	desc = "\"New Testament\" brand laser pistol. Small and easily concealable, it still packs a reasonable punch for a laser weapon. Refurbished after numerous copyright allegations. \
+	It bears a tau cross marking it as produced by the Church of the Absolute's New Testament weapons division."
 	icon = 'icons/obj/guns/energy/ntpistol.dmi'
 	icon_state = "ntpistol"
 	item_state = "ntpistol"

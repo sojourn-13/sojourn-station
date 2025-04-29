@@ -29,7 +29,7 @@
 	mat_efficiency = initial(mat_efficiency)
 
 /obj/machinery/autolathe/bioprinter/disk
-	default_disk = /obj/item/computer_hardware/hard_drive/portable/design/nt/basic_utility
+	default_disk = /obj/item/pc_part/drive/disk/design/nt/basic_utility
 
 /obj/machinery/autolathe/bioprinter/public
-	default_disk = /obj/item/computer_hardware/hard_drive/portable/design/nt/basic_utility/public
+	default_disk = /obj/item/pc_part/drive/disk/design/nt/basic_utility/public

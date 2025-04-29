@@ -53,9 +53,9 @@
 		/obj/item/reagent_containers/glass/beaker = 1,
 		/obj/item/reagent_containers/glass/bucket = 1,
 		/obj/item/reagent_containers/glass/rag = 1,
-		/obj/item/reagent_containers/food/drinks/jar = 1,
-		/obj/item/reagent_containers/food/drinks/flask/barflask = 1,
-		/obj/item/reagent_containers/food/drinks/drinkingglass = 1,
+		/obj/item/reagent_containers/drinks/jar = 1,
+		/obj/item/reagent_containers/drinks/flask/barflask = 1,
+		/obj/item/reagent_containers/drinks/drinkingglass = 1,
 		/obj/item/reagent_containers/blood/empty = 1,
 		/obj/item/reagent_containers/dropper = 1,
 		/obj/item/stack/rods = 4,
@@ -81,7 +81,17 @@
 	return pickweight(items - exclusions)
 
 /obj/random/junk/nondense
-	exclusions = list(/obj/random/scrap/moderate_weighted, /obj/item/remains/robot)
+	exclusions = list(/obj/random/scrap/moderate_weighted,
+	/obj/item/remains/robot,
+	/obj/effect/decal/cleanable/blood/gibs/robot,
+	/obj/effect/decal/cleanable/blood/oil,
+	/obj/effect/decal/cleanable/blood/oil/streak,
+	/obj/effect/decal/cleanable/molten_item,
+	/obj/effect/decal/cleanable/spiderling_remains,
+	/obj/effect/decal/cleanable/vomit,
+	/obj/effect/decal/cleanable/blood/splatter,
+	/obj/effect/spider/stickyweb
+	)
 
 /obj/random/junk/low_chance
 	name = "low chance random junk"

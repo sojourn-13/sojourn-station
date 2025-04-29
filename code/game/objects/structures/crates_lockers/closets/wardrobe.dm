@@ -10,6 +10,9 @@
 	icon_door = "black"
 
 /obj/structure/closet/wardrobe/color/black/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	new /obj/item/clothing/under/color/black(src)
 	new /obj/item/clothing/under/color/black(src)
 	new /obj/item/clothing/under/colorskirt/black(src)
@@ -28,6 +31,9 @@
 	icon_door = "pink"
 
 /obj/structure/closet/wardrobe/color/pink/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	new /obj/item/clothing/under/color/pink(src)
 	new /obj/item/clothing/under/color/pink(src)
 	new /obj/item/clothing/under/colorskirt/pink(src)
@@ -40,6 +46,9 @@
 	icon_door = "green"
 
 /obj/structure/closet/wardrobe/color/green/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	new /obj/item/clothing/under/color/green(src)
 	new /obj/item/clothing/under/color/green(src)
 	new /obj/item/clothing/under/colorskirt/green(src)
@@ -58,6 +67,9 @@
 	icon_door = "yellow"
 
 /obj/structure/closet/wardrobe/color/yellow/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	new /obj/item/clothing/under/color(src)
 	new /obj/item/clothing/under/color(src)
 	new /obj/item/clothing/under/colorskirt(src)
@@ -76,6 +88,9 @@
 	icon_door = "white"
 
 /obj/structure/closet/wardrobe/color/white/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	new /obj/item/clothing/under/color/white(src)
 	new /obj/item/clothing/under/color/white(src)
 	new /obj/item/clothing/under/colorskirt/white(src)
@@ -92,6 +107,9 @@
 	icon_door = "red"
 
 /obj/structure/closet/wardrobe/color/red/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	new /obj/item/clothing/under/color/red(src)
 	new /obj/item/clothing/under/color/red(src)
 	new /obj/item/clothing/under/colorskirt/red(src)
@@ -110,6 +128,9 @@
 	icon_door = "blue"
 
 /obj/structure/closet/wardrobe/color/blue/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	new /obj/item/clothing/under/color/blue(src)
 	new /obj/item/clothing/under/color/blue(src)
 	new /obj/item/clothing/under/colorskirt/blue(src)
@@ -128,6 +149,9 @@
 	icon_door = "grey"
 
 /obj/structure/closet/wardrobe/color/grey/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	new /obj/item/clothing/under/color(src)
 	new /obj/item/clothing/under/color(src)
 	new /obj/item/clothing/under/colorskirt/grey(src)
@@ -144,6 +168,9 @@
 	icon_door = "mixed"
 
 /obj/structure/closet/wardrobe/color/mixed/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	new /obj/item/clothing/under/color/blue(src)
 	new /obj/item/clothing/under/color(src)
 	new /obj/item/clothing/under/color/green(src)
@@ -175,6 +202,9 @@
 	icon_door = "yellow"
 
 /obj/structure/closet/wardrobe/job/engineering_yellow/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	new /obj/item/clothing/under/rank/engineer(src)
 	new /obj/item/clothing/under/rank/engineer(src)
 	new /obj/item/clothing/under/rank/engineer(src)
@@ -193,6 +223,9 @@
 	icon_door = "blue"
 
 /obj/structure/closet/wardrobe/job/sec/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	new /obj/item/clothing/under/rank/security(src)
 	new /obj/item/clothing/under/rank/security(src)
 	new /obj/item/clothing/head/seccap(src)
@@ -215,6 +248,9 @@
 	icon_door = "militia"
 
 /obj/structure/closet/wardrobe/militia/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	new /obj/item/clothing/under/rank/trooper/gorka(src)
 	new /obj/item/clothing/under/rank/trooper/gorka(src)
 	new /obj/item/clothing/under/rank/trooper/cadet(src)
@@ -243,6 +279,9 @@
 	icon_door = "militia"
 
 /obj/structure/closet/wardrobe/militia/accessory/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	new /obj/item/clothing/accessory/holster/leg(src)
 	new /obj/item/clothing/accessory/holster/leg(src)
 	new /obj/item/clothing/accessory/holster/leg(src)
@@ -269,6 +308,8 @@
 	new /obj/item/clothing/accessory/job/cape/blackshield/tan(src)
 	new /obj/item/clothing/accessory/job/cape/blackshield/camo(src)
 	new /obj/item/clothing/accessory/job/cape/blackshield/camo(src)
+	new /obj/item/clothing/accessory/job/cape/blackshield/whitecamo(src)
+	new /obj/item/clothing/accessory/job/cape/blackshield/whitecamo(src)
 	new /obj/item/clothing/mask/balaclava(src)
 	new /obj/item/clothing/mask/balaclava(src)
 	new /obj/item/clothing/mask/balaclava(src)
@@ -287,6 +328,9 @@
 	icon_door = "white"
 
 /obj/structure/closet/wardrobe/job/science_white/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	new /obj/item/clothing/under/rank/scientist(src)
 	new /obj/item/clothing/under/rank/scientist(src)
 	new /obj/item/clothing/under/rank/scientist(src)
@@ -305,6 +349,9 @@
 	icon_door = "black"
 
 /obj/structure/closet/wardrobe/job/robotics_black/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	new /obj/item/clothing/under/rank/roboticist(src)
 	new /obj/item/clothing/under/rank/roboticist(src)
 	new /obj/item/clothing/suit/storage/rank/robotech_jacket(src)
@@ -319,6 +366,9 @@
 	icon_door = "white"
 
 /obj/structure/closet/wardrobe/job/chemistry_white/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	new /obj/item/clothing/under/rank/chemist(src)
 	new /obj/item/clothing/under/rank/chemist(src)
 	new /obj/item/clothing/shoes/color(src)
@@ -331,6 +381,9 @@
 	icon_door = "white"
 
 /obj/structure/closet/wardrobe/job/virology_white/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	new /obj/item/clothing/under/rank/virologist(src)
 	new /obj/item/clothing/under/rank/virologist(src)
 	new /obj/item/clothing/shoes/color(src)
@@ -345,6 +398,9 @@
 	icon_door = "white"
 
 /obj/structure/closet/wardrobe/job/medic_white/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	new /obj/item/clothing/under/rank/medical(src)
 	new /obj/item/clothing/under/rank/medical(src)
 	new /obj/item/clothing/under/scrubs(src)
@@ -365,6 +421,9 @@
 	icon_door = "black"
 
 /obj/structure/closet/wardrobe/job/chaplain_black/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	new /obj/item/clothing/under/rank/preacher(src)
 	new /obj/item/clothing/shoes/color/black(src)
 	new /obj/item/clothing/suit/costume/job/nun(src)
@@ -384,6 +443,9 @@
 	icon_door = "white"
 
 /obj/structure/closet/wardrobe/misc/pjs/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	new /obj/item/clothing/under/pj(src)
 	new /obj/item/clothing/under/pj(src)
 	new /obj/item/clothing/under/pj/blue(src)
@@ -399,6 +461,9 @@
 	desc = "A dingey old locker full of old SolFed SWAT gear."
 
 /obj/structure/closet/wardrobe/misc/tactical/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	new /obj/item/clothing/under/turtleneck/tacticalgreen(src)
 	new /obj/item/clothing/suit/storage/vest/swat(src)
 	new /obj/item/clothing/head/helmet/swat(src)
@@ -414,6 +479,9 @@
 	icon_door = "orange"
 
 /obj/structure/closet/wardrobe/misc/prison/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
 	new /obj/item/clothing/under/orange(src)
 	new /obj/item/clothing/under/orange(src)
 	new /obj/item/clothing/under/orange(src)

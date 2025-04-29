@@ -16,8 +16,8 @@
 	automated. It's a wonder it hasn't been raided, but then again its protected by a massive army of still functioning combat drones. This one specializes in a wide variety of interesting goods.")
 	inventory = list(
 		"Sheji pan" = list(
-			/obj/item/computer_hardware/hard_drive/portable/design/onestar/stockparts = good_data("GP Stockpart Disk", list(30, 50), 1500),
-			/obj/item/computer_hardware/hard_drive/portable/design/onestar = good_data("GP Tool Disk", list(30, 50), 2000)
+			/obj/item/clothing/suit/space/void/greyson = good_data("GP 'Zhengdou' hardsuit", list(5, 5), 25000),
+			/obj/item/tank/onestar_regenerator = good_data("OS Type - 13 'Tiantipenquan'", list(5,10), 2000)
 		),
 		"Gongju" = list(
 			/obj/item/tool/crowbar/onestar = custom_good_nameprice("GP Crowbar", list(-100, -50)),
@@ -43,8 +43,8 @@
 	)
 	hidden_inventory = list(
 		"Wuqi pan" = list(
-			/obj/item/computer_hardware/hard_drive/portable/design/onestar/cog = custom_good_nameprice("GP Cog Disk", list(50, 150)),
-			/obj/item/computer_hardware/hard_drive/portable/design/onestar/armor = custom_good_nameprice("GP Ablative Disk", list(20, 30))
+			/obj/item/pc_part/drive/disk/design/onestar/cog = custom_good_nameprice("GP Cog Disk", list(50, 150)),
+			/obj/item/pc_part/drive/disk/design/onestar/armor = custom_good_nameprice("GP Ablative Disk", list(20, 30))
 		),
 		"Wuqi yinshua" = list(
 			/obj/item/gun/energy/cog = good_data("GP Cog", list(-1, 0), 475)

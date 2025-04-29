@@ -204,7 +204,7 @@ var/global/list/drone_welder_options = list("Greyson Welder" = "tool_welder_os",
 	if(!name)
 		name = "Generic Drone"
 
-	var/mob/living/carbon/superior_animal/robot/custom_drone/CD = new(usr.loc) // Spawn a new drone
+	var/mob/living/carbon/superior/robot/custom_drone/CD = new(usr.loc) // Spawn a new drone
 	CD.customize(chassis_choice, radio_choice, shell_choice, marks_choice, screen_choice, scanner_choice, right_weapon_type_choice, left_weapon_type_choice, right_tool_choice, left_tool_choice) // Customize the drone's sprite
 	CD.name = name
 	CD.friends += usr

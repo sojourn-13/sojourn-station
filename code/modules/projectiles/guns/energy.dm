@@ -47,6 +47,7 @@
 		if(chosenCell)
 			cell = new chosenCell
 			cell.loc = src
+	update_icon()
 
 
 /obj/item/gun/energy/switch_firemodes()
@@ -204,7 +205,7 @@
 	var/list/data = ..()
 
 	var/list/stats = data["stats"]
-	
+
 	var/list/cell_stats = list()
 
 	cell_stats += list(list("name" = "Power Usage", "type" = "AnimatedNumber", "value" = charge_cost))

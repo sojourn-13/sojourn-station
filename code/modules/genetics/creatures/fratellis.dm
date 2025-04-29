@@ -3,7 +3,7 @@
 #define DISTENDED_STOMACH_CONTENTS 8
 
 //R&D meat weakling
-/mob/living/carbon/superior_animal/genetics/fratellis
+/mob/living/carbon/superior/genetics/fratellis
 	name = "fratellis"
 	desc = "A beast tortured by its own immortality. It hungers, but cannot be sated. It bleeds, but cannot run dry."
 	icon = 'icons/mob/genetics/fratellis.dmi'
@@ -26,7 +26,7 @@
 	health = 1200
 	pixel_x = -16
 
-	//meat_type = /obj/item/reagent_containers/food/snacks/meat
+	//meat_type = /obj/item/reagent_containers/snacks/meat
 	attack_sound = 'sound/xenomorph/alien_bite1.ogg'
 
 	var/list/potential_mutations = list(
@@ -50,15 +50,15 @@
 	var/list/stomach_contents = list()
 
 	var/digestion_progress = 0
-	var/obj/item/reagent_containers/food/snacks/digestion_target
+	var/obj/item/reagent_containers/snacks/digestion_target
 
 //Strictly speaking, we can and often do force_feed the Fratellis food in order to regenerate it.
 //However, this proc is set so we can override the Snack's attack script with our own feeding prompt.
-/mob/living/carbon/superior_animal/genetics/fratellis/can_force_feed()
+/mob/living/carbon/superior/genetics/fratellis/can_force_feed()
 	return FALSE
 
 //Cannot be gibbed, but will have a huge shower of blood!
-/mob/living/carbon/superior_animal/genetics/fratellis/gib()
+/mob/living/carbon/superior/genetics/fratellis/gib()
 	var/on_turf = istype(loc, /turf)
 	if(on_turf)
 		src.visible_message("<span class='danger'>The stomach of \the [src] explodes in a shower of gore!</span>")
@@ -72,10 +72,10 @@
 	return FALSE
 
 //Cannot be dusted
-/mob/living/carbon/superior_animal/genetics/fratellis/dust()
+/mob/living/carbon/superior/genetics/fratellis/dust()
 	return FALSE
 
-/mob/living/carbon/superior_animal/genetics/fratellis/Life()
+/mob/living/carbon/superior/genetics/fratellis/Life()
 
 	//Handle Regeneration (Works while dead)
 	if(health < (maxHealth-4))
@@ -159,12 +159,12 @@
 	if(!digestion_target && !self_cannibalism)
 		if(digestion_progress > 10) //Only check for this so often
 			digestion_progress = 0
-			for(var/obj/item/reagent_containers/food/snacks/target in stomach_contents)
+			for(var/obj/item/reagent_containers/snacks/target in stomach_contents)
 				digestion_target = target
 				stomach_contents.Remove(target)
-				if(istype(digestion_target, /obj/item/reagent_containers/food/snacks/meat) && !gnawing_state && (hunger > 500))
-					var/obj/item/reagent_containers/food/snacks/meat/ourMeat = digestion_target
-					if(ispath(ourMeat.source_mob, /mob/living/carbon/superior_animal/genetics/fratellis))
+				if(istype(digestion_target, /obj/item/reagent_containers/snacks/meat) && !gnawing_state && (hunger > 500))
+					var/obj/item/reagent_containers/snacks/meat/ourMeat = digestion_target
+					if(ispath(ourMeat.source_mob, /mob/living/carbon/superior/genetics/fratellis))
 						gnawing_state = 1
 				break
 			if(!digestion_target && gnawing_state)
@@ -201,7 +201,7 @@
 
 
 
-/mob/living/carbon/superior_animal/genetics/fratellis/update_icon()
+/mob/living/carbon/superior/genetics/fratellis/update_icon()
 	if(stat == DEAD)
 		icon_state = "fratellis_6"
 	else if(mutation_display_start + mutation_display_time < world.time)
@@ -222,7 +222,7 @@
 
 
 
-/mob/living/carbon/superior_animal/genetics/fratellis/proc/steal_from_mob()
+/mob/living/carbon/superior/genetics/fratellis/proc/steal_from_mob()
 	if(stat)
 		return -1
 
@@ -245,7 +245,7 @@
 
 
 
-/mob/living/carbon/superior_animal/genetics/fratellis/attackby(obj/item/used_item, mob/user)
+/mob/living/carbon/superior/genetics/fratellis/attackby(obj/item/used_item, mob/user)
 	if(user.a_intent == I_HELP)
 		if(istype(used_item, /mob))
 			to_chat(user, SPAN_WARNING("\the [src] really isn't into vore."))
@@ -293,7 +293,7 @@
 					switch(success)
 						if(TOOL_USE_SUCCESS)
 							user.visible_message("[user] cuts a slab of meat from \the [src].", "You begin harvest a slab of meat from \the [src].")
-							var/obj/item/reagent_containers/food/snacks/meat/butchered_meat = new /obj/item/reagent_containers/food/snacks/meat(get_turf(src))
+							var/obj/item/reagent_containers/snacks/meat/butchered_meat = new /obj/item/reagent_containers/snacks/meat(get_turf(src))
 							butchered_meat.name = "[src.name] [butchered_meat.name]"
 							butchered_meat.initialize_genetics(src)
 							src.adjustBruteLoss(150)
@@ -401,7 +401,7 @@
 
 
 
-/mob/living/carbon/superior_animal/genetics/fratellis/proc/update_description()
+/mob/living/carbon/superior/genetics/fratellis/proc/update_description()
 	desc = initial(desc)
 	if(stomach_open)
 		if(stomach_retracted)
@@ -443,7 +443,7 @@
 	desc += "\n<span class='notice'>Hunger: [hunger]</span>"
 	#endif
 
-/mob/living/carbon/superior_animal/genetics/fratellis/proc/rise_again()
+/mob/living/carbon/superior/genetics/fratellis/proc/rise_again()
 	if(stat != DEAD)
 		return
 

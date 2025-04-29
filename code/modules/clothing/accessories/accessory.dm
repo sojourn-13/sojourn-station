@@ -471,6 +471,11 @@
 	desc = "A simple, durable cloak for protecting you in any weather conditions! This one comes in a tactical camo pattern."
 	icon_state = "blackshieldcloak_camo"
 
+/obj/item/clothing/accessory/job/cape/blackshield/whitecamo
+	name = "white camo Blackshield cloak"
+	desc = "A simple, durable cloak for protecting you in any weather conditions! This one comes in an urban tactical camo pattern."
+	icon_state = "blackshieldcloak_whitecamo"
+
 /obj/item/clothing/accessory/cape/sergeant_cape
 	name = "Sergeants mantle"
 	desc = "A shoulder-mantlee made from black and silver fabric, denoting the position of Sergeant. Allows for identification at a glance."
@@ -1289,7 +1294,7 @@
 
 /obj/item/clothing/accessory/necklace/fractalrosary
 	name = "Fractal Rosary"
-	desc = "This is an token given by the Church of Absolute to Fractals, members of the Church who are not yet or cannot be baptized for any reason. \
+	desc = "This is an token given by the Church of the Absolute to Fractals, members of the Church who are not yet or cannot be baptized for any reason. \
 Anyone wearing it can open public church doors. You should do your best to keep it out of the hands of the non-faithful, lest it be abused."
 	icon_state = "fractal_rosary"
 	item_state = "fractal_rosary"
@@ -1421,7 +1426,7 @@ Anyone wearing it can open public church doors. You should do your best to keep 
 	item_state = "vest"
 	overlay_state = "vest"
 	item_state_slots = list(slot_r_hand_str = "wcoat", slot_l_hand_str = "wcoat")
-	allowed = list(/obj/item/gun/projectile, /obj/item/gun/energy, /obj/item/pen, /obj/item/paper, /obj/item/device/lighting/toggleable/flashlight, /obj/item/tank/emergency_oxygen, /obj/item/storage/fancy/cigarettes, /obj/item/storage/box/matches, /obj/item/reagent_containers/food/drinks/flask)
+	allowed = list(/obj/item/gun/projectile, /obj/item/gun/energy, /obj/item/pen, /obj/item/paper, /obj/item/device/lighting/toggleable/flashlight, /obj/item/tank/emergency_oxygen, /obj/item/storage/fancy/cigarettes, /obj/item/storage/box/matches, /obj/item/reagent_containers/drinks/flask)
 	armor_list = list(melee = 0, bullet = 0,energy = 0, bomb = 0, bio = 0, rad = 0)
 	slot_flags = SLOT_OCLOTHING|SLOT_ACCESSORY_BUFFER
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO
@@ -1478,7 +1483,7 @@ Anyone wearing it can open public church doors. You should do your best to keep 
 	item_state = "sweatervest"
 	overlay_state = "sweatervest"
 	item_state_slots = list(slot_r_hand_str = "wcoat", slot_l_hand_str = "wcoat")
-	allowed = list(/obj/item/gun/projectile, /obj/item/gun/energy, /obj/item/pen, /obj/item/paper, /obj/item/device/lighting/toggleable/flashlight, /obj/item/tank/emergency_oxygen, /obj/item/storage/fancy/cigarettes, /obj/item/storage/box/matches, /obj/item/reagent_containers/food/drinks/flask)
+	allowed = list(/obj/item/gun/projectile, /obj/item/gun/energy, /obj/item/pen, /obj/item/paper, /obj/item/device/lighting/toggleable/flashlight, /obj/item/tank/emergency_oxygen, /obj/item/storage/fancy/cigarettes, /obj/item/storage/box/matches, /obj/item/reagent_containers/drinks/flask)
 	armor_list = list(melee = 0, bullet = 0,energy = 0, bomb = 0, bio = 0, rad = 0)
 	slot_flags = SLOT_OCLOTHING|SLOT_ACCESSORY_BUFFER
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO

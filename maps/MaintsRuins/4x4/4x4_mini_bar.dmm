@@ -1,0 +1,129 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/obj/machinery/portable_atmospherics/hydroponics/soil/invisible,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/reagent_containers/pill/floorpill,
+/obj/structure/closet/crate/trashcart,
+/turf/simulated/floor/industrial/checker_large,
+/area/nadezhda/maintenance/undergroundfloor2west)
+"i" = (
+/obj/machinery/portable_atmospherics/hydroponics/soil/invisible,
+/obj/random/pouch/hardcase_ammo/low_chance,
+/turf/simulated/floor/industrial/checker_large,
+/area/nadezhda/maintenance/undergroundfloor2west)
+"w" = (
+/obj/machinery/portable_atmospherics/hydroponics/soil/invisible,
+/obj/structure/bed/chair/wood{
+	dir = 4
+	},
+/obj/item/storage/wallet/random,
+/turf/simulated/floor/industrial/checker_large,
+/area/nadezhda/maintenance/undergroundfloor2west)
+"x" = (
+/obj/machinery/portable_atmospherics/hydroponics/soil/invisible,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/bed/chair/wood{
+	dir = 4
+	},
+/obj/item/reagent_containers/pill/floorpill,
+/obj/item/trash/spitwad,
+/obj/random/dungeon_ammo/really_low_chance,
+/obj/random/dungeon_ammo/really_low_chance,
+/turf/simulated/floor/industrial/checker_large,
+/area/nadezhda/maintenance/undergroundfloor2west)
+"y" = (
+/obj/machinery/portable_atmospherics/hydroponics/soil/invisible,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/woodentable,
+/obj/random/booze/low_chance,
+/obj/item/trash/plate,
+/turf/simulated/floor/industrial/fancy_slates,
+/area/nadezhda/maintenance/undergroundfloor2west)
+"E" = (
+/obj/machinery/portable_atmospherics/hydroponics/soil/invisible,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small,
+/turf/simulated/floor/industrial/checker_large,
+/area/nadezhda/maintenance/undergroundfloor2west)
+"F" = (
+/obj/machinery/portable_atmospherics/hydroponics/soil/invisible,
+/obj/structure/bed/chair/wood{
+	dir = 8
+	},
+/obj/item/trash/icecreambowl,
+/turf/simulated/floor/industrial/fancy_slates,
+/area/nadezhda/maintenance/undergroundfloor2west)
+"H" = (
+/obj/machinery/portable_atmospherics/hydroponics/soil/invisible,
+/obj/random/closet_maintloot,
+/turf/simulated/floor/industrial/checker_large,
+/area/nadezhda/maintenance/undergroundfloor2west)
+"L" = (
+/obj/machinery/portable_atmospherics/hydroponics/soil/invisible,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/industrial/checker_large,
+/area/nadezhda/maintenance/undergroundfloor2west)
+"O" = (
+/obj/machinery/portable_atmospherics/hydroponics/soil/invisible,
+/obj/structure/table/woodentable,
+/obj/random/booze/low_chance,
+/obj/random/junkfood/low_chance,
+/obj/item/trash/plate,
+/turf/simulated/floor/industrial/fancy_slates,
+/area/nadezhda/maintenance/undergroundfloor2west)
+"Q" = (
+/obj/machinery/portable_atmospherics/hydroponics/soil/invisible,
+/obj/random/booze/low_chance,
+/obj/structure/salvageable/personal,
+/turf/simulated/floor/industrial/fancy_slates,
+/area/nadezhda/maintenance/undergroundfloor2west)
+"V" = (
+/obj/machinery/portable_atmospherics/hydroponics/soil/invisible,
+/turf/simulated/floor/industrial/checker_large,
+/area/nadezhda/maintenance/undergroundfloor2west)
+"W" = (
+/obj/machinery/portable_atmospherics/hydroponics/soil/invisible,
+/obj/item/trash/semki,
+/turf/simulated/floor/industrial/checker_large,
+/area/nadezhda/maintenance/undergroundfloor2west)
+"X" = (
+/obj/machinery/portable_atmospherics/hydroponics/soil/invisible,
+/obj/structure/table/woodentable,
+/obj/random/booze/low_chance,
+/obj/random/junkfood/low_chance,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/item/trash/semki,
+/turf/simulated/floor/industrial/fancy_slates,
+/area/nadezhda/maintenance/undergroundfloor2west)
+"Y" = (
+/obj/machinery/portable_atmospherics/hydroponics/soil/invisible,
+/obj/item/reagent_containers/pill/floorpill,
+/turf/simulated/floor/industrial/fancy_slates,
+/area/nadezhda/maintenance/undergroundfloor2west)
+
+(1,1,1) = {"
+H
+W
+V
+a
+"}
+(2,1,1) = {"
+w
+V
+x
+i
+"}
+(3,1,1) = {"
+X
+O
+y
+E
+"}
+(4,1,1) = {"
+Q
+F
+Y
+L
+"}

@@ -1,6 +1,7 @@
 /obj/item/gun/projectile/automatic/slaught_o_matic
 	name = "\"Slaught-o-Matic\""
-	desc = "This disposable plastic handgun is mass-produced by H&S for civilian use. It often is used by street urchins, thugs, or terrorists on a budget. For what it's worth, it's not an awful handgun - but you only get one magazine before the gun locks up and becomes useless."
+	desc = "This disposable, mostly plastic handgun is mass-produced by H&S for civilian use. It often is used by street urchins, thugs or terrorists on a budget. \
+	For what it's worth, it's not a totally awful handgun - but you only get one magazine's worth before the gun locks up and becomes useless."
 	icon = 'icons/obj/guns/projectile/slaught_o_matic.dmi'
 	icon_state = "slaught"
 	item_state = "slaught"

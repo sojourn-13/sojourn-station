@@ -1,7 +1,7 @@
 //Void Wolfs are VERY wip. They're set up as basic enemies with the sprites.
 
 /*Melee Void Wolfs*/
-/mob/living/carbon/superior_animal/human/voidwolf
+/mob/living/carbon/superior/human/voidwolf
 	name = "Void Wolf Commando"
 	desc = "A Void Wolf mercenary wielding an energy blade and riot shield."
 	icon = 'icons/mob/mobs-humanoid.dmi'
@@ -38,22 +38,22 @@
 	get_stat_modifier = TRUE
 
 	allowed_stat_modifiers = list(
-		/datum/stat_modifier/mob/living/carbon/superior_animal/durable = 5,
+		/datum/stat_modifier/mob/living/carbon/superior/durable = 5,
 		/datum/stat_modifier/health/flat/negative/low = 5,
 		/datum/stat_modifier/health/flat/positive/low = 5,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/armor/mult/negative/low = 5,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/young = 12,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/old = 5,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish = 5,
+		/datum/stat_modifier/mob/living/carbon/superior/armor/mult/negative/low = 5,
+		/datum/stat_modifier/mob/living/carbon/superior/young = 12,
+		/datum/stat_modifier/mob/living/carbon/superior/old = 5,
+		/datum/stat_modifier/mob/living/carbon/superior/brutish = 5,
 		/datum/stat_modifier/mob/living/damage/negative/mixed/flat/low = 5,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/brutal = 5,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/aggressive/savage = 1,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/aggressive = 10,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/deadeye = 5,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/slowaimed = 5,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/triggerfinger = 15,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/quickdraw = 5,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/slowdraw = 10,
+		/datum/stat_modifier/mob/living/carbon/superior/brutal = 5,
+		/datum/stat_modifier/mob/living/carbon/superior/aggressive/savage = 1,
+		/datum/stat_modifier/mob/living/carbon/superior/aggressive = 10,
+		/datum/stat_modifier/mob/living/carbon/superior/deadeye = 5,
+		/datum/stat_modifier/mob/living/carbon/superior/slowaimed = 5,
+		/datum/stat_modifier/mob/living/carbon/superior/triggerfinger = 15,
+		/datum/stat_modifier/mob/living/carbon/superior/quickdraw = 5,
+		/datum/stat_modifier/mob/living/carbon/superior/slowdraw = 10,
 	)
 
 //They are all waring space suits
@@ -67,26 +67,29 @@
 
 //Drops
 	meat_amount = 4
-	meat_type = /obj/item/reagent_containers/food/snacks/meat/human
+	meat_type = /obj/item/reagent_containers/snacks/meat/human
 
 	drop_items = list(/obj/item/trash/material/e_sword_cutlass, /obj/item/shield/riot/damaged)
 	faction = "pirate"
 
-/mob/living/carbon/superior_animal/human/voidwolf/handle_breath(datum/gas_mixture/breath) //we have are own air supplies
+	fancy_attack_overlay = "voidwolf_slash_flick"
+	fancy_attack_shading = "#9b111e" //Ruby
+
+/mob/living/carbon/superior/human/voidwolf/handle_breath(datum/gas_mixture/breath) //we have are own air supplies
 	return
 
-/mob/living/carbon/superior_animal/human/voidwolf/handle_environment(var/datum/gas_mixture/environment) //are armor legit is a void suit
+/mob/living/carbon/superior/human/voidwolf/handle_environment(var/datum/gas_mixture/environment) //are armor legit is a void suit
 	return
 
-/mob/living/carbon/superior_animal/human/voidwolf/start_pulling(var/atom/movable/AM)
+/mob/living/carbon/superior/human/voidwolf/start_pulling(var/atom/movable/AM)
 	to_chat(src, SPAN_WARNING("Your hand gets pushed away from \the [src]. !"))
 	return
 
-/mob/living/carbon/superior_animal/human/voidwolf/death()
+/mob/living/carbon/superior/human/voidwolf/death()
 	..()
 	drop_death_loot()
 
-/mob/living/carbon/superior_animal/human/voidwolf/emp_act(severity)
+/mob/living/carbon/superior/human/voidwolf/emp_act(severity)
 	..()
 	if(rapid)
 		rapid = FALSE
@@ -94,7 +97,7 @@
 		ranged = FALSE
 
 
-/mob/living/carbon/superior_animal/human/voidwolf/fieldtech
+/mob/living/carbon/superior/human/voidwolf/fieldtech
 	name = "Void Wolf Field Tech"
 	desc = "A Void Wolf mercenary wielding an industrial welder."
 	melee_damage_lower = 20
@@ -108,8 +111,11 @@
 	armor_divisor = 1
 	melee_damage_type = BURN
 
+	fancy_attack_overlay = "voidwolf_fad_flick"
+	fancy_attack_shading = "#ffc87c" //Yellow Topaz" //Ruby
+
 /*Ranged Void Wolfs*/
-/mob/living/carbon/superior_animal/human/voidwolf/ranged
+/mob/living/carbon/superior/human/voidwolf/ranged
 	name = "Void Wolf Trooper"
 	desc = "A Void Wolf mercenary wielding an energy rifle."
 	icon_state = "voidwolf"
@@ -132,12 +138,15 @@
 	mags_left = 1
 	melee_sharp = FALSE
 	armor_divisor = 1
+	fancy_attack_overlay = "voidwolf_gun_melee_flick"
+	fancy_attack_shading = "#2975A7" //Sapphire
 
-/mob/living/carbon/superior_animal/human/voidwolf/ranged/New()
+
+/mob/living/carbon/superior/human/voidwolf/ranged/New()
 	..()
 	reload_message = "[name] ejects a depleted cell and rapidly reloads a new one!"
 
-/mob/living/carbon/superior_animal/human/voidwolf/fieldtech/ranged
+/mob/living/carbon/superior/human/voidwolf/fieldtech/ranged
 	name = "Void Wolf Field Tech"
 	desc = "A Void Wolf mercenary wielding an industrial welder and energy pistol."
 	icon_state = "voidengie_ranged"
@@ -158,11 +167,11 @@
 	armor_divisor = 1
 	melee_damage_type = BURN
 
-/mob/living/carbon/superior_animal/human/voidwolf/fieldtech/ranged/New()
+/mob/living/carbon/superior/human/voidwolf/fieldtech/ranged/New()
 	..()
 	reload_message = "[name] ejects a depleted cell and fumbles a new one into their weapon."
 
-/mob/living/carbon/superior_animal/human/voidwolf/ranged/aerotrooper
+/mob/living/carbon/superior/human/voidwolf/ranged/aerotrooper
 	name = "Void Wolf Aerotrooper"
 	desc = "A Void Wolf mercenary wielding an energy rifle and jetpack."
 	icon_state = "voidwolf_flying"
@@ -177,11 +186,11 @@
 	melee_sharp = FALSE
 	armor_divisor = 1
 
-/mob/living/carbon/superior_animal/human/voidwolf/ranged/aerotrooper/New()
+/mob/living/carbon/superior/human/voidwolf/ranged/aerotrooper/New()
 	..()
 	reload_message = "[name] ejects a depleted cell and rapidly reloads a new one!"
 
-/mob/living/carbon/superior_animal/human/voidwolf/captain
+/mob/living/carbon/superior/human/voidwolf/captain
 	name = "Void Wolf Captain"
 	desc = "A Void Wolf field commander wielding an energy sword and Spider Rose combo. "
 	icon_state = "voidwolfcap"
@@ -206,11 +215,11 @@
 
 	times_to_get_stat_modifiers = 2 //two prefixes
 
-/mob/living/carbon/superior_animal/human/voidwolf/captain/New()
+/mob/living/carbon/superior/human/voidwolf/captain/New()
 	..()
 	reload_message = "[name] ejects a depleted cell and rapidly reloads a new one with one hand!"
 
-/mob/living/carbon/superior_animal/human/voidwolf/captain/movement_tech()
+/mob/living/carbon/superior/human/voidwolf/captain/movement_tech()
 	moved = TRUE
 	if(!weakened && stat == CONSCIOUS)
 		attemptAttackOnTarget()

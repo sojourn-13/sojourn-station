@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/automatic/c20r
 	name = "bullpup SMG"
-	desc = "The C-20r is a lightweight and rapid-firing SMG, for when you REALLY need someone dead. Fires either 9mm or 10mm depending on installed barrel. Has a 'Scarborough Arms - Per falcis, per pravitas' buttstock stamp."
+	desc = "The C20r is a lightweight and rapid-firing SMG for when you REALLY need someone dead. Fires either 9mm or 10mm depending on installed barrel. Has a 'Scarborough Arms - Per falcis, per pravitas' buttstock stamp."
 	icon = 'icons/obj/guns/projectile/cr20.dmi'
 	icon_state = "c20r"
 	item_state = "c20r"

@@ -12,7 +12,7 @@
 	origin_tech = list(TECH_COMBAT = 7, TECH_MATERIAL = 2)
 	handle_casings = EJECT_CASINGS
 	price_tag = 5500
-	fire_sound = 'sound/weapons/guns/fire/ubgl.ogg'
+	fire_sound = 'sound/weapons/guns/fire/ubgl_fire.ogg'
 	bulletinsert_sound = 'sound/weapons/guns/interact/china_lake_reload.ogg'
 	fire_sound_text = "a metallic thunk"
 	init_recoil = HANDGUN_RECOIL(2)
@@ -53,7 +53,7 @@
 
 //revolves the magazine, allowing players to choose between multiple grenade types
 /obj/item/gun/projectile/grenade/proc/pump(mob/user as mob)
-	playsound(user, 'sound/weapons/shotgunpump.ogg', 60, 1)
+	playsound(user, 'sound/weapons/guns/interact/shotgun_pump.ogg', 60, 1)
 
 	var/obj/item/ammo_casing/next
 	if(loaded.len)

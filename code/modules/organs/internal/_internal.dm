@@ -114,7 +114,7 @@
 			if(!LAZYLEN(possible_wounds))
 				break
 
-		owner.custom_pain("Something inside your [parent.name] hurts a lot.", 0)		// Let em know they're hurting
+		owner?.custom_pain("Something inside your [parent.name] hurts a lot.", 0)		// Let em know they're hurting
 
 		return TRUE
 	return FALSE
@@ -282,7 +282,7 @@
 				SPAN_DANGER("You hear a sickening crack.")
 			)
 
-			if(owner.species && !(owner.species.flags & NO_PAIN))
+			if(!((owner.species.flags & NO_PAIN) || (PAIN_LESS in owner.mutations)))
 				owner.emote("scream")
 			// Fractures have a chance of getting you out of restraints
 			if(prob(25))
@@ -394,7 +394,7 @@
 /obj/item/organ/internal/proc/prepare_eat()
 	if(BP_IS_ROBOTIC(src))
 		return // No eating cybernetic implants!
-	var/obj/item/reagent_containers/food/snacks/organ/S = new
+	var/obj/item/reagent_containers/snacks/organ/S = new
 	S.name = name
 	S.desc = desc
 	S.icon = icon
@@ -406,7 +406,7 @@
 /obj/item/organ/internal/attack(mob/living/carbon/M, mob/user)
 	if(M == user && ishuman(user))
 		var/mob/living/carbon/human/H = user
-		var/obj/item/reagent_containers/food/snacks/S = prepare_eat()
+		var/obj/item/reagent_containers/snacks/S = prepare_eat()
 		if(S)
 			H.drop_item()
 			H.put_in_active_hand(S)
@@ -444,6 +444,23 @@
 	nutriment_req = initial(nutriment_req)
 	oxygen_req = initial(oxygen_req)
 	SEND_SIGNAL(src, COMSIG_IWOUND_FLAGS_REMOVE)
+	//If we shove lets say robotics into a flesh arm it should be 50% less affective for organ efficiency
+	if(parent)
+		if(istype(parent, /obj/item/organ))
+			var/obj/item/organ/O = parent
+			//Basically if we missmatch are major three types then we get a 50% reduction, Assisted organs bypass this
+			if(BP_IS_ORGANIC(O))
+				if(!BP_IS_ORGANIC(src) && !BP_IS_ASSISTED(src))
+					for(var/efficiency in organ_efficiency)
+						organ_efficiency[efficiency] *= 0.5
+			if(BP_IS_ROBOTIC(O))
+				if(!BP_IS_ROBOTIC(src) && !BP_IS_ASSISTED(src))
+					for(var/efficiency in organ_efficiency)
+						organ_efficiency[efficiency] *= 0.5
+			if(BP_IS_SLIME(O))
+				if(!BP_IS_SLIME(src) && !BP_IS_ASSISTED(src))
+					for(var/efficiency in organ_efficiency)
+						organ_efficiency[efficiency] *= 0.5
 
 /obj/item/organ/internal/proc/apply_modifiers()
 	SEND_SIGNAL(src, COMSIG_IWOUND_EFFECTS)

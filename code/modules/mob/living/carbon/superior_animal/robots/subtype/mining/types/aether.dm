@@ -1,4 +1,4 @@
-/mob/living/carbon/superior_animal/robot/mining/aether
+/mob/living/carbon/superior/robot/mining/aether
 	name = "Aether Mining Drone"
 	desc = "A small Aether-model mining drone, developed by a Roboticist in Soteria and sold to Lonestar to facilitate mining operations. \
 			It is autonomous and can be set to mine, pick up ore and even wander on its own."

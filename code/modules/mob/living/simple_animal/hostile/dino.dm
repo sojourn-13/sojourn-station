@@ -1,4 +1,4 @@
-/mob/living/simple_animal/hostile/dino
+/mob/living/simple/hostile/dino
 	name = "primal render yearling"
 	desc = "A younger primal render, one that has yet to harden its scales, shed the baby fat, \
 	and grow its usual horns and claws. Unlike older ones it has yet to become as fantastically violent to everything, \
@@ -35,7 +35,7 @@
 	mob_size = MOB_LARGE
 	sanity_damage = 1
 
-/mob/living/simple_animal/hostile/dino/tagilla
+/mob/living/simple/hostile/dino/tagilla
 	faction = "neutral"
 	name = "Tagilla"
 	desc = "A younger primal render, one that has yet to harden its scales, \
@@ -51,7 +51,7 @@
 	friendly_to_colony = TRUE
 	sanity_damage = -1
 
-/mob/living/simple_animal/hostile/dino/tagilla/FindTarget()
+/mob/living/simple/hostile/dino/tagilla/FindTarget()
 	var/atom/T = null
 	stop_automated_movement = 0
 	for(var/atom/A in ListTargets(vision_range))

@@ -691,7 +691,7 @@
 
 /obj/item/oddity/nt/seal
 	name = "Cartographer's Seal"
-	desc = "A badge carrying the seal of the cartographer of the Church of Absolute, said to be marked with a tithe of blood as proof of its sacred nature. An extremely rare sight, as many of these seals are thought to be lost. Merely holding one is said to inspire divine right. The church would be immensely interested in this."
+	desc = "A badge carrying the seal of the cartographer of the Church of the Absolute, said to be marked with a tithe of blood as proof of its sacred nature. An extremely rare sight, as many of these seals are thought to be lost. Merely holding one is said to inspire divine right. The church would be immensely interested in this."
 	icon_state = "nt_seal"
 	oddity_stats = list(
 		STAT_TGH = 12,
@@ -959,7 +959,7 @@
 		to_chat(user, "<span class='info'>Further attempts have gotten you no closer to solving the [src].</span>")
 		return
 	if(prob(openchance))
-		new /mob/living/carbon/superior_animal/human/stranger(user.loc)
+		new /mob/living/carbon/superior/human/stranger(user.loc)
 		new /obj/item/oddity/rare/openedpuzzlebox(user.loc)
 		to_chat(user, SPAN_WARNING("[src] clicks and lights up!"))
 		qdel(src)

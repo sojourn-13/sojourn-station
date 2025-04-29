@@ -65,6 +65,7 @@
 			return
 
 		wearing_rig.toggle_piece("helmet",user)
+		wearing_rig.updateArmor()
 
 /mob/living/carbon/human/rig/verb/toggle_chest()
 
@@ -81,6 +82,7 @@
 			return
 
 		wearing_rig.toggle_piece("chest",user)
+		wearing_rig.updateArmor()
 
 /mob/living/carbon/human/rig/verb/toggle_gauntlets()
 
@@ -96,6 +98,7 @@
 			return
 
 		wearing_rig.toggle_piece("gauntlets",user)
+		wearing_rig.updateArmor()
 
 /mob/living/carbon/human/rig/verb/toggle_boots()
 
@@ -111,6 +114,7 @@
 			return
 
 		wearing_rig.toggle_piece("boots",user)
+		wearing_rig.updateArmor()
 
 /mob/living/carbon/human/rig/verb/deploy_suit()
 

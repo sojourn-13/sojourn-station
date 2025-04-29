@@ -243,7 +243,7 @@
 /*
 	Animals
 */
-/mob/living/simple_animal/UnarmedAttack(var/atom/A, var/proximity)
+/mob/living/simple/UnarmedAttack(var/atom/A, var/proximity)
 
 	if(!..())
 		return

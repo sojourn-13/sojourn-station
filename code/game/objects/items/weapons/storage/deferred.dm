@@ -51,7 +51,6 @@
 	populate_contents()
 	. = ..()
 
-
 /obj/item/storage/deferred/rations //DO this before merging
 	name = "infantryman's rations kit"
 	icon_state = "irp_box"
@@ -227,7 +226,7 @@
 	icon_state = "serbcrate_deferred_worn"
 	initial_contents = list(/obj/random/booze = 10,
 	/obj/random/booze/low_chance = 10,
-	/obj/item/reagent_containers/food/drinks/bottle/vodka = 3)
+	/obj/item/reagent_containers/drinks/bottle/vodka = 3)
 
 //SERBIAN-YUNANI UNIFORM CRATES
 
@@ -283,7 +282,7 @@
 	/obj/item/clothing/mask/balaclava/tactical = 1,
 	/obj/item/clothing/shoes/jackboots = 1,
 	/obj/item/clothing/gloves/fingerless = 1,
-	/obj/item/reagent_containers/food/drinks/bottle/vodka = 1)
+	/obj/item/reagent_containers/drinks/bottle/vodka = 1)
 
 /obj/item/storage/deferred/crate/uniform_flak
 	name = "flak serbian uniform crate"
@@ -403,7 +402,60 @@
 	price_tag = 120
 	initial_contents = list(/obj/random/tool = 7)
 
+// Trade, but specified
+// Med
+/obj/item/storage/deferred/triage
+	name = "triage autoinjector kit"
+	desc = "An assorted container of useful medical autoinjectors meant to alleviate minor wounds."
+	initial_contents = list(/obj/item/reagent_containers/hypospray/autoinjector/bicaridine = 2,
+	/obj/item/reagent_containers/hypospray/autoinjector/kelotane = 2,
+	/obj/item/reagent_containers/hypospray/autoinjector/antitoxin = 2,
+	/obj/item/reagent_containers/hypospray/autoinjector/dexalin = 2
+	)
 
+/obj/item/storage/deferred/bandages
+	name = "box of bandages"
+	desc = "A container packed with gauze, for packing wounds with gauze."
+	initial_contents = list(/obj/item/stack/medical/bruise_pack = 6)
+
+/obj/item/storage/deferred/ointment
+	name = "box of ointment"
+	desc = "A container filled with tubes of ointment."
+	initial_contents = list(/obj/item/stack/medical/ointment = 6)
+
+//Gear (Emergency supplies), as an "Oh fuck a [insert threat] appeared and absolutely no one is prepared to fight it." response by Lonestar. Alternatively, could probably be used to gear up prospies that manage to lose their gear.
+/obj/item/storage/deferred/crate/infantry_rifle
+	name = "infantry rifle kit"
+	desc = "A (relatively) lightweight crate containing everything to arm a colonist (to the bare minimum.)"
+	initial_contents = list(/obj/item/gun/projectile/boltgun/lever,
+	/obj/item/ammo_magazine/ammobox/magnum_40 = 2
+	) // No magnum rifle speedloaders, just throwing an extra box in there.
+
+/obj/item/storage/deferred/crate/infantry_armor
+	name = "infantry armor kit"
+	desc = "A (relatively) lightweight crate containing everything to armor a colonist (to the bare minimum.)"
+	initial_contents = list(/obj/item/clothing/suit/armor/vest,
+	/obj/item/clothing/gloves/thick/handmade,
+	/obj/item/clothing/shoes/jackboots,
+	/obj/item/clothing/head/helmet
+	)
+
+/obj/item/storage/deferred/crate/infantry_erifle // Kind of goofy how the most common laser rifle in the galaxy is locked behind S.I. or buying it very late stage Trade beacon DIRECTLY from G.P.
+	name = "infantry energy rifle kit"
+	desc = "A (relatively) lightweight crate containing everything to arm a colonist. With lasers (to the bare minimum.)"
+	initial_contents = list(/obj/item/gun/energy/cog,
+	/obj/item/cell/medium = 2 // Leave 'em craving literally anything better
+	)
+
+/obj/item/storage/deferred/havelock_box
+	name = "havelock personal defense kit"
+	desc = "Everything you need to technically be armed."
+	initial_contents = list(/obj/item/gun/projectile/revolver/detective,
+	/obj/item/ammo_magazine/speed_loader_pistol_35,
+	/obj/item/ammo_magazine/speed_loader_pistol_35/rubber,
+	/obj/item/ammo_magazine/ammobox/pistol_35,
+	/obj/item/ammo_magazine/ammobox/pistol_35/rubber
+	)
 // Kitchen supply
 /obj/item/storage/deferred/kitchen
 	name = "galley supply box"
@@ -413,10 +465,10 @@
 		/obj/item/tool/knife/butch = 1,
 		/obj/item/material/kitchen/rollingpin = 1,
 		/obj/item/packageWrap = 1,
-		/obj/item/reagent_containers/food/condiment/saltshaker = 1,
-		/obj/item/reagent_containers/food/condiment/peppermill = 1,
-		/obj/item/reagent_containers/food/condiment/cookingoil = 1,
-		/obj/item/reagent_containers/food/condiment/sugar = 1
+		/obj/item/reagent_containers/condiment/saltshaker = 1,
+		/obj/item/reagent_containers/condiment/peppermill = 1,
+		/obj/item/reagent_containers/condiment/cookingoil = 1,
+		/obj/item/reagent_containers/condiment/sugar = 1
 	)
 
 // MoeSci supply
@@ -440,7 +492,7 @@
 	name = "research box"
 	desc = "A small collection of intellectual curiosities"
 	initial_contents = list(
-		/obj/item/computer_hardware/hard_drive/portable/research_points/rare = 1
+		/obj/item/pc_part/drive/disk/research_points/rare = 1
 	)
 
 // Trapper
@@ -458,6 +510,6 @@
 	name = "SA rifle pack"
 	desc = "A small collection of SA disks"
 	initial_contents = list(
-		/obj/item/computer_hardware/hard_drive/portable/design/guns/sa_kalashnikov = 1,
-		/obj/item/computer_hardware/hard_drive/portable/design/guns/sa_pk = 1
+		/obj/item/pc_part/drive/disk/design/guns/sa_kalashnikov = 1,
+		/obj/item/pc_part/drive/disk/design/guns/sa_pk = 1
 	)

@@ -190,6 +190,10 @@
 
 	. += move_intent.move_delay
 
+	if(client)
+		if(client.true_dir == NORTHEAST || client.true_dir == NORTHWEST || client.true_dir == SOUTHEAST || client.true_dir == SOUTHWEST)
+			. += MOVE_DELAY_DIAGONAL_ADDER //If we are moving in a cornerdirs then we slow down a bit to not cheat movement
+
 
 /mob/proc/Life()
 	LEGACY_SEND_SIGNAL(src, COMSIG_MOB_LIFE)
@@ -1027,7 +1031,7 @@ mob/proc/yank_out_object()
 		affected.implants -= selection
 		affected.embedded -= selection
 		selection.on_embed_removal(src)
-		if(!(H.species && (H.species.flags & NO_PAIN)))
+		if(!(H.species && ((H.species.flags & NO_PAIN) || (PAIN_LESS in H.mutations))))
 			H.shock_stage+=20
 		affected.take_damage((selection.w_class * 3), 0, 0, 1, "Embedded object extraction")
 
@@ -1108,7 +1112,7 @@ mob/proc/yank_out_object()
 /mob/proc/has_brain_worms()
 
 	for(var/I in contents)
-		if(istype(I,/mob/living/simple_animal/borer))
+		if(istype(I,/mob/living/simple/borer))
 			return I
 
 	return FALSE
@@ -1337,3 +1341,6 @@ mob/proc/yank_out_object()
 		if(maxHealth > 300) //soft cap to keep players from becoming killable only by organ damage or pain.
 			health = 300
 			maxHealth = 300
+		//If we get below 0 max HP it messes with stuff and damage values, 20 hp is the limit for this
+		if(maxHealth < 20)
+			maxHealth = 20

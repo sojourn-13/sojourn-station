@@ -108,6 +108,7 @@
 	heating_point = 523
 	heating_products = list("toxin")
 	reagent_type = "Toxin/Stimulator"
+	withdrawal_threshold = 8 //gives you chances to purge it
 
 /datum/reagent/toxin/carpotoxin/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	..()
@@ -832,7 +833,7 @@
 	..()
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-		if(H.species && (H.species.flags & (NO_PAIN)))
+		if((H.species.flags & NO_PAIN) || (PAIN_LESS in H.mutations))
 			return
 
 		M.apply_effect(agony_amount, HALLOSS, 0)

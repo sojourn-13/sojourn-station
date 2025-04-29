@@ -23,7 +23,8 @@
 			/obj/item/handcuffs,
 			/obj/item/shield/riot,
 			/obj/item/tool/baton,
-			/obj/machinery/deployable/barrier
+			/obj/machinery/deployable/barrier,
+			/obj/item/clothing/ears/earmuffs
 		),
 		"Energy weapons" = list(
 			/obj/item/gun/energy/gun/martin,
@@ -64,12 +65,19 @@
 			/obj/item/clothing/suit/storage/vest,
 			/obj/item/clothing/head/helmet/tanker,
 			/obj/item/clothing/suit/armor/bulletproof,
-			/obj/item/clothing/suit/armor/laserproof
+			/obj/item/clothing/suit/armor/laserproof,
+			/obj/item/clothing/gloves/thick/swat
+		),
+		"Pre-Assembled Equipment Kits" = list(
+			/obj/item/storage/deferred/crate/infantry_rifle = good_data("Armstrong Kit", list(1, 3), 1000),
+			/obj/item/storage/deferred/crate/infantry_armor = good_data("Basic Armor Kit", list(1, 3), 400),
+			/obj/item/storage/deferred/crate/infantry_erifle = good_data("Cog Kit", list(1, 3), 950),
+			/obj/item/storage/deferred/havelock_box = good_data("Havelock Personal Defense Kit", list (2, 4), 450)
 		)
 	)
 	hidden_inventory = list(
 		"Gun Resale Parts" = list(
-			/obj/item/computer_hardware/hard_drive/portable/design/gun_frames/resale = good_data("Blackmarket Gun Frame Disk", list(1, 1), 800),
+			/obj/item/pc_part/drive/disk/design/gun_frames/resale = good_data("Blackmarket Gun Frame Disk", list(1, 1), 800),
 			/obj/item/part/gun/grip/black,
 			/obj/item/part/gun/barrel/srifle,
 			/obj/item/part/gun/barrel/shotgun,
@@ -85,7 +93,7 @@
 			/obj/item/gun_upgrade/mechanism/reverse_loader,
 			/obj/item/gun_upgrade/trigger/dangerzone
 		),
-		"Xanorath Smugged Gear" = list(
+		"Xanorath Smuggled Gear" = list(
 			/obj/item/clothing/suit/space/void/merc/xanorath,
 			/obj/item/melee/energy/sword/pirate,
 //			/obj/item/gun/projectile/gyropistol = good_data("Novichok", list(0, 2), 28000), //holster sized 'i win' gun, keep this expensive and rare.
@@ -96,8 +104,8 @@
 			/obj/item/reagent_containers/pill/happy,
 			/obj/item/seeds/ambrosiadeusseed,
 			/obj/item/seeds/ambrosiavulgarisseed,
-			/obj/item/reagent_containers/food/snacks/grown/ambrosiadeus = good_data("Ambrosiadeus", list(1, 3), 200),
-			/obj/item/reagent_containers/food/snacks/grown/ambrosiavulgaris = good_data("Ambrosiavulgaris", list(1, 3), 400)
+			/obj/item/reagent_containers/snacks/grown/ambrosiadeus = good_data("Ambrosiadeus", list(1, 3), 200),
+			/obj/item/reagent_containers/snacks/grown/ambrosiavulgaris = good_data("Ambrosiavulgaris", list(1, 3), 400)
 
 		)
 	)

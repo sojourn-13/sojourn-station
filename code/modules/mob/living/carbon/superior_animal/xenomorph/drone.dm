@@ -1,7 +1,7 @@
 //basic xenomorph mob, used as a glass cannon kind of fodder
 var/datum/xenomorph/xenomorph_ai
 
-/mob/living/carbon/superior_animal/xenomorph
+/mob/living/carbon/superior/xenomorph
 	name = "xenomorph drone" //So we dont mix up drone as in the contruction drone or such
 	desc = "A basic xenomorph drone, all slime, teeth, and claws. Looking at it unnerves you..."
 	icon = 'icons/mob/Xenos_48x48.dmi'
@@ -40,7 +40,7 @@ var/datum/xenomorph/xenomorph_ai
 	move_to_delay = 4
 	turns_per_move = 12
 	see_in_dark = 10
-	meat_type = /obj/item/reagent_containers/food/snacks/meat/xenomeat
+	meat_type = /obj/item/reagent_containers/snacks/meat/xenomeat
 	meat_amount = 3
 	leather_amount = 0
 	bones_amount = 0
@@ -57,8 +57,8 @@ var/datum/xenomorph/xenomorph_ai
 	min_breath_poison_type = 0
 	default_pixel_x = -14
 
-	var/poison_per_bite = 0
-	var/poison_type = "xenotoxin"
+	poison_per_bite = 0
+	poison_type = "xenotoxin"
 	pass_flags = PASSTABLE
 	faction = "xenomorph"
 
@@ -74,14 +74,14 @@ var/datum/xenomorph/xenomorph_ai
 	known_languages = list(LANGUAGE_XENOMORPH)
 
 	allowed_stat_modifiers = list(
-		/datum/stat_modifier/mob/living/carbon/superior_animal/padded/xeno = 36,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/old/xeno = 26,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/young/xeno = 50,
+		/datum/stat_modifier/mob/living/carbon/superior/padded/xeno = 36,
+		/datum/stat_modifier/mob/living/carbon/superior/old/xeno = 26,
+		/datum/stat_modifier/mob/living/carbon/superior/young/xeno = 50,
 		/datum/stat_modifier/health/mult/positive/low = 42,
 		/datum/stat_modifier/health/mult/positive/medium = 21,
 		/datum/stat_modifier/health/mult/positive/high = 14,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/durable/xeno = 22,
-		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish/xeno = 12,
+		/datum/stat_modifier/mob/living/carbon/superior/durable/xeno = 22,
+		/datum/stat_modifier/mob/living/carbon/superior/brutish/xeno = 12,
 		/datum/stat_modifier/mob/living/speed/flat/positive/low = 1
 	)
 
@@ -90,11 +90,11 @@ var/datum/xenomorph/xenomorph_ai
 	armor_divisor = 1.25
 
 
-/mob/living/carbon/superior_animal/xenomorph/slip(slipped_on,stun_duration=8)
+/mob/living/carbon/superior/xenomorph/slip(slipped_on,stun_duration=8)
 	return FALSE
 //Xenos can't be slipped but can be flashed, after all, secondary senses like thermal vision are usually easily overloaded by lights.
 
-/mob/living/carbon/superior_animal/xenomorph/New()
+/mob/living/carbon/superior/xenomorph/New()
 	..()
 	if(!icon_living)
 		icon_living = icon_state
@@ -107,7 +107,7 @@ var/datum/xenomorph/xenomorph_ai
 	pixel_x = -14
 	pixel_y = 0
 
-/mob/living/carbon/superior_animal/xenomorph/hunter/New()
+/mob/living/carbon/superior/xenomorph/hunter/New()
 	..()
 	if(!icon_living)
 		icon_living = icon_state
@@ -120,11 +120,11 @@ var/datum/xenomorph/xenomorph_ai
 	pixel_x = 0
 	pixel_y = 0
 
-/mob/living/carbon/superior_animal/xenomorph/start_pulling(atom/movable/AM)
+/mob/living/carbon/superior/xenomorph/start_pulling(atom/movable/AM)
 	to_chat(src, SPAN_WARNING("Your hand gets slashed away from \the [src]. !"))
 	return
 
-/mob/living/carbon/superior_animal/xenomorph/attack_hand(mob/living/carbon/M as mob)
+/mob/living/carbon/superior/xenomorph/attack_hand(mob/living/carbon/M as mob)
 	..()
 	var/mob/living/carbon/human/H = M
 

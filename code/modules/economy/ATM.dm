@@ -464,7 +464,7 @@ log transactions
 		exchange_tabulate(I, user)
 		return
 	//this is for disks/hardrives
-	if(istype(I, /obj/item/computer_hardware/hard_drive))
+	if(istype(I, /obj/item/pc_part/drive))
 		exchange_tabulate(I, user)
 		return
 	..()
@@ -511,8 +511,8 @@ log transactions
 		exchange_medium = round(((OS.amount*10)*tax))
 		qdel(OS)
 
-	if(istype(I, /obj/item/computer_hardware/hard_drive))
-		var/obj/item/computer_hardware/hard_drive/HD = I
+	if(istype(I, /obj/item/pc_part/drive))
+		var/obj/item/pc_part/drive/HD = I
 		for(var/datum/computer_file/program/coin_miner/CM in HD.stored_files)
 			exchange_medium += (CM.size * CM.added_wealth)
 			CM.size = 0
