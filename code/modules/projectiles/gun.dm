@@ -501,20 +501,66 @@
 
 	currently_firing = TRUE
 
-	var/shoot_time = (burst - 1)* burst_delay
+	var/shoot_time = (burst - 1) * burst_delay
 	user.setClickCooldown(shoot_time) //no clicking on things while shooting
 	can_fire_next = FALSE
 	addtimer(CALLBACK(src, TYPE_PROC_REF(/obj/item/gun, ready_to_shoot)), fire_delay)
 
 	//actually attempt to shoot
 	var/turf/targloc = get_turf(target) //cache this in case target gets deleted during shooting, e.g. if it was a securitron that got destroyed.
-	for(var/i in 1 to burst)
-		var/obj/projectile = consume_next_projectile(user)
+	var/obj/projectile = consume_next_projectile(user)
+
+	var/obj/item/projectile/Project
+
+	//Dont assume its a projectile
+	if(istype(projectile, /obj/item/projectile))
+		Project = projectile
+
+	var/move_onto_next = FALSE
+	var/burst_delay_pre = burst_delay
+
+	var/i = burst
+	while(i)
+		i -= 1
+		if(move_onto_next)
+			move_onto_next = FALSE
+			projectile = consume_next_projectile(user)
+
+			//Dont assume its a projectile
+			if(istype(projectile, /obj/item/projectile))
+				Project = projectile
+
+		//if are projectile is infact a projectile
+		if(Project)
+
+			if(Project.steel_rain) //do we make areselfs constantly?
+				i += 1 //We need to keep the loop going
+				Project.steel_rain -= 1
+				var/obj/item/projectile/pew = new Project.type(src)
+				pew.impact_type = null
+				pew.tracer_type = null
+				pew.muzzle_type = null
+				pew.steel_rain = Project.steel_rain //Used for damage mods
+				projectile = pew
+				burst_delay = 0.1 //Shoot every basically at once
+				shoot_time = 0.1
+			else
+				//normal shooting again
+				burst_delay = burst_delay_pre
+				shoot_time = (burst - 1) * burst_delay
+				projectile = Project
+				Project = null
+				move_onto_next = TRUE
+		else
+			//we are not a bullet thus have no reason to stick around
+			move_onto_next = TRUE
+
 		if(!projectile)
 			handle_click_empty(user)
 			break
 
-		handle_muzzle_flash(user)
+		if(!burst) //Only do this once after everything else is cleared
+			handle_muzzle_flash(user)
 
 		if(extra_proj_damagemult)
 			projectile.multiply_projectile_damage(extra_proj_damagemult)

@@ -174,7 +174,17 @@ Bullet also tend to have more armor against them do to this and can be douged un
 	if(!newdamages.len)
 		return
 	for(var/damage_type in newdamages)
-		var/bonus = pellets > 2 ? newdamages[damage_type] / pellets * 2 : newdamages[damage_type]
+		var/bonus = (pellets + steel_rain) > 2 ? newdamages[damage_type] / (pellets + steel_rain) * 2 : newdamages[damage_type]
+		if(damage_type == IRRADIATE)
+			irradiate += bonus
+			continue
+		damage_types[damage_type] += bonus
+
+/obj/item/projectile/bullet/adjust_damages(var/list/newdamages)
+	if(!newdamages.len)
+		return
+	for(var/damage_type in newdamages)
+		var/bonus = steel_rain > 2 ? newdamages[damage_type] / steel_rain * 2 : newdamages[damage_type]
 		if(damage_type == IRRADIATE)
 			irradiate += bonus
 			continue
