@@ -1,6 +1,7 @@
 #define MOVE_DELAY_MIN 1.0 // Absolute minimum of movement delay - cannot be lowered further by any means
 #define MOVE_DELAY_BASE 1.1
 #define MOVE_DELAY_VENTCRAWL MOVE_DELAY_BASE //Ventcrawling has a static speed for all mobs
+#define MOVE_DELAY_DIAGONAL_ADDER 1.4
 
 //Glidesize
 #define FRACTIONAL_GLIDESIZES 1
