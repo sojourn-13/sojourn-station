@@ -121,7 +121,7 @@
 				to_chat(user, SPAN_NOTICE("You disconnect the monitor."))
 				A.state = 4
 				A.icon_state = "4"
-			circuit.deconstruct(src)
+			circuit?.deconstruct(src)
 			qdel(src)
 	else
 		..()
