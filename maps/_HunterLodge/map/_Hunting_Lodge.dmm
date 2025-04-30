@@ -708,15 +708,6 @@
 	},
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
-"dD" = (
-/obj/structure/multiz/stairs/enter/bottom{
-	dir = 2
-	},
-/obj/structure/multiz/stairs/enter/bottom{
-	dir = 1
-	},
-/turf/simulated/floor/wood,
-/area/nadezhda/outside/forest/hunting_lodge_dark)
 "dE" = (
 /obj/structure/table/bench/wooden,
 /turf/simulated/floor/asteroid/dirt,
@@ -9742,7 +9733,7 @@ Cx
 Cx
 Cx
 yh
-dD
+On
 jj
 jj
 jj
@@ -9976,7 +9967,7 @@ Cx
 Cx
 Cx
 yh
-dD
+On
 jj
 jj
 jj
