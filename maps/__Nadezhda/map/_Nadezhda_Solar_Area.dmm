@@ -2723,7 +2723,7 @@
 /turf/simulated/floor/fixed/hydrotile,
 /area/nadezhda/outside/mountainsolars)
 "OM" = (
-/obj/machinery/recharge_station,
+/obj/machinery/recharge_station/upgraded_t_three,
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/nadezhda/engineering/dorm)
 "OU" = (
