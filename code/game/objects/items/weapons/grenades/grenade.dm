@@ -73,7 +73,7 @@
 /obj/item/grenade/proc/prime(mob/user)
 	var/turf/T = get_turf(src)
 	T?.hotspot_expose(700,125)
-	user.hud_used.updatePlaneMasters(user)
+	user.hud_used?.updatePlaneMasters(user)
 
 
 /obj/item/grenade/attackby(obj/item/I, mob/user as mob)

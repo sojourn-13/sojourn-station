@@ -224,6 +224,8 @@
 	icon_state = "erisblue"
 	requires_power = 1
 
+// CFW - Safehouse Rework
+/*
 /area/nadezhda/dungeon/outside/safehouse
 	name = "Abandoned Safehouse"
 	icon_state = "nadezhdagreen"
@@ -231,6 +233,40 @@
 	is_dungeon_lootable = FALSE
 	ambience = list('sound/ambience/ambigen1.ogg','sound/ambience/ambigen3.ogg','sound/ambience/ambigen4.ogg','sound/ambience/ambigen5.ogg','sound/ambience/ambigen6.ogg','sound/ambience/ambigen7.ogg','sound/ambience/ambigen8.ogg','sound/ambience/ambigen9.ogg','sound/ambience/ambigen10.ogg','sound/ambience/ambigen11.ogg','sound/ambience/ambigen12.ogg','sound/ambience/ambigen14.ogg')
 	area_light_color = COLOR_LIGHTING_CREW_SOFT
+*/
+
+/area/nadezhda/dungeon/outside/safehouse
+	name = "Safehouse"
+	icon_state = "nadezhdagreen"
+	is_maintenance = FALSE
+	dynamic_lighting = TRUE
+	is_dungeon_lootable = FALSE
+	ambience = list('sound/ambience/ambigen1.ogg','sound/ambience/ambigen3.ogg','sound/ambience/ambigen4.ogg','sound/ambience/ambigen5.ogg','sound/ambience/ambigen6.ogg','sound/ambience/ambigen7.ogg','sound/ambience/ambigen8.ogg','sound/ambience/ambigen9.ogg','sound/ambience/ambigen10.ogg','sound/ambience/ambigen11.ogg','sound/ambience/ambigen12.ogg','sound/ambience/ambigen14.ogg')
+	area_light_color = COLOR_LIGHTING_CREW_SOFT
+
+/area/nadezhda/dungeon/outside/safehouse/substation
+	name = "Safehouse Substation"
+
+/area/nadezhda/dungeon/outside/safehouse/kitchen
+	name = "Safehouse Kitchen"
+
+/area/nadezhda/dungeon/outside/safehouse/restroom
+	name = "Safehouse Restroom"
+
+/area/nadezhda/dungeon/outside/safehouse/operations
+	name = "Safehouse Operations"
+
+/area/nadezhda/dungeon/outside/safehouse/laboratory
+	name = "Safehouse Laboratory"
+
+/area/nadezhda/dungeon/outside/safehouse/mechbay
+	name = "Safehouse Mech-Bay"
+
+/area/nadezhda/dungeon/outside/safehouse/infirmary
+	name = "Safehouse Infirmary"
+
+/area/nadezhda/dungeon/outside/safehouse/warehouse
+	name = "Safehouse Warehouse"
 
 //This is put here because the floors are seperated by power needs, the reason being if not powering 1 floor lags the server to hell and back. -Kaz
 /area/nadezhda/dungeon/outside/prepper/vault/floor1
