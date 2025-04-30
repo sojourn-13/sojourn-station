@@ -114,14 +114,6 @@
 /obj/item/spider_shadow_trap/Bumped(AM as mob|obj)
 	Crossed(AM)
 */
-
-/obj/item/spider_shadow_trap/attackby(obj/item/I, mob/user)
-	..()
-	//Get ambushed stupid
-	if(istype(I, /obj/item/reagent_containers/snacks/meat))
-		ambush(null)
-		return
-
 /obj/item/spider_shadow_trap/attack_hand(mob/user as mob)
 	Crossed(user)
 
@@ -137,8 +129,7 @@
 /obj/item/spider_shadow_trap/proc/ambush(var/mob/living/M)
 	triggered = 1
 	playsound(src.loc, 'sound/sanity/screech.ogg', 300, 1)
-	if(M)
-		M.Weaken(3)
+	M.Weaken(3)
 	new /mob/living/carbon/superior/spider/fortress/emperor(src.loc)
 	qdel(src)
 
@@ -163,8 +154,7 @@
 /obj/item/spider_shadow_trap/burrowing/ambush(var/mob/living/M)
 	triggered = 1
 	playsound(src.loc, 'sound/effects/impacts/rumble2.ogg', 300, 1)
-	if(M)
-		M.Weaken(3)
+	M.Weaken(3)
 	new /mob/living/carbon/superior/spider/fortress/burrowing(src.loc)
 	qdel(src)
 
