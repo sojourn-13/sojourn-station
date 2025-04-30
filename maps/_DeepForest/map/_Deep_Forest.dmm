@@ -13910,13 +13910,8 @@
 /area/space)
 "jki" = (
 /obj/structure/table/steel,
-/obj/item/stack/rods{
-	max_amount = 1
-	},
-/obj/item/stack/rods{
-	max_amount = 1
-	},
 /obj/item/stack/cable_coil,
+/obj/item/stack/rods/random,
 /turf/simulated/floor/wood/wild4,
 /area/colony/exposedsun/crashed_shop/outsider)
 "jkl" = (
