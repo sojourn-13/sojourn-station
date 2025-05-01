@@ -296,7 +296,7 @@ export const CraftMenu = (props) => {
 
   // -- State --
   // Compact mode
-  const [showCompact, setShowCompact] = useState(false);
+  const [showCompact, setShowCompact] = useState(true);
 
   // Search text
   const [searchText, setSearchText] = useSharedState('searchText', '');
