@@ -57,7 +57,7 @@
 
 		// This is not great code, but the previous method made Linter-chan cry, and what I thought to do instead, replace the chest piece by a voidsuit, felt really weird.
 		// This is way smaller, more efficient, less loophole-y, and don't give me that weird feeling. -R4d6
-		if(istype(wearing_rig, /obj/item/rig/ameridian_knight) && !wearing_rig.active)
+		if(istype(wearing_rig, /obj/item/rig/hydrogen_knight) && !wearing_rig.active)
 			to_chat(user, SPAN_WARNING("The helmet require the rig to be active."))
 			return
 

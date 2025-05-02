@@ -179,10 +179,10 @@
 	)
 
 
-// Ameridian Knight Rig recipe
-/datum/craft_recipe/robotic/ameridian_knight
-	name = "Ameridian Knight Rigsuit"
-	result = /obj/item/rig/ameridian_knight
+// Hydrogen Knight Rig recipe
+/datum/craft_recipe/robotic/hydrogen_knight
+	name = "Hydrogen Knight Rigsuit"
+	result = /obj/item/rig/hydrogen_knight
 	icon_state = "device"
 	steps = list(
 		list(/obj/item/rig, 1, "time" = 20), // Any rig as base
@@ -209,7 +209,7 @@
 		list(/obj/item/stock_parts/capacitor/super, 1, "time" = 30),
 		list(/obj/item/tool_upgrade/productivity/booster, 1, "time" = 30),
 		list(/obj/item/stock_parts/matter_bin/super, 1, "time" = 30),
-		list(/obj/item/ameridian_core, 1, "time" = 30),
+		list(/obj/item/hydrogen_fuel_cell, 1, "time" = 30),
 		list(/obj/item/stock_parts/manipulator/pico, 2, "time" = 30),
 		list(/obj/item/gun_upgrade/mechanism/battery_shunt, 1, "time" = 30),
 		list(/obj/item/tool_upgrade/productivity/rocket_engine, 1, "time" = 30),
