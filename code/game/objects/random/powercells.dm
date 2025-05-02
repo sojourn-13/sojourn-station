@@ -125,3 +125,14 @@
 				/obj/item/cell/small/super = 5,\
 				/obj/item/cell/small/hyper = 1
 				))
+
+/obj/random/powercell/safe_guild
+    name = "random guild only powercell"
+    icon_state = "battery-green"
+
+/obj/random/powercell/safe_guild/item_to_spawn()
+    return pickweight(list(
+                /obj/item/cell/large/guild = 1,\
+                /obj/item/cell/medium/guild = 1,\
+                /obj/item/cell/small/guild = 1,\
+                ))

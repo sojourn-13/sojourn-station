@@ -15360,6 +15360,7 @@
 /obj/item/storage/freezer/medical/contains_teratomas,
 /obj/item/storage/hcases/med/has_items_spawn,
 /obj/item/storage/hcases/med/has_items_spawn,
+/obj/item/circuitboard/sleeper/hyper,
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/nadezhda/dungeon/outside/prepper/alpha)
 "Yg" = (
