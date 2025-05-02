@@ -14,7 +14,7 @@
 
 	tags = list(TAG_NEGATIVE)
 
-	ocurrences_max = 1 //typically requires a medical doctor to handle having it trigger more then this is just annoying
+	ocurrences_max = 0 //typically requires a medical doctor to handle having it trigger more then this is just annoying
 
 
 /datum/event/spontaneous_appendicitis/start()

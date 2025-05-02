@@ -409,13 +409,13 @@
 	build_path = /obj/item/circuitboard/teleporterhub
 	category = CAT_BLUE
 
-/*
+
 //Experimental devices
 /datum/design/research/circuit/mindswapper
 	name = "experimental mind swapper"
 	build_path = /obj/item/circuitboard/mindswapper
 	category = CAT_MEDI
-*/
+
 
 /datum/design/research/circuit/tesla_turret
 	name = "experimental tesla turret"

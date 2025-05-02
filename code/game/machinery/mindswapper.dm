@@ -1,7 +1,7 @@
-/*
+
 /obj/machinery/mindswapper
 	name = "experimental mind swapper"
-	desc = "The name isn't descriptive enough?"
+	desc = "A highly experimental and illegal machine, capable of swapping minds of any two given creatures."
 	icon = 'icons/obj/machines/research.dmi'
 	icon_state = "mindswap_off"
 	density = TRUE
@@ -104,4 +104,4 @@
 
 	visible_message(SPAN_DANGER("You hear a loud electrical crack before the mind swapper shuts down."))
 	update_icon()
-*/
+

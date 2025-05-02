@@ -145,7 +145,7 @@
 		/obj/item/stock_parts/manipulator = 1,
 		/obj/item/device/assembly/prox_sensor = 1,
 	)
-/*
+
 /obj/item/circuitboard/mindswapper
 	build_name = "mind swapper"
 	build_path = /obj/machinery/mindswapper
@@ -156,7 +156,7 @@
 		/obj/item/stock_parts/scanning_module = 3,
 		/obj/item/stock_parts/manipulator = 4
 	)
-*/
+
 
 /obj/item/circuitboard/blackshield_teleporter
 	name = "circuit board blackshield teleporter"

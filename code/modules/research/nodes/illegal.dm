@@ -113,7 +113,7 @@
 
 	unlocks_designs = list(/datum/design/research/item/implant/freedom)
 
-/*
+
 /datum/technology/mind_biotech
 	name = "Mind Biotech"
 	desc = "Experimental biotechnology that explores the inner workings of sentient minds."
@@ -130,7 +130,7 @@
 	cost = 3000
 
 	unlocks_designs = list(	/datum/design/research/circuit/mindswapper)
-*/
+
 
 /datum/technology/tyrant_aimodule
 	name = "AI Core Module (T.Y.R.A.N.T.)"
