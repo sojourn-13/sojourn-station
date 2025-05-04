@@ -893,13 +893,12 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor2west)
 "ajg" = (
-/obj/structure/bed/chair/sofa/black/corner{
-	dir = 8;
-	icon_state = "sofaend_left"
-	},
 /obj/machinery/requests_console/preset/command/foreman{
 	dir = 1;
 	pixel_y = -35
+	},
+/obj/structure/bed/chair/sofa/black/left{
+	dir = 8
 	},
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/pros/foreman)
@@ -26643,9 +26642,8 @@
 /area/nadezhda/command/fo)
 "fcq" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/bed/chair/sofa/black/corner{
-	dir = 4;
-	icon_state = "sofaend_left"
+/obj/structure/bed/chair/sofa/black/left{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/pros/prep)
@@ -104972,9 +104970,8 @@
 	dir = 8;
 	pixel_x = 32
 	},
-/obj/structure/bed/chair/sofa/black/corner{
-	dir = 8;
-	icon_state = "sofaend_right"
+/obj/structure/bed/chair/sofa/black/right{
+	dir = 8
 	},
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/pros/foreman)
@@ -107715,12 +107712,11 @@
 /area/nadezhda/rnd/xenobiology/xenoflora)
 "uuE" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/bed/chair/sofa/black/corner{
-	dir = 4;
-	icon_state = "sofaend_right"
-	},
 /obj/machinery/computer/guestpass{
 	pixel_y = -32
+	},
+/obj/structure/bed/chair/sofa/black/right{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/pros/prep)
