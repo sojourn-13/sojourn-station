@@ -1,7 +1,7 @@
 //SOJ's attempt to fix and optimize npcs atmos intractions
 //First optimization is to stop having mobs eat air and less new gas mixtures
 /mob/living/carbon/superior/proc/sa_handle_breath()
-	var/datum/gas_mixture/environment = loc.return_air_for_internal_lifeform()
+	var/datum/gas_mixture/environment = loc?.return_air_for_internal_lifeform()
 	handle_breath(environment)
 	handle_environment(environment) //it should be pretty safe to move this out of ai inactive if this causes problems.
 	if(can_burrow && bad_environment)
