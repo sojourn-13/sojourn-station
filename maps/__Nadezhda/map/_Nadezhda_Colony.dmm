@@ -29608,12 +29608,12 @@
 	desc = "A remote control switch.";
 	id = "medbay exit";
 	name = "Medbay Exit Button";
-	pixel_y = 6
+	pixel_y = 9
 	},
 /obj/machinery/button/remote/blast_door{
 	id = "Chem2";
-	name = "Medical shutter control";
-	pixel_y = -6
+	name = "Medical Shutter Control";
+	pixel_y = -2
 	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/reception)
