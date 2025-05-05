@@ -124,7 +124,7 @@
 			new flooring.build_type(src)
 
 	//We attempt to get whatever should be under this floor
-	var/temp = flooring.get_plating_type(src) //This will return null if there's nothing underneath
+	var/temp = flooring?.get_plating_type(src) //This will return null if there's nothing underneath
 	if (temp)
 		set_flooring(get_flooring_data(temp))
 	else
