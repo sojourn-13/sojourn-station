@@ -55,8 +55,11 @@
 		current_steak = W // Start cooking the steak
 		insert_item(W, user) // insert the steak inside the fire
 
-	else if(istype(W, /obj/item/stack/material/wood)) // If it's wood, use it as fuel
+	else if(istype(W, /obj/item/stack/material/wood)) // If it's wood, use it as fuel |2025-G: Currently, it cannot tell between a full stack, numerous or one plank, all work and give 1000 fuel
 		add_fuel(W, user)
+		if(burning)
+			update_icon()
+			playsound(loc, 'sound/effects/fireplace.ogg', 50, 1)
 
 	else if(isflamesource(W))
 		ignite() // Start the fire
@@ -67,7 +70,7 @@
 /obj/structure/bonfire/attack_hand(mob/user)
 	if(buckled_mob)
 		return ..()
-	DropFuel(user) // Take out some unused fuel
+	//DropFuel(user) // Take out some unused fuel 2025-G: This is causing bugs for infinite fuel, taking burning logs out of a bonfire is also silly
 
 // Fuel stuff
 /obj/structure/bonfire/proc/add_fuel(obj/item/W, mob/user)
@@ -98,7 +101,7 @@
 			return TRUE
 	return FALSE // We don't have anything to burn !
 
-// Remove an unburned plank from the flames
+// Remove an unburned plank from the flames |2025-G: currently turned off to prevent infinite fuel
 /obj/structure/bonfire/proc/DropFuel(mob/user)
 	for(var/obj/item in contents) // Check the fire's inventory
 		if(istype(item, /obj/item/stack/material/wood)) // Wood!
@@ -133,11 +136,13 @@
 		else // We ran out of fuel.
 			extinguish() // The fire is no more.
 
+
 // Turn off the fire
 /obj/structure/bonfire/proc/extinguish()
-	if(burning) // Only proceed if we aren't already off
+	if(burning)// Only proceed if we aren't already off
 		burning = FALSE // No longer burning
 		update_icon()
+		playsound(loc, 'sound/effects/torch_off.ogg', 50, 1)
 		visible_message("<span class='notice'>\The [src] stops burning.</span>")
 
 // Turn on the fire
@@ -145,6 +150,7 @@
 	if(!burning && use_fuel(start_fuel_use)) // Make sure we aren't already on and that we have enough fuel
 		burning = TRUE // We're burning now.
 		update_icon()
+		playsound(loc, 'sound/effects/fireplace.ogg', 50, 1)
 		visible_message("<span class='warning'>\The [src] starts burning!</span>")
 
 /obj/structure/bonfire/update_icon()
@@ -152,9 +158,9 @@
 	if(burning)
 		var/state
 		switch(fuel)
-			if(0 to 500)
+			if(1 to 10000)
 				state = "bonfire_warm"
-			if(501 to 1000)
+			if(10001 to 9999999)
 				state = "bonfire_hot"
 		var/image/I = image(icon, state)
 		I.appearance_flags = RESET_COLOR | DEFAULT_APPEARANCE_FLAGS
@@ -188,5 +194,5 @@
 
 /obj/structure/bonfire/permanent/New()
 	..()
-	fuel = fuel_conversion_rate
+	fuel = fuel_conversion_rate * 5
 	update_icon()

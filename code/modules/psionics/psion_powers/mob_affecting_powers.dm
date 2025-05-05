@@ -119,10 +119,14 @@
 /mob/living/carbon/human/proc/psionic_swarm()
 	set category = "Psionic powers"
 	set name = "Psionic Swarm (2)"
-	set desc = "Spend two psi points to call forth a psionic energy cloud that will rip at foes and protect you for a short time."
+	set desc = "Spend two psi points to call forth a psionic energy cloud that will chase at foes, even if invisible and protect you for a short time from hostiles or projectiles."
 	var/psi_point_cost = 2
 	var/mob/living/carbon/human/user = src
 	var/obj/item/organ/internal/psionic_tumor/PT = user.first_organ_by_process(BP_PSION)
+
+	if(user.stats.getPerk(PERK_PSI_ATTUNEMENT))
+		to_chat(user, "Your mastery over psionics allows you to minimize the cost.")
+		psi_point_cost = 1
 
 	if(PT && PT.pay_power_cost(psi_point_cost) && PT.check_possibility())
 		user.visible_message(
