@@ -43987,9 +43987,6 @@
 /area/nadezhda/absolutism/skyyard)
 "ipC" = (
 /obj/structure/table/glass,
-/obj/item/phone{
-	pixel_y = 8
-	},
 /obj/item/pen/multi,
 /obj/item/folder/cyan,
 /obj/item/folder/cyan,
@@ -81906,6 +81903,7 @@
 /obj/machinery/light_switch{
 	pixel_y = 32
 	},
+/obj/item/reagent_containers/spray/cleaner,
 /turf/simulated/floor/tiled/white/monofloor,
 /area/nadezhda/medical/chemistry)
 "pBv" = (
@@ -84181,7 +84179,6 @@
 	pixel_y = 3;
 	preloaded_reagents = list("plasma" = 30)
 	},
-/obj/item/reagent_containers/spray/cleaner,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/medical/chemistry)
 "pWh" = (
