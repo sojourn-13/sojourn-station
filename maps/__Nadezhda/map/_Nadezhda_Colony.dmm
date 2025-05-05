@@ -15768,12 +15768,9 @@
 "dbq" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/blast/shutters{
-	density = 0;
 	dir = 2;
-	icon_state = "shutter0";
 	id = "premier_office2";
-	name = "Office Shutters";
-	opacity = 0
+	name = "Office Shutters"
 	},
 /obj/effect/window_lwall_spawn/reinforced/polarized{
 	id = "Captain"
@@ -27727,12 +27724,9 @@
 "fmD" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /obj/machinery/door/blast/shutters{
-	density = 0;
 	dir = 2;
-	icon_state = "shutter0";
 	id = "guild_lobby";
-	name = "Office Shutters";
-	opacity = 0
+	name = "Office Shutters"
 	},
 /turf/simulated/floor/plating,
 /area/nadezhda/engineering/foyer)
@@ -40213,12 +40207,9 @@
 "hGS" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /obj/machinery/door/blast/shutters{
-	density = 0;
 	dir = 2;
-	icon_state = "shutter0";
 	id = "guild_lobby";
-	name = "Office Shutters";
-	opacity = 0
+	name = "Office Shutters"
 	},
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/plating,
@@ -46149,12 +46140,9 @@
 	},
 /obj/machinery/door/firedoor,
 /obj/machinery/door/blast/shutters{
-	density = 0;
 	dir = 2;
-	icon_state = "shutter0";
 	id = "premier_office2";
-	name = "Office Shutters";
-	opacity = 0
+	name = "Office Shutters"
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/command/captain)
@@ -46641,12 +46629,9 @@
 /obj/effect/window_lwall_spawn/reinforced,
 /obj/machinery/door/firedoor,
 /obj/machinery/door/blast/shutters{
-	density = 0;
 	dir = 2;
-	icon_state = "shutter0";
 	id = "guild_lobby";
-	name = "Office Shutters";
-	opacity = 0
+	name = "Office Shutters"
 	},
 /turf/simulated/floor/plating,
 /area/nadezhda/engineering/foyer)
@@ -53423,12 +53408,9 @@
 /obj/effect/window_lwall_spawn/reinforced,
 /obj/machinery/door/firedoor,
 /obj/machinery/door/blast/shutters{
-	density = 0;
 	dir = 2;
-	icon_state = "shutter0";
 	id = "lonestar_lobby";
-	name = "Office Shutters";
-	opacity = 0
+	name = "Office Shutters"
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/quartermaster/office)
@@ -106812,12 +106794,9 @@
 	dir = 8
 	},
 /obj/machinery/door/blast/shutters{
-	density = 0;
 	dir = 2;
-	icon_state = "shutter0";
 	id = "guild_lobby";
-	name = "Office Shutters";
-	opacity = 0
+	name = "Office Shutters"
 	},
 /obj/machinery/door/firedoor,
 /obj/machinery/door/window/northleft{
@@ -106833,12 +106812,9 @@
 "ulj" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /obj/machinery/door/blast/shutters{
-	density = 0;
 	dir = 2;
-	icon_state = "shutter0";
 	id = "premier_office";
-	name = "Office Shutters";
-	opacity = 0
+	name = "Office Shutters"
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/command/fo)
@@ -110571,12 +110547,9 @@
 "uUH" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/blast/shutters{
-	density = 0;
 	dir = 4;
-	icon_state = "shutter0";
 	id = "premier_office2";
-	name = "Office Shutters";
-	opacity = 0
+	name = "Office Shutters"
 	},
 /obj/effect/window_lwall_spawn/reinforced/polarized{
 	id = "Captain"
@@ -116052,12 +116025,9 @@
 	dir = 2
 	},
 /obj/machinery/door/blast/shutters{
-	density = 0;
 	dir = 2;
-	icon_state = "shutter0";
 	id = "premier_office";
-	name = "Office Shutters";
-	opacity = 0
+	name = "Office Shutters"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/command/fo)
@@ -122977,12 +122947,9 @@
 /obj/structure/table/reinforced,
 /obj/machinery/door/firedoor,
 /obj/machinery/door/blast/shutters{
-	density = 0;
 	dir = 2;
-	icon_state = "shutter0";
 	id = "lonestar_lobby";
-	name = "Office Shutters";
-	opacity = 0
+	name = "Office Shutters"
 	},
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/quartermaster/office)
