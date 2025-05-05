@@ -285,7 +285,10 @@
 
 /obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil/Process()
 
-	var/datum/gas_mixture/environment = loc.return_air()
+	if(loc == null)
+		return
+		
+	var/datum/gas_mixture/environment = loc?.return_air()
 
 	if(environment)
 		environment.temperature = target_temperature
