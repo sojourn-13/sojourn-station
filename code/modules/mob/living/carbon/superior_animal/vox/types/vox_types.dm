@@ -304,10 +304,9 @@
 		addtimer(CALLBACK(src, TYPE_PROC_REF(/atom, cut_overlay), I), 40)
 
 	for(var/mob/living/carbon/superior/vox/V in oview(3, src))
-		if(V.stat == CONSCIOUS && health != maxHealth)
+		if(V.stat == CONSCIOUS && V.health != V.maxHealth)
 			var/image/I
 			I = image(icon ='icons/mob/battle_overlays.dmi', icon_state = "healed")
-			add_overlay(I)
 			V.add_overlay(I)
 			addtimer(CALLBACK(V, TYPE_PROC_REF(/atom, cut_overlay), I), 40)
 
