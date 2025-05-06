@@ -24,16 +24,19 @@
 	return INITIALIZE_HINT_NORMAL
 
 /atom/movable/lighting_overlay/New(atom/loc, no_update = FALSE)
-	. = ..()
-	verbs.Cut()
-	total_lighting_overlays++
-
 	var/turf/T = loc //If this runtimes atleast we'll know what's creating over-lays outside of turfs.
-	T.lighting_overlay = src
-	T.luminosity = 0
-	if(no_update)
-		return
-	update_overlay()
+	if(T.dynamic_lighting)
+		. = ..()
+		verbs.Cut()
+		total_lighting_overlays++
+
+		T.lighting_overlay = src
+		T.luminosity = 0
+		if(no_update)
+			return
+		update_overlay()
+	else
+		qdel(src)
 
 /atom/movable/lighting_overlay/proc/update_overlay()
 	set waitfor = FALSE
@@ -45,6 +48,10 @@
 		else
 			log_debug("A lighting overlay realised it was in nullspace in update_overlay() and got pooled!")
 		qdel(src, force=TRUE)
+		return
+	if(!T.dynamic_lighting)
+		log_debug("A lighting overlay found it's way onto a statically lit turf! loc: [loc] , [loc.type]")
+		qdel(src)
 		return
 
 	// To the future coder who sees this and thinks
