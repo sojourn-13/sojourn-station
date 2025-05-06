@@ -18,7 +18,7 @@
 	stations_recommended = list("trapper")
 	inventory = list(
 		"Biomatter products" = list(
-			/obj/item/reagent_containers/snacks/meat,
+			// /obj/item/reagent_containers/snacks/meat, no more directly buying and selling back meat. Now you've got to butcher an animal at the very least.
 			/obj/item/reagent_containers/drinks/milk,
 			/obj/item/soap/church,
 			/obj/item/storage/pouch/small_generic,
@@ -36,12 +36,12 @@
 			/obj/item/clothing/accessory/holster/hip
 		),
 		"Livestock" = list(
-			/obj/structure/largecrate/animal/corgi,
-			/obj/structure/largecrate/animal/cow,
-			/obj/structure/largecrate/animal/goat,
-			/obj/structure/largecrate/animal/cat,
-			/obj/structure/largecrate/animal/chick,
-			/obj/structure/largecrate/animal/pig
+			/obj/structure/largecrate/animal/corgi = good_data("corgi crate", list(-1, 2), 800),
+			/obj/structure/largecrate/animal/cow = good_data("cow crate", list(-1, 2), 600),
+			/obj/structure/largecrate/animal/goat = good_data("goat crate", list(-1, 2), 500),
+			/obj/structure/largecrate/animal/cat = good_data("cat crate", list(-1, 2), 600),
+			/obj/structure/largecrate/animal/chick = good_data("chicken crate", list(-1, 2), 500),
+			/obj/structure/largecrate/animal/pig = good_data("pig crate", list(-1, 2), 500)
 		),
 		"Bee & Plant Supply" = list(
 			/obj/item/bee_pack,
@@ -156,7 +156,8 @@
 		/obj/item/clothing/suit/space/void/NTvoid = offer_data("angel voidsuit", 1250, 15),
 		/obj/item/clothing/shoes/hermes_shoes = offer_data("hermes shoes", 420, 10),
 		/obj/item/reagent_containers/snacks/grown = offer_data("spare grown food", 10, 120),
-		/obj/item/reagent_containers/snacks/meat = offer_data("meat", 80, 20) //Buys it for less than Dionis/McRonalds, but is willing to buy more of it.
+		///obj/item/reagent_containers/snacks/meat = offer_data("meat", 80, 20) //Buys it for less than Dionis/McRonalds, but is willing to buy more of it. SIKE! We're doing cutlets now.
+		/obj/item/reagent_containers/snacks/rawcutlet = offer_data("raw cutlet", 30, 30) //Up to 10 slabs of meat at a time!! (Assuming the given meat has slices_num = 3)
 	)
 
 /obj/item/reagent_containers/drinks/cans/cahors/cargo
