@@ -1,6 +1,6 @@
 /* Weapons
  * Contains:
- *		Sword
+ *		Telescopic baton
  *		Classic Baton
  */
 
