@@ -71,6 +71,14 @@
 	//log_and_message_admins("LOG 1: armor [armor] | ablative_armor [ablative_armor] | remaining_armor| [remaining_armor] | remaining_ablative [remaining_ablative].")
 	//log_and_message_admins("LOG 1.2: attack_flag [attack_flag] | damagetype [damagetype] | def_zone| [def_zone] | armor_divisor [armor_divisor].")
 
+	//Do we have perks and stats?
+	if(stats)
+		//If we have this perk then reduce armor by 20%
+		if(stats.getPerk(PERK_ARMOR_REDUCTION))
+			ablative_armor *= 0.8
+			remaining_ablative *= 0.8
+			armor *= 0.8
+
 	for(var/dmg_type in dmg_types)
 		var/dmg = dmg_types[dmg_type]
 		if(dmg)

@@ -531,6 +531,13 @@
 	else
 		..()
 
+/obj/item/shield/buckler/handmade/damaged
+
+/obj/item/shield/buckler/handmade/damaged/Initialize()
+	. = ..()
+	//Almost breaks instantly
+	durability -= rand(90, 99)
+
 /obj/item/shield/buckler/handmade/bone
 	name = "bone shield"
 	desc = "A handmade stout shield, but with a small size crafted entirely of bone. Exceptionally good at enduring melee attacks due to its light weight and high density."
