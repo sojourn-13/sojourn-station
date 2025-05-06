@@ -626,7 +626,7 @@
 	icon_state = "s-shell_l"
 	spent_icon = "s-shell_l-spent"
 	shell_color = "l"
-	projectile_type = /obj/item/projectile/bullet/pellet/shotgun
+	projectile_type = /obj/item/projectile/bullet/shotgun/birdshot
 	maxamount = 5
 
 /obj/item/ammo_casing/shotgun/pellet/prespawned
@@ -638,7 +638,7 @@
 	icon_state = "s-shell_ss"
 	spent_icon = "s-shell_ss-spent"
 	shell_color = "scrap_s"
-	projectile_type = /obj/item/projectile/bullet/pellet/shotgun/scrap
+	projectile_type = /obj/item/projectile/bullet/shotgun/birdshot/scrap
 
 /obj/item/ammo_casing/shotgun/pellet/scrap/prespawned
 	amount = 5

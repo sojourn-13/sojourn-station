@@ -1115,6 +1115,34 @@
 	hitscan = TRUE
 	recoil = 38
 
+//Should do about 84 damage at 1 tile distance (adjacent) but each bullet checks armor.
+//Overall less damage than slugs in exchange for more damage at very close range and more embedding
+/obj/item/projectile/bullet/shotgun/birdshot
+	name = "shrapnel"
+	icon_state = "birdshot-1"
+	damage_types = list(BRUTE = 14)
+	armor_divisor = 1 //Each bullet is being checked for by armor
+	wounding_mult = WOUNDING_SMALL //lotta relatively smaller pellets.
+	step_delay = 0.9
+	affective_damage_range = 2
+	affective_ap_range = 2
+	recoil = 5
+	steel_rain = 6
+
+/obj/item/projectile/bullet/shotgun/birdshot/Initialize()
+	. = ..()
+	icon_state = "birdshot-[rand(1,4)]"
+
+//Should do about 60 damage at 1 tile distance (adjacent) but each bullet checks armor.
+/obj/item/projectile/bullet/shotgun/birdshot/scrap
+	damage_types = list(BRUTE = 12)
+	armor_divisor = 1 //We deal so little damage that we dont need this to be below 1
+	affective_damage_range = 1
+	affective_ap_range = 1
+	steel_rain = 5 //One less steel barrin
+	recoil = 4 //Tighter nit to stay competivie with real ammo
+
+
 //Should do about 68 damage at 1 tile distance (adjacent), and 40 damage at 3 tiles distance.
 //Overall less damage than slugs in exchange for more damage at very close range and more embedding
 /obj/item/projectile/bullet/pellet/shotgun
