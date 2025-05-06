@@ -537,9 +537,10 @@
 				i += 1 //We need to keep the loop going
 				Project.steel_rain -= 1
 				var/obj/item/projectile/pew = new Project.type(src)
-				pew.impact_type = null
-				pew.tracer_type = null
-				pew.muzzle_type = null
+				if(!istype(pew, /obj/item/projectile/beam))
+					pew.impact_type = null
+					pew.tracer_type = null
+					pew.muzzle_type = null
 				pew.steel_rain = Project.steel_rain //Used for damage mods
 				projectile = pew
 				burst_delay = 0.1 //Shoot every basically at once
