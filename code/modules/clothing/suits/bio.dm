@@ -22,6 +22,10 @@
 	siemens_coefficient = 0.9
 	price_tag = 50
 
+//EW GROSS GET IT AWAY FROM MY HAIR
+/obj/item/clothing/head/bio_hood/New()
+	AddComponent(/datum/component/clothing_sanity_protection, 3)
+
 /obj/item/clothing/suit/bio_suit
 	name = "bio suit"
 	desc = "A suit that protects against biological contamination."
@@ -45,6 +49,8 @@
 	siemens_coefficient = 0.9
 	price_tag = 100
 
+/obj/item/clothing/head/bio_suit/New()
+	AddComponent(/datum/component/clothing_sanity_protection, 2)
 
 //Standard biosuit, orange stripe
 /obj/item/clothing/head/bio_hood/general

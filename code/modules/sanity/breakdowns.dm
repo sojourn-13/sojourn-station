@@ -18,9 +18,6 @@
 	icon_state = "negative"
 	breakdown_sound = 'sound/sanity/insane.ogg'
 
-
-
-
 #define STALWART_THRESHOLD 30 // How damaged should owner be for Stalwart to be able to trigger
 
 /datum/breakdown/positive/stalwart
@@ -46,8 +43,6 @@
 	holder.owner.adjustOxyLoss(-45)
 	holder.owner.reagents.add_reagent("tramadol", 5) // the way this works is silly as all fuck and should probably be fixed at some point
 	..()
-
-
 
 /datum/breakdown/positive/adaptation
 	name = "Adaptation"
@@ -93,8 +88,6 @@
 /datum/breakdown/positive/concentration/conclude()
 	--holder.sanity_invulnerability
 	..()
-
-
 
 /datum/breakdown/positive/determination
 	name = "Determination"
@@ -273,14 +266,12 @@
 	if(!.)
 		return	FALSE
 	if(prob(10))
-		var/power = rand(9,27)
+		var/power = rand(4,9)
 		holder.owner.playsound_local(holder.owner, 'sound/effects/explosionfar.ogg', 100, 1, round(power*2,1) )
 		holder.owner.playsound_local(holder.owner, "explosion", 100, 1, round(power,1) )
-		shake_camera(holder.owner, 2)
+		shake_camera(holder.owner, 1)
 	if(prob(10))
 		holder.owner.playsound_local(holder.owner, 'sound/effects/alert.ogg')
-
-
 
 /datum/breakdown/negative/fabric
 	name = "The Fabric"
@@ -342,7 +333,6 @@
 	holder.negative_prob = min(holder.negative_prob + 20, 100)
 	holder.max_level = max(holder.max_level - 20, 0)
 	..()
-
 
 /datum/breakdown/common/power_hungry
 	name = "Power Hungry"
@@ -468,7 +458,6 @@
 	start_messages = list("Flesh is weak, you are disgusted by the weakness of your own body.")
 	end_messages = list("Nothing like a mechanical upgrade to feel like new.")
 
-
 /datum/breakdown/common/desire_for_chrome/can_occur()
 	for(var/obj/item/organ/external/Ex in holder.owner.organs)
 		if(!BP_IS_ROBOTIC(Ex))
@@ -485,7 +474,6 @@
 
 /datum/breakdown/common/desire_for_chrome/proc/check_organ()
 	finished = TRUE
-
 
 /datum/breakdown/common/false_nostalgy
 	name = "False Nostalgy"
@@ -650,8 +638,6 @@
 				holder.owner.put_in_hands(I)
 			break
 
-
-
 /datum/breakdown/common/signs
 	name = "Signs"
 	restore_sanity_post = 70
@@ -671,7 +657,7 @@
 
 /datum/breakdown/common/signs/New()
 	..()
-	message = "Etiam tempor orci eu lobortis elementum nibh tellus molestie"
+	message = "Etiam tempor orci eu lobortis elementum nibh tellus molestie."
 
 /datum/breakdown/common/signs/update()
 	. = ..()
