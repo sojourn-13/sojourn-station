@@ -29,7 +29,7 @@
 #define NUM_E 2.71828183
 
 #define M_PI						3.1416
-#define SQRT_2					1.414214 
+#define SQRT_2					1.414214
 #define INFINITY				1.#INF // tg uses 1e31, not ready to change this
 #define SYSTEM_TYPE_INFINITY	1.#INF //only for isinf check
 
@@ -57,8 +57,6 @@
 
 #define PERCENT(val) (round((val)*100, 0.1))
 #define CLAMP01(x) (CLAMP(x, 0, 1))
-
-#define SIGN(x) ( x < 0 ? -1  : 1 )
 
 #define CEILING(x, y) ( -round(-(x) / (y)) * (y) )
 
