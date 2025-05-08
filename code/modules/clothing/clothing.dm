@@ -739,22 +739,17 @@ BLIND     // can't see anything
 			to_chat(user, "Its vital tracker and tracking beacon appear to be enabled.")
 
 /obj/item/clothing/under/proc/set_sensors(var/mob/M)
-	if (istype(M, /mob/dead/)) return
-	if (usr.stat || usr.restrained()) return
 	if(has_sensor >= 2)
 		to_chat(usr, "The controls are locked.")
 		return 0
 	if(has_sensor <= 0)
-		to_chat(usr, "This suit does not have any sensors..")
+		to_chat(usr, "This suit does not have any sensors.")
 		return 0
 
-	var/list/modes = list("Off", "Binary sensors", "Vitals tracker", "Tracking beacon")
-	var/switchMode = input("Select a sensor mode:", "Suit Sensor Mode", modes[sensor_mode + 1]) in modes
-	if(get_dist(usr, src) > 1)
-		to_chat(usr, "You have moved too far away.")
-		return
-	sensor_mode = modes.Find(switchMode) - 1
-
+	if(sensor_mode == 3)
+		sensor_mode = 0
+	else
+		sensor_mode++
 
 	if (src.loc == usr)
 		switch(sensor_mode)
@@ -781,29 +776,9 @@ BLIND     // can't see anything
 				for(var/mob/V in viewers(usr, 1))
 					V.show_message("[usr] sets [src.loc]'s sensors to maximum.", 1)
 
-/obj/item/clothing/under/verb/toggle()
-	set name = "Toggle Suit Sensors"
-	set category = "Object"
-	set src in usr
-	set_sensors(usr)
-	..()
-
-/obj/item/clothing/under/proc/lock_sensors(var/mob/M)
-	if(has_sensor = 1)
-		to_chat(usr, "You lock the suit's sensors.")
-		has_sensor = 2
-		return 0
-	else if(has_sensor >= 2)
-		to_chat(usr, "You unlock the suit's sensors.")
-		has_sensor = 1
-		return 0
-	else if(has_sensor <= 0)
-		to_chat(usr, "This suit does not have any sensors.")
-		return 0
-
 /obj/item/clothing/under/attackby(var/obj/item/I, var/mob/U)
-	if(I.get_tool_type(usr, list(QUALITY_PULSING), src) && ishuman(U))
-		lock(U)
+	if(I.get_tool_type(usr, list(QUALITY_SCREW_DRIVING), src) && ishuman(U))
+		set_sensors(U)
 	else
 		return ..()
 
