@@ -174,7 +174,7 @@
 	dat += "[view==ORION_VIEW_MAIN ? "" : "<a href='?src=\ref[src];continue=1'>"]Main[view==ORION_VIEW_MAIN ? "" : "</a>"]<BR>"
 	dat += "[view==ORION_VIEW_SUPPLIES ? "" : "<a href='?src=\ref[src];supplies=1'>"]Supplies[view==ORION_VIEW_SUPPLIES ? "" : "</a>"]<BR>"
 	dat += "[view==ORION_VIEW_CREW ? "" : "<a href='?src=\ref[src];crew=1'>"]Crew[view==ORION_VIEW_CREW ? "" : "</a>"]</P>"
-	user << browse(dat, "window=arcade")
+	user << browse(HTML_SKELETON(dat), "window=arcade")
 
 /obj/machinery/computer/arcade/orion_trail/Topic(href,href_list)
 	if(..())

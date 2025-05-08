@@ -740,7 +740,7 @@
 	for(var/mode in config.storytellers)
 		dat += {"<A href='?src=\ref[source];c_mode2=[mode]'>[config.storyteller_names[mode]]</A><br>"}
 	dat += {"Now: [master_storyteller]"}
-	usr << browse(dat, "window=c_mode")
+	usr << browse(HTML_SKELETON(dat), "window=c_mode")
 
 
 /datum/admin_topic/c_mode2

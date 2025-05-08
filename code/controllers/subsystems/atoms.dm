@@ -161,4 +161,4 @@ ADMIN_VERB_ADD(/client/proc/cmd_display_init_log, R_DEBUG, null)
 	if(!LAZYLEN(SSatoms.BadInitializeCalls))
 		to_chat(usr, SPAN_NOTICE("BadInit list is empty."))
 	else
-		usr << browse(replacetext(SSatoms.InitLog(), "\n", "<br>"), "window=initlog")
+		usr << browse(HTML_SKELETON(replacetext(SSatoms.InitLog(), "\n", "<br>")), "window=initlog")
