@@ -22,7 +22,7 @@
 //#define to_chat(target, message)                            target << message
 #define to_world(message)                                   to_chat(world, message)
 #define to_world_log(message)                               log_world(message)
-#define show_browser(target, browser_content, browser_name) target << browse(browser_content, browser_name)
+#define show_browser(target, browser_content, browser_name) target << browse(HTML_SKELETON_TITLE(browser_name, browser_content))
 #define to_file(file_entry, source_var)                     file_entry << source_var
 #define from_file(file_entry, target_var)                   file_entry >> target_var
 #define send_rsc(target, rsc_content, rsc_name)             target << browse_rsc(rsc_content, rsc_name)
