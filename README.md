@@ -10,7 +10,6 @@ A downstream branch of the Sojourn-13 codebase.
 Please contact us on the server Discord. 
 
 Project owner - MsRandylicious<br/>
-Loremaster - Bamhalazam<br/>
 Host - Ryuu<br/>
 Lead Janitor - CFWMagic
 
@@ -18,7 +17,7 @@ Lead Janitor - CFWMagic
 
 Mapping - Glitchy, smoggie<br/>
 Lore - Bamhalazam, Yo-Rimbo, Tzui5020, Floofster<br/>
-Code - Ryuu, Tennessee, Bamhalazam, CFW Magic<br/>
+Code - Ryuu, CFW Magic, Tennessee, Bamhalazam, R4D6<br/>
 
-Contributors - Odisurin, Delams-The-SM, XSlayer300, HOUND, Dr.Farson<br/>
+Contributors - Odisurin, Delams-The-SM, XSlayer300, HOUND, Dr.Farson, R4D6<br/>
 
