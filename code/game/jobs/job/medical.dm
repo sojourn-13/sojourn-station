@@ -80,7 +80,7 @@
 
 	access = list(
 		access_moebius, access_medical_equip, access_morgue, access_surgery, access_chemistry, access_virology,
-		access_genetics, access_external_airlocks, access_research_equipment, access_medical_suits, access_xenobiology
+		access_genetics, access_external_airlocks, access_research_equipment, access_medical_suits, access_xenobiology, access_eva,
 	)
 
 	stat_modifiers = list(
@@ -126,7 +126,7 @@
 
 	access = list(
 		access_moebius, access_medical_equip, access_morgue, access_surgery, access_chemistry, access_virology,
-		access_genetics, access_external_airlocks, access_research_equipment, access_medical_suits, access_xenobiology
+		access_genetics, access_external_airlocks, access_research_equipment, access_medical_suits, access_xenobiology, access_eva,
 	)
 
 	stat_modifiers = list(
@@ -177,7 +177,7 @@
 
 	access = list(
 		access_moebius, access_medical_equip, access_morgue, access_surgery, access_chemistry, access_virology, access_orderly, access_medical_suits,
-		access_psychiatrist, access_genetics, access_robotics, access_xenobiology, access_tox, access_xenoarch
+		access_psychiatrist, access_genetics, access_robotics, access_xenobiology, access_tox, access_xenoarch, access_eva,
 	)
 
 	stat_modifiers = list(
@@ -228,7 +228,7 @@
 	alt_titles = list("Soteria Psychologist", "Soteria Empath")
 	outfit_type = /decl/hierarchy/outfit/job/medical/psychiatrist
 	access = list(
-		access_moebius, access_medical_equip, access_morgue, access_psychiatrist, access_chemistry, access_medical_suits
+		access_moebius, access_medical_equip, access_morgue, access_psychiatrist, access_chemistry, access_medical_suits, access_eva,
 	)
 	disallow_species = list(FORM_AGSYNTH, FORM_BSSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
 
