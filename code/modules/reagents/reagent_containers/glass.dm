@@ -52,7 +52,7 @@
 	. = ..()
 	base_name = name
 	//For when beakers are pre-labled.
-	update_name_label()
+	update_name_label(FALSE)
 	update_icon()
 
 /obj/item/reagent_containers/glass/proc/has_lid()
@@ -162,8 +162,9 @@
 
 	..()
 
-/obj/item/reagent_containers/glass/proc/update_name_label()
-	playsound(src,'sound/effects/PEN_Ball_Point_Pen_Circling_01_mono.ogg',40,1)
+/obj/item/reagent_containers/glass/proc/update_name_label(play_sound = TRUE)
+	if (play_sound)
+		playsound(src,'sound/effects/PEN_Ball_Point_Pen_Circling_01_mono.ogg',40,1)
 	if(label_text == "")
 		name = base_name
 	else
