@@ -120,7 +120,6 @@
 	desc = "The brains of an elevator. Use this to get where you want to go."
 	icon_state = "panel"
 	req_access = list(access_eva)
-	req_one_access = list(access_heads, access_atmospherics, access_medical)
 
 // Hit it with a PDA or ID to enable priority call mode
 /obj/structure/lift/panel/attackby(obj/item/W as obj, mob/user as mob)
