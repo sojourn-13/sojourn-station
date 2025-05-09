@@ -11,7 +11,7 @@
 /mob/living/carbon/superior/handle_breath(datum/gas_mixture/environment as anything)
 	var/damage = 0
 	if(breath_required_type)
-		if(environment.gas[breath_required_type] < min_breath_required_type)
+		if(environment?.gas[breath_required_type] < min_breath_required_type)
 			damage = min_breath_required_type - environment.gas[breath_required_type]
 			adjustOxyLoss(damage)
 
@@ -28,7 +28,7 @@
 	return
 
 /mob/living/carbon/superior/handle_environment(datum/gas_mixture/environment as anything)
-	var/pressure = environment.return_pressure()
+	var/pressure = environment?.return_pressure()
 	var/damage = 0
 //	message_admins("pressure = [pressure] temp = [environment.temperature]")
 
