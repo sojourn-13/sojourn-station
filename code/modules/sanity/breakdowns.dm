@@ -64,7 +64,7 @@
 
 /datum/breakdown/positive/adaptation/conclude()
 	holder.positive_prob = min(holder.positive_prob + 10, 100)
-	holder.negative_prob = max(holder.negative_prob - 5, 0)
+//	holder.negative_prob = max(holder.negative_prob - 5, 0)
 	holder.max_level = max(holder.max_level + 20, 0)
 	..()
 
@@ -339,7 +339,7 @@
 
 /datum/breakdown/negative/spiral/conclude()
 	holder.positive_prob = max(holder.positive_prob - 10, 0)
-	holder.negative_prob = min(holder.negative_prob + 20, 100)
+//	holder.negative_prob = min(holder.negative_prob + 20, 100)
 	holder.max_level = max(holder.max_level - 20, 0)
 	..()
 
@@ -616,7 +616,7 @@
 */
 #define KLEPTOMANIA_COOLDOWN rand(30 SECONDS, 60 SECONDS)
 
-/datum/breakdown/common/kleptomania
+/datum/breakdown/negative/kleptomania
 	name = "Kleptomania"
 	duration = 5 MINUTES
 	restore_sanity_post = 50
@@ -633,7 +633,7 @@
 		"You feel easier about not stealing things now."
 	)
 
-/datum/breakdown/common/kleptomania/update()
+/datum/breakdown/negative/kleptomania/update()
 	. = ..()
 	if(!. || holder.owner.incapacitated())
 		return
@@ -652,7 +652,7 @@
 
 
 
-/datum/breakdown/common/signs
+/datum/breakdown/negative/signs
 	name = "Signs"
 	restore_sanity_post = 70
 	insight_reward = 5
@@ -669,11 +669,11 @@
 		"The truth have spoken. You feel it again. The melody of sound returns to you."
 	)
 
-/datum/breakdown/common/signs/New()
+/datum/breakdown/negative/signs/New()
 	..()
 	message = "Etiam tempor orci eu lobortis elementum nibh tellus molestie"
 
-/datum/breakdown/common/signs/update()
+/datum/breakdown/negative/signs/update()
 	. = ..()
 	if(!.)
 		return
@@ -684,14 +684,14 @@
 	var/phrase_pos = rand(1, words.len - phrase_len)
 	to_chat(holder.owner,"...[jointext(words, " ", phrase_pos, phrase_pos + phrase_len + 1)]...")
 
-/datum/breakdown/common/signs/occur()
+/datum/breakdown/negative/signs/occur()
 	RegisterSignal(holder.owner, COMSIG_HUMAN_SAY, PROC_REF(check_message))
 	return ..()
 
-/datum/breakdown/common/signs/conclude()
+/datum/breakdown/negative/signs/conclude()
 	UnregisterSignal(holder.owner, COMSIG_HUMAN_SAY)
 	..()
 
-/datum/breakdown/common/signs/proc/check_message(msg)
+/datum/breakdown/negative/signs/proc/check_message(msg)
 	if(msg == message)
 		finished = TRUE

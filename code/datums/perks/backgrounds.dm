@@ -126,13 +126,13 @@ This is NOT for racial-specific perks, but rather specifically for general backg
 	if(..() && ishuman(L))
 		var/mob/living/carbon/human/H = L
 		H.sanity.positive_prob += 30
-		H.sanity.negative_prob += 20
+//		H.sanity.negative_prob += 20
 
 /datum/perk/nihilist/remove()
 	if(ishuman(holder))
 		var/mob/living/carbon/human/H = holder
 		H.sanity.positive_prob -= 30
-		H.sanity.negative_prob -= 20
+//		H.sanity.negative_prob -= 20
 		H.stats.removeTempStat(STAT_COG, "Fate Nihilist")
 	..()
 

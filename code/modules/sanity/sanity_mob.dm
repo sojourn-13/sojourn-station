@@ -75,7 +75,7 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 	var/list/desires = list()
 	var/positive_prob = 20
 	var/positive_prob_multiplier = 1
-	var/negative_prob = 30
+	var/negative_prob = 0 //30
 
 	var/view_damage_threshold = 35
 	var/environment_cap_coeff = 1 //How much we are affected by environmental cognitohazards. Multiplies the above threshold

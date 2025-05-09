@@ -10,14 +10,14 @@
 	if(ishuman(E.owner))
 		var/mob/living/carbon/human/H = E.owner
 		H.sanity.max_level += 50
-		H.sanity.negative_prob -= 10
+//		H.sanity.negative_prob -= 10
 		H.sanity.view_damage_threshold -= 15
 
 /obj/item/organ_module/sanity_mind_helper/onRemove(obj/item/organ/external/E)
 	if(ishuman(E.owner))
 		var/mob/living/carbon/human/H = E.owner
 		H.sanity.max_level -= 50
-		H.sanity.negative_prob += 10
+//		H.sanity.negative_prob += 10
 		H.sanity.view_damage_threshold += 15
 
 //This is not as powerful as you would think, it turns passive regen of 0.2 (out of 200) into 1, out of 200, for **passive** heal ticks
