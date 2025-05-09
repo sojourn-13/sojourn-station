@@ -30,7 +30,7 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 	var/allow_admin_ooccolor = 0		// Allows admins with relevant permissions to have their own ooc colour
 	var/allow_vote_restart = 0 			// allow votes to e
 	var/automatic_restart_time = 0		// server will begin ending the round at this time
-	var/automatic_restart_time_lobby = 0// Server will end if you cant start a round after this time
+	var/automatic_restart_time_lobby = 600// Server will end if you cant start a round after this time
 	var/automatic_restart_delay = 0		// warning on how long until things restart
 	var/ert_admin_call_only = 0
 	var/allow_vote_mode = 0				// allow votes to change mode
@@ -73,7 +73,7 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 	var/ToRban = 0
 	var/automute_on = 0					//enables automuting/spam prevention
 	var/use_cortical_stacks = 0			//enables neural lace
-	var/empty_server_restart_time = 0	// Time in minutes before empty server will restart
+	var/empty_server_restart_time = 10	// Time in minutes before empty server will restart
 
 	var/character_slots = 20				// The number of available character slots
 	var/loadout_slots = 3					// The number of loadout slots per character
