@@ -4938,8 +4938,10 @@
 /area/nadezhda/maintenance/undergroundfloor2west)
 "aYT" = (
 /obj/structure/table/reinforced,
-/obj/random/powercell,
-/obj/random/powercell,
+/obj/item/cell/large/moebius/omega,
+/obj/item/cell/large/moebius/omega,
+/obj/item/cell/medium/moebius/omega,
+/obj/item/cell/medium/moebius/omega,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/research)
 "aYX" = (
