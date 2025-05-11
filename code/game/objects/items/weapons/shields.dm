@@ -52,7 +52,7 @@
 	else
 		new /obj/item/material/shard/shrapnel(get_turf(src))
 	playsound(get_turf(src), 'sound/items/electronic_assembly_emptying.ogg', 50, 1 -3)
-	spawn(2) qdel(src)
+	qdel(src)
 	return
 
 /obj/item/shield/proc/adjustShieldDurability(amount, user)
@@ -83,11 +83,11 @@
 		else if (durability > max_durability * 0.20)
 			to_chat(user, SPAN_WARNING("It looks a bit cracked and worn."))
 		else if (durability > max_durability * 0.10)
-			to_chat(user, SPAN_WARNING("Whatever use this tool once had is fading fast."))
+			to_chat(user, SPAN_WARNING("Large scrapes and cracks cover the surface of the shield."))
 		else if (durability > max_durability * 0.05)
-			to_chat(user, SPAN_WARNING("Attempting to use this thing as a tool is probably not going to work out well."))
+			to_chat(user, SPAN_WARNING("Attempting to use this thing as a shield is probably not going to work out well."))
 		else
-			to_chat(user, SPAN_DANGER("It's falling apart. This is one slip away from just being a pile of assorted trash."))
+			to_chat(user, SPAN_DANGER("It's falling apart. This is one hit away from just being a pile of assorted trash."))
 
 /obj/item/shield/handle_shield(mob/user, var/damage, atom/damage_source = null, mob/attacker = null, var/def_zone = null, var/attack_text = "the attack")
 
@@ -99,23 +99,43 @@
 	if(istype(attacker, /mob/living/simple/hostile) || istype(attacker, /mob/living/carbon/superior/))
 		var/mob/living/carbon/human/defender = user
 		if(check_shield_arc(defender, bad_arc, damage_source, attacker))
-			if(defender.halloss >= 50)
+			if(defender.halloss >= 50 && !defender.blocking)
 				defender.visible_message(SPAN_DANGER("\The [defender] is too tired to block!"))
+				to_chat(user, SPAN_NOTICE("Your arm goes limp as you block the attack, you'll need be more **defendive** to force yourself to keep blocking!"))
 				return 0
 			else
 				var/damage_received = CLAMP(damage * (CLAMP(100-user.stats.getStat(STAT_TGH)/2,0,100) / 100) - user.stats.getStat(STAT_TGH)/5,1,100)
+				var/shield_damage = damage_received
 				if(damage_received <= 0)
 					damage_received = 1 //Alawys small amount of damage
+					shield_damage = 1
+
+				if((defender.species.flags & NO_PAIN) || (PAIN_LESS in defender.mutations))
+					shield_damage += shield_damage * 0.25 //25% more damage if you ingore the halloss stuff
+
+				if(defender.halloss >= 50)
+					damage_received += defender.halloss * 0.25 //25% of are halloss is added as damage
+
+				if(durability < max_durability * 0.5) //D: are shield is dieing AAAAAAAAAA
+					to_chat(user, SPAN_NOTICE("Your [src] buckles and cracks as you force it to block the attack!"))
+
+					if(durability < max_durability * 0.3)
+						playsound(defender.loc, 'sound/weapons/tablehit1.ogg', 50, 1)
+
+				if(defender.blocking)
+					shield_damage = shield_damage * 0.9 //Take 10% less shield damage, we are blocking after all
 				if(istype(attacker, /mob/living/carbon/superior/roach/))
-					adjustShieldDurability(-(damage_received/6))
+					adjustShieldDurability(-(shield_damage/6))
 				else if(istype(attacker, /mob/living/carbon/superior/spider/))
-					adjustShieldDurability(-(damage_received/2))
+					adjustShieldDurability(-(shield_damage/2))
 				else if(istype(attacker, /mob/living/carbon/superior/termite_colony/))
-					adjustShieldDurability(-(damage_received/2))
+					adjustShieldDurability(-(shield_damage/2))
 				else
-					adjustShieldDurability(-damage_received)
+					adjustShieldDurability(-shield_damage)
 				defender.adjustHalLoss(damage_received)
 				defender.visible_message(SPAN_DANGER("\The [defender] blocks [attack_text] with \the [src]!"))
+				playsound(defender.loc, 'sound/weapons/shield/shieldblock.ogg', 50, 1)
+
 				return 1
 	if(check_parry_arc(user, bad_arc, damage_source, attacker))
 		if(prob(get_block_chance(user, damage, damage_source, attacker)))
