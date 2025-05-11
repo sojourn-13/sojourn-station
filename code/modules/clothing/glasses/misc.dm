@@ -336,7 +336,7 @@
 	prescription = 1
 
 // Sun Branch
-//Even when not using them with Sun Branch weapons are a little helpful
+// Even when not using them with Sun Branch weapons are a little helpful
 /obj/item/clothing/glasses/firefly_glasses
 	name = "\"Firefly\" glasses"
 	desc = "A pair of brassy rimmed plasma infused lens that the user better able synergize with Sun Branch weapons."
@@ -345,3 +345,30 @@
 	flash_protection = FLASH_PROTECTION_MINOR //Helps you look at fire
 	matter = list(MATERIAL_PLASMA = 2, MATERIAL_GOLD = 1, MATERIAL_IRON = 1)
 	prescription = 1
+
+// Stamped Branch
+// Accually useless outside of looks and lore
+/obj/item/clothing/glasses/stamped_lens
+	name = "\"Stamped\" lens"
+	desc = "A frameless auto vision correcting lens, has a unreconizable dreary logo on its scew."
+	icon_state = "stamped_hud"
+	item_state = "stamped_hud"
+	matter = list(MATERIAL_GLASS = 0.2, MATERIAL_STEEL = 0.1)
+	prescription = 1
+
+/obj/item/clothing/glasses/stamped_lens/examine(mob/user)
+	..()
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		if(istype(H.glasses, /obj/item/clothing/glasses/stamped_huds))
+			to_chat(user, SPAN_NOTICE("According to [H.glasses]'s info on, this is a STAMP CORP internal use only contraband and security lens, used for spotting hidden cameras, hacking devices and illegal armor or guns."))
+			to_chat(user, SPAN_NOTICE("Anti-Hack chip operational. This lens is outside of network range, swapping to precoded STAMP CORP regulations and law code."))
+
+//We cant be hacked and will destory things that try it.
+/obj/item/clothing/glasses/stamped_lens/attackby(obj/item/I, mob/user, params)
+	if(istype(I, /obj/item/card/emag))
+		var/emag == I
+		emag.uses = -1
+		if(user)
+			to_chat(user, SPAN_NOTICE("Anti-Hack chip operational. Disarming hacking equipment and notifing STAMP CORP of a breach of Legal Code 25813."))
+	..()
