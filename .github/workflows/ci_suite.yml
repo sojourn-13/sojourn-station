@@ -192,3 +192,8 @@ jobs:
         with:
           name: deploy
           path: deploy
+      - name: Restore BYOND cache
+        uses: actions/cache@v4
+        with:
+          path: C:\\byond
+          key: ${{ runner.os }}-byond-${{ hashFiles('dependencies.sh') }}
