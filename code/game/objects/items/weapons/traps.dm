@@ -433,6 +433,53 @@ Very rarely it might escape
 	qdel(src)
 
 /**********************************
+	Wooden Trible Trap
+**********************************/
+/*
+	Currently admin only, used for events as it has a fancy toxin
+	Massively lowered stats and breaks almost instantly
+	Has integrity that depletes and it will eventually break
+*/
+/obj/item/beartrap/trible_vox
+	name = "wooden trap"
+	desc = "A classic shallow pit trap consisting of two planks of wood wrapped in thorned vines. It uses an unfortunate person's weight to drive the thorns into their leg. \
+	Useless once removed moved from a  pit. The vines have been dunked in a foul smelling substance."
+	icon_state = "woodtrap"
+	price_tag = 150 //Kros loves this kinda stuff maybe, or any real collectors
+	base_damage = 20
+	fail_damage = 10
+	base_difficulty = 50
+	matter = list(MATERIAL_WOOD = 4)
+	var/integrity = 20
+
+//It takes 8 damage whenever it snaps onto a mob
+/obj/item/beartrap/trible_vox/attack_mob(mob/living/L)
+	if(L?.faction == "vox_tribe")
+		return
+	.=..()
+	integrity -= 8
+	check_integrity()
+	L.reagents.add_reagent("slow_toxin", integrity)
+
+/obj/item/beartrap/trible_vox/fail_attempt(var/user, var/difficulty)
+	.=..()
+	integrity -= rand(6, 10)
+	check_integrity()
+
+/obj/item/beartrap/trible_vox/proc/check_integrity()
+	if (prob(integrity))
+		return
+
+	break_apart()
+
+/obj/item/beartrap/trible_vox/proc/break_apart()
+	visible_message(SPAN_DANGER("\the [src] shatters into fragments!"))
+	new /obj/item/stack/material/wood(loc, 10)
+	new /obj/item/material/shard/wood(loc)
+	new /obj/item/material/shard/wood(loc)
+	qdel(src)
+
+/**********************************
 	Armed Subtypes
 **********************************/
 /*
@@ -445,5 +492,9 @@ Very rarely it might escape
 	anchored = TRUE
 
 /obj/item/beartrap/makeshift/armed
+	deployed = TRUE
+	anchored = TRUE
+
+/obj/item/beartrap/trible_vox/armed
 	deployed = TRUE
 	anchored = TRUE
