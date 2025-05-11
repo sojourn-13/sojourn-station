@@ -54,13 +54,14 @@
 		)
 	)
 	offer_types = list(
-		/obj/item/reagent_containers/snacks/meat = offer_data("meat", 100, 10),
+		/obj/item/reagent_containers/snacks/meat = offer_data("meat", 90, 10),
 		/obj/item/reagent_containers/snacks/meat/corgi = offer_data("corgi meat", 1000, 2),
-		/obj/item/reagent_containers/snacks/meat/roachmeat = offer_data("roach meat", 200, 15),
-		/obj/item/reagent_containers/snacks/meat/roachmeat/seuche = offer_data("seuche roach meat", 250, 10),
-		/obj/item/reagent_containers/snacks/meat/roachmeat/kraftwerk = offer_data("kraftwerk roach meat", 450, 10),
-		/obj/item/reagent_containers/snacks/meat/roachmeat/jager = offer_data("jager roach meat", 250, 10),
-		/obj/item/reagent_containers/snacks/meat/roachmeat/fuhrer = offer_data("fuhrer roach meat", 350, 5), //Caps it
-		/obj/item/reagent_containers/snacks/meat/roachmeat/kaiser = offer_data("kaiser roach meat", 2000, 2)
+		/datum/reagent/toxin/blattedin = offer_data("blattedin bottle (60u)", 1000, 1),
+		/datum/reagent/toxin/diplopterum = offer_data("diplopterum bottle (60u)", 1200, 1),
+		/datum/reagent/toxin/seligitillin = offer_data("seligitillin bottle (60u)", 1250, 1),
+		/datum/reagent/toxin/starkellin = offer_data("starkellinbottle bottle (60u)", 1000, 1),
+		/datum/reagent/toxin/gewaltine = offer_data("gewaltine bottle (60u)", 1400, 1),
+		/datum/reagent/toxin/fuhrerole = offer_data("fuhrerole bottle (60u)", 2400, 1),
+		/obj/item/reagent_containers/snacks/meat/roachmeat/kaiser = offer_data("kaiser roach meat", 1500, 2)
 	)
 
