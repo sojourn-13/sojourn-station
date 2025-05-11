@@ -893,13 +893,12 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor2west)
 "ajg" = (
-/obj/structure/bed/chair/sofa/black/corner{
-	dir = 8;
-	icon_state = "sofaend_left"
-	},
 /obj/machinery/requests_console/preset/command/foreman{
 	dir = 1;
 	pixel_y = -35
+	},
+/obj/structure/bed/chair/sofa/black/left{
+	dir = 8
 	},
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/pros/foreman)
@@ -13160,9 +13159,9 @@
 /turf/simulated/floor/wood,
 /area/nadezhda/command/smc/quarters)
 "cCF" = (
-/obj/structure/table/steel,
 /obj/item/paper_bin,
 /obj/item/pen/multi,
+/obj/structure/table/woodentable,
 /turf/simulated/floor/wood,
 /area/nadezhda/command/swo/quarters)
 "cCH" = (
@@ -24367,6 +24366,11 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/security/sechall)
+"eHn" = (
+/obj/structure/table/woodentable,
+/obj/item/storage/case/donut,
+/turf/simulated/floor/wood,
+/area/nadezhda/command/swo/quarters)
 "eHq" = (
 /obj/structure/table/rack,
 /obj/item/towel,
@@ -26643,9 +26647,8 @@
 /area/nadezhda/command/fo)
 "fcq" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/bed/chair/sofa/black/corner{
-	dir = 4;
-	icon_state = "sofaend_left"
+/obj/structure/bed/chair/sofa/black/left{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/pros/prep)
@@ -41961,8 +41964,8 @@
 /obj/machinery/photocopier/faxmachine{
 	department = "Warrent Officer's Office"
 	},
-/obj/structure/table/steel,
 /obj/machinery/light,
+/obj/structure/table/woodentable,
 /turf/simulated/floor/wood,
 /area/nadezhda/command/swo/quarters)
 "hXi" = (
@@ -43150,8 +43153,20 @@
 /area/nadezhda/medical/psych)
 "ihy" = (
 /obj/structure/table/woodentable,
-/obj/item/device/lighting/toggleable/lamp/green{
-	pixel_y = 3
+/obj/item/reagent_containers/snacks/meatsteak{
+	pixel_y = 7;
+	food_quality = 300
+	},
+/obj/item/reagent_containers/drinks/bottle/wine{
+	pixel_y = -7
+	},
+/obj/item/reagent_containers/drinks/drinkingglass/wineglass{
+	pixel_y = -8;
+	pixel_x = -9
+	},
+/obj/item/flame/candle{
+	pixel_y = -6;
+	pixel_x = 7
 	},
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/command/merchant)
@@ -48980,11 +48995,10 @@
 /turf/simulated/floor/wood,
 /area/nadezhda/maintenance/undergroundfloor2west)
 "jof" = (
-/obj/structure/bed/double/padded,
-/obj/item/bedsheet/yellowdouble,
 /obj/machinery/alarm{
 	pixel_y = 32
 	},
+/obj/structure/bed/chair/comfy/black,
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/command/merchant)
 "joh" = (
@@ -92826,12 +92840,10 @@
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/absolutism/bioreactor)
 "rFN" = (
-/obj/item/biosyphon,
-/obj/structure/table/woodentable,
-/obj/item/storage/case/donut,
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/random/furniture/pottedplant,
 /turf/simulated/floor/wood,
 /area/nadezhda/command/swo/quarters)
 "rFP" = (
@@ -93254,8 +93266,8 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/dungeon/outside/campground)
 "rKs" = (
-/obj/structure/bed/padded,
-/obj/item/bedsheet/hop,
+/obj/structure/table/woodentable,
+/obj/item/biosyphon,
 /turf/simulated/floor/wood,
 /area/nadezhda/command/swo/quarters)
 "rKy" = (
@@ -104972,9 +104984,8 @@
 	dir = 8;
 	pixel_x = 32
 	},
-/obj/structure/bed/chair/sofa/black/corner{
-	dir = 8;
-	icon_state = "sofaend_right"
+/obj/structure/bed/chair/sofa/black/right{
+	dir = 8
 	},
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/pros/foreman)
@@ -107715,12 +107726,11 @@
 /area/nadezhda/rnd/xenobiology/xenoflora)
 "uuE" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/bed/chair/sofa/black/corner{
-	dir = 4;
-	icon_state = "sofaend_right"
-	},
 /obj/machinery/computer/guestpass{
 	pixel_y = -32
+	},
+/obj/structure/bed/chair/sofa/black/right{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/pros/prep)
@@ -224457,7 +224467,7 @@ acV
 ecu
 tHt
 xud
-tHt
+eHn
 acV
 acV
 toQ

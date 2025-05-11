@@ -42,10 +42,6 @@
 	if(camera_networks && camera_networks.len)
 		verbs += /obj/item/clothing/head/helmet/space/proc/toggle_camera
 
-	//EW GROSS GET IT AWAY FROM MY HAIR
-	AddComponent(/datum/component/clothing_sanity_protection, 2)
-
-
 /obj/item/clothing/head/helmet/space/proc/toggle_camera()
 	set name = "Toggle Helmet Camera"
 	set category = "Object"
@@ -98,11 +94,6 @@
 	stiffness = HEAVY_STIFFNESS
 	tool_qualities = list(QUALITY_ARMOR = 100)
 	max_upgrades = 1
-
-/obj/item/clothing/suit/space/Initialize()
-	. = ..()
-	AddComponent(/datum/component/clothing_sanity_protection, 1.5)
-
 
 /obj/item/clothing/suit/space/equipped(mob/M)
 	check_limb_support()

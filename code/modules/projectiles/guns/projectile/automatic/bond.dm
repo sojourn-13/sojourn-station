@@ -2,7 +2,7 @@
 	name = "\"Bond\" survival rifle"
 	desc = "A \"Bond\" survival rifle manufactured by Hunters Inc, with a fixed adjustable scope. \
 	Compact, lightweight, with high velocity and high penetration. \
-	Fires lightweight caseless ammunition using a robust bolt-action mechanism. \
+	Fires lightweight caseless ammunition. \
 	A true modern frontiersman's rifle."
 	icon = 'icons/obj/guns/projectile/survivalrifle.dmi'
 	icon_state = "survivalrifle"
