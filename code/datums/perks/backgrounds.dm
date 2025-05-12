@@ -62,7 +62,6 @@ This is NOT for racial-specific perks, but rather specifically for general backg
 	options["Lingua Romana"] = LANGUAGE_ROMANA
 	options["Yassari"] = LANGUAGE_YASSARI
 	options["Latin"] = LANGUAGE_LATIN
-	options["Kriosan"] = LANGUAGE_KRIOSAN
 	options["Akula"] = LANGUAGE_AKULA
 	options["Narad Pidgin"] = LANGUAGE_MERP
 	options["Crinos"] = LANGUAGE_SABLEKYNE
