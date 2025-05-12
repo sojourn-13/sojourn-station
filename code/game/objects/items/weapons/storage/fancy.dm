@@ -236,9 +236,10 @@ obj/item/storage/fancy/dogtreats/populate_contents()
 	else
 		..()
 
+//Dead Space Ref "USG Ishimura"
 /obj/item/storage/fancy/cigarettes/ishimura
-	name = "\improper Ishimura Special packet"
-	desc = "A packet of six Ishimura Special cigarettes. A favored and common smoke among researchers and scientists, often considered the more refined choice for the social smoker."
+	name = "\improper Zipangu Special packet"
+	desc = "A packet of six Zipangu Special cigarettes. A favored and common smoke among researchers and scientists, often considered the more refined choice for the social smoker."
 	icon_state = "IshimuraSpecialCigPack"
 	item_state = "IshimuraSpecialCigPack"
 
@@ -247,10 +248,10 @@ obj/item/storage/fancy/dogtreats/populate_contents()
 		new /obj/item/clothing/mask/smokable/cigarette/ishimura(src)
 	create_reagents(10 * storage_slots)//so people can inject cigarettes without opening a packet, now with being able to inject the whole one
 
-
+//Blade Runner Ref "Tannhauser Gate"
 /obj/item/storage/fancy/cigarettes/tannhauser
-	name = "\improper Tannhauser Gate packet"
-	desc = "A packet of six Tannhauser Gate cigarettes. An often overlooked brand of smokes that rarely sells well with anyone who isn't quite old or quite cheap. Tastes like burning rusted metal but survives due to being the number one brand for spacers."
+	name = "\improper Tannenwald packet"
+	desc = "A packet of six Tannenwald cigarettes. An often overlooked brand of smokes that rarely sells well with anyone who isn't quite old or quite cheap. Tastes like burning rusted metal but survives due to being the number one brand for spacers."
 	icon_state = "TannhauserGateCigPacket"
 	item_state = "TannhauserGateCigPacket"
 
@@ -259,10 +260,10 @@ obj/item/storage/fancy/dogtreats/populate_contents()
 		new /obj/item/clothing/mask/smokable/cigarette/tannhauser(src)
 	create_reagents(10 * storage_slots)//so people can inject cigarettes without opening a packet, now with being able to inject the whole one
 
-
+//Brouzouf Ref (Brouzouf is also a french slang for "money")
 /obj/item/storage/fancy/cigarettes/brouzouf
-	name = "\improper Brouzouf Message packet"
-	desc = "A packet of six Brouzouf Message cigarettes. You gain Brouzouf. Your legs are OK."
+	name = "\improper Clope packet"
+	desc = "A packet of six "Clope" cigarettes. Everytime you smoke these, you feel fancy."
 	icon_state = "BrouzoufMessageCigPacket"
 	item_state = "BrouzoufMessageCigPacket"
 
@@ -271,7 +272,7 @@ obj/item/storage/fancy/dogtreats/populate_contents()
 		new /obj/item/clothing/mask/smokable/cigarette/brouzouf(src)
 	create_reagents(10 * storage_slots)//so people can inject cigarettes without opening a packet, now with being able to inject the whole one
 
-
+//Dont know if this is a Ref
 /obj/item/storage/fancy/cigarettes/frozen
 	name = "\improper Frozen Nova packet"
 	desc = "A packet of six Frozen Nova cigarettes. A popular brand for frontier mercenaries and soldiers, often traded commonly by pirates for its deep throat scratching taste."
@@ -283,10 +284,10 @@ obj/item/storage/fancy/dogtreats/populate_contents()
 		new /obj/item/clothing/mask/smokable/cigarette/frozen(src)
 	create_reagents(10 * storage_slots)//so people can inject cigarettes without opening a packet, now with being able to inject the whole one
 
-
+//System Shock Reference "Shodan AI"
 /obj/item/storage/fancy/cigarettes/shodan
-	name = "\improper Shodans packet"
-	desc = "A packet of six Shodans cigarettes. Smokes often used by those with cybernetic implants in body and brain as its said it relaxes the synapse connections, though it is commonly said that is just marketing speak."
+	name = "\improper MindFusion packet"
+	desc = "A packet of six MindFusion cigarettes. Smokes often used by those with cybernetic implants in body and brain as its said it relaxes the synapse connections, though it is commonly said that is just marketing speak."
 	icon_state = "ShodansCigPacket"
 	item_state = "ShodansCigPacket"
 
@@ -295,10 +296,10 @@ obj/item/storage/fancy/dogtreats/populate_contents()
 		new /obj/item/clothing/mask/smokable/cigarette/shodan(src)
 	create_reagents(10 * storage_slots)//so people can inject cigarettes without opening a packet, now with being able to inject the whole one
 
-
+//Pretty niche Tsotuma Nihei Reference to "TOHA Heavy Industries"
 /obj/item/storage/fancy/cigarettes/toha
-	name = "\improper TOHA Heavy Industries packet"
-	desc = "A packet of six TOHA Heavy Industries cigarettes. The pack of choice for the engineer, the mechanic, and the technician. A special import as requested by many in the Artificer's Guild with a price to match."
+	name = "\improper Sanperitor Export packet"
+	desc = "A packet of six Sanperitor Export cigarettes. The pack of choice for the engineer, the mechanic, and the technician. A special import as requested by many in the Artificer's Guild with a price to match. And the Body to bear the pollution."
 	icon_state = "TOHAHeavyIndustriesCigPacket"
 	item_state = "TOHAHeavyIndustriesCigPacket"
 
@@ -307,10 +308,10 @@ obj/item/storage/fancy/dogtreats/populate_contents()
 		new /obj/item/clothing/mask/smokable/cigarette/toha(src)
 	create_reagents(10 * storage_slots)//so people can inject cigarettes without opening a packet, now with being able to inject the whole one
 
-
+//Team Fortress Ref
 /obj/item/storage/fancy/cigarettes/fortress
-	name = "\improper Fortress Classic packet"
-	desc = "A packet of six Fortress Classic cigarettes. A standard classic pack that many smokers start with, often in the teen years, reasonably priced and well liked."
+	name = "\improper Bastion Classic packet"
+	desc = "A packet of six Bastion Classic cigarettes. A standard classic pack that many smokers start with, often in the teen years, reasonably priced and well liked."
 	icon_state = "cigpacket"
 	item_state = "cigpacket"
 
@@ -319,10 +320,10 @@ obj/item/storage/fancy/dogtreats/populate_contents()
 		new /obj/item/clothing/mask/smokable/cigarette/fortress(src)
 	create_reagents(10 * storage_slots)//so people can inject cigarettes without opening a packet, now with being able to inject the whole one
 
-
+//Team Fortress Ref
 /obj/item/storage/fancy/cigarettes/fortressred
-	name = "\improper Fortress RED lights packet"
-	desc = "A packet of six Fortress RED light cigarettes. A standard classic pack for the smoker that wants to kick his habit at his own pace. Has a cherry taste."
+	name = "\improper Bastion RED lights packet"
+	desc = "A packet of six Bastion RED light cigarettes. A standard classic pack for the smoker that wants to kick his habit at his own pace. Tastes like cherries."
 	icon_state = "Dpacket"
 	item_state = "Dpacket"
 
@@ -331,10 +332,10 @@ obj/item/storage/fancy/dogtreats/populate_contents()
 		new /obj/item/clothing/mask/smokable/cigarette/fortressred(src)
 	create_reagents(10 * storage_slots)//so people can inject cigarettes without opening a packet, now with being able to inject the whole one
 
-
+//Team Fortress Ref
 /obj/item/storage/fancy/cigarettes/fortressblue
-	name = "\improper Fortress BLU menthol packet"
-	desc = "A packet of six Fortress BLU menthol cigarettes. A standard classic pack that for the smoker that prefers a cool minty taste."
+	name = "\improper Bastion BLU menthol packet"
+	desc = "A packet of six Bastion BLU menthol cigarettes. A standard classic pack for the smoker that prefers a cool, minty taste."
 	icon_state = "Bpacket"
 	item_state = "Bpacket"
 
@@ -343,6 +344,7 @@ obj/item/storage/fancy/dogtreats/populate_contents()
 		new /obj/item/clothing/mask/smokable/cigarette/fortressblue(src)
 	create_reagents(10 * storage_slots)//so people can inject cigarettes without opening a packet, now with being able to inject the whole one
 
+//Unknown if this is a Ref
 /obj/item/storage/fancy/cigarettes/khi
 	name = "\improper Hippie's Delight packet"
 	desc = "A packet of six Hippie's Delight cigarettes. A brand of cigarettes favorited by those whom live in Astrovans on public and private beaches everywhere. CAUTION: Contents may contain chemicals unsuitable for some people. Ride the wave, surf's up bro!"
@@ -354,6 +356,7 @@ obj/item/storage/fancy/dogtreats/populate_contents()
 		new /obj/item/clothing/mask/smokable/cigarette/khi(src)
 	create_reagents(20 * storage_slots)//so people can inject cigarettes without opening a packet, now with being able to inject the whole one
 
+//Unknown if this is a Ref
 /obj/item/storage/fancy/cigarettes/comred
 	name = "\improper ComRed packet"
 	desc = "A packet of six ComRed cigarettes. Smokes for the when the workers are free."
@@ -367,7 +370,7 @@ obj/item/storage/fancy/dogtreats/populate_contents()
 
 /obj/item/storage/fancy/cigarettes/lonestar
 	name = "\improper LoneStar packet"
-	desc = "A packet of six LoneStar cigarettes. Locally grown, rolled, and smoked only by the cheapest of colonists."
+	desc = "A packet of six LoneStar cigarettes. Locally grown, rolled, and smoked only by the cheapest of colonists and those who couldn't care less."
 	icon_state = "LoneStarCigPack"
 	item_state = "LoneStarCigPack"
 
