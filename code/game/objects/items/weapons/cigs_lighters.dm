@@ -256,7 +256,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	ignitermes = "<span class='notice'>USER fiddles with FLAME, and manages to light their NAME.</span>"
 
 /obj/item/clothing/mask/smokable/cigarette/ishimura
-	name = "\improper Ishimura Special cigarette"
+	name = "\improper Zipangu Special cigarette"
 	icon_state = "ishimuraoff"
 	icon_on = "ishimuraon"
 	icon_off = "ishimuraoff"
@@ -282,7 +282,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	preloaded_reagents = list("nicotine" = 5)
 
 /obj/item/clothing/mask/smokable/cigarette/tannhauser
-	name = "\improper Tannhauser Gate cigarette"
+	name = "\improper Tannenberg cigarette"
 	icon_state = "tannhauseroff"
 	icon_on = "tannhauseron"
 	icon_off = "tannhauseroff"
@@ -290,7 +290,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	preloaded_reagents = list("nicotine" = 5, "sodiumchloride" = 5)
 
 /obj/item/clothing/mask/smokable/cigarette/brouzouf
-	name = "\improper Brouzouf Message cigarette"
+	name = "\improper Clope cigarette"
 	icon_state = "brouzoufoff"
 	icon_on = "brouzoufon"
 	icon_off = "brouzoufoff"
@@ -306,7 +306,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	preloaded_reagents = list("nicotine" = 5, "coffee" = 5)
 
 /obj/item/clothing/mask/smokable/cigarette/shodan
-	name = "\improper Shodans cigarette"
+	name = "\improper MindFusion cigarette"
 	icon_state = "shodanoff"
 	icon_on = "shodanon"
 	icon_off = "shodanoff"
@@ -314,7 +314,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	preloaded_reagents = list("nicotine" = 5, "greentea" = 5)
 
 /obj/item/clothing/mask/smokable/cigarette/toha
-	name = "\improper TOHA Heavy Industries cigarette"
+	name = "\improper Sanperitor Export cigarette"
 	icon_state = "tohaoff"
 	icon_on = "tohaon"
 	icon_off = "tohaoff"
@@ -322,7 +322,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	preloaded_reagents = list("nicotine" = 5, "honey" = 5)
 
 /obj/item/clothing/mask/smokable/cigarette/fortress
-	name = "\improper Fortress Classic cigarette"
+	name = "\improper Bastion Classic cigarette"
 	icon_state = "cigoff"
 	icon_on = "cigon"
 	icon_off = "cigoff"
@@ -330,7 +330,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	preloaded_reagents = list("nicotine" = 5, "tonic" = 5)
 
 /obj/item/clothing/mask/smokable/cigarette/fortressred
-	name = "\improper Fortress RED light cigarette"
+	name = "\improper Bastion RED light cigarette"
 	icon_state = "cigoff"
 	icon_on = "cigon"
 	icon_off = "cigoff"
@@ -338,7 +338,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	preloaded_reagents = list("nicotine" = 2, "cherryjelly" = 8)
 
 /obj/item/clothing/mask/smokable/cigarette/fortressblue
-	name = "\improper Fortress BLU menthol cigarette"
+	name = "\improper Bastion BLU menthol cigarette"
 	icon_state = "cigoff"
 	icon_on = "cigon"
 	icon_off = "cigoff"
@@ -526,23 +526,23 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	icon_state = "cigbutt"
 
 /obj/item/trash/cigbutt/ishimura
-	name = "\improper Ishimura Special cigarette butt"
+	name = "\improper Zipangu Special cigarette butt"
 	icon_state = "ishimurabutt"
 
 /obj/item/trash/cigbutt/tannhauser
-	name = "\improper Tannhauser Gate cigarette butt"
+	name = "\improper Tannenberg Gate cigarette butt"
 	icon_state = "tannhauserbutt"
 
 /obj/item/trash/cigbutt/brouzouf
-	name = "\improper Brouzouf Message cigarette butt"
+	name = "\improper Clope cigarette butt"
 	icon_state = "brouzoufbutt"
 
 /obj/item/trash/cigbutt/shodan
-	name = "\improper Shodans cigarette butt"
+	name = "\improper MindFusion cigarette butt"
 	icon_state = "shodanbutt"
 
 /obj/item/trash/cigbutt/toha
-	name = "\improper TOHA Heavy Industries cigarette butt"
+	name = "\improper Sanperitor Export cigarette butt"
 	icon_state = "tohabutt"
 
 /obj/item/trash/cigbutt/frozen
@@ -550,15 +550,15 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	icon_state = "frozenbutt"
 
 /obj/item/trash/cigbutt/fortress
-	name = "\improper Fortress Classic cigarette butt"
+	name = "\improper Bastion Classic cigarette butt"
 	icon_state = "cigbutt"
 
 /obj/item/trash/cigbutt/fortressred
-	name = "\improper Fortress RED menthols cigarette butt"
+	name = "\improper Bastion RED menthols cigarette butt"
 	icon_state = "cigbutt"
 
 /obj/item/trash/cigbutt/fortressblue
-	name = "\improper Fortress BLU light cigarette butt"
+	name = "\improper Bastion BLU light cigarette butt"
 	icon_state = "cigbutt"
 
 /obj/item/trash/cigbutt/khi
