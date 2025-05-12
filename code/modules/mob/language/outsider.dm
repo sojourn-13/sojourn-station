@@ -110,6 +110,7 @@
 	speech_verb = list("states", "rumbles")
 	ask_verb = list("stipulates", "huffs")
 	exclaim_verb = list("barks", "yips")
+	flags = RESTRICTED
 	colour = "kriosan"
 	key = "k"
 	has_written_form = FALSE	//Lore reason - Creolized German and their ancient native language. Therefor their written language is 'dead' effectively.
