@@ -263,7 +263,7 @@ obj/item/storage/fancy/dogtreats/populate_contents()
 //Brouzouf Ref (Brouzouf is also a french slang for "money")
 /obj/item/storage/fancy/cigarettes/brouzouf
 	name = "\improper Clope packet"
-	desc = "A packet of six "Clope" cigarettes. Everytime you smoke these, you feel fancy."
+	desc = "A packet of six Clope cigarettes. Everytime you smoke these, you feel fancy."
 	icon_state = "BrouzoufMessageCigPacket"
 	item_state = "BrouzoufMessageCigPacket"
 
