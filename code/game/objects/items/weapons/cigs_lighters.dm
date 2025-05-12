@@ -530,7 +530,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	icon_state = "ishimurabutt"
 
 /obj/item/trash/cigbutt/tannhauser
-	name = "\improper Tannenberg Gate cigarette butt"
+	name = "\improper Tannenberg cigarette butt"
 	icon_state = "tannhauserbutt"
 
 /obj/item/trash/cigbutt/brouzouf
