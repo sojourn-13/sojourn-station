@@ -250,8 +250,8 @@ obj/item/storage/fancy/dogtreats/populate_contents()
 
 //Blade Runner Ref "Tannhauser Gate"
 /obj/item/storage/fancy/cigarettes/tannhauser
-	name = "\improper Tannenwald packet"
-	desc = "A packet of six Tannenwald cigarettes. An often overlooked brand of smokes that rarely sells well with anyone who isn't quite old or quite cheap. Tastes like burning rusted metal but survives due to being the number one brand for spacers."
+	name = "\improper Tannenberg packet"
+	desc = "A packet of six Tannenberg cigarettes. An often overlooked brand of smokes that rarely sells well with anyone who isn't quite old or quite cheap. Tastes like burning rusted metal but survives due to being the number one brand for spacers."
 	icon_state = "TannhauserGateCigPacket"
 	item_state = "TannhauserGateCigPacket"
 
