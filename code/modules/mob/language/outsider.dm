@@ -114,10 +114,6 @@
 	colour = "kriosan"
 	key = "k"
 	has_written_form = TRUE // there's been a resurgence of the Kriosan language, resulting in a rekindling of the written texts.
-	partial_understanding = list(
-		LANGUAGE_EURO = 75,
-		LANGUAGE_COMMON = 10
-	)
 	shorthand = "KO"
 	syllables = list("arf", "ar", "aw", "ba", "bar", "bh", "bo", "bow", "bow-wow", "br", "bro", "brr", "bwar", \
 	"bwoo", "bork", "foo", "gr", "gra", "grr", "gruff", "growl", "hro", "hrm", "huff", "arf", "woof", "ruff", \
