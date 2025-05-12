@@ -103,40 +103,26 @@
 	"SKRE","AHK","EHK","RAWK","KRA","AAA","EEE","KI","II","KRI","KA")
 	shorthand = "N/A"
 
-//Kriosan racial language. Lore: German creolization due to Sol-Gov occupation; therefor intelligibility with German.
+//Kriosan racial language. Lore: German integration due to Sol-Gov occupation; therefor very slightly intelligibility with German.
 /datum/language/kriosan
 	name = LANGUAGE_KRIOSAN
 	desc = "The main language of Krios, Kriosan Creole. Mostly consiting of quill-hound noises, posturing and many Eurolang loan words."
 	speech_verb = list("states", "rumbles")
 	ask_verb = list("stipulates", "huffs")
 	exclaim_verb = list("barks", "yips")
-	flags = RESTRICTED
+	flags = RESTRICTED // Requires a canine like tongue and teeth to speak, making it inaccessible to other species.
 	colour = "kriosan"
 	key = "k"
-	has_written_form = FALSE	//Lore reason - Creolized German and their ancient native language. Therefor their written language is 'dead' effectively.
+	has_written_form = TRUE // there's been a resurgence of the Kriosan language, resulting in a rekindling of the written texts.
 	partial_understanding = list(
 		LANGUAGE_EURO = 75,
 		LANGUAGE_COMMON = 10
 	)
 	shorthand = "KO"
-	syllables = list("Frau", "Mann", "Waffe", "Schiff", "Bombe", "Explosion", "Grenze", "Strasse", "Halle", "Pistole", "Gewehr", "Uniform", "Kind", "Arzt", \
-					 "und", "ja", "nein", "vielleicht", "ob", "man", "Faust", "Auto", "fliegen", "Asteroid", "Hose", "laufen", "fahren","Raumschiff", \
- 					 "Serbien", "Eisenhammer", "Soteria", "Atmosphaere", "Generator", "Ingenieur", "Religion", "Ratte", "Priester", "Käfer", "Armee", "Regierung", "neu", \
- 					 "alt", "verfallen", "Hoffnung", "schauen", "sterben", "elektrisch", "Teufel", "kurieren", "Fleisch", "trinken", "Auftrag", "Hilfe", "Medizin", "zeppelin", \
- 					 "verfallen", "Verfall", "National", "Laser", "Strom", "Gruppe", "Verteidigung", "verteidigen", "Suche", "Auge", "Hand", "Bein", "Kopf", \
- 					 "Flucht", "Wahrheit", "Ritter", "Einfluss", "Einfall", "Muesli", "Wand", "Fenster", "Metall", "Holz", "Glas", "Sand",  \
- 					 "Computer", "mikro", "Planet", "Universum", "Weltraum", "Turbine", "Treibstoff", "platt", "dunkel", "hell", "tauchen", "Licht", "scheinen", \
- 					 "Kaiser", "bekaempfen", "Tastatur", "Augenlicht", "verwerfen", "analysieren", "verschieben", \
- 					 "Flammen", "Feuer", "Batterie", "laser", "Unwetter", "Abflug", "behandeln", "Roboter", "Regierung", \
-					 "Unterhaltung", "Platituede", "Pferd", "Poker", "spielen", "Radio", "Baum", "Raumschlacht", "Kolonie", "kolonisieren", \
- 					 "Gas", "Schaltung", "umstuerzen", "Umsturz", "Wissenschaft", "erforschen", "Forschung", "Psychologe", "Schmerz", \
- 					 "Schmerzen", "gebrochen", "brechen", "alle", "Musik", "also", "Interesse", "Pruegel", "Alkohol", "Getraenk", \
- 					 "dynamisch", "Dynamik", "Organisation", "hauptsache", "Radio", "ueberhaupt", "weil", "deshalb", "mir", "dir", \
- 					 "dein", "mein", "ihr", "eure", "seine", "meine", "Granate", "Katze", "Hund", "Fisch", "Ziege", "aber", "dennoch", "weshalb", "deshalb", \
-					 "doch", "wieso", "denn", "ja", "halt", "auch", "schon", "denn", "etwa", "nur", "bloss", "eben", "mal", "gar", "ruhig", "eigentlich", \
-					 "eh", "nun", "erstmal", "gleich", "zumindest", "wohl", "durchaus", "sicher", "anscheinend", "eigentlich", "folgendermassen", \
-					 "ausnahmslos", "bisschen", "fortwaehrend", "augenscheinlich", "einfach", "fraglos", "ausdruecklich", "einigermassen", "freilich", \
-					 "weitem", "einmal", "ganz", "gewiss", "besonders", "endlich", "Hund", "Katze", "Ruede", "Pleite", "Schreckschraube", "Klammer", "Fuss")
+	syllables = list("arf", "ar", "aw", "ba", "bar", "bh", "bo", "bow", "bow-wow", "br", "bro", "brr", "bwar", \
+	"bwoo", "bork", "foo", "gr", "gra", "grr", "gruff", "growl", "hro", "hrm", "huff", "arf", "woof", "ruff", \
+	"oo", "ra", "raw", "ro", "roo", "rr", "snarl", "wo", "woo", "wor", "wr", "wrow", "wuff", "wur", \
+	"wroo", "wrowf", "ya", "yap", "yaw", "yar", "yarr", "yip", "yow", "yowp")
 
 //Aqula racial language. Lore: Long history of indpendence from Sol, therefor their language did not intergrate much. Somewhat physical language due to showing of force, akin to grunts, posturing or facial expressions providing context to wording (I.e akin to a tonal language style but with body language instead).
 /datum/language/akula
