@@ -33,8 +33,10 @@
 	if(ishuman(E.owner))
 		var/mob/living/carbon/human/H = E.owner
 		H.sanity.sanity_passive_gain_multiplier *= 5
+		H.sanity.passive_sanity_gain *= 5
 
 /obj/item/organ_module/sanity_on_a_buget/onRemove(obj/item/organ/external/E)
 	if(ishuman(E.owner))
 		var/mob/living/carbon/human/H = E.owner
 		H.sanity.sanity_passive_gain_multiplier /= 5
+		H.sanity.passive_sanity_gain /= 5

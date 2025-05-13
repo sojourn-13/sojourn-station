@@ -9,10 +9,10 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 #define SANITY_VIEW_DAMAGE_MOD (0.4 * GLOB.GLOBAL_SANITY_MOD)
 
 // Damage received from unpleasant stuff in view
-#define SANITY_DAMAGE_VIEW(damage, vig, dist) ((damage) * SANITY_VIEW_DAMAGE_MOD * max((1.2 - (vig) / STAT_LEVEL_MAX), 0.05) * (1 - (dist)/15))
+#define SANITY_DAMAGE_VIEW(damage, vig, dist) ((damage) * SANITY_VIEW_DAMAGE_MOD * max((1.2 - (vig) / STAT_LEVEL_MAX), 0.25) * (1 - (dist)/15))
 
 // Damage received from body damage
-#define SANITY_DAMAGE_HURT(damage, vig) (min((damage) / 5 * SANITY_DAMAGE_MOD * (1.2 - (vig) / STAT_LEVEL_MAX), 60))
+#define SANITY_DAMAGE_HURT(damage, vig) (min((damage) / 10 * SANITY_DAMAGE_MOD * (1.2 - (vig) / STAT_LEVEL_MAX), 60))
 
 // Damage received from shock
 #define SANITY_DAMAGE_SHOCK(shock, vig) ((shock) / 50 * SANITY_DAMAGE_MOD * (1.2 - (vig) / STAT_LEVEL_MAX))
@@ -53,14 +53,14 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 	var/sanity_passive_gain_multiplier = 1
 	var/sanity_invulnerability = 0
 	var/level
-	var/max_level = 200 //Soj change to make sanity less of a wacky rollercoaster.
+	var/max_level = 800 //Soj change to make sanity less of a wacky rollercoaster.
 	var/level_change = 0 //This single var through a long list of checks is are sorta "base" for are inspration gain
 	var/level_change_cap = 10 //This is the cap on insight you can get per level change.
 	var/level_change_min = 0.2 //Pitty insperation 0.5 no matter what
 
 	var/insight
 	var/max_insight = INFINITY
-	var/insight_passive_gain_multiplier = 0.5
+	var/insight_passive_gain_multiplier = 0.45 //Was 0.5 before
 	var/insight_gain_multiplier = 1
 	var/insight_rest_gain_multiplier = 1
 	var/insight_rest = 0
@@ -92,6 +92,8 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 	var/smoking_message = 51 //Used as a cooldown, agv smoke has around 250~ puffs
 
 	var/life_tick_modifier = 2	//How often is the onLife() triggered and by how much are the effects multiplied
+
+	var/passive_sanity_gain = 0.2
 
 /datum/sanity/New(mob/living/carbon/human/H)
 	owner = H
@@ -133,6 +135,9 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 
 /datum/sanity/proc/onLife()
 	handle_breakdowns()
+	//If we are resting in a normal room we will slowly recover from madness
+	if(passive_sanity_gain)
+		changeLevel(passive_sanity_gain)
 	if(owner.stat == DEAD || owner.life_tick % life_tick_modifier || owner.in_stasis || (owner.species.lower_sanity_process && !owner.client))
 		return
 	if(owner.species.reagent_tag == IS_SYNTHETIC)
@@ -163,8 +168,9 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 	if(sanity_invulnerability)//Sorry, but that needed to be added here :C
 		return
 	var/vig = owner.stats.getStat(STAT_VIG)
+	var/idealist = owner.stats.getPerk(PERK_IDEALIST)
 	for(var/atom/A in view(owner.client ? owner.client : owner))
-		if(owner.stats.getPerk(PERK_IDEALIST) && ishuman(A)) //Moralists react negatively to people in distress
+		if(idealist && ishuman(A)) //Moralists react negatively to people in distress
 			var/mob/living/carbon/human/H = A
 			if(H.sanity.level < 30 || H.health < 50)
 				. += SANITY_DAMAGE_VIEW(0.1, vig, get_dist(owner, A))
@@ -174,6 +180,11 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 			continue
 
 		if(A.sanity_damage) //If this thing is not nice to behold
+			//We are actually super good to look at so dont reduce us mr vig
+			if(A.sanity_damage < 0)
+				. += A.sanity_damage / get_dist(owner, A) //Still devide by dis
+				continue
+
 			. += SANITY_DAMAGE_VIEW(A.sanity_damage, vig, get_dist(owner, A))
 
 
