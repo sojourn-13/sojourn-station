@@ -31,7 +31,6 @@ ADMIN_VERB_ADD(/client/proc/debug_variables, R_ADMIN | R_MOD | R_DEBUG, FALSE)
 	usr << browse_rsc('code/js/view_variables.js', "view_variables.js")
 
 	var/html = {"
-		<html>
 		<head>
 			<script src='view_variables.js'></script>
 			<title>[D] (\ref[D] - [D.type])</title>
@@ -39,7 +38,8 @@ ADMIN_VERB_ADD(/client/proc/debug_variables, R_ADMIN | R_MOD | R_DEBUG, FALSE)
 				body { font-family: Verdana, sans-serif; font-size: 9pt; }
 				.value { font-family: "Courier New", monospace; font-size: 8pt; }
 			</style>
-		</head>
+		</head>"}
+	var/body = {"
 		<body onload='selectTextField(); updateSearch()'; onkeyup='updateSearch()'>
 			<div align='center'>
 				<table width='100%'><tr>
@@ -100,10 +100,9 @@ ADMIN_VERB_ADD(/client/proc/debug_variables, R_ADMIN | R_MOD | R_DEBUG, FALSE)
 				[make_view_variables_var_list(D)]
 			</ol>
 		</body>
-		</html>
 		"}
 
-	usr << browse(html, "window=variables\ref[D];size=475x650")
+	usr << browse(HTML_SKELETON_RAW(html,body), "window=variables\ref[D];size=475x650")
 
 
 /proc/make_view_variables_var_list(datum/D)

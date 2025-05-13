@@ -183,8 +183,10 @@ Turf and target are seperate in case you want to teleport some distance from a t
 			return 1
 	return 0
 
+#if DM_VERSION < 516
 /proc/sign(x)
 	return x!=0?x/abs(x):0
+#endif
 
 /proc/spow(x,y)
 	return (sign(x) * (abs(x) ** y))

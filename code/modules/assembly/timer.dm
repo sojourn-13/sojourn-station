@@ -79,7 +79,7 @@
 		<br><br><a href='?src=\ref[src];refresh=1'>Refresh</a>
 		<br><br><a href='?src=\ref[src];close=1'>Close</a>
 	"}
-	user << browse(dat, "window=timer")
+	user << browse(HTML_SKELETON(dat), "window=timer")
 	onclose(user, "timer")
 
 

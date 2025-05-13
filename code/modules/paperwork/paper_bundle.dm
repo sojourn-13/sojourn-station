@@ -45,7 +45,7 @@
 		if(W.has_quality(QUALITY_ADHESIVE))
 			return 0
 		if(istype(W, /obj/item/pen))
-			usr << browse("", "window=[name]") //Closes the dialog
+			usr << browse(null, "window=[name]") //Closes the dialog
 		var/obj/P = pages[page]
 		P.attackby(W, user)
 
@@ -134,6 +134,9 @@
 		+ "<div> <img src='tmp_photo.png' width = '[32*P.photo_size]'" \
 		+ "[P.scribble ? "<div> Written on the back:<br><i>[P.scribble]</i>" : null]"\
 		+ "</body></html>", "window=[name]; size=[32*P.photo_size]x[32*P.photo_size]")
+
+
+#warning crazyness
 
 /obj/item/paper_bundle/attack_self(mob/user as mob)
 	src.show_content(user)

@@ -187,9 +187,8 @@
 	if(!forceshow && istype(user,/mob/living/silicon/ai))
 		var/mob/living/silicon/ai/AI = user
 		can_read = get_dist(src, AI.camera) < 2
-	user << browse("<HTML><HEAD><TITLE>[name]</TITLE></HEAD><BODY bgcolor='[color]'>[can_read ? info : stars(info)][stamps]</BODY></HTML>", "window=[name]")
 
-	var/html = "<html><head><title>[name]</title></head><body bgcolor='[color]'>"
+	var/html = ""
 	var/body
 	if (can_read && editable)
 		body = info_links
@@ -213,10 +212,11 @@
 
 	html += "<hr />"
 	html += body + stamps
-	html += "</body></html>"
-	show_browser(user, html, "window=[name]")
 
-	onclose(user, "[name]")
+	var/datum/browser/popup = new (usr, name, name)
+	popup.set_content("[info_links][stamps]")
+	popup.add_head_content("<style>html{background-color:[color];}</style>")
+	popup.open()
 
 /obj/item/paper/proc/write_content(mob/user)
 
@@ -472,7 +472,10 @@
 		playsound(src,'sound/effects/PEN_Ball_Point_Pen_Circling_01_mono.ogg',40,1)
 		update_space(t)
 
-		usr << browse("<HTML><HEAD><TITLE>[name]</TITLE></HEAD><BODY bgcolor='[color]'>[info_links][stamps]</BODY></HTML>", "window=[name]") // Update the window
+		var/datum/browser/popup = new (usr, name, name)
+		popup.set_content("[info_links][stamps]")
+		popup.add_head_content("<style>html{background-color:[color];}</style>")
+		popup.open()
 
 		update_icon()
 
@@ -541,7 +544,10 @@
 		if ( istype(RP) && RP.mode == 2 )
 			RP.RenamePaper(user,src)
 		else
-			user << browse("<HTML><HEAD><TITLE>[name]</TITLE></HEAD><BODY bgcolor='[color]'>[info_links][stamps]</BODY></HTML>", "window=[name]")
+			var/datum/browser/popup = new (usr, name, name)
+			popup.set_content("[info_links][stamps]")
+			popup.add_head_content("<style>html{background-color:[color];}</style>")
+			popup.open()
 		return
 
 	else if(istype(P, /obj/item/stamp))
