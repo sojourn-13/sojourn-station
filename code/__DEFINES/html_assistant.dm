@@ -9,3 +9,5 @@ HTML_SKELETON_RAW("<head>[HTML_SKELETON_HEAD][head]</head>", "<body>[body]</body
 #define HTML_SKELETON_TITLE(title, body) HTML_SKELETON_INTERNAL("<title>[title]</title>", body)
 #define HTML_SKELETON(body) HTML_SKELETON_INTERNAL("", body)
 
+#define HTML_SKELETON_PAPER(title, head, body, colour) \
+"<title>[title]</title>" + HTML_SKELETON_RAW("<head>[HTML_SKELETON_HEAD][head]</head>", "<body><body bgcolor='[color]'>[body]</body>")

@@ -187,6 +187,8 @@
 	if(!forceshow && istype(user,/mob/living/silicon/ai))
 		var/mob/living/silicon/ai/AI = user
 		can_read = get_dist(src, AI.camera) < 2
+		if(can_read)
+			user << browse(HTML_SKELETON_PAPER(name,null,info + stamps,color), "window=[name]")
 
 	var/html = ""
 	var/body
@@ -212,11 +214,8 @@
 
 	html += "<hr />"
 	html += body + stamps
-
-	var/datum/browser/popup = new (usr, name, name)
-	popup.set_content("[info_links][stamps]")
-	popup.add_head_content("<style>html{background-color:[color];}</style>")
-	popup.open()
+	user << browse(HTML_SKELETON_PAPER(name,null,html,color), "window=[name]")
+	onclose(user, "[name]")
 
 /obj/item/paper/proc/write_content(mob/user)
 
@@ -472,10 +471,7 @@
 		playsound(src,'sound/effects/PEN_Ball_Point_Pen_Circling_01_mono.ogg',40,1)
 		update_space(t)
 
-		var/datum/browser/popup = new (usr, name, name)
-		popup.set_content("[info_links][stamps]")
-		popup.add_head_content("<style>html{background-color:[color];}</style>")
-		popup.open()
+		usr << browse(HTML_SKELETON_PAPER(name,null,info_links + stamps,color), "window=[name]")
 
 		update_icon()
 
@@ -544,10 +540,7 @@
 		if ( istype(RP) && RP.mode == 2 )
 			RP.RenamePaper(user,src)
 		else
-			var/datum/browser/popup = new (usr, name, name)
-			popup.set_content("[info_links][stamps]")
-			popup.add_head_content("<style>html{background-color:[color];}</style>")
-			popup.open()
+			user << browse(HTML_SKELETON_PAPER(name,null,info_links + stamps,color), "window=[name]")
 		return
 
 	else if(istype(P, /obj/item/stamp))
