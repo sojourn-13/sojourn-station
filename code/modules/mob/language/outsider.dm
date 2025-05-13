@@ -103,10 +103,10 @@
 	"SKRE","AHK","EHK","RAWK","KRA","AAA","EEE","KI","II","KRI","KA")
 	shorthand = "N/A"
 
-//Kriosan racial language. Lore: German integration due to Sol-Gov occupation; therefor very slightly intelligibility with German.
+//Kriosan racial language. Lore: Former forced Eurolang integration due to Sol-Gov occupation has been shed and a resurgence of the Kriosan Language has eliminated traces of other languages' influence.
 /datum/language/kriosan
 	name = LANGUAGE_KRIOSAN
-	desc = "The main language of Krios, Kriosan Creole. Mostly consiting of quill-hound noises, posturing and many Eurolang loan words."
+	desc = "The main language of Krios, Kriosan. Mostly consiting of quill-hound noises."
 	speech_verb = list("states", "rumbles")
 	ask_verb = list("stipulates", "huffs")
 	exclaim_verb = list("barks", "yips")
