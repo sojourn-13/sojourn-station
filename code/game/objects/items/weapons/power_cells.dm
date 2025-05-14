@@ -467,7 +467,7 @@
 
 // One cell to rule them all!
 /obj/item/cell/large/hydrogen
-	name = "hydrogen cell adapter"
+	name = "Soteria \"Fusion-Link\" Fuel-Cell Adapter"
 	desc = "An advanced device designed to convert the power held within regular cryo-sealed hydrogen fuel cell into power suitable for most electronic systems."
 	icon_state = "hydrogen"
 	max_chargerate = 0 // Cannot be charged
@@ -540,7 +540,7 @@
 
 // A cell powered by an ameridian core. It is self-charging and used in the Ameridian Knight Rig, where it cannot be removed.
 /obj/item/cell/large/ameridian
-	name = "ameridian power cell"
+	name = "Soteria \"Radiocore\" Ameridian Cell"
 	desc = "An advanced device designed to extract power from ameridian cores. However it can only extract power while not in use."
 	icon_state = "ameridian"
 	maxcharge = 20000
