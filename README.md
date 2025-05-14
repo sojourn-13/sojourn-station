@@ -19,5 +19,5 @@ Mapping - Glitchy, smoggie<br/>
 Lore - Bamhalazam, Yo-Rimbo, Tzui5020, Floofster<br/>
 Code - Ryuu, CFW Magic, Tennessee, Bamhalazam, R4D6<br/>
 
-Contributors - Odisurin, Delams-The-SM, XSlayer300, HOUND, Dr.Farson, R4D6<br/>
+Contributors - Odisurin, Delams-The-SM, XSlayer300, HOUND, Dr.Farson, R4D6, Smokingsquirrel<br/>
 
