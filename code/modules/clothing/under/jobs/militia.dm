@@ -263,7 +263,7 @@
 
 /obj/item/clothing/under/rank/trooper/gorka
 	name = "blackshield gorka suit"
-	desc = "A rugged set of two-tone overwear, made with robust materials and the insignia of the Blackshield."
+	desc = "A rugged set of two-tone overwear, made with robust materials and adorned with Blackshield insignia."
 	icon_state = "gorka_ih"
 
 /obj/item/clothing/under/rank/trooper/gorka/verb/toggle_style()
