@@ -353,7 +353,7 @@
 
 /obj/item/clothing/under/rank/bdu/trooper
 	name = "Blackshield BDU"
-	desc = "A rugged militia Battle Dress Uniform, made with robust materials and the insignia of the Blackshield."
+	desc = "A rugged militia Battle Dress Uniform, made with robust materials and adorned with Blackshield insignia."
 	icon_state = "bdubsstandard"
 	item_state = "bdubsstandard"
 
