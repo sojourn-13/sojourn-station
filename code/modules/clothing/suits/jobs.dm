@@ -99,7 +99,7 @@
 //Quartermaster
 /obj/item/clothing/suit/storage/rank/qm_coat
 	name = "surface manager coat"
-	desc = "An ideal choice for the "businessman". This coat seems have good impact resistance, and is made from resistant and expensive materials."
+	desc = "An ideal choice for the businessman. This coat seems have good impact resistance, and is made from resistant and expensive materials."
 	icon_state = "qm_coat"
 	item_state = "qm_coat"
 	blood_overlay_type = "coat"
