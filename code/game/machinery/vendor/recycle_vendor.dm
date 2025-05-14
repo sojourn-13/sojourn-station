@@ -70,6 +70,9 @@
 
 
 /obj/machinery/recycle_vendor/attackby(obj/item/I, mob/living/user)
+	if(istype(I,/obj/item/tool/psionic_omnitool) || istype(I,/obj/item/tool/knife/psionic_blade))
+		return
+
 	if(user.incapacitated() || user.stat || !user.Adjacent(user))
 		// TODO: Standardized check for that kind of stuff -- KIROV
 		return
