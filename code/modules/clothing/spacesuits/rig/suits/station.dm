@@ -222,7 +222,7 @@ Technomancer RIG
 
 /obj/item/rig/techno/equipped
 	initial_modules = list(
-		/obj/item/rig_module/storage/large,
+		/obj/item/rig_module/storage/engi,
 		/obj/item/rig_module/power_sink,
 		/obj/item/rig_module/maneuvering_jets,
 		/obj/item/rig_module/cargo_clamp,
@@ -347,9 +347,10 @@ Technomancer RIG
 /obj/item/rig/advhazmat/equipped
 	req_access = list(access_xenoarch)
 	initial_modules = list(
+		/obj/item/rig_module/storage/large,
 		/obj/item/rig_module/ai_container,
 		/obj/item/rig_module/maneuvering_jets,
-		/obj/item/rig_module/device/anomaly_scanner,
+		/obj/item/rig_module/device/anomaly_scanner
 		)
 
 /***************************************
@@ -391,7 +392,7 @@ Technomancer RIG
 		/obj/item/rig_module/maneuvering_jets,
 		/obj/item/rig_module/device/healthscanner,
 		/obj/item/rig_module/vision/medhud,
-		/obj/item/rig_module/storage/large
+		/obj/item/rig_module/storage/med
 		)
 
 /obj/item/rig/recovery_suit
