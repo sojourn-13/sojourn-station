@@ -101,3 +101,10 @@
 	name = "Soteria \"Hand Crank\""
 	build_path = /obj/item/device/manual_charger
 	category = CAT_POWER
+
+//Hand crank for cells
+/datum/design/research/item/powercell/large/hydrogen
+	name = "Soteria \"Fusion-Link\""
+	build_type = PROTOLATHE | MECHFAB
+	build_path = /obj/item/cell/large/hydrogen
+	category = CAT_POWER

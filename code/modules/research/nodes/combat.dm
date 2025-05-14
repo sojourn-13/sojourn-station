@@ -355,4 +355,5 @@
 							/datum/design/research/item/weapon/hydrogen_welder,
 							/datum/design/research/item/weapon/hydrogrenade,
 							/datum/design/research/item/ammo/hydroflaskette,
+							/datum/design/research/item/powercell/large/hydrogen,
 							/datum/design/research/item/ion_jaunt)

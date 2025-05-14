@@ -16,7 +16,7 @@
 	glove_type = /obj/item/clothing/gloves/rig/hydrogen_knight
 	cell_type =  /obj/item/cell/large/hydrogen/loaded // With how it is made, it start ready to be used
 	air_type =   /obj/item/tank/oxygen
-	suitable_cell = /obj/item/cell/large
+	suitable_cell = /obj/item/cell/large/hydrogen
 	initial_modules = list(//obj/item/rig_module/storage/expanded,
 							/obj/item/rig_module/mounted,
 							/obj/item/rig_module/held/shield,
