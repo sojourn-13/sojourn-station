@@ -140,11 +140,7 @@ uniquic_armor_act
 			*/
 
 		if(stats.getStat(STAT_TGH) > 0)
-			//Prevents a devide by 0
-			var/tgt = stats.getStat(STAT_TGH)
-			if(tgt == 0)
-				tgt = 1
-			total += clamp(0, round(tgt/(12 + item_punishment)), 10)
+			total += clamp(0, round(stats.getStat(STAT_TGH)/(12 + item_punishment)), 10)
 
 	if(stats.getPerk(PERK_OVERBREATH))
 		var/health_deficiency = (maxHealth - health)
