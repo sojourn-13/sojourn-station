@@ -542,7 +542,7 @@
 /obj/item/cell/large/ameridian
 	name = "ameridian power cell"
 	desc = "An advanced device designed to extract power from ameridian cores. However it can only extract power while not in use."
-	icon_state = "hydrogen"
+	icon_state = "ameridian"
 	maxcharge = 20000
 	autorecharging = TRUE
 	autorecharge_rate = 0.1
