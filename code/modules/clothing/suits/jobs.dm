@@ -5,7 +5,7 @@
 //Assistant
 /obj/item/clothing/suit/storage/rank/ass_jacket
 	name = "colonist jacket"
-	desc = "Practical and comfortable jacket. It seems have a little protection from physical harm."
+	desc = "Practical and comfortable jacket, padded for an inch of extra protection from harm."
 	icon_state = "ass_jacket"
 	item_state = "ass_jacket"
 	blood_overlay_type = "coat"
@@ -22,7 +22,7 @@
 //Guild Technician
 /obj/item/clothing/suit/storage/rank/cargo_jacket
 	name = "lonestar jacket"
-	desc = "Stylish jacket lined with pockets. It seems have a little protection from physical harm."
+	desc = "Stylish jacket lined with pockets, padded for an inch of extra protection from harm."
 	icon_state = "cargo_jacket"
 	item_state = "cargo_jacket"
 	blood_overlay_type = "coat"
@@ -38,7 +38,7 @@
 
 /obj/item/clothing/suit/storage/rank/cargoclerk_jacket
 	name = "lonestar office jacket"
-	desc = "Stylish jacket lined for lonestar office workers. It seems have a little protection from physical harm."
+	desc = "Stylish jacket lined for lonestar office workers, padded for an inch of extra protection from harm."
 	icon_state = "cargoclerk_jacket"
 	item_state = "cargo_jacket"
 	blood_overlay_type = "coat"
@@ -99,7 +99,7 @@
 //Quartermaster
 /obj/item/clothing/suit/storage/rank/qm_coat
 	name = "surface manager coat"
-	desc = "An ideal choice for a smuggler. This coat seems have good impact resistance, and is made from resistant and expensive materials."
+	desc = "An ideal choice for the businessman. This coat seems have good impact resistance, and is made from resistant and expensive materials."
 	icon_state = "qm_coat"
 	item_state = "qm_coat"
 	blood_overlay_type = "coat"
@@ -243,7 +243,7 @@
 
 /obj/item/clothing/suit/rank/chef/classic
 	name = "classic chef's apron"
-	desc = "A basic, dull, white chef's apron."
+	desc = "A basic and dull white chef's apron."
 	icon_state = "apronchef"
 	item_state = "apronchef"
 	blood_overlay_type = "armor"
@@ -252,7 +252,7 @@
 //Detective
 /obj/item/clothing/suit/storage/rank/insp_trench
 	name = "ranger's armored trenchcoat"
-	desc = "Brown and armored trenchcoat, designed and created by the Marshals. The coat is externally impact resistant - perfect for your next act of autodefenestration!"
+	desc = "Brown, armored trenchcoat. Designed and created by the Marshals. The coat is impact resistant - perfect for your next act of autodefenestration!"
 	icon_state = "rangercoat"
 	item_state = "rangercoat"
 	blood_overlay_type = "coat"

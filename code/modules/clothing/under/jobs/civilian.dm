@@ -94,8 +94,8 @@
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
 
 /obj/item/clothing/under/rank/preacher
-	desc = "A dark ceremonial robe tailored for Primes."
-	name = "prime's robe"
+	desc = "A red ceremonial shirt tailored for Primes."
+	name = "prime's uniform"
 	icon_state = "preacher"
 	item_state = "w_suit"
 
@@ -225,13 +225,13 @@
 		return 1
 
 /obj/item/clothing/under/rank/chef
-	desc = "A pleasant yet practical suit for professional kitchen staff."
+	desc = "A comfy and practical suit for professional kitchen staff."
 	name = "chef's uniform"
 	icon_state = "chef"
 	item_state = "w_suit"
 
 /obj/item/clothing/under/rank/first_officer
-	desc = "A tan shirt with a Steward's badge, worn alongside some black leggings."
+	desc = "A tan shirt with a Steward's badge, worn alongside some black trousers."
 	name = "steward's uniform"
 	icon_state = "hop"
 	item_state = "b_suit"
@@ -305,6 +305,6 @@
 
 /obj/item/clothing/under/rank/lonestar_gorka
 	name = "lonestar gorka jumpsuit"
-	desc = "A gorka suit painted over with Lonestar orange and black."
+	desc = "An old gorka suit painted over with Lonestar orange and black."
 	icon_state = "ls_gorka"
 	item_state = "ls_gorka"

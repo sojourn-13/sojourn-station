@@ -13,7 +13,7 @@
 
 /obj/item/clothing/under/rank/trooper/cadet
 	name = "green cadet uniform"
-	desc = "A rugged, baggy, one-size-fits-all set of militant and quite slavic two-tone clothes for volunteers, cadets, and conscripts."
+	desc = "An old, rugged, baggy, one-size-fits-all set of militant two-tone clothes for volunteers, cadets and conscripts."
 	icon_state = "gorka"
 	item_state = "gorka"
 
@@ -263,7 +263,7 @@
 
 /obj/item/clothing/under/rank/trooper/gorka
 	name = "blackshield gorka suit"
-	desc = "A rugged set of vaguely slavic two-tone overwear, made with robust materials and wearing the insignia of the Blackshield."
+	desc = "A rugged set of two-tone overwear, made with robust materials and adorned with Blackshield insignia."
 	icon_state = "gorka_ih"
 
 /obj/item/clothing/under/rank/trooper/gorka/verb/toggle_style()
@@ -297,19 +297,19 @@
 
 /obj/item/clothing/under/rank/trooper/service
 	name = "blackshield service uniform"
-	desc = "A modern uniform with dark blue pants, with a white button up shirt. There are straps on the shoulders for adding shoulderboards."
+	desc = "A modern uniform with dark blue pants and white button up shirt. There are straps on the shoulders for adding shoulderboards."
 	icon_state = "trooper_service"
 	item_state = "trooper_service"
 
 /obj/item/clothing/suit/rank/trooper/service
 	name = "blackshield service jacket"
-	desc = "A modern dark blue uniform jacket. Fit for a trooper, even one on the frontier."
+	desc = "A modern dark blue service jacket to wear with the service uniform. Fit for a trooper, even one on the frontier."
 	icon_state = "trooper_service"
 	item_state = "trooper_service"
 
 /obj/item/clothing/suit/rank/trooper/dress
 	name = "blackshield dress jacket"
-	desc = "A modern dark blue uniform jacket. Fit for a trooper, even one on the frontier."
+	desc = "A modern dark blue dress jacket to wear with the service uniform for ceremonnial or offical occasions. Fit for a trooper, even one on the frontier."
 	icon_state = "trooper_dress"
 	item_state = "trooper_dress"
 
@@ -353,7 +353,7 @@
 
 /obj/item/clothing/under/rank/bdu/trooper
 	name = "Blackshield BDU"
-	desc = "A rugged militia Battle Dress Uniform, made with robust materials and wearing the insignia of the Blackshield."
+	desc = "A rugged militia Battle Dress Uniform, made with robust materials and adorned with Blackshield insignia."
 	icon_state = "bdubsstandard"
 	item_state = "bdubsstandard"
 
@@ -394,7 +394,7 @@
 
 /obj/item/clothing/under/rank/armorer/gorka
 	name = "Sergeant's uniform"
-	desc = "A rugged set of vaguely slavic two-tone overwear, made with robust materials and wearing the pins of a Blackshield Sergeant."
+	desc = "A rugged set of two-tone overwear, made with robust materials and the pins of a Blackshield Sergeant."
 	icon_state = "gorka_ih"
 
 /obj/item/clothing/under/rank/armorer/gorka/verb/toggle_style()
@@ -433,19 +433,19 @@
 
 /obj/item/clothing/under/rank/armorer/service
 	name = "Blackshield NCO service uniform"
-	desc = "A modern uniform with silver trimmings on the dark blue pants, with a white button up shirt. There are straps on the shoulders for adding shoulderboards."
+	desc = "A modern uniform with silver trimmings on dark blue pants with a white button up shirt. There are straps on the shoulders for adding shoulderboards."
 	icon_state = "sergeant_service"
 	item_state = "sergeant_service"
 
 /obj/item/clothing/suit/rank/armorer/service
 	name = "Blackshield NCO service jacket"
-	desc = "A modern dark blue uniform jacket with silver trimmings. Fit for a mid-level trooper, even one on the frontier."
+	desc = "A modern dark blue service jacket with silver trimmings to wear with the service uniform. Fit for an enlisted leader, even one on the frontier."
 	icon_state = "sergeant_service"
 	item_state = "sergeant_service"
 
 /obj/item/clothing/suit/rank/armorer/dress
 	name = "Blackshield NCO dress jacket"
-	desc = "A modern dark blue uniform jacket with silver trimmings. Fit for a mid-level trooper, even one on the frontier."
+	desc = "A modern dark blue dress jacket with silver trimmings to wear with the service uniform for ceremonnial and official occasions. Fit for an enlisted leader, even one on the frontier."
 	icon_state = "sergeant_dress"
 	item_state = "sergeant_dress"
 
@@ -455,7 +455,7 @@
  */
 /obj/item/clothing/under/rank/commander
 	name = "commander's combat uniform"
-	desc = "It's a uniform worn by those few with the dedication to achieve the position of \"Blackshield Commander\". It has additional armor to protect the wearer."
+	desc = "Uniform worn by those few with the dedication to achieve the position of \"Blackshield Commander\". It has additional armor to protect the wearer."
 	icon_state = "gorka_ih"
 	siemens_coefficient = 0.8
 
@@ -489,7 +489,7 @@
 
 /obj/item/clothing/suit/rank/commander_service
 	name = "blackshield command service jacket"
-	desc = "A modern dark blue uniform jacket with gold trimmings. Fit for a command officer, even one on the frontier."
+	desc = "A modern dark blue uniform jacket with gold trimmings to go with the dress uniform for ceremonnial or official occasions. Fit for a field officer, even one on the frontier."
 	icon_state = "commander_service"
 	item_state = "commander_service"
 
@@ -522,19 +522,19 @@
 
 /obj/item/clothing/under/rank/brigservice
 	name = "blackshield general's service uniform"
-	desc = "A modern uniform with red trimmings on the dark blue pants, with a white button up shirt. There are straps on the shoulders for adding shoulderboards."
+	desc = "A modern uniform with red trimmings on dark blue pants with a white button up shirt. There are straps on the shoulders for adding shoulderboards."
 	icon_state = "brigadier_service"
 	item_state = "brigadier_service"
 
 /obj/item/clothing/suit/rank/brigservice
 	name = "blackshield general's service jacket"
-	desc = "A modern dark blue uniform jacket with red trimmings. Fit for a general officer, even one on the frontier."
+	desc = "A modern dark blue service jacket with red trimmings to wear with the service uniform. Fit for a general, even one on the frontier."
 	icon_state = "brigadier_service"
 	item_state = "brigadier_service"
 
 /obj/item/clothing/suit/rank/brigdress
 	name = "blackshield general's dress jacket"
-	desc = "A modern dark blue uniform jacket with red trimmings. Fit for a general officer, even one on the frontier."
+	desc = "A modern dark blue uniform jacket with red trimmings to wear with the dress uniform for ceremonnial or official occasions. Fit for a general, even one on the frontier."
 	icon_state = "brigadier_dress"
 	item_state = "brigadier_dress"
 

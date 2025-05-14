@@ -106,7 +106,7 @@
 
 /obj/item/clothing/under/rank/engineer/adv_master
 	desc = "A plastic-coated and iron-woven engineering suit worn by Guild Masters heading into dangerously radioactive areas for repair work. Offers full radiation protection."
-	name = "adept's padded emergency suit"
+	name = "Guild Master's padded emergency suit"
 	icon_state = "chiefengineeradv"
 	item_state = "chiefengineeradv"
 	armor_list = list(
