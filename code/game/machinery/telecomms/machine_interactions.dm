@@ -85,7 +85,7 @@ level 5 manipulator 15 x 3 x 2 = 90w saved greyson level
 
 	user.set_machine(src)
 	var/dat
-	dat = "<font face = \"Courier\"><HEAD><TITLE>[src.name]</TITLE></HEAD><center><H3>[src.name] Access</H3></center>"
+	dat = "<font face = \"Courier\"><center><H3>[src.name] Access</H3></center>"
 	dat += "<br>[temp]<br>"
 	dat += "<br>Power Status: <a href='?src=\ref[src];input=toggle'>[src.toggled ? "On" : "Off"]</a>"
 	if(on && toggled)
@@ -135,7 +135,7 @@ level 5 manipulator 15 x 3 x 2 = 90w saved greyson level
 
 	dat += "</font>"
 	temp = ""
-	user << browse(dat, "window=tcommachine;size=520x500;can_resize=0")
+	user << browse(HTML_SKELETON_TITLE(src.name, dat), "window=tcommachine;size=520x500;can_resize=0")
 	onclose(user, "dormitory")
 
 

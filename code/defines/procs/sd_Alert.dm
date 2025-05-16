@@ -112,9 +112,7 @@ sd_alert
 		if(!default) default = buttons[1]
 		if(!(flags & SD_ALERT_NOVALIDATE)) validation = buttons.Copy()
 
-		var/html = {"<head><title>[title]</title>[style]<script>\
-		function c(x) {document.location.href='BYOND://?src=\ref[src];'+x;}\
-		</script></head><body onLoad="fcs.focus();"\
+		var/html = {"<body onLoad="fcs.focus();"\
 		[(flags&SD_ALERT_SCROLL)?"":" scroll=no"]><table [table]><tr>\
 		<td>[message]</td></tr><tr><th>"}
 
@@ -148,7 +146,14 @@ sd_alert
 
 		html += "</th></tr></table></body>"
 
-		target << browse(html, "window=\ref[src];size=[size];can_close=0")
+		var/list/sizes =  splittext(size, "x")
+		var/datum/browser/popup = new (usr, "\ref[src]", title, sizes[1], sizes[2])
+		popup.set_content(html)
+		popup.add_head_content("[style]<script>\
+		function c(x) {document.location.href='BYOND://?src=\ref[src];'+x;}\
+		</script>")
+		popup.open()
+
 
 	proc/Response()
 		var/validated

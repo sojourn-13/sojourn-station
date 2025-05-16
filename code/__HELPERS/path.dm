@@ -9,7 +9,7 @@
  * If no path was found, returns an empty list, which is important for bots like medibots who expect an empty list rather than nothing.
  *
  * Arguments:
- * * caller: The movable atom that's trying to find the path
+ * * pathfinding_atom: The movable atom that's trying to find the path
  * * end: What we're trying to path to. It doesn't matter if this is a turf or some other atom, we're gonna just path to the turf it's on anyway
  * * max_distance: The maximum number of steps we can take in a given path to search (default: 30, 0 = infinite)
  * * mintargetdistance: Minimum distance to the target before path returns, could be used to get near a target, but not right to it - for an AI mob with a gun, for example.
@@ -19,17 +19,17 @@
  * * skip_first: Whether or not to delete the first item in the path. This would be done because the first item is the starting tile, which can break movement for some creatures.
  * * diagonal_safety: ensures diagonal moves won't use invalid midstep turfs by splitting them into two orthogonal moves if necessary
  */
-/proc/get_path_to(caller, end, max_distance = 30, mintargetdist, id=null, simulated_only = TRUE, turf/exclude, skip_first=TRUE, diagonal_safety=TRUE)
-	if(!caller || !get_turf(end))
+/proc/get_path_to(pathfinding_atom, end, max_distance = 30, mintargetdist, id=null, simulated_only = TRUE, turf/exclude, skip_first=TRUE, diagonal_safety=TRUE)
+	if(!pathfinding_atom || !get_turf(end))
 		return
 
-	var/l = SSpathfinder.mobs.getfree(caller)
+	var/l = SSpathfinder.mobs.getfree(pathfinding_atom)
 	while(!l)
 		stoplag(3)
-		l = SSpathfinder.mobs.getfree(caller)
+		l = SSpathfinder.mobs.getfree(pathfinding_atom)
 
 	var/list/path
-	var/datum/pathfind/pathfind_datum = new(caller, end, id, max_distance, mintargetdist, simulated_only, exclude, diagonal_safety)
+	var/datum/pathfind/pathfind_datum = new(pathfinding_atom, end, id, max_distance, mintargetdist, simulated_only, exclude, diagonal_safety)
 	path = pathfind_datum.search()
 	qdel(pathfind_datum)
 
@@ -46,7 +46,7 @@
  * If you really want to optimize things, optimize this, cuz this gets called a lot.
  * We do early next.density check despite it being already checked in LinkBlockedWithAccess for short-circuit performance
  */
-#define CAN_STEP(cur_turf, next) (next && !next.density && !(simulated_only && SSpathfinder.space_type_cache[next.type]) && !cur_turf.LinkBlockedWithAccess(next,caller, id) && (next != avoid))
+#define CAN_STEP(cur_turf, next) (next && !next.density && !(simulated_only && SSpathfinder.space_type_cache[next.type]) && !cur_turf.LinkBlockedWithAccess(next,pathfinding_atom, id) && (next != avoid))
 /// Another helper macro for JPS, for telling when a node has forced neighbors that need expanding
 #define STEP_NOT_HERE_BUT_THERE(cur_turf, dirA, dirB) ((!CAN_STEP(cur_turf, get_step(cur_turf, dirA)) && CAN_STEP(cur_turf, get_step(cur_turf, dirB))))
 
@@ -99,7 +99,7 @@
 /// The datum used to handle the JPS pathfinding, completely self-contained
 /datum/pathfind
 	/// The thing that we're actually trying to path for
-	var/atom/movable/caller
+	var/atom/movable/pathfinding_atom
 	/// The turf where we started at
 	var/turf/start
 	/// The turf we're trying to path to (note that this won't track a moving target)
@@ -125,8 +125,8 @@
 	/// Ensures diagonal moves won't use invalid midstep turfs by splitting them into two orthogonal moves if necessary
 	var/diagonal_safety = TRUE
 
-/datum/pathfind/New(atom/movable/caller, atom/goal, id, max_distance, mintargetdist, simulated_only, avoid, diagonal_safety)
-	src.caller = caller
+/datum/pathfind/New(atom/movable/pathfinding_atom, atom/goal, id, max_distance, mintargetdist, simulated_only, avoid, diagonal_safety)
+	src.pathfinding_atom = pathfinding_atom
 	end = get_turf(goal)
 	open = new /datum/heap(GLOBAL_PROC_REF(HeapPathWeightCompare))
 	sources = new()
@@ -144,7 +144,7 @@
  * return null, which [/proc/get_path_to] translates to an empty list (notable for simple bots, who need empty lists)
  */
 /datum/pathfind/proc/search()
-	start = get_turf(caller)
+	start = get_turf(pathfinding_atom)
 	if(!start || !end)
 		stack_trace("Invalid A* start or destination")
 		return
@@ -160,7 +160,7 @@
 
 	//then run the main loop
 	while(!open.is_empty() && !path)
-		if(!caller)
+		if(!pathfinding_atom)
 			return
 		current_processed_node = open.pop() //get the lower f_value turf in the open list
 		if(max_distance && (current_processed_node.number_tiles > max_distance))//if too many steps, don't process that path
@@ -368,17 +368,17 @@
 			return
 
 /**
- * For seeing if we can actually move between 2 given turfs while accounting for our access and the caller's pass_flags
+ * For seeing if we can actually move between 2 given turfs while accounting for our access and the pathfinding_atom's pass_flags
  *
  * Assumes destinantion turf is non-dense - check and shortcircuit in code invoking this proc to avoid overhead.
  *
  * Arguments:
- * * caller: The movable, if one exists, being used for mobility checks to see what tiles it can reach
+ * * pathfinding_atom: The movable, if one exists, being used for mobility checks to see what tiles it can reach
  * * ID: An ID card that decides if we can gain access to doors that would otherwise block a turf
  * * simulated_only: Do we only worry about turfs with simulated atmos, most notably things that aren't space?
  * * no_id: When true, doors with public access will count as impassible
 */
-/turf/proc/LinkBlockedWithAccess(turf/destination_turf, caller, ID, no_id = FALSE)
+/turf/proc/LinkBlockedWithAccess(turf/destination_turf, pathfinding_atom, ID, no_id = FALSE)
 	if(destination_turf.x != x && destination_turf.y != y) //diagonal
 		var/in_dir = get_dir(destination_turf,src) // eg. northwest (1+8) = 9 (00001001)
 		var/first_step_direction_a = in_dir & 3 // eg. north   (1+8)&3 (0000 0011) = 1 (0000 0001)
@@ -386,7 +386,7 @@
 
 		for(var/first_step_direction in list(first_step_direction_a,first_step_direction_b))
 			var/turf/midstep_turf = get_step(destination_turf,first_step_direction)
-			var/way_blocked = midstep_turf.density || LinkBlockedWithAccess(midstep_turf,caller,ID, no_id = no_id) || midstep_turf.LinkBlockedWithAccess(destination_turf,caller,ID, no_id = no_id)
+			var/way_blocked = midstep_turf.density || LinkBlockedWithAccess(midstep_turf,pathfinding_atom,ID, no_id = no_id) || midstep_turf.LinkBlockedWithAccess(destination_turf,pathfinding_atom,ID, no_id = no_id)
 			if(!way_blocked)
 				return FALSE
 		return TRUE
@@ -400,22 +400,22 @@
 		//	if(destination_turf.density)
 		//		return TRUE
 		if(TURF_PATHING_PASS_PROC)
-			if (!destination_turf.CanPass(caller, destination_turf)) //not really relevant right now, i dont think this type of pathfinding is even used rn
+			if (!destination_turf.CanPass(pathfinding_atom, destination_turf)) //not really relevant right now, i dont think this type of pathfinding is even used rn
 				return TRUE
 		if(TURF_PATHING_PASS_NO)
 			return TRUE
 
 	// Source border object checks
 	for(var/obj/structure/window/iter_window in src)
-		if(!iter_window.CanPass(caller, destination_turf, direction = actual_dir))
+		if(!iter_window.CanPass(pathfinding_atom, destination_turf, direction = actual_dir))
 			return TRUE
 
 	for(var/obj/machinery/door/window/iter_windoor in src)
-		if(!iter_windoor.CanPass(caller, destination_turf, direction = actual_dir))
+		if(!iter_windoor.CanPass(pathfinding_atom, destination_turf, direction = actual_dir))
 			return TRUE
 
 	for(var/obj/structure/railing/iter_rail in src)
-		if(!iter_rail.CanPass(caller, destination_turf, direction = actual_dir))
+		if(!iter_rail.CanPass(pathfinding_atom, destination_turf, direction = actual_dir))
 			return TRUE
 
 	/*for(var/obj/machinery/door/firedoor/border_only/firedoor in src)
@@ -424,7 +424,7 @@
 
 	// Destination blockers check
 	for(var/obj/iter_object in destination_turf)
-		if(!iter_object.CanPass(caller, destination_turf))
+		if(!iter_object.CanPass(pathfinding_atom, destination_turf))
 			return TRUE
 
 	return FALSE
