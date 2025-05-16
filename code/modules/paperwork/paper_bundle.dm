@@ -126,9 +126,11 @@
 			dat = "[pages_header][stars(P.info)][P.stamps]"
 		else
 			dat = "[pages_header][P.info][P.stamps]"
-		user << browse(HTML_SKELETON_PAPER(P.name,null, dat,P.color), "window=[name]")
+		color = P.color
+		user << browse(HTML_SKELETON_PAPER(P.name,null,dat,P.color), "window=[name]")
 	else if(istype(pages[page], /obj/item/photo))
 		var/obj/item/photo/P = W
+		color = P.color
 		user << browse_rsc(P.img, "tmp_photo.png")
 		user << browse(HTML_SKELETON_RAW("<title>[P.name]</title>", \
 		"<body style='overflow:hidden'>[pages_header]" \
