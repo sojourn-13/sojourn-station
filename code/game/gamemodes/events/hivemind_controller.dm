@@ -163,7 +163,7 @@ GLOBAL_VAR_INIT(hivemind_panel, new /datum/hivemind_panel)
 	<a href='?src=\ref[src];toggle_slime_pop_lock=1'>\[TOGGLE\]</a>"
 
 	data += "</td></tr></table>"
-	usr << browse(data, "window=hive_main;size=600x600")
+	usr << browse(HTML_SKELETON(data), "window=hive_main;size=600x600")
 
 
 /datum/hivemind_panel/Topic(href,href_list)

@@ -24,7 +24,7 @@
 	if(!message)	return
 	var/F = investigate_subject2file(subject)
 	if(!F)	return
-	F << "<small>[time2text(world.timeofday,"hh:mm")] \ref[src] ([x],[y],[z])</small> || [src] [message]<br>"
+	F << HTML_SKELETON("<small>[time2text(world.timeofday,"hh:mm")] \ref[src] ([x],[y],[z])</small> || [src] [message]<br>")
 
 //ADMINVERBS
 ADMIN_VERB_ADD(/client/proc/investigate_show, R_ADMIN, TRUE)
@@ -39,7 +39,7 @@ ADMIN_VERB_ADD(/client/proc/investigate_show, R_ADMIN, TRUE)
 			if(!F)
 				to_chat(src, "<font color='red'>Error: admin_investigate: [INVESTIGATE_DIR][subject] is an invalid path or cannot be accessed.</font>")
 				return
-			src << browse(F,"window=investigate[subject];size=800x300")
+			src << browse(HTML_SKELETON(F),"window=investigate[subject];size=800x300")
 
 		if("hrefs")				//persistant logs and stuff
 			if(config && config.log_hrefs)
