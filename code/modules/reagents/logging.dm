@@ -26,4 +26,4 @@ ADMIN_VERB_ADD(/client/proc/view_chemical_reaction_logs, R_ADMIN, FALSE)
 	for(var/entry in chemical_reaction_logs)
 		html += "[entry]<br>"
 
-	usr << browse(html, "window=chemlogs")
+	usr << browse(HTML_SKELETON(html), "window=chemlogs")

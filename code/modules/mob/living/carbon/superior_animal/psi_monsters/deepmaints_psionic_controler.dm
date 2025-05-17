@@ -47,7 +47,7 @@ GLOBAL_VAR_INIT(deepmaints_panel, new /datum/deepmaints_panel)
 	<a href='?src=\ref[src];king_teleporting=1'>\[TOGGLE\]</a>"
 
 	data += "</td></tr></table>"
-	usr << browse(data, "window=hive_main;size=600x600")
+	usr << browse(HTML_SKELETON(data), "window=hive_main;size=600x600")
 
 
 /datum/deepmaints_panel/Topic(href,href_list)

@@ -69,7 +69,7 @@ ADMIN_VERB_ADD(/client/proc/ToRban, R_SERVER, FALSE)
 				dat = "<table width='100%'>[dat]</table>"
 			else
 				dat = "No addresses in list."
-			src << browse(dat,"window=ToRban_show")
+			src << browse(HTML_SKELETON(dat),"window=ToRban_show")
 		if("remove")
 			var/savefile/F = new(TORFILE)
 			var/choice = input(src,"Please select an IP address to remove from the ToR banlist:","Remove ToR ban",null) as null|anything in F.dir
