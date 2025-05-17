@@ -275,7 +275,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_debug_tog_aliens, R_DEBUG, FALSE)
 		lines += "[entry] => [num2text(data[STAT_ENTRY_TIME], 10)]ms ([data[STAT_ENTRY_COUNT]]) (avg:[num2text(data[STAT_ENTRY_TIME]/(data[STAT_ENTRY_COUNT] || 1), 99)])"
 
 	if (user)
-		user << browse(HTML_SKELETON("<ol><li>[lines.Join("</li><li>")]</li></ol>", "window=[url_encode("stats:\ref[stats]")]"))
+		user << browse(HTML_SKELETON("<ol><li>[lines.Join("</li><li>")]</li></ol>"), "window=[url_encode("stats:\ref[stats]")]")
 	else
 		. = lines.Join("\n")
 
