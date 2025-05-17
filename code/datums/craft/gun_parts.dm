@@ -397,7 +397,7 @@ Make it so steel parts fit into any gun you want but can 'break', or cause jams.
 /obj/item/part/gun/barrel
 	name = "generic barrel"
 	desc = "A gun barrel, which keeps the bullet going in the right direction."
-	icon_state = "barrel_.35"
+	icon_state = "barrel_9mm"
 	generic = FALSE
 	matter = list(MATERIAL_PLASTEEL = 4)
 	price_tag = 200
@@ -407,7 +407,7 @@ Make it so steel parts fit into any gun you want but can 'break', or cause jams.
 /obj/item/part/gun/barrel/pistol
 	name = ".35 pistol barrel"
 	desc = "A gun barrel, which keeps the bullet going in the right direction. Chambered for .35."
-	icon_state = "barrel_.35"
+	icon_state = "barrel_9mm"
 	price_tag = 100
 	caliber = CAL_PISTOL
 	refence_for_legal = "pistol"

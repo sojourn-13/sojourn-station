@@ -399,7 +399,7 @@
 /obj/item/ammo_magazine/ammobox/c10x24
 	name = "ammunition box (10x24mm caseless)"
 	icon_state = "box10x24"
-	desc = "A box of .40 caseless round, how odd."
+	desc = "A box of 10x24mm caseless round, how odd."
 	matter = list(MATERIAL_CARDBOARD = 1)
 	caliber = "10x24"
 	ammo_type = /obj/item/ammo_casing/c10x24
@@ -407,8 +407,8 @@
 
 /obj/item/ammo_magazine/ammobox/c10x24_small
 	name = "ammunition packet (10x24mm caseless)"
-	icon_state = "box.40"
-	desc = "A box of .40 caseless round, how odd."
+	icon_state = "box10x24"
+	desc = "A box of 10x24mm caseless round, how odd."
 	matter = list(MATERIAL_CARDBOARD = 1)
 	caliber = "10x24"
 	ammo_type = /obj/item/ammo_casing/c10x24
