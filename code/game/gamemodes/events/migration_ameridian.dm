@@ -65,9 +65,9 @@
 
 /datum/event/ameridian_migration/start()
 	if(severity == EVENT_LEVEL_MAJOR)
-		spawn_ameridian(70)
+		spawn_ameridian(20) //change to 70 on june 22th
 	else if(severity == EVENT_LEVEL_MODERATE)
-		spawn_ameridian(35)
+		spawn_ameridian(15) //change to 35 on june 22th
 
 /datum/event/ameridian_migration/proc/spawn_ameridian(var/number)
 	var/list/spawn_locations = pickweight_mult(viable_turfs, number)
@@ -77,12 +77,4 @@
 			spawned_ameridian.Add(new /obj/random/structures/ameridian_crystal(T))
 
 /datum/event/ameridian_migration/end()
-	for(var/obj/structure/ameridian_crystal/a in spawned_ameridian)
-		if(!a.stat)
-			var/turf/T = get_turf(a)
-			if(istype(T, /turf/space)) //If they end up outside the map then we remove them on end
-				spawned_ameridian.Remove(a)
-				qdel(a)
-			if(istype(T, /turf/unsimulated/wall/jungle))
-				spawned_ameridian.Remove(a)
-				qdel(a)
+	return //We dont go away after are spreading
