@@ -289,9 +289,6 @@
 	pointamounts = 20
 	heal_to_sanity = 30
 
-//Small intraction you can do!
-//Get the mask, level up to stat cap, take it off, proofit!
-
 /obj/item/clothing/mask/deepmaints_buff/dropped()
 	..()
 	if(!pointremoved)
@@ -306,9 +303,8 @@
 	.=..()
 	masked_person = M
 	if(!pointgranted)
-		masked_person.stats.changeStat_withcap(stat_to_change, -pointamounts)
+		masked_person.stats.changeStat_withcap(stat_to_change, pointamounts)
 		pointgranted = 1
-
 
 //The anti-psion hat
 /obj/item/clothing/head/psionic/tinfoil
@@ -332,7 +328,6 @@
 	desc = "A set of experimental cloths made of rare materials and silk, allowing psionic users to more effectively channel psionic essence."
 	matter = list(MATERIAL_SILK = 5)
 	var/cognitive_potential = 0.1 //cube sink
-
 
 /obj/item/clothing/under/psionic_cloths/attackby(obj/item/I, mob/user)
 	if(istype(I, /obj/item/device/psionic_catalyst))

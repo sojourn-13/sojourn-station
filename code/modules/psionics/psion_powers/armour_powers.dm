@@ -72,5 +72,5 @@
 			)
 		var/psionic_mask = pick(typesof(/obj/item/clothing/mask/deepmaints_buff))
 		if(psionic_mask)
-			user.replace_in_slot(new psionic_mask, wear_mask, skip_covering_check = TRUE)
+			user.replace_in_slot(new psionic_mask, slot_wear_mask, skip_covering_check = TRUE)
 
