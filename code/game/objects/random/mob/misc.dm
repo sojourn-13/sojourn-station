@@ -133,10 +133,11 @@
 //At higher levels we throw in CRAZY NOT CONNECTED TO THE REAL CULT daskvey TYPE MOBS, they are harder to fight with less
 /obj/random/mob/psi_monster/item_to_spawn()
 	if(GLOB.chaos_level > 0)
-		mobs += list(/mob/living/carbon/superior/psi/wasonce/crimson_jelly = (2 * GLOB.chaos_level))
+		mobs += list(/mob/living/carbon/superior/psi/wasonce/crimson_jelly = (0.2 * GLOB.chaos_level))
+		mobs += list(/mob/living/carbon/superior/psi/debuffer = (0.1 * GLOB.chaos_level))
 
 	if(GLOB.chaos_level > 1)
-		mobs += list(/mob/living/carbon/superior/psi/wasonce/crimson_jelly/pitch_horror = (0.5 * GLOB.chaos_level))
+		mobs += list(/mob/living/carbon/superior/psi/wasonce/crimson_jelly/pitch_horror = (0.1 * GLOB.chaos_level))
 		mobs += list(/mob/living/carbon/superior/psi/daskvey_follower/weakling/deepmaints_bound = (0.5 * GLOB.chaos_level))
 
 	if(GLOB.chaos_level > 2)

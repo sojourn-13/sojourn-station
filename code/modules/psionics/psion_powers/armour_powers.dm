@@ -55,3 +55,22 @@
 		user.replace_in_slot(new /obj/item/clothing/gloves/occultLgloves, slot_gloves, skip_covering_check = TRUE)
 		user.replace_in_slot(new /obj/item/clothing/suit/space/occulLtist, slot_wear_suit, skip_covering_check = TRUE)
 		user.replace_in_slot(new /obj/item/clothing/head/helmet/space/occultLhood, slot_head, skip_covering_check = TRUE)
+
+
+/mob/living/carbon/human/psionic_tumor/proc/psion_gas_mask()
+	set category = "Psionic powers"
+	set name = "Psionic Mask (1)"
+	set desc = "Spend one psi points to don a mask that on removal will heal your mind and enhance your skills when waring."
+	var/psi_point_cost = 1
+	var/mob/living/carbon/human/user = src
+	var/obj/item/organ/internal/psionic_tumor/PT = user.first_organ_by_process(BP_PSION)
+	if(PT && PT.pay_power_cost(psi_point_cost) && PT.check_possibility())
+		playsound(usr.loc, pick('sound/mecha/lowpower.ogg','sound/effects/magic/Blind.ogg','sound/hallucinations/i_see_you2.ogg','sound/effects/phasein.ogg'), 50, 1, 1, -3)
+		user.visible_message(
+			SPAN_DANGER("[src]'s breaths become shallow for a second..."),
+			SPAN_DANGER("A mask forms around your mouth, clamping on the sides")
+			)
+		var/psionic_mask = pick(typesof(/obj/item/clothing/mask/deepmaints_buff))
+		if(psionic_mask)
+			user.replace_in_slot(new psionic_mask, slot_wear_mask, skip_covering_check = TRUE)
+
