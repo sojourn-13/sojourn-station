@@ -20,7 +20,7 @@
 	default_pixel_x = -16
 	default_pixel_y = 0
 	size_pixel_offset_x = -16
-	armor_divisor = 4
+	armor_divisor = 2 //We half armor and still deal a lot of damage
 	momento_mori = /obj/effect/decal/cleanable/psi_ash/king
 	first_teleport_callout = "<b><font size='3px'>\the Dreaming King looses a terrible scream before journeying to nowhere, his words bellowing in rage, \"Only the king may wear the crown!\" The answering calls of his court echoing through the realm!</font></b>"
 	second_teleport_callout = "<b><font size='3px'>\the Dreaming King looses an agonized howl before journeying to nowhere, his words bellowing in rage, \"I will never die!\" The strongest of his court heard affirming his call!</font></b>"

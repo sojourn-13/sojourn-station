@@ -14,7 +14,7 @@
 	turns_per_move = 4 // Slow
 	attacktext = "punched"
 	momento_mori = /obj/effect/decal/cleanable/psi_ash/ponderous
-	armor_divisor = 3
+	armor_divisor = 1.5 //We dont hit to hard so make sure we nickle and dime
 
 /mob/living/carbon/superior/psi/hovering_nightmare
 	name = "hovering nightmare"
@@ -27,7 +27,7 @@
 	health = 100 * PSIMOB_HEALTH_MOD
 	melee_damage_lower = 20
 	melee_damage_upper = 25
-	armor_divisor = 1.5
+	armor_divisor = 1
 	emote_see = list("begins to melt, blackened skin sloughing down its form until it pulls taut.", "howls, \"Birth, flesh, death, decay, birth, flesh, death, decay!\"", "howls in agony!")
 	turns_per_move = 10
 	leach_on_odds = 10
@@ -52,7 +52,7 @@
 	poison_per_bite = 3
 	poison_type = "xenotoxin"
 	attacktext = "tongued"
-	armor_divisor = 2
+	armor_divisor = 1.3
 
 /mob/living/carbon/superior/psi/memory
 	name = "memory"
@@ -67,7 +67,7 @@
 	emote_see = list("screams, \"They did this they did this!\"", "howls, \"They could have done something!\"", "whispers, \"I could have done something...\"", "groans, \"Kill me, please...\"", "weeps, \"It will never end.\"")
 	speak_chance = 15
 	attacktext = "stroked"
-	armor_divisor = 1
+	armor_divisor = 0.7 //We can high role, give us some extra armor to counteract this
 	leach_on_odds = 70
 	can_leach = TRUE
 	steal_odds = 5

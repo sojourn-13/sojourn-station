@@ -19,7 +19,7 @@
 	death_gasp = "<b><font size='3px'>The flesh behemoth heaves as its body crumbles, wriggling pus maggots bursting from its failing rotted bulk!</font></b>!"
 	drop_items = list(/obj/random/psi/always_spawn, /obj/random/psi/always_spawn)
 	momento_mori = /obj/effect/decal/cleanable/psi_ash/flesh_behemoth
-	armor_divisor = 1
+	armor_divisor = 0.7 //Big hits + lots of health we dont need to always deal 30+ damage
 
 
 /mob/living/carbon/superior/psi/mind_gazer
@@ -37,7 +37,7 @@
 	healing_factor = 10
 	attacktext = "rammed"
 	drop_items = list(/obj/random/psi/always_spawn, /obj/random/psi/always_spawn)
-	armor_divisor = 1.2
+	armor_divisor = 1
 	leach_on_odds = 30
 	can_leach = TRUE
 	steal_odds = 15
@@ -63,7 +63,7 @@
 	light_color = COLOR_LIGHTING_RED_BRIGHT
 	attacktext = "clawed"
 	drop_items = list(/obj/random/psi/always_spawn, /obj/random/psi/always_spawn)
-	armor_divisor = 1.5
+	armor_divisor = 1.2
 
 /mob/living/carbon/superior/psi/cerebral_crusher
 	name = "cerebral crusher"
@@ -82,7 +82,7 @@
 	healing_factor = 10
 	attacktext = "slammed"
 	drop_items = list(/obj/random/psi/always_spawn, /obj/random/psi/always_spawn)
-	armor_divisor = 1.3
+	armor_divisor = 1
 
 /mob/living/carbon/superior/psi/wasonce/crimson_jelly
 	name = "crimson jelly"
@@ -106,7 +106,7 @@
 	knockdown_odds = 15
 	armor = list(melee = 5, bullet = 2, energy = 1, bomb = 30, bio = 100, rad = 100)
 	drop_items = list(/obj/random/psi/always_spawn, /obj/random/psi/weapons/always_spawn)
-	armor_divisor = 2.3
+	armor_divisor = 1
 
 /mob/living/carbon/superior/psi/wasonce/crimson_jelly/pitch_horror
 	name = "pitch horror"
@@ -119,41 +119,49 @@
 	health = 1250 * PSIMOB_HEALTH_MOD
 	knockdown_odds = 30
 	drop_items = list(/obj/random/psi/always_spawn, /obj/random/psi/weapons/always_spawn, /obj/random/psi/always_spawn, /obj/random/psi/weapons/always_spawn)
-	armor_divisor = 4
+	armor_divisor = 1.1
 
 // King's Court. Special named psi mobs with better stats and custom voice lines, they are spawned whenever the king of the hound journey.
+// King's Court is given old armor devisor values as their gimmic
 /mob/living/carbon/superior/psi/flesh_behemoth/baron
 	name = "Baron Wormwood"
 	desc = "He sings for meat, for piles and piles of flesh heaped onto a rotting table for his greedy maw to consume all manner of ripened offal."
 	emote_see = list("chuckles lowly, split bleeding lips cracking into a pleased leer.", "murmurs, \"So troubling, so troubling, more gore for the pile but they bring so many toys...\"", "snorts, \"Too many butchers, not enough bakers.\"")
 	death_gasp = "<b><font size='3px'>Baron Wormwood heaves as his body crumbles, wriggling pus maggots bursting from its failing rotted bulk!</font></b>!"
+	armor_divisor = 1
 
 /mob/living/carbon/superior/psi/mind_gazer/viscount
 	name = "Viscount Mannimarcus"
 	desc = "His all seeing eye has let its gaze fall upon you."
 	emote_see = list("chitters in song.", "rasps, \"I told the King they would come, but his arrogance led to nothing being done.\"", "sighs wearily, \"We must be ever vigil.\"")
+	armor_divisor = 1.2
 
 /mob/living/carbon/superior/psi/pus_maggot/ash_wendigo/duke
 	name = "Duke Ravencroft"
 	desc = "He comes to protect his king. Is it out of loyalty or simply the chance to kill?"
 	emote_see = list("growls quietly.", "hisses, \"The King is dead, long live the King.\"", "yells, \"Ashes! Ashes and dust, all of you!\"")
+	armor_divisor = 1.5
 
 /mob/living/carbon/superior/psi/cerebral_crusher/marshal
 	name = "Marshal Benedictus"
 	desc = "He shall pry your secrets from your flesh and slice your mind to colorful bloodied ribbons."
 	emote_see = list("knocks a closed fist on his bone plates.", "mutters, \"They call themselves marshals, yet with no court? Hmph!\"", "grinds his knuckles along the ground, \"Not a loss, not a loss at all.\"")
+	armor_divisor = 1.3
 
 /mob/living/carbon/superior/psi/wasonce/crimson_jelly/jester
 	name = "Red Jester Thomas"
 	desc = "He laughed, even at the end."
 	emote_see = list("laughs in a chorus of voices!", "giggles madly!", "howls with laughter!")
+	armor_divisor = 2.3
 
 /mob/living/carbon/superior/psi/wasonce/crimson_jelly/pitch_horror/steward
 	name = "Steward Kerevork"
 	desc = "Enslavement."
 	emote_see = list("moans, \"There was no escape.\"", "sighs, \"I have no regrets, I went with a clear conscience.\"", "groans, \"If only we could have forseen this.\"")
+	armor_divisor = 4
 
 /mob/living/carbon/superior/psi/licker/pack
 	name = "pack runners"
 	desc = "The hound of the crown's pack, loyal and deadly, they've learned to meld into each other, weaving themselves like smoke between the hound and you. Even the Hound has his servants."
 	density = FALSE
+	armor_divisor = 2
