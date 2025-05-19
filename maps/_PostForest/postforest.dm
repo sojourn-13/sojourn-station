@@ -1,4 +1,4 @@
-#include "map/_rocky_caves.dmm"
+//#include "map/_rocky_caves.dmm"
 
 /obj/map_data/rocky_caves
 	name = "Rocky Caves"
