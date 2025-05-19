@@ -125,8 +125,6 @@
 	id = "holywater"
 
 /datum/reagent/water/holywater/affect_ingest(mob/living/carbon/human/M, alien, effect_multiplier)
-	if(M.species.reagent_tag == IS_SLIME)
-		M.take_organ_damage(0, 2)
 	var/obj/item/implant/core_implant/I = M.get_core_implant(/obj/item/implant/core_implant/cruciform)
 	if(!I && !I.wearer) //Do we have a core implant?
 		return
