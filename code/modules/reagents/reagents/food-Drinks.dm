@@ -2009,17 +2009,9 @@
 
 /datum/reagent/ethanol/ntcahors/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	..()
-	if(M.species?.reagent_tag == IS_SLIME)
-		M.adjust_hallucination(-0.9 * effect_multiplier)
-		M.reagents.remove_reagent("wormwood", 0.8 * effect_multiplier) //well at least we still do these basic things.
-		M.take_organ_damage(1, 0) //we are however still bad for slime biology.
-		M.apply_damage(1, HALLOSS)
-		if(prob(5))
-			to_chat(M, "You feel a distinctive ache as something begins to eat away at you from the inside out!")
-	else
-		M.adjust_hallucination(-0.9 * effect_multiplier)
-		M.add_chemical_effect(CE_TOXIN, -2.5 * effect_multiplier)
-		M.reagents.remove_reagent("wormwood", 0.8 * effect_multiplier)
+	M.adjust_hallucination(-0.9 * effect_multiplier)
+	M.add_chemical_effect(CE_TOXIN, -2.5 * effect_multiplier)
+	M.reagents.remove_reagent("wormwood", 0.8 * effect_multiplier)
 
 // Cocktails
 

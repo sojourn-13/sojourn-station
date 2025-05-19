@@ -671,17 +671,22 @@
 	icon_state = "hypermytosis"
 	var/cooldown = 5 MINUTES
 	passivePerk = FALSE
-	var/nutrition_cost = 450
+	var/nutrition_cost = 300
 
 /datum/perk/racial/limb_regen/activate()
 	if(world.time < cooldown_time)
 		to_chat(usr, SPAN_NOTICE("You've already regenerated recently, wait some time before trying again."))
 		return FALSE
+
 	if(holder.nutrition > nutrition_cost)
 		cooldown_time = world.time + cooldown
 		holder.nutrition -= nutrition_cost
 		to_chat(usr, SPAN_NOTICE("You turn your attention inward, focusing on mending your form."))
-		holder.reagents.add_reagent("mstim", 10)
+		var/mob/living/carbon/human/H = holder
+		for(var/name in BP_ALL_LIMBS)
+			if(!H.has_appendage(name))
+				H.restore_organ(name)
+
 	else
 		to_chat(usr, SPAN_NOTICE("You lack the energy for such an expenditure."))
 
@@ -714,6 +719,7 @@
 			holder.stats.addTempStat(STAT_TGH, amount_to_boost, duration, "Slime Biology")
 	else
 		to_chat(usr, SPAN_NOTICE("You lack the energy for such an expenditure."))
+
 /datum/perk/racial/slime_stat_boost/mental
 	name = "Malleable Mind"
 	desc = "Expend some of your spare calories to greatly improve your intellect."
@@ -746,33 +752,10 @@
 	holder.nutrition -= nutrition_cost
 	holder.reagents.add_reagent("slime_speed", 5)
 
-/* This is the old code for this perk, it does not work but it's left for postereity. Feel free to remove if you please - CDB
-/datum/perk/racial/limb_regen
-	name = "Gelatinous Regeneration"
-	desc = "Spend nutrition to regenerate lost limbs, albeit without fully fixing your injuries."
-	var/cooldown = 30 MINUTES
-	passivePerk = FALSE
-	var/nutrition_cost = 300
-
-/datum/perk/racial/limb_regen/activate()
-	if(world.time < cooldown_time)
-		to_chat(usr, SPAN_NOTICE("You can't regenerate again so soon!"))
-		return FALSE
-	cooldown_time = world.time + cooldown
-	holder.nutrition -= nutrition_cost
-	for(var/obj/item/organ/external/current_organ in holder.organs) //grab the current brute/burn of the limb, then re-apply half of it after rejuvenating OR subtract ten, whichever is lower
-		var/old_brute = current_organ.brute_dam
-		var/old_burn = current_organ.burn_dam
-		if(!(current_organ == BP_HEAD))
-			current_organ.replaced()
-		current_organ.rejuvenate()
-		current_organ.brute_dam = max(0, min((old_brute / 2), (old_brute - 10)))
-		current_organ.burn_dam = max(0, min((old_burn / 2), (old_burn - 10)))*/
-
 /datum/perk/racial/slime_metabolism
 	name = "Gelatinous Biology"
-	desc = "Your peculiar anatomy afford you a variety of benefits compared to most organics. Toxins will generally heal instead of hurt, whereas anti-toxins will hurt instead of heal.\
-	additionally you are somewhat resistant to NSA overload, and can slowly regenerate health so long as you have nutrition. "//This perk doesn't actually cause the slime-specific chem metabolism effects
+	desc = "Your peculiar anatomy afford you a variety of benefits compared to most organics. What causes toxin damage will heal it instead of causing it, and vice-versa.\
+	Additionally you are somewhat resistant to NSA overload, and can slowly regenerate health so long as you have nutrition."
 	icon_state = "gelatinousbiology"
 	passivePerk = TRUE
 	var/regen_rate = 0.3
@@ -784,14 +767,12 @@
 
 /datum/perk/racial/slime_metabolism/assign(mob/living/L)
 	..()
-	holder.toxin_mod_perk -= 0.5
 	if(ishuman(holder))
 		var/mob/living/carbon/human/H = holder
 		H.metabolism_effects.nsa_bonus += 100
 		H.metabolism_effects.calculate_nsa()
 
 /datum/perk/racial/slime_metabolism/remove()
-	holder.toxin_mod_perk += 0.5
 	if(ishuman(holder))
 		var/mob/living/carbon/human/H = holder
 		H.metabolism_effects.nsa_bonus -= 100

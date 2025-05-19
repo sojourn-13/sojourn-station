@@ -1119,8 +1119,8 @@
 	flags = NO_SLIP | NO_BREATHE | NO_BLOOD | NO_SCAN | NO_MINOR_CUT
 	siemens_coefficient = 3 //conductive
 	darksight = 3
-	always_blood = TRUE
-	always_ingest = TRUE
+	always_blood = FALSE
+	always_ingest = FALSE
 	breath_type = null
 	poison_type = null
 	hunger_factor = 2
@@ -1130,11 +1130,11 @@
 	injury_type =  INJURY_TYPE_HOMOGENOUS
 	taste_sensitivity = TASTE_SENSITIVE
 
-	nutrition_mod = 150 //Important for some perks
+	nutrition_mod = 250 //Important for some perks
 
 	burn_mod = 1.2
 	brute_mod = 1.2
-	toxins_mod = 1 // fuck toxins_mod, we use a perk for this
+	toxins_mod = -1 // What normally deals toxin damage instead heal toxin damage, and what normally heals toxin damage now deals toxin damage.
 	oxy_mod = 0
 
 	cold_discomfort_level = 283
@@ -1149,8 +1149,7 @@
 	heat_level_3 = 372 //Default 460
 
 	has_process = list(
-		BP_BRAIN = /obj/item/organ/internal/vital/brain/slime,
-		OP_STOMACH = /obj/item/organ/internal/stomach/slime
+		BP_BRAIN = /obj/item/organ/internal/vital/brain/slime
 		)
 
 	breath_type = null
@@ -1174,9 +1173,8 @@
 
 /datum/species/slime/get_bodytype()
 	return "Aulvae"
-/*
+
 /datum/species/slime/handle_death(var/mob/living/carbon/human/H)
-	spawn(1)
+	spawn()
 		if(H)
 			H.gib()
-*/

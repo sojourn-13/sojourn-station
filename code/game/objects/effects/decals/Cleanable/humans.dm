@@ -109,7 +109,7 @@ var/global/list/image/splatter_cache=list()
 				S.add_overlay(S.blood_overlay)
 			S.blood_DNA |= blood_DNA.Copy()
 
-	else if (hasfeet)//Or feet
+	else if (hasfeet && perp.species.reagent_tag != IS_SLIME)//Or feet
 		perp.feet_blood_color = basecolor
 		perp.track_blood = max(amount,perp.track_blood)
 		shoe_types |= /obj/effect/decal/cleanable/blood/bearfoot
