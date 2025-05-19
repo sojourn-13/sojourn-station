@@ -214,10 +214,10 @@
 					var/obj/item/wielded_l = H.l_hand
 					knock_out_of_hand = FALSE
 					if(GLOB.chaos_level >= 3) //At level 3 it knocks items from a wielded state out of it!
-						if(!wielded_r.is_held_twohanded(wielded_r))
+						if(wielded_r.is_held_twohanded(H))
 							visible_message(SPAN_DANGER("[src] batters [H.name]'s [wielded_r], making [H.name] unwield [wielded_r]!"))
 							wielded_r.unwield(H)
-						if(!wielded_l.is_held_twohanded(wielded_l))
+						if(wielded_l.is_held_twohanded(H))
 							visible_message(SPAN_DANGER("[src] batters [H.name]'s [wielded_l], making [H.name] unwield [wielded_l]!"))
 							wielded_l.unwield(H)
 				//This is insanely powerful and shuld not just happend without chaos level being extremely high
