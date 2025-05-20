@@ -4,7 +4,6 @@
 	icon = 'modular_sojourn/misc_stuff.dmi'
 	icon_state = "cementbag"
 	max_amount = 100
-	var/inuse = FALSE
 
 /obj/item/stack/cement_bag/full
 	amount = 100
