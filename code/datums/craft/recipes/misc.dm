@@ -126,8 +126,8 @@
 	)
 
 /datum/craft_recipe/consumer/cement_bag
-	name = "Bag: Quick-Cement"
-	result = /obj/item/stack/cement_bag
+	name = "Bag: Quick-Cement (5x)"
+	result = /obj/item/stack/cement_bag/five
 	flags = CRAFT_BATCH
 	steps = list(
 		list(/obj/item/stack/ore, 2, "time" = 2),
