@@ -254,6 +254,9 @@ var/list/flooring_types
 				T.contents += CT
 	if (istype(I, /obj/item/stack/cement_bag))
 		var/obj/item/stack/cement_bag/CB = I
+		if(!T.wet)
+			to_chat(user, SPAN_NOTICE("The floor needs to be wet before pouring the [src]!"))
+			return
 		to_chat(user, SPAN_NOTICE("You start pouring and smoothing the [src]..."))
 		if(do_after(user,20))
 			new /obj/effect/flooring_type_spawner/concrete(T)
@@ -1082,6 +1085,9 @@ var/list/flooring_types
 	if(can_repair)
 		if(istype(I, /obj/item/stack/cement_bag))
 			var/obj/item/stack/cement_bag/CB = I
+			if(!T.wet)
+				to_chat(user, SPAN_NOTICE("The floor needs to be wet before pouring the [src]!"))
+				return
 			to_chat(user, SPAN_NOTICE("You start pouring and smoothing the [src]..."))
 			if(do_after(user,20))
 				new repair_into(T)
