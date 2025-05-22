@@ -40,8 +40,11 @@
 		if(projectiles >= max_ammo)
 			to_chat(user, SPAN_WARNING("[src] is full."))
 			return 0
-		FMJ.ammo_amount_left -= FMJ.amount_per_click
+		if(projectiles + FMJ.amount_per_click > max_ammo)
+			FMJ.amount_per_click = max_ammo - projectiles
+			FMJ.ammo_amount_left -= FMJ.amount_per_click
 		projectiles += FMJ.amount_per_click
+		FMJ.amount_per_click = initial(FMJ.amount_per_click)
 		return 1
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/New() //Freshly made ones are not loaded

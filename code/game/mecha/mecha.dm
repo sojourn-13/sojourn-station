@@ -235,6 +235,10 @@
 
 /obj/mecha/proc/reload_gun()
 	var/obj/item/mech_ammo_box/MAB
+	if(istype(selected, /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/missile_rack)) // Does it use bullets?
+		var/obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/missile_rack/missile = selected
+		missile.rearm()
+		return TRUE
 	if(!istype(selected, /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic)) // Does it use bullets?
 		return FALSE
 
@@ -246,16 +250,36 @@
 
 	if(MAB) // Only proceed if MAB isn't null, AKA we got a valid box to draw from
 		while(gun.max_ammo > gun.projectiles) // Keep loading until we're full or the box's empty
-			if(MAB.ammo_amount_left < MAB.amount_per_click) // Check if there's enough ammo left
+
+			if(gun.projectiles + MAB.amount_per_click > gun.max_ammo) //Check to see if we are going to overload a gun
+				MAB.amount_per_click = gun.max_ammo - gun.projectiles //Make it so we reload the gun to its fulliest amount and not a shell more
+
+			//Prevents negitive numbers or cheating magic ammo
+			if(MAB.amount_per_click > MAB.ammo_amount_left) //Check to see if we would add more ammo then we have
+				MAB.amount_per_click = MAB.ammo_amount_left //Make it so we add the last of are ammo
+
+			MAB.ammo_amount_left -= MAB.amount_per_click // Remove the ammo from the box
+			gun.projectiles += MAB.amount_per_click // Put the ammo in the gun
+
+			if(MAB.ammo_amount_left <= 0) // Check if there's enough ammo left
+				occupant_message(SPAN_WARNING("[MAB.name] depleted, auto dropping.")) //Let the user know that we dropped ammo
 				MAB.forceMove(loc) // Drop the empty ammo box
 				for(var/i = ammo.len to 1 step -1) // Check each spot in the ammobox list
 					if(ammo[i] == MAB) // Is it the same box?
 						ammo[i] = null // It is no longer there
-						MAB = null
-				return FALSE
-			MAB.ammo_amount_left -= MAB.amount_per_click // Remove the ammo from the box
-			gun.projectiles += MAB.amount_per_click // Put the ammo in the box
+						MAB = null //Null this out so we later down dont need to do the initial ammo
+
+			if(MAB) //Check to see if we are still around
+				MAB.amount_per_click = initial(MAB.amount_per_click) //Reset are amount per click in cases of non-standered ammo adding
+
+
+			occupant_message(SPAN_WARNING("[selected.name] reloaded successfully.")) //Let the user know they infact reloaded their gun
 		return TRUE
+
+	//This means we don't have ammo stored for our weapon - Trilby
+	occupant_message(SPAN_WARNING("No Ammo Detected for Selected Weapon."))
+	return FALSE
+
 
 ////////////////////////
 ////// Helpers /////////

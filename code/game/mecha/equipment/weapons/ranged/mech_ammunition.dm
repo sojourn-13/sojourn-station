@@ -29,6 +29,8 @@
 		if(ammo_amount_left >= ammo_max_amout)
 			to_chat(user, SPAN_WARNING("[src] is full."))
 			return 0
+		if(FMJ.ammo_amount_left + amount_per_click > ammo_max_amout)
+			amount_per_click = ammo_max_amout - FMJ.ammo_amount_left
 		FMJ.ammo_amount_left -= amount_per_click
 		ammo_amount_left += amount_per_click
 		return 1
