@@ -7,7 +7,7 @@
 	max_blood_storage = 7.5
 	oxygen_req = 2.5
 	nutriment_req = 4 // its a non breakable slime bone with muscle. We eat the owner.
-	organ_efficiency = list(OP_BONE = 125, OP_MUSCLE = 125, OP_NERVE = 125, OP_HEART = 15) //We have slightly higher efficiency, but we also don't have a bone to protect us so any damage to the internals damages all of us. Heart efficiency is low as it is primely used to pump chems around our body- and each bone applies that bonus. With 7 cytostructures you get 105 efficiency total.
+	organ_efficiency = list(OP_BONE = 125, OP_MUSCLE = 125, OP_NERVE = 125) //We have slightly higher efficiency, but we also don't have a bone to protect us so any damage to the internals damages all of us.
 	price_tag = 200
 	force = WEAPON_FORCE_NORMAL
 
@@ -17,6 +17,7 @@
 	Destroy()
 
 //organs
+/* No need for a specifc stomach organ.
 /obj/item/organ/internal/stomach/slime
 	name = "Aulvae lysosomes"
 	desc = "A series of small organs found floating barely-visible within an Aulvae that assist in a variety of tasks relating to the processing of ingested matter."
@@ -28,20 +29,23 @@
 /obj/item/organ/internal/stomach/slime/removed_mob()
 	..()
 	visible_message(SPAN_NOTICE("the [src] lose cohesion and become a puddle of goo!"))
-	Destroy()
+	Destroy()*/
 
 //Core(brain)
 /obj/item/organ/internal/vital/brain/slime
-	name = "Aulvae core"
+	name = "slime core"
 	desc = "A complex, organic knot of jelly and crystalline particles."
 	icon = 'icons/mob/slimes.dmi'
 	icon_state = "bluespace slime extract"
-//	organ_efficiency = list() //tbh not sure why we didn't just make the core do all these functions along with stomach. Oh well.
+	organ_efficiency = list(BP_BRAIN = 100, OP_LIVER = 100, OP_STOMACH = 100, OP_KIDNEYS = 100)
 	nature = MODIFICATION_SLIME
 	parent_organ_base = BP_CHEST
 	blood_req = 0
 	max_blood_storage = 0
 	oxygen_req = 0
+	var/regenerating = FALSE
+	var/revival_chem = "plasma"
+	var/respawn_delay = 10 SECONDS // Delay before the slime actually revive after being injected.
 
 //very funny but this needs work.
 
@@ -91,10 +95,7 @@ This noise doesn't work, nor has it ever.
 It is also obsolete as revival for slimepeople is now accomplished via
 a tweak to plasma to make it affect dead slimes inmstead of going into the body
 this code is maintained for postereity or incase someone wants to try it again themselves -cdb
-
-	var/regenerating = FALSE
-	var/revival_chem = "plasma"
-	var/respawn_delay = 100 // Delay, in deciseconds (1/10th of a second), before the slime actually revive after being injected.
+*/
 
 /obj/item/organ/internal/vital/brain/slime/attackby(obj/item/I, mob/user)
 	if(istype(I, /obj/item/reagent_containers/syringe) && !regenerating)
@@ -103,13 +104,34 @@ this code is maintained for postereity or incase someone wants to try it again t
 			to_chat(user, SPAN_NOTICE("You inject [revival_chem] into [src]."))
 			src.visible_message("[src] starts to wobble and wiggle...")
 			regenerating = TRUE
-			spawn(100) regen_body()
+
+			if(!brainmob?.client && !brainmob.teleop)
+				for(var/mob/observer/ghost/ghost in GLOB.player_list)
+					if(ghost.mind == brainmob?.mind)
+						to_chat(ghost, "<b><font color = #330033><font size = 3>Someone is regenerating your body!</b></font></font>")
+						break
+
+			addtimer(CALLBACK(src, PROC_REF(regen_body)), respawn_delay)
 
 /obj/item/organ/internal/vital/brain/slime/proc/regen_body()
 	if(loc != get_turf(src))
 		forceMove(src, get_turf(src))
-	var/mob/living/carbon/human/host = new(src, FORM_SLIME, FORM_SLIME)
+
+	if(!brainmob?.client && !brainmob.teleop)
+		for(var/mob/observer/ghost/ghost in GLOB.player_list)
+			if(ghost.mind == brainmob?.mind)
+				ghost.reenter_corpse() // We're not asking.
+
+	if(!brainmob?.client)
+		visible_message(SPAN_WARNING("The regeneration failed."))
+		return
+
+	var/mob/living/carbon/human/host = new(get_turf(src), FORM_SLIME, FORM_SLIME)
 	brainmob?.mind.transfer_to(host)
 
-	src.visible_message("[src] expands into a humanoid form.")
-*/
+	host.client.prefs.copy_to(host)
+	host.species.add_stats(host)
+
+	src.visible_message(SPAN_NOTICE("[src] expands into a humanoid form."))
+	qdel(src)
+

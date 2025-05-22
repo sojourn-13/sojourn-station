@@ -42,8 +42,8 @@
 			var/obj/item/cruciform_upgrade/speed_of_the_chosen/sotc = upgrade
 			tally -= sotc.speed_increase
 
-	//If we are not a synth then we have some movement delays thanks to hunger
-	if(species.reagent_tag != IS_SYNTHETIC)
+	//If we are not a synth or a slime then we have some movement delays thanks to hunger
+	if(species.reagent_tag != IS_SYNTHETIC && species.reagent_tag != IS_SLIME)
 		var/health_deficiency = (maxHealth - health)
 		var/hunger_deficiency = (max_nutrition - nutrition)
 		var/hunger_half = max_nutrition * 0.5			//50% of max nutrition
