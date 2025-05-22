@@ -24,7 +24,7 @@
 	send_byjax(chassis.occupant, "exosuit.browser", "\ref[src]", get_equip_info())
 	log_message("Rearmed [name].")
 	occupant_message(SPAN_WARNING("[name] rearmed."))
-	
+
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/missile_rack/Topic(href, href_list)
 	. = ..()
 	if(href_list["rearm"])
@@ -62,7 +62,7 @@
 	max_ammo = 9
 	missile_speed = 2
 	missile_range = 15 //Medium
-	projectiles_per_shot = 3
+	projectiles_per_shot = 1
 	fire_cooldown = 2
 	projectile_energy_cost = 2000
 	equip_cooldown = 60
