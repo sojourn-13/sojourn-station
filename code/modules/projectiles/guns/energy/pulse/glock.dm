@@ -1,5 +1,5 @@
 /obj/item/gun/energy/glock
-	name = "\"Galaxy\" plasma pistol"
+	name = "SI-HG \"Galaxy\" Advanced Energy Gun"
 	desc = "The \"Galaxy\" plasma pistol is an odd sight, to say the least.. \
 	Its externals appear to be based into a modified \"Sky\" pistol frame with elements from the various Soteria energy weapons being crammed into its exterior. \
 	If you can get past its crude appearance, it appears to be a well made firearm; sporting an improved grip compared to the pistol it was based off \
@@ -28,7 +28,7 @@
 	init_firemodes = list(
 		list(mode_name="kill shot", mode_desc="A small laser beam capable of personal defense and shooting through windows and grilles.", projectile_type=/obj/item/projectile/beam/midlaser, charge_cost = 25, icon="kill", fire_sound='sound/weapons/energy/laser_pistol.ogg', charge_cost=80, fire_delay=0.5, icon="kill", projectile_color = "#e4562b"),
 		list(mode_name="stun shot", mode_desc="A strong bolt of electricty, capable of taking down targets with only minor long-lasting damage.", projectile_type=/obj/item/projectile/energy/electrode/stunshot, fire_sound='sound/weapons/energy/Taser.ogg', charge_cost=100, fire_delay=1, icon="stun", projectile_color = "#dfdc39"),
-		list(mode_name="plasma bolt", mode_desc="Hard hitting plasma bolts to reduce armor.", projectile_type=/obj/item/projectile/plasma, fire_sound='sound/weapons/energy/pulse.ogg', charge_cost=120, fire_delay=8, icon="vaporize", projectile_color = "#00AAFF"),
+		list(mode_name="plasma bolt", mode_desc="Hard hitting plasma bolts to reduce armor.", projectile_type=/obj/item/projectile/plasma/heavy, fire_sound='sound/weapons/energy/pulse.ogg', charge_cost=120, fire_delay=8, icon="vaporize", projectile_color = "#00AAFF"),
 		list(mode_name="ion shot", mode_desc="An iodizing shot to disable cells, electronics and cybernetics.", projectile_type=/obj/item/projectile/ion, fire_sound='sound/effects/supermatter.ogg', charge_cost=300, fire_delay=12, icon="destroy", projectile_color = "#71d4b3"),
 	)
 	serial_type = "SI-HG"
