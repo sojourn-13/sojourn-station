@@ -72,10 +72,11 @@
 	difficulty = "Medium."
 	selection_color = "#bdb1bb"
 	wage = WAGE_PROFESSIONAL
-	noob_name = "Soteria Research Student"
-	alt_titles = list("Soteria Intern","Soteria Xenobiologist", "Soteria Xenoarcheologist", "Soteria Xenobotanist", "Soteria Research Fabricator", "Soteria Geneticist")
+//	noob_name = "Soteria Research Student"
+	alt_titles = list("Soteria Xenobiologist", "Soteria Xenoarcheologist", "Soteria Xenobotanist", "Soteria Research Fabricator", "Soteria Geneticist")
 	outfit_type = /decl/hierarchy/outfit/job/science/scientist
 	disallow_species = list(FORM_AGSYNTH, FORM_BSSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
+	playtimerequired = 240 //4 hours
 
 	software_on_spawn = list(/datum/computer_file/program/signaller, /datum/computer_file/program/chem_catalog)
 
@@ -107,6 +108,53 @@
 	icon_state = "player-purple"
 	join_tag = /datum/job/scientist
 
+/datum/job/scistudent
+	title = "Soteria Science Intern"
+	flag = SCIENTISTJR
+	department = DEPARTMENT_SCIENCE
+	department_flag = SCIENCE
+	faction = MAP_FACTION
+	total_positions = 4
+	spawn_positions = 4
+	supervisors = "the Chief Research Overseer"
+	difficulty = "Medium."
+	alt_titles = list("Soteria Xenobiology Intern", "Soteria Xenoarcheology Intern", "Soteria Xenobotany Intern", "Soteria Genetics Intern")
+	selection_color = "#bdb1bb"
+	wage = WAGE_PROFESSIONAL
+	disallow_species = list(FORM_AGSYNTH, FORM_BSSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
+
+	outfit_type = /decl/hierarchy/outfit/job/science/scientist
+
+	software_on_spawn = list(/datum/computer_file/program/signaller, /datum/computer_file/program/chem_catalog)
+
+	access = list(
+		access_robotics, access_tox, access_tox_storage, access_moebius, access_xenobiology, access_xenoarch, access_research_equipment,
+		access_genetics, access_medical_suits
+	)
+
+	perks = list(PERK_SI_SCI, PERK_CHEMIST) //We do hydro?
+
+	stat_modifiers = list(
+		STAT_MEC = 20,
+		STAT_COG = 35,
+		STAT_BIO = 10,
+	)
+
+	description = "The Scientist is a researcher representing the Soteria Institute, standing at the frontier of human advancement.<br>\
+	You may engage in a variety of research projects in four distinct fields - R&D, Xenoflora, Xenobiology, and Xenoarchaeology.<br>\
+	The manufacture of high tech devices is the primary source of income for Soteria, but artifacts and alien life may offer great potential.<br>\
+	Remember that dedicated specialists exist for robotics projects. You may work closely for general R&D, but avoid taking over robotics."
+
+	duties = "Advance the cause of knowledge with various research projects.<br>\
+	Manufacture new devices and weapons as you advance up the R&D tree.<br>\
+	Manipulate plant DNA, and investigate alien life and devices.<br>\
+	Create unusual things, explore, learn, and have a scientific adventure."
+
+/obj/landmark/join/start/scistudent
+	name = "Soteria Science Intern"
+	icon_state = "player-purple"
+	join_tag = /datum/job/scistudent
+
 
 /datum/job/roboticist
 	title = "Soteria Roboticist"
@@ -118,12 +166,13 @@
 	spawn_positions = 2
 	supervisors = "the Chief Research Overseer"
 	difficulty = "Medium."
-	noob_name = "Soteria Roboticist Student"
-	alt_titles = list("Robotics Lab Assistant", "Soteria Cyberneticist", "Soteria Mechanist", "Soteria Biomechanical Engineer")
+//	noob_name = "Soteria Roboticist Student"
+	alt_titles = list("Soteria Cyberneticist", "Soteria Mechanist", "Soteria Biomechanical Engineer")
 	selection_color = "#bdb1bb"
 	wage = WAGE_PROFESSIONAL
 	department_account_access = TRUE
 	disallow_species = list(FORM_BSSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
+	playtimerequired = 240 //4 hours
 
 
 	outfit_type = /decl/hierarchy/outfit/job/science/roboticist
@@ -157,3 +206,52 @@
 	name = "Soteria Roboticist"
 	icon_state = "player-purple"
 	join_tag = /datum/job/roboticist
+
+/datum/job/robostudent
+	title = "Soteria Robotics Intern"
+	flag = ROBOTICISTJR
+	department = DEPARTMENT_SCIENCE
+	department_flag = SCIENCE
+	faction = MAP_FACTION
+	total_positions = 2
+	spawn_positions = 2
+	supervisors = "the Chief Research Overseer"
+	difficulty = "Medium."
+//	noob_name = "Soteria Roboticist Student"
+	alt_titles = list("Robotics Lab Assistant", "Soteria Cybernetics Intern", "Soteria Mechanics Intern", "Soteria Biomechanics Intern")
+	selection_color = "#bdb1bb"
+	wage = WAGE_PROFESSIONAL
+	disallow_species = list(FORM_BSSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
+
+
+	outfit_type = /decl/hierarchy/outfit/job/science/roboticist
+
+	access = list(
+		access_robotics, access_tox, access_tox_storage, access_morgue, access_moebius, access_research_equipment, access_medical_suits
+	) //As a job that handles so many corpses, it makes sense for them to have morgue access.
+
+	software_on_spawn = list(/datum/computer_file/program/chem_catalog)
+
+	stat_modifiers = list(
+		STAT_MEC = 30,
+		STAT_COG = 25,
+		STAT_BIO = 25,
+	)
+
+	perks = list(PERK_SURGICAL_MASTER, PERK_ROBOTICS_EXPERT, PERK_SI_SCI)
+
+	description = "The Roboticist is a specialized scientist with a busy workload - at the forefront of Soteria's service offerings.<br>\
+	You must maintain and upgrade the fleet of synthetics that keep the ship running, as well as constructing new ones on occasion.<br>\
+	In addition, you may be asked to manufacture prosthetic limbs and enhancements. Medical can perform the installation if you lack surgical skills.<br>\
+	Though not requested often you can also construct massive and powerful mechanized vehicles. These have powerful mining, rescue, and military applications.<br>\
+	Remember that you are ultimately running a commercial cybernetic clinic - charge for your valuable services to earn a living."
+
+	duties = "Repair, maintain and upgrade robots within the colony.<br>\
+	Maintain and implant new bionics in crewmembers.<br>\
+	Advertise bionics for sale and run a commercial cybernetic clinic.<br>\
+	Construct large mechas for specialized use in departments."
+
+/obj/landmark/join/start/robostudent
+	name = "Soteria Robotics Intern"
+	icon_state = "player-purple"
+	join_tag = /datum/job/robostudent

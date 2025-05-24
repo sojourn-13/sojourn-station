@@ -51,6 +51,8 @@ var/const/DOCTOR			=(1<<4)
 var/const/PSYCHIATRIST		=(1<<5)
 var/const/ROBOTICIST		=(1<<6)
 var/const/DOCTORJR			=(1<<7)
+var/const/SCIENTISTJR		=(1<<8)
+var/const/ROBOTICISTJR		=(1<<9)
 
 
 var/const/STEWARD			=(1<<0)

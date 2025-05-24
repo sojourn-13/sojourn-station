@@ -116,7 +116,7 @@ ADMIN_VERB_ADD(/client/proc/test_MD, R_DEBUG, null)
 						/datum/job/salvager, /datum/job/pro, /datum/job/fence,
 						/datum/job/clubworker, /datum/job/clubmanager, /datum/job/artist,
 						/datum/job/chaplain, /datum/job/acolyte, /datum/job/janitor, /datum/job/hydro,
-						/datum/job/scientist, /datum/job/roboticist,
+						/datum/job/scientist, /datum/job/roboticist, /datum/job/scistudent, /datum/job/robostudent,
 						/datum/job/ai, /datum/job/cyborg,
 						/datum/job/assistant, /datum/job/foreigner,
 						/datum/job/off_colony_hunt_master, /datum/job/off_colony_hunter, /datum/job/off_colony_herbalist, /datum/job/outsider

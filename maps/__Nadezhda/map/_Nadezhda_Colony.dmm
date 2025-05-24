@@ -44753,6 +44753,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/sleeper)
+"iwX" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/landmark/join/start/robostudent,
+/turf/simulated/floor/tiled/white/techfloor,
+/area/nadezhda/rnd/robotics)
 "ixb" = (
 /obj/effect/floor_decal/industrial/danger{
 	dir = 1
@@ -83482,6 +83487,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/landmark/join/start/scistudent,
 /turf/simulated/floor/carpet/purcarpet,
 /area/nadezhda/rnd/rbreakroom)
 "pQH" = (
@@ -100804,6 +100810,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/landmark/join/start/scistudent,
 /turf/simulated/floor/carpet/purcarpet,
 /area/nadezhda/rnd/rbreakroom)
 "tgW" = (
@@ -183202,7 +183209,7 @@ pGq
 dil
 xxm
 mSn
-oxA
+iwX
 ePd
 hTJ
 kbF
@@ -183606,7 +183613,7 @@ tZk
 nvI
 xxm
 nbO
-oxA
+iwX
 jaE
 dej
 uRs

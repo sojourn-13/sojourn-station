@@ -4,7 +4,7 @@
 #define JOBS_COMMAND "Premier","Steward","Blackshield Commander","Warrant Officer","Surface Operations Manager","Guild Master","Chief Biolab Overseer","Chief Research Overseer","Prime","Foreman"
 #define JOBS_ENGINEERING "Guild Master","Guild Adept","Guild Apprentice"
 #define JOBS_MEDICAL "Chief Biolab Overseer","Soteria Doctor","Soteria Psychiatrist","Soteria Lifeline Technician","Soteria Medical Resident"
-#define JOBS_SCIENCE "Chief Research Overseer","Soteria Scientist","Soteria Roboticist"
+#define JOBS_SCIENCE "Chief Research Overseer","Soteria Scientist","Soteria Roboticist","Soteria Science Intern","Soteria Robotics Intern"
 #define JOBS_LSS "Surface Operations Manager","Cargo Technician","Lonestar Miner","Bartender","Chef","Gardener","Janitor","Artist"
 #define JOBS_CIVILIAN "Colonist", "Visitor"
 #define JOBS_CHURCH "Prime", "Vector"
