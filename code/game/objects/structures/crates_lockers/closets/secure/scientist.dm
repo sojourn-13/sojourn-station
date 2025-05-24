@@ -65,7 +65,6 @@
 	new /obj/item/clothing/shoes/color(src)
 	new /obj/item/clothing/shoes/leather(src)
 	new /obj/item/clothing/gloves/latex(src)
-	new /obj/item/clothing/accessory/holster/saber/rapiersci/occupied(src)
 	new /obj/item/device/radio/headset/heads/rd(src)
 	new /obj/item/clothing/mask/gas(src)
 	new /obj/item/rig/advhazmat/equipped(src)
@@ -77,13 +76,14 @@
 	//Storage
 	new /obj/item/storage/bag/xenobio(src)
 	new /obj/item/storage/belt/sci(src)
-	new /obj/item/storage/backpack/satchel/leather/withwallet(src)
 	new /obj/item/bodybag/xenobio(src)
 	new /obj/item/device/aicard(src)
 	//Misc
 	new /obj/item/tank/air(src)
 	new /obj/item/device/flash(src)
 	new /obj/item/shield_projector/rectangle/soteria_personal(src)
+	new /obj/item/tool/hydrogen_sword(src)
+	new /obj/item/gun/energy/glock(src)
 	new /obj/item/circuitboard/teleporter(src)
 	new /obj/item/circuitboard/aicore(src)
 	new /obj/item/oddity/chem_book(src)
