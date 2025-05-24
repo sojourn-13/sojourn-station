@@ -25,6 +25,9 @@
 /decl/hierarchy/outfit/job/science/scientist
 	name = OUTFIT_JOB_NAME("Soteria - Scientist")
 
+/decl/hierarchy/outfit/job/science/scistudent
+	name = OUTFIT_JOB_NAME("Soteria - Science Intern")
+
 /decl/hierarchy/outfit/job/science/xenobiologist
 	name = OUTFIT_JOB_NAME("Soteria - Xenobiologist")
 
@@ -38,5 +41,18 @@
 	pda_type = /obj/item/modular_computer/pda/science/roboticist
 
 /decl/hierarchy/outfit/job/science/roboticist/New()
+	..()
+	backpack_overrides.Cut()
+
+/decl/hierarchy/outfit/job/science/robostudent
+	name = OUTFIT_JOB_NAME("Soteria - Robotics Intern")
+	uniform = /obj/item/clothing/under/rank/roboticist
+	suit = /obj/item/clothing/suit/storage/rank/robotech_jacket
+	belt = /obj/item/storage/belt/utility/roboticist
+	pda_slot = slot_r_store
+	id_type = /obj/item/card/id/dkgrey
+	pda_type = /obj/item/modular_computer/pda/science/roboticist
+
+/decl/hierarchy/outfit/job/science/robostudent/New()
 	..()
 	backpack_overrides.Cut()

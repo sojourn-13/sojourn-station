@@ -100,7 +100,7 @@
 	id = DEPARTMENT_SCIENCE
 	//24375 in 5 hours with full crew + nepotism
 	account_initial_balance = 24500 //Covers wages of employees. Sell posis and whatever else to make up for material cost.
-	jobs_in_department = list("/datum/job/rd","/datum/job/scientist","/datum/job/roboticist")
+	jobs_in_department = list("/datum/job/rd","/datum/job/scientist","/datum/job/roboticist","/datum/job/scistudent","/datum/job/robostudent")
 
 /datum/department/church
 	name = "Church of the Absolute"
