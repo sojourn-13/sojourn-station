@@ -29,6 +29,8 @@
 	var/ai_access = TRUE
 	var/power_efficiency = 1
 
+	//soj edit for custom colours for lighting
+	var/custom_color = null
 
 	mob_size = MOB_LARGE
 
@@ -1313,6 +1315,17 @@
 
 
 //Soj edit
+/mob/living/silicon/robot/verb/colour_lighting()
+	set name = "Set LED light colour"
+	set category = "Silicon Commands"
+	set src = usr
+
+	if(stat == CONSCIOUS)
+		var/new_lightings = input(usr, "Choose your light colour: ", "LED Colour", rgb(255,255,255)) as color|null
+		if(new_lightings)
+			light_color = new_lightings
+	else
+		to_chat(src, "You can't change your LED colour while offline.")
 
 /mob/living/silicon/robot/verb/resting_icon_mode()
 	set name = "Resting Icon Mode"
