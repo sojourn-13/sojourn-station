@@ -54,13 +54,13 @@
 
 /datum/design/research/item/greyson/iron_lock_security_boots
 	name = "Greyson Positronic Ablative Jackboots"
-	build_path = /obj/item/clothing/shoes/ablasive/iron_lock_security
+	build_path = /obj/item/clothing/shoes/ablative/iron_lock_security
 	materials = list(MATERIAL_STEEL = 15, MATERIAL_PLASTIC = 10) //So its costs more for being RnD printed
 	category = CAT_CLOTHING
 
 /datum/design/research/item/greyson/iron_lock_security_gloves
 	name = "Greyson Positronic Ablative Gloves"
-	build_path = /obj/item/clothing/gloves/thick/ablasive/iron_lock_security
+	build_path = /obj/item/clothing/gloves/thick/ablative/iron_lock_security
 	materials = list(MATERIAL_STEEL = 15, MATERIAL_PLASTIC = 10) //So its costs more for being RnD printed
 	category = CAT_CLOTHING
 

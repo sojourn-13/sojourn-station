@@ -106,7 +106,7 @@
 	siemens_coefficient = 0
 
 
-/obj/item/clothing/gloves/thick/ablasive
+/obj/item/clothing/gloves/thick/ablative
 	name = "ablative gloves"
 	desc = "A thick pair of gloves that excel at protecting the wearer against energy projectiles."
 	armor_list = list(melee = 2, bullet = 2, energy = 17, bomb = 30, bio = 10, rad = 0)
@@ -115,14 +115,14 @@
 	price_tag = 150
 	matter = list(MATERIAL_STEEL = 5, MATERIAL_PLASTIC = 10, MATERIAL_PLATINUM = 2)
 
-/obj/item/clothing/gloves/thick/ablasive/militia
+/obj/item/clothing/gloves/thick/ablative/militia
 	name = "militia ablative gloves"
 	desc = "A thick pair of gloves that excel at protecting the wearer against energy projectiles."
 	armor_list = list(melee = 2, bullet = 2, energy = 3, bomb = 10, bio = 0, rad = 0)
 	icon_state = "bs_ablative"
 	item_state = "ihscombat"
 
-/obj/item/clothing/gloves/thick/ablasive/iron_lock_security
+/obj/item/clothing/gloves/thick/ablative/iron_lock_security
 	name = "outdated gloves"
 	desc = "A pair of \"Iron Lock Security\" ablative gloves with plates designed to absorb energy projectiles, even after all this time no one has been able to improve its design by Greyson Positronic."
 

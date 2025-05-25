@@ -3606,7 +3606,7 @@
 "cCg" = (
 /obj/structure/table/standard,
 /obj/random/common_oddities,
-/obj/item/clothing/gloves/thick/ablasive/iron_lock_security,
+/obj/item/clothing/gloves/thick/ablative/iron_lock_security,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "cCk" = (
@@ -4158,8 +4158,8 @@
 "cTM" = (
 /obj/structure/table/standard,
 /obj/random/common_oddities,
-/obj/item/clothing/gloves/thick/ablasive/iron_lock_security,
-/obj/item/clothing/shoes/ablasive/iron_lock_security,
+/obj/item/clothing/gloves/thick/ablative/iron_lock_security,
+/obj/item/clothing/shoes/ablative/iron_lock_security,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "cUj" = (
@@ -7345,7 +7345,7 @@
 /obj/structure/bed/chair{
 	dir = 8
 	},
-/obj/item/clothing/shoes/ablasive/iron_lock_security,
+/obj/item/clothing/shoes/ablative/iron_lock_security,
 /obj/item/remains/mummy2,
 /obj/item/gun/energy/gun/martin,
 /obj/random/powercell/small_safe,
@@ -15501,7 +15501,7 @@
 "kto" = (
 /obj/structure/table/standard,
 /obj/random/common_oddities,
-/obj/item/clothing/gloves/thick/ablasive/iron_lock_security,
+/obj/item/clothing/gloves/thick/ablative/iron_lock_security,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
 "ktF" = (
@@ -27432,7 +27432,7 @@
 	dir = 8
 	},
 /obj/item/remains/mummy2,
-/obj/item/clothing/shoes/ablasive/iron_lock_security,
+/obj/item/clothing/shoes/ablative/iron_lock_security,
 /obj/machinery/light/small{
 	dir = 4;
 	pixel_y = 8

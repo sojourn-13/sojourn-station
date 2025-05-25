@@ -22,8 +22,8 @@
 			/obj/item/clothing/suit/armor/bulletproof = custom_good_amount_range(list(3, 5)),
 			/obj/item/clothing/head/helmet = custom_good_amount_range(list(3, 5)),
 			/obj/item/clothing/suit/armor/laserproof = custom_good_amount_range(list(1, 5)),
-			/obj/item/clothing/shoes/ablasive = custom_good_amount_range(list(1, 5)),
-			/obj/item/clothing/gloves/thick/ablasive = custom_good_amount_range(list(1, 5)),
+			/obj/item/clothing/shoes/ablative = custom_good_amount_range(list(1, 5)),
+			/obj/item/clothing/gloves/thick/ablative = custom_good_amount_range(list(1, 5)),
 			/obj/item/clothing/head/helmet/laserproof = custom_good_amount_range(list(1, 5)),
 			/obj/item/clothing/head/helmet/faceshield/altyn = custom_good_amount_range(list(1, 5)),
 			/obj/item/clothing/suit/armor/flakvest/full = custom_good_amount_range(list(1, 5))

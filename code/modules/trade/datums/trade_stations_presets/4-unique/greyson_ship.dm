@@ -24,10 +24,10 @@
 		"Jiguang Kuijia" = list(
 			/obj/item/clothing/under/iron_lock_security = custom_good_name("ILS Security Uniform"),
 			/obj/item/clothing/head/soft/iron_lock_security = custom_good_name("ILS Security Cap"),
-			/obj/item/clothing/gloves/thick/ablasive/iron_lock_security = custom_good_name("ILS Ablasive Gloves"),
-			/obj/item/clothing/shoes/ablasive/iron_lock_security = custom_good_name("ILS Ablasive Shoes"),
-			/obj/item/clothing/head/helmet/laserproof/iron_lock_security = custom_good_name("ILS Ablasive Helmet"),
-			/obj/item/clothing/suit/armor/vest/iron_lock_security = custom_good_name("ILS Ablasive Vest")
+			/obj/item/clothing/gloves/thick/ablative/iron_lock_security = custom_good_name("ILS Ablative Gloves"),
+			/obj/item/clothing/shoes/ablative/iron_lock_security = custom_good_name("ILS Ablative Shoes"),
+			/obj/item/clothing/head/helmet/laserproof/iron_lock_security = custom_good_name("ILS Ablative Helmet"),
+			/obj/item/clothing/suit/armor/vest/iron_lock_security = custom_good_name("ILS Ablative Vest")
 		),
 		"Chilun" = list(
 			/obj/item/gun/energy/cog = custom_good_name("GP Cog")
@@ -38,7 +38,7 @@
 
 	offer_types = list(
 		/obj/item/pc_part/drive/disk/design/onestar/stockparts = offer_data("GP Stockparts Disk", 500, 1),
-		/obj/item/pc_part/drive/disk/design/onestar/armor = offer_data("GP Ablasive Armor Disk", 500, 1),
+		/obj/item/pc_part/drive/disk/design/onestar/armor = offer_data("GP Ablative Armor Disk", 500, 1),
 		/obj/item/pc_part/drive/disk/design/onestar/spring = offer_data("GP Spring Disk", 2000, 1),
 		/obj/item/pc_part/drive/disk/design/onestar/rivet = offer_data("GP Rivet Disk", 2000, 1),
 		/obj/item/pc_part/drive/disk/design/onestar/rebar = offer_data("GP Rebar Disk", 2000, 1),

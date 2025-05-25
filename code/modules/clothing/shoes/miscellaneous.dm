@@ -15,7 +15,7 @@
 	origin_tech = list(TECH_ILLEGAL = 3)
 	siemens_coefficient = 0 // DAMN BOI
 
-/obj/item/clothing/shoes/ablasive
+/obj/item/clothing/shoes/ablative
 	name = "ablative jackboots"
 	desc = "A thick pair of boots that excels in protecting the wearer against energy projectiles."
 	armor_list = list(melee = 2, bullet = 2, energy = 3, bomb = 30, bio = 10, rad = 0)
@@ -25,7 +25,7 @@
 	can_hold_knife = TRUE
 	matter = list(MATERIAL_STEEL = 5, MATERIAL_PLASTIC = 15, MATERIAL_PLATINUM = 2)
 
-/obj/item/clothing/shoes/ablasive/iron_lock_security
+/obj/item/clothing/shoes/ablative/iron_lock_security
 	name = "outdated jackboots"
 	desc = "An \"Iron Lock Security\" ablative boots with plates designed to absorb energy projectiles, even after all this time no one has been able to improve its design by Greyson Positronic."
 
