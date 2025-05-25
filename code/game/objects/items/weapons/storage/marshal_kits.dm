@@ -293,8 +293,8 @@
 	populate_contents()
 		new /obj/item/clothing/suit/armor/vest/ablative/ironhammer(src)
 		new /obj/item/clothing/head/helmet/laserproof/marshal(src)
-		new /obj/item/clothing/gloves/thick/ablasive(src)
-		new /obj/item/clothing/shoes/ablasive(src)
+		new /obj/item/clothing/gloves/thick/ablative(src)
+		new /obj/item/clothing/shoes/ablative(src)
 
 /obj/item/storage/box/m_kit/riot
 	name = "Riot Armor Kit"

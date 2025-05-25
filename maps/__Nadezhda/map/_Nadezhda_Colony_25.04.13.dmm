@@ -125422,7 +125422,7 @@
 /obj/structure/table/rack/shelf,
 /obj/item/clothing/suit/armor/vest/ablative/militia,
 /obj/item/clothing/suit/armor/vest/ablative/militia,
-/obj/item/clothing/gloves/thick/ablasive/militia{
+/obj/item/clothing/gloves/thick/ablative/militia{
 	pixel_y = -6
 	},
 /obj/item/clothing/head/helmet/laserproof/militia{
@@ -125431,7 +125431,7 @@
 /obj/item/clothing/head/helmet/laserproof/militia{
 	pixel_y = 10
 	},
-/obj/item/clothing/gloves/thick/ablasive/militia{
+/obj/item/clothing/gloves/thick/ablative/militia{
 	pixel_y = -6
 	},
 /turf/simulated/floor/tiled/dark/techfloor_grid,
