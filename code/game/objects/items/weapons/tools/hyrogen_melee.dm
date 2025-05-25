@@ -109,7 +109,7 @@
 		for(var/mob/M in view(1, T)) // Burn every mob nearby.
 			to_chat(M, SPAN_DANGER("You feel a wave of heat scorch your body!"))
 			M.take_overall_damage(0, rand(emp_burn_min, emp_burn_max))
-	qdel(src)
+		qdel(src)
 
 
 /obj/item/tool/hydrogen_sword/attack(mob/M as mob, mob/living/user as mob)
