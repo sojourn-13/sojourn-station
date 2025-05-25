@@ -17,19 +17,18 @@
 	projectile_type = /obj/item/projectile/beam/midlaser
 	suitable_cell = /obj/item/cell/medium
 	charge_cost = 80
-	fire_delay = 0.5
+	fire_delay = 10
 	zoom_factors = list(0.4)
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_STEEL = 10, MATERIAL_SILVER = 4, MATERIAL_PLASMA = 8)
 	price_tag = 8000
-	damage_multiplier = 1.2
-	penetration_multiplier = 1.2
+	damage_multiplier = 0.9
+	penetration_multiplier = 0.9
 	init_recoil = CARBINE_RECOIL(0.5)
 	gun_tags = list(GUN_LASER, GUN_ENERGY, GUN_SIGHT)
 	init_firemodes = list(
-		list(mode_name="kill shot", mode_desc="A small laser beam capable of personal defense and shooting through windows and grilles.", projectile_type=/obj/item/projectile/beam/midlaser, charge_cost = 25, icon="kill", fire_sound='sound/weapons/energy/laser_pistol.ogg', charge_cost=80, fire_delay=0.5, icon="kill", projectile_color = "#e4562b"),
-		list(mode_name="stun shot", mode_desc="A strong bolt of electricty, capable of taking down targets with only minor long-lasting damage.", projectile_type=/obj/item/projectile/energy/electrode/stunshot, fire_sound='sound/weapons/energy/Taser.ogg', charge_cost=100, fire_delay=1, icon="stun", projectile_color = "#dfdc39"),
-		list(mode_name="plasma bolt", mode_desc="Hard hitting plasma bolts to reduce armor.", projectile_type=/obj/item/projectile/plasma/heavy, fire_sound='sound/weapons/energy/pulse.ogg', charge_cost=120, fire_delay=8, icon="vaporize", projectile_color = "#00AAFF"),
-		list(mode_name="ion shot", mode_desc="An iodizing shot to disable cells, electronics and cybernetics.", projectile_type=/obj/item/projectile/ion, fire_sound='sound/effects/supermatter.ogg', charge_cost=300, fire_delay=12, icon="destroy", projectile_color = "#71d4b3"),
+		list(mode_name="kill shot", mode_desc="A small laser beam capable of personal defense and shooting through windows and grilles.", projectile_type=/obj/item/projectile/beam/midlaser, fire_sound='sound/weapons/energy/laser_pistol.ogg', charge_cost=80, fire_delay=10, icon="kill", projectile_color = "#e4562b"),
+		list(mode_name="stun shot", mode_desc="A strong bolt of electricty, capable of taking down targets with only minor long-lasting damage.", projectile_type=/obj/item/projectile/energy/electrode/stunshot, fire_sound='sound/weapons/energy/Taser.ogg', charge_cost=100, fire_delay=20, icon="stun", projectile_color = "#dfdc39"),
+		list(mode_name="plasma bolt", mode_desc="Hard hitting plasma bolts to reduce armor.", projectile_type=/obj/item/projectile/plasma/heavy, fire_sound='sound/weapons/energy/pulse.ogg', charge_cost=120, fire_delay=25, icon="vaporize", projectile_color = "#00AAFF"),
 	)
 	serial_type = "SI-HG"
 
