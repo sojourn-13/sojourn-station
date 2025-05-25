@@ -325,7 +325,7 @@
 /obj/machinery/vending/marshal_kit/proc/RedeemWOSecondary(obj/item/voucher/voucher, mob/redeemer)
 	var/items = list(
 					"Mateba Kit" = /obj/item/storage/box/m_kit/mateba,
-					"Galaxy Kit" = /obj/item/storage/box/m_kit/galaxy,
+					"Centurio Kit" = /obj/item/storage/box/m_kit/centurio,
 					"Amnesty Kit" = /obj/item/storage/box/m_kit/amnesty)
 	var/selection = items[input(redeemer, "Pick your side-arm", "Marshal Voucher Redemption") as null|anything in items]
 	if(selection)
