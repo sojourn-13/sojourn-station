@@ -1,3 +1,39 @@
+// Base class, modified to allow pockets
+
+/obj/item/clothing/suit/fluff
+	item_flags = DRAG_AND_DROP_UNEQUIP|EQUIP_SOUNDS
+	var/obj/item/storage/internal/pockets
+	var/cant_hold = list(/obj/item/clothing/accessory,
+						 /obj/item/tool_upgrade/armor)
+
+/obj/item/clothing/suit/fluff/New()
+	..()
+	pockets = new/obj/item/storage/internal(src)
+	pockets.storage_slots = 2	//two slots
+	pockets.max_w_class = ITEM_SIZE_SMALL		//fit only pocket sized items
+	pockets.max_storage_space = 4
+	pockets.cant_hold |= extra_allowed
+
+/obj/item/clothing/suit/fluff/Destroy()
+	qdel(pockets)
+	pockets = null
+	. = ..()
+
+/obj/item/clothing/suit/fluff/attack_hand(mob/user)
+	if ((is_worn() || is_held()) && !pockets.handle_attack_hand(user))
+		return TRUE
+	..(user)
+
+/obj/item/clothing/suit/fluff/MouseDrop(obj/over_object)
+	if(pockets.handle_mousedrop(usr, over_object))
+		return TRUE
+	..(over_object)
+
+/obj/item/clothing/suit/fluff/attackby(obj/item/W, mob/user)
+	if(!istype(W, /obj/item/clothing/accessory)) // Do not put accessories into pockets
+		pockets.attackby(W, user)
+	..()
+
 /*
  * Lasertag
  */
