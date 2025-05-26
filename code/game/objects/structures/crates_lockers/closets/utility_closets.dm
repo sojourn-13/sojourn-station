@@ -75,6 +75,7 @@
 	new /obj/item/tank/oxygen/red(src)
 	new /obj/item/extinguisher(src)
 	new /obj/item/clothing/head/hardhat/red(src)
+	new /obj/item/clothing/gloves/thick(src)
 	new /obj/item/inflatable/door(src)
 	new /obj/item/stack/medical/ointment(src)
 
