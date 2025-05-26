@@ -928,7 +928,7 @@
 /obj/machinery/button/remote/airlock{
 	blue_ink_tk_blocker = 1;
 	desc = "It controls doors, remotely. This one has tinfoil like cover on it.";
-	id = "medbay exit";
+	id = "medbay_exit";
 	name = "Medbay Exit Button";
 	pixel_x = 24
 	},
@@ -1167,7 +1167,7 @@
 	})
 "alU" = (
 /obj/machinery/door/airlock/glass_medical{
-	id_tag = "medbay exit";
+	id_tag = "medbay_exit";
 	name = "Medbay";
 	req_access = newlist();
 	req_one_access = list(5,45)
@@ -1620,7 +1620,7 @@
 /area/nadezhda/outside/inside_colony)
 "aqU" = (
 /obj/machinery/door/airlock/glass_medical{
-	id_tag = "medbay exit";
+	id_tag = "medbay_exit";
 	name = "Medbay";
 	req_access = newlist();
 	req_one_access = list(5,45)
@@ -17841,6 +17841,10 @@
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_y = -32
 	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/sleeper)
@@ -63307,7 +63311,6 @@
 /area/nadezhda/maintenance/undergroundfloor2north)
 "mfz" = (
 /obj/machinery/door/airlock/glass_medical{
-	id_tag = "medbay exit";
 	name = "Medbay";
 	req_access = newlist();
 	req_one_access = list(5,45)
@@ -66608,7 +66611,6 @@
 /area/nadezhda/hallway/side/f2section1)
 "mLv" = (
 /obj/machinery/door/airlock/glass_medical{
-	id_tag = "medbay exit";
 	name = "Medbay";
 	req_access = newlist();
 	req_one_access = list(5,45)
@@ -79155,6 +79157,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/grey_slates_long,
 /area/nadezhda/maintenance/undergroundfloor1south)
+"paL" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = 32
+	},
+/turf/simulated/floor/tiled/dark/danger,
+/area/nadezhda/medical/sleeper)
 "paR" = (
 /obj/structure/flora/big/bush2,
 /turf/simulated/floor/asteroid/dirt/dark,
@@ -85129,6 +85138,18 @@
 /obj/item/clothing/glasses/hud/health/scouter,
 /obj/item/clothing/glasses/hud/health/scouter{
 	pixel_y = 3
+	},
+/obj/item/device/radio{
+	pixel_x = -6
+	},
+/obj/item/device/radio{
+	pixel_x = -2
+	},
+/obj/item/device/radio{
+	pixel_x = 2
+	},
+/obj/item/device/radio{
+	pixel_x = 6
 	},
 /turf/simulated/floor/tiled/white/monofloor,
 /area/nadezhda/medical/sleeper)
@@ -101808,7 +101829,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/glass_medical{
-	id_tag = "medbay exit";
 	name = "Medbay";
 	req_access = newlist();
 	req_one_access = list(5,45)
@@ -116283,7 +116303,6 @@
 "vXN" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/glass_medical{
-	id_tag = "medbay exit";
 	name = "Medbay";
 	req_access = newlist();
 	req_one_access = list(5,45)
@@ -127834,6 +127853,9 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/sign/warning/nosmoking/small{
 	pixel_x = -32;
+	pixel_y = 32
+	},
+/obj/structure/closet/wall_mounted/emcloset{
 	pixel_y = 32
 	},
 /turf/simulated/floor/tiled/dark/danger,
@@ -144757,7 +144779,7 @@ qgT
 efM
 vvo
 qUI
-xCT
+paL
 mJa
 byN
 qUI
