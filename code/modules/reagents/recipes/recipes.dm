@@ -556,7 +556,7 @@
 
 /datum/chemical_reaction/nitroglycerin/on_reaction(var/datum/reagents/holder, var/created_volume)
 	var/datum/effect/effect/system/reagents_explosion/e = new()
-	e.set_up(round (created_volume/8, 1), holder.my_atom, 0, 0)
+	e.set_up(round (created_volume/4, 1), holder.my_atom, 0, 0)
 	//None of this account for BS beakers or 2 buckets... - Same as old water + poss but hey this takes more effert even tho it still has no counter
 	//at created_volume/10, doble 240 beaker bomb is 24,
 	//at created_volume/6,  doble 240 beaker bomb is 40,
