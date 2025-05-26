@@ -28,32 +28,32 @@
 	display_name = "gas mask"
 	path = /obj/item/clothing/mask/gas
 	slot = slot_wear_mask
-	cost = 2
+	cost = 1
 
 /datum/gear/clothing/gasmaskenviro
 	display_name = "gas mask, enviro"
 	path = /obj/item/clothing/mask/gas/old
 	slot = slot_wear_mask
-	cost = 2
+	cost = 1
 
 /datum/gear/clothing/gasmaskindustrial
 	display_name = "gas mask, industrial"
 	path = /obj/item/clothing/mask/gas/industrial
 	slot = slot_wear_mask
-	cost = 2
+	cost = 1
 
 /datum/gear/clothing/withnosurvivors
 	display_name = "rebreather"
 	path = /obj/item/clothing/mask/gas/bigguy
 	slot = slot_wear_mask
-	cost = 2
+	cost = 1
 	flags= GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/clothing/mask/costume/history/plaguedoctor
 	display_name = "Plague Doctor mask"
 	path = /obj/item/clothing/mask/costume/history/plaguedoctor
 	slot = slot_wear_mask
-	cost = 2 //Same cost as gasmasks because it provides the same benefit (actually better for this one)
+	cost = 1 //Same cost as gasmasks because it provides the same benefit (actually better for this one)
 
 /datum/gear/clothing/mask/costume/animal
 	display_name = "Animal mask selection"
@@ -65,7 +65,7 @@
 	display_name = "Clown mask selection"
 	slot = slot_wear_mask
 	path = /obj/item/clothing/mask/gas/dal
-	cost = 2 //Same cost as gasmasks because it provides the same benefit
+	cost = 1 //Same cost as gasmasks because it provides the same benefit
 
 /datum/gear/clothing/mask/gas/clown/New()
 	..()
