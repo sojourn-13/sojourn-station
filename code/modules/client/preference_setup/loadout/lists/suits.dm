@@ -13,7 +13,7 @@
 /datum/gear/suit/bunnysuit
 	display_name = "bunny suit"
 	path = /obj/item/clothing/suit/costume/kinky/alyson
-	cost = 2 // Pay the horni tax.
+	cost = 0 // Pay the horni tax.
 
 /datum/gear/suit/orsicoat
 	display_name = "Red Winter Cape"
