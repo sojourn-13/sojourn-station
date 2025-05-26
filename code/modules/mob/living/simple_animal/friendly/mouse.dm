@@ -1,6 +1,6 @@
 /mob/living/simple/mouse
-	name = "rat"
-	real_name = "rat"
+	name = "mouse"
+	real_name = "mouse"
 	desc = "It's a small, disgusting rodent, often found being annoying, and aiding in the spread of disease."
 	icon = 'icons/mob/mobs-mouse.dmi'
 	icon_state = "mouse_gray"
