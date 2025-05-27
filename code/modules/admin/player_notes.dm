@@ -5,7 +5,7 @@
 #define NOTESFILE "data/player_notes.sav"	//where the player notes are saved
 
 datum/admins/proc/notes_show(var/ckey)
-	usr << browse("<head><title>Player Notes</title></head><body>[notes_gethtml(ckey)]</body>","window=player_notes;size=700x400")
+	usr << browse(HTML_SKELETON_TITLE("Player Notes", notes_gethtml(ckey)),"window=player_notes;size=700x400")
 
 
 datum/admins/proc/notes_gethtml(var/ckey)
@@ -92,7 +92,7 @@ datum/admins/proc/notes_gethtml(var/ckey)
 // AdminPM Logging stuff.
 
 datum/admins/proc/adminpmhistory_show(var/ckey)
-	usr << browse("<head><title>Player Admin-PM History</title></head><body>[adminpmhistory_gethtml(ckey)]</body>","window=adminpmhistory;size=700x400")
+	usr << browse(HTML_SKELETON_TITLE("Player Admin-PM History", adminpmhistory_gethtml(ckey)),"window=adminpmhistory;size=700x400")
 
 datum/admins/proc/adminpmhistory_gethtml(var/ckey)
 

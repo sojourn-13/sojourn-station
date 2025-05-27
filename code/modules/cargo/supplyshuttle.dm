@@ -36,8 +36,8 @@ var/list/mechtoys = list(
 	layer = 4
 	explosion_resistance = 5
 /*
-/obj/structure/plasticflaps/CanAStarPass(obj/item/card/id/ID, to_dir, caller)
-	if(istype(caller, /obj/machinery/bot/mulebot))
+/obj/structure/plasticflaps/CanAStarPass(obj/item/card/id/ID, to_dir, pathfinding_atom)
+	if(istype(pathfinding_atom, /obj/machinery/bot/mulebot))
 		return TRUE
 */
 /obj/structure/plasticflaps/CanPass(atom/A, turf/T)
