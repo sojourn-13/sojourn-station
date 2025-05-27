@@ -183,7 +183,7 @@
 	spawn_positions = 3
 	supervisors = "the Blackshield Commander"
 	difficulty = "Hard."
-	noob_name = "Blackshield Cadet"
+//	noob_name = "Blackshield Cadet"
 //	alt_titles = list("Blackshield Cadet")
 	selection_color = "#a7bbc6"
 	wage = WAGE_LABOUR_HAZARD
@@ -241,7 +241,7 @@
 	selection_color = "#a7bbc6"
 	wage = WAGE_LABOUR_INTERN
 	health_modifier = 10
-	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_NASHEF)
+	disallow_species = list(FORM_AGSYNTH, FORM_NASHEF)
 
 	outfit_type = /decl/hierarchy/outfit/job/blackshield/troop/cadet
 
