@@ -19,15 +19,23 @@
 	name_pool = list("Kar Thil Kor" = "Quite a uniquic planet. Many uniquic devolments have been made here, grand. I can trade newest disks from far and wide.")
 	inventory = list(
 		"Disks" = list(
-			/obj/item/pc_part/drive/disk/design/sun_branch = good_data("Sun Branch Disk", list(4, 6), 1200)
+			/obj/item/pc_part/drive/disk/design/sun_branch = good_data("Sun Branch Disk", list(4, 6), 1200),
+			/obj/item/pc_part/drive/disk/design/stamped_branch = good_data("Stamp Branch Disk", list(80, 90), 600)
 		)
 	)
 	hidden_inventory = list(
-		"Pre-Printed" = list(
+		"Sun Branch Pre-Printed" = list(
 			/obj/item/tool/sword/midday = good_data("\"Sunup\" sword", list(4, 6), 1000),
 			/obj/item/tool/sword/dawn = good_data("\"Crack of Dawn\" blade", list(4, 6), 1500),
 			/obj/item/tool/sword/sun_set = good_data("\"Sunset\" sword", list(4, 6), 800),
 			/obj/item/clothing/glasses/firefly_glasses = good_data("\"Firefly\" glasses", list(4, 6), 500)
+		),
+		"Stamp Branch Pre-Printed" = list(
+			/obj/item/gun/projectile/stamper = good_data("\"Stamper\" caseless auto-pistol", list(1, 3), 500),
+			/obj/item/gun/projectile/stamp = good_data("\"Stamp\" caseless pistol", list(2, 4), 250),
+			/obj/item/clothing/suit/stamped_suit = good_data("\"Wired\" Executive Suit", list(4, 6), 800),
+			/obj/item/clothing/glasses/stamped_lens = good_data("\"Stamped\" lens", list(6, 8), 500),
+			/obj/item/ammo_magazine/stamp_10x24 = good_data("\"Spring-Lock\" Stamp Mag", list(6, 8), 500),
 		)
 	)
 	offer_types = list(

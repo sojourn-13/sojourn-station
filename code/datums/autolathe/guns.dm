@@ -412,6 +412,15 @@
 	name = "NM 10mm Caseless \"Spec-Op\" Compact Carbine"
 	build_path = /obj/item/gun/projectile/automatic/specop
 
+/datum/design/autolathe/gun/stamp_smg
+	name = "\"Stamper\" caseless auto-pistol"
+	build_path = /obj/item/gun/projectile/stamper
+
+/datum/design/autolathe/gun/stamp
+	name = "\"Stamp\" caseless pistol"
+	build_path = /obj/item/gun/projectile/stamp
+
+
 //L A U N C H E R S
 
 /datum/design/autolathe/gun/grenade_launcher

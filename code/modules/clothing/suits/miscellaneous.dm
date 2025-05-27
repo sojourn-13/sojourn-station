@@ -518,7 +518,7 @@ obj/item/clothing/suit/gownrisque/alt
 	..()
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
-		if(istype(H.glasses, /obj/item/clothing/glasses/stamped_huds))
+		if(istype(H.glasses, /obj/item/clothing/glasses/stamped_lens))
 			to_chat(user, SPAN_NOTICE("According to [H.glasses]'s info on, this is a STAMP CORP executive suit used for protecting VIP's with a specal type of metal wire weaving, \
 			thats designed to stop bullets and reduce impacts."))
 

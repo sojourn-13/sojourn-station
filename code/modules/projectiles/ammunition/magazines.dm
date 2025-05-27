@@ -807,6 +807,37 @@
 	max_ammo = 40
 	multiple_sprites = 1
 
+/obj/item/ammo_magazine/stamp_10x24
+	name = "Stamp Corp \"Spring-Lock\" Mag"
+	desc = "A 48 round magazine marked for 10x24mm rounds. \
+	Do to the spring at the bottom of the mag as well as many materal design flaws reloading is impossable."
+	icon_state = "pistolcaseless" //Sprite by Odell
+	mag_type = MAGAZINE
+	mag_well = MAG_WELL_STAMP
+	matter = list(MATERIAL_STEEL = 0.1)
+	caliber = "10x24"
+	ammo_type = /obj/item/ammo_casing/c10x24
+	max_ammo = 48
+
+/obj/item/ammo_magazine/stamp_10x24/insertCasing(var/obj/item/ammo_casing/C)
+	return FALSE
+
+/obj/item/ammo_magazine/stamp_10x24/update_icon()
+	cut_overlays()
+	max_ammo = 0
+	if(stored_ammo.len)
+		var/obj/item/ammo_casing/AC = stored_ammo[1] //look at next casing.
+		add_overlay("pistolcaseless_shell_[AC.shell_color]") //look and display the overlay for the ammo
+
+/obj/item/ammo_magazine/stamp_10x24/examine(mob/user)
+	..()
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		if(istype(H.glasses, /obj/item/clothing/glasses/stamped_lens))
+			to_chat(user, SPAN_NOTICE("According to [H.glasses]'s info on, this magazine is not made with its proper matterals leading to a defect in its spring, \
+			and should be returned to Production District Head Office."))
+			to_chat(user, SPAN_NOTICE("Legal Code 1121: Holding of Missprinted Good."))
+
 //// 12mm Heavy Pistol ////
 
 /obj/item/ammo_magazine/kurtz_50

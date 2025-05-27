@@ -356,19 +356,44 @@
 	matter = list(MATERIAL_GLASS = 0.2, MATERIAL_STEEL = 0.1)
 	prescription = 1
 
+/obj/item/clothing/glasses/stamped_lens/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Standard"] = "stamped_hud"
+	options["Marqua Fit"] = "stamped_hud_marqua"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+
 /obj/item/clothing/glasses/stamped_lens/examine(mob/user)
 	..()
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
-		if(istype(H.glasses, /obj/item/clothing/glasses/stamped_huds))
+		if(istype(H.glasses, /obj/item/clothing/glasses/stamped_lens))
 			to_chat(user, SPAN_NOTICE("According to [H.glasses]'s info on, this is a STAMP CORP internal use only contraband and security lens, used for spotting hidden cameras, hacking devices and illegal armor or guns."))
 			to_chat(user, SPAN_NOTICE("Anti-Hack chip operational. This lens is outside of network range, swapping to precoded STAMP CORP regulations and law code."))
 
 //We cant be hacked and will destory things that try it.
 /obj/item/clothing/glasses/stamped_lens/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/card/emag))
-		var/emag == I
-		emag.uses = -1
+		var/obj/item/card/emag/punishment_mechanic = I
+		punishment_mechanic.uses = -1
 		if(user)
 			to_chat(user, SPAN_NOTICE("Anti-Hack chip operational. Disarming hacking equipment and notifing STAMP CORP of a breach of Legal Code 25813."))
 	..()

@@ -3028,6 +3028,7 @@
 #include "code\modules\projectiles\guns\projectile\pistol\silenced.dm"
 #include "code\modules\projectiles\guns\projectile\pistol\silver_eye.dm"
 #include "code\modules\projectiles\guns\projectile\pistol\spring.dm"
+#include "code\modules\projectiles\guns\projectile\pistol\stamp.dm"
 #include "code\modules\projectiles\guns\projectile\revolver\artwork_revolver.dm"
 #include "code\modules\projectiles\guns\projectile\revolver\breakaction.dm"
 #include "code\modules\projectiles\guns\projectile\revolver\capgun.dm"

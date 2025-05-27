@@ -910,6 +910,12 @@
 	build_path = /obj/item/ammo_magazine/smg_10x24
 	materials = list(MATERIAL_STEEL = 2)
 
+/datum/design/autolathe/ammo/stamped_mag
+	name = "Stamp Corp \"Spring-Lock\" Mag"
+	build_path = /obj/item/ammo_magazine/stamp_10x24
+	materials = list(MATERIAL_STEEL = 0.1)
+
+
 //14.5×114mm anti-materiel
 /datum/design/autolathe/ammo/box_antim
 	name = "ammunition box (14.5×114mm)"

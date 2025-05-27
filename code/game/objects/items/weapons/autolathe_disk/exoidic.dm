@@ -20,12 +20,8 @@
 	license = 12
 	designs = list(
 		/datum/design/autolathe/clothing/stamped_wired_suit = 7, //Cheap suit that has good armor so we dont allow mass printing
-		/datum/design/autolathe/clothing/stamped_huds = 0, //Its useless
-		/datum/design/autolathe/gun/stamped = 3,
-		/datum/design/autolathe/gun/stamped_smg = 4,
-		/datum/design/autolathe/ammo/stamped_mag,
-		/datum/design/autolathe/ammo/stamped_mag_hv,
-		/datum/design/autolathe/ammo/stamped_mag_rubber,
-		/datum/design/autolathe/ammo/stamped_mag_lethal,
-		/datum/design/autolathe/ammo/stamped_mag_practice
+		/datum/design/autolathe/clothing/stamped_huds = 0.5, //Its useless
+		/datum/design/autolathe/gun/stamp = 3,
+		/datum/design/autolathe/gun/stamp_smg = 4,
+		/datum/design/autolathe/ammo/stamped_mag = 0.5
 	)
