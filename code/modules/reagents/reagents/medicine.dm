@@ -773,6 +773,7 @@ We don't use this but we might find use for it. Porting it since it was updated 
 			if(LAZYLEN(current_wounds) && !BP_IS_ROBOTIC(I) && prob(75)) //Peridaxon heals only non-robotic organs
 				M.add_chemical_effect(CE_ONCOCIDAL, 1)
 				M.add_chemical_effect(CE_BLOODCLOT, 1)
+				M.add_chemical_effect(CE_DEBRIDEMENT, 1)
 				M.add_chemical_effect(CE_ANTITOX, 2)
 
 /datum/reagent/medicine/peridaxon/overdose(mob/living/carbon/M, alien)
