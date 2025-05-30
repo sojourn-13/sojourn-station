@@ -216,6 +216,7 @@
 						to_chat(user, SPAN_WARNING("\The [AM] won't fit into the magwell.")) //Prevents an exploit
 						return
 					else if(replace_item(ammo_magazine, A, user)) // The replace_item() proc already existed, THIS is a proper tac reload and not an Iraqi reload.
+						ammo_magazine.update_icon()
 						ammo_magazine = A
 						update_icon()
 						to_chat(user, SPAN_NOTICE("You tactically reload your [src] with [AM]!"))
