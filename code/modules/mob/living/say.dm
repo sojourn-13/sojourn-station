@@ -292,8 +292,6 @@ var/list/channel_to_radio_key = new
 
 	if(ismouse(src))
 		INVOKE_ASYNC(src, /atom/movable/proc/animate_chat, "Squeak!", speaking, italics, speech_bubble_recipients, 40)
-	else if(isdrone(src))
-		INVOKE_ASYNC(src, /atom/movable/proc/animate_chat, "Beep!", speaking, italics, speech_bubble_recipients, 40)
 	else
 		INVOKE_ASYNC(src, /atom/movable/proc/animate_chat, message, speaking, italics, speech_bubble_recipients, 40)
 
