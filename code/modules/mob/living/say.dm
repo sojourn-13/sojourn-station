@@ -289,7 +289,11 @@ var/list/channel_to_radio_key = new
 		M.hear_say(message, verb, speaking, alt_name, italics, src, speech_sound, sound_vol, 1)
 
 	INVOKE_ASYNC(GLOBAL_PROC, .proc/animate_speechbubble, speech_bubble, speech_bubble_recipients, 30)
-	INVOKE_ASYNC(src, /atom/movable/proc/animate_chat, message, speaking, italics, speech_bubble_recipients, 40)
+
+	if(ismouse(src))
+		INVOKE_ASYNC(src, /atom/movable/proc/animate_chat, "Squeak!", speaking, italics, speech_bubble_recipients, 40)
+	else
+		INVOKE_ASYNC(src, /atom/movable/proc/animate_chat, message, speaking, italics, speech_bubble_recipients, 40)
 
 	for(var/obj/O as anything in listening_obj)
 		spawn(0)
