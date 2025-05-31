@@ -273,7 +273,7 @@
 		/datum/design/autolathe/ammo/rifle_lethal = 4,
 	)
 
-// 8.6 Rifles
+// .408 Rifles
 /obj/item/pc_part/drive/disk/design/guns/python
 	disk_name = "NM - 7.5mm Python Heavy Rifle"
 	icon_state = "marshal"

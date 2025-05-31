@@ -2,9 +2,8 @@
 	name = "\"Omnirifle\""
 	desc = "A standard issue battle rifle issued to SolFed Marines, produced across the galaxy by state arsenals. \
 		 A weapon built for versatility and rugged reliability, it fires a variety of utility and specialized munitions. \
-		 Chambered in 8.6x70mm, its gaping bore allows virtually any imaginable payload, however the recoil and magazine suffer for it. \
-		 Certain munitions are physically demanding for even the strongest users without the aid of power armor or gun platforms. \
-		 This example has defaced serial numbers and added electro-penciled rack numbers."
+		 Chambered in .408, its gaping bore allows virtually any imaginable payload, however the recoil and magazine suffer for it. \
+		 Certain munitions are physically demanding for even the strongest users without the aid of power armor or gun platforms."
 	icon = 'icons/obj/guns/projectile/Omnirifle.dmi'
 	icon_state = "omnirifle"
 	item_state = "omnirifle"
@@ -65,7 +64,7 @@
 	name = "\"Longarm\" marksman rifle"
 	desc = "A heavy front line designated marksman rifle manufactured by H&S, also known as the M13A2 Special Purpose Rifle in its generic military form. \
 		 Either a copy or 'liberated' example, it fires a variety of utility and specialized munitions. \
-		 Chambered in 8.6x70mm, its gaping bore allows virtually any imaginable payload, however the recoil and magazine suffer for it. \
+		 Chambered in .408, its gaping bore allows virtually any imaginable payload, however the recoil and magazine suffer for it. \
 		 This example is fitted with an advanced combat sight and limited to semiautomatic and burst modes. \
 		 Due to market competition on the Omnirifle platform, H&S allowed special limited edition custom prints for an extra licensing fee."
 	icon = 'icons/obj/guns/projectile/DMR.dmi'
@@ -96,7 +95,7 @@
 	name = "\"Osprey\" precision rifle"
 	desc = "Classic, elegant sporting rifle based on proven military technology. \
 		 A police model of the venerable M13A1 Special Purpose Rifle manufactured on Earth by Seinemetall Defense GmbH for both sportsmen and counter-terror agents, it fires a variety of utility and specialized munitions. \
-		 Chambered in 8.6x70mm, its gaping bore allows virtually any imaginable payload, however the recoil and magazine suffer for it. \
+		 Chambered in .408, its gaping bore allows virtually any imaginable payload, however the recoil and magazine suffer for it. \
 		 This example is fitted with high-zoom optics, elegant wood furnishing and is limited to semiautomatic."
 	icon = 'icons/obj/guns/projectile/Osprey.dmi'
 	icon_state = "osprey"
@@ -116,7 +115,7 @@
 /obj/item/gun/projectile/automatic/omnirifle/rds
 	name = "\"Warthog\" advanced rifle"
 	desc = "A heavy second-line rifle manufactured by H&S, as well as number of state arsenals. \
-		 A rifle fashioned for cover fire and cramped environments. Chambered in 8.6x70mm. \
+		 A rifle fashioned for cover fire and cramped environments. Chambered in .408. \
 		 Its gaping bore packs a punch, however the recoil is incredibly violent and terrifying. \
 		 This one is fitted with a muzzle brake, fore grip, holographic sight and limited to 3-round bursts. it's almost manageable. Almost."
 	icon = 'icons/obj/guns/projectile/Warthog.dmi'

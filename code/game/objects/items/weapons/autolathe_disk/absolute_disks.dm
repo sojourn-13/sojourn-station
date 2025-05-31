@@ -340,7 +340,7 @@
 
 // Church Rifle
 /obj/item/pc_part/drive/disk/design/nt/shepherd
-	disk_name = "Absolute Armory - OT MR 8.6x70mm Shepherd"
+	disk_name = "Absolute Armory - OT MR .408 Shepherd"
 
 	license = 8
 	designs = list(
@@ -352,7 +352,7 @@
 		)
 
 /obj/item/pc_part/drive/disk/design/nt/shepherd/plus
-	disk_name = "Absolute Armory - OT MR 8.6x70mm Shepherd Plus"
+	disk_name = "Absolute Armory - OT MR .408 Shepherd Plus"
 
 	license = 10
 

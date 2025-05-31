@@ -535,7 +535,7 @@
 /obj/item/ammo_magazine/ammobox/heavy_rifle_408_small
 	name = "ammunition packet (.408 ball)"
 	icon_state = "hrifle"
-	desc = "A box of 8.6x70mm heavy rifle ammunition."
+	desc = "A box of .408 heavy rifle ammunition."
 	matter = list(MATERIAL_STEEL = 5, MATERIAL_CARDBOARD = 1)
 	caliber = CAL_HRIFLE
 	ammo_type = /obj/item/ammo_casing/heavy_rifle_408
@@ -544,37 +544,37 @@
 /obj/item/ammo_magazine/ammobox/heavy_rifle_408_small/rubber
 	name = "ammunition packet (.408 rubber)"
 	icon_state = "hrifle_r"
-	desc = "A box of 8.6x70mm heavy rifle ammunition. 40ct, 8mm deforming impact rounds. It contains a lengthy warning label clearly stating it is a less-lethal round and declaring the manufacturer is not responsible for damages done. This one seems a lot more lengthy then others....really not gonna try and arrest someone with this right?"
+	desc = "A box of .408 heavy rifle ammunition. 40ct, 8mm deforming impact rounds. It contains a lengthy warning label clearly stating it is a less-lethal round and declaring the manufacturer is not responsible for damages done. This one seems a lot more lengthy then others....really not gonna try and arrest someone with this right?"
 	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/rubber
 
 /obj/item/ammo_magazine/ammobox/heavy_rifle_408_small/practice
 	name = "ammunition packet (.408 practice)"
 	icon_state = "hrifle_p"
-	desc = "A box of 8.6x70mm heavy rifle ammunition."
+	desc = "A box of .408 heavy rifle ammunition."
 	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/practice
 
 /obj/item/ammo_magazine/ammobox/heavy_rifle_408_small/hv
 	name = "ammunition packet (.408 SLAP)"
 	icon_state = "hrifle_hv"
-	desc = "A box of 8.6x70mm heavy rifle ammunition. 40ct, 8mm Saboted Light Armor Penetrators, spoon-tipped."
+	desc = "A box of .408 heavy rifle ammunition. 40ct, 8mm Saboted Light Armor Penetrators, spoon-tipped."
 	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/hv
 
 /obj/item/ammo_magazine/ammobox/heavy_rifle_408_small/lethal
 	name = "ammunition packet (.408 hollow point)"
 	icon_state = "hrifle_l"
-	desc = "A box of 8.6x70mm heavy rifle ammunition. 40ct, .40 hollow-tipped full-caliber."
+	desc = "A box of .408 heavy rifle ammunition. 40ct, .40 hollow-tipped full-caliber."
 	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/lethal
 
 /obj/item/ammo_magazine/ammobox/heavy_rifle_408_small/incend
 	name = "ammunition packet (.408 incendiary)"
 	icon_state = "hrifle_l"
-	desc = "A box of 8.6x70mm heavy rifle ammunition. 40ct, .40 incendiary full-caliber."
+	desc = "A box of .408 heavy rifle ammunition. 40ct, .40 incendiary full-caliber."
 	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/incend
 
 /obj/item/ammo_magazine/ammobox/heavy_rifle_408_small/laser
 	name = "ammunition packet (.408 laser)"
 	icon_state = "hrifle_si"
-	desc = "A box of 8.6x70mm heavy rifle ammunition. 60ct, subcaliber laser rounds."
+	desc = "A box of .408 heavy rifle ammunition. 60ct, subcaliber laser rounds."
 	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/laser
 	matter = list(MATERIAL_CARDBOARD = 1)
 	max_ammo = 60
@@ -588,7 +588,7 @@
 /obj/item/ammo_magazine/ammobox/heavy_rifle_408
 	name = "ammunition box (.408 ball)"
 	icon_state = "boxhrifle"
-	desc = "A box of 8.6x70mm heavy rifle ammunition."
+	desc = "A box of .408 heavy rifle ammunition."
 	matter = list(MATERIAL_STEEL = 10)
 	w_class = ITEM_SIZE_BULKY
 	mag_type = MAGAZINE
@@ -622,7 +622,7 @@
 /obj/item/ammo_magazine/ammobox/heavy_rifle_408/rubber
 	name = "ammunition box (.408 rubber)"
 	icon_state = "boxhrifle-rubber"
-	desc = "A box of 8.6x70mm heavy rifle ammunition. 120ct, 8mm deforming impact rounds. It contains a lengthy warning label clearly stating it is a less-lethal round and declaring the manufacturer is not responsible for damages done. This one seems a lot more lengthy then others....really not gonna try and arrest someone with this right?"
+	desc = "A box of .408 heavy rifle ammunition. 120ct, 8mm deforming impact rounds. It contains a lengthy warning label clearly stating it is a less-lethal round and declaring the manufacturer is not responsible for damages done. This one seems a lot more lengthy then others....really not gonna try and arrest someone with this right?"
 	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/rubber
 
 /obj/item/ammo_magazine/ammobox/heavy_rifle_408/rubber/update_icon()
@@ -642,7 +642,7 @@
 /obj/item/ammo_magazine/ammobox/heavy_rifle_408/practice
 	name = "ammunition box (.408 practice)"
 	icon_state = "boxhrifle-practice"
-	desc = "A box of 8.6x70mm heavy rifle ammunition. 80ct, 8mm subcaliber frangible training rounds."
+	desc = "A box of .408 heavy rifle ammunition. 80ct, 8mm subcaliber frangible training rounds."
 	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/practice
 
 /obj/item/ammo_magazine/ammobox/heavy_rifle_408/practice/update_icon()
@@ -662,7 +662,7 @@
 /obj/item/ammo_magazine/ammobox/heavy_rifle_408/hv
 	name = "ammunition box (.408 SLAP)"
 	icon_state = "boxhrifle-hv"
-	desc = "A box of 8.6x70mm heavy rifle ammunition. Light Armor Penetrators, spoon-tipped."
+	desc = "A box of .408 heavy rifle ammunition. Light Armor Penetrators, spoon-tipped."
 	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/hv
 
 /obj/item/ammo_magazine/ammobox/heavy_rifle_408/hv/update_icon()
@@ -682,7 +682,7 @@
 /obj/item/ammo_magazine/ammobox/heavy_rifle_408/lethal
 	name = "ammunition box (.408 hollow-tip)"
 	icon_state = "boxhrifle-lethal"
-	desc = "A box of 8.6x70mm heavy rifle ammunition."
+	desc = "A box of .408 heavy rifle ammunition."
 	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/lethal
 
 /obj/item/ammo_magazine/ammobox/heavy_rifle_408/lethal/update_icon()

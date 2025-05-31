@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/boltgun/scout
 	name = "\"Scout\" heavy bolt-action rifle"
-	desc = "Weapon for hunting, sniping, and competition shooting. Chambered in 8.6x70mm Heavy Rifle rounds, it packs the reach, the punch and the accuracy for every occasion, however saying it kicks like a mule would only be a plain understatement."
+	desc = "Weapon for hunting, sniping, and competition shooting. Chambered in .408 Heavy Rifle rounds, it packs the reach, the punch and the accuracy for every occasion, however saying it kicks like a mule would only be a plain understatement."
 	icon = 'icons/obj/guns/projectile/heavyboltgun.dmi'
 	icon_state = "boltgun"
 	item_state = "boltgun"
@@ -39,7 +39,7 @@
 
 /obj/item/gun/projectile/boltgun/sawn/scout
 	name = "\"obrez\" heavy bolt-action rifle"
-	desc = "A crudely mangled and sawn-down 8.6x70mm bolt action rifle. Rifle was fine."
+	desc = "A crudely mangled and sawn-down .408 bolt action rifle. Rifle was fine."
 	icon = 'icons/obj/guns/projectile/sawnoff/heavyboltgun.dmi'
 	icon_state = "obrez"
 	item_state = "obrez"

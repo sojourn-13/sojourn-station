@@ -515,7 +515,7 @@ Make it so steel parts fit into any gun you want but can 'break', or cause jams.
 
 /obj/item/part/gun/barrel/hrifle/steel
 	name = "cheap .408 heavy rifle barrel"
-	desc = "A gun barrel, which keeps the bullet going in the right direction. Chambered for 8.6mm heavy rifle. \
+	desc = "A gun barrel, which keeps the bullet going in the right direction. Chambered for .408 heavy rifle. \
 			This one does not look as high quality."
 	icon_state = "barrel_heavy"
 	matter = list(MATERIAL_STEEL = 14)

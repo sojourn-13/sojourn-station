@@ -706,7 +706,7 @@
 
 /obj/item/ammo_magazine/rifle_75_linked_box/heavy_rifle_408
 	name = "linked ammunition box (.408 Heavy Rifle)"
-	desc = "A 64 round linked box marked for 8.6x70mm Heavy Rifle."
+	desc = "A 64 round linked box marked for .408 Heavy Rifle."
 	max_ammo = 64
 	icon_state = "pkh_box"
 	caliber = CAL_HRIFLE
@@ -751,7 +751,7 @@
 /obj/item/ammo_magazine/heavy_rifle_408
 	name = "heavy rifle magazine"
 	icon_state = "hrifle"
-	desc = "A 14 round magazine marked for 8.6x70mm Heavy Rifle."
+	desc = "A 14 round magazine marked for .408 Heavy Rifle."
 	origin_tech = list(TECH_COMBAT = 2)
 	w_class = ITEM_SIZE_NORMAL
 	mag_type = MAGAZINE
@@ -797,7 +797,7 @@
 /obj/item/ammo_magazine/heavy_rifle_408_drum
 	name = "heavy rifle drum magazine (ball)"
 	icon_state = "hdrum"
-	desc = "A 36 round drum magazine marked for 8.6x70mm Heavy Rifle."
+	desc = "A 36 round drum magazine marked for .408 Heavy Rifle."
 	origin_tech = list(TECH_COMBAT = 2)
 	w_class = ITEM_SIZE_NORMAL
 	mag_type = MAGAZINE
@@ -1112,7 +1112,7 @@
 
 /obj/item/ammo_magazine/speed_loader_heavy_rifle_408
 	name = "ammo strip (.408 Heavy Rifle)"
-	desc = "A 10 round ammo strip for 8.6x70mm Heavy Rifle."
+	desc = "A 10 round ammo strip for .408 Heavy Rifle."
 	icon_state = "stripper_base"
 	icon = 'icons/obj/ammo_speed.dmi'
 	caliber = CAL_HRIFLE
