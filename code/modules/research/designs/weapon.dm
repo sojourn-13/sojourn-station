@@ -259,7 +259,7 @@
 
 /datum/design/research/item/ammo/heavy_rifle_408
 	name = "Heavy Rifle .408 laser casing."
-	desc = "Heavy Rifle 8.6x70mm casing fitted with a one time use laser payload."
+	desc = "Heavy Rifle .408 casing fitted with a one time use laser payload."
 	build_path = /obj/item/ammo_magazine/ammobox/heavy_rifle_408_small/laser
 	materials = list(MATERIAL_STEEL = 6, MATERIAL_GLASS = 6, MATERIAL_GOLD = 3)
 

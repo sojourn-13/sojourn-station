@@ -543,7 +543,7 @@
 	affective_ap_range = 3
 	recoil = 5
 
-/// 8.6x70mm Heavy Rifle ///
+/// .408 Heavy Rifle ///
 
 /obj/item/projectile/bullet/heavy_rifle_408
 	icon_state = "bullet_heavy"

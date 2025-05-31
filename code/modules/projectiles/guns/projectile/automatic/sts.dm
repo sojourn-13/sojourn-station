@@ -126,7 +126,7 @@
 
 /obj/item/gun/projectile/automatic/sts/rifle/heavy
 	name = "\"STS\" heavy rifle"
-	desc = "A rugged STS-40. Uses 8.6x70mm heavy rifle rounds. If we have to go alone, we'll go alone with pride."
+	desc = "A rugged STS-40. Uses .408 heavy rifle rounds. If we have to go alone, we'll go alone with pride."
 	icon = 'icons/obj/guns/projectile/sts40.dmi'
 	icon_state = "sts"
 	item_state = "sts"
@@ -150,7 +150,7 @@
 
 /obj/item/gun/projectile/automatic/sts/rifle/heavy/sawn
 	name = "sawn down \"STS\" heavy rifle"
-	desc = "A rugged STS-40. Uses 8.6x70mm heavy rifle rounds. This one has been shortened as much as possible while still being able to function properly."
+	desc = "A rugged STS-40. Uses .408 heavy rifle rounds. This one has been shortened as much as possible while still being able to function properly."
 	icon = 'icons/obj/guns/projectile/sawnoff/sts40.dmi'
 	icon_state = "sts"
 	item_state = "sts"
