@@ -100,6 +100,8 @@
 
 #define INVERSE(x) ( 1/(x) )
 
+#define IS_CARDINAL(x) ((x & (x - 1)) == 0)
+
 // Used for calculating the radioactive strength falloff
 #define INVERSE_SQUARE(initial_strength,cur_distance,initial_distance) ( (initial_strength)*((initial_distance)**2/(cur_distance)**2) )
 

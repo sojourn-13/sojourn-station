@@ -13500,9 +13500,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "cGb" = (
-/obj/machinery/door/airlock/maintenance_common{
-	req_access = list(12)
-	},
+/obj/machinery/door/airlock/maintenance_common,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/cable/cyan{
@@ -15006,7 +15004,9 @@
 /obj/item/bedsheet/mimedouble,
 /obj/machinery/button/switch/holosign{
 	id = "spess";
-	pixel_x = 24
+	pixel_x = 21;
+	pixel_y = 8;
+	dir = 8
 	},
 /obj/item/contraband/poster/placed/generic/no_erp{
 	desc = "This poster reminds the crew that Eroticism, unsanctioned Rituals and Pornography are bad and shouldnt be film or done.";
@@ -27867,6 +27867,11 @@
 /obj/item/clothing/under/dress/sailor,
 /obj/item/toy/weapon/sword,
 /obj/item/toy/weapon/sword,
+/obj/machinery/light_switch{
+	pixel_y = 8;
+	pixel_x = 20;
+	dir = 8
+	},
 /turf/simulated/floor/carpet/sblucarpet,
 /area/nadezhda/crew_quarters/sleep/bedrooms)
 "fog" = (
@@ -30876,9 +30881,7 @@
 /turf/simulated/floor/industrial/cafe_large,
 /area/nadezhda/maintenance/undergroundfloor2east)
 "fUO" = (
-/obj/machinery/door/airlock/maintenance_common{
-	req_access = list(12)
-	},
+/obj/machinery/door/airlock/maintenance_common,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor2east)
 "fUP" = (
@@ -48430,9 +48433,7 @@
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/rnd/xenobiology/xenoflora)
 "jjN" = (
-/obj/machinery/door/airlock/maintenance_common{
-	req_access = list(12)
-	},
+/obj/machinery/door/airlock/maintenance_common,
 /turf/simulated/floor/industrial/cafe_large,
 /area/nadezhda/maintenance/undergroundfloor2east)
 "jjR" = (
@@ -97484,10 +97485,6 @@
 /area/nadezhda/maintenance/undergroundfloor1west)
 "syj" = (
 /obj/structure/curtain/open/privacy,
-/obj/machinery/light_switch{
-	dir = 1;
-	pixel_y = -32
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable/green{
 	d1 = 4;
