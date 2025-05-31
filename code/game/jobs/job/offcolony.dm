@@ -1,3 +1,4 @@
+/*
 /datum/job/off_colony_hunt_master
 	title = "Lodge Hunt Master"
 	total_positions = 1
@@ -34,12 +35,14 @@
 	duties = "Keep your hunters alive, ensuring they don't get killed by the various dangerous fauna.<br>\
 		Ensure all of your hunters are equipped and working properly in teams.<br>\
 		Make sure that relations between the lodge and the colony remain good, in particular with the prospectors."
+*/
 
 /obj/landmark/join/start/hunt_master
 	name = "Lodge Hunt Master"
 	icon_state = "player-black"
-	join_tag = /datum/job/off_colony_hunt_master
+//	join_tag = /datum/job/off_colony_hunt_master
 
+/*
 /datum/job/off_colony_hunter
 	title = "Lodge Hunter"
 	total_positions = 4
@@ -76,12 +79,14 @@
 	duties = "Care for, feed, and raise your various animals to harvest supplies and food.<br>\
 		Work with your fellow hunters to ensure you can take down dangerous fauna.<br>\
 		Build and maintain a thriving lodge in the wilderness."
+*/
 
 /obj/landmark/join/start/lodge_hunter
 	name = "Lodge Hunter"
 	icon_state = "player-black"
-	join_tag = /datum/job/off_colony_hunter
+//	join_tag = /datum/job/off_colony_hunter
 
+/*
 /datum/job/off_colony_herbalist
 	title = "Lodge Herbalist"
 	total_positions = 2
@@ -116,11 +121,12 @@
 	duties = "Grow plants and harvest them for their medical reagents using your primitive chem lab.<br>\
 		Work as a medic for your lodge, keeping people alive and patching them up.<br>\
 		Build and maintain a thriving lodge in the wilderness."
+*/
 
 /obj/landmark/join/start/lodge_herbalist
 	name = "Lodge Herbalist"
 	icon_state = "player-black"
-	join_tag = /datum/job/off_colony_herbalist
+//	join_tag = /datum/job/off_colony_herbalist
 
 /datum/job/outsider
 	title = "Outsider"

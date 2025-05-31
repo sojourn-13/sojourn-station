@@ -166,7 +166,7 @@
 	matter = list(MATERIAL_BIOMATTER = 2.5)
 	natural_remedy = TRUE
 	perk_required = TRUE
-	needed_perk = PERK_BUTCHER
+//	needed_perk = PERK_BUTCHER
 	bio_requirement = 10 // So simple a tribal can do it, still has a small check to use.
 	stacktype_alt = null
 

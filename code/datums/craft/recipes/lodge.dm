@@ -2,7 +2,7 @@
 	category = "Lodge"
 	time = 100
 	related_stats = list(STAT_BIO)
-	requiredPerk = PERK_BUTCHER
+//	requiredPerk = PERK_BUTCHER
 
 // Weaponry -----------------
 /datum/craft_recipe/lodge/crossbow_bolts

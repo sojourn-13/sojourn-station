@@ -5,13 +5,13 @@
 	var/actual_bones_amount = max(0,(bones_amount/2))
 
 	if(ishuman(user))
-		if(user.stats.getPerk(PERK_BUTCHER)) // Master Butcher will now give full amounts defined in the creature's variables. Otherwise, it's only half, and no special items.
-			actual_leather_amount = max(0,(leather_amount))
-			actual_meat_amount = max(1,(meat_amount))
-			actual_bones_amount = max(0,(bones_amount))
-			if(has_special_parts)
-				for(var/animal_part in special_parts)
-					new animal_part(get_turf(src))
+//		if(user.stats.getPerk(PERK_BUTCHER)) // Master Butcher will now give full amounts defined in the creature's variables. Otherwise, it's only half, and no special items.
+		actual_leather_amount = max(0,(leather_amount))
+		actual_meat_amount = max(1,(meat_amount))
+		actual_bones_amount = max(0,(bones_amount))
+		if(has_special_parts)
+			for(var/animal_part in special_parts)
+				new animal_part(get_turf(src))
 
 	if(actual_leather_amount > 0 && (stat == DEAD))
 		for(var/i=0;i<actual_leather_amount;i++)
@@ -39,17 +39,17 @@
 			qdel(src)
 		else
 			if(ishuman(user))
-				if(user.stats.getPerk(PERK_BUTCHER))
-					if(user != src)
-						user.visible_message(SPAN_DANGER("[user] butchers \the [src] cleanly!"))
-					var/obj/effect/decal/cleanable/blood/blood_effect = new/obj/effect/decal/cleanable/blood/splatter(get_turf(src))
-					blood_effect.basecolor = bloodcolor
-					blood_effect.update_icon()
-				qdel(src)
-			else
+//				if(user.stats.getPerk(PERK_BUTCHER))
 				if(user != src)
-					user.visible_message(SPAN_DANGER("[user] butchers \the [src] messily!"))
-				gib()
+					user.visible_message(SPAN_DANGER("[user] butchers \the [src] cleanly!"))
+				var/obj/effect/decal/cleanable/blood/blood_effect = new/obj/effect/decal/cleanable/blood/splatter(get_turf(src))
+				blood_effect.basecolor = bloodcolor
+				blood_effect.update_icon()
+			qdel(src)
+//			else
+//				if(user != src)
+//					user.visible_message(SPAN_DANGER("[user] butchers \the [src] messily!"))
+//				gib()
 
 /mob/living/carbon/superior/update_lying_buckled_and_verb_status()
 	lying_prev = lying
