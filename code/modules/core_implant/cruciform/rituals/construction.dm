@@ -49,7 +49,7 @@ GLOBAL_LIST_INIT(nt_constructs, init_nt_constructs())
 		if(!ispath(placeholder))
 			continue
 		listed_components += list("[blueprint.materials[placeholder]] [initial(placeholder.name)]")
-	to_chat(user, SPAN_NOTICE("[blueprint.name] requires: [english_list(listed_components)]."))
+	to_chat(user, SPAN_NOTICE("[blueprint?.name] requires: [english_list(listed_components)]."))
 	return TRUE
 
 /datum/ritual/cruciform/priest/construction

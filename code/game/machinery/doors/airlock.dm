@@ -1273,7 +1273,7 @@ There are 9 wires.
 	SetStunned(5)
 	SetWeakened(5)
 	var/turf/T = get_turf(src)
-	T.add_blood(src)
+	T?.add_blood(src)
 
 /mob/living/carbon/airlock_crush(crush_damage)
 	. = ..()

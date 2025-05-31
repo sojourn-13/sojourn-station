@@ -351,8 +351,8 @@ GLOBAL_VAR_INIT(score_technomancer_faction_item_loss, 0)
 	var/max_personal_score = 1000
 
 	dat += {"
-	<b>Personal Objectives completed:</b> [mind.individual_objectives_completed] ([to_score_color(objectives_score)] Points)<br>
-	<b>Antagonist contracts completed:</b> [mind.contracts_completed] ([to_score_color(contracts_score)] Points)<br>
+	<b>Personal Objectives completed:</b> [mind?.individual_objectives_completed] ([to_score_color(objectives_score)] Points)<br>
+	<b>Antagonist contracts completed:</b> [mind?.contracts_completed] ([to_score_color(contracts_score)] Points)<br>
 	<b>Survive:</b> [client.survive ? "Yes" : "No"] ([to_score_color(survive_score)] Points)<br>
 	<b>Escape:</b> [client.escaped ? "Yes" : "No"] ([to_score_color(scaped_score)] Points)<br>
 	<b>Final personal score:</b> [get_color_score(final_score, final_score, max_personal_score)] Points<br><br>

@@ -26,7 +26,7 @@
 
 /obj/item/organ_module/active/simple/proc/retract(obj/item/organ/external/E)
 	if(holding == null)
-		var/mob/M = holding.loc
+		var/mob/M = holding?.loc
 		to_chat(M, SPAN_WARNING("There are nothing to retract"))
 		return
 

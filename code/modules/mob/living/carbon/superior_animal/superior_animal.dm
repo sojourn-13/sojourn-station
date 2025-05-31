@@ -158,7 +158,7 @@
 							return possible_location // this is a valid target
 						else
 							continue
-				var/index = possible_locations.len
+				var/index = possible_locations?.len
 				return possible_locations[index] //return the last entry in the list
 
 	for (var/turf/possible_location as anything in possible_locations) // iterate through each turf we are considering

@@ -34,7 +34,7 @@ GLOBAL_LIST_EMPTY(faction_types)
 				return antag
 
 /proc/clear_antagonist(var/datum/mind/player)
-	for(var/datum/antagonist/A in player.antagonist)
+	for(var/datum/antagonist/A in player?.antagonist)
 		A.remove_antagonist()
 
 /proc/clear_antagonist_type(datum/mind/player, a_id)

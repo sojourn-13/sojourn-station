@@ -188,7 +188,7 @@
 				. += TF.flooring.tally_addition_decl
 		. += T.tally_addition
 
-	. += move_intent.move_delay
+	. += move_intent?.move_delay
 
 	if(client)
 		if(client.true_dir == NORTHEAST || client.true_dir == NORTHWEST || client.true_dir == SOUTHEAST || client.true_dir == SOUTHWEST)

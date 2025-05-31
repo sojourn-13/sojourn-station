@@ -217,7 +217,7 @@
 			to_chat(user, SPAN_DANGER("It looks starving!"))
 		else if (nutrition < max_nutrition *0.5)
 			to_chat(user, SPAN_NOTICE("It looks hungry."))
-		else if ((reagents.total_volume > 0 && nutrition > max_nutrition *0.75) || nutrition > max_nutrition *0.9)
+		else if ((reagents?.total_volume > 0 && nutrition > max_nutrition *0.75) || nutrition > max_nutrition *0.9)
 			to_chat(user, "It looks full and contented.")
 	if (health < maxHealth * 0.10)
 		to_chat(user, SPAN_DANGER("It looks like they are on their last legs!"))

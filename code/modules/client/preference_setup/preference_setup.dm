@@ -128,7 +128,7 @@ var/const/CHARACTER_PREFERENCE_INPUT_TITLE = "Character Preference"
 		. = 1
 
 	if(.)
-		user.client.prefs.ShowChoices(user)
+		user.client?.prefs.ShowChoices(user)
 
 /**************************
 * Category Category Setup *
