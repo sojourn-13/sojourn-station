@@ -6,7 +6,8 @@
 	restricted_to_species = list(FORM_MARQUA)
 
 	restricted_depts = SECURITY
-	restricted_jobs = list(/datum/job/pro, /datum/job/foreman, /datum/job/off_colony_hunt_master, /datum/job/off_colony_hunter)
+//	restricted_jobs = list(/datum/job/pro, /datum/job/foreman, /datum/job/off_colony_hunt_master, /datum/job/off_colony_hunter)
+	restricted_jobs = list(/datum/job/pro, /datum/job/foreman)
 
 	stat_modifiers = list(
 		STAT_ROB = -10,

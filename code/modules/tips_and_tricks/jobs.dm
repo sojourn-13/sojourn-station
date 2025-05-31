@@ -338,6 +338,7 @@
     jobs_list = list(/datum/job/chaplain, /datum/job/acolyte)
     tipText = "The cleansing carbine as the name suggests fires cleaning pellets that when hit something will make a small bit of slippery foam that cleans. This can be used both defensively as lasting slip to get away from bigger foes and to normally clean the station if there's no janitor around."
 
+/*
 /tipsAndTricks/jobs/hunter_meds
     jobs_list = list(/datum/job/off_colony_hunt_master, /datum/job/off_colony_hunter)
     tipText = "Tatonkas located in the barn can be bred using wheat and then butchered for bones, leather, and animal parts you can turn into medicine in the crafting menu."
@@ -357,3 +358,5 @@
 /tipsAndTricks/jobs/hunter_allies
     jobs_list = list(/datum/job/off_colony_hunt_master, /datum/job/off_colony_hunter)
     tipText = "The cerberus hounds are far sighted and loyal animals who won't ever attack you, they make great hunting allies by acting as distractions against larger enemies and emitting growls when they spot enemies you haven't."
+*/
+

@@ -142,7 +142,8 @@
 /datum/department/lodge
 	name = "Lodge"
 	id = DEPARTMENT_LODGE
-	jobs_in_department = list("/datum/job/off_colony_hunt_master","/datum/job/off_colony_hunter","/datum/job/off_colony_herbalist")
+	jobs_in_department = list()
+//	jobs_in_department = list("/datum/job/off_colony_hunt_master","/datum/job/off_colony_hunter","/datum/job/off_colony_herbalist")
 
 /datum/department/greyson_positronic
 	name = "Greyson Positronic"

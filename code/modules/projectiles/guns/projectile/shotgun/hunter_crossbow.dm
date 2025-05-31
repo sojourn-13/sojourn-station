@@ -24,10 +24,10 @@
 /obj/item/gun/projectile/shotgun/pump/hunter_crossbow/handle_post_fire(mob/user)
 	..()
 	to_chat(usr, SPAN_WARNING("The bolt inside heats up to a dull red glow before being fired."))
-	if(user.stats.getPerk(PERK_BUTCHER) && loaded.len>0)
-		to_chat(user, SPAN_NOTICE("Your hands move instinctively to load the next bolt!"))
-		pump(user)
-		return
+//	if(user.stats.getPerk(PERK_BUTCHER) && loaded.len>0)
+	to_chat(user, SPAN_NOTICE("Your hands move instinctively to load the next bolt!"))
+	pump(user)
+	return
 
 /obj/item/gun/projectile/shotgun/pump/hunter_crossbow/update_icon()
 	..()

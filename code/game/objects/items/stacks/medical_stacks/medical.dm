@@ -33,7 +33,7 @@
 		if(prob(10 + H.stats.getStat(STAT_BIO)) && H.stats.getPerk(PERK_MEDICAL_EXPERT))
 			to_chat(H, SPAN_NOTICE("You have managed to waste less [src]."))
 			return TRUE
-		if(prob(10 + H.stats.getStat(STAT_BIO)) && H.stats.getPerk(PERK_MASTER_HERBALIST) && natural_remedy == TRUE)
+		if(prob(10 + H.stats.getStat(STAT_BIO)) && natural_remedy == TRUE) // && H.stats.getPerk(PERK_MASTER_HERBALIST)
 			to_chat(H, SPAN_NOTICE("You have managed to waste less [src]."))
 			return TRUE
 	return FALSE

@@ -143,7 +143,7 @@
 	natural_remedy = TRUE
 	fancy_icon = FALSE
 	perk_required = TRUE
-	needed_perk = PERK_BUTCHER
+//	needed_perk = PERK_BUTCHER
 	bio_requirement = 10 // So simple a tribal can do it, still has a small check to use.
 	stacktype_alt = null
 

@@ -119,8 +119,10 @@ ADMIN_VERB_ADD(/client/proc/test_MD, R_DEBUG, null)
 						/datum/job/scientist, /datum/job/roboticist, /datum/job/scistudent, /datum/job/robostudent,
 						/datum/job/ai, /datum/job/cyborg,
 						/datum/job/assistant, /datum/job/foreigner,
-						/datum/job/off_colony_hunt_master, /datum/job/off_colony_hunter, /datum/job/off_colony_herbalist, /datum/job/outsider
+						/datum/job/outsider
 						)
+//						/datum/job/off_colony_hunt_master, /datum/job/off_colony_hunter, /datum/job/off_colony_herbalist // Disabled on request by MsRandylicious
+
 
 	var/overmap_z
 	var/overmap_size = 50
