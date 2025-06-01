@@ -71,24 +71,20 @@
 	if(drop_amount)
 		var/obj/item/stack/material/ameridian/loot = new /obj/item/stack/material/ameridian(get_turf(src))
 		loot.amount = drop_amount
-	qdel(src)
-
-/mob/living/carbon/superior/ameridian_golem/Destroy()
-	. = ..()
+	Destroy()
 
 /mob/living/carbon/superior/ameridian_golem/bullet_act(var/obj/item/projectile/P, var/def_zone)
+	var/sonic_hit = FALSE
 	if(istype(P, /obj/item/projectile/sonic_bolt))
 		if (!(P.testing))
 			var/obj/item/projectile/sonic_bolt/SB = P
 			SB.multiply_projectile_damage(SB.golem_damage_bonus)
 			drop_amount = 0 // No loot
+			sonic_hit = TRUE
 
 	. = ..()
 
-	addtimer(CALLBACK(src, PROC_REF(maintain_drop_amount)), 100 MILLISECONDS) //consider converting this to ticks?
-
-/mob/living/carbon/superior/ameridian_golem/proc/maintain_drop_amount()
-	if (!is_dead(src)) // We're still alive!
+	if(sonic_hit && loc != null && stat != DEAD) // We're still alive!
 		drop_amount = initial(drop_amount) // So we still have loot
 
 // Stole this code from 'code/__HELPERS/matrices.dm' because otherwise the golems shrink during the shake animation. -R4d6
