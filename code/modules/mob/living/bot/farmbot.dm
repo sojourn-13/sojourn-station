@@ -134,7 +134,7 @@
 			if(path.len && frustration < 5)
 				if(path[1] == loc)
 					path -= path[1]
-				if(path.len < 0) // Hopefully fixes list index out of bounds error - Ryuu
+				if(path.len < 0 && frustration < 5) // Hopefully fixes list index out of bounds error - Ryuu
 					var/t = step_towards(src, path[1])
 					if(t)
 						path -= path[1]
