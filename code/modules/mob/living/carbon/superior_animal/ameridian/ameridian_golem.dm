@@ -71,7 +71,8 @@
 	if(drop_amount)
 		var/obj/item/stack/material/ameridian/loot = new /obj/item/stack/material/ameridian(get_turf(src))
 		loot.amount = drop_amount
-	Destroy()
+	spawn(1)
+		qdel(src)
 
 /mob/living/carbon/superior/ameridian_golem/bullet_act(var/obj/item/projectile/P, var/def_zone)
 	var/sonic_hit = FALSE
