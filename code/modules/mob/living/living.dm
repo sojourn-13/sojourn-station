@@ -889,8 +889,8 @@ default behaviour is:
 
 	QDEL_NULL(stats)
 
-	static_overlay.loc = null
-	static_overlay.transform = null
+	static_overlay?.loc = null
+	static_overlay?.transform = null
 	QDEL_NULL(static_overlay)
 
 	unnatural_mutations = null //causes a GC failure if we qdel-and it seems its not SUPPOSED to qdel, oddly
