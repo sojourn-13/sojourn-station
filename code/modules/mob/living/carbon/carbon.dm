@@ -8,16 +8,16 @@
 	..()
 
 /mob/living/carbon/Destroy()
-	bloodstr.parent = null //these exist due to a GC failure linked to these vars
-	bloodstr.my_atom = null //while they should be cleared by the qdels, they evidently aren't
+	bloodstr?.parent = null //these exist due to a GC failure linked to these vars
+	bloodstr?.my_atom = null //while they should be cleared by the qdels, they evidently aren't
 
-	ingested.parent = null
-	ingested.my_atom = null
+	ingested?.parent = null
+	ingested?.my_atom = null
 
-	touching.parent = null
-	touching.my_atom = null
+	touching?.parent = null
+	touching?.my_atom = null
 
-	metabolism_effects.parent = null
+	metabolism_effects?.parent = null
 	reagents = null
 	QDEL_NULL(ingested)
 	QDEL_NULL(touching)

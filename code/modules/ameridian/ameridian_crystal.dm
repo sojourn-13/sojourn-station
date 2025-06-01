@@ -22,10 +22,14 @@
 	var/self_improvement = TRUE		// Weather or not we are able to grow leading to more shards when mined
 	var/fast_improvement = 320		// Minium amount of time it takes for a growing crystal to grow
 	var/slow_improvement = 680		// Maxium amount of time it takes for a growing crystal to grow
+	var/improvement_speed = 0
+	var/last_improvement = 0 // Time of the last improvement
 	var/grower_helper = FALSE		// Used by spires to have shards it proces grow
 
 	var/spread_speed_slow = 100		// Minium amount of time it takes for a grown crystal to spread
 	var/spread_speed_high = 280		// Maxium amount of time it takes for a grown crystal to spread
+	var/spread_speed = 0
+	var/spread_time = 0
 
 	var/rads_producter = FALSE		// A simple check to make sure that we dont stack these in case thats a issue
 	var/rad_range = 3				// Radius that the crystal irradiate
@@ -41,8 +45,6 @@
 /obj/structure/ameridian_crystal/New()
 	..()
 	update_icon()
-	if(is_growing)
-		addtimer(CALLBACK(src, PROC_REF(spread)), rand(fast_improvement,slow_improvement))
 	if(!randomized_colour)
 		gooners()
 		return
@@ -56,18 +58,28 @@
 		icon_state = "ameridian_crystal_red"
 		fast_improvement = 60
 		slow_improvement = 90
+	improvement_speed = rand(fast_improvement, slow_improvement)
+	spread_speed = rand(spread_speed_slow, spread_speed_high)
 	gooners()
-	self_improvements()
+	START_PROCESSING(SSobj, src)
 
+/obj/structure/ameridian_crystal/Process()
+	if(is_growing)
+		if(spread_time + spread_speed >= world.time)
+			spread()
+
+	if(self_improvement)
+		if(last_improvement + improvement_speed >= world.time)
+			self_improvements()
 
 /obj/structure/ameridian_crystal/proc/self_improvements()
+	last_improvement = world.time
 	light_range = growth //More growth = more light
 	if(!self_improvement)
 		return
 	if(growth >= 5)
 		self_improvement = FALSE
 		return
-	addtimer(CALLBACK(src, PROC_REF(self_improvements)), rand(fast_improvement,slow_improvement)) //This constantly gets recalled by self. Thus to give people time to combat the shards they will get some time
 	growth += 1
 	update_icon()
 
@@ -105,7 +117,9 @@
 	. = ..()
 
 /obj/structure/ameridian_crystal/Destroy()
+	STOP_PROCESSING(SSobj, src)
 	. = ..()
+
 
 /obj/structure/ameridian_crystal/update_icon()
 	set_light(growth, growth)
@@ -141,10 +155,11 @@
 	var/obj/item/stack/material/ameridian/T = new(get_turf(src))
 	T.amount = growth // Drop more crystal the further along we are
 	activate_mobs_in_range(src, 7, TRUE) // Wake up the nearby golems
-	qdel(src)
+	Destroy()
 
 
 /obj/structure/ameridian_crystal/proc/spread()
+	spread_time = world.time
 	if(!src) //Just in case
 		return
 	if(!is_growing)
@@ -167,9 +182,6 @@
 
 		if(crystal)
 			new crystal(T) // We spread
-
-
-	addtimer(CALLBACK(src, PROC_REF(spread)), rand(spread_speed_slow,spread_speed_high)) //This constantly gets recalled by self. Thus to give people time to combat the shards they will get some time
 
 /obj/structure/ameridian_crystal/proc/toggle_growing()
 	is_growing = !is_growing
