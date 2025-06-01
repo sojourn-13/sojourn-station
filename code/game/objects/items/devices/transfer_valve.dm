@@ -13,7 +13,7 @@
 
 	// #TODO-ISKHOD: Probably add the assembly holders to this, as referenced on line 42, which will properly solve the runtime
 	var/obj/item/device/assembly/left_assembly = null
-    var/obj/item/device/assembly/right_assembly = null
+	var/obj/item/device/assembly/right_assembly = null
 
 /obj/item/device/transfer_valve/proc/process_activation(var/obj/item/device/D)
 
