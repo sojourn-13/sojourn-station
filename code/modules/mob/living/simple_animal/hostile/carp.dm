@@ -153,6 +153,6 @@
 				return
 		if(H && H.has_shield()) //Having a shield to block the knockdown!
 			L.visible_message(SPAN_DANGER("\the [src] tried to knocks down \the [L]! But [L] blocks \the [src] attack!"))
-		if(prob(knockdown_odds - L.stats.getStat(STAT_TGH))) // Each point of toughness decreases knockdown chance by one
+		if(prob(knockdown_odds - L.stats?.getStat(STAT_TGH))) // Each point of toughness decreases knockdown chance by one
 			L?.Weaken(3)
 			L?.visible_message(SPAN_DANGER("\the [src] knocks down \the [L]!"))

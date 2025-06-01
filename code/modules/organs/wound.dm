@@ -161,7 +161,7 @@
 		amount -= healed_damage
 		src.damage -= healed_damage
 
-		while(src.wound_damage() < damage_list[current_stage] && current_stage < src.desc_list.len)
+		while(current_stage < src.desc_list.len && src.wound_damage() < damage_list[current_stage])
 			current_stage++
 		desc = desc_list[current_stage]
 		src.min_damage = damage_list[current_stage]

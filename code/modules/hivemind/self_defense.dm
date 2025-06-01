@@ -136,7 +136,8 @@
 		champion = new champion_path(spawn_loc)
 		champion.maxHealth += 150
 		champion.health += 150
-		champion.malfunction_chance = 0
+		if("malfunction_chance" in champion)
+			champion.malfunction_chance = 0
 		champion.name = "Champion "
 		if(i > champ_names.len)
 			champion.name = champion.name + " " + champ_names[champ_names.len]

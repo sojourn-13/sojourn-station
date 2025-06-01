@@ -42,7 +42,7 @@
 /mob/living/carbon/superior/spider/hunter/pepper/Life()
 	. = ..()
 
-	gas_sac.add_reagent("condensedcapsaicinspider", 1)
+	gas_sac?.add_reagent("condensedcapsaicinspider", 1)
 
 /mob/living/carbon/superior/spider/hunter/pepper/handle_attacking_stance(atom/targetted_mob, already_destroying_surroundings)
 	. = ..()

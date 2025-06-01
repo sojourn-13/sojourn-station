@@ -108,7 +108,7 @@
 			current_volume = new_volume
 			continue
 		current_volume = sanitized_volume
-		src.player.event_manager.push_event(src.player, token, tick, current_volume)
+		src.player.event_manager?.push_event(src.player, token, tick, current_volume)
 		if (current_volume <= 0)
 			break
 
@@ -174,7 +174,7 @@
 					cur_octaves[note_off] = octave
 					cur_accidentals[note_off] = accidental
 					play_synthesized_note(note_off, accidental, octave+transposition, duration, src.current_line, cur_note)
-					if (src.player.event_manager.is_overloaded())
+					if (src.player.event_manager?.is_overloaded())
 						STOP_PLAY_LINES
 			cur_note++
 			src.player.event_manager.suspended = 0

@@ -300,9 +300,9 @@ GLOBAL_LIST_INIT(TGUI_THEMES, list(
 			"key" = window_key,
 			"size" = window_size,
 			"fancy" = user.client?.get_preference_value(/datum/client_preference/tgui_fancy) == GLOB.PREF_YES,
-			"locked" = user.client.get_preference_value(/datum/client_preference/tgui_lock) == GLOB.PREF_YES,
+			"locked" = user.client?.get_preference_value(/datum/client_preference/tgui_lock) == GLOB.PREF_YES,
 			// for bad PCs
-			"toaster" = user.client.get_preference_value(/datum/client_preference/tgui_toaster) == GLOB.PREF_YES,
+			"toaster" = user.client?.get_preference_value(/datum/client_preference/tgui_toaster) == GLOB.PREF_YES,
 			"default_theme" = get_theme_by_pref(user.client.prefs.TGUI_theme)
 		),
 		"client" = list(

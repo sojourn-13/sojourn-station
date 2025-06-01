@@ -44,7 +44,7 @@
 	return interact(user)
 
 /obj/structure/lift/interact(var/mob/user)
-	if(!lift.is_functional())
+	if(!lift?.is_functional())
 		return 0
 	return 1
 // End base.

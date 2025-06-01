@@ -265,16 +265,19 @@
 /datum/reagent/proc/addiction_act_stage3(mob/living/carbon/human/M)
 	if(prob(30))
 		to_chat(M, SPAN_DANGER("You have an intense craving for [name]."))
-		M.sanity.changeLevel(-5)
+		if(istype(M, /mob/living/carbon/human) && M.sanity)
+			M.sanity.changeLevel(-5)
 
 /datum/reagent/proc/addiction_act_stage4(mob/living/carbon/human/M)
 	if(prob(30))
 		to_chat(M, SPAN_DANGER("You're not feeling good at all! You really need some [name]."))
-		M.sanity.changeLevel(-10)
+		if(istype(M, /mob/living/carbon/human) && M.sanity)
+			M.sanity.changeLevel(-10)
 
 /datum/reagent/proc/addiction_end(mob/living/carbon/human/M)
 	to_chat(M, SPAN_NOTICE("You feel like you've gotten over your need for [name]."))
-	M.sanity.changeLevel(15)
+	if(istype(M, /mob/living/carbon/human) && M.sanity)
+		M.sanity.changeLevel(15)
 
 // Withdrawal
 /datum/reagent/proc/withdrawal_start(mob/living/carbon/M)
@@ -285,7 +288,6 @@
 
 /datum/reagent/proc/withdrawal_end(mob/living/carbon/M)
 	return
-
 
 /datum/reagent/Destroy() // This should only be called by the holder, so it's already handled clearing its references
 	. = ..()
