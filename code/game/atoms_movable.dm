@@ -48,8 +48,9 @@
 	var/times_to_get_stat_modifiers = 1
 	var/get_prefix = TRUE
 
-	var/fancy_glide = FALSE
+	var/fancy_glide = FALSE //Max is 6
 	var/fancy_glide_colour
+	var/fancy_glide_custom_frames = FALSE
 
 /atom/movable/Initialize()
 	. = ..()
@@ -424,31 +425,39 @@
 				// Pretty much exactly the same for all the other cases here.
 				if (step(src, NORTH))
 					step(src, EAST)
+					dir = NORTHEAST
 				else
 					if (step(src, EAST))
 						step(src, NORTH)
+						dir = NORTHEAST
 			else
 				if (Dir & WEST)
 					if (step(src, NORTH))
 						step(src, WEST)
+						dir = NORTHWEST
 					else
 						if (step(src, WEST))
 							step(src, NORTH)
+							dir = NORTHWEST
 		else
 			if (Dir & SOUTH)
 				if (Dir & EAST)
 					if (step(src, SOUTH))
 						step(src, EAST)
+						dir = SOUTHEAST
 					else
 						if (step(src, EAST))
 							step(src, SOUTH)
+							dir = SOUTHEAST
 				else
 					if (Dir & WEST)
 						if (step(src, SOUTH))
 							step(src, WEST)
+							dir = SOUTHWEST
 						else
 							if (step(src, WEST))
 								step(src, SOUTH)
+								dir = SOUTHWEST
 	else
 		var/atom/oldloc = src.loc
 		var/olddir = dir //we can't override this without sacrificing the rest of movable/New()
@@ -474,42 +483,8 @@
 				onTransitZ(get_z(oldloc, get_z(loc)))
 				update_plane()
 
-			if(fancy_glide && move_speed > 0)
-				var/aplha_adder = 255 / min(fancy_glide, 6)
-				var/offsetter = 32 / min(fancy_glide, 6)
-				var/warps //Spefically needs to be one for maths reasons
-				for(warps = 1, warps < fancy_glide, warps++)
-					if(warps > 6)
-						continue //Dont do more then 6 as it gets laggy as well as blurry
-					var/obj/effect/temp_visual/dir_setting/S = new(get_turf(oldloc), warps)
-					S.icon = icon
-					S.icon_state = icon_state
-					S.color = fancy_glide_colour ? fancy_glide_colour : color
-					S.alpha = aplha_adder * warps
-					S.plane = BELOW_MOB_LAYER
-					S.dir = dir
-					//It came to me in a dream, not a 100% sure this can be improved
-					switch(last_move)
-						if(NORTH)
-							S.pixel_y = offsetter * warps
-						if(SOUTH)
-							S.pixel_y = -offsetter * warps
-						if(EAST)
-							S.pixel_x = offsetter * warps
-						if(WEST)
-							S.pixel_x = -offsetter * warps
-						if(NORTHEAST)
-							S.pixel_x = offsetter * warps
-							S.pixel_y = offsetter * warps
-						if(NORTHWEST)
-							S.pixel_x = offsetter * warps
-							S.pixel_y = -offsetter * warps
-						if(SOUTHEAST)
-							S.pixel_x = offsetter * warps
-							S.pixel_y = -offsetter * warps
-						if(SOUTHWEST)
-							S.pixel_x = -offsetter * warps
-							S.pixel_y = -offsetter * warps
+			if(fancy_glide && oldloc)
+				warpping_affect(oldloc)
 
 		SEND_SIGNAL(src, COMSIG_MOVABLE_MOVED, oldloc, loc)
 
@@ -551,3 +526,71 @@
 
 	for (var/prefix in name_prefixes)
 		name = "[prefix] [name]"
+
+//It came to me in a dream, not a 100% sure this can be improved
+/atom/movable/proc/warpping_affect(olden_loc)
+	if(fancy_glide && move_speed > 0 && olden_loc)
+		var/warps //Spefically needs to be one for maths reasons
+		for(warps = 0, warps < fancy_glide, warps++)
+			if(warps > 6)
+				break //Dont do more then 6 as it gets laggy as well as blurry
+			if(!QDELETED(src)) //If we are somehow moving well deleted dont do this
+				var/assumed_dir = dir
+				if(ishuman(src))
+					var/mob/living/carbon/human/H = src
+					assumed_dir = H.momentum_dir ?  H.momentum_dir : dir
+				if(IS_CARDINAL(assumed_dir))
+					addtimer(CALLBACK(src, PROC_REF(spawn_warpping_affect), olden_loc, warps), (50 MILLISECONDS * warps))
+				else
+					//We are slowed down by moving diagnally, this timer matches that
+					addtimer(CALLBACK(src, PROC_REF(spawn_warpping_affect), olden_loc, warps), (125 MILLISECONDS * warps))
+
+/atom/movable/proc/spawn_warpping_affect(olden_loc, warps)
+	if(!olden_loc)
+		return
+	var/aplha_adder = 255 / min(fancy_glide, 6)
+	var/offsetter = 32 / min(fancy_glide, 6)
+	var/obj/effect/temp_visual/shorter/S = new(get_turf(olden_loc))
+	var/directional = dir
+	S.appearance = appearance
+	//S.icon_state = icon_state
+	if(fancy_glide_custom_frames)
+		//I.e roach_2 roach_3, note that we never start at 0, 1->6 i.e 6 frames
+		S.icon_state = "[icon_state]_[warps]"
+	S.color = fancy_glide_colour ? fancy_glide_colour : color
+	S.alpha = aplha_adder * warps
+	S.set_plane(-2) //Dont hide us!
+	S.dir = directional
+	QDEL_IN(S, 2 + warps)
+
+	//Dont let us click these
+	S.name = null
+	S.desc = null
+	S.mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+
+	if(ishuman(src))
+		var/mob/living/carbon/human/H = src
+		S.dir = H.momentum_dir ?  H.momentum_dir : directional
+
+	switch(directional)
+		if(NORTH)
+			S.pixel_y = 6 + offsetter * warps
+		if(SOUTH)
+			S.pixel_y = -6 + -offsetter * warps
+		if(EAST)
+			S.pixel_x = 6 + offsetter * warps
+		if(WEST)
+			S.pixel_x = -6 + -offsetter * warps
+		if(NORTHEAST)
+			S.pixel_x = 6 + offsetter * warps
+			S.pixel_y = 6 + offsetter * warps
+		if(NORTHWEST)
+			S.pixel_x = -6 + -offsetter * warps
+			S.pixel_y = 6 + offsetter * warps
+		if(SOUTHEAST)
+			S.pixel_x = 6 + offsetter * warps
+			S.pixel_y = -6 + -offsetter * warps
+		if(SOUTHWEST)
+			S.pixel_x = -6 + -offsetter * warps
+			S.pixel_y = -6 + -offsetter * warps
+

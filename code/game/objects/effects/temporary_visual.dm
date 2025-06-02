@@ -7,20 +7,20 @@
 	unacidable = 1
 	var/duration = 10 //in deciseconds
 	var/randomdir = TRUE
+	var/autoset = TRUE
 
 /obj/effect/temp_visual/shorter
 	duration = 5 //in deciseconds
-
-/obj/effect/temp_visual/shorter/Initialize(mapload, duration_adder)
-	duration += duration_adder
-	. = ..()
+	randomdir = FALSE
+	autoset = FALSE
 
 /obj/effect/temp_visual/Initialize()
 	. = ..()
 	if(randomdir)
 		dir = (pick(cardinal))
 
-	QDEL_IN(src, duration)
+	if(autoset)
+		QDEL_IN(src, duration)
 
 /obj/effect/temp_visual/Destroy()
 	. = ..()
