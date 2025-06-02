@@ -449,6 +449,7 @@
 
 		M.add_chemical_effect(CE_HEARTHEAL, 2)
 		M.add_chemical_effect(CE_LUNGHEAL, 2)
+		M.add_chemical_effect(CE_LIVERHEAL, 2)
 		M.add_chemical_effect(CE_EYEHEAL, 2)
 		M.add_chemical_effect(CE_DEBRIDEMENT, 2)
 		M.add_chemical_effect(CE_BONE_MEND, 2)
