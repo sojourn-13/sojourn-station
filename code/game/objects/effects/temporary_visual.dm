@@ -8,6 +8,13 @@
 	var/duration = 10 //in deciseconds
 	var/randomdir = TRUE
 
+/obj/effect/temp_visual/shorter
+	duration = 5 //in deciseconds
+
+/obj/effect/temp_visual/shorter/Initialize(mapload, duration_adder)
+	duration += duration_adder
+	. = ..()
+
 /obj/effect/temp_visual/Initialize()
 	. = ..()
 	if(randomdir)

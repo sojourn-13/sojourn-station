@@ -48,6 +48,9 @@
 	var/times_to_get_stat_modifiers = 1
 	var/get_prefix = TRUE
 
+	var/fancy_glide = FALSE
+	var/fancy_glide_colour
+
 /atom/movable/Initialize()
 	. = ..()
 	init_stat_modifiers()
@@ -465,10 +468,48 @@
 
 		// Only update plane if we're located on map
 		if(isturf(loc))
+
 			// if we wasn't on map OR our Z coord was changed
 			if( !isturf(oldloc) || (get_z(loc) != get_z(oldloc)) )
 				onTransitZ(get_z(oldloc, get_z(loc)))
 				update_plane()
+
+			if(fancy_glide && move_speed > 0)
+				var/aplha_adder = 255 / min(fancy_glide, 6)
+				var/offsetter = 32 / min(fancy_glide, 6)
+				var/warps //Spefically needs to be one for maths reasons
+				for(warps = 1, warps < fancy_glide, warps++)
+					if(warps > 6)
+						continue //Dont do more then 6 as it gets laggy as well as blurry
+					var/obj/effect/temp_visual/dir_setting/S = new(get_turf(oldloc), warps)
+					S.icon = icon
+					S.icon_state = icon_state
+					S.color = fancy_glide_colour ? fancy_glide_colour : color
+					S.alpha = aplha_adder * warps
+					S.plane = BELOW_MOB_LAYER
+					S.dir = dir
+					//It came to me in a dream, not a 100% sure this can be improved
+					switch(last_move)
+						if(NORTH)
+							S.pixel_y = offsetter * warps
+						if(SOUTH)
+							S.pixel_y = -offsetter * warps
+						if(EAST)
+							S.pixel_x = offsetter * warps
+						if(WEST)
+							S.pixel_x = -offsetter * warps
+						if(NORTHEAST)
+							S.pixel_x = offsetter * warps
+							S.pixel_y = offsetter * warps
+						if(NORTHWEST)
+							S.pixel_x = offsetter * warps
+							S.pixel_y = -offsetter * warps
+						if(SOUTHEAST)
+							S.pixel_x = offsetter * warps
+							S.pixel_y = -offsetter * warps
+						if(SOUTHWEST)
+							S.pixel_x = -offsetter * warps
+							S.pixel_y = -offsetter * warps
 
 		SEND_SIGNAL(src, COMSIG_MOVABLE_MOVED, oldloc, loc)
 
