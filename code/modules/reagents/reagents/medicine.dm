@@ -266,14 +266,9 @@
 			to_chat(M, "You feel a distinctive ache as something begins to eat away at you from the inside out!")
 		return
 	M.add_chemical_effect(CE_ANTITOX, 3 * (dose * 0.1)) //every 10u is 3 antitox, starts out slow but rapidly grows
-	if(ishuman(M))
-		var/mob/living/carbon/human/H = M
-		var/obj/item/organ/internal/liver/L = H.random_organ_by_process(OP_LIVER)
-		if(istype(L))
-			if(BP_IS_ROBOTIC(L))
-				return
-			if(L.damage > 0)
-				L.damage = max(L.damage - 2 * removed, 0)
+
+	M.add_chemical_effect(CE_LIVERHEAL, 0.5 + (dose * 0.1))  //We need a few units before we heal are liver to stop folks doing micro dosing/insta removal
+
 	holder.remove_reagent("pararein", 0.8 * effect_multiplier)
 	holder.remove_reagent("carpotoxin", 0.4 * effect_multiplier) // Gonna be good for fish recipes // Copypasting even my commentary? tsk tsk - Seb
 	holder.remove_reagent("toxin", 0.4 * effect_multiplier)
@@ -295,14 +290,7 @@
 	nerve_system_accumulations = -30
 
 /datum/reagent/medicine/cordradaxon/affect_blood(var/mob/living/carbon/M, var/alien, var/removed = REM)
-	if(ishuman(M))
-		var/mob/living/carbon/human/H = M
-		var/obj/item/organ/internal/vital/heart/C = H.random_organ_by_process(OP_HEART)
-		if(H && istype(H))
-			if(BP_IS_ROBOTIC(C))
-				return
-			if(C.damage > 0)
-				C.damage = max(C.damage - 5 * removed, 0)
+	M.add_chemical_effect(CE_HEARTHEAL, 0.5 + (dose * 0.1))  //We need a few units before we heal are liver to stop folks doing micro dosing/insta removal
 
 /datum/reagent/medicine/dexalin
 	name = "Dexalin"
@@ -341,15 +329,8 @@
 	var/ce_to_add = 2 - M.chem_effects[CE_OXYGENATED]
 	if(ce_to_add > 0)
 		M.add_chemical_effect(CE_OXYGENATED, ce_to_add)
-	if(ishuman(M))
-		var/mob/living/carbon/human/H = M
-		//G for GUNS
-		var/obj/item/organ/internal/muscle/G = H.random_organ_by_process(OP_MUSCLE)
-		if(H && istype(H))
-			if(BP_IS_ROBOTIC(G))
-				return
-			if(G.damage > 0)
-				G.damage = max(G.damage - 5 * removed, 0)
+
+	M.add_chemical_effect(CE_MUSCLEHEAL, ce_to_add)
 
 /datum/reagent/medicine/quintalin
 	name = "Quintalin"
@@ -381,14 +362,7 @@
 	nerve_system_accumulations = -30
 
 /datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/alien, var/removed = REM)
-	if(ishuman(M))
-		var/mob/living/carbon/human/H = M
-		var/obj/item/organ/internal/vital/lungs/L = H.random_organ_by_process(OP_LUNGS)
-		if(H && istype(H))
-			if(BP_IS_ROBOTIC(L))
-				return
-			if(L.damage > 0)
-				L.damage = max(L.damage - 5 * removed, 0)
+	M.add_chemical_effect(CE_LUNGHEAL, 0.5 + (dose * 0.1))  //We need a few units before we heal are liver to stop folks doing micro dosing/insta removal
 
 /datum/reagent/medicine/tricordrazine
 	name = "Tricordrazine"
@@ -472,11 +446,15 @@
 		M.add_chemical_effect(CE_PULSE, -2)
 		M.adjustOxyLoss(-(1 + (M.getOxyLoss() * 0.05)) * effect_multiplier)
 		M.heal_organ_damage(effect_multiplier, effect_multiplier, 5 * effect_multiplier, 5 * effect_multiplier)
-		if(ishuman(M)) // Half of Peridaxon's effect for corpses.
-			var/mob/living/carbon/human/H = M
-			for(var/obj/item/organ/I in H.internal_organs)
-				if((I.damage > 0) && !BP_IS_ROBOTIC(I) && !istype(I, /obj/item/organ/internal/bone)) // No healing bones, nor robotic organs.
-					I.heal_damage(((0.2 + I.damage * 0.05) * effect_multiplier), FALSE)
+
+		M.add_chemical_effect(CE_HEARTHEAL, 2)
+		M.add_chemical_effect(CE_LUNGHEAL, 2)
+		M.add_chemical_effect(CE_EYEHEAL, 2)
+		M.add_chemical_effect(CE_DEBRIDEMENT, 2)
+		M.add_chemical_effect(CE_BONE_MEND, 2)
+		M.add_chemical_effect(CE_MUSCLEHEAL, 2)
+		M.add_chemical_effect(CE_NERVESHEAL, 2)
+		M.add_chemical_effect(CE_BLOODVESSELSHEAL, 2)
 
 /datum/reagent/medicine/nanitefluid
 	name = "Nanobot Fluid"
@@ -495,9 +473,8 @@
 			var/mob/living/carbon/human/H = M
 			for(var/obj/item/organ/external/robotic/E in H.organs)
 				E.heal_damage(15 * effect_multiplier, 15 * effect_multiplier, TRUE)
-			for(var/obj/item/organ/I in H.internal_organs)
-				if((I.damage > 0) && BP_IS_ROBOTIC(I))
-					I.heal_damage(((0.3 + I.damage * 0.1) * effect_multiplier), TRUE)
+		M.add_chemical_effect(CE_MECH_REPAIR, 5)
+
 
 /* Cloning Reagent - From Eris
 We don't use this but we might find use for it. Porting it since it was updated in Erismed 4 */
@@ -738,12 +715,8 @@ We don't use this but we might find use for it. Porting it since it was updated 
 	nerve_system_accumulations = -15
 
 /datum/reagent/medicine/alkysine/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	if(ishuman(M))
-		var/mob/living/carbon/human/H = M
-		var/obj/item/organ/internal/vital/brain/B = H.internal_organs_by_efficiency[BP_BRAIN]
-		if(!BP_IS_ROBOTIC(B) && prob(75))
-			M.add_chemical_effect(CE_PAINKILLER, 10)
-			M.add_chemical_effect(CE_BRAINHEAL, 1)
+	M.add_chemical_effect(CE_PAINKILLER, 10)
+	M.add_chemical_effect(CE_BRAINHEAL, 1)
 
 /datum/reagent/medicine/imidazoline
 	name = "Imidazoline"
@@ -759,13 +732,7 @@ We don't use this but we might find use for it. Porting it since it was updated 
 /datum/reagent/medicine/imidazoline/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.eye_blurry = max(M.eye_blurry - (5 * effect_multiplier), 0)
 	M.eye_blind = max(M.eye_blind - (5 * effect_multiplier), 0)
-	if(ishuman(M))
-		var/mob/living/carbon/human/H = M
-		var/obj/item/organ/internal/E = H.random_organ_by_process(OP_EYES)
-		if(E && istype(E))
-			var/list/current_wounds = E.GetComponents(/datum/component/internal_wound)
-			if(LAZYLEN(current_wounds) && prob(75))
-				M.add_chemical_effect(CE_EYEHEAL, 1)
+	M.add_chemical_effect(CE_EYEHEAL, 1)
 
 /datum/reagent/medicine/imidazoline/overdose(mob/living/carbon/M, alien)
 	. = ..()
@@ -787,15 +754,9 @@ We don't use this but we might find use for it. Porting it since it was updated 
 	nerve_system_accumulations = 30
 
 /datum/reagent/medicine/peridaxon/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	if(ishuman(M))
-		var/mob/living/carbon/human/H = M
-		var/list/organs_sans_brain_and_bones = H.internal_organs - H.internal_organs_by_efficiency[BP_BRAIN] - H.internal_organs_by_efficiency[OP_BONE] // Peridaxon shouldn't heal brain or bones
-		for(var/obj/item/organ/I in organs_sans_brain_and_bones)
-			var/list/current_wounds = I.GetComponents(/datum/component/internal_wound)
-			if(LAZYLEN(current_wounds) && !BP_IS_ROBOTIC(I) && prob(75)) //Peridaxon heals only non-robotic organs
-				M.add_chemical_effect(CE_ONCOCIDAL, 1)
-				M.add_chemical_effect(CE_BLOODCLOT, 1)
-				M.add_chemical_effect(CE_ANTITOX, 2)
+	M.add_chemical_effect(CE_ONCOCIDAL, 1)
+	M.add_chemical_effect(CE_BLOODCLOT, 1)
+	M.add_chemical_effect(CE_ANTITOX, 2)
 
 /datum/reagent/medicine/peridaxon/overdose(mob/living/carbon/M, alien)
 	. = ..()
@@ -814,14 +775,8 @@ We don't use this but we might find use for it. Porting it since it was updated 
 	overdose = 10
 
 /datum/reagent/medicine/trypsin/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	if(ishuman(M))
-		var/mob/living/carbon/human/H = M
-		var/list/organs_sans_brain_and_bones = H.internal_organs - H.internal_organs_by_efficiency[BP_BRAIN] - H.internal_organs_by_efficiency[OP_BONE] // Peridaxon shouldn't heal brain or bones
-		for(var/obj/item/organ/I in organs_sans_brain_and_bones)
-			var/list/current_wounds = I.GetComponents(/datum/component/internal_wound)
-			if(LAZYLEN(current_wounds) && !BP_IS_ROBOTIC(I) && prob(75)) //heals only non-robotic organs
-				M.add_chemical_effect(CE_DEBRIDEMENT, dose*0.2) //5 units will provide enough CE_DEBRIDEMENT to actually
-				M.apply_damage(dose*0.5, HALLOSS)
+	M.add_chemical_effect(CE_DEBRIDEMENT, dose*0.2) //5 units will provide enough CE_DEBRIDEMENT to actually
+	M.apply_damage(dose*0.5, HALLOSS)
 
 
 /datum/reagent/medicine/trypsin/overdose(mob/living/carbon/M, alien)

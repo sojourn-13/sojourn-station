@@ -84,7 +84,7 @@
 	var/contained = reagents.log_list()
 	var/trans = reagents.trans_to_mob(M, amount_per_transfer_from_this, CHEM_BLOOD)
 	admin_inject_log(user, M, src, contained, trans)
-	to_chat(user, SPAN_NOTICE("[trans] units injected. [reagents.total_volume] units remaining in \the [src]."))	
+	to_chat(user, SPAN_NOTICE("[trans] units injected. [reagents.total_volume] units remaining in \the [src]."))
 	return
 
 /obj/item/reagent_containers/hypospray/verb/empty()
@@ -298,11 +298,10 @@
 	baseline_sprite = "supeyrette"
 	injtime = 5 //150% longer inject time for 100% more storage.A worthy trade off for this tool
 
-
 /obj/item/reagent_containers/hypospray/autoinjector/large/chemmaters
 	icon_state = "supeyrette" //still missing the icons from doll.
 	item_state = "supeyrette"
-	baseline_sprite = "syrette"
+	baseline_sprite = "supeyrette"
 	preloaded_reagents = list()
 
 /obj/item/reagent_containers/hypospray/autoinjector/large/meralyn
