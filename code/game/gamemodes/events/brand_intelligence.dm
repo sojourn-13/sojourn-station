@@ -8,7 +8,7 @@
 	name = "brand intelligence"
 
 	event_type =/datum/event/brand_intelligence
-	event_pools = list(EVENT_LEVEL_MUNDANE = POOL_THRESHOLD_MUNDANE)
+//	event_pools = list(EVENT_LEVEL_MUNDANE = POOL_THRESHOLD_MUNDANE)
 	tags = list(TAG_COMMUNAL, TAG_DESTRUCTIVE)
 
 //////////////////////////////////////////////////////////
