@@ -231,12 +231,12 @@
 		new /obj/item/ammo_magazine/speed_loader_kurz_50(src)
 		new /obj/item/clothing/accessory/holster/armpit(src)
 
-/obj/item/storage/box/m_kit/centurio
-	name = "\"Centurio\" Plasma Pistol Kit"
-	desc = "A kit containing a versatile plasma pistol with an additional ion firemode."
+/obj/item/storage/box/m_kit/galaxy
+	name = "\"Galaxy\" Advanced Energy Pistol Kit"
+	desc = "A kit containing a versatile plasma pistol with two additonal firemodes."
 
 	populate_contents()
-		new /obj/item/gun/energy/centurio(src)
+		new /obj/item/gun/energy/glock(src)
 		new /obj/item/cell/medium/high(src)
 		new /obj/item/cell/medium/high(src)
 		new /obj/item/clothing/accessory/holster/armpit(src)
