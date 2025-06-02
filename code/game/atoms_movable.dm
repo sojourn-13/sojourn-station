@@ -530,16 +530,17 @@
 //It came to me in a dream, not a 100% sure this can be improved
 /atom/movable/proc/warpping_affect(olden_loc)
 	if(fancy_glide && move_speed > 0 && olden_loc)
-		var/warps //Spefically needs to be one for maths reasons
+		var/warps //Spefically needs to be zero or more for maths reasons
 		for(warps = 0, warps < fancy_glide, warps++)
 			if(warps > 6)
 				break //Dont do more then 6 as it gets laggy as well as blurry
 			if(!QDELETED(src)) //If we are somehow moving well deleted dont do this
 				var/assumed_dir = dir
+				//Humans can forcefully set face regardless of direction, this ensures that we do the affect in the correct diretion
 				if(ishuman(src))
 					var/mob/living/carbon/human/H = src
 					assumed_dir = H.momentum_dir ?  H.momentum_dir : dir
-				if(IS_CARDINAL(assumed_dir))
+				if(IS_CARDINAL(assumed_dir)) //If we are carnial we need to run faster to keep up
 					addtimer(CALLBACK(src, PROC_REF(spawn_warpping_affect), olden_loc, warps), (50 MILLISECONDS * warps))
 				else
 					//We are slowed down by moving diagnally, this timer matches that
@@ -548,19 +549,27 @@
 /atom/movable/proc/spawn_warpping_affect(olden_loc, warps)
 	if(!olden_loc)
 		return
+	//This lets us turn a low aplha icon into a fuller brightness evenly
 	var/aplha_adder = 255 / min(fancy_glide, 6)
+	//This slowly moves us pixel by pixel for a smooth transition, evenly
 	var/offsetter = 32 / min(fancy_glide, 6)
+	//Snowflake temp_visual for are wierdly required timers and lack of spinning
 	var/obj/effect/temp_visual/shorter/S = new(get_turf(olden_loc))
 	var/directional = dir
+	//The magic, this makes it so are image are 1:1 and even reflect it properly if changing icons a lot
 	S.appearance = appearance
-	//S.icon_state = icon_state
+	//Untested, if issues then cry. - Trilby
 	if(fancy_glide_custom_frames)
 		//I.e roach_2 roach_3, note that we never start at 0, 1->6 i.e 6 frames
+		S.appearance = null //So we can override the icon_state and icon
 		S.icon_state = "[icon_state]_[warps]"
+		S.icon = icon
+	//If we set a new colour, use that otherwise use current objects
 	S.color = fancy_glide_colour ? fancy_glide_colour : color
 	S.alpha = aplha_adder * warps
 	S.set_plane(-2) //Dont hide us!
-	S.dir = directional
+	S.dir = directional //Helps with keeping us the correct way
+	//Stagger out the removal of the shadows for a cleaner look
 	QDEL_IN(S, 2 + warps)
 
 	//Dont let us click these
@@ -568,6 +577,7 @@
 	S.desc = null
 	S.mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 
+	//Humans can forcefully set face regardless of direction, this ensures that we do the affect in the correct diretion
 	if(ishuman(src))
 		var/mob/living/carbon/human/H = src
 		S.dir = H.momentum_dir ?  H.momentum_dir : directional
