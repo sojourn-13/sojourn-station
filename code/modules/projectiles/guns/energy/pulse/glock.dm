@@ -1,10 +1,10 @@
 /obj/item/gun/energy/glock
-	name = "SI-HG \"Galaxy\" Advanced Energy Gun"
+	name = "SI-NM \"Galaxy\" Advanced Energy Gun"
 	desc = "The \"Galaxy\" plasma pistol is an odd sight, to say the least.. \
 	Its externals appear to be based into a modified \"Sky\" pistol frame with elements from the various Soteria energy weapons being crammed into its exterior. \
-	If you can get past its crude appearance, it appears to be a well made firearm; sporting an improved grip compared to the pistol it was based off \
-	and flexibility in firemodes; sporting laser and plasma settings, a stun-bolt setting, and an emergency ion setting! \
-	On the bottom of the grip appears to have a covered access port, the letters \"SI-HG\" letters pressed ontop the cover."
+	A collaboration between Marshals and Soteria, it appears to be a well made firearm; sporting an improved grip compared to the pistol it was based off \
+	and flexibility in firemodes; sporting laser and plasma settings, as well as a less-than-lethal stun bolt setting! \
+	On the bottom of the grip appears to have a covered access port, the letters \"SI-NM\" letters pressed ontop the cover."
 	icon = 'icons/obj/guns/energy/plasglock.dmi'
 	icon_state = "plaslock"
 	item_state = "plaslock"
@@ -30,7 +30,7 @@
 		list(mode_name="stun shot", mode_desc="A strong bolt of electricty, capable of taking down targets with only minor long-lasting damage.", projectile_type=/obj/item/projectile/energy/electrode/stunshot, fire_sound='sound/weapons/energy/Taser.ogg', charge_cost=100, fire_delay=20, icon="stun", projectile_color = "#dfdc39"),
 		list(mode_name="plasma bolt", mode_desc="Hard hitting plasma bolts to reduce armor.", projectile_type=/obj/item/projectile/plasma/heavy, fire_sound='sound/weapons/energy/pulse.ogg', charge_cost=120, fire_delay=25, icon="vaporize", projectile_color = "#00AAFF"),
 	)
-	serial_type = "SI-HG"
+	serial_type = "SI-NM"
 
 	wield_delay = 0.3 SECOND
 	wield_delay_factor = 0.2 // 20 vig
