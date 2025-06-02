@@ -18446,7 +18446,6 @@
 /turf/simulated/shuttle/wall/mining,
 /area/shuttle/rocinante_shuttle_area)
 "dBM" = (
-/obj/structure/window/reinforced,
 /obj/structure/closet/crate/trashcart,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/pros/prep)
@@ -33691,8 +33690,8 @@
 /turf/simulated/floor/tiled/steel/danger,
 /area/nadezhda/engineering/shield_generator)
 "gtM" = (
-/obj/effect/window_lwall_spawn/reinforced,
 /obj/machinery/door/firedoor,
+/obj/effect/window_lwall_spawn/plasma/reinforced,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/command/tcommsat/computer)
 "gtO" = (
@@ -39930,6 +39929,7 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
+/obj/random/oddity_guns,
 /turf/simulated/floor/industrial/navy_slates,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "hEe" = (
@@ -70580,13 +70580,13 @@
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/engineering/atmos/surface)
 "nwv" = (
-/obj/effect/window_lwall_spawn/reinforced,
 /obj/structure/cable/cyan{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/door/firedoor,
+/obj/effect/window_lwall_spawn/plasma/reinforced,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/command/tcommsat/computer)
 "nwx" = (
@@ -89310,9 +89310,6 @@
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/command/teleporter)
 "qWf" = (
-/obj/structure/window/reinforced{
-	dir = 1
-	},
 /obj/structure/table/rack/shelf,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/pros/prep)
@@ -102690,15 +102687,6 @@
 /obj/effect/floor_decal/industrial/road/curve2,
 /turf/simulated/floor/rock/manmade/road,
 /area/nadezhda/outside/inside_colony)
-"tzB" = (
-/obj/structure/table/marble,
-/obj/machinery/door/blast/shutters/glass{
-	id = "bar1";
-	name = "glass shutter"
-	},
-/obj/machinery/vending/drink_showcase,
-/turf/simulated/floor/wood/wild3,
-/area/nadezhda/crew_quarters/bar)
 "tzE" = (
 /obj/random/mob/termite_no_despawn,
 /obj/effect/overlay/water,
@@ -112374,9 +112362,6 @@
 /turf/simulated/floor/industrial/bricks,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "vmC" = (
-/obj/machinery/atmospherics/unary/vent_scrubber{
-	dir = 1
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/random/furniture/pottedplant,
 /turf/simulated/floor/tiled/white/cargo,
@@ -112877,7 +112862,7 @@
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/command/fo)
 "vrA" = (
-/obj/effect/window_lwall_spawn/reinforced,
+/obj/effect/window_lwall_spawn/plasma/reinforced,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/command/tcommsat/computer)
 "vrC" = (
@@ -113086,11 +113071,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/quartermaster/hangarsupply)
-"vtG" = (
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple/soteria_roomba/medical,
-/turf/simulated/floor/tiled/techmaint,
-/area/nadezhda/maintenance/undergroundfloor1north)
 "vtH" = (
 /obj/structure/fireaxecabinet{
 	pixel_x = -30
@@ -117669,6 +117649,7 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
+/obj/machinery/vending/drink_showcase,
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/crew_quarters/bar)
 "wlt" = (
@@ -123711,8 +123692,8 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/black{
 	dir = 4
 	},
-/obj/effect/window_lwall_spawn/reinforced,
 /obj/machinery/door/firedoor,
+/obj/effect/window_lwall_spawn/plasma/reinforced,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/command/tcommsat/computer)
 "xtO" = (
@@ -151411,7 +151392,7 @@ arU
 arU
 arU
 uyF
-vtG
+giu
 oCZ
 giu
 uyF
@@ -191034,7 +191015,7 @@ orF
 bCN
 bCN
 cPd
-tzB
+flb
 flb
 flb
 flb
