@@ -101,13 +101,7 @@
 /datum/reagent/sight_dram/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	M.eye_blurry = max(M.eye_blurry - (5 * effect_multiplier), 0)
 	M.eye_blind = max(M.eye_blind - (5 * effect_multiplier), 0)
-	if(ishuman(M))
-		var/mob/living/carbon/human/H = M
-		var/obj/item/organ/internal/eyes/E = H.random_organ_by_process(OP_EYES)
-		if(E && istype(E))
-			if(E.damage > 0)
-				E.damage = max(E.damage - (5), 0)
-
+	M.add_chemical_effect(CE_EYEHEAL, 8)
 
 /datum/reagent/lively_concoxion
 	name = "Ichor of Health"
