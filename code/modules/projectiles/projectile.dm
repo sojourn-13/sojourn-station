@@ -130,6 +130,7 @@
 	var/ignition_source = TRUE //Used for deciding if a projectile should blow up a benzin.
 	var/predetermed = null //Used for NPCs to sudo rng, uses define zones directly
 
+	var/steel_rain = 0
 
 /obj/item/projectile/New()
 
