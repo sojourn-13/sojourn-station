@@ -149,10 +149,13 @@ Has ability of every roach.
 /mob/living/carbon/superior/roach/kaiser/proc/speed_cycle()
 	if(health_marker_1 >= health)
 		move_to_delay = 4
+		fancy_glide = 2
 	if(health_marker_2 >= health)
 		move_to_delay = 3.5
+		fancy_glide = 4
 	if(health_marker_3 >= health)
 		move_to_delay = 2.5
+		fancy_glide = 6
 
 /mob/living/carbon/superior/roach/kaiser/slip(slipped_on)
 	return FALSE
