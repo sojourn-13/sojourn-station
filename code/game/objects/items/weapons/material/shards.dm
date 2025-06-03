@@ -197,3 +197,9 @@
 
 /obj/item/material/shard/ameridian/New(loc)
 	..(loc, MATERIAL_AMERIDIAN)
+
+/obj/item/material/shard/wood
+	name = "splinters"
+
+/obj/item/material/shard/wood/New(loc)
+	..(loc, MATERIAL_WOOD)
