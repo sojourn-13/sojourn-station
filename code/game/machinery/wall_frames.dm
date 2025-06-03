@@ -111,6 +111,7 @@
 	icon = 'icons/obj/lighting.dmi'
 	icon_state = "tube-construct-item"
 	build_machine_type = /obj/machinery/light_construct
+	build_floormachine_type = /obj/machinery/light_construct/floor
 	reverse = 1
 
 /obj/item/frame/light/small
