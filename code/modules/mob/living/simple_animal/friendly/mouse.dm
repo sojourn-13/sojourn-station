@@ -29,9 +29,9 @@
 	density = 0
 	layer = MOB_LAYER
 	mob_size = MOB_MINISCULE
-	min_oxy = 16 //Require atleast 16kPA oxygen
-	minbodytemp = 223		//Below -50 Degrees Celcius
-	maxbodytemp = 323	//Above 50 Degrees Celcius
+	min_oxy = 16					// Require atleast 16kPA oxygen
+	minbodytemp = 223				// Below -50 Degrees Celcius
+	maxbodytemp = 323				// Above 50 Degrees Celcius
 	universal_speak = FALSE
 	universal_understand = TRUE
 	holder_type = /obj/item/holder/mouse
@@ -42,28 +42,22 @@
 	speed = 1
 	can_pull_size = ITEM_SIZE_TINY
 	can_pull_mobs = MOB_PULL_NONE
-
 	meat_type = /obj/item/reagent_containers/snacks/meat
 	meat_amount = 1
-
 	can_burrow = TRUE
-
-	//kitchen_tag = "rodent" //This is part of cooking overhaul, not yet ported
+	//kitchen_tag = "rodent"		// #TODO-CLASSIC - This is part of cooking overhaul, not yet ported
 
 	var/decompose_time = 30 MINUTES
-
-	var/body_color //brown, gray and white, leave blank for random
-
+	var/body_color					// Brown, gray and white, leave blank for random
 	var/soft_squeaks = list('sound/effects/creatures/mouse_squeaks_1.ogg',
 	'sound/effects/creatures/mouse_squeaks_2.ogg',
 	'sound/effects/creatures/mouse_squeaks_3.ogg',
 	'sound/effects/creatures/mouse_squeaks_4.ogg')
-	var/last_softsqueak = null//Used to prevent the same soft squeak twice in a row
-	var/squeals = 5//Spam control.
-	var/maxSqueals = 5//SPAM PROTECTION
-	var/last_squealgain = 0// #TODO-FUTURE: Remove from life() once something else is created
+	var/last_softsqueak = null		// Prevents the same soft squeak twice in a row
+	var/squeals = 5					// Spam prevention
+	var/maxSqueals = 5				// Spam prevention
+	var/last_squealgain = 0			// #TODO-CLASSIC - Remove from life() once something else is created
 	var/squeakcooldown = 0
-
 
 /mob/living/simple/mouse/New()
 	..()
@@ -75,8 +69,7 @@
 		if(client)
 			walk_to(src,0)
 
-			//Player-animals don't do random speech normally, so this is here
-			//Player-controlled mice will still squeak, but less often than NPC mice
+			// Allows player-controlled mice to do random squeaks (less often than NPC mice)
 			if (stat == CONSCIOUS && prob(speak_chance*0.05))
 				squeak_soft(0)
 
@@ -86,8 +79,7 @@
 					squeals++
 					last_squealgain = world.time
 
-
-//Pixel offsetting as they scamper around
+//Pixel offsetting while moving
 /mob/living/simple/mouse/Move(NewLoc, Dir = 0, step_x = 0, step_y = 0, var/glide_size_override = 0)
 	if((. = ..()))
 		if (prob(50))
@@ -128,7 +120,6 @@
 	if (body_color == "irish")
 		holder_type = /obj/item/holder/mouse/irish
 
-
 /mob/living/simple/mouse/speak_audio()
 	squeak_soft(0)
 
@@ -137,7 +128,7 @@
 	visible_emote("squeaks timidly, sniffs the air and gazes longingly up at \the [thing.name].",0)
 
 /mob/living/simple/mouse/attack_hand(mob/living/carbon/human/M as mob)
-	if (src.stat == DEAD)//If the mouse is dead, we don't pet it, we just pickup the corpse on click
+	if (src.stat == DEAD)			// If the mouse is dead, we don't pet it, we just pickup the corpse on click
 		get_scooped(M, usr)
 		return
 	else
@@ -149,19 +140,16 @@
 	src.icon_dead = "mouse_[body_color]_splat"
 	src.icon_state = "mouse_[body_color]_splat"
 
-//Plays a sound.
-//This is triggered when a mob steps on an NPC mouse, or manually by a playermouse
+// Plays a sound when a mob steps on a mouse
 /mob/living/simple/mouse/proc/squeak(var/manual = 1)
 	if (stat == CONSCIOUS)
 		playsound(src, 'sound/effects/mousesqueek.ogg', 70, 1)
 		if (manual)
 			log_say("[key_name(src)] squeaks! ")
 
-
-//Plays a random selection of four sounds, at a low volume
-//This is triggered randomly periodically by any mouse, or manually
+// Periodically plays one of four sounds randomly, at a low volume
 /mob/living/simple/mouse/proc/squeak_soft(var/manual = 1)
-	if (stat != DEAD) //Soft squeaks are allowed while sleeping
+	if (stat != DEAD)				// Soft squeaks are allowed while sleeping
 		var/list/new_squeaks = last_softsqueak ? soft_squeaks - last_softsqueak : soft_squeaks
 		var/sound = pick(new_squeaks)
 
@@ -171,9 +159,7 @@
 		if (manual)
 			log_say("[key_name(src)] squeaks softly! ")
 
-
-//Plays a loud sound
-//Triggered manually, when a mouse dies, or rarely when its stepped on
+// Plays a loud sound manually, upon death or sometimes when stepped on
 /mob/living/simple/mouse/proc/squeak_loud(var/manual = 0)
 	if (stat == CONSCIOUS)
 
@@ -184,11 +170,11 @@
 		else
 			to_chat(src, "<span class='warning'>Your hoarse mousey throat can't squeal just now, stop and take a breath!</span>")
 
-
-//Wrapper verbs for the squeak functions
+// Ability - Squeal!
 /mob/living/simple/mouse/verb/squeak_loud_verb()
 	set name = "Squeal!"
 	set category = "Abilities"
+	set desc = "Squeal loudly."
 
 	if (usr.client.prefs.muted & MUTE_IC)
 		to_chat(usr, "<span class='danger'>You are muted from IC emotes.</span>")
@@ -196,9 +182,11 @@
 
 	squeak_loud(1)
 
+// Ability - Soft Squeak
 /mob/living/simple/mouse/verb/squeak_soft_verb()
-	set name = "Soft Squeaking"
+	set name = "Soft Squeak"
 	set category = "Abilities"
+	set desc = "Squeak softly."
 
 	if (usr.client.prefs.muted & MUTE_IC)
 		to_chat(usr, "<span class='danger'>You are muted from IC emotes.</span>")
@@ -206,9 +194,11 @@
 
 	squeak_soft(1)
 
+// Ability - Squeak
 /mob/living/simple/mouse/verb/squeak_verb()
 	set name = "Squeak"
 	set category = "Abilities"
+	set desc = "Squeak."
 
 	if (usr.client.prefs.muted & MUTE_IC)
 		to_chat(usr, "<span class='danger'>You are muted from IC emotes.</span>")
@@ -216,28 +206,28 @@
 
 	squeak(1)
 
-
+// When stepped on
 /mob/living/simple/mouse/Crossed(AM as mob|obj)
 	if( ishuman(AM) )
 		if(!stat)
 			var/mob/M = AM
 			to_chat(M, "<span class='notice'>\icon[src] Squeek!</span>")
-			poke(1) //Wake up if stepped on
+			poke(1)					// Wake up if stepped on
 			if (prob(95))
 				squeak(0)
 			else
-				squeak_loud(0)//You trod on its tail
+				squeak_loud(0)		// You trod on its tail (Squeals)
 
 	if(!health)
 		return
 
-
 	..()
 
+// Upon death
 /mob/living/simple/mouse/death()
 	layer = MOB_LAYER
 	if(ckey || prob(35))
-		squeak_loud(0)//deathgasp
+		squeak_loud(0)				// Squeals loudly upon death
 
 	addtimer(CALLBACK(src, PROC_REF(dust)), decompose_time)
 
@@ -246,21 +236,17 @@
 /mob/living/simple/mouse/dust()
 	..(anim = "dust_[body_color]", remains = /obj/item/remains/mouse, iconfile = icon)
 
-//Mice can bite mobs, deals 1 damage, and stuns the mouse for a second
+// Bite Attack - Deals 1 damage and stuns the mouse for a second (#TODO-ISKHOD - Find a better way to do this)
 /mob/living/simple/mouse/AltClickOn(A)
-	if (!can_click()) //This has to be here because anything but normal leftclicks doesn't use a click cooldown. It would be easy to fix, but there may be unintended consequences
+	if (!can_click()) 								// Here because only normal leftclicks use a click cooldown. Easy to fix, but there may be unintended consequences
 		return
-	melee_damage_upper = melee_damage_lower //We set the damage to 1 so we can hurt things
+	melee_damage_upper = melee_damage_lower			// Sets the damage to 1
 	attack_sound = pick(list('sound/effects/creatures/nibble1.ogg', 'sound/effects/creatures/nibble2.ogg'))
 	UnarmedAttack(A, Adjacent(A))
-	melee_damage_upper = 0 //Set it back to zero so we're not biting with every normal click
-	setClickCooldown(DEFAULT_ATTACK_COOLDOWN*2) //Unarmed attack already applies a cooldown, but it's not long enough
+	melee_damage_upper = 0							// Set it back to zero so we're not biting with every normal click
+	setClickCooldown(DEFAULT_ATTACK_COOLDOWN*2)		// Doubles the default attack cooldown
 
-
-/*
- * Mouse types
- */
-
+// Mouse Types
 /mob/living/simple/mouse/white
 	body_color = "white"
 	icon_state = "mouse_white"
@@ -290,19 +276,6 @@
 	icon_state = "mouse_irish"
 	icon_rest = "mouse_irish_sleep"
 	holder_type = /obj/item/holder/mouse/irish
-
-/mob/living/simple/mouse/brown/Tom
-	name = "Tom"
-	real_name = "Tom"
-	desc = "Jerry the cat is not amused."
-	colony_friend = TRUE
-	friendly_to_colony = TRUE
-
-/mob/living/simple/mouse/brown/Tom/Initialize()
-	. = ..()
-	// Change my name back, don't want to be named Tom (666)
-	name = initial(name)
-	real_name = name
 
 /mob/living/simple/mouse/cannot_use_vents()
 	return
