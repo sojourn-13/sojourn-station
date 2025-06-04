@@ -31,7 +31,8 @@
 
 /mob/living/carbon/superior/psi/daskvey_follower
 	name = "Daskveyian Swordsman"
-	desc = "A basic footsoldier of the Hand of Daskvey. Donning the mask of the warrior, the lowest rank of souls receive their sword and begin training for the safey of their brothers and sisters."
+	desc = "A basic footsoldier of the Hand of Daskvey. Donning the mask of the warrior, \
+	the lowest rank of souls receive their sword and begin training for the safey of their brothers and sisters."
 	icon_state = "psisolder_hm_sword"
 	icon_living = "psisolder_hm_sword"
 	icon = 'icons/mob/mobs-daskvey.dmi'
@@ -185,7 +186,8 @@ They are soully made and reflavoured to be for PVE.
 
 /mob/living/carbon/superior/psi/daskvey_follower/cleaver
 	name = "Daskveyian Wall Breaker"
-	desc = "A basic footsoldier of the Hand of Daskvey. Donning the mask of the warrior, the agressive souls of former criminals find themselves too enraged to naught but strike their enemies down with furious rage. Flesh or steel, the axe will smash its way through."
+	desc = "A basic footsoldier of the Hand of Daskvey. Donning the mask of the warrior, \
+	the agressive souls of former criminals find themselves too enraged to naught but strike their enemies down with furious rage. Flesh or steel, the axe will smash its way through."
 	icon_state = "psisolder_hm_axe"
 	icon_living = "psisolder_hm_axe"
 	maxHealth = 250 * DVEY_HEALTH_MOD
@@ -215,7 +217,8 @@ They are soully made and reflavoured to be for PVE.
 
 /mob/living/carbon/superior/psi/daskvey_follower/plasma
 	name = "Daskveyian Plasma Caster"
-	desc = "Trained warrior of the Hand of Daskvey. Carrying a laser gun enhanced by the wielder's mind, they inflict deadly pain on any that obstruct the freedom of their cult's members. For freedom is never free."
+	desc = "Trained warrior of the Hand of Daskvey. Carrying a laser gun enhanced by the wielder's mind, \
+	they inflict deadly pain on any that obstruct the freedom of their cult's members. For freedom is never free."
 	icon_state = "psisolder_hm_plasma"
 	icon_living = "psisolder_hm_plasma"
 	maxHealth = 250 * DVEY_HEALTH_MOD
@@ -333,7 +336,8 @@ They are soully made and reflavoured to be for PVE.
 
 /mob/living/carbon/superior/psi/daskvey_follower/rifle
 	name = "Daskveyian Rifleperson"
-	desc = "A basic rifleperson of the Hand of Daskvey. Shadowed behind the mask of the warrior, they find peace with weapon in hand, for no duty is more important to freedom than to take up arms for it."
+	desc = "A basic rifleperson of the Hand of Daskvey. Shadowed behind the mask of the warrior, they find peace with weapon in hand, \
+	for no duty is more important to freedom than to take up arms for it."
 
 	icon_state = "psisolder_hm_rifle"
 	icon_living = "psisolder_hm_rifle"
@@ -380,7 +384,8 @@ They are soully made and reflavoured to be for PVE.
 
 /mob/living/carbon/superior/psi/daskvey_follower/shield
 	name = "Daskveyian Juggernaut "
-	desc = "A soul of strength and integrity, recovered from the ravages laid upon it. Outfitted in heavy armor, it protects those in its shadow with unbending steel, for they are the wall that holds back any that seek to harm their kin."
+	desc = "A soul of strength and integrity, recovered from the ravages laid upon it. \
+	Outfitted in heavy armor, it protects those in its shadow with unbending steel, for they are the wall that holds back any that seek to harm their kin."
 	icon_state = "psi_juggernaut_glass_Shield"
 	icon_living = "psi_juggernaut_glass_Shield"
 	maxHealth = 300 * DVEY_HEALTH_MOD
@@ -412,7 +417,8 @@ They are soully made and reflavoured to be for PVE.
 
 /mob/living/carbon/superior/psi/daskvey_follower/shield/deepmaints_bound
 	name = "Wild Daskveyian Juggernaut "
-	desc = "Once a soul of strength and integrity, recovered from the ravages laid upon it. Still fitted in heavy armor, it protected those in its shadow with unbending steel, for they were once the wall that held back any that seek to harm their kin. \
+	desc = "Once a soul of strength and integrity, recovered from the ravages laid upon it. Still fitted in heavy armor, \
+	it protected those in its shadow with unbending steel, for they were once the wall that held back any that seek to harm their kin. \
 	Turned mad from the Kings influence and being rebound to the Deep Maintenance acts on impluse attacking anyone not directly apart of the Daskvey."
 	color = null
 	psionic_respawn = TRUE //Endles fighter
@@ -421,7 +427,8 @@ They are soully made and reflavoured to be for PVE.
 
 /mob/living/carbon/superior/psi/daskvey_follower/halberd
 	name = "Daskveyian Halberdier"
-	desc = "A soul of strength and integrity, recovered from the ravages laid upon it. Outfitted in heavy armor, it protects those in its shadow with unwavering confidence, for they know what failure means."
+	desc = "A soul of strength and integrity, recovered from the ravages laid upon it. Outfitted in heavy armor, \
+	it protects those in its shadow with unwavering confidence, for they know what failure means."
 	icon_state = "psi_juggernaut_glass_halberd"
 	icon_living = "psi_juggernaut_glass_halberd"
 	maxHealth = 280 * DVEY_HEALTH_MOD
@@ -440,7 +447,8 @@ They are soully made and reflavoured to be for PVE.
 
 /mob/living/carbon/superior/psi/daskvey_follower/halberd/deepmaints_bound
 	name = "Wild Daskveyian Halberdier"
-	desc = "Once a soul of strength and integrity, recovered from the ravages laid upon it. Still fitted in heavy armor, it used to protects those in its shadow with unwavering confidence, for they found what failure means. \
+	desc = "Once a soul of strength and integrity, recovered from the ravages laid upon it. Still fitted in heavy armor, \
+	it used to protects those in its shadow with unwavering confidence, for they found what failure means. \
 	Turned mad from the Kings influence and being rebound to the Deep Maintenance acts on impluse attacking anyone not directly apart of the Daskvey."
 	color = null
 	psionic_respawn = TRUE //Endles fighter
@@ -477,7 +485,8 @@ They are soully made and reflavoured to be for PVE.
 
 /mob/living/carbon/superior/psi/daskvey_follower/orb_shooter
 	name = "Daskveyian Cultist "
-	desc = "A soul reformed by the Hand of Daskvey, they spend their time occupied with daily routine, trying to fend off the insanity of their own predicament, while better learning their new powers."
+	desc = "A soul reformed by the Hand of Daskvey, they spend their time occupied with daily routine, \
+	trying to fend off the insanity of their own predicament, while better learning their new powers."
 	icon_state = "psion_v"
 	icon_living = "psion_v"
 	maxHealth = 150 * DVEY_HEALTH_MOD
@@ -517,7 +526,8 @@ They are soully made and reflavoured to be for PVE.
 
 /mob/living/carbon/superior/psi/daskvey_follower/orb_shooter/deepmaints_bound
 	name = "Wild Daskveyian Cultist "
-	desc = "Once a soul reformed by the Hand of Daskvey, they spend their time occupied with daily routine, trying to fend off the insanity of their own predicament, while better learning their new powers. \
+	desc = "Once a soul reformed by the Hand of Daskvey, \
+	they spend their time occupied with daily routine, trying to fend off the insanity of their own predicament, while better learning their new powers. \
 	Turned mad from the Kings influence and being rebound to the Deep Maintenance acts on impluse attacking anyone not directly apart of the Daskvey."
 	color = null
 	psionic_respawn = TRUE //Endles fighter
@@ -526,7 +536,8 @@ They are soully made and reflavoured to be for PVE.
 
 /mob/living/carbon/superior/psi/daskvey_follower/orb_master
 	name = "Daskveyian Hand"
-	desc = "A master of the mind, reformed and guided true by the Hand of Daskvey. The members of the Hands form the parties of preach leaders, and assistants to the acolytes. Their knowledge of psionics is of a scholarly level."
+	desc = "A master of the mind, reformed and guided true by the Hand of Daskvey. The members of the Hands form the parties of preach leaders, and assistants to the acolytes. \
+	Their knowledge of psionics is of a scholarly level."
 	icon_state = "psion_v_master"
 	icon_living = "psion_v_master"
 	maxHealth = 150 * DVEY_HEALTH_MOD

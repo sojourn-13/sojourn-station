@@ -9,6 +9,7 @@
 	var/wax = 2000
 	var/endless_burn = FALSE
 	var/lit_sanity_damage = -0.5
+	var/candle_light_level = CANDLE_LUM
 
 /obj/item/flame/candle/New()
 	wax = rand(800, 1000) // Enough for 27-33 minutes. 30 minutes on average.
@@ -59,7 +60,7 @@
 		//src.damtype = "fire"
 		for(var/mob/O in viewers(usr, null))
 			O.show_message(flavor_text, 1)
-		set_light(CANDLE_LUM)
+		set_light(candle_light_level)
 		START_PROCESSING(SSobj, src)
 		sanity_damage = lit_sanity_damage
 
