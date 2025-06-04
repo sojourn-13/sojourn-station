@@ -252,16 +252,6 @@
 		agony = 0
 	)
 
-	var/add_armor = list(
-		melee = 0,
-		bullet = 0,
-		energy = 0,
-		bomb = 0,
-		bio = 0,
-		rad = 0,
-		agony = 0
-	)
-
 	var/ranged = FALSE  //Do we have a range based attack?
 	var/rapid = FALSE   //Do we shoot in groups?
 	var/rapid_fire_shooting_amount = 1 // Has to be one so stat modifiers can work.
