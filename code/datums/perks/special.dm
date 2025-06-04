@@ -93,3 +93,27 @@
 		holder.stats.add_Stat_cap(stat, -30)
 	..()
 
+/datum/perk/ally_armor_adder
+	name = "Rally Cry"
+	desc = "Call to arms, Call to protect and Call to victory, increases armor and damage done by same faction creatures."
+	gain_text = "One must simply be the one to make the call."
+	lose_text = "The voice grows meeker against the odds or struggles."
+	icon_state = "calling"
+	active = FALSE
+	passivePerk = FALSE
+
+/datum/perk/ally_armor_adder/activate()
+	var/mob/living/user = usr
+	if(!istype(user))
+		return ..()
+	if(world.time < cooldown_time)
+		to_chat(usr, SPAN_NOTICE("You cannot muster the willpower to have a heroic moment just yet."))
+		return FALSE
+	cooldown_time = world.time + 15 MINUTES
+	log_and_message_admins("used their [src] perk.")
+	for(var/mob/living/L in view(user))
+		if(L != user && L.stat == CONSCIOUS && L.faction == user.faction)
+			to_chat(L, SPAN_NOTICE("You feel inspired by the heroic leader [user]!"))
+			L.stats.addPerk(PERK_ARMOR_UP)
+	user.stats.addPerk(PERK_ARMOR_UP)
+	return ..()
