@@ -98,30 +98,37 @@
 /datum/computer_file/data/news_article/kros_news_ii
 	filename = "Trouble in Sector N-2"
 	server_file_path = 'news_articles/kros_news_ii.html'
+	archived = 1
 
 /datum/computer_file/data/news_article/fire_in_jungle
 	filename = "Fire In The Jungle"
 	server_file_path = 'news_articles/FIRE_IN_THE_JUNGLE.html'
+	archived = 1
 
 /datum/computer_file/data/news_article/Mangos_Untitled_Stream
 	filename = "Mango's Untitled Stream #473"
 	server_file_path = 'news_articles/Mangos_Untitled_Stream.html'
+	archived = 1
 
 /datum/computer_file/data/news_article/The_month_in_recap
 	filename = "The month in recap!"
 	server_file_path = 'news_articles/The_month_in_recap.html'
+	archived = 1
 
 /datum/computer_file/data/news_article/Full_stop
 	filename = "Full stop"
 	server_file_path = 'news_articles/Full_stop.html'
+	archived = 1
 
 /datum/computer_file/data/news_article/An_odd_twist_of_fate
 	filename = "An odd twist of fate"
 	server_file_path = 'news_articles/An_odd_twist_of_fate.html'
+	archived = 1
 
 /datum/computer_file/data/news_article/Emily_chu
 	filename = "Emily Chu's Report"
 	server_file_path = 'news_articles/Emily_chu.html'
+	archived = 1
 
 /datum/computer_file/data/news_article/wanted_issue_terran
 	filename = "WANTED ISSUE - JACK TERRAN."
@@ -130,10 +137,15 @@
 /datum/computer_file/data/news_article/Kar_Thil_Kor
 	filename = "Marqua \"Kar Thil Kor\" Trade Ship."
 	server_file_path = 'news_articles/Kar_Thil_Kor.html'
+	archived = 1
 
 /datum/computer_file/data/news_article/zoo_revamp_news_cluster
 	filename = "Zoo Incursion Chronicals."
 	server_file_path = 'news_articles/zoo_revamp_news_cluster.html'
+
+/datum/computer_file/data/news_article/frosts_annoucement
+	filename = "Sgt Frost Major Chances and Annoucement."
+	server_file_path = 'news_articles/Frost_Annoucement.html'
 
 
 

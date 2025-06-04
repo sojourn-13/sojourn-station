@@ -29,8 +29,8 @@
 	..()
 
 /datum/perk/cooldown/exertion/assign(mob/living/carbon/human/H)
-	if(..())
-		holder.stats.changeStat(STAT_TGH, -5)
+	..()
+	holder?.stats.changeStat(STAT_TGH, -5)
 
 /datum/perk/cooldown/exertion/remove()
 	if(holder)
@@ -44,8 +44,8 @@
 	icon_state = "reason" //https://game-icons.net/1x1/lorc/brainstorm.html
 
 /datum/perk/cooldown/reason/assign(mob/living/carbon/human/H)
-	if(..())
-		holder.stats.changeStat(STAT_COG, -5)
+	..()
+	holder?.stats.changeStat(STAT_COG, -5)
 
 /datum/perk/cooldown/reason/remove()
 	if(holder)
@@ -60,7 +60,6 @@
 	gain_text = "You feel tired. Your mind needs some time to recover from all this exspression."
 	lose_text = "You feel a bit more rested from the burnout."
 
-
 /datum/perk/cooldown/artist_no/on_process()
 	if(ishuman(holder))
 		var/mob/living/carbon/human/H = holder
@@ -72,4 +71,108 @@
 			perk_lifetime -= 1 SECONDS
 		else if(H.ingested.has_reagent("tea"))
 			perk_lifetime -= 0.5 SECONDS
+	..()
+
+/datum/perk/cooldown/armor_reduction
+	name = "Armor Reduction"
+	desc = "Something has pointed out the weaknesses in your stance and armor."
+	icon_state = "shield_no"
+	perk_lifetime = 30 SECONDS //recover this quickly its accually deblitating
+	gain_text = "Everything that attacks you knows exactly where to hit."
+	lose_text = "Everything attacking you no longer know exactly where to attack."
+
+/datum/perk/cooldown/armor_up
+	name = "Armor Addition"
+	desc = "Something or someone has increased the protective rating on your baseline resistances to weapons and firearms making you able to take a beating much easier."
+	icon_state = "shield_plus"
+	perk_lifetime = 8 MINUTES //Gives enuff time for folks to make a last stand
+	gain_text = "Everything that hits you seems to have issues inflicting damages."
+	lose_text = "Damages are able to stack up more easily again, whatever was aiding you is no longer active."
+
+/datum/perk/cooldown/armor_up/assign(mob/living/L)
+	..()
+	if(!holder)
+		return
+
+	var/image/I = image(icon ='icons/mob/battle_overlays.dmi', icon_state = "scan_person_alt")
+
+	holder.add_overlay(I)
+
+	addtimer(CALLBACK(holder, TYPE_PROC_REF(/atom, cut_overlay), I), 30)
+
+	if(ishuman(holder))
+		var/mob/living/carbon/human/H = L
+		H.punch_damage_increase += 5
+		H.mob_ablative_armor += 30
+		//If we added 30 and still have negitive armor, just set it to 0
+		if(H.mob_ablative_armor <= 0)
+			H.mob_ablative_armor = 0
+
+	if(isanimal(holder))
+		var/mob/living/simple/A = L
+		A.melee_damage_lower += 5
+		A.melee_damage_upper += 5
+
+		//Increase bullet/laser and melee armor only
+		for(var/key in A.armor)
+			if(key == "melee")
+				A.armor[key] += 5
+			if(key == "bullet")
+				A.armor[key] += 3
+			if(key == "energy")
+				A.armor[key] += 3
+
+
+	if(issuperioranimal(holder))
+		var/mob/living/carbon/superior/S = L
+		S.melee_damage_lower += 5
+		S.melee_damage_upper += 5
+
+		//Increase bullet and melee armor only
+		for(var/key in S.armor)
+			if(key == "melee")
+				S.armor[key] += 5
+			if(key == "bullet")
+				S.armor[key] += 3
+			if(key == "energy")
+				S.armor[key] += 3
+
+/datum/perk/cooldown/armor_up/remove()
+	if(ishuman(holder))
+		var/mob/living/carbon/human/H = holder
+		H.punch_damage_increase -= 5
+		H.mob_ablative_armor -= 30
+		if(H.mob_ablative_armor <= 0)
+			H.mob_ablative_armor = 0
+
+
+	if(isanimal(holder))
+		var/mob/living/simple/A = holder
+		A.melee_damage_lower -= 5
+		A.melee_damage_upper -= 5
+
+		//Increase bullet/laser and melee armor only
+		for(var/key in A.armor)
+			if(key == "melee")
+				A.armor[key] -= 5
+			if(key == "bullet")
+				A.armor[key] -= 3
+			if(key == "energy")
+				A.armor[key] -= 3
+
+
+	if(issuperioranimal(holder))
+		var/mob/living/carbon/superior/S = holder
+		S.melee_damage_lower -= 5
+		S.melee_damage_upper -= 5
+
+		//Increase bullet and melee armor only
+		for(var/key in S.armor)
+			if(key == "melee")
+				S.armor[key] -= 5
+			if(key == "bullet")
+				S.armor[key] -= 3
+			if(key == "energy")
+				S.armor[key] -= 3
+
 	..()
