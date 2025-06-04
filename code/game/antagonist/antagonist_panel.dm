@@ -46,7 +46,7 @@
 		dat += "<br><a href='?src=\ref[src];obj_announce=1'>\[announce objectives\]</a>"
 	dat += "<br><a href='?src=\ref[src];obj_add=1'>\[add\]</a>"
 	dat += "</td></tr>"
-	return dat
+	return HTML_SKELETON(dat)
 
 /datum/antagonist/proc/antagonist_panel()
 	usr << browse(get_panel_entry(),"window=\ref[src]antag")

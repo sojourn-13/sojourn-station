@@ -76,7 +76,7 @@
 	dat += "<hr>"
 	dat += "<a href='?src=\ref[src];refresh=1'>Refresh</a> <a href='?src=\ref[src];close=1'>Close</a>"
 
-	user << browse(dat, "window=anodevice;size=400x500")
+	user << browse(HTML_SKELETON(dat), "window=anodevice;size=400x500")
 	onclose(user, "anodevice")
 
 /obj/item/anodevice/Process()

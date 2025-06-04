@@ -53,7 +53,7 @@
 				else
 					output += "&nbsp;&nbsp;&nbsp;&nbsp;[device]<br>"
 
-	usr << browse(output,"window=radioreport")
+	usr << browse(HTML_SKELETON(output),"window=radioreport")
 
 
 ADMIN_VERB_ADD(/client/proc/reload_admins, R_SERVER, FALSE)

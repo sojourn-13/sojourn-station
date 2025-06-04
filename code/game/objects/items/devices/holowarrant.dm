@@ -59,7 +59,6 @@
 	if(active)
 		if(active.fields["arrestsearch"] == "arrest")
 			output = {"
-			<HTML><HEAD><TITLE>[active.fields["namewarrant"]]</TITLE></HEAD>
 			<BODY bgcolor='#ffffff'>Issued under the jurisdiction of the [boss_name]</br>
 			</br>
 			<b>ARREST WARRANT</b></center></br>
@@ -69,7 +68,6 @@
 			<b>Jurisdiction:</b> _<u>[station_name]</u>____</br>
 			</br>_<u>[active.fields["auth"]]</u>____</br>
 			<small>Person authorizing arrest</small></br>
-			</BODY></HTML>
 			"}
 
 			header = "Arrest warrant for [active.fields["namewarrant"]]"
@@ -77,7 +75,6 @@
 
 		if(active.fields["arrestsearch"] ==  "search")
 			output= {"
-			<HTML><HEAD><TITLE>[active.fields["namewarrant"]]</TITLE></HEAD>
 			<BODY bgcolor='#ffffff'>Issued under the jurisdiction of the [boss_name]</br>
 			</br>
 			<b>SEARCH WARRANT</b></center></br>
@@ -99,7 +96,6 @@
 			In the event of the Suspect/Departamental staff attempting to resist/impede this search or flee, they may be taken into custody immediately and charged with appropriate crimes. </br>
 			</br>
 			All confiscated items must be filed and taken to Evidence.</small></i></center></br>
-			</BODY></HTML>
 			"}
 
 			header = "Search warrant for [active.fields["namewarrant"]]"
@@ -136,7 +132,7 @@
 /obj/item/device/holowarrant/proc/show_content(mob/user, forceshow)
 	if(!active)
 		return
-	show_browser(user, output, holoheader)
+	show_browser(user, HTML_SKELETON_TITLE("[active.fields["namewarrant"]]",output), holoheader)
 
 /obj/item/device/holowarrant/verb/print_warrant()
 	set src in usr.contents
