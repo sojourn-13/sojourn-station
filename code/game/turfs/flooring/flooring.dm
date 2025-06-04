@@ -254,20 +254,15 @@ var/list/flooring_types
 				T.contents += CT
 	if (istype(I, /obj/item/stack/cement_bag))
 		var/obj/item/stack/cement_bag/CB = I
-		if(CB.inuse)
-			to_chat(user, SPAN_NOTICE("You cant pour the [src] that fast!"))
-			return
 		if(!T.wet)
 			to_chat(user, SPAN_NOTICE("The floor needs to be wet before pouring the [src]!"))
 			return
-		CB.inuse = TRUE
 		to_chat(user, SPAN_NOTICE("You start pouring and smoothing the [src]..."))
-		if(do_after(user,60))
+		if(do_after(user,20))
 			new /obj/effect/flooring_type_spawner/concrete(T)
 			CB.use(1)
 		else
 			to_chat(user, SPAN_NOTICE("You must stand still to finish the job!"))
-			CB.inuse = FALSE
 
 
 /decl/flooring/reinforced/plating/under/get_plating_type(var/turf/location)
@@ -978,10 +973,15 @@ var/list/flooring_types
 	icon_base = "dirt_ploughed"
 
 /decl/flooring/dirt/flood
+	desc = "Mud and clay. It's viscous and hard to move through."
 	icon_base = "flood_dirt"
+	tally_addition_decl = 1
 
+//Mini enforcements
 /decl/flooring/dirt/flood/plough
+	desc = "Mud and clay. It's viscous and hard to move through. This area has rows of ploughed dirt as well mixing and making it even harder"
 	icon_base = "flood_dirt_ploughed"
+	tally_addition_decl = 2
 
 /decl/flooring/dirt/dust
 	icon_base = "dust"
@@ -1090,20 +1090,15 @@ var/list/flooring_types
 	if(can_repair)
 		if(istype(I, /obj/item/stack/cement_bag))
 			var/obj/item/stack/cement_bag/CB = I
-			if(CB.inuse)
-				to_chat(user, SPAN_NOTICE("You cant pour the [src] that fast!"))
-				return
 			if(!T.wet)
 				to_chat(user, SPAN_NOTICE("The floor needs to be wet before pouring the [src]!"))
 				return
-			CB.inuse = TRUE
 			to_chat(user, SPAN_NOTICE("You start pouring and smoothing the [src]..."))
-			if(do_after(user,60))
+			if(do_after(user,20))
 				new repair_into(T)
 				CB.use(1)
 			else
 				to_chat(user, SPAN_NOTICE("You must stand still to finish the job!"))
-				CB.inuse = FALSE
 
 //concrete
 
