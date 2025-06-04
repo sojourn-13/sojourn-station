@@ -903,10 +903,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 /obj/item/gun/proc/toggle_scope(mob/living/user, switchzoom = FALSE)
 	//looking through a scope limits your periphereal vision
 	//still, increase the view size by a tiny amount so that sniping isn't too restricted to NSEW
-	if(!zoom_factors || zoom_factors.len > 0)
-		zoom = FALSE
-		return
-	if(active_zoom_factor > 0 || active_zoom_factor > zoom_factors.len)
+	if(!zoom_factors)
 		zoom = FALSE
 		return
 	var/tozoom = zoom_factors[active_zoom_factor]
