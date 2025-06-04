@@ -16,7 +16,7 @@
 	related_stats = list(STAT_MEC, STAT_COG)
 
 /datum/craft_recipe/machinery/wall
-	flags = CRAFT_ON_FLOOR
+	flags = null
 
 /datum/craft_recipe/machinery/wall/air_alarm
 	name = "air alarm frame"
