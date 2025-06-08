@@ -539,6 +539,7 @@ obj/item/storage/pouch/large_generic/advmedic/populate_contents()
 		/obj/item/gun/projectile/rivet,
 		/obj/item/gun/projectile/silvereye,
 		/obj/item/gun/projectile/spring,
+		/obj/item/gun/projectile/stamp,
 		/obj/item/gun/projectile/boltgun/sawn,
 		/obj/item/gun/projectile/shotgun/pump/obrez,
 		/obj/item/gun/projectile/automatic/texan,
