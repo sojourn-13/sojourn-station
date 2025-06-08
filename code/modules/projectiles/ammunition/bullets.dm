@@ -173,6 +173,9 @@
 /obj/item/ammo_casing/light_rifle_257/prespawned
 	amount = 10
 
+/obj/item/ammo_casing/light_rifle_257/spent
+	projectile_type = null
+
 /obj/item/ammo_casing/light_rifle_257/practice
 	desc = "A 6.5mm practice bullet casing."
 	icon_state = "srifle_c_p"
