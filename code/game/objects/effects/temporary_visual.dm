@@ -6,14 +6,21 @@
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	unacidable = 1
 	var/duration = 10 //in deciseconds
-	var/randomdir = TRUE
+	var/randomdir = TRUE //If true makes the dir random, picks cardinals
+	var/autoset = TRUE //If true uses duration var above
+
+/obj/effect/temp_visual/shorter
+	duration = 5 //in deciseconds
+	randomdir = FALSE
+	autoset = FALSE
 
 /obj/effect/temp_visual/Initialize()
 	. = ..()
 	if(randomdir)
 		dir = (pick(cardinal))
 
-	QDEL_IN(src, duration)
+	if(autoset)
+		QDEL_IN(src, duration)
 
 /obj/effect/temp_visual/Destroy()
 	. = ..()
