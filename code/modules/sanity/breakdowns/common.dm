@@ -206,6 +206,158 @@
 	if(msg == message)
 		finished = TRUE
 
+datum/breakdown/common/noinsight
+	name = "Stagnation"
+	duration = 10 MINUTES
+	restore_sanity_post = 150
+
+	start_messages = list(
+		"You feel stuck in a rut",
+		"You glumb unable to get inspration for craft or self improvement"
+	)
+
+	var/insight_passive_gain_multiplier = 0
+
+/datum/breakdown/common/noinsight/update()
+	. = ..()
+	if(!.)
+		return FALSE
+	if(insight_passive_gain_multiplier)
+		return FALSE
+	if(ishuman(holder.owner))
+		var/mob/living/carbon/human/H = holder.owner
+		H.sanity.insight_passive_gain_multiplier -= 1
+
+/datum/breakdown/common/noinsight/conclude()
+	if(ishuman(holder.owner))
+		var/mob/living/carbon/human/H = holder.owner
+		H.sanity.insight_passive_gain_multiplier += 1
+	..()
+
+//Church based common powers
+
+//names are based on classification/implied lore.
+
+//Spends some power to heal some sanity
+/datum/breakdown/common/church
+	name = "Auto Recovery Prayer"
+	duration = 0
+	restore_sanity_post = 0
+	var/ran_once = FALSE
+	var/power_use = 2
+	var/sanity_heal = 120
+
+	start_messages = list(
+		"Your chest feels warm.",
+		"Your crusiform automatically activates a unknown prayer."
+	)
+
+/datum/breakdown/common/church/can_occur()
+	if(ishuman(holder.owner))
+		var/mob/living/carbon/human/H = holder.owner
+		var/obj/item/implant/core_implant/I = H.get_core_implant(/obj/item/implant/core_implant/cruciform)
+		if(I && I.active && I.wearer)
+			return TRUE
+	return FALSE
+
+/datum/breakdown/common/church/conclude()
+	if(ishuman(holder.owner))
+		var/mob/living/carbon/human/H = holder.owner
+		var/obj/item/implant/core_implant/I = H.get_core_implant(/obj/item/implant/core_implant/cruciform)
+		if(I && I.active && I.wearer)
+			if(power_use && I.power > power_use)
+				I.power -= power_use
+				restore_sanity_post = sanity_heal
+	..()
+
+/datum/breakdown/common/church/injector
+	name = "Auto Injection Prayer"
+	duration = 0
+	restore_sanity_post = 0
+	ran_once = FALSE
+	power_use = 10
+	sanity_heal = 25
+
+	start_messages = list(
+		"Your chest feels warm.",
+		"Your crusiform automatically activates a unknown prayer."
+	)
+
+/datum/breakdown/common/church/injector/conclude()
+	if(ishuman(holder.owner))
+		var/mob/living/carbon/human/H = holder.owner
+		var/obj/item/implant/core_implant/I = H.get_core_implant(/obj/item/implant/core_implant/cruciform)
+		if(I && I.active && I.wearer)
+			if(power_use && I.power > power_use)
+				I.power -= power_use
+				restore_sanity_post = sanity_heal
+				holder.owner.reagents.add_reagent("holydexalinp", 2)
+				holder.owner.reagents.add_reagent("holytricord", 2)
+				holder.owner.reagents.add_reagent("holycilin", 3)
+				holder.owner.reagents.add_reagent("holyquickclot", 1)
+
+	..()
+
+/datum/breakdown/common/church/random_player
+	name = "Auto Prayer"
+	duration = 0
+	restore_sanity_post = 0
+	ran_once = FALSE
+	power_use = 1
+	sanity_heal = 25
+
+	start_messages = list(
+		"Your chest feels warm.",
+		"Your crusiform automatically activates a prayer?"
+	)
+
+/datum/breakdown/common/church/random_player/conclude()
+	if(ishuman(holder.owner))
+		var/mob/living/carbon/human/H = holder.owner
+		var/obj/item/implant/core_implant/I = H.get_core_implant(/obj/item/implant/core_implant/cruciform)
+		if(I && I.active && I.wearer)
+			if(power_use && I.power > power_use)
+				I.power -= power_use
+				restore_sanity_post = sanity_heal
+				var/datum/ritual/cruciform/base/prayer =  pick(\
+				/datum/ritual/cruciform/base/flare, \
+				/datum/ritual/cruciform/base/reveal, \
+				/datum/ritual/cruciform/base/relief, \
+				/datum/ritual/cruciform/base/soul_hunger)
+				prayer.perform(H, I)
+	..()
+
+//Psionic based breakdowns
+//Just heal 25 sanity, thats it
+/datum/breakdown/common/psionic
+	name = "Psionic Recovery"
+	duration = 0
+	restore_sanity_post = 25
+
+	var/use_power = FALSE
+
+	start_messages = list(
+		"Your head pluses with a headack then clears up.",
+		"Your mind goes blank for a second."
+	)
+
+/datum/breakdown/common/psionic/conclude()
+	if(ishuman(holder.owner))
+		var/mob/living/carbon/human/T = holder.owner
+		var/obj/item/organ/internal/psionic_tumor/PT = T.random_organ_by_process(BP_PSION)
+		if(PT)
+			if(use_power && PT.psi_points > use_power)
+				PT.psi_points -= use_power
+	..()
+
+/datum/breakdown/common/psionic/can_occur()
+	if(ishuman(holder.owner)) // Check if it's an actual mob and not a wall
+		var/mob/living/carbon/human/T = holder.owner
+		var/obj/item/organ/internal/psionic_tumor/PT = T.random_organ_by_process(BP_PSION)
+		if(PT)
+			return TRUE
+	return FALSE
+
 
 //Disabled breakdowns that we dislike
 
