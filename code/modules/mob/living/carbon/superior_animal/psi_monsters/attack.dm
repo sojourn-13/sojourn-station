@@ -202,31 +202,23 @@
 					shield.adjustShieldDurability(-50, H)
 					knock_out_of_hand = FALSE
 
-				//Lots of checks for a seemingly simple task, unwielding a persons wielded weapon
-				var/right_hand_found = FALSE
-				var/left_hand_found = FALSE
-				if(H.l_hand)
-					left_hand_found = TRUE
-				if(H.r_hand)
-					right_hand_found = TRUE
-				if(right_hand_found && left_hand_found)
-					var/obj/item/wielded_r = H.r_hand
-					var/obj/item/wielded_l = H.l_hand
-					knock_out_of_hand = FALSE
-					if(GLOB.chaos_level >= 3) //At level 3 it knocks items from a wielded state out of it!
-						if(!wielded_r.is_held_twohanded(wielded_r))
-							visible_message(SPAN_DANGER("[src] batters [H.name]'s [wielded_r], making [H.name] unwield [wielded_r]!"))
-							wielded_r.unwield(H)
-						if(!wielded_l.is_held_twohanded(wielded_l))
-							visible_message(SPAN_DANGER("[src] batters [H.name]'s [wielded_l], making [H.name] unwield [wielded_l]!"))
-							wielded_l.unwield(H)
-				//This is insanely powerful and shuld not just happend without chaos level being extremely high
-				if(GLOB.chaos_level >= 5)
-					if(knock_out_of_hand) //When not wielding an item we knock it out of your grasp!
-						if(H.get_active_hand())
-							var/obj/fumble = H.get_active_hand()
-							H.drop_from_inventory(fumble)
-							visible_message(SPAN_DANGER("[src] knocks [fumble] out of [H.name]'s grasp!"))
+				if(H.get_active_hand() && knock_out_of_hand)
+					var/obj/item/fumble = H.get_active_hand()
+
+					if(GLOB.chaos_level >= 3 && H) //At chaos level 3 we forcefully unwield peoples weapons and shields
+						if(fumble.wielded)
+							visible_message(SPAN_DANGER("[src] batters [H.name]'s [fumble], making [H.name] unwield [fumble]!"))
+							fumble.unwield(H)
+							knock_out_of_hand = FALSE
+						if(fumble.wielded)
+							visible_message(SPAN_DANGER("[src] batters [H.name]'s [fumble], making [H.name] unwield [fumble]!"))
+							fumble.unwield(H)
+							knock_out_of_hand = FALSE
+
+					//This is insanely powerful and shuld not just happend without chaos level being extremely high
+					if(GLOB.chaos_level >= 5 && H && knock_out_of_hand)
+						H.drop_from_inventory(fumble)
+						visible_message(SPAN_DANGER("[src] knocks [fumble] out of [H.name]'s grasp!"))
 	. = ..()
 
 //To see full affects go to the ai.dm for psi_monsters
