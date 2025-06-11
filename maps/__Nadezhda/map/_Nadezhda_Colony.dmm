@@ -49539,7 +49539,11 @@
 	pixel_y = -2;
 	name = "Room B Bolts";
 	specialfunctions = 4;
+<<<<<<< HEAD
 	req_access = newlist();
+=======
+	req_access = s;
+>>>>>>> 778a940808b5f34368881e60a63942e5befb7a6a
 	id = "psych_b";
 	req_one_access = list(45,64)
 	},
@@ -79693,6 +79697,13 @@
 /obj/effect/decal/cleanable/generic,
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/crew_quarters/bar)
+"oYE" = (
+/obj/structure/flora/pottedplant/grave_poppers,
+/obj/item/device/radio/intercom{
+	pixel_y = 24
+	},
+/turf/simulated/floor/wood,
+/area/nadezhda/medical/ward)
 "oYH" = (
 /obj/machinery/door/window/southright{
 	dir = 1;
@@ -93758,6 +93769,7 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/pros/shuttle)
 "rHH" = (
+<<<<<<< HEAD
 /obj/effect/floor_decal/industrial/road,
 /obj/effect/floor_decal/industrial/road{
 	dir = 1
@@ -93779,6 +93791,14 @@
 	req_one_access = list(5,45,64)
 	},
 /turf/simulated/floor/tiled/white/gray_platform,
+=======
+/obj/effect/decal/cleanable/dirt,
+/obj/item/device/radio/intercom{
+	pixel_y = 24
+	},
+/obj/machinery/camera/network/medbay,
+/turf/simulated/floor/tiled/cafe,
+>>>>>>> 778a940808b5f34368881e60a63942e5befb7a6a
 /area/nadezhda/medical/ward)
 "rHK" = (
 /obj/effect/decal/cleanable/generic,
@@ -102355,6 +102375,36 @@
 /obj/structure/barricade,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
+"tmy" = (
+/obj/effect/floor_decal/industrial/road,
+/obj/effect/floor_decal/industrial/road{
+	dir = 1
+	},
+/obj/machinery/door/firedoor,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/industrial/stand_clear,
+/obj/machinery/door/blast/regular{
+	density = 0;
+	icon_state = "pdoor0";
+	id = "MedbayTotalLockdown";
+	layer = 2.6;
+	name = "Medbay Total Lockdown";
+	opacity = 0
+	},
+/obj/machinery/door/airlock/highsecurity{
+	name = "Recovery Ward";
+	req_access = newlist();
+	req_one_access = list(5,45,64)
+	},
+/turf/simulated/floor/tiled/white/gray_platform,
+/area/nadezhda/medical/ward)
 "tmz" = (
 /obj/machinery/smartfridge/secure/extract,
 /turf/simulated/floor/tiled/steel,
@@ -104909,6 +104959,20 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/absolutism/skyyard)
+"tLK" = (
+/obj/structure/table/rack,
+/obj/item/clothing/mask/breath,
+/obj/item/clothing/head/helmet/space/void/medical,
+/obj/item/clothing/shoes/magboots,
+/obj/item/clothing/suit/space/void/medical,
+/obj/item/rig/medical/equipped,
+/obj/item/rig/medical/equipped,
+/obj/item/clothing/suit/space/void/medical,
+/obj/item/clothing/shoes/magboots,
+/obj/item/clothing/head/helmet/space/void/medical,
+/obj/item/clothing/mask/breath,
+/turf/simulated/floor/tiled/white/techfloor,
+/area/nadezhda/medical/sleeper)
 "tLN" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -122373,11 +122437,29 @@
 /area/nadezhda/maintenance/undergroundfloor1south)
 "wUB" = (
 /obj/effect/decal/cleanable/dirt,
+<<<<<<< HEAD
 /obj/item/device/radio/intercom{
 	pixel_y = 24
 	},
 /obj/machinery/camera/network/medbay,
 /turf/simulated/floor/tiled/cafe,
+=======
+/obj/effect/floor_decal/industrial/stand_clear,
+/obj/machinery/door/blast/regular{
+	density = 0;
+	icon_state = "pdoor0";
+	id = "MedbayTotalLockdown";
+	layer = 2.6;
+	name = "Medbay Total Lockdown";
+	opacity = 0
+	},
+/obj/machinery/door/airlock/highsecurity{
+	name = "Recovery Ward";
+	req_access = newlist();
+	req_one_access = list(5,45,64)
+	},
+/turf/simulated/floor/tiled/white/gray_platform,
+>>>>>>> 778a940808b5f34368881e60a63942e5befb7a6a
 /area/nadezhda/medical/ward)
 "wUF" = (
 /obj/structure/disposalpipe/segment{
@@ -145497,7 +145579,11 @@ mrY
 hLC
 kpg
 fXj
+<<<<<<< HEAD
 gxy
+=======
+tmy
+>>>>>>> 778a940808b5f34368881e60a63942e5befb7a6a
 cGi
 cGi
 cGi
@@ -145699,7 +145785,11 @@ sXK
 nTR
 kAu
 oSS
+<<<<<<< HEAD
 rHH
+=======
+wUB
+>>>>>>> 778a940808b5f34368881e60a63942e5befb7a6a
 rVk
 fIN
 rVk
@@ -146318,7 +146408,11 @@ dwF
 dwF
 wcz
 cVw
+<<<<<<< HEAD
 wUB
+=======
+rHH
+>>>>>>> 778a940808b5f34368881e60a63942e5befb7a6a
 fKp
 wzL
 wGH
@@ -146898,7 +146992,11 @@ xCT
 mJa
 ttd
 qUI
+<<<<<<< HEAD
 lJF
+=======
+tLK
+>>>>>>> 778a940808b5f34368881e60a63942e5befb7a6a
 dtz
 xww
 xww
@@ -148533,7 +148631,11 @@ nNi
 vtu
 saK
 wGH
+<<<<<<< HEAD
 ltB
+=======
+oYE
+>>>>>>> 778a940808b5f34368881e60a63942e5befb7a6a
 xpU
 quR
 pcb
