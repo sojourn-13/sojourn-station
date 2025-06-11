@@ -437,8 +437,8 @@
 	START_PROCESSING(SSobj, src)
 
 /obj/structure/sink/Process()
-	if(max_amount >= amount_of_reagents)
-		amount_of_reagents += refill_rate
+	// if(max_amount >= amount_of_reagents)
+	//	amount_of_reagents += refill_rate
 
 /obj/structure/sink/MouseDrop_T(var/obj/item/thing, var/mob/user)
 	. = ..()
@@ -469,9 +469,9 @@
 	if(!Adjacent(user))
 		return
 
-	if(amount_of_reagents < 40 && limited_reagents)
-		to_chat(user, SPAN_WARNING("The water pressure seems too low to wash with."))
-		return
+	// if(amount_of_reagents < 40 && limited_reagents)
+	//	to_chat(user, SPAN_WARNING("The water pressure seems too low to wash with."))
+	//	return
 
 	if(busy)
 		to_chat(user, SPAN_WARNING("Someone's already washing here."))
@@ -489,7 +489,7 @@
 		return
 	busy = FALSE
 
-	amount_of_reagents -= 40
+	// amount_of_reagents -= 40
 	user.clean_blood()
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
@@ -509,20 +509,20 @@
 		to_chat(user, SPAN_WARNING("The [O] doesn‘t seem to accept water directly from the tap. Use a beaker or other proxy to add reagents."))
 		return
 
-	var/obj/item/reagent_containers/RG = O
-	if (istype(RG) && RG.is_refillable())
-		var/amount_to_add = min(RG.volume - RG.reagents.total_volume, RG.amount_per_transfer_from_this)
-		if(amount_to_add > amount_of_reagents)
-			amount_to_add = amount_of_reagents
-		if(amount_of_reagents)
-			RG.reagents.add_reagent(reagent_id, amount_to_add)
-			user.visible_message(SPAN_NOTICE("[user] fills \the [RG] using \the [src]."),SPAN_NOTICE("You fill \the [RG] using \the [src]."))
-			playsound(loc, 'sound/effects/watersplash.ogg', 100, 1)
-			if(limited_reagents)
-				amount_of_reagents -= amount_to_add
-		else
-			to_chat(user, SPAN_WARNING("The sink seems to be out of pressure"))
-		return 1
+//	var/obj/item/reagent_containers/RG = O
+//	if (istype(RG) && RG.is_refillable())
+//		var/amount_to_add = min(RG.volume - RG.reagents.total_volume, RG.amount_per_transfer_from_this)
+//		if(amount_to_add > amount_of_reagents)
+//			amount_to_add = amount_of_reagents
+//		if(amount_of_reagents)
+//			RG.reagents.add_reagent(reagent_id, amount_to_add)
+//			user.visible_message(SPAN_NOTICE("[user] fills \the [RG] using \the [src]."),SPAN_NOTICE("You fill \the [RG] using \the [src]."))
+//			playsound(loc, 'sound/effects/watersplash.ogg', 100, 1)
+//			if(limited_reagents)
+//				amount_of_reagents -= amount_to_add
+//		else
+//			to_chat(user, SPAN_WARNING("The sink seems to be out of pressure"))
+//		return 1
 
 	else if (istype(O, /obj/item/tool/baton))
 		var/obj/item/tool/baton/B = O
@@ -557,9 +557,9 @@
 		SPAN_NOTICE("You start washing [I] using [src].")
 	)
 
-	if(amount_of_reagents < 40)
-		to_chat(user, SPAN_WARNING("The water pressure seems too low to wash with."))
-		return
+	// if(amount_of_reagents < 40)
+	//	to_chat(user, SPAN_WARNING("The water pressure seems too low to wash with."))
+	//	return
 
 	busy = TRUE
 	if(!do_after(user, 40, src))
@@ -567,8 +567,8 @@
 		return
 	busy = FALSE
 
-	if(limited_reagents)
-		amount_of_reagents -= 40
+	// if(limited_reagents)
+	//	amount_of_reagents -= 40
 
 	if(QDELETED(I))
 		return 								//Item's been destroyed while washing
@@ -595,14 +595,14 @@
 	name = "water fountain"
 	desc = "A small fountain of polished stone that has a small pump at the bottom which helps pump out fresh water."
 	icon_state = "BaptismFont_Water"
-	refill_rate = 2
+//	refill_rate = 2
 
 /obj/structure/sink/basion
 	name = "water basin"
 	desc = "A deep basin of polished stone that has been pre-filled with fresh water."
 	icon_state = "BaptismFont_Water"
 	limited_reagents = FALSE
-	refill_rate = 200
+	// refill_rate = 200
 
 /obj/structure/sink/kitchen
 	name = "kitchen sink"
@@ -614,7 +614,7 @@
 	desc = "A puddle of still water. Great for splashing others."
 	icon_state = "puddle"
 	limited_reagents = FALSE
-	refill_rate = 200
+//	refill_rate = 200
 
 /obj/structure/sink/puddle/attack_hand(mob/M as mob)
 	icon_state = "puddle-splash"
