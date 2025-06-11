@@ -427,10 +427,10 @@
 	var/reagent_id = "water"
 
 //Inspired by TG plumming
-	var/limited_reagents = FALSE
-	// var/amount_of_reagents = 200
-	// var/max_amount = 200
-	// var/refill_rate = 0.5
+	var/limited_reagents = TRUE
+	var/amount_of_reagents = 200
+	var/max_amount = 200
+	var/refill_rate = 0.5
 
 /obj/structure/sink/New()
 	..()
