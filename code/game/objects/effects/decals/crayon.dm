@@ -1766,7 +1766,7 @@ obj/item/scroll/proc/example_spell(mob/living/carbon/human/M) //testing spell
 	icon_state = "blood_basin"
 	density = 1
 	limited_reagents = FALSE
-//	refill_rate = 200
+	refill_rate = 200
 	reagent_id = "blood"
 
 /obj/structure/sink/basion/crayon/attack_hand(mob/living/carbon/human/user) //gives us bloody hands for writing spells.
