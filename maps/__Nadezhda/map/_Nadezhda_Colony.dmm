@@ -34491,36 +34491,6 @@
 	},
 /turf/simulated/floor/tiled/techmaint_panels,
 /area/nadezhda/maintenance/undergroundfloor1north)
-"gxy" = (
-/obj/effect/floor_decal/industrial/road,
-/obj/effect/floor_decal/industrial/road{
-	dir = 1
-	},
-/obj/machinery/door/firedoor,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/floor_decal/industrial/stand_clear,
-/obj/machinery/door/blast/regular{
-	density = 0;
-	icon_state = "pdoor0";
-	id = "MedbayTotalLockdown";
-	layer = 2.6;
-	name = "Medbay Total Lockdown";
-	opacity = 0
-	},
-/obj/machinery/door/airlock/highsecurity{
-	name = "Recovery Ward";
-	req_access = newlist();
-	req_one_access = list(5,45,64)
-	},
-/turf/simulated/floor/tiled/white/gray_platform,
-/area/nadezhda/medical/ward)
 "gxz" = (
 /obj/structure/table/standard,
 /obj/item/storage/box/gloves{
@@ -37842,6 +37812,20 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/command/teleporter)
+"hgu" = (
+/obj/structure/table/rack,
+/obj/item/clothing/mask/breath,
+/obj/item/clothing/head/helmet/space/void/medical,
+/obj/item/clothing/shoes/magboots,
+/obj/item/clothing/suit/space/void/medical,
+/obj/item/rig/medical/equipped,
+/obj/item/rig/medical/equipped,
+/obj/item/clothing/suit/space/void/medical,
+/obj/item/clothing/shoes/magboots,
+/obj/item/clothing/head/helmet/space/void/medical,
+/obj/item/clothing/mask/breath,
+/turf/simulated/floor/tiled/white/techfloor,
+/area/nadezhda/medical/sleeper)
 "hgw" = (
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/medical/sleeper)
@@ -49539,11 +49523,7 @@
 	pixel_y = -2;
 	name = "Room B Bolts";
 	specialfunctions = 4;
-<<<<<<< HEAD
 	req_access = newlist();
-=======
-	req_access = s;
->>>>>>> 778a940808b5f34368881e60a63942e5befb7a6a
 	id = "psych_b";
 	req_one_access = list(45,64)
 	},
@@ -60032,13 +60012,6 @@
 /obj/machinery/light/small,
 /turf/simulated/floor/industrial/white_large_slates,
 /area/nadezhda/maintenance/surfaceeast)
-"ltB" = (
-/obj/structure/flora/pottedplant/grave_poppers,
-/obj/item/device/radio/intercom{
-	pixel_y = 24
-	},
-/turf/simulated/floor/wood,
-/area/nadezhda/medical/ward)
 "ltE" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -61677,20 +61650,6 @@
 	},
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
-"lJF" = (
-/obj/structure/table/rack,
-/obj/item/clothing/mask/breath,
-/obj/item/clothing/head/helmet/space/void/medical,
-/obj/item/clothing/shoes/magboots,
-/obj/item/clothing/suit/space/void/medical,
-/obj/item/rig/medical/equipped,
-/obj/item/rig/medical/equipped,
-/obj/item/clothing/suit/space/void/medical,
-/obj/item/clothing/shoes/magboots,
-/obj/item/clothing/head/helmet/space/void/medical,
-/obj/item/clothing/mask/breath,
-/turf/simulated/floor/tiled/white/techfloor,
-/area/nadezhda/medical/sleeper)
 "lJZ" = (
 /obj/structure/cable/yellow{
 	d1 = 4;
@@ -79697,13 +79656,6 @@
 /obj/effect/decal/cleanable/generic,
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/crew_quarters/bar)
-"oYE" = (
-/obj/structure/flora/pottedplant/grave_poppers,
-/obj/item/device/radio/intercom{
-	pixel_y = 24
-	},
-/turf/simulated/floor/wood,
-/area/nadezhda/medical/ward)
 "oYH" = (
 /obj/machinery/door/window/southright{
 	dir = 1;
@@ -91992,6 +91944,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/hallway/surface/section1)
+"rnZ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/device/radio/intercom{
+	pixel_y = 24
+	},
+/obj/machinery/camera/network/medbay,
+/turf/simulated/floor/tiled/cafe,
+/area/nadezhda/medical/ward)
 "roa" = (
 /obj/effect/floor_decal/steeldecal/steel_decals10{
 	dir = 10
@@ -93769,7 +93729,6 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/pros/shuttle)
 "rHH" = (
-<<<<<<< HEAD
 /obj/effect/floor_decal/industrial/road,
 /obj/effect/floor_decal/industrial/road{
 	dir = 1
@@ -93791,14 +93750,6 @@
 	req_one_access = list(5,45,64)
 	},
 /turf/simulated/floor/tiled/white/gray_platform,
-=======
-/obj/effect/decal/cleanable/dirt,
-/obj/item/device/radio/intercom{
-	pixel_y = 24
-	},
-/obj/machinery/camera/network/medbay,
-/turf/simulated/floor/tiled/cafe,
->>>>>>> 778a940808b5f34368881e60a63942e5befb7a6a
 /area/nadezhda/medical/ward)
 "rHK" = (
 /obj/effect/decal/cleanable/generic,
@@ -102375,36 +102326,6 @@
 /obj/structure/barricade,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
-"tmy" = (
-/obj/effect/floor_decal/industrial/road,
-/obj/effect/floor_decal/industrial/road{
-	dir = 1
-	},
-/obj/machinery/door/firedoor,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/floor_decal/industrial/stand_clear,
-/obj/machinery/door/blast/regular{
-	density = 0;
-	icon_state = "pdoor0";
-	id = "MedbayTotalLockdown";
-	layer = 2.6;
-	name = "Medbay Total Lockdown";
-	opacity = 0
-	},
-/obj/machinery/door/airlock/highsecurity{
-	name = "Recovery Ward";
-	req_access = newlist();
-	req_one_access = list(5,45,64)
-	},
-/turf/simulated/floor/tiled/white/gray_platform,
-/area/nadezhda/medical/ward)
 "tmz" = (
 /obj/machinery/smartfridge/secure/extract,
 /turf/simulated/floor/tiled/steel,
@@ -103094,6 +103015,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/nadezhda/command/hallway)
+"tuH" = (
+/obj/structure/flora/pottedplant/grave_poppers,
+/obj/item/device/radio/intercom{
+	pixel_y = 24
+	},
+/turf/simulated/floor/wood,
+/area/nadezhda/medical/ward)
 "tuI" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/structure/flora/ausbushes/palebush,
@@ -104959,20 +104887,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/absolutism/skyyard)
-"tLK" = (
-/obj/structure/table/rack,
-/obj/item/clothing/mask/breath,
-/obj/item/clothing/head/helmet/space/void/medical,
-/obj/item/clothing/shoes/magboots,
-/obj/item/clothing/suit/space/void/medical,
-/obj/item/rig/medical/equipped,
-/obj/item/rig/medical/equipped,
-/obj/item/clothing/suit/space/void/medical,
-/obj/item/clothing/shoes/magboots,
-/obj/item/clothing/head/helmet/space/void/medical,
-/obj/item/clothing/mask/breath,
-/turf/simulated/floor/tiled/white/techfloor,
-/area/nadezhda/medical/sleeper)
 "tLN" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -122436,15 +122350,25 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "wUB" = (
-/obj/effect/decal/cleanable/dirt,
-<<<<<<< HEAD
-/obj/item/device/radio/intercom{
-	pixel_y = 24
+/obj/effect/floor_decal/industrial/road,
+/obj/effect/floor_decal/industrial/road{
+	dir = 1
 	},
-/obj/machinery/camera/network/medbay,
-/turf/simulated/floor/tiled/cafe,
-=======
+/obj/machinery/door/firedoor,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/industrial/stand_clear,
+/obj/machinery/door/airlock/highsecurity{
+	name = "Recovery Ward";
+	req_access = newlist();
+	req_one_access = list(5,45,64)
+	},
 /obj/machinery/door/blast/regular{
 	density = 0;
 	icon_state = "pdoor0";
@@ -122453,13 +122377,7 @@
 	name = "Medbay Total Lockdown";
 	opacity = 0
 	},
-/obj/machinery/door/airlock/highsecurity{
-	name = "Recovery Ward";
-	req_access = newlist();
-	req_one_access = list(5,45,64)
-	},
 /turf/simulated/floor/tiled/white/gray_platform,
->>>>>>> 778a940808b5f34368881e60a63942e5befb7a6a
 /area/nadezhda/medical/ward)
 "wUF" = (
 /obj/structure/disposalpipe/segment{
@@ -128198,11 +128116,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/industrial/stand_clear,
-/obj/machinery/door/airlock/highsecurity{
-	name = "Recovery Ward";
-	req_access = newlist();
-	req_one_access = list(5,45,64)
-	},
 /obj/machinery/door/blast/regular{
 	density = 0;
 	icon_state = "pdoor0";
@@ -128210,6 +128123,11 @@
 	layer = 2.6;
 	name = "Medbay Total Lockdown";
 	opacity = 0
+	},
+/obj/machinery/door/airlock/highsecurity{
+	name = "Recovery Ward";
+	req_access = newlist();
+	req_one_access = list(5,45,64)
 	},
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/medical/ward)
@@ -145574,16 +145492,12 @@ qsS
 gzK
 nWr
 xHP
-xZM
+wUB
 mrY
 hLC
 kpg
 fXj
-<<<<<<< HEAD
-gxy
-=======
-tmy
->>>>>>> 778a940808b5f34368881e60a63942e5befb7a6a
+xZM
 cGi
 cGi
 cGi
@@ -145785,11 +145699,7 @@ sXK
 nTR
 kAu
 oSS
-<<<<<<< HEAD
 rHH
-=======
-wUB
->>>>>>> 778a940808b5f34368881e60a63942e5befb7a6a
 rVk
 fIN
 rVk
@@ -146408,11 +146318,7 @@ dwF
 dwF
 wcz
 cVw
-<<<<<<< HEAD
-wUB
-=======
-rHH
->>>>>>> 778a940808b5f34368881e60a63942e5befb7a6a
+rnZ
 fKp
 wzL
 wGH
@@ -146992,11 +146898,7 @@ xCT
 mJa
 ttd
 qUI
-<<<<<<< HEAD
-lJF
-=======
-tLK
->>>>>>> 778a940808b5f34368881e60a63942e5befb7a6a
+hgu
 dtz
 xww
 xww
@@ -148631,11 +148533,7 @@ nNi
 vtu
 saK
 wGH
-<<<<<<< HEAD
-ltB
-=======
-oYE
->>>>>>> 778a940808b5f34368881e60a63942e5befb7a6a
+tuH
 xpU
 quR
 pcb
