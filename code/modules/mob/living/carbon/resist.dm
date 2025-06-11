@@ -129,7 +129,7 @@
 	var/breakouttime = 1200 - src.stats.getStat(STAT_ROB) * 10
 	//If you are handcuffed with actual handcuffs... Well what do I know, maybe someone will want to handcuff you with toilet paper in the future...
 	if(istype(HC))
-		breakouttime = max(HC.breakouttime - src.stats.getStat(STAT_ROB) * 5, HC.breakouttime *= 0.1)
+		breakouttime = HC.breakouttime - src.stats.getStat(STAT_ROB) * 10
 
 	var/mob/living/carbon/human/H = src
 	if(istype(H) && H.gloves && istype(H.gloves,/obj/item/clothing/gloves/rig))
