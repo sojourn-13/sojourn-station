@@ -215,7 +215,7 @@
 	speech_verb = list("chatters")
 	ask_verb = list("mrowls")
 	exclaim_verb = list("yelps")
-	flags = NO_SPEAK
+	flags = NO_SPEAK | RESTRICTED
 	colour = "crinos"
 	key = "5"
 	space_chance = 50
