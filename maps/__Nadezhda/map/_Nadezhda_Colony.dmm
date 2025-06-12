@@ -54114,9 +54114,6 @@
 /area/nadezhda/command/hallway)
 "kjz" = (
 /obj/machinery/autolathe/organ_fabricator/loaded,
-/obj/item/contraband/poster/placed/eris/responsiblemedical1{
-	pixel_x = 32
-	},
 /turf/simulated/floor/tiled/white/monofloor,
 /area/nadezhda/medical/organ_lab)
 "kjB" = (
@@ -59781,12 +59778,15 @@
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/hallway/side/f2section1)
 "lqq" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/item/contraband/poster/placed/recruitment/engineering{
-	pixel_y = 32
+/obj/structure/flora/small/bushc1,
+/obj/machinery/light{
+	dir = 4
 	},
-/turf/simulated/floor/tiled/steel/cyancorner,
-/area/nadezhda/hallway/side/f2section1)
+/mob/living/simple/opossum/poppy{
+	desc = "It's an opossum, a small scavenging marsupial. It's wearing appropriate personal protective equipment, how did she get here?"
+	},
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/hallway/main/stairwell)
 "lqH" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/simulated/floor/asteroid/grass,
@@ -68702,13 +68702,6 @@
 /obj/structure/bed/chair/sofa/teal/left,
 /turf/simulated/floor/tiled/steel/bar_dance,
 /area/nadezhda/maintenance/undergroundfloor1west)
-"mZz" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/item/contraband/poster/placed/recruitment/security{
-	pixel_x = 32
-	},
-/turf/simulated/floor/tiled/steel/cyancorner,
-/area/nadezhda/hallway/side/f2section1)
 "mZA" = (
 /obj/machinery/atmospherics/unary/freezer,
 /turf/simulated/floor/tiled/steel,
@@ -74886,17 +74879,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet,
 /area/nadezhda/command/crematorium)
-"ofg" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4;
-	icon_state = "pipe-c"
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/sign/neon/armory{
-	pixel_x = -32
-	},
-/turf/simulated/floor/tiled/steel/golden,
-/area/nadezhda/hallway/surface/section1)
 "ofj" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -91631,7 +91613,7 @@
 /obj/machinery/camera/network/medbay{
 	dir = 1
 	},
-/obj/item/contraband/poster/placed/eris/responsiblemedical2{
+/obj/item/contraband/poster/placed/generic/safety_eye_protection{
 	pixel_y = -32
 	},
 /turf/simulated/floor/tiled/white/brown_perforated,
@@ -93087,7 +93069,9 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/sign/neon/diner{
-	pixel_y = -28
+	pixel_y = -28;
+	light_power = 1;
+	light_range = 2
 	},
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/hallway/side/f2section1)
@@ -124374,9 +124358,6 @@
 	dir = 1
 	},
 /obj/random/furniture/pottedplant,
-/obj/item/contraband/poster/placed/recruitment/xenobiology{
-	pixel_x = 32
-	},
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/nadezhda/medical/reception)
 "xpD" = (
@@ -125928,9 +125909,6 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/item/contraband/poster/placed/generic/safety_eye_protection{
-	pixel_y = 32
-	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/sleeper)
 "xEA" = (
@@ -172055,7 +172033,7 @@ wsX
 pDs
 iCJ
 mkZ
-hdI
+lqq
 iMY
 wlh
 bEZ
@@ -191554,7 +191532,7 @@ fLT
 sZv
 wCM
 cPd
-lqq
+whU
 rXw
 lVX
 aYq
@@ -195973,7 +195951,7 @@ bbM
 fIa
 whU
 uWM
-mZz
+whU
 whU
 whU
 ghk
@@ -229901,7 +229879,7 @@ vhL
 fKc
 jcs
 rCV
-ofg
+nll
 jFs
 dqC
 vhL
