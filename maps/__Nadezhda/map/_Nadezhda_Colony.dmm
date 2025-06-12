@@ -36792,13 +36792,13 @@
 /obj/item/storage/fancy/crayons,
 /obj/item/storage/fancy/crayons,
 /obj/item/storage/fancy/crayons,
-/obj/item/oddity/common/towel,
-/obj/item/oddity/common/towel,
 /obj/machinery/firealarm{
 	dir = 1;
 	pixel_x = 6;
 	pixel_y = -32
 	},
+/obj/item/towel,
+/obj/item/towel,
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/medical/ward)
 "gUK" = (
