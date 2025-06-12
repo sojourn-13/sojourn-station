@@ -68,7 +68,7 @@
 
 	darksight = 3
 
-	perks = list(PERK_DEBTOR, PERK_SPLICER, PERK_DIVERSE_CULTURE)
+	perks = list(PERK_SPLICER, PERK_DIVERSE_CULTURE)
 
 	has_limbs = list(
 		BP_CHEST =  new /datum/organ_description/chest/exalt,

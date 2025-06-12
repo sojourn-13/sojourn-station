@@ -177,9 +177,6 @@
 	options["Lingua Romana"] = LANGUAGE_ROMANA
 	options["Yassari"] = LANGUAGE_YASSARI
 	options["Latin"] = LANGUAGE_LATIN
-	options["Akula"] = LANGUAGE_AKULA
-	options["Narad Pidgin"] = LANGUAGE_MERP
-	options["Crinos"] = LANGUAGE_SABLEKYNE
 	var/choice = input(M,"Which language do you know?","Linguist Choice") as null|anything in options
 	if(src && choice)
 		M.add_language(choice)
@@ -777,4 +774,38 @@
 		var/mob/living/carbon/human/H = holder
 		H.metabolism_effects.nsa_bonus -= 100
 		H.metabolism_effects.calculate_nsa()
+	..()
+
+///////////////////////////////////// FBP perks
+
+/datum/perk/linguist_fbp
+	name = "Lost Tongue"
+	desc = "You once spoke a language native for your people, and now you must use a synthetic tongue to do so."
+	icon_state = "linguist"
+	active = FALSE
+	passivePerk = FALSE
+	var/anti_cheat = FALSE
+
+/datum/perk/linguist_fbp/activate()
+	..()
+	if(anti_cheat)
+		to_chat(holder, "Recalling your native language is not as easy for someone who was not once an organic.")
+		return FALSE
+	anti_cheat = TRUE
+	var/mob/M = usr
+	var/list/options = list()
+	options["Akula"] = LANGUAGE_AKULA
+	options["Narad Pidgin"] = LANGUAGE_MERP
+	options["Crinos"] = LANGUAGE_SABLEKYNE
+	options["Marqua"] = LANGUAGE_MARQUA
+	options["Kriosan"] = LANGUAGE_KRIOSAN
+	options["Opifexee"] = LANGUAGE_OPIFEXEE
+	var/choice = input(M,"Which language did you once know like the back of your hand?","Original Language Choice") as null|anything in options
+	if(src && choice)
+		M.add_language(choice)
+		M.stats.removePerk(PERK_LOST_TONGUE)
+	anti_cheat = FALSE
+	return TRUE
+
+/datum/perk/linguist_fbp/remove()
 	..()
