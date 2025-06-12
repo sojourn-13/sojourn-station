@@ -128207,7 +128207,6 @@
 /area/nadezhda/maintenance/undergroundfloor1north)
 "yaE" = (
 /obj/structure/sink/fountain{
-	limited_reagents = 0;
 	name = "high flow water fountain"
 	},
 /turf/simulated/floor/asteroid/dirt/dust,
