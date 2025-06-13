@@ -23,7 +23,7 @@
 
 	var/size_multiplier = 1 //multiplier for the mob's icon size
 	var/scale_effect = 0	//new multiplier. The one above is obsolete
-	var/damage_multiplier = 1 //multiplies melee combat damage
+	var/cqc_damage_multiplier = 1 //multiplies melee combat damage
 	var/icon_update = 1 //whether icon updating shall take place
 
 	var/lip_style = null	//no lipstick by default- arguably misleading, as it could be used for general makeup

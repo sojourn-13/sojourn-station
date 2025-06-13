@@ -854,13 +854,91 @@
 			silent = 0
 			return 1
 		if(health <= death_threshold) //No health = death
-			if(stats.getPerk(PERK_UNFINISHED_DELIVERY) && prob(33)) //Unless you have this perk
-				heal_organ_damage(20, 20)
-				adjustOxyLoss(-100)
-				AdjustSleeping(rand(20,30))
-				updatehealth()
-				stats.removePerk(PERK_UNFINISHED_DELIVERY)
-				learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/return_to_sender, "RETURN_TO_SENDER", skill_gained = 1, learner = src)
+			//Perk Checks
+
+			if(stats.getPerk(PERK_UNFINISHED_DELIVERY) \
+			|| stats.getPerk(PERK_UNFINISHED_DELIVERY_FEATHERS) \
+			|| stats.getPerk(PERK_UNFINISHED_DELIVERY_INK) \
+			|| stats.getPerk(PERK_UNFINISHED_DELIVERY_VERSES))
+
+				//Only RNG one
+				if(stats.getPerk(PERK_UNFINISHED_DELIVERY) && prob(33))
+					heal_organ_damage(20, 20)
+					adjustOxyLoss(-100)
+					AdjustSleeping(rand(20,30))
+					updatehealth()
+					stats.removePerk(PERK_UNFINISHED_DELIVERY)
+					learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/return_to_sender, "RETURN_TO_SENDER", skill_gained = 1, learner = src)
+
+				else
+					death()
+					blinded = 1
+					silent = 0
+					return 1
+
+				if(stats.getPerk(PERK_UNFINISHED_DELIVERY_FEATHERS))
+					if(species.reagent_tag == IS_SYNTHETIC)
+						for(var/obj/item/organ/external/robotic/E in organs)
+							E.heal_damage(10,10,TRUE) //Heals 50 of each in best case, thats not to bad
+					else
+						heal_organ_damage(25, 25)
+					adjustOxyLoss(-100)
+					AdjustSleeping(rand(5,15))
+					updatehealth()
+					stats.removePerk(PERK_UNFINISHED_DELIVERY_FEATHERS)
+					learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/return_to_sender, "RETURN_TO_SENDER", skill_gained = 1, learner = src)
+
+				if(stats.getPerk(PERK_UNFINISHED_DELIVERY_INK))
+					if(species.reagent_tag == IS_SYNTHETIC)
+						for(var/obj/item/organ/external/robotic/E in organs)
+							E.heal_damage(25,25,TRUE)
+						mob_ablative_armor += 15 //Give some armor we dont get those fancy chemicals, its a leg up
+
+					else
+						heal_organ_damage(50, 50)
+						reagents.add_reagent("blood", 120) //Give them blood, they are likely low
+						reagents.add_reagent("wormwood", 10) //The cost of blood
+						reagents.add_reagent("holydexalinp", 10) //Stablize them
+					adjustOxyLoss(-200)
+					AdjustSleeping(rand(3,5))
+					updatehealth()
+					stats.removePerk(PERK_UNFINISHED_DELIVERY_INK)
+					learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/return_to_sender, "RETURN_TO_SENDER", skill_gained = 1, learner = src)
+
+				//A second life basically
+				if(stats.getPerk(PERK_UNFINISHED_DELIVERY_VERSES))
+
+					var/obj/item/implant/core_implant/I = get_core_implant(/obj/item/implant/core_implant/cruciform)
+					if(I && I.active && I.wearer)
+						I.power = I.max_power //Fully recharge it, we just spent a big upgrade
+						//Use some of are refreshed power to call for help
+						var/datum/ritual/cruciform/base/prayer = /datum/ritual/cruciform/base/entreaty
+						prayer.perform(src, I)
+						//Now do some light
+						prayer = /datum/ritual/cruciform/base/flare
+						prayer.perform(src, I)
+						I.power = I.max_power
+
+					if(species.reagent_tag == IS_SYNTHETIC)
+						for(var/obj/item/organ/external/robotic/E in organs)
+							E.heal_damage(70,70,TRUE)
+						mob_ablative_armor += 30 //Give some armor we dont get those fancy chemicals, its a leg up
+
+					else
+						heal_organ_damage(95, 95)
+						reagents.add_reagent("blood", 300) //Dont die
+						reagents.add_reagent("wormwood", 5) //The cost of blood
+						//Stablize them!
+						reagents.add_reagent("holydexalinp", 10)
+						reagents.add_reagent("holytricord", 10)
+						reagents.add_reagent("holydylo", 10)
+					adjustOxyLoss(-250)
+					AdjustSleeping(rand(1,3)) //Micro nap
+					updatehealth()
+					stats.removePerk(PERK_UNFINISHED_DELIVERY_VERSES)
+					learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/return_to_sender, "RETURN_TO_SENDER", skill_gained = 1, learner = src)
+
+
 			else
 				death()
 				blinded = 1
