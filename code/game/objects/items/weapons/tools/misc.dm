@@ -15,7 +15,7 @@
 	max_upgrades = 2
 
 /obj/item/tool/polytool
-	name = "\"Jolly Co-operation\" polytool"
+	name = "Artificer's Guild \"Jolly Co-operation\" polytool"
 	desc = "One of the few jointly designed tools by both Lonestar Shipping Solutions and the Artificer's Guild, a rather curious attempt at merging the munchkin 5000 of lonestar infamy and \
 	designs taken directly from the guild arc welder. What it produced was a munchkin and arc welder combo with much finer tuned properties, efficient fuel economy, comfortable hand grips, and plenty of slots for tool augments."
 	icon_state = "polytool"
@@ -23,7 +23,7 @@
 	max_health = 300
 	w_class = ITEM_SIZE_NORMAL
 	worksound = WORKSOUND_DRIVER_TOOL
-	switched_on_qualities = list(QUALITY_SCREW_DRIVING = 75, QUALITY_BOLT_TURNING = 75, QUALITY_DRILLING = 40, QUALITY_PULSING = 60, QUALITY_WIRE_CUTTING = 30, QUALITY_WELDING = 60, QUALITY_CAUTERIZING = 30)
+	switched_on_qualities = list(QUALITY_SCREW_DRIVING = 50, QUALITY_BOLT_TURNING = 50, QUALITY_DRILLING = 30, QUALITY_PRYING = 50, QUALITY_WIRE_CUTTING = 30, QUALITY_HAMMERING = 50, QUALITY_SHOVELING = 50, QUALITY_SAWING = 50, QUALITY_CUTTING = 50, QUALITY_PULSING = 50, QUALITY_CAUTERIZING = 30)
 	price_tag = 3000
 	use_fuel_cost = 0.05
 	max_fuel = 100
@@ -31,6 +31,24 @@
 	create_hot_spot = TRUE
 	glow_color = COLOR_BLUE_LIGHT
 	max_upgrades = 4 //Superior in all ways to the munchkin and arc welder as a tool, only way to obtain it is through guild crafting or getting really lucky in cargo tech lockers. Give how fuck rare munckins are, balance by scarcity factor. -Kaz
+
+/obj/item/tool/polytool/engimultitool
+	name = "Artificer's Guild \"Little Helper\" omnitool"
+	desc = "The Artificer's Guild \"Little Helper\" is a mechanized, handheld all-in-one tool based on the polytool so known and loved. Convenient to use and highly customizable but less effecient than specialized tools and not suitable for advanced crafting applications."
+	icon_state = "engi_omni"
+	item_state = "engi_omni"
+	max_health = 300
+	w_class = ITEM_SIZE_NORMAL
+	worksound = WORKSOUND_DRIVER_TOOL
+	switched_on_qualities = list(QUALITY_SCREW_DRIVING = 30, QUALITY_BOLT_TURNING = 30, QUALITY_DRILLING = 20, QUALITY_PRYING = 30, QUALITY_WIRE_CUTTING = 30, QUALITY_HAMMERING = 30, QUALITY_SHOVELING = 30, QUALITY_SAWING = 30, QUALITY_CUTTING = 30, QUALITY_PULSING = 30, QUALITY_CAUTERIZING = 10)
+	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_STEEL = 3)
+	price_tag = 1400
+	use_power_cost = 2
+	suitable_cell = /obj/item/cell/medium
+	toggleable = TRUE
+	glow_color = COLOR_BLUE_LIGHT
+	max_upgrades = 5
+	workspeed = 0.8
 
 /obj/item/tool/polytool/marqua
 	name = "Mar'quaian poly tool"
@@ -50,13 +68,13 @@
 	max_upgrades = 0 //Superior in all ways to the munchkin and arc welder as a tool, only way to obtain it is through guild crafting or getting really lucky in cargo tech lockers. Give how fuck rare munckins are, balance by scarcity factor. -Kaz
 
 /obj/item/tool/medmultitool
-	name = "Greyson Positronic medical omnitool"
+	name = "Greyson Positronic \"Autosurgeon\" medical omnitool"
 	desc = "A compact Greyson Positronic medical omnitool. It has all surgery tools and takes a medium cell in its handle."
 	icon_state = "medmulti"
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_GLASS = 2, MATERIAL_PLATINUM = 2)
 	flags = CONDUCT
 	origin_tech = list(TECH_MATERIAL = 3, TECH_BIO = 4)
-	tool_qualities = list(QUALITY_CLAMPING = 30, QUALITY_RETRACTING = 30, QUALITY_BONE_SETTING = 30, QUALITY_CAUTERIZING = 30, QUALITY_SAWING = 15, QUALITY_CUTTING = 30, QUALITY_LASER_CUTTING = 30, QUALITY_WIRE_CUTTING = 25, QUALITY_BONE_GRAFTING = 50)
+	tool_qualities = list(QUALITY_CLAMPING = 40, QUALITY_RETRACTING = 40, QUALITY_BONE_SETTING = 40, QUALITY_CAUTERIZING = 40, QUALITY_SAWING = 30, QUALITY_CUTTING = 40, QUALITY_LASER_CUTTING = 30, QUALITY_WIRE_CUTTING = 25, QUALITY_BONE_GRAFTING = 50)
 	suitable_cell = /obj/item/cell/medium
 	use_power_cost = 0.2 //Effective!
 	max_upgrades = 2
@@ -87,7 +105,7 @@
 	max_upgrades = 1
 
 /obj/item/tool/medmultitool/medimplant/sci
-	name = "Soteria medical omnitool"
+	name = "Soteria medical \"Minidoc\" omnitool"
 	desc = "An all-in-one medical tool based on the legendary Greyson Positronic model. While convenient, it is less efficient than more advanced surgical tools, such as laser scalpels, and requires a small power cell. This one is a cheap copy of better versions."
 	icon_state = "medimplant"
 	matter = null //Nope
