@@ -1765,9 +1765,9 @@ obj/item/scroll/proc/example_spell(mob/living/carbon/human/M) //testing spell
 			An inkwell of tea in which to dip your fingers to write in tea."
 	icon_state = "blood_basin"
 	density = 1
-	limited_reagents = FALSE
-	refill_rate = 200
-	reagent_id = "blood"
+//	limited_reagents = FALSE
+//	refill_rate = 200
+//	reagent_id = "blood"
 
 /obj/structure/sink/basion/crayon/attack_hand(mob/living/carbon/human/user) //gives us bloody hands for writing spells.
 	if(istype(user))

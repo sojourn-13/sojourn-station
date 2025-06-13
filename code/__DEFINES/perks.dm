@@ -165,6 +165,8 @@
 #define PERK_SLIMEMETH /datum/perk/racial/speed_boost
 #define PERK_SLIMEBRAIN /datum/perk/racial/slime_stat_boost/mental
 #define PERK_SLIMEBUFF /datum/perk/racial/slime_stat_boost/physical
+//FBPs
+#define PERK_LOST_TONGUE /datum/perk/linguist_fbp
 
 //////////////
 //Core Perks//

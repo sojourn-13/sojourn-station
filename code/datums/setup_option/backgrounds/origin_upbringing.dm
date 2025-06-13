@@ -74,6 +74,21 @@
 		STAT_COG = 0
 	)
 
+/datum/category_item/setup_option/background/bckgrnd/lost_tongue
+	name = "Lost Tongue"
+	desc = "Having once been an alien in an organic body, you now have been confined to a mechanical chassis that feels so unfamiliar. Through special modification, you have been once more granted the ability to speak your native tongue."
+
+	perks = list(PERK_LOST_TONGUE)
+	restricted_to_species = list(FORM_FBP)
+	stat_modifiers = list(
+		STAT_ROB = 0,
+		STAT_TGH = 0,
+		STAT_VIG = 0,
+		STAT_BIO = 0,
+		STAT_MEC = 0,
+		STAT_COG = 0
+	)
+
 /datum/category_item/setup_option/background/bckgrnd/linguist
 	name = "Aspiring Linguist"
 	desc = "Be it from your education or from a multi-lingual family, you've found yourself studying languages non-stop throughout your childhood and early adulthood. Unlike most you're silver-tongued \
