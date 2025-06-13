@@ -196,7 +196,7 @@
 	)
 
 /datum/craft_recipe/guild/polytool
-	name = "\"jolly co-operation\" polytool"
+	name = "\"Jolly Co-operation\" polytool"
 	result = /obj/item/tool/polytool
 	steps = list(
 		list(/obj/item/tool/omnitool, 1, "time" = 60),
@@ -208,6 +208,26 @@
 		list(/obj/item/tool_upgrade/augment/fuel_tank, 1, "time" = 60),
 		list(QUALITY_SCREW_DRIVING, 20, "time" = 60),
 		list(QUALITY_BOLT_TURNING, 30, "time" = 40)
+	)
+
+/datum/craft_recipe/guild/engimultitool
+	name = "Artificer's Guild \"Little Helper\" omnitool"
+	result = /obj/item/tool/polytool/engimultitool
+	steps = list(
+		list(CRAFT_MATERIAL, 5, MATERIAL_PLASTEEL, 60),
+		list(QUALITY_WELDING, 30, 20),
+		list(/obj/item/circuitboard, 1),
+		list(QUALITY_SCREW_DRIVING, 20, 40),
+		list(QUALITY_WIRE_CUTTING, 20, 40),
+		list(CRAFT_MATERIAL, 3, MATERIAL_STEEL, 20),
+		list(QUALITY_BOLT_TURNING, 30, 40),
+		list(QUALITY_HAMMERING, 30, 20),
+		list(/obj/item/stack/cable_coil, 30, 20),
+		list(QUALITY_WIRE_CUTTING, 20, 40),
+		list(/obj/item/stock_parts/capacitor/guild, 1, 40),
+		list(QUALITY_PULSING, 30, 20),
+		list(/obj/item/stock_parts/manipulator/guild, 1, 30),
+		list(QUALITY_SCREW_DRIVING, 30)
 	)
 
 /datum/craft_recipe/guild/deadblow_hammer
