@@ -668,7 +668,7 @@
 	var/wrath_damage = 0.2
 
 /datum/ritual/cruciform/divisor/divisor_smite/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C)
-	user.damage_multiplier += wrath_damage
+	user.cqc_damage_multiplier += wrath_damage
 	to_chat(user, SPAN_NOTICE("You feel divine wrath empowering you with immense but fleeting strength!"))
 	set_personal_cooldown(user)
 	addtimer(CALLBACK(src, PROC_REF(discard_effect), user), src.effect_time)
@@ -676,7 +676,7 @@
 
 /datum/ritual/cruciform/divisor/divisor_smite/proc/discard_effect(mob/living/carbon/human/user, amount)
 	to_chat(user, SPAN_NOTICE("You feel the divine wrath fade, leaving you with only your own strength."))
-	user.damage_multiplier -= wrath_damage
+	user.cqc_damage_multiplier -= wrath_damage
 
 /datum/ritual/cruciform/divisor/zoom_litany
 	name = "Speed of Battle"
