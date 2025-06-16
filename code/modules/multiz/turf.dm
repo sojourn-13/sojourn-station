@@ -180,6 +180,11 @@ see multiz/movement.dm for some info.
 				if(H.a_intent == I_HURT)
 					fall_damage = (H.mob_size + (min(min(H.stats.getStat(STAT_ROB), 1), 60) / 2)) //max is 50(a lot)
 
+			//We have the parkour perk just pass them, they can dodge it
+			if(ishuman(M))
+				if(M.stats.getPerk(PERK_PARKOUR))
+					continue
+
 			if(M == mover)
 				continue
 			//Armor + 5 so we dont get stunlocked by not waring a hat and someone throws like 1 bullet case at a time
