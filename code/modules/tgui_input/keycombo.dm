@@ -8,7 +8,7 @@
  * * user - The user to show the number input to.
  * * message - The content of the number input, shown in the body of the TGUI window.
  * * title - The title of the number input modal, shown on the top of the TGUI window.
- * * default - The default (or current) key, shown as a placeholder. 
+ * * default - The default (or current) key, shown as a placeholder.
  */
 /proc/tgui_input_keycombo(mob/user = usr, message, title = "Key Input", default = 0, timeout = 0, ui_state = GLOB.always_state)
 	if (!istype(user))

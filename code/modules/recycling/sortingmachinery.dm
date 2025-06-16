@@ -347,7 +347,7 @@
 
 	dat += "</tr></table><br>Current Selection: [currTag ? currTag : "None"]</tt>"
 	dat += "<br><a href='?src=\ref[src];nextTag=CUSTOM'>Enter custom location.</a>"
-	user << browse(dat, "window=destTagScreen;size=450x375")
+	user << browse(HTML_SKELETON(dat), "window=destTagScreen;size=450x375")
 	onclose(user, "destTagScreen")
 
 /obj/item/device/destTagger/attack_self(mob/user as mob)
@@ -380,7 +380,7 @@
 /obj/machinery/disposal/deliveryChute/Initialize(mapload, d)
 	..()
 	return INIT_ORDER_LATELOAD
-	
+
 /obj/machinery/disposal/deliveryChute/LateInitialize(mapload)
 	. = ..()
 	trunk = locate() in loc
@@ -486,7 +486,7 @@
 				C.density = TRUE
 				C.update()
 				qdel(src)
-				
+
 			return
 
 /obj/machinery/disposal/deliveryChute/Destroy()
