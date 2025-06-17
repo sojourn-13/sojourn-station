@@ -1,58 +1,60 @@
+// Crayon Colors
 /obj/item/pen/crayon/red
 	icon_state = "crayonred"
-	colour = "#DA0000"
-	shadeColour = "#810C0C"
+	colour = COLOR_CRAYON_RED
+	shadeColour = COLOR_CRAYON_SHADE_RED
 	colourName = "red"
 
 /obj/item/pen/crayon/orange
 	icon_state = "crayonorange"
-	colour = "#FF9300"
-	shadeColour = "#A55403"
+	colour = COLOR_CRAYON_ORANGE
+	shadeColour = COLOR_CRAYON_SHADE_ORANGE
 	colourName = "orange"
 
 /obj/item/pen/crayon/yellow
 	icon_state = "crayonyellow"
-	colour = "#FFF200"
-	shadeColour = "#886422"
+	colour = COLOR_CRAYON_YELLOW
+	shadeColour = COLOR_CRAYON_SHADE_YELLOW
 	colourName = "yellow"
 
 /obj/item/pen/crayon/green
 	icon_state = "crayongreen"
-	colour = "#A8E61D"
-	shadeColour = "#61840F"
+	colour = COLOR_CRAYON_GREEN
+	shadeColour = COLOR_CRAYON_SHADE_GREEN
 	colourName = "green"
 
 /obj/item/pen/crayon/blue
 	icon_state = "crayonblue"
-	colour = "#00B7EF"
-	shadeColour = "#0082A8"
+	colour = COLOR_CRAYON_BLUE
+	shadeColour = COLOR_CRAYON_SHADE_BLUE
 	colourName = "blue"
 
 /obj/item/pen/crayon/purple
 	icon_state = "crayonpurple"
-	colour = "#DA00FF"
-	shadeColour = "#810CFF"
+	colour = COLOR_CRAYON_PURPLE
+	shadeColour = COLOR_CRAYON_SHADE_PURPLE
 	colourName = "purple"
+
+/obj/item/pen/crayon/black
+	icon_state = "crayonblack"
+	colour = COLOR_CRAYON_BLACK
+	shadeColour = COLOR_CRAYON_SHADE_BLACK
+	colourName = "black"
+
+/obj/item/pen/crayon/white
+	icon_state = "crayonwhite"
+	colour = COLOR_CRAYON_WHITE
+	shadeColour = COLOR_CRAYON_SHADE_WHITE
+	colourName = "white"
 
 /obj/item/pen/crayon/mime
 	icon_state = "crayonmime"
 	desc = "A very sad-looking crayon."
-	colour = "#FFFFFF"
-	shadeColour = "#000000"
+	colour = COLOR_CRAYON_WHITE
+	shadeColour = COLOR_CRAYON_BLACK
 	colourName = "mime"
 	uses = 0
 	grindable = FALSE
-
-/obj/item/pen/crayon/mime/attack_self(mob/living/user as mob) //inversion
-	if(colour != "#FFFFFF" && shadeColour != "#000000")
-		colour = "#FFFFFF"
-		shadeColour = "#000000"
-		to_chat(user, "You will now draw in white and black with this crayon.")
-	else
-		colour = "#000000"
-		shadeColour = "#FFFFFF"
-		to_chat(user, "You will now draw in black and white with this crayon.")
-	return
 
 /obj/item/pen/crayon/rainbow
 	icon_state = "crayonrainbow"
@@ -62,11 +64,7 @@
 	uses = 0
 	grindable = FALSE
 
-/obj/item/pen/crayon/rainbow/attack_self(mob/living/user as mob)
-	colour = input(user, "Please select the main color.", "Crayon color") as color
-	shadeColour = input(user, "Please select the shade color.", "Crayon color") as color
-	return
-
+// Crayon Logic
 /obj/item/pen/crayon/afterattack(atom/target, mob/user as mob, proximity)
 	if(!proximity) return
 	if(istype(target,/turf/simulated/floor))
@@ -110,3 +108,21 @@
 				qdel(src)
 	else
 		..()
+
+// Mime Crayon Logic
+/obj/item/pen/crayon/mime/attack_self(mob/living/user as mob)
+	if(colour != COLOR_CRAYON_WHITE && shadeColour != COLOR_CRAYON_BLACK)
+		colour = COLOR_CRAYON_WHITE
+		shadeColour = COLOR_CRAYON_BLACK
+		to_chat(user, "You will now draw in white and black with this crayon.")
+	else
+		colour = COLOR_CRAYON_BLACK
+		shadeColour = COLOR_CRAYON_WHITE
+		to_chat(user, "You will now draw in black and white with this crayon.")
+	return
+
+// Rainbow Crayon Logic
+/obj/item/pen/crayon/rainbow/attack_self(mob/living/user as mob)
+	colour = input(user, "Please select the main color.", "Crayon color") as color
+	shadeColour = input(user, "Please select the shade color.", "Crayon color") as color
+	return
