@@ -59,6 +59,18 @@
 	. = ..()
 	gunshot_residue = null
 
+/obj/item/clothing/proc/return_inv()
+	var/list/L = list()
+
+	L += src.contents
+
+	for(var/obj/item/storage/S in src)
+		L += S.return_inv()
+	for(var/obj/item/gift/G in src)
+		L += G.gift
+		if (istype(G.gift, /obj/item/storage))
+			L += G.gift:return_inv()
+	return L
 
 //Delayed equipping
 /obj/item/clothing/pre_equip(var/mob/user, var/slot)
@@ -586,7 +598,8 @@ BLIND     // can't see anything
 			/obj/item/material/butterfly,
 			/obj/item/material/kitchen/utensil,
 			/obj/item/tool/knife/tacknife,
-			/obj/item/tool/knife/shiv
+			/obj/item/tool/knife/shiv,
+			/obj/item/oddity/common/old_knife
 		)
 	if(!not_a_knife)
 		not_a_knife = list(/obj/item/tool/knife/psionic_blade)

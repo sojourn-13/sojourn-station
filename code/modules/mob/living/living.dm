@@ -364,6 +364,10 @@ default behaviour is:
 			L += D.wrapped
 			if(istype(D.wrapped, /obj/item/storage)) //this should never happen
 				L += get_contents(D.wrapped)
+
+		for(var/obj/item/clothing/C in Storage.return_inv())//Check for pockets and shoe knifes
+			L += get_contents(C)
+
 		return L
 
 	else
@@ -371,6 +375,9 @@ default behaviour is:
 		L += src.contents
 		for(var/obj/item/storage/S in src.contents)	//Check for storage items
 			L += get_contents(S)
+
+		for(var/obj/item/clothing/C in src.contents)	//Check for pockets and shoe knifes
+			L += get_contents(C)
 
 		for(var/obj/item/gift/G in src.contents) //Check for gift-wrapped items
 			L += G.gift
