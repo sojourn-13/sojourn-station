@@ -236,7 +236,7 @@ obj/item/clothing/suit/gownrisque/alt
 	extra_allowed = list(
 	/obj/item/storage/firstaid,
 	/obj/item/storage/lockbox,
-	/obj/item/storage/part_replacer,
+	/obj/item/storage/rped,
 	/obj/item/storage/secure,
 	/obj/item/storage/toolbox,
 	/obj/item/storage/briefcase,

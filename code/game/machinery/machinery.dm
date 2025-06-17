@@ -356,7 +356,7 @@ Class Procs:
 
 	return FALSE //If got no qualities - continue base attackby proc
 
-/obj/machinery/proc/default_part_replacement(var/obj/item/storage/part_replacer/R, var/mob/user)
+/obj/machinery/proc/default_part_replacement(var/obj/item/storage/rped/R, var/mob/user)
 	if(!istype(R))
 		return 0
 	if(!component_parts)

@@ -434,7 +434,7 @@
 
 	unlocks_designs = list(/datum/design/research/item/part/RPED,
 							 /datum/design/research/circuit/secure_airlock,
-							 /datum/design/research/item/part/RPED/mini,
+							 /datum/design/research/item/part/RPED/compact,
 							 /datum/design/research/item/part/rocket)
 
 /datum/technology/industrial_printing

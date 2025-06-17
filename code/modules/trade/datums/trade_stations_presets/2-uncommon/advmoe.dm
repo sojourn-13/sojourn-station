@@ -20,7 +20,7 @@
 			/obj/item/storage/deferred/slime = custom_good_amount_range(list(0, 1)),
 			/obj/item/storage/deferred/xenobotany = custom_good_amount_range(list(2, 5)),
 			/obj/item/storage/deferred/rnd = custom_good_amount_range(list(-1, 1)),
-			/obj/item/storage/part_replacer/mini,
+			/obj/item/storage/rped/compact,
 			/obj/item/device/geiger
 		),
 		"Cryo-Sealed Hydrogen" = list(

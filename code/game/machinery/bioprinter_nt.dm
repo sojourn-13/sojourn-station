@@ -18,7 +18,7 @@
 		return
 
 	//it needs to have panel open, but just in case
-	if(istype(I, /obj/item/storage/part_replacer))
+	if(istype(I, /obj/item/storage/rped))
 		return
 
 	..(I, user)

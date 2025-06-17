@@ -130,9 +130,9 @@
 /datum/design/research/item/part/RPED
 	name = "Rapid Part Exchange Device"
 	desc = "A special mechanical module made to store, sort, and apply standard machine parts."
-	build_path = /obj/item/storage/part_replacer
+	build_path = /obj/item/storage/rped
 
-/datum/design/research/item/part/RPED/mini
+/datum/design/research/item/part/RPED/compact
 	name = "Mini Rapid Part Exchange Device"
 	desc = "A special mechanical module made to store, sort, and apply standard machine parts. This one is compact, making it easier to handle, but holds less."
-	build_path = /obj/item/storage/part_replacer/mini
+	build_path = /obj/item/storage/rped/compact

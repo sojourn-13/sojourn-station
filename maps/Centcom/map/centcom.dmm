@@ -5211,7 +5211,7 @@
 /area/wizard_station)
 "od" = (
 /obj/structure/table/reinforced,
-/obj/item/storage/part_replacer,
+/obj/item/storage/rped,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/centcom/evac)
 "oe" = (
@@ -8772,7 +8772,7 @@
 /obj/machinery/recharger/industrial,
 /obj/structure/table/reinforced,
 /obj/item/stock_parts/manipulator/handmade,
-/obj/item/storage/part_replacer/mini,
+/obj/item/storage/rped/compact,
 /obj/structure/sign/warning/secure_area/small{
 	pixel_y = -24
 	},
