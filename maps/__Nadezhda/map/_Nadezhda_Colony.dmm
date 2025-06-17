@@ -20866,7 +20866,7 @@
 /area/nadezhda/outside/pond)
 "dXr" = (
 /obj/structure/table/rack/shelf,
-/obj/item/storage/part_replacer/mini,
+/obj/item/storage/rped/compact,
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/nadezhda/engineering/workshop)
 "dXv" = (

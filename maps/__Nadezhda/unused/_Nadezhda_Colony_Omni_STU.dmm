@@ -117555,7 +117555,7 @@
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "wKm" = (
 /obj/structure/table/rack/shelf,
-/obj/item/storage/part_replacer/mini,
+/obj/item/storage/rped/compact,
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/nadezhda/engineering/workshop)
 "wKo" = (

@@ -182,7 +182,7 @@
 					to_chat(user, SPAN_WARNING("This frame does not accept circuit boards of this type!"))
 
 		if(STATE_CIRCUIT)
-			if(istype(I, /obj/item/storage/part_replacer))
+			if(istype(I, /obj/item/storage/rped))
 				handle_part_replacer(I, user)
 
 			else if(istype(I, /obj/item))
@@ -214,7 +214,7 @@
 					examine(user)
 	update_icon()
 
-/obj/machinery/constructable_frame/machine_frame/proc/handle_part_replacer(obj/item/storage/part_replacer/R, mob/user)
+/obj/machinery/constructable_frame/machine_frame/proc/handle_part_replacer(obj/item/storage/rped/R, mob/user)
 	// Ahead of time prepping for bluespace RPED calling into this directly
 	if(state != STATE_CIRCUIT || !req_components)
 		return

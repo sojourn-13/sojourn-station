@@ -26436,7 +26436,7 @@
 /area/nadezhda/dungeon/outside/prepper/delta)
 "rCG" = (
 /obj/structure/table/steel_reinforced,
-/obj/item/storage/part_replacer,
+/obj/item/storage/rped,
 /obj/item/stock_parts/manipulator/pico,
 /obj/item/stock_parts/manipulator/pico,
 /obj/item/stock_parts/manipulator/pico,
