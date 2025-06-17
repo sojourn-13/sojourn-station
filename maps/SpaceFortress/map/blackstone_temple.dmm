@@ -153,7 +153,7 @@
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "fe" = (
-/obj/structure/sink/basion,
+/obj/structure/sink/basin,
 /obj/item/soap/hunters,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
@@ -191,9 +191,9 @@
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "gi" = (
-/obj/structure/sink/basion{
+/obj/structure/sink/basin{
 	icon_state = "BaptismFont_Wine";
-	name = "blood basion";
+	name = "blood basin";
 	desc = "A deep basin of polished stone that has been pre-filled with fresh blood.";
 	reagent_id = "blood";
 	color = "#880000"
@@ -329,9 +329,9 @@
 /turf/simulated/floor/asteroid/grass,
 /area/outpost/abandoned_fortress)
 "jR" = (
-/obj/structure/sink/basion{
+/obj/structure/sink/basin{
 	reagent_id = "icer";
-	name = "ice basion";
+	name = "ice basin";
 	desc = "A deep basin of polished stone that has been pre-filled with fresh ice."
 	},
 /turf/simulated/floor/rock/manmade/ruin3,
@@ -1094,7 +1094,7 @@
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "FX" = (
-/obj/structure/sink/basion,
+/obj/structure/sink/basin,
 /obj/item/reagent_containers/glass/bucket,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
@@ -1224,9 +1224,9 @@
 /turf/simulated/floor/asteroid/dirt/flood,
 /area/outpost/abandoned_fortress)
 "JB" = (
-/obj/structure/sink/basion{
+/obj/structure/sink/basin{
 	reagent_id = "icer";
-	name = "ice basion";
+	name = "ice basin";
 	desc = "A deep basin of polished stone that has been pre-filled with fresh ice."
 	},
 /obj/item/reagent_containers/snacks/meat/chicken/vox,
@@ -1268,7 +1268,7 @@
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "KY" = (
-/obj/structure/sink/basion,
+/obj/structure/sink/basin,
 /obj/item/trash/plate,
 /obj/item/trash/plate,
 /obj/item/trash/plate,
@@ -1389,9 +1389,9 @@
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "OT" = (
-/obj/structure/sink/basion{
+/obj/structure/sink/basin{
 	reagent_id = "icer";
-	name = "ice basion";
+	name = "ice basin";
 	desc = "A deep basin of polished stone that has been pre-filled with fresh ice."
 	},
 /obj/item/reagent_containers/snacks/meat/carp,
@@ -1498,10 +1498,10 @@
 /turf/simulated/floor/asteroid/grass,
 /area/outpost/abandoned_fortress)
 "Ss" = (
-/obj/structure/sink/basion{
+/obj/structure/sink/basin{
 	icon_state = "BaptismFont_Wine";
 	reagent_id = "pwine";
-	name = "wine basion";
+	name = "wine basin";
 	desc = "A deep basin of polished stone that has been pre-filled with wine."
 	},
 /turf/simulated/floor/rock/manmade/ruin3,
@@ -1571,9 +1571,9 @@
 /turf/simulated/floor/beach/water/ocean,
 /area/outpost/abandoned_fortress)
 "TY" = (
-/obj/structure/sink/basion{
+/obj/structure/sink/basin{
 	reagent_id = "icer";
-	name = "ice basion";
+	name = "ice basin";
 	desc = "A deep basin of polished stone that has been pre-filled with fresh ice."
 	},
 /obj/item/reagent_containers/snacks/meat/carp,
@@ -1724,7 +1724,7 @@
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "Yl" = (
-/obj/structure/sink/basion,
+/obj/structure/sink/basin,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "YD" = (

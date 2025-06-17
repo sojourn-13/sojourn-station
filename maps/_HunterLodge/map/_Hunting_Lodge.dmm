@@ -173,7 +173,7 @@
 /obj/effect/floor_decal/spline/fancy{
 	color = "#6c3d26"
 	},
-/obj/structure/sink/basion,
+/obj/structure/sink/basin,
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/outside/forest/hunting_lodge)
 "aS" = (
@@ -2232,7 +2232,7 @@
 /turf/simulated/floor/wood/wild2,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "rd" = (
-/obj/structure/sink/basion,
+/obj/structure/sink/basin,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "rg" = (

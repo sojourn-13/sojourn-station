@@ -601,7 +601,7 @@
 	icon_state = "BaptismFont_Water"
 //	refill_rate = 2
 
-/obj/structure/sink/basion
+/obj/structure/sink/basin
 	name = "water basin"
 	desc = "A deep basin of polished stone that has been pre-filled with fresh water."
 	icon_state = "BaptismFont_Water"

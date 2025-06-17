@@ -1682,7 +1682,7 @@
 /area/nadezhda/maintenance/undergroundfloor1north)
 "arE" = (
 /obj/effect/floor_decal/industrial/hatch/blue,
-/obj/structure/sink/basion,
+/obj/structure/sink/basin,
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/crew_quarters/hydroponics)
 "arF" = (
@@ -97982,7 +97982,7 @@
 	})
 "suY" = (
 /obj/effect/floor_decal/industrial/outline/blue,
-/obj/structure/sink/basion,
+/obj/structure/sink/basin,
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/rnd/xenobiology/xenoflora)
 "svb" = (
