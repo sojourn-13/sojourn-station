@@ -8038,7 +8038,7 @@
 /turf/simulated/floor/wood/wild1,
 /area/centcom/evac)
 "Nf" = (
-/obj/structure/sink/basion/crayon,
+/obj/structure/sink/basin/crayon,
 /turf/simulated/floor/wood/wild1,
 /area/centcom/evac)
 "Nn" = (

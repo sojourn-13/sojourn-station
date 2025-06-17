@@ -1,8 +1,8 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "ae" = (
-/obj/structure/sink/basion{
+/obj/structure/sink/basin{
 	icon_state = "BaptismFont_Wine";
-	name = "blood basion";
+	name = "blood basin";
 	desc = "A deep basin of polished stone that has been pre-filled with fresh blood.";
 	reagent_id = "blood";
 	color = "#880000"
@@ -360,10 +360,10 @@
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/asteroid/rogue)
 "nC" = (
-/obj/structure/sink/basion{
+/obj/structure/sink/basin{
 	icon_state = "BaptismFont_Wine";
 	reagent_id = "pwine";
-	name = "wine basion";
+	name = "wine basin";
 	desc = "A deep basin of polished stone that has been pre-filled with wine."
 	},
 /turf/simulated/floor/rock/manmade/ruin3,
@@ -437,7 +437,7 @@
 /turf/simulated/floor/carpet/bcarpet,
 /area/asteroid/rogue)
 "oT" = (
-/obj/structure/sink/basion,
+/obj/structure/sink/basin,
 /turf/simulated/floor/carpet/bcarpet,
 /area/asteroid/rogue)
 "pg" = (
@@ -501,7 +501,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
 "rQ" = (
-/obj/structure/sink/basion,
+/obj/structure/sink/basin,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/asteroid/rogue)
 "rY" = (

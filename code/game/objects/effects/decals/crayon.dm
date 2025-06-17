@@ -1217,7 +1217,7 @@
 		B.remove_self(100) // Basically pouring your blood into a container, insane
 		M.sanity.breakdown(FALSE) // If your blood got sucked and poured into a container you too would freak out
 		M.sanity.changeLevel(-50)
-		var/obj/structure/sink/basion/crayon/N = new /obj/structure/sink/basion/crayon
+		var/obj/structure/sink/basin/crayon/N = new /obj/structure/sink/basin/crayon
 		N.loc = W.loc
 		qdel(W)
 	return
@@ -1759,7 +1759,7 @@ obj/item/scroll/proc/example_spell(mob/living/carbon/human/M) //testing spell
 		user.disabilities|=NEARSIGHTED
 
 // TEA FONT!!!
-/obj/structure/sink/basion/crayon
+/obj/structure/sink/basin/crayon
 	name = "crayon basin"
 	desc = "A deep basin of polished black crayon that forever fills with tea for a most splended party. \
 			An inkwell of tea in which to dip your fingers to write in tea."
@@ -1769,7 +1769,7 @@ obj/item/scroll/proc/example_spell(mob/living/carbon/human/M) //testing spell
 //	refill_rate = 200
 //	reagent_id = "blood"
 
-/obj/structure/sink/basion/crayon/attack_hand(mob/living/carbon/human/user) //gives us bloody hands for writing spells.
+/obj/structure/sink/basin/crayon/attack_hand(mob/living/carbon/human/user) //gives us bloody hands for writing spells.
 	if(istype(user))
 		if(user.gloves)
 			to_chat(user, SPAN_NOTICE("You must take off your gloves to dip your fingers into the kettle."))
@@ -1784,7 +1784,7 @@ obj/item/scroll/proc/example_spell(mob/living/carbon/human/M) //testing spell
 			to_chat(user, SPAN_NOTICE("Voices boom in your thoughts. TAKE NOT! INEXPERIENCED PUPPET!"))
 		add_verb(user, /mob/living/carbon/human/proc/bloody_doodle)
 
-/obj/structure/sink/basion/crayon/attackby(obj/item/I, mob/user)
+/obj/structure/sink/basin/crayon/attackby(obj/item/I, mob/user)
 	if(I.has_quality(QUALITY_BOLT_TURNING))
 		anchored = !anchored
 		to_chat(user, SPAN_NOTICE("You [anchored? "" : "un"]secured \the [src]!"))
