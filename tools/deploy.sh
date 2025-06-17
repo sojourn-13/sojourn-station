@@ -23,7 +23,7 @@ if [ -d ".git" ]; then
   cp -r .git/logs/* $1/.git/logs/
 fi
 
-cp sojourn-station.dmb sojourn-station.rsc $1/
+cp sojourn-iskhod.dmb sojourn-iskhod.rsc $1/
 cp -r maps/* $1/maps/
 cp -r strings/* $1/strings/
 cp -r config/names $1/config/

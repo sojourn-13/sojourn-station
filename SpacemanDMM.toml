@@ -1,4 +1,4 @@
-environment = "sojourn-station.dme"
+environment = "sojourn-iskhod.dme"
 
 [langserver]
 dreamchecker = true

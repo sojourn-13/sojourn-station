@@ -23,7 +23,7 @@
 
 /datum/getrev/proc/get_log_message()
 	var/list/msg = list()
-	msg += "Running /sojourn-station/ revision: [date]"
+	msg += "Running /sojourn-iskhod/ revision: [date]"
 	if(originmastercommit)
 		msg += "origin/master: [originmastercommit]"
 
