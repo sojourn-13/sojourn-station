@@ -15,7 +15,7 @@ Lead Janitor - CFWMagic
 
 ## CREDITS
 
-Mapping - Glitchy, smoggie<br/>
+Mapping - Glitchy, smoggie, John-Guild<br/>
 Lore - Bamhalazam, Yo-Rimbo, Tzui5020, Floofster<br/>
 Code - Ryuu, CFW Magic, Tennessee, Bamhalazam, R4D6<br/>
 
