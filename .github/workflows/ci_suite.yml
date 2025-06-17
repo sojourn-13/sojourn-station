@@ -10,7 +10,7 @@ jobs:
   run_linters:
     if: "!contains(github.event.head_commit.message, '[ci skip]')"
     name: Run Linters Diagnostic Tool
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-22.04
     concurrency:
       group: run_linters-${{ github.ref }}
       cancel-in-progress: true
