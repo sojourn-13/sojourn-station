@@ -3577,7 +3577,7 @@
 	strength = 30
 
 	glass_unique_appearance = TRUE
-	glass_icon_state = "marquadrink"
+	glass_icon_state = "Marquadrink"
 	glass_name = "Ocular"
 	glass_desc = "Don't make eye contact, a favorite of the Mar qua."
 	price_per_unit = 0.2

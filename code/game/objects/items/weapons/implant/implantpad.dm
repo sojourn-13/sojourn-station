@@ -4,7 +4,7 @@
 	name = "implantpad"
 	desc = "Used to modify implants."
 	icon = 'icons/obj/items.dmi'
-	icon_state = "implantpad-0"
+	icon_state = "implantpad-1" // CFW - Was implantpad-0, hotfix attempt
 	item_state = "electronic"
 	throw_speed = 1
 	throw_range = 5
@@ -22,7 +22,7 @@
 				src.icon_state = "implantpad-1"
 				add_overlay("implant_[case.implant:overlay_icon]")
 	else
-		src.icon_state = "implantpad-0"
+		src.icon_state = "implantpad-1" // CFW - Was implantpad-0, hotfix attempt
 	return
 
 
