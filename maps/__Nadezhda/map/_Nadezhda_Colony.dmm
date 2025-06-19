@@ -58613,7 +58613,10 @@
 "lcH" = (
 /obj/random/junk/low_chance,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/mine/armed,
+/obj/item/mine/excelsior{
+	armed = 1;
+	anchored = 1
+	},
 /turf/simulated/floor/industrial/bricks,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "lcI" = (
@@ -77181,8 +77184,8 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/structure/disposalpipe/junction/yjunction{
-	dir = 2
+/obj/structure/disposalpipe/junction{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/lab)
@@ -82804,7 +82807,10 @@
 "pCq" = (
 /obj/machinery/door/airlock/maintenance_common,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/mine/armed,
+/obj/item/mine/excelsior{
+	armed = 1;
+	anchored = 1
+	},
 /turf/simulated/floor/industrial/bricks,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "pCr" = (
@@ -115206,7 +115212,10 @@
 /area/nadezhda/engineering/workshop)
 "vDi" = (
 /obj/machinery/door/airlock/maintenance_common,
-/obj/item/mine/armed,
+/obj/item/mine/excelsior{
+	armed = 1;
+	anchored = 1
+	},
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "vDn" = (
@@ -124760,7 +124769,8 @@
 /obj/structure/boulder,
 /obj/effect/decal/cleanable/rubble,
 /obj/item/mine/excelsior{
-	armed = 1
+	armed = 1;
+	anchored = 1
 	},
 /obj/structure/cable/cyan{
 	d1 = 1;
