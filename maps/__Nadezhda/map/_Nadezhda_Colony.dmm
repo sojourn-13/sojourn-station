@@ -1682,7 +1682,7 @@
 /area/nadezhda/maintenance/undergroundfloor1north)
 "arE" = (
 /obj/effect/floor_decal/industrial/hatch/blue,
-/obj/structure/sink/basion,
+/obj/structure/sink/basin,
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/crew_quarters/hydroponics)
 "arF" = (
@@ -20892,7 +20892,7 @@
 /area/nadezhda/outside/pond)
 "dXr" = (
 /obj/structure/table/rack/shelf,
-/obj/item/storage/part_replacer/mini,
+/obj/item/storage/rped/compact,
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/nadezhda/engineering/workshop)
 "dXv" = (
@@ -98116,7 +98116,7 @@
 	})
 "suY" = (
 /obj/effect/floor_decal/industrial/outline/blue,
-/obj/structure/sink/basion,
+/obj/structure/sink/basin,
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/rnd/xenobiology/xenoflora)
 "svb" = (
@@ -124768,6 +124768,10 @@
 "xrO" = (
 /obj/structure/boulder,
 /obj/effect/decal/cleanable/rubble,
+/obj/item/mine/excelsior{
+	armed = 1;
+	anchored = 1
+	},
 /obj/structure/cable/cyan{
 	d1 = 1;
 	d2 = 2;
