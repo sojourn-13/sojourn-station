@@ -319,7 +319,7 @@ note dizziness decrements automatically in the mob's Life() proc.
 					M.client.eye = locate(dd_range(1,M.loc.x+rand(-strength,strength),world.maxx),dd_range(1,M.loc.y+rand(-strength,strength),world.maxy),M.loc.z)
 				sleep(1)
 
-		M.client.eye=oldeye
+		M.client?.eye=oldeye
 		M.shakecamera = 0
 
 

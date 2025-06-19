@@ -121,7 +121,7 @@
 			user.visible_message(SPAN_WARNING("[user] throws [C] [through] \the [src]!"),
 			SPAN_WARNING("You throw [C] [through] \the [src]."))
 			user.drop_item()
-			C.forceMove(target.loc)
+			C.forceMove(target?.loc)
 			var/direction = pick(NORTH, SOUTH, EAST, WEST, NORTHEAST, NORTHWEST, SOUTHEAST, SOUTHWEST)
 			C.Move(get_step(C, direction))
 			if(istype(C, /obj/item/grenade))
