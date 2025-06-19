@@ -73,7 +73,7 @@
 
 /obj/item/folder/AltClick(mob/user)
 	..()
-	if(contents)
+	if(contents && contents.len > 0)
 		remove_item(contents[1], user)
 
 /obj/item/folder/update_icon()

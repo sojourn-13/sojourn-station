@@ -200,7 +200,7 @@ var/global/obj/machinery/power/eotp/eotp
 	else if(type_release == ENERGY_REWARD)
 		for(var/mob/living/carbon/human/H in disciples)
 			var/obj/item/implant/core_implant/cruciform/C = H.get_core_implant(/obj/item/implant/core_implant/cruciform)
-			C.power_regen += initial(C.power_regen)
+			C?.power_regen += initial(C?.power_regen)
 			to_chat(H, SPAN_NOTICE("Your cruciform vibrates, its power regeneration enhancing temporarily."))
 
 	//for(var/disciple in disciples)
