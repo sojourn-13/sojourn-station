@@ -110,11 +110,11 @@
 			return
 		if(istype(I, /obj/item/pen/crayon))
 			var/obj/item/pen/crayon/Holder = I
-			if (Holder.colourName == "orange")
+			if (Holder.color_name == "orange")
 				colour = "#FF9300"
-			if (Holder.colourName == "mime")
+			if (Holder.color_name == "mime")
 				colour = "grey"
-			else colour = Holder.colourName
+			else colour = Holder.color_name
 			update_icon()
 			user.unEquip(I, src)
 			qdel(I)

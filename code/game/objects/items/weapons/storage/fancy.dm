@@ -146,11 +146,11 @@ obj/item/storage/fancy/dogtreats/populate_contents()
 	cut_overlays() //resets list
 	add_overlay(image('icons/obj/crayons.dmi',"crayonbox"))
 	for(var/obj/item/pen/crayon/crayon in contents)
-		add_overlay(image('icons/obj/crayons.dmi',crayon.colourName))
+		add_overlay(image('icons/obj/crayons.dmi',crayon.color_name))
 
 /obj/item/storage/fancy/crayons/attackby(obj/item/W as obj, mob/user as mob)
 	if(istype(W,/obj/item/pen/crayon))
-		switch(W:colourName)
+		switch(W:color_name)
 			if("mime")
 				to_chat(usr, "This crayon is too sad to be contained in this box.")
 				return

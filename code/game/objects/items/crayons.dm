@@ -2,65 +2,65 @@
 /obj/item/pen/crayon/red
 	icon_state = "crayonred"
 	colour = COLOR_CRAYON_RED
-	shadeColour = COLOR_CRAYON_SHADE_RED
-	colourName = "red"
+	shade_color = COLOR_CRAYON_SHADE_RED
+	color_name = "red"
 
 /obj/item/pen/crayon/orange
 	icon_state = "crayonorange"
 	colour = COLOR_CRAYON_ORANGE
-	shadeColour = COLOR_CRAYON_SHADE_ORANGE
-	colourName = "orange"
+	shade_color = COLOR_CRAYON_SHADE_ORANGE
+	color_name = "orange"
 
 /obj/item/pen/crayon/yellow
 	icon_state = "crayonyellow"
 	colour = COLOR_CRAYON_YELLOW
-	shadeColour = COLOR_CRAYON_SHADE_YELLOW
-	colourName = "yellow"
+	shade_color = COLOR_CRAYON_SHADE_YELLOW
+	color_name = "yellow"
 
 /obj/item/pen/crayon/green
 	icon_state = "crayongreen"
 	colour = COLOR_CRAYON_GREEN
-	shadeColour = COLOR_CRAYON_SHADE_GREEN
-	colourName = "green"
+	shade_color = COLOR_CRAYON_SHADE_GREEN
+	color_name = "green"
 
 /obj/item/pen/crayon/blue
 	icon_state = "crayonblue"
 	colour = COLOR_CRAYON_BLUE
-	shadeColour = COLOR_CRAYON_SHADE_BLUE
-	colourName = "blue"
+	shade_color = COLOR_CRAYON_SHADE_BLUE
+	color_name = "blue"
 
 /obj/item/pen/crayon/purple
 	icon_state = "crayonpurple"
 	colour = COLOR_CRAYON_PURPLE
-	shadeColour = COLOR_CRAYON_SHADE_PURPLE
-	colourName = "purple"
+	shade_color = COLOR_CRAYON_SHADE_PURPLE
+	color_name = "purple"
 
 /obj/item/pen/crayon/black
 	icon_state = "crayonblack"
 	colour = COLOR_CRAYON_BLACK
-	shadeColour = COLOR_CRAYON_SHADE_BLACK
-	colourName = "black"
+	shade_color = COLOR_CRAYON_SHADE_BLACK
+	color_name = "black"
 
 /obj/item/pen/crayon/white
 	icon_state = "crayonwhite"
 	colour = COLOR_CRAYON_WHITE
-	shadeColour = COLOR_CRAYON_SHADE_WHITE
-	colourName = "white"
+	shade_color = COLOR_CRAYON_SHADE_WHITE
+	color_name = "white"
 
 /obj/item/pen/crayon/mime
 	icon_state = "crayonmime"
 	desc = "A very sad-looking crayon."
 	colour = COLOR_CRAYON_WHITE
-	shadeColour = COLOR_CRAYON_BLACK
-	colourName = "mime"
+	shade_color = COLOR_CRAYON_BLACK
+	color_name = "mime"
 	uses = 0
 	grindable = FALSE
 
 /obj/item/pen/crayon/rainbow
 	icon_state = "crayonrainbow"
 	colour = "#FFF000"
-	shadeColour = "#000FFF"
-	colourName = "rainbow"
+	shade_color = "#000FFF"
+	color_name = "rainbow"
 	uses = 0
 	grindable = FALSE
 
@@ -84,7 +84,7 @@
 				to_chat(user, "You start drawing an arrow on the [target.name].")
 		if(instant || do_after(user, 50))
 			//This looks bad do to needing to cross-reference 2 paths thare are related
-			var/obj/effect/decal/cleanable/crayon/drawing_to_spawn = new /obj/effect/decal/cleanable/crayon(target,colour,shadeColour,drawtype)
+			var/obj/effect/decal/cleanable/crayon/drawing_to_spawn = new /obj/effect/decal/cleanable/crayon(target,colour,shade_color,drawtype)
 			if(link_to_rune)
 				drawing_to_spawn.follow_crayon = src
 			to_chat(user, "You finish drawing.")
@@ -111,18 +111,18 @@
 
 // Mime Crayon Logic
 /obj/item/pen/crayon/mime/attack_self(mob/living/user as mob)
-	if(colour != COLOR_CRAYON_WHITE && shadeColour != COLOR_CRAYON_BLACK)
+	if(colour != COLOR_CRAYON_WHITE && shade_color != COLOR_CRAYON_BLACK)
 		colour = COLOR_CRAYON_WHITE
-		shadeColour = COLOR_CRAYON_BLACK
+		shade_color = COLOR_CRAYON_BLACK
 		to_chat(user, "You will now draw in white and black with this crayon.")
 	else
 		colour = COLOR_CRAYON_BLACK
-		shadeColour = COLOR_CRAYON_WHITE
+		shade_color = COLOR_CRAYON_WHITE
 		to_chat(user, "You will now draw in black and white with this crayon.")
 	return
 
 // Rainbow Crayon Logic
 /obj/item/pen/crayon/rainbow/attack_self(mob/living/user as mob)
 	colour = input(user, "Please select the main color.", "Crayon color") as color
-	shadeColour = input(user, "Please select the shade color.", "Crayon color") as color
+	shade_color = input(user, "Please select the shade color.", "Crayon color") as color
 	return
