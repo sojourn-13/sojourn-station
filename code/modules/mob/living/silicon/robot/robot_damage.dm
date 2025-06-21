@@ -48,10 +48,10 @@
 		if(C.installed == 1) rval += C
 	return rval
 
-/mob/living/silicon/robot/proc/get_armour()
+/mob/living/silicon/robot/proc/get_armor()
 
 	if(!components.len) return FALSE
-	var/datum/robot_component/C = components["armour"]
+	var/datum/robot_component/C = components["armor"]
 	if(C && C.installed == 1)
 		return C
 	return FALSE
@@ -85,7 +85,7 @@
 			to_chat(src, "\red Your shield absorbs some of the impact!")
 
 	if(!emp)
-		var/datum/robot_component/armour/A = get_armour()
+		var/datum/robot_component/armor/A = get_armor()
 		if(A)
 			A.take_damage(brute,burn,sharp,edge)
 			return
@@ -130,7 +130,7 @@
 			burn -= absorb_burn
 			to_chat(src, "\red Your shield absorbs some of the impact!")
 
-	var/datum/robot_component/armour/A = get_armour()
+	var/datum/robot_component/armor/A = get_armor()
 	if(A)
 		A.take_damage(brute*A.brute_mult,burn*A.burn_mult,sharp)
 		return

@@ -10861,7 +10861,7 @@
 /area/nadezhda/quartermaster/hangarsupply)
 "aCF" = (
 /obj/machinery/door/airlock/command{
-	name = "Bridge Armoury";
+	name = "Bridge Armory";
 	req_access = list(20)
 	},
 /obj/structure/disposalpipe/segment{

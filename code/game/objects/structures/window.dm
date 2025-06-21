@@ -624,7 +624,7 @@
 	maximal_heat = T0C + 99453 // Safe use temperature at 100,000 kelvin. I think?
 	damage_per_fire_tick = 1.5
 	maxHealth = 300
-	resistance = RESISTANCE_ARMOURED
+	resistance = RESISTANCE_ARMORED
 
 /obj/structure/window/reinforced/plasma/full
 	dir = SOUTH|EAST
@@ -632,7 +632,7 @@
 	icon_state = "plasmarwindow_mask"
 	alpha = 150
 	maxHealth = 350
-	resistance = RESISTANCE_ARMOURED
+	resistance = RESISTANCE_ARMORED
 	flags = null
 
 /obj/structure/window/reinforced/tinted

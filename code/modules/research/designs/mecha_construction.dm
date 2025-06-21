@@ -103,8 +103,8 @@
 /datum/design/research/item/mechfab/gygax/right_leg
 	build_path = /obj/item/mecha_parts/part/gygax_right_leg
 
-/datum/design/research/item/mechfab/gygax/armour
-	build_path = /obj/item/mecha_parts/part/gygax_armour
+/datum/design/research/item/mechfab/gygax/armor
+	build_path = /obj/item/mecha_parts/part/gygax_armor
 
 //Durand ======================================================================
 
@@ -132,8 +132,8 @@
 /datum/design/research/item/mechfab/durand/right_leg
 	build_path = /obj/item/mecha_parts/part/durand_right_leg
 
-/datum/design/research/item/mechfab/durand/armour
-	build_path = /obj/item/mecha_parts/part/durand_armour
+/datum/design/research/item/mechfab/durand/armor
+	build_path = /obj/item/mecha_parts/part/durand_armor
 
 //Phazon ======================================================================
 
@@ -161,7 +161,7 @@
 /datum/design/research/item/mechfab/phazon/right_leg
 	build_path = /obj/item/mecha_parts/part/phazon_right_leg
 
-/datum/design/research/item/mechfab/phazon/armour
+/datum/design/research/item/mechfab/phazon/armor
 	build_path = /obj/item/mecha_parts/part/phazon_armor
 
 ///////////////////////////////////
@@ -186,4 +186,4 @@
 
 /datum/design/research/circuit/mecha/targeting
 	build_path = /obj/item/circuitboard/mecha/targeting
-	sort_string = "NAAAÑ"
+	sort_string = "NAAAï¿½"

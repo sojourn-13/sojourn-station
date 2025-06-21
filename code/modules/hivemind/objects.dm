@@ -6,8 +6,8 @@
 	name = "electrolyzed goo"
 	icon = 'icons/obj/hivemind.dmi'
 	icon_state = "goo_proj"
-	damage_types = list(BURN = 15) //Shot in large amounts and stacks a bit with its burn damage
-	check_armour = ARMOR_ENERGY //Unlike Bio, it's not either 0% or 100%. Strong Energy armour isn't common, But most of armour has some protection against energy.
+	damage_types = list(BURN = 15) // Shot in large amounts and stacks a bit with its burn damage
+	check_armor = ARMOR_ENERGY // Unlike Bio, it's not either 0% or 100%. Strong Energy armor isn't common, But most of armor has some protection against energy.
 	step_delay = 2
 	var/second_hit_damage = 10
 

@@ -157,7 +157,7 @@
 	result = /obj/item/clothing/suit/storage/scav_heavy
 	steps = list(
 		list(/obj/item/clothing/suit/storage/scavengerarmor, 1),
-		list(QUALITY_CUTTING, 15, 15), //Cut apart the armour to be remade
+		list(QUALITY_CUTTING, 15, 15), //Cut apart the armor to be remade
 		list(CRAFT_MATERIAL, 8, MATERIAL_PLASTEEL), //Insert plasteel plates
 		list(QUALITY_HAMMERING, 20, 15), //Hammer sheets into place
 		list(QUALITY_WELDING, 30, 15), //Weld the sheets in

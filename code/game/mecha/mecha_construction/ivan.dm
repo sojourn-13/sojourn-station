@@ -63,9 +63,9 @@
 			//"backkey"=QUALITY_PRYING,
 			"desc"="The mech is missing its radio."),
 		//6
-		list("key"=/obj/item/robot_parts/robot_component/armour/mkii,
+		list("key"=/obj/item/robot_parts/robot_component/armor/mkii,
 			//"backkey"=QUALITY_WELDING,
-			"desc"="The joint protectors are welded. A Mark II armour plating is needed as the external armor."),
+			"desc"="The joint protectors are welded. A Mark II armor plating is needed as the external armor."),
 		//7
 		list("key"=QUALITY_WELDING,
 			//"backkey"=QUALITY_BOLT_TURNING,

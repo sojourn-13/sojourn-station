@@ -194,7 +194,7 @@
 
 /obj/item/tool/sword/saber/militiasergeant
 	name = "Sergeant's Saber"
-	desc = "An Saber made for the Senior Enlisted of Blackshield, Usually used for Ceremonial usage but can also be used in combat, Preferably used by a maniac who likes to charge into battle without helmet or armour."
+	desc = "An Saber made for the Senior Enlisted of Blackshield, Usually used for Ceremonial usage but can also be used in combat, Preferably used by a maniac who likes to charge into battle without helmet or armor."
 	icon_state = "cutlass"
 	item_state = "cutlass"
 	armor_divisor = ARMOR_PEN_SHALLOW

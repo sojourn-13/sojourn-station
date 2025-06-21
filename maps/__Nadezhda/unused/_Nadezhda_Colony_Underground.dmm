@@ -3657,7 +3657,7 @@
 	icon_state = "1-4"
 	},
 /obj/machinery/button/remote/blast_door{
-	id = "Armoury";
+	id = "Armory";
 	name = "Armory Blast Doors";
 	pixel_x = 27;
 	pixel_y = 25;
@@ -3689,7 +3689,7 @@
 /area/nadezhda/security/nuke_storage)
 "ahY" = (
 /obj/machinery/door/blast/regular{
-	id = "Armoury";
+	id = "Armory";
 	name = "Armory Shop"
 	},
 /obj/machinery/door/firedoor,
@@ -3819,7 +3819,7 @@
 /area/nadezhda/command/merchant)
 "aim" = (
 /obj/machinery/button/remote/blast_door{
-	id = "Armoury";
+	id = "Armory";
 	name = "Armory Blast Doors";
 	pixel_x = 7;
 	pixel_y = 25;
@@ -4176,7 +4176,7 @@
 	},
 /obj/machinery/button/remote/blast_door{
 	desc = "It controls the display cases, remotely.";
-	id = "Armoury Display";
+	id = "Armory Display";
 	name = "Display Cases";
 	pixel_x = 39;
 	req_access = list(69)
@@ -4231,8 +4231,8 @@
 "ajg" = (
 /obj/structure/table/rack,
 /obj/machinery/door/blast/shutters/glass{
-	id = "Armoury Display";
-	name = "Armoury showcase"
+	id = "Armory Display";
+	name = "Armory showcase"
 	},
 /obj/machinery/light{
 	dir = 8
@@ -4250,12 +4250,12 @@
 "ajh" = (
 /obj/structure/table/rack,
 /obj/machinery/door/blast/shutters/glass{
-	id = "Armoury Display";
-	name = "Armoury showcase"
+	id = "Armory Display";
+	name = "Armory showcase"
 	},
 /obj/machinery/door/blast/shutters/glass{
-	id = "Armoury Display";
-	name = "Armoury showcase"
+	id = "Armory Display";
+	name = "Armory showcase"
 	},
 /obj/structure/window/reinforced{
 	dir = 4
@@ -4278,8 +4278,8 @@
 /obj/random/cloth/helmet,
 /obj/random/cloth/helmet,
 /obj/machinery/door/blast/shutters/glass{
-	id = "Armoury Display";
-	name = "Armoury showcase"
+	id = "Armory Display";
+	name = "Armory showcase"
 	},
 /obj/structure/window/reinforced{
 	dir = 8
@@ -4291,8 +4291,8 @@
 "ajj" = (
 /obj/structure/table/rack,
 /obj/machinery/door/blast/shutters/glass{
-	id = "Armoury Display";
-	name = "Armoury showcase"
+	id = "Armory Display";
+	name = "Armory showcase"
 	},
 /obj/machinery/light{
 	dir = 4
@@ -11494,7 +11494,7 @@
 /area/nadezhda/engineering/atmos)
 "avr" = (
 /obj/machinery/door/blast/regular{
-	id = "Armoury";
+	id = "Armory";
 	name = "Armory Shop"
 	},
 /obj/machinery/door/firedoor,
@@ -45704,7 +45704,7 @@
 	dir = 4
 	},
 /obj/machinery/button/remote/blast_door{
-	id = "Armoury";
+	id = "Armory";
 	name = "Armory Blast Doors";
 	pixel_x = -27;
 	pixel_y = 25;
@@ -60903,7 +60903,7 @@
 /area/nadezhda/hallway/side/f2section1)
 "wGt" = (
 /obj/machinery/door/airlock/command{
-	name = "Bridge Armoury";
+	name = "Bridge Armory";
 	req_access = list(20)
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{

@@ -56,17 +56,17 @@
 	name = "Robot Camera"
 	build_path = /obj/item/robot_parts/robot_component/camera
 
-/datum/design/research/item/mechfab/robot/component/armour
-	name = "Robot Armour plating"
-	build_path = /obj/item/robot_parts/robot_component/armour
+/datum/design/research/item/mechfab/robot/component/armor
+	name = "Robot Armor plating"
+	build_path = /obj/item/robot_parts/robot_component/armor
 
-/datum/design/research/item/mechfab/robot/component/armour/mkii
-	name = "Mark II energy armour plating"
-	build_path = /obj/item/robot_parts/robot_component/armour/mkii
+/datum/design/research/item/mechfab/robot/component/armor/mkii
+	name = "Mark II energy armor plating"
+	build_path = /obj/item/robot_parts/robot_component/armor/mkii
 
-/datum/design/research/item/mechfab/robot/component/armour/mkv
-	name = "Mark V extra armour plating"
-	build_path = /obj/item/robot_parts/robot_component/armour/mkv
+/datum/design/research/item/mechfab/robot/component/armor/mkv
+	name = "Mark V extra armor plating"
+	build_path = /obj/item/robot_parts/robot_component/armor/mkv
 
 
 /datum/design/research/item/mechfab/robot/component/jetpack

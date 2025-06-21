@@ -86,9 +86,9 @@
 			//"backkey"=QUALITY_PRYING,
 			"desc"="The external armor is installed on the chassis, but needs to be bolted down."),
 		//6
-		list("key"=/obj/item/mecha_parts/part/durand_armour,
+		list("key"=/obj/item/mecha_parts/part/durand_armor,
 			//"backkey"=QUALITY_WELDING,
-			"desc"="The internal armor is welded together, and the full chassis is ready for durand armour plates."),
+			"desc"="The internal armor is welded together, and the full chassis is ready for durand armor plates."),
 		//7
 		list("key"=QUALITY_WELDING,
 			//"backkey"=QUALITY_BOLT_TURNING,
@@ -543,7 +543,7 @@
 					"You pry the durand armor plates from the [holder]."
 				)
 				holder.icon_state = "durand17"
-				new /obj/item/mecha_parts/part/durand_armour(get_turf(holder))
+				new /obj/item/mecha_parts/part/durand_armor(get_turf(holder))
 		if(5)
 			if(diff == FORWARD)
 				usr.visible_message(

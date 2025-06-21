@@ -8656,7 +8656,7 @@
 	req_access = list(69)
 	},
 /obj/machinery/door/blast/regular{
-	id = "Armoury";
+	id = "Armory";
 	name = "Armory Shop"
 	},
 /obj/structure/cable/green{
@@ -24494,7 +24494,7 @@
 /area/nadezhda/rnd/xenobiology)
 "eQz" = (
 /obj/machinery/button/remote/blast_door{
-	id = "Armoury";
+	id = "Armory";
 	name = "Armory Blast Doors";
 	pixel_x = 25;
 	req_access = list(69)
@@ -25411,7 +25411,7 @@
 /obj/effect/window_lwall_spawn/reinforced,
 /obj/machinery/door/firedoor,
 /obj/machinery/door/blast/regular{
-	id = "Armoury";
+	id = "Armory";
 	name = "Armory Shop"
 	},
 /turf/simulated/floor/plating,
@@ -37739,7 +37739,7 @@
 	req_access = list(3)
 	},
 /obj/machinery/door/blast/regular{
-	id = "Armoury";
+	id = "Armory";
 	name = "Armory Shop"
 	},
 /turf/simulated/floor/tiled/dark/bluecorner,
@@ -39466,7 +39466,7 @@
 	req_access = list(3)
 	},
 /obj/machinery/door/blast/regular{
-	id = "Armoury";
+	id = "Armory";
 	name = "Armory Shop"
 	},
 /obj/structure/cable/green{
@@ -94544,7 +94544,7 @@
 /area/nadezhda/outside/inside_colony)
 "smM" = (
 /obj/machinery/door/airlock/command{
-	name = "Bridge Armoury";
+	name = "Bridge Armory";
 	req_access = list(20)
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -97558,7 +97558,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/button/remote/blast_door{
-	id = "Armoury";
+	id = "Armory";
 	name = "Armory Blast Doors";
 	pixel_x = -27;
 	pixel_y = 25;
@@ -106954,7 +106954,7 @@
 /area/nadezhda/command/tcommsat/computer)
 "uLX" = (
 /obj/machinery/button/remote/blast_door{
-	id = "Armoury";
+	id = "Armory";
 	name = "Armory Blast Doors";
 	pixel_x = 27;
 	pixel_y = 25;

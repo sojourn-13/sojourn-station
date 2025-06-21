@@ -161,7 +161,7 @@
 //Chaplain
 /obj/item/clothing/suit/storage/chaplain
 	name = "prime longcoat"
-	desc = "A long, lightly armoured jacket. Dark, stylish and authoritarian."
+	desc = "A long, lightly armored jacket. Dark, stylish and authoritarian."
 	icon_state = "chaplain_hoodie"
 	item_state = "chaplain_hoodie"
 	blood_overlay_type = "coat"

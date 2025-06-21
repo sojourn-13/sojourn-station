@@ -4,7 +4,7 @@
 	icon_state = "goo_proj"
 	damage_types = list()
 	irradiate = 20
-	check_armour = ARMOR_BIO
+	check_armor = ARMOR_BIO
 	step_delay = 2
 
 /obj/item/projectile/roach_spit/on_hit(atom/target)
@@ -26,7 +26,7 @@
 	icon_state = "goo_proj"
 	damage_types = list()
 	irradiate = 20
-	check_armour = ARMOR_BIO
+	check_armor = ARMOR_BIO
 	step_delay = 2
 
 /obj/item/projectile/roach_spit/large/on_hit(atom/target)

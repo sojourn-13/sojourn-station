@@ -1,7 +1,7 @@
 // Here is where we store the items made by the nanogate organ.
 /obj/item/rig/nanite
 	name = "nanite suit control module"
-	desc = "A lighter, less armoured rig suit made from nanites and attached to someone's spine."
+	desc = "A lighter, less armored rig suit made from nanites and attached to someone's spine."
 	icon_state = "nanite_rig"
 	suit_type = "nanite"
 	armor_list = list(

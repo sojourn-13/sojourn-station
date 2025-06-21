@@ -1,6 +1,6 @@
-//A 'wound' system for space suits.
-//Breaches greatly increase the amount of lost gas and decrease the armour rating of the suit.
-//They can be healed with plastic or metal sheeting.
+// A 'wound' system for space suits.
+// Breaches greatly increase the amount of lost gas and decrease the armor rating of the suit.
+// They can be healed with plastic or metal sheeting.
 
 /datum/breach
 	var/class = 0                           // Size. Lower is smaller. Uses floating point values!

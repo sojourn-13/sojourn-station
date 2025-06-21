@@ -1313,9 +1313,9 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	data["projectile_damage"] = (P.get_total_damage() * damage_multiplier) + get_total_damage_adjust()
 	data["projectile_AP"] = P.armor_divisor + penetration_multiplier
 	data["projectile_WOUND"] = P.wounding_mult
-	data["unarmoured_damage"] = min(0, ((P.get_total_damage() * damage_multiplier) + get_total_damage_adjust()) * P.wounding_mult)
-	data["armoured_damage_10"] = min(0, (((P.get_total_damage() * damage_multiplier) + get_total_damage_adjust()) - (10 / (P.armor_divisor + penetration_multiplier))) * P.wounding_mult)
-	data["armoured_damage_15"] = min(0, (((P.get_total_damage() * damage_multiplier) + get_total_damage_adjust()) - (15 / (P.armor_divisor + penetration_multiplier))) * P.wounding_mult)
+	data["unarmored_damage"] = min(0, ((P.get_total_damage() * damage_multiplier) + get_total_damage_adjust()) * P.wounding_mult)
+	data["armored_damage_10"] = min(0, (((P.get_total_damage() * damage_multiplier) + get_total_damage_adjust()) - (10 / (P.armor_divisor + penetration_multiplier))) * P.wounding_mult)
+	data["armored_damage_15"] = min(0, (((P.get_total_damage() * damage_multiplier) + get_total_damage_adjust()) - (15 / (P.armor_divisor + penetration_multiplier))) * P.wounding_mult)
 	data["projectile_recoil"] = P.recoil
 	qdel(P)
 	return data

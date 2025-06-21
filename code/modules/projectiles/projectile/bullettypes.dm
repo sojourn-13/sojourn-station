@@ -133,7 +133,7 @@
 	embed = FALSE
 	sharp = FALSE
 	step_delay = 0.65
-	check_armour = ARMOR_BIO
+	check_armor = ARMOR_BIO
 	recoil = 3
 
 //Revolvers and high-caliber pistols
@@ -255,7 +255,7 @@
 	embed = FALSE
 	sharp = FALSE
 	step_delay = 0.65
-	check_armour = ARMOR_BIO
+	check_armor = ARMOR_BIO
 	recoil = 6
 
 /// .50 Kurz Heavy Pistol ///
@@ -276,7 +276,7 @@
 	icon_state = "rubber"
 	damage_types = list(BRUTE = 20, HALLOSS = 35)
 	wounding_mult = WOUNDING_SERIOUS
-	check_armour = ARMOR_MELEE
+	check_armor = ARMOR_MELEE
 	armor_divisor = 0.5
 	can_ricochet = TRUE
 	//ricochet_mod = 2 //including our AP mallus for bounce we are baseline about 1.9x as likely to bounce.
@@ -380,7 +380,7 @@
 	name = "rubber bullet"
 	icon_state = "rubber"
 	damage_types = list(BRUTE = 10, HALLOSS = 20)
-	check_armour = ARMOR_MELEE
+	check_armor = ARMOR_MELEE
 	armor_divisor = 0.8
 	wounding_mult = WOUNDING_TINY
 	embed = TRUE	//Imagine being shot with a high velocity .223/5.56 rubber bullet - that shit could easily kill you - or at least would act like a normal bullet.
@@ -483,7 +483,7 @@
 	name = "rubber bullet"
 	icon_state = "rubber"
 	damage_types = list(BRUTE = 14, HALLOSS = 26)
-	check_armour = ARMOR_MELEE
+	check_armor = ARMOR_MELEE
 	armor_divisor = 1
 	wounding_mult = WOUNDING_NORMAL
 	embed = TRUE	//literally imagine a 7.5 rubber bullet hitting you - holy shit.
@@ -562,7 +562,7 @@
 	icon_state = "rubber"
 	damage_types = list(BRUTE = 17, HALLOSS = 32)
 	armor_divisor = 1.3
-	check_armour = ARMOR_MELEE
+	check_armor = ARMOR_MELEE
 	embed = TRUE	//imagine an effectively smaller .50 Cal marksman round hitting you. holy shit.
 	sharp = FALSE
 	can_ricochet = TRUE
@@ -952,7 +952,7 @@
 	embed = FALSE
 	sharp = FALSE
 	step_delay = 0.95 //slightly slower than a slug
-	check_armour = ARMOR_BIO //duh.
+	check_armor = ARMOR_BIO //duh.
 	recoil = 8//much less damage than slug, much less recoil.
 
 
@@ -1029,7 +1029,7 @@
 	hitsound_wall = 'sound/weapons/guns/misc/ric4.ogg'
 	damage_types = list(BRUTE = 40)
 	armor_divisor = 4
-	check_armour = ARMOR_BULLET
+	check_armor = ARMOR_BULLET
 	embed = FALSE
 	can_ricochet = FALSE
 	sharp = FALSE
@@ -1078,7 +1078,7 @@
 	can_ricochet = FALSE
 	sharp = FALSE
 	muzzle_type = /obj/effect/projectile/plasma/muzzle/red
-	check_armour = ARMOR_ENERGY
+	check_armor = ARMOR_ENERGY
 	recoil = 7
 /*
 //For the love of God don't make this common.
@@ -1091,7 +1091,7 @@
 	fire_stacks = 1
 	armor_divisor = 10
 	nocap_structures = TRUE
-	check_armour = ARMOR_BOMB
+	check_armor = ARMOR_BOMB
 	sharp = TRUE
 	edge = TRUE
 	step_delay = 0.9
@@ -1232,7 +1232,7 @@
 	effective_faction = list("wurm", "roach", "spider", "vox_tribe", "russian", "tengo") //good against common colony mobs
 	damage_mult = 2 // Turns out arrows always sucked
 	embed = FALSE //don't want to embed and drop an arrow, that would be weird
-	check_armour = ARMOR_MELEE
+	check_armor = ARMOR_MELEE
 	step_delay = 0.9
 	affective_damage_range = 6
 	affective_ap_range = 6

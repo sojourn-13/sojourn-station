@@ -90,7 +90,7 @@
       l-walls, walls and railings), their speed of wall destruction depends on their
       melee damage ofc.
   - soundadd: Ports two metal smash/hit sounds from TGMC or CM.
-  - balance: Buffs RIG armour values, adds storage modules to (hopefully) every RIG,
+  - balance: Buffs RIG armor values, adds storage modules to (hopefully) every RIG,
       buffs the mech flashlight. Makes the fugly MEO suit a bit faster.
   - tweak: Mech drillbits can be printed from the mechfab now and the orderable exosuit
       crate now contains all the necessary components.
@@ -102,7 +102,7 @@
   - bugfix: Fix roaches not targetting mechs properly
   - balance: You can once again , move while Weakened()
   - code_imp: Fixed some cyborg traits being randomly added.
-  - balance: Techomancer armour ratings tweaked to be more usefull to their job ,  technomaner
+  - balance: Techomancer armor ratings tweaked to be more usefull to their job ,  technomaner
       armor style loss removed.
   - balance: Grenades that are thrown above people will bounce to the side.
   - balance: Cover now only works if the target is adjacent to it

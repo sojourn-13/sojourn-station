@@ -151,7 +151,7 @@
   Wouju:
   - balance: 'Hivemind Mobs now have their movement speed fixed, in order from slowest
       to fastest: Mechiver < Bomber < Hiborg < Himan < Lobber < Stinger.  Also makes
-      the Mechiver have higher HP and Armour as to compensate for the slowness.'
+      the Mechiver have higher HP and Armor as to compensate for the slowness.'
   infraredbaron:
   - imageadd: Fitting in-hands for deagle, sky driver, colt and deckard;
   - code_imp: Added slide code to deagle

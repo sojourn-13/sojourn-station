@@ -4,7 +4,7 @@
 	agony = 12
 	armor_divisor = 1
 	step_delay = 1.15
-	check_armour = ARMOR_MELEE
+	check_armor = ARMOR_MELEE
 	can_ricochet = FALSE
 	embed = FALSE
 	sharp = FALSE
@@ -17,7 +17,7 @@
 	agony = 15
 	armor_divisor = 1.25 //primitive.
 	step_delay = 1
-	check_armour = ARMOR_MELEE
+	check_armor = ARMOR_MELEE
 	can_ricochet = FALSE
 	embed = FALSE
 	sharp = FALSE

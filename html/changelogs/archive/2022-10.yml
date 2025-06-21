@@ -121,7 +121,7 @@
       coils)
   budgetcommander:
   - rscadd: Sanity UI now shows exact values
-  - rscadd: Added damage against 15 armour to the gun UI.
+  - rscadd: Added damage against 15 armor to the gun UI.
   maikilangiolo:
   - bugfix: fixed manual-action mechanism crafting
   - bugfix: makeshift rev needing plasteel parts

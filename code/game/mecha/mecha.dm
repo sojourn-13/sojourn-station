@@ -950,7 +950,7 @@ assassination method if you time it right*/
 		return PROJECTILE_CONTINUE
 
 	if(!Proj.testing)
-		log_message("Hit by projectile. Type: [Proj.name]([Proj.check_armour]).",1)
+		log_message("Hit by projectile. Type: [Proj.name]([Proj.check_armor]).",1)
 		if(deflect_hit(is_melee = 0))
 			occupant_message(SPAN_NOTICE("The armor deflects incoming projectile."))
 			visible_message("[src]'s armor deflects the projectile.")
@@ -961,7 +961,7 @@ assassination method if you time it right*/
 			var/final_penetration = Proj.penetrating ? Proj.penetrating - armor_level : 0
 			var/damage_multiplier = final_penetration > 0 ? max(1.5, final_penetration) : 1 // Minimum damage bonus of 50% if you beat the mech's armor
 			Proj.penetrating = 0 // Reduce this value to maintain the old penetration loop's behavior
-			hit_damage(Proj.get_structure_damage() * damage_multiplier, Proj.check_armour, is_melee=0)
+			hit_damage(Proj.get_structure_damage() * damage_multiplier, Proj.check_armor, is_melee=0)
 
 			//AP projectiles have a chance to cause additional damage
 			if(final_penetration > 0)

@@ -3,7 +3,7 @@
 	icon_state = "ion"
 	damage_types = list(BURN = 0)
 	nodamage = TRUE
-	check_armour = ARMOR_ENERGY
+	check_armor = ARMOR_ENERGY
 	recoil = 5
 
 /obj/item/projectile/ion/on_impact(atom/target)
@@ -23,7 +23,7 @@
 	name = "explosive microjet"
 	icon_state = "bolter"
 	damage_types = list(BRUTE = 50)
-	check_armour = ARMOR_BULLET
+	check_armor = ARMOR_BULLET
 	sharp = TRUE
 	edge = TRUE
 	recoil = 35
@@ -38,7 +38,7 @@
 	icon_state = "rocket"
 	damage_types = list(BRUTE = 70)
 	armor_divisor = 10
-	check_armour = ARMOR_BULLET
+	check_armor = ARMOR_BULLET
 	recoil = 75
 
 /obj/item/projectile/bullet/rocket/railgun
@@ -69,7 +69,7 @@
 	icon_state = "rocket_e"
 	damage_types = list(BRUTE = 10, BURN = 30)
 	armor_divisor = 10
-	check_armour = ARMOR_BULLET
+	check_armor = ARMOR_BULLET
 	var/heavy_emp_range = 3
 	var/light_emp_range = 8
 	recoil = 60
@@ -111,7 +111,7 @@
 	icon_state = "ice_2"
 	damage_types = list(BURN = 0)
 	nodamage = 1
-	check_armour = ARMOR_ENERGY
+	check_armor = ARMOR_ENERGY
 	var/temperature = 300
 
 /obj/item/projectile/temp/on_impact(atom/target)//These two could likely check temp protection on the mob
@@ -139,7 +139,7 @@
 	icon_state = "ice_2"
 	damage_types = list(BURN = 0)
 	nodamage = TRUE
-	check_armour = ARMOR_ENERGY
+	check_armor = ARMOR_ENERGY
 	pass_flags = PASSTABLE | PASSGLASS | PASSGRILLE
 	hitscan = FALSE
 
@@ -149,7 +149,7 @@
 	icon_state = "smallf"
 	damage_types = list(BRUTE = 0)
 	nodamage = TRUE
-	check_armour = ARMOR_BULLET
+	check_armor = ARMOR_BULLET
 
 /obj/item/projectile/meteor/Bump(atom/A as mob|obj|turf|area, forced)
 	if(A == firer)
@@ -181,7 +181,7 @@
 	icon_state = "energy"
 	damage_types = list(TOX = 0)
 	nodamage = TRUE
-	check_armour = ARMOR_ENERGY
+	check_armor = ARMOR_ENERGY
 
 /obj/item/projectile/energy/floramut/on_impact(atom/target)
 	if (!testing)
@@ -214,7 +214,7 @@
 	icon_state = "energy2"
 	damage_types = list(TOX = 0)
 	nodamage = TRUE
-	check_armour = ARMOR_ENERGY
+	check_armor = ARMOR_ENERGY
 
 /obj/item/projectile/energy/florayield/on_impact(atom/target)
 	if (!testing)
@@ -233,7 +233,7 @@
 	icon_state = "plasma"
 	damage_types = list(TOX = 0)
 	nodamage = TRUE
-	check_armour = ARMOR_ENERGY
+	check_armor = ARMOR_ENERGY
 
 /obj/item/projectile/energy/floraevolve/on_impact(atom/target)
 	if (!testing)
@@ -287,7 +287,7 @@
 	name = "blob of fuel"
 	icon_state = "fireball"
 	damage_types = list(BURN = 16)
-	check_armour = ARMOR_MELEE
+	check_armor = ARMOR_MELEE
 	kill_count = 3
 	fire_stacks = 3
 
@@ -382,7 +382,7 @@
 	damage_types = list(BRUTE = 10)
 	armor_divisor = 3 // It is a sound-wave liquifing organs I guess
 	kill_count = 7
-	check_armour = ARMOR_ENERGY
+	check_armor = ARMOR_ENERGY
 	var/golem_damage_bonus = 20 // Damage multiplier against ameridians.
 	recoil = 7
 
@@ -518,7 +518,7 @@
 	icon_state = "ice_1"
 	damage_types = list(BURN = 47)
 	armor_divisor = 2.5
-	check_armour = ARMOR_ENERGY
+	check_armor = ARMOR_ENERGY
 	recoil = 8
 
 	muzzle_type = /obj/effect/projectile/tesla/muzzle

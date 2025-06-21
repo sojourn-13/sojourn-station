@@ -109,7 +109,7 @@
 
 /obj/item/clothing/under/rank/mercenary
 	name = "green tactical turtleneck"
-	desc = "Military style turtleneck, for operating in cold environments. Typically worn underneath armour."
+	desc = "Military style turtleneck, for operating in cold environments. Typically worn underneath armor."
 	icon_state = "greenturtle"
 	item_state = "bl_suit"
 	has_sensor = 0

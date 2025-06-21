@@ -183,7 +183,7 @@
 //********** Blitzshell unique uplink items **********//
 
 /datum/uplink_item/item/tools/blitz_hp_upgrade
-	name = "Blitzshell Armour Augmentation"
+	name = "Blitzshell Armor Augmentation"
 	desc = "Augment your chassis to take more blows before destruction."
 	item_cost = 15
 	antag_roles = list(ROLE_BLITZ)
@@ -193,7 +193,7 @@
 	if(user && istype(user, /mob/living/silicon/robot/drone/blitzshell))
 		var/mob/living/silicon/robot/drone/blitzshell/BS = user
 		BS.maxHealth += 30
-		to_chat(BS, SPAN_NOTICE("Your chassis armour is augmented."))
+		to_chat(BS, SPAN_NOTICE("Your chassis armor is augmented."))
 		return 1
 	return 0
 

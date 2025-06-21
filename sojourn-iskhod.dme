@@ -3073,7 +3073,7 @@
 #include "code\modules\psionics\ear.dm"
 #include "code\modules\psionics\psion.dm"
 #include "code\modules\psionics\psion_powers\_powers.dm"
-#include "code\modules\psionics\psion_powers\armour_powers.dm"
+#include "code\modules\psionics\psion_powers\armor_powers.dm"
 #include "code\modules\psionics\psion_powers\deepmaints_themed_powers.dm"
 #include "code\modules\psionics\psion_powers\faction_powers.dm"
 #include "code\modules\psionics\psion_powers\gear_summoning_powers.dm"

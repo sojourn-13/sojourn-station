@@ -5,7 +5,7 @@
 	hitsound_wall = 'sound/weapons/guns/misc/laser_searwall.ogg'
 	damage_types = list(BURN = 28)
 	armor_divisor = 1.1
-	check_armour = ARMOR_ENERGY
+	check_armor = ARMOR_ENERGY
 	fire_stacks = 1 //Blasma
 
 	affective_damage_range = 3
@@ -73,7 +73,7 @@
 	pass_flags = PASSTABLE
 	damage_types = list(BURN = 0)
 	no_attack_log = 1
-	check_armour = ARMOR_ENERGY
+	check_armor = ARMOR_ENERGY
 	recoil = 1
 	fire_stacks = 0
 	ignition_source = FALSE
@@ -95,7 +95,7 @@
 	icon_state = "lasertag"
 	damage_types = list(BURN = 0)
 	no_attack_log = 1
-	check_armour = ARMOR_ENERGY
+	check_armor = ARMOR_ENERGY
 	recoil = 1
 	fire_stacks = 0
 	ignition_source = FALSE
@@ -117,7 +117,7 @@
 	icon_state = "lasertag"
 	damage_types = list(BURN = 0)
 	no_attack_log = 1
-	check_armour = ARMOR_ENERGY
+	check_armor = ARMOR_ENERGY
 	recoil = 1
 	fire_stacks = 0
 	ignition_source = FALSE
@@ -139,7 +139,7 @@
 	icon_state = "lasertag"
 	damage_types = list(BURN = 0)
 	no_attack_log = 1
-	check_armour = ARMOR_ENERGY
+	check_armor = ARMOR_ENERGY
 	recoil = 1
 	fire_stacks = 0
 	ignition_source = FALSE
@@ -160,7 +160,7 @@
 	name = "lasertag beam"
 	icon_state = "lasertag"
 	damage_types = list(BURN = 0)
-	check_armour = ARMOR_ENERGY
+	check_armor = ARMOR_ENERGY
 	recoil = 1
 	fire_stacks = 0
 	ignition_source = FALSE
@@ -191,7 +191,7 @@
 	hitsound_wall = 'sound/weapons/guns/misc/ric4.ogg'
 	damage_types = list(BRUTE = 54)
 	armor_divisor = 4
-	check_armour = ARMOR_BULLET
+	check_armor = ARMOR_BULLET
 	affective_damage_range = 16
 	affective_ap_range = 16
 	hitscan = TRUE

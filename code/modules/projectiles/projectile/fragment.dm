@@ -20,7 +20,7 @@
 	icon_state = "invisible"
 	embed = 0
 	damage_types = list(BRUTE = 16)
-	check_armour = ARMOR_BOMB
+	check_armor = ARMOR_BOMB
 
 /obj/item/projectile/bullet/pellet/fragment/rubber
 	damage_types = list(BRUTE = 1, HALLOSS = 25)// 70 x 25 = 1750 pain, if all hit, rather then 32 x 150
@@ -35,7 +35,7 @@
 	icon = 'icons/obj/projectiles_64x64.dmi'
 	icon_state = "phosphorus_ember"
 	damage_types = list(BURN = 5)
-	check_armour = ARMOR_ENERGY
+	check_armor = ARMOR_ENERGY
 	embed = 0
 	pellets = 1
 	range_step = 5

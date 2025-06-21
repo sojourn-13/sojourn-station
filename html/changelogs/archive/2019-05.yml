@@ -147,7 +147,7 @@
   - tweak: Remade BR into AR, remade mags, desc, reduced size to large from huge,
       reduced price from 4000 to 3500 (regular AR), added zoom because it has scope,
       removed DMG multiplier, replaced 250 RPM mode with 400 RPM, added "short burst"
-      mode, replaced old 7.62 mags in secure armoury with new IH 5.56 mags.
+      mode, replaced old 7.62 mags in secure armory with new IH 5.56 mags.
   - tweak: Made PK boxes into mag boxes to work with magwells.
   - tweak: Flare pouch was renamed to tubular pouch and can carry rockets for RPG
       now.

@@ -8,7 +8,7 @@ Bullet also tend to have more armor against them do to this and can be douged un
 	icon_state = "bullet"
 	damage_types = list(BRUTE = 20)
 	nodamage = 0
-	check_armour = ARMOR_BULLET
+	check_armor = ARMOR_BULLET
 	embed = TRUE
 	sharp = 0
 	hitsound_wall = "ric_sound"

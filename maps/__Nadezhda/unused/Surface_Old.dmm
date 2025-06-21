@@ -3132,14 +3132,14 @@
 "agP" = (
 /obj/machinery/button/remote/blast_door{
 	desc = "It controls the display cases, remotely.";
-	id = "Armoury Display";
+	id = "Armory Display";
 	name = "Display Cases";
 	pixel_x = -7;
 	pixel_y = 25;
 	req_access = list(3)
 	},
 /obj/machinery/button/remote/blast_door{
-	id = "Armoury";
+	id = "Armory";
 	name = "Shop Blast Doors";
 	pixel_x = 7;
 	pixel_y = 25;
@@ -3936,7 +3936,7 @@
 "aiF" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /obj/machinery/door/blast/regular{
-	id = "Armoury";
+	id = "Armory";
 	name = "Armory Shop"
 	},
 /turf/simulated/floor/tiled/dark,
@@ -4466,8 +4466,8 @@
 "ajE" = (
 /obj/structure/table/rack,
 /obj/machinery/door/blast/shutters/glass{
-	id = "Armoury Display";
-	name = "Armoury showcase"
+	id = "Armory Display";
+	name = "Armory showcase"
 	},
 /obj/machinery/light{
 	dir = 8
@@ -4485,12 +4485,12 @@
 "ajF" = (
 /obj/structure/table/rack,
 /obj/machinery/door/blast/shutters/glass{
-	id = "Armoury Display";
-	name = "Armoury showcase"
+	id = "Armory Display";
+	name = "Armory showcase"
 	},
 /obj/machinery/door/blast/shutters/glass{
-	id = "Armoury Display";
-	name = "Armoury showcase"
+	id = "Armory Display";
+	name = "Armory showcase"
 	},
 /obj/structure/window/reinforced{
 	dir = 4
@@ -4517,8 +4517,8 @@
 /obj/random/cloth/helmet,
 /obj/random/cloth/helmet,
 /obj/machinery/door/blast/shutters/glass{
-	id = "Armoury Display";
-	name = "Armoury showcase"
+	id = "Armory Display";
+	name = "Armory showcase"
 	},
 /obj/structure/window/reinforced{
 	dir = 8
@@ -4747,7 +4747,7 @@
 "akk" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /obj/machinery/door/blast/regular{
-	id = "Armoury";
+	id = "Armory";
 	name = "Armory Shop"
 	},
 /turf/simulated/floor/plating,
@@ -6376,7 +6376,7 @@
 	dir = 2
 	},
 /obj/machinery/door/blast/regular{
-	id = "Armoury";
+	id = "Armory";
 	name = "Armory Shop"
 	},
 /turf/simulated/floor/plating,
@@ -6406,7 +6406,7 @@
 "anW" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /obj/machinery/door/blast/regular{
-	id = "Armoury";
+	id = "Armory";
 	name = "Armory Shop"
 	},
 /obj/machinery/door/firedoor/multi_tile{
@@ -6496,8 +6496,8 @@
 "aog" = (
 /obj/structure/table/rack,
 /obj/machinery/door/blast/shutters/glass{
-	id = "Armoury Display";
-	name = "Armoury showcase"
+	id = "Armory Display";
+	name = "Armory showcase"
 	},
 /obj/machinery/light{
 	dir = 4
@@ -7164,7 +7164,7 @@
 "apB" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /obj/machinery/door/blast/regular{
-	id = "Armoury";
+	id = "Armory";
 	name = "Armory Shop"
 	},
 /obj/machinery/door/firedoor/multi_tile,
@@ -7197,7 +7197,7 @@
 /area/nadezhda/security/prisoncells)
 "apG" = (
 /obj/machinery/door/blast/regular{
-	id = "Armoury";
+	id = "Armory";
 	name = "Armory Shop"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -8306,7 +8306,7 @@
 /area/nadezhda/security/prisoncells)
 "aso" = (
 /obj/machinery/door/blast/regular{
-	id = "Armoury";
+	id = "Armory";
 	name = "Armory Shop"
 	},
 /obj/structure/cable{
