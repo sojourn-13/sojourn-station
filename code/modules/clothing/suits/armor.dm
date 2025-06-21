@@ -1419,7 +1419,7 @@
 	icon_state = "platecarrier_ih"
 	item_state = "platecarrier_ih"
 	blood_overlay_type = "armor"
-	slowdown = 0.10
+//	slowdown = 0.10
 	armor_list = list(melee = 12, bullet = 12, energy = 7, bomb = 10, bio = 0, rad = 0)
 
 /obj/item/clothing/suit/armor/platecarrier/hos/toggle_style()
@@ -1454,7 +1454,7 @@
 	desc = "An armored vest carrying military grade trauma plates and advanced ballistic meshes.This set has a set of equally advanced arm and leg-guards added for increased overall protection."
 	icon_state = "platecarrier_ih_fullbody"
 	item_state = "platecarrier_ih_fullbody"
-	slowdown = 0.15 //bit surprised this wasn't here, but okay
+//	slowdown = 0.15 //bit surprised this wasn't here, but okay
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 
 
@@ -1858,7 +1858,7 @@
 	icon_state = "platecarrier_sfa"
 	item_state = "platecarrier_sfa"
 	blood_overlay_type = "armor"
-	slowdown = 0.05
+//	slowdown = 0.05
 	armor_list = list(melee = 12, bullet = 12, energy = 7, bomb = 10, bio = 0, rad = 0)
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 
@@ -1868,6 +1868,6 @@
 	icon_state = "platecarrier_sfc"
 	item_state = "platecarrier_sfc"
 	blood_overlay_type = "armor"
-	slowdown = 0.05
+//	slowdown = 0.05
 	armor_list = list(melee = 12, bullet = 12, energy = 7, bomb = 10, bio = 40, rad = 0)
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS

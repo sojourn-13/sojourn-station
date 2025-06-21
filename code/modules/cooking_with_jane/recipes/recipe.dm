@@ -1322,7 +1322,7 @@
 	product_type = /obj/item/reagent_containers/snacks/birthdaycake
 	step_builder = list(
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/snacks/plaincake),
-		list(CWJ_ADD_ITEM, /obj/item/clothing/head/costume/misc/cake),
+		list(CWJ_ADD_REAGENT, "glaze", 30),
 		list(CWJ_USE_OVEN, J_MED, 30 SECONDS)
 	)
 
