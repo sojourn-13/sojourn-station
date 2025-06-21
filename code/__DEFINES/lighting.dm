@@ -33,7 +33,7 @@
 		0, 0, 0, 1           \
 	)                        \
 
-// Helpers so we can (more easily) control the colour matrices.
+// Helpers so we can (more easily) control the color matrices.
 #define CL_MATRIX_RR 1
 #define CL_MATRIX_RG 2
 #define CL_MATRIX_RB 3
@@ -55,7 +55,7 @@
 #define CL_MATRIX_CB 19
 #define CL_MATRIX_CA 20
 
-//Some defines to generalise colours used in lighting.
+//Some defines to generalise colors used in lighting.
 //Important note on colors. Colors can end up significantly different from the basic html picture, especially when saturated
 #define LIGHT_COLOR_RED        "#FA8282" //Warm but extremely diluted red. rgb(250, 130, 130)
 #define LIGHT_COLOR_GREEN      "#64C864" //Bright but quickly dissipating neon green. rgb(100, 200, 100)
@@ -72,7 +72,7 @@
 #define LIGHT_COLOR_PURPLE     "#952CF4" //Light Purple. rgb(149, 44, 244)
 #define LIGHT_COLOR_LAVENDER   "#9B51FF" //Less-saturated light purple. rgb(155, 81, 255)
 
-//These ones aren't a direct colour like the ones above, because nothing would fit
+//These ones aren't a direct color like the ones above, because nothing would fit
 #define LIGHT_COLOR_FIRE       "#FAA019" //Warm orange color, leaning strongly towards yellow. rgb(250, 160, 25)
 #define LIGHT_COLOR_LAVA       "#C48A18" //Very warm yellow, leaning slightly towards orange. rgb(196, 138, 24)
 #define LIGHT_COLOR_FLARE      "#FA644B" //Bright, non-saturated red. Leaning slightly towards pink for visibility. rgb(250, 100, 75)

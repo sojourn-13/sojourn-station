@@ -364,7 +364,7 @@ SUBSYSTEM_DEF(tickets)
 	lastStaffResponse = C
 	lastResponseTime = worldtime2text()
 
-//Return the ticket state as a colour coded text string.
+//Return the ticket state as a color coded text string.
 /datum/ticket/proc/state2text()
 	if(ticket_converted)
 		return "<font color='yellow'>CONVERTED</font>"

@@ -9,8 +9,8 @@
 	light_power = 7
 	light_color = COLOR_LIGHTING_PURPLE_BRIGHT
 	resize = FALSE
-	randomized_colour = FALSE
-	colour_type = "PURPLE"
+	randomized_color = FALSE
+	color_type = "PURPLE"
 	growth = 5 //We start out always maxed as to save on preformance
 	grower_helper = TRUE
 	self_improvement = FALSE
@@ -30,7 +30,7 @@
 	spread_range = -1 //Invest 3 into me before a return
 	name = "artificial ameridian spire growth"
 	desc = "An artificially constructed version of a sprite growth, made with a pure ameridian core pulsing around tons of ameridian shards."
-	colour_type = "FAKE"
+	color_type = "FAKE"
 	is_growing = FALSE
 
 /obj/structure/ameridian_crystal/spire/examine(mob/user)

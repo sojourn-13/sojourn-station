@@ -77,8 +77,8 @@
 	set_trait(TRAIT_ALTER_TEMP,           0)            // If set, the plant will periodically alter local temp by this amount.
 	set_trait(TRAIT_PRODUCT_ICON,         0)            // Icon to use for fruit coming from this plant.
 	set_trait(TRAIT_PLANT_ICON,           0)            // Icon to use for the plant growing in the tray.
-	set_trait(TRAIT_PRODUCT_COLOUR,       0)            // Colour to apply to product icon.
-	set_trait(TRAIT_BIOLUM_COLOUR,        0)            // The colour of the plant's radiance.
+	set_trait(TRAIT_PRODUCT_COLOR,       0)            // Colour to apply to product icon.
+	set_trait(TRAIT_BIOLUM_COLOR,        0)            // The colour of the plant's radiance.
 	set_trait(TRAIT_CHEM_SPRAYER,         0)            // The ability to spray its chemicals on movement.
 	set_trait(TRAIT_POTENCY,              1)            // General purpose plant strength value.
 	set_trait(TRAIT_REQUIRES_NUTRIENTS,   1)            // The plant can starve.
@@ -95,7 +95,7 @@
 	set_trait(TRAIT_HIGHKPA_TOLERANCE,    200)          // High pressure capacity.
 	set_trait(TRAIT_IDEAL_HEAT,           293)          // Preferred temperature in Kelvin.
 	set_trait(TRAIT_NUTRIENT_CONSUMPTION, 0.25)         // Plant eats this much per tick.
-	set_trait(TRAIT_PLANT_COLOUR,         "#46B543")    // Colour of the plant icon.
+	set_trait(TRAIT_PLANT_COLOR,         "#46B543")    // Colour of the plant icon.
 	set_trait(TRAIT_BOOSTED_GROWTH,       1)            // Rate of plant aging process for growth.
 
 	spawn(5)
@@ -206,12 +206,12 @@
 			splat.name = "[thrown.name] [pick("smear","smudge","splatter")]"
 			if(get_trait(TRAIT_BIOLUM))
 				var/clr
-				if(get_trait(TRAIT_BIOLUM_COLOUR))
-					clr = get_trait(TRAIT_BIOLUM_COLOUR)
+				if(get_trait(TRAIT_BIOLUM_COLOR))
+					clr = get_trait(TRAIT_BIOLUM_COLOR)
 				splat.set_light(get_trait(TRAIT_BIOLUM), l_color = clr)
-			var/flesh_colour = get_trait(TRAIT_FLESH_COLOUR)
-			if(!flesh_colour) flesh_colour = get_trait(TRAIT_PRODUCT_COLOUR)
-			if(flesh_colour) splat.color = get_trait(TRAIT_PRODUCT_COLOUR)
+			var/flesh_colour = get_trait(TRAIT_FLESH_COLOR)
+			if(!flesh_colour) flesh_colour = get_trait(TRAIT_PRODUCT_COLOR)
+			if(flesh_colour) splat.color = get_trait(TRAIT_PRODUCT_COLOR)
 
 	if(chems)
 		for(var/mob/living/M in T.contents)
@@ -385,8 +385,8 @@
 	set_trait(TRAIT_POTENCY,rand(5,30),200,0)
 	set_trait(TRAIT_PRODUCT_ICON,pick(plant_controller.plant_product_sprites))
 	set_trait(TRAIT_PLANT_ICON,pick(plant_controller.plant_sprites))
-	set_trait(TRAIT_PLANT_COLOUR,get_random_colour(0,75,190))
-	set_trait(TRAIT_PRODUCT_COLOUR,get_random_colour(0,75,190))
+	set_trait(TRAIT_PLANT_COLOR,get_random_colour(0,75,190))
+	set_trait(TRAIT_PRODUCT_COLOR,get_random_colour(0,75,190))
 	update_growth_stages()
 
 	if(prob(20))
@@ -519,7 +519,7 @@
 		set_trait(TRAIT_WALL_HUGGER, 1)
 	if(prob(5))
 		set_trait(TRAIT_BIOLUM,1)
-		set_trait(TRAIT_BIOLUM_COLOUR,get_random_colour(0,75,190))
+		set_trait(TRAIT_BIOLUM_COLOR,get_random_colour(0,75,190))
 	if(prob(1))
 		set_trait(TRAIT_CHEM_PRODUCTION,1)
 	if(prob(10))
@@ -595,8 +595,8 @@
 					if(get_trait(TRAIT_BIOLUM))
 						source_turf.visible_message(SPAN_NOTICE("\The [display_name] begins to glow!"))
 						if(prob(degree*2))
-							set_trait(TRAIT_BIOLUM_COLOUR,get_random_colour(0,75,190))
-							source_turf.visible_message("<span class='notice'>\The [display_name]'s glow </span><font color='[get_trait(TRAIT_BIOLUM_COLOUR)]'>changes colour</font>!")
+							set_trait(TRAIT_BIOLUM_COLOR,get_random_colour(0,75,190))
+							source_turf.visible_message("<span class='notice'>\The [display_name]'s glow </span><font color='[get_trait(TRAIT_BIOLUM_COLOR)]'>changes colour</font>!")
 					else
 						source_turf.visible_message(SPAN_NOTICE("\The [display_name]'s glow dims..."))
 			if(11)
@@ -710,11 +710,11 @@
 		if(GENE_ENVIRONMENT)
 			traits_to_copy = list(TRAIT_IDEAL_HEAT,TRAIT_IDEAL_LIGHT,TRAIT_LIGHT_TOLERANCE)
 		if(GENE_PIGMENT)
-			traits_to_copy = list(TRAIT_PLANT_COLOUR,TRAIT_PRODUCT_COLOUR,TRAIT_BIOLUM_COLOUR)
+			traits_to_copy = list(TRAIT_PLANT_COLOR,TRAIT_PRODUCT_COLOR,TRAIT_BIOLUM_COLOR)
 		if(GENE_STRUCTURE)
 			traits_to_copy = list(TRAIT_PLANT_ICON,TRAIT_PRODUCT_ICON,TRAIT_HARVEST_REPEAT, TRAIT_COMPANION_PLANT)
 		if(GENE_FRUIT)
-			traits_to_copy = list(TRAIT_STINGS,TRAIT_EXPLOSIVE,TRAIT_FLESH_COLOUR,TRAIT_JUICY,TRAIT_CHEM_SPRAYER)
+			traits_to_copy = list(TRAIT_STINGS,TRAIT_EXPLOSIVE,TRAIT_FLESH_COLOR,TRAIT_JUICY,TRAIT_CHEM_SPRAYER)
 		if(GENE_SPECIAL)
 			traits_to_copy = list(TRAIT_TELEPORTING, TRAIT_CHEM_PRODUCTION)
 
@@ -783,12 +783,12 @@
 				product = new has_mob_product(get_turf(user),name)
 			else
 				product = new /obj/item/reagent_containers/snacks/grown(get_turf(user),name,potency_mod)
-			if(get_trait(TRAIT_PRODUCT_COLOUR))
+			if(get_trait(TRAIT_PRODUCT_COLOR))
 				if(!ismob(product))
-					product.color = get_trait(TRAIT_PRODUCT_COLOUR)
+					product.color = get_trait(TRAIT_PRODUCT_COLOR)
 					if(istype(product,/obj/item/reagent_containers))
 						var/obj/item/reagent_containers/snacks/food = product
-						food.filling_color = get_trait(TRAIT_PRODUCT_COLOUR)
+						food.filling_color = get_trait(TRAIT_PRODUCT_COLOR)
 
 			if(mysterious)
 				product.name += "?"
@@ -796,8 +796,8 @@
 
 			if(get_trait(TRAIT_BIOLUM))
 				var/clr
-				if(get_trait(TRAIT_BIOLUM_COLOUR))
-					clr = get_trait(TRAIT_BIOLUM_COLOUR)
+				if(get_trait(TRAIT_BIOLUM_COLOR))
+					clr = get_trait(TRAIT_BIOLUM_COLOR)
 				product.set_light(get_trait(TRAIT_BIOLUM), l_color = clr)
 
 			//Handle spawning in living, mobile products.
@@ -839,20 +839,20 @@
 
 		else
 			product = new /obj/item/reagent_containers/snacks/grown(get_turf(location),name)
-		if(get_trait(TRAIT_PRODUCT_COLOUR))
+		if(get_trait(TRAIT_PRODUCT_COLOR))
 			if(!ismob(product))
-				product.color = get_trait(TRAIT_PRODUCT_COLOUR)
+				product.color = get_trait(TRAIT_PRODUCT_COLOR)
 				if(istype(product,/obj/item/reagent_containers))
 					var/obj/item/reagent_containers/snacks/food = product
-					food.filling_color = get_trait(TRAIT_PRODUCT_COLOUR)
+					food.filling_color = get_trait(TRAIT_PRODUCT_COLOR)
 		if(mysterious)
 			product.name += "?"
 			product.desc += " On second thought, something about this one looks strange."
 
 		if(get_trait(TRAIT_BIOLUM))
 			var/clr
-			if(get_trait(TRAIT_BIOLUM_COLOUR))
-				clr = get_trait(TRAIT_BIOLUM_COLOUR)
+			if(get_trait(TRAIT_BIOLUM_COLOR))
+				clr = get_trait(TRAIT_BIOLUM_COLOR)
 			product.set_light(get_trait(TRAIT_BIOLUM), l_color = clr)
 			//Handle spawning in living, mobile products.
 		if(isliving(product))

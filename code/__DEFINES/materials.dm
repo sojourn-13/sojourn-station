@@ -70,7 +70,7 @@
 	MATERIAL_AMERIDIAN, \
 	MATERIAL_RSCRAP)
 
-#define PLASTEEL_COLOUR "#8e9799"
+#define PLASTEEL_COLOR "#8e9799"
 //Color to exactly match concept art #b0bcbe
 //I made it slightly darker than that, because the original color was too bright and causes eyestrain imo
 

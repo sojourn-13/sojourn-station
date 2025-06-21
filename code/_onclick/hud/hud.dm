@@ -25,7 +25,7 @@ var/list/global_huds
 	var/obj/screen/science
 
 /datum/global_hud/New()
-	//420erryday psychedellic colours screen overlay for when you are high
+	//420erryday psychedellic colors screen overlay for when you are high
 	druggy = new /obj/screen/fullscreen/tile("druggy")
 
 	//that white blurry effect you get when you eyes are damaged
