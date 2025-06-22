@@ -70,6 +70,8 @@
 		L += G.gift
 		if (istype(G.gift, /obj/item/storage))
 			L += G.gift:return_inv()
+	for(var/obj/item/rig_module/RM in src)
+		L += RM.return_inv()
 	return L
 
 //Delayed equipping

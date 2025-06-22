@@ -368,6 +368,12 @@ default behaviour is:
 		for(var/obj/item/clothing/C in Storage.return_inv())//Check for pockets and shoe knifes
 			L += get_contents(C)
 
+		for(var/obj/item/rig/R in Storage.return_inv()) //Check for rig modules basically
+			L += get_contents(R)
+
+		for(var/obj/item/rig_module/RM in Storage.return_inv()) //Check stuff in rig storage
+			L += RM.get_contents(RM)
+
 		return L
 
 	else
@@ -378,6 +384,12 @@ default behaviour is:
 
 		for(var/obj/item/clothing/C in src.contents)	//Check for pockets and shoe knifes
 			L += get_contents(C)
+
+		for(var/obj/item/rig/R in src.contents) //Check for rig modules basically
+			L += get_contents(R)
+
+		for(var/obj/item/rig_module/RM in src.contents) //Check stuff in rig storage
+			L += get_contents(RM)
 
 		for(var/obj/item/gift/G in src.contents) //Check for gift-wrapped items
 			L += G.gift
