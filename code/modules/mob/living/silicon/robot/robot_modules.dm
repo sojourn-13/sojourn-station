@@ -90,17 +90,17 @@ var/global/list/robot_modules = list(
 	if(R.radio)
 		R.radio.recalculateChannels()
 
-	//Snagging the value of armour if a borg has one. So that way health can be updated to accomodate that plating.
-	var/armourHealth = 0
+	//Snagging the value of armor if a borg has one. So that way health can be updated to accomodate that plating.
+	var/armorHealth = 0
 	if(R)
 		for(var/V in R.components)
 			var/datum/robot_component/C = R.components[V]
-			if (V == "armour")
-				armourHealth = C.max_damage
+			if (V == "armor")
+				armorHealth = C.max_damage
 
 	//Setting robot stats
-	var/healthpercent = R.health / R.maxHealth //We update the health to remain at the same percentage it was before
-	R.maxHealth = health + armourHealth //So we don't have borgs with more internal armour then their actual life.
+	var/healthpercent = R.health / R.maxHealth // We update the health to remain at the same percentage it was before
+	R.maxHealth = health + armorHealth // So we don't have borgs with more internal armor then their actual life.
 	R.health = R.maxHealth * healthpercent
 
 	R.handle_regular_hud_updates()
@@ -154,14 +154,14 @@ var/global/list/robot_modules = list(
 	remove_subsystems(R)
 	remove_status_flags(R)
 
-	var/armourHealth = 0
+	var/armorHealth = 0
 	for(var/V in R.components)
 		var/datum/robot_component/C = R.components[V]
-		if (V == "armour")
-			armourHealth = C.max_damage
+		if (V == "armor")
+			armorHealth = C.max_damage
 
 	var/healthpercent = R.health / R.maxHealth //We update the health to remain at the same percentage it was before
-	R.maxHealth = initial(R.maxHealth) + armourHealth
+	R.maxHealth = initial(R.maxHealth) + armorHealth
 	R.health = R.maxHealth * healthpercent
 	R.speed_factor = initial(R.speed_factor)
 	R.power_efficiency = initial(R.power_efficiency)

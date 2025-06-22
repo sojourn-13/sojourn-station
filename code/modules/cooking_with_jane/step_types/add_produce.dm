@@ -19,17 +19,17 @@
 		//Seeds are bad and terrible I hate this
 		//Get tooltip image for plants
 		var/datum/seed/seed = plant_controller.seeds[produce]
-		var/icon_key = "fruit-[seed.get_trait(TRAIT_PRODUCT_ICON)]-[seed.get_trait(TRAIT_PRODUCT_COLOUR)]-[seed.get_trait(TRAIT_PLANT_COLOUR)]"
+		var/icon_key = "fruit-[seed.get_trait(TRAIT_PRODUCT_ICON)]-[seed.get_trait(TRAIT_PRODUCT_COLOR)]-[seed.get_trait(TRAIT_PLANT_COLOR)]"
 		if(plant_controller.plant_icon_cache[icon_key])
 			tooltip_image = plant_controller.plant_icon_cache[icon_key]
 		else
 			tooltip_image = image('icons/obj/hydroponics_products.dmi',"blank")
 			var/image/fruit_base = image('icons/obj/hydroponics_products.dmi',"[seed.get_trait(TRAIT_PRODUCT_ICON)]-product")
-			fruit_base.color = "[seed.get_trait(TRAIT_PRODUCT_COLOUR)]"
+			fruit_base.color = "[seed.get_trait(TRAIT_PRODUCT_COLOR)]"
 			tooltip_image.add_overlay(fruit_base)
 			if("[seed.get_trait(TRAIT_PRODUCT_ICON)]-leaf" in icon_states('icons/obj/hydroponics_products.dmi'))
 				var/image/fruit_leaves = image('icons/obj/hydroponics_products.dmi',"[seed.get_trait(TRAIT_PRODUCT_ICON)]-leaf")
-				fruit_leaves.color = "[seed.get_trait(TRAIT_PLANT_COLOUR)]"
+				fruit_leaves.color = "[seed.get_trait(TRAIT_PLANT_COLOR)]"
 				tooltip_image.add_overlay(fruit_leaves)
 			plant_controller.plant_icon_cache[icon_key] = tooltip_image
 

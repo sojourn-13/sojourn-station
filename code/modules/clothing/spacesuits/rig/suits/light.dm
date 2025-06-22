@@ -1,7 +1,7 @@
 // Light rigs are not space-capable, but don't suffer excessive slowdown or sight issues when depowered.
 /obj/item/rig/light
 	name = "light suit control module"
-	desc = "A lighter, less armoured rig suit."
+	desc = "A lighter, less armored rig suit."
 	icon_state = "ninja_rig"
 	suit_type = "light suit"
 	armor_list = list(
@@ -41,7 +41,7 @@
 
 /obj/item/rig/light/ultra_light
 	name = "SI 'Proto-Spacer' control module"
-	desc = "An ultra light, unarmoured rig suit. The precursor to the Soteria retainer model, quite lacking in armor and EMP protection but capable of fitting hardsuit modules."
+	desc = "An ultra light, unarmored rig suit. The precursor to the Soteria retainer model, quite lacking in armor and EMP protection but capable of fitting hardsuit modules."
 	icon_state = "hacker_rig"
 	suit_type = "SI 'Spacer"
 	armor_list = list(
@@ -110,7 +110,7 @@
 /obj/item/rig/light/hacker
 	name = "cybersuit control module"
 	suit_type = "cyber"
-	desc = "An advanced powered armour suit with many cyberwarfare enhancements. Comes with built-in insulated gloves for safely tampering with electronics."
+	desc = "An advanced powered armor suit with many cyberwarfare enhancements. Comes with built-in insulated gloves for safely tampering with electronics."
 	icon_state = "hacker_rig"
 	armor_list = list(
 		melee = 6,

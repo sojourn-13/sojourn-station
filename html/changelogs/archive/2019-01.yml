@@ -40,7 +40,7 @@
       weapons.
   - tweak: Reduced siemens coefficient of SCAF suit, making mercenaries more resistant
       to tasers.
-  - maptweak: Removed six of the nine Ironhammer hardsuits from their armoury, and
+  - maptweak: Removed six of the nine Ironhammer hardsuits from their armory, and
       instead added ten random hardsuit module spawns.
   - maptweak: Added a missing disposal pipe section.
   - maptweak: Reduced the quantity of metal and plastic that spawns in robotics.
@@ -85,11 +85,11 @@
 2019-01-26:
   Nanako:
   - rscadd: Adds new sprites for the Ironhammer Voidsuit. By Watler. Now they are
-      regularly available in the lower armoury.
-  - maptweak: An Ironhammer operative entering the armoury now has a total of six
-      armour options available to them, and all of these have their advantages and
+      regularly available in the lower armory.
+  - maptweak: An Ironhammer operative entering the armory now has a total of six
+      armor options available to them, and all of these have their advantages and
       drawbacks.
-  - maptweak: Rearranged things in the armoury to add three voidsuit spawns, along
+  - maptweak: Rearranged things in the armory to add three voidsuit spawns, along
       with magboots and jetpack for each. Removed several of the gasmasks, oxygen
       tanks, and portable flashers. And instead added in some double capacity emergency
       tanks, and an oxygen canister for refilling.

@@ -56,7 +56,7 @@
 						var/obj/item/clothing/C = I
 						var/obj/item/pen/crayon/CR = crayon
 						C.color = CR.colour
-						C.name = "[CR.colourName] dyed [C.initial_name]"
+						C.name = "[CR.color_name] dyed [C.initial_name]"
 
 			//Tanning!
 			for(var/obj/item/stack/material/hairlesshide/HH in contents)

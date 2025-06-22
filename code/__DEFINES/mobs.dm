@@ -261,7 +261,7 @@
 #define BP_AUGMENT_L_HAND       "left hand augment"
 #define BP_AUGMENT_R_LEG        "right leg augment"
 #define BP_AUGMENT_L_LEG        "left leg augment"
-#define BP_AUGMENT_CHEST_ARMOUR "chest armor augment"
+#define BP_AUGMENT_CHEST_ARMOR "chest armor augment"
 #define BP_AUGMENT_CHEST_ACTIVE "active chest augment"
 #define BP_AUGMENT_HEAD         "head augment"
 
@@ -314,7 +314,7 @@
 #define BP_IS_DEFORMED(org) (org.nature & ORGAN_FLAG_DEFORMED)
 
 #define SYNTH_BLOOD_COLOR "#030303"
-#define SYNTH_FLESH_COLOUR "#575757"
+#define SYNTH_FLESH_COLOR "#575757"
 
 #define MOB_PULL_NONE 0
 #define MOB_PULL_SMALLER 1

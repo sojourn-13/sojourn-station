@@ -11,13 +11,13 @@
 	var/growth = 1					// The growth level of the crystal. The higher it is, the older the crystal is.
 	var/max_growth = 5				// Maximum growth level, in case we want to do stuff relative to size
 
-	var/colour_type = "GREEN"
+	var/color_type = "GREEN"
 
 	var/is_growing = FALSE			// If weather or not we are growing for self improvement, mostly affects shard amounts on mining
 	var/spread_range = 1			// Radius that the crystal can spawn new crystals. this is basically atm a 3x3 - Gains 1x1 every additonal core added so people can make their own size fields how they want!
 
 	var/resize = TRUE				// Used for basic crystal on update icon to help controle its size and affects
-	var/randomized_colour = TRUE	// If we on spawn have different colours
+	var/randomized_color = TRUE	// If we on spawn have different colours
 
 	var/self_improvement = TRUE		// Weather or not we are able to grow leading to more shards when mined
 	var/fast_improvement = 320		// Minium amount of time it takes for a growing crystal to grow
@@ -45,16 +45,16 @@
 /obj/structure/ameridian_crystal/New()
 	..()
 	update_icon()
-	if(!randomized_colour)
+	if(!randomized_color)
 		gooners()
 		return
 	if(prob(33))
-		colour_type = "BLUE"
+		color_type = "BLUE"
 		icon_state = "ameridian_crystal_blue"
 		fast_improvement = 120
 		slow_improvement = 220
 	else if(prob(33))
-		colour_type = "RED"
+		color_type = "RED"
 		icon_state = "ameridian_crystal_red"
 		fast_improvement = 60
 		slow_improvement = 90
@@ -87,25 +87,25 @@
 	AddRadSource(src, rad_amounts, rad_range)
 
 /obj/structure/ameridian_crystal/proc/gooners()
-	if(colour_type == "BLUE") //Slower but less danger - kinda this needs to be better worked on
+	if(color_type == "BLUE") //Slower but less danger - kinda this needs to be better worked on
 		new /obj/random/mob/golem/high_chance (src.loc)
 		growth = pick(1,1,1,1,2,2,2,3,3,3,3,4,5)
 		light_color = COLOR_LIGHTING_BLUE_BRIGHT
-	if(colour_type == "RED") //Red things grow faster
+	if(color_type == "RED") //Red things grow faster
 		new /obj/random/mob/golem/low_chance (src.loc)
 		new /obj/random/mob/golem/high_chance (src.loc)
 		growth = pick(1,2,2,3,3,3,4,4,4,4,5,5,5)
 		light_color = COLOR_LIGHTING_RED_BRIGHT
-	if(colour_type == "GREEN")
+	if(color_type == "GREEN")
 		new /obj/random/mob/golem (src.loc)
 		new /obj/random/mob/golem/low_chance (src.loc)
 		growth = pick(1,1,2,2,2,3,3,3,4,4,4,5,5)
-	if(colour_type == "PURPLE")
+	if(color_type == "PURPLE")
 		growth = 5 // A just in case to allow us to still spread and grow.
 		light_color = COLOR_LIGHTING_PURPLE_BRIGHT
 		icon_state = "ameridian_crystal_purple"
 		new /obj/random/cluster/golem_hoard(src.loc)
-	if(colour_type == "FAKE")
+	if(color_type == "FAKE")
 		growth = 5 // A just in case to allow us to still spread and grow.
 		light_color = COLOR_LIGHTING_PURPLE_DARK
 		icon_state = "ameridian_crystal_purple"

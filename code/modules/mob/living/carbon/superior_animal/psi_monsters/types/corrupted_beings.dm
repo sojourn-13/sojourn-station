@@ -40,7 +40,7 @@
 	attack_sound = 'sound/weapons/slice.ogg'
 	melee_damage_lower = 26
 	melee_damage_upper = 26
-	emote_see = list("looks left then right.", "breathes heavily.", "adjusts their armour.")
+	emote_see = list("looks left then right.", "breathes heavily.", "adjusts their armor.")
 	turns_per_move = 3
 	move_to_delay = 3
 	attacktext = "cuts into"
@@ -192,7 +192,7 @@ They are soully made and reflavoured to be for PVE.
 	health = 250 * DVEY_HEALTH_MOD
 	melee_damage_lower = 33
 	melee_damage_upper = 33
-	emote_see = list("looks left then right.", "breaths heavily.", "adjusts their armour.")
+	emote_see = list("looks left then right.", "breaths heavily.", "adjusts their armor.")
 	turns_per_move = 3
 	move_to_delay = 4
 	attacktext = "hacks"
@@ -222,7 +222,7 @@ They are soully made and reflavoured to be for PVE.
 	health = 250 * DVEY_HEALTH_MOD
 	melee_damage_lower = 8
 	melee_damage_upper = 10
-	emote_see = list("looks left then right.", "breaths heavily.", "adjusts their armour.")
+	emote_see = list("looks left then right.", "breaths heavily.", "adjusts their armor.")
 	turns_per_move = 3
 	move_to_delay = 4
 	attacktext = "bashes"
@@ -256,7 +256,7 @@ They are soully made and reflavoured to be for PVE.
 	health = 250 * DVEY_HEALTH_MOD
 	melee_damage_lower = 8
 	melee_damage_upper = 10
-	emote_see = list("looks left then right.", "breaths heavily.", "adjusts their armour.")
+	emote_see = list("looks left then right.", "breaths heavily.", "adjusts their armor.")
 	turns_per_move = 3
 	move_to_delay = 4
 	attacktext = "bashes"
@@ -293,7 +293,7 @@ They are soully made and reflavoured to be for PVE.
 	health = 250 * DVEY_HEALTH_MOD
 	melee_damage_lower = 8
 	melee_damage_upper = 10
-	emote_see = list("looks left then right.", "breaths heavily.", "adjusts their armour.")
+	emote_see = list("looks left then right.", "breaths heavily.", "adjusts their armor.")
 	turns_per_move = 3
 	move_to_delay = 4
 	attacktext = "bashes"
@@ -341,7 +341,7 @@ They are soully made and reflavoured to be for PVE.
 	health = 250 * DVEY_HEALTH_MOD
 	melee_damage_lower = 8
 	melee_damage_upper = 10
-	emote_see = list("looks left then right.", "breaths heavily.", "adjusts their armour.")
+	emote_see = list("looks left then right.", "breaths heavily.", "adjusts their armor.")
 	turns_per_move = 3
 	move_to_delay = 4
 	attacktext = "bashes"
@@ -387,7 +387,7 @@ They are soully made and reflavoured to be for PVE.
 	health = 300 * DVEY_HEALTH_MOD
 	melee_damage_lower = 20
 	melee_damage_upper = 25
-	emote_see = list("looks left then right.", "breaths heavily.", "adjusts their armour.")
+	emote_see = list("looks left then right.", "breaths heavily.", "adjusts their armor.")
 	turns_per_move = 4
 	move_to_delay = 5
 	attacktext = "destablizes"
@@ -428,7 +428,7 @@ They are soully made and reflavoured to be for PVE.
 	health = 280 * DVEY_HEALTH_MOD
 	melee_damage_lower = 33
 	melee_damage_upper = 33
-	emote_see = list("looks left then right", "breaths heavilly", "adjusts their armour")
+	emote_see = list("looks left then right", "breaths heavilly", "adjusts their armor")
 	turns_per_move = 4
 	move_to_delay = 5
 	attacktext = "hacks"

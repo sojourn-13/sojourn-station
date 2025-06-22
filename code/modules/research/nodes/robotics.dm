@@ -92,7 +92,7 @@
 		/datum/design/research/item/mechfab/gygax/right_arm,
 		/datum/design/research/item/mechfab/gygax/left_leg,
 		/datum/design/research/item/mechfab/gygax/right_leg,
-		/datum/design/research/item/mechfab/gygax/armour
+		/datum/design/research/item/mechfab/gygax/armor
 		)
 /*
 /datum/technology/mech_gyrax_ultra
@@ -131,7 +131,7 @@
 		/datum/design/research/item/mechfab/durand/right_arm,
 		/datum/design/research/item/mechfab/durand/left_leg,
 		/datum/design/research/item/mechfab/durand/right_leg,
-		/datum/design/research/item/mechfab/durand/armour
+		/datum/design/research/item/mechfab/durand/armor
 	)
 
 
@@ -156,7 +156,7 @@
 		/datum/design/research/item/mechfab/phazon/right_arm,
 		/datum/design/research/item/mechfab/phazon/left_leg,
 		/datum/design/research/item/mechfab/phazon/right_leg,
-		/datum/design/research/item/mechfab/phazon/armour
+		/datum/design/research/item/mechfab/phazon/armor
 		)
 
 
@@ -374,9 +374,9 @@
 						/datum/design/research/item/robot_upgrade/tasercooler,
 						/datum/design/research/item/robot_upgrade/rcd,
 						/datum/design/research/item/robot_upgrade/arc_welder,
-						/datum/design/research/item/mechfab/robot/component/armour,
-						/datum/design/research/item/mechfab/robot/component/armour/mkii,
-						/datum/design/research/item/mechfab/robot/component/armour/mkv,
+						/datum/design/research/item/mechfab/robot/component/armor,
+						/datum/design/research/item/mechfab/robot/component/armor/mkii,
+						/datum/design/research/item/mechfab/robot/component/armor/mkv,
 						/datum/design/research/circuit/repair_station
 						)
 

@@ -7,7 +7,7 @@
 	anchored = 1
 	opacity = 0
 	density = 0
-	color = DEAD_PLANT_COLOUR
+	color = DEAD_PLANT_COLOR
 
 /obj/effect/dead_plant/attack_hand()
 	qdel(src)
@@ -151,14 +151,14 @@
 	//TODO: should really be caching this.
 	refresh_icon()
 
-	var/icon_colour = seed.get_trait(TRAIT_PLANT_COLOUR)
+	var/icon_colour = seed.get_trait(TRAIT_PLANT_COLOR)
 	if(icon_colour)
 		color = icon_colour
 	// Apply colour and light from seed datum.
 	if(seed.get_trait(TRAIT_BIOLUM))
 		var/clr
-		if(seed.get_trait(TRAIT_BIOLUM_COLOUR))
-			clr = seed.get_trait(TRAIT_BIOLUM_COLOUR)
+		if(seed.get_trait(TRAIT_BIOLUM_COLOR))
+			clr = seed.get_trait(TRAIT_BIOLUM_COLOR)
 		set_light(1+round(seed.get_trait(TRAIT_POTENCY)/20), l_color = clr)
 		return
 	else

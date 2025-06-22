@@ -50,7 +50,7 @@
 // Explorer gear
 /obj/item/clothing/head/hood/explorer
 	name = "explorer hood"
-	desc = "An armoured hood for exploring harsh environments."
+	desc = "An armored hood for exploring harsh environments."
 	icon_state = "explorer"
 	flags = THICKMATERIAL
 	min_cold_protection_temperature = SPACE_SUIT_MIN_COLD_PROTECTION_TEMPERATURE
@@ -82,7 +82,7 @@
 	desc = "Protect yourself from the elements or conceal your identity, in the name of the Absolute."
 	armor_list = list(
 		melee = 0,
-		bullet = 0, //unarmoured, but bioproof
+		bullet = 0, // Unarmored, but bioproof
 		energy = 0,
 		bomb = 0,
 		bio = 100,

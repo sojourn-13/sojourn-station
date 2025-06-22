@@ -41,7 +41,7 @@
 	  *
 	  * its inherent color, the colored paint applied on it, special color effect etc...
 	  */
-	var/list/atom_colours
+	var/list/atom_colors
 
 	// All physical objects that exist have a somewhat metaphysical representation of their integrity
 	// Why are areas derived from /atom instead of /datum?  They're abstracts!
@@ -856,24 +856,24 @@ its easier to just keep the beam vertical.
 		return null
 	return L.AllowDrop() ? L : L.drop_location()
 
-///Adds an instance of colour_type to the atom's atom_colours list
-/atom/proc/add_atom_colour(coloration, colour_priority)
-	if(!atom_colours || !atom_colours.len)
-		atom_colours = list()
-		atom_colours.len = COLOUR_PRIORITY_AMOUNT //four priority levels currently.
+///Adds an instance of color_type to the atom's atom_colors list
+/atom/proc/add_atom_color(coloration, colour_priority)
+	if(!atom_colors || !atom_colors.len)
+		atom_colors = list()
+		atom_colors.len = COLOR_PRIORITY_AMOUNT //four priority levels currently.
 	if(!coloration)
 		return
-	if(colour_priority > atom_colours.len)
+	if(colour_priority > atom_colors.len)
 		return
-	atom_colours[colour_priority] = coloration
+	atom_colors[colour_priority] = coloration
 	update_atom_colour()
 
 ///Resets the atom's color to null, and then sets it to the highest priority colour available
 /atom/proc/update_atom_colour()
 	color = null
-	if(!atom_colours)
+	if(!atom_colors)
 		return
-	for(var/C in atom_colours)
+	for(var/C in atom_colors)
 		if(islist(C))
 			var/list/L = C
 			if(L.len)

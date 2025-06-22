@@ -350,7 +350,7 @@
   WatlerJe, Kurgis:
   - rscadd: New crewman jumpsuit, made by WatlerJe, which can be selected in the loadout.
   budgetcommander:
-  - rscadd: Damage against targets with 0 and 10 armour is now visible in a gun's
+  - rscadd: Damage against targets with 0 and 10 armor is now visible in a gun's
       stats.
   - rscadd: Wound value is visible again.
   - tweak: Displayed damage is no longer changed by wound value.

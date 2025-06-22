@@ -227,7 +227,7 @@ var/list/flooring_types
 	removal_time = 250
 	health = 200
 	has_base_range = 0
-	resistance = RESISTANCE_ARMOURED
+	resistance = RESISTANCE_ARMORED
 	footstep_sound = "catwalk"
 	space_smooth = SMOOTH_ALL
 	floor_smooth = SMOOTH_NONE
@@ -319,7 +319,7 @@ var/list/flooring_types
 	plating_type = null
 	is_plating = TRUE
 	health = 350
-	resistance = RESISTANCE_HEAVILY_ARMOURED
+	resistance = RESISTANCE_HEAVILY_ARMORED
 	removal_time = 1 MINUTES //Cutting through the hull is very slow work
 	footstep_sound = "hull"
 	wall_smooth = SMOOTH_ALL

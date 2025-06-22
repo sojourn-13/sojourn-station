@@ -333,62 +333,62 @@
 /obj/item/pc_part/drive/disk/plantgene/pigment/red
 	disk_name = "plant gene disk - light color: red, bright"
 	trait_info = "light color: red, bright"
-	preset_values = list(TRAIT_BIOLUM_COLOUR = COLOR_LIGHTING_RED_BRIGHT)
+	preset_values = list(TRAIT_BIOLUM_COLOR = COLOR_LIGHTING_RED_BRIGHT)
 
 /obj/item/pc_part/drive/disk/plantgene/pigment/orange
 	disk_name = "plant gene disk - light color: orange, bright"
 	trait_info = "light color: orange, bright"
-	preset_values = list(TRAIT_BIOLUM_COLOUR = COLOR_LIGHTING_ORANGE_BRIGHT)
+	preset_values = list(TRAIT_BIOLUM_COLOR = COLOR_LIGHTING_ORANGE_BRIGHT)
 
 /obj/item/pc_part/drive/disk/plantgene/pigment/green
 	disk_name = "plant gene disk - light color: green, bright"
 	trait_info = "light color: green, bright"
-	preset_values = list(TRAIT_BIOLUM_COLOUR = COLOR_LIGHTING_GREEN_BRIGHT)
+	preset_values = list(TRAIT_BIOLUM_COLOR = COLOR_LIGHTING_GREEN_BRIGHT)
 
 /obj/item/pc_part/drive/disk/plantgene/pigment/cyan
 	disk_name = "plant gene disk - light color: cyan, bright"
 	trait_info = "light color: cyan, bright"
-	preset_values = list(TRAIT_BIOLUM_COLOUR = COLOR_LIGHTING_CYAN_BRIGHT)
+	preset_values = list(TRAIT_BIOLUM_COLOR = COLOR_LIGHTING_CYAN_BRIGHT)
 
 /obj/item/pc_part/drive/disk/plantgene/pigment/blue
 	disk_name = "plant gene disk - light color: blue, bright"
 	trait_info = "light color: blue, bright"
-	preset_values = list(TRAIT_BIOLUM_COLOUR = COLOR_LIGHTING_BLUE_BRIGHT)
+	preset_values = list(TRAIT_BIOLUM_COLOR = COLOR_LIGHTING_BLUE_BRIGHT)
 
 /obj/item/pc_part/drive/disk/plantgene/pigment/purple
 	disk_name = "plant gene disk - light color: purple, bright"
 	trait_info = "light color: purple, bright"
-	preset_values = list(TRAIT_BIOLUM_COLOUR = COLOR_LIGHTING_PURPLE_BRIGHT)
+	preset_values = list(TRAIT_BIOLUM_COLOR = COLOR_LIGHTING_PURPLE_BRIGHT)
 
 /obj/item/pc_part/drive/disk/plantgene/pigment/red_dark
 	disk_name = "plant gene disk - light color: red, dark"
 	trait_info = "light color: red, dark"
-	preset_values = list(TRAIT_BIOLUM_COLOUR = COLOR_LIGHTING_RED_DARK)
+	preset_values = list(TRAIT_BIOLUM_COLOR = COLOR_LIGHTING_RED_DARK)
 
 /obj/item/pc_part/drive/disk/plantgene/pigment/orange_dark
 	disk_name = "plant gene disk - light color: orange, dark"
 	trait_info = "light color: orange, dark"
-	preset_values = list(TRAIT_BIOLUM_COLOUR = COLOR_LIGHTING_ORANGE_DARK)
+	preset_values = list(TRAIT_BIOLUM_COLOR = COLOR_LIGHTING_ORANGE_DARK)
 
 /obj/item/pc_part/drive/disk/plantgene/pigment/green_dark
 	disk_name = "plant gene disk - light color: green, dark"
 	trait_info = "light color: green, dark"
-	preset_values = list(TRAIT_BIOLUM_COLOUR = COLOR_LIGHTING_GREEN_DARK)
+	preset_values = list(TRAIT_BIOLUM_COLOR = COLOR_LIGHTING_GREEN_DARK)
 
 /obj/item/pc_part/drive/disk/plantgene/pigment/cyan_dark
 	disk_name = "plant gene disk - light color: cyan, dark"
 	trait_info = "light color: cyan, dark"
-	preset_values = list(TRAIT_BIOLUM_COLOUR = COLOR_LIGHTING_CYAN_DARK)
+	preset_values = list(TRAIT_BIOLUM_COLOR = COLOR_LIGHTING_CYAN_DARK)
 
 /obj/item/pc_part/drive/disk/plantgene/pigment/blue_dark
 	disk_name = "plant gene disk - light color: blue, dark"
 	trait_info = "light color: blue, dark"
-	preset_values = list(TRAIT_BIOLUM_COLOUR = COLOR_LIGHTING_BLUE_DARK)
+	preset_values = list(TRAIT_BIOLUM_COLOR = COLOR_LIGHTING_BLUE_DARK)
 
 /obj/item/pc_part/drive/disk/plantgene/pigment/purple_dark
 	disk_name = "plant gene disk - light color: purple, dark"
 	trait_info = "light color: purple, dark"
-	preset_values = list(TRAIT_BIOLUM_COLOUR = COLOR_LIGHTING_PURPLE_DARK)
+	preset_values = list(TRAIT_BIOLUM_COLOR = COLOR_LIGHTING_PURPLE_DARK)
 
 // SPECIAL
 /obj/item/pc_part/drive/disk/plantgene/special

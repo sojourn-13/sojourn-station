@@ -194,15 +194,15 @@
 	w_class = ITEM_SIZE_TINY
 	attack_verb = list("attacked", "coloured")
 	colour = "#FF0000" //RGB
-	var/shadeColour = "#220000" //RGB
+	var/shade_color = "#220000" //RGB
 	var/uses = 30 //0 for unlimited uses
 	var/instant = 0
-	var/colourName = "red" //for updateIcon purposes
+	var/color_name = "red" //for updateIcon purposes
 	var/grindable = TRUE //normal crayons are grindable, rainbow and mime aren't
 
 /obj/item/pen/crayon/New()
-	name = "[colourName] crayon"
+	name = "[color_name] crayon"
 	if(grindable)
 		create_reagents(20)
-		reagents.add_reagent("crayon_dust_[colourName]", 20)
+		reagents.add_reagent("crayon_dust_[color_name]", 20)
 	..()

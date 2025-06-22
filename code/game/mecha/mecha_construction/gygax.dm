@@ -74,7 +74,7 @@
 			//"backkey" = QUALITY_PRYING,
 			"desc"="The external armor is installed on the chassis, but needs to be bolted down."),
 		//6
-		list("key" = /obj/item/mecha_parts/part/gygax_armour,
+		list("key" = /obj/item/mecha_parts/part/gygax_armor,
 			//"backkey" = QUALITY_WELDING,
 			"desc"="The internal armor is welded together, and the full chassis is ready for gygax armor plates."),
 		//7
@@ -533,7 +533,7 @@
 					"[usr] pries gygax armor plates from the [holder].", \
 					"You pry gygax armor plates from the [holder]."
 				)
-				new /obj/item/mecha_parts/part/gygax_armour(get_turf(holder))
+				new /obj/item/mecha_parts/part/gygax_armor(get_turf(holder))
 				holder.icon_state = "gygax16"
 		if(5)
 			if(diff == FORWARD)

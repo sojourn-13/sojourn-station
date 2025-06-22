@@ -1,8 +1,8 @@
-//Misc
-#define DEAD_PLANT_COLOUR "#C2A180"
-#define FROZEN_PLANT_COLOUR "#CCFFFF"
+// Plant Colors
+#define DEAD_PLANT_COLOR "#C2A180"
+#define FROZEN_PLANT_COLOR "#CCFFFF"
 
-// Definitions for genes (trait groupings)
+// Definitions For Genes (Trait Groupings)
 #define GENE_BIOCHEMISTRY "biochemistry"
 #define GENE_HARDINESS "hardiness"
 #define GENE_ENVIRONMENT "environment"
@@ -18,7 +18,7 @@
 
 #define ALL_GENES list(GENE_BIOCHEMISTRY,GENE_HARDINESS,GENE_ENVIRONMENT,GENE_METABOLISM,GENE_STRUCTURE,GENE_DIET,GENE_PIGMENT,GENE_OUTPUT,GENE_ATMOSPHERE,GENE_VIGOUR,GENE_FRUIT,GENE_SPECIAL)
 
-//Definitions for traits (individual descriptors)
+// Definitions For Traits (Individual Descriptors)
 #define TRAIT_CHEMS                	"1"
 #define TRAIT_EXUDE_GASSES         	"2"
 #define TRAIT_ALTER_TEMP           	"3"
@@ -52,12 +52,12 @@
 #define TRAIT_MATURATION           	"31"
 #define TRAIT_PRODUCTION           	"32"
 #define TRAIT_TELEPORTING          	"33"
-#define TRAIT_PLANT_COLOUR         	"34"
-#define TRAIT_PRODUCT_COLOUR       	"35"
+#define TRAIT_PLANT_COLOR         	"34"
+#define TRAIT_PRODUCT_COLOR       	"35"
 #define TRAIT_BIOLUM               	"36"
-#define TRAIT_BIOLUM_COLOUR        	"37"
+#define TRAIT_BIOLUM_COLOR        	"37"
 #define TRAIT_IMMUTABLE            	"38"
-#define TRAIT_FLESH_COLOUR         	"39"
+#define TRAIT_FLESH_COLOR         	"39"
 #define TRAIT_CHEM_SPRAYER         	"40"
 #define TRAIT_WALL_HUGGER			"41"
 #define TRAIT_INVASIVE				"42" //Allows to invade already seeded tiles

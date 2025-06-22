@@ -242,7 +242,7 @@ Freeing yourself is much harder than freeing someone else. Calling for help is a
 		return
 
 	var/mob/living/L = buckled_mob
-	//armour
+	// Armor
 
 	if( L.damage_through_armor(fail_damage, BRUTE, target_zone, ARMOR_MELEE, used_weapon = src) )
 	//No damage - no stun
@@ -303,8 +303,7 @@ Freeing yourself is much harder than freeing someone else. Calling for help is a
 	can_buckle = initial(can_buckle)
 	playsound(src, 'sound/effects/impacts/beartrap_shut.ogg', 100, 1,10,10)//Really loud snapping sound
 
-
-	//armour
+	// Armor
 	if( L.damage_through_armor(base_damage, BRUTE, target_zone, ARMOR_MELEE, used_weapon = src) )
 	//No damage - no stun
 		L.Stun(4) //A short stun prevents spamming failure attempts

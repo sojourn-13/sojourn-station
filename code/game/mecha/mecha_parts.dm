@@ -187,12 +187,11 @@
 	origin_tech = list(TECH_DATA = 2, TECH_MATERIAL = 2, TECH_ENGINEERING = 3)
 	matter = list(MATERIAL_PLASTEEL = 20)
 
-/obj/item/mecha_parts/part/gygax_armour
-	name = "Gygax Armour Plates"
-	icon_state = "gygax_armour"
+/obj/item/mecha_parts/part/gygax_armor
+	name = "Gygax Armor Plates"
+	icon_state = "gygax_armour" // TODO-ISKHOD - Change this to gygax_armor in the .dmi
 	origin_tech = list(TECH_MATERIAL = 6, TECH_COMBAT = 4, TECH_ENGINEERING = 5)
 	matter = list(MATERIAL_STEEL = 30, MATERIAL_PLASMA = 10)
-
 
 //////////// Durand
 
@@ -238,14 +237,11 @@
 	origin_tech = list(TECH_DATA = 2, TECH_MATERIAL = 3, TECH_ENGINEERING = 3)
 	matter = list(MATERIAL_PLASTEEL = 30, MATERIAL_SILVER = 3)
 
-/obj/item/mecha_parts/part/durand_armour
-	name = "Durand Armour Plates"
-	icon_state = "durand_armour"
+/obj/item/mecha_parts/part/durand_armor
+	name = "Durand Armor Plates"
+	icon_state = "durand_armour" // TODO-ISKHOD - Change this to gygax_armor in the .dmi
 	origin_tech = list(TECH_MATERIAL = 5, TECH_COMBAT = 4, TECH_ENGINEERING = 5)
 	matter = list(MATERIAL_PLASTEEL = 50, MATERIAL_URANIUM = 10)
-
-
-
 
 ////////// Phazon
 //origin_tech = list(TECH_MATERIAL = 5, TECH_COMBAT = 4, TECH_ENGINEERING = 5)

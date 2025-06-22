@@ -2,7 +2,7 @@
 	name = "baton round"
 	icon_state = "grenade"
 	damage_types = list(BRUTE = 20, HALLOSS = 100)
-	check_armour = ARMOR_MELEE
+	check_armor = ARMOR_MELEE
 	armor_divisor = 1
 	embed = TRUE			//literally imagine being hit by this.
 	can_ricochet = TRUE		//It's rubber
@@ -16,7 +16,7 @@
 	armor_divisor = 1
 	embed = TRUE
 	sharp = FALSE
-	check_armour = ARMOR_BULLET
+	check_armor = ARMOR_BULLET
 	recoil = 45
 
 /obj/item/projectile/bullet/grenade/Move()	//Makes grenade shells cause their effect when they arrive at their target turf

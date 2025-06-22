@@ -89,11 +89,11 @@ var/global/list/datum/supply_drop_loot/supply_drop
 		/obj/item/reagent_containers/snacks/meat,
 		/obj/item/reagent_containers/snacks/meat)
 
-/datum/supply_drop_loot/armour
-	name = "Armour"
+/datum/supply_drop_loot/armor
+	name = "Armor"
 	container = /obj/structure/largecrate
 
-/datum/supply_drop_loot/armour/New()
+/datum/supply_drop_loot/armor/New()
 	..()
 	contents = list(
 		/obj/item/clothing/head/helmet/faceshield/riot,

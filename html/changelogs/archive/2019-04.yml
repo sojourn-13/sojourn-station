@@ -59,7 +59,7 @@
   - maptweak: Replased all glass windows with walls at firing range, because what
       the fuck glass to fucking space doing on a fucking firing range?
   - bugfix: Small fix to SMG mag sprite.
-  - bugfix: 'Fixed Armoury access '
+  - bugfix: 'Fixed Armory access '
   TorinoFermic:
   - tweak: Hatton code is ordered with additions of research nodes and bugfixing the
       variable.

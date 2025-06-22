@@ -372,7 +372,7 @@ var/list/name_to_material
 	integrity = 150
 	icon_base = "solid"
 	icon_reinf = "reinf_over"
-	icon_colour = PLASTEEL_COLOUR
+	icon_colour = PLASTEEL_COLOR
 	hitsound = 'sound/weapons/genhit.ogg'
 
 /material/steel/holographic
@@ -388,7 +388,7 @@ var/list/name_to_material
 	melting_point = 6000
 	icon_base = "solid"
 	icon_reinf = "reinf_over"
-	icon_colour = PLASTEEL_COLOUR//"#777777"
+	icon_colour = PLASTEEL_COLOR//"#777777"
 	explosion_resistance = 25
 	hardness = 80
 	weight = 23

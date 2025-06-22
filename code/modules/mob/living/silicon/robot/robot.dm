@@ -328,14 +328,14 @@
 	var/module_type = robot_modules[modtype]
 	var/obj/item/robot_module/RM = new module_type() //Spawn a dummy module to read values from
 
-	var/armourHealth = 0
+	var/armorHealth = 0
 	for(var/V in src.components)
 		var/datum/robot_component/C = src.components[V]
-		if (V == "armour")
-			armourHealth = C.max_damage
+		if (V == "armor")
+			armorHealth = C.max_damage
 
 	switch(alert(src, "[RM.desc] \n \n\
-	Health: [RM.health + armourHealth] \n\
+	Health: [RM.health + armorHealth] \n\
 	Power Efficiency: [RM.power_efficiency*100]%\n\
 	Movement Speed: [RM.speed_factor*100]%",
 	"[modtype] module", "Yes", "No"))
@@ -561,7 +561,7 @@
 		chance = max((chance / B.armor_divisor), 0)
 		if (!(Proj.testing))
 			if(B.starting && prob(chance)) // disregard this for test because its luck based
-				visible_message(SPAN_DANGER("\The [Proj.name] ricochets off [src]\'s armour!"))
+				visible_message(SPAN_DANGER("\The [Proj.name] ricochets off [src]\'s armor!"))
 				var/multiplier = round(10 / get_dist(B.starting, src))
 				var/turf/sourceloc = get_turf_away_from_target_complex(src, B.starting, multiplier)
 				var/distance = get_dist(sourceloc, src)

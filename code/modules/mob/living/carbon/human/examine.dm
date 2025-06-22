@@ -78,14 +78,14 @@
 		else
 			msg += "[He] [is] wearing \icon[head] <a href='?src=\ref[user];lookitem=\ref[head]'>\a [head]</a> on [his] head.\n"
 
-	//suit/armour
+	//suit/armor
 	if(wear_suit)
 		if(wear_suit.blood_DNA)
 			msg += "<span class='warning'>[He] [is] wearing \icon[wear_suit] [wear_suit.gender==PLURAL?"some":"a"] [(wear_suit.blood_color != "#030303") ? "blood" : "oil"]-stained <a href='?src=\ref[user];lookitem=\ref[wear_suit]'>\a [wear_suit]</a>!</span>\n"
 		else
 			msg += "[He] [is] wearing \icon[wear_suit] <a href='?src=\ref[user];lookitem=\ref[wear_suit]'>\a [wear_suit]</a>.\n"
 
-		//suit/armour storage
+		//suit/armor storage
 		if(s_store && !skipsuitstorage)
 			if(s_store.blood_DNA)
 				msg += "<span class='warning'>[He] [is] carrying \icon[s_store] [s_store.gender==PLURAL?"some":"a"] [(s_store.blood_color != "#030303") ? "blood" : "oil"]-stained <a href='?src=\ref[user];lookitem=\ref[s_store]'>\a [s_store]</a> on [his] [wear_suit]!</span>\n"

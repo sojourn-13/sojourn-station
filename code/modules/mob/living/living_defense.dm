@@ -39,7 +39,7 @@
 		if(damagetype == HALLOSS)
 			//First we get the nervs!
 			effective_damage = round(effective_damage * clamp((get_specific_organ_efficiency(OP_NERVE, def_zone) / 100), 0.5, 1.5))
-			var/pain_armor = max(0, (src.getarmor(def_zone, "bullet") +  src.getarmor(def_zone, "melee") - armour_pen))//All brute over-pen checks bullet rather then melee for simple mobs to keep melee viable
+			var/pain_armor = max(0, (src.getarmor(def_zone, "bullet") +  src.getarmor(def_zone, "melee") - armor_pen))//All brute over-pen checks bullet rather then melee for simple mobs to keep melee viable
 			var/pain_no_matter_what = (effective_damage * 0.15) //we deal 15% of are pain, this is to stop rubbers being *completely* uses with basic armor - Its not perfect in melee
 			effective_damage = max(pain_no_matter_what, (effective_damage - pain_armor))
 			if(ishuman(src))
@@ -59,7 +59,7 @@
 */
 
 
-	// Determine DR and ADR, armour divisor reduces it
+	// Determine DR and ADR, armor divisor reduces it
 	var/armor = getarmor(def_zone, attack_flag) / armor_divisor
 	if(!(attack_flag in list(ARMOR_MELEE, ARMOR_BULLET, ARMOR_ENERGY))) // Making sure BIO and other armor types are handled correctly
 		armor /= 5
@@ -74,7 +74,7 @@
 	for(var/dmg_type in dmg_types)
 		var/dmg = dmg_types[dmg_type]
 		if(dmg)
-			var/used_armor = 0 // Used for agony calculation, as well as reduction in armour before follow-up attacks
+			var/used_armor = 0 // Used for agony calculation, as well as reduction in armor before follow-up attacks
 
 			if(dmg_type in list(BRUTE, BURN, TOX, BLAST)) // Some damage types do not help penetrate armor
 				if(remaining_armor)
@@ -170,7 +170,7 @@
 			armor_message(SPAN_NOTICE("[src] armor reduces the impact by a little."),
 							SPAN_NOTICE("Your armor reduced the impact a little."))
 
-	// Deal damage to ablative armour based on how much was used, we multiply armour divisor back so high AP doesn't decrease damage dealt to ADR
+	// Deal damage to ablative armor based on how much was used, we multiply armor divisor back so high AP doesn't decrease damage dealt to ADR
 	if(ablative_armor)
 		damageablative(def_zone, (ablative_armor - remaining_ablative) * armor_divisor)
 
@@ -258,9 +258,9 @@
 				dmult += P.supereffective_mult
 			damage *= dmult
 		hit_impact(P.get_structure_damage(), hit_dir)
-		//log_debug("DEBUG Proj Pre DTA:def_zone = [def_zone_hit], attack_flag = [P.check_armour], armor_divisor = [P.armor_divisor], used_weapon = [P], sharp = [is_sharp(P)], edge = [has_edge(P)], wounding_multiplier = [P.wounding_mult], dmg_types = [P.damage_types])")
+		//log_debug("DEBUG Proj Pre DTA:def_zone = [def_zone_hit], attack_flag = [P.check_armor], armor_divisor = [P.armor_divisor], used_weapon = [P], sharp = [is_sharp(P)], edge = [has_edge(P)], wounding_multiplier = [P.wounding_mult], dmg_types = [P.damage_types])")
 
-		return damage_through_armor(def_zone = def_zone_hit, attack_flag = P.check_armour, armor_divisor = P.armor_divisor, used_weapon = P, sharp = is_sharp(P), edge = has_edge(P), wounding_multiplier = P.wounding_mult, dmg_types = P.damage_types, return_continuation = TRUE)
+		return damage_through_armor(def_zone = def_zone_hit, attack_flag = P.check_armor, armor_divisor = P.armor_divisor, used_weapon = P, sharp = is_sharp(P), edge = has_edge(P), wounding_multiplier = P.wounding_mult, dmg_types = P.damage_types, return_continuation = TRUE)
 
 	return PROJECTILE_CONTINUE
 

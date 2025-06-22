@@ -9,7 +9,7 @@
 #define RIG_INTERFACE_LOCK 8
 #define RIG_INTERFACE_SHOCK 16
 /*
- * Defines the behavior of hardsuits/rigs/power armour.
+ * Defines the behavior of hardsuits/rigs/power armor.
  */
 
 /obj/item/rig
@@ -803,7 +803,7 @@
 		if(P.damage_types[damage_type] <= 0)
 			P.damage_types -= damage_type
 
-	ablative_armor -= max(-(ablative_stack - ablative_armor) / ablation - armor.getRating(P.check_armour), 0) // Damage blocked (not halloss) reduces ablative armor, base armor protects ablative armor
+	ablative_armor -= max(-(ablative_stack - ablative_armor) / ablation - armor.getRating(P.check_armor), 0) // Damage blocked (not halloss) reduces ablative armor, base armor protects ablative armor
 
 	if(!P.damage_types.len)
 		return TRUE

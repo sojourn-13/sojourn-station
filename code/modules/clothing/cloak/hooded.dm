@@ -214,7 +214,7 @@
 	w_class = ITEM_SIZE_SMALL
 	armor_list = list(
 		melee = 0,
-		bullet = 0, //unarmoured, but bioproof
+		bullet = 0, // Unarmored, but bioproof
 		energy = 0,
 		bomb = 0,
 		bio = 100,

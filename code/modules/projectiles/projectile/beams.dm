@@ -13,7 +13,7 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 	damage_types = list(BURN = 20)
 	armor_divisor = 1.2 //Some AP
 	wounding_mult = 1.2 //and some wounding mult
-	check_armour = ARMOR_ENERGY
+	check_armor = ARMOR_ENERGY
 	var/frequency = 1
 	hitscan = 1
 	invisibility = 101	//beam projectiles are invisible as they are rendered by the effect engine
@@ -158,7 +158,7 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 	icon_state = "laser"
 	pass_flags = PASSTABLE | PASSGLASS | PASSGRILLE
 	damage_types = list(BURN = 0)
-	check_armour = ARMOR_ENERGY
+	check_armor = ARMOR_ENERGY
 	eyeblur = 2
 
 /obj/item/projectile/beam/midlaser // Middle ground between better than stock but worse than heavy.

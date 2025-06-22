@@ -57523,7 +57523,7 @@
 /area/nadezhda/maintenance/undergroundfloor2west)
 "kQx" = (
 /obj/machinery/door/airlock/command{
-	name = "Bridge Armoury";
+	name = "Bridge Armory";
 	req_access = list(20)
 	},
 /obj/structure/cable/green{
@@ -65997,7 +65997,7 @@
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber,
 /obj/machinery/button/remote/blast_door{
-	id = "Armoury";
+	id = "Armory";
 	name = "Armory Blast Doors";
 	pixel_y = 32;
 	req_access = list(3)

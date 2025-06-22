@@ -925,7 +925,7 @@
 	name = "\improper Security - Gunnery Sergeant's Office"
 	icon_state = "Warden"
 
-/area/eris/security/armoury
+/area/eris/security/armory
 	name = "\improper Security - Armory"
 	icon_state = "Warden"
 

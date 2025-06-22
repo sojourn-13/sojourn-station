@@ -181,7 +181,7 @@
       will start off in a bed, asleep.
   - rscadd: Added Evac Vote, and reforked vote system in general with different vote
       power for different players.
-  - rscadd: Added the PK machine gun to the serbian armoury, replacing the old L6
+  - rscadd: Added the PK machine gun to the serbian armory, replacing the old L6
       SAW.
   - rscadd: Added Storyteller Panel button to the Player Panel.
   - tweak: Added the ability for admins to override vote cooldowns.

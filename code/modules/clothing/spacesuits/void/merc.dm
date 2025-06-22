@@ -45,7 +45,7 @@
 
 /obj/item/clothing/suit/space/void/SCAF
 	name = "SCAF suit"
-	desc = "A bulky antique suit of refurbished infantry armour, retrofitted with seals and coatings to make it EVA capable but also reducing mobility."
+	desc = "A bulky antique suit of refurbished infantry armor, retrofitted with seals and coatings to make it EVA capable but also reducing mobility."
 	icon_state = "scaf"
 	item_state = "scaf"
 	slowdown = 1.3
@@ -67,7 +67,7 @@
 
 /obj/item/clothing/suit/space/void/SCAF/voidwolf
 	name = "REAVER-SCAF suit"
-	desc = "A bulky antique suit of refurbished infantry armour, retrofitted with seals and coatings to make it EVA capable but also reducing mobility. This one has a void wolf paint job with intimidating red colors."
+	desc = "A bulky antique suit of refurbished infantry armor, retrofitted with seals and coatings to make it EVA capable but also reducing mobility. This one has a void wolf paint job with intimidating red colors."
 	icon_state = "scaf_wolf"
 	item_state = "scaf_wolf"
 	slowdown = 1.1 // Red makes it go fasta!
@@ -135,7 +135,7 @@
 
 /obj/item/clothing/suit/space/void/SCAF/blackshield
 	name = "blackshield SCAF suit"
-	desc = "A bulky antique suit of refurbished into elite infantry armour, retrofitted with seals and coatings to make it EVA capable but also reducing mobility. The blackshields answers to an all purpose mobile tank suit."
+	desc = "A bulky antique suit of refurbished into elite infantry armor, retrofitted with seals and coatings to make it EVA capable but also reducing mobility. The blackshields answers to an all purpose mobile tank suit."
 	icon_state = "scaf_mil"
 	item_state = "scaf_mil"
 	helmet = /obj/item/clothing/head/helmet/space/void/SCAF/blackshield

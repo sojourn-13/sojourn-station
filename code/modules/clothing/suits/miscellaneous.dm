@@ -38,7 +38,7 @@
  * Lasertag
  */
 /obj/item/clothing/suit/fluff/bluetag
-	name = "blue plasma tag armour"
+	name = "blue plasma tag armor"
 	desc = "Blue Pride, Station Wide."
 	icon_state = "bluetag"
 	item_state = "bluetag"
@@ -48,7 +48,7 @@
 	siemens_coefficient = 3.0
 
 /obj/item/clothing/suit/fluff/redtag
-	name = "red plasma tag armour"
+	name = "red plasma tag armor"
 	desc = "Reputed to go faster."
 	icon_state = "redtag"
 	item_state = "redtag"
@@ -58,7 +58,7 @@
 	siemens_coefficient = 3.0
 
 /obj/item/clothing/suit/fluff/greentag
-	name = "green plasma tag armour"
+	name = "green plasma tag armor"
 	desc = "Started green, ended a legend."
 	icon_state = "greentag"
 	item_state = "greentag"
@@ -68,7 +68,7 @@
 	siemens_coefficient = 3.0
 
 /obj/item/clothing/suit/fluff/yellowtag
-	name = "yellow plasma tag armour"
+	name = "yellow plasma tag armor"
 	desc = "The only thing yellow about you is your armor."
 	icon_state = "yellowtag"
 	item_state = "yellowtag"
@@ -363,11 +363,11 @@ obj/item/clothing/suit/gownrisque/alt
 
 /obj/item/clothing/suit/storage/scav_heavy
 	name = "scavenger plate armor"
-	desc = "A set of scavenger armor with additional armour plating installed. Though the haphazardly-made plates are heavy and don't exactly excel against projectiles, they shrug off melee attacks nicely."
+	desc = "A set of scavenger armor with additional armor plating installed. Though the haphazardly-made plates are heavy and don't exactly excel against projectiles, they shrug off melee attacks nicely."
 	icon_state = "scav_heavy"
 	item_state = "scav_heavy"
 	armor_list = list(
-		melee = 12, //A bit worse than riot armour
+		melee = 12, // A bit worse than riot armor
 		bullet = 6,
 		energy = 6,
 		bomb = 25,
@@ -401,7 +401,7 @@ obj/item/clothing/suit/gownrisque/alt
 
 /obj/item/clothing/suit/storage/triad
 	name = "triad jacket"//RUINER reference
-	desc = "A well armoured trench coat. The label on the inside claims it comes from somewhere dangerous."
+	desc = "A well armored trench coat. The label on the inside claims it comes from somewhere dangerous."
 	icon_state = "triadkillers"
 	item_state = "triadkillers"
 	armor_list = list(

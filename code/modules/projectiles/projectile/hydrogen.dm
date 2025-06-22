@@ -5,7 +5,7 @@
 	hitsound_wall = 'sound/weapons/guns/misc/laser_searwall.ogg'
 	damage_types = list(BURN = 70)
 	armor_divisor = 2.25
-	check_armour = ARMOR_ENERGY
+	check_armor = ARMOR_ENERGY
 	muzzle_type = /obj/effect/projectile/plasma/muzzle
 	impact_type = /obj/effect/projectile/plasma/impact
 	kill_count = 15 // How long until they disapear

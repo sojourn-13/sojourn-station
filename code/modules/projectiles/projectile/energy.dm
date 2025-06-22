@@ -2,7 +2,7 @@
 	name = "energy"
 	icon_state = "spark"
 	damage_types = list(BURN = 0)
-	check_armour = ARMOR_ENERGY
+	check_armor = ARMOR_ENERGY
 	mob_hit_sound = list('sound/effects/gore/sear.ogg')
 	hitsound_wall = 'sound/weapons/guns/misc/laser_searwall.ogg'
 	recoil = 4
