@@ -48,7 +48,9 @@
 
 /obj/item/clothing/Destroy()
 	for(var/obj/item/clothing/accessory/A in accessories)
-		qdel(A)
+		A.on_removed()
+		accessories -= A
+		update_wear_icon()
 	accessories = null
 	return ..()
 
@@ -515,6 +517,12 @@ BLIND     // can't see anything
 	slowdown = SHOES_SLOWDOWN
 	force = 2
 	var/overshoes = 0
+
+/obj/item/clothing/shoes/Destroy()
+	if(holding)
+		holding.forceMove(loc)
+		holding = null
+	return ..()
 
 /obj/item/clothing/shoes/proc/draw_knife()
 	set name = "Draw Boot Knife"

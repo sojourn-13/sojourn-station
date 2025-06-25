@@ -13,6 +13,8 @@
 	pockets.cant_hold |= extra_allowed
 
 /obj/item/clothing/suit/storage/Destroy()
+	for(var/I in pockets.contents)
+		pockets.remove_from_storage(I)
 	qdel(pockets)
 	pockets = null
 	. = ..()
