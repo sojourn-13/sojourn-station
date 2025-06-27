@@ -11,7 +11,6 @@ Please contact us on the server Discord.
 
 Project owner - MsRandylicious<br/>
 Host - Ryuu<br/>
-Lead Janitor - CFWMagic
 
 ## CREDITS
 
