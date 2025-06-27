@@ -1321,9 +1321,15 @@
 	set src = usr
 
 	if(stat == CONSCIOUS)
+		if(light_color != initial(light_color))
+			light_color = initial(light_color)
+			custom_color = null
+			to_chat(src, "You set your LED to its default state.")
+			return
 		var/new_lightings = input(usr, "Choose your light colour: ", "LED Color", rgb(255,255,255)) as color|null
 		if(new_lightings)
 			light_color = new_lightings
+			custom_color = new_lightings
 	else
 		to_chat(src, "You can't change your LED lighting well not offline.")
 
