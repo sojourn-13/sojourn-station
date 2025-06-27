@@ -3501,6 +3501,7 @@
 #include "maps\__Nadezhda\Map_Nadezhda.dm"
 #include "maps\_dungeons\crawler\crawler.dm"
 #include "maps\_dungeons\deepmaint\deepmaint.dm"
+#include "maps\_PostForest\postforest.dm"
 #include "maps\CEVEris\_Eris_areas.dm"
 #include "maps\CEVEris\_map_data_Eris.dm"
 #include "maps\SpaceFortress\spacefortress.dm"
