@@ -260,6 +260,29 @@
 	stored_power = /mob/living/carbon/human/psionic_tumor/proc/temp_regulate
 	resonances = "Climate"
 
+/obj/item/device/psionic_catalyst/candle_enhancer
+	name = "psionic catalyst: Forever Candle"
+	desc = "Psionic catalysts, other worldly items not quite understood, but valuable for the powers they may grant a psion. To everyone else, they have research value in a deconstructor or may be \
+	recycled for the somewhat rare materials that make them. Holding it feels quite strange. Even to an unattuned mind, one can hear the faintly glowing object whispering, the eager voices say: \
+	A candle has a long breath if never blown on..."
+	stored_power = /mob/living/carbon/human/psionic_tumor/proc/candle_enhancer
+	resonances = "Warm"
+
+/obj/item/device/psionic_catalyst/psi_injector_enhancer
+	name = "psionic catalyst: Psionic Breath"
+	desc = "Psionic catalysts, other worldly items not quite understood, but valuable for the powers they may grant a psion. To everyone else, they have research value in a deconstructor or may be \
+	recycled for the somewhat rare materials that make them. Holding it feels quite strange. Even to an unattuned mind, one can hear the faintly glowing object whispering, the eager voices say: \
+	The feeling of an inhaler in hand cant leave the mind after ones breath draws none."
+	stored_power = /mob/living/carbon/human/psionic_tumor/proc/psi_injector_enhancer
+	resonances = "Healing"
+
+/obj/item/device/psionic_catalyst/psion_gas_mask
+	name = "psionic catalyst: Psionic Gas Mask"
+	desc = "Psionic catalysts, other worldly items not quite understood, but valuable for the powers they may grant a psion. To everyone else, they have research value in a deconstructor or may be \
+	recycled for the somewhat rare materials that make them. Holding it feels quite strange. Even to an unattuned mind, one can hear the faintly glowing object whispering, the eager voices say: \
+	The long tube holds so much to breath yet the tank runs dry."
+	stored_power = /mob/living/carbon/human/psionic_tumor/proc/psion_gas_mask
+	resonances = "Climate"
 
 /obj/item/device/psionic_catalyst/add_initial_transforms()
 	. = ..()
@@ -325,6 +348,18 @@
 				/obj/item/device/psionic_catalyst/needle_n_thread = 15,
 				/obj/item/device/psionic_catalyst/purify = 15,
 				/obj/item/device/psionic_catalyst/temp_regulate = 15))
+
+/obj/random/psi_catalyst/debuffer
+	name = "random debuffer psi_catalyst"
+	icon_state = "ammo-green"
+
+/obj/random/psi_catalyst/debuffer/item_to_spawn()
+	return pickweight(list(
+				/obj/random/psi_catalyst = 15,
+				/obj/item/device/psionic_catalyst/needle_n_thread = 15,
+				/obj/item/device/psionic_catalyst/purify = 15,
+				/obj/item/device/psionic_catalyst/temp_regulate = 15))
+
 
 
 // Psi-related lore paperwork. Not really a good place to put this so here it is. -Kaz

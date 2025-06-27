@@ -63,7 +63,7 @@
 	holder.stats.changeStat(STAT_MEC, 10)
 	holder.stats.changeStat(STAT_BIO, 10)
 
-/datum/perk/psion/remove()
+/datum/perk/psi_peace_of_the_psion/remove()
 	holder.stats.changeStat(STAT_ROB, -10)
 	holder.stats.changeStat(STAT_TGH, -10)
 	holder.stats.changeStat(STAT_VIG, -10)
