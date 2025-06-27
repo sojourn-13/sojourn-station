@@ -227,10 +227,15 @@
 
 /datum/reagent/toxin/fuhrerole/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	if(M.species?.reagent_tag == IS_CHTMANT)
-		var/mob/living/carbon/human/H = M
-		for(var/obj/item/organ/I in H.internal_organs)
-			if((I.damage > 0) && !BP_IS_ROBOTIC(I)) //Chtmants are not meant to have robotic organs!
-				I.heal_damage(((0.2 + I.damage * 0.05) * effect_multiplier), FALSE)
+		M.add_chemical_effect(CE_HEARTHEAL, 2)
+		M.add_chemical_effect(CE_LUNGHEAL, 2)
+		M.add_chemical_effect(CE_LIVERHEAL, 2)
+		M.add_chemical_effect(CE_EYEHEAL, 2)
+		M.add_chemical_effect(CE_DEBRIDEMENT, 2)
+		M.add_chemical_effect(CE_BONE_MEND, 2)
+		M.add_chemical_effect(CE_MUSCLEHEAL, 2)
+		M.add_chemical_effect(CE_NERVESHEAL, 2)
+		M.add_chemical_effect(CE_BLOODVESSELSHEAL, 2)
 		return
 	else
 		M.faction = "roach"

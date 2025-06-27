@@ -70,13 +70,22 @@
 #define CE_NOWITHDRAW		"no_withdrawal"
 #define CE_VOICEMIMIC		"voice_mimic"
 #define CE_DYNAMICFINGERS	"dynfingers"
-#define CE_BONE_MEND		"bone mending"   	// Ossisine
 #define CE_ONCOCIDAL        "anticancer"
 #define CE_DARKSIGHT 		"darksight"	//Vision methods built into a mob.
-#define CE_BRAINHEAL        "neural tissue restoration"
-#define CE_EYEHEAL          "sensory organ regeneration stimulant"
 #define CE_DEBRIDEMENT      "debriding agent" //for fixing burn/necrosis type wounds.
 #define CE_ATTACK_COOLDOWN  "attacking cooldown adder" //Used to *add* attack cooldown, negitives will increase attack speed
+
+//Chem affects that just heal a spefic organ
+#define CE_BRAINHEAL		"neural tissue restoration"
+#define CE_EYEHEAL			"sensory organ regeneration stimulant"
+#define CE_LIVERHEAL		"hepatoprotective agent stimulantion"
+#define CE_HEARTHEAL		"cardiac resynchronization therapy stimulant"
+#define CE_LUNGHEAL			"pulmo regeneration stimulant"
+#define CE_BONE_MEND		"bone mending"	// Ossisine
+#define CE_MUSCLEHEAL		"muscle mending"
+#define CE_NERVESHEAL		"nerve regeneration"
+#define CE_BLOODVESSELSHEAL	"blood vessel regeneration"
+
 
 #define CE_WOUND_STABLIZE   "wound stablizer" //for preventing internal wounds form progressing
 

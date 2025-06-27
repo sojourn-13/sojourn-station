@@ -632,15 +632,6 @@
 
 /datum/reagent/stim/mind_melter/overdose(var/mob/living/carbon/M, var/alien)
 	M.add_side_effect("Headache", 11)
-	if(ishuman(M))
-		var/mob/living/carbon/human/H = M
-		var/obj/item/organ/internal/psionic_tumor/C = H.random_organ_by_process(OP_HEART)
-		if(H && istype(H))
-			if(BP_IS_ROBOTIC(C))
-				return
-			if(C.damage > 0)
-				C.damage = max(C.damage - 2, 0)
-
 
 #define REVIVE_TIME_FRAME  (1 MINUTES)
 
