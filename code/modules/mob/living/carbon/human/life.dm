@@ -860,7 +860,7 @@
 			|| stats.getPerk(PERK_UNFINISHED_DELIVERY_FEATHERS) \
 			|| stats.getPerk(PERK_UNFINISHED_DELIVERY_INK) \
 			|| stats.getPerk(PERK_UNFINISHED_DELIVERY_VERSES))
-
+				var/blocked_death = FALSE
 				//Only RNG one
 				if(stats.getPerk(PERK_UNFINISHED_DELIVERY) && prob(33))
 					heal_organ_damage(20, 20)
@@ -869,14 +869,10 @@
 					updatehealth()
 					stats.removePerk(PERK_UNFINISHED_DELIVERY)
 					learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/return_to_sender, "RETURN_TO_SENDER", skill_gained = 1, learner = src)
-
-				else
-					death()
-					blinded = 1
-					silent = 0
-					return 1
+					blocked_death = TRUE
 
 				if(stats.getPerk(PERK_UNFINISHED_DELIVERY_FEATHERS))
+					blocked_death = TRUE
 					if(species.reagent_tag == IS_SYNTHETIC)
 						for(var/obj/item/organ/external/robotic/E in organs)
 							E.heal_damage(10,10,TRUE) //Heals 50 of each in best case, thats not to bad
@@ -889,6 +885,7 @@
 					learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/return_to_sender, "RETURN_TO_SENDER", skill_gained = 1, learner = src)
 
 				if(stats.getPerk(PERK_UNFINISHED_DELIVERY_INK))
+					blocked_death = TRUE
 					if(species.reagent_tag == IS_SYNTHETIC)
 						for(var/obj/item/organ/external/robotic/E in organs)
 							E.heal_damage(25,25,TRUE)
@@ -907,7 +904,7 @@
 
 				//A second life basically
 				if(stats.getPerk(PERK_UNFINISHED_DELIVERY_VERSES))
-
+					blocked_death = TRUE
 					var/obj/item/implant/core_implant/I = get_core_implant(/obj/item/implant/core_implant/cruciform)
 					if(I && I.active && I.wearer)
 						I.power = I.max_power //Fully recharge it, we just spent a big upgrade
@@ -938,6 +935,12 @@
 					stats.removePerk(PERK_UNFINISHED_DELIVERY_VERSES)
 					learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/return_to_sender, "RETURN_TO_SENDER", skill_gained = 1, learner = src)
 
+
+				if(!blocked_death)
+					death()
+					blinded = 1
+					silent = 0
+					return 1
 
 			else
 				death()
