@@ -751,6 +751,8 @@
 	<br>\
 	If a tessellate is around, everyone will be given a mental reprieve.\
 	<br>\
+	If a factorial is around, fully recharge their cruciform as well as the prayers'.\
+	<br>\
 	If a lemniscate is around, this prayer will give them enhanced speed.\
 	<br>\
 	If a vinculum is around, massively boost damage of the litany.\
@@ -830,6 +832,7 @@
 				new /obj/effect/temp_visual/text/communal_judgment_fact(CI.wearer.loc)
 
 				CI.power = CI.max_power
+				C.power = C.max_power
 
 			if(CI.get_module(CRUCIFORM_TESS) || CI.get_module(CRUCIFORM_OMNI))
 				new /obj/effect/temp_visual/text/communal_judgment_tess(CI.wearer.loc)
