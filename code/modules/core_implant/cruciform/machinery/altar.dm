@@ -17,7 +17,10 @@
 	/obj/item/cruciform_upgrade/cleansing_presence,
 	/obj/item/cruciform_upgrade/martyr_gift,
 	/obj/item/cruciform_upgrade/wrath_of_god,
-	/obj/item/cruciform_upgrade/speed_of_the_chosen
+	/obj/item/cruciform_upgrade/speed_of_the_chosen,
+	/obj/item/cruciform_upgrade/the_feathers,
+	/obj/item/cruciform_upgrade/the_inks,
+	/obj/item/cruciform_upgrade/the_verses_wrote
 	)
 	var/list/available_slots = list()
 	var/request_cooldown = FALSE //Whether this altar has had an item requested from it in the last 10 minutes

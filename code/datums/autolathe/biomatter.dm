@@ -367,6 +367,22 @@
 	name = "Speed of the chosen"
 	build_path = /obj/item/cruciform_upgrade/speed_of_the_chosen
 
+/datum/design/autolathe/cruciform_upgrade/the_feathers
+	name = "Feathers of Lazarus"
+	build_path = /obj/item/cruciform_upgrade/the_feathers
+	materials = list(MATERIAL_BIOMATTER = 150, MATERIAL_GOLD = 5, MATERIAL_SILVER = 3, MATERIAL_PLASMA = 1)
+
+/datum/design/autolathe/cruciform_upgrade/the_inks
+	name = "Lazarus Inkwell"
+	build_path = /obj/item/cruciform_upgrade/the_inks
+	materials = list(MATERIAL_BIOMATTER = 200, MATERIAL_SILVER = 5, MATERIAL_PLASMA = 3, MATERIAL_URANIUM = 1)
+
+/datum/design/autolathe/cruciform_upgrade/the_verses_wrote
+	name = "Lazarus Verses"
+	build_path = /obj/item/cruciform_upgrade/the_verses_wrote
+	//This is exspensive as its really good
+	materials = list(MATERIAL_BIOMATTER = 240, MATERIAL_PLASMA = 5, MATERIAL_URANIUM = 3, MATERIAL_OSMIUM = 1, MATERIAL_DIAMOND = 1)
+
 //[/POUCHES]
 /datum/design/bioprinter/pouch/ammo
 	name = "Ammo pouch"
