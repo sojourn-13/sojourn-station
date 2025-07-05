@@ -737,9 +737,9 @@
 	<br>\
 	Its powers based on how many close by vectors are present.\
 	<br>\
-	In a small range, deal damage to every hostile based on fractals, vectors and priests, including yourself.\
+	In a small range, deal damage to every hostile based on fractals, vectors and primes, including yourself.\
 	<br>\
-	In a small range, kill hivemind wires and damage machines based on how many fractals, vectors and priests, including yourself.\
+	In a small range, kill hivemind wires and damage machines based on how many fractals, vectors and primes, including yourself.\
 	<br>\
 	If mandated to fight off a hivemind, always kill off hivemind wires and deal additional damage to hivemind machines.\
 	<br>\
