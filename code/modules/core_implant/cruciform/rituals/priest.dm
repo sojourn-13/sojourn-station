@@ -733,16 +733,29 @@
 /datum/ritual/cruciform/priest/communal_judgment
 	name = "Communal Judgment"
 	phrase = "Pro vobis agemus!" //"We shall act on behalf"
-	desc = "A powerful litany that can only be used once an hour. Its powers based on how many close by vectors are present. \
-	In a small range deal damage to every hostile based on fractals, vectors and preists including yourself. \
-	In a small range kill of hivemind wires and damage mechines based on how many fractals, vectors and preists including yourself. \
-	If mandated to fight off a hivemind, always kill off hivemind wiers and deal additional damage to hivemind mechines. \
-	If this prayer kills a hivemind creature, all vectors with active crusiforms will recharge per kill. \
-	If a divisor is around, this prayer will give them protection as well as redirect all enemies to them. \
-	If a monomial is around, this prayer will give them some holy aid in recovering from pain and small wounds. \
-	If a tessellate is around, everyone will be given a mental reprieve . \
-	If a lemniscate is around, this prayer will give them enhanced speed. \
-	This litany will be weaken by the amount of psionics around when used."
+	desc = "A powerful litany that can only be used once an hour.\
+	<br>\
+	Its powers based on how many close by vectors are present.\
+	<br>\
+	In a small range, deal damage to every hostile based on fractals, vectors and priests, including yourself.\
+	<br>\
+	In a small range, kill hivemind wires and damage machines based on how many fractals, vectors and priests, including yourself.\
+	<br>\
+	If mandated to fight off a hivemind, always kill off hivemind wires and deal additional damage to hivemind machines.\
+	<br>\
+	If this prayer kills a hivemind creature, all close by vectors with active crusiforms will recharge per kill.\
+	<br>\
+	If a divisor is around, this prayer will give them protection as well as redirect all enemies to them.\
+	<br>\
+	If a monomial is around, this prayer will give them some holy aid in recovering from pain and small wounds.\
+	<br>\
+	If a tessellate is around, everyone will be given a mental reprieve.\
+	<br>\
+	If a lemniscate is around, this prayer will give them enhanced speed.\
+	<br>\
+	If a vinculum is around, massively boost damage of the litany.\
+	<br>\
+	This litany will be weakened by the amount of psionics around when used."
 	power = 70
 	category = "Vitae"
 
@@ -781,6 +794,9 @@
 		if(CI && CI.active)
 			holy_power += 5
 			crusiform_users += CI
+
+			if(CI.type == /obj/item/implant/core_implant/cruciform)
+				holy_power += 10 //Basic folks give 3x more then paths
 
 			//Protect the judgment
 			if(CI.get_module(CRUCIFORM_DIVI) || CI.get_module(CRUCIFORM_OMNI))
