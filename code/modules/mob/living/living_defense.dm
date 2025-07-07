@@ -24,7 +24,7 @@
 
 	if(armor_divisor <= 0)
 		armor_divisor = 0.001
-		log_debug("[used_weapon] applied damage to [name] with a nonpositive armor divisor")
+		log_debug("[used_weapon] aka [type] applied damage to [name] with a nonpositive armor divisor")
 
 	var/total_dmg = 0
 	var/dealt_damage = 0

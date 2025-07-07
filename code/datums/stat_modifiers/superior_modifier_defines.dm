@@ -79,7 +79,8 @@
 			superior_holder.flash_resistances = ZERO_OR_MORE(round(superior_holder.flash_resistances / flash_resistances_mult))
 
 		if (armor_divisor_increment)
-			superior_holder.armor_divisor = ZERO_OR_MORE(superior_holder.armor_divisor - armor_divisor_increment)
+			//HAS to be clamp as this being 0 will lead it to count as 0.0001 and being 0.0001 is way to low
+			superior_holder.armor_divisor = CLAMP(superior_holder.armor_divisor - armor_divisor_increment, 0.1, INFINITY)
 		if (armor_divisor_mult)
 			superior_holder.armor_divisor = ZERO_OR_MORE(superior_holder.armor_divisor / armor_divisor_mult)
 

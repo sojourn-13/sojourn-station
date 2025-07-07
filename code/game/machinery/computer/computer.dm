@@ -121,7 +121,13 @@
 				to_chat(user, SPAN_NOTICE("You disconnect the monitor."))
 				A.state = 4
 				A.icon_state = "4"
-			circuit.deconstruct(src)
+			if(isobj(circuit)) ///This is a bandaid fix to prevent glass douping, not a real fix.
+				circuit.deconstruct(src)
+			else
+				//basically whatever console we killed had a bad circuit, at lest dont completely scam the person.
+				new /obj/item/trash/material/circuit(src.loc)
+				A.state = 0
+				A.icon_state = "0"
 			qdel(src)
 	else
 		..()
