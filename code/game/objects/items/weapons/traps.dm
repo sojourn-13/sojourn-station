@@ -246,7 +246,7 @@ Freeing yourself is much harder than freeing someone else. Calling for help is a
 	var/mob/living/L = buckled_mob
 	//armour
 
-	if( L.damage_through_armor(fail_damage, BRUTE, target_zone, ARMOR_MELEE, used_weapon = src) )
+	if( L.damage_through_armor(fail_damage, BRUTE, target_zone, ARMOR_MELEE, used_weapon = src,  armor_divisor = 1) )
 	//No damage - no stun
 		L.Stun(4) //A short stun prevents spamming failure attempts
 		shake_camera(user, 2, 1)
@@ -307,7 +307,7 @@ Freeing yourself is much harder than freeing someone else. Calling for help is a
 
 
 	//armour
-	if( L.damage_through_armor(base_damage, BRUTE, target_zone, ARMOR_MELEE, used_weapon = src) )
+	if( L.damage_through_armor(base_damage, BRUTE, target_zone, ARMOR_MELEE, used_weapon = src,  armor_divisor = 1) )
 	//No damage - no stun
 		L.Stun(4) //A short stun prevents spamming failure attempts
 		shake_camera(L, 2, 1)
@@ -320,7 +320,7 @@ Freeing yourself is much harder than freeing someone else. Calling for help is a
 		to_chat(L, SPAN_DANGER("The steel jaws of \the [src] bite into you, trapping you in place!"))
 	else
 		//If you are using it on a big mob you can ue the extra damage
-		L.damage_through_armor(base_damage, BRUTE, target_zone, ARMOR_MELEE, used_weapon = src)
+		L.damage_through_armor(base_damage, BRUTE, target_zone, ARMOR_MELEE, used_weapon = src,  armor_divisor = 1)
 
 	//If the victim is nonhuman and has no client, start processing.
 	if (!ishuman(L) && !L.client)
