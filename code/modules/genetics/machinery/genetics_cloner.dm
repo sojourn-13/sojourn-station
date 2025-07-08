@@ -655,6 +655,7 @@ and which aren't.
 	var/obj/structure/reagent_dispensers/bidon/linked_bidon
 
 /obj/machinery/computer/genetics/clone_console/New()
+	..()
 	sync()
 
 /obj/machinery/computer/genetics/clone_console/proc/sync()
