@@ -1960,6 +1960,7 @@
 #include "code\modules\core_implant\cruciform\machinery\altar.dm"
 #include "code\modules\core_implant\cruciform\machinery\armaments.dm"
 #include "code\modules\core_implant\cruciform\machinery\eotp.dm"
+#include "code\modules\core_implant\cruciform\machinery\lazbench.dm"
 #include "code\modules\core_implant\cruciform\machinery\obelisk.dm"
 #include "code\modules\core_implant\cruciform\machinery\onlooker.dm"
 #include "code\modules\core_implant\cruciform\machinery\wall_obelisk.dm"
