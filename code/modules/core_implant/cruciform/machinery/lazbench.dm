@@ -27,27 +27,29 @@
 	desc = "A heavy box that is unable to be open do to talismans with pre-latin verses. \
 	On the side of the case is simular pre-latin verses."
 	icon = 'icons/obj/neotheology_machinery.dmi'
-	icon_state = "candle1"
-	item_state = "lazbench"
+	icon_state = "lazwork"
 	w_class = ITEM_SIZE_TINY
 	force = WEAPON_FORCE_HARMLESS
 
 /obj/item/lazarus_box/New()
 	..()
 	if(loc)
-		var/obj/effect/temp_visual/text/T = new  /obj/effect/temp_visual/text
-		T.duration = 35 //in deciseconds
-		T.randomdir = FALSE
-		T.txt_color = "#A77D02"  // Gold-ish yellow
-		//if(prob(30))
-		T.txt = "Many wish to escape death..."
-		if(prob(15))
-			T.txt = "...Few are able to understand the ¦¦¦¦¦¦¦..."
-		if(prob(10))
-			T.txt = "...I however saw a fraction too..."
-		if(prob(1))
-			T.txt = "...Commited unspeakable heresy..."
-		if(prob(0.1))
-			T.txt = "My work lives on, unlike myself, yet my wishes linger on for others to use."
-		T.forceMove(loc)
+		var/obj/effect/temp_visual/text/laz_box/T = new /obj/effect/temp_visual/text/laz_box(src.loc)
+		var/overlap_prevent = FALSE
+		if(prob(30))
+			T.create_text_overlay(T, "Many wish to escape death...")
+			overlap_prevent = TRUE
+		if(prob(15) && !overlap_prevent)
+			T.create_text_overlay(T, "...Few are able to understand the ¦¦¦¦¦¦¦...")
+			overlap_prevent = TRUE
+		if(prob(10) && !overlap_prevent)
+			T.create_text_overlay(T, "...I however saw a fraction too...")
+			overlap_prevent = TRUE
+		if(prob(1) && !overlap_prevent)
+			T.create_text_overlay(T, "...Commited unspeakable heresy...")
+			overlap_prevent = TRUE
+		if(prob(0.1) && !overlap_prevent)
+			T.create_text_overlay(T, "My work lives on, unlike myself, yet my wishes linger on for others to use.")
+			overlap_prevent = TRUE
+
 
