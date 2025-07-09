@@ -17,7 +17,7 @@
 	chameleon_skill = 1
 	speak_chance = 2
 	attacktext = "clawed"
-	armor_divisor = 1.2
+	armor_divisor = 0.8 //Gives 20% more armor we are weak
 
 /mob/living/carbon/superior/psi/thought_melter
 	name = "thought melter"
@@ -33,7 +33,7 @@
 	speak_chance = 10
 	poison_per_bite = 1
 	attacktext = "caressed"
-	armor_divisor = 1.5
+	armor_divisor = 1
 
 /mob/living/carbon/superior/psi/pus_maggot
 	name = "pus maggot"
@@ -45,7 +45,7 @@
 	health = 110 * PSIMOB_HEALTH_MOD
 	melee_damage_lower = 10
 	melee_damage_upper = 15
-	armor_divisor = 1.2
+	armor_divisor = 0.9 //We swarm and are weak any desent armor can do just fine
 	emote_see = list("drools acid onto the floor.", "wriggles in glee!", "rolls over!")
 	var/burn_attack_text = "The pus maggot vomits up some acidic pus all over!"
 	var/burn_attack_sound = 'sound/effects/splat.ogg'

@@ -432,7 +432,7 @@
 	reagent_to_brew = "witch_brew"
 	display_name = "Witches Brew"
 	//mint is wool of bat, reishi is toe of frog, herbell is Tongue of dog, lastly blueberries are meant to be eye of newt
-	needed_crops = list("mint" = 5, "reishi" = 10, "harebell" = 5, "blueberries" = 25)
+	needed_crops = list("mint" = 5, "reishi" = 10, "harebells" = 5, "blueberries" = 25)
 	needed_chems = list("sugarrush" = 60, "fringeweaver" = 60)
 	brew_timer = 5 MINUTES
 	brewed_amount = 1 //Every 5u is 1 psionic point so this gives you 6 points
@@ -445,7 +445,7 @@
 	display_name = "Absolutism Cahors Wine"
 	prerequisite = "holywater"
 	brewed_amount = 6
-	needed_crops = list("green grape" = 30, "sugarcane" = 25, "harebell" = 5)
+	needed_crops = list("green grape" = 30, "sugarcane" = 25, "harebells" = 5)
 	needed_chems = list("carbon" = 120, "holywater" = 120)
 
 	price_tag_setter = 16000
@@ -456,7 +456,7 @@
 	reagent_to_brew = "holywater"
 	display_name = "Blessed Water"
 	brewed_amount = 12
-	needed_crops = list("mint" = 20, "towercap" = 30, "harebell" = 25)
+	needed_crops = list("mint" = 20, "towercap" = 30, "harebells" = 25)
 	needed_chems = list("carbon" = 120, "water" = 120)
 
 	price_tag_setter = 1000

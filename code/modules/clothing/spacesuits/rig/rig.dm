@@ -1009,3 +1009,19 @@
 #undef ONLY_DEPLOY
 #undef ONLY_RETRACT
 #undef SEAL_DELAY
+
+/obj/item/rig/proc/return_inv()
+	var/list/L = list()
+
+	L += src.contents
+
+	for(var/obj/item/storage/S in src)
+		L += S.return_inv()
+	for(var/obj/item/gift/G in src)
+		L += G.gift
+		if (istype(G.gift, /obj/item/storage))
+			L += G.gift:return_inv()
+	for(var/obj/item/rig_module/RM in src)
+		L += RM.return_inv()
+
+	return L

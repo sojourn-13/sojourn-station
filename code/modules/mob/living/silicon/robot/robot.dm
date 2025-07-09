@@ -29,6 +29,8 @@
 	var/ai_access = TRUE
 	var/power_efficiency = 1
 
+	//soj edit for custom colours for lighting
+	var/custom_color = null
 
 	mob_size = MOB_LARGE
 
@@ -1312,8 +1314,24 @@
 /mob/living/silicon/robot/get_cell()
 	return cell
 
+//Soj edits
+/mob/living/silicon/robot/verb/colour_lighting()
+	set name = "Set LED light colour"
+	set category = "Silicon Commands"
+	set src = usr
 
-//Soj edit
+	if(stat == CONSCIOUS)
+		if(light_color != initial(light_color))
+			light_color = initial(light_color)
+			custom_color = null
+			to_chat(src, "You set your LED to its default state.")
+			return
+		var/new_lightings = input(usr, "Choose your light colour: ", "LED Color", rgb(255,255,255)) as color|null
+		if(new_lightings)
+			light_color = new_lightings
+			custom_color = new_lightings
+	else
+		to_chat(src, "You can't change your LED lighting well not offline.")
 
 /mob/living/silicon/robot/verb/resting_icon_mode()
 	set name = "Resting Icon Mode"
@@ -1356,7 +1374,7 @@
 			if("Engineering")
 				icon = 'icons/mob/robot_tall/engi.dmi'
 
-				if(icon_state == "dullahaneng" || icon_state == "dullahancargo" )
+				if(icon_state == "dullahaneng" || icon_state == "dullahancargo")
 					icon = 'icons/mob/robot_tall/engi_dullahan.dmi'
 
 			if("Security")
@@ -1394,3 +1412,6 @@
 
 				if(icon_state == "dullahanjani" || icon_state == "dullahanpeace")
 					icon = 'icons/mob/robot_tall/janitor_dullahan.dmi'
+
+			if("Standard")
+				icon = 'icons/mob/robot_tall/standard.dmi'

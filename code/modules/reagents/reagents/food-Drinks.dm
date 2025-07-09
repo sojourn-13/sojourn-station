@@ -1284,7 +1284,7 @@
 				M.add_chemical_effect(CE_NOPULSE, 1)
 		M.add_chemical_effect(CE_SPEEDBOOST, 0.6) // Fry_consumes_100_cups_of_coffee.gif
 		M.make_jittery(40) // Except he's not calm!
-		M.add_chemical_effect(CE_TOXIN, 0.1) // An alternative to getting irradiated, nobody wants that.
+		M.add_chemical_effect(CE_TOXIN, 0.1 * dose) // An alternative to getting irradiated, nobody wants that.
 
 
 
