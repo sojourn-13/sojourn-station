@@ -168,14 +168,8 @@
 		M.emote("drool")
 	..()
 
-	if(ishuman(M))
-		var/mob/living/carbon/human/H = M
-		var/obj/item/organ/internal/vital/heart/C = H.random_organ_by_process(OP_HEART)
-		if(H && istype(H))
-			if(BP_IS_ROBOTIC(C))
-				return
-			if(C.damage > 0)
-				C.damage = max(C.damage - 0.5, 0)
+	M.add_chemical_effect(CE_HEARTHEAL, 2)
+
 
 /datum/reagent/drug/impedrezene/withdrawal_act(mob/living/carbon/M)
 	M.stats.addTempStat(STAT_ROB, STAT_LEVEL_ADEPT, STIM_TIME, "impedrezene_w")
@@ -431,13 +425,7 @@
 
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-		//G for GUNS
-		var/obj/item/organ/internal/muscle/G = H.random_organ_by_process(OP_MUSCLE)
-		if(H && istype(H))
-			if(BP_IS_ROBOTIC(G))
-				return
-			if(G.damage > 0)
-				G.damage = max(G.damage - 0.5, 0)// small healing
+		M.add_chemical_effect(CE_MUSCLEHEAL, 2)
 		if(H.health <= 50)
 			H.heal_organ_damage(-0.1, -0.1)
 

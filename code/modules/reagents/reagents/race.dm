@@ -129,17 +129,8 @@
 
 /datum/reagent/medicine/cindpetamol/affect_blood(mob/living/carbon/M, alien, effect_multiplier, var/removed)
 	M.add_chemical_effect(CE_TOXIN, -8)
-	if(ishuman(M))
-		var/mob/living/carbon/human/H = M
-		var/obj/item/organ/internal/liver/L = H.random_organ_by_process(OP_LIVER)
-		if(istype(L))
-			if(BP_IS_ROBOTIC(L))
-				return
-			var/list/current_wounds = L.GetComponents(/datum/component/internal_wound)
-			if(LAZYLEN(current_wounds) && prob(20))
-				LEGACY_SEND_SIGNAL(L, COMSIG_IORGAN_REMOVE_WOUND, pick(current_wounds))
-			if(L.damage > 0)
-				L.damage = max(L.damage - 2 * removed, 0)
+	M.add_chemical_effect(CE_LIVERHEAL, 2)
+
 	var/mob/living/carbon/C = M
 	if(istype(C) && C.metabolism_effects.addiction_list.len)
 		if(prob(90 + dose))
