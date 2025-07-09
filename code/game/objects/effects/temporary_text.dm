@@ -39,3 +39,9 @@
 
 	// Add the thing to the thing
 	target.overlays += rotating_text_overlay
+
+/obj/effect/temp_visual/text/laz_box
+	duration = 35 //in deciseconds
+	randomdir = FALSE
+	txt_color = "#A77D02"  // Gold-ish yellow
+	txt = ""
