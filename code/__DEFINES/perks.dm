@@ -254,3 +254,5 @@
 #define PERK_ARMOR_UP /datum/perk/cooldown/armor_up
 //Anti-art
 #define PERK_ARTIST_NO /datum/perk/cooldown/artist_no
+//Church Cooldown
+#define PERK_JUDGMENT_HASTE /datum/perk/cooldown/judgment_haste
