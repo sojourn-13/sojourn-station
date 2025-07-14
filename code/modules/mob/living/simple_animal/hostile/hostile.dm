@@ -188,8 +188,9 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 			if(poison_per_bite > 0)
 				if(H.reagents)
 					var/zone_armor =  H.getarmor(targeted_organ, ARMOR_MELEE)
-					var/poison_injected = zone_armor ? poison_per_bite * (-0.01 * zone_armor + 1) : poison_per_bite
-					H.reagents.add_reagent(poison_type, poison_injected)
+					var/poison_injected = zone_armor ? poison_per_bite * (-0.05 * zone_armor + 1) : poison_per_bite
+					if(poison_injected > 0)
+						H.reagents.add_reagent(poison_type, poison_injected)
 
 		target.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
 		playsound(src.loc, attack_sound, 50, 1)
