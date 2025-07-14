@@ -717,5 +717,6 @@
 			var/mob/living/L = A
 			if(istype(L) && L.reagents)
 				var/zone_armor =  L.getarmor(targeted_organ, ARMOR_MELEE)
-				var/poison_injected = zone_armor ? poison_per_bite * (-0.01 * zone_armor + 1) : poison_per_bite
-				L.reagents.add_reagent(poison_type, poison_injected)
+				var/poison_injected = zone_armor ? poison_per_bite * (-0.05 * zone_armor + 1) : poison_per_bite
+				if(poison_injected > 0)
+					L.reagents.add_reagent(poison_type, poison_injected)
