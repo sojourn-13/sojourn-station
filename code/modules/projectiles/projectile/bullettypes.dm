@@ -451,7 +451,10 @@
 
 /obj/item/projectile/bullet/light_rifle_257/bluespace/launch(atom/target, target_zone, x_offset=0, y_offset=0, angle_offset=0, proj_sound, firer_arg)
 	if(target)
-		go_to_bluespace(src, 0.05, TRUE, src, get_turf(target))
+		go_to_bluespace(src, 0.1, TRUE, src, get_turf(target))
+		if(ismob(target) && get_turf(target) && QDELETED(target))
+			new /obj/item/bluespace_dust/small(get_turf(target))
+
 	..()
 
 /obj/item/projectile/bullet/light_rifle_257/scrap
@@ -576,7 +579,9 @@
 
 /obj/item/projectile/bullet/rifle_75/bluespace/launch(atom/target, target_zone, x_offset=0, y_offset=0, angle_offset=0, proj_sound, firer_arg)
 	if(target)
-		go_to_bluespace(src, 0.05, TRUE, src, get_turf(target))
+		go_to_bluespace(src, 0.1, TRUE, src, get_turf(target))
+		if(ismob(target) && get_turf(target) && QDELETED(target))
+			new /obj/item/bluespace_dust/small(get_turf(target))
 	..()
 
 /// 8.6x70mm Heavy Rifle ///
@@ -677,7 +682,9 @@
 
 /obj/item/projectile/bullet/heavy_rifle_408/bluespace/launch(atom/target, target_zone, x_offset=0, y_offset=0, angle_offset=0, proj_sound, firer_arg)
 	if(target)
-		go_to_bluespace(src, 0.05, TRUE, src, get_turf(target))
+		go_to_bluespace(src, 0.1, TRUE, src, get_turf(target))
+		if(ismob(target) && get_turf(target) && QDELETED(target))
+			new /obj/item/bluespace_dust/small(get_turf(target))
 	..()
 
 ///Snowflake  ///
