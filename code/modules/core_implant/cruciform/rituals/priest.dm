@@ -728,6 +728,188 @@
 			fail("You decide not to obtain a prosthetic at this time.", user, C)
 			return FALSE
 
+//really complicated strong spell
+
+/datum/ritual/cruciform/priest/communal_judgment
+	name = "Communal Judgment"
+	phrase = "Pro vobis agemus!" //"We shall act on behalf"
+	desc = "A powerful litany that can only be used once an hour.\
+	<br>\
+	Its powers based on how many close by vectors are present.\
+	<br>\
+	In a small range, deal damage to every hostile based on fractals, vectors and primes, including yourself.\
+	<br>\
+	In a small range, kill hivemind wires and damage machines based on how many fractals, vectors and primes, including yourself.\
+	<br>\
+	If mandated to fight off a hivemind, always kill off hivemind wires and deal additional damage to hivemind machines.\
+	<br>\
+	If this prayer kills a hivemind creature, all close by vectors with active crusiforms will recharge per kill.\
+	<br>\
+	If a divisor is around, this prayer will give them protection as well as redirect all enemies to them.\
+	<br>\
+	If a monomial is around, this prayer will give them some holy aid in recovering from pain and small wounds.\
+	<br>\
+	If a tessellate is around, everyone will be given a mental reprieve.\
+	<br>\
+	If a factorial is around, fully recharge their cruciform as well as the prayers'.\
+	<br>\
+	If a lemniscate is around, this prayer will give them enhanced speed.\
+	<br>\
+	If a vinculum is around, massively boost damage of the litany.\
+	<br>\
+	This litany will be weakened by the amount of psionics around when used."
+	power = 70
+	category = "Vitae"
+
+	cooldown = TRUE
+	cooldown_time = 60 MINUTES
+	cooldown_category = "communal_judgment"
+
+/datum/ritual/cruciform/priest/communal_judgment/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C)
+	var/holy_power = 10
+	var/list/crusiform_users = list()
+	var/tess = FALSE
+
+	new /obj/effect/temp_visual/text/communal_judgment(user.loc)
+
+	for(var/mob/living/carbon/human/H in oview(6, user))
+		//psionics will actively make it harder to use this spell
+		var/obj/item/organ/internal/psionic_tumor/PT = H.random_organ_by_process(BP_PSION)
+		if(PT)
+			if(H.stats.getPerk(PERK_PSION))
+				holy_power -= 1
+				PT.psi_points -= 3
+				H.sanity.changeLevel(-rand(15,30))
+				H.sanity.remove_insight(holy_power)
+			if(H.stats.getPerk(PERK_PSI_HARMONY))
+				holy_power -= 1
+				PT.psi_points += 5 //Fancy intraction
+				H.sanity.changeLevel(rand(1,5)) //You are at peace, feel glad
+				H.sanity.remove_insight(holy_power/5) //The judgment passes over your forgiving mind
+			if(H.stats.getPerk(PERK_PSI_ATTUNEMENT))
+				H.sanity.changeLevel(-rand(80,120))
+				H.sanity.remove_insight(holy_power)
+				holy_power -= 4
+				PT.psi_points -= 5
+
+		var/obj/item/implant/core_implant/cruciform/CI = H.get_core_implant(/obj/item/implant/core_implant/cruciform)
+		if(CI && CI.active)
+			holy_power += 5
+			crusiform_users += CI
+
+			if(CI.type == /obj/item/implant/core_implant/cruciform)
+				holy_power += 10 //Basic folks give 3x more then paths
+
+			//Protect the judgment
+			if(CI.get_module(CRUCIFORM_DIVI) || CI.get_module(CRUCIFORM_OMNI))
+				CI.wearer.mob_ablative_armor += 10
+				new /obj/effect/temp_visual/text/communal_judgment_divi(CI.wearer.loc)
+				CI.wearer.stats.addTempStat(STAT_TGH, 15, 60 SECONDS, "Protect the judgment")
+				CI.wearer.stats.addTempStat(STAT_ROB, 15, 60 SECONDS, "Protect the judgment")
+				for(var/mob/living/carbon/superior/S in oview(6, CI.wearer))
+					S.loseTarget(TRUE,TRUE)
+					S.react_to_attack(CI.wearer,src,CI.wearer)
+
+			//Mend the weakened
+			if(CI.get_module(CRUCIFORM_MONO) || CI.get_module(CRUCIFORM_OMNI))
+				new /obj/effect/temp_visual/text/communal_judgment_mono(CI.wearer.loc)
+
+				CI.wearer.reagents.add_reagent("nepenthe", 10)
+				CI.wearer.reagents.add_reagent("holydexalinp", 8)
+				CI.wearer.reagents.add_reagent("holytricord", 15)
+
+				CI.wearer.stats.addTempStat(STAT_TGH, 30, 60 SECONDS, "Protect the judgment")
+				CI.wearer.stats.addTempStat(STAT_ROB, 15, 60 SECONDS, "Protect the judgment")
+
+			//Hasten the common
+			if(CI.get_module(CRUCIFORM_LEMN) || CI.get_module(CRUCIFORM_OMNI))
+				new /obj/effect/temp_visual/text/communal_judgment_lemn(CI.wearer.loc)
+
+				CI.wearer.stats.addPerk(PERK_JUDGMENT_HASTE)
+
+			//Repower the strong
+			if(CI.get_module(CRUCIFORM_FACT) || CI.get_module(CRUCIFORM_OMNI))
+				new /obj/effect/temp_visual/text/communal_judgment_fact(CI.wearer.loc)
+
+				CI.power = CI.max_power
+				C.power = C.max_power
+
+			if(CI.get_module(CRUCIFORM_TESS) || CI.get_module(CRUCIFORM_OMNI))
+				new /obj/effect/temp_visual/text/communal_judgment_tess(CI.wearer.loc)
+				tess += 1
+
+			if(CI.security_clearance == CLEARANCE_CLERGY)
+				holy_power += 5
+				continue
+
+		if(istype(H.get_active_hand(), /obj/item/clothing/accessory/cross))
+			holy_power += 3
+			continue
+
+		if(istype(H.wear_mask, /obj/item/clothing/accessory/cross))
+			holy_power += 3
+			continue
+
+		var/obj/item/clothing/G = H.w_uniform
+		if(istype(G))
+			for(var/obj/item/I in G.accessories)
+				if(istype(I, /obj/item/clothing/accessory/cross))
+					holy_power += 3
+					continue
+
+				if(istype(I, /obj/item/clothing/accessory/necklace/fractalrosary))
+					holy_power += 1
+					continue
+
+		if(istype(H.get_active_hand(), /obj/item/clothing/accessory/necklace/fractalrosary))
+			holy_power += 1
+			continue
+
+		if(istype(H.wear_mask, /obj/item/clothing/accessory/necklace/fractalrosary))
+			holy_power += 1
+			continue
+
+	if(tess)
+		for(var/obj/item/implant/core_implant/cruciform/CI in crusiform_users)
+			if(CI && CI.active)
+				var/mob/living/carbon/human/heal_mind = CI.wearer
+				heal_mind.sanity.changeLevel(holy_power * tess) //Heal the minds
+
+
+	for(var/mob/living/L in oview(6, user))
+		//If you are alive, not are faction or not a friend of the colony, then we deal damage to you
+		if(L.stat != DEAD && L.faction != user.faction && !L.friendly_to_colony && !L.colony_friend)
+			//We hate you, die please
+			if(L.faction == "hive")
+				L.adjustBruteLoss(holy_power * 2)
+				L.adjustFireLoss(holy_power * 2)
+				L.adjustOxyLoss(holy_power * 2)
+				L.updatehealth()
+				if(L.stat == DEAD)
+					for(var/obj/item/implant/core_implant/cruciform/CI in crusiform_users)
+						if(CI && CI.active)
+							CI.power += 2 //Recharge a small bit
+			else
+				L.adjustBruteLoss(holy_power / 2)
+				L.adjustFireLoss(holy_power / 2)
+				L.adjustOxyLoss(holy_power)
+		else
+			continue
+
+	if(hive_mind_ai)
+		if(!GLOB.hive_data_bool["all_church_to_battle"])
+			if(holy_power > 20)
+				for(var/obj/effect/plant/hivemind/Evil in oview(6, user))
+					Evil.die_off()
+			if(holy_power > 25)
+				for(var/obj/machinery/hivemind_machine/Mevil in oview(6, user))
+					Mevil.take_damage(holy_power)
+		else
+			for(var/obj/effect/plant/hivemind/Evil in oview(6, user))
+				Evil.die_off()
+			for(var/obj/machinery/hivemind_machine/Mevil in oview(6, user))
+				Mevil.take_damage(holy_power * 5) //We hate you, Die
+
 //Promotions and Access litanies
 /datum/ritual/targeted/cruciform/priest/upgrade_kit
 	name = "Prepare the Way"

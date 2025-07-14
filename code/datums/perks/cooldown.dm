@@ -176,3 +176,20 @@
 				S.armor[key] -= 3
 
 	..()
+
+/datum/perk/cooldown/judgment_haste
+	name = "Judgment Haste"
+	desc = "A Judgement is required. Let you be the one to have its haste."
+	icon_state = "adrenalineburst"
+	perk_lifetime = 2 MINUTES
+	gain_text = "A Judgement is required."
+	lose_text = "Your haste from the judgement fades."
+
+/datum/perk/cooldown/judgment_haste/assign(mob/living/carbon/human/H)
+	..()
+	holder.fancy_glide += 6
+
+/datum/perk/cooldown/judgment_haste/remove()
+	holder.fancy_glide -= 6
+
+	..()
