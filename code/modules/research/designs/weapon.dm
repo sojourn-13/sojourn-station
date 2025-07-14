@@ -268,6 +268,29 @@
 	desc = "A 200 round box of casings of pulse loaded laser cavities. Its cal is 5.56mm."
 	build_path = /obj/item/ammo_magazine/ammobox/laser_223/box
 	materials = list(MATERIAL_STEEL = 20, MATERIAL_GLASS = 20, MATERIAL_SILVER = 10)
+
+/datum/design/research/item/ammo/bluespace_257
+	name = "Bluespace Ammunition 6.5mm (30x)"
+	desc = "Three bundles of 30 6.5mm Bluespace Ammunition."
+	build_path = /obj/item/ammo_casing/light_rifle_257/bluespace/prespawned/SI
+	materials = list(MATERIAL_STEEL = 5, MATERIAL_GLASS = 5, MATERIAL_SILVER = 1, MATERIAL_GOLD = 4.5, MATERIAL_DIAMOND = 4.5, MATERIAL_PLASMA = 4.5)
+	chemicals = list("silicon" = 5, "luminol" = 5)
+
+/datum/design/research/item/ammo/bluespace_75
+	name = "Bluespace Ammunition 7.62mm (20x)"
+	desc = "Two bundles of 20 7.62mm Bluespace Ammunition."
+	build_path = /obj/item/ammo_casing/rifle_75/bluespace/prespawned/SI
+	materials = list(MATERIAL_STEEL = 5, MATERIAL_GLASS = 5, MATERIAL_SILVER = 1, MATERIAL_GOLD = 4.5, MATERIAL_DIAMOND = 4.5, MATERIAL_PLASMA = 4.5)
+	chemicals = list("silicon" = 5, "luminol" = 5)
+
+/datum/design/research/item/ammo/bluespace_408
+	name = "Bluespace Ammunition 8.6mm (10x)"
+	desc = "A bundle of 10 8.6mm Bluespace Ammunition."
+	build_path = /obj/item/ammo_casing/heavy_rifle_408/bluespace/prespawned
+	materials = list(MATERIAL_STEEL = 5, MATERIAL_GLASS = 5, MATERIAL_SILVER = 1, MATERIAL_GOLD = 4.5, MATERIAL_DIAMOND = 4.5, MATERIAL_PLASMA = 4.5)
+	chemicals = list("silicon" = 5, "luminol" = 5)
+
+
 /*
 /datum/design/research/item/ammo/laser/box/ap
 	name = "\"Piezoelectric\" piercing laser box."

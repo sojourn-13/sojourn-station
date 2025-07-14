@@ -436,6 +436,24 @@
 	step_delay = 0.7
 	recoil = 7
 
+/obj/item/projectile/bullet/light_rifle_257/bluespace
+	name = "bluespace bullet"
+	damage_types = list(BURN = 28)
+	armor_divisor = 5 //We shot past the armor
+	penetrating = -5
+	can_ricochet = FALSE
+	embed = FALSE
+	sharp = FALSE
+	wounding_mult = WOUNDING_NORMAL
+	step_delay = 2
+	recoil = 1
+	kill_count = 2 //We dont go that far.
+
+/obj/item/projectile/bullet/light_rifle_257/bluespace/launch(atom/target, target_zone, x_offset=0, y_offset=0, angle_offset=0, proj_sound, firer_arg)
+	if(target)
+		go_to_bluespace(src, 0.05, TRUE, src, get_turf(target))
+	..()
+
 /obj/item/projectile/bullet/light_rifle_257/scrap
 	damage_types = list(BRUTE = 15)
 	armor_divisor = 0.5
@@ -543,6 +561,24 @@
 	affective_ap_range = 3
 	recoil = 5
 
+/obj/item/projectile/bullet/rifle_75/bluespace
+	name = "bluespace bullet"
+	damage_types = list(BURN = 30)
+	armor_divisor = 5 //We shot past the armor
+	penetrating = -5
+	can_ricochet = FALSE
+	embed = FALSE
+	sharp = FALSE
+	wounding_mult = WOUNDING_NORMAL
+	step_delay = 2
+	recoil = 1
+	kill_count = 2 //We dont go that far.
+
+/obj/item/projectile/bullet/rifle_75/bluespace/launch(atom/target, target_zone, x_offset=0, y_offset=0, angle_offset=0, proj_sound, firer_arg)
+	if(target)
+		go_to_bluespace(src, 0.05, TRUE, src, get_turf(target))
+	..()
+
 /// 8.6x70mm Heavy Rifle ///
 
 /obj/item/projectile/bullet/heavy_rifle_408
@@ -625,6 +661,24 @@
 	affective_damage_range = 4
 	affective_ap_range = 4
 	recoil = 12
+
+/obj/item/projectile/bullet/heavy_rifle_408/bluespace
+	name = "bluespace bullet"
+	damage_types = list(BURN = 42)
+	armor_divisor = 5 //We shot past the armor
+	penetrating = -5
+	can_ricochet = FALSE
+	embed = FALSE
+	sharp = FALSE
+	wounding_mult = WOUNDING_NORMAL
+	step_delay = 2
+	recoil = 1
+	kill_count = 2 //We dont go that far.
+
+/obj/item/projectile/bullet/heavy_rifle_408/bluespace/launch(atom/target, target_zone, x_offset=0, y_offset=0, angle_offset=0, proj_sound, firer_arg)
+	if(target)
+		go_to_bluespace(src, 0.05, TRUE, src, get_turf(target))
+	..()
 
 ///Snowflake  ///
 
