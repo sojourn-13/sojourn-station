@@ -2,16 +2,19 @@
 	name = "rock"
 	icon = 'icons/obj/mining.dmi'
 	icon_state = "ore2"
-	w_class = ITEM_SIZE_SMALL
+	w_class = ITEM_SIZE_TINY
 	max_amount = 120
 	var/crushable = TRUE
 	var/material
 	var/material_randomly_has = TRUE
-	var/sheet_amout = 1 //How many sheets do we give?
+	var/sheet_amout = 1
 	price_tag = 1
 
 /obj/item/stack/ore/get_storage_cost()
-	return amount * BASE_STORAGE_COST(w_class)
+	var/value = 0
+	if(amount)
+		value = amount / 6
+	return value
 
 /obj/item/stack/ore/Initialize()
 	..()
@@ -36,22 +39,29 @@
 			material = ORE_CARBON
 		if(prob(40))
 			material = ORE_IRON
-		else
+		if(!material)
 			material = ORE_SAND
+
 
 /obj/item/stack/ore/ex_act(severity)
 	return //We allow mining charges to not blow up ores
 
 /obj/item/stack/ore/attackby(obj/item/I, mob/user)
 	var/tool_type = I.get_tool_type(user, list(QUALITY_HAMMERING), src)
-	if(tool_type==QUALITY_HAMMERING)
+	if(tool_type==QUALITY_HAMMERING && crushable)
 		to_chat(user, SPAN_NOTICE("Crushing the rocks, turning them to sand..."))
 		if(I.use_tool(user, src, WORKTIME_QUICK, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
-			new /obj/item/stack/ore/glass(get_turf(src))
+			if(QDELETED(src))
+				return
+			if(istype(src, /obj/item/stack/ore/glass))
+				new /obj/item/stack/ore/glass/dust(get_turf(src))
+			else
+				new /obj/item/stack/ore/glass(get_turf(src))
+			//Still will get some more sand out of it but not as endless
 			if(prob(50))
 				new /obj/random/material_ore_small(get_turf(src))
 			to_chat(user, SPAN_NOTICE("You crush the rocks into dust! Well sand..."))
-			qdel(src)
+			use(1)
 			return
 		return
 	else
@@ -125,8 +135,18 @@
 	origin_tech = list(TECH_MATERIAL = 1)
 	material = ORE_SAND
 	slot_flags = SLOT_HOLSTER
+	crushable = TRUE //We can be sifted further
+	material_randomly_has = FALSE
+
+/obj/item/stack/ore/glass/dust
+	name = "sand dust"
+	icon_state = "o_dust"
+	origin_tech = list(TECH_MATERIAL = 1)
+	material = ORE_SAND
+	slot_flags = SLOT_HOLSTER
 	crushable = FALSE
 	material_randomly_has = FALSE
+	sheet_amout = 1.3
 
 // POCKET SAND!
 /obj/item/stack/ore/glass/throw_impact(atom/hit_atom)
@@ -222,3 +242,5 @@
 	icon_state = "slag"
 	material = null
 	price_tag = 0
+	material_randomly_has = FALSE
+
