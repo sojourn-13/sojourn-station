@@ -58,8 +58,6 @@
 #define PERCENT(val) (round((val)*100, 0.1))
 #define CLAMP01(x) (CLAMP(x, 0, 1))
 
-#define SIGN(x) ( x < 0 ? -1  : 1 )
-
 #define CEILING(x, y) ( -round(-(x) / (y)) * (y) )
 
 #define ROUND_UP(x) ( -round(-(x)))
