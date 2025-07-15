@@ -1345,6 +1345,7 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
+/obj/machinery/mineral/ore_crusher,
 /turf/simulated/floor/plating,
 /area/mine/processing)
 "eh" = (
