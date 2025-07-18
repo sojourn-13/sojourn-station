@@ -248,7 +248,8 @@ SUBSYSTEM_DEF(ticker)
 		"game_id" = game_id,
 		"newline" = "\n"
 	)
-	send2chat(new /datum/tgs_message_content(format_message_named(config.message_announce_new_game, message_args)), config.channel_announce_new_game)
+	// Send to IRC instead of send2chat
+	send2mainirc(format_message_named(config.message_announce_new_game, message_args))
 	//	SOJOURN: discord bot configuration: END
 
 	setup_economy()
@@ -538,7 +539,8 @@ SUBSYSTEM_DEF(ticker)
 		"game_id" = game_id,
 		"newline" = "\n"
 	)
-	send2chat(new /datum/tgs_message_content(format_message_named(config.message_announce_round_end, message_args)), config.channel_announce_end_game)
+	// Send to IRC instead of send2chat
+	send2mainirc(format_message_named(config.message_announce_round_end, message_args))
 	send2adminchat("Server", "Round just ended.")
 	//	SOJOURN: discord bot configuration: END
 
@@ -641,3 +643,4 @@ SUBSYSTEM_DEF(ticker)
 		if(GAME_STATE_PLAYING)
 			Master.SetRunLevel(RUNLEVEL_GAME)
 		if(GAME_STATE_FINISHED)
+			Master.SetRunLevel(RUNLEVEL_POSTGAME)

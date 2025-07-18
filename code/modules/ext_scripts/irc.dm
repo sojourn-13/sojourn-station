@@ -15,7 +15,7 @@
 					LIBCALL(nudge_lib, "nudge")("[config.comms_password]","[config.irc_bot_host]","[channel]","[msg]")
 			else
 				spawn(0)
-					ext_python("ircbot_message.py", "[config.comms_password] [config.irc_bot_host] [channel] [msg]")
+					ext_python("ircbot_message.py", "\"[config.comms_password] [config.irc_bot_host] [channel] [msg]\"")
 	return
 
 /proc/send2mainirc(var/msg)
