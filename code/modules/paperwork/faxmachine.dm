@@ -1,6 +1,13 @@
+#define ERRORUNKNOWNDEPT "ERRORUNKNOWNDEPT"
+
+// Remove duplicate/illegal config definition here
+// Configuration for fax export directory should be in your global config, not here
+
+var/ping = null
+
 var/list/obj/machinery/photocopier/faxmachine/allfaxes = list()
 var/list/alldepartments = list()
-
+var/list/admin_departments = list() // from faxmachine(1).dm
 var/list/adminfaxes = list()	//cache for faxes that have been sent to admins
 
 /obj/machinery/photocopier/faxmachine
@@ -23,6 +30,8 @@ var/list/adminfaxes = list()	//cache for faxes that have been sent to admins
 
 	var/canrecieve = TRUE
 
+var/last_staff_request_time = 0
+
 /obj/machinery/photocopier/faxmachine/New()
 	..()
 	allfaxes += src
@@ -32,15 +41,9 @@ var/list/adminfaxes = list()	//cache for faxes that have been sent to admins
 
 /obj/machinery/photocopier/faxmachine/attack_hand(mob/user as mob)
 	user.set_machine(src)
-
 	var/dat = "Fax Machine<BR>"
 
-	var/scan_name
-	if(scan)
-		scan_name = scan.name
-	else
-		scan_name = "--------"
-
+	var/scan_name = scan ? scan.name : "--------"
 	dat += "Confirm Identity: <a href='byond://?src=\ref[src];scan=1'>[scan_name]</a><br>"
 
 	if(authenticated)
@@ -51,20 +54,17 @@ var/list/adminfaxes = list()	//cache for faxes that have been sent to admins
 	dat += "<hr>"
 
 	if(authenticated)
-		dat += "<b>Logged in to:</b> [boss_name] Quantum Entanglement Network<br><br>"
+		dat += "<b>Logged in to:</b> Central Command Quantum Entanglement Network<br><br>"
 
 		if(copyitem)
 			dat += "<a href='byond://?src=\ref[src];remove=1'>Remove Item</a><br><br>"
 
 			if(sendcooldown)
 				dat += "<b>Transmitter arrays realigning. Please stand by.</b><br>"
-
 			else
-
 				dat += "<a href='byond://?src=\ref[src];send=1'>Send</a><br>"
 				dat += "<b>Currently sending:</b> [copyitem.name]<br>"
 				dat += "<b>Sending to:</b> <a href='byond://?src=\ref[src];dept=1'>[destination]</a><br>"
-
 		else
 			if(sendcooldown)
 				dat += "Please insert paper to send via secure connection.<br><br>"
@@ -72,13 +72,14 @@ var/list/adminfaxes = list()	//cache for faxes that have been sent to admins
 			else
 				dat += "Please insert paper to send via secure connection.<br><br>"
 
+		// Always show the staff request button, even if no paper is present
+		dat += "<a href='byond://?src=\ref[src];staffrequest=1'>Send Automated Staff Request</a><br>"
 	else
 		dat += "Proper authentication is required to use this device.<br><br>"
-
 		if(copyitem)
 			dat += "<a href ='byond://?src=\ref[src];remove=1'>Remove Item</a><br>"
 
-	user << browse(HTML_SKELETON(dat), "window=copier")
+	user << browse(dat, "window=copier")
 	onclose(user, "copier")
 	return
 
@@ -97,25 +98,22 @@ var/list/adminfaxes = list()	//cache for faxes that have been sent to admins
 /obj/machinery/photocopier/faxmachine/Topic(href, href_list)
 	if(href_list["send"])
 		if(copyitem)
-			if (destination in GLOB.admin_factions_list)
+			if(destination in admin_departments)
 				send_admin_fax(usr, destination)
 			else
 				sendfax(destination)
-
-			if (sendcooldown)
-				spawn(sendcooldown) // cooldown time
+			if(sendcooldown)
+				spawn(sendcooldown)
 					sendcooldown = 0
-
 	else if(href_list["remove"])
 		if(copyitem)
 			copyitem.loc = usr.loc
 			usr.put_in_hands(copyitem)
-			to_chat(usr, SPAN_NOTICE("You take \the [copyitem] out of \the [src]."))
+			to_chat(usr, span_notice("You take \the [copyitem] out of \the [src]."))
 			copyitem = null
 			updateUsrDialog()
-
 	if(href_list["scan"])
-		if (scan)
+		if(scan)
 			if(ishuman(usr))
 				scan.loc = usr.loc
 				if(!usr.get_active_hand())
@@ -127,89 +125,88 @@ var/list/adminfaxes = list()	//cache for faxes that have been sent to admins
 			authenticated = 0
 		else
 			var/obj/item/I = usr.get_active_hand()
-			if (istype(I, /obj/item/card/id) && usr.unEquip(I))
+			if(istype(I, /obj/item/card/id) && usr.unEquip(I))
 				insert_id(I)
 
 	if(href_list["dept"])
-		var/dest = input(usr, "Which department?", "Choose a department", "") as null|anything in (alldepartments + GLOB.faxable_factions_list)
+		var/dest = input(usr, "Which department?", "Choose a department", "") as null|anything in (alldepartments + admin_departments)
 		if(dest) destination = dest
-
 	if(href_list["auth"])
-		if ( (!( authenticated ) && (scan)) )
-			if (check_access(scan))
+		if(!authenticated && scan)
+			if(check_access(scan))
 				authenticated = 1
-
 	if(href_list["logout"])
 		authenticated = 0
-
+	if(href_list["staffrequest"])
+		if(world.time - last_staff_request_time < 10 * 60 * 10) // 5 minutes in deciseconds
+			to_chat(usr, span_warning("You must wait before sending another staff request."))
+			return
+		var/list/dept_options = list(
+			"Low Council",
+			"Artificer's Guild",
+			"Church",
+			"Prospectors",
+			"Security Roles",
+			"SI Medical",
+			"SI Research",
+			"LSS Cargo",
+			"LSS Service"
+		)
+		var/selected_dept = input(usr, "Select department to request staff from:", "Automated Staff Request") as null|anything in dept_options
+		if(selected_dept)
+			last_staff_request_time = world.time
+			request_roles(selected_dept)
+		return
 	updateUsrDialog()
 
 /obj/machinery/photocopier/faxmachine/proc/sendfax(var/destination)
 	if(stat & (BROKEN|NOPOWER))
 		return
-
 	use_power(200)
-
 	var/success = 0
 	for(var/obj/machinery/photocopier/faxmachine/F in allfaxes)
-		if( F.department == destination )
-			success |= F.recievefax(copyitem) //If multiple faxes, we may need more.
-
-	if (success)
+		if(F.department == destination)
+			success |= F.recievefax(copyitem)
+	if(success)
 		visible_message("[src] beeps, \"Message transmitted successfully.\"")
-		//sendcooldown = 600
 	else
 		visible_message("[src] beeps, \"Error transmitting message.\"")
 
 /obj/machinery/photocopier/faxmachine/proc/recievefax(var/obj/item/incoming)
 	if(stat & (BROKEN|NOPOWER))
 		return 0
-
-	//if(department == "Unknown")
-		//return 0	//You can't send faxes to "Unknown"*/ //Yeah you can.
-
 	flick("faxreceive", src)
 	playsound(loc, "sound/items/polaroid1.ogg", 50, 1)
-
-	// give the sprite some time to flick
 	sleep(20)
-
-	if (istype(incoming, /obj/item/paper))
+	if(istype(incoming, /obj/item/paper))
 		copy(incoming)
-	else if (istype(incoming, /obj/item/photo))
+	else if(istype(incoming, /obj/item/photo))
 		photocopy(incoming)
-	else if (istype(incoming, /obj/item/paper_bundle))
+	else if(istype(incoming, /obj/item/paper_bundle))
 		bundlecopy(incoming)
 	else
 		return 0
-
 	use_power(active_power_usage)
 	return 1
 
 /obj/machinery/photocopier/faxmachine/proc/send_admin_fax(var/mob/sender, var/destination)
 	if(stat & (BROKEN|NOPOWER))
 		return
-
 	use_power(200)
-
 	var/obj/item/rcvdcopy
-	if (istype(copyitem, /obj/item/paper))
+	if(istype(copyitem, /obj/item/paper))
 		rcvdcopy = copy(copyitem)
-	else if (istype(copyitem, /obj/item/photo))
+	else if(istype(copyitem, /obj/item/photo))
 		rcvdcopy = photocopy(copyitem)
-	else if (istype(copyitem, /obj/item/paper_bundle))
+	else if(istype(copyitem, /obj/item/paper_bundle))
 		rcvdcopy = bundlecopy(copyitem, 0)
 	else
 		visible_message("[src] beeps, \"Error transmitting message.\"")
 		return
-
-	rcvdcopy.loc = locate("Admin Fax"):loc //hopefully this shouldn't cause trouble // We use tags so that admins can move the destination around -R4d6
+	rcvdcopy.loc = locate("Admin Fax"):loc
 	adminfaxes += rcvdcopy
-
-	//message badmins that a fax has arrived
 	var/datum/faction/dept = GLOB.admin_factions_list[destination]
 	message_admins(sender, dept.fax_alert, rcvdcopy, destination, dept.darkcolor)
-
 	sendcooldown = 1800
 	sleep(50)
 	visible_message("[src] beeps, \"Message transmitted successfully.\"")
@@ -226,21 +223,22 @@ var/list/adminfaxes = list()	//cache for faxes that have been sent to admins
 
 /obj/machinery/photocopier/faxmachine/proc/export_fax(fax)
 	var/date_string = time2text(world.realtime, "YYYY/MM-Month/DD-Day")
-	var/export_dir = "[config.fax_export_dir]/[date_string]"
+	var/export_dir = "data/logs/faxes/[date_string]"
 	var faxid = "[num2text(world.realtime,12)]_[rand(10000)]"
+	var/html_content = ""
 	if (istype(fax, /obj/item/paper))
 		var/obj/item/paper/P = fax
-		var/text = "<HTML><HEAD><TITLE>[P.name]</TITLE></HEAD><BODY>[P.info][P.stamps]</BODY></HTML>";
-		file("[export_dir]/fax_[faxid].html") << text;
+		html_content = "<HTML><HEAD><TITLE>[P.name]</TITLE></HEAD><BODY>[P.info][P.stamps]</BODY></HTML>"
+		file("[export_dir]/fax_[faxid].html") << html_content
 	else if (istype(fax, /obj/item/photo))
 		var/obj/item/photo/H = fax
 		fcopy(H.img, "[export_dir]/photo_[faxid].png")
-		var/text = "<html><head><title>[H.name]</title></head>" \
+		html_content = "<html><head><title>[H.name]</title></head>" \
 			+ "<body style='overflow:hidden;margin:0;text-align:center'>" \
 			+ "<img src='photo_[faxid].png'>" \
 			+ "[H.scribble ? "<br>Written on the back:<br><i>[H.scribble]</i>" : ""]"\
 			+ "</body></html>"
-		file("[export_dir]/fax_[faxid].html") << text
+		file("[export_dir]/fax_[faxid].html") << html_content
 	else if (istype(fax, /obj/item/paper_bundle))
 		var/obj/item/paper_bundle/B = fax
 		var/data = ""
@@ -248,28 +246,55 @@ var/list/adminfaxes = list()	//cache for faxes that have been sent to admins
 			var/obj/pageobj = B.pages[page]
 			var/page_faxid = export_fax(pageobj)
 			data += "<a href='fax_[page_faxid].html'>Page [page] - [pageobj.name]</a><br>"
-		var/text = "<html><head><title>[B.name]</title></head><body>[data]</body></html>"
-		file("[export_dir]/fax_[faxid].html") << text
+		html_content = "<html><head><title>[B.name]</title></head><body>[data]</body></html>"
+		file("[export_dir]/fax_[faxid].html") << html_content
 	return faxid
 
-/**
- * Call the chat webhook to transmit a notification of an admin fax to the admin chat.
- */
 /obj/machinery/photocopier/faxmachine/proc/message_chat_admins(var/mob/sender, var/faxname, var/obj/item/sent, var/faxid, font_colour="#006100")
-	if (config.webhook_url)
-		spawn(0)
-			var/query_string = "type=fax"
-			query_string += "&key=[url_encode(config.webhook_key)]"
-			query_string += "&faxid=[url_encode(faxid)]"
-			query_string += "&color=[url_encode(font_colour)]"
-			query_string += "&faxname=[url_encode(faxname)]"
-			query_string += "&sendername=[url_encode(sender.name)]"
-			query_string += "&sentname=[url_encode(sent.name)]"
-			world.Export("[config.webhook_url]?[query_string]")
+	// Compose the HTML content for the fax
+	var/html_content = ""
+	if (istype(sent, /obj/item/paper))
+		var/obj/item/paper/P = sent
+		html_content = "<HTML><HEAD><TITLE>[P.name]</TITLE></HEAD><BODY>[P.info][P.stamps]</BODY></HTML>"
+	else if (istype(sent, /obj/item/photo))
+		var/obj/item/photo/H = sent
+		html_content = "<html><head><title>[H.name]</title></head>" \
+			+ "<body style='overflow:hidden;margin:0;text-align:center'>" \
+			+ "<img src='photo_[faxid].png'>" \
+			+ "[H.scribble ? "<br>Written on the back:<br><i>[H.scribble]</i>" : ""]"\
+			+ "</body></html>"
+	else if (istype(sent, /obj/item/paper_bundle))
+		var/obj/item/paper_bundle/B = sent
+		var/data = ""
+		for (var/page = 1, page <= B.pages.len, page++)
+			var/obj/pageobj = B.pages[page]
+			var/page_faxid = export_fax(pageobj)
+			data += "<a href='fax_[page_faxid].html'>Page [page] - [pageobj.name]</a><br>"
+		html_content = "<html><head><title>[B.name]</title></head><body>[data]</body></html>"
 
-//
-// Overrides/additions to stock defines go here, as well as hooks. Sort them by
-// the object they are overriding. So all /mob/living together, etc.
-//
-/datum/configuration
-	var/fax_export_dir = "data/logs/faxes"	// Directory in which to write exported fax HTML files.
+	// Send the HTML content to IRC relay with header "FAX:"
+	var/msg = "FAX: [faxname] '[sent.name]' sent from [key_name(sender)]\nHTML Render:\n[html_content]"
+	send2irc(msg)
+
+/obj/machinery/photocopier/faxmachine/proc/request_roles(var/role_to_ping)
+	// Optionally, you can prompt for reason/jobname here as well
+	var/reason = input(usr, "Enter reason for request:", "Request Reason", "Unspecified") as text
+	var/jobname = input(usr, "Enter job name (optional):", "Job Name", "") as text
+	// Send the ping to the Discord relay (AphroditeBot.py expects TCP or webhook, here we use send2irc)
+	var/ping_id = null
+	switch(role_to_ping)
+		if("Low Council") ping_id = "1342911886361890907"
+		if("Artificer's Guild") ping_id = "1342911983673933936"
+		if("Church") ping_id = "1342912183415083078"
+		if("Prospectors") ping_id = "1342912254600806400"
+		if("Security Roles") ping_id = "1342913722276118659"
+		if("SI Medical") ping_id = "1342912277514420267"
+		if("SI Research") ping_id = "1342912405176324269"
+		if("LSS Cargo") ping_id = "1342912457156329595"
+		if("LSS Service") ping_id = "1342912586802266193"
+	if(ping_id)
+		var/requester = (usr && usr.name) ? usr.name : "Unknown"
+		// Add channel id for department pings
+		var/msg = "FAXREQUEST: " + "ping:" + ping_id + " Job Request: " + jobname + " (" + reason + ") requested by " + requester + " channel:1345434730597843095"
+		send2irc(msg)
+	to_chat(usr, span_notice("Your request was transmitted."))

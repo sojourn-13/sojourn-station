@@ -19,7 +19,7 @@
 #define CREDS "&cent;"
 
 
-#define DEPARTMENT_COMMAND	"Nadezhda Employment"
+#define DEPARTMENT_COMMAND	"Nadezhda Low Council"
 #define DEPARTMENT_MEDICAL	"Soteria Institute: Medical Department"
 #define DEPARTMENT_ENGINEERING	"Artificer Guild"
 #define DEPARTMENT_SCIENCE	"Soteria Institute: Research Department"
