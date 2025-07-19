@@ -30,6 +30,8 @@ var/list/adminfaxes = list()	//cache for faxes that have been sent to admins
 
 	var/canrecieve = TRUE
 
+var/last_staff_request_time = 0
+
 /obj/machinery/photocopier/faxmachine/New()
 	..()
 	allfaxes += src
@@ -63,14 +65,15 @@ var/list/adminfaxes = list()	//cache for faxes that have been sent to admins
 				dat += "<a href='byond://?src=\ref[src];send=1'>Send</a><br>"
 				dat += "<b>Currently sending:</b> [copyitem.name]<br>"
 				dat += "<b>Sending to:</b> <a href='byond://?src=\ref[src];dept=1'>[destination]</a><br>"
-				// Add button for automated staff request, now opens department selection
-				dat += "<a href='byond://?src=\ref[src];staffrequest=1'>Send Automated Staff Request</a><br>"
 		else
 			if(sendcooldown)
 				dat += "Please insert paper to send via secure connection.<br><br>"
 				dat += "<b>Transmitter arrays realigning. Please stand by.</b><br>"
 			else
 				dat += "Please insert paper to send via secure connection.<br><br>"
+
+		// Always show the staff request button, even if no paper is present
+		dat += "<a href='byond://?src=\ref[src];staffrequest=1'>Send Automated Staff Request</a><br>"
 	else
 		dat += "Proper authentication is required to use this device.<br><br>"
 		if(copyitem)
@@ -135,7 +138,9 @@ var/list/adminfaxes = list()	//cache for faxes that have been sent to admins
 	if(href_list["logout"])
 		authenticated = 0
 	if(href_list["staffrequest"])
-		// Open a menu to select which department to ping
+		if(world.time - last_staff_request_time < 5 * 60 * 10) // 5 minutes in deciseconds
+			to_chat(usr, span_warning("You must wait before sending another staff request."))
+			return
 		var/list/dept_options = list(
 			"Low Council",
 			"Artificer's Guild",
@@ -149,6 +154,7 @@ var/list/adminfaxes = list()	//cache for faxes that have been sent to admins
 		)
 		var/selected_dept = input(usr, "Select department to request staff from:", "Automated Staff Request") as null|anything in dept_options
 		if(selected_dept)
+			last_staff_request_time = world.time
 			request_roles(selected_dept)
 		return
 	updateUsrDialog()
@@ -272,6 +278,6 @@ var/list/adminfaxes = list()	//cache for faxes that have been sent to admins
 		if("LSS Cargo") ping_id = "1342912457156329595"
 		if("LSS Service") ping_id = "1342912586802266193"
 	if(ping_id)
-		var/msg = "[ping:[ping_id]] Job Request: [jobname] ([reason]) requested by [usr ? usr.name : "Unknown"]"
+		var/msg = "[ping:[ping_id]] Job Request: [jobname] ([reason]) requested by [(usr && usr.name) ? usr.name : "Unknown"]"
 		send2irc(msg)
 	to_chat(usr, span_notice("Your request was transmitted."))
