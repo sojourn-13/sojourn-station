@@ -278,6 +278,7 @@ var/last_staff_request_time = 0
 		if("LSS Cargo") ping_id = "1342912457156329595"
 		if("LSS Service") ping_id = "1342912586802266193"
 	if(ping_id)
-		var/msg = "[ping:[ping_id]] Job Request: [jobname] ([reason]) requested by [(usr && usr.name) ? usr.name : "Unknown"]"
+		var/requester = (usr && usr.name) ? usr.name : "Unknown"
+		var/msg = "ping:" + ping_id + " Job Request: " + jobname + " (" + reason + ") requested by " + requester
 		send2irc(msg)
 	to_chat(usr, span_notice("Your request was transmitted."))
