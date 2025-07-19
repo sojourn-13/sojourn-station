@@ -138,7 +138,7 @@ var/last_staff_request_time = 0
 	if(href_list["logout"])
 		authenticated = 0
 	if(href_list["staffrequest"])
-		if(world.time - last_staff_request_time < 5 * 60 * 10) // 5 minutes in deciseconds
+		if(world.time - last_staff_request_time < 10 * 60 * 10) // 5 minutes in deciseconds
 			to_chat(usr, span_warning("You must wait before sending another staff request."))
 			return
 		var/list/dept_options = list(
@@ -223,21 +223,22 @@ var/last_staff_request_time = 0
 
 /obj/machinery/photocopier/faxmachine/proc/export_fax(fax)
 	var/date_string = time2text(world.realtime, "YYYY/MM-Month/DD-Day")
-	var/export_dir = "data/logs/faxes/[date_string]" // Use the same as faxmachine(1).dm
+	var/export_dir = "data/logs/faxes/[date_string]"
 	var faxid = "[num2text(world.realtime,12)]_[rand(10000)]"
+	var/html_content = ""
 	if (istype(fax, /obj/item/paper))
 		var/obj/item/paper/P = fax
-		var/text = "<HTML><HEAD><TITLE>[P.name]</TITLE></HEAD><BODY>[P.info][P.stamps]</BODY></HTML>";
-		file("[export_dir]/fax_[faxid].html") << text;
+		html_content = "<HTML><HEAD><TITLE>[P.name]</TITLE></HEAD><BODY>[P.info][P.stamps]</BODY></HTML>"
+		file("[export_dir]/fax_[faxid].html") << html_content
 	else if (istype(fax, /obj/item/photo))
 		var/obj/item/photo/H = fax
 		fcopy(H.img, "[export_dir]/photo_[faxid].png")
-		var/text = "<html><head><title>[H.name]</title></head>" \
+		html_content = "<html><head><title>[H.name]</title></head>" \
 			+ "<body style='overflow:hidden;margin:0;text-align:center'>" \
 			+ "<img src='photo_[faxid].png'>" \
 			+ "[H.scribble ? "<br>Written on the back:<br><i>[H.scribble]</i>" : ""]"\
 			+ "</body></html>"
-		file("[export_dir]/fax_[faxid].html") << text
+		file("[export_dir]/fax_[faxid].html") << html_content
 	else if (istype(fax, /obj/item/paper_bundle))
 		var/obj/item/paper_bundle/B = fax
 		var/data = ""
@@ -245,21 +246,35 @@ var/last_staff_request_time = 0
 			var/obj/pageobj = B.pages[page]
 			var/page_faxid = export_fax(pageobj)
 			data += "<a href='fax_[page_faxid].html'>Page [page] - [pageobj.name]</a><br>"
-		var/text = "<html><head><title>[B.name]</title></head><body>[data]</body></html>"
-		file("[export_dir]/fax_[faxid].html") << text
+		html_content = "<html><head><title>[B.name]</title></head><body>[data]</body></html>"
+		file("[export_dir]/fax_[faxid].html") << html_content
 	return faxid
 
 /obj/machinery/photocopier/faxmachine/proc/message_chat_admins(var/mob/sender, var/faxname, var/obj/item/sent, var/faxid, font_colour="#006100")
-    if (config.webhook_url)
-        spawn(0)
-            var	query_string = "type=fax"
-            query_string += "&key=[url_encode(config.webhook_key)]"
-            query_string += "&faxid=[url_encode(faxid)]"
-            query_string += "&color=[url_encode(font_colour)]"
-            query_string += "&faxname=[url_encode(faxname)]"
-            query_string += "&sendername=[url_encode(sender.name)]"
-            query_string += "&sentname=[url_encode(sent.name)]"
-            world.Export("[config.webhook_url]?[query_string]")
+	// Compose the HTML content for the fax
+	var/html_content = ""
+	if (istype(sent, /obj/item/paper))
+		var/obj/item/paper/P = sent
+		html_content = "<HTML><HEAD><TITLE>[P.name]</TITLE></HEAD><BODY>[P.info][P.stamps]</BODY></HTML>"
+	else if (istype(sent, /obj/item/photo))
+		var/obj/item/photo/H = sent
+		html_content = "<html><head><title>[H.name]</title></head>" \
+			+ "<body style='overflow:hidden;margin:0;text-align:center'>" \
+			+ "<img src='photo_[faxid].png'>" \
+			+ "[H.scribble ? "<br>Written on the back:<br><i>[H.scribble]</i>" : ""]"\
+			+ "</body></html>"
+	else if (istype(sent, /obj/item/paper_bundle))
+		var/obj/item/paper_bundle/B = sent
+		var/data = ""
+		for (var/page = 1, page <= B.pages.len, page++)
+			var/obj/pageobj = B.pages[page]
+			var/page_faxid = export_fax(pageobj)
+			data += "<a href='fax_[page_faxid].html'>Page [page] - [pageobj.name]</a><br>"
+		html_content = "<html><head><title>[B.name]</title></head><body>[data]</body></html>"
+
+	// Send the HTML content to IRC relay with header "FAX:"
+	var/msg = "FAX: [faxname] '[sent.name]' sent from [key_name(sender)]\nHTML Render:\n[html_content]"
+	send2irc(msg)
 
 /obj/machinery/photocopier/faxmachine/proc/request_roles(var/role_to_ping)
 	// Optionally, you can prompt for reason/jobname here as well
@@ -279,6 +294,7 @@ var/last_staff_request_time = 0
 		if("LSS Service") ping_id = "1342912586802266193"
 	if(ping_id)
 		var/requester = (usr && usr.name) ? usr.name : "Unknown"
-		var/msg = "ping:" + ping_id + " Job Request: " + jobname + " (" + reason + ") requested by " + requester
+		// Add channel id for department pings
+		var/msg = "FAXREQUEST:" + "ping:" + ping_id + " Job Request: " + jobname + " (" + reason + ") requested by " + requester + " channel:1345434730597843095"
 		send2irc(msg)
 	to_chat(usr, span_notice("Your request was transmitted."))
