@@ -295,6 +295,6 @@ var/last_staff_request_time = 0
 	if(ping_id)
 		var/requester = (usr && usr.name) ? usr.name : "Unknown"
 		// Add channel id for department pings
-		var/msg = "FAXREQUEST:" + "ping:" + ping_id + " Job Request: " + jobname + " (" + reason + ") requested by " + requester + " channel:1345434730597843095"
+		var/msg = "FAXREQUEST: " + "ping:" + ping_id + " Job Request: " + jobname + " (" + reason + ") requested by " + requester + " channel:1345434730597843095"
 		send2irc(msg)
 	to_chat(usr, span_notice("Your request was transmitted."))
