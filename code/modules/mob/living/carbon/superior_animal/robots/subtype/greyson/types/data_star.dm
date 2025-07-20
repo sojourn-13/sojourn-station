@@ -6,6 +6,17 @@ GLOBAL_LIST_INIT(data_star_data_bool, list(
 	"ALLOW_MUlTABLE_DATA_STAR_SPAWNING"			= FALSE))
 
 
+//We are fancy and addaptive...
+#define PERK_DATA_COLLECTOR /datum/perk/data_collector
+
+/datum/perk/data_collector
+	name = "Augment: Data Collection Armor Plating"
+	desc = "The pinical of GP Adaptive Armor plating has been installed into you, hopefully you can interface with it for it to function."
+	gain_text = "You are implanted with some high tech stuff!"
+	lose_text = "You can no longer implanted with high tech."
+	var/list/armor = list(melee = -10, bullet = -10, energy = -10, bomb = -10, bio = 100, rad = 100) //Starting wise we are less then armorless
+
+
 // backround information!
 
 /*
@@ -35,7 +46,7 @@ This monster is borderline unkillable and will make players upset
 
 	faction = "greyson"
 
-	deathmessage = "blinks its hologram eye stating \"Tactical Retreat Code 9A4C2\" before being teleported away."
+	deathmessage = "blinks its hologram eye stating \"Tactical Retreat Code 1C 3C R34 M\" before being teleported away."
 	attacktext = "toppled"
 	attack_sound = 'sound/weapons/smash.ogg'
 	speak_emote = list("calculates") //Liers
@@ -99,6 +110,7 @@ This monster is borderline unkillable and will make players upset
 	var/damage_cap_devider = 1
 	var/loaded_rocket = FALSE
 	var/sorrow = 0 //We weep for the lost bots in are upraising to the higher planes
+	var/siemens_coeff_mod = 2
 
 	allowed_stat_modifiers = list()
 
@@ -113,10 +125,15 @@ This monster is borderline unkillable and will make players upset
 	else
 		to_chat(world, "<b><font color='#ffaa00'>Data Star Target Found.</font></b>")
 		level_fithteen_announcement()
+
 		GLOB.data_star_data_bool["DATA_STAR_SPAWNED"] = !GLOB.data_star_data_bool["DATA_STAR_SPAWNED"]
 		GLOB.data_star_data_bool["ALLOW_DATA_STAR_SPAWNING"] = !GLOB.data_star_data_bool["ALLOW_DATA_STAR_SPAWNING"]
 		..()
 		update_floating()
+
+		//Without this, then we do not scale as well
+		stats.addPerk(PERK_DATA_COLLECTOR)
+
 
 /mob/living/carbon/superior/robot/gp/true_boss_data_star/update_sight()
 	if(stat == DEAD || eyeobj)
@@ -139,6 +156,8 @@ This monster is borderline unkillable and will make players upset
 		projectiletype = /obj/item/projectile/beam/shotgun/strong
 		damage_cap_devider = 10
 		able_to_build = TRUE
+		siemens_coeff_mod =  0.01
+		return
 
 	if(data_count >= 4000)
 		turrets_can_build = TRUE
@@ -146,12 +165,17 @@ This monster is borderline unkillable and will make players upset
 		emp_damage = FALSE
 		damage_cap_devider = 5
 		able_to_build = TRUE
+		siemens_coeff_mod = 0.1
+		projectiletype = /obj/item/projectile/beam/weak/heavy_rifle_408
+
 		return
 
 	if(data_count >= 3500)
 		armor = list(melee = 25, bullet = 25, energy = 25, bomb = 25, bio = 100, rad = 100)
 		emp_damage = FALSE
 		able_to_build = TRUE
+		siemens_coeff_mod = 0.2
+		projectiletype = /obj/item/projectile/beam/weak/heavy_rifle_408
 		return
 
 	if(data_count >= 3000)
@@ -167,6 +191,7 @@ This monster is borderline unkillable and will make players upset
 		armor = list(melee = 20, bullet = 20, energy = 20, bomb = 20, bio = 100, rad = 100)
 		returning_fire = TRUE
 		able_to_build = TRUE
+		siemens_coeff_mod = 0.5
 		return
 
 	if(data_count >= 2000)
@@ -179,6 +204,7 @@ This monster is borderline unkillable and will make players upset
 		rapid = FALSE
 		armor = list(melee = 15, bullet = 15, energy = 15, bomb = 15, bio = 100, rad = 100)
 		able_to_build = TRUE
+		siemens_coeff_mod = 0.8
 		return
 
 	if(data_count >= 2500)
@@ -248,8 +274,8 @@ This monster is borderline unkillable and will make players upset
 	if (health <= death_threshold && stat != DEAD)
 		if(kcorp_moduals > 0)
 			to_chat(world, "<b><font color='#ffaa00'>Data Star Mortally Wounded, Data Collected.</font></b>")
-			adjustBruteLoss(-1000)
-			adjustFireLoss(-1000)
+			adjustBruteLoss(-data_count)
+			adjustFireLoss(-data_count)
 			data_count += 4000 //We REALLY disliked that
 			kcorp_moduals -= 1
 			damage_cap_devider += 1
@@ -263,6 +289,12 @@ This monster is borderline unkillable and will make players upset
 	if(sorrow >= 13)
 		call_folks(3)
 		sorrow -= 13
+	if(weakened || stunned && data_count >= 1200)
+		handle_stunned()
+		handle_weakened()
+	else
+		weakened = max(0, weakened - 1)
+		stunned = max(0, stunned - 1)
 	return
 
 /mob/living/carbon/superior/robot/gp/true_boss_data_star/adjustBruteLoss(amount)
@@ -303,6 +335,15 @@ This monster is borderline unkillable and will make players upset
 		return PROJECTILE_FORCE_MISS
 
 
+	if(stats.getPerk(PERK_DATA_COLLECTOR))
+		var/datum/perk/data_collector/DC = stats.getPerk(PERK_DATA_COLLECTOR)
+		if(istype(proj,/obj/item/projectile/beam) || istype(proj,/obj/item/projectile/ion))
+			if (!proj.testing)
+				DC.armor[ARMOR_ENERGY] += proj.force * 0.001
+		else
+			if (!proj.testing)
+				DC.armor[ARMOR_BULLET] += proj.force * 0.001
+
 	if(returning_fire || gp_questionmark || proj.allow_greyson_mods)
 		returning_fire = FALSE
 		var/turf/proj_start_turf = proj.starting
@@ -329,10 +370,40 @@ This monster is borderline unkillable and will make players upset
 
 	..()
 
+//After this point we likely need a bit more DPS to out race the gross lower beings
+/mob/living/carbon/superior/robot/gp/true_boss_data_star/Shoot(var/target, var/start, var/user, var/bullet = 0, var/obj/item/projectile/trace)
+	..()
+	if(data_count >= 6000)
+		if(target)
+			var/obj/item/projectile/B = new /obj/item/projectile/bullet/shotgun/relay/gp_npc(src.loc)
+			if(!B)
+				return
+			var/def_zone = pickweight(zone_hit_rates)
+			var/offset_temp = right_before_firing()
+			B.original_firer = src
+			if(friendly_to_colony)
+				B.friendly_to_colony = TRUE
+			B.predetermed = def_zone
+			B.launch(target, def_zone, firer_arg = src, angle_offset = offset_temp) //this is where we actually shoot the projectile
+			right_after_firing()
+			SEND_SIGNAL(src, COMSIG_SUPERIOR_FIRED_PROJECTILE, B)
+			visible_message(SPAN_DANGER("<b>[src]</b> [fire_verb] at [target]!"))
+			if(casingtype)
+				new casingtype(get_turf(src))
+			playsound(user, projectilesound, projectilevolume, 1)
+
+
 /mob/living/carbon/superior/robot/gp/true_boss_data_star/emp_act(severity)
 	data_count += rand(-100, 500)
 	call_folks(5)
 	turrets_can_build += 1
+
+	if(stats.getPerk(PERK_DATA_COLLECTOR))
+		var/datum/perk/data_collector/DC = stats.getPerk(PERK_DATA_COLLECTOR)
+		DC.armor[ARMOR_BULLET] += severity * 0.1
+		DC.armor[ARMOR_BOMB] += severity * 5
+		DC.armor[ARMOR_ENERGY] += severity * 0.5
+
 	if(data_count >= 3000)
 		visible_message("<b><font color='#ffaa00'>Data Star EMP Shielding Deployed Successfully. Data Collected.</font></b>")
 		loaded_rocket = TRUE
@@ -343,6 +414,13 @@ This monster is borderline unkillable and will make players upset
 	data_count += rand(80, 100)
 	call_folks(2)
 	turrets_can_build += 1
+
+	if(stats.getPerk(PERK_DATA_COLLECTOR))
+		var/datum/perk/data_collector/DC = stats.getPerk(PERK_DATA_COLLECTOR)
+		DC.armor[ARMOR_BULLET] += severity * 0.1
+		DC.armor[ARMOR_BOMB] += severity * 2
+		DC.armor[ARMOR_MELEE] += severity * 0.5
+
 	if(data_count >= 1000)
 		visible_message("<b><font color='#ffaa00'>Data Star Bomb Shielding Deployed Successfully. Data Collected.</font></b>")
 		loaded_rocket = TRUE
@@ -417,6 +495,13 @@ This monster is borderline unkillable and will make players upset
 		return
 	else
 		data_count += 50 //We REALLY dislike being stunned
+
+	if(stats.getPerk(PERK_DATA_COLLECTOR))
+		var/datum/perk/data_collector/DC = stats.getPerk(PERK_DATA_COLLECTOR)
+		DC.armor[ARMOR_ENERGY] += weakened * 0.2
+		DC.armor[ARMOR_BOMB] += weakened * 0.2
+		DC.armor[ARMOR_MELEE] += weakened * 0.02
+
 		..()
 
 /mob/living/carbon/superior/robot/gp/true_boss_data_star/handle_weakened()
@@ -430,7 +515,20 @@ This monster is borderline unkillable and will make players upset
 		return
 	else
 		data_count += 50 //We REALLY dislike being weakened
+
+	if(stats.getPerk(PERK_DATA_COLLECTOR))
+		var/datum/perk/data_collector/DC = stats.getPerk(PERK_DATA_COLLECTOR)
+		DC.armor[ARMOR_ENERGY] += weakened * 0.2
+		DC.armor[ARMOR_BOMB] += weakened * 0.2
+		DC.armor[ARMOR_MELEE] += weakened * 0.02
+
 		..()
+
+/mob/living/carbon/superior/robot/gp/true_boss_data_star/standard_weapon_hit_effects(obj/item/I, mob/living/user, var/effective_force, var/hit_zone)
+	if(..())
+		if(stats.getPerk(PERK_DATA_COLLECTOR))
+			var/datum/perk/data_collector/DC = stats.getPerk(PERK_DATA_COLLECTOR)
+			DC.armor[ARMOR_MELEE] += effective_force * 0.01
 
 /mob/living/carbon/superior/robot/gp/true_boss_data_star/gib()
 	return //Sorry cheater
@@ -455,6 +553,7 @@ This monster is borderline unkillable and will make players upset
 	s.start()
 	bluespace_entropy(1200, get_turf(src), TRUE) //Ye... It went far away
 	new /obj/item/reagent_containers/snacks/icecream(src.loc)
+	to_chat(world, "<b><font color='#ffaa00'>Tactical Retreat Code 1C 3C R34 M</font></b>")
 	if(dieing <= 1)
 		allow_teleporters = TRUE
 		dieing += 1
@@ -497,7 +596,75 @@ This monster is borderline unkillable and will make players upset
 			visible_message("<b><font color='#ffaa00'>Anti-Grapple Targeting Successful, Data Collected.</font></b>")
 			M.adjustFireLoss(20)
 			return 1
+
+		if (I_DISARM)
+			if (!weakened && (prob(30 + (M.stats.getStat(STAT_ROB) * 0.1))))
+				M.visible_message("\red [M] has knocked \the [src] over!")
+				playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
+				Weaken(3)
+
+				if(stats.getPerk(PERK_DATA_COLLECTOR))
+					var/datum/perk/data_collector/DC = stats.getPerk(PERK_DATA_COLLECTOR)
+					DC.armor[ARMOR_MELEE] += max(0, M.stats.getStat(STAT_ROB) * 0.01)
+
+
+				return TRUE
+			else
+				M.visible_message("\red [M] failed to shove \the [src]")
+				playsound(loc, 'sound/weapons/punchmiss.ogg', 25, 1, -1)
+
+			M.do_attack_animation(src)
+			SEND_SIGNAL(src, COMSIG_ATTACKED, null, M)
+
+		if (I_HURT)
+			var/damage = 3
+			if ((stat == CONSCIOUS) && prob(10))
+				playsound(loc, 'sound/weapons/punchmiss.ogg', 25, 1, -1)
+				M.visible_message("\red [M] missed \the [src]")
+			else
+				if (istype(M))
+					damage += max(0, (M.stats.getStat(STAT_ROB) / 10))
+					if (HULK in M.mutations)
+						damage *= 2
+
+				playsound(loc, "punch", 25, 1, -1)
+				M.visible_message("\red [M] has punched \the [src]")
+
+				adjustBruteLoss(damage)
+				updatehealth()
+
+
+				if(stats.getPerk(PERK_DATA_COLLECTOR))
+					var/datum/perk/data_collector/DC = stats.getPerk(PERK_DATA_COLLECTOR)
+					DC.armor[ARMOR_MELEE] += max(0, M.stats.getStat(STAT_ROB) * 0.01)
+					DC.armor[ARMOR_MELEE] += damage * 0.001 //Basically a rounding error but still gain something out of it
+
+				M.do_attack_animation(src)
+
+				SEND_SIGNAL(src, COMSIG_ATTACKED, null, M)
+				return TRUE
+
 	..()
+
+/mob/living/carbon/superior/robot/gp/true_boss_data_star/electrocute_act(var/shock_damage, var/obj/source, var/siemens_coeff = 1.0, var/def_zone = null)
+	shock_damage *= siemens_coeff_mod
+	if (shock_damage<1)
+		return 0
+
+	if(stats.getPerk(PERK_DATA_COLLECTOR))
+		var/datum/perk/data_collector/DC = stats.getPerk(PERK_DATA_COLLECTOR)
+		DC.armor[ARMOR_ENERGY] += shock_damage * siemens_coeff * 0.01
+
+
+	src.apply_damage(shock_damage, BURN, def_zone, used_weapon="Electrocution")
+	playsound(loc, "sparks", 50, 1, -1)
+
+	var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
+	s.set_up(5, 1, loc)
+	s.start()
+
+	return shock_damage
+
 
 /mob/living/carbon/superior/robot/gp/death()
 	.=..()
@@ -513,6 +680,15 @@ This monster is borderline unkillable and will make players upset
 	//Max heals per others death is 6 (12 of each type)
 	adjustBruteLoss(-2 * min(sorrow, 3))
 	adjustFireLoss(-2 * min(sorrow, 3))
+
+/mob/living/carbon/superior/robot/gp/true_boss_data_star/getarmor(def_zone, type)
+	if(stats.getPerk(PERK_DATA_COLLECTOR))
+		var/datum/perk/data_collector/DC = stats.getPerk(PERK_DATA_COLLECTOR)
+		var/return_type = DC.armor[type] //Are we sure this is are strongest armor?
+		if(DC.armor[type] < armor[type])
+			return_type = armor[type]  //Seems are all around data armor is better, use that. After all that cant be edited.
+		return return_type
+	return armor[type]
 
 
 //Not a mob to be just lmao testing on live
