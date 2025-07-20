@@ -1173,9 +1173,6 @@
 				to_chat(H, SPAN_DANGER("Your equipment intensify the welder's glow. Your eyes itch and burn severely."))
 				H.eye_blurry += rand(16,26)
 				E.take_damage(rand(6, 8))
-		if(safety<FLASH_PROTECTION_MAJOR)
-			to_chat(user, SPAN_WARNING("Your eyes are really starting to hurt. This can't be good for you!"))
-
 
 /obj/item/tool/attack(mob/living/M, mob/living/user, var/target_zone)
 	if(isbroken)
