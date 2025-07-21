@@ -584,7 +584,7 @@
  * @license MIT
  */var m=(0,T.h)("store"),x=function(ot){ot===void 0&&(ot={});var mt=ot.sideEffects,ut=mt===void 0?!0:mt,Nt=ot.reducer,gt=ot.middleware,xt=g([(0,t.HY)({debug:O.A$,backend:r.jB}),Nt]),Dt=ut?[].concat((gt==null?void 0:gt.pre)||[],[y.h,r.pX],(gt==null?void 0:gt.post)||[]):[],Pt=t.Tw.apply(void 0,[].concat(Dt)),yt=(0,t.y$)(xt,Pt);return window.__store__=yt,window.__augmentStack__=j(yt),yt},E=function(ot){return function(mt){return function(ut){var Nt=ut.type;return m.debug("action",Nt==="update"||Nt==="backend/update"?{type:Nt}:ut),mt(ut)}}},j=function(ot){return function(mt,ut){var Nt,gt;ut=ut||new Error(mt.split("\n")[0]),ut.stack=ut.stack||mt,m.log("FatalError:",ut);var xt=ot.getState(),Dt=xt==null||(Nt=xt.backend)==null?void 0:Nt.config;return mt+"\nUser Agent: "+navigator.userAgent+"\nState: "+JSON.stringify({ckey:Dt==null||(gt=Dt.client)==null?void 0:gt.ckey,interface:Dt==null?void 0:Dt.interface,window:Dt==null?void 0:Dt.window})}},b=Ze(6965),A=Ze(83422),D=Ze(87514),w=Ze(33196),I=Ze(87760),C=Ze(49945);/**
  * Basically, hacks from goonchat which try to keep the map focused at all
- * times, except for when some meaningful action happens o
+ * times, except for when some meaningful action happens.
  *
  * @file
  * @copyright 2020 Aleksej Komarov
