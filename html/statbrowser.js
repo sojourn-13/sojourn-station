@@ -610,11 +610,13 @@ function draw_verbs(cat) {
 function set_theme(which) {
 	if (which == "light") {
 		document.body.className = "light";
+		document.documentElement.className = 'light';
 		// WARNING: DO NOT REMOVE
 		// THIS AVOIDS AN IE BUG WITH CLASSNAME NOT UPDATING CHILDREN ELEMENTS
 		set_style_sheet("light");
 	} else if (which == "dark") {
 		document.body.className = "dark";
+		document.documentElement.className = 'dark';
 		// WARNING: DO NOT REMOVE
 		// THIS AVOIDS AN IE BUG WITH CLASSNAME NOT UPDATING CHILDREN ELEMENTS
 		set_style_sheet("dark");
@@ -636,6 +638,19 @@ function set_tabs_style(style) {
 
 function set_font_size(size) {
 	document.body.style.setProperty('font-size', size);
+}
+
+function set_tabs_style(style) {
+	if (style == "default") {
+		menu.classList.add('menu-wrap');
+		menu.classList.remove('tabs-classic');
+	} else if (style == "classic") {
+		menu.classList.add('menu-wrap');
+		menu.classList.add('tabs-classic');
+	} else if (style == "scrollable") {
+		menu.classList.remove('menu-wrap');
+		menu.classList.remove('tabs-classic');
+	}
 }
 
 // WARNING: DO NOT REMOVE

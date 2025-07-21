@@ -22,7 +22,7 @@ type Props = Partial<{
 
 export function Layout(props: Props) {
   const { className, children, ...rest } = props;
-  
+  document.documentElement.className = `theme-${theme}`;
   let { theme } = props;
   
   // use user prefs for theme if the UI doesn't force a theme
