@@ -35,6 +35,10 @@ var/last_staff_request_time = 0
     if( !(("[department]" in alldepartments) || ("[department]" in GLOB.admin_factions_list)) )
         alldepartments |= department
 
+    // Populate admin_departments from GLOB.admin_factions_list
+    for(var/faction_name in GLOB.admin_factions_list)
+        admin_departments |= faction_name
+
 /obj/machinery/photocopier/faxmachine/attack_hand(mob/user as mob)
     user.set_machine(src)
     var/dat = "Fax Machine<BR>"
@@ -93,7 +97,8 @@ var/last_staff_request_time = 0
 /obj/machinery/photocopier/faxmachine/Topic(href, href_list)
     if(href_list["send"])
         if(copyitem)
-            if(destination in admin_departments)
+            // Check if destination is an admin faction
+            if(destination in GLOB.admin_factions_list)
                 send_admin_fax(usr, destination)
             else
                 sendfax(destination)
@@ -176,7 +181,7 @@ var/last_staff_request_time = 0
 	if(ping_id)
 		var/requester = (usr && usr.name) ? usr.name : "Unknown"
 		// Add channel id for department pings
-		var/msg = "FAXREQUEST: " + "ping:" + ping_id + " Job Request: " + jobname + " (" + reason + ") requested by " + requester + " channel:1345434730597843095"
+		var/msg = "ping:" + ping_id + " Job Request: " + jobname + " (" + reason + ") requested by " + requester + " channel:1345434730597843095"
 		send2irc(msg)
 	to_chat(usr, span_notice("Your request was transmitted."))
 
@@ -307,6 +312,10 @@ var/last_staff_request_time = 0
             if (page == 1)
                 var/page_msg = "FAX: [faxname] '[pageobj.name]' (Page [page] of [B.pages.len]) sent from [key_name(sender)] ([sender_ckey]) as [sender_char_name] (ID: [auth_name])\nHTML Render:\n[page_html_content]"
                 send2irc(page_msg)
+                // Add small delay between fax and first attachment
+                sleep(0.1)
             else
                 var/attachment_msg = "ATTACHMENT: [page_html_content]"
                 send2irc(attachment_msg)
+                // Add small delay between attachments
+                sleep(0.1)
