@@ -28,7 +28,6 @@ var turfname = "";
 var imageRetryDelay = 500;
 var imageRetryLimit = 50;
 var menu = document.getElementById('menu');
-var under_menu = document.getElementById('under_menu');
 var statcontentdiv = document.getElementById('statcontent');
 var storedimages = [];
 var split_admin_tabs = false;
@@ -56,29 +55,28 @@ function createStatusTab(name) {
 	if (!verb_tabs.includes(name) && !permanent_tabs.includes(name)) {
 		return;
 	}
-	var B = document.createElement("BUTTON");
-	B.onclick = function () {
+	var button = document.createElement("DIV");
+	button.onclick = function () {
 		tab_change(name);
 		this.blur();
 	};
-	B.id = name;
-	B.textContent = name;
-	B.className = "button";
+	button.id = name;
+	button.textContent = name;
+	button.className = "button";
 	//ORDERING ALPHABETICALLY
-	B.style.order = name.charCodeAt(0);
+	button.style.order = name.charCodeAt(0);
 	// Override for status/MC/perks
 	// this works because ascii chars start at 65
 	if (name == "Status") {
-		B.style.order = 1;
+		button.style.order = 1;
 	} else if (name == "MC") {
-		B.style.order = 2;
+		button.style.order = 2;
 	} else if (name == "Perks") {
-		B.style.order = 3;
+		button.style.order = 3;
 	}
 	//END ORDERING
-	menu.appendChild(B);
+	menu.appendChild(button);
 	SendTabToByond(name);
-	under_menu.style.height = menu.clientHeight + 'px';
 }
 
 function removeStatusTab(name) {
@@ -92,7 +90,6 @@ function removeStatusTab(name) {
 	}
 	menu.removeChild(document.getElementById(name));
 	TakeTabFromByond(name);
-	under_menu.style.height = menu.clientHeight + 'px';
 }
 
 function sortVerbs() {
@@ -107,10 +104,6 @@ function sortVerbs() {
 		return 0;
 	});
 }
-
-window.onresize = function () {
-	under_menu.style.height = menu.clientHeight + 'px';
-};
 
 function addPermanentTab(name) {
 	if (!permanent_tabs.includes(name)) {
@@ -367,6 +360,7 @@ function draw_status() {
 		} else {
 			var div = document.createElement("div");
 			div.textContent = status_tab_parts[i];
+			div.className = "status-info";
 			document.getElementById("statcontent").appendChild(div);
 		}
 	}
@@ -625,6 +619,23 @@ function set_theme(which) {
 		// THIS AVOIDS AN IE BUG WITH CLASSNAME NOT UPDATING CHILDREN ELEMENTS
 		set_style_sheet("dark");
 	}
+}
+
+function set_tabs_style(style) {
+	if (style == "default") {
+		menu.classList.add('menu-wrap');
+		menu.classList.remove('tabs-classic');
+	} else if (style == "classic") {
+		menu.classList.add('menu-wrap');
+		menu.classList.add('tabs-classic');
+	} else if (style == "scrollable") {
+		menu.classList.remove('menu-wrap');
+		menu.classList.remove('tabs-classic');
+	}
+}
+
+function set_font_size(size) {
+	document.body.style.setProperty('font-size', size);
 }
 
 // WARNING: DO NOT REMOVE
