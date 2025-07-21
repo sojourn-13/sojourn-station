@@ -408,7 +408,7 @@ function draw_perks() {
 		td1.title = part.desc || "No Description";
 		if (!part.passive) {
 			var a = document.createElement("a");
-			a.href = "?src=" + part.ref + ";trigger=1";
+			a.href = "byond://?src=" + part.ref + ";trigger=1";
 			if (part.cooldown > perks_tab_time) {
 				a.textContent = part.name + " (Cooldown: " + Math.floor((part.cooldown - perks_tab_time) / 10) + " seconds)";
 				a.className = "color-bad";
@@ -469,7 +469,7 @@ function draw_listedturf() {
 			// rather than every onmousedown getting the "part" of the last entry.
 			return function (e) {
 				e.preventDefault();
-				var clickcatcher = "?_src_=listedturf_click;item_ref=" + part[1];
+				var clickcatcher = "byond://?src=?_src_=listedturf_click;item_ref=" + part[1];
 				switch (e.button) {
 					case 1:
 						clickcatcher += ";statpanel_item_click=middle";
@@ -526,7 +526,7 @@ function draw_spells(cat) {
 		var td2 = document.createElement("td");
 		if (part[3]) {
 			var a = document.createElement("a");
-			a.href = "?src=" + part[3] + ";statpanel_item_click=left";
+			a.href = "byond://?src=" + part[3] + ";statpanel_item_click=left";
 			a.textContent = part[2];
 			td2.appendChild(a);
 		} else {
