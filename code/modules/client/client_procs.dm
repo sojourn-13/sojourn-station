@@ -189,6 +189,9 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	///////////
 
 /client/New(TopicData)
+
+	winset(src, "", "browser-options=byondstorage")
+
 	TopicData = null //Prevent calls to client.Topic from connect
 
 	if(connection != "seeker" && connection != "web")//Invalid connection type.

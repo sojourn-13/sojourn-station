@@ -46,7 +46,7 @@
 
 /obj/item/blueprints/interact()
 	var/area/A = get_area(usr)
-	var/text = {"<HTML><head><title>[src]</title></head><BODY>
+	var/text = {"
 <h2>[station_name()] blueprints</h2>
 <small>Property of Nadezhda Colony. For council members only. Store in high-secure storage.</small><hr>
 "}
@@ -68,8 +68,7 @@ move an amendment</a> to the drawing.</p>
 "}
 		else
 			return
-	text += "</BODY></HTML>"
-	usr << browse(text, "window=blueprints")
+	usr << browse(HTML_SKELETON_TITLE(src,text), "window=blueprints")
 	onclose(usr, "blueprints")
 
 /obj/item/blueprints/proc/get_area_type(var/area/A = get_area(usr))
