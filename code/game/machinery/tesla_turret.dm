@@ -33,7 +33,7 @@ GLOBAL_LIST_INIT(turret_channels, new/list(5))
 
 /obj/machinery/tesla_turret
 	name = "Blue-Lightning Tesla Coil Turret"
-	desc = "An experimental Tesla Coil Turret for point-defense and pest control, developed as Soteria's answer to the Absolute's Obelisks. Bears a Blue-Ink Logo on its central Pylon."
+	desc = "An experimental Tesla Coil Turret for point-defense and pest control, developed as Soteria's answer to the Absolute's Obelisks. Bears a Soteria Logo on its central Pylon."
 	anchored = TRUE
 	density = TRUE
 	icon = 'icons/obj/tesla_turret.dmi'

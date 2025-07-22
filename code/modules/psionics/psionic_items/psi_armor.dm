@@ -260,7 +260,7 @@
 
 //The anti-psion hat
 /obj/item/clothing/head/psionic/tinfoil
-	name = "Blue-Ink Psionic Shielding Apparatus"
+	name = "Soteria Psionic Shielding Apparatus"
 	icon_state = "tinfoil"
 	desc = "The product of an eccentric scientist who was fed up with telepathic cat-calls. This device shields the wearer from recieving \
 	telepathic messages, but also prevents psions from using their abilities altogether when worn. The perfect Psionic Containment device. \
