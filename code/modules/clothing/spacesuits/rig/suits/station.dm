@@ -369,7 +369,7 @@ Technomancer RIG
 		bio = 100,
 		rad = 100
 	)
-	ablative_max = 50
+	ablative_max = 10
 	ablation = ABLATION_CERAMIC
 	slowdown = 0
 	offline_vision_restriction = 1
