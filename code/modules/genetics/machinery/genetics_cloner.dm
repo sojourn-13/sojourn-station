@@ -35,7 +35,7 @@ This makes cloning vat is probably the most dangerous tool in Genetics. Because 
 */
 
 /obj/machinery/genetics/cloner
-	name = "Blue-Ink Xenofauna Cloning Vat"
+	name = "Soteria Xenofauna Cloning Vat"
 	desc = "A heavily customized cloning vat, retooled for cloning strange and fantastic creatures far and beyond regular fauna. Requires a steady supply of protein to function."
 	icon = 'icons/obj/neotheology_pod.dmi'
 	icon_state = "preview"

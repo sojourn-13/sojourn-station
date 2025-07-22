@@ -28,7 +28,7 @@
 	category = CAT_CLOTHING
 
 /datum/design/research/item/clothing/tinfoil
-	name = "Blue-Ink Psionic Shielding Apparatus"
+	name = "Soteria Psionic Shielding Apparatus"
 	desc = "The product of an eccentric scientist who was fed up with telepathic cat-calls. This device shields the wearer from recieving \
 	telepathic messages, but also prevents psions from using their abilities altogether when worn. The perfect Psionic Containment device. \
 	Despite the advanced technology involved, it looks a little like a tin-foil hat."

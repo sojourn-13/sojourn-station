@@ -11,7 +11,7 @@ Designs for various genetics components
 	build_path = /obj/item/circuitboard/genetics/clone_console
 
 /datum/design/autolathe/genetics/purger
-	name = "Blue-Ink Mutagenic Purger"
+	name = "Soteria Mutagenic Purger"
 	build_path = /obj/item/genetics/purger
 	time = 100
 
