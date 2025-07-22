@@ -45,19 +45,17 @@
 /obj/structure/ameridian_crystal/New()
 	..()
 	update_icon()
-	if(!randomized_color)
-		gooners()
-		return
-	if(prob(33))
-		color_type = "BLUE"
-		icon_state = "ameridian_crystal_blue"
-		fast_improvement = 120
-		slow_improvement = 220
-	else if(prob(33))
-		color_type = "RED"
-		icon_state = "ameridian_crystal_red"
-		fast_improvement = 60
-		slow_improvement = 90
+	if(randomized_color)
+		if(prob(33))
+			color_type = "BLUE"
+			icon_state = "ameridian_crystal_blue"
+			fast_improvement = 120
+			slow_improvement = 220
+		else if(prob(33))
+			color_type = "RED"
+			icon_state = "ameridian_crystal_red"
+			fast_improvement = 60
+			slow_improvement = 90
 	improvement_speed = rand(fast_improvement, slow_improvement)
 	spread_speed = rand(spread_speed_slow, spread_speed_high)
 	gooners()
@@ -65,11 +63,11 @@
 
 /obj/structure/ameridian_crystal/Process()
 	if(is_growing)
-		if(spread_time + spread_speed >= world.time)
+		if(spread_time + spread_speed <= world.time)
 			spread()
 
 	if(self_improvement)
-		if(last_improvement + improvement_speed >= world.time)
+		if(last_improvement + improvement_speed <= world.time)
 			self_improvements()
 
 /obj/structure/ameridian_crystal/proc/self_improvements()
