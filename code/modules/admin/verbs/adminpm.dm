@@ -113,6 +113,19 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_pm_panel, R_ADMIN|R_MOD|R_MENTOR, FALSE)
 	log_admin("PM: [key_name(src)]->[key_name(C)]: [msg]")
 	log_adminPMHistory(C.ckey, src.ckey, msg)
 
+	// Send adminpm to IRC admin channel - use PM format for bot parsing
+	var/sender_ckey = src ? src.key : "Unknown"
+	var/sender_char = "Unknown"
+	if(src && src.mob && src.mob.real_name)
+		sender_char = src.mob.real_name
+
+	var/recipient_ckey = C ? C.key : "Unknown"
+	var/recipient_char = "Unknown"
+	if(C && C.mob && C.mob.real_name)
+		recipient_char = C.mob.real_name
+
+	var/pm_msg = "PM [sender_ckey]/([sender_char]) to [recipient_ckey]/([recipient_char]): [msg]"
+	send2adminirc(pm_msg)
 
 	// Send the message to achat. TGS
 	var/category = "PM: [key_name(src)] -> [key_name(C)]"
