@@ -26,45 +26,39 @@ SUBSYSTEM_DEF(ticker)
 	var/list/availablefactions = list()	  // list of factions with openings
 
 	var/pregame_timeleft = 180
-	var/last_player_left_timestamp = 0
-
-	var/delay_end = 0	//if set to nonzero, the round will not restart on it's own
-
-	var/triai = 0//Global holder for Triumvirate
-
-	var/quoted = FALSE
-
-	var/round_end_announced = 0 // Spam Prevention. Announce round end only once.
-
-	var/ship_was_nuked = 0			  // See nuclearbomb.dm and malfunction.dm.
-	var/ship_nuke_code = "NO CODE"	   // Heads will get parts of this code.
-	var/ship_nuke_code_rotation_part = 1 // What part of code next Head will get.
-	var/nuke_in_progress = 0		   	// Sit back and relax
-
-	var/newscaster_announcements = null
-
-	//station_explosion used to be a variable for every mob's hud. Which was a waste!
-	//Now we have a general cinematic centrally held within the gameticker....far more efficient!
-	var/obj/screen/cinematic = null
-	var/scheduled_restart = null
-	var/automatic_restart_allowed = TRUE
-
-	var/list/round_start_events
-	var/list/message_args				//	args for message
-
-	var/automatic_restart_time_lobby_sound_cooldown = 0 //used for
+// Instance variables for ticker subsystem
+/datum/controller/subsystem/ticker
+    var/last_player_left_timestamp = 0
+    var/empty_server_restart_timeout = 30 // minutes, value taken from config
+    var/delay_end = 0 //if set to nonzero, the round will not restart on its own
+    var/triai = 0 //Global holder for Triumvirate
+    var/quoted = FALSE
+    var/round_end_announced = 0 // Spam Prevention. Announce round end only once.
+    var/ship_was_nuked = 0 // See nuclearbomb.dm and malfunction.dm.
+    var/ship_nuke_code = "NO CODE" // Heads will get parts of this code.
+    var/ship_nuke_code_rotation_part = 1 // What part of code next Head will get.
+    var/nuke_in_progress = 0 // Sit back and relax
+    var/newscaster_announcements = null
+    var/obj/screen/cinematic = null
+    var/scheduled_restart = null
+    var/automatic_restart_allowed = TRUE
+    var/list/round_start_events = list()
+    var/list/message_args = list()
+    var/automatic_restart_time_lobby_sound_cooldown = 0
 
 /datum/controller/subsystem/ticker/Initialize(start_timeofday)
-	if(!syndicate_code_phrase)
-		syndicate_code_phrase = generate_code_phrase()
-	if(!syndicate_code_response)
-		syndicate_code_response = generate_code_phrase()
-
-	setup_objects()
-	setup_genetics()
-	setup_huds()
-
-	return ..()
+    if(!syndicate_code_phrase)
+        syndicate_code_phrase = generate_code_phrase()
+    if(!syndicate_code_response)
+        syndicate_code_response = generate_code_phrase()
+    src.setup_objects()
+    src.setup_huds()
+    // Parse timeout from config
+    if(isnum(config["EMPTY_SERVER_RESTART_TIMEOUT"]))
+        src.empty_server_restart_timeout = text2num(config["EMPTY_SERVER_RESTART_TIMEOUT"])
+    else
+        src.empty_server_restart_timeout = 30
+    return ..()
 
 /datum/controller/subsystem/ticker/proc/setup_objects()
 	populate_antag_type_list() // Set up antagonists. Do these first since character setup will rely on them
@@ -142,8 +136,19 @@ SUBSYSTEM_DEF(ticker)
 			GLOB.storyteller.Process()
 			GLOB.storyteller.process_events()
 
-			if(!process_empty_server())
-				return
+			// Check for absence of players in active round
+			if(!clients.len)
+				if(!src.last_player_left_timestamp)
+					src.last_player_left_timestamp = world.time
+				else if(world.time >= src.last_player_left_timestamp + (src.empty_server_restart_timeout * 60 * 10))
+					src.last_player_left_timestamp = 0
+					log_game("Server: No players were on the server for [src.empty_server_restart_timeout] minutes, restarting server...")
+					to_chat(world, "<span class='danger'>Server restarting due to inactivity (no players for [src.empty_server_restart_timeout] minutes).</span>")
+					world.Reboot()
+					return
+			else
+				// If players appeared, reset the timer
+				src.last_player_left_timestamp = 0
 
 			if(automatic_restart_allowed && config.automatic_restart_time && config.automatic_restart_time < world.time)
 				shift_end()
@@ -182,37 +187,37 @@ SUBSYSTEM_DEF(ticker)
 // will also return TRUE if its currently counting down to server's restart after last player left
 
 /datum/controller/subsystem/ticker/proc/process_empty_server()
-	if(!config.empty_server_restart_time)
-		return TRUE
-	switch(current_state)
-		if(GAME_STATE_PLAYING)
-			if(clients.len)
-				// Resets countdown if any player connects on empty server
-				if(last_player_left_timestamp)
-					last_player_left_timestamp = 0
-				return TRUE
-			else
-				// Last player left so we store the time when he left
-				if(!last_player_left_timestamp)
-					last_player_left_timestamp = world.time
-					return TRUE
-				// Counting down the world's end
-				else if (world.time >= last_player_left_timestamp + (config.empty_server_restart_time MINUTES))
-					last_player_left_timestamp = 0
-					log_game("\[Server\] No players were on a server last [config.empty_server_restart_time] minutes, restarting server...")
-					world.Reboot()
-					return FALSE
-		if(GAME_STATE_PREGAME)
-			if(!clients.len)
-				// if pregame and no player we break fire() execution so no countdown will be done
-				if(pregame_timeleft == initial(pregame_timeleft))
-					return FALSE
-				// Resetting countdown time
-				else
-					pregame_timeleft = initial(pregame_timeleft)
-					quoted = FALSE
-					return FALSE
-	return TRUE
+    if(!src.empty_server_restart_timeout)
+        return TRUE
+    switch(current_state)
+        if(GAME_STATE_PLAYING)
+            if(clients.len)
+                // Resets countdown if any player connects on empty server
+                if(src.last_player_left_timestamp)
+                    src.last_player_left_timestamp = 0
+                return TRUE
+            else
+                // Last player left so we store the time when he left
+                if(!src.last_player_left_timestamp)
+                    src.last_player_left_timestamp = world.time
+                    return TRUE
+                // Counting down the world's end
+                else if (world.time >= src.last_player_left_timestamp + (src.empty_server_restart_timeout * 60 * 10))
+                    src.last_player_left_timestamp = 0
+                    log_game("Server: No players were on a server last [src.empty_server_restart_timeout] minutes, restarting server...")
+                    world.Reboot()
+                    return FALSE
+        if(GAME_STATE_PREGAME)
+            if(!clients.len)
+                // if pregame and no player we break fire() execution so no countdown will be done
+                if(pregame_timeleft == initial(pregame_timeleft))
+                    return FALSE
+                // Resetting countdown time
+                else
+                    pregame_timeleft = initial(pregame_timeleft)
+                    src.quoted = FALSE
+                    return FALSE
+    return TRUE
 
 /datum/controller/subsystem/ticker/proc/setup()
 	to_chat(world, "<span class='boldannounce'>Starting game...</span>")
@@ -430,7 +435,7 @@ SUBSYSTEM_DEF(ticker)
 /datum/controller/subsystem/ticker/proc/collect_minds()
 	for(var/mob/living/player in GLOB.player_list)
 		if(player.mind)
-			SSticker.minds |= player.mind
+			src.minds |= player.mind
 
 /datum/controller/subsystem/ticker/proc/generate_contracts(count)
 	var/list/candidates = (subtypesof(/datum/antag_contract) - typesof(/datum/antag_contract/excel) - typesof(/datum/antag_contract/blackshield))
@@ -503,7 +508,7 @@ SUBSYSTEM_DEF(ticker)
 				if (get_area(C) in targets)
 					marked_areas += 1
 		if (marked_areas >= 3)
-			M.complete()
+		 M.complete()
 	addtimer(CALLBACK(src, PROC_REF(excel_check)), 3 MINUTES)
 
 /datum/controller/subsystem/ticker/proc/contract_tick()
@@ -577,7 +582,7 @@ SUBSYSTEM_DEF(ticker)
 
 		if(aiPlayer.connected_robots.len)
 			var/robolist = "<b>The AI's loyal minions were:</b> "
-			for(var/mob/living/silicon/robot/robo in aiPlayer.connected_robots)
+		 for(var/mob/living/silicon/robot/robo in aiPlayer.connected_robots)
 				robolist += "[robo.name][robo.stat?" (Deactivated) (Played by: [robo.key]), ":" (Played by: [robo.key]), "]"
 			to_chat(world, "[robolist]")
 
@@ -630,13 +635,9 @@ SUBSYSTEM_DEF(ticker)
 // expand me pls
 /datum/controller/subsystem/ticker/Recover()
 	current_state = SSticker.current_state
-
-	minds = SSticker.minds
-
-	delay_end = SSticker.delay_end
-
-	triai = SSticker.triai
-
+	src.minds = SSticker.minds
+	src.delay_end = SSticker.delay_end
+	src.triai = SSticker.triai
 	switch (current_state)
 		if(GAME_STATE_SETTING_UP)
 			Master.SetRunLevel(RUNLEVEL_SETUP)

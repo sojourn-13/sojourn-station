@@ -42,8 +42,8 @@
 	// Send adminhelp message to Discord chat
 	send2adminchat_webhook(key_name(src), original_msg)
 
-	// Send adminhelp message to IRC admin channel
-	send2adminirc("Adminhelp: [key_name(src)]: [original_msg]")
+	// Send adminhelp message to IRC admin channel using the new procedure
+	process_all_ahelps(src, original_msg)
 
 	// Assuming it is an an admin help and not a mentor help
 	SStickets.newHelpRequest(src, msg) // Ahelp
