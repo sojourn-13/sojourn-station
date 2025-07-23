@@ -7,7 +7,7 @@
 	var/crushable = TRUE
 	var/material
 	var/material_randomly_has = TRUE
-	var/sheet_amout = 1
+	var/sheet_amout = 0.5
 	price_tag = 1
 
 /obj/item/stack/ore/get_storage_cost()
@@ -103,7 +103,12 @@
 /obj/item/stack/ore/uranium/small
 	name = "pitchblende shard"
 	material = MATERIAL_URANIUM
-	sheet_amout = 0.5
+	sheet_amout = 1
+
+/obj/item/stack/ore/uranium/dust
+	name = "pitchblende dust"
+	icon_state = "o_dust_uranium"
+	sheet_amout = 1.3
 
 /obj/item/stack/ore/iron
 	name = "hematite"
@@ -115,7 +120,12 @@
 
 /obj/item/stack/ore/iron/small
 	name = "hematite nugget"
-	sheet_amout = 0.5
+	sheet_amout = 1
+
+/obj/item/stack/ore/iron/dust
+	name = "hematite dust"
+	icon_state = "o_dust_iron"
+	sheet_amout = 1.3
 
 /obj/item/stack/ore/coal
 	name = "raw carbon"
@@ -127,7 +137,12 @@
 
 /obj/item/stack/ore/coal/small
 	name = "raw carbon chunk"
-	sheet_amout = 0.5
+	sheet_amout = 1
+
+/obj/item/stack/ore/coal/dust
+	name = "coal dust"
+	icon_state = "o_dust_coal"
+	sheet_amout = 1.3
 
 /obj/item/stack/ore/glass
 	name = "sand"
@@ -171,7 +186,12 @@
 
 /obj/item/stack/ore/plasma/small
 	name = "plasma crystal"
-	sheet_amout = 0.5
+	sheet_amout = 1
+
+/obj/item/stack/ore/plasma/dust
+	name = "plasma dust"
+	icon_state = "o_dust_plasma"
+	sheet_amout = 1.3
 
 /obj/item/stack/ore/silver
 	name = "native silver ore"
@@ -184,7 +204,12 @@
 
 /obj/item/stack/ore/silver/small
 	name = "native silver nugget"
-	sheet_amout = 0.5
+	sheet_amout = 1
+
+/obj/item/stack/ore/silver/dust
+	name = "silver powdered"
+	icon_state = "o_dust_silver"
+	sheet_amout = 1.3
 
 /obj/item/stack/ore/gold
 	name = "native gold ore"
@@ -197,7 +222,12 @@
 
 /obj/item/stack/ore/gold/small
 	name = "native gold nugget"
-	sheet_amout = 0.5
+	sheet_amout = 1
+
+/obj/item/stack/ore/gold/dust
+	name = "gold powdered"
+	icon_state = "o_dust_gold"
+	sheet_amout = 1.3
 
 /obj/item/stack/ore/diamond
 	name = "diamonds"
@@ -210,7 +240,12 @@
 
 /obj/item/stack/ore/diamond/small
 	name = "diamond dust"
-	sheet_amout = 0.5
+	sheet_amout = 1
+
+/obj/item/stack/ore/diamond/dust
+	name = "diamond dust"
+	icon_state = "o_dust_diamond"
+	sheet_amout = 1.3
 
 /obj/item/stack/ore/osmium
 	name = "raw platinum"
@@ -222,7 +257,12 @@
 
 /obj/item/stack/ore/osmium/small
 	name = "raw platinum shard"
-	sheet_amout = 0.5
+	sheet_amout = 1
+
+/obj/item/stack/ore/osmium/dust
+	name = "platinum powdered"
+	icon_state = "o_dust_platinum"
+	sheet_amout = 1.3
 
 /obj/item/stack/ore/hydrogen
 	name = "raw hydrogen"
@@ -234,7 +274,12 @@
 
 /obj/item/stack/ore/hydrogen/small
 	name = "raw hydrogen nugget" //Its a nugget?
-	sheet_amout = 0.5
+	sheet_amout = 1
+
+/obj/item/stack/ore/hydrogen/dust
+	name = "hydrogen powdered"
+	icon_state = "o_dust_hydrogen"
+	sheet_amout = 1.3
 
 /obj/item/stack/ore/slag
 	name = "Slag"
