@@ -735,29 +735,29 @@
 	phrase = "Pro vobis agemus!" //"We shall act on behalf"
 	desc = "A powerful litany that can only be used once an hour.\
 	<br>\
-	Its powers based on how many close by vectors are present.\
+	Its powers are based on how many vectors are present.\
 	<br>\
-	In a small range, deal damage to every hostile based on fractals, vectors and primes, including yourself.\
+	Deal damage to every hostile in a small area based on the number of fractals, vectors and primes nearby, including yourself.\
 	<br>\
-	In a small range, kill hivemind wires and damage machines based on how many fractals, vectors and primes, including yourself.\
+	Destroy hivemind wires and damage machines in a small area based on the number of fractals, vectors and primes nearby, including yourself.\
 	<br>\
-	If mandated to fight off a hivemind, always kill off hivemind wires and deal additional damage to hivemind machines.\
+	If mandated to fight off a hivemind, always destroy hivemind wires and deal additional damage to hivemind machines.\
 	<br>\
-	If this prayer kills a hivemind creature, all close by vectors with active crusiforms will recharge per kill.\
+	If this prayer kills a hivemind creature, all nearby vectors with active cruciforms will recharge energy per kill.\
 	<br>\
-	If a divisor is around, this prayer will give them protection as well as redirect all enemies to them.\
+	If a divisor is nearby, this prayer will give them protection as well as directt all enemies to attack them.\
 	<br>\
-	If a monomial is around, this prayer will give them some holy aid in recovering from pain and small wounds.\
+	If a monomial is nearby, this prayer will give them some holy aid in recovering from pain and small wounds.\
 	<br>\
-	If a tessellate is around, everyone will be given a mental reprieve.\
+	If a tessellate is nearby, everyone will be given mental reprieve.\
 	<br>\
-	If a factorial is around, fully recharge their cruciform as well as the prayers'.\
+	If a factorial is nearby, fully recharge their cruciform as well as their prayers'.\
 	<br>\
-	If a lemniscate is around, this prayer will give them enhanced speed.\
+	If a lemniscate is nearby, this prayer will give them enhanced speed.\
 	<br>\
-	If a vinculum is around, massively boost damage of the litany.\
+	If a vinculum is nearby, massively boost damage of their litanies.\
 	<br>\
-	This litany will be weakened by the amount of psionics around when used."
+	This litany will be weakened by the amount of psions around when used."
 	power = 70
 	category = "Vitae"
 
@@ -804,8 +804,8 @@
 			if(CI.get_module(CRUCIFORM_DIVI) || CI.get_module(CRUCIFORM_OMNI))
 				CI.wearer.mob_ablative_armor += 10
 				new /obj/effect/temp_visual/text/communal_judgment_divi(CI.wearer.loc)
-				CI.wearer.stats.addTempStat(STAT_TGH, 15, 60 SECONDS, "Protect the judgment")
-				CI.wearer.stats.addTempStat(STAT_ROB, 15, 60 SECONDS, "Protect the judgment")
+				CI.wearer.stats.addTempStat(STAT_TGH, 15, 60 SECONDS, "Protect the bearers of judgement")
+				CI.wearer.stats.addTempStat(STAT_ROB, 15, 60 SECONDS, "Protect the bearers of judgment")
 				for(var/mob/living/carbon/superior/S in oview(6, CI.wearer))
 					S.loseTarget(TRUE,TRUE)
 					S.react_to_attack(CI.wearer,src,CI.wearer)
@@ -818,8 +818,8 @@
 				CI.wearer.reagents.add_reagent("holydexalinp", 8)
 				CI.wearer.reagents.add_reagent("holytricord", 15)
 
-				CI.wearer.stats.addTempStat(STAT_TGH, 30, 60 SECONDS, "Protect the judgment")
-				CI.wearer.stats.addTempStat(STAT_ROB, 15, 60 SECONDS, "Protect the judgment")
+				CI.wearer.stats.addTempStat(STAT_TGH, 30, 60 SECONDS, "Protect the bearers of judgment")
+				CI.wearer.stats.addTempStat(STAT_ROB, 15, 60 SECONDS, "Protect the bearers of judgment")
 
 			//Hasten the common
 			if(CI.get_module(CRUCIFORM_LEMN) || CI.get_module(CRUCIFORM_OMNI))
