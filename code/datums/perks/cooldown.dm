@@ -179,11 +179,11 @@
 
 /datum/perk/cooldown/judgment_haste
 	name = "Judgment Haste"
-	desc = "A Judgement is required. Let you be the one to have its haste."
+	desc = "A Judgement is required. Let it be delivered with haste."
 	icon_state = "adrenalineburst"
 	perk_lifetime = 2 MINUTES
 	gain_text = "A Judgement is required."
-	lose_text = "Your haste from the judgement fades."
+	lose_text = "Your haste of judgement fades."
 
 /datum/perk/cooldown/judgment_haste/assign(mob/living/carbon/human/H)
 	..()
