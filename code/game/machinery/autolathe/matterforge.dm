@@ -636,7 +636,9 @@
 //	lst[MATERIAL_BIOMATTER] = 0.2		//church makes so much of it {does not work, snowflake material code}
 
 /obj/machinery/matter_nanoforge/proc/check_user(mob/user)
-	if(user.stats?.getPerk(PERK_HANDYMAN))
+	if(!user.stats?.getPerk(PERK_HANDYMAN) && !usr.stat_check(STAT_MECH, 80))
+		to_chat(usr, SPAN_NOTICE("You don't know how to make the [src] work, you lack the training or mechanical skill."))
+		return FALSE
+
+	if(..())
 		return TRUE
-	to_chat(user, SPAN_NOTICE("You don't know how to make the [src] work, you lack the training or mechanical skill."))
-	return FALSE
