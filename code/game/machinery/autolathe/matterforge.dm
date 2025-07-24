@@ -640,5 +640,5 @@
 		to_chat(usr, SPAN_NOTICE("You don't know how to make the [src] work, you lack the training or mechanical skill."))
 		return FALSE
 
-	if(..())
+	else
 		return TRUE
