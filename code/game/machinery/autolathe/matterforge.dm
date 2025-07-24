@@ -639,6 +639,5 @@
 	if(!user.stats?.getPerk(PERK_HANDYMAN) && !usr.stat_check(STAT_MEC, 80))
 		to_chat(usr, SPAN_NOTICE("You don't know how to make the [src] work, you lack the training or mechanical skill."))
 		return FALSE
-
 	else
 		return TRUE
