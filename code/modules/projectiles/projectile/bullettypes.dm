@@ -996,8 +996,8 @@
 
 					var/obj/item/projectile/bullet/shotgun/relay/relayed = new type(enemy_turf)
 
-					if(M.health >= 1)
-						//message_admins("dont relay")
+					if(target_mob.health >= 1)
+						//message_admins("dont relay [M.health]")
 
 						relayed.allow_relay = FALSE
 
@@ -1012,7 +1012,7 @@
 
 					var/obj/item/projectile/bullet/shotgun/relay/relayed = new type(enemy_turf)
 
-					if(M.health >= 1)
+					if(target_mob.health >= 1)
 						//message_admins("dont relay")
 
 						relayed.allow_relay = FALSE
