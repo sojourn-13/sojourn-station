@@ -183,6 +183,7 @@
 							/datum/design/research/item/scalpel_laser,
 							/datum/design/research/item/clothing/health,
 							/datum/design/research/item/bonegel,
+							/datum/design/research/item/fiber_medical
 							)
 
 /datum/technology/improved_biotech
@@ -206,6 +207,7 @@
 							/datum/design/research/item/toxin_kit,
 							/datum/design/research/item/o2_kit,
 							/datum/design/research/item/adv_kit,
+							/datum/design/research/item/si_kit,
 							/datum/design/research/item/surgery_kit,
 							/datum/design/research/item/drill_s_adv,
 							/datum/design/research/item/scalpel_adv,
@@ -213,7 +215,7 @@
 							/datum/design/research/item/cautery_adv,
 							/datum/design/research/item/hemostat_adv,
 							/datum/design/research/item/retractor_adv,
-							/datum/design/research/item/medsaw_circular,
+							/datum/design/research/item/medsaw_circular
 							)
 
 /datum/technology/portable_biotech

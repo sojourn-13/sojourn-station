@@ -137,6 +137,11 @@
 	build_path = /obj/item/storage/firstaid/adv/empty
 	category = "Medical"
 
+/datum/design/research/item/si_kit
+	name = "Empty Soteria Advanced Kit"
+	build_path = /obj/item/storage/firstaid/regular/si/empty
+	category = "Medical"
+
 
 //Surgery tools
 /datum/design/research/item/surgery_kit
@@ -210,6 +215,14 @@
 	build_path = /obj/item/tool/tape_roll/bonegel/si
 	materials = list(MATERIAL_PLASTIC = 10)
 	category = CAT_TOOLS
+
+/datum/design/research/item/fiber_medical
+	name = "Medical Fiber Tape"
+	desc = "A roll of medical fiber tape, used for quick bandaging of wounds and fractures."
+	build_path = /obj/item/tool/tape_roll/fiber/medical
+	materials = list(MATERIAL_PLASTIC = 5)
+	category = CAT_TOOLS
+
 
 /datum/design/research/item/mmi
 	name = "Man-machine interface"
