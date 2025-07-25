@@ -3568,7 +3568,7 @@
 	price_per_unit = 0.2
 
 /datum/reagent/ethanol/ocular
-	name = "Ocular"
+	name = "Ocular"a
 	id = "ocular"
 	description = "Don't make eye contact, a favorite of the Mar qua."
 	taste_description = "fresh mint and inspiration"

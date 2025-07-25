@@ -214,17 +214,17 @@
 // drfarson
 /datum/gear/fluff/drfarson_katana_saya
 	ckey_whitelist = list("drfarson")
-	display_name = "Hydrogen Saya Conversion Kit"
-	path = /obj/item/fluff_conversion_kit/drfarson_katana_saya
+	display_name = "Embroidered Occult Saya"
+	path = /obj/item/clothing/accessory/holster/saber/occult
 
 // drfarson
-/obj/item/fluff_conversion_kit/drfarson_katana_saya
-	name = "Hydrogen Saya Conversion Kit"
-	target_type = /obj/item/clothing/accessory/holster/saber/saya
-	name_change = "embroidered hydrogen-sword saya"
-	vars_change = list(
-		"desc" = "A sleek hardened ebony material covers the entire saya in multifaceted shapes, the runes on it seem to shift and change as you look at them, probing your mind.",
-		"icon_state" = "rapiersci_holster",
-		"overlay_state" = "rapiersci",
-		"can_hold" = list(/obj/item/tool/sword/katana/nano, /obj/item/tool/hydrogen_sword)
-	)
+/obj/item/clothing/accessory/holster/saber/occult
+	name = "embroidered occult saya"
+	desc = "A sleek hardened ebony material covers the entire saya in multifaceted shapes, the runes on it seem to shift and change as you look at them, probing your mind."
+	icon_state = "rapiersci_holster"
+	overlay_state = "rapiersci"
+	slot = "utility"
+	can_hold = list(/obj/item/tool/sword/saber/deconstuctive_rapier, /obj/item/tool/sword/katana/nano, /obj/item/tool/hydrogen_sword, /obj/item/tool/knife/ritual/blade)
+	price_tag = 15000
+	sound_in = 'sound/effects/sheathin.ogg'
+	sound_out = 'sound/effects/sheathout.ogg'
