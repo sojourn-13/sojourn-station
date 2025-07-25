@@ -70,7 +70,7 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 // 223 is a middle ground between 408 and 75. Damage of 408, AP of 75
 /obj/item/projectile/beam/laser_223
 	damage_types = list(BURN = 20)
-	armor_divisor = 2
+	armor_divisor = 1.5
 	recoil = 5
 	wounding_mult = WOUNDING_SERIOUS
 /*
@@ -90,32 +90,32 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 
 /obj/item/projectile/beam/weak/pistol_35
 	damage_types = list(BURN = 15)
-	armor_divisor = 2
+	armor_divisor = 1.5
 	recoil = 2.5
 
 /obj/item/projectile/beam/weak/light_rifle_257
 	damage_types = list(BURN = 14)
-	armor_divisor = 3
+	armor_divisor = 2
 	recoil = 3.5
 
 /obj/item/projectile/beam/weak/rifle_75
 	damage_types = list(BURN = 15.5)
-	armor_divisor = 3
+	armor_divisor = 2
 	recoil = 5
 
 /obj/item/projectile/beam/weak/heavy_rifle_408
 	damage_types = list(BURN = 20)
-	armor_divisor = 4
+	armor_divisor = 3
 	recoil = 10
 
 /obj/item/projectile/beam/weak/magnum_40
 	damage_types = list(BURN = 19)
-	armor_divisor = 3
+	armor_divisor = 2
 	recoil = 4.5
 
 /obj/item/projectile/beam/weak/kurz_50
 	damage_types = list(BURN = 23.5)
-	armor_divisor = 3
+	armor_divisor = 2
 	recoil = 8
 
 /obj/item/projectile/beam/weak/smg
