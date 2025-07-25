@@ -210,3 +210,21 @@
 		"item_state" = "rat_telebaton_0",
 		"baton_base" = "rat_telebaton"
 	)
+
+// drfarson
+/datum/gear/fluff/drfarson_katana_saya
+	ckey_whitelist = list("drfarson")
+	display_name = "Embroidered Occult Saya"
+	path = /obj/item/clothing/accessory/holster/saber/occult
+
+// drfarson
+/obj/item/clothing/accessory/holster/saber/occult
+	name = "embroidered occult saya"
+	desc = "A sleek hardened ebony material covers the entire saya in multifaceted shapes, the runes on it seem to shift and change as you look at them, probing your mind."
+	icon_state = "rapiersci_holster"
+	overlay_state = "rapiersci"
+	slot = "utility"
+	can_hold = list(/obj/item/tool/sword/saber/deconstuctive_rapier, /obj/item/tool/sword/katana/nano, /obj/item/tool/hydrogen_sword, /obj/item/tool/knife/ritual/blade)
+	price_tag = 15000
+	sound_in = 'sound/effects/sheathin.ogg'
+	sound_out = 'sound/effects/sheathout.ogg'
