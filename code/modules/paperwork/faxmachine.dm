@@ -170,23 +170,23 @@ var/last_staff_request_time = 0
     var/ping_id = null
     switch(role_to_ping)
         if("Low Council") 
-            ping_id = "1342911886361890907"
+            ping_id = "lowcouncil"
         if("Artificer's Guild") 
-            ping_id = "1342911983673933936"
+            ping_id = "guild"
         if("Church") 
-            ping_id = "1342912183415083078"
+            ping_id = "church"
         if("Prospectors") 
-            ping_id = "1342912254600806400"
+            ping_id = "prospectors"
         if("Security Roles") 
-            ping_id = "1342913722276118659"
+            ping_id = "security"
         if("SI Medical") 
-            ping_id = "1342912277514420267"
+            ping_id = "medical"
         if("SI Research") 
-            ping_id = "1342912405176324269"
+            ping_id = "science"
         if("LSS Cargo") 
-            ping_id = "1342912457156329595"
+            ping_id = "cargo"
         if("LSS Service") 
-            ping_id = "1342912586802266193"
+            ping_id = "service"
     
     // Debug logging to check if ping_id is set
     to_chat(usr, span_notice("Debug: role_to_ping=[role_to_ping], ping_id=[ping_id]"))
