@@ -1,74 +1,80 @@
 [
     {
-	"url":"https://cdn.discordapp.com/attachments/1342462736684159086/1397674781494743060/Cuban_Pete_-_Jim_Carrey.mp3?ex=68829593&is=68814413&hm=f90fd400e436c6d95b04e4d48caa7cba2a498ab29baa7d8279f26e1a8e53f519&",
+	"url":"https://addi-bot.ca/files/Cuban_Pete_-_Jim_Carrey(1).mp3",
 	"title":"Cuban Pete",
 	"duration":1300,
 	"artist":"Jim Carrey"
     },
     {
-	"url":"https://cdn.discordapp.com/attachments/1342997536176214026/1377056138805383301/Kiss_Me_Goodnight_Sergeant-major.mp3?ex=68820fb7&is=6880be37&hm=f36a7f77c8af3a5b846877d955478d44aa6acb8e2e2f3635f1cdfe32578edc01&",
+	"url":"https://addi-bot.ca/files/Kiss%20Me%20Goodnight%20Sergeant-major(3).mp3",
 	"title":"Kiss Me Goodnight Sergeant Major",
 	"duration":1210,
 	"artist":"Sods Opera"
     },
     {
-	"url":"https://cdn.discordapp.com/attachments/1397677695726256308/1397690513544577085/9._Beneath_Cowdenbeath.mp3?ex=6882a43a&is=688152ba&hm=84bad4c6080de73a5872a5872d2e3d60a8bbe8debb24c9db8eac6cea25a47976&",
+	"url":"https://addi-bot.ca/files/9.%20Beneath%20Cowdenbeath(1).mp3",
 	"title":"Beneath Cowdenbeath",
 	"duration":1490,
 	"artist":"Gloryhammer"
     },
 	{
-	"url":"https://cdn.discordapp.com/attachments/1397677695726256308/1397690513984852108/16_-_Counter-attack.flac?ex=6882a43a&is=688152ba&hm=4983368581e07b0d0d8bba3ce6eb78d4aefbb90271314e6e8f52dd6598e802cf&",
+	"url":"https://addi-bot.ca/files/16%20-%20Counter-attack(1).flac",
 	"title":"Counter-Attack",
 	"duration":920,
 	"artist":"Paul Schuegraf"
     },
     {
-	"url":"https://cdn.discordapp.com/attachments/1397677695726256308/1397690514463129710/E5M02_MainBGM_AfterHalf.mp3?ex=6882a43a&is=688152ba&hm=8a7993f5c21a2aac38aa6e79b0a8bab08f52508ffa05c2ed4847971ac60d9e5f&",
+	"url":"https://addi-bot.ca/files/E5M02_MainBGM_AfterHalf.mp3",
 	"title":"E5MO2",
 	"duration":4370,
 	"artist":"Masufumi Takada / Jun Fukuda"
     },
     {
-	"url":"https://cdn.discordapp.com/attachments/1397677695726256308/1397690514861592720/Irreversible.mp3?ex=6882a43a&is=688152ba&hm=065e35bd141f3cb16c77daf3aa1c79ba5ccc595f1fe09ba1a3b2b18b10d45bc1&",
+	"url":"https://addi-bot.ca/files/Irr%c3%a9versible.mp3",
 	"title":"Irréversible",
 	"duration":1080,
 	"artist":"Guillaume Houzé"
     },
     {
-	"url":"https://cdn.discordapp.com/attachments/1397677695726256308/1397690515251790076/Motes_of_Dust.mp3?ex=6882a43a&is=688152ba&hm=deb4057cfa18d1bedaf54c656cbb70776c4a6868a7945dd826005694103a6b33&",
+	"url":"https://addi-bot.ca/files/Motes%20of%20Dust.mp3",
 	"title":"Motes of Dust",
 	"duration":4600,
 	"artist":"Unknown Artist"
     },
     {
-	"url":"https://cdn.discordapp.com/attachments/1397677695726256308/1397690515629150361/Noosphere.mp3?ex=6882a43a&is=688152ba&hm=cee0463e7c24737bfb05ec4a715d3243eeaf791fa923d40cbba7722dc42e3747&",
+	"url":"https://addi-bot.ca/files/Noosphere.mp3",
 	"title":"Noosphere",
 	"duration":3890,
 	"artist":"Guillaume David"
     },
     {
-	"url":"https://cdn.discordapp.com/attachments/1397677695726256308/1397690516048576572/Oligarkh.mp3?ex=6882a43a&is=688152ba&hm=b884f260d8700ff846a0d69cfe8f899fd72d04ba432052c214856ac00e6b23bb&",
+	"url":"https://addi-bot.ca/files/Oligarkh.mp3",
 	"title":"Cyberslav",
 	"duration":1790,
 	"artist":"Oligarkh"
     },
     {
-	"url":"https://cdn.discordapp.com/attachments/1397677695726256308/1397690516505628693/She_Rules_The_Battlefield.mp3?ex=6882a43a&is=688152ba&hm=aa7601031a2a2cdb7cb9b1ca61fed62a07f70f62450650b998e5f339b019574f&",
+	"url":"https://addi-bot.ca/files/She%20Rules%20The%20Battlefield.mp3",
 	"title":"She Rules the Battlefield",
 	"duration":1630,
 	"artist":"Yuki Kajiura"
     },
     {
-	"url":"https://cdn.discordapp.com/attachments/1397677695726256308/1397690516824657970/The_Seven_Seas.mp3?ex=6882a43b&is=688152bb&hm=b911ba52905c9a089661b3e1deaf4651b83b42766d050e71322a5aa0efe67e6a&",
+	"url":"https://addi-bot.ca/files/The%20Seven%20Seas.mp3",
 	"title":"The Seven Seas",
 	"duration":1430,
 	"artist":"F777"
     },
     {
-	"url":"https://cdn.discordapp.com/attachments/1397677695726256308/1397690517235568731/Time_Will_Catch_Me_First.mp3?ex=6882a43b&is=688152bb&hm=8d40ac6df63e4e16375345653cb206d44e2641635aaa378a7c12f6bef2148b72&",
+	"url":"https://addi-bot.ca/files/Time%20Will%20Catch%20Me%20First.mp3",
 	"title":"Time Will Catch Me First",
 	"duration":2560,
 	"artist":"Peter Crowley"
+    },
+	    {
+	"url":"https://addi-bot.ca/files/Beneath%20the%20Mask.mp3",
+	"title":"Beneath the Mask",
+	"duration":2770,
+	"artist":"Persona 5"
     }
 ]
