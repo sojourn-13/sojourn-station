@@ -151,7 +151,7 @@
 		if(admin_ranks.len)
 			new_rank = input("Please select a rank", "New rank", null, null) as null|anything in (admin_ranks|"*New Rank*")
 		else
-			new_rank = input("Please select a rank", "New rank", null, null) as null|anything in list("Game Master", "Developer", "Moderator", "Dev Moderator", "Administrator", "Head Administrator", "Lore Master", "Host", "Owner", "*New Rank*")
+			new_rank = input("Please select a rank", "New rank", null, null) as null|anything in list("Game Master", "Developer", "Moderator", "Developer/Moderator", "Administrator", "Head Administrator", "Lore Master", "Host", "Owner", "*New Rank*")
 
 		var/rights = 0
 		if(D)
