@@ -1,4 +1,4 @@
-	////////////
+////////////
 	//SECURITY//
 	////////////
 #define UPLOAD_LIMIT 524288 //Restricts client uploads to the server to 0.5MB
@@ -363,7 +363,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	QDEL_NULL(tooltips)
 	QDEL_NULL(loot_panel)
 	if(dbcon.IsConnected())
-		var/DBQuery/query = dbcon.NewQuery("UPDATE players SET last_seen = Now() WHERE id = [src.id]")
+		var/DBQuery/query = dbcon.NewQuery("UPDATE `players` SET `last_seen` = Now() WHERE `id` = '[src.id]'")
 		if(!query.Execute())
 			log_world("Failed to update players table for user with id [src.id]. Error message: [query.ErrorMsg()].")
 	Master.UpdateTickRate()
@@ -433,17 +433,24 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	src.get_country()
 	src.get_byond_age() // Get days since byond join
 
-	var/DBQuery/query_insert = dbcon.NewQuery("INSERT INTO players (ckey, first_seen, last_seen, registered, ip, cid, rank, byond_version, country) VALUES ('[src.ckey]', Now(), Now(), '[registration_date]', '[sql_sanitize_text(src.address)]', '[sql_sanitize_text(src.computer_id)]', 'player', [src.byond_version], '[src.country_code]')")
+	// Use INSERT IGNORE to prevent duplicates, then UPDATE if needed
+	var/DBQuery/query_insert = dbcon.NewQuery("INSERT IGNORE INTO `players` (`ckey`, `first_seen`, `last_seen`, `registered`, `ip`, `cid`, `rank`, `byond_version`, `country`) VALUES ('[src.ckey]', Now(), Now(), '[registration_date]', '[sql_sanitize_text(src.address)]', '[sql_sanitize_text(src.computer_id)]', 'player', [src.byond_version], '[src.country_code]')")
 	if(!query_insert.Execute())
 		log_world("##CRITICAL: Failed to create player record for user [ckey]. Error message: [query_insert.ErrorMsg()].")
 		return
 
-	else
-		var/DBQuery/get_player_id = dbcon.NewQuery("SELECT id, first_seen FROM players WHERE ckey = '[src.ckey]'")
-		get_player_id.Execute()
-		if(get_player_id.NextRow())
-			src.id = get_player_id.item[1]
-			src.first_seen = get_player_id.item[2]
+	// Always update to ensure latest info
+	var/DBQuery/query_update = dbcon.NewQuery("UPDATE `players` SET `last_seen` = Now(), `ip` = '[sql_sanitize_text(src.address)]', `cid` = '[sql_sanitize_text(src.computer_id)]', `byond_version` = [src.byond_version], `country` = '[src.country_code]' WHERE `ckey` = '[src.ckey]'")
+	if(!query_update.Execute())
+		log_world("Failed to update players table for user [ckey]. Error message: [query_update.ErrorMsg()].")
+
+	// Get the player ID
+	var/DBQuery/get_player_id = dbcon.NewQuery("SELECT `id`, `first_seen` FROM `players` WHERE `ckey` = '[src.ckey]'")
+	get_player_id.Execute()
+	if(get_player_id.NextRow())
+		src.id = get_player_id.item[1]
+		src.first_seen = get_player_id.item[2]
+
 
 //Not actually age, but rather time since first seen in days
 /client/proc/get_player_age()
@@ -477,27 +484,24 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	establish_db_connection()
 	if(dbcon.IsConnected())
 		// Get existing player from DB
-		var/DBQuery/query = dbcon.NewQuery("SELECT id from players WHERE ckey = '[src.ckey]'")
+		var/DBQuery/query = dbcon.NewQuery("SELECT `id`, `registered`, `first_seen` from `players` WHERE `ckey` = '[src.ckey]'")
 		if(!query.Execute())
 			log_world("Failed to get player record for user with ckey '[src.ckey]'. Error message: [query.ErrorMsg()].")
 
 		// Not their first time here
 		else if(query.NextRow())
 			// client already registered so we fetch all needed data
-			query = dbcon.NewQuery("SELECT id, registered, first_seen, VPN_check_white FROM players WHERE id = [query.item[1]]")
-			query.Execute()
-			if(query.NextRow())
-				src.id = query.item[1]
-				src.registration_date = query.item[2]
-				src.first_seen = query.item[3]
-				src.VPN_whitelist = query.item[4]
-				src.get_country()
+			src.id = query.item[1]
+			src.registration_date = query.item[2]
+			src.first_seen = query.item[3]
+			src.VPN_whitelist = FALSE // Default value since column doesn't exist
+			src.get_country()
 
-				//Player already identified previously, we need to just update the 'lastseen', 'ip' and 'computer_id' variables
-				var/DBQuery/query_update = dbcon.NewQuery("UPDATE players SET last_seen = Now(), ip = '[src.address]', cid = '[src.computer_id]', byond_version = '[src.byond_version]', country = '[src.country_code]' WHERE id = [src.id]")
+			//Player already identified previously, we need to just update the 'lastseen', 'ip' and 'computer_id' variables
+			var/DBQuery/query_update = dbcon.NewQuery("UPDATE `players` SET `last_seen` = Now(), `ip` = '[src.address]', `cid` = '[src.computer_id]', `byond_version` = '[src.byond_version]', `country` = '[src.country_code]' WHERE `id` = [src.id]")
 
-				if(!query_update.Execute())
-					log_world("Failed to update players table for user with id [src.id]. Error message: [query_update.ErrorMsg()].")
+			if(!query_update.Execute())
+				log_world("Failed to update players table for user with id [src.id]. Error message: [query_update.ErrorMsg()].")
 
 		//Panic bunker - player not in DB, so they get kicked
 		else if(config.panic_bunker && !holder && !deadmin_holder && !(ckey in GLOB.PB_bypass))
@@ -506,31 +510,35 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 			to_chat(src, "<span class='warning'>Sorry but the server is currently not accepting connections from never before seen players.</span>")
 			del(src) // Hard del the client. This terminates the connection.
 			return 0
-		query = dbcon.NewQuery("SELECT ip_related_ids, cid_related_ids FROM players WHERE id = '[src.id]'")
-		query.Execute()
-		if(query.NextRow())
-			related_ip = splittext(query.item[1], ",")
-			related_cid = splittext(query.item[2], ",")
-		query = dbcon.NewQuery("SELECT id, ip, cid FROM players WHERE (ip = '[address]' OR cid = '[computer_id]') AND id <> '[src.id]'")
-		query.Execute()
-		var/changed = 0
-		while(query.NextRow())
-			var/temp_id = query.item[1]
-			var/temp_ip = query.item[2]
-			var/temp_cid = query.item[3]
-			if(temp_ip == address)
-				changed = 1
-				related_ip |= temp_id
-			if(temp_cid == computer_id)
-				changed = 1
-				related_cid |= temp_id
-		if(changed)
-			query = dbcon.NewQuery("UPDATE players SET cid_related_ids = '[jointext(related_cid, ",")]', ip_related_ids = '[jointext(related_ip, ",")]' WHERE id = '[src.id]'")
+
+		// Player not found, register them
+		else
+			src.register_in_db()
+
+		// Only continue with related ID stuff if we have a valid ID
+		if(src.id)
+			query = dbcon.NewQuery("SELECT `ip_related_ids`, `cid_related_ids` FROM `players` WHERE `id` = '[src.id]'")
 			query.Execute()
+			if(query.NextRow())
+				related_ip = splittext(query.item[1], ",")
+				related_cid = splittext(query.item[2], ",")
+			query = dbcon.NewQuery("SELECT `id`, `ip`, `cid` FROM `players` WHERE (`ip` = '[address]' OR `cid` = '[computer_id]') AND `id` <> '[src.id]'")
+			query.Execute()
+			var/changed = 0
+			while(query.NextRow())
+				var/temp_id = query.item[1]
+				var	temp_ip = query.item[2]
+				var	temp_cid = query.item[3]
+				if(temp_ip == address)
+					changed = 1
+					related_ip |= temp_id
+				if(temp_cid == computer_id)
+					changed = 1
+					related_cid |= temp_id
+			if(changed)
+				query = dbcon.NewQuery("UPDATE `players` SET `cid_related_ids` = '[jointext(related_cid, ",")]', `ip_related_ids` = '[jointext(related_ip, ",")]' WHERE `id` = '[src.id]'")
+				query.Execute()
 
-
-	src.get_byond_age() // Get days since byond join
-	src.get_player_age() // Get days since first seen
 
 	// IP Reputation Check
 	if(config.ip_reputation)
@@ -560,11 +568,6 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 					return 0
 		else
 			log_admin("Couldn't perform IP check on [key] with [address]")
-
-	if(text2num(id) < 0)
-		src.register_in_db()
-
-
 
 #undef UPLOAD_LIMIT
 

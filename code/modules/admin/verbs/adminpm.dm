@@ -183,6 +183,9 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_pm_panel, R_ADMIN|R_MOD|R_MENTOR, FALSE)
 
 	to_chat(src, "<span class='pm'><span class='out'>" + create_text_tag("pm_out_alt", "", src) + " to <span class='name'>IRC-[sender]</span>: <span class='message'>[msg]</span></span></span>")
 
+	// Send reply back to IRC
+	send2adminirc("IRC PM: [key_name(src)]->IRC-[sender]: [msg]")
+
 	log_admin("PM: [key_name(src)]->IRC-[sender]: [msg]")
 	for(var/client/X in admins)
 		if(X == src)

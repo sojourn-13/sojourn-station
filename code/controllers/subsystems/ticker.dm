@@ -26,6 +26,7 @@ SUBSYSTEM_DEF(ticker)
 	var/list/availablefactions = list()	  // list of factions with openings
 
 	var/pregame_timeleft = 180
+	var/round_start_time = 0 // Track when the round actually started
 // Instance variables for ticker subsystem
 /datum/controller/subsystem/ticker
     var/last_player_left_timestamp = 0
@@ -117,14 +118,14 @@ SUBSYSTEM_DEF(ticker)
 
 			if(config.automatic_restart_time_lobby)
 				if(world.time >= config.automatic_restart_time_lobby)
-					to_chat(world, "<span class='danger'>Restarting world due to no active players willing to start game. Save characters if working on them.</span>")
-					log_admin("World has rebooted due to no active players willing to play the game.")
+					to_chat(world, "<span class='danger'>Restarting world due to no active players willing to start game. Save characters if working on them. You have 60 seconds.</span>")
+					log_admin("World is rebooting due to no active players willing to play the game.")
+					send2mainirc("World is rebooting due to no active players willing to play the game.")
 					if(automatic_restart_time_lobby_sound_cooldown < world.time)
 						automatic_restart_time_lobby_sound_cooldown = world.time + 10
 						SEND_SOUND(world, sound('sound/AI/annoucement_dings.ogg'))
-					spawn(60 SECONDS)
-						if(!(current_state == GAME_STATE_PREGAME))
-							world.Reboot()
+					sleep(60 SECONDS)
+					world.Reboot()
 
 		if(GAME_STATE_SETTING_UP)
 			if(!setup())
@@ -144,13 +145,14 @@ SUBSYSTEM_DEF(ticker)
 					src.last_player_left_timestamp = 0
 					log_game("Server: No players were on the server for [src.empty_server_restart_timeout] minutes, restarting server...")
 					to_chat(world, "<span class='danger'>Server restarting due to inactivity (no players for [src.empty_server_restart_timeout] minutes).</span>")
+					send2mainirc("Server restarting: No players for [src.empty_server_restart_timeout] minutes during active round.")
 					world.Reboot()
 					return
 			else
 				// If players appeared, reset the timer
 				src.last_player_left_timestamp = 0
 
-			if(automatic_restart_allowed && config.automatic_restart_time && config.automatic_restart_time < world.time)
+			if(automatic_restart_allowed && config.automatic_restart_time && (world.time - round_start_time) >= config.automatic_restart_time)
 				shift_end()
 
 			var/game_finished = (evacuation_controller.round_over() || ship_was_nuked  || universe_has_ended || (scheduled_restart && scheduled_restart < world.time))
@@ -174,6 +176,7 @@ SUBSYSTEM_DEF(ticker)
 					if(!delay_end)
 						sleep(restart_timeout)
 						if(!delay_end)
+							send2mainirc("Server restarting: Round has ended.")
 							world.Reboot()
 						else
 							to_chat(world, SPAN_NOTICE("<b>An admin has delayed the round end</b>"))
@@ -205,6 +208,7 @@ SUBSYSTEM_DEF(ticker)
                 else if (world.time >= src.last_player_left_timestamp + (src.empty_server_restart_timeout * 60 * 10))
                     src.last_player_left_timestamp = 0
                     log_game("Server: No players were on a server last [src.empty_server_restart_timeout] minutes, restarting server...")
+                    send2adminirc("Server restarting: No players for [src.empty_server_restart_timeout] minutes during active round.")
                     world.Reboot()
                     return FALSE
         if(GAME_STATE_PREGAME)
@@ -284,6 +288,8 @@ SUBSYSTEM_DEF(ticker)
 
 	current_state = GAME_STATE_PLAYING
 	Master.SetRunLevel(RUNLEVEL_GAME)
+
+	round_start_time = world.time // Record when the round started
 
 	callHook("roundstart")
 
