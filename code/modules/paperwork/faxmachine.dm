@@ -301,6 +301,9 @@ var/last_staff_request_time = 0
         // Escape the HTML content to prevent shell interpretation issues
         html_content = html_encode(html_content)
         var/msg = "FAX: [faxname] '[sent.name]' sent from [key_name(sender)] ([sender_ckey]) as [sender_char_name] (ID: [auth_name])\\nHTML Render:\\n[html_content]"
+        // Escape the HTML content to prevent shell interpretation issues
+        html_content = html_encode(html_content)
+        var/msg = "FAX: [faxname] '[sent.name]' sent from [key_name(sender)] ([sender_ckey]) as [sender_char_name] (ID: [auth_name])\\nHTML Render:\\n[html_content]"
         send2irc(msg)
     else if (istype(sent, /obj/item/photo))
         var/obj/item/photo/H = sent
@@ -309,6 +312,9 @@ var/last_staff_request_time = 0
             + "<img src='photo_[faxid].png'>" \
             + "[H.scribble ? "<br>Written on the back:<br><i>[H.scribble]</i>" : ""]"\
             + "</body></html>"
+        // Escape the HTML content to prevent shell interpretation issues
+        html_content = html_encode(html_content)
+        var/msg = "FAX: [faxname] '[sent.name]' sent from [key_name(sender)] ([sender_ckey]) as [sender_char_name] (ID: [auth_name])\\nHTML Render:\\n[html_content]"
         // Escape the HTML content to prevent shell interpretation issues
         html_content = html_encode(html_content)
         var/msg = "FAX: [faxname] '[sent.name]' sent from [key_name(sender)] ([sender_ckey]) as [sender_char_name] (ID: [auth_name])\\nHTML Render:\\n[html_content]"
@@ -333,7 +339,12 @@ var/last_staff_request_time = 0
             // Escape the HTML content to prevent shell interpretation issues
             page_html_content = html_encode(page_html_content)
             
+
+            // Escape the HTML content to prevent shell interpretation issues
+            page_html_content = html_encode(page_html_content)
+            
             if (page == 1)
+                var/page_msg = "FAX: [faxname] '[pageobj.name]' (Page [page] of [B.pages.len]) sent from [key_name(sender)] ([sender_ckey]) as [sender_char_name] (ID: [auth_name])\\nHTML Render:\\n[page_html_content]"
                 var/page_msg = "FAX: [faxname] '[pageobj.name]' (Page [page] of [B.pages.len]) sent from [key_name(sender)] ([sender_ckey]) as [sender_char_name] (ID: [auth_name])\\nHTML Render:\\n[page_html_content]"
                 send2irc(page_msg)
                 // Add small delay between fax and first attachment
