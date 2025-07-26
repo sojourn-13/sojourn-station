@@ -1,44 +1,80 @@
 [
     {
-	"url":"https://cdn.discordapp.com/attachments/1355758849034031224/1355785925170299000/Chris_Christodoulou_-_Coalescence_Risk_of_Rain_2013.mp3?ex=67ea3189&is=67e8e009&hm=34c8f2e5daa5ec04af073427e2ac4f9ba42ec9dba5d8970f87eba5bd2b79ab13&",
-	"title":"Coalescence",
-	"duration":3390,
-	"artist":"Chris Christodoulou"
+	"url":"https://addi-bot.ca/files/Cuban_Pete_-_Jim_Carrey(1).mp3",
+	"title":"Cuban Pete",
+	"duration":1300,
+	"artist":"Jim Carrey"
     },
     {
-	"url":"https://cdn.discordapp.com/attachments/1355758849034031224/1355762944075366410/Starbound_OST_-_Novakid_Theme-_I_was_the_Sun_Before_it_was_Cool.mp3?ex=67ea1c22&is=67e8caa2&hm=b1162f34bf7c6172b681a8461f0aae25c1000c8b164ff7fe634e9db21b7a851b&",
-	"title":"I Was The Sun (Before It Was Cool)",
-	"duration":2890,
-	"artist":"Starbound"
+	"url":"https://addi-bot.ca/files/Kiss%20Me%20Goodnight%20Sergeant-major(3).mp3",
+	"title":"Kiss Me Goodnight Sergeant Major",
+	"duration":1210,
+	"artist":"Sods Opera"
     },
     {
-	"url":"https://cdn.discordapp.com/attachments/1355758849034031224/1355786538801303592/Miki_Matsubara-_Mayonaka_No_Door_Stay_With_Me.mp3?ex=67ea321c&is=67e8e09c&hm=f7ee4a4ecef18c9de1d81e7bba37bf33ad064ffd578ef3892db5c9617e64f3f1&",
-	"title":"Mayonaka no Door (Stay With Me)",
-	"duration":2840,
-	"artist":"Miki Matsubara"
+	"url":"https://addi-bot.ca/files/9.%20Beneath%20Cowdenbeath(1).mp3",
+	"title":"Beneath Cowdenbeath",
+	"duration":1490,
+	"artist":"Gloryhammer"
+    },
+	{
+	"url":"https://addi-bot.ca/files/16%20-%20Counter-attack(1).flac",
+	"title":"Counter-Attack",
+	"duration":920,
+	"artist":"Paul Schuegraf"
     },
     {
-	"url":"https://cdn.discordapp.com/attachments/1355758849034031224/1355761473665761350/Merry-Go-Round_of_Life_from_Howls_Moving_Castle.mp3?ex=67ea1ac4&is=67e8c944&hm=e1b3deb595070205470766a6052f9ea5101ca814dbad1726711f55f4a0f9d64d&",
-	"title":"Merry-Go-Round of Life",
-	"duration":3110,
-	"artist":"Joe Hisashi"
+	"url":"https://addi-bot.ca/files/E5M02_MainBGM_AfterHalf.mp3",
+	"title":"E5MO2",
+	"duration":4370,
+	"artist":"Masufumi Takada / Jun Fukuda"
     },
     {
-	"url":"https://cdn.discordapp.com/attachments/1352670381848264754/1355749487431385228/Shogo_-_Negai.mp3?ex=67ea0f9a&is=67e8be1a&hm=7ef7b2c68408aad674c4490a91a3ca1fa24bc744dc30c463c74c25db6c2e7b08&",
-	"title":"Negai (Wish)",
-	"duration":2100,
-	"artist":"Miho Nemoto"
+	"url":"https://addi-bot.ca/files/Irr%c3%a9versible.mp3",
+	"title":"Irréversible",
+	"duration":1080,
+	"artist":"Guillaume Houzé"
     },
     {
-	"url":"https://cdn.discordapp.com/attachments/1355758849034031224/1355762333703471255/Overdose_Casino.mp3?ex=67ea1b91&is=67e8ca11&hm=77c74a96e03f37b41534d3106189769372b495b63f3d052a20a89435c1d8db3a&",
-	"title":"Ovedose Casino",
-	"duration":2090,
-	"artist":"Alex Peipman"
+	"url":"https://addi-bot.ca/files/Motes%20of%20Dust.mp3",
+	"title":"Motes of Dust",
+	"duration":4600,
+	"artist":"Unknown Artist"
     },
     {
-	"url":"https://cdn.discordapp.com/attachments/1355758849034031224/1355759596282843197/Sea_Power_-_Whirling-In-Rags_8_AM.mp3?ex=67ea1904&is=67e8c784&hm=e9839e61d7a1f43237107f406dc19530bc3b2a20b95cbe8f489ed70835526abf&",
-	"title":"Whirling-In-Rags, 8 AM",
-	"duration":2730,
-	"artist":"Sea Power"
+	"url":"https://addi-bot.ca/files/Noosphere.mp3",
+	"title":"Noosphere",
+	"duration":3890,
+	"artist":"Guillaume David"
+    },
+    {
+	"url":"https://addi-bot.ca/files/Oligarkh.mp3",
+	"title":"Cyberslav",
+	"duration":1790,
+	"artist":"Oligarkh"
+    },
+    {
+	"url":"https://addi-bot.ca/files/She%20Rules%20The%20Battlefield.mp3",
+	"title":"She Rules the Battlefield",
+	"duration":1630,
+	"artist":"Yuki Kajiura"
+    },
+    {
+	"url":"https://addi-bot.ca/files/The%20Seven%20Seas.mp3",
+	"title":"The Seven Seas",
+	"duration":1430,
+	"artist":"F777"
+    },
+    {
+	"url":"https://addi-bot.ca/files/Time%20Will%20Catch%20Me%20First.mp3",
+	"title":"Time Will Catch Me First",
+	"duration":2560,
+	"artist":"Peter Crowley"
+    },
+	    {
+	"url":"https://addi-bot.ca/files/Beneath%20the%20Mask.mp3",
+	"title":"Beneath the Mask",
+	"duration":2770,
+	"artist":"Persona 5"
     }
 ]

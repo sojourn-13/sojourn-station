@@ -342,7 +342,7 @@ datum/borrowbook // Datum used to keep track of who has borrowed what when and f
 							if(get_author_id.NextRow())
 								author_id = get_author_id.item[1]
 
-							var/DBQuery/query = dbcon.NewQuery("INSERT INTO library (author, title, content, category, author_id) VALUES ('[sqlauthor]', '[sqltitle]', '[sqlcontent]', '[sqlcategory]', [author_id])")
+							var/DBQuery/query = dbcon.NewQuery("INSERT INTO library (`author`, `title`, `content`, `category`, `author_id`) VALUES ('[sqlauthor]', '[sqltitle]', '[sqlcontent]', '[sqlcategory]', [author_id])")
 							if(!query.Execute())
 								to_chat(usr, query.ErrorMsg())
 							else

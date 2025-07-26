@@ -132,7 +132,7 @@ var/list/admin_ranks = list() //list of all ranks with associated rights
 	return TRUE
 
 /proc/load_admins()
-	var/DBQuery/query = dbcon.NewQuery("SELECT ckey, rank, flags FROM players WHERE rank != 'player'")
+	var/DBQuery/query = dbcon.NewQuery("SELECT `ckey`, `rank`, `flags` FROM players WHERE `rank` != 'player'")
 	query.Execute()
 	while(query.NextRow())
 		var/ckey = query.item[1]
@@ -146,41 +146,9 @@ var/list/admin_ranks = list() //list of all ranks with associated rights
 		var/datum/admins/D = new /datum/admins(rank, flags, ckey)
 
 		//find the client for a ckey if they are connected and associate them with the new admin datum
-		D.associate(directory[ckey])
+		if(directory && directory[ckey])
+			D.associate(directory[ckey])
 
 	//Clear profile access
 	for(var/A in world.GetConfig("admin"))
 		world.SetConfig("APP/admin", A, null)
-
-
-// TODO: finally rework database schema with separate permissions table
-/proc/load_permissions(var/player_id)
-	var/flag = 0
-
-	establish_db_connection()
-	if(!dbcon.IsConnected())
-		return flag
-
-	var/DBQuery/query = dbcon.NewQuery("SELECT fun, server, debug, permissions, mentor, moderator, sound, admin, host FROM permissions WHERE player_id = [player_id]")
-	if(!query.Execute())
-		return flag
-
-	var/list/permissions = list()
-	if(query.NextRow())
-		permissions = list(
-			"fun" = query.item[1],
-			"server" = query.item[2],
-			"debug" = query.item[3],
-			"permissions" = query.item[4],
-			"mentor" = query.item[5],
-			"moderator" = query.item[6],
-			"sound" = query.item[7],
-			"admin" = query.item[8],
-			"host" = query.item[9],
-		)
-
-	for(var/key in permissions)
-		if(permissions[key])
-			flag |= admin_permissions[key]
-
-	return flag

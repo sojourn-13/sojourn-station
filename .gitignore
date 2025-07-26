@@ -224,3 +224,9 @@ aux*.pdb
 
 # Screenshot tests
 /artifacts
+
+# Other stuff
+/scripts
+/faxes
+rust_g.dm
+jukebox.json

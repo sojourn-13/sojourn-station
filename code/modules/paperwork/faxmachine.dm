@@ -163,27 +163,44 @@ var/last_staff_request_time = 0
     updateUsrDialog()
 
 /obj/machinery/photocopier/faxmachine/proc/request_roles(var/role_to_ping)
-	// Optionally, you can prompt for reason/jobname here as well
-	var/reason = input(usr, "Enter reason for request:", "Request Reason", "Unspecified") as text
-	var/jobname = input(usr, "Enter job name (optional):", "Job Name", "") as text
-	// Send the ping to the Discord relay (AphroditeBot.py expects TCP or webhook, here we use send2irc)
-	var/ping_id = null
-	switch(role_to_ping)
-		if("Low Council") ping_id = "1342911886361890907"
-		if("Artificer's Guild") ping_id = "1342911983673933936"
-		if("Church") ping_id = "1342912183415083078"
-		if("Prospectors") ping_id = "1342912254600806400"
-		if("Security Roles") ping_id = "1342913722276118659"
-		if("SI Medical") ping_id = "1342912277514420267"
-		if("SI Research") ping_id = "1342912405176324269"
-		if("LSS Cargo") ping_id = "1342912457156329595"
-		if("LSS Service") ping_id = "1342912586802266193"
-	if(ping_id)
-		var/requester = (usr && usr.name) ? usr.name : "Unknown"
-		// Add channel id for department pings
-		var/msg = "ping:" + ping_id + " Job Request: " + jobname + " (" + reason + ") requested by " + requester + " channel:1345434730597843095"
-		send2irc(msg)
-	to_chat(usr, span_notice("Your request was transmitted."))
+    // Optionally, you can prompt for reason/jobname here as well
+    var/reason = input(usr, "Enter reason for request:", "Request Reason", "Unspecified") as text
+    var/jobname = input(usr, "Enter job name (optional):", "Job Name", "") as text
+    // Send the ping to the Discord relay (AphroditeBot.py expects TCP or webhook, here we use send2irc)
+    var/ping_id = null
+    switch(role_to_ping)
+        if("Low Council") 
+            ping_id = "lowcouncil"
+        if("Artificer's Guild") 
+            ping_id = "guild"
+        if("Security Roles") 
+            ping_id = "security"
+        if("SI Medical") 
+            ping_id = "medical"
+        if("SI Research") 
+            ping_id = "science"
+        if("LSS Cargo") 
+            ping_id = "cargo"
+        if("LSS Service") 
+            ping_id = "service"
+        if("Church") 
+            ping_id = "church"
+        if("Prospectors") 
+            ping_id = "prospectors"
+    
+    // Debug logging to check if ping_id is set
+    to_chat(usr, span_notice("Debug: role_to_ping=[role_to_ping], ping_id=[ping_id]"))
+    
+    if(ping_id)
+        var/requester = (usr && usr.name) ? usr.name : "Unknown"
+        // Add channel id for department pings
+        var/msg = "ping:" + ping_id + " Job Request: " + jobname + " (" + reason + ") requested by " + requester + " channel:1345434730597843095"
+        to_chat(usr, span_notice("Debug: Sending message: [msg]"))
+        send2irc(msg)
+    else
+        to_chat(usr, span_warning("Error: Could not find ping_id for department: [role_to_ping]"))
+    
+    to_chat(usr, span_notice("Your request was transmitted."))
 
 /obj/machinery/photocopier/faxmachine/proc/sendfax(var/destination)
     if(stat & (BROKEN|NOPOWER))
@@ -281,7 +298,9 @@ var/last_staff_request_time = 0
     if (istype(sent, /obj/item/paper))
         var/obj/item/paper/P = sent
         var/html_content = "<HTML><HEAD><TITLE>[P.name]</TITLE></HEAD><BODY>[P.info][P.stamps]</BODY></HTML>"
-        var/msg = "FAX: [faxname] '[sent.name]' sent from [key_name(sender)] ([sender_ckey]) as [sender_char_name] (ID: [auth_name])\nHTML Render:\n[html_content]"
+        // Escape the HTML content to prevent shell interpretation issues
+        html_content = html_encode(html_content)
+        var/msg = "FAX: [faxname] '[sent.name]' sent from [key_name(sender)] ([sender_ckey]) as [sender_char_name] (ID: [auth_name])\\nHTML Render:\\n[html_content]"
         send2irc(msg)
     else if (istype(sent, /obj/item/photo))
         var/obj/item/photo/H = sent
@@ -290,7 +309,9 @@ var/last_staff_request_time = 0
             + "<img src='photo_[faxid].png'>" \
             + "[H.scribble ? "<br>Written on the back:<br><i>[H.scribble]</i>" : ""]"\
             + "</body></html>"
-        var/msg = "FAX: [faxname] '[sent.name]' sent from [key_name(sender)] ([sender_ckey]) as [sender_char_name] (ID: [auth_name])\nHTML Render:\n[html_content]"
+        // Escape the HTML content to prevent shell interpretation issues
+        html_content = html_encode(html_content)
+        var/msg = "FAX: [faxname] '[sent.name]' sent from [key_name(sender)] ([sender_ckey]) as [sender_char_name] (ID: [auth_name])\\nHTML Render:\\n[html_content]"
         send2irc(msg)
     else if (istype(sent, /obj/item/paper_bundle))
         var/obj/item/paper_bundle/B = sent
@@ -309,8 +330,11 @@ var/last_staff_request_time = 0
                     + "[HH.scribble ? "<br>Written on the back:<br><i>[HH.scribble]</i>" : ""]"\
                     + "</body></html>"
 
+            // Escape the HTML content to prevent shell interpretation issues
+            page_html_content = html_encode(page_html_content)
+            
             if (page == 1)
-                var/page_msg = "FAX: [faxname] '[pageobj.name]' (Page [page] of [B.pages.len]) sent from [key_name(sender)] ([sender_ckey]) as [sender_char_name] (ID: [auth_name])\nHTML Render:\n[page_html_content]"
+                var/page_msg = "FAX: [faxname] '[pageobj.name]' (Page [page] of [B.pages.len]) sent from [key_name(sender)] ([sender_ckey]) as [sender_char_name] (ID: [auth_name])\\nHTML Render:\\n[page_html_content]"
                 send2irc(page_msg)
                 // Add small delay between fax and first attachment
                 sleep(0.1)
