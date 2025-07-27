@@ -124,6 +124,9 @@
 		if(!ore_type == R.material && ore_loaded)
 			to_chat(user, SPAN_WARNING("[src] is already processing ore!"))
 			return
+		if(R.dust)
+			to_chat(user, SPAN_NOTICE("[R] is already processed."))
+			return
 		active_power_usage = 2500 //Assume its really hard and its computing power
 		ore_type = R.material
 		if(!ore_type)

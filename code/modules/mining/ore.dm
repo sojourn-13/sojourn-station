@@ -8,6 +8,7 @@
 	var/material
 	var/material_randomly_has = TRUE
 	var/sheet_amout = 0.5
+	var/dust = FALSE
 	price_tag = 1
 
 /obj/item/stack/ore/get_storage_cost()
@@ -109,6 +110,7 @@
 	name = "pitchblende dust"
 	icon_state = "o_dust_uranium"
 	sheet_amout = 1.3
+	dust = TRUE
 
 /obj/item/stack/ore/iron
 	name = "hematite"
@@ -126,6 +128,7 @@
 	name = "hematite dust"
 	icon_state = "o_dust_iron"
 	sheet_amout = 1.3
+	dust = TRUE
 
 /obj/item/stack/ore/coal
 	name = "raw carbon"
@@ -143,6 +146,7 @@
 	name = "coal dust"
 	icon_state = "o_dust_coal"
 	sheet_amout = 1.3
+	dust = TRUE
 
 /obj/item/stack/ore/glass
 	name = "sand"
@@ -162,6 +166,7 @@
 	crushable = FALSE
 	material_randomly_has = FALSE
 	sheet_amout = 1.3
+	dust = TRUE
 
 // POCKET SAND!
 /obj/item/stack/ore/glass/throw_impact(atom/hit_atom)
@@ -192,6 +197,7 @@
 	name = "plasma dust"
 	icon_state = "o_dust_plasma"
 	sheet_amout = 1.3
+	dust = TRUE
 
 /obj/item/stack/ore/silver
 	name = "native silver ore"
@@ -210,6 +216,7 @@
 	name = "silver powdered"
 	icon_state = "o_dust_silver"
 	sheet_amout = 1.3
+	dust = TRUE
 
 /obj/item/stack/ore/gold
 	name = "native gold ore"
@@ -228,6 +235,7 @@
 	name = "gold powdered"
 	icon_state = "o_dust_gold"
 	sheet_amout = 1.3
+	dust = TRUE
 
 /obj/item/stack/ore/diamond
 	name = "diamonds"
@@ -246,6 +254,7 @@
 	name = "diamond dust"
 	icon_state = "o_dust_diamond"
 	sheet_amout = 1.3
+	dust = TRUE
 
 /obj/item/stack/ore/osmium
 	name = "raw platinum"
@@ -263,6 +272,7 @@
 	name = "platinum powdered"
 	icon_state = "o_dust_platinum"
 	sheet_amout = 1.3
+	dust = TRUE
 
 /obj/item/stack/ore/hydrogen
 	name = "raw hydrogen"
@@ -280,6 +290,7 @@
 	name = "hydrogen powdered"
 	icon_state = "o_dust_hydrogen"
 	sheet_amout = 1.3
+	dust = TRUE
 
 /obj/item/stack/ore/slag
 	name = "Slag"
