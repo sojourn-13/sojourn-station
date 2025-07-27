@@ -141,17 +141,17 @@
 
 /datum/perk/unfinished_delivery_feathers
 	name = "Feathers of Lazarus"
-	desc = "Your cruciform is more than just a symbol of faith. Should you ever perish, it will perform an emergency revival that restores your body after a short time, in which you'll be unconscious. Restores some blood for non-synthics"
+	desc = "Your cruciform is more than just a symbol of faith. Should you ever perish, it will perform an emergency revival that restores your body after a short time, in which you'll be unconscious. Restores some blood for non-synthetics"
 	icon_state = "regrowth" // https://game-icons.net/1x1/delapouite/stump-regrowth.html
 
 /datum/perk/unfinished_delivery_ink
-	name = "Lazarus Inkwell"
-	desc = "Your cruciform is more than just a symbol of faith. Should you ever perish, it will perform an emergency revival that restores your body, in which you'll be unconscious. Restores blood for non-synthics"
+	name = "Lazarus' Inkwell"
+	desc = "Your cruciform is more than just a symbol of faith. Should you ever perish, it will perform an emergency revival that restores your body, during which you'll be unconscious. Restores blood for non-synthetics."
 	icon_state = "regrowth" // https://game-icons.net/1x1/delapouite/stump-regrowth.html
 
 /datum/perk/unfinished_delivery_verses
-	name = "Lazarus Verses"
-	desc = "Your cruciform is more than just a symbol of faith. Should you ever perish, it will perform an emergency revival and stablization that restores your body casts light, call for help and restore your crusiforms faith, in which you'll be unconscious. Restores a large amount of blood for non-synthics"
+	name = "Lazarus' Verses"
+	desc = "Your cruciform is more than just a symbol of faith. Should you ever perish, it will perform an emergency revival and stablization that restores your body and casts light, calls for help and restores your cruciforms faith, during which you'll be unconscious. Restores a large amount of blood for non-synthetics."
 	icon_state = "regrowth" // https://game-icons.net/1x1/delapouite/stump-regrowth.html
 
 

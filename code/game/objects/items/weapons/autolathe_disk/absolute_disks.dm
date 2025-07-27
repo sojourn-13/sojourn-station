@@ -689,7 +689,7 @@ obj/item/pc_part/drive/disk/design/nt/concillium/plus
 //Crusiform Upgrades
 /obj/item/pc_part/drive/disk/design/nt/snt_las
 	disk_name = "Absolute Scriptures of the Old Testament's Saint of Lazarus and the protocals wrote."
-	desc = "A disk containing designs for crusiforms upgrades. The disk has a few tailisms hand inscriped into the plastic."
+	desc = "A disk containing designs for cruciform upgrades. The disk has a few notes hand-written into the plastic."
 	license = 6 //Powerful stuff, a full kit is 6
 	designs = list(
 		/datum/design/autolathe/cruciform_upgrade/the_feathers,

@@ -1,9 +1,9 @@
 /datum/perk/rezsickness
 	name = "Revival Sickness"
-	desc = "You've recently died and have been brought back to life, the experience leaving you weakened and thus unfit for fighting for a while. You better find a bed or chair to rest into until you've fully recuperated."
+	desc = "You've recently died and have been brought back to life, the experience leaving you weakened and thus unfit for fighting for a while. You better find a bed or chair to rest until you've fully recuperated."
 	icon_state = "revivalsickness"
-	gain_text = "Your body aches from the pain of returning from death, you better find a chair or bed to rest in so you can heal properly."
-	lose_text = "You finally feel like you recovered from the ravages of your body."
+	gain_text = "Your body aches from the pain of returning from death, you better find a chair or bed to rest so you can heal properly."
+	lose_text = "You finally feel like you recovered your ravaged body."
 	var/initial_time
 
 /datum/perk/rezsickness/assign(mob/living/L)

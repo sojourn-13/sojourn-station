@@ -203,7 +203,7 @@
 	uninstall()
 
 /obj/item/cruciform_upgrade/the_inks
-	name = "Lazarus Inkwell"
+	name = "Lazarus' Inkwell"
 	desc = "A powerful upgrade. The second of three to be used on a faithful that has Lazarus Quill then removed shortly after."
 	icon_state = "the_inks"
 	matter = null
@@ -222,7 +222,7 @@
 	uninstall()
 
 /obj/item/cruciform_upgrade/the_verses_wrote
-	name = "Lazarus Verses"
+	name = "Lazarus' Verses"
 	desc = "A powerful upgrade. The third of three to be used on a faithful that has Lazarus Inkwell then removed shortly after."
 	icon_state = "the_verses_wrote"
 	matter = null

@@ -378,7 +378,7 @@
 	materials = list(MATERIAL_BIOMATTER = 200, MATERIAL_SILVER = 5, MATERIAL_PLASMA = 3, MATERIAL_URANIUM = 1)
 
 /datum/design/autolathe/cruciform_upgrade/the_verses_wrote
-	name = "Lazarus Verses"
+	name = "Lazarus' Verses"
 	build_path = /obj/item/cruciform_upgrade/the_verses_wrote
 	//This is exspensive as its really good
 	materials = list(MATERIAL_BIOMATTER = 240, MATERIAL_PLASMA = 5, MATERIAL_URANIUM = 3, MATERIAL_OSMIUM = 1, MATERIAL_DIAMOND = 1)

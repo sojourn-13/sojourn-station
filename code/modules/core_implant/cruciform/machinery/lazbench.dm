@@ -1,9 +1,9 @@
 //Less "Machinery" and more like fluff items and set pieces.
 
 /obj/structure/lazbench
-	name = "Lazarus Writings Bench"
-	desc = "A reconstucted verson of Saint Lazarus writing station. \
-	Every books' words have been cencered, and countless talisman hide under the thin cloth."
+	name = "Lazarus' Writings Bench"
+	desc = "A reconstructed version of Saint Lazarus' writing station. \
+	Every books' words have been censored, and countless talisman hide under the thin cloth."
 	icon = 'icons/obj/neotheology_machinery.dmi'
 	icon_state = "lazbench"
 
@@ -22,10 +22,10 @@
 	return
 
 /obj/item/lazarus_box
-	name = "Lazarus Works"
+	name = "Lazarus' Works"
 	//Basically you cant open this with force
-	desc = "A heavy box that is unable to be open do to talismans with pre-latin verses. \
-	On the side of the case is simular pre-latin verses."
+	desc = "A heavy box that is unable to be opened due to talismans with pre-latin verses. \
+	On the side of the case are simular pre-latin verses."
 	icon = 'icons/obj/neotheology_machinery.dmi'
 	icon_state = "lazwork"
 	w_class = ITEM_SIZE_TINY
@@ -40,7 +40,7 @@
 			T.create_text_overlay(T, "Many wish to escape death...")
 			overlap_prevent = TRUE
 		if(prob(15) && !overlap_prevent)
-			T.create_text_overlay(T, "...Few are able to understand the ¦¦¦¦¦¦¦...")
+			T.create_text_overlay(T, "...Few are able to understand the Â¦Â¦Â¦Â¦Â¦Â¦Â¦...")
 			overlap_prevent = TRUE
 		if(prob(10) && !overlap_prevent)
 			T.create_text_overlay(T, "...I however saw a fraction too...")
@@ -49,7 +49,7 @@
 			T.create_text_overlay(T, "...Commited unspeakable heresy...")
 			overlap_prevent = TRUE
 		if(prob(0.1) && !overlap_prevent)
-			T.create_text_overlay(T, "My work lives on, unlike myself, yet my wishes linger on for others to use.")
+			T.create_text_overlay(T, "My work lives on, unlike myself, yet my legacy lingers for others to use.")
 			overlap_prevent = TRUE
 
 

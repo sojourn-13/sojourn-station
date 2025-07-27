@@ -543,7 +543,7 @@ GLOBAL_LIST_INIT(nt_constructs, init_nt_constructs())
 	build_time = 8 SECONDS
 
 /datum/nt_blueprint/cruciform_upgrade/lazarus_bench
-	name = "Lazarus Writings Bench"
+	name = "Lazarus' Writings Bench"
 	build_path = /obj/structure/lazbench
 	materials = list(
 		/obj/item/stack/material/wood = 40,
@@ -559,7 +559,7 @@ GLOBAL_LIST_INIT(nt_constructs, init_nt_constructs())
 
 //Has a bit of lore, but will be rarely made if full sets are cycled.
 /datum/nt_blueprint/cruciform_upgrade/lazarus_box
-	name = "Lazarus Work"
+	name = "Lazarus' Work"
 	build_path = /obj/item/lazarus_box
 	materials = list(
 		/obj/structure/lazbench = 1,
@@ -574,7 +574,7 @@ GLOBAL_LIST_INIT(nt_constructs, init_nt_constructs())
 //The upgrades - Lore based crafting requirements costs are less so. All should cost a stack of biomatter+ and silk
 
 /datum/nt_blueprint/cruciform_upgrade/the_feathers
-	name = "Lazarus Work: Feathers of Lazarus"
+	name = "Lazarus' Work: Feathers of Lazarus"
 	build_path = /obj/item/cruciform_upgrade/the_feathers
 	materials = list(
 		/obj/structure/lazbench = 1,
@@ -616,7 +616,7 @@ GLOBAL_LIST_INIT(nt_constructs, init_nt_constructs())
 
 //Full cycle a upgrade, let us recover are loses
 /datum/nt_blueprint/cruciform_upgrade/recycle_verses
-	name = "Lazarus Recovery: Feathers of Lazarus: Phoenix"
+	name = "Lazarus' Recovery: Feathers of Lazarus: Phoenix"
 	build_path = /obj/item/cruciform_upgrade/the_feathers
 	materials = list(
 		/obj/structure/lazbench = 1,
