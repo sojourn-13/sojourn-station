@@ -373,7 +373,7 @@
 	materials = list(MATERIAL_BIOMATTER = 150, MATERIAL_GOLD = 5, MATERIAL_SILVER = 3, MATERIAL_PLASMA = 1)
 
 /datum/design/autolathe/cruciform_upgrade/the_inks
-	name = "Lazarus Inkwell"
+	name = "Lazarus' Inkwell"
 	build_path = /obj/item/cruciform_upgrade/the_inks
 	materials = list(MATERIAL_BIOMATTER = 200, MATERIAL_SILVER = 5, MATERIAL_PLASMA = 3, MATERIAL_URANIUM = 1)
 
