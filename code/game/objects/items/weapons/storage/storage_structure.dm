@@ -14,6 +14,7 @@
 	var/loaded = FALSE
 	density = FALSE
 	anchored = TRUE
+	layer = TABLE_LAYER
 
 /obj/item/storage/internal/structure
 	var/obj/structure/storage/OSS
