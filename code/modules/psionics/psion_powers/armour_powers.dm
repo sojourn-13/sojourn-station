@@ -2,7 +2,7 @@
 //Powers that give armor, cloathing or other such ablities
 
 /mob/living/carbon/human/proc/psionic_armor()
-	set category = "Psionic powers"
+	set category = "Psionic powers.Armor"
 	set name = "Psionic Armor (4)"
 	set desc = "Spend four psi points to don a set of armor from somewhere that does not exist. Anything taken off disappears and whatever clothing you are wearing when this power is used is destroyed."
 	var/psi_point_cost = 4
@@ -21,7 +21,7 @@
 		user.replace_in_slot(new /obj/item/clothing/head/helmet/space/occulthood, slot_head, skip_covering_check = TRUE)
 
 /mob/living/carbon/human/proc/Hpsi_armor()
-	set category = "Psionic powers"
+	set category = "Psionic powers.Armor"
 	set name = "Durable Shell (8)"
 	set desc = "Spend eight psi points to don a set of very strong armor, using your mind and the environment as the materials. Each piece of armor replaces the clothes you are already wearing, and provides additional strength to your body, in exchange for your psionic abilities."
 	var/psi_point_cost = 8
@@ -39,7 +39,7 @@
 		user.replace_in_slot(new /obj/item/clothing/head/helmet/space/occultHhood, slot_head, skip_covering_check = TRUE)
 
 /mob/living/carbon/human/proc/Light_psi_armor()
-	set category = "Psionic powers"
+	set category = "Psionic powers.Armor"
 	set name = "Void Robe (6)"
 	set desc = "Spend six psi points to don an ultra-light protective cloak, spurring the wearer to new adventures in the kingdom of the king of dreams! Each part of the kit enhances the psion's thinking abilities and accelerates his step."
 	var/psi_point_cost = 6
@@ -58,7 +58,7 @@
 
 
 /mob/living/carbon/human/psionic_tumor/proc/psion_gas_mask()
-	set category = "Psionic powers"
+	set category = "Psionic powers.Armor"
 	set name = "Psionic Mask (1)"
 	set desc = "Spend one psi points to don a mask that on removal will heal your mind and enhance your skills when waring."
 	var/psi_point_cost = 1
