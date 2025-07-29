@@ -1,7 +1,7 @@
 /mob/living/carbon/superior
 	name = "superior animal"
 	desc = "You should not see this."
-
+	var/research_value = 150
 	mob_bump_flag = SIMPLE_ANIMAL
 	mob_swap_flags = MONKEY|SLIME|SIMPLE_ANIMAL
 	mob_push_flags = MONKEY|SLIME|SIMPLE_ANIMAL

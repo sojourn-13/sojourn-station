@@ -48,6 +48,7 @@
 	overkill_gib = 16
 
 	sanity_damage = 0.5
+	research_value = 100 // Small roach - basic research value
 
 	fleshcolor = "#666600"
 	bloodcolor = "#666600"

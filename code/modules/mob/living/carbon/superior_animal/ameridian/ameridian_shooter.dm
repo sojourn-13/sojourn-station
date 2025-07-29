@@ -29,3 +29,4 @@
 	)
 
 	mob_ablative_armor = 8
+	research_value = 1500

@@ -9,7 +9,7 @@
 	recommendations_needed = 2
 	hidden_inv_threshold = 2000
 	recommendation_threshold = 3500
-	stations_recommended = list("greyson_printer")
+	stations_recommended = list("greyson_printer", "marqua")
 	name_pool = list("Tuixiaoayuan" = "A still functioning, heavily armed greyson ship that still produces and offers wares, likely entirely unaware of Greyson Positronics collapse given its \
 	automated. It's a wonder it hasn't been raided, but then again it has guns that could level a planet on it. Plus, it hardly offers things of real value...")
 	inventory = list(

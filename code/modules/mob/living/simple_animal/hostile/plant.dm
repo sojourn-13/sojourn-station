@@ -33,16 +33,20 @@
 	leather_amount = 0
 	bones_amount = 0
 	faction = "neutral"
+	research_value = 200
 
 /mob/living/simple/hostile/plant/alt
 	icon_state = "shroom_2"
 	desc = "Is that a mushroom person? It's wearing a loin cloth and a black cloak. Weird."
+	research_value = 200
 
 /mob/living/simple/hostile/plant/folken
 	name = "Folken"
 	desc = "Is that a plant person? It's wearing a scavenged poncho and a flat cap."
 	icon_state = "plant_1"
+	research_value = 220
 
 /mob/living/simple/hostile/plant/folken/alt
 	icon_state = "plant_2"
 	desc = "Is that a plant person? It's wearing a scavenged pair of jeans and shirt with a dusty cowboy hat."
+	research_value = 220

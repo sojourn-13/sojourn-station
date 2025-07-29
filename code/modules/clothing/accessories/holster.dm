@@ -342,12 +342,12 @@ Sword holsters
 	update_icon()
 
 /obj/item/clothing/accessory/holster/saber/rapiermed
-	name = "Rapier scabbard"
+	name = "Soteria CBOs Multi-Scabbard"
 	desc = "A brilliantly wood carved gold gilded scabbard fit for royalty, it's design is surgically precise."
 	icon_state = "rapiermed_holster"
 	overlay_state = "rapiermed"
 	slot = "utility"
-	can_hold = list(/obj/item/tool/sword/saber/injection_rapier)
+	can_hold = list(/obj/item/tool/sword/saber/injection_rapier, /obj/item/tool/sword/katana/nano, /obj/item/tool/hydrogen_sword)
 	price_tag = 2000
 	sound_in = 'sound/effects/sheathin.ogg'
 	sound_out = 'sound/effects/sheathout.ogg'
@@ -368,12 +368,12 @@ Sword holsters
 
 //
 /obj/item/clothing/accessory/holster/saber/rapiersci
-	name = "Rapier saya"
+	name = "Soteria CROs Multi-Saya"
 	desc = "A sleek hardened ebony material covers the entire saya in multifaceted shapes, it's design probes your mind."
 	icon_state = "rapiersci_holster"
 	overlay_state = "rapiersci"
 	slot = "utility"
-	can_hold = list(/obj/item/tool/sword/saber/deconstuctive_rapier)
+	can_hold = list(/obj/item/tool/sword/saber/deconstuctive_rapier, /obj/item/tool/sword/katana/nano, /obj/item/tool/hydrogen_sword)
 	price_tag = 2000
 	sound_in = 'sound/effects/sheathin.ogg'
 	sound_out = 'sound/effects/sheathout.ogg'

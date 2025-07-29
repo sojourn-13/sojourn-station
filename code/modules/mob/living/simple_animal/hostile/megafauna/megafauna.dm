@@ -1,4 +1,3 @@
-
 /mob/living/simple/hostile/megafauna
 	name = "boss of this gym"
 	desc = "Attack the weak point for massive damage."
@@ -26,6 +25,7 @@
 	var/emp_proof = FALSE
 
 	needs_environment = FALSE
+	research_value = 3000
 
 //More complicated verson of movement and targeting fire
 /mob/living/simple/hostile/megafauna/MoveToTarget()

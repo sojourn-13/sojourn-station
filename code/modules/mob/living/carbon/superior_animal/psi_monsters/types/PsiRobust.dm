@@ -15,6 +15,7 @@
 	attacktext = "punched"
 	momento_mori = /obj/effect/decal/cleanable/psi_ash/ponderous
 	armor_divisor = 3
+	research_value = 2200
 
 /mob/living/carbon/superior/psi/hovering_nightmare
 	name = "hovering nightmare"
@@ -35,6 +36,7 @@
 	steal_odds = 50
 	stat_to_steal = STAT_COG
 	steal_amount = -3
+	research_value = 2800
 
 /mob/living/carbon/superior/psi/licker
 	name = "licker"
@@ -53,6 +55,7 @@
 	poison_type = "xenotoxin"
 	attacktext = "tongued"
 	armor_divisor = 2
+	research_value = 2000
 
 /mob/living/carbon/superior/psi/memory
 	name = "memory"
@@ -73,6 +76,7 @@
 	steal_odds = 5
 	stat_to_steal = STAT_VIV
 	steal_amount = -1
+	research_value = 2400
 
 /mob/living/carbon/superior/psi/flesh_tower
 	name = "flesh tower"
@@ -102,6 +106,7 @@
 	mag_drop = FALSE
 	attacktext = "slapped"
 	range_telegraph = "lurks back, getting ready to lob acids at"
+	research_value = 2600
 
 /mob/living/carbon/superior/psi/flesh_tower/Initialize(mapload)
 	. = ..()

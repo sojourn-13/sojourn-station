@@ -20,7 +20,7 @@
 	drop_items = list(/obj/random/psi/always_spawn, /obj/random/psi/always_spawn)
 	momento_mori = /obj/effect/decal/cleanable/psi_ash/flesh_behemoth
 	armor_divisor = 1
-
+	research_value = 8000
 
 /mob/living/carbon/superior/psi/mind_gazer
 	name = "mind gazer"
@@ -43,6 +43,7 @@
 	steal_odds = 15
 	stat_to_steal = STAT_VIG
 	steal_amount = -4
+	research_value = 6500
 
 /mob/living/carbon/superior/psi/pus_maggot/ash_wendigo
 	name = "ash wendigo"
@@ -64,6 +65,7 @@
 	attacktext = "clawed"
 	drop_items = list(/obj/random/psi/always_spawn, /obj/random/psi/always_spawn)
 	armor_divisor = 1.5
+	research_value = 7200
 
 /mob/living/carbon/superior/psi/cerebral_crusher
 	name = "cerebral crusher"
@@ -83,6 +85,7 @@
 	attacktext = "slammed"
 	drop_items = list(/obj/random/psi/always_spawn, /obj/random/psi/always_spawn)
 	armor_divisor = 1.3
+	research_value = 8500
 
 /mob/living/carbon/superior/psi/wasonce/crimson_jelly
 	name = "crimson jelly"
@@ -107,6 +110,7 @@
 	armor = list(melee = 5, bullet = 2, energy = 1, bomb = 30, bio = 100, rad = 100)
 	drop_items = list(/obj/random/psi/always_spawn, /obj/random/psi/weapons/always_spawn)
 	armor_divisor = 2.3
+	research_value = 9000
 
 /mob/living/carbon/superior/psi/wasonce/crimson_jelly/pitch_horror
 	name = "pitch horror"
@@ -120,6 +124,7 @@
 	knockdown_odds = 30
 	drop_items = list(/obj/random/psi/always_spawn, /obj/random/psi/weapons/always_spawn, /obj/random/psi/always_spawn, /obj/random/psi/weapons/always_spawn)
 	armor_divisor = 4
+	research_value = 12000
 
 // King's Court. Special named psi mobs with better stats and custom voice lines, they are spawned whenever the king of the hound journey.
 /mob/living/carbon/superior/psi/flesh_behemoth/baron
@@ -127,33 +132,40 @@
 	desc = "He sings for meat, for piles and piles of flesh heaped onto a rotting table for his greedy maw to consume all manner of ripened offal."
 	emote_see = list("chuckles lowly, split bleeding lips cracking into a pleased leer.", "murmurs, \"So troubling, so troubling, more gore for the pile but they bring so many toys...\"", "snorts, \"Too many butchers, not enough bakers.\"")
 	death_gasp = "<b><font size='3px'>Baron Wormwood heaves as his body crumbles, wriggling pus maggots bursting from its failing rotted bulk!</font></b>!"
+	research_value = 9500
 
 /mob/living/carbon/superior/psi/mind_gazer/viscount
 	name = "Viscount Mannimarcus"
 	desc = "His all seeing eye has let its gaze fall upon you."
 	emote_see = list("chitters in song.", "rasps, \"I told the King they would come, but his arrogance led to nothing being done.\"", "sighs wearily, \"We must be ever vigil.\"")
+	research_value = 8000
 
 /mob/living/carbon/superior/psi/pus_maggot/ash_wendigo/duke
 	name = "Duke Ravencroft"
 	desc = "He comes to protect his king. Is it out of loyalty or simply the chance to kill?"
 	emote_see = list("growls quietly.", "hisses, \"The King is dead, long live the King.\"", "yells, \"Ashes! Ashes and dust, all of you!\"")
+	research_value = 8500
 
 /mob/living/carbon/superior/psi/cerebral_crusher/marshal
 	name = "Marshal Benedictus"
 	desc = "He shall pry your secrets from your flesh and slice your mind to colorful bloodied ribbons."
 	emote_see = list("knocks a closed fist on his bone plates.", "mutters, \"They call themselves marshals, yet with no court? Hmph!\"", "grinds his knuckles along the ground, \"Not a loss, not a loss at all.\"")
+	research_value = 10000
 
 /mob/living/carbon/superior/psi/wasonce/crimson_jelly/jester
 	name = "Red Jester Thomas"
 	desc = "He laughed, even at the end."
 	emote_see = list("laughs in a chorus of voices!", "giggles madly!", "howls with laughter!")
+	research_value = 10500
 
 /mob/living/carbon/superior/psi/wasonce/crimson_jelly/pitch_horror/steward
 	name = "Steward Kerevork"
 	desc = "Enslavement."
 	emote_see = list("moans, \"There was no escape.\"", "sighs, \"I have no regrets, I went with a clear conscience.\"", "groans, \"If only we could have forseen this.\"")
+	research_value = 14000
 
 /mob/living/carbon/superior/psi/licker/pack
 	name = "pack runners"
 	desc = "The hound of the crown's pack, loyal and deadly, they've learned to meld into each other, weaving themselves like smoke between the hound and you. Even the Hound has his servants."
 	density = FALSE
+	research_value = 3500

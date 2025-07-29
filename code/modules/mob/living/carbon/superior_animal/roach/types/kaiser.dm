@@ -28,6 +28,7 @@ Has ability of every roach.
 	mob_size = MOB_LARGE  // The same as Hivemind Tyrant
 	status_flags = 0
 	mouse_opacity = MOUSE_OPACITY_OPAQUE // Easier to click on in melee, they're giant targets anyway
+	research_value = 1500 // Large kaiser roach - maximum roach research value
 
 	flash_resistances = 9.9 // were not fully flash proof but almost...
 	armor_divisor = 4

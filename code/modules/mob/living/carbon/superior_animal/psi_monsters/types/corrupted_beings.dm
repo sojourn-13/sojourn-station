@@ -27,7 +27,7 @@
 
 	//Good stats baseline in case admins dont edit these
 	armor = list(melee = 11, bullet = 3, energy = 11, bomb = 10, bio = 100, rad = 100, agony = 17)
-
+	research_value = 2500
 
 /mob/living/carbon/superior/psi/daskvey_follower
 	name = "Daskveyian Swordsman"
@@ -64,6 +64,7 @@
 
 	//Same armor that they are warning
 	armor = list(melee = 7, bullet = 7, energy = 7, bomb = 30, bio = 100, rad = 50)
+	research_value = 3000
 
 /*
 Note about the deepmaints_bound!
@@ -80,6 +81,7 @@ They are soully made and reflavoured to be for PVE.
 	can_leave = FALSE
 	drop_items = list(/obj/item/tool/sword/cult/deepmaints, /obj/random/psi/always_spawn)
 	color = null
+	research_value = 2800
 
 /mob/living/carbon/superior/psi/daskvey_follower/daskvey
 	name = "Daskvey"
@@ -123,6 +125,7 @@ They are soully made and reflavoured to be for PVE.
 	//Dragons are weak to melee - source: Dnd
 	//Ive never seen a wizard NOT nuke a dragon with fire ball
 	armor = list(melee = 10, bullet = 17, energy = 23, bomb = 40, bio = 100, rad = 100)
+	research_value = 15000
 
 /mob/living/carbon/superior/psi/daskvey_follower/daskvey/MiddleClickOn(mob/targetDD as mob)
 	var/mob/living/carbon/superior/psi/daskvey_follower/daskvey/shooter = src //We're the shooter.
@@ -201,6 +204,7 @@ They are soully made and reflavoured to be for PVE.
 	drop_items = list(/obj/item/tool/sword/cleaver/cult/deepmaints)
 
 	armor_divisor = 1.25
+	research_value = 3200
 
 /mob/living/carbon/superior/psi/daskvey_follower/cleaver/deepmaints_bound
 	name = "Wild Daskveyian Wall Breaker"
@@ -212,6 +216,7 @@ They are soully made and reflavoured to be for PVE.
 	psionic_respawn = TRUE //Endles fighter
 	can_leave = FALSE
 	drop_items = list(/obj/item/tool/sword/cleaver/cult/deepmaints, /obj/random/psi/always_spawn)
+	research_value = 3000
 
 /mob/living/carbon/superior/psi/daskvey_follower/plasma
 	name = "Daskveyian Plasma Caster"
@@ -237,6 +242,7 @@ They are soully made and reflavoured to be for PVE.
 	projectiletype = /obj/item/projectile/plasma/aoe/heat
 
 	armor_divisor = 1
+	research_value = 3500
 
 /mob/living/carbon/superior/psi/daskvey_follower/plasma/deepmaints_bound
 	name = "Wild Daskveyian Plasma Caster"
@@ -246,6 +252,7 @@ They are soully made and reflavoured to be for PVE.
 	psionic_respawn = TRUE //Endles fighter
 	can_leave = FALSE
 	drop_items = list(/obj/item/gun/energy/plasma/cassad/cult/deepmaints, /obj/random/psi/always_spawn)
+	research_value = 3300
 
 /mob/living/carbon/superior/psi/daskvey_follower/laser
 	name = "Daskveyian Las-Gunner"
@@ -274,6 +281,7 @@ They are soully made and reflavoured to be for PVE.
 	projectiletype = /obj/item/projectile/beam
 
 	armor_divisor = 1
+	research_value = 3400
 
 /mob/living/carbon/superior/psi/daskvey_follower/laser/deepmaints_bound
 	name = "Wild Daskveyian Las-Gunner"
@@ -283,6 +291,7 @@ They are soully made and reflavoured to be for PVE.
 	psionic_respawn = TRUE //Endles fighter
 	can_leave = FALSE
 	drop_items = list(/obj/item/gun/energy/laser/cult/deepmaints, /obj/random/psi/always_spawn)
+	research_value = 3200
 
 /mob/living/carbon/superior/psi/daskvey_follower/smg
 	name = "Daskveyian Assaulter"
@@ -315,6 +324,7 @@ They are soully made and reflavoured to be for PVE.
 	mag_type = /obj/item/ammo_magazine/smg_35/empty
 
 	armor_divisor = 1
+	research_value = 3100
 
 /mob/living/carbon/superior/psi/daskvey_follower/smg/Initialize(mapload)
 	. = ..()
@@ -330,6 +340,7 @@ They are soully made and reflavoured to be for PVE.
 	psionic_respawn = TRUE //Endles fighter
 	can_leave = FALSE
 	drop_items = list(/obj/item/gun/projectile/automatic/greasegun/cult/deepmaints, /obj/random/psi/always_spawn)
+	research_value = 2900
 
 /mob/living/carbon/superior/psi/daskvey_follower/rifle
 	name = "Daskveyian Rifleperson"
@@ -362,6 +373,7 @@ They are soully made and reflavoured to be for PVE.
 	mag_type = /obj/item/ammo_magazine/rifle_75/empty
 
 	armor_divisor = 1
+	research_value = 3300
 
 /mob/living/carbon/superior/psi/daskvey_follower/rifle/Initialize(mapload)
 	. = ..()
@@ -377,6 +389,7 @@ They are soully made and reflavoured to be for PVE.
 	psionic_respawn = TRUE //Endles fighter
 	can_leave = FALSE
 	drop_items = list(/obj/item/gun/projectile/automatic/sts/rifle/cult/deepmaints, /obj/random/psi/always_spawn)
+	research_value = 3100
 
 /mob/living/carbon/superior/psi/daskvey_follower/shield
 	name = "Daskveyian Juggernaut "
@@ -397,6 +410,7 @@ They are soully made and reflavoured to be for PVE.
 	armor_divisor = 1
 	armor = list(melee = 15, bullet = 15, energy = 3, bomb = 100, bio = 100, rad = 90)
 	var/knockdown_odds = 30
+	research_value = 4000
 
 // BUMP!
 /mob/living/carbon/superior/psi/daskvey_follower/shield/UnarmedAttack(atom/A, proximity)
@@ -418,6 +432,7 @@ They are soully made and reflavoured to be for PVE.
 	psionic_respawn = TRUE //Endles fighter
 	can_leave = FALSE
 	drop_items = list(/obj/random/psi/always_spawn, /obj/random/psi/always_spawn)
+	research_value = 3800
 
 /mob/living/carbon/superior/psi/daskvey_follower/halberd
 	name = "Daskveyian Halberdier"
@@ -437,6 +452,7 @@ They are soully made and reflavoured to be for PVE.
 
 	armor_divisor = 1.5
 	armor = list(melee = 15, bullet = 15, energy = 3, bomb = 100, bio = 100, rad = 90)
+	research_value = 4200
 
 /mob/living/carbon/superior/psi/daskvey_follower/halberd/deepmaints_bound
 	name = "Wild Daskveyian Halberdier"
@@ -446,6 +462,7 @@ They are soully made and reflavoured to be for PVE.
 	psionic_respawn = TRUE //Endles fighter
 	can_leave = FALSE
 	drop_items = list(/obj/random/psi/always_spawn, /obj/random/psi/always_spawn)
+	research_value = 4000
 
 /mob/living/carbon/superior/psi/daskvey_follower/weakling
 	name = "Daskveyian Uplifted"
@@ -465,6 +482,7 @@ They are soully made and reflavoured to be for PVE.
 
 	armor_divisor = 1
 	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 0, rad = 0)
+	research_value = 1000
 
 /mob/living/carbon/superior/psi/daskvey_follower/weakling/deepmaints_bound
 	name = "Wild Daskveyian Uplifted"
@@ -474,6 +492,7 @@ They are soully made and reflavoured to be for PVE.
 	psionic_respawn = TRUE //Endles fighter
 	can_leave = FALSE
 	drop_items = list(/obj/random/psi/always_spawn)
+	research_value = 1200
 
 /mob/living/carbon/superior/psi/daskvey_follower/orb_shooter
 	name = "Daskveyian Cultist "
@@ -502,18 +521,7 @@ They are soully made and reflavoured to be for PVE.
 	ranged = TRUE
 	comfy_range = 6
 	projectiletype = /obj/item/projectile/kinetic_blast_electro/dangerous
-
-/mob/living/carbon/superior/psi/daskvey_follower/orb_shooter/handle_ammo_check()
-	if(prob(40))
-		projectiletype = /obj/item/projectile/kinetic_blast_electro/brutal
-
-	if(prob(30))
-		projectiletype = /obj/item/projectile/kinetic_blast_electro/robust
-
-	if(prob(20))
-		projectiletype = /obj/item/projectile/kinetic_blast_electro/dangerous
-
-	..()
+	research_value = 2800
 
 /mob/living/carbon/superior/psi/daskvey_follower/orb_shooter/deepmaints_bound
 	name = "Wild Daskveyian Cultist "
@@ -523,6 +531,7 @@ They are soully made and reflavoured to be for PVE.
 	psionic_respawn = TRUE //Endles fighter
 	can_leave = FALSE
 	drop_items = list(/obj/random/psi/always_spawn, /obj/random/psi/always_spawn)
+	research_value = 3000
 
 /mob/living/carbon/superior/psi/daskvey_follower/orb_master
 	name = "Daskveyian Hand"
@@ -551,6 +560,7 @@ They are soully made and reflavoured to be for PVE.
 	ranged = TRUE
 	comfy_range = 6
 	projectiletype = /obj/item/projectile/kinetic_blast_pyro
+	research_value = 3800
 
 /mob/living/carbon/superior/psi/daskvey_follower/orb_master/handle_ammo_check()
 	if(prob(40))
@@ -576,3 +586,4 @@ They are soully made and reflavoured to be for PVE.
 	psionic_respawn = TRUE //Endles fighter
 	can_leave = FALSE
 	drop_items = list(/obj/random/psi/always_spawn, /obj/random/psi/always_spawn, /obj/random/psi/always_spawn)
+	research_value = 4000

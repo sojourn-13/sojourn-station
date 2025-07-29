@@ -12,3 +12,4 @@
 
 	mob_ablative_armor = 4
 	ablative_retaining = ABLATION_CERAMIC
+	research_value = 1000

@@ -1,5 +1,5 @@
 
-//Exoidic disks from random other places.
+//Exotic disks from random other places.
 
 //Sun Branch
 /obj/item/pc_part/drive/disk/design/sun_branch

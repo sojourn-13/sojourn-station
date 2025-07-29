@@ -27,11 +27,13 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 	can_burrow = FALSE
 	hunger_enabled = 0//Until automated eating mechanics are enabled, disable hunger for hostile mobs
 
+	var/research_value = 100
+
 	var/minimum_distance = 1 //Minimum approach distance, so ranged mobs chase targets down, but still keep their distance set in tiles
 	var/atom/targets_from = null //all range/attack/etc. calculations should be done from this atom, defaults to the mob itself, useful for Vehicles and such
 
 	var/vision_range = 9 //How big of an area to search for targets in, a vision of 9 attempts to find targets as soon as they walk into screen view
-	var/aggro_vision_range = 9 //If a mob is aggro, we search in this radius. Defaults to 9 to keep in line with original simple mob aggro radius
+	var/aggro_vision_range = 9 //If a mob is aggro, we search in this radius. Defaults to 9 to keep in line with original  mob aggro radius
 	var/approaching_target = FALSE //We should dodge now
 
 	var/poison_per_bite = 0 //To handle poisonous bigguns

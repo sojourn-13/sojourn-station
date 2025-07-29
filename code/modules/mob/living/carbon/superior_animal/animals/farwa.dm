@@ -25,6 +25,7 @@
 	mob_size = MOB_SMALL
 	colony_friend = TRUE
 	friendly_to_colony = TRUE
+	research_value = 300
 
 /mob/living/carbon/superior/farwa/Life()
 	..()
@@ -51,3 +52,4 @@
 	icon_state = "sgt_kitter"
 	icon_living = "sgt_kitter"
 	icon_dead = "sgt_kitter_dead"
+	research_value = 350

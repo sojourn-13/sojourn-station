@@ -1207,7 +1207,7 @@
 #include "code\game\objects\items\weapons\weldbackpack.dm"
 #include "code\game\objects\items\weapons\autolathe_disk\absolute_disks.dm"
 #include "code\game\objects\items\weapons\autolathe_disk\blackshield_disks.dm"
-#include "code\game\objects\items\weapons\autolathe_disk\exoidic.dm"
+#include "code\game\objects\items\weapons\autolathe_disk\exotic.dm"
 #include "code\game\objects\items\weapons\autolathe_disk\greyson_excelsior_disks.dm"
 #include "code\game\objects\items\weapons\autolathe_disk\guild_disks.dm"
 #include "code\game\objects\items\weapons\autolathe_disk\gun_parts_disks.dm"

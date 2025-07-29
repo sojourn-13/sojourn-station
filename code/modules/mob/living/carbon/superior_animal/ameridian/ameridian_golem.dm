@@ -58,6 +58,7 @@
 	//Golems in general to make shotguns more affective for them use ablative armor
 	mob_ablative_armor = 8
 	ablative_retaining = ABLATION_SOFT
+	research_value = 1800
 
 
 /mob/living/carbon/superior/ameridian_golem/add_initial_transforms()

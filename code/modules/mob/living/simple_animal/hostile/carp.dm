@@ -30,6 +30,7 @@
 	inherent_mutations = list(MUTATION_EPILEPSY, MUTATION_DEAF, MUTATION_BAROTRAUMA)
 	faction = "carp"
 	var/knockdown_odds	= 20 // Percentage chance of being knocked down, counteracted by Toughness stat
+	research_value = 1500 // Space carp - basic creature
 
 /mob/living/simple/hostile/carp/Initialize(worldload)
 	..()
@@ -47,6 +48,7 @@
 	melee_damage_lower = 4
 	melee_damage_upper = 6
 	knockdown_odds	= 15
+	research_value = 100
 
 /mob/living/simple/hostile/carp/baby/Initialize(worldload)
 	..()
@@ -74,6 +76,7 @@
 
 	break_stuff_probability = 100
 	knockdown_odds	= 25
+	research_value = 800
 
 /mob/living/simple/hostile/carp/pike/Initialize(worldload)
 	..()
@@ -96,6 +99,7 @@
 	melee_damage_lower = 25
 	melee_damage_upper = 30
 	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_EPILEPSY, MUTATION_DEAF, MUTATION_BAROTRAUMA)
+	research_value = 1200
 
 	break_stuff_probability = 100
 	knockdown_odds	= 30
@@ -130,6 +134,7 @@
 
 	armor = list(melee = 6, bullet = 2, energy = 16, bomb = 25, bio = 100, rad = 25) //Lasers dont work on scales
 	knockdown_odds	= 35
+	research_value = 2500
 
 /mob/living/simple/hostile/carp/greatwhite/Initialize(worldload)
 	..()

@@ -5,18 +5,18 @@
 	uid = "marqua"
 	tree_x = 0.1
 	tree_y = 0.4
-	start_discovered = TRUE
+	start_discovered = FALSE
 	spawn_always = TRUE
 	markup = UNIQUE_GOODS
-	recommendations_needed = 0
-	hidden_inv_threshold  = 1
+	recommendations_needed = 2
+	hidden_inv_threshold  = 2500
 	recommendation_threshold = 0
 
 	icon_states = list("marqua_dyson", "planet")
 
 
 	//Currently only has seen Sun Branch,
-	name_pool = list("Kar Thil Kor" = "Quite a uniquic planet. Many uniquic devolments have been made here, grand. I can trade newest disks from far and wide.")
+	name_pool = list("Kar Thil Kor" = "A most remarkable world of unique developments. We have catalogued many exceptional innovations. Offering the finest technological disks and tools from across distant star systems.")
 	inventory = list(
 		"Disks" = list(
 			/obj/item/pc_part/drive/disk/design/sun_branch = good_data("Sun Branch Disk", list(4, 6), 1200)
@@ -28,6 +28,11 @@
 			/obj/item/tool/sword/dawn = good_data("\"Crack of Dawn\" blade", list(4, 6), 1500),
 			/obj/item/tool/sword/sun_set = good_data("\"Sunset\" sword", list(4, 6), 800),
 			/obj/item/clothing/glasses/firefly_glasses = good_data("\"Firefly\" glasses", list(4, 6), 500)
+		),
+		"Tools and Devices" = list(
+			/obj/item/tool/polytool/marqua = good_data("Mar'quaian engineering polytool", list(4, 6), 2500),
+			/obj/item/tool/medmultitool/marqua = good_data("Mar'quaian medical omnitool", list(4, 6), 3000),
+			/obj/item/tool/shovel/combat/marqua = good_data("Mar'quaian crovel", list(4, 6), 1200)
 		)
 	)
 	offer_types = list(

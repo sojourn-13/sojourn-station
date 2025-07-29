@@ -51,21 +51,23 @@
 	workspeed = 0.8
 
 /obj/item/tool/polytool/marqua
-	name = "Mar'quaian poly tool"
-	desc = "A complicated mess of drivers, bits, wrench heads, snips and pliers, this intricate mess of a tool in a handle has it all, its made of a strange alloy yet still has a slot under it for fuel."
-	icon_state = "clustertool"
-	item_state = "clustertool"
-	max_health = 300
+	name = "Mar'quaian engineering polytool"
+	desc = "An ergonomic cell loading polytool consisting of an arc-welder like design with far more intricate measures taken to allow it to complete near-any mechanical task, made of a strange alloy, and seemingly constructed without any screws welds or bolts on its surface, perfectly polished. Uses a medium cell."
+	icon_state = "skrell_welder_arc"
+	item_state = "skrell_welder_arc"
 	w_class = ITEM_SIZE_NORMAL
-	worksound = WORKSOUND_DRIVER_TOOL
-	switched_on_qualities = list(QUALITY_SCREW_DRIVING = 75, QUALITY_BOLT_TURNING = 75, QUALITY_DRILLING = 40, QUALITY_PULSING = 60, QUALITY_WIRE_CUTTING = 30, QUALITY_WELDING = 60, QUALITY_CAUTERIZING = 30)
-	price_tag = 6000
-	use_fuel_cost = 0.01
-	max_fuel = 100
+	worksound = WORKSOUND_WELDING
+	switched_on_qualities = list(QUALITY_SCREW_DRIVING = 90, QUALITY_WELDING = 75, QUALITY_BOLT_TURNING = 90, QUALITY_DRILLING = 60, QUALITY_PRYING = 70, QUALITY_WIRE_CUTTING = 45, QUALITY_HAMMERING = 70, QUALITY_SHOVELING = 70, QUALITY_SAWING = 70, QUALITY_CUTTING = 70, QUALITY_PULSING = 75, QUALITY_CAUTERIZING = 45)
+	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_SILVER = 3, MATERIAL_GOLD = 2, MATERIAL_DIAMOND = 0.5, MATERIAL_BIOMATTER = 10)
+	price_tag = 7000 //valuable given its design
+	use_power_cost = 0.2
+	sparks_on_use = FALSE
+	suitable_cell = /obj/item/cell/medium
 	toggleable = TRUE
-	create_hot_spot = TRUE
 	glow_color = COLOR_BLUE_LIGHT
-	max_upgrades = 0 //Superior in all ways to the munchkin and arc welder as a tool, only way to obtain it is through guild crafting or getting really lucky in cargo tech lockers. Give how fuck rare munckins are, balance by scarcity factor. -Kaz
+	max_upgrades = 0
+	agonyforce = 80
+	hitcost = 10
 
 /obj/item/tool/medmultitool
 	name = "Greyson Positronic \"Autosurgeon\" medical omnitool"
@@ -125,6 +127,25 @@
 	degradation = 0
 	max_upgrades = 0
 	workspeed = 1.1 //Can't be upgraded and its locked behind a race that can literally get no other implants but this one, which can't be upgraded, so its slightly better. -Kaz
+
+/obj/item/tool/medmultitool/marqua
+	name = "Mar'quaian medical omnitool"
+	desc = "A complicated mess of medical tools in a single cell-loading tool, this intricate and sleek tool in a small handle has it all, its made of a strange alloy and is seemingly constructed without any screws welds or bolts on its surface, perfectly polished. Uses a medium cell."
+	icon_state = "clustertool"
+	item_state = "clustertool"
+	max_health = 300
+	w_class = ITEM_SIZE_NORMAL
+	worksound = WORKSOUND_DRIVER_TOOL
+	switched_on_qualities = list(QUALITY_CLAMPING = 75, QUALITY_RETRACTING = 75, QUALITY_BONE_SETTING = 75, QUALITY_CAUTERIZING = 75, QUALITY_SAWING = 56, QUALITY_CUTTING = 75, QUALITY_LASER_CUTTING = 56, QUALITY_WIRE_CUTTING = 47, QUALITY_BONE_GRAFTING = 94)
+	matter = list(MATERIAL_PLASTEEL = 8, MATERIAL_SILVER = 4, MATERIAL_GOLD = 2, MATERIAL_DIAMOND = 0.5, MATERIAL_BIOMATTER = 10)
+	price_tag = 6000
+	suitable_cell = /obj/item/cell/medium
+	use_power_cost = 0.2 //Effective!
+	max_upgrades = 2
+	workspeed = 1.2
+	price_tag = 8000 // Super fancy
+	degradation = 0
+	max_upgrades = 0 //Superior in all ways to the munchkin and arc welder as a tool, only way to obtain it is through guild crafting or getting really lucky in cargo tech lockers. Give how fuck rare munckins are, balance by scarcity factor. -Kaz
 
 /obj/item/tool/medmultitool/medimplant/organic
 	name = "organic medical omnitool"

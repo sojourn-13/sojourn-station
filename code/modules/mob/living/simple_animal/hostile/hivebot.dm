@@ -35,6 +35,7 @@
 	armor = list(melee = 3, bullet = 1, energy = 5, bomb = 25, bio = 100, rad = 25)
 	cant_gib = TRUE
 	sanity_damage = 1
+	research_value = 400
 
 /mob/living/simple/hostile/hivebot/emp_act(severity)
 	..()
@@ -102,6 +103,7 @@
 	light_color = COLOR_LIGHTING_RED_BRIGHT
 	mob_classification = CLASSIFICATION_SYNTHETIC
 	move_to_delay = 5
+	research_value = 500
 
 /mob/living/simple/hostile/republicon/emp_act(severity)
 	..()
@@ -117,6 +119,7 @@
 	icon_state = "republicon-armed"
 	icon_dead = "republicon-armed_dead"
 	ranged = 1
+	research_value = 600
 
 /mob/living/carbon/superior/sentinal_seeker
 	name = "Forgotten Seeker"
@@ -172,6 +175,7 @@
 	light_range = 6
 	light_color = COLOR_LIGHTING_RED_BRIGHT
 	mob_classification = CLASSIFICATION_SYNTHETIC
+	research_value = 2000
 
 /mob/living/carbon/superior/sentinal_seeker/New()
 	..()

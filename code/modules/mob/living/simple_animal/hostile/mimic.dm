@@ -36,6 +36,7 @@
 
 	faction = "mimic"
 	move_to_delay = 2
+	research_value = 300
 
 /mob/living/simple/hostile/mimic/Initialize()
 	icon_state = "mimic_[pick("trashcart","crate","bin","steel","wood","med","freezer","wep","stool","body","ore")]"

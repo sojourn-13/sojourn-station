@@ -13,12 +13,14 @@
 	meat_type = /obj/item/reagent_containers/snacks/meat/spider/hunter
 	meat_amount = 4
 	emote_see = list("chitters.","rubs its legs.","bounces in place.")
+	research_value = 1200
 
 /mob/living/carbon/superior/spider/hunter/cloaker
 	name = "cloaker spider"
 	desc = "Furry and black, it makes you shudder to look at it. This one has a weaker chameleonic chitin that makes it hard to see."
 	alpha = 50
 	armor = list(melee = 1, bullet = 0, energy = 0, bomb = 0, bio = 10, rad = 25, agony = 0)
+	research_value = 1300
 
 
 /mob/living/carbon/superior/spider/hunter/cloaker/death() //We are now unable to chameleonic chitin do to being dead
@@ -34,6 +36,7 @@
 	health = 100 * SPIDER_HEALTH_MOD
 	melee_damage_lower = 20
 	melee_damage_upper = 25
+	research_value = 1400
 
 /mob/living/carbon/superior/spider/hunter/mindweaver
 	name = "mindweaver spider"
@@ -93,7 +96,7 @@
 			if(L.stats.getPerk(PERK_ASS_OF_CONCRETE) || L.stats.getPerk(PERK_BRAWN))
 				return
 			L.Weaken(3)
-			L.visible_message(SPAN_DANGER("\the [src] knocks down \the [L]!"))
+			L.visible_message(SPAN_DANGER("\the [src] knocks down \he [L]!"))
 
 	. = ..()
 

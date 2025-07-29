@@ -38,6 +38,7 @@
 	mob_size = MOB_LARGE
 	attack_sound = 'sound/xenomorph/alien_bite2.ogg'
 	sanity_damage = 3
+	research_value = 10000
 
 /obj/item/projectile/renderspine
 	name = "spine"
@@ -378,6 +379,7 @@
 	rapid = 1
 	can_burrow = FALSE
 	mob_size = MOB_LARGE
+	research_value = 5000
 
 /mob/living/simple/hostile/poporavtomat/ex_act(severity, target)
 	switch (severity)

@@ -8,7 +8,7 @@
 	recommendations_needed = 1
 	name_pool = list("B-42-Alpha" = "Unknown signature, bluespace traces interfere with sensors. Unable to triangulate object.")
 	icon_states = list("ring_active", "ring")
-
+	stations_recommended = list("marqua")
 
 	inventory = list(
 		"#$285@$532#$@" = list(
