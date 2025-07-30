@@ -4,26 +4,27 @@
 	icon_state = "emp"
 	item_state = "empgrenade"
 	origin_tech = list(TECH_MATERIAL = 2, TECH_MAGNET = 3)
+	var/pluse_range_h = 4
+	var/pluse_range_l = 10
 
 /obj/item/grenade/empgrenade/prime()
 	..()
-	if(empulse(src, 4, 10))
+	if(empulse(src, pluse_range_h, pluse_range_l))
 		icon_state = "emp_off"
 		desc = "[initial(desc)] It has already been used."
 	return
 
 /obj/item/grenade/empgrenade/low_yield
 	name = "HS EMP grenade \"Power Zapper\" - C"
-	desc = "A weaker variant of the \"Power Zapper\" emp grenade, with lesser radius."
+	desc = "A weaker variant of the \"Frye\" emp grenade, with lesser radius."
 	icon_state = "lyemp"
 	item_state = "empgrenade"
-	origin_tech = list(TECH_MATERIAL = 2, TECH_MAGNET = 3)
+	pluse_range_h = 1
+	pluse_range_l = 4
 
-/obj/item/grenade/empgrenade/low_yield/prime() // Inheritance is a fuck . this made low yields as effective as normal.
-	var/turf/T = get_turf(src)
-	if(T)
-		T.hotspot_expose(700,125)
-	if(empulse(src, 4, 1))
-		icon_state = "emp_off"
-		desc = "[initial(desc)] It has already been used."
-	return
+/obj/item/grenade/empgrenade/impact
+	name = "HS EMP-I grenade \"Pluser\" - C"
+	desc = "A weaker variant of the \"Power Zapper\" emp grenade, with even lesser radius."
+	pluse_range_h = 0
+	pluse_range_l = 2
+	impact = TRUE

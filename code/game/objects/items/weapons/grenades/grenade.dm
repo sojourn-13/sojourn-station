@@ -9,11 +9,15 @@
 	throw_range = 20
 	flags = CONDUCT
 	slot_flags = SLOT_BELT|SLOT_MASK
+	price_tag = 300
 	var/active = 0
 	var/det_time = 40
 	var/loadable = TRUE
-	var/variance = 0 //How much the fuse time varies up or down. Punishes cooking with makeshift nades, proper ones should have 0
-	price_tag = 300
+	//How much the fuse time varies up or down. Punishes cooking with makeshift nades, proper ones should have 0
+	var/variance = 0
+	var/impact = FALSE
+	var/impact_unsafe = FALSE
+	var/exploded = FALSE
 
 /obj/item/grenade/proc/clown_check(var/mob/living/user)
 	if((CLUMSY in user.mutations) && prob(10))
@@ -28,6 +32,8 @@
 
 /obj/item/grenade/examine(mob/user)
 	if(..(user, 0))
+		if(impact)
+			to_chat(user, "This grenade is set to explode when hitting anything[impact_unsafe ? "" : " when primed"].")
 		if(det_time > 1)
 			to_chat(user, "The timer is set to [det_time/10] seconds.")
 			return
@@ -71,24 +77,87 @@
 
 
 /obj/item/grenade/proc/prime(mob/user)
+	if(exploded)
+		return
+	exploded = TRUE
 	var/turf/T = get_turf(src)
 	T.hotspot_expose(700,125)
-	user.hud_used.updatePlaneMasters(user)
+	if(ismob(user))
+		user.hud_used.updatePlaneMasters(user)
 
 
 /obj/item/grenade/attackby(obj/item/I, mob/user as mob)
-	if(QUALITY_SCREW_DRIVING in I.tool_qualities)
-		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, QUALITY_SCREW_DRIVING, FAILCHANCE_EASY, required_stat = STAT_COG))
-			switch(det_time)
-				if (1)
-					det_time = 30
-					to_chat(user, SPAN_NOTICE("You set the [name] for 3 second detonation time."))
-				if (30)
-					det_time = 40
-					to_chat(user, SPAN_NOTICE("You set the [name] for 4 second detonation time."))
-				if (40)
-					det_time = 1
-					to_chat(user, SPAN_NOTICE("You set the [name] for instant detonation."))
+
+	var/list/usable_qualities = list(QUALITY_SCREW_DRIVING)
+
+	if(impact)
+		usable_qualities += QUALITY_BOLT_TURNING
+
+	var/tool_type = I.get_tool_type(user, usable_qualities, src)
+	switch(tool_type)
+		if(QUALITY_BOLT_TURNING)
+			if(impact)
+				impact_unsafe = !impact_unsafe
+
+				to_chat(user, "You adjust the [src] to \
+				[impact_unsafe ? "explode even when unprimed on impact" : "explode only when when primed"].")
+				add_fingerprint(user)
+
+
+		if(QUALITY_SCREW_DRIVING)
+			if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, QUALITY_SCREW_DRIVING, FAILCHANCE_EASY, required_stat = STAT_COG))
+				switch(det_time)
+					if (1)
+						det_time = 30
+						to_chat(user, SPAN_NOTICE("You set the [name] for 3 second detonation time."))
+					if (30)
+						det_time = 40
+						to_chat(user, SPAN_NOTICE("You set the [name] for 4 second detonation time."))
+					if (40)
+						det_time = 1
+						to_chat(user, SPAN_NOTICE("You set the [name] for instant detonation."))
+
 			add_fingerprint(user)
+
+		if(ABORT_CHECK)
+			return
+
 	..()
 	return
+
+/obj/item/grenade/throw_at(atom/target, range, speed, thrower)
+	..()
+
+	//More logging
+	if(active && impact)
+		if(throwing && thrower)
+			log_and_message_admins("impact based nade \a [src] used by [thrower], to hit [target] at [jumplink(thrower)]")
+			if(ismob(thrower))
+				var/mob/M = thrower
+				M.attack_log += "\[[time_stamp()]\] <font color='red'>primed \a [src] via impact</font>"
+
+	if(impact_unsafe)
+		log_and_message_admins("impact -unsafe- based nade \a [src] used by [thrower], to hit [target] at [jumplink(thrower)]")
+		if(ismob(thrower))
+			var/mob/M = thrower
+			M.attack_log += "\[[time_stamp()]\] <font color='red'>primed \a [src] via impact</font>"
+
+
+//called when src is thrown into hit_atom
+/obj/item/grenade/throw_impact(atom/hit_atom, var/speed)
+	..()
+	if(active && impact)
+		if(throwing && thrower)
+			log_and_message_admins("primed \a [src] via impact at [hit_atom]")
+			if(ismob(thrower))
+				var/mob/M = thrower
+				M.attack_log += "\[[time_stamp()]\] <font color='red'>primed \a [src] via impact</font>"
+		prime(hit_atom)
+
+	if(impact_unsafe)
+		log_and_message_admins("primed \a [src] via impact at [hit_atom]")
+		if(ismob(thrower))
+			var/mob/M = thrower
+			M.attack_log += "\[[time_stamp()]\] <font color='red'>primed \a [src] via impact</font>"
+
+		prime(hit_atom)
