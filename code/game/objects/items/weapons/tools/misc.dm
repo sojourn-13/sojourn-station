@@ -43,8 +43,6 @@
 	switched_on_qualities = list(QUALITY_SCREW_DRIVING = 30, QUALITY_WELDING = 30, QUALITY_BOLT_TURNING = 30, QUALITY_DRILLING = 20, QUALITY_PRYING = 30, QUALITY_WIRE_CUTTING = 30, QUALITY_HAMMERING = 30, QUALITY_SHOVELING = 30, QUALITY_SAWING = 30, QUALITY_CUTTING = 30, QUALITY_PULSING = 30, QUALITY_CAUTERIZING = 10)
 	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_STEEL = 3)
 	price_tag = 1400
-	use_power_cost = 2
-	suitable_cell = /obj/item/cell/medium
 	toggleable = TRUE
 	glow_color = COLOR_BLUE_LIGHT
 	max_upgrades = 5
