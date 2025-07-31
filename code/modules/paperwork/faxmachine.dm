@@ -169,28 +169,28 @@ var/last_staff_request_time = 0
     // Send the ping to the Discord relay (AphroditeBot.py expects TCP or webhook, here we use send2irc)
     var/ping_id = null
     switch(role_to_ping)
-        if("Low Council") 
+        if("Low Council")
             ping_id = "lowcouncil"
-        if("Artificer's Guild") 
+        if("Artificer's Guild")
             ping_id = "guild"
-        if("Security Roles") 
+        if("Security Roles")
             ping_id = "security"
-        if("SI Medical") 
+        if("SI Medical")
             ping_id = "medical"
-        if("SI Research") 
+        if("SI Research")
             ping_id = "science"
-        if("LSS Cargo") 
+        if("LSS Cargo")
             ping_id = "cargo"
-        if("LSS Service") 
+        if("LSS Service")
             ping_id = "service"
-        if("Church") 
+        if("Church")
             ping_id = "church"
-        if("Prospectors") 
+        if("Prospectors")
             ping_id = "prospectors"
-    
+
     // Debug logging to check if ping_id is set
     to_chat(usr, span_notice("Debug: role_to_ping=[role_to_ping], ping_id=[ping_id]"))
-    
+
     if(ping_id)
         var/requester = (usr && usr.name) ? usr.name : "Unknown"
         // Add channel id for department pings
@@ -199,7 +199,7 @@ var/last_staff_request_time = 0
         send2irc(msg)
     else
         to_chat(usr, span_warning("Error: Could not find ping_id for department: [role_to_ping]"))
-    
+
     to_chat(usr, span_notice("Your request was transmitted."))
 
 /obj/machinery/photocopier/faxmachine/proc/sendfax(var/destination)
@@ -301,9 +301,6 @@ var/last_staff_request_time = 0
         // Escape the HTML content to prevent shell interpretation issues
         html_content = html_encode(html_content)
         var/msg = "FAX: [faxname] '[sent.name]' sent from [key_name(sender)] ([sender_ckey]) as [sender_char_name] (ID: [auth_name])\\nHTML Render:\\n[html_content]"
-        // Escape the HTML content to prevent shell interpretation issues
-        html_content = html_encode(html_content)
-        var/msg = "FAX: [faxname] '[sent.name]' sent from [key_name(sender)] ([sender_ckey]) as [sender_char_name] (ID: [auth_name])\\nHTML Render:\\n[html_content]"
         send2irc(msg)
     else if (istype(sent, /obj/item/photo))
         var/obj/item/photo/H = sent
@@ -312,9 +309,6 @@ var/last_staff_request_time = 0
             + "<img src='photo_[faxid].png'>" \
             + "[H.scribble ? "<br>Written on the back:<br><i>[H.scribble]</i>" : ""]"\
             + "</body></html>"
-        // Escape the HTML content to prevent shell interpretation issues
-        html_content = html_encode(html_content)
-        var/msg = "FAX: [faxname] '[sent.name]' sent from [key_name(sender)] ([sender_ckey]) as [sender_char_name] (ID: [auth_name])\\nHTML Render:\\n[html_content]"
         // Escape the HTML content to prevent shell interpretation issues
         html_content = html_encode(html_content)
         var/msg = "FAX: [faxname] '[sent.name]' sent from [key_name(sender)] ([sender_ckey]) as [sender_char_name] (ID: [auth_name])\\nHTML Render:\\n[html_content]"
@@ -338,13 +332,12 @@ var/last_staff_request_time = 0
 
             // Escape the HTML content to prevent shell interpretation issues
             page_html_content = html_encode(page_html_content)
-            
+
 
             // Escape the HTML content to prevent shell interpretation issues
             page_html_content = html_encode(page_html_content)
-            
+
             if (page == 1)
-                var/page_msg = "FAX: [faxname] '[pageobj.name]' (Page [page] of [B.pages.len]) sent from [key_name(sender)] ([sender_ckey]) as [sender_char_name] (ID: [auth_name])\\nHTML Render:\\n[page_html_content]"
                 var/page_msg = "FAX: [faxname] '[pageobj.name]' (Page [page] of [B.pages.len]) sent from [key_name(sender)] ([sender_ckey]) as [sender_char_name] (ID: [auth_name])\\nHTML Render:\\n[page_html_content]"
                 send2irc(page_msg)
                 // Add small delay between fax and first attachment
