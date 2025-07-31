@@ -8,7 +8,7 @@
 	start_discovered = FALSE
 	spawn_always = TRUE
 	markup = UNIQUE_GOODS
-	recommendations_needed = 2
+	recommendations_needed = 0
 	hidden_inv_threshold  = 2500
 	recommendation_threshold = 0
 
