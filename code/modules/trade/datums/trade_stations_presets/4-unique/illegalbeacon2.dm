@@ -14,7 +14,6 @@
 	wealth = 0
 	hidden_inv_threshold = 6000
 	recommendations_needed = 3
-	stations_recommended = list("marqua")
 	inventory = list(
 		// TEST: pricing should be tested. Guideline is 775 credits per TC.
 		"RIG Accessories" = list(

@@ -8,7 +8,7 @@
 	start_discovered = FALSE
 	spawn_always = TRUE
 	markup = UNIQUE_GOODS
-	recommendations_needed = 2
+	recommendations_needed = 1
 	hidden_inv_threshold  = 2500
 	recommendation_threshold = 0
 
@@ -30,9 +30,9 @@
 			/obj/item/clothing/glasses/firefly_glasses = good_data("\"Firefly\" glasses", list(4, 6), 500)
 		),
 		"Tools and Devices" = list(
-			/obj/item/tool/polytool/marqua = good_data("Mar'quaian engineering polytool", list(4, 6), 2500),
-			/obj/item/tool/medmultitool/marqua = good_data("Mar'quaian medical omnitool", list(4, 6), 3000),
-			/obj/item/tool/shovel/combat/marqua = good_data("Mar'quaian crovel", list(4, 6), 1200)
+			/obj/item/tool/polytool/marqua = good_data("Mar'quaian engineering polytool", list(1, 2), 2500),
+			/obj/item/tool/medmultitool/marqua = good_data("Mar'quaian medical omnitool", list(1, 2), 3000),
+			/obj/item/tool/shovel/combat/marqua = good_data("Mar'quaian crovel", list(1, 2), 1200)
 		)
 	)
 	offer_types = list(
