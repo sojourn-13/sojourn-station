@@ -15,6 +15,7 @@
 
 	armor = list(melee = 3, bullet = 1, energy = 0, bomb = 5, bio = 20, rad = 0, agony = 0)
 	armor_divisor = 1.2
+	research_value = 300 // Tank roach - medium armored
 
 // Panzers won't slip over on water or soap.
 /mob/living/carbon/superior/roach/tank/slip(slipped_on,stun_duration=8)

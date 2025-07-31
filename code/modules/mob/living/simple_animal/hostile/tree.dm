@@ -38,6 +38,7 @@
 	bones_amount = 0
 
 	faction = "carp"
+	research_value = 150
 
 /mob/living/simple/hostile/tree/FindTarget()
 	. = ..()

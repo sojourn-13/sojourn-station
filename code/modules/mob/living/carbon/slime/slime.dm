@@ -1,4 +1,5 @@
 /mob/living/carbon/slime
+	var/research_value = 800
 	name = "baby slime"
 	icon = 'icons/mob/slimes.dmi'
 	icon_state = "grey baby slime"
@@ -74,6 +75,12 @@
 	var/sanitizedcolour = replacetext(colour, " ", "")
 	coretype = text2path("/obj/item/slime_extract/[sanitizedcolour]")
 	regenerate_icons()
+
+	// Adjust research value based on adult status
+	if(is_adult)
+		research_value = 1500
+	else
+		research_value = 800
 	..(location)
 
 /mob/living/carbon/slime/proc/set_mutation(var/colour="grey")

@@ -1,4 +1,3 @@
-
 //Swords
 
 /obj/item/tool/sword
@@ -242,10 +241,15 @@
 		if(!ishuman(M))
 			if(!issilicon(M))
 				if(is_dead(M))
+					// Calculate points based on mob's research_value variable
+					var/points_to_award = 50 // Default fallback value
+					if("research_value" in M.vars)
+						points_to_award = M.vars["research_value"]
+
 					user.visible_message("[user] drives [src.name] into [M.name]'s body, deconstructing it!", "You drive the [src.name] into [M.name], extracting research data")
 					msg_admin_attack("[user] deconned [M.name] - ([user.ckey]) with \a [src] (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[M.x];Y=[M.y];Z=[M.z]'>JMP</a>)")
 					M.dust()
-					add_points(50)
+					add_points(points_to_award)
 					add_overlay(image('icons/obj/cwj_cooking/scan.dmi', icon_state="scan_person", layer=ABOVE_WINDOW_LAYER))
 					addtimer(CALLBACK(src, TYPE_PROC_REF(/atom, update_icon)), 11)
 					return

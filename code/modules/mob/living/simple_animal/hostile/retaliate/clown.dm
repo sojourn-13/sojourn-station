@@ -41,7 +41,7 @@
 	var/banana_time = 0 // If there's no time set it won't spawn.
 	var/banana_type = /obj/item/bananapeel
 	var/attack_reagent
-
+	research_value = 400
 
 /mob/living/simple/hostile/retaliate/clown/Life()
 	. = ..()
@@ -80,12 +80,14 @@
 	response_harm = "splats"
 	emote_see = list("bubbles.", "oozes.")
 	attack_reagent = "arectine"
+	research_value = 300
 
 /mob/living/simple/hostile/retaliate/clown/giggles
 	name = "Giggles"
 	desc = "Why?"
 	icon_state = "giggles"
 	icon_living = "giggles"
+	research_value = 500
 
 /mob/living/simple/hostile/retaliate/clown/banana
 	name = "Clownana"
@@ -102,6 +104,7 @@
 	health = 250
 	speed = -10
 	banana_time = 20
+	research_value = 600
 
 /mob/living/simple/hostile/retaliate/clown/pie
 	name = "Pie spewer"
@@ -116,6 +119,7 @@
 	speed = -10
 	banana_time = 40
 	banana_type = /obj/item/reagent_containers/snacks/pie
+	research_value = 600
 
 /mob/living/simple/hostile/retaliate/clown/honkling
 	name = "Honkling"
@@ -130,6 +134,7 @@
 	melee_damage_lower = 1
 	melee_damage_upper = 1
 	attacktext = "cheers up"
+	research_value = 1500
 
 /mob/living/simple/hostile/retaliate/clown/stacked
 	name = "Clowns"
@@ -145,6 +150,7 @@
 	melee_damage_upper = 10
 	attacktext = "punches in unison"
 	pixel_x = -20
+	research_value = 700
 
 /mob/living/simple/hostile/retaliate/clown/fleshclown
 	name = "Fleshclown"
@@ -162,6 +168,7 @@
 	speed = -5
 	melee_damage_upper = 15
 	attacktext = "limply slaps"
+	research_value = 800
 
 /mob/living/simple/hostile/retaliate/clown/longface
 	name = "Longface"
@@ -182,6 +189,7 @@
 	harm_intent_damage = 5
 	melee_damage_lower = 5
 	attacktext = "YA-HONKs"
+	research_value = 900
 
 /mob/living/simple/hostile/retaliate/clown/scary
 	name = "Copyright Infringement"
@@ -201,6 +209,7 @@
 	harm_intent_damage = 30
 	melee_damage_lower = 40
 	attacktext = "copyright claims"
+	research_value = 1000
 
 /mob/living/simple/hostile/retaliate/clown/clownhulk
 	name = "Honk Hulk"
@@ -220,6 +229,7 @@
 	melee_damage_lower = 40
 	melee_damage_upper = 50
 	attacktext = "pummels"
+	research_value = 2000
 
 /mob/living/simple/hostile/retaliate/clown/clownhulk/chlown
 	name = "Chlown"
@@ -238,6 +248,7 @@
 	melee_damage_upper = 25
 	attacktext = "steals the girlfriend of"
 	attack_sound = 'sound/items/Airhorn.ogg'
+	research_value = 3000
 
 /mob/living/simple/hostile/retaliate/clown/clownhulk/honcmunculus
 	name = "Honkmunculus"
@@ -256,6 +267,7 @@
 	melee_damage_upper = 20
 	attacktext = "ferociously mauls"
 	attack_reagent = "mindbreaker"
+	research_value = 2200
 
 /mob/living/simple/hostile/retaliate/clown/clownhulk/destroyer
 	name = "The Destroyer"
@@ -271,6 +283,7 @@
 	melee_damage_lower = 20
 	melee_damage_upper = 40
 	attacktext = "acts out divine vengeance on"
+	research_value = 4000
 
 /mob/living/simple/hostile/retaliate/clown/mutant
 	name = "Unknown"
@@ -291,6 +304,7 @@
 	melee_damage_lower = 10
 	melee_damage_upper = 20
 	attacktext = "awkwardly flails at"
+	research_value = 1200
 
 /mob/living/simple/hostile/retaliate/clown/mutant/blob
 	name = "Something that was once a clown"
@@ -305,4 +319,5 @@
 	speed = 20
 	attacktext = "bounces off of"
 	attack_reagent = "mindbreaker"
+	research_value = 1800
 

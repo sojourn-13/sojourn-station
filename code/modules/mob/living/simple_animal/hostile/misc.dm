@@ -23,6 +23,7 @@
 	resistance = 8
 	has_special_parts = TRUE
 	special_parts = list(/obj/item/animal_part/wolf_tooth)
+	research_value = 250 // Samak - medium predator
 
 /mob/living/simple/hostile/diyaab
 	name = "diyaab"
@@ -50,6 +51,7 @@
 	special_parts = list(/obj/item/animal_part/wolf_tooth)
 	clone_difficulty = CLONE_EASY
 	inherent_mutations = list(MUTATION_DWARFISM, MUTATION_EPILEPSY, MUTATION_UNBALANCED, MUTATION_IMBECILE)
+	research_value = 120 // Diyaab - small pack animal
 
 /mob/living/simple/hostile/shantak
 	name = "shantak"
@@ -75,6 +77,7 @@
 	meat_amount = 6 //Pigs are known for giving meat
 	has_special_parts = TRUE
 	special_parts = list(/obj/item/animal_part/wolf_tooth)
+	research_value = 180
 
 /mob/living/simple/yithian
 	name = "yithian"
@@ -181,6 +184,7 @@
 	has_special_parts = TRUE
 	special_parts = list(/obj/item/animal_part/wolf_tooth)
 	sanity_damage = -1
+	research_value = 100
 
 /mob/living/simple/hostile/tengbrute
 	name = "tengolo brute"
@@ -213,6 +217,7 @@
 	bones_amount = 4
 	has_special_parts = TRUE
 	special_parts = list(/obj/item/animal_part/wolf_tooth)
+	research_value = 200
 
 /mob/living/simple/hostile/tengstalker
 	name = "tengolo stalker"
@@ -245,6 +250,7 @@
 	bones_amount = 4
 	has_special_parts = TRUE
 	special_parts = list(/obj/item/animal_part/wolf_tooth)
+	research_value = 280
 
 /mob/living/simple/hostile/tengcharge
 	name = "tengolo charger"
@@ -277,6 +283,7 @@
 	bones_amount = 4
 	has_special_parts = TRUE
 	special_parts = list(/obj/item/animal_part/wolf_tooth)
+	research_value = 160
 
 /mob/living/simple/hostile/helldiver
 	name = "hell diver"
@@ -321,6 +328,7 @@
 	has_special_parts = TRUE
 	special_parts = list(/obj/item/animal_part/helldiver_tooth)
 	inherent_mutations = list(MUTATION_MKNEWAIFUHAIR)
+	research_value = 300
 
 /mob/living/simple/hostile/helldiver/FindTarget()
 	. = ..()
@@ -354,6 +362,7 @@
 	meat_amount = 3
 	mob_size = MOB_MEDIUM
 	resistance = 15
+	research_value = 220
 
 // Credit to scar#1579 for the sprite.
 /mob/living/simple/hostile/retaliate/tahca
@@ -386,3 +395,4 @@
 	mob_size = MOB_MEDIUM
 	has_special_parts = TRUE
 	special_parts = list(/obj/item/animal_part/tahca_antler)
+	research_value = 190

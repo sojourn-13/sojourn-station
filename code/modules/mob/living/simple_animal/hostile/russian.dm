@@ -34,6 +34,7 @@
 	leather_amount = 0
 	bones_amount = 0
 	inherent_mutations = list(MUTATION_HEART, MUTATION_LUNG, MUTATION_LIVER, MUTATION_BLOOD_VESSEL, MUTATION_MUSCLES, MUTATION_NERVES)
+	research_value = 180
 
 
 /mob/living/simple/hostile/russian/ranged
@@ -43,6 +44,7 @@
 	projectiletype = /obj/item/projectile/bullet
 	projectilesound = 'sound/weapons/Gunshot.ogg'
 	casingtype = /obj/item/ammo_casing/magnum_40
+	research_value = 220
 
 
 /mob/living/simple/hostile/russian/death()

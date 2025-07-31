@@ -36,6 +36,7 @@
 
 	faction = "scarybat"
 	var/mob/living/owner
+	research_value = 100
 
 /mob/living/simple/hostile/scarybat/New(loc, mob/living/L as mob)
 	..()
@@ -66,3 +67,4 @@
 /mob/living/simple/hostile/scarybat/cult
 	inherent_mutations = list(MUTATION_BLINDNESS, MUTATION_ECHOLOCATION, MUTATION_TOXIN_RESISTANCE, MUTATION_BLOOD_BANK, MUTATION_VAMPIRE)
 	supernatural = 1
+	research_value = 150

@@ -39,6 +39,7 @@
 
 	var/transform_ed = FALSE
 	can_leave = TRUE
+	research_value = 11000
 
 // BUMP!
 /mob/living/carbon/superior/psi/ploge/UnarmedAttack(atom/A, proximity)

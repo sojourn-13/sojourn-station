@@ -19,3 +19,4 @@
 	leather_amount = 0
 	bones_amount = 0
 	sanity_damage = 1
+	research_value = 80

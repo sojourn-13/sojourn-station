@@ -18,6 +18,7 @@
 	speak_chance = 2
 	attacktext = "clawed"
 	armor_divisor = 1.2
+	research_value = 1200
 
 /mob/living/carbon/superior/psi/thought_melter
 	name = "thought melter"
@@ -34,6 +35,7 @@
 	poison_per_bite = 1
 	attacktext = "caressed"
 	armor_divisor = 1.5
+	research_value = 1000
 
 /mob/living/carbon/superior/psi/pus_maggot
 	name = "pus maggot"
@@ -56,11 +58,13 @@
 	steal_odds = 10
 	stat_to_steal = STAT_VIV
 	steal_amount = -2
+	research_value = 1400
 
 /mob/living/carbon/superior/psi/pus_maggot/summoned
 	momento_mori = /obj/effect/decal/cleanable/psi_ash/low_chance
 	drop_items = list(/obj/random/psi/low_chance)
 	psionic_respawn = FALSE
+	research_value = 1200
 
 
 /mob/living/carbon/superior/psi/Initialize()

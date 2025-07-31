@@ -20,6 +20,7 @@
 	response_disarm = "pushes"
 
 	known_commands = list("stay", "stop", "attack", "follow")
+	research_value = 150
 
 /mob/living/simple/hostile/commanded/bear/hit_with_weapon(obj/item/O, mob/living/user, var/effective_force, var/hit_zone)
 	. = ..()

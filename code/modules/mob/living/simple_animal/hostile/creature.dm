@@ -14,6 +14,7 @@
 	speed = 4
 	sanity_damage = 2
 	meat_type = /obj/item/reagent_containers/snacks/meat/human
+	research_value = 500
 
 /mob/living/simple/hostile/creature/cult
 	faction = "cult"
@@ -38,6 +39,7 @@
 	maxHealth = 200
 	melee_damage_lower = 20
 	melee_damage_upper = 35
+	research_value = 800
 
 /mob/living/simple/hostile/retaliate/spaceman
 	name = "spaceman"
@@ -54,6 +56,7 @@
 	melee_damage_upper = 10
 	attacktext = "hits"
 	meat_type = /obj/item/reagent_containers/snacks/meat/human
+	research_value = 150
 
 /mob/living/simple/hostile/retaliate/spaceman/leader
 	name = "spaceman leader"
@@ -69,6 +72,7 @@
 	melee_damage_upper = 40
 	attacktext = "hits"
 	meat_type = /obj/item/reagent_containers/snacks/meat/human
+	research_value = 300
 
 /mob/living/simple/hostile/madminer
 	name = "thing"
@@ -86,11 +90,13 @@
 	sanity_damage = 1
 	meat_type = /obj/item/reagent_containers/snacks/meat/human
 	attack_sound = 'sound/weapons/rapierhit.ogg'
+	research_value = 250
 
 /mob/living/simple/hostile/madminer/armed
 	desc = "It isn't a person and its armed."
 	melee_damage_lower = 20
 	melee_damage_upper = 25
+	research_value = 350
 
 /mob/living/simple/hostile/madminer/death(gibbed, deathmessage = "vanishes with a scream of agony!")
 	..()
@@ -104,6 +110,7 @@
 	health = 1000
 	maxHealth = 1000
 	sanity_damage = 4
+	research_value = 5000
 
 /mob/living/simple/hostile/madminer/cultist
 	name = "cultist"
@@ -113,6 +120,7 @@
 	melee_damage_upper = 25
 	health = 150
 	maxHealth = 150
+	research_value = 400
 
 /mob/living/simple/hostile/sargoyle
 	name = "sargoyle"
@@ -132,6 +140,7 @@
 	inherent_mutations = list(MUTATION_BLINDNESS, MUTATION_ECHOLOCATION, MUTATION_TOXIN_RESISTANCE, MUTATION_BLOOD_BANK)
 	special_parts = list(/obj/item/animal_part/sarg_horn, /obj/item/animal_part/sarg_horn)
 	armor = list(melee = 1, bullet = 2, energy = 0, bomb = 25, bio = 0, rad = 25)
+	research_value = 300
 
 /*
 #define MOOK_ATTACK_NEUTRAL 0

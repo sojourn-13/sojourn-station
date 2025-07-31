@@ -27,6 +27,7 @@
 	/// The amount of ticks the spray will exist for
 	var/spray_lifespan = 10
 	inherent_mutations = list(MUTATION_SHOCK_LESS)
+	research_value = 1600
 
 /mob/living/carbon/superior/spider/hunter/pepper/New()
 	.=..()

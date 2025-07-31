@@ -28,6 +28,7 @@
 	inherent_mutations = list(MUTATION_EPILEPSY, MUTATION_THICK_FUR, MUTATION_IMBECILE, MUTATION_NERVOUSNESS)
 	var/horror_modifer = TRUE // For-admins to turn this off
 	var/rawr_cooldown = FALSE
+	research_value = 200
 
 /mob/living/simple/hostile/bear/FindTarget()
 	. = ..()
@@ -108,6 +109,7 @@
 	health = 120
 	melee_damage_lower = 30
 	melee_damage_upper = 40
+	research_value = 350
 
 /mob/living/simple/hostile/bear/brown
 	name = "brown bear"
@@ -118,6 +120,7 @@
 	icon_state = "brownbear"
 	icon_gib = "brownbear_gib"
 	icon_dead = "brownbear_dead"
+	research_value = 220
 
 /mob/living/simple/hostile/bear/polar
 	name = "polar bear"
@@ -128,6 +131,7 @@
 	icon_state = "polarbear"
 	icon_gib = "brownbear_gib"
 	icon_dead = "polarbear_dead"
+	research_value = 250
 
 /mob/living/simple/hostile/bear/excelsior
 	name = "excelsior armored bear"
@@ -145,6 +149,7 @@
 	melee_damage_lower = 30
 	melee_damage_upper = 40
 	special_parts = list(/obj/item/animal_part/wolf_tooth,/obj/item/animal_part/wolf_tooth)
+	research_value = 600
 
 // Credit to scar#1579 for the sprite.
 /mob/living/simple/hostile/bear/mukwah
@@ -162,3 +167,4 @@
 	bones_amount = 10
 	pixel_x = -16
 	special_parts = list(/obj/item/animal_part/wolf_tooth,/obj/item/animal_part/wolf_tooth)
+	research_value = 1500

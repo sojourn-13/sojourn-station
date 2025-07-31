@@ -6,7 +6,7 @@
 	uid = "kriosanconfederacy"
 	tree_x = 0.54
 	tree_y = 0.7
-	stations_recommended = list("mcronalds")
+	stations_recommended = list("mcronalds", "marqua")
 	offer_limit = 20
 	base_income = 1600
 	wealth = 0

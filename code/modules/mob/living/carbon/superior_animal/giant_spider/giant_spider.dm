@@ -61,6 +61,8 @@
 	fancy_attack_overlay = "spider_bite_flick"
 	fancy_attack_shading = "#CBC3E3"
 
+	research_value = 1500
+
 /mob/living/carbon/superior/spider/New(var/location, var/atom/parent)
 	get_light_and_color(parent)
 	..()

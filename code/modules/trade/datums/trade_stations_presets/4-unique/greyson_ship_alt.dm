@@ -14,6 +14,7 @@
 	regain_stock = FALSE
 	name_pool = list("Dayinji" = "A still functioning, heavily armed greyson ship that still produces and offers wares, likely entirely unaware of Greyson Positronics collapse given its \
 	automated. It's a wonder it hasn't been raided, but then again its protected by a massive army of still functioning combat drones. This one specializes in a wide variety of interesting goods.")
+	stations_recommended = list("marqua")
 	inventory = list(
 		"Sheji pan" = list(
 			/obj/item/clothing/suit/space/void/greyson = good_data("GP 'Zhengdou' hardsuit", list(5, 5), 25000),

@@ -37,6 +37,7 @@
 	projectiletype = /obj/item/projectile/bullet/heavy_rifle_408/hv
 
 	needs_environment = FALSE
+	research_value = 3000
 
 /mob/living/simple/hostile/megafauna/excelsior_cosmonaught/death(gibbed, var/list/force_grant)
 	if(health <= death_threshold)

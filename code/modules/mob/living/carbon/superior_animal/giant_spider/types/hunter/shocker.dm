@@ -14,6 +14,7 @@
 	/// How much cooldown will be incremented
 	var/cooldown_increment = 5
 	inherent_mutations = list(MUTATION_SHOCK_LESS)
+	research_value = 1500
 
 /mob/living/carbon/superior/spider/hunter/shocker/UnarmedAttack(var/atom/A, var/proximity)
 	. = ..()

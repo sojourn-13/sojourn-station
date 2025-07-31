@@ -26,6 +26,7 @@
 	var/egg_inject_chance = 0 //AHAHAHAHAHAHAHAAHAHAH, no
 	life_cycles_before_sleep = 3000 //We need more time to eat and web
 	inherent_mutations = list(MUTATION_PROT_MILK, MUTATION_SPIDER_FRIEND, MUTATION_NERVOUSNESS, MUTATION_DEAF)
+	research_value = 800
 
 /mob/living/carbon/superior/spider/nurse/midwife
 	name = "midwife spider"
@@ -39,6 +40,7 @@
 	poison_per_bite = 4
 	egg_inject_chance = 5 //Yes
 	meat_type = /obj/item/reagent_containers/snacks/meat/spider/midwife
+	research_value = 1000
 
 /mob/living/carbon/superior/spider/nurse/cave_spider
 	name = "cave spider"
@@ -130,6 +132,7 @@
 	armor = list(melee = 3, bullet = 1, energy = 0, bomb = 5, bio = 10, rad = 25, agony = 0)
 	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_SPIDER_FRIEND, MUTATION_RAND_UNSTABLE, MUTATION_RAND_UNSTABLE, MUTATION_RAND_UNSTABLE)
 	armor_divisor = 2
+	research_value = 2000
 
 /mob/living/carbon/superior/spider/nurse/queen/New()
 	..()

@@ -17,3 +17,4 @@
 	meat_type = /obj/item/reagent_containers/snacks/meat/roachmeat/jager
 	meat_amount = 3
 	armor_divisor = 1.1
+	research_value = 200 // Medium hunter roach

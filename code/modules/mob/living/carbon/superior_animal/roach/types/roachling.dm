@@ -21,6 +21,7 @@
 	probability_egg_laying = 95 //We are the quickest are we dont want to waste eggs!
 	var/amount_grown = 0
 	var/big_boss = FALSE
+	research_value = 75 // Smallest roach - lowest research value
 
 
 /mob/living/carbon/superior/roach/roachling/Life()

@@ -12,6 +12,7 @@
 	var/list/known_commands = list("stay", "stop", "attack", "follow")
 	var/mob/master = null //undisputed master. Their commands hold ultimate sway and ultimate power.
 	var/list/allowed_targets = list() //WHO CAN I KILL D:
+	research_value = 80
 
 /mob/living/simple/hostile/commanded/hear_say(var/message, var/verb = "says", var/datum/language/language = null, var/alt_name = "", var/italics = 0, var/mob/speaker = null, var/sound/speech_sound, var/sound_vol)
 	if((speaker in friends) || speaker == master)

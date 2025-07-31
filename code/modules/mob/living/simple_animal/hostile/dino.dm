@@ -34,6 +34,7 @@
 	bones_amount = 6 //The amount of bone sheets dropped.
 	mob_size = MOB_LARGE
 	sanity_damage = 1
+	research_value = 600
 
 /mob/living/simple/hostile/dino/tagilla
 	faction = "neutral"
@@ -50,6 +51,7 @@
 	melee_damage_upper = 45
 	friendly_to_colony = TRUE
 	sanity_damage = -1
+	research_value = 1200
 
 /mob/living/simple/hostile/dino/tagilla/FindTarget()
 	var/atom/T = null
