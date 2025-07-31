@@ -62,6 +62,7 @@
 	sparks_on_use = FALSE
 	suitable_cell = /obj/item/cell/medium
 	toggleable = TRUE
+	degradation = 0
 	glow_color = COLOR_BLUE_LIGHT
 	max_upgrades = 0
 	agonyforce = 80
