@@ -1,6 +1,6 @@
 /mob/living/carbon/human/psionic_tumor/proc/candle_enhancer()
-	set category = "Psionic powers"
-	set name = "Forever Candle (1)"
+	set category = "Psionic powers.Transform"
+	set name = "(1) Forever Candle"
 	set desc = "Spend a single psi point make a candle burn brighter and forever."
 	var/psi_point_cost = 1
 	var/mob/living/carbon/human/user = src
@@ -26,8 +26,8 @@
 			user.show_message(SPAN_DANGER("You have to hold a candle to enhance it."))
 
 /mob/living/carbon/human/psionic_tumor/proc/psi_injector_enhancer()
-	set category = "Psionic powers"
-	set name = "Psionic Breath (1)"
+	set category = "Psionic powers.Transform"
+	set name = "(1) Psionic Breath"
 	set desc = "Spend a single psi point make a psionic inhaler be able to bypass masks, as well as increases its affectiveness."
 	var/psi_point_cost = 1
 	var/mob/living/carbon/human/user = src

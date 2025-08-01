@@ -1,7 +1,7 @@
 
 /mob/living/carbon/human/proc/telekineticprowress()
-	set category = "Psionic powers"
-	set name = "Telekinetic Prowess (1)"
+	set category = "Psionic powers.Telepathy"
+	set name = "(1) Telekinetic Prowess"
 	set desc = "Spend a single point of your psi essence to gain telekinesis. Lasts indefinitely, unless it's forcefully removed or if you willingly end it yourself."
 	var/psi_point_cost = 1
 	var/mob/living/carbon/human/user = src
@@ -19,8 +19,8 @@
 			to_chat(user, "You already have telekinesis.")
 
 /mob/living/carbon/human/proc/telekineticprowress_end()
-	set category = "Psionic powers"
-	set name = "End Telekinesis (0)"
+	set category = "Psionic powers.Telepathy"
+	set name = "(0) End Telekinesis"
 	set desc = "End your telekinesis at will, with no cost to your psi points."
 	var/psi_point_cost = 0
 	var/mob/living/carbon/human/user = src
