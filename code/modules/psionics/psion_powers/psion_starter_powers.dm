@@ -5,7 +5,7 @@
 
 /mob/living/carbon/human/proc/psionic_telepathy()
 	set category = "Psionic powers.Telepathy"
-	set name = "Telepathic Projection (1)"
+	set name = "(1) Telepathic Projection"
 	set desc = "Spend a single psi point to send a telepathic message to someone, projecting your thoughts directly into their mind. Be wary, as not all are susceptible to telepathy."
 	var/psi_point_cost = 1
 	var/mob/living/carbon/human/user = src

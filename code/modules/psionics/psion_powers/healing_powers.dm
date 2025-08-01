@@ -3,7 +3,7 @@
 
 /mob/living/carbon/human/proc/psionic_healing()
 	set category = "Psionic powers.Healing"
-	set name = "Psychosomatic Healing (1)"
+	set name = "(1) Psychosomatic Healing"
 	set desc = "Spend a single psi point to heal your body, at the cost of terrible pain."
 	var/psi_point_cost = 1
 	var/mob/living/carbon/human/user = src
@@ -25,7 +25,7 @@
 //antiheals people with halloss
 /mob/living/carbon/human/proc/pain_infliction()
 	set category = "Psionic powers.Telepathy"
-	set name = "Pain Infliction (2)"
+	set name = "(2) Pain Infliction"
 	set desc = "Spend two psi points to inflict pain upon whoever you're grabbing. Your victim has to be held tight for it to work."
 	var/psi_point_cost = 2 //Two Points. Yes spamable to pain somebody but considering what people can do with grabs for free this is relatively tame. Needs aggressive grab, people with deep psi pools usually invested into that and lack robustness
 	var/mob/living/carbon/human/user = src
@@ -52,7 +52,7 @@
 
 /mob/living/carbon/human/proc/pain_transference()
 	set category = "Psionic powers.Telepathy"
-	set name = "Pain Transference (2)"
+	set name = "(2) Pain Transference"
 	set desc = "Spend two psi points to psionically absorb some of the pain of whoever you are holding. Obviously, this is very painful to the psion."
 	var/psi_point_cost = 2 //Basically a grab is needed to steal somebodies pain and take it for yourself, good for all those support mains
 	var/amount
@@ -85,7 +85,7 @@
 //Heals hunger
 /mob/living/carbon/human/proc/psychosomatictransfer()
 	set category = "Psionic powers.Healing"
-	set name = "Psychosomatic Fullness (1)"
+	set name = "(1) Psychosomatic Fullness"
 	set desc = "Spend a single psi point to convince your stomach it's not actually that hungry, burning fat reserves to keep on going. Taxing on the mind and causes minor burns."
 	var/psi_point_cost = 1
 	var/mob/living/carbon/human/user = src
@@ -103,7 +103,7 @@
 // Heals stuns/other misc things
 /mob/living/carbon/human/proc/chosen_control()
 	set category = "Psionic powers.Healing"
-	set name = "Chosen Control (4)"
+	set name = "(4) Chosen Control"
 	set desc = "Spend four psi points to clear all effects that would impede one's control. Removes stuns, paralysis, pain, agony, restraints, and clears the users body of all chemicals and addictions."
 	var/psi_point_cost = 4
 	var/mob/living/carbon/human/user = src
@@ -139,7 +139,7 @@
 // Heals sanity
 /mob/living/carbon/human/proc/meditative_focus()
 	set category = "Psionic powers.Healing"
-	set name = "Meditative Focus (2)"
+	set name = "(2) Meditative Focus"
 	set desc = "Spend two psi points of your psi essence to focus your mind and increase your sanity."
 	var/psi_point_cost = 2
 	var/mob/living/carbon/human/user = src
@@ -168,7 +168,7 @@
 // remove all chemicals (other then blood)
 /mob/living/carbon/human/psionic_tumor/proc/purify()
 	set category = "Psionic powers.Healing"
-	set name = "Psionic Purify (1)"
+	set name = "(1) Psionic Purify"
 	set desc = "Spend a single psi point to clear out any chemicals in your body, helpful or not."
 	var/psi_point_cost = 1
 	var/mob/living/carbon/human/user = src
@@ -193,7 +193,7 @@
 // Heals heat/cold
 /mob/living/carbon/human/psionic_tumor/proc/temp_regulate()
 	set category = "Psionic powers.Healing"
-	set name = "Psionic Temperature Regulate (4)"
+	set name = "(4) Psionic Temperature Regulate"
 	set desc = "Spend four psi points to set your body temperature into comfortable levels."
 	var/psi_point_cost = 4
 	var/mob/living/carbon/human/user = src

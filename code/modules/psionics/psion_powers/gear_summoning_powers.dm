@@ -3,7 +3,7 @@
 
 /mob/living/carbon/human/proc/psionic_omnitool()
 	set category = "Psionic powers.Summoning"
-	set name = "Telekinetic Omnitool (2)"
+	set name = "(2) Telekinetic Omnitool"
 	set desc = "Spend two psi points to create an omnitool. It disappears when dropped or if it leaves your hand."
 	var/psi_point_cost = 2
 	var/stat_mec = 25
@@ -36,7 +36,7 @@
 
 /mob/living/carbon/human/proc/pyrokinetic_spark()
 	set category = "Psionic powers.Summoning"
-	set name = "Pyrokinetic Spark (1)"
+	set name = "(1) Pyrokinetic Spark"
 	set desc = "Spend a single psi point to create a tiny flickering fire in your hand that will shine light and ignite combustible materials, can be thrown but will extinguish quickly."
 	var/psi_point_cost = 1
 	var/mob/living/carbon/human/user = src
@@ -53,7 +53,7 @@
 
 /mob/living/carbon/human/proc/psionic_knife()
 	set category = "Psionic powers.Summoning"
-	set name = "Psychic Blade (1)"
+	set name = "(1) Psychic Blade"
 	set desc = "Spend a single psi point to create a shoddy, yet still deadly knife. It's power and damage scale with your robustness."
 	var/psi_point_cost = 1
 	var/mob/living/carbon/human/user = src
@@ -70,7 +70,7 @@
 
 /mob/living/carbon/human/proc/psionic_shield()
 	set category = "Psionic powers.Summoning"
-	set name = "Psychic Shield (1)"
+	set name = "(1) Psychic Shield"
 	set desc = "Spend a single psi point to create an energy shield capable of blocking melee attacks. \
 	If you already have a shield in-hand, it will be enhanced instead, making it capable of blocking lasers and bullets at the cost of its durablity.\
 	If the shield in-hand is already enhanced, it will be be repaired instead."
@@ -153,7 +153,7 @@
 
 /mob/living/carbon/human/proc/psionic_shield_layered()
 	set category = "Psionic powers.Summoning"
-	set name = "Layered Psychic Shield (1)"
+	set name = "(1) Layered Psychic Shield"
 	set desc = "Spend a single psi point to create a layered shield capable of blocking bullets, energy beams and melee attacks."
 	var/psi_point_cost = 1
 	var/mob/living/carbon/human/user = src
@@ -174,7 +174,7 @@
 
 /mob/living/carbon/human/proc/telekinetic_fist()
 	set category = "Psionic powers.Summoning"
-	set name = "Telekinetic Fist (1)"
+	set name = "(1) Telekinetic Fist"
 	set desc = "Spend a single psi point to create a telekinetic fist, a single-use melee weapon that knocks your foes back. It's knockback and power \
 	scales with your robustness."
 	var/psi_point_cost = 1
@@ -192,7 +192,7 @@
 
 /mob/living/carbon/human/proc/kinetic_barrier()
 	set category = "Psionic powers.Summoning"
-	set name = "Kinetic Barrier (2)"
+	set name = "(2) Kinetic Barrier"
 	set desc = "Spend two psi points to create a wide, psychic barrier in front of you. It blocks all movement and projectiles, but not vision."
 	var/psi_point_cost = 2
 	var/timer = 10 SECONDS
@@ -214,7 +214,7 @@
 
 /mob/living/carbon/human/proc/kinetic_blaster()
 	set category = "Psionic powers.Orbs"
-	set name = "Kinetic Orb (0)"
+	set name = "(0) Kinetic Orb"
 	set desc = "Create a kinetic orb in your hand at no cost to your psi points. It acts as a ranged weapon that grows in power with your cognition and uses a single psi point per shot."
 	var/psi_point_cost = 0
 	var/mob/living/carbon/human/user = src
@@ -232,7 +232,7 @@
 
 /mob/living/carbon/human/proc/cryo_kinetic_blaster()
 	set category = "Psionic powers.Orbs"
-	set name = "Cryo-Kinetic Orb (0)"
+	set name = "(0) Cryo-Kinetic Orb"
 	set desc = "Create a cryo-kinetic orb in your hand at no cost to your psi points. It acts as a ranged weapon that grows in power with your cognition and uses four psi points per shot. \
 	Deals no damage on its own, but the sudden blast of cold can stun your target for a short time."
 	var/psi_point_cost = 0
@@ -250,7 +250,7 @@
 
 /mob/living/carbon/human/proc/pyro_kinetic_blaster()
 	set category = "Psionic powers.Orbs"
-	set name = "Pyro-Kinetic Orb (0)"
+	set name = "(0) Pyro-Kinetic Orb"
 	set desc = "Create a pyro-kinetic orb in your hand at no cost to your psi points. It acts as a ranged weapon that grows in power with your cognition and uses three psi points per shot. \
 	The heat generated from pyro blasts fast enough to not cause fires, but the sudden expansion of hot air is highly explosive."
 	var/psi_point_cost = 0
@@ -268,7 +268,7 @@
 
 /mob/living/carbon/human/proc/electro_kinetic_blaster()
 	set category = "Psionic powers.Orbs"
-	set name = "Electro-Kinetic Orb (0)"
+	set name = "(0) Electro-Kinetic Orb"
 	set desc = "Create an electro-kinetic orb in your hand at no cost to your psi points. It acts as a ranged weapon that grows in power with your cognition and uses two psi points per shot. \
 	Much stronger than kinetic blasts and doesn't need to travel towards its target, being electric."
 	var/psi_point_cost = 0
@@ -286,7 +286,7 @@
 
 /mob/living/carbon/human/psionic_tumor/proc/needle_n_thread()
 	set category = "Psionic powers.Healing"
-	set name = "Psionic Suture (1)"
+	set name = "(1) Psionic Suture"
 	set desc = "Spend a single psi point to create a psionic suture in hand, which can be used to stop bleeding and to close wounds."
 	var/psi_point_cost = 1
 	var/mob/living/carbon/human/user = src
@@ -313,7 +313,7 @@
 
 /mob/living/carbon/human/psionic_tumor/proc/psi_burn_cream()
 	set category = "Psionic powers.Healing"
-	set name = "Psionic Ointment (1)"
+	set name = "(1) Psionic Ointment"
 	set desc = "Spend a single psi point to create a psionic ointment in hand, which can be used to stop cleanse wounds and mend burns."
 	var/psi_point_cost = 1
 	var/mob/living/carbon/human/user = src
@@ -340,7 +340,7 @@
 
 /mob/living/carbon/human/proc/psionic_powercell()
 	set category = "Psionic powers.Summoning"
-	set name = "Psionic Cell Creation (1)"
+	set name = "(1) Psionic Cell Creation"
 	set desc = "Spend one psi points to create a self-charging psion-cell. If you're already holding a psion-cell, it will upgrade it by one size."
 	var/psi_point_cost = 1
 	var/mob/living/carbon/human/user = src

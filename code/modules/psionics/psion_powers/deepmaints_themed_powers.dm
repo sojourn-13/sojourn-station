@@ -2,7 +2,7 @@
 
 /mob/living/carbon/human/proc/bring_darkness()
 	set category = "Psionic powers.Summoning"
-	set name = "Bring Darkness (3)"
+	set name = "(3) Bring Darkness"
 	set desc = "Spend three psi points to break all the lights connected to the power grid near you. Does not work on independent light sources, sunlight, and doesn't grant you sight in the dark."
 	var/psi_point_cost = 3
 	var/mob/living/carbon/human/user = src
@@ -23,7 +23,7 @@
 
 /mob/living/carbon/human/proc/kings_decorum()
 	set category = "Psionic powers.Summoning"
-	set name = "Kings Decorum (2)"
+	set name = "(2) Kings Decorum"
 	set desc = "Spend two psi points to expel gore, blood, and smoke to decorate the world as the king desires."
 	var/psi_point_cost = 2
 	var/mob/living/carbon/human/user = src
@@ -85,7 +85,7 @@
 
 /mob/living/carbon/human/proc/merge_flesh_and_steel()
 	set category = "Psionic powers.Ascension"
-	set name = "Merge Flesh and Steel (10)"
+	set name = "(10) Merge Flesh and Steel"
 	set desc = "Expend a massive pool of ten psi points and your own body to become something greater. To grasp at perfection, one must make sacrifices..."
 	var/psi_point_cost = 10
 	var/mob/living/carbon/human/user = src
@@ -101,7 +101,7 @@
 
 /mob/living/carbon/human/proc/ascend_another()
 	set category = "Psionic powers.Ascension"
-	set name = "Psionic Ascension (5)"
+	set name = "(5) Psionic Ascension"
 	set desc = "Spend five psi points to ascend someone standing in front of you, making them a psion. The process is extremely damaging to the mind and you must stand still during it."
 	var/psi_point_cost = 5
 	var/mob/living/carbon/human/user = src
@@ -131,7 +131,7 @@
 
 /mob/living/carbon/human/proc/cerebral_hemorrhage()
 	set category = "Psionic powers.Ascension" //Being fodder for the strong
-	set name = "Cerebral Hemorrhage (5)"
+	set name = "(5) Cerebral Hemorrhage"
 	set desc = "Spend five psi points to destroy the brain of anyone you are grappling. Lesser creatures will be instantly slain in a messy fashion, unless they are harmless."
 	var/psi_point_cost = 5
 	var/mob/living/carbon/human/user = src
