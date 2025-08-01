@@ -31,7 +31,7 @@
 
 	var/datum/wires/alarm/wires
 
-	var/mode = AALARM_MODE_OFF
+	var/mode = AALARM_MODE_SCRUBBING
 	var/screen = AALARM_SCREEN_MAIN
 	var/area_uid
 	var/area/alarm_area
