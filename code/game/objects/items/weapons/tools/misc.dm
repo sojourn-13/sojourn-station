@@ -140,7 +140,6 @@
 	price_tag = 6000
 	suitable_cell = /obj/item/cell/medium
 	use_power_cost = 0.2 //Effective!
-	max_upgrades = 0
 	workspeed = 1.2
 	price_tag = 8000 // Super fancy
 	degradation = 0
