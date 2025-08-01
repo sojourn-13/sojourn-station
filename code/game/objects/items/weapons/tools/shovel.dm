@@ -60,6 +60,7 @@
 	armor_divisor = ARMOR_PEN_SHALLOW
 	matter = list(MATERIAL_STEEL = 6, MATERIAL_PLASTEEL = 6)
 	tool_qualities = list(QUALITY_SHOVELING = 85, QUALITY_DIGGING = 85, QUALITY_PRYING = 70, QUALITY_CUTTING = 30, QUALITY_SAWING = 45, QUALITY_HAMMERING = 30)
+	max_upgrades = 0
 	workspeed = 1.5
 	degradation = 0
 	price_tag = 2875
