@@ -11,6 +11,7 @@
 	active = FALSE
 	passivePerk = FALSE
 	var/anti_cheat= FALSE
+	copy_protected = TRUE
 
 /datum/perk/forceful_rejection/remove()
 	holder.stats.changeStat(STAT_VIV, -15)
@@ -62,6 +63,7 @@
 	lose_text = "It was but a nightmare."
 	icon_state = "celestial"
 	var/statis_amount = 0
+	copy_protected = TRUE // absolutely not
 
 /datum/perk/skill_cap_expanding/assign(mob/living/L)
 	..()
@@ -82,6 +84,7 @@
 	gain_text = "Looking into the stars is starting to becoming productive!"
 	lose_text = "The void above is the same as below."
 	icon_state = "void_eye"
+	copy_protected = TRUE
 
 /datum/perk/skill_cap_addition/assign(mob/living/L)
 	..()

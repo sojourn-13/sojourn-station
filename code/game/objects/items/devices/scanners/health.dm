@@ -228,7 +228,7 @@
 	if (M.getCloneLoss())
 		dat += SPAN_WARNING("Subject appears to have cellular corruption.")
 	if (M.has_brain_worms())
-		dat += SPAN_WARNING("Subject suffering from aberrant brain activity. Recommend further scanning.")
+		dat += SPAN_WARNING("Subject has a second neural pattern. Likely cause: Cortical Borers.")
 	else if (M.getBrainLoss() >= 60 || !M.has_brain())
 		dat += SPAN_WARNING("Subject is brain dead.")
 	else if (M.getBrainLoss() >= 25)

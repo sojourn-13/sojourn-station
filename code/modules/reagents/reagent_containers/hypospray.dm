@@ -84,7 +84,7 @@
 	var/contained = reagents.log_list()
 	var/trans = reagents.trans_to_mob(M, amount_per_transfer_from_this, CHEM_BLOOD)
 	admin_inject_log(user, M, src, contained, trans)
-	to_chat(user, SPAN_NOTICE("[trans] units injected. [reagents.total_volume] units remaining in \the [src]."))	
+	to_chat(user, SPAN_NOTICE("[trans] units injected. [reagents.total_volume] units remaining in \the [src]."))
 	return
 
 /obj/item/reagent_containers/hypospray/verb/empty()
@@ -114,6 +114,13 @@
 	var/can_be_refilled = TRUE //For cargos
 	var/baseline_sprite = "syrette_inopravoline" //Mostly used for chemmasters so we dont need to init(sprite name), to allow mid-round changing of icons.
 	injtime = 2 //Instant was a bit to powerful well refilling
+
+/obj/item/reagent_containers/hypospray/autoinjector/sugar
+	name = "autoinjector (Emergency Glucose)"
+	desc = "A Soteria proprietary injector. Meant for even the most dull-minded individuals, these are marked with a stylized symbol of a Cortical Borer. For emergencies, rogue borers, and-or diabetic shock."
+	preloaded_reagents = list("sugar" = 5)
+	can_be_refilled = FALSE
+	injtime = 5
 
 /obj/item/reagent_containers/hypospray/autoinjector/examine(mob/user)
 	..()

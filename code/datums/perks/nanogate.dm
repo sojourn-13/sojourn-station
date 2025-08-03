@@ -8,6 +8,7 @@
 	icon_state = "nanogateimplant"
 	gain_text = "Your head aches for a moment, the effects of your spine having been seperated and an advanced machine slotted inbetween leaving you with a dull pain that is quickly cured \
 	by your nanites."
+	copy_protected = TRUE
 
 /datum/perk/nanite_power/nanite_regen
 	name = "Nanite Regeneration"

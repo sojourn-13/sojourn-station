@@ -1,6 +1,7 @@
 /datum/perk/cooldown
 	var/perk_lifetime = 5 MINUTES
 	var/timestamp_start
+	copy_protected = TRUE
 	gain_text = "You feel tired. Your body needs some time to recover from all this training."
 	lose_text = "You feel a bit more rested from the training."
 

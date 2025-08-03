@@ -7,7 +7,24 @@
 
 	if(cannot_amputate || !owner)
 		return
-
+	//Ugh.
+	if(organ_tag == BP_HEAD) //UGLY UGLY UGLY
+		if(owner.has_brain_worms())
+			var/mob/living/simple/borer/B = owner.has_brain_worms()
+			if(B)
+				B.leave_host()
+				B.reset_view(null) //Camera bug.
+				to_chat(owner, SPAN_NOTICE("Your host has been decapitated! Resist to leave their dismembered head!"))
+				B.detatch()
+				B.emergency_leave = TRUE
+				if(!B.ckey && owner.ckey && B.controlling)
+					B.ckey = owner.ckey
+					B.controlling = 0
+				if(B.host_brain?.ckey)
+					owner.ckey = B.host_brain.ckey //this will technically allow you to be revived by just attaching any head and brain but whatever bro fixing it is so ass
+					B.host_brain.ckey = null
+					B.host_brain.name = "host brain"
+					B.host_brain.real_name = "host brain"
 	switch(disintegrate)
 		if(DISMEMBER_METHOD_EDGE)
 			if(!clean)
@@ -94,5 +111,4 @@
 					continue
 				I.forceMove(get_turf(src))
 				I.throw_at(get_edge_target_turf(src,pick(alldirs)),rand(1,3),30)
-
 			qdel(src)

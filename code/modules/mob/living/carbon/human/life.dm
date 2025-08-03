@@ -1054,6 +1054,10 @@
 		var/image/holder = hud_list[LIFE_HUD]
 		if(stat == DEAD)
 			holder.icon_state = "huddead"
+		else if(status_flags & XENO_HOST)
+			holder.icon_state = "hudxeno"
+		else if (has_brain_worms())
+			holder.icon_state = "hudbrainworm"
 		else
 			holder.icon_state = "hudhealthy"
 		hud_list[LIFE_HUD] = holder
@@ -1064,12 +1068,8 @@
 			holder.icon_state = "huddead"
 		else if(status_flags & XENO_HOST)
 			holder.icon_state = "hudxeno"
-		else if(has_brain_worms())
-			var/mob/living/simple/borer/B = has_brain_worms()
-			if(B.controlling)
-				holder.icon_state = "hudbrainworm"
-			else
-				holder.icon_state = "hudhealthy"
+		else if (has_brain_worms())
+			holder.icon_state = "hudbrainworm"
 		else
 			holder.icon_state = "hudhealthy"
 
@@ -1078,7 +1078,7 @@
 			holder2.icon_state = "huddead"
 		else if(status_flags & XENO_HOST)
 			holder2.icon_state = "hudxeno"
-		else if(has_brain_worms())
+		else if (has_brain_worms())
 			holder2.icon_state = "hudbrainworm"
 		else
 			holder2.icon_state = "hudhealthy"

@@ -677,13 +677,13 @@
 	return
 
 /obj/item/storage/box/autoinjectors
-	name = "box of injectors"
-	desc = "Contains auto-injectors."
+	name = "box of emergency sugar injectors"
+	desc = "Contains auto-injectors meant for usage in an uncontrolled borer infection."
 	illustration = "syringe"
 
 /obj/item/storage/box/autoinjectors/populate_contents()
 	for(var/i in 1 to 7)
-		new /obj/item/reagent_containers/hypospray/autoinjector(src)
+		new /obj/item/reagent_containers/hypospray/autoinjector/sugar(src)
 
 /obj/item/storage/box/lights
 	name = "box of replacement bulbs"

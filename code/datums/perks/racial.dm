@@ -48,6 +48,7 @@
 	icon_state = "suddenbrilliance"
 	active = FALSE
 	passivePerk = FALSE
+	copy_protected = TRUE
 
 /datum/perk/suddenbrilliance/activate()
 	var/mob/living/carbon/human/user = usr
@@ -66,11 +67,13 @@
 	name = "Inspired Intellect"
 	desc = "Even the most humble Mar'qua is capable of study and extrapolation, your natural intellect allows you to become gain inspiration more easily."
 	icon_state = "inspiredintellect"
+	copy_protected = TRUE
 
 /datum/perk/alien_nerves
 	name = "Adapted Nervous System"
 	desc = "A mar'qua's nervous system has long since adapted to the use of stimulants, chemicals, and different toxins. Unlike lesser races, you can handle a wide variety of chemicals before showing any side effects and you'll never become addicted."
 	icon_state = "adaptednervoussystem"
+	copy_protected = TRUE
 
 /datum/perk/alien_nerves/assign(mob/living/L)
 	..()
@@ -95,6 +98,7 @@
 	icon_state = "willtosurvive"
 	active = FALSE
 	passivePerk = FALSE
+	copy_protected = TRUE
 
 /datum/perk/iwillsurvive/activate()
 	var/mob/living/carbon/human/user = usr
@@ -115,6 +119,7 @@
 	icon_state = "inspiringbattlecry"
 	active = FALSE
 	passivePerk = FALSE
+	copy_protected = TRUE //It would be extremely funny but I don't think we want the entire colony to be able to buff themselves infinitely
 
 /datum/perk/battlecry/activate()
 	var/mob/living/carbon/human/user = usr
@@ -152,6 +157,7 @@
 	name = "Tenacity"
 	desc = "Humans were always resilient, not letting anything or anyone to get in way of their goals. Due to this your body is way more adapted to anything thrown it's way letting you push onward for just a little bit longer than others."
 	icon_state = "tenacity"
+	copy_protected = TRUE
 
 /datum/perk/linguist_for_humans
 	name = "Diverse Culture"
@@ -160,6 +166,7 @@
 	active = FALSE
 	passivePerk = FALSE
 	var/anti_cheat = FALSE
+	copy_protected = TRUE
 
 /datum/perk/linguist_for_humans/activate()
 	..()
@@ -196,6 +203,7 @@
 	icon_state = "enhancesenses"
 	active = FALSE
 	passivePerk = FALSE
+	copy_protected = TRUE
 
 /datum/perk/enhancedsenses/activate()
 	var/mob/living/carbon/human/user = usr
@@ -214,6 +222,7 @@
 	name = "Instinctual Skill"
 	desc = "All kriosans understand the dynamics of shooting, to such a degree that guns are more extensions to one's hand than weapon. You take no penalty when firing any range weapon one handed."
 	icon_state = "instinctualskill"
+	copy_protected = TRUE
 
 ////////////////////////////////////////Akula perks
 /datum/perk/recklessfrenzy
@@ -223,6 +232,7 @@
 	icon_state = "recklessfrenzy"
 	active = FALSE
 	passivePerk = FALSE
+	copy_protected = TRUE
 
 /datum/perk/recklessfrenzy/activate()
 	var/mob/living/carbon/human/user = usr
@@ -242,7 +252,7 @@
 	name = "Iron Flesh"
 	desc = "Akula scales are not only tough and resistant to damage but exceptionally skilled at naturally forcing out embedded objects that somehow punch through. You'll never get a bullet nor object stuck inside when hit."
 	icon_state = "ironflesh"
-
+	copy_protected = TRUE
 
 ////////////////////////////////////////Naramad perks
 /datum/perk/adrenalineburst
@@ -251,6 +261,7 @@
 	icon_state = "adrenalineburst"
 	active = FALSE
 	passivePerk = FALSE
+	copy_protected = TRUE
 
 /datum/perk/adrenalineburst/activate()
 	var/mob/living/carbon/human/user = usr
@@ -270,11 +281,13 @@
 	name = "Hydration Reliance"
 	desc = "Naramad have adapted biology heavily reliant on the intake of fluids, in particular clean clear water. Drinking purified water, even tap water, heals your body slowly, as if you drank tricordizine!"
 	icon_state = "hydrationreliance"
+	copy_protected = TRUE
 
 /datum/perk/born_warrior
 	name = "Born Warrior"
 	desc = "No matter their background all naramadi are capable bringing any object to bear as a weapon, be it bladed or blunt. Unlike other races your grip is iron and you'll never lose your weapon through embedding it in an enemy."
 	icon_state = "bornwarrior"
+	copy_protected = TRUE
 
 /////////////////////////////////////////Cindarite perks
 /datum/perk/purgetoxins
@@ -283,6 +296,7 @@
 	icon_state = "purgetoxins"
 	active = FALSE
 	passivePerk = FALSE
+	copy_protected = TRUE
 
 /datum/perk/purgetoxins/activate()
 	var/mob/living/carbon/human/user = usr
@@ -303,6 +317,7 @@
 	icon_state = "uncannyresiliance"
 	active = FALSE
 	passivePerk = FALSE
+	copy_protected = TRUE
 
 /datum/perk/purgeinfections/activate()
 	var/mob/living/carbon/human/user = usr
@@ -321,6 +336,7 @@
 	name = "Second Skin"
 	desc = "Cindarites, be they bunker born or spacers, are used to wearing bulky enviromental suits. This life time of being acclimated to heavy clothing has become a second skin for many, allowing you to remove clothing instantly and never suffer slowdown from heavy armor."
 	icon_state = "secondskin"
+	copy_protected = TRUE
 
 ///////////////////////////////////////////Opifex perks
 /datum/perk/opifex_backup
@@ -329,6 +345,7 @@
 	icon_state = "smuggledtools"
 	active = FALSE
 	passivePerk = FALSE
+	copy_protected = TRUE
 
 /datum/perk/opifex_backup/activate()
 	var/mob/living/carbon/human/user = usr
@@ -350,7 +367,7 @@
 	icon_state = "smuggledmedicine"
 	active = FALSE
 	passivePerk = FALSE
-
+	copy_protected = TRUE
 
 /datum/perk/opifex_backup_medical/activate()
 	var/mob/living/carbon/human/user = usr
@@ -374,6 +391,7 @@
 	icon_state = "smuggledarmaments"
 	active = FALSE
 	passivePerk = FALSE
+	copy_protected = TRUE
 
 /datum/perk/opifex_backup_combat/activate()
 	var/mob/living/carbon/human/user = usr
@@ -395,6 +413,7 @@
 	icon_state = "smuggledcircuit"
 	active = FALSE
 	passivePerk = FALSE
+	copy_protected = TRUE
 
 /datum/perk/opifex_turret/activate()
 	var/mob/living/carbon/human/user = usr
@@ -416,6 +435,7 @@
 	icon_state = "smuggledpatchkit"
 	active = FALSE
 	passivePerk = FALSE
+	copy_protected = TRUE
 
 /datum/perk/opifex_patchkit/activate()
 	var/mob/living/carbon/human/user = usr
@@ -437,6 +457,7 @@
 	desc = "Through a combination of pheromones, appearance, and an innate understanding of spider behavior all spiders are friendly to you, they won't attack you even if you attack them. This change \
 	in your biology and pheromones however make you an enemy to roaches. As a side effect of dealing with spiders so often, you can't be slowed or stuck by webbing."
 	icon_state = "muscular" // https://game-icons.net
+	copy_protected = TRUE
 
 /datum/perk/spiderfriend/assign(mob/living/L)
 	..()
@@ -451,6 +472,7 @@
 	desc = "You can spin webs, spreading them around a location as a form of snaring barricade."
 	active = FALSE
 	passivePerk = FALSE
+	copy_protected = TRUE
 
 /datum/perk/webmaker/activate()
 	var/mob/living/carbon/human/user = usr
@@ -470,6 +492,7 @@
 	desc = "As a member of the Ru caste your ability to produce chemicals is well known, though it takes an hour to recover and much of your nutritional in-take you can produce clumped ichors that function as medical kits."
 	active = FALSE
 	passivePerk = FALSE
+	copy_protected = TRUE
 
 /datum/perk/ichor/activate()
 	var/mob/living/carbon/human/user = usr
@@ -495,6 +518,7 @@
 	name = "Chitin Armor"
 	desc = "Unlike other caste in the cht'mant hive you are built for combat, while not as naturally tough as other species you can tank a few more blows than your softer insectile brethren."
 	icon_state = "paper"
+	copy_protected = TRUE
 
 /datum/perk/chitinarmor/assign(mob/living/L)
 	..()
@@ -512,6 +536,7 @@
 	name = "Scuttlebug"
 	desc = "While your definitive purpose is not as clearly defined as other castes within the cht'mant hive your constant movement and labors have made you quite used to the hustle and bustle, letting you run faster than most races."
 	icon_state = "scuttlebug"
+	copy_protected = TRUE
 
 /datum/perk/repair_goo
 	name = "Produce Repair Goo"
@@ -519,6 +544,7 @@
 	icon_state = "repairgoo"
 	active = FALSE
 	passivePerk = FALSE
+	copy_protected = TRUE
 
 /datum/perk/repair_goo/activate()
 	var/mob/living/carbon/human/user = usr
@@ -546,6 +572,7 @@
 	icon_state = "modifyoddity"
 	active = FALSE
 	passivePerk = FALSE
+	copy_protected = TRUE
 
 /datum/perk/oddity_reroll/activate()
 	var/mob/living/carbon/human/user = usr
@@ -571,11 +598,13 @@
 	desc = "As a Folken, you can use the light to heal wounds, standing in areas of bright light will increase your natural regeneration."
 	icon_state = "folkenphotohealing"
 	passivePerk = TRUE
+	copy_protected = TRUE
 
 /datum/perk/folken_healing/young
 	name = "Folken Photo-Healing"
 	desc = "As a Folken, you can use the light to heal wounds, standing in areas of bright light will increase your natural regeneration. Due to your comparitively young age, you heal much faster than older folken."
 	var/replaced = FALSE // Did it replace the normal folken healing?
+	copy_protected = TRUE
 
 /datum/perk/folken_healing/young/assign(mob/living/L)
 	..()
@@ -595,6 +624,7 @@
 	desc = "As a mycus, you heal as long as you are in the darkness, increasing your natural regeneration."
 	icon_state = "mycusregeneration"
 	passivePerk = TRUE
+	copy_protected = TRUE
 
 /datum/perk/mushroom_follower
 	name = "Spawn Shroomling"
@@ -605,6 +635,7 @@
 	passivePerk = FALSE
 	var/used = FALSE // Not deleting after use since the description is useful.
 	var/follower_type = /mob/living/carbon/superior/fungi/shroom
+	copy_protected = TRUE
 
 /datum/perk/mushroom_follower/activate()
 	var/mob/living/carbon/human/user = usr
@@ -630,6 +661,7 @@
 	passivePerk = FALSE
 	var/used = FALSE // Not deleting after use since the description is useful.
 	var/follower_type = /mob/living/carbon/superior/fungi/slime
+	copy_protected = TRUE
 
 /datum/perk/slime_follower/activate()
 	var/mob/living/carbon/human/user = usr
@@ -654,6 +686,7 @@
 	based products."
 	icon_state = "carnivore"
 	passivePerk = TRUE
+	copy_protected = TRUE
 
 /datum/perk/herbivore
 	name = "Herbivore"
@@ -661,7 +694,7 @@
 	based products."
 	icon_state = "herbivore"
 	passivePerk = TRUE
-
+	copy_protected = TRUE
 ///////////////////////////////////// Slime perks
 /datum/perk/racial/limb_regen
 	name = "Hypermytosis"
@@ -671,6 +704,7 @@
 	var/cooldown = 5 MINUTES
 	passivePerk = FALSE
 	var/nutrition_cost = 300
+	//This is the ONLY racial perk I am going to allow to be copied.
 
 /datum/perk/racial/limb_regen/activate()
 	if(world.time < cooldown_time)
@@ -699,6 +733,7 @@
 	var/amount_to_boost = 45 // How much the stats are boosted
 	var/duration = 1 MINUTES // How long the stats are boosted for
 	var/blorp = 0 //I'm so sorry.
+	copy_protected = TRUE
 
 /datum/perk/racial/slime_stat_boost/activate()
 	if(world.time < cooldown_time)
@@ -737,6 +772,7 @@
 	var/cooldown = 10 MINUTES
 	passivePerk = FALSE
 	var/nutrition_cost = 200
+	copy_protected = TRUE
 
 /datum/perk/racial/speed_boost/activate()
 	if(world.time < cooldown_time)
@@ -758,6 +794,7 @@
 	icon_state = "gelatinousbiology"
 	passivePerk = TRUE
 	var/regen_rate = 0.3
+	copy_protected = TRUE
 
 /datum/perk/racial/slime_metabolism/on_process()
 	. = ..()
