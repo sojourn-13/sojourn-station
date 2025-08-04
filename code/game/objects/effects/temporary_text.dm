@@ -40,6 +40,12 @@
 	// Add the thing to the thing
 	target.overlays += rotating_text_overlay
 
+/obj/effect/temp_visual/text/laz_box
+	duration = 35 //in deciseconds
+	randomdir = FALSE
+	txt_color = "#A77D02"  // Gold-ish yellow
+	txt = ""
+ 
 /obj/effect/temp_visual/text/communal_judgment
 	duration = 20 //in deciseconds
 	randomdir = FALSE
@@ -75,4 +81,3 @@
 	randomdir = FALSE
 	txt_color = "#FFFDD0"  // Non eyebleed yellow
 	txt = "Desperationem, dolorem, et mentes lamentantes iuratorum sanabo." //I will heal the despair, the pain, and the lamenting minds of the jurors.
-
