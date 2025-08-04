@@ -417,7 +417,7 @@
 	for(var/datum/unarmed_attack/u_attack in species.unarmed_attacks)
 		dat += "<b>Primarily [u_attack.attack_name] </b><br/><br/><br/>"
 
-	src << browse(dat, "window=checkattack")
+	src << browse(HTML_SKELETON(dat), "window=checkattack")
 	return
 
 /mob/living/carbon/human/check_attacks()
@@ -432,7 +432,7 @@
 		else
 			dat += "<b>Primarily [u_attack.attack_name]</b> - <a href='byond://?src=\ref[src];default_attk=\ref[u_attack]'>set default</a><br/><br/><br/>"
 
-	src << browse(dat, "window=checkattack")
+	src << browse(HTML_SKELETON(dat), "window=checkattack")
 
 /mob/living/carbon/human/Topic(href, href_list)
 	if(href_list["default_attk"])

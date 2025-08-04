@@ -65,7 +65,7 @@
 		dat += {"
 		<A href='?src=\ref[src];viewrequests=1'>View requests</A><BR>
 		<A href='?src=\ref[src];vieworders=1'>View orders</A>"}
-	user << browse(dat, "window=computer;size=575x450")
+	user << browse(HTML_SKELETON(dat), "window=computer;size=575x450")
 	onclose(user, "computer")
 	return
 /obj/machinery/computer/supplycomp/emag_act(remaining_charges, mob/user)

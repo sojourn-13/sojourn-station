@@ -156,7 +156,7 @@
 
 		dat += "The speaker switch is [vocal ? "on" : "off"]. <a href='?src=\ref[src];togglevoice=[1]'>Toggle</a><br>"
 
-	user << browse("<HEAD><TITLE>Medibot v1.0 controls</TITLE></HEAD>[dat]", "window=automed")
+	user << browse(HTML_SKELETON_TITLE("Medibot v1.0 controls",dat), "window=automed")
 	onclose(user, "automed")
 	return
 
