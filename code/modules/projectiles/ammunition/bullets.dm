@@ -81,6 +81,7 @@
 	spent_icon = "pistol_c_lsr-spent"
 	shell_color = "lsr"
 	projectile_type = /obj/item/projectile/beam/weak/pistol_35
+	projectile_color = "#ACFFFC"
 
 /obj/item/ammo_casing/pistol_35/biomatter
 	desc = "A caseless .35 caustic."
@@ -144,6 +145,7 @@
 	spent_icon = "magnum_c_lsr-spent"
 	shell_color = "lsr"
 	projectile_type = /obj/item/projectile/beam/weak/magnum_40
+	projectile_color = "#ACFFFC"
 
 /obj/item/ammo_casing/magnum_40/scrap
 	desc = "An old .40 Magnum bullet casing."
@@ -236,6 +238,7 @@
 	spent_icon = "rifle_c_lsr-spent"
 	shell_color = "lsr"
 	projectile_type = /obj/item/projectile/beam/weak/light_rifle_257
+	projectile_color = "#ACFFFC"
 
 //// 7.5mm Rifle ////
 
@@ -300,6 +303,7 @@
 	spent_icon = "rifle_c_lsr-spent"
 	shell_color = "lsr"
 	projectile_type = /obj/item/projectile/beam/weak/rifle_75
+	projectile_color = "#ACFFFC"
 
 //// .408 heavy rifle////
 
@@ -364,6 +368,7 @@
 	spent_icon = "rifle_c_lsr-spent"
 	shell_color = "lsr"
 	projectile_type = /obj/item/projectile/beam/weak/heavy_rifle_408
+	projectile_color = "#ACFFFC"
 
 /obj/item/ammo_casing/heavy_rifle_408/spent
 	projectile_type = null
@@ -493,6 +498,7 @@
 	spent_icon = "rifle_c_lsr-spent"
 	shell_color = "lsr"
 	projectile_type = /obj/item/projectile/beam/weak/kurz_50
+	projectile_color = "#ACFFFC"
 
 //// .60-06 ////
 /obj/item/ammo_casing/antim
@@ -704,6 +710,7 @@
 	shell_color = "lsr"
 	projectile_type = /obj/item/projectile/beam/shotgun
 	maxamount = 5
+	projectile_color = "#ACFFFC"
 
 /obj/item/ammo_casing/shotgun/laser/prespawned
 	amount = 5
@@ -844,6 +851,7 @@
 	shell_color = "lsr"
 	caliber = CAL_SCI
 	projectile_type = /obj/item/projectile/beam/laser_223
+	projectile_color = "#ACFFFC"
 
 /obj/item/ammo_casing/beam/spent
 	projectile_type = null
