@@ -220,7 +220,7 @@
 	icon_state = "bronze_heart"
 
 /obj/item/clothing/accessory/medal/nobel_science
-	name = "nobel sciences award"
+	name = "innovative sciences medal"
 	desc = "A bronze medal which represents significant contributions to the field of science or engineering."
 
 /obj/item/clothing/accessory/medal/silver
@@ -231,11 +231,23 @@
 
 /obj/item/clothing/accessory/medal/silver/valor
 	name = "medal of valor"
-	desc = "A silver medal awarded for acts of exceptional valor."
+	desc = "A silver medal with an iron star awarded for acts of exceptional valor."
+	icon_state = "iron_star"
 
 /obj/item/clothing/accessory/medal/silver/security
-	name = "robust security award"
-	desc = "An award for distinguished combat and sacrifice in defence of the colony. Often awarded to security staff."
+	name = "distinguished service sword"
+	desc = "An silver sword for distinguished combat and sacrifice in defence of the colony. Often awarded to security staff."
+	icon_state = "silver_sword"
+
+/obj/item/clothing/accessory/medal/silver/white_heart
+	name = "medical services medal"
+	desc = "A silver medal with a white heart awarded for exceptional medical service and dedication to saving lives."
+	icon_state = "white_heart"
+
+/obj/item/clothing/accessory/medal/silver/conduct
+	name = "distinguished conduct medal"
+	desc = "A silver medal awarded for distinguished conduct and exemplary service."
+	icon_state = "silver_star"
 
 /obj/item/clothing/accessory/medal/gold
 	name = "gold medal"
@@ -250,6 +262,17 @@
 /obj/item/clothing/accessory/medal/gold/heroism
 	name = "medal of exceptional heroism"
 	desc = "An extremely rare golden medal awarded only by faction woners. To recieve such a medal is the highest honor and as such, very few exist. This medal is almost never awarded to anybody but commanders."
+	icon_state = "gold_sun"
+
+/obj/item/clothing/accessory/medal/gold/valor
+	name = "medal of exceptional valor"
+	desc = "A prestigious golden medal awarded for extraordinary acts of valor that go beyond the call of duty."
+	icon_state = "gold_star"
+
+/obj/item/clothing/accessory/medal/gold/honor
+	name = "high council medal of honor"
+	desc = "The highest award that can be bestowed, this golden medal with crest represents the ultimate recognition from the high council for extraordinary service to the colony."
+	icon_state = "gold_crest"
 
 /*Capes*/
 
