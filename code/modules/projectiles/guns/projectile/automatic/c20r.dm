@@ -76,12 +76,36 @@
 	. = ..()
 	ammo_magazine = new /obj/item/ammo_magazine/smg_35/hv(src)
 
+/obj/item/gun/projectile/automatic/c20r/sci/med
+	name = "Soteria \"Medtech\" SMG"
+	desc = "A Soteria copy of the Scarborough Arms C-20r equipped with a .40 barrel, better at punching through armour and still reliable and versatile none the less as its often nicknamed the Medtech. Uses .40 caliber ammunition."
+	damage_multiplier = 1.2
+	penetration_multiplier = 1.4
+	gun_parts = list(/obj/item/part/gun/frame/c20r/sci = 1, /obj/item/part/gun/grip/black = 1, /obj/item/part/gun/mechanism/smg = 1, /obj/item/part/gun/barrel/magnum = 1)
+	price_tag = 500
+	serial_type = "SI"
+
+/obj/item/gun/projectile/automatic/c20r/sci/med/preloaded
+
+/obj/item/gun/projectile/automatic/c20r/sci/med/preloaded/New()
+	. = ..()
+	ammo_magazine = new /obj/item/ammo_magazine/smg_magnum_40/hv(src)
+
 /obj/item/part/gun/frame/c20r/sci
 	name = "C20m frame"
 	desc = "A C20m SMG frame. The syndicate's bread and butter, reverse-engineered. Curiously, it has two sets of threads for a barrel in differing sizes."
 	icon_state = "frame_sci"
 	result = /obj/item/gun/projectile/automatic/c20r/sci
-	resultvars = list(/obj/item/gun/projectile/automatic/c20r/sci)
+	resultvars = list(/obj/item/gun/projectile/automatic/c20r/sci, /obj/item/gun/projectile/automatic/c20r/sci/med)
 	gripvars = list(/obj/item/part/gun/grip/black)
 	mechanismvar = /obj/item/part/gun/mechanism/smg
 	barrelvars = list(/obj/item/part/gun/barrel/pistol, /obj/item/part/gun/barrel/magnum)
+
+/obj/item/part/gun/frame/c20r/sci/attack_self(mob/user)
+	// Check barrel type and set appropriate result before building
+	if(InstalledBarrel && istype(InstalledBarrel, /obj/item/part/gun/barrel/magnum))
+		result = /obj/item/gun/projectile/automatic/c20r/sci/med
+	else
+		result = /obj/item/gun/projectile/automatic/c20r/sci
+
+	return ..() // Call parent attack_self() to build the gun
