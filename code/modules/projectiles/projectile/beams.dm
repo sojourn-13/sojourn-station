@@ -73,7 +73,7 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 	armor_divisor = 1.5
 	recoil = 5
 	wounding_mult = WOUNDING_SERIOUS
-	projectile_color = "#ACFFFC"
+	proj_color = "#ACFFFC"
 /*
 /obj/item/projectile/beam/laser_223/ap
 	damage_types = list(BURN = 16)
@@ -93,37 +93,37 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 	damage_types = list(BURN = 15)
 	armor_divisor = 1.5
 	recoil = 2.5
-	projectile_color = "#ACFFFC"
+	proj_color = "#ACFFFC"
 
 /obj/item/projectile/beam/weak/light_rifle_257
 	damage_types = list(BURN = 14)
 	armor_divisor = 2
 	recoil = 3.5
-	projectile_color = "#ACFFFC"
+	proj_color = "#ACFFFC"
 
 /obj/item/projectile/beam/weak/rifle_75
 	damage_types = list(BURN = 15.5)
 	armor_divisor = 2
 	recoil = 5
-	projectile_color = "#ACFFFC"
+	proj_color = "#ACFFFC"
 
 /obj/item/projectile/beam/weak/heavy_rifle_408
 	damage_types = list(BURN = 20)
 	armor_divisor = 3
 	recoil = 10
-	projectile_color = "#ACFFFC"
+	proj_color = "#ACFFFC"
 
 /obj/item/projectile/beam/weak/magnum_40
 	damage_types = list(BURN = 19)
 	armor_divisor = 2
 	recoil = 4.5
-	projectile_color = "#ACFFFC"
+	proj_color = "#ACFFFC"
 
 /obj/item/projectile/beam/weak/kurz_50
 	damage_types = list(BURN = 23.5)
 	armor_divisor = 2
 	recoil = 8
-	projectile_color = "#ACFFFC"
+	proj_color = "#ACFFFC"
 
 /obj/item/projectile/beam/weak/smg
 	damage_types = list(BURN = 10)
@@ -153,14 +153,14 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 	damage_types = list(BURN = 35) //Normal slugs deal 45
 	armor_divisor = 1.1
 	recoil = 2
-	projectile_color = "#ACFFFC"
+	proj_color = "#ACFFFC"
 
 /obj/item/projectile/beam/shotgun/strong
 	damage_types = list(BURN = 54) // Default slug (/obj/item/projectile/bullet/shotgun) deal 54 damage
 	armor_divisor = 1.1
 	eyeblur = 4
 	recoil = 4
-	projectile_color = "#ACFFFC"
+	proj_color = "#ACFFFC"
 
 /obj/item/projectile/beam/practice
 	name = "laser"
