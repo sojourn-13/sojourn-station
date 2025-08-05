@@ -123,9 +123,10 @@
 
 /obj/item/gun/projectile/makarov/moebius
 	name = "SI HG .35 \"Malpractice\"" // SI stands for Soteria Institution
-	desc = "A small, easily concealable, but somewhat underpowered gun produced by SI as based off the \"Little Comet\" but ended up being a copy of the \"Clarissa\" with white paint. Uses .35 rounds."
+	desc = "A small, easily concealable, but somewhat underpowered gun produced by SI as based off the \"Little Comet\" but ended up being a copy of the \"Clarissa\" with white paint. Uses .35 rounds and is capable of firing from both pistol and smg magazines."
 	icon = 'icons/obj/guns/projectile/clarissa_white.dmi'
 	fire_sound = 'sound/weapons/guns/fire/9mm_pistol.ogg'
+	mag_well = MAG_WELL_SMG | MAG_WELL_PISTOL | MAG_WELL_H_PISTOL | MAG_WELL_DRUM
 	price_tag = 200
 	serial_type = "SI"
 	icon_state = "clarissa"

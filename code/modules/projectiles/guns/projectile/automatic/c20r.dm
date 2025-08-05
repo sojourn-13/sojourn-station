@@ -61,9 +61,10 @@
 	update_icon()
 
 /obj/item/gun/projectile/automatic/c20r/sci
-	name = "Soteria \"Bullpip\" SMG"
-	desc = "A Soteria copy of the Scarborough Arms C-20r equipped with a .35 barrel, not quite as good at punching through armor nor as deadly, but still reliable and versatile none the less as its often nicknamed the bullpip. Uses .35 caliber ammunition, but the barrel can be changed out to use .40 caliber ammunition instead."
+	name = "SI C-20m \"Bullpip\" .35 SMG"
+	desc = "A Soteria copy of the Scarborough Arms C-20r equipped with a .35 barrel and capable of firing from pistol and smg magazines. Not quite as good at punching through armor nor as deadly, but still reliable and versatile none the less as its often nicknamed the bullpip. Uses .35 caliber ammunition, but the barrel can be changed out to use .40 caliber ammunition instead."
 	icon = 'icons/obj/guns/projectile/si_cr20.dmi'
+	mag_well = MAG_WELL_SMG|MAG_WELL_PISTOL
 	damage_multiplier = 1.1
 	penetration_multiplier = 1.3
 	gun_parts = list(/obj/item/part/gun/frame/c20r/sci = 1, /obj/item/part/gun/grip/black = 1, /obj/item/part/gun/mechanism/smg = 1, /obj/item/part/gun/barrel/pistol = 1)
@@ -76,8 +77,16 @@
 	. = ..()
 	ammo_magazine = new /obj/item/ammo_magazine/smg_35/hv(src)
 
+/obj/item/gun/projectile/automatic/c20r/sci/update_icon()
+	cut_overlays()
+	icon_state = "[initial(icon_state)][silenced ? "_s" : ""]"
+	if(ammo_magazine)
+		add_overlay("mag[silenced ? "_s" : ""][ammo_magazine.ammo_color]")
+	if (!ammo_magazine || !length(ammo_magazine.stored_ammo))
+		add_overlay("slide[silenced ? "_s" : ""]")
+
 /obj/item/gun/projectile/automatic/c20r/sci/med
-	name = "Soteria \"Medtech\" SMG"
+	name = "SI C-20m \"MedTech\" .40 SMG"
 	desc = "A Soteria copy of the Scarborough Arms C-20r equipped with a .40 barrel and capable of firing from pistol and smg magazines. Slightly better at punching through armour and still reliable and versatile none the less as its often nicknamed the Medtech. Uses .40 caliber ammunition, but the barrel can be changed out to use .35 caliber ammunition instead."
 	icon = 'icons/obj/guns/projectile/si_cr20_med.dmi'
 	caliber = CAL_MAGNUM
@@ -94,6 +103,14 @@
 /obj/item/gun/projectile/automatic/c20r/sci/med/preloaded/New()
 	. = ..()
 	ammo_magazine = new /obj/item/ammo_magazine/smg_magnum_40/rubber(src)
+
+/obj/item/gun/projectile/automatic/c20r/sci/med/update_icon()
+	cut_overlays()
+	icon_state = "[initial(icon_state)][silenced ? "_s" : ""]"
+	if(ammo_magazine)
+		add_overlay("mag[silenced ? "_s" : ""][ammo_magazine.ammo_color]")
+	if (!ammo_magazine || !length(ammo_magazine.stored_ammo))
+		add_overlay("slide[silenced ? "_s" : ""]")
 
 /obj/item/part/gun/frame/c20r/sci
 	name = "C20m frame"
