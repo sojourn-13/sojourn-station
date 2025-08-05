@@ -388,7 +388,7 @@
 	ammo_type = /obj/item/ammo_casing/magnum_40/scrap
 
 /obj/item/ammo_magazine/smg_magnum_40/laser
-	name = "smg magazine (.40 laser)"
+	name = "smg magazine (.40 Magnum laser)"
 	icon_state = "smg_magnum_lsr"
 	ammo_color = "-lsr"
 	mag_well = MAG_WELL_SMG | MAG_WELL_LASER_SMG
