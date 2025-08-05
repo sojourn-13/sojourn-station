@@ -29,8 +29,8 @@
 	build_path = /obj/item/gun/energy/lasercannon/rnd
 
 /datum/design/research/item/weapon/c20r
-	name = "Lightweight C20R"
-	desc = "The C-20r is a lightweight and rapid-firing SMG. Uses .35 rounds."
+	name = "SI C-20m \"Bullpip\" .35 SMG"
+	desc = "The C-20m is a lightweight and rapid-firing SMG that can be modified to use .35 or .40 caliber rounds."
 	build_path = /obj/item/gun/projectile/automatic/c20r/sci
 
 /datum/design/research/item/weapon/centurio
