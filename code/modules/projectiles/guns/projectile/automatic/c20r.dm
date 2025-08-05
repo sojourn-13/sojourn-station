@@ -78,10 +78,10 @@
 
 /obj/item/gun/projectile/automatic/c20r/sci/med
 	name = "Soteria \"Medtech\" SMG"
-	desc = "A Soteria copy of the Scarborough Arms C-20r equipped with a .40 barrel, slightly better at punching through armour and still reliable and versatile none the less as its often nicknamed the Medtech. Uses .40 caliber ammunition, but the barrel can be changed out to use .35 caliber ammunition instead."
+	desc = "A Soteria copy of the Scarborough Arms C-20r equipped with a .40 barrel and capable of firing from pistol and smg magazines. Slightly better at punching through armour and still reliable and versatile none the less as its often nicknamed the Medtech. Uses .40 caliber ammunition, but the barrel can be changed out to use .35 caliber ammunition instead."
 	icon = 'icons/obj/guns/projectile/si_cr20_med.dmi'
 	caliber = CAL_MAGNUM
-	mag_well = MAG_WELL_SMG
+	mag_well = MAG_WELL_SMG|MAG_WELL_PISTOL
 	damage_multiplier = 1.5
 	penetration_multiplier = 1.8
 	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE, GUN_SCOPE, GUN_MAGWELL)
