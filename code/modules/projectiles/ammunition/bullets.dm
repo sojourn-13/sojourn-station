@@ -77,6 +77,9 @@
 
 /obj/item/ammo_casing/pistol_35/laser
 	desc = "A .35 laser casing."
+	icon_state = "pistol_c_lsr"
+	spent_icon = "pistol_c_lsr-spent"
+	shell_color = "lsr"
 	projectile_type = /obj/item/projectile/beam/weak/pistol_35
 
 /obj/item/ammo_casing/pistol_35/biomatter
@@ -137,6 +140,9 @@
 
 /obj/item/ammo_casing/magnum_40/laser
 	desc = "A .40 Magnum laser casing."
+	icon_state = "magnum_c_lsr"
+	spent_icon = "magnum_c_lsr-spent"
+	shell_color = "lsr"
 	projectile_type = /obj/item/projectile/beam/weak/magnum_40
 
 /obj/item/ammo_casing/magnum_40/scrap
@@ -226,6 +232,9 @@
 
 /obj/item/ammo_casing/light_rifle_257/laser
 	desc = "A .257 laser casing."
+	icon_state = "rifle_c_lsr"
+	spent_icon = "rifle_c_lsr-spent"
+	shell_color = "lsr"
 	projectile_type = /obj/item/projectile/beam/weak/light_rifle_257
 
 //// 7.5mm Rifle ////
@@ -287,6 +296,9 @@
 
 /obj/item/ammo_casing/rifle_75/laser
 	desc = "A 7.5mm laser casing."
+	icon_state = "rifle_c_lsr"
+	spent_icon = "rifle_c_lsr-spent"
+	shell_color = "lsr"
 	projectile_type = /obj/item/projectile/beam/weak/rifle_75
 
 //// .408 heavy rifle////
@@ -348,6 +360,9 @@
 
 /obj/item/ammo_casing/heavy_rifle_408/laser
 	desc = "A .408 laser casing."
+	icon_state = "rifle_c_lsr"
+	spent_icon = "rifle_c_lsr-spent"
+	shell_color = "lsr"
 	projectile_type = /obj/item/projectile/beam/weak/heavy_rifle_408
 
 /obj/item/ammo_casing/heavy_rifle_408/spent
@@ -474,6 +489,9 @@
 /obj/item/ammo_casing/kurz_50/laser
 	desc = "A .50 Kurz laser casing."
 	caliber = CAL_50
+	icon_state = "rifle_c_lsr"
+	spent_icon = "rifle_c_lsr-spent"
+	shell_color = "lsr"
 	projectile_type = /obj/item/projectile/beam/weak/kurz_50
 
 //// .60-06 ////
@@ -683,7 +701,7 @@
 	desc = "A 12 gauge laser shell."
 	icon_state = "lasershell"
 	spent_icon = "lasershell-spent"
-	shell_color = "i"
+	shell_color = "lsr"
 	projectile_type = /obj/item/projectile/beam/shotgun
 	maxamount = 5
 
@@ -821,6 +839,9 @@
 /obj/item/ammo_casing/laser_223
 	name = "laser casing"
 	desc = "A .223 pulse charged laser cavity."
+	icon_state = "clrifle_c_lsr"
+	spent_icon = "clrifle_c_lsr-spent"
+	shell_color = "lsr"
 	caliber = CAL_SCI
 	projectile_type = /obj/item/projectile/beam/laser_223
 
