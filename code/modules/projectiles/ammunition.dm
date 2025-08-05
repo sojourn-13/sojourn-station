@@ -360,12 +360,12 @@
 
 	// Check for laser ammunition compatibility
 	if(findtext(C.type, "/laser"))
-		// This is laser ammunition - only allow in laser magazine wells
+		// This is laser ammunition - only allow in magazines that have laser mag wells
 		if(!(mag_well & (MAG_WELL_LASER_PISTOL | MAG_WELL_LASER_SMG | MAG_WELL_LASER_DRUM | MAG_WELL_LASER_RIFLE | MAG_WELL_LASER_HRIFLE | MAG_WELL_LASER_H_PISTOL)))
 			return FALSE
 	else
-		// This is regular ammunition - don't allow in laser-only magazine wells
-		if(mag_well & (MAG_WELL_LASER_PISTOL | MAG_WELL_LASER_SMG | MAG_WELL_LASER_DRUM | MAG_WELL_LASER_RIFLE | MAG_WELL_LASER_HRIFLE | MAG_WELL_LASER_H_PISTOL) && !(mag_well & ~(MAG_WELL_LASER_PISTOL | MAG_WELL_LASER_SMG | MAG_WELL_LASER_DRUM | MAG_WELL_LASER_RIFLE | MAG_WELL_LASER_HRIFLE | MAG_WELL_LASER_H_PISTOL)))
+		// This is regular ammunition - don't allow in magazines with any laser mag wells
+		if(mag_well & (MAG_WELL_LASER_PISTOL | MAG_WELL_LASER_SMG | MAG_WELL_LASER_DRUM | MAG_WELL_LASER_RIFLE | MAG_WELL_LASER_HRIFLE | MAG_WELL_LASER_H_PISTOL))
 			return FALSE
 
 	if(C.amount > 1)
