@@ -236,7 +236,7 @@
 		if(C.caliber != caliber)
 			to_chat(user, SPAN_WARNING("\The [C] does not fit into \the [src]."))
 			return
-		
+
 		// Check for laser ammunition compatibility
 		if(findtext(C.type, "/laser"))
 			// This is laser ammunition - only allow in laser magazine wells
@@ -248,7 +248,7 @@
 			if(mag_well & (MAG_WELL_LASER_PISTOL | MAG_WELL_LASER_SMG | MAG_WELL_LASER_DRUM | MAG_WELL_LASER_RIFLE | MAG_WELL_LASER_HRIFLE | MAG_WELL_LASER_H_PISTOL) && !(mag_well & ~(MAG_WELL_LASER_PISTOL | MAG_WELL_LASER_SMG | MAG_WELL_LASER_DRUM | MAG_WELL_LASER_RIFLE | MAG_WELL_LASER_HRIFLE | MAG_WELL_LASER_H_PISTOL)))
 				to_chat(user, SPAN_WARNING("\The [src] laser magazine cannot accept regular ammunition."))
 				return
-		
+
 		insertCasing(C)
 	else if(istype(W, /obj/item/ammo_magazine))
 		var/obj/item/ammo_magazine/other = W
@@ -303,7 +303,7 @@
 		if(C.caliber != caliber)
 			to_chat(user, SPAN_WARNING("[C] does not fit into [src]."))
 			return
-		
+
 		// Check for laser ammunition compatibility
 		if(findtext(C.type, "/laser"))
 			// This is laser ammunition - only allow in laser magazine wells
@@ -315,7 +315,7 @@
 			if(mag_well & (MAG_WELL_LASER_PISTOL | MAG_WELL_LASER_SMG | MAG_WELL_LASER_DRUM | MAG_WELL_LASER_RIFLE | MAG_WELL_LASER_HRIFLE | MAG_WELL_LASER_H_PISTOL) && !(mag_well & ~(MAG_WELL_LASER_PISTOL | MAG_WELL_LASER_SMG | MAG_WELL_LASER_DRUM | MAG_WELL_LASER_RIFLE | MAG_WELL_LASER_HRIFLE | MAG_WELL_LASER_H_PISTOL)))
 				to_chat(user, SPAN_WARNING("[src] laser magazine cannot accept regular ammunition."))
 				return
-		
+
 		if(stored_ammo.len)
 			var/obj/item/ammo_casing/T = removeCasing()
 			if(T)
@@ -357,7 +357,7 @@
 		return FALSE
 	if(stored_ammo.len >= max_ammo)
 		return FALSE
-	
+
 	// Check for laser ammunition compatibility
 	if(findtext(C.type, "/laser"))
 		// This is laser ammunition - only allow in laser magazine wells
@@ -367,7 +367,7 @@
 		// This is regular ammunition - don't allow in laser-only magazine wells
 		if(mag_well & (MAG_WELL_LASER_PISTOL | MAG_WELL_LASER_SMG | MAG_WELL_LASER_DRUM | MAG_WELL_LASER_RIFLE | MAG_WELL_LASER_HRIFLE | MAG_WELL_LASER_H_PISTOL) && !(mag_well & ~(MAG_WELL_LASER_PISTOL | MAG_WELL_LASER_SMG | MAG_WELL_LASER_DRUM | MAG_WELL_LASER_RIFLE | MAG_WELL_LASER_HRIFLE | MAG_WELL_LASER_H_PISTOL)))
 			return FALSE
-	
+
 	if(C.amount > 1)
 		C.amount -= 1
 		var/type = C.type
