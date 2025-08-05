@@ -93,7 +93,7 @@
 
 /obj/item/gun/projectile/automatic/c20r/sci/med/preloaded/New()
 	. = ..()
-	ammo_magazine = new /obj/item/ammo_magazine/smg_magnum_40/hv(src)
+	ammo_magazine = new /obj/item/ammo_magazine/smg_magnum_40/rubber(src)
 
 /obj/item/part/gun/frame/c20r/sci
 	name = "C20m frame"

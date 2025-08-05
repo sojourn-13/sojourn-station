@@ -602,7 +602,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 		stamped = TRUE
 		var/list/options = list()
 		// Keeping this in case any other "sensible" option for a primary weapon for Lifeline Techs arrives, just add them as an option here.
-		options["Bullpip SMG with HV ammo"] = list(/obj/item/gun/projectile/automatic/c20r/sci/med/preloaded,/obj/item/gun_upgrade/muzzle/silencer,/obj/item/ammo_magazine/smg_magnum_40/hv,/obj/item/ammo_magazine/smg_magnum_40/hv)
+		options["Medtech .40 SMG with HV ammo"] = list(/obj/item/gun/projectile/automatic/c20r/sci/med/preloaded,/obj/item/gun_upgrade/muzzle/silencer,/obj/item/ammo_magazine/smg_magnum_40/hv,/obj/item/ammo_magazine/smg_magnum_40/hv, /obj/item/ammo_magazine/smg_magnum_40/rubber/obj/item/ammo_magazine/smg_magnum_40/rubber, /obj/item/ammo_magazine/smg_magnum_40/rubber, /obj/item/ammo_magazine/smg_magnum_40/rubber)
 		options["Soteria \"Sprocket\" laser carbine"] = list(/obj/item/gun/energy/cog/sprocket/preloaded,/obj/item/cell/medium/moebius/high)
 		options["SST \"Humility\" shotgun"] = list(/obj/item/gun/energy/sst/humility/preloaded,/obj/item/cell/medium/moebius/high)
 		var/choice = input(user,"Which gun will you take?") as null|anything in options
