@@ -62,7 +62,7 @@
 
 /obj/item/gun/projectile/automatic/c20r/sci
 	name = "Soteria \"Bullpip\" SMG"
-	desc = "A Soteria copy of the Scarborough Arms C-20r, not quite as good at punching through armor nor as deadly, but still reliable and versatile none the less as its often nicknamed the bullpip. Uses .35 or .40 depending on the installed barrel."
+	desc = "A Soteria copy of the Scarborough Arms C-20r equipped with a .35 barrel, not quite as good at punching through armor nor as deadly, but still reliable and versatile none the less as its often nicknamed the bullpip. Uses .35 caliber ammunition, but the barrel can be changed out to use .40 caliber ammunition instead."
 	icon = 'icons/obj/guns/projectile/si_cr20.dmi'
 	damage_multiplier = 1.1
 	penetration_multiplier = 1.3
@@ -78,7 +78,7 @@
 
 /obj/item/gun/projectile/automatic/c20r/sci/med
 	name = "Soteria \"Medtech\" SMG"
-	desc = "A Soteria copy of the Scarborough Arms C-20r equipped with a .40 barrel, better at punching through armour and still reliable and versatile none the less as its often nicknamed the Medtech. Uses .40 caliber ammunition."
+	desc = "A Soteria copy of the Scarborough Arms C-20r equipped with a .40 barrel, better at punching through armour and still reliable and versatile none the less as its often nicknamed the Medtech. Uses .40 caliber ammunition, but the barrel can be changed out to use .35 caliber ammunition instead."
 	icon = 'icons/obj/guns/projectile/si_cr20_med.dmi'
 	caliber = CAL_MAGNUM
 	mag_well = MAG_WELL_SMG
