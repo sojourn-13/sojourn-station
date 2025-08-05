@@ -216,10 +216,46 @@
 	materials = list(MATERIAL_STEEL = 15)
 
 /datum/design/research/item/ammo/smg_mag/laser
-	name = "SMG Magazine .35 (Empty) "
+	name = "SMG Magazine .35 Laser Marked (Empty)"
 	desc = "A magazine for .35, used in smgs, marked for laser based ammo"
 	build_path = /obj/item/ammo_magazine/smg_35/laser/empty
 	materials = list(MATERIAL_STEEL = 15)
+
+/datum/design/research/item/ammo/magnum/empty/laser
+	name = "Magnum Magazine .40 Laser Marked (Empty)"
+	desc = "An empty magazine for .40 Magnum, marked for laser based ammo"
+	build_path = /obj/item/ammo_magazine/magnum_40/laser/empty
+	materials = list(MATERIAL_STEEL = 4)
+
+/datum/design/research/item/ammo/smg_magnum/empty/laser
+	name = "SMG Magnum Magazine .40 Laser Marked (Empty)"
+	desc = "An empty SMG magazine for .40, marked for laser based ammo"
+	build_path = /obj/item/ammo_magazine/smg_magnum_40/laser/empty
+	materials = list(MATERIAL_STEEL = 15)
+
+/datum/design/research/item/ammo/light_rifle/empty/laser
+	name = "Carbine Magazine .257 Laser Marked (Empty)"
+	desc = "An empty magazine for .257 Carbine, marked for laser based ammo"
+	build_path = /obj/item/ammo_magazine/light_rifle_257/laser/empty
+	materials = list(MATERIAL_STEEL = 8)
+
+/datum/design/research/item/ammo/rifle_75/empty/laser
+	name = "Rifle Magazine 7.5mm Laser Marked (Empty)"
+	desc = "An empty magazine for 7.5mm Rifle, marked for laser based ammo"
+	build_path = /obj/item/ammo_magazine/rifle_75/laser/empty
+	materials = list(MATERIAL_STEEL = 10)
+
+/datum/design/research/item/ammo/heavy_rifle/empty/laser
+	name = "Heavy Rifle Magazine .408 Laser Marked (Empty)"
+	desc = "An empty magazine for .408 Heavy Rifle, marked for laser based ammo"
+	build_path = /obj/item/ammo_magazine/heavy_rifle_408/laser/empty
+	materials = list(MATERIAL_STEEL = 12)
+
+/datum/design/research/item/ammo/kurz/empty/laser
+	name = "Heavy Pistol Magazine .50 Kurz Laser Marked (Empty)"
+	desc = "An empty magazine for .50 Kurz, marked for laser based ammo"
+	build_path = /obj/item/ammo_magazine/kurz_50/laser/empty
+	materials = list(MATERIAL_STEEL = 4)
 
 /datum/design/research/item/ammo/smg_mag/lethal
 	name = "SMG Magazine .35"

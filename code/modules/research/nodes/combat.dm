@@ -163,6 +163,7 @@
 							/datum/design/research/item/ammo/smg_mag/laser,
 							/datum/design/research/item/ammo/pistol_laser,
 							/datum/design/research/item/ammo/pistol/empty/laser,
+							/datum/design/research/item/ammo/magnum/empty/laser,
 							/datum/design/research/item/ammo/magum_laser,
 							/datum/design/research/item/robot_upgrade/bigknife,
 							/datum/design/research/item/weapon/slimebaton
@@ -232,7 +233,9 @@
 							/datum/design/research/item/weapon/katana,
 							/datum/design/research/item/ammo/rifle_75,
 							/datum/design/research/item/ammo/light_rifle_257,
-							/datum/design/research/item/ammo/kurz_laser)
+							/datum/design/research/item/ammo/kurz_laser,
+							/datum/design/research/item/ammo/smg_magnum/empty/laser,
+							/datum/design/research/item/ammo/light_rifle/empty/laser)
 
 /datum/technology/exotic_gunmods
 	name = "Experimental Gunmods"
@@ -276,7 +279,10 @@
 							/datum/design/research/item/ammo/heavy_rifle_408,
 							/datum/design/research/item/ammo/laser_mag,
 							/datum/design/research/item/weapon/laser_ak,
-							/datum/design/research/item/weapon/centauri
+							/datum/design/research/item/weapon/centauri,
+							/datum/design/research/item/ammo/rifle_75/empty/laser,
+							/datum/design/research/item/ammo/heavy_rifle/empty/laser,
+							/datum/design/research/item/ammo/kurz/empty/laser
 							)
 
 /datum/technology/riglaser_weaponry
