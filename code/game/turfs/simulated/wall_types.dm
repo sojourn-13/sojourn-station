@@ -260,6 +260,8 @@
 	..(newloc,MATERIAL_IRON)
 /turf/simulated/wall/uranium/New(var/newloc)
 	..(newloc,MATERIAL_URANIUM)
+	// Add radiation source to uranium walls
+	new /obj/effect/radiation_source(src, 50, 5) // 50 rads at range 5
 /turf/simulated/wall/diamond/New(var/newloc)
 	..(newloc,MATERIAL_DIAMOND)
 /turf/simulated/wall/gold/New(var/newloc)
