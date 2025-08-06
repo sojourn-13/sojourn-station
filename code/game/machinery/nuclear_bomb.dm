@@ -560,6 +560,12 @@ var/bomb_set
 	original_level = security_state.current_security_level
 	security_state.set_security_level(security_state.severe_security_level, TRUE)
 
+	// Trigger emergency red lighting on all lights in the colony
+	for(var/obj/machinery/light/L in world)
+		if(isStationLevel(L.z))
+			spawn()
+				L.set_red()
+
 	// Update station bomb state variables
 	if(istype(src, /obj/machinery/nuclearbomb/station))
 		var/obj/machinery/nuclearbomb/station/S = src
@@ -618,6 +624,12 @@ var/bomb_set
 	if(original_level)
 		var/decl/security_state/security_state = decls_repository.get_decl(GLOB.maps_data.security_state)
 		security_state.set_security_level(original_level, TRUE)
+
+	// Restore normal lighting on all lights in the colony
+	for(var/obj/machinery/light/L in world)
+		if(isStationLevel(L.z))
+			spawn()
+				L.reset_color()
 
 	// Reset station bomb state variables
 	if(istype(src, /obj/machinery/nuclearbomb/station))
