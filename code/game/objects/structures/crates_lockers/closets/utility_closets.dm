@@ -153,6 +153,10 @@
 	new /obj/item/clothing/head/radiation(src)
 	new /obj/item/clothing/suit/radiation(src)
 	new /obj/item/clothing/head/radiation(src)
+	new /obj/item/device/geiger(src)
+	new /obj/item/device/geiger(src)
+	new /obj/item/storage/firstaid/radiation(src)
+
 
 /*
  * Bombsuit closet
