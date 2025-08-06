@@ -522,32 +522,22 @@ var/bomb_set
 
 /obj/machinery/nuclearbomb/update_icon()
 	if(lighthack)
-		icon_state = "nuclearbomb0"
+		icon_state = "idle"
 		return
 
 	// Use proper state variables for station bombs
 	if(istype(src, /obj/machinery/nuclearbomb/station))
 		var/obj/machinery/nuclearbomb/station/S = src
 		if(timing == -1 || S.exploding)
-			icon_state = "nuclearbomb3"
+			icon_state = "exploding"
 		else if(timing || S.urgent)
-			icon_state = "nuclearbomb2"
+			icon_state = "urgent"
 		else if(extended || S.greenlight)
-			icon_state = "nuclearbomb1"
+			icon_state = "greenlight"
 		else if(S.idle)
-			icon_state = "nuclearbomb0"
+			icon_state = "idle"
 		else
-			icon_state = "nuclearbomb0"
-	else
-		// Original behavior for regular bombs
-		if(timing == -1)
-			icon_state = "nuclearbomb3"
-		else if(timing)
-			icon_state = "nuclearbomb2"
-		else if(extended)
-			icon_state = "nuclearbomb1"
-		else
-			icon_state = "nuclearbomb0"
+			icon_state = "idle"
 /*
 if(!N.lighthack)
 	if (N.icon_state == "nuclearbomb2")
