@@ -568,7 +568,8 @@ if(!N.lighthack)
 
 //====the nuclear football (holds the disk and instructions)====
 /obj/item/storage/secure/briefcase/nukedisk
-	desc = "A large briefcase with a digital locking system."
+	name = "nuclear football"
+	desc = "A large briefcase with a digital locking system. This one has a nuclear warning symbol on it."
 
 /obj/item/storage/secure/briefcase/nukedisk/examine(mob/user)
 	. = ..()
