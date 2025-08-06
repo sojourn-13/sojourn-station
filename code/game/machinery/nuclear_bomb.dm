@@ -598,7 +598,8 @@ if(!N.lighthack)
 		8) Insert the nuclear authentication disk into the self-destruct terminal.<br>\
 		9) Enter the authentication code into the self-destruct terminal.<br>\
 		10) Start the sequence at the main terminal by disabling safety interlocks and activating the self-destruct sequence.<br><br>\
-		The sequence may only be aborted during the first 5 minutes of the countdown. \")
+		The sequence may only be aborted during the first 5 minutes of the countdown. "
+		)
 		R.name = "colony self-destruct instructions"
 
 //====colony self-destruct system====
