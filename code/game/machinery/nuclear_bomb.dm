@@ -374,12 +374,12 @@ var/bomb_set
 					return
 
 				if(!isinspace())
-					anchored = !anchored
-					if(anchored)
+					// Can only anchor, not unanchor - nuclear bombs should stay secured
+					if(!anchored)
+						anchored = 1
 						visible_message(SPAN_WARNING("With a steely snap, bolts slide out of [src] and anchor it to the flooring."))
 					else
-						secure_device()
-						visible_message(SPAN_WARNING("The anchoring bolts slide back into the depths of [src]."))
+						to_chat(usr, SPAN_WARNING("The nuclear device is permanently anchored and cannot be moved."))
 				else
 					to_chat(usr, SPAN_WARNING("There is nothing to anchor to!"))
 
