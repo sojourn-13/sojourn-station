@@ -570,6 +570,10 @@ if(!N.lighthack)
 /obj/item/storage/secure/briefcase/nukedisk
 	name = "nuclear football"
 	desc = "A large briefcase with a digital locking system. This one has a nuclear warning symbol on it."
+	startswith = list(
+		/obj/item/disk/nuclear,
+		/obj/item/folder/envelope/nuke_instructions
+	)
 
 /obj/item/storage/secure/briefcase/nukedisk/examine(mob/user)
 	. = ..()
