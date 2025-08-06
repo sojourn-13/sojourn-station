@@ -1459,6 +1459,18 @@ area/nadezhda/medical/medbaymeeting
 	name = "\improper Vault"
 	icon_state = "nuke_storage"
 
+/area/nadezhda/security/nuke_vault
+	name = "\improper Nuclear Vault"
+	flags = AREA_FLAG_CRITICAL
+	area_light_color = COLOR_LIGHTING_SCI_DARK
+	icon_state = "nuke_storage"
+
+/area/nadezhda/security/nuke_hallway
+	name = "\improper Nuclear Vault Access"
+	flags = AREA_FLAG_CRITICAL | AREA_FLAG_RAD_SHIELDED
+	area_light_color = COLOR_LIGHTING_SCI_BRIGHT
+	icon_state = "nuke_storage"
+
 /area/nadezhda/security/checkpoint
 	name = "\improper Security Checkpoint"
 	icon_state = "checkpoint1"
