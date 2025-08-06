@@ -22,7 +22,7 @@
 		access_tox_storage, access_teleporter, access_sec_doors,
 		access_moebius, access_medical_equip, access_chemistry, access_virology, access_surgery, access_psychiatrist,
 		access_robotics, access_xenobiology, access_ai_upload, access_tech_storage, access_eva, access_external_airlocks, access_medical_suits,
-		access_RC_announce, access_keycard_auth, access_tcomsat, access_gateway, access_xenoarch, access_network, access_maint_tunnels, access_research_equipment
+		access_RC_announce, access_keycard_auth, access_tcomsat, access_gateway, access_xenoarch, access_network, access_maint_tunnels, access_research_equipment, access_heads_vault
 	)
 	ideal_character_age = 40
 	minimum_character_age = 25

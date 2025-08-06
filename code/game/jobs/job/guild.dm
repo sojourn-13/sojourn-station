@@ -16,7 +16,7 @@
 	access = list(
 		access_maint_tunnels, access_mailsorting, access_cargo, access_cargo_bot, access_merchant, access_mining,
 		access_heads, access_mining_station, access_RC_announce, access_keycard_auth, access_sec_doors,
-		access_eva, access_external_airlocks, access_hydroponics, access_bar, access_kitchen, access_theatre
+		access_eva, access_external_airlocks, access_hydroponics, access_bar, access_kitchen, access_theatre, access_heads_vault
 	)
 	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_BSSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
 
