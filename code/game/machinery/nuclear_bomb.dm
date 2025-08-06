@@ -570,14 +570,11 @@ if(!N.lighthack)
 /obj/item/storage/secure/briefcase/nukedisk
 	name = "nuclear football"
 	desc = "A large briefcase with a digital locking system. This one has a nuclear warning symbol on it."
-	startswith = list(
-		/obj/item/disk/nuclear,
-		/obj/item/folder/envelope/nuke_instructions
-	)
 
-/obj/item/storage/secure/briefcase/nukedisk/examine(mob/user)
+/obj/item/storage/secure/briefcase/nukedisk/Initialize()
 	. = ..()
-	to_chat(user,"On closer inspection, you see a company emblem is etched into the front of it.")
+	new /obj/item/disk/nuclear(src)
+	new /obj/item/folder/envelope/nuke_instructions(src)
 
 /obj/item/folder/envelope/nuke_instructions
 	name = "instructions envelope"
