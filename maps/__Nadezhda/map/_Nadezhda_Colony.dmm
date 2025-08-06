@@ -249,7 +249,7 @@
 	dir = 5
 	},
 /turf/simulated/floor/greengrid,
-/area/colony)
+/area/nadezhda/security/nuke_vault)
 "acQ" = (
 /obj/machinery/atmospherics/unary/vent_scrubber{
 	dir = 1
@@ -2314,6 +2314,18 @@
 	},
 /turf/simulated/floor/tiled/steel/golden,
 /area/nadezhda/hallway/surface/section1)
+"axi" = (
+/obj/machinery/atmospherics/pipe/simple/heat_exchanging{
+	dir = 4
+	},
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/structure/cable/heavyduty{
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/security/nuke_hallway)
 "axj" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -2560,7 +2572,7 @@
 	dir = 10
 	},
 /turf/simulated/floor/greengrid,
-/area/colony)
+/area/nadezhda/security/nuke_vault)
 "azL" = (
 /obj/machinery/camera/network/security{
 	dir = 8
@@ -3663,6 +3675,18 @@
 /obj/item/caution,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/crew_quarters/janitor)
+"aKp" = (
+/obj/machinery/power/apc{
+	dir = 1;
+	name = "North APC";
+	pixel_y = 28
+	},
+/obj/structure/cable/cyan{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/turf/simulated/floor/tiled/white/danger,
+/area/nadezhda/security/nuke_hallway)
 "aKu" = (
 /obj/structure/boulder{
 	pixel_x = -1
@@ -5375,14 +5399,6 @@
 /obj/structure/boulder,
 /turf/simulated/floor/industrial/bricks,
 /area/nadezhda/maintenance/undergroundfloor1west)
-"bcg" = (
-/obj/structure/catwalk,
-/obj/structure/lattice,
-/obj/machinery/camera/motion/security,
-/turf/simulated/open,
-/area/nadezhda/security/nuke_storage{
-	name = "\improper Nuclear Vault"
-	})
 "bch" = (
 /obj/structure/table/rack/shelf,
 /obj/random/mecha_equipment/low_chance,
@@ -6284,7 +6300,7 @@
 	dir = 1
 	},
 /turf/unsimulated/mineral,
-/area/colony)
+/area/nadezhda/security/nuke_vault)
 "bjU" = (
 /obj/structure/table/rack/shelf,
 /obj/random/lowkeyrandom/low_chance,
@@ -6616,7 +6632,7 @@
 "bnZ" = (
 /obj/structure/multiz/ladder/up,
 /turf/simulated/floor/greengrid,
-/area/colony)
+/area/nadezhda/security/nuke_vault)
 "bog" = (
 /obj/random/cluster/roaches/low_chance,
 /obj/effect/decal/cleanable/dirt,
@@ -7172,7 +7188,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/heat_exchanging,
 /turf/simulated/floor/greengrid,
-/area/colony)
+/area/nadezhda/security/nuke_vault)
 "btp" = (
 /obj/structure/disposalpipe/segment{
 	dir = 1;
@@ -7854,6 +7870,13 @@
 /area/nadezhda/maintenance{
 	name = "Residential District Maintenance"
 	})
+"bzd" = (
+/obj/structure/closet/radiation,
+/obj/machinery/light{
+	light_color = "#b9e8ea"
+	},
+/turf/simulated/floor/tiled/white/danger,
+/area/nadezhda/security/nuke_hallway)
 "bze" = (
 /obj/effect/spider/stickyweb,
 /obj/effect/spider/stickyweb,
@@ -8455,6 +8478,14 @@
 /area/nadezhda/maintenance{
 	name = "Residential District Maintenance"
 	})
+"bFu" = (
+/obj/machinery/power/port_gen/pacman/diesel,
+/obj/structure/cable/cyan{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/security/nuke_hallway)
 "bFy" = (
 /obj/structure/multiz/stairs/enter/bottom{
 	dir = 8
@@ -8655,6 +8686,9 @@
 /obj/landmark/join/late/cyborg,
 /turf/simulated/floor/tiled/white/techfloor,
 /area/nadezhda/rnd/robotics)
+"bHv" = (
+/turf/simulated/wall/r_wall,
+/area/nadezhda/security/nuke_vault)
 "bHA" = (
 /obj/structure/flora/small/lavarock2,
 /turf/simulated/floor/asteroid/grass,
@@ -9238,6 +9272,17 @@
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/server)
+"bMp" = (
+/obj/structure/cable/cyan{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/floor_decal/industrial/caution{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white/danger,
+/area/nadezhda/security/nuke_hallway)
 "bMs" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -9575,9 +9620,7 @@
 /obj/effect/floor_decal/industrial_plant/steel_warning,
 /obj/machinery/nuke_cylinder_dispenser,
 /turf/simulated/floor/reinforced,
-/area/nadezhda/security/nuke_storage{
-	name = "\improper Nuclear Vault"
-	})
+/area/nadezhda/security/nuke_vault)
 "bQU" = (
 /obj/effect/floor_decal/industrial/warningdust{
 	dir = 6
@@ -9618,6 +9661,25 @@
 	name = "murky water"
 	},
 /area/nadezhda/maintenance/undergroundfloor2north)
+"bRA" = (
+/obj/machinery/atmospherics/mains_pipe/simple/hidden{
+	dir = 4
+	},
+/obj/machinery/button/remote/airlock{
+	name = "Nuclear Vault Bolts";
+	pixel_y = 6;
+	id = "nukebolts3";
+	req_one_access = list(53);
+	specialfunctions = 4
+	},
+/obj/machinery/button/remote/blast_door{
+	name = "Nuclear Vault Blast Doors";
+	pixel_y = -6;
+	id = "nuclearblast3";
+	req_one_access = list(53)
+	},
+/turf/simulated/wall/r_wall,
+/area/nadezhda/security/nuke_hallway)
 "bRC" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/random/scrap/sparse_weighted,
@@ -10889,9 +10951,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/plating/under,
-/area/nadezhda/security/nuke_storage{
-	name = "\improper Nuclear Vault"
-	})
+/area/nadezhda/security/nuke_hallway)
 "cej" = (
 /obj/structure/salvageable/data,
 /turf/simulated/floor/industrial/black_large_slates,
@@ -11081,9 +11141,7 @@
 	dir = 4
 	},
 /turf/simulated/open,
-/area/nadezhda/security/nuke_storage{
-	name = "\improper Nuclear Vault"
-	})
+/area/nadezhda/security/nuke_vault)
 "cgA" = (
 /obj/structure/table/standard,
 /obj/item/clothing/head/costume/misc/paper,
@@ -11548,6 +11606,30 @@
 	name = "murky water"
 	},
 /area/nadezhda/maintenance/undergroundfloor1north)
+"clg" = (
+/obj/structure/catwalk,
+/obj/structure/lattice,
+/obj/structure/lattice,
+/obj/structure/railing{
+	icon_state = "reinforced_railing0";
+	name = "orange reinforced railing";
+	health = 140;
+	maxhealth = 140;
+	dir = 1
+	},
+/obj/structure/railing{
+	icon_state = "reinforced_railing0";
+	name = "orange reinforced railing";
+	health = 140;
+	maxhealth = 140;
+	dir = 4
+	},
+/obj/structure/jtb_pillar{
+	name = "pylon";
+	desc = "An ominous pylon."
+	},
+/turf/simulated/open,
+/area/nadezhda/security/nuke_vault)
 "clh" = (
 /obj/structure/reagent_dispensers/watertank/huge{
 	color = "#9a977b"
@@ -12653,6 +12735,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/quartermaster/office)
+"cwb" = (
+/obj/machinery/shower{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial_plant/steel_grate,
+/turf/simulated/floor/reinforced,
+/area/nadezhda/security/nuke_hallway)
 "cwk" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -14498,9 +14587,7 @@
 /area/nadezhda/outside/forest)
 "cNL" = (
 /turf/simulated/wall/r_wall,
-/area/nadezhda/security/nuke_storage{
-	name = "\improper Nuclear Vault"
-	})
+/area/nadezhda/security/nuke_hallway)
 "cNQ" = (
 /obj/item/modular_computer/console/preset/engineering/atmos,
 /turf/simulated/floor/tiled/steel/techfloor_grid,
@@ -15189,10 +15276,11 @@
 /obj/machinery/atmospherics/pipe/simple/heat_exchanging{
 	dir = 4
 	},
+/obj/structure/cable/heavyduty{
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/plating/under,
-/area/nadezhda/security/nuke_storage{
-	name = "\improper Nuclear Vault"
-	})
+/area/nadezhda/security/nuke_hallway)
 "cUa" = (
 /obj/structure/cable/yellow{
 	d1 = 4;
@@ -15527,6 +15615,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/danger,
 /area/nadezhda/engineering/workshop)
+"cWU" = (
+/obj/structure/closet/radiation,
+/turf/simulated/floor/tiled/white/danger,
+/area/nadezhda/security/nuke_hallway)
 "cWX" = (
 /obj/machinery/suit_storage_unit/medical,
 /obj/machinery/light/small{
@@ -17014,6 +17106,12 @@
 /area/nadezhda/maintenance{
 	name = "Residential District Maintenance"
 	})
+"dlZ" = (
+/obj/machinery/atmospherics/pipe/simple/heat_exchanging{
+	dir = 4
+	},
+/turf/simulated/wall/r_wall,
+/area/nadezhda/command/hallway)
 "dma" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/structure/flora/big/bush3,
@@ -17973,9 +18071,7 @@
 	},
 /obj/effect/floor_decal/industrial/road/curve3,
 /turf/simulated/floor/reinforced,
-/area/nadezhda/security/nuke_storage{
-	name = "\improper Nuclear Vault"
-	})
+/area/nadezhda/security/nuke_vault)
 "duU" = (
 /obj/item/device/radio/intercom{
 	dir = 1;
@@ -19754,22 +19850,18 @@
 /turf/simulated/floor/rock,
 /area/asteroid/cave)
 "dKX" = (
-/obj/machinery/power/apc{
-	dir = 1;
-	name = "North APC";
-	pixel_y = 28
-	},
-/obj/structure/cable/cyan{
-	d2 = 2;
-	icon_state = "0-2"
-	},
 /obj/machinery/atmospherics/pipe/simple/heat_exchanging{
 	dir = 4
 	},
+/obj/structure/catwalk,
+/obj/structure/cable/heavyduty{
+	icon_state = "4-8"
+	},
+/obj/structure/sign/warning/radioactive/small{
+	pixel_x = 32
+	},
 /turf/simulated/floor/plating/under,
-/area/nadezhda/security/nuke_storage{
-	name = "\improper Nuclear Vault"
-	})
+/area/nadezhda/security/nuke_hallway)
 "dLd" = (
 /obj/machinery/light,
 /obj/item/device/radio/intercom{
@@ -20737,6 +20829,15 @@
 	name = "murky water"
 	},
 /area/nadezhda/maintenance/undergroundfloor1west)
+"dUm" = (
+/obj/structure/reagent_dispensers/fueltank/huge,
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/security/nuke_hallway)
 "dUo" = (
 /obj/effect/floor_decal/industrial/warningred{
 	dir = 8
@@ -22943,9 +23044,7 @@
 	dir = 4
 	},
 /turf/simulated/open,
-/area/nadezhda/security/nuke_storage{
-	name = "\improper Nuclear Vault"
-	})
+/area/nadezhda/security/nuke_vault)
 "epd" = (
 /obj/structure/flora/small/grassb4,
 /turf/simulated/floor/asteroid/dirt/dark,
@@ -23141,9 +23240,7 @@
 	},
 /obj/machinery/self_destruct,
 /turf/simulated/floor/reinforced,
-/area/nadezhda/security/nuke_storage{
-	name = "\improper Nuclear Vault"
-	})
+/area/nadezhda/security/nuke_vault)
 "eqU" = (
 /obj/machinery/light{
 	dir = 1
@@ -24800,7 +24897,7 @@
 	dir = 10
 	},
 /turf/simulated/floor/greengrid,
-/area/colony)
+/area/nadezhda/security/nuke_vault)
 "eIb" = (
 /obj/machinery/portable_atmospherics/canister/air,
 /obj/effect/floor_decal/spline/fancy/three_quarters,
@@ -25229,9 +25326,7 @@
 /area/nadezhda/absolutism/skyyard)
 "eLW" = (
 /turf/simulated/open,
-/area/nadezhda/security/nuke_storage{
-	name = "\improper Nuclear Vault"
-	})
+/area/nadezhda/security/nuke_vault)
 "eLZ" = (
 /obj/structure/flora/small/rock3,
 /turf/simulated/floor/asteroid/dirt,
@@ -25543,6 +25638,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/tactical_blackshield)
+"eOf" = (
+/obj/item/contraband/poster/placed/generic/missinggloves,
+/turf/simulated/wall/r_wall,
+/area/nadezhda/storage/primary)
 "eOg" = (
 /obj/machinery/power/nt_obelisk,
 /turf/simulated/floor/asteroid/dirt/dust,
@@ -25622,13 +25721,8 @@
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/rnd/rbreakroom)
 "eOU" = (
-/obj/machinery/atmospherics/pipe/simple/heat_exchanging{
-	dir = 4
-	},
-/turf/simulated/wall/r_wall,
-/area/nadezhda/security/nuke_storage{
-	name = "\improper Nuclear Vault"
-	})
+/turf/unsimulated/mineral,
+/area/nadezhda/security/nuke_vault)
 "eOZ" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -26298,9 +26392,7 @@
 "eVn" = (
 /obj/machinery/keycard_auth/enhanced,
 /turf/simulated/wall/r_wall,
-/area/nadezhda/security/nuke_storage{
-	name = "\improper Nuclear Vault"
-	})
+/area/nadezhda/security/nuke_vault)
 "eVo" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable/cyan{
@@ -26955,6 +27047,19 @@
 	},
 /turf/simulated/floor/wood/wild2,
 /area/nadezhda/crew_quarters/dorm2)
+"far" = (
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/white/danger,
+/area/nadezhda/security/nuke_hallway)
 "faH" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8;
@@ -27287,10 +27392,18 @@
 	dir = 1
 	},
 /obj/structure/multiz/ladder,
+/obj/machinery/power/apc{
+	dir = 8;
+	name = "West APC";
+	operating = 0;
+	pixel_x = -28
+	},
+/obj/structure/cable/cyan{
+	d2 = 2;
+	icon_state = "0-2"
+	},
 /turf/simulated/open,
-/area/nadezhda/security/nuke_storage{
-	name = "\improper Nuclear Vault"
-	})
+/area/nadezhda/security/nuke_vault)
 "fej" = (
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/medical/genetics)
@@ -28903,7 +29016,7 @@
 	dir = 9
 	},
 /turf/simulated/floor/greengrid,
-/area/colony)
+/area/nadezhda/security/nuke_vault)
 "fsm" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint,
@@ -29131,6 +29244,14 @@
 /obj/machinery/deployable/barrier,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
+"fvt" = (
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/security/nuke_hallway)
 "fvv" = (
 /obj/structure/flora/small/busha3,
 /obj/structure/flora/ausbushes/ppflowers,
@@ -31720,6 +31841,23 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/crew_quarters/bar)
+"fWb" = (
+/obj/structure/cable/cyan{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/obj/machinery/power/smes/buildable{
+	charge = 5e+006;
+	input_attempt = 1;
+	input_level = 200000;
+	inputting = 2;
+	output_attempt = 1;
+	output_level = 200000;
+	output_level_max = 250000;
+	outputting = 2
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/security/nuke_hallway)
 "fWf" = (
 /obj/structure/lattice,
 /obj/structure/railing{
@@ -32294,16 +32432,6 @@
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor2north)
-"gbo" = (
-/obj/structure/catwalk,
-/obj/structure/lattice,
-/obj/machinery/camera/motion/security{
-	dir = 1
-	},
-/turf/simulated/open,
-/area/nadezhda/security/nuke_storage{
-	name = "\improper Nuclear Vault"
-	})
 "gbp" = (
 /mob/living/carbon/superior/spider/plasma,
 /turf/simulated/floor/asteroid/dirt/dust,
@@ -34268,6 +34396,23 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/inside_colony)
+"gsa" = (
+/obj/structure/cable/cyan{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/door/blast/regular{
+	name = "Nuclear Vault";
+	id = "nuclearblast2"
+	},
+/obj/machinery/door/airlock/vault/bolted{
+	name = "Nuclear Vault";
+	id_tag = "nukebolts2";
+	req_one_access = list(53)
+	},
+/turf/simulated/floor/tiled/white/gray_perforated,
+/area/nadezhda/security/nuke_hallway)
 "gsc" = (
 /obj/structure/barricade,
 /turf/simulated/floor/wood/wild5,
@@ -35216,9 +35361,7 @@
 "gAZ" = (
 /obj/structure/lattice,
 /turf/simulated/open,
-/area/nadezhda/security/nuke_storage{
-	name = "\improper Nuclear Vault"
-	})
+/area/nadezhda/security/nuke_vault)
 "gBg" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -35290,6 +35433,13 @@
 	},
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/command/prime)
+"gBL" = (
+/obj/structure/lattice,
+/obj/machinery/camera/motion/security{
+	dir = 8
+	},
+/turf/simulated/open,
+/area/nadezhda/security/nuke_vault)
 "gBS" = (
 /obj/effect/floor_decal/industrial/warningwhite,
 /obj/effect/decal/cleanable/dirt,
@@ -35732,6 +35882,17 @@
 	name = "murky water"
 	},
 /area/nadezhda/maintenance/undergroundfloor1west)
+"gHv" = (
+/obj/machinery/atmospherics/mains_pipe/simple/hidden{
+	dir = 4
+	},
+/obj/structure/catwalk,
+/obj/structure/railing{
+	dir = 8;
+	tag = "icon-railing0 (WEST)"
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/security/nuke_hallway)
 "gHw" = (
 /obj/structure/table/marble,
 /obj/machinery/recharger,
@@ -39812,7 +39973,7 @@
 	dir = 9
 	},
 /turf/simulated/floor/greengrid,
-/area/colony)
+/area/nadezhda/security/nuke_vault)
 "hwH" = (
 /obj/effect/floor_decal/industrial/danger{
 	dir = 1
@@ -42115,9 +42276,7 @@
 /obj/effect/floor_decal/industrial_plant/border,
 /obj/effect/floor_decal/industrial/road/straight3,
 /turf/simulated/floor/reinforced,
-/area/nadezhda/security/nuke_storage{
-	name = "\improper Nuclear Vault"
-	})
+/area/nadezhda/security/nuke_vault)
 "hRA" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -44176,13 +44335,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/substation/bridge)
-"iku" = (
-/obj/structure/jtb_pillar{
-	name = "pylon";
-	desc = "An ominous pylon."
-	},
-/turf/simulated/floor/greengrid,
-/area/colony)
 "ikw" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 10
@@ -44426,9 +44578,7 @@
 	maxhealth = 140
 	},
 /turf/simulated/open,
-/area/nadezhda/security/nuke_storage{
-	name = "\improper Nuclear Vault"
-	})
+/area/nadezhda/security/nuke_vault)
 "imo" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -45989,6 +46139,12 @@
 /obj/random/scrap/sparse_even,
 /turf/simulated/floor/industrial/bricks,
 /area/nadezhda/maintenance/undergroundfloor1west)
+"iBI" = (
+/obj/structure/catwalk,
+/obj/structure/lattice,
+/obj/machinery/camera/motion/security,
+/turf/simulated/open,
+/area/nadezhda/security/nuke_vault)
 "iBK" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -46200,6 +46356,9 @@
 /obj/machinery/atmospherics/pipe/simple/visible/yellow,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/engineering/atmos)
+"iDB" = (
+/turf/simulated/floor/tiled/white/danger,
+/area/nadezhda/security/nuke_hallway)
 "iDJ" = (
 /obj/structure/flora/small/rock4,
 /turf/simulated/floor/asteroid/grass,
@@ -48122,6 +48281,15 @@
 	},
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/absolutism/hallways)
+"iZd" = (
+/obj/effect/window_lwall_spawn/plasma/reinforced,
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/security/nuke_hallway)
 "iZg" = (
 /obj/machinery/atmospherics/unary/vent_scrubber{
 	dir = 8
@@ -48583,9 +48751,7 @@
 	dir = 4
 	},
 /turf/simulated/open,
-/area/nadezhda/security/nuke_storage{
-	name = "\improper Nuclear Vault"
-	})
+/area/nadezhda/security/nuke_vault)
 "jcG" = (
 /obj/random/furniture,
 /turf/simulated/floor/wood/wild4,
@@ -50087,9 +50253,7 @@
 	},
 /obj/effect/floor_decal/industrial/road/curve1,
 /turf/simulated/floor/reinforced,
-/area/nadezhda/security/nuke_storage{
-	name = "\improper Nuclear Vault"
-	})
+/area/nadezhda/security/nuke_vault)
 "jqO" = (
 /obj/machinery/firealarm{
 	dir = 1;
@@ -50945,6 +51109,17 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/grey_slates_long,
 /area/nadezhda/maintenance/surfaceeast)
+"jyO" = (
+/obj/machinery/shower{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial_plant/steel_grate,
+/obj/structure/window/reinforced{
+	dir = 8;
+	pixel_x = -3
+	},
+/turf/simulated/floor/reinforced,
+/area/nadezhda/security/nuke_hallway)
 "jyP" = (
 /obj/structure/railing{
 	dir = 4;
@@ -51119,32 +51294,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/nadezhda/maintenance/undergroundfloor1north)
-"jAC" = (
-/obj/structure/catwalk,
-/obj/structure/lattice,
-/obj/structure/lattice,
-/obj/structure/railing{
-	icon_state = "reinforced_railing0";
-	name = "orange reinforced railing";
-	health = 140;
-	maxhealth = 140;
-	dir = 1
-	},
-/obj/structure/railing{
-	icon_state = "reinforced_railing0";
-	name = "orange reinforced railing";
-	health = 140;
-	maxhealth = 140;
-	dir = 4
-	},
-/obj/structure/jtb_pillar{
-	name = "pylon";
-	desc = "An ominous pylon."
-	},
-/turf/simulated/open,
-/area/nadezhda/security/nuke_storage{
-	name = "\improper Nuclear Vault"
-	})
 "jAN" = (
 /obj/random/scrap/dense_weighted,
 /obj/effect/spider/stickyweb,
@@ -51393,9 +51542,7 @@
 	},
 /obj/effect/floor_decal/industrial/road/straight4,
 /turf/simulated/floor/reinforced,
-/area/nadezhda/security/nuke_storage{
-	name = "\improper Nuclear Vault"
-	})
+/area/nadezhda/security/nuke_vault)
 "jDO" = (
 /obj/structure/disposalpipe/segment{
 	dir = 2;
@@ -51681,7 +51828,7 @@
 	dir = 9
 	},
 /turf/simulated/floor/greengrid,
-/area/colony)
+/area/nadezhda/security/nuke_vault)
 "jGb" = (
 /obj/structure/shuttle_part/mining{
 	icon_state = "10,0"
@@ -55739,6 +55886,16 @@
 "kuc" = (
 /turf/simulated/open,
 /area/nadezhda/maintenance/undergroundfloor2west)
+"kuh" = (
+/obj/structure/catwalk,
+/obj/structure/lattice,
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/open,
+/area/nadezhda/security/nuke_vault)
 "kuj" = (
 /obj/structure/cable/cyan{
 	d1 = 1;
@@ -56273,9 +56430,7 @@
 	light_color = "#0892d0"
 	},
 /turf/simulated/open,
-/area/nadezhda/security/nuke_storage{
-	name = "\improper Nuclear Vault"
-	})
+/area/nadezhda/security/nuke_vault)
 "kyH" = (
 /obj/structure/closet/secure_closet/personal{
 	req_access = null
@@ -56330,9 +56485,7 @@
 /obj/structure/lattice,
 /obj/structure/catwalk,
 /turf/simulated/open,
-/area/nadezhda/security/nuke_storage{
-	name = "\improper Nuclear Vault"
-	})
+/area/nadezhda/security/nuke_vault)
 "kza" = (
 /obj/structure/scrap/guns,
 /obj/random/lathe_disk/any_gun/low_chance,
@@ -56428,17 +56581,20 @@
 /obj/structure/catwalk,
 /obj/machinery/door/airlock/vault/bolted{
 	name = "Nuclear Vault";
-	id_tag = "nukebolts2";
+	id_tag = "nukebolts3";
 	req_one_access = list(53)
 	},
 /obj/machinery/door/blast/regular{
 	name = "Nuclear Vault";
-	id = "nuclearblast2"
+	id = "nuclearblast3"
+	},
+/obj/structure/cable/cyan{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/plating/under,
-/area/nadezhda/security/nuke_storage{
-	name = "\improper Nuclear Vault"
-	})
+/area/nadezhda/security/nuke_hallway)
 "kzJ" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -56532,15 +56688,13 @@
 	name = "Residential District Maintenance"
 	})
 "kAh" = (
-/obj/structure/catwalk,
-/obj/structure/railing,
-/obj/structure/railing{
-	dir = 1
+/obj/structure/cable/cyan{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
-/turf/simulated/floor/plating/under,
-/area/nadezhda/security/nuke_storage{
-	name = "\improper Nuclear Vault"
-	})
+/turf/simulated/floor/tiled/white/danger,
+/area/nadezhda/security/nuke_hallway)
 "kAi" = (
 /obj/machinery/atmospherics/unary/vent_scrubber,
 /obj/structure/extinguisher_cabinet{
@@ -58313,19 +58467,13 @@
 /area/nadezhda/maintenance/surfacesec)
 "kTE" = (
 /obj/structure/catwalk,
-/obj/structure/railing,
-/obj/structure/railing{
-	dir = 1
-	},
 /obj/structure/cable/cyan{
-	d1 = 1;
+	d1 = 4;
 	d2 = 8;
-	icon_state = "1-8"
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/plating/under,
-/area/nadezhda/security/nuke_storage{
-	name = "\improper Nuclear Vault"
-	})
+/area/nadezhda/security/nuke_hallway)
 "kTH" = (
 /obj/random/scrap/dense_weighted/low_chance,
 /obj/effect/decal/cleanable/dirt,
@@ -58860,9 +59008,7 @@
 	dir = 8
 	},
 /turf/simulated/open,
-/area/nadezhda/security/nuke_storage{
-	name = "\improper Nuclear Vault"
-	})
+/area/nadezhda/security/nuke_vault)
 "kZH" = (
 /obj/structure/flora/small/busha3,
 /turf/simulated/floor/asteroid/grass,
@@ -61111,7 +61257,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/greengrid,
-/area/colony)
+/area/nadezhda/security/nuke_vault)
 "lxV" = (
 /obj/structure/railing/grey{
 	dir = 8;
@@ -61173,9 +61319,7 @@
 	dir = 8
 	},
 /turf/simulated/open,
-/area/nadezhda/security/nuke_storage{
-	name = "\improper Nuclear Vault"
-	})
+/area/nadezhda/security/nuke_vault)
 "lyI" = (
 /obj/structure/bed/chair/sofa/black/left{
 	dir = 4
@@ -62617,9 +62761,7 @@
 	},
 /obj/effect/floor_decal/industrial/road/curve4,
 /turf/simulated/floor/reinforced,
-/area/nadezhda/security/nuke_storage{
-	name = "\improper Nuclear Vault"
-	})
+/area/nadezhda/security/nuke_vault)
 "lNB" = (
 /obj/effect/floor_decal/industrial/inputgate,
 /turf/simulated/floor/fixed/hydrotile,
@@ -65356,9 +65498,7 @@
 	desc = "An ominous pylon."
 	},
 /turf/simulated/open,
-/area/nadezhda/security/nuke_storage{
-	name = "\improper Nuclear Vault"
-	})
+/area/nadezhda/security/nuke_vault)
 "mmp" = (
 /obj/structure/closet/crate/hydroponics,
 /obj/item/tool/shovel/spade,
@@ -65804,7 +65944,7 @@
 "mqy" = (
 /obj/machinery/atmospherics/pipe/simple/heat_exchanging,
 /turf/simulated/floor/greengrid,
-/area/colony)
+/area/nadezhda/security/nuke_vault)
 "mqA" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -67767,6 +67907,19 @@
 	},
 /turf/simulated/floor/carpet/purcarpet,
 /area/nadezhda/command/cro)
+"mIR" = (
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/security/nuke_hallway)
 "mIS" = (
 /obj/structure/railing{
 	dir = 8;
@@ -67830,6 +67983,12 @@
 	},
 /turf/simulated/floor/industrial/ornate,
 /area/nadezhda/maintenance/undergroundfloor2west)
+"mJz" = (
+/obj/structure/table/rack/shelf,
+/obj/item/storage/firstaid/radiation,
+/obj/item/storage/firstaid/radiation,
+/turf/simulated/floor/tiled/white/danger,
+/area/nadezhda/security/nuke_hallway)
 "mJD" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/firedoor,
@@ -69399,6 +69558,14 @@
 	},
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/sechall)
+"mZE" = (
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/tiled/white/danger,
+/area/nadezhda/security/nuke_hallway)
 "mZI" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -70982,6 +71149,14 @@
 	},
 /turf/simulated/floor/fixed/hydrotile,
 /area/nadezhda/engineering/engine_room)
+"noM" = (
+/obj/structure/cable/cyan{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/security/nuke_hallway)
 "noN" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/rack/shelf,
@@ -72204,23 +72379,8 @@
 /obj/machinery/atmospherics/mains_pipe/simple/hidden{
 	dir = 4
 	},
-/obj/machinery/button/remote/airlock{
-	name = "Nuclear Vault Bolts";
-	pixel_y = 6;
-	id = "nukebolts2";
-	req_one_access = list(53);
-	specialfunctions = 4
-	},
-/obj/machinery/button/remote/blast_door{
-	name = "Nuclear Vault Blast Doors";
-	pixel_y = -6;
-	id = "nuclearblast2";
-	req_one_access = list(53)
-	},
-/turf/simulated/wall/r_wall,
-/area/nadezhda/security/nuke_storage{
-	name = "\improper Nuclear Vault"
-	})
+/turf/simulated/floor/tiled/white/danger,
+/area/nadezhda/security/nuke_hallway)
 "nyY" = (
 /obj/structure/closet/secure_closet/personal{
 	req_access = null
@@ -72423,9 +72583,7 @@
 	desc = "An ominous pylon."
 	},
 /turf/simulated/open,
-/area/nadezhda/security/nuke_storage{
-	name = "\improper Nuclear Vault"
-	})
+/area/nadezhda/security/nuke_vault)
 "nAW" = (
 /obj/structure/cable/yellow{
 	d1 = 4;
@@ -75839,25 +75997,6 @@
 /obj/structure/flora/ausbushes/genericbush,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/crew_quarters/pool)
-"ohn" = (
-/obj/machinery/atmospherics/mains_pipe/simple/hidden{
-	dir = 4
-	},
-/obj/machinery/button/remote/blast_door{
-	name = "Nuclear Vault Blast Doors";
-	pixel_y = -6;
-	id = "nuclearblast1";
-	req_one_access = list(53)
-	},
-/obj/machinery/button/remote/airlock{
-	name = "Nuclear Vault Bolts";
-	pixel_y = 6;
-	id = "nukebolts1";
-	req_one_access = list(53);
-	specialfunctions = 4
-	},
-/turf/simulated/wall/r_wall,
-/area/nadezhda/command/hallway)
 "ohx" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/effect/decal/cleanable/dirt,
@@ -76025,6 +76164,9 @@
 /obj/random/credits/c10000,
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/security/nuke_storage)
+"oiW" = (
+/turf/simulated/floor/greengrid,
+/area/nadezhda/security/nuke_vault)
 "oiX" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
@@ -76231,9 +76373,7 @@
 	light_color = "#0892d0"
 	},
 /turf/simulated/open,
-/area/nadezhda/security/nuke_storage{
-	name = "\improper Nuclear Vault"
-	})
+/area/nadezhda/security/nuke_vault)
 "okD" = (
 /obj/structure/flora/small/busha2,
 /obj/effect/decal/cleanable/dirt,
@@ -76631,6 +76771,18 @@
 /obj/effect/window_lwall_spawn/smartspawnplasma,
 /turf/simulated/floor/plating/under,
 /area/turret_protected/ai_upload)
+"ooz" = (
+/obj/machinery/door/airlock/maintenance_engineering{
+	name = "Engineering Maintenance";
+	req_access = list(10)
+	},
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/white/gray_perforated,
+/area/nadezhda/security/nuke_hallway)
 "ooF" = (
 /obj/effect/decal/cleanable/generic,
 /obj/effect/decal/cleanable/dirt,
@@ -76864,6 +77016,24 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/crew_quarters)
+"oqF" = (
+/obj/structure/cable/cyan{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/obj/machinery/power/smes/buildable{
+	RCon_tag = "Substation - Nuclear Vault";
+	charge = 5e+006;
+	input_attempt = 1;
+	input_level = 200000;
+	inputting = 2;
+	output_attempt = 1;
+	output_level = 200000;
+	output_level_max = 250000;
+	outputting = 2
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/security/nuke_hallway)
 "oqM" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -76907,7 +77077,7 @@
 	dir = 10
 	},
 /turf/simulated/floor/greengrid,
-/area/colony)
+/area/nadezhda/security/nuke_vault)
 "oqZ" = (
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/security/maingate/east)
@@ -77468,17 +77638,6 @@
 	},
 /turf/simulated/floor/rock/manmade/road,
 /area/nadezhda/outside/inside_colony)
-"ovV" = (
-/obj/machinery/atmospherics/mains_pipe/simple/hidden{
-	dir = 4
-	},
-/obj/machinery/camera/motion/security{
-	dir = 1
-	},
-/turf/simulated/floor/plating/under,
-/area/nadezhda/security/nuke_storage{
-	name = "\improper Nuclear Vault"
-	})
 "owa" = (
 /obj/machinery/light{
 	dir = 4;
@@ -78472,6 +78631,13 @@
 /obj/structure/flora/small/grassb5,
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest)
+"oFo" = (
+/obj/machinery/light{
+	brightness_power = 1;
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white/danger,
+/area/nadezhda/security/nuke_hallway)
 "oFu" = (
 /obj/machinery/computer/arcade,
 /obj/effect/decal/cleanable/dirt,
@@ -80821,16 +80987,13 @@
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/ward)
 "pcf" = (
-/obj/machinery/atmospherics/pipe/simple/heat_exchanging{
-	dir = 4
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
-/obj/machinery/light/small{
-	dir = 1
-	},
-/turf/simulated/floor/plating/under,
-/area/nadezhda/security/nuke_storage{
-	name = "\improper Nuclear Vault"
-	})
+/turf/simulated/floor/tiled/white/danger,
+/area/nadezhda/security/nuke_hallway)
 "pcg" = (
 /turf/simulated/floor/tiled/techmaint,
 /area/asteroid/cave)
@@ -80881,7 +81044,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/greengrid,
-/area/colony)
+/area/nadezhda/security/nuke_vault)
 "pcQ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/spider_shadow_trap,
@@ -81752,7 +81915,7 @@
 	dir = 6
 	},
 /turf/simulated/floor/greengrid,
-/area/colony)
+/area/nadezhda/security/nuke_vault)
 "pkU" = (
 /obj/structure/bed/chair{
 	dir = 1
@@ -83256,7 +83419,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/greengrid,
-/area/colony)
+/area/nadezhda/security/nuke_vault)
 "pzR" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -83358,6 +83521,16 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/medical/sleeper)
+"pAH" = (
+/obj/machinery/shower{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial_plant/steel_grate,
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/turf/simulated/floor/reinforced,
+/area/nadezhda/security/nuke_hallway)
 "pAK" = (
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
@@ -83444,8 +83617,8 @@
 /turf/simulated/floor/tiled/white/monofloor,
 /area/nadezhda/medical/chemistry)
 "pBt" = (
-/turf/simulated/floor/greengrid,
-/area/colony)
+/turf/unsimulated/mineral,
+/area/nadezhda/security/nuke_hallway)
 "pBv" = (
 /obj/structure/catwalk/rgfloor,
 /obj/structure/lattice,
@@ -84132,9 +84305,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/plating/under,
-/area/nadezhda/security/nuke_storage{
-	name = "\improper Nuclear Vault"
-	})
+/area/nadezhda/security/nuke_hallway)
 "pJb" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/firstaid/adv,
@@ -86611,6 +86782,10 @@
 /obj/machinery/light/small,
 /turf/simulated/floor/industrial/white_large_slates,
 /area/nadezhda/maintenance/undergroundfloor2east)
+"qeW" = (
+/obj/structure/sign/warning/hazard_electrical,
+/turf/simulated/wall/r_wall,
+/area/nadezhda/security/nuke_hallway)
 "qfc" = (
 /obj/structure/flora/big/rocks3,
 /obj/structure/flora/small/bushc2,
@@ -89498,6 +89673,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/nadezhda/maintenance/undergroundfloor2west)
+"qGf" = (
+/obj/structure/closet/secure_closet/engineering_electrical,
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/security/nuke_hallway)
 "qGo" = (
 /obj/structure/disposalpipe/segment,
 /obj/effect/decal/cleanable/dirt,
@@ -90150,6 +90329,20 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/bricks,
 /area/nadezhda/maintenance/undergroundfloor1south)
+"qNA" = (
+/obj/machinery/power/terminal{
+	dir = 4
+	},
+/obj/structure/cable/cyan{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/machinery/light{
+	dir = 1;
+	light_color = "#0892d0"
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/security/nuke_hallway)
 "qND" = (
 /obj/structure/table/woodentable,
 /obj/item/modular_computer/tablet/lease/preset/command,
@@ -91281,6 +91474,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/ceramic,
 /area/nadezhda/maintenance/surfaceeast)
+"qYW" = (
+/obj/effect/window_lwall_spawn/plasma/reinforced,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/security/nuke_hallway)
 "qZj" = (
 /obj/structure/table/woodentable,
 /obj/machinery/button/remote/airlock{
@@ -91532,7 +91729,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/greengrid,
-/area/colony)
+/area/nadezhda/security/nuke_vault)
 "rbH" = (
 /obj/structure/catwalk,
 /obj/random/material_resources/low_chance,
@@ -92156,6 +92353,25 @@
 /obj/random/cluster/roaches/low_chance,
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/maintenance/undergroundfloor2north)
+"rho" = (
+/obj/machinery/atmospherics/mains_pipe/simple/hidden{
+	dir = 4
+	},
+/obj/machinery/button/remote/airlock{
+	name = "Nuclear Vault Bolts";
+	pixel_y = 6;
+	id = "nukebolts2";
+	req_one_access = list(53);
+	specialfunctions = 4
+	},
+/obj/machinery/button/remote/blast_door{
+	name = "Nuclear Vault Blast Doors";
+	pixel_y = -6;
+	id = "nuclearblast2";
+	req_one_access = list(53)
+	},
+/turf/simulated/wall/r_wall,
+/area/nadezhda/security/nuke_hallway)
 "rhv" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -92303,6 +92519,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/engineering/foyer)
+"ris" = (
+/obj/structure/jtb_pillar{
+	name = "pylon";
+	desc = "An ominous pylon."
+	},
+/turf/simulated/floor/greengrid,
+/area/nadezhda/security/nuke_vault)
 "riD" = (
 /obj/structure/closet/wall_mounted/firecloset{
 	pixel_x = 32
@@ -92404,9 +92627,7 @@
 /obj/structure/catwalk,
 /obj/structure/lattice,
 /turf/simulated/open,
-/area/nadezhda/security/nuke_storage{
-	name = "\improper Nuclear Vault"
-	})
+/area/nadezhda/security/nuke_vault)
 "rjO" = (
 /obj/machinery/smartfridge/drying_rack,
 /obj/item/device/radio/intercom{
@@ -93347,9 +93568,7 @@
 	dir = 1
 	},
 /turf/simulated/open,
-/area/nadezhda/security/nuke_storage{
-	name = "\improper Nuclear Vault"
-	})
+/area/nadezhda/security/nuke_vault)
 "rtQ" = (
 /obj/machinery/power/apc{
 	locked = 0;
@@ -94270,6 +94489,29 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/security/nuke_storage)
+"rCF" = (
+/obj/structure/catwalk,
+/obj/structure/lattice,
+/obj/structure/lattice,
+/obj/structure/railing{
+	icon_state = "reinforced_railing0";
+	name = "orange reinforced railing";
+	health = 140;
+	maxhealth = 140
+	},
+/obj/structure/railing{
+	icon_state = "reinforced_railing0";
+	name = "orange reinforced railing";
+	health = 140;
+	maxhealth = 140;
+	dir = 4
+	},
+/obj/structure/jtb_pillar{
+	name = "pylon";
+	desc = "An ominous pylon."
+	},
+/turf/simulated/open,
+/area/nadezhda/security/nuke_vault)
 "rCQ" = (
 /obj/machinery/atmospherics/binary/pump{
 	dir = 4;
@@ -94447,6 +94689,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/cargo,
 /area/nadezhda/outside/inside_colony)
+"rER" = (
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/tiled/white/danger,
+/area/nadezhda/security/nuke_hallway)
 "rFc" = (
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/asteroid/dirt/dark,
@@ -97055,9 +97305,7 @@
 /obj/effect/floor_decal/industrial_plant/border_corner,
 /obj/effect/floor_decal/industrial/road/curve2,
 /turf/simulated/floor/reinforced,
-/area/nadezhda/security/nuke_storage{
-	name = "\improper Nuclear Vault"
-	})
+/area/nadezhda/security/nuke_vault)
 "scY" = (
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/steel/techfloor_grid,
@@ -97776,6 +98024,12 @@
 	},
 /turf/simulated/floor/plating,
 /area/nadezhda/crew_quarters/hydroponics/garden)
+"skO" = (
+/obj/machinery/atmospherics/pipe/simple/heat_exchanging{
+	dir = 4
+	},
+/turf/simulated/wall/r_wall,
+/area/nadezhda/security/nuke_hallway)
 "skR" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/bed/chair/office/light{
@@ -98912,9 +99166,7 @@
 	dir = 8
 	},
 /turf/simulated/open,
-/area/nadezhda/security/nuke_storage{
-	name = "\improper Nuclear Vault"
-	})
+/area/nadezhda/security/nuke_vault)
 "suQ" = (
 /obj/effect/floor_decal/steeldecal/steel_decals_central1{
 	dir = 1;
@@ -99141,9 +99393,7 @@
 	dir = 4
 	},
 /turf/simulated/open,
-/area/nadezhda/security/nuke_storage{
-	name = "\improper Nuclear Vault"
-	})
+/area/nadezhda/security/nuke_vault)
 "swk" = (
 /obj/machinery/atmospherics/unary/vent_pump{
 	dir = 8
@@ -100352,7 +100602,7 @@
 	dir = 5
 	},
 /turf/simulated/floor/greengrid,
-/area/colony)
+/area/nadezhda/security/nuke_vault)
 "sII" = (
 /obj/effect/floor_decal/spline/plain{
 	dir = 1
@@ -100398,6 +100648,20 @@
 /obj/random/powercell/safe_guild,
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/nadezhda/engineering/workshop)
+"sIT" = (
+/obj/machinery/atmospherics/pipe/simple/heat_exchanging{
+	dir = 4
+	},
+/obj/structure/catwalk,
+/obj/structure/railing{
+	dir = 8;
+	tag = "icon-railing0 (WEST)"
+	},
+/obj/structure/cable/heavyduty{
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/security/nuke_hallway)
 "sIV" = (
 /obj/effect/floor_decal/industrial/road/straight2,
 /obj/machinery/camera/network/colony_surface{
@@ -103774,6 +104038,12 @@
 	},
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/crew_quarters/dorm3)
+"trS" = (
+/obj/structure/sign/warning/radioactive/small{
+	pixel_x = 32
+	},
+/turf/simulated/floor/tiled/white/danger,
+/area/nadezhda/security/nuke_hallway)
 "trV" = (
 /obj/random/flora/jungle_tree,
 /obj/structure/flora/small/busha3,
@@ -105747,7 +106017,7 @@
 	dir = 6
 	},
 /turf/simulated/floor/greengrid,
-/area/colony)
+/area/nadezhda/security/nuke_vault)
 "tJz" = (
 /obj/structure/table/reinforced,
 /obj/machinery/light,
@@ -107229,6 +107499,25 @@
 	name = "padded blue carpet"
 	},
 /area/nadezhda/command/cbo)
+"tXr" = (
+/obj/structure/catwalk,
+/obj/structure/railing{
+	dir = 8;
+	tag = "icon-railing0 (WEST)"
+	},
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/structure/sign/warning/secure_area/small{
+	pixel_y = 6;
+	pixel_x = 32
+	},
+/obj/structure/sign/warning/radioactive/small{
+	pixel_x = 32;
+	pixel_y = -6
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/command/hallway)
 "tXu" = (
 /obj/random/mob/excelsior,
 /turf/simulated/floor/industrial/concrete_bricks,
@@ -107466,9 +107755,7 @@
 /obj/structure/lattice,
 /obj/structure/lattice,
 /turf/simulated/open,
-/area/nadezhda/security/nuke_storage{
-	name = "\improper Nuclear Vault"
-	})
+/area/nadezhda/security/nuke_vault)
 "tZu" = (
 /obj/structure/flora/small/rock2,
 /obj/structure/flora/ausbushes/brflowers,
@@ -109868,6 +110155,10 @@
 /obj/random/traps/wire_splicing/low_chance,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1west)
+"uwy" = (
+/obj/structure/closet/secure_closet/engineering_welding,
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/security/nuke_hallway)
 "uwB" = (
 /obj/structure/shuttle_part/science{
 	icon_state = "15,2"
@@ -110546,9 +110837,7 @@
 /obj/structure/lattice,
 /obj/structure/lattice,
 /turf/simulated/open,
-/area/nadezhda/security/nuke_storage{
-	name = "\improper Nuclear Vault"
-	})
+/area/nadezhda/security/nuke_vault)
 "uDo" = (
 /obj/machinery/light_switch{
 	dir = 4;
@@ -113233,9 +113522,7 @@
 	},
 /obj/effect/floor_decal/industrial/road/straight2,
 /turf/simulated/floor/reinforced,
-/area/nadezhda/security/nuke_storage{
-	name = "\improper Nuclear Vault"
-	})
+/area/nadezhda/security/nuke_vault)
 "vbs" = (
 /obj/machinery/telecomms/server/presets/common,
 /turf/simulated/floor/bluegrid{
@@ -114744,15 +115031,6 @@
 /obj/machinery/microwave,
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/command/merchant)
-"vpp" = (
-/obj/structure/lattice,
-/obj/machinery/camera/motion/security{
-	dir = 8
-	},
-/turf/simulated/open,
-/area/nadezhda/security/nuke_storage{
-	name = "\improper Nuclear Vault"
-	})
 "vpq" = (
 /obj/structure/flora/ausbushes/stalkybush,
 /turf/simulated/floor/beach/water/shallow,
@@ -117988,7 +118266,7 @@
 /area/nadezhda/security/maingate)
 "vUq" = (
 /turf/simulated/wall/uranium,
-/area/colony)
+/area/nadezhda/security/nuke_vault)
 "vUr" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -118702,6 +118980,13 @@
 /obj/structure/multiz/stairs/enter/bottom,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/outside/inside_colony)
+"war" = (
+/obj/machinery/atmospherics/mains_pipe/simple/hidden{
+	dir = 4
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/security/nuke_hallway)
 "wat" = (
 /obj/machinery/light,
 /obj/structure/closet/wall_mounted/firecloset{
@@ -118838,7 +119123,7 @@
 "wbz" = (
 /obj/machinery/atmospherics/pipe/simple/heat_exchanging,
 /turf/unsimulated/mineral,
-/area/colony)
+/area/nadezhda/security/nuke_vault)
 "wbA" = (
 /obj/structure/bed/chair/shuttle{
 	dir = 8
@@ -119045,9 +119330,7 @@
 	light_color = "#0892d0"
 	},
 /turf/simulated/open,
-/area/nadezhda/security/nuke_storage{
-	name = "\improper Nuclear Vault"
-	})
+/area/nadezhda/security/nuke_vault)
 "wdv" = (
 /obj/structure/closet/wall_mounted/firecloset{
 	pixel_x = 32
@@ -120498,13 +120781,21 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/command/hallway)
+"wqE" = (
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/obj/structure/cable/cyan{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/security/nuke_hallway)
 "wqF" = (
 /obj/machinery/nuclearbomb/station,
 /obj/effect/floor_decal/industrial_plant/steel_grate_alt,
 /turf/simulated/floor/reinforced,
-/area/nadezhda/security/nuke_storage{
-	name = "\improper Nuclear Vault"
-	})
+/area/nadezhda/security/nuke_vault)
 "wqK" = (
 /obj/structure/table/woodentable,
 /obj/random/lathe_disk/low_chance,
@@ -121528,7 +121819,7 @@
 	dir = 9
 	},
 /turf/simulated/floor/greengrid,
-/area/colony)
+/area/nadezhda/security/nuke_vault)
 "wBD" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -122149,12 +122440,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor2east)
-"wHE" = (
-/obj/machinery/atmospherics/pipe/simple/heat_exchanging{
-	dir = 4
-	},
-/turf/simulated/wall/r_wall,
-/area/nadezhda/command/hallway)
 "wHK" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -122580,6 +122865,9 @@
 	name = "murky water"
 	},
 /area/nadezhda/maintenance/undergroundfloor1north)
+"wLG" = (
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/security/nuke_hallway)
 "wLJ" = (
 /obj/effect/floor_decal/industrial/warningwhite,
 /obj/effect/floor_decal/industrial/warningwhite{
@@ -123159,6 +123447,14 @@
 	},
 /turf/unsimulated/mineral,
 /area/colony)
+"wQL" = (
+/obj/structure/catwalk,
+/obj/structure/lattice,
+/obj/machinery/camera/motion/security{
+	dir = 1
+	},
+/turf/simulated/open,
+/area/nadezhda/security/nuke_vault)
 "wQR" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable/cyan{
@@ -124313,6 +124609,15 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/sechall)
+"xdd" = (
+/obj/machinery/atmospherics/mains_pipe/simple/hidden{
+	dir = 4
+	},
+/obj/machinery/camera/motion/security{
+	dir = 1
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/security/nuke_hallway)
 "xdg" = (
 /obj/structure/bed/chair/office/dark,
 /turf/simulated/floor/reinforced,
@@ -125166,9 +125471,7 @@
 	},
 /obj/effect/floor_decal/industrial/road/straight1,
 /turf/simulated/floor/reinforced,
-/area/nadezhda/security/nuke_storage{
-	name = "\improper Nuclear Vault"
-	})
+/area/nadezhda/security/nuke_vault)
 "xlI" = (
 /obj/structure/sign/medsci/bluecross3,
 /turf/simulated/wall/r_wall,
@@ -125257,7 +125560,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/greengrid,
-/area/colony)
+/area/nadezhda/security/nuke_vault)
 "xmD" = (
 /obj/random/furniture/pottedplant,
 /obj/item/contraband/poster/placed/generic/no_erp{
@@ -126711,6 +127014,25 @@
 /area/nadezhda/maintenance{
 	name = "Residential District Maintenance"
 	})
+"xAW" = (
+/obj/machinery/atmospherics/mains_pipe/simple/hidden{
+	dir = 4
+	},
+/obj/machinery/button/remote/blast_door{
+	name = "Nuclear Vault Blast Doors";
+	pixel_y = -6;
+	id = "nuclearblast1";
+	req_one_access = list(53)
+	},
+/obj/machinery/button/remote/airlock{
+	name = "Nuclear Vault Bolts";
+	pixel_y = 6;
+	id = "nukebolts1";
+	req_one_access = list(53);
+	specialfunctions = 4
+	},
+/turf/simulated/wall/r_wall,
+/area/nadezhda/command/hallway)
 "xAX" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /obj/machinery/door/firedoor,
@@ -128105,31 +128427,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/green_large_slates,
 /area/nadezhda/maintenance/undergroundfloor1east)
-"xNA" = (
-/obj/structure/catwalk,
-/obj/structure/lattice,
-/obj/structure/lattice,
-/obj/structure/railing{
-	icon_state = "reinforced_railing0";
-	name = "orange reinforced railing";
-	health = 140;
-	maxhealth = 140
-	},
-/obj/structure/railing{
-	icon_state = "reinforced_railing0";
-	name = "orange reinforced railing";
-	health = 140;
-	maxhealth = 140;
-	dir = 4
-	},
-/obj/structure/jtb_pillar{
-	name = "pylon";
-	desc = "An ominous pylon."
-	},
-/turf/simulated/open,
-/area/nadezhda/security/nuke_storage{
-	name = "\improper Nuclear Vault"
-	})
 "xNG" = (
 /obj/structure/closet/wardrobe/misc/pjs,
 /obj/item/clothing/under/medigown,
@@ -130371,7 +130668,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/greengrid,
-/area/colony)
+/area/nadezhda/security/nuke_vault)
 "ylc" = (
 /obj/machinery/light/floor{
 	dir = 8
@@ -164816,19 +165113,19 @@ tad
 tad
 tad
 tad
-tad
-tad
-tad
-tad
-pBt
+eOU
+eOU
+eOU
+eOU
+oiW
 bnZ
 pcI
-pBt
-pBt
-tad
-tad
-tad
-tad
+oiW
+oiW
+eOU
+eOU
+eOU
+eOU
 tad
 tad
 tad
@@ -165018,19 +165315,19 @@ tad
 tad
 tad
 tad
-tad
-tad
-tad
-tad
-pBt
+eOU
+eOU
+eOU
+eOU
+oiW
 pkL
 wBl
-pBt
-pBt
-tad
-tad
-tad
-tad
+oiW
+oiW
+eOU
+eOU
+eOU
+eOU
 tad
 tad
 tad
@@ -165220,19 +165517,19 @@ tad
 tad
 tad
 tad
-tad
-tad
-tad
-pBt
-pBt
+eOU
+eOU
+eOU
+oiW
+oiW
 pzP
-pBt
-pBt
-pBt
-pBt
-tad
-tad
-tad
+oiW
+oiW
+oiW
+oiW
+eOU
+eOU
+eOU
 tad
 tad
 tad
@@ -165422,19 +165719,19 @@ tad
 tad
 tad
 tad
-tad
-tad
+eOU
+eOU
 sIE
-pBt
-pBt
+oiW
+oiW
 pzP
-pBt
-pBt
-pBt
-pBt
-pBt
-tad
-tad
+oiW
+oiW
+oiW
+oiW
+oiW
+eOU
+eOU
 tad
 tad
 tad
@@ -165624,19 +165921,19 @@ tad
 tad
 tad
 tad
-tad
-tad
+eOU
+eOU
 azK
 tJw
 xmC
 oqX
 sIE
-pBt
-pBt
-pBt
-pBt
-tad
-tad
+oiW
+oiW
+oiW
+oiW
+eOU
+eOU
 tad
 tad
 tad
@@ -165826,19 +166123,19 @@ tad
 tad
 tad
 tad
-tad
-pBt
-pBt
+eOU
+oiW
+oiW
 pcI
-pBt
-pBt
+oiW
+oiW
 eIa
 xmC
 xmC
 sIE
-pBt
-pBt
-tad
+oiW
+oiW
+eOU
 tad
 tad
 tad
@@ -166023,29 +166320,29 @@ tad
 "}
 (177,1,1) = {"
 tad
-pBt
-pBt
-pBt
-pBt
-pBt
-tad
-pBt
-pBt
+oiW
+oiW
+oiW
+oiW
+oiW
+eOU
+oiW
+oiW
 pcI
-pBt
-pBt
+oiW
+oiW
 pzP
-pBt
-pBt
+oiW
+oiW
 pcI
-pBt
-pBt
-tad
-pBt
-pBt
-pBt
-pBt
-pBt
+oiW
+oiW
+eOU
+oiW
+oiW
+oiW
+oiW
+oiW
 tad
 tad
 tad
@@ -166225,29 +166522,29 @@ tad
 "}
 (178,1,1) = {"
 tad
-pBt
-pBt
-pBt
-pBt
-pBt
-tad
-pBt
+oiW
+oiW
+oiW
+oiW
+oiW
+eOU
+oiW
 pkL
 wBl
-iku
-pBt
+ris
+oiW
 ykZ
-pBt
-iku
+oiW
+ris
 pcI
-pBt
-pBt
-tad
-pBt
-pBt
-pBt
-pBt
-pBt
+oiW
+oiW
+eOU
+oiW
+oiW
+oiW
+oiW
+oiW
 tad
 tad
 tad
@@ -166427,29 +166724,29 @@ tad
 "}
 (179,1,1) = {"
 tad
-pBt
-pBt
-pBt
-pBt
-pBt
+oiW
+oiW
+oiW
+oiW
+oiW
 bjT
 xmC
 wBl
-pBt
-pBt
-hLL
+oiW
+oiW
+bHv
 vUq
-hLL
-pBt
+bHv
+oiW
 pcI
-pBt
-pBt
-tad
-pBt
-pBt
-pBt
-pBt
-pBt
+oiW
+oiW
+eOU
+oiW
+oiW
+oiW
+oiW
+oiW
 tad
 tad
 tad
@@ -166629,12 +166926,12 @@ tad
 "}
 (180,1,1) = {"
 tad
-pBt
-pBt
-pBt
-pBt
-pBt
-tad
+oiW
+oiW
+oiW
+oiW
+oiW
+eOU
 pkL
 mqy
 mqy
@@ -166647,11 +166944,11 @@ jFV
 xmC
 mqy
 wbz
-pBt
-pBt
-pBt
-pBt
-pBt
+oiW
+oiW
+oiW
+oiW
+oiW
 tad
 tad
 tad
@@ -166831,29 +167128,29 @@ tad
 "}
 (181,1,1) = {"
 tad
-pBt
-pBt
-pBt
-pBt
-pBt
+oiW
+oiW
+oiW
+oiW
+oiW
 bjT
 acI
-pBt
-pBt
-pBt
-hLL
+oiW
+oiW
+oiW
+bHv
 vUq
-hLL
-pBt
+bHv
+oiW
 pcI
-pBt
-pBt
-tad
-pBt
-pBt
-pBt
-pBt
-pBt
+oiW
+oiW
+eOU
+oiW
+oiW
+oiW
+oiW
+oiW
 tad
 tad
 tad
@@ -167033,29 +167330,29 @@ tad
 "}
 (182,1,1) = {"
 tad
-pBt
-pBt
-pBt
-pBt
-pBt
-tad
+oiW
+oiW
+oiW
+oiW
+oiW
+eOU
 azK
 xmC
 sIE
-iku
-pBt
+ris
+oiW
 rbG
-pBt
-iku
+oiW
+ris
 pcI
-pBt
-pBt
-tad
-pBt
-pBt
-pBt
-pBt
-pBt
+oiW
+oiW
+eOU
+oiW
+oiW
+oiW
+oiW
+oiW
 tad
 tad
 tad
@@ -167235,29 +167532,29 @@ tad
 "}
 (183,1,1) = {"
 tad
-pBt
-pBt
-pBt
-pBt
-pBt
-tad
-pBt
-pBt
+oiW
+oiW
+oiW
+oiW
+oiW
+eOU
+oiW
+oiW
 pcI
-pBt
-pBt
+oiW
+oiW
 pcI
-pBt
-pBt
+oiW
+oiW
 pcI
-pBt
-pBt
-tad
-pBt
-pBt
-pBt
-pBt
-pBt
+oiW
+oiW
+eOU
+oiW
+oiW
+oiW
+oiW
+oiW
 tad
 tad
 tad
@@ -167442,19 +167739,19 @@ tad
 tad
 tad
 tad
-tad
-pBt
+eOU
+oiW
 pkL
 fsk
 xmC
 xmC
 hwC
-pBt
+oiW
 pkL
 wBl
-pBt
-pBt
-tad
+oiW
+oiW
+eOU
 tad
 tad
 tad
@@ -167644,19 +167941,19 @@ tad
 tad
 tad
 tad
-tad
-tad
+eOU
+eOU
 pcI
-pBt
-pBt
-pBt
+oiW
+oiW
+oiW
 azK
 xmC
 fsk
 xmC
 sIE
-tad
-tad
+eOU
+eOU
 tad
 tad
 tad
@@ -167846,19 +168143,19 @@ tad
 tad
 tad
 tad
-tad
-tad
-tad
-tad
-pBt
-pBt
-pBt
-pBt
-pBt
-tad
-tad
-tad
-tad
+eOU
+eOU
+eOU
+eOU
+oiW
+oiW
+oiW
+oiW
+oiW
+eOU
+eOU
+eOU
+eOU
 tad
 tad
 tad
@@ -191731,7 +192028,7 @@ ghp
 ghp
 lME
 gmv
-hSX
+eOf
 nio
 hfa
 mAJ
@@ -198758,7 +199055,7 @@ cZb
 vsb
 oKN
 spC
-aid
+tXr
 fdU
 ubE
 ubE
@@ -198960,9 +199257,9 @@ cZb
 vsb
 vsb
 lUE
-wHE
+dlZ
 xpi
-ohn
+xAW
 vsb
 vsb
 vsb
@@ -199970,9 +200267,9 @@ tad
 tad
 tad
 cNL
-pcf
+axi
 cei
-ovV
+xdd
 cNL
 tad
 cZb
@@ -200980,7 +201277,7 @@ tad
 tad
 tad
 cNL
-pcf
+axi
 cei
 pIT
 cNL
@@ -201990,9 +202287,9 @@ tad
 tad
 tad
 cNL
-pcf
+axi
 cei
-ovV
+xdd
 cNL
 tad
 tad
@@ -203000,7 +203297,7 @@ tad
 tad
 tad
 cNL
-pcf
+axi
 cei
 pIT
 cNL
@@ -203202,9 +203499,9 @@ tad
 tad
 tad
 cNL
-cTS
-cei
-pIT
+sIT
+kTE
+gHv
 cNL
 tad
 cZb
@@ -203406,7 +203703,7 @@ tad
 cNL
 dKX
 kTE
-pIT
+war
 cNL
 tad
 cZb
@@ -203599,18 +203896,18 @@ tad
 tad
 tad
 tad
-tad
-tad
-tad
-tad
-tad
-tad
+pBt
 cNL
-cTS
-kAh
-pIT
 cNL
-tad
+cNL
+cNL
+cNL
+cNL
+skO
+gsa
+rho
+cNL
+cNL
 cZb
 cZb
 cZb
@@ -203801,18 +204098,18 @@ tad
 tad
 tad
 tad
-tad
-tad
-tad
-tad
-tad
-tad
+pBt
 cNL
-cTS
+oqF
+wqE
+dUm
+qeW
+oFo
+iDB
 kAh
-pIT
+nyX
+jyO
 cNL
-tad
 tad
 cZb
 cZb
@@ -204003,18 +204300,18 @@ tad
 tad
 tad
 tad
-tad
-tad
-tad
-tad
-tad
-tad
+pBt
 cNL
+qNA
+wLG
+noM
+ooz
 pcf
-kAh
-ovV
+pcf
+mZE
+nyX
+cwb
 cNL
-tad
 tad
 tad
 cZb
@@ -204205,18 +204502,18 @@ tad
 tad
 tad
 tad
-tad
-tad
-tad
-tad
-tad
-tad
+pBt
 cNL
-cTS
-kAh
-pIT
+fWb
+wLG
+wLG
 cNL
-tad
+aKp
+iDB
+iDB
+nyX
+pAH
+cNL
 tad
 tad
 tad
@@ -204407,18 +204704,18 @@ tad
 tad
 tad
 tad
-tad
-tad
-tad
-tad
-tad
-tad
+pBt
 cNL
-cTS
-kAh
-pIT
+noM
+fvt
+mIR
+iZd
+far
+pcf
+rER
+nyX
+cWU
 cNL
-tad
 tad
 tad
 tad
@@ -204609,18 +204906,18 @@ tad
 tad
 tad
 tad
-tad
-tad
-tad
-tad
-tad
-tad
+pBt
 cNL
-cTS
+qGf
+uwy
+bFu
+qYW
+iDB
+iDB
 kAh
-pIT
+nyX
+bzd
 cNL
-tad
 tad
 tad
 tad
@@ -204811,18 +205108,18 @@ tad
 tad
 tad
 tad
-tad
-tad
-tad
-tad
-tad
-tad
+pBt
 cNL
-cTS
-kAh
-pIT
 cNL
-tad
+cNL
+cNL
+cNL
+mJz
+trS
+bMp
+nyX
+cWU
+cNL
 tad
 tad
 tad
@@ -205013,18 +205310,18 @@ tad
 tad
 tad
 tad
-tad
-tad
-tad
-tad
-tad
-tad
+pBt
+pBt
+pBt
+pBt
+pBt
 cNL
-eOU
+cNL
+skO
 kzE
-nyX
+bRA
 cNL
-tad
+cNL
 tad
 tad
 tad
@@ -205223,7 +205520,7 @@ tad
 tad
 kZs
 fei
-rjM
+kuh
 iml
 okx
 tad
@@ -206424,11 +206721,11 @@ tad
 "}
 (177,1,2) = {"
 tad
-cNL
-cNL
-cNL
-cNL
-cNL
+bHv
+bHv
+bHv
+bHv
+bHv
 tad
 gAZ
 eLW
@@ -206442,11 +206739,11 @@ eLW
 eLW
 gAZ
 tad
-cNL
-cNL
-cNL
-cNL
-cNL
+bHv
+bHv
+bHv
+bHv
+bHv
 tad
 cZb
 cZb
@@ -206626,11 +206923,11 @@ tad
 "}
 (178,1,2) = {"
 tad
-cNL
+bHv
 eqM
 eqM
 eqM
-cNL
+bHv
 gAZ
 eLW
 eLW
@@ -206644,11 +206941,11 @@ eLW
 eLW
 eLW
 gAZ
-cNL
+bHv
 eqM
 eqM
 eqM
-cNL
+bHv
 tad
 cZb
 cZb
@@ -206828,7 +207125,7 @@ tad
 "}
 (179,1,2) = {"
 tad
-cNL
+bHv
 uDh
 rjM
 rjM
@@ -206850,7 +207147,7 @@ wds
 rjM
 rjM
 uDh
-cNL
+bHv
 tad
 cZb
 cZb
@@ -207031,7 +207328,7 @@ tad
 (180,1,2) = {"
 tad
 eVn
-bcg
+iBI
 bQH
 rjM
 rjM
@@ -207051,7 +207348,7 @@ kyZ
 rjM
 rjM
 bQH
-gbo
+wQL
 eVn
 tad
 cZb
@@ -207232,7 +207529,7 @@ tad
 "}
 (181,1,2) = {"
 tad
-cNL
+bHv
 uDh
 rjM
 uDh
@@ -207254,7 +207551,7 @@ kyD
 rjM
 rjM
 rjM
-cNL
+bHv
 tad
 tad
 tad
@@ -207434,29 +207731,29 @@ tad
 "}
 (182,1,2) = {"
 tad
-cNL
+bHv
 eqM
 eqM
 eqM
-cNL
+bHv
 gAZ
 eLW
 eLW
 eLW
-jAC
+clg
 kyZ
 kyZ
 kyZ
-xNA
+rCF
 eLW
 eLW
 eLW
 gAZ
-cNL
+bHv
 eqM
 eqM
 eqM
-cNL
+bHv
 tad
 tad
 tad
@@ -207636,11 +207933,11 @@ tad
 "}
 (183,1,2) = {"
 tad
-cNL
-cNL
-cNL
-cNL
-cNL
+bHv
+bHv
+bHv
+bHv
+bHv
 tad
 gAZ
 eLW
@@ -207654,11 +207951,11 @@ eLW
 eLW
 gAZ
 tad
-cNL
-cNL
-cNL
-cNL
-cNL
+bHv
+bHv
+bHv
+bHv
+bHv
 tad
 tad
 tad
@@ -208253,7 +208550,7 @@ tad
 tad
 gAZ
 gAZ
-vpp
+gBL
 gAZ
 gAZ
 tad
