@@ -191,7 +191,6 @@
 		/obj/item/device/mmi,
 		/obj/item/device/paicard,
 		/obj/item/gun,
-		/obj/item/pinpointer,
 		/obj/item/clothing/suit,
 		/obj/item/clothing/shoes/magboots,
 		/obj/item/blueprints,

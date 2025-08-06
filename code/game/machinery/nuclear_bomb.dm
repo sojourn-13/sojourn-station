@@ -15,6 +15,13 @@ var/bomb_set
 	var/code = ""
 	var/yes_code = 0
 	var/safety = 1
+
+	// Nuclear sequence timing variables
+	var/abort_window_time = 300  // 5 minutes (300 seconds) to abort
+	var/evacuation_time = 300    // 5 minutes for evacuation phase
+	var/final_countdown_time = 60  // 1 minute final countdown to detonation
+	var/sequence_stage = 0       // 0 = not started, 1 = abort window, 2 = evacuation, 3 = final countdown
+	var/evacuation_called = FALSE
 	var/obj/item/disk/nuclear/auth = null
 	var/removal_stage = 0 // 0 is no removal, 1 is covers removed, 2 is covers open, 3 is sealant open, 4 is unwrenched, 5 is removed from bolts.
 	var/lastentered
@@ -22,6 +29,7 @@ var/bomb_set
 	unacidable = 1
 	var/previous_level = ""
 	var/datum/wires/nuclearbomb/wires = null
+	var/decl/security_level/original_level  // Store original security level
 
 	var/eris_ship_bomb = FALSE           // if TRUE (1 in map editor), then Heads will get parts of code for this bomb. Obviously used in map editor. Single mapped bomb supported.
 
@@ -46,9 +54,29 @@ var/bomb_set
 /obj/machinery/nuclearbomb/Process()
 	if (src.timing)
 		src.timeleft = max(timeleft - 2, 0) // 2 seconds per process()
-		if (timeleft <= 0)
-			spawn
-				explode()
+
+		// Handle the multi-stage nuclear sequence
+		if(sequence_stage == 1) // Abort window phase
+			if(timeleft <= 0)
+				// Abort window expired, move to evacuation phase
+				sequence_stage = 2
+				timeleft = evacuation_time
+				trigger_evacuation()
+		else if(sequence_stage == 2) // Evacuation phase
+			if(timeleft <= 0)
+				// Evacuation time expired, move to final countdown
+				sequence_stage = 3
+				timeleft = final_countdown_time
+				announce_final_countdown()
+		else if(sequence_stage == 3) // Final countdown phase
+			if(timeleft <= 0)
+				spawn
+					explode()
+		else // Original behavior for non-sequenced bombs
+			if (timeleft <= 0)
+				spawn
+					explode()
+
 		SSnano.update_uis(src)
 	return
 
@@ -182,6 +210,24 @@ var/bomb_set
 	data["anchored"] = anchored
 	data["yescode"] = yes_code
 	data["message"] = "AUTH"
+
+	// Add sequence stage information
+	switch(sequence_stage)
+		if(0)
+			data["sequence_stage"] = "Standby"
+			icon_state = "idle"
+		if(1)
+			data["sequence_stage"] = "Abort Window"
+			icon_state = "greenlight"
+		if(2)
+			data["sequence_stage"] = "Evacuation Phase"
+			icon_state = "urgent"
+		if(3)
+			icon_state = "exploding"
+			data["sequence_stage"] = "Final Countdown"
+	data["sequence_stage_num"] = sequence_stage
+	data["can_abort"] = (sequence_stage == 1) // Can only abort during abort window
+	data["interface_locked"] = (sequence_stage >= 2) // Lock interface after abort window expires
 	if (is_auth(user))
 		data["message"] = code
 		if (yes_code)
@@ -233,6 +279,12 @@ var/bomb_set
 				I.loc = src
 				auth = I
 	if (is_auth(usr))
+		// Check if interface is locked (after abort window expires)
+		if(sequence_stage >= 2)
+			to_chat(usr, SPAN_WARNING("Interface locked. Nuclear sequence cannot be modified after abort window expires."))
+			SSnano.update_uis(src)
+			return
+
 		if (href_list["type"])
 			if (href_list["type"] == "E")
 				if (code == r_code)
@@ -280,12 +332,25 @@ var/bomb_set
 					return
 
 				if (!timing && !safety)
-					timing = 1
+					start_nuclear_sequence()
 					log_and_message_admins("engaged a nuclear bomb")
 					bomb_set++ //There can still be issues with this resetting when there are multiple bombs. Not a big deal though for Nuke/N
 					update_icon()
 				else
 					secure_device()
+			if (href_list["abort"])
+				if(sequence_stage == 1 && is_auth(usr)) // Only during abort window and if authorized
+					if(abort_nuclear_sequence())
+						to_chat(usr, SPAN_NOTICE("Nuclear sequence aborted successfully."))
+						log_and_message_admins("aborted a nuclear bomb sequence")
+					else
+						to_chat(usr, SPAN_WARNING("Unable to abort nuclear sequence at this time."))
+				else if(sequence_stage >= 2)
+					to_chat(usr, SPAN_WARNING("Abort window has expired. Evacuation phase has begun - abort is no longer possible."))
+				else
+					to_chat(usr, SPAN_WARNING("Abort window has expired or insufficient authorization."))
+				SSnano.update_uis(src)
+				return
 			if (href_list["safety"])
 				if (wires.IsIndexCut(NUCLEARBOMB_WIRE_SAFETY))
 					to_chat(usr, SPAN_WARNING("Nothing happens, something might be wrong with the wiring."))
@@ -362,19 +427,127 @@ var/bomb_set
 
 	return
 
+// Nuclear sequence helper functions
+/obj/machinery/nuclearbomb/proc/trigger_evacuation()
+	if(!evacuation_called && evacuation_controller)
+		evacuation_called = TRUE
+		evacuation_controller.call_evacuation(null, TRUE) // Emergency evacuation
+
+		// Announce evacuation with priority announcement
+		priority_announcement.Announce("NUCLEAR ALERT: Evacuation phase has begun. All personnel must proceed to evacuation points immediately. This is not a drill.", "Nuclear Safety Control")
+
+		playsound(src, 'sound/effects/Evacuation.ogg', 100, 0, 10)
+
+	// Update station bomb state variables
+	if(istype(src, /obj/machinery/nuclearbomb/station))
+		var/obj/machinery/nuclearbomb/station/S = src
+		S.greenlight = 0
+		S.urgent = 1
+		S.lock = 1  // Lock interface when evacuation begins
+
+/obj/machinery/nuclearbomb/proc/announce_final_countdown()
+	// Announce final countdown with priority announcement
+	priority_announcement.Announce("CRITICAL ALERT: Self-destruct sequence has reached terminal countdown. Abort systems have been disabled. All personnel must evacuate immediately. This is not a drill.", "Nuclear Safety Control")
+
+	playsound(src, 'sound/effects/siren.ogg', 100, 0, 15)
+
+	// Update station bomb state variables
+	if(istype(src, /obj/machinery/nuclearbomb/station))
+		var/obj/machinery/nuclearbomb/station/S = src
+		S.urgent = 0
+		S.exploding = 1
+
+	// Set all areas to red alert
+	for(var/area/A in GLOB.map_areas)
+		if(istype(A, /area/nadezhda/hallway))
+			A.readyalert()
+
+/obj/machinery/nuclearbomb/proc/start_nuclear_sequence()
+	if(timing)
+		return FALSE // Already running
+
+	sequence_stage = 1
+	timeleft = abort_window_time
+	timing = 1
+
+	// Set security level to DELTA when bomb is activated
+	var/decl/security_state/security_state = decls_repository.get_decl(GLOB.maps_data.security_state)
+	original_level = security_state.current_security_level
+	security_state.set_security_level(security_state.severe_security_level, TRUE)
+
+	// Update station bomb state variables
+	if(istype(src, /obj/machinery/nuclearbomb/station))
+		var/obj/machinery/nuclearbomb/station/S = src
+		S.idle = 0
+		S.greenlight = 1
+		S.urgent = 0
+		S.exploding = 0
+		S.lock = 0  // Unlocked during abort window
+
+	// Use priority announcement system for nuclear activation
+	priority_announcement.Announce("NUCLEAR ALERT: The nuclear self-destruct sequence has been activated. All personnel have 5 minutes to abort before evacuation procedures begin. This is not a drill.", "Nuclear Safety Control")
+	playsound(src, 'sound/effects/siren.ogg', 100, 0, 5)
+
+	return TRUE
+
+/obj/machinery/nuclearbomb/proc/abort_nuclear_sequence()
+	if(sequence_stage != 1)
+		return FALSE // Can only abort during abort window (stage 1), not during evacuation (stage 2) or final countdown (stage 3)
+
+	timing = 0
+	sequence_stage = 0
+	timeleft = 120
+	evacuation_called = FALSE
+
+	// Restore original security level when aborted
+	if(original_level)
+		var/decl/security_state/security_state = decls_repository.get_decl(GLOB.maps_data.security_state)
+		security_state.set_security_level(original_level, TRUE)
+
+	// Reset station bomb state variables
+	if(istype(src, /obj/machinery/nuclearbomb/station))
+		var/obj/machinery/nuclearbomb/station/S = src
+		S.idle = 1
+		S.greenlight = 0
+		S.urgent = 0
+		S.exploding = 0
+		S.lock = 0
+
+	// Use priority announcement for abort notification
+	priority_announcement.Announce("NUCLEAR ALERT CANCELLED: Nuclear self-destruct sequence has been successfully aborted. All systems returning to normal operation.", "Nuclear Safety Control")
+
+	bomb_set--
+	update_icon()
+	return TRUE
+
 /obj/machinery/nuclearbomb/update_icon()
 	if(lighthack)
 		icon_state = "nuclearbomb0"
 		return
 
-	else if(timing == -1)
-		icon_state = "nuclearbomb3"
-	else if(timing)
-		icon_state = "nuclearbomb2"
-	else if(extended)
-		icon_state = "nuclearbomb1"
+	// Use proper state variables for station bombs
+	if(istype(src, /obj/machinery/nuclearbomb/station))
+		var/obj/machinery/nuclearbomb/station/S = src
+		if(timing == -1 || S.exploding)
+			icon_state = "nuclearbomb3"
+		else if(timing || S.urgent)
+			icon_state = "nuclearbomb2"
+		else if(extended || S.greenlight)
+			icon_state = "nuclearbomb1"
+		else if(S.idle)
+			icon_state = "nuclearbomb0"
+		else
+			icon_state = "nuclearbomb0"
 	else
-		icon_state = "nuclearbomb0"
+		// Original behavior for regular bombs
+		if(timing == -1)
+			icon_state = "nuclearbomb3"
+		else if(timing)
+			icon_state = "nuclearbomb2"
+		else if(extended)
+			icon_state = "nuclearbomb1"
+		else
+			icon_state = "nuclearbomb0"
 /*
 if(!N.lighthack)
 	if (N.icon_state == "nuclearbomb2")
@@ -392,3 +565,117 @@ if(!N.lighthack)
 
 /obj/item/disk/nuclear/touch_map_edge()
 	qdel(src)
+
+//====the nuclear football (holds the disk and instructions)====
+/obj/item/storage/secure/briefcase/nukedisk
+	desc = "A large briefcase with a digital locking system."
+
+/obj/item/storage/secure/briefcase/nukedisk/examine(mob/user)
+	. = ..()
+	to_chat(user,"On closer inspection, you see a company emblem is etched into the front of it.")
+
+/obj/item/folder/envelope/nuke_instructions
+	name = "instructions envelope"
+	desc = "A small envelope. The label reads 'open only in event of high emergency'."
+
+/obj/item/folder/envelope/nuke_instructions/Initialize()
+	. = ..()
+	// Create basic instruction paper without complex formatting
+	var/obj/item/paper/R = new(src)
+	if(R && R.info)
+		R.info = "Nuclear Self-Destruct System Instructions<br><br>\
+		In the event of a Delta-level emergency, this document will guide you through the activation of the colony's \
+		on-board nuclear self-destruct system. Please read carefully.<br><br>\
+		1) Announce the imminent activation to any surviving crew members, and begin evacuation procedures.<br>\
+		2) Notify heads of staff with proper authorization.<br>\
+		3) Proceed to the self-destruct chamber.<br>\
+		4) Insert the nuclear authentication disk into the self-destruct terminal.<br>\
+		5) Enter the authentication code into the self-destruct terminal.<br>\
+		6) Activate nuclear cylinders if required.<br>\
+		7) Set countdown time and start the sequence.<br><br>\
+		This concludes the instructions."
+		R.name = "colony self-destruct instructions"
+
+//====colony self-destruct system====
+/obj/machinery/nuclearbomb/station
+	name = "self-destruct terminal"
+	desc = "For when it all gets too much to bear. Do not taunt."
+	icon = 'icons/obj/machines/nuke_station.dmi'
+	icon_state = "idle"
+	anchored = 1
+	deployable = 1
+	extended = 1
+
+	var/idle = 1
+	var/greenlight = 0
+	var/urgent = 0
+	var/exploding = 0
+	var/lock = 0
+
+	var/list/flash_tiles = list()
+	var/list/inserters = list()
+	var/last_turf_state
+
+	var/announced = 0
+	var/time_to_explosion = 0
+	var/self_destruct_cutoff = 60 //Seconds
+	timeleft = 300 // 5 minutes
+
+/obj/machinery/nuclearbomb/station/Initialize()
+	. = ..()
+	verbs -= /obj/machinery/nuclearbomb/verb/toggle_deployable
+	for(var/turf/simulated/floor/T in get_area(src))
+		if(istype(T.flooring, /decl/flooring/reinforced/circuit))
+			flash_tiles += T
+	update_icon()
+	for(var/obj/machinery/self_destruct/ch in get_area(src))
+		inserters += ch
+
+/obj/machinery/nuclearbomb/station/proc/start_bomb()
+	// Check that all inserters are armed AND have cylinders lowered
+	var/total_inserters = inserters.len
+	var/lowered_cylinders = 0
+
+	for(var/inserter in inserters)
+		var/obj/machinery/self_destruct/sd = inserter
+		if(!istype(sd))
+			to_chat(usr, "<span class='warning'>An inserter is damaged or missing.</span>")
+			return
+		if(!sd.armed)
+			to_chat(usr, "<span class='warning'>Inserter [sd] has not been armed.</span>")
+			return
+		if(sd.density == 0)  // Cylinder is lowered when density is 0
+			lowered_cylinders++
+
+	// Verify we have the minimum required inserters and all cylinders are lowered
+	if(total_inserters < 6)
+		to_chat(usr, "<span class='warning'>Insufficient inserters found. Expected 6, found [total_inserters].</span>")
+		return
+
+	if(lowered_cylinders < total_inserters)
+		to_chat(usr, "<span class='warning'>Not all nuclear cylinders have been lowered. [lowered_cylinders]/[total_inserters] cylinders are in position.</span>")
+		return
+
+	visible_message("<span class='warning'>Warning. The self-destruct sequence override will be disabled [self_destruct_cutoff] seconds before detonation.</span>")
+	start_nuclear_sequence()
+
+/obj/machinery/nuclearbomb/station/attackby(obj/item/I, mob/user, params)
+	if(isWrench(I))
+		return
+	return ..()
+
+/obj/machinery/nuclearbomb/station/Topic(href, href_list)
+	if((. = ..()))
+		return
+	if(href_list["anchor"])
+		return
+
+	// Override timer handling for station bombs to use start_bomb() instead of start_nuclear_sequence()
+	if(is_auth(usr) && yes_code && href_list["timer"])
+		if(!timing && !safety && anchored)
+			start_bomb()
+			log_and_message_admins("engaged a nuclear bomb")
+			bomb_set++
+			update_icon()
+		SSnano.update_uis(src)
+		return

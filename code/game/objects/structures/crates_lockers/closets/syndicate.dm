@@ -61,11 +61,12 @@
 	new /obj/item/gun/energy/gun(src)
 	new /obj/item/gun/energy/gun(src)
 	new /obj/item/gun/energy/gun(src)
-	new /obj/item/pinpointer/nukeop(src)
-	new /obj/item/pinpointer/nukeop(src)
-	new /obj/item/pinpointer/nukeop(src)
-	new /obj/item/pinpointer/nukeop(src)
-	new /obj/item/pinpointer/nukeop(src)
+	// DISABLED - pinpointer not available
+	// new /obj/item/pinpointer/nukeop(src)
+	// new /obj/item/pinpointer/nukeop(src)
+	// new /obj/item/pinpointer/nukeop(src)
+	// new /obj/item/pinpointer/nukeop(src)
+	// new /obj/item/pinpointer/nukeop(src)
 	var/obj/item/device/radio/uplink/U = new(src)
 	U.hidden_uplink.uses = 40
 	return
