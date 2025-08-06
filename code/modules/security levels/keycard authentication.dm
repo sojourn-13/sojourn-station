@@ -482,7 +482,7 @@ var/global/maint_all_access = 0
 		if("Evacuate")
 			evacuation_controller.call_evacuation(null, TRUE)
 			auth_announcement.Announce("EVACUATION ALERT: Emergency evacuation procedures have been initiated via dual keycard authentication on separate devices. All personnel must proceed to evacuation points immediately.", "Emergency Control")
-			
+
 			// Discord notification for evacuation
 			var/decl/security_state/security_state = decls_repository.get_decl(GLOB.maps_data.security_state)
 			var/user_details = ""
