@@ -82,7 +82,7 @@
 			icon_state = "geiger_on_1"
 			new_volume = 0
 		if(11 to 25)
-			icon_state = "geiger_on_2" 
+			icon_state = "geiger_on_2"
 			new_volume = 16
 		if(26 to 50)
 			icon_state = "geiger_on_3"
