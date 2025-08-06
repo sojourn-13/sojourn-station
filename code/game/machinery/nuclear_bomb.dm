@@ -22,6 +22,7 @@ var/bomb_set
 	var/final_countdown_time = 60  // 1 minute final countdown to detonation
 	var/sequence_stage = 0       // 0 = not started, 1 = abort window, 2 = evacuation, 3 = final countdown
 	var/evacuation_called = FALSE
+	var/sound_timer = 0          // Timer for countdown sound effects
 	var/obj/item/disk/nuclear/auth = null
 	var/removal_stage = 0 // 0 is no removal, 1 is covers removed, 2 is covers open, 3 is sealant open, 4 is unwrenched, 5 is removed from bolts.
 	var/lastentered
@@ -54,6 +55,12 @@ var/bomb_set
 /obj/machinery/nuclearbomb/Process()
 	if (src.timing)
 		src.timeleft = max(timeleft - 2, 0) // 2 seconds per process()
+
+		// Play countdown sound every 5 seconds
+		sound_timer += 2
+		if(sound_timer >= 50) // 50 deciseconds = 5 seconds
+			playsound(src, 'sound/effects/3.wav', 50, 0)
+			sound_timer = 0
 
 		// Handle the multi-stage nuclear sequence
 		if(sequence_stage == 1) // Abort window phase
@@ -384,6 +391,7 @@ var/bomb_set
 
 	bomb_set--
 	timing = 0
+	sound_timer = 0  // Reset sound timer when securing device
 	timeleft = CLAMP(timeleft, 120, 600)
 	update_icon()
 
@@ -469,6 +477,7 @@ var/bomb_set
 	sequence_stage = 1
 	timeleft = abort_window_time
 	timing = 1
+	sound_timer = 0  // Reset sound timer when starting countdown
 
 	// Set security level to DELTA when bomb is activated
 	var/decl/security_state/security_state = decls_repository.get_decl(GLOB.maps_data.security_state)
@@ -498,6 +507,7 @@ var/bomb_set
 	sequence_stage = 0
 	timeleft = 120
 	evacuation_called = FALSE
+	sound_timer = 0  // Reset sound timer when aborting sequence
 
 	// Restore original security level when aborted
 	if(original_level)
@@ -624,7 +634,7 @@ if(!N.lighthack)
 /obj/machinery/nuclearbomb/station/proc/start_bomb()
 	// Check that all inserters are armed AND have cylinders lowered
 	var/total_inserters = inserters.len
-	var/lowered_cylinders = 0
+	var/armed_cylinders = 0
 
 	for(var/inserter in inserters)
 		var/obj/machinery/self_destruct/sd = inserter
@@ -634,16 +644,16 @@ if(!N.lighthack)
 		if(!sd.armed)
 			to_chat(usr, "<span class='warning'>Inserter [sd] has not been armed.</span>")
 			return
-		if(sd.density == 0)  // Cylinder is lowered when density is 0
-			lowered_cylinders++
+		if(sd.armed == 1)  // Cylinder is lowered when density is 0
+			armed_cylinders++
 
 	// Verify we have the minimum required inserters and all cylinders are lowered
-	if(total_inserters < 6)
+	if(total_inserters < 12)
 		to_chat(usr, "<span class='warning'>Insufficient inserters found. Expected 6, found [total_inserters].</span>")
 		return
 
-	if(lowered_cylinders < total_inserters)
-		to_chat(usr, "<span class='warning'>Not all nuclear cylinders have been lowered. [lowered_cylinders]/[total_inserters] cylinders are in position.</span>")
+	if(armed_cylinders < total_inserters)
+		to_chat(usr, "<span class='warning'>Not all nuclear cylinders have been lowered. [armed_cylinders]/[total_inserters] cylinders are in position.</span>")
 		return
 
 	visible_message("<span class='warning'>Warning. The self-destruct sequence override will be disabled [self_destruct_cutoff] seconds before detonation.</span>")

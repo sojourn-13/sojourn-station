@@ -90,16 +90,16 @@
 					station_nuke.abort_nuclear_sequence()
 		else if(!damaged)
 			user.visible_message("[user] begins to arm [cylinder].", "You begin to arm [cylinder].")
+			playsound(src.loc,'sound/effects/alert.ogg',50,1,5)
 			if(do_after(user, 40, src))
 				armed = 1
 				density = 0
 				user.visible_message("[user] arms [cylinder].", "You arm [cylinder].")
 				flick("loading", src)
-				playsound(src.loc,'sound/machines/airalarm.ogg',50,1,5)
-
 				// Cylinder is now armed and ready for activation via the nuclear terminal
 				// The nuclear sequence should only be triggered from the terminal itself, not by arming cylinders
 		update_icon()
+		playsound(src.loc,'sound/effects/magnetclamp.ogg',75,1,5)
 		src.add_fingerprint(user)
 
 /obj/machinery/self_destruct/MouseDrop(atom/over)
