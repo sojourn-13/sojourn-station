@@ -587,15 +587,18 @@ if(!N.lighthack)
 	if(R)
 		R.set_content("Nuclear Self-Destruct System Instructions<br><br>\
 		In the event of a Delta-level emergency, this document will guide you through the activation of the colony's \
-		on-board nuclear self-destruct system. Please read carefully.<br><br>\
-		1) Announce the imminent activation to any surviving crew members, and begin evacuation procedures.<br>\
+		nuclear self-destruct system. Please read carefully.<br><br>\
+		1) Announce the imminent activation to any surviving crew members, and begin these procedures.<br>\
 		2) Notify heads of staff with proper authorization.<br>\
-		3) Proceed to the self-destruct chamber.<br>\
-		4) Insert the nuclear authentication disk into the self-destruct terminal.<br>\
-		5) Enter the authentication code into the self-destruct terminal.<br>\
-		6) Activate nuclear cylinders if required.<br>\
-		7) Set countdown time and start the sequence.<br><br>\
-		This concludes the instructions.")
+		3) Request the nuclear disk from the High Council via secure fax channels.<br>\
+		4) Proceed to the self-destruct chamber once approval and the authentication disk has been received.<br>\
+		5) Authenticate with two Department Heads' approval using the secure terminals on either side of the room to retrieve the authorization code.<br>\
+		6) Remove all nuclear cylinders from their slots in the storage compartment after unlocking it with a premier-level ID.<br>\
+		7) Insert the nuclear cylinders into their slots and arm them by lowering the locking mechanism.<br>\
+		8) Insert the nuclear authentication disk into the self-destruct terminal.<br>\
+		9) Enter the authentication code into the self-destruct terminal.<br>\
+		10) Start the sequence at the main terminal by disabling safety interlocks and activating the self-destruct sequence.<br><br>\
+		The sequence may only be aborted during the first 5 minutes of the countdown. \")
 		R.name = "colony self-destruct instructions"
 
 //====colony self-destruct system====
