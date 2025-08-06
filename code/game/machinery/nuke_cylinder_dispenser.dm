@@ -25,12 +25,19 @@
 	if(!(stat & (NOPOWER|BROKEN)) && locked && check_access(user))
 		locked = FALSE
 		user.visible_message("[user] unlocks \the [src].", "You unlock \the [src].")
+		// Admin notification when nuclear cylinder storage is unlocked
+		message_admins("[key_name_admin(user)] unlocked nuclear cylinder storage at [src] in [get_area(src)]")
+		log_admin("[key_name(user)] unlocked nuclear cylinder storage at [src] in [get_area(src)]")
 		update_icon()
 		add_fingerprint(user)
 		return TRUE
 	if(!locked)
 		open = !open
 		user.visible_message("[user] [open ? "opens" : "closes"] \the [src].", "You [open ? "open" : "close"] \the [src].")
+		// Admin notification when nuclear cylinder storage is opened
+		if(open)
+			message_admins("[key_name_admin(user)] opened nuclear cylinder storage at [src] in [get_area(src)] - [length(cylinders)] cylinders available")
+			log_admin("[key_name(user)] opened nuclear cylinder storage at [src] in [get_area(src)] - [length(cylinders)] cylinders available")
 		update_icon()
 		add_fingerprint(user)
 	return TRUE
@@ -41,6 +48,10 @@
 		if(check_access(id))
 			locked = !locked
 			user.visible_message("[user] [locked ? "locks" : "unlocks"] \the [src].", "You [locked ? "lock" : "unlock"] \the [src].")
+			// Admin notification when nuclear cylinder storage is unlocked via ID card
+			if(!locked)
+				message_admins("[key_name_admin(user)] unlocked nuclear cylinder storage via ID card at [src] in [get_area(src)]")
+				log_admin("[key_name(user)] unlocked nuclear cylinder storage via ID card at [src] in [get_area(src)]")
 			update_icon()
 		return
 	if(open && istype(O, /obj/item/weapon/nuclear_cylinder) && (length(cylinders) < 6))
@@ -60,6 +71,9 @@
 			usr.visible_message("[usr] picks up \the [cylinders[1]].", "You pick up \the [cylinders[1]].")
 			usr.put_in_hands(cylinders[length(cylinders)])
 			cylinders.Cut(length(cylinders))
+			// Admin notification when nuclear cylinder is extracted
+			message_admins("[key_name_admin(usr)] extracted a nuclear cylinder from storage at [src] in [get_area(src)] - [length(cylinders)] cylinders remaining")
+			log_admin("[key_name(usr)] extracted a nuclear cylinder from storage at [src] in [get_area(src)] - [length(cylinders)] cylinders remaining")
 			update_icon()
 		add_fingerprint(usr)
 

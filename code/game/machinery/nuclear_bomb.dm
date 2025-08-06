@@ -17,12 +17,13 @@ var/bomb_set
 	var/safety = 1
 
 	// Nuclear sequence timing variables
-	var/abort_window_time = 300  // 5 minutes (300 seconds) to abort
-	var/evacuation_time = 300    // 5 minutes for evacuation phase
-	var/final_countdown_time = 60  // 1 minute final countdown to detonation
+	var/abort_window_time = 150  // 2 minutes and 30 seconds (150 seconds) to abort
+	var/evacuation_time = 150    // 2 minutes and 30 seconds for evacuation phase
+	var/final_countdown_time = 300  // 5 minutes final countdown to detonation
 	var/sequence_stage = 0       // 0 = not started, 1 = abort window, 2 = evacuation, 3 = final countdown
 	var/evacuation_called = FALSE
 	var/sound_timer = 0          // Timer for countdown sound effects
+	var/explosion_timer = 0      // Timer for random explosions during final countdown
 	var/obj/item/disk/nuclear/auth = null
 	var/removal_stage = 0 // 0 is no removal, 1 is covers removed, 2 is covers open, 3 is sealant open, 4 is unwrenched, 5 is removed from bolts.
 	var/lastentered
@@ -76,6 +77,12 @@ var/bomb_set
 				timeleft = final_countdown_time
 				announce_final_countdown()
 		else if(sequence_stage == 3) // Final countdown phase
+			// Random explosions during final countdown
+			explosion_timer += 2
+			if(explosion_timer >= 30) // Every 15 seconds (30 deciseconds)
+				trigger_random_explosion()
+				explosion_timer = 0
+
 			if(timeleft <= 0)
 				spawn
 					explode()
@@ -233,8 +240,8 @@ var/bomb_set
 			icon_state = "exploding"
 			data["sequence_stage"] = "Final Countdown"
 	data["sequence_stage_num"] = sequence_stage
-	data["can_abort"] = (sequence_stage == 1) // Can only abort during abort window
-	data["interface_locked"] = (sequence_stage >= 2) // Lock interface after abort window expires
+	data["can_abort"] = (sequence_stage == 1 || sequence_stage == 2) // Can abort during abort window and evacuation phase
+	data["interface_locked"] = (sequence_stage >= 3) // Lock interface only during final countdown
 	if (is_auth(user))
 		data["message"] = code
 		if (yes_code)
@@ -263,6 +270,16 @@ var/bomb_set
 		src.deployable = 1
 	return
 
+/obj/machinery/nuclearbomb/verb/admin_initiate_countdown()
+	set name = "Admin: Initiate Nuclear Countdown"
+	set category = "Admin"
+	set desc = "Manually start the nuclear self-destruct sequence"
+
+	if(!check_rights(R_ADMIN))
+		return
+
+	src.admin_initiate_countdown_proc()
+
 /obj/machinery/nuclearbomb/proc/is_auth(var/mob/user)
 	if(auth)
 		return 1
@@ -286,9 +303,9 @@ var/bomb_set
 				I.loc = src
 				auth = I
 	if (is_auth(usr))
-		// Check if interface is locked (after abort window expires)
-		if(sequence_stage >= 2)
-			to_chat(usr, SPAN_WARNING("Interface locked. Nuclear sequence cannot be modified after abort window expires."))
+		// Check if interface is locked (during final countdown only)
+		if(sequence_stage >= 3)
+			to_chat(usr, SPAN_WARNING("Interface locked. Nuclear sequence cannot be modified during final countdown phase."))
 			SSnano.update_uis(src)
 			return
 
@@ -346,16 +363,16 @@ var/bomb_set
 				else
 					secure_device()
 			if (href_list["abort"])
-				if(sequence_stage == 1 && is_auth(usr)) // Only during abort window and if authorized
+				if((sequence_stage == 1 || sequence_stage == 2) && is_auth(usr)) // Can abort during both abort window and evacuation phases
 					if(abort_nuclear_sequence())
 						to_chat(usr, SPAN_NOTICE("Nuclear sequence aborted successfully."))
 						log_and_message_admins("aborted a nuclear bomb sequence")
 					else
 						to_chat(usr, SPAN_WARNING("Unable to abort nuclear sequence at this time."))
-				else if(sequence_stage >= 2)
-					to_chat(usr, SPAN_WARNING("Abort window has expired. Evacuation phase has begun - abort is no longer possible."))
+				else if(sequence_stage >= 3)
+					to_chat(usr, SPAN_WARNING("Final countdown has begun - abort is no longer possible. Random explosions will begin shortly."))
 				else
-					to_chat(usr, SPAN_WARNING("Abort window has expired or insufficient authorization."))
+					to_chat(usr, SPAN_WARNING("Insufficient authorization."))
 				SSnano.update_uis(src)
 				return
 			if (href_list["safety"])
@@ -392,6 +409,7 @@ var/bomb_set
 	bomb_set--
 	timing = 0
 	sound_timer = 0  // Reset sound timer when securing device
+	explosion_timer = 0  // Reset explosion timer when securing device
 	timeleft = CLAMP(timeleft, 120, 600)
 	update_icon()
 
@@ -413,7 +431,18 @@ var/bomb_set
 
 	var/off_station = 0
 	var/turf/bomb_location = get_turf(src)
-	if(bomb_location && isStationLevel(bomb_location.z))
+	var/list/map_z_levels = list()
+
+	// Get all z-levels that belong to the same map as the bomb
+	if(bomb_location)
+		// Find all z-levels that are part of the same station/map
+		for(var/z_level = 1; z_level <= world.maxz; z_level++)
+			if(isStationLevel(z_level))
+				map_z_levels += z_level
+
+	// Check if bomb is within the map's main area on any relevant z-level
+	if(bomb_location && (bomb_location.z in map_z_levels))
+		// Check if it's within the main station area (adjust coordinates as needed for your map)
 		if( (bomb_location.x < (128-NUKERANGE)) || (bomb_location.x > (128+NUKERANGE)) || (bomb_location.y < (128-NUKERANGE)) || (bomb_location.y > (128+NUKERANGE)) )
 			off_station = 1
 	else
@@ -422,20 +451,64 @@ var/bomb_set
 	if(get_storyteller())
 		SSticker.nuke_in_progress = FALSE
 		if(off_station == 1)
-			to_chat(world, "<b>A nuclear device was set off, but the explosion was out of reach of the colony!</b>")
+			to_chat(world, "<b>A nuclear device was set off, but the explosion was out of reach of the main colony area!</b>")
 		else if(off_station == 2)
-			to_chat(world, "<b>A nuclear device was set off, but the device was not on the colony!</b>")
+			to_chat(world, "<b>A nuclear device was set off, but the device was not in the primary operational zone!</b>")
 		else
-			to_chat(world, "<b>The colony was destoyed by the nuclear blast!</b>")
+			to_chat(world, "<b>The colony was destroyed by the nuclear blast!</b>")
 
-		SSticker.ship_was_nuked = (off_station<2)	//offstation==1 is a draw. the station becomes irradiated and needs to be evacuated.
-														//kinda shit but I couldn't  get permission to do what I wanted to do.
+		// Affect all z-levels that are part of the same map
+		SSticker.ship_was_nuked = (off_station < 2 && bomb_location && (bomb_location.z in map_z_levels))
 
-		SSticker.station_explosion_cinematic(off_station)
+		// Call explosion cinematic for all relevant z-levels
+		SSticker.station_explosion_cinematic(off_station, map_z_levels)
 
 	return
 
 // Nuclear sequence helper functions
+/obj/machinery/nuclearbomb/proc/trigger_random_explosion()
+	// Get all z-levels that belong to the same map as the bomb
+	var/turf/bomb_location = get_turf(src)
+	if(!bomb_location)
+		return
+
+	var/list/map_z_levels = list()
+	// Find all z-levels that are part of the same station/map
+	for(var/z_level = 1; z_level <= world.maxz; z_level++)
+		if(isStationLevel(z_level))
+			map_z_levels += z_level
+
+	// Get a random area from any map z-level
+	var/list/valid_areas = list()
+	for(var/area/A in GLOB.map_areas)
+		if((A.z in map_z_levels) && A.type != /area && !istype(A, /area/space))
+			valid_areas += A
+
+	if(!valid_areas.len)
+		return
+
+	var/area/target_area = pick(valid_areas)
+	var/list/turfs_in_area = list()
+
+	// Get all valid turfs in the selected area from any map z-level
+	for(var/turf/T in target_area)
+		if(istype(T, /turf/simulated/floor) && (T.z in map_z_levels))
+			turfs_in_area += T
+
+	if(!turfs_in_area.len)
+		return
+
+	// Pick a random turf and create an explosion
+	var/turf/explosion_turf = pick(turfs_in_area)
+
+	// Announce the explosion
+	priority_announcement.Announce("STRUCTURAL FAILURE DETECTED: Catastrophic failure in [target_area.name]. All personnel evacuate immediately.", "Nuclear Safety Control")
+
+	// Create the explosion after a short delay
+	spawn(30) // 3 second delay
+		explosion(explosion_turf, 1, 2, 3, 4) // Small but noticeable explosion
+		playsound(explosion_turf, 'sound/effects/explosion1.ogg', 75, 1)
+
 /obj/machinery/nuclearbomb/proc/trigger_evacuation()
 	if(!evacuation_called && evacuation_controller)
 		evacuation_called = TRUE
@@ -455,7 +528,7 @@ var/bomb_set
 
 /obj/machinery/nuclearbomb/proc/announce_final_countdown()
 	// Announce final countdown with priority announcement
-	priority_announcement.Announce("CRITICAL ALERT: Self-destruct sequence has reached terminal countdown. Abort systems have been disabled. All personnel must evacuate immediately. This is not a drill.", "Nuclear Safety Control")
+	priority_announcement.Announce("CRITICAL ALERT: Self-destruct sequence has reached terminal countdown. Abort systems have been disabled. Random structural failures will begin immediately. All personnel must evacuate immediately. This is not a drill.", "Nuclear Safety Control")
 
 	playsound(src, 'sound/effects/siren.ogg', 100, 0, 15)
 
@@ -478,6 +551,7 @@ var/bomb_set
 	timeleft = abort_window_time
 	timing = 1
 	sound_timer = 0  // Reset sound timer when starting countdown
+	explosion_timer = 0  // Reset explosion timer when starting countdown
 
 	// Set security level to DELTA when bomb is activated
 	var/decl/security_state/security_state = decls_repository.get_decl(GLOB.maps_data.security_state)
@@ -499,15 +573,44 @@ var/bomb_set
 
 	return TRUE
 
+// Admin proc to manually initiate nuclear countdown
+/obj/machinery/nuclearbomb/proc/admin_initiate_countdown_proc()
+	if(!check_rights(R_ADMIN))
+		return
+
+	if(timing)
+		to_chat(usr, SPAN_WARNING("Nuclear sequence is already active."))
+		return
+
+	var/confirm = alert(usr, "Are you sure you want to initiate the nuclear self-destruct sequence? This will start the countdown immediately.", "Nuclear Countdown Confirmation", "Yes", "No")
+	if(confirm != "Yes")
+		return
+
+	// Force the bomb into an active state
+	auth = new /obj/item/disk/nuclear(src) // Create auth disk
+	yes_code = 1
+	safety = 0
+	anchored = 1
+	extended = 1
+
+	// Start the sequence
+	if(start_nuclear_sequence())
+		message_admins("[key_name_admin(usr)] manually initiated nuclear countdown on [src] at [get_area(src)]")
+		log_admin("[key_name(usr)] manually initiated nuclear countdown on [src] at [get_area(src)]")
+		to_chat(usr, SPAN_NOTICE("Nuclear countdown initiated successfully."))
+	else
+		to_chat(usr, SPAN_WARNING("Failed to initiate nuclear countdown."))
+
 /obj/machinery/nuclearbomb/proc/abort_nuclear_sequence()
-	if(sequence_stage != 1)
-		return FALSE // Can only abort during abort window (stage 1), not during evacuation (stage 2) or final countdown (stage 3)
+	if(sequence_stage != 1 && sequence_stage != 2)
+		return FALSE // Can abort during abort window (stage 1) and evacuation phase (stage 2), but not during final countdown (stage 3)
 
 	timing = 0
 	sequence_stage = 0
 	timeleft = 120
 	evacuation_called = FALSE
 	sound_timer = 0  // Reset sound timer when aborting sequence
+	explosion_timer = 0  // Reset explosion timer when aborting sequence
 
 	// Restore original security level when aborted
 	if(original_level)

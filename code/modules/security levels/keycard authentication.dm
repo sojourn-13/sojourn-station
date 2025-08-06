@@ -24,7 +24,7 @@
 	var/static/datum/announcement/priority/kcad_announcement = new(do_log = 1, new_sound = sound('sound/misc/notice1.ogg'), do_newscast = 1)
 
 	// Global dual authentication variables - shared across all keycard auth devices
-	var/static/list/global_auth_users = list()         // List of users who have swiped their cards
+	var/static/list/global_auth_users = list()         // List of user details who have swiped their cards
 	var/static/list/global_auth_devices = list()       // List of devices that have been used for auth
 	var/static/global_auth_time_limit = 50             // 5 seconds (10 deciseconds per second)
 	var/static/global_auth_timer = 0                   // Current timer for dual auth
@@ -148,7 +148,12 @@
 				user_name = user.real_name
 
 			// Check if this user already authenticated
-			if(user_name in global_auth_users)
+			var/user_found = FALSE
+			for(var/list/user_info in global_auth_users)
+				if(user_info["ckey"] == user.ckey)
+					user_found = TRUE
+					break
+			if(user_found)
 				to_chat(user, "<span class='warning'>You have already authenticated for this event.</span>")
 				return
 
@@ -157,8 +162,14 @@
 				to_chat(user, "<span class='warning'>This device has already been used for authentication. Use a different keycard authenticator.</span>")
 				return
 
-			// Add user and device to authenticated lists
-			global_auth_users += user_name
+			// Add user and device to authenticated lists with detailed information
+			var/list/user_details = list(
+				"ckey" = user.ckey,
+				"real_name" = user.real_name,
+				"id_name" = user_name,
+				"id_assignment" = ID.assignment ? ID.assignment : "Unknown"
+			)
+			global_auth_users += list(user_details)
 			global_auth_devices += src
 			playsound(src, 'sound/machines/twobeep.ogg', 50, 1)
 			to_chat(user, "<span class='notice'>Authentication accepted ([global_auth_users.len]/2).</span>")
@@ -347,7 +358,12 @@ var/global/maint_all_access = 0
 				user_name = user.real_name
 
 			// Check if this user already authenticated
-			if(user_name in global_auth_users)
+			var/user_found = FALSE
+			for(var/list/user_info in global_auth_users)
+				if(user_info["ckey"] == user.ckey)
+					user_found = TRUE
+					break
+			if(user_found)
 				to_chat(user, "<span class='warning'>You have already authenticated for this event.</span>")
 				return
 
@@ -356,8 +372,14 @@ var/global/maint_all_access = 0
 				to_chat(user, "<span class='warning'>This device has already been used for authentication. Use a different keycard authenticator.</span>")
 				return
 
-			// Add user and device to authenticated lists
-			global_auth_users += user_name
+			// Add user and device to authenticated lists with detailed information
+			var/list/user_details = list(
+				"ckey" = user.ckey,
+				"real_name" = user.real_name,
+				"id_name" = user_name,
+				"id_assignment" = ID.assignment ? ID.assignment : "Unknown"
+			)
+			global_auth_users += list(user_details)
 			global_auth_devices += src
 			playsound(src, 'sound/machines/twobeep.ogg', 50, 1)
 			to_chat(user, "<span class='notice'>Authentication accepted ([global_auth_users.len]/2).</span>")
@@ -443,6 +465,14 @@ var/global/maint_all_access = 0
 			var/datum/announcement/priority/security/nuke_announcement = new(do_log = 1, do_newscast = 1, new_sound = sound('sound/effects/siren.ogg'))
 			nuke_announcement.Announce("CRITICAL ALERT: Nuclear weapon safeties have been disarmed via dual keycard authentication on separate devices. All personnel are advised that the station is now in a state of extreme emergency. DELTA security protocols are now in effect. This is not a drill.", "Nuclear Safety Control")
 
+			// Discord notification for nuclear authorization
+			var/user_details = ""
+			for(var/list/user_info in global_auth_users)
+				if(user_details != "")
+					user_details += ", "
+				user_details += "[user_info["real_name"]] ([user_info["ckey"]]) - [user_info["id_name"]] ([user_info["id_assignment"]])"
+			send2adminirc("nuclear authentication device used | Users: [user_details] | Alert Level: [security_state.current_security_level.name]")
+
 			var/obj/machinery/nuclearbomb/nuke = locate(/obj/machinery/nuclearbomb/station) in world
 			if(nuke)
 				to_chat(usr, "The nuclear authorization code is [nuke.r_code]")
@@ -452,6 +482,15 @@ var/global/maint_all_access = 0
 		if("Evacuate")
 			evacuation_controller.call_evacuation(null, TRUE)
 			auth_announcement.Announce("EVACUATION ALERT: Emergency evacuation procedures have been initiated via dual keycard authentication on separate devices. All personnel must proceed to evacuation points immediately.", "Emergency Control")
+			
+			// Discord notification for evacuation
+			var/decl/security_state/security_state = decls_repository.get_decl(GLOB.maps_data.security_state)
+			var/user_details = ""
+			for(var/list/user_info in global_auth_users)
+				if(user_details != "")
+					user_details += ", "
+				user_details += "[user_info["real_name"]] ([user_info["ckey"]]) - [user_info["id_name"]] ([user_info["id_assignment"]])"
+			send2adminirc("emergency evacuation triggered | Users: [user_details] | Alert Level: [security_state.current_security_level.name]")
 
 // These procs need to access the static variables from the main class
 /proc/check_global_dual_auth_status()
