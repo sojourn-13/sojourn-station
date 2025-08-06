@@ -16,14 +16,13 @@ Used In File(s): \code\game\gamemodes\nuclear\nuclearbomb.dm
 		<div class="item">
 			<b>Timer:</b> {{:helper.link('Start', 'play', {'timer' : 1}, data.timer ? 'disabled' : '')}}
 		</div>
-		{{if data.can_abort}}
-			<div class="item">
-				<b>Abort:</b> {{:helper.link('ABORT SEQUENCE', 'cross', {'abort' : 1}, 'redButton')}}
-			</div>
-		{{/if}}
 		<div class="item">
 			<b>Safety:</b> {{:helper.link('Engaged', 'info', {'safety' : 1}, data.safety ? 'selected' : '')}} {{:helper.link('Disengaged', 'alert', {'safety' : 0}, data.safety ? '' : 'redButton')}}
 		</div>
+		<div class="item">
+			<b>Abort:</b> {{:helper.link('ABORT SEQUENCE', 'cross', {'abort' : 1}, 'redButton')}}
+		</div>
+		{{/if}}
 	{{else}}
 		<div class="item">
 			<b>Timer:</b> {{:helper.link('Start', 'play', null, 'disabled')}}
