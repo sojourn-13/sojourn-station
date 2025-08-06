@@ -73,7 +73,7 @@
 	name = "standard magazine (.35 laser)"
 	icon_state = "pistol_lsr"
 	ammo_color = "-lsr"
-	mag_well = MAG_WELL_PISTOL | MAG_WELL_LASER_PISTOL
+	mag_well = MAG_WELL_PISTOL
 	ammo_type = /obj/item/ammo_casing/pistol_35/laser
 
 /obj/item/ammo_magazine/pistol_35/laser/empty
@@ -135,7 +135,7 @@
 	name = "standard drum magazine (.35 laser)"
 	icon_state = "ldrum_lsr"
 	ammo_color = "-lsr"
-	mag_well = MAG_WELL_DRUM | MAG_WELL_LASER_DRUM
+	mag_well = MAG_WELL_DRUM
 	ammo_type = /obj/item/ammo_casing/pistol_35/laser
 
 /obj/item/ammo_magazine/highcap_pistol_35/drum/laser/empty
@@ -194,7 +194,7 @@
 	name = "highcap magazine (.35 laser)"
 	icon_state = "hpistol_lsr"
 	ammo_color = "-lsr"
-	mag_well = MAG_WELL_H_PISTOL | MAG_WELL_LASER_H_PISTOL
+	mag_well = MAG_WELL_H_PISTOL
 	ammo_type = /obj/item/ammo_casing/pistol_35/laser
 
 /obj/item/ammo_magazine/highcap_pistol_35/laser/empty
@@ -260,7 +260,7 @@
 	name = "smg magazine (.35 laser)"
 	icon_state = "smg_lsr"
 	ammo_color = "-lsr"
-	mag_well = MAG_WELL_SMG | MAG_WELL_LASER_SMG
+	mag_well = MAG_WELL_SMG
 	ammo_type = /obj/item/ammo_casing/pistol_35/laser
 
 /obj/item/ammo_magazine/smg_35/laser/empty
@@ -325,7 +325,7 @@
 	name = "magazine (.40 Magnum laser)"
 	icon_state = "magnum_lsr"
 	ammo_color = "-lsr"
-	mag_well = MAG_WELL_PISTOL | MAG_WELL_LASER_PISTOL
+	mag_well = MAG_WELL_PISTOL
 	ammo_type = /obj/item/ammo_casing/magnum_40/laser
 
 /obj/item/ammo_magazine/magnum_40/laser/empty
@@ -391,7 +391,7 @@
 	name = "smg magazine (.40 Magnum laser)"
 	icon_state = "smg_magnum_lsr"
 	ammo_color = "-lsr"
-	mag_well = MAG_WELL_SMG | MAG_WELL_LASER_SMG
+	mag_well = MAG_WELL_SMG
 	ammo_type = /obj/item/ammo_casing/pistol_35/laser
 
 /obj/item/ammo_magazine/smg_magnum_40/laser/empty
@@ -452,7 +452,7 @@
 /obj/item/ammo_magazine/light_rifle_257/laser
 	name = "carbine magazine (laser)"
 	icon_state = "lrifle_long_lsr"
-	mag_well = MAG_WELL_RIFLE | MAG_WELL_LASER_RIFLE
+	mag_well = MAG_WELL_RIFLE
 	ammo_color = "laser"
 	ammo_type = /obj/item/ammo_casing/light_rifle_257/laser
 
@@ -598,7 +598,7 @@
 /obj/item/ammo_magazine/rifle_75/laser
 	name = "rifle magazine (laser)"
 	icon_state = "rifle_lsr"
-	mag_well = MAG_WELL_RIFLE | MAG_WELL_LASER_RIFLE
+	mag_well = MAG_WELL_RIFLE
 	ammo_color = "laser"
 	ammo_type = /obj/item/ammo_casing/rifle_75/laser
 
@@ -887,7 +887,7 @@
 /obj/item/ammo_magazine/heavy_rifle_408/laser
 	name = "heavy rifle magazine (laser)"
 	icon_state = "hrifle_lsr"
-	mag_well = MAG_WELL_HRIFLE | MAG_WELL_LASER_HRIFLE
+	mag_well = MAG_WELL_HRIFLE
 	ammo_color = "laser"
 	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/laser
 
@@ -978,7 +978,7 @@
 	name = "heavy pistol magazine (laser)"
 	icon_state = "kurz_lsr"
 	ammo_color = "-lsr"
-	mag_well = MAG_WELL_PISTOL | MAG_WELL_LASER_PISTOL
+	mag_well = MAG_WELL_PISTOL
 	ammo_type = /obj/item/ammo_casing/kurz_50/laser
 
 /obj/item/ammo_magazine/kurz_50/laser/empty

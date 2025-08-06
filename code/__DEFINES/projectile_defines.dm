@@ -46,12 +46,6 @@
 #define MAG_WELL_PULSE		1024	// Mary sue ammo for the pulse rifle
 #define MAG_WELL_LSRIFLE	2048	// Mary sue ammo for the laser AK
 #define MAG_WELL_LINKED_BOX	4096	// Linked ammo boxes, for LMGs
-#define MAG_WELL_LASER_PISTOL	8192	// Laser pistol magazines
-#define MAG_WELL_LASER_SMG		16384	// Laser SMG magazines
-#define MAG_WELL_LASER_DRUM		32768	// Laser drum magazines
-#define MAG_WELL_LASER_RIFLE	65536	// Laser rifle magazines
-#define MAG_WELL_LASER_HRIFLE	131072	// Laser heavy rifle magazines
-#define MAG_WELL_LASER_H_PISTOL	262144	// Laser high capacity pistol magazines
 
 // Slots
 #define SLOT_BARREL "barrel"
