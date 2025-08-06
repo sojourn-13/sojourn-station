@@ -17,31 +17,37 @@ Used In File(s): \code\game\gamemodes\nuclear\nuclearbomb.dm
 			<b>Timer:</b> {{:helper.link('Start', 'play', {'timer' : 1}, data.timer ? 'disabled' : '')}}
 		</div>
 		<div class="item">
-			<b>Safety:</b> {{:helper.link('Engaged', 'info', {'safety' : 1}, data.safety ? 'selected' : '')}} {{:helper.link('Disengaged', 'alert', {'safety' : 0}, data.safety ? '' : 'redButton')}}
+			<b>Time:</b> {{:helper.link('--', '', {'time' : -10}, data.time <= 120 ? 'disabled' : '')}}{{:helper.link('-', '', {'time' : -1}, data.time <= 120 ? 'disabled' : '')}} {{:data.time}} {{:helper.link('+', '', {'time' : 1})}}{{:helper.link('++', '', {'time' : 10})}}
 		</div>
 		<div class="item">
-			<b>Abort:</b> {{:helper.link('ABORT SEQUENCE', 'cross', {'abort' : 1}, 'redButton')}}
+			<b>Safety:</b> {{:helper.link('Engaged', 'info', {'safety' : 1}, data.safety ? 'selected' : '')}} {{:helper.link('Disengaged', 'alert', {'safety' : 0}, data.safety ? '' : 'redButton')}}
 		</div>
-		{{/if}}
 	{{else}}
 		<div class="item">
 			<b>Timer:</b> {{:helper.link('Start', 'play', null, 'disabled')}}
 		</div>
 		<div class="item">
+			<b>Time:</b> {{:helper.link('-', '', null, 'disabled')}}{{:helper.link('-', '', null, 'disabled')}} {{:data.time}} {{:helper.link('+', '', null, 'disabled')}}{{:helper.link('++', '', null, 'disabled')}}
+		</div>
+		<div class="item">
 			<b>Safety:</b> {{:helper.link('Engaged', 'info', null, 'disabled')}} {{:helper.link('Disengaged', 'alert', null, 'disabled')}}
 		</div>
 	{{/if}}
-</div>
-	<hr>
-	{{if data.interface_locked}}
+	{{if data.auth && data.can_abort && !data.interface_locked}}
 		<div class="item">
-			<div style="color: red; font-weight: bold; text-align: center;">
-				INTERFACE LOCKED - ABORT WINDOW EXPIRED
-			</div>
+			<b>Abort:</b> {{:helper.link('ABORT SEQUENCE', 'cross', {'abort' : 1}, 'redButton')}}
 		</div>
-		<hr>
 	{{/if}}
 </div>
+<hr>
+{{if data.interface_locked}}
+	<div class="item">
+		<div style="color: red; font-weight: bold; text-align: center;">
+			INTERFACE LOCKED - ABORT WINDOW EXPIRED
+		</div>
+	</div>
+	<hr>
+{{/if}}
 <div class="item">
 	<div class="item">
 		>{{if data.message}} {{:data.message}}{{/if}}

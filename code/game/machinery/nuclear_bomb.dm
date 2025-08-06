@@ -42,6 +42,7 @@ var/bomb_set
 	else                                  // i decided not to touch normal bombs code length.
 		r_code = "[rand(10000, 99999.0)]" //Creates a random code upon object spawn.
 	wires = new/datum/wires/nuclearbomb(src)
+	update_icon() // Ensure light is set on spawn
 
 /obj/machinery/nuclearbomb/Initialize()
 	. = ..()
@@ -62,6 +63,14 @@ var/bomb_set
 		if(sound_timer >= 50) // 50 deciseconds = 5 seconds
 			playsound(src, 'sound/effects/3.wav', 50, 0)
 			sound_timer = 0
+
+		// Light pulsing effect for urgent states
+		if(sequence_stage >= 2) // During evacuation and final countdown
+			if(sound_timer % 20 == 0) // Pulse every 2 seconds
+				var/current_power = light_power
+				set_light(l_power = current_power * 1.5) // Brighten
+				spawn(10) // After 1 second
+					set_light(l_power = current_power) // Return to normal
 
 		// Handle the multi-stage nuclear sequence
 		if(sequence_stage == 1) // Abort window phase
@@ -333,6 +342,23 @@ var/bomb_set
 						code += lastentered
 						if (length(code) > length(r_code))
 							code = "ERROR"
+
+		// Handle abort button - accessible with nuclear disk regardless of code entry
+		if (href_list["abort"])
+			if(sequence_stage >= 3)
+				to_chat(usr, SPAN_WARNING("Final countdown has begun - abort is no longer possible. Random explosions will begin shortly."))
+			else if(!timing)
+				to_chat(usr, SPAN_WARNING("No nuclear sequence is currently active."))
+			else
+				// Abort the sequence
+				if(abort_nuclear_sequence())
+					to_chat(usr, SPAN_NOTICE("Nuclear sequence aborted successfully."))
+					log_and_message_admins("aborted a nuclear bomb sequence")
+				else
+					to_chat(usr, SPAN_WARNING("Unable to abort nuclear sequence at this time."))
+			SSnano.update_uis(src)
+			return
+
 		if (yes_code)
 			if (href_list["time"])
 				var/time = text2num(href_list["time"])
@@ -362,21 +388,6 @@ var/bomb_set
 					update_icon()
 				else
 					secure_device()
-			if (href_list["abort"])
-				if(sequence_stage >= 3)
-					to_chat(usr, SPAN_WARNING("Final countdown has begun - abort is no longer possible. Random explosions will begin shortly."))
-				else if(!is_auth(usr))
-					to_chat(usr, SPAN_WARNING("Insufficient authorization. Nuclear authorization disk required."))
-				else if(sequence_stage != 1 && sequence_stage != 2)
-					to_chat(usr, SPAN_WARNING("Nuclear sequence cannot be aborted at this time. Sequence stage: [sequence_stage]"))
-				else
-					if(abort_nuclear_sequence())
-						to_chat(usr, SPAN_NOTICE("Nuclear sequence aborted successfully."))
-						log_and_message_admins("aborted a nuclear bomb sequence")
-					else
-						to_chat(usr, SPAN_WARNING("Unable to abort nuclear sequence at this time."))
-				SSnano.update_uis(src)
-				return
 			if (href_list["safety"])
 				if (wires.IsIndexCut(NUCLEARBOMB_WIRE_SAFETY))
 					to_chat(usr, SPAN_WARNING("Nothing happens, something might be wrong with the wiring."))
@@ -610,9 +621,13 @@ var/bomb_set
 		to_chat(usr, SPAN_WARNING("Failed to initiate nuclear countdown."))
 
 /obj/machinery/nuclearbomb/proc/abort_nuclear_sequence()
-	if(sequence_stage != 1 && sequence_stage != 2)
-		return FALSE // Can abort during abort window (stage 1) and evacuation phase (stage 2), but not during final countdown (stage 3)
+	if(!timing)
+		return FALSE // No sequence to abort
 
+	if(sequence_stage >= 3)
+		return FALSE // Cannot abort during final countdown
+
+	// Stop the timing and reset everything
 	timing = 0
 	sequence_stage = 0
 	timeleft = 120
@@ -643,6 +658,9 @@ var/bomb_set
 	// Use priority announcement for abort notification
 	priority_announcement.Announce("NUCLEAR ALERT CANCELLED: Nuclear self-destruct sequence has been successfully aborted. All systems returning to normal operation.", "Nuclear Safety Control")
 
+	// Play abort sound
+	playsound(src, 'sound/machines/chime.ogg', 75, 0, 5)
+
 	bomb_set--
 	update_icon()
 	return TRUE
@@ -650,7 +668,7 @@ var/bomb_set
 /obj/machinery/nuclearbomb/update_icon()
 	if(lighthack)
 		icon_state = "idle"
-		set_light(l_range = 2, l_power = 0.3, l_color = COLOR_LIGHTING_BLUE_BRIGHT)
+		set_light(l_range = 3, l_power = 0.5, l_color = COLOR_LIGHTING_BLUE_BRIGHT)
 		return
 
 	// Use proper state variables for station bombs
@@ -658,33 +676,37 @@ var/bomb_set
 		var/obj/machinery/nuclearbomb/station/S = src
 		if(timing == -1 || S.exploding)
 			icon_state = "exploding"
-			set_light(l_range = 3, l_power = 0.8, l_color = COLOR_LIGHTING_RED_MACHINERY)
+			set_light(l_range = 6, l_power = 1.2, l_color = COLOR_LIGHTING_RED_MACHINERY)
+			// Intense pulsing red light for exploding state
 		else if(timing || S.urgent)
 			icon_state = "urgent"
-			set_light(l_range = 3, l_power = 0.6, l_color = COLOR_LIGHTING_RED_MACHINERY)
+			set_light(l_range = 5, l_power = 0.9, l_color = COLOR_LIGHTING_RED_MACHINERY)
+			// Bright red warning light for urgent state
 		else if(extended || S.greenlight)
 			icon_state = "greenlight"
-			set_light(l_range = 2, l_power = 0.4, l_color = COLOR_LIGHTING_GREEN_BRIGHT)
+			set_light(l_range = 4, l_power = 0.7, l_color = COLOR_LIGHTING_RED_MACHINERY)
+			// Green armed/ready light
 		else if(S.idle)
 			icon_state = "idle"
-			set_light(l_range = 2, l_power = 0.3, l_color = COLOR_LIGHTING_BLUE_BRIGHT)
+			set_light(l_range = 3, l_power = 0.5, l_color = COLOR_LIGHTING_BLUE_BRIGHT)
+			// Calm blue idle light
 		else
 			icon_state = "idle"
-			set_light(l_range = 2, l_power = 0.3, l_color = COLOR_LIGHTING_BLUE_BRIGHT)
+			set_light(l_range = 3, l_power = 0.5, l_color = COLOR_LIGHTING_BLUE_BRIGHT)
 	else
 		// For regular nuclear bombs (not station bombs)
 		if(timing == -1)
 			icon_state = "exploding"
-			set_light(l_range = 3, l_power = 0.8, l_color = COLOR_LIGHTING_RED_MACHINERY)
+			set_light(l_range = 6, l_power = 1.2, l_color = COLOR_LIGHTING_RED_MACHINERY)
 		else if(timing)
 			icon_state = "urgent"
-			set_light(l_range = 3, l_power = 0.6, l_color = COLOR_LIGHTING_RED_MACHINERY)
+			set_light(l_range = 5, l_power = 0.9, l_color = COLOR_LIGHTING_RED_MACHINERY)
 		else if(extended)
 			icon_state = "greenlight"
-			set_light(l_range = 2, l_power = 0.4, l_color = COLOR_LIGHTING_RED_MACHINERY)
+			set_light(l_range = 4, l_power = 0.7, l_color = COLOR_LIGHTING_RED_MACHINERY)
 		else
 			icon_state = "idle"
-			set_light(l_range = 2, l_power = 0.3, l_color = COLOR_LIGHTING_BLUE_BRIGHT)
+			set_light(l_range = 3, l_power = 0.5, l_color = COLOR_LIGHTING_BLUE_BRIGHT)
 /*
 if(!N.lighthack)
 	if (N.icon_state == "nuclearbomb2")

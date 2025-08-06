@@ -5735,6 +5735,10 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/security/sechall)
+"bfv" = (
+/obj/structure/sign/warning/nosmoking/small,
+/turf/simulated/wall/r_wall,
+/area/nadezhda/security/nuke_hallway)
 "bfx" = (
 /obj/structure/flora/big/bush2,
 /obj/structure/flora/ausbushes/lavendergrass,
@@ -7875,6 +7879,8 @@
 /obj/machinery/light{
 	light_color = "#b9e8ea"
 	},
+/obj/item/tank/emergency_oxygen/double,
+/obj/item/clothing/mask/breath,
 /turf/simulated/floor/tiled/white/danger,
 /area/nadezhda/security/nuke_hallway)
 "bze" = (
@@ -8484,7 +8490,8 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
-/turf/simulated/floor/tiled/techmaint,
+/obj/effect/floor_decal/industrial/outline/red,
+/turf/simulated/floor/plating/under,
 /area/nadezhda/security/nuke_hallway)
 "bFy" = (
 /obj/structure/multiz/stairs/enter/bottom{
@@ -15617,6 +15624,8 @@
 /area/nadezhda/engineering/workshop)
 "cWU" = (
 /obj/structure/closet/radiation,
+/obj/item/tank/emergency_oxygen/double,
+/obj/item/clothing/mask/breath,
 /turf/simulated/floor/tiled/white/danger,
 /area/nadezhda/security/nuke_hallway)
 "cWX" = (
@@ -27058,6 +27067,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/white/danger,
 /area/nadezhda/security/nuke_hallway)
 "faH" = (
@@ -27392,15 +27402,14 @@
 	dir = 1
 	},
 /obj/structure/multiz/ladder,
-/obj/machinery/power/apc{
-	dir = 8;
-	name = "West APC";
-	operating = 0;
-	pixel_x = -28
-	},
 /obj/structure/cable/cyan{
 	d2 = 2;
 	icon_state = "0-2"
+	},
+/obj/machinery/power/apc{
+	dir = 8;
+	name = "West APC";
+	pixel_x = -28
 	},
 /turf/simulated/open,
 /area/nadezhda/security/nuke_vault)
@@ -31855,6 +31864,17 @@
 	output_level = 200000;
 	output_level_max = 250000;
 	outputting = 2
+	},
+/obj/effect/floor_decal/industrial/danger,
+/obj/effect/floor_decal/industrial/danger{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/danger{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/danger{
+	dir = 4;
+	tag = "icon-danger (EAST)"
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/security/nuke_hallway)
@@ -46972,6 +46992,10 @@
 	icon_state = "10,15"
 	},
 /area/nadezhda/rnd/docking)
+"iKg" = (
+/obj/structure/sign/warning/hazard_radiation,
+/turf/simulated/wall/r_wall,
+/area/nadezhda/security/nuke_hallway)
 "iKp" = (
 /obj/structure/window/reinforced{
 	dir = 1
@@ -67987,6 +68011,7 @@
 /obj/structure/table/rack/shelf,
 /obj/item/storage/firstaid/radiation,
 /obj/item/storage/firstaid/radiation,
+/obj/item/storage/firstaid/radiation,
 /turf/simulated/floor/tiled/white/danger,
 /area/nadezhda/security/nuke_hallway)
 "mJD" = (
@@ -71155,6 +71180,10 @@
 	d2 = 8;
 	icon_state = "2-8"
 	},
+/obj/structure/extinguisher_cabinet{
+	pixel_y = 30
+	},
+/obj/item/reagent_containers/glass/bottle/petrel,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/security/nuke_hallway)
 "noN" = (
@@ -77031,6 +77060,17 @@
 	output_level = 200000;
 	output_level_max = 250000;
 	outputting = 2
+	},
+/obj/effect/floor_decal/industrial/danger,
+/obj/effect/floor_decal/industrial/danger{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/danger{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/danger{
+	dir = 4;
+	tag = "icon-danger (EAST)"
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/security/nuke_hallway)
@@ -83167,6 +83207,12 @@
 	},
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/crew_quarters/sleep/bedrooms)
+"pxb" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/briefcase/inflatable,
+/obj/item/storage/briefcase/inflatable,
+/turf/simulated/floor/tiled/white/danger,
+/area/nadezhda/security/nuke_hallway)
 "pxl" = (
 /obj/structure/railing{
 	dir = 4
@@ -90341,6 +90387,7 @@
 	dir = 1;
 	light_color = "#0892d0"
 	},
+/obj/effect/floor_decal/industrial/shutoff,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/security/nuke_hallway)
 "qND" = (
@@ -120789,6 +120836,7 @@
 	d2 = 2;
 	icon_state = "0-2"
 	},
+/obj/effect/floor_decal/industrial/shutoff,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/security/nuke_hallway)
 "wqF" = (
@@ -122980,6 +123028,14 @@
 /obj/structure/barricade,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1west)
+"wMv" = (
+/obj/structure/cable/cyan{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/security/nuke_hallway)
 "wMw" = (
 /obj/structure/flora/ausbushes/reedbush,
 /obj/structure/flora/rock,
@@ -203700,7 +203756,7 @@ tad
 tad
 tad
 tad
-cNL
+iKg
 dKX
 kTE
 war
@@ -203899,7 +203955,7 @@ tad
 pBt
 cNL
 cNL
-cNL
+bfv
 cNL
 cNL
 cNL
@@ -204304,7 +204360,7 @@ pBt
 cNL
 qNA
 wLG
-noM
+wMv
 ooz
 pcf
 pcf
@@ -204912,7 +204968,7 @@ qGf
 uwy
 bFu
 qYW
-iDB
+pxb
 iDB
 kAh
 nyX

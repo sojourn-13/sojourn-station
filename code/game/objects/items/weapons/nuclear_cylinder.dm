@@ -1,6 +1,6 @@
 /obj/item/weapon/nuclear_cylinder
 	name = "\improper nuclear cylinder"
-	desc = "This cylinder is used in the self destruct system of the ship."
+	desc = "This cylinder is used in the self destruct system of the colony."
 	icon = 'icons/obj/machines/nuclear_cylinder.dmi'
 	icon_state = "nuclear_cylinder"
 	item_state = "nuclear"
@@ -11,3 +11,7 @@
 	throw_speed = 2
 	throw_range = 4
 	origin_tech = list(TECH_MATERIAL = 3, TECH_ENGINEERING = 4)
+
+/obj/item/weapon/nuclear_cylinder/Initialize()
+	. = ..()
+	AddRadSource(src, 10, 5) // Add radiation source to the cylinder
