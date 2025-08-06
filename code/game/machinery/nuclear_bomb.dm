@@ -533,6 +533,7 @@ var/bomb_set
 /obj/machinery/nuclearbomb/update_icon()
 	if(lighthack)
 		icon_state = "idle"
+		set_light(l_range = 2, l_power = 0.3, l_color = COLOR_LIGHTING_BLUE_BRIGHT)
 		return
 
 	// Use proper state variables for station bombs
@@ -540,14 +541,33 @@ var/bomb_set
 		var/obj/machinery/nuclearbomb/station/S = src
 		if(timing == -1 || S.exploding)
 			icon_state = "exploding"
+			set_light(l_range = 3, l_power = 0.8, l_color = COLOR_LIGHTING_RED_MACHINERY)
 		else if(timing || S.urgent)
 			icon_state = "urgent"
+			set_light(l_range = 3, l_power = 0.6, l_color = COLOR_LIGHTING_RED_MACHINERY)
 		else if(extended || S.greenlight)
 			icon_state = "greenlight"
+			set_light(l_range = 2, l_power = 0.4, l_color = COLOR_LIGHTING_GREEN_BRIGHT)
 		else if(S.idle)
 			icon_state = "idle"
+			set_light(l_range = 2, l_power = 0.3, l_color = COLOR_LIGHTING_BLUE_BRIGHT)
 		else
 			icon_state = "idle"
+			set_light(l_range = 2, l_power = 0.3, l_color = COLOR_LIGHTING_BLUE_BRIGHT)
+	else
+		// For regular nuclear bombs (not station bombs)
+		if(timing == -1)
+			icon_state = "exploding"
+			set_light(l_range = 3, l_power = 0.8, l_color = COLOR_LIGHTING_RED_MACHINERY)
+		else if(timing)
+			icon_state = "urgent"
+			set_light(l_range = 3, l_power = 0.6, l_color = COLOR_LIGHTING_RED_MACHINERY)
+		else if(extended)
+			icon_state = "greenlight"
+			set_light(l_range = 2, l_power = 0.4, l_color = COLOR_LIGHTING_RED_MACHINERY)
+		else
+			icon_state = "idle"
+			set_light(l_range = 2, l_power = 0.3, l_color = COLOR_LIGHTING_BLUE_BRIGHT)
 /*
 if(!N.lighthack)
 	if (N.icon_state == "nuclearbomb2")
@@ -578,7 +598,7 @@ if(!N.lighthack)
 
 /obj/item/folder/envelope/nuke_instructions
 	name = "instructions envelope"
-	desc = "A small envelope. The label reads 'open only in event of high emergency'."
+	desc = "A small manilla envelope with multiple warning labels and an integrity seal. The label reads 'open only in event of imminent destruction or hostile takeover of colony command infrastructure' Another note indicates that failure to obey the warning is grounds for high treason."
 
 /obj/item/folder/envelope/nuke_instructions/Initialize()
 	. = ..()
