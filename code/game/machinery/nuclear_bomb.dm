@@ -393,8 +393,18 @@ var/bomb_set
 					to_chat(usr, SPAN_WARNING("Nothing happens, something might be wrong with the wiring."))
 					SSnano.update_uis(src)
 					return
+
+				var/old_safety = safety
 				safety = !safety
-				if(safety)
+
+				if(safety && !old_safety && timing)
+					// Safety was re-engaged during active countdown - abort sequence
+					to_chat(usr, SPAN_NOTICE("Safety re-engaged. Nuclear sequence automatically aborted."))
+					if(abort_nuclear_sequence())
+						log_and_message_admins("aborted a nuclear bomb sequence by re-engaging safety")
+					else
+						secure_device()
+				else if(safety)
 					secure_device()
 			if (href_list["anchor"])
 				if(removal_stage == 5)
