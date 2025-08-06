@@ -582,8 +582,8 @@ if(!N.lighthack)
 	. = ..()
 	// Create basic instruction paper without complex formatting
 	var/obj/item/paper/R = new(src)
-	if(R && R.info)
-		R.info = "Nuclear Self-Destruct System Instructions<br><br>\
+	if(R)
+		R.set_content("Nuclear Self-Destruct System Instructions<br><br>\
 		In the event of a Delta-level emergency, this document will guide you through the activation of the colony's \
 		on-board nuclear self-destruct system. Please read carefully.<br><br>\
 		1) Announce the imminent activation to any surviving crew members, and begin evacuation procedures.<br>\
@@ -593,7 +593,7 @@ if(!N.lighthack)
 		5) Enter the authentication code into the self-destruct terminal.<br>\
 		6) Activate nuclear cylinders if required.<br>\
 		7) Set countdown time and start the sequence.<br><br>\
-		This concludes the instructions."
+		This concludes the instructions.")
 		R.name = "colony self-destruct instructions"
 
 //====colony self-destruct system====
