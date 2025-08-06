@@ -633,6 +633,7 @@ if(!N.lighthack)
 	for(var/turf/simulated/floor/T in get_area(src))
 		if(istype(T.flooring, /decl/flooring/reinforced/circuit))
 			flash_tiles += T
+	icon_state = "idle"
 	update_icon()
 	for(var/obj/machinery/self_destruct/ch in get_area(src))
 		inserters += ch
