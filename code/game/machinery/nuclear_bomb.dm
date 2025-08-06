@@ -363,16 +363,18 @@ var/bomb_set
 				else
 					secure_device()
 			if (href_list["abort"])
-				if((sequence_stage == 1 || sequence_stage == 2) && is_auth(usr)) // Can abort during both abort window and evacuation phases
+				if(sequence_stage >= 3)
+					to_chat(usr, SPAN_WARNING("Final countdown has begun - abort is no longer possible. Random explosions will begin shortly."))
+				else if(!is_auth(usr))
+					to_chat(usr, SPAN_WARNING("Insufficient authorization. Nuclear authorization disk required."))
+				else if(sequence_stage != 1 && sequence_stage != 2)
+					to_chat(usr, SPAN_WARNING("Nuclear sequence cannot be aborted at this time. Sequence stage: [sequence_stage]"))
+				else
 					if(abort_nuclear_sequence())
 						to_chat(usr, SPAN_NOTICE("Nuclear sequence aborted successfully."))
 						log_and_message_admins("aborted a nuclear bomb sequence")
 					else
 						to_chat(usr, SPAN_WARNING("Unable to abort nuclear sequence at this time."))
-				else if(sequence_stage >= 3)
-					to_chat(usr, SPAN_WARNING("Final countdown has begun - abort is no longer possible. Random explosions will begin shortly."))
-				else
-					to_chat(usr, SPAN_WARNING("Insufficient authorization."))
 				SSnano.update_uis(src)
 				return
 			if (href_list["safety"])

@@ -12,33 +12,27 @@ Used In File(s): \code\game\gamemodes\nuclear\nuclearbomb.dm
 	<div><b>Sequence Stage:</b> {{:data.sequence_stage}}</div>
 </div>
 <div class="item">
-	<div class="item">
-		{{if data.auth && data.yescode && !data.interface_locked}}
+	{{if data.auth && data.yescode && !data.interface_locked}}
+		<div class="item">
+			<b>Timer:</b> {{:helper.link('Start', 'play', {'timer' : 1}, data.timer ? 'disabled' : '')}}
+		</div>
+		{{if data.can_abort}}
 			<div class="item">
-				<b>Timer:</b> {{:helper.link('Start', 'play', {'timer' : 1}, data.timer ? 'disabled' : '')}}
-			</div>
-			{{if data.can_abort}}
-				<div class="item">
-					<b>Abort:</b> {{:helper.link('ABORT SEQUENCE', 'cross', {'abort' : 1}, 'redButton')}}
-				</div>
-			{{/if}}
-		{{else}}
-			<div class="item">
-				<b>Timer:</b> {{:helper.link('Start', 'play', null, 'disabled')}}
+				<b>Abort:</b> {{:helper.link('ABORT SEQUENCE', 'cross', {'abort' : 1}, 'redButton')}}
 			</div>
 		{{/if}}
-	</div>
-	<div class="item">
-		{{if data.auth && data.yescode && !data.interface_locked}}
-			<div class="item">
-				<b>Safety:</b> {{:helper.link('Engaged', 'info', {'safety' : 1}, data.safety ? 'selected' : '')}}{{:helper.link('Disengaged', 'alert', {'safety' : 0}, data.safety ? '' : 'redButton')}}
-			</div>
-		{{else}}
-			<div class="item">
-				<b>Safety:</b> {{:helper.link('Engaged', 'info', null, 'disabled')}}{{:helper.link('Disengaged', 'alert', null, 'disabled')}}
-			</div>
-		{{/if}}
-	</div>
+		<div class="item">
+			<b>Safety:</b> {{:helper.link('Engaged', 'info', {'safety' : 1}, data.safety ? 'selected' : '')}} {{:helper.link('Disengaged', 'alert', {'safety' : 0}, data.safety ? '' : 'redButton')}}
+		</div>
+	{{else}}
+		<div class="item">
+			<b>Timer:</b> {{:helper.link('Start', 'play', null, 'disabled')}}
+		</div>
+		<div class="item">
+			<b>Safety:</b> {{:helper.link('Engaged', 'info', null, 'disabled')}} {{:helper.link('Disengaged', 'alert', null, 'disabled')}}
+		</div>
+	{{/if}}
+</div>
 	<hr>
 	{{if data.interface_locked}}
 		<div class="item">
