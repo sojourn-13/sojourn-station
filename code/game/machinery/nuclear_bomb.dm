@@ -59,19 +59,13 @@ var/bomb_set
 /obj/machinery/nuclearbomb/Process()
 	if (src.timing)
 		src.timeleft = max(timeleft - 2, 0) // 2 seconds per process()
-
-		// Play countdown sound every 5 seconds
-		sound_timer += 2
-		if(sound_timer >= 50) // 50 deciseconds = 5 seconds
-			world << sound('sound/effects/3.wav', volume = 50)
-			sound_timer = 0
+		alarm_loop_timer += 2
+		if(alarm_loop_timer >= 510) // 255 seconds = 4:15 minutes (510 deciseconds with 2-second increments)
+			world << sound('sound/effects/2.mp3', volume = 75)
+			alarm_loop_timer = 0
 
 		// Repeating alarm loop during active sequence (4:15 minute sound)
 		if(sequence_stage >= 1) // During any active sequence stage
-			alarm_loop_timer += 2
-			if(alarm_loop_timer >= 510) // 255 seconds = 4:15 minutes (510 deciseconds with 2-second increments)
-				world << sound('sound/effects/2.mp3', volume = 75)
-				alarm_loop_timer = 0
 
 		// Light pulsing effect for urgent states
 		if(sequence_stage >= 2) // During evacuation and final countdown
@@ -94,13 +88,13 @@ var/bomb_set
 				// Evacuation time expired, move to final countdown
 				sequence_stage = 3
 				timeleft = final_countdown_time
+
 				announce_final_countdown()
 		else if(sequence_stage == 3) // Final countdown phase
 			// Check for 1-minute abort warning
 			if(timeleft <= 60 && !abort_warning_played)
 				abort_warning_played = TRUE
 				world << sound('sound/effects/3.wav', volume = 75)
-				world << sound('sound/effects/2.mp3', volume = 75)
 				command_announcement.Announce("ATTENTION. EMERGENCY. All personnel. T-Minus one minute to detonation. T-Minus one minute. You now have one minute to reach minimum safe distance.", "Emergency Announcement")
 
 			// Faster random explosions during final countdown
@@ -687,7 +681,8 @@ var/bomb_set
 
 	// Use priority announcement for abort notification
 	priority_announcement.Announce("ATTENTION. EMERGENCY. The self-destruct sequence has been aborted. Repeat. The self-destruct sequence has been aborted. All systems returning to normal operation.", "Emergency Announcement")
-
+	// Stop all ongoing nuclear-related sounds before playing abort sound
+	world << sound(null) // Stop all sounds
 	// Play abort sound
 	world << sound('sound/machines/chime.ogg', volume = 75)
 

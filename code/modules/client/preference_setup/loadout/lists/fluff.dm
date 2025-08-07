@@ -234,3 +234,10 @@
 	ckey_whitelist = list("drfarson")
 	display_name = "High Council Medal of Honor"
 	path = /obj/item/clothing/accessory/medal/gold/honor
+
+
+// floofster
+/datum/gear/fluff/floof_cloak
+	ckey_whitelist = list("floofster")
+	display_name = "Outsider's Cloak"
+	path = /obj/item/clothing/accessory/cape/outsider
