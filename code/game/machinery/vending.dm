@@ -699,7 +699,7 @@
 		listed_products.Add(list(list(
 			"key" = key,
 			"name" = strip_improper(I.product_name),
-			"icon" = icon2base64tgui(I.product_path),
+			"icon" = icon2base64html(I.product_path),
 			"price" = I.price,
 			"color" = I.display_color,
 			"amount" = I.get_amount())))
