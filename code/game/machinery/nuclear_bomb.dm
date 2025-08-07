@@ -59,6 +59,10 @@ var/bomb_set
 /obj/machinery/nuclearbomb/Process()
 	if (src.timing)
 		src.timeleft = max(timeleft - 2, 0) // 2 seconds per process()
+
+		// Play a beep sound every countdown tick
+		playsound(src, 'sound/effects/beep-countdown.mp3', 100, 1)
+
 		alarm_loop_timer += 2
 		if(alarm_loop_timer >= 510) // 255 seconds = 4:15 minutes (510 deciseconds with 2-second increments)
 			world << sound('sound/effects/2.mp3', volume = 75)
