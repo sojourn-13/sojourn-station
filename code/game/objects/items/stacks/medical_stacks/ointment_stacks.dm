@@ -7,7 +7,6 @@
 	icon_state = "ointment"
 	heal_burn = 10
 	origin_tech = list(TECH_BIO = 1)
-	preloaded_reagents = list("silicon" = 4, "carbon" = 8)
 	fancy_icon = TRUE
 	disinfectant  = TRUE
 

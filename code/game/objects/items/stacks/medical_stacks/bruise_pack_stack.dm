@@ -5,7 +5,6 @@
 	icon_state = "brutepack" //sprites by @LiLJard @Ajajumbo123
 	origin_tech = list(TECH_BIO = 1)
 	heal_brute = 10
-	preloaded_reagents = list("silicon" = 4, "ethanol" = 8)
 	fancy_icon = TRUE
 
 /obj/item/stack/medical/bruise_pack/attack(mob/living/carbon/M, mob/living/user)
