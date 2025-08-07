@@ -6,6 +6,41 @@
 	origin_tech = list(TECH_BIO = 1)
 	heal_brute = 10
 	fancy_icon = TRUE
+	var/list/injected_reagents = list() // Reagents added via syringe injection
+	var/max_injectable_volume = 15 // Maximum volume that can be injected
+
+/obj/item/stack/medical/bruise_pack/attackby(obj/item/I, mob/user, params)
+	// Allow syringe injection for basic gauze, Blackshield, and non-sterile bandages
+	if(istype(I, /obj/item/reagent_containers/syringe))
+		var/obj/item/reagent_containers/syringe/S = I
+		if(S.reagents && S.reagents.total_volume > 0)
+			// Calculate how much we can inject
+			var/current_injected_volume = 0
+			for(var/reagent in injected_reagents)
+				current_injected_volume += injected_reagents[reagent]
+
+			var/available_space = max_injectable_volume - current_injected_volume
+			if(available_space <= 0)
+				to_chat(user, SPAN_WARNING("\The [src] cannot absorb any more reagents."))
+				return
+
+			var/transfer_amount = min(S.reagents.total_volume, available_space)
+
+			to_chat(user, SPAN_NOTICE("You inject [transfer_amount] units from \the [S] into \the [src]."))
+
+			// Transfer reagents from syringe to gauze
+			for(var/datum/reagent/R in S.reagents.reagent_list)
+				var/amount_to_transfer = (R.volume / S.reagents.total_volume) * transfer_amount
+				if(injected_reagents[R.type])
+					injected_reagents[R.type] += amount_to_transfer
+				else
+					injected_reagents[R.type] = amount_to_transfer
+
+			S.reagents.remove_any(transfer_amount)
+			S.update_icon()
+			return
+
+	return ..()
 
 /obj/item/stack/medical/bruise_pack/attack(mob/living/carbon/M, mob/living/user)
 	if(..())
@@ -101,6 +136,17 @@
 						if(user.reagents)
 							user.reagents.add_reagent(reagent, preloaded_reagents[reagent])
 
+				// Apply injected reagents to the user (portion per application)
+				if(injected_reagents && injected_reagents.len)
+					var/reagent_portion = 1.0 / amount // Divide reagents by remaining uses
+					for(var/reagent in injected_reagents)
+						if(user.reagents && injected_reagents[reagent] > 0)
+							var/amount_to_apply = injected_reagents[reagent] * reagent_portion
+							user.reagents.add_reagent(reagent, amount_to_apply)
+							injected_reagents[reagent] -= amount_to_apply
+							if(injected_reagents[reagent] <= 0)
+								injected_reagents.Remove(reagent)
+
 				if(!try_to_save_use(user))
 					used++
 				affecting.update_damages()
@@ -130,6 +176,39 @@
 	stacktype_alt = /obj/item/stack/medical/bruise_pack
 	icon_state = "bs_brutepack"
 	preloaded_reagents = list("quickclot" = 2, "bicaridine" = 2)
+
+/obj/item/stack/medical/bruise_pack/blacshield/attackby(obj/item/I, mob/user, params)
+	// Allow syringe injection for Blackshield gauze
+	if(istype(I, /obj/item/reagent_containers/syringe))
+		var/obj/item/reagent_containers/syringe/S = I
+		if(S.reagents && S.reagents.total_volume > 0)
+			// Calculate how much we can inject
+			var/current_injected_volume = 0
+			for(var/reagent in injected_reagents)
+				current_injected_volume += injected_reagents[reagent]
+
+			var/available_space = max_injectable_volume - current_injected_volume
+			if(available_space <= 0)
+				to_chat(user, SPAN_WARNING("\The [src] cannot absorb any more reagents."))
+				return
+
+			var/transfer_amount = min(S.reagents.total_volume, available_space)
+
+			to_chat(user, SPAN_NOTICE("You inject [transfer_amount] units from \the [S] into \the [src]."))
+
+			// Transfer reagents from syringe to gauze
+			for(var/datum/reagent/R in S.reagents.reagent_list)
+				var/amount_to_transfer = (R.volume / S.reagents.total_volume) * transfer_amount
+				if(injected_reagents[R.type])
+					injected_reagents[R.type] += amount_to_transfer
+				else
+					injected_reagents[R.type] = amount_to_transfer
+
+			S.reagents.remove_any(transfer_amount)
+			S.update_icon()
+			return
+
+	return ..()
 
 
 /obj/item/stack/medical/bruise_pack/update_icon()
@@ -202,6 +281,39 @@
 	fancy_icon = TRUE
 	matter = list(MATERIAL_BIOMATTER = 1)
 
+/obj/item/stack/medical/bruise_pack/handmade/attackby(obj/item/I, mob/user, params)
+	// Allow syringe injection for handmade gauze
+	if(istype(I, /obj/item/reagent_containers/syringe))
+		var/obj/item/reagent_containers/syringe/S = I
+		if(S.reagents && S.reagents.total_volume > 0)
+			// Calculate how much we can inject
+			var/current_injected_volume = 0
+			for(var/reagent in injected_reagents)
+				current_injected_volume += injected_reagents[reagent]
+
+			var/available_space = max_injectable_volume - current_injected_volume
+			if(available_space <= 0)
+				to_chat(user, SPAN_WARNING("\The [src] cannot absorb any more reagents."))
+				return
+
+			var/transfer_amount = min(S.reagents.total_volume, available_space)
+
+			to_chat(user, SPAN_NOTICE("You inject [transfer_amount] units from \the [S] into \the [src]."))
+
+			// Transfer reagents from syringe to gauze
+			for(var/datum/reagent/R in S.reagents.reagent_list)
+				var/amount_to_transfer = (R.volume / S.reagents.total_volume) * transfer_amount
+				if(injected_reagents[R.type])
+					injected_reagents[R.type] += amount_to_transfer
+				else
+					injected_reagents[R.type] = amount_to_transfer
+
+			S.reagents.remove_any(transfer_amount)
+			S.update_icon()
+			return
+
+	return ..()
+
 /obj/item/stack/medical/bruise_pack/soteria
 	name = "Soteria advanced gauze"
 	singular_name = "Soteria advanced gauze"
@@ -220,6 +332,7 @@
 	singular_name = "Absolutism Bruisepack"
 	desc = "An advanced bruisepack for severe injuries. Created by the will of God and made far easier to use than normal advanced kits."
 	icon_state = "nt_traumakit"
+	preloaded_reagents = list("holywater" = 1, "holytricord" = 2, "holyquickclot" = 1, "holydylo" = 1)
 	heal_brute = 10
 	automatic_charge_overlays = FALSE
 	matter = list(MATERIAL_BIOMATTER = 2)

@@ -1,6 +1,6 @@
 
 /obj/item/stack/medical/ointment
-	name = "ointment"
+	name = "bottle of ointment"
 	desc = "Used to treat those nasty burns."
 	gender = PLURAL
 	singular_name = "ointment" //sprites by @LiLJard @Ajajumbo123
@@ -177,6 +177,7 @@
 	singular_name = "Absolutism Burnpack"
 	desc = "An advanced treatment kit for severe burns. Created by the will of God and made far easier to use than normal advanced kits."
 	icon_state = "nt_burnkit"
+	preloaded_reagents = list("holywater" = 1, "holytricord" = 2, "holydylo" = 1, "holycilin" = 1)
 	heal_brute = 5
 	automatic_charge_overlays = FALSE
 	matter = list(MATERIAL_BIOMATTER = 2)
