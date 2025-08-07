@@ -1201,7 +1201,18 @@ proc/get_average_color(var/icon, var/icon_state, var/image_dir)
 
 /proc/path2icon(path, dir = SOUTH, frame = 1, moving)
 	var/atom/A = path
-	return icon(initial(A.icon), initial(A.icon_state), dir, frame, moving)
+	var/icon_file = initial(A.icon)
+	var/icon_state = initial(A.icon_state)
+
+	// Handle cases where icon_state might be null
+	if(!icon_state)
+		icon_state = ""
+
+	// Validate that we have a valid icon file
+	if(!icon_file)
+		return null
+
+	return icon(icon_file, icon_state, dir, frame, moving)
 
 /**
  * Converts an icon to base64. Operates by putting the icon in the iconCache savefile,
@@ -1210,10 +1221,6 @@ proc/get_average_color(var/icon, var/icon_state, var/image_dir)
  */
 /proc/icon2base64(icon/icon)
 	if (!isicon(icon))
-		return FALSE
-
-	// Validate icon before processing
-	if (!icon.Width() || !icon.Height())
 		return FALSE
 
 	var/savefile/dummySave = new("tmp/dummySave.sav")
@@ -1253,10 +1260,21 @@ proc/get_average_color(var/icon, var/icon_state, var/image_dir)
 		var/cached = bicon_cache[key]
 
 		if(!cached)
-			var/base64_result = icon2base64(path2icon(A))
-			if(!base64_result)
-				return "" // Return empty string if icon conversion fails
-			bicon_cache[key] = cached = base64_result
+			var/icon/target_icon = path2icon(A)
+			if(!target_icon)
+				// Fallback: try to create icon directly from initial values
+				target_icon = icon(initial(A.icon), initial(A.icon_state))
+
+			if(target_icon)
+				var/base64_result = icon2base64(target_icon)
+				if(base64_result)
+					bicon_cache[key] = cached = base64_result
+				else
+					// Last resort: cache a placeholder to avoid repeated failures
+					bicon_cache[key] = cached = "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg=="
+			else
+				// Empty 1x1 transparent PNG as fallback
+				bicon_cache[key] = cached = "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg=="
 
 		return "data:image/png;base64,[cached]"
 
@@ -1266,9 +1284,11 @@ proc/get_average_color(var/icon, var/icon_state, var/image_dir)
 
 		if(!cached)
 			var/base64_result = icon2base64(thing)
-			if(!base64_result)
-				return "" // Return empty string if icon conversion fails
-			bicon_cache[key] = cached = base64_result
+			if(base64_result)
+				bicon_cache[key] = cached = base64_result
+			else
+				// Cache a placeholder to avoid repeated failures
+				bicon_cache[key] = cached = "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg=="
 
 		return "data:image/png;base64,[cached]"
 
@@ -1433,18 +1453,19 @@ proc/get_average_color(var/icon, var/icon_state, var/image_dir)
 		var/icon/target_icon = target
 		var/icon_base64 = icon2base64(target_icon)
 
-		// Handle icon2base64 failure
+		// Handle icon2base64 failure - use fallback instead of error
 		if (!icon_base64)
-			return "<img class='icon icon-misc' src='' alt='Icon error'>"
+			icon_base64 = "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg=="
 
 		if (target_icon.Height() > world.icon_size || target_icon.Width() > world.icon_size)
 			var/icon_md5 = md5(icon_base64)
-			icon_base64 = bicon_cache[icon_md5]
-			if (!icon_base64) // Doesn't exist yet, make it.
+			var/cached_icon = bicon_cache[icon_md5]
+			if (!cached_icon) // Doesn't exist yet, make it.
 				var/base64_result = icon2base64(target_icon)
 				if (!base64_result)
-					return "<img class='icon icon-misc' src='' alt='Icon error'>"
-				bicon_cache[icon_md5] = icon_base64 = base64_result
+					base64_result = "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg=="
+				bicon_cache[icon_md5] = cached_icon = base64_result
+			icon_base64 = cached_icon
 
 		return "<img class='icon icon-misc' src='data:image/png;base64,[icon_base64]'>"
 
@@ -1461,7 +1482,7 @@ proc/get_average_color(var/icon, var/icon_state, var/image_dir)
 
 		var/base64_result = icon2base64(target_icon)
 		if (!base64_result)
-			return "<img class='icon icon-[target_atom.icon_state]' src='' alt='Icon error'>"
+			base64_result = "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg=="
 		bicon_cache[key] = base64_result
 
 	return "<img class='icon icon-[target_atom.icon_state]' src='data:image/png;base64,[bicon_cache[key]]'>"
