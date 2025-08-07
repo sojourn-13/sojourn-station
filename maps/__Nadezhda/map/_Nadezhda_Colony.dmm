@@ -402,6 +402,12 @@
 /obj/effect/window_lwall_spawn/smartspawn,
 /turf/simulated/floor/plating,
 /area/nadezhda/engineering/atmos)
+"aeq" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/briefcase/inflatable,
+/obj/item/storage/briefcase/inflatable,
+/turf/simulated/floor/tiled/white/danger,
+/area/nadezhda/security/nuke_hallway)
 "aes" = (
 /obj/machinery/door/airlock/maintenance_engineering{
 	name = "Engineering Maintenance";
@@ -5735,10 +5741,6 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/security/sechall)
-"bfv" = (
-/obj/structure/sign/warning/nosmoking/small,
-/turf/simulated/wall/r_wall,
-/area/nadezhda/security/nuke_hallway)
 "bfx" = (
 /obj/structure/flora/big/bush2,
 /obj/structure/flora/ausbushes/lavendergrass,
@@ -39372,6 +39374,10 @@
 /obj/effect/spider/spiderling/near_grown,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1south)
+"hqG" = (
+/obj/structure/sign/warning/nosmoking/small,
+/turf/simulated/wall/r_wall,
+/area/nadezhda/security/nuke_hallway)
 "hqH" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -39484,6 +39490,18 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/outside/inside_colony)
+"hrN" = (
+/obj/structure/cable/cyan{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/obj/structure/extinguisher_cabinet{
+	pixel_y = 30
+	},
+/obj/item/reagent_containers/glass/bottle/petrel,
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/security/nuke_hallway)
 "hrP" = (
 /turf/simulated/wall/r_wall,
 /area/nadezhda/engineering/engine_room)
@@ -46992,10 +47010,6 @@
 	icon_state = "10,15"
 	},
 /area/nadezhda/rnd/docking)
-"iKg" = (
-/obj/structure/sign/warning/hazard_radiation,
-/turf/simulated/wall/r_wall,
-/area/nadezhda/security/nuke_hallway)
 "iKp" = (
 /obj/structure/window/reinforced{
 	dir = 1
@@ -71180,10 +71194,6 @@
 	d2 = 8;
 	icon_state = "2-8"
 	},
-/obj/structure/extinguisher_cabinet{
-	pixel_y = 30
-	},
-/obj/item/reagent_containers/glass/bottle/petrel,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/security/nuke_hallway)
 "noN" = (
@@ -76803,7 +76813,7 @@
 "ooz" = (
 /obj/machinery/door/airlock/maintenance_engineering{
 	name = "Engineering Maintenance";
-	req_access = list(10)
+	req_one_access = list(53)
 	},
 /obj/structure/cable/cyan{
 	d1 = 1;
@@ -83207,12 +83217,6 @@
 	},
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/crew_quarters/sleep/bedrooms)
-"pxb" = (
-/obj/structure/table/reinforced,
-/obj/item/storage/briefcase/inflatable,
-/obj/item/storage/briefcase/inflatable,
-/turf/simulated/floor/tiled/white/danger,
-/area/nadezhda/security/nuke_hallway)
 "pxl" = (
 /obj/structure/railing{
 	dir = 4
@@ -91281,6 +91285,10 @@
 	},
 /turf/simulated/floor/industrial/grey_slates_long,
 /area/nadezhda/maintenance/undergroundfloor1east)
+"qWt" = (
+/obj/structure/sign/warning/hazard_radiation,
+/turf/simulated/wall/r_wall,
+/area/nadezhda/security/nuke_hallway)
 "qWv" = (
 /obj/effect/floor_decal/industrial/warningwhite,
 /obj/effect/floor_decal/industrial/warningwhite{
@@ -100706,6 +100714,9 @@
 	},
 /obj/structure/cable/heavyduty{
 	icon_state = "4-8"
+	},
+/obj/item/modular_computer/telescreen/preset/generic{
+	pixel_y = 28
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/security/nuke_hallway)
@@ -123028,14 +123039,6 @@
 /obj/structure/barricade,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1west)
-"wMv" = (
-/obj/structure/cable/cyan{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/turf/simulated/floor/tiled/techmaint,
-/area/nadezhda/security/nuke_hallway)
 "wMw" = (
 /obj/structure/flora/ausbushes/reedbush,
 /obj/structure/flora/rock,
@@ -203756,7 +203759,7 @@ tad
 tad
 tad
 tad
-iKg
+qWt
 dKX
 kTE
 war
@@ -203955,7 +203958,7 @@ tad
 pBt
 cNL
 cNL
-bfv
+hqG
 cNL
 cNL
 cNL
@@ -204360,7 +204363,7 @@ pBt
 cNL
 qNA
 wLG
-wMv
+noM
 ooz
 pcf
 pcf
@@ -204762,7 +204765,7 @@ tad
 tad
 pBt
 cNL
-noM
+hrN
 fvt
 mIR
 iZd
@@ -204968,7 +204971,7 @@ qGf
 uwy
 bFu
 qYW
-pxb
+aeq
 iDB
 kAh
 nyX
