@@ -95,6 +95,13 @@
 				W.bandage()
 				// user's stat check that causing pain if they are amateurs
 				try_to_pain(M, user)
+
+				// Apply reagents to the user on every application
+				if(preloaded_reagents && preloaded_reagents.len)
+					for(var/reagent in preloaded_reagents)
+						if(user.reagents)
+							user.reagents.add_reagent(reagent, preloaded_reagents[reagent])
+
 				if(!try_to_save_use(user))
 					used++
 				affecting.update_damages()
@@ -118,8 +125,12 @@
 	splittable = FALSE
 
 /obj/item/stack/medical/bruise_pack/blacshield
+	name = "Blackshield trauma gauze"
+	singular_name = "Blackshield trauma gauze"
+	desc = "Used to treat and stem critical bleeding and severe trauma. Unlike regular gauze this one has a Blackshield logo on it, its formula designed for quick treatment of burns in the field using specialised clotting enzyme and a regenerative salve."
 	stacktype_alt = /obj/item/stack/medical/bruise_pack
 	icon_state = "bs_brutepack"
+	preloaded_reagents = list("quickclot" = 2, "bicaridine" = 2)
 
 
 /obj/item/stack/medical/bruise_pack/update_icon()
@@ -137,7 +148,6 @@
 	automatic_charge_overlays = TRUE
 	consumable = FALSE	// Will the stack disappear entirely once the amount is used up?
 	splittable = FALSE	// Is the stack capable of being splitted?
-	preloaded_reagents = list("silicon" = 4, "ethanol" = 10, "lithium" = 4)
 	w_class = ITEM_SIZE_SMALL
 	perk_required = TRUE
 	needed_perk = PERK_MEDICAL_EXPERT
@@ -194,17 +204,17 @@
 	matter = list(MATERIAL_BIOMATTER = 1)
 
 /obj/item/stack/medical/bruise_pack/soteria
-	name = "Soteria medical gauze"
-	singular_name = "Soteria medical gauze"
-	desc = "An advanced sterile gauze to wrap around bloody stumps. Unlike the regular gauze, these have more charges, and sterilize wounds as ointment would. Hand-made, with love, by Soteria Medical staff."
+	name = "Soteria advanced gauze"
+	singular_name = "Soteria advanced gauze"
+	desc = "Premium sterile gauze manufactured by the Soteria Institute. Each strip is pre-treated with a specialized medical cocktail including quick-clotting agents, advanced healing compounds, detoxification chemicals, and broad-spectrum antibiotics. The gauze features Soteria's signature blue threading and comes with more applications than standard field dressings. Hand-crafted with care by skilled Soteria Medical personnel with care and concern."
 	icon_state = "sr_brutepack"
-	preloaded_reagents = list("quickclot" = 5, "sterilizine" = 10)
+	preloaded_reagents = list("quickclot" = 1, "meralyne" = 2, "dylovene" = 2, "spaceacillin" = 1, "sterilizine" = 1)
 	fancy_icon = TRUE
 	disinfectant  = TRUE
 	amount = 8
 	max_amount = 8
 	heal_brute = 25 // Everything handmade and faction-wise will always be superior. See: Hand-Forged manipulators
-	price_tag = 25
+	price_tag = 250
 
 /obj/item/stack/medical/bruise_pack/advanced/nt
 	name = "Absolutism Bruisepack"
