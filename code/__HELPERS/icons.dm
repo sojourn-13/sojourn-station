@@ -1211,10 +1211,32 @@ proc/get_average_color(var/icon, var/icon_state, var/image_dir)
 /proc/icon2base64(icon/icon)
 	if (!isicon(icon))
 		return FALSE
+
+	// Validate icon before processing
+	if (!icon.Width() || !icon.Height())
+		return FALSE
+
 	var/savefile/dummySave = new("tmp/dummySave.sav")
+
+	// Write the icon and check if it succeeded
 	WRITE_FILE(dummySave["dummy"], icon)
+
 	var/iconData = dummySave.ExportText("dummy")
+	if (!iconData)
+		dummySave.Unlock()
+		dummySave = null
+		fdel("tmp/dummySave.sav")
+		return FALSE
+
 	var/list/partial = splittext(iconData, "{")
+
+	// Validate that we have the expected format
+	if (length(partial) < 2)
+		dummySave.Unlock()
+		dummySave = null
+		fdel("tmp/dummySave.sav")
+		return FALSE
+
 	. = replacetext(copytext_char(partial[2], 3, -5), "\n", "") //if cleanup fails we want to still return the correct base64
 	dummySave.Unlock()
 	dummySave = null
@@ -1231,7 +1253,10 @@ proc/get_average_color(var/icon, var/icon_state, var/image_dir)
 		var/cached = bicon_cache[key]
 
 		if(!cached)
-			bicon_cache[key] = cached = icon2base64(path2icon(A))
+			var/base64_result = icon2base64(path2icon(A))
+			if(!base64_result)
+				return "" // Return empty string if icon conversion fails
+			bicon_cache[key] = cached = base64_result
 
 		return "data:image/png;base64,[cached]"
 
@@ -1240,7 +1265,10 @@ proc/get_average_color(var/icon, var/icon_state, var/image_dir)
 		var/cached = bicon_cache[key]
 
 		if(!cached)
-			bicon_cache[key] = cached = icon2base64(thing)
+			var/base64_result = icon2base64(thing)
+			if(!base64_result)
+				return "" // Return empty string if icon conversion fails
+			bicon_cache[key] = cached = base64_result
 
 		return "data:image/png;base64,[cached]"
 
@@ -1405,11 +1433,18 @@ proc/get_average_color(var/icon, var/icon_state, var/image_dir)
 		var/icon/target_icon = target
 		var/icon_base64 = icon2base64(target_icon)
 
+		// Handle icon2base64 failure
+		if (!icon_base64)
+			return "<img class='icon icon-misc' src='' alt='Icon error'>"
+
 		if (target_icon.Height() > world.icon_size || target_icon.Width() > world.icon_size)
 			var/icon_md5 = md5(icon_base64)
 			icon_base64 = bicon_cache[icon_md5]
 			if (!icon_base64) // Doesn't exist yet, make it.
-				bicon_cache[icon_md5] = icon_base64 = icon2base64(target_icon)
+				var/base64_result = icon2base64(target_icon)
+				if (!base64_result)
+					return "<img class='icon icon-misc' src='' alt='Icon error'>"
+				bicon_cache[icon_md5] = icon_base64 = base64_result
 
 		return "<img class='icon icon-misc' src='data:image/png;base64,[icon_base64]'>"
 
@@ -1424,7 +1459,10 @@ proc/get_average_color(var/icon, var/icon_state, var/image_dir)
 			target_icon = icon()
 			target_icon.Insert(temp, dir = SOUTH)
 
-		bicon_cache[key] = icon2base64(target_icon)
+		var/base64_result = icon2base64(target_icon)
+		if (!base64_result)
+			return "<img class='icon icon-[target_atom.icon_state]' src='' alt='Icon error'>"
+		bicon_cache[key] = base64_result
 
 	return "<img class='icon icon-[target_atom.icon_state]' src='data:image/png;base64,[bicon_cache[key]]'>"
 
