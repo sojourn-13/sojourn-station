@@ -18,7 +18,7 @@
 	)
 */
 
-/datum/craft_recipe/soteria/soteria_gauze
+/datum/craft_recipe/soteria/gauze
 	name = "Soteria medical gauze"
 	result = /obj/item/stack/medical/bruise_pack/soteria
 	icon_state = "clothing"
@@ -31,7 +31,7 @@
 		list(QUALITY_CLAMPING, 30, "time" = 1)
 	)
 
-/datum/craft_recipe/soteria/soteria_ointment
+/datum/craft_recipe/soteria/ointment
 	name = "Soteria medical ointment"
 	result = /obj/item/stack/medical/ointment/soteria
 	icon_state = "clothing"
