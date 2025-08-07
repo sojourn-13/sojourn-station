@@ -24,6 +24,8 @@ var/bomb_set
 	var/evacuation_called = FALSE
 	var/sound_timer = 0          // Timer for countdown sound effects
 	var/explosion_timer = 0      // Timer for random explosions during final countdown
+	var/alarm_loop_timer = 0     // Timer for repeating alarm loop
+	var/abort_warning_played = FALSE  // Track if 1-minute abort warning has been played
 	var/obj/item/disk/nuclear/auth = null
 	var/removal_stage = 0 // 0 is no removal, 1 is covers removed, 2 is covers open, 3 is sealant open, 4 is unwrenched, 5 is removed from bolts.
 	var/lastentered
@@ -64,6 +66,13 @@ var/bomb_set
 			playsound(src, 'sound/effects/3.wav', 50, 0)
 			sound_timer = 0
 
+		// Repeating alarm loop during active sequence (4:15 minute sound)
+		if(sequence_stage >= 1) // During any active sequence stage
+			alarm_loop_timer += 2
+			if(alarm_loop_timer >= 2550) // 255 seconds = 4:15 minutes
+				playsound(world, 'sound/effects/2 alarms, very long.mp3', 75, 0)
+				alarm_loop_timer = 0
+
 		// Light pulsing effect for urgent states
 		if(sequence_stage >= 2) // During evacuation and final countdown
 			if(sound_timer % 20 == 0) // Pulse every 2 seconds
@@ -74,6 +83,12 @@ var/bomb_set
 
 		// Handle the multi-stage nuclear sequence
 		if(sequence_stage == 1) // Abort window phase
+			// Check for 1-minute abort warning
+			if(timeleft <= 60 && !abort_warning_played)
+				abort_warning_played = TRUE
+				playsound(src, 'sound/effects/3.wav', 75, 0)
+				command_announcement.Announce("ATTENTION. EMERGENCY. All personnel. T-Minus one minute to detonation. T-Minus one minute. You now have one minute to reach minimum safe distance.", "Emergency Command")
+
 			if(timeleft <= 0)
 				// Abort window expired, move to evacuation phase
 				sequence_stage = 2
@@ -86,9 +101,9 @@ var/bomb_set
 				timeleft = final_countdown_time
 				announce_final_countdown()
 		else if(sequence_stage == 3) // Final countdown phase
-			// Random explosions during final countdown
+			// Faster random explosions during final countdown
 			explosion_timer += 2
-			if(explosion_timer >= 30) // Every 15 seconds (30 deciseconds)
+			if(explosion_timer >= 10) // Every 5 seconds (10 deciseconds) - much faster
 				trigger_random_explosion()
 				explosion_timer = 0
 
@@ -524,13 +539,9 @@ var/bomb_set
 	// Pick a random turf and create an explosion
 	var/turf/explosion_turf = pick(turfs_in_area)
 
-	// Announce the explosion
-	priority_announcement.Announce("STRUCTURAL FAILURE DETECTED: Catastrophic failure in [target_area.name]. All personnel evacuate immediately.", "Nuclear Safety Control")
-
-	// Create the explosion after a short delay
-	spawn(30) // 3 second delay
-		explosion(explosion_turf, 1, 2, 3, 4) // Small but noticeable explosion
-		playsound(explosion_turf, 'sound/effects/explosion1.ogg', 75, 1)
+	// Create the explosion immediately - no delay for faster pace
+	explosion(explosion_turf, 1, 2, 3, 4) // Small but noticeable explosion
+	playsound(explosion_turf, 'sound/effects/explosion1.ogg', 75, 1)
 
 /obj/machinery/nuclearbomb/proc/trigger_evacuation()
 	if(!evacuation_called && evacuation_controller)
@@ -538,7 +549,7 @@ var/bomb_set
 		evacuation_controller.call_evacuation(null, TRUE) // Emergency evacuation
 
 		// Announce evacuation with priority announcement
-		priority_announcement.Announce("NUCLEAR ALERT: Evacuation phase has begun. All personnel must proceed to evacuation points immediately. This is not a drill.", "Nuclear Safety Control")
+		priority_announcement.Announce("ATTENTION. EMERGENCY. All personnel. T-Minus seven minutes and thirty seconds to detonation. Proceed immediately to nearest emergency exit. You now have seven minutes to reach minimum safe distance.", "Emergency Command")
 
 		playsound(src, 'sound/effects/Evacuation.ogg', 100, 0, 10)
 
@@ -551,7 +562,7 @@ var/bomb_set
 
 /obj/machinery/nuclearbomb/proc/announce_final_countdown()
 	// Announce final countdown with priority announcement
-	priority_announcement.Announce("CRITICAL ALERT: Self-destruct sequence has reached terminal countdown. Abort systems have been disabled. Random structural failures will begin immediately. All personnel must evacuate immediately. This is not a drill.", "Nuclear Safety Control")
+	priority_announcement.Announce("ATTENTION. EMERGENCY. All personnel. T-Minus five minutes to detonation. The option to override detonation procedure has expired. You now have five minutes to reach minimum safe distance.", "Emergency Command")
 
 	playsound(src, 'sound/effects/siren.ogg', 100, 0, 15)
 
@@ -575,6 +586,8 @@ var/bomb_set
 	timing = 1
 	sound_timer = 0  // Reset sound timer when starting countdown
 	explosion_timer = 0  // Reset explosion timer when starting countdown
+	alarm_loop_timer = 0  // Reset alarm loop timer
+	abort_warning_played = FALSE  // Reset abort warning flag
 
 	// Set security level to DELTA when bomb is activated
 	var/decl/security_state/security_state = decls_repository.get_decl(GLOB.maps_data.security_state)
@@ -597,8 +610,11 @@ var/bomb_set
 		S.lock = 0  // Unlocked during abort window
 
 	// Use priority announcement system for nuclear activation
-	priority_announcement.Announce("NUCLEAR ALERT: The nuclear self-destruct sequence has been activated. All personnel have 5 minutes to abort before evacuation procedures begin. This is not a drill.", "Nuclear Safety Control")
+	priority_announcement.Announce("ATTENTION. EMERGENCY. All personnel. The Nadezhda Colony self-destruct sequence has been activated. T-Minus ten minutes to detonation. T-Minus ten minutes. The option to override automatic detonation expires in T-Minus five minutes. For your own safety, please evacuate this colony. This is not a drill.", "Emergency Command")
 	playsound(src, 'sound/effects/siren.ogg', 100, 0, 5)
+
+	// Start the repeating alarm loop immediately
+	playsound(world, 'sound/effects/2 alarms, very long.mp3', 75, 0)
 
 	return TRUE
 
@@ -644,6 +660,8 @@ var/bomb_set
 	evacuation_called = FALSE
 	sound_timer = 0  // Reset sound timer when aborting sequence
 	explosion_timer = 0  // Reset explosion timer when aborting sequence
+	alarm_loop_timer = 0  // Reset alarm loop timer
+	abort_warning_played = FALSE  // Reset abort warning flag
 
 	// Restore original security level when aborted
 	if(original_level)
@@ -666,7 +684,7 @@ var/bomb_set
 		S.lock = 0
 
 	// Use priority announcement for abort notification
-	priority_announcement.Announce("NUCLEAR ALERT CANCELLED: Nuclear self-destruct sequence has been successfully aborted. All systems returning to normal operation.", "Nuclear Safety Control")
+	priority_announcement.Announce("ATTENTION. EMERGENCY. The self-destruct sequence has been aborted. Repeat. The self-destruct sequence has been aborted. All systems returning to normal operation.", "Emergency Command")
 
 	// Play abort sound
 	playsound(src, 'sound/machines/chime.ogg', 75, 0, 5)
