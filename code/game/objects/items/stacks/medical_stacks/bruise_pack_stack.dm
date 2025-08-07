@@ -136,16 +136,12 @@
 						if(user.reagents)
 							user.reagents.add_reagent(reagent, preloaded_reagents[reagent])
 
-				// Apply injected reagents to the user (portion per application)
+				// Apply injected reagents to the user (static amount per use)
 				if(injected_reagents && injected_reagents.len)
-					var/reagent_portion = 1.0 / amount // Divide reagents by remaining uses
 					for(var/reagent in injected_reagents)
 						if(user.reagents && injected_reagents[reagent] > 0)
-							var/amount_to_apply = injected_reagents[reagent] * reagent_portion
+							var/amount_to_apply = injected_reagents[reagent] / max_amount // Static amount per use based on initial injection
 							user.reagents.add_reagent(reagent, amount_to_apply)
-							injected_reagents[reagent] -= amount_to_apply
-							if(injected_reagents[reagent] <= 0)
-								injected_reagents.Remove(reagent)
 
 				if(!try_to_save_use(user))
 					used++
