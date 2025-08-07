@@ -63,14 +63,14 @@ var/bomb_set
 		// Play countdown sound every 5 seconds
 		sound_timer += 2
 		if(sound_timer >= 50) // 50 deciseconds = 5 seconds
-			playsound(world, 'sound/effects/3.wav', 50, 0)
+			world << sound('sound/effects/3.wav', volume = 50)
 			sound_timer = 0
 
 		// Repeating alarm loop during active sequence (4:15 minute sound)
 		if(sequence_stage >= 1) // During any active sequence stage
 			alarm_loop_timer += 2
 			if(alarm_loop_timer >= 2550) // 255 seconds = 4:15 minutes
-				playsound(world, 'sound/effects/2.mp3', 75, 0)
+				world << sound('sound/effects/2.mp3', volume = 75)
 				alarm_loop_timer = 0
 
 		// Light pulsing effect for urgent states
@@ -99,8 +99,9 @@ var/bomb_set
 			// Check for 1-minute abort warning
 			if(timeleft <= 60 && !abort_warning_played)
 				abort_warning_played = TRUE
-				playsound(world, 'sound/effects/3.wav', 75, 0)
-				command_announcement.Announce("ATTENTION. EMERGENCY. All personnel. T-Minus one minute to detonation. T-Minus one minute. You now have one minute to reach minimum safe distance.", "Emergency Command")
+				world << sound('sound/effects/3.wav', volume = 75)
+				world << sound('sound/effects/2.mp3', volume = 75)
+				command_announcement.Announce("ATTENTION. EMERGENCY. All personnel. T-Minus one minute to detonation. T-Minus one minute. You now have one minute to reach minimum safe distance.", "Emergency Announcement")
 
 			// Faster random explosions during final countdown
 			explosion_timer += 2
@@ -550,9 +551,9 @@ var/bomb_set
 		evacuation_controller.call_evacuation(null, TRUE) // Emergency evacuation
 
 		// Announce evacuation with priority announcement
-		priority_announcement.Announce("ATTENTION. EMERGENCY. All personnel. T-Minus seven minutes and thirty seconds to detonation. Proceed immediately to nearest emergency exit. You now have seven minutes to reach minimum safe distance.", "Emergency Command")
+		priority_announcement.Announce("ATTENTION. EMERGENCY. All personnel. T-Minus seven minutes and thirty seconds to detonation. Proceed immediately to nearest emergency exit. You now have seven minutes to reach minimum safe distance.", "Emergency Announcement")
 
-		playsound(world, 'sound/effects/Evacuation.ogg', 100, 0, 10)
+		world << sound('sound/effects/Evacuation.ogg', volume = 100)
 
 	// Update station bomb state variables
 	if(istype(src, /obj/machinery/nuclearbomb/station))
@@ -563,9 +564,9 @@ var/bomb_set
 
 /obj/machinery/nuclearbomb/proc/announce_final_countdown()
 	// Announce final countdown with priority announcement
-	priority_announcement.Announce("ATTENTION. EMERGENCY. All personnel. T-Minus five minutes to detonation. The option to override detonation procedure has expired. You now have five minutes to reach minimum safe distance.", "Emergency Command")
+	priority_announcement.Announce("ATTENTION. EMERGENCY. All personnel. T-Minus five minutes to detonation. The option to override detonation procedure has expired. You now have five minutes to reach minimum safe distance.", "Emergency Announcement")
 
-	playsound(world, 'sound/effects/siren.ogg', 100, 0, 15)
+	world << sound('sound/effects/siren.ogg', volume = 100)
 
 	// Update station bomb state variables
 	if(istype(src, /obj/machinery/nuclearbomb/station))
@@ -611,11 +612,11 @@ var/bomb_set
 		S.lock = 0  // Unlocked during abort window
 
 	// Use priority announcement system for nuclear activation
-	priority_announcement.Announce("ATTENTION. EMERGENCY. All personnel. The Nadezhda Colony self-destruct sequence has been activated. T-Minus ten minutes to detonation. T-Minus ten minutes. The option to override automatic detonation expires in T-Minus five minutes. For your own safety, please evacuate this colony. This is not a drill.", "Emergency Command")
-	playsound(world, 'sound/effects/siren.ogg', 100, 0, 5)
+	priority_announcement.Announce("ATTENTION. EMERGENCY. All personnel. The Nadezhda Colony self-destruct sequence has been activated. T-Minus ten minutes to detonation. T-Minus ten minutes. The option to override automatic detonation expires in T-Minus five minutes. For your own safety, please evacuate this colony. This is not a drill.", "Emergency Announcement")
+	world << sound('sound/effects/siren.ogg', volume = 100)
 
 	// Start the repeating alarm loop immediately
-	playsound(world, 'sound/effects/2.mp3', 75, 0)
+	world << sound('sound/effects/2.mp3', volume = 75)
 
 	return TRUE
 
@@ -685,10 +686,10 @@ var/bomb_set
 		S.lock = 0
 
 	// Use priority announcement for abort notification
-	priority_announcement.Announce("ATTENTION. EMERGENCY. The self-destruct sequence has been aborted. Repeat. The self-destruct sequence has been aborted. All systems returning to normal operation.", "Emergency Command")
+	priority_announcement.Announce("ATTENTION. EMERGENCY. The self-destruct sequence has been aborted. Repeat. The self-destruct sequence has been aborted. All systems returning to normal operation.", "Emergency Announcement")
 
 	// Play abort sound
-	playsound(world, 'sound/machines/chime.ogg', 75, 0, 5)
+	world << sound('sound/machines/chime.ogg', volume = 75)
 
 	bomb_set--
 	update_icon()
