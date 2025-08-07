@@ -465,7 +465,7 @@ var/bomb_set
 	src.yes_code = 0
 	src.safety = 1
 	update_icon()
-	world << sound('sound/machines/Alarm.ogg', volume = 100)
+	world << sound('sound/machines/Alarm.ogg', volume = 75)
 	SSticker.nuke_in_progress = TRUE
 	sleep(100)
 
@@ -566,7 +566,7 @@ var/bomb_set
 	// Announce final countdown with priority announcement
 	priority_announcement.Announce("ATTENTION. EMERGENCY. All personnel. T-Minus five minutes to detonation. The option to override detonation procedure has expired. You now have five minutes to reach minimum safe distance.", "Emergency Announcement")
 
-	world << sound('sound/effects/siren.ogg', volume = 100)
+	world << sound('sound/effects/siren.ogg', volume = 75)
 
 	// Update station bomb state variables
 	if(istype(src, /obj/machinery/nuclearbomb/station))
@@ -613,7 +613,7 @@ var/bomb_set
 
 	// Use priority announcement system for nuclear activation
 	priority_announcement.Announce("ATTENTION. EMERGENCY. All personnel. The Nadezhda Colony self-destruct sequence has been activated. T-Minus ten minutes to detonation. T-Minus ten minutes. The option to override automatic detonation expires in T-Minus five minutes. For your own safety, please evacuate this colony. This is not a drill.", "Emergency Announcement")
-	world << sound('sound/effects/siren.ogg', volume = 100)
+	world << sound('sound/effects/siren.ogg', volume = 75)
 
 	// Start the repeating alarm loop immediately
 	world << sound('sound/effects/2.mp3', volume = 75)
