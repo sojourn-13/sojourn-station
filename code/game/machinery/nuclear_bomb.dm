@@ -553,7 +553,7 @@ var/bomb_set
 		// Announce evacuation with priority announcement
 		priority_announcement.Announce("ATTENTION. EMERGENCY. All personnel. T-Minus seven minutes and thirty seconds to detonation. Proceed immediately to nearest emergency exit. You now have seven minutes to reach minimum safe distance.", "Emergency Announcement")
 
-		world << sound('sound/effects/Evacuation.ogg', volume = 100)
+		world << sound('sound/effects/Evacuation.ogg', volume = 75)
 
 	// Update station bomb state variables
 	if(istype(src, /obj/machinery/nuclearbomb/station))
