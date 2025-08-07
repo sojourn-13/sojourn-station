@@ -465,7 +465,7 @@ var/bomb_set
 	src.yes_code = 0
 	src.safety = 1
 	update_icon()
-	playsound(src,'sound/machines/Alarm.ogg',100,0,5)
+	world << sound('sound/machines/Alarm.ogg', volume = 100)
 	SSticker.nuke_in_progress = TRUE
 	sleep(100)
 
