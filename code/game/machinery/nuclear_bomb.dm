@@ -63,14 +63,14 @@ var/bomb_set
 		// Play countdown sound every 5 seconds
 		sound_timer += 2
 		if(sound_timer >= 50) // 50 deciseconds = 5 seconds
-			playsound(src, 'sound/effects/3.wav', 50, 0)
+			playsound(world, 'sound/effects/3.wav', 50, 0)
 			sound_timer = 0
 
 		// Repeating alarm loop during active sequence (4:15 minute sound)
 		if(sequence_stage >= 1) // During any active sequence stage
 			alarm_loop_timer += 2
 			if(alarm_loop_timer >= 2550) // 255 seconds = 4:15 minutes
-				playsound(world, 'sound/effects/2 alarms, very long.mp3', 75, 0)
+				playsound(world, 'sound/effects/2.mp3', 75, 0)
 				alarm_loop_timer = 0
 
 		// Light pulsing effect for urgent states
@@ -84,11 +84,6 @@ var/bomb_set
 		// Handle the multi-stage nuclear sequence
 		if(sequence_stage == 1) // Abort window phase
 			// Check for 1-minute abort warning
-			if(timeleft <= 60 && !abort_warning_played)
-				abort_warning_played = TRUE
-				playsound(src, 'sound/effects/3.wav', 75, 0)
-				command_announcement.Announce("ATTENTION. EMERGENCY. All personnel. T-Minus one minute to detonation. T-Minus one minute. You now have one minute to reach minimum safe distance.", "Emergency Command")
-
 			if(timeleft <= 0)
 				// Abort window expired, move to evacuation phase
 				sequence_stage = 2
@@ -101,6 +96,12 @@ var/bomb_set
 				timeleft = final_countdown_time
 				announce_final_countdown()
 		else if(sequence_stage == 3) // Final countdown phase
+			// Check for 1-minute abort warning
+			if(timeleft <= 60 && !abort_warning_played)
+				abort_warning_played = TRUE
+				playsound(world, 'sound/effects/3.wav', 75, 0)
+				command_announcement.Announce("ATTENTION. EMERGENCY. All personnel. T-Minus one minute to detonation. T-Minus one minute. You now have one minute to reach minimum safe distance.", "Emergency Command")
+
 			// Faster random explosions during final countdown
 			explosion_timer += 2
 			if(explosion_timer >= 10) // Every 5 seconds (10 deciseconds) - much faster
@@ -551,7 +552,7 @@ var/bomb_set
 		// Announce evacuation with priority announcement
 		priority_announcement.Announce("ATTENTION. EMERGENCY. All personnel. T-Minus seven minutes and thirty seconds to detonation. Proceed immediately to nearest emergency exit. You now have seven minutes to reach minimum safe distance.", "Emergency Command")
 
-		playsound(src, 'sound/effects/Evacuation.ogg', 100, 0, 10)
+		playsound(world, 'sound/effects/Evacuation.ogg', 100, 0, 10)
 
 	// Update station bomb state variables
 	if(istype(src, /obj/machinery/nuclearbomb/station))
@@ -564,7 +565,7 @@ var/bomb_set
 	// Announce final countdown with priority announcement
 	priority_announcement.Announce("ATTENTION. EMERGENCY. All personnel. T-Minus five minutes to detonation. The option to override detonation procedure has expired. You now have five minutes to reach minimum safe distance.", "Emergency Command")
 
-	playsound(src, 'sound/effects/siren.ogg', 100, 0, 15)
+	playsound(world, 'sound/effects/siren.ogg', 100, 0, 15)
 
 	// Update station bomb state variables
 	if(istype(src, /obj/machinery/nuclearbomb/station))
@@ -611,10 +612,10 @@ var/bomb_set
 
 	// Use priority announcement system for nuclear activation
 	priority_announcement.Announce("ATTENTION. EMERGENCY. All personnel. The Nadezhda Colony self-destruct sequence has been activated. T-Minus ten minutes to detonation. T-Minus ten minutes. The option to override automatic detonation expires in T-Minus five minutes. For your own safety, please evacuate this colony. This is not a drill.", "Emergency Command")
-	playsound(src, 'sound/effects/siren.ogg', 100, 0, 5)
+	playsound(world, 'sound/effects/siren.ogg', 100, 0, 5)
 
 	// Start the repeating alarm loop immediately
-	playsound(world, 'sound/effects/2 alarms, very long.mp3', 75, 0)
+	playsound(world, 'sound/effects/2.mp3', 75, 0)
 
 	return TRUE
 
@@ -687,7 +688,7 @@ var/bomb_set
 	priority_announcement.Announce("ATTENTION. EMERGENCY. The self-destruct sequence has been aborted. Repeat. The self-destruct sequence has been aborted. All systems returning to normal operation.", "Emergency Command")
 
 	// Play abort sound
-	playsound(src, 'sound/machines/chime.ogg', 75, 0, 5)
+	playsound(world, 'sound/machines/chime.ogg', 75, 0, 5)
 
 	bomb_set--
 	update_icon()
