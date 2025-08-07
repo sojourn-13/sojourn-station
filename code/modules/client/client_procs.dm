@@ -298,6 +298,49 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	winset(src, null, "command=\".configure graphics-hwmode on\"")
 
 	/* byond err version check here (configurable) */
+	// Check minimum BYOND version
+	if(config.minimum_byond_version && byond_version < config.minimum_byond_version)
+		to_chat(src, span_userdanger("Your BYOND version is too old."))
+		to_chat(src, span_danger("This server requires BYOND version [config.minimum_byond_version] or higher. You are using version [byond_version]."))
+		to_chat(src, span_danger("Please update to a newer version of BYOND."))
+		if(connecting_admin)
+			to_chat(src, "As an admin, you are being allowed to continue using this version, but please consider updating BYOND.")
+		else
+			qdel(src)
+			return
+
+	// Check minimum BYOND build
+	if(config.minimum_byond_build && byond_build && byond_build < config.minimum_byond_build)
+		to_chat(src, span_userdanger("Your BYOND build is too old."))
+		to_chat(src, span_danger("This server requires BYOND build [config.minimum_byond_build] or higher. You are using build [byond_build]."))
+		to_chat(src, span_danger("Please update to a newer version of BYOND."))
+		if(connecting_admin)
+			to_chat(src, "As an admin, you are being allowed to continue using this version, but please consider updating BYOND.")
+		else
+			qdel(src)
+			return
+
+	// Check maximum BYOND version
+	if(config.maximum_byond_version && byond_version > config.maximum_byond_version)
+		to_chat(src, span_userdanger("Your BYOND version is too new."))
+		to_chat(src, span_danger("This server requires BYOND version [config.maximum_byond_version] or lower. You are using version [byond_version]."))
+		to_chat(src, span_danger("Please downgrade to an older version of BYOND or wait for server compatibility to be updated."))
+		if(connecting_admin)
+			to_chat(src, "As an admin, you are being allowed to continue using this version, but please be aware of potential compatibility issues.")
+		else
+			qdel(src)
+			return
+
+	// Check maximum BYOND build
+	if(config.maximum_byond_build && byond_build && byond_build > config.maximum_byond_build)
+		to_chat(src, span_userdanger("Your BYOND build is too new."))
+		to_chat(src, span_danger("This server requires BYOND build [config.maximum_byond_build] or lower. You are using build [byond_build]."))
+		to_chat(src, span_danger("Please downgrade to an older version of BYOND or wait for server compatibility to be updated."))
+		if(connecting_admin)
+			to_chat(src, "As an admin, you are being allowed to continue using this version, but please be aware of potential compatibility issues.")
+		else
+			qdel(src)
+			return
 
 	// if (connection == "web" && !connecting_admin)
 	// 	if (!CONFIG_GET(flag/allow_webclient))
