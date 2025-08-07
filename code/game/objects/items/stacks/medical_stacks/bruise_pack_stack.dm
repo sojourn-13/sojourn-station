@@ -7,7 +7,7 @@
 	heal_brute = 10
 	fancy_icon = TRUE
 	var/list/injected_reagents = list() // Reagents added via syringe injection
-	var/max_injectable_volume = 15 // Maximum volume that can be injected
+	var/max_injectable_volume = 5 // Maximum volume that can be injected
 
 /obj/item/stack/medical/bruise_pack/attackby(obj/item/I, mob/user, params)
 	// Allow syringe injection for basic gauze, Blackshield, and non-sterile bandages
