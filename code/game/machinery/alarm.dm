@@ -117,6 +117,10 @@
 	TLV["pressure"] =		list(ONE_ATMOSPHERE*0.80,ONE_ATMOSPHERE*0.90,ONE_ATMOSPHERE*1.10,ONE_ATMOSPHERE*1.20) /* kpa */
 	TLV["temperature"] =	list(T0C-26, T0C, T0C+40, T0C+66) // K
 
+	// Apply default mode to ensure scrubbers and vents are turned on
+	spawn(10)
+		apply_mode()
+
 
 /obj/machinery/alarm/Initialize()
 	. = ..()
@@ -1141,7 +1145,7 @@ FIRE ALARM
 			else
 				alarm()
 			. = TRUE
-		
+
 		if("timer_set")
 			time = max(0, params["time"])
 			. = TRUE

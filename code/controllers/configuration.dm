@@ -162,6 +162,10 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 	var/list/forbidden_versions = list() // Clients with these byond versions will be autobanned. Format: string "byond_version.byond_build"; separate with ; in config, e.g. 512.1234;512.1235
 	var/minimum_byond_version
 	var/minimum_byond_build
+	var/maximum_byond_version
+	var/maximum_byond_build
+	var/byond_version_upgrade_message = "Your BYOND version is too old. Please upgrade to a newer version to connect."
+	var/byond_version_downgrade_message = "Your BYOND version is too new and may be unstable. Please downgrade to an older version to connect."
 
 	var/enter_allowed = 1
 
@@ -645,6 +649,18 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 
 				if("minimum_byond_build")
 					config.minimum_byond_build = text2num(value)
+
+				if("maximum_byond_version")
+					config.maximum_byond_version = text2num(value)
+
+				if("maximum_byond_build")
+					config.maximum_byond_build = text2num(value)
+
+				if("byond_version_upgrade_message")
+					config.byond_version_upgrade_message = value
+
+				if("byond_version_downgrade_message")
+					config.byond_version_downgrade_message = value
 
 				if("irc_bot_host")
 					config.irc_bot_host = value

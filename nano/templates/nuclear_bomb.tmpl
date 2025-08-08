@@ -1,52 +1,53 @@
-<!-- 
+<!--
 Title: Nuke Control Panel/Nuclear Bomb Defusion
 Used In File(s): \code\game\gamemodes\nuclear\nuclearbomb.dm
 -->
 <div class="item">
 	<b>Authorization Disk:</b> {{if data.auth}}{{:helper.link('++++++++++', 'eject', {'auth' : 1})}} {{else}} {{:helper.link('----------', 'disk', {'auth' : 1})}}{{/if}}
-</div>	
+</div>
 <hr>
 <div class="item">
 	<div><b>Status:</b> {{:data.authstatus}} - {{:data.safe}}</div>
 	<div><b>Timer:</b> {{:data.time}}</div>
+	<div><b>Sequence Stage:</b> {{:data.sequence_stage}}</div>
 </div>
 <div class="item">
+	{{if data.auth && data.yescode && !data.interface_locked}}
+		<div class="item">
+			<b>Timer:</b> {{:helper.link('Start', 'play', {'timer' : 1}, data.timer ? 'disabled' : '')}}
+		</div>
+		<div class="item">
+			<b>Time:</b> {{:helper.link('--', '', {'time' : -10}, data.time <= 120 ? 'disabled' : '')}}{{:helper.link('-', '', {'time' : -1}, data.time <= 120 ? 'disabled' : '')}} {{:data.time}} {{:helper.link('+', '', {'time' : 1})}}{{:helper.link('++', '', {'time' : 10})}}
+		</div>
+		<div class="item">
+			<b>Safety:</b> {{:helper.link('Engaged', 'info', {'safety' : 1}, data.safety ? 'selected' : '')}} {{:helper.link('Disengaged', 'alert', {'safety' : 0}, data.safety ? '' : 'redButton')}}
+		</div>
+	{{else}}
+		<div class="item">
+			<b>Timer:</b> {{:helper.link('Start', 'play', null, 'disabled')}}
+		</div>
+		<div class="item">
+			<b>Time:</b> {{:helper.link('-', '', null, 'disabled')}}{{:helper.link('-', '', null, 'disabled')}} {{:data.time}} {{:helper.link('+', '', null, 'disabled')}}{{:helper.link('++', '', null, 'disabled')}}
+		</div>
+		<div class="item">
+			<b>Safety:</b> {{:helper.link('Engaged', 'info', null, 'disabled')}} {{:helper.link('Disengaged', 'alert', null, 'disabled')}}
+		</div>
+	{{/if}}
+	{{if data.auth && data.can_abort && !data.interface_locked}}
+		<div class="item">
+			<b>Abort:</b> {{:helper.link('ABORT SEQUENCE', 'cross', {'abort' : 1}, 'redButton')}}
+		</div>
+	{{/if}}
+</div>
+<hr>
+{{if data.interface_locked}}
 	<div class="item">
-		{{if data.auth && data.yescode}}
-			<div class="item">
-				<b>Timer:</b> {{:helper.link('On', 'play', {'timer' : 1}, data.timer ? 'redButton' : '')}}{{:helper.link('Off', 'stop', {'timer' : 0}, !data.timer ? 'selected' : '')}}
-			</div>
-			<div class="item">
-				<b>Time:</b> {{:helper.link('--', '', {'time' : -10}, data.time <= 120 ? 'disabled' : '')}}{{:helper.link('-', '', {'time' : -1}, data.time <= 120 ? 'disabled' : '')}} {{:data.time}} {{:helper.link('+', '', {'time' : 1})}}{{:helper.link('++', '', {'time' : 10})}}
-			</div>
-		{{else}}
-			<div class="item">
-				<b>Timer:</b> {{:helper.link('On', 'play', null, 'disabled')}}{{:helper.link('Off', 'pause', null, 'disabled')}}
-			</div>
-			<div class="item">
-				<b>Time:</b> {{:helper.link('-', '', null, 'disabled')}}{{:helper.link('-', '', null, 'disabled')}} {{:data.time}} {{:helper.link('+', '', null, 'disabled')}}{{:helper.link('++', '', null, 'disabled')}}
-			</div>
-		{{/if}}
-	</div>
-	<div class="item">
-		{{if data.auth && data.yescode}}
-			<div class="item">
-				<b>Safety:</b> {{:helper.link('Engaged', 'info', {'safety' : 1}, data.safety ? 'selected' : '')}}{{:helper.link('Disengaged', 'alert', {'safety' : 0}, data.safety ? '' : 'redButton')}}
-			</div>
-			<div class="item">
-				<b>Anchor:</b> {{:helper.link('Engaged', 'locked', {'anchor' : 1}, data.anchored ? 'selected' : '')}}{{:helper.link('Disengaged', 'unlocked', {'anchor' : 0}, data.anchored ? '' : 'selected')}}
-			</div>
-		{{else}}
-			<div class="item">
-				<b>Safety:</b> {{:helper.link('Engaged', 'info', null, 'disabled')}}{{:helper.link('Disengaged', 'alert', null, 'disabled')}}
-			</div>
-			<div class="item">
-				<b>Anchor:</b> {{:helper.link('Engaged', 'locked', null, 'disabled')}}{{:helper.link('Disengaged', 'unlocked', null, 'disabled')}}
-			</div>	
-		{{/if}}
+		<div style="color: red; font-weight: bold; text-align: center;">
+			INTERFACE LOCKED - ABORT WINDOW EXPIRED
+		</div>
 	</div>
 	<hr>
-</div>
+{{/if}}
 <div class="item">
 	<div class="item">
 		>{{if data.message}} {{:data.message}}{{/if}}

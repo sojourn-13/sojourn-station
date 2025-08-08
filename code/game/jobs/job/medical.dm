@@ -20,7 +20,7 @@
 		access_chemistry, access_virology, access_cmo, access_surgery, access_RC_announce,
 		access_keycard_auth, access_sec_doors, access_psychiatrist, access_eva, access_maint_tunnels,
 		access_external_airlocks, access_paramedic, access_research_equipment, access_medical_suits,
-		access_robotics, access_xenobiology
+		access_robotics, access_xenobiology, access_heads_vault
 	)
 
 	ideal_character_age = 40
@@ -228,7 +228,8 @@
 	alt_titles = list("Soteria Psychologist", "Soteria Empath")
 	outfit_type = /decl/hierarchy/outfit/job/medical/psychiatrist
 	access = list(
-		access_moebius, access_medical_equip, access_morgue, access_psychiatrist, access_chemistry, access_medical_suits, access_eva
+		access_moebius, access_medical_equip, access_morgue, access_chemistry, access_virology,
+		access_genetics, access_external_airlocks, access_research_equipment, access_medical_suits, access_xenobiology, access_eva, access_psychiatrist
 	)
 	disallow_species = list(FORM_AGSYNTH, FORM_BSSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
 

@@ -228,3 +228,16 @@
 	price_tag = 15000
 	sound_in = 'sound/effects/sheathin.ogg'
 	sound_out = 'sound/effects/sheathout.ogg'
+
+// drfarson
+/datum/gear/fluff/drfarson_medal
+	ckey_whitelist = list("drfarson")
+	display_name = "High Council Medal of Honor"
+	path = /obj/item/clothing/accessory/medal/gold/honor
+
+
+// floofster
+/datum/gear/fluff/floof_cloak
+	ckey_whitelist = list("floofster")
+	display_name = "Outsider's Cloak"
+	path = /obj/item/clothing/accessory/cape/outsider

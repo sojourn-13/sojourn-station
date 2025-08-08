@@ -20,7 +20,7 @@
 		"a Ironhammer commander's jumpsuit" = /obj/item/clothing/under/rank/ih_commander,
 		"a First Officer's jumpsuit" = /obj/item/clothing/under/rank/first_officer,
 		"the hypospray" = /obj/item/reagent_containers/hypospray,
-		"the captain's pinpointer" = /obj/item/pinpointer,
+		// "the captain's pinpointer" = /obj/item/pinpointer, // DISABLED - pinpointer not available
 		"an ablative armor vest" = /obj/item/clothing/suit/armor/laserproof,
 		"an Ironhammer hardsuit control module" = /obj/item/rig/combat/ironhammer
 	)

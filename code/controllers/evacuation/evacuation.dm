@@ -86,7 +86,7 @@ var/datum/evacuation_controller/evacuation_controller
 			if(istype(A, /area/nadezhda/hallway))
 				A.readyalert()
 		if(!skip_announce)
-			evacuation_controller.evac_called.Announce(replacetext(GLOB.maps_data.emergency_shuttle_called_message, "%ETA%", "[round(evacuation_controller.get_eta()/60)] minute\s."))
+			evacuation_controller.evac_called.Announce(replacetext(GLOB.maps_data.emergency_shuttle_called_message, "%ETA%", "[round(evacuation_controller.get_eta()/60)] minute\s."), new_sound = sound('sound/effects/Evacuation.ogg', volume = 35))
 	else
 		if(!skip_announce)
 			priority_announcement.Announce(replacetext(replacetext(GLOB.maps_data.shuttle_called_message, "%dock_name%", "[dock_name]"),  "%ETA%", "[round(get_eta()/60)] minute\s"))

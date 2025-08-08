@@ -124,7 +124,14 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_pm_panel, R_ADMIN|R_MOD|R_MENTOR, FALSE)
 	if(C && C.mob && C.mob.real_name)
 		recipient_char = C.mob.real_name
 
-	var/pm_msg = "PM [sender_ckey]/([sender_char]) to [recipient_ckey]/([recipient_char]): [msg]"
+	// Determine PM type for IRC bot parsing
+	var/pm_prefix = ""
+	if(holder)
+		pm_prefix = "\[Admin PM\] "
+	else
+		pm_prefix = "\[Player PM\] "
+
+	var/pm_msg = "[pm_prefix]PM [sender_ckey]/([sender_char]) to [recipient_ckey]/([recipient_char]): [msg]"
 	send2adminirc(pm_msg)
 
 	// Send the message to achat. TGS

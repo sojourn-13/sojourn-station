@@ -27,7 +27,7 @@
 		access_moebius, access_engine, access_mining, access_construction, access_mailsorting,
 		access_heads, access_hos, access_RC_announce, access_keycard_auth, access_gateway, access_sec_shop,
 		access_external_airlocks, access_research_equipment, access_prospector, access_tcomsat, access_hydroponics,
-		access_bar, access_kitchen, access_medical_suits
+		access_bar, access_kitchen, access_medical_suits, access_heads_vault
 	)
 
 	stat_modifiers = list(

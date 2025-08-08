@@ -276,9 +276,9 @@
 
 	switch(status)		// set icon_states
 		if(LIGHT_OK)
-			if(firealarmed && on && cmptext(base_state,"tube"))
+			if(firealarmed && on && (cmptext(base_state,"tube") || cmptext(base_state,"floortube") || cmptext(base_state,"bulb") || cmptext(base_state,"lbulb") || cmptext(base_state,"ltube")))
 				icon_state = "[base_state]_alert"
-			else if(atmosalarmed && on && cmptext(base_state,"tube"))
+			else if(atmosalarmed && on && (cmptext(base_state,"tube") || cmptext(base_state,"floortube") || cmptext(base_state,"bulb") || cmptext(base_state,"lbulb") || cmptext(base_state,"ltube")))
 				icon_state = "[base_state]_alert_atmos"
 			else
 				icon_state = "[base_state][on]"
@@ -295,7 +295,7 @@
 
 /obj/machinery/light/proc/set_blue()
 	if(on)
-		if(cmptext(base_state,"tube"))
+		if(cmptext(base_state,"tube") || cmptext(base_state,"floortube") || cmptext(base_state,"bulb") || cmptext(base_state,"lbulb") || cmptext(base_state,"ltube"))
 			atmosalarmed = 1
 			firealarmed = 0
 			brightness_color = COLOR_LIGHTING_BLUE_MACHINERY
@@ -304,7 +304,7 @@
 
 /obj/machinery/light/proc/set_red()
 	if(on)
-		if(cmptext(base_state,"tube"))
+		if(cmptext(base_state,"tube") || cmptext(base_state,"floortube") || cmptext(base_state,"bulb") || cmptext(base_state,"lbulb") || cmptext(base_state,"ltube"))
 			firealarmed = 1
 			atmosalarmed = 0
 			brightness_color = COLOR_LIGHTING_RED_MACHINERY
@@ -312,7 +312,7 @@
 
 /obj/machinery/light/proc/reset_color()
 	if(on)
-		if(cmptext(base_state,"tube"))
+		if(cmptext(base_state,"tube") || cmptext(base_state,"floortube") || cmptext(base_state,"bulb") || cmptext(base_state,"lbulb") || cmptext(base_state,"ltube"))
 			firealarmed = 0
 			atmosalarmed = 0
 

@@ -41,5 +41,49 @@
 		list(QUALITY_CAUTERIZING, 30, "time" = 1),
 		list(/obj/item/stack/sterilizer_crystal, 1),
 		list(QUALITY_BONE_SETTING, 30, "time" = 5),
-		list(QUALITY_CLAMPING, 30, "time" = 1)
+		list(QUALITY_CLAMPING, 30, "time" = 1),
+	)
+
+/datum/craft_recipe/soteria/blackshield_gauze
+	name = "Blackshield trauma gauze"
+	result = /obj/item/stack/medical/bruise_pack/blacshield
+	icon_state = "clothing"
+	steps = list(
+		list(CRAFT_MATERIAL, 6, MATERIAL_CLOTH, "time" = 1),
+		list(QUALITY_CUTTING, 25, "time" = 5),
+		list(QUALITY_CAUTERIZING, 25, "time" = 1),
+		list(QUALITY_BONE_SETTING, 25, "time" = 5),
+		list(QUALITY_CLAMPING, 25, "time" = 1),
+	)
+
+/datum/craft_recipe/soteria/blackshield_ointment
+	name = "Blackshield trauma ointment"
+	result = /obj/item/stack/medical/ointment/blacshield
+	icon_state = "clothing"
+	steps = list(
+		list(CRAFT_MATERIAL, 3, MATERIAL_PLASTIC, "time" = 1),
+		list(QUALITY_CUTTING, 25, "time" = 5),
+		list(QUALITY_CAUTERIZING, 25, "time" = 1),
+		list(QUALITY_BONE_SETTING, 25, "time" = 5),
+		list(QUALITY_CLAMPING, 25, "time" = 1),
+	)
+
+/datum/craft_recipe/soteria/soteria_gauze
+	name = "roll of gauze"
+	result = /obj/item/stack/medical/bruise_pack
+	icon_state = "clothing"
+	steps = list(
+		list(CRAFT_MATERIAL, 8, MATERIAL_CLOTH, "time" = 1),
+		list(QUALITY_CUTTING, 30, "time" = 5),
+		list(QUALITY_CAUTERIZING, 30, "time" = 1),
+	)
+
+/datum/craft_recipe/soteria/soteria_ointment
+	name = "bottle of ointment"
+	result = /obj/item/stack/medical/ointment
+	icon_state = "clothing"
+	steps = list(
+		list(CRAFT_MATERIAL, 3, MATERIAL_PLASTIC, "time" = 1),
+		list(QUALITY_CUTTING, 30, "time" = 5),
+		list(QUALITY_CAUTERIZING, 30, "time" = 1),
 	)
