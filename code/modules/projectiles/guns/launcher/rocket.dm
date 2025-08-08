@@ -193,7 +193,7 @@
 	// Destroy mechs in one hit
 	if(istype(target, /obj/mecha))
 		var/obj/mecha/M = target
-		M.take_damage(M.health + 1000) // Ensure destruction regardless of health
+		M.take_damage(300) // Ensure destruction regardless of health
 		return
 
 	if(ismob(target))
@@ -206,8 +206,8 @@
 				return
 			else
 				// Deal normal projectile damage to high-health simple mobs
-				var/brute_damage = damage_types[BRUTE] || 80
-				var/burn_damage = damage_types[BURN] || 40
+				var/brute_damage = damage_types[BRUTE] || 250
+				var/burn_damage = damage_types[BURN] || 100
 				SA.adjustBruteLoss(brute_damage)
 				SA.adjustFireLoss(burn_damage)
 		// For humans and other complex mobs, deal normal projectile damage
