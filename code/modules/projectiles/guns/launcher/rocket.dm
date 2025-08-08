@@ -60,7 +60,7 @@
 	w_class = ITEM_SIZE_HUGE
 	slot_flags = SLOT_BACK|SLOT_BELT
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 3)
-	serial_type = "BS"
+	serial_type = "SI-BS"
 	max_rockets = 1
 	var/fired = 0
 	var/disposable = 1
@@ -73,7 +73,7 @@
 /obj/item/gun/launcher/rocket/spear/New()
 	..()
 	// Pre-load with one rocket
-	var/obj/item/ammo_casing/rocket/loaded_rocket = new /obj/item/ammo_casing/rocket(src)
+	var/obj/item/ammo_casing/rocket/loaded_rocket = new /obj/item/ammo_casing/rocket/disposable(src)
 	rockets += loaded_rocket
 	update_icon()
 
@@ -312,7 +312,6 @@
 		to_chat(user, SPAN_NOTICE("Both the action must be closed and safety off to fire."))
 
 /obj/item/gun/projectile/shotgun/pump/sabul/handle_post_fire(mob/user)
-	log_and_message_admins("fired a utility/grenade round ([chambered.name]) from a SABLE launcher ([src.name]).")
 	user.attack_log += "\[[time_stamp()]\] <font color='red'> fired a utility/grenade round ([chambered.name]) from a SABLE launcher ([src.name])</font>"
 	chambered = null
 

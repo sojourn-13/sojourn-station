@@ -802,7 +802,7 @@
 	name = "SPEAR-7 disposable rocket"
 	desc = "An 85mm warhead designed for the SPEAR disposable rocket launcher. Has tubular shape."
 	icon_state = "rocketshell_e"
-	projectile_type = /obj/item/projectile/bullet/rocket
+	projectile_type = /obj/item/projectile/bullet/rocket/spear
 	caliber = CAL_ROCKET
 	maxamount = 1
 	reload_delay = 15

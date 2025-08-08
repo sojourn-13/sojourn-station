@@ -41,6 +41,25 @@
 	check_armor = ARMOR_BULLET
 	recoil = 75
 
+/obj/item/projectile/bullet/rocket/spear
+	name = "SPEAR-7 anti-armor rocket"
+	icon_state = "rocket_e"
+	damage_types = list(BRUTE = 650)
+	armor_divisor = 25
+	check_armor = ARMOR_BULLET
+	recoil = 75
+
+/obj/item/projectile/bullet/rocket/spear/launch(atom/target, target_zone, x_offset, y_offset, angle_offset, firer_arg)
+	if (!testing)
+		set_light(3.5, 1.0, "#ff4400")
+	..(target, target_zone, x_offset, y_offset, angle_offset)
+
+/obj/item/projectile/bullet/rocket/spear/on_impact(atom/target)
+	if (!testing)
+		explosion(loc, 1, 2, 3, 5)
+		set_light(0)
+	return TRUE
+
 /obj/item/projectile/bullet/rocket/sabul
 	name = "high explosive mini-rocket"
 	icon_state = "grenade"
