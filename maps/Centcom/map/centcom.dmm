@@ -8682,30 +8682,6 @@
 /obj/item/ammo_casing/rocket{
 	pixel_y = -10
 	},
-/obj/item/ammo_casing/rocket/emp{
-	pixel_y = 9
-	},
-/obj/item/ammo_casing/rocket/emp{
-	pixel_y = 9
-	},
-/obj/item/ammo_casing/rocket/emp{
-	pixel_y = 9
-	},
-/obj/item/ammo_casing/rocket/emp{
-	pixel_y = 9
-	},
-/obj/item/ammo_casing/rocket/emp{
-	pixel_y = 9
-	},
-/obj/item/ammo_casing/rocket/emp{
-	pixel_y = 8
-	},
-/obj/item/ammo_casing/rocket/emp{
-	pixel_y = 5
-	},
-/obj/item/ammo_casing/rocket/emp{
-	pixel_y = 2
-	},
 /obj/machinery/door/window/westleft,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/centcom/evac)

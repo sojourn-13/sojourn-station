@@ -35,7 +35,15 @@
 
 /obj/item/projectile/bullet/rocket
 	name = "high explosive rocket"
-	icon_state = "rocket"
+	icon_state = "rocket_e"
+	damage_types = list(BRUTE = 70)
+	armor_divisor = 10
+	check_armor = ARMOR_BULLET
+	recoil = 75
+
+/obj/item/projectile/bullet/rocket/sabul
+	name = "high explosive mini-rocket"
+	icon_state = "grenade"
 	damage_types = list(BRUTE = 70)
 	armor_divisor = 10
 	check_armor = ARMOR_BULLET
@@ -57,54 +65,18 @@
 		set_light(0)
 	return TRUE
 
+/obj/item/projectile/bullet/rocket/sabul/on_impact(atom/target)
+	if (!testing)
+		explosion(loc, 0, 1, 2, 2)
+		set_light(0)
+	return TRUE
+
 /obj/item/projectile/bullet/rocket/scrap
 	damage_types = list(BRUTE = 30)
 
 /obj/item/projectile/bullet/rocket/scrap/on_impact(atom/target)
 	if(!testing)
 		explosion(target, 0, 0, 2, 3)
-
-/obj/item/projectile/bullet/rocket/emp
-	name = "EMP rocket"
-	icon_state = "rocket_e"
-	damage_types = list(BRUTE = 10, BURN = 30)
-	armor_divisor = 10
-	check_armor = ARMOR_BULLET
-	var/heavy_emp_range = 3
-	var/light_emp_range = 8
-	recoil = 60
-
-/obj/item/projectile/bullet/rocket/emp/launch(atom/target, target_zone, x_offset, y_offset, angle_offset, firer_arg)
-	if (!testing)
-		set_light(2.5, 0.5, "#dddd00")
-	..(target, target_zone, x_offset, y_offset, angle_offset)
-
-/obj/item/projectile/bullet/rocket/emp/on_impact(atom/target)
-	..()
-
-	if (!testing)
-
-		for(var/obj/structure/closet/L in hear(7, get_turf(src)))
-			if(locate(/mob/living/carbon/, L))
-				for(var/mob/living/carbon/M in L)
-					flashbang_bang(get_turf(src), M)
-
-
-		for(var/mob/living/carbon/M in hear(7, get_turf(src)))
-			flashbang_bang(get_turf(src), M)
-
-		for(var/obj/effect/blob/B in hear(8,get_turf(src)))	   		//Blob damage here
-			var/damage = round(30/(get_dist(B,get_turf(src))+1))
-			B.take_damage(damage)
-			B.update_icon()
-
-		new/obj/effect/sparks(src.loc)
-		new/obj/effect/effect/smoke/illumination(src.loc, brightness=15)
-		empulse(target, heavy_emp_range, light_emp_range)
-	if (testing)
-		impact_atom = target
-	qdel(src)
-	return
 
 /obj/item/projectile/temp
 	name = "freeze beam"

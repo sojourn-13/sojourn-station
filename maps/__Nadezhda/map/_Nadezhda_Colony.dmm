@@ -10514,6 +10514,10 @@
 /obj/item/reagent_containers/blood/APlus,
 /obj/item/reagent_containers/blood/BMinus,
 /obj/item/reagent_containers/blood/BPlus,
+/obj/item/reagent_containers/blood/AMinus,
+/obj/item/reagent_containers/blood/APlus,
+/obj/item/reagent_containers/blood/BMinus,
+/obj/item/reagent_containers/blood/BPlus,
 /obj/item/reagent_containers/blood/OMinus,
 /obj/item/reagent_containers/blood/OPlus,
 /obj/structure/closet/secure_closet/freezer/blood{
@@ -31389,6 +31393,10 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "fVl" = (
+/obj/item/reagent_containers/blood/AMinus,
+/obj/item/reagent_containers/blood/APlus,
+/obj/item/reagent_containers/blood/BMinus,
+/obj/item/reagent_containers/blood/BPlus,
 /obj/item/reagent_containers/blood/AMinus,
 /obj/item/reagent_containers/blood/APlus,
 /obj/item/reagent_containers/blood/BMinus,
@@ -59921,14 +59929,6 @@
 	pixel_x = 5;
 	pixel_y = 3
 	},
-/obj/item/reagent_containers/blood/OMinus{
-	pixel_x = -5;
-	pixel_y = -1
-	},
-/obj/item/reagent_containers/blood/OPlus{
-	pixel_x = 4;
-	pixel_y = 2
-	},
 /obj/structure/table/rack/shelf,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/triage_blackshield)
@@ -64229,14 +64229,6 @@
 /obj/item/reagent_containers/blood/BPlus{
 	pixel_x = 5;
 	pixel_y = 3
-	},
-/obj/item/reagent_containers/blood/OMinus{
-	pixel_x = -5;
-	pixel_y = -1
-	},
-/obj/item/reagent_containers/blood/OPlus{
-	pixel_x = 4;
-	pixel_y = 2
 	},
 /obj/structure/table/rack/shelf,
 /obj/structure/closet/secure_closet/freezer/fridge{
@@ -74596,11 +74588,10 @@
 	req_access = list(45)
 	},
 /obj/item/storage/freezer,
-/obj/item/reagent_containers/blood/OPlus,
-/obj/item/reagent_containers/blood/OPlus,
-/obj/item/reagent_containers/blood/OPlus,
-/obj/item/reagent_containers/blood/OPlus,
-/obj/item/reagent_containers/blood/OPlus,
+/obj/item/reagent_containers/blood/AMinus,
+/obj/item/reagent_containers/blood/APlus,
+/obj/item/reagent_containers/blood/BMinus,
+/obj/item/reagent_containers/blood/BPlus,
 /turf/simulated/floor/tiled/white/monofloor,
 /area/nadezhda/medical/organ_lab)
 "obw" = (
@@ -88380,10 +88371,11 @@
 /obj/structure/closet/crate/serbcrate{
 	name = "Heavy ordinance crate"
 	},
-/obj/item/gun/projectile/rpg,
-/obj/item/ammo_casing/rocket,
-/obj/item/ammo_casing/rocket,
-/obj/item/ammo_casing/rocket/emp,
+/obj/item/gun/launcher/rocket/spear,
+/obj/item/gun/projectile/shotgun/pump/sabul,
+/obj/item/ammo_casing/rocket/sabul,
+/obj/item/ammo_casing/rocket/sabul,
+/obj/item/ammo_casing/rocket/sabul,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
 "qDf" = (
@@ -96381,6 +96373,10 @@
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/nadezhda/security/armory_blackshield)
 "sei" = (
+/obj/item/reagent_containers/blood/AMinus,
+/obj/item/reagent_containers/blood/APlus,
+/obj/item/reagent_containers/blood/BMinus,
+/obj/item/reagent_containers/blood/BPlus,
 /obj/item/reagent_containers/blood/AMinus,
 /obj/item/reagent_containers/blood/APlus,
 /obj/item/reagent_containers/blood/BMinus,
@@ -120766,11 +120762,10 @@
 	name = "secure blood fridge";
 	req_access = list(45)
 	},
-/obj/item/reagent_containers/blood/OPlus,
-/obj/item/reagent_containers/blood/OPlus,
-/obj/item/reagent_containers/blood/OPlus,
-/obj/item/reagent_containers/blood/OPlus,
-/obj/item/reagent_containers/blood/OPlus,
+/obj/item/reagent_containers/blood/AMinus,
+/obj/item/reagent_containers/blood/APlus,
+/obj/item/reagent_containers/blood/BMinus,
+/obj/item/reagent_containers/blood/BPlus,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/sleeper)
 "wDh" = (
