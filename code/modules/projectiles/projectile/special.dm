@@ -44,8 +44,8 @@
 /obj/item/projectile/bullet/rocket/spear
 	name = "SPEAR-7 anti-armor rocket"
 	icon_state = "rocket_e"
-	damage_types = list(BRUTE = 650)
-	armor_divisor = 25
+	damage_types = list(BRUTE = 150)
+	armor_divisor = 15
 	check_armor = ARMOR_BULLET
 	recoil = 75
 
