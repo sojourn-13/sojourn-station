@@ -119,20 +119,27 @@
 		item_state = "spear_spent"
 		return
 
+	// Only mark as fired if we actually have ammunition and can fire
+	if(!rockets.len)
+		to_chat(user, SPAN_WARNING("\The [src] is empty!"))
+		return
+
 	// Call parent Fire method to actually fire the weapon
-	..()
+	var/result = ..()
 
-	// After successful firing, mark as fired and disable
-	fired = 1
-	name = "spent SI-BS \"SPEAR\" recoilless rifle"
-	desc = "A used SI-BS SPEAR recoilless rifle. The firing mechanism has been destroyed and it's now just expensive scrap metal."
-	icon_state = "spear_spent"
-	item_state = "spear_spent"
+	// Only mark as spent if the firing was successful
+	if(result)
+		// After successful firing, mark as fired and disable
+		fired = 1
+		name = "spent SI-BS \"SPEAR\" recoilless rifle"
+		desc = "A used SI-BS SPEAR recoilless rifle. The firing mechanism has been destroyed and it's now just expensive scrap metal."
+		icon_state = "spear_spent"
+		item_state = "spear_spent"
 
-	// Clear remaining rockets and disable functionality
-	rockets.Cut()
-	safety = 1
-	restrict_safety = 1
+		// Clear remaining rockets and disable functionality
+		rockets.Cut()
+		safety = 1
+		restrict_safety = 1
 
 /obj/item/gun/launcher/rocket/spear/process_projectile(obj/item/projectile/projectile, mob/user, atom/target, var/target_zone, var/params=null, var/pointblank=0, var/reflex=0)
 	// Use ballistic launch instead of throwing for visible rocket travel
@@ -142,6 +149,79 @@
 
 /obj/item/gun/launcher/rocket/sable
 	name = "SI-BS \"SABLE\" utility platform"
+	desc = "A SI-BS pattern Specialised Advanced Ballistic Rocket Engagement (SABRE) utility platform. \
+	This advanced rocket launcher features a distinctive rocket launch sound and enhanced targeting capabilities."
+	icon = 'icons/obj/guns/projectile/sable.dmi'
+	icon_state = "sable_closed"
+	item_state = "sable_closed"
+	w_class = ITEM_SIZE_NORMAL
+	slot_flags = SLOT_BACK|SLOT_BELT
+	serial_type = "SI-BS"
+	force = WEAPON_FORCE_NORMAL
+	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_STEEL = 15)
+	price_tag = 1500
+	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 4)
+
+	// Enhanced rocket launcher with special launch sound
+	fire_sound = 'sound/mecha/weapons/rocketlauncher.ogg'
+	max_rockets = 2
+	fire_delay = 15
+	slowdown_hold = 0.6
+	init_recoil = HANDGUN_RECOIL(3)
+	twohanded = TRUE
+
+/obj/item/gun/launcher/rocket/sable/Fire(atom/target, mob/living/user, params, pointblank=0, reflex=0)
+	// Play the rocket launch sound
+	if(fire_sound)
+		playsound(src, fire_sound, 70, 1)
+
+	return ..()
+
+/obj/item/gun/launcher/rocket/sable/process_projectile(obj/item/projectile/projectile, mob/user, atom/target, var/target_zone, var/params=null, var/pointblank=0, var/reflex=0)
+	// Use ballistic launch instead of throwing for visible rocket travel
+	projectile.loc = get_turf(user)
+
+	// Add gibbing capability to simple mobs
+	if(istype(projectile, /obj/item/projectile))
+		projectile.damage_types = list(BRUTE = 80, BURN = 40)
+
+	projectile.launch(target, target_zone, 0, 0, 0, null, user)
+	return 1
+
+// Special on_hit proc for SABLE projectiles
+/obj/item/projectile/proc/sable_on_hit(atom/target, blocked = 0)
+	// Destroy mechs in one hit
+	if(istype(target, /obj/mecha))
+		var/obj/mecha/M = target
+		M.take_damage(M.health + 1000) // Ensure destruction regardless of health
+		if(M.explode)
+			M.explode()
+		return
+
+	if(ismob(target))
+		var/mob/M = target
+		// Gib simple mobs with less than 1000 health
+		if(istype(M, /mob/living/simple))
+			var/mob/living/simple/SA = M
+			if(SA.maxHealth < 1000)
+				SA.gib()
+				return
+			else
+				// Deal normal projectile damage to high-health simple mobs
+				var/brute_damage = damage_types[BRUTE] || 80
+				var/burn_damage = damage_types[BURN] || 40
+				SA.adjustBruteLoss(brute_damage)
+				SA.adjustFireLoss(burn_damage)
+		// For humans and other complex mobs, deal normal projectile damage
+		else if(istype(M, /mob/living))
+			var/mob/living/L = M
+			var/brute_damage = damage_types[BRUTE] || 80
+			var/burn_damage = damage_types[BURN] || 40
+			L.adjustBruteLoss(brute_damage)
+			L.adjustFireLoss(burn_damage)
+
+	// Call original explosion/damage effects if available
+	return
 /obj/item/gun/launcher/rocket/spear/examine(mob/user)
 	if(!..(user, 2))
 		return
