@@ -1,3 +1,5 @@
+// BULLETS
+
 //// .35 ////
 
 /obj/item/ammo_casing/pistol_35
@@ -781,9 +783,9 @@
 
 //Misc
 /obj/item/ammo_casing/rocket
-	name = "PG-7VL grenade"
-	desc = "A 40mm warhead designed for the RPG-7 launcher. Has tubular shape."
-	icon_state = "rocketshell"
+	name = "PG-7V-L rocket"
+	desc = "A laser-guided warhead designed for the RPG-7 launcher. Has tubular shape."
+	icon_state = "rocket"
 	projectile_type = /obj/item/projectile/bullet/rocket
 	caliber = CAL_ROCKET
 	maxamount = 1
@@ -794,14 +796,14 @@
 /obj/item/ammo_casing/rocket/scrap
 	name = "scrap rocket"
 	desc = "An old improvised rocket shell for the RPG-7 launcher. Has a tubular shape."
-	icon_state = "old_rocketshell"
+	icon_state = "rocket_old"
 	projectile_type = /obj/item/projectile/bullet/rocket/scrap
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASMA = 2)
 
 /obj/item/ammo_casing/rocket/disposable
 	name = "SPEAR-7 disposable rocket"
 	desc = "An 85mm warhead designed for the SPEAR disposable rocket launcher. Has tubular shape."
-	icon_state = "rocketshell_e"
+	icon_state = "rocketshell_s"
 	projectile_type = /obj/item/projectile/bullet/rocket/spear
 	caliber = CAL_ROCKET
 	maxamount = 1
@@ -820,10 +822,31 @@
 	is_caseless = TRUE
 	w_class = ITEM_SIZE_NORMAL
 
+/obj/item/ammo_casing/rocket/shrapnel
+	name = "PG-7V-S shrapnel rocket"
+	desc = "A laser-guided shrapnel warhead designed for the RPG-7 launcher. Designed to devastate infantry formations."
+	icon_state = "rocket_shrapnel"
+	projectile_type = /obj/item/projectile/bullet/rocket/shrapnel
+	caliber = CAL_ROCKET
+	maxamount = 1
+	reload_delay = 15
+	is_caseless = TRUE
+	w_class = ITEM_SIZE_BULKY
+
+/obj/item/ammo_casing/rocket/heat
+	name = "PG-7V-AT HEAT rocket"
+	desc = "A laser-guided High Explosive Anti-Tank warhead designed for the RPG-7 launcher. Optimized for penetrating armor."
+	icon_state = "rocket_heat"
+	projectile_type = /obj/item/projectile/bullet/rocket/heat
+	caliber = CAL_ROCKET
+	maxamount = 1
+	reload_delay = 15
+	is_caseless = TRUE
+	w_class = ITEM_SIZE_BULKY
+
 /obj/item/ammo_casing/rocket/scrap/prespawned
 	amount = 1
 
-/*
 /obj/item/ammo_casing/a75
 	name = "microjet casing"
 	desc = "A 19mm gyrojet rocket."
@@ -832,7 +855,7 @@
 
 /obj/item/ammo_casing/a75/spent
 	projectile_type = null
-*/
+
 /obj/item/ammo_casing/cap
 	name = "cap"
 	desc = "A cap for children toys."
@@ -905,6 +928,15 @@
 	desc = "A grenade shell containing specific chemical substances similar to those used in flashbangs, designed to be fired from gernade launchers."
 	icon_state = "flash"
 	projectile_type = /obj/item/projectile/bullet/grenade/flash
+
+/obj/item/ammo_casing/grenade/net
+	name = "xenofauna energy net shell"
+	desc = "A casing containing an autodeploying net for capturing targets. Kind of looks like a flash light."
+	icon_state = "net"
+	projectile_type = /obj/item/projectile/bullet/grenade/energy_net
+	caliber = CAL_UTILITY
+	maxamount = 3
+	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 3, MATERIAL_GOLD = 2, MATERIAL_SILVER = 2)
 
 //Cross Bolt ammo
 /obj/item/ammo_casing/crossbow_bolts

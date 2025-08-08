@@ -357,3 +357,24 @@
 							/datum/design/research/item/ammo/hydroflaskette,
 							/datum/design/research/item/powercell/large/hydrogen,
 							/datum/design/research/item/ion_jaunt)
+
+/datum/technology/special_weapons_platform
+	name = "Special Weapons Platforms"
+	desc = "Advanced launcher systems for specialized operations. Combines covert technology with plasma weapons expertise to create versatile launcher platforms."
+	tech_type = RESEARCH_COMBAT
+
+	x = 0.7
+	y = 0.9
+	icon = "rocket"
+
+	required_technologies = list(/datum/technology/advanced_unstable_plasma_weapons)
+	required_tech_levels = list(RESEARCH_COVERT = 8)
+	cost = 7500
+
+	unlocks_designs = list(/datum/design/research/item/weapon/sabul,
+							/datum/design/research/item/weapon/spear,
+							/datum/design/research/item/ammo/flare_shell,
+							/datum/design/research/item/ammo/flare_shell/blue,
+							/datum/design/research/item/ammo/flare_shell/green,
+							/datum/design/research/item/ammo/mini_rocket,
+							/datum/design/research/item/ammo/grenade_net)

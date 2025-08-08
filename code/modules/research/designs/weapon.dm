@@ -154,6 +154,19 @@
 	name = "\"Legkiy-Kalashnikov\" laser carbine"
 	build_path = /obj/item/gun/projectile/automatic/ak47/akl
 
+// SI-BS launcher desgins
+/datum/design/research/item/weapon/sabul
+	name = "SI-BS \"SABUL\" utility platform"
+	desc = "A SI-BS pattern Specialised Ballistic Utility Launcher (SABUL) utility platform. This break-action launcher fires utility shells and grenades one at a time, but can be reloaded and reused indefinitely."
+	build_path = /obj/item/gun/projectile/shotgun/pump/sabul
+	materials = list(MATERIAL_PLASTEEL = 15, MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 5)
+
+/datum/design/research/item/weapon/spear
+	name = "SI-BS \"SPEAR\" recoilless rifle"
+	desc = "A Blackshield pattern Single-shot Portable/Expendable Anti-tank Rocket (SPEAR) recoilless rifle. This disposable launcher must be unfolded before use. Once fired, it is no longer usable."
+	build_path = /obj/item/gun/launcher/rocket/spear
+	materials = list(MATERIAL_PLASTEEL = 25, MATERIAL_STEEL = 15, MATERIAL_PLASTIC = 10, MATERIAL_PLASMA = 5)
+
 // Plasma guns
 /datum/design/research/item/weapon/hydrogen_rifle
 	name = "Hydrogen \"Venatori\" Rifle"
@@ -326,6 +339,12 @@
 	build_path = /obj/item/ammo_casing/shotgun/laser/prespawned
 	materials = list(MATERIAL_STEEL = 4, MATERIAL_SILVER = 4, MATERIAL_GOLD = 4)
 
+/datum/design/research/item/ammo/grenade_net
+	name = "Net Shell"
+	desc = "A casing containing an autodeploying net for capturing targets. Kind of looks like a shotgun shell but much bigger."
+	build_path = /obj/item/ammo_casing/grenade/net
+	materials = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 3)
+
 // Misc Ammo
 
 /datum/design/research/item/ammo/hatton
@@ -340,6 +359,32 @@
 	name = "Compressed metallic hydrogen flask"
 	desc = "A small flask for metallic hydrogen. Used in hydroplasma weapons and tools."
 	build_path = /obj/item/hydrogen_fuel_cell
+
+// Utility Ammunition
+
+/datum/design/research/item/ammo/flare_shell
+	name = "Flare Shell"
+	desc = "A chemical flare shell designed to produce a distress signal or illuminate an area."
+	build_path = /obj/item/ammo_casing/flare/prespawn
+	materials = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 1)
+
+/datum/design/research/item/ammo/flare_shell/blue
+	name = "Blue Flare Shell"
+	desc = "A chemical flare shell designed to produce a blue distress signal or illuminate an area."
+	build_path = /obj/item/ammo_casing/flare/blue/prespawn
+	materials = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 1)
+
+/datum/design/research/item/ammo/flare_shell/green
+	name = "Green Flare Shell"
+	desc = "A chemical flare shell designed to produce a green distress signal or illuminate an area."
+	build_path = /obj/item/ammo_casing/flare/green/prespawn
+	materials = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 1)
+
+/datum/design/research/item/ammo/mini_rocket
+	name = "40mm Mini-Rocket"
+	desc = "An 40mm mini-rocket designed for the SABUL utility launcher. Has tubular shape."
+	build_path = /obj/item/ammo_casing/rocket/sabul
+	materials = list(MATERIAL_STEEL = 8, MATERIAL_PLASMA = 5)
 
 //Disks
 /datum/design/research/item/disk/blackshield

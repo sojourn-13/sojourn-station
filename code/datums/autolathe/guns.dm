@@ -414,12 +414,12 @@
 /datum/design/autolathe/gun/spear
 	name = "SI-BS \"SPEAR\" recoilless rifle"
 	build_path = /obj/item/gun/launcher/rocket/spear
-	materials = list(MATERIAL_PLASTEEL = 25, MATERIAL_STEEL = 15, MATERIAL_PLASTIC = 10)
+	materials = list(MATERIAL_PLASTEEL = 25, MATERIAL_STEEL = 15, MATERIAL_PLASTIC = 10, MATERIAL_PLASMA = 5)
 
 /datum/design/autolathe/gun/sabul
 	name = "SI-BS \"SABUL\" utility platform"
 	build_path = /obj/item/gun/projectile/shotgun/pump/sabul
-	materials = list(MATERIAL_PLASTEEL = 15, MATERIAL_STEEL = 10)
+	materials = list(MATERIAL_PLASTEEL = 15, MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 5)
 
 // Energy
 /datum/design/autolathe/gun/taser

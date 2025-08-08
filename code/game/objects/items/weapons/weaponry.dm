@@ -7,6 +7,11 @@
 	force = 0
 	var/net_type = /obj/effect/energy_net
 
+/obj/item/energy_net/safari
+	name = "animal net"
+	desc = "An energized net meant to subdue animals."
+	net_type = /obj/effect/energy_net
+
 /obj/item/energy_net/dropped()
 	spawn(10)
 		if(src) qdel(src)
@@ -24,7 +29,7 @@
 	if(T)
 		var/obj/effect/energy_net/net = new net_type(T)
 		net.layer = M.layer+1
-		buckle_mob(M)
+		net.buckle_mob(M)
 		net.affecting = M
 		T.visible_message("[M] was caught in an energy net!")
 		qdel(src)
@@ -49,6 +54,11 @@
 	var/mob/living/affecting = null //Who it is currently affecting, if anyone.
 	var/mob/living/master = null    //Who shot web. Will let this person know if the net was successful.
 	var/countdown = -1
+
+/obj/effect/energy_net/safari
+	name = "animal net"
+	desc = "An energized net meant to subdue animals."
+	anchored = 0  // Safari nets are not anchored
 
 /obj/effect/energy_net/teleport
 	countdown = 60

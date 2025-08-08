@@ -722,8 +722,8 @@ GLOBAL_LIST_EMPTY(all_crafting_station_recipes)
 /datum/recipe_crafting_station/rocket/rpg
 	name = "RPG shell"
 	result = /obj/item/ammo_casing/rocket/scrap/prespawned
-/*
+
 /datum/recipe_crafting_station/rocket/gyrojet
 	name = "19mm gyrojet rocket"
 	result = /obj/item/ammo_casing/a75
-*/
+
