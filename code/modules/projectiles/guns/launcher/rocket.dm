@@ -60,10 +60,11 @@
 	w_class = ITEM_SIZE_HUGE
 	slot_flags = SLOT_BACK|SLOT_BELT
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 3)
-	serial_type = "BS"
+	serial_type = "SI-BS"
 	max_rockets = 1
 	var/fired = 0
 	var/disposable = 1
+	twohanded = TRUE
 
 	// Start with safety on (folded)
 	safety = 1
@@ -72,12 +73,15 @@
 /obj/item/gun/launcher/rocket/spear/New()
 	..()
 	// Pre-load with one rocket
-	var/obj/item/ammo_casing/rocket/loaded_rocket = new /obj/item/ammo_casing/rocket(src)
+	var/obj/item/ammo_casing/rocket/loaded_rocket = new /obj/item/ammo_casing/rocket/disposable(src)
 	rockets += loaded_rocket
 	update_icon()
 
 /obj/item/gun/launcher/rocket/spear/update_icon()
-	if(safety)
+	if(fired)
+		icon_state = "spear_spent"
+		item_state = "spear_spent"
+	else if(safety)
 		icon_state = "spear_folded"
 		item_state = "spear_folded"
 	else
@@ -87,6 +91,8 @@
 /obj/item/gun/launcher/rocket/spear/toggle_safety(mob/living/user)
 	if(fired)
 		to_chat(user, SPAN_WARNING("\The [src] has already been fired and cannot be unfolded again."))
+		icon_state = "spear_spent"
+		item_state = "spear_spent"
 		return
 
 	safety = !safety
@@ -108,6 +114,8 @@
 		return
 	if(fired)
 		to_chat(user, SPAN_WARNING("\The [src] has already been fired and is now useless."))
+		icon_state = "spear_spent"
+		item_state = "spear_spent"
 		return
 
 	// Call parent Fire method to actually fire the weapon
@@ -304,7 +312,6 @@
 		to_chat(user, SPAN_NOTICE("Both the action must be closed and safety off to fire."))
 
 /obj/item/gun/projectile/shotgun/pump/sabul/handle_post_fire(mob/user)
-	log_and_message_admins("fired a utility/grenade round ([chambered.name]) from a SABLE launcher ([src.name]).")
 	user.attack_log += "\[[time_stamp()]\] <font color='red'> fired a utility/grenade round ([chambered.name]) from a SABLE launcher ([src.name])</font>"
 	chambered = null
 
