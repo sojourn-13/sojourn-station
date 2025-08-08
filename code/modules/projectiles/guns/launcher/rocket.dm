@@ -64,6 +64,7 @@
 	max_rockets = 1
 	var/fired = 0
 	var/disposable = 1
+	twohanded = TRUE
 
 	// Start with safety on (folded)
 	safety = 1
