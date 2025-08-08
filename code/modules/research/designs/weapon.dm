@@ -161,6 +161,12 @@
 	build_path = /obj/item/gun/projectile/shotgun/pump/sabul
 	materials = list(MATERIAL_PLASTEEL = 15, MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 5)
 
+/datum/design/research/item/weapon/sable
+	name = "SI-BS \"SABLE\" utility platform"
+	desc = "A SI-BS pattern Specialised Advanced Ballistic Rocket Engagement (SABRE) utility platform. This advanced rocket launcher features enhanced targeting capabilities and devastating firepower."
+	build_path = /obj/item/gun/launcher/rocket/sable
+	materials = list(MATERIAL_PLASTEEL = 20, MATERIAL_STEEL = 15, MATERIAL_PLASTIC = 8, MATERIAL_PLASMA = 3)
+
 /datum/design/research/item/weapon/spear
 	name = "SI-BS \"SPEAR\" recoilless rifle"
 	desc = "A Blackshield pattern Single-shot Portable/Expendable Anti-tank Rocket (SPEAR) recoilless rifle. This disposable launcher must be unfolded before use. Once fired, it is no longer usable."

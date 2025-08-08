@@ -55,6 +55,43 @@
 	..(target, target_zone, x_offset, y_offset, angle_offset)
 
 /obj/item/projectile/bullet/rocket/spear/on_impact(atom/target)
+	// Severely damages mechs in one hit
+	if(istype(target, /obj/mecha))
+		var/obj/mecha/M = target
+		M.take_damage(300)
+		visible_message(SPAN_DANGER("[src] severely damages [target]!"))
+
+	if(ismob(target))
+		var/mob/M = target
+		// Gib simple mobs with less than 1000 health
+		if(istype(M, /mob/living/simple))
+			var/mob/living/simple/SA = M
+			if(SA.maxHealth < 1000)
+				SA.gib()
+				visible_message(SPAN_DANGER("[src] completely destroys [target]!"))
+			else
+				// Deal high damage to strong simple mobs
+				SA.adjustBruteLoss(300)
+		// Gib superior mobs (spiders, roaches, etc.) with less than 1000 health too
+		else if(istype(M, /mob/living/carbon/superior))
+			var/mob/living/carbon/superior/SUP = M
+			if(SUP.maxHealth < 1000)
+				SUP.gib()
+				visible_message(SPAN_DANGER("[src] completely destroys [target]!"))
+			else
+				// Deal high damage to strong superior mobs
+				SUP.adjustBruteLoss(300)
+		// For humans and other complex mobs, deal normal projectile damage
+		else if(istype(M, /mob/living/carbon/human))
+			var/mob/living/carbon/human/H = M
+			H.adjustBruteLoss(80)
+			H.adjustFireLoss(40)
+
+		else if(istype(M, /mob/living))
+			var/mob/living/L = M
+			L.adjustBruteLoss(150)
+			L.adjustFireLoss(75)
+
 	if (!testing)
 		explosion(loc, 1, 2, 3, 5)
 		set_light(0)

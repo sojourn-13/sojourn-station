@@ -7,7 +7,7 @@
 	normal_step_energy_drain = 3
 	step_energy_drain = 3
 	dir_in = 1 //Facing North.
-	health = 1200
+	health = 1400
 	deflect_chance = 20
 	damage_absorption = list("brute"=0.5,"fire"=1.1,"bullet"=0.65,"energy"=0.9,"bomb"=1)
 	armor_level = MECHA_ARMOR_HEAVY
