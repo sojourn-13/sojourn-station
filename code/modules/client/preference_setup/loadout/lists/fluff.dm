@@ -241,3 +241,4 @@
 	ckey_whitelist = list("floofster")
 	display_name = "Outsider's Cloak"
 	path = /obj/item/clothing/accessory/cape/outsider
+	cost = 0

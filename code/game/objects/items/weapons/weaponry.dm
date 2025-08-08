@@ -102,6 +102,11 @@
 		countdown--
 		return
 
+/obj/effect/energy_net/Move(NewLoc, Dir = 0, step_x = 0, step_y = 0, var/glide_size_override = 0)
+	. = ..()
+	if(affecting && affecting.buckled == src)
+		affecting.forceMove(loc, glide_size_override=glide_size_override)
+
 /obj/effect/energy_net/bullet_act(var/obj/item/projectile/Proj)
 	if (!(Proj.testing))
 		health -= Proj.get_structure_damage()
