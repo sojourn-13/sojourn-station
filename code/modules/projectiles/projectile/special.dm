@@ -35,15 +35,15 @@
 
 /obj/item/projectile/bullet/rocket
 	name = "high explosive rocket"
-	icon_state = "rocket_e"
+	icon_state = "rocket"
 	damage_types = list(BRUTE = 70)
 	armor_divisor = 10
 	check_armor = ARMOR_BULLET
 	recoil = 75
 
 /obj/item/projectile/bullet/rocket/spear
-	name = "SPEAR-7 anti-armor rocket"
-	icon_state = "rocket_e"
+	name = "SPEAR anti-armor rocket"
+	icon_state = "rocket_shrapnel"
 	damage_types = list(BRUTE = 150)
 	armor_divisor = 15
 	check_armor = ARMOR_BULLET
