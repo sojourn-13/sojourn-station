@@ -156,6 +156,25 @@
 	projectile.launch(target, target_zone, 0, 0, 0, null, user)
 	return 1
 
+/obj/item/gun/launcher/rocket/spear/examine(mob/user)
+	if(!..(user, 2))
+		return
+
+	if(fired)
+		to_chat(user, SPAN_WARNING("This launcher has been fired and is now useless."))
+	else if(safety)
+		to_chat(user, SPAN_NOTICE("The launcher is currently folded. Use the safety toggle to unfold it for firing."))
+	else
+		to_chat(user, SPAN_NOTICE("The launcher is unfolded and ready to fire."))
+		to_chat(user, SPAN_NOTICE("[rockets.len] / [max_rockets] rockets loaded."))
+
+/obj/item/gun/launcher/rocket/spear/attackby(obj/item/I as obj, mob/user as mob)
+	if(fired)
+		to_chat(user, SPAN_WARNING("\The [src] has already been fired and cannot be reloaded."))
+		return
+
+	..()
+
 /obj/item/gun/launcher/rocket/sable
 	name = "SI-BS \"SABLE\" utility platform"
 	desc = "A SI-BS pattern Specialised Advanced Ballistic Rocket Engagement (SABRE) utility platform. \
@@ -192,24 +211,6 @@
 	projectile.launch(target, target_zone, 0, 0, 0, null, user)
 	return 1
 
-/obj/item/gun/launcher/rocket/spear/examine(mob/user)
-	if(!..(user, 2))
-		return
-
-	if(fired)
-		to_chat(user, SPAN_WARNING("This launcher has been fired and is now useless."))
-	else if(safety)
-		to_chat(user, SPAN_NOTICE("The launcher is currently folded. Use the safety toggle to unfold it for firing."))
-	else
-		to_chat(user, SPAN_NOTICE("The launcher is unfolded and ready to fire."))
-		to_chat(user, SPAN_NOTICE("[rockets.len] / [max_rockets] rockets loaded."))
-
-/obj/item/gun/launcher/rocket/spear/attackby(obj/item/I as obj, mob/user as mob)
-	if(fired)
-		to_chat(user, SPAN_WARNING("\The [src] has already been fired and cannot be reloaded."))
-		return
-
-	..()
 
 /obj/item/gun/projectile/shotgun/pump/sabul
 	name = "SI-BS \"SABUL\" utility platform"
