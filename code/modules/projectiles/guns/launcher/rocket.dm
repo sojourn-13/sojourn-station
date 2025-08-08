@@ -194,8 +194,6 @@
 	if(istype(target, /obj/mecha))
 		var/obj/mecha/M = target
 		M.take_damage(M.health + 1000) // Ensure destruction regardless of health
-		if(M.explode)
-			M.explode()
 		return
 
 	if(ismob(target))
