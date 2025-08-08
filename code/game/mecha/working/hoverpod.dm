@@ -84,7 +84,7 @@
 /obj/mecha/working/hoverpod/combatpod
 	desc = "An ancient, run-down combat spacecraft." // Ideally would have a seperate icon.
 	name = "Combat Hoverpod"
-	health = 200
+	health = 250
 	internal_damage_threshold = 35
 	cargo_capacity = 2
 	max_equip = 2

@@ -124,11 +124,18 @@
 		to_chat(user, SPAN_WARNING("\The [src] is empty!"))
 		return
 
+	// Count rockets before firing
+	var/rockets_before = rockets.len
+
 	// Call parent Fire method to actually fire the weapon
 	var/result = ..()
 
-	// Only mark as spent if the firing was successful
-	if(result)
+	// Check if a rocket was actually consumed (fired)
+	var/rockets_after = rockets.len
+	var/rocket_consumed = (rockets_before > rockets_after)
+
+	// Only mark as spent if a rocket was actually fired
+	if(rocket_consumed)
 		// After successful firing, mark as fired and disable
 		fired = 1
 		name = "spent SI-BS \"SPEAR\" recoilless rifle"
@@ -140,6 +147,8 @@
 		rockets.Cut()
 		safety = 1
 		restrict_safety = 1
+
+	return result
 
 /obj/item/gun/launcher/rocket/spear/process_projectile(obj/item/projectile/projectile, mob/user, atom/target, var/target_zone, var/params=null, var/pointblank=0, var/reflex=0)
 	// Use ballistic launch instead of throwing for visible rocket travel
@@ -180,46 +189,9 @@
 /obj/item/gun/launcher/rocket/sable/process_projectile(obj/item/projectile/projectile, mob/user, atom/target, var/target_zone, var/params=null, var/pointblank=0, var/reflex=0)
 	// Use ballistic launch instead of throwing for visible rocket travel
 	projectile.loc = get_turf(user)
-
-	// Add gibbing capability to simple mobs
-	if(istype(projectile, /obj/item/projectile))
-		projectile.damage_types = list(BRUTE = 80, BURN = 40)
-
 	projectile.launch(target, target_zone, 0, 0, 0, null, user)
 	return 1
 
-// Special on_hit proc for SABLE projectiles
-/obj/item/projectile/proc/sable_on_hit(atom/target, blocked = 0)
-	// Destroy mechs in one hit
-	if(istype(target, /obj/mecha))
-		var/obj/mecha/M = target
-		M.take_damage(300) // Ensure destruction regardless of health
-		return
-
-	if(ismob(target))
-		var/mob/M = target
-		// Gib simple mobs with less than 1000 health
-		if(istype(M, /mob/living/simple))
-			var/mob/living/simple/SA = M
-			if(SA.maxHealth < 1000)
-				SA.gib()
-				return
-			else
-				// Deal normal projectile damage to high-health simple mobs
-				var/brute_damage = damage_types[BRUTE] || 250
-				var/burn_damage = damage_types[BURN] || 100
-				SA.adjustBruteLoss(brute_damage)
-				SA.adjustFireLoss(burn_damage)
-		// For humans and other complex mobs, deal normal projectile damage
-		else if(istype(M, /mob/living))
-			var/mob/living/L = M
-			var/brute_damage = damage_types[BRUTE] || 80
-			var/burn_damage = damage_types[BURN] || 40
-			L.adjustBruteLoss(brute_damage)
-			L.adjustFireLoss(burn_damage)
-
-	// Call original explosion/damage effects if available
-	return
 /obj/item/gun/launcher/rocket/spear/examine(mob/user)
 	if(!..(user, 2))
 		return
@@ -354,6 +326,10 @@
 	if(safety)
 		to_chat(user, SPAN_WARNING("\The [src] safety is on! Toggle it off to fire."))
 		return
+
+	// Play fire sound before firing
+	if(fire_sound)
+		playsound(src, fire_sound, 70, 1)
 
 	return ..()
 
