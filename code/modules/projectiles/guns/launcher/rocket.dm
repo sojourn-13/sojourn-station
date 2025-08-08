@@ -77,7 +77,10 @@
 	update_icon()
 
 /obj/item/gun/launcher/rocket/spear/update_icon()
-	if(safety)
+	if(fired)
+		icon_state = "spear_spent"
+		item_state = "spear_spent"
+	else if(safety)
 		icon_state = "spear_folded"
 		item_state = "spear_folded"
 	else
@@ -87,6 +90,8 @@
 /obj/item/gun/launcher/rocket/spear/toggle_safety(mob/living/user)
 	if(fired)
 		to_chat(user, SPAN_WARNING("\The [src] has already been fired and cannot be unfolded again."))
+		icon_state = "spear_spent"
+		item_state = "spear_spent"
 		return
 
 	safety = !safety
@@ -108,6 +113,8 @@
 		return
 	if(fired)
 		to_chat(user, SPAN_WARNING("\The [src] has already been fired and is now useless."))
+		icon_state = "spear_spent"
+		item_state = "spear_spent"
 		return
 
 	// Call parent Fire method to actually fire the weapon
