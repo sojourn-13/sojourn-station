@@ -70,7 +70,7 @@
 
 /obj/item/projectile/bullet/rocket/shrapnel
 	name = "shrapnel rocket"
-	icon_state = "rocket"
+	icon_state = "rocket_shrapnel"
 	damage_types = list(BRUTE = 45)
 	armor_divisor = 5
 	check_armor = ARMOR_BULLET
@@ -88,7 +88,7 @@
 
 /obj/item/projectile/bullet/rocket/heat
 	name = "HEAT rocket"
-	icon_state = "rocket"
+	icon_state = "rocket_heat"
 	damage_types = list(BRUTE = 85)
 	armor_divisor = 20
 	check_armor = ARMOR_BULLET

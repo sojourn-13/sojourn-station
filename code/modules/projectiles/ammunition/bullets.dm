@@ -933,10 +933,10 @@
 	name = "xenofauna energy net shell"
 	desc = "A casing containing an autodeploying net for capturing targets. Kind of looks like a flash light."
 	icon_state = "net"
-	projectile_type = /obj/item/projectile/bullet/grenade/net
+	projectile_type = /obj/item/projectile/bullet/grenade/energy_net
 	caliber = CAL_UTILITY
 	maxamount = 3
-	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 3)
+	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 3, MATERIAL_GOLD = 2, MATERIAL_SILVER = 2)
 
 //Cross Bolt ammo
 /obj/item/ammo_casing/crossbow_bolts
