@@ -1688,7 +1688,6 @@
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/outside/one_star/fo_internal)
 "nW" = (
-/obj/item/ammo_casing/rocket/emp,
 /obj/item/trash/mre/os,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
