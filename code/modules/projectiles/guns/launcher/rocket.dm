@@ -175,43 +175,6 @@
 
 	..()
 
-/obj/item/gun/launcher/rocket/sable
-	name = "SI-BS \"SABLE\" utility platform"
-	desc = "A SI-BS pattern Specialised Advanced Ballistic Rocket Engagement (SABRE) utility platform. \
-	This advanced rocket launcher features a distinctive rocket launch sound and enhanced targeting capabilities."
-	icon = 'icons/obj/guns/projectile/sable.dmi'
-	icon_state = "sable_closed"
-	item_state = "sable_closed"
-	w_class = ITEM_SIZE_NORMAL
-	slot_flags = SLOT_BACK|SLOT_BELT
-	serial_type = "SI-BS"
-	force = WEAPON_FORCE_NORMAL
-	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_STEEL = 15)
-	price_tag = 1500
-	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 4)
-
-	// Enhanced rocket launcher with special launch sound
-	fire_sound = 'sound/mecha/weapons/rocketlauncher.ogg'
-	max_rockets = 2
-	fire_delay = 15
-	slowdown_hold = 0.6
-	init_recoil = HANDGUN_RECOIL(3)
-	twohanded = TRUE
-
-/obj/item/gun/launcher/rocket/sable/Fire(atom/target, mob/living/user, params, pointblank=0, reflex=0)
-	// Play the rocket launch sound
-	if(fire_sound)
-		playsound(src, fire_sound, 70, 1)
-
-	return ..()
-
-/obj/item/gun/launcher/rocket/sable/process_projectile(obj/item/projectile/projectile, mob/user, atom/target, var/target_zone, var/params=null, var/pointblank=0, var/reflex=0)
-	// Use ballistic launch instead of throwing for visible rocket travel
-	projectile.loc = get_turf(user)
-	projectile.launch(target, target_zone, 0, 0, 0, null, user)
-	return 1
-
-
 /obj/item/gun/projectile/shotgun/pump/sabul
 	name = "SI-BS \"SABUL\" utility platform"
 	desc = "A SI-BS pattern Specialised Ballistic Utility Launcher (SABUL) utility platform. \

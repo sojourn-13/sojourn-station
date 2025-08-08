@@ -189,7 +189,6 @@
 							/datum/design/research/item/mechfab/modules/punch_helper,
 							/datum/design/research/item/mechfab/modules/momentum_speed_adder,
 							/datum/design/research/item/weapon/sabul,
-							/datum/design/research/item/weapon/sable,
 							/datum/design/research/item/weapon/spear,
 							/datum/design/research/item/ammo/flare_shell,
 							/datum/design/research/item/ammo/flare_shell/blue,
