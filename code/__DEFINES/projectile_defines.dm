@@ -14,6 +14,8 @@
 #define CAL_DART "chemical dart"
 #define CAL_SCI "laser casings"
 #define CAL_GRENADE "grenade"
+#define CAL_UTILITY "40mm utility shell"
+#define CAL_MINIROCKET "40mm mini-rocket"
 #define CAL_FLARE "flare shell"
 #define CAL_CROSSBOW "bolt"
 #define CAL_RXBOW "flashforged bolt"

@@ -368,13 +368,11 @@
 /obj/item/ammo_casing/flare
 	name = "flare shell"
 	desc = "A chemical flare shell designed to produce a distress signal or illuminate an area."
-	caliber = CAL_FLARE
+	caliber = CAL_GRENADE
 	icon_state = "f-shell"
-	spent_icon = "f-shell-spent"
 	projectile_type = /obj/item/projectile/bullet/flare
 	matter = list(MATERIAL_PLASTIC = 1)
 	matter_reagents = list("phosphorus" = 3)
-	maxamount = 3
 
 /obj/item/ammo_casing/flare/prespawn
 	amount = 3
@@ -766,11 +764,20 @@
 	icon_state = "s-shell_f"
 	spent_icon = "s-shell_f-spent"
 	shell_color = "f"
+	caliber = CAL_UTILITY
 	projectile_type = /obj/item/projectile/energy/flash/flare
 	maxamount = 5
 
 /obj/item/ammo_casing/shotgun/illumination/prespawned
 	amount = 5
+
+/obj/item/ammo_casing/grenade/illumination
+	name = "40mm flash shell"
+	desc = "A chemical shell used to signal distress or provide illumination."
+	icon_state = "flare"
+	spent_icon = "flare"
+	projectile_type = /obj/item/projectile/energy/flash/flare
+	maxamount = 5
 
 //Misc
 /obj/item/ammo_casing/rocket
@@ -782,7 +789,7 @@
 	maxamount = 1
 	reload_delay = 15
 	is_caseless = TRUE
-	w_class = ITEM_SIZE_NORMAL
+	w_class = ITEM_SIZE_BULKY
 
 /obj/item/ammo_casing/rocket/scrap
 	name = "scrap rocket"
@@ -791,13 +798,31 @@
 	projectile_type = /obj/item/projectile/bullet/rocket/scrap
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASMA = 2)
 
+/obj/item/ammo_casing/rocket/disposable
+	name = "SPEAR-7 disposable rocket"
+	desc = "An 85mm warhead designed for the SPEAR disposable rocket launcher. Has tubular shape."
+	icon_state = "rocketshell_e"
+	projectile_type = /obj/item/projectile/bullet/rocket
+	caliber = CAL_ROCKET
+	maxamount = 1
+	reload_delay = 15
+	is_caseless = TRUE
+	w_class = ITEM_SIZE_BULKY
+
+/obj/item/ammo_casing/rocket/sabul
+	name = "40mm mini-rocket"
+	desc = "An 40mm mini-rocket designed for the SABL utility launcher. Has tubular shape."
+	icon_state = "rocketshell_u"
+	projectile_type = /obj/item/projectile/bullet/rocket/sabul
+	caliber = CAL_MINIROCKET
+	maxamount = 1
+	reload_delay = 15
+	is_caseless = TRUE
+	w_class = ITEM_SIZE_NORMAL
+
 /obj/item/ammo_casing/rocket/scrap/prespawned
 	amount = 1
 
-/obj/item/ammo_casing/rocket/emp
-	name = "PG-7EMP grenade"
-	desc = "A 40mm EMP/Flash warhead designed for the RPG-7 launcher. Has a tubular shape."
-	projectile_type = /obj/item/projectile/bullet/rocket/emp
 /*
 /obj/item/ammo_casing/a75
 	name = "microjet casing"

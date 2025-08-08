@@ -185,7 +185,7 @@
 	icon_state = "serbcrate_deferred_black"
 	desc = "A crate containing one \"RPG-7\" launcher, and twelve 40mm PG-7VL warheads."
 	initial_contents = list(/obj/item/ammo_casing/rocket = 9,
-	/obj/item/ammo_casing/rocket/emp = 3,
+	/obj/item/ammo_casing/rocket = 3,
 	/obj/item/storage/pouch/tubular = 1,
 	/obj/item/gun/projectile/rpg = 1,
 	/obj/item/storage/pouch/tubular = 1)
