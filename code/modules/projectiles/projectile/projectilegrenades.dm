@@ -120,6 +120,43 @@
 	qdel(src)
 	return
 
+/obj/item/projectile/bullet/grenade/net
+	name = "net shell"
+	recoil = 5
+
+/obj/item/projectile/bullet/grenade/net/grenade_effect(target)
+	if (!testing)
+		var/turf/T = get_turf(target)
+		if(T && isliving(target))
+			var/mob/living/M = target
+			if(!locate(/obj/effect/energy_net) in T)
+				var/obj/effect/energy_net/safari/net = new(T)
+				net.layer = M.layer + 1
+				net.buckle_mob(M)
+				net.affecting = M
+				T.visible_message(SPAN_WARNING("[M] was caught in an energy net!"))
+		else
+			// If it doesn't hit a living target, just spawn the net item
+			new /obj/item/energy_net/safari(T)
+
+/obj/item/projectile/bullet/grenade/energy_net
+	name = "energy net grenade"
+	desc = "A grenade that deploys an energy net."
+	icon_state = "grenade"
+	recoil = 3
+
+/obj/item/projectile/bullet/grenade/energy_net/on_impact(atom/target)
+	if (!testing && isliving(target))
+		var/mob/living/M = target
+		var/turf/T = get_turf(M)
+		if(T && !locate(/obj/effect/energy_net) in T)
+			var/obj/effect/energy_net/safari/net = new(T)
+			net.layer = M.layer + 1
+			net.buckle_mob(M)
+			net.affecting = M
+			T.visible_message(SPAN_WARNING("[M] was caught in an energy net!"))
+	return TRUE
+
 /obj/item/proc/flash(var/turf/T, var/mob/living/carbon/M, var/explosion_text = "BANG") //Bang made into an item proc so lot's of stuff can use it wtihout copy - paste
 	to_chat(M, SPAN_DANGER(explosion_text))								// Called during the loop that bangs people in lockers/containers and when banging
 	playsound(src.loc, 'sound/effects/bang.ogg', 50, 1, 5)		// people in normal view.  Could theroetically be called during other explosions.

@@ -65,6 +65,7 @@
 	var/fired = 0
 	var/disposable = 1
 	twohanded = TRUE
+	max_upgrades = 0
 
 	// Start with safety on (folded)
 	safety = 1
@@ -133,7 +134,14 @@
 	safety = 1
 	restrict_safety = 1
 
+/obj/item/gun/launcher/rocket/spear/process_projectile(obj/item/projectile/projectile, mob/user, atom/target, var/target_zone, var/params=null, var/pointblank=0, var/reflex=0)
+	// Use ballistic launch instead of throwing for visible rocket travel
+	projectile.loc = get_turf(user)
+	projectile.launch(target, target_zone, 0, 0, 0, null, user)
+	return 1
 
+/obj/item/gun/launcher/rocket/sable
+	name = "SI-BS \"SABLE\" utility platform"
 /obj/item/gun/launcher/rocket/spear/examine(mob/user)
 	if(!..(user, 2))
 		return
@@ -182,7 +190,7 @@
 	slowdown_hold = 0.5
 	init_recoil = HANDGUN_RECOIL(2)
 	twohanded = TRUE
-	serial_type = "SI"
+	serial_type = "SI-BS"
 
 	var/action_open = 0  // Track if the action is open or closed
 
@@ -339,9 +347,31 @@
 			if (!do_after(user, C.reload_delay, user))
 				return
 
-		user.remove_from_mob(C)
-		C.forceMove(src)
-		loaded += C
+		if(C.amount > 1)
+			C.amount -= 1
+			var/type = C.type
+			var/obj/item/ammo_casing/inserted_casing = new type
+			inserted_casing.desc = C.desc
+			inserted_casing.caliber = C.caliber
+			inserted_casing.projectile_type = C.projectile_type
+			inserted_casing.icon_state = C.icon_state
+			inserted_casing.spent_icon = C.spent_icon
+			inserted_casing.is_caseless = C.is_caseless
+			inserted_casing.shell_color = C.shell_color
+			inserted_casing.maxamount = C.maxamount
+			inserted_casing.amount = 1 //Were only taking 1 shell, prevents ammo douping
+			//This here makes it so if were loading in pre-shot shells it doesnt magically give it a BB
+			if(ispath(inserted_casing.projectile_type) && C.BB)
+				inserted_casing.BB = new inserted_casing.projectile_type(inserted_casing)
+			else
+				inserted_casing.BB = null
+			C.update_icon()
+			inserted_casing.update_icon()
+			loaded += inserted_casing
+		else
+			user.remove_from_mob(C)
+			C.forceMove(src)
+			loaded += C
 		user.visible_message("[user] inserts \a [C] into [src].", SPAN_NOTICE("You insert \a [C] into [src]."))
 		if(bulletinsert_sound)
 			playsound(src.loc, bulletinsert_sound, 60, 1)
