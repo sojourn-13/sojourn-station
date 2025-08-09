@@ -179,9 +179,41 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 /obj/item/storage/hcases/ammo/ih
 	icon_state = "ammo_case_ih"
 	desc = "An ammo can for Marshals. Can hold normal ammo magazines, packets, bullets, gun parts, a assortment of grenades and some gear. Alt+click to open and close."
+	can_hold = list(
+		/obj/item/ammo_magazine,
+		/obj/item/ammo_casing,
+		/obj/item/ammo_magazine/ammobox,
+		/obj/item/ammo_kit,
+		/obj/item/gun/projectile/boltgun/flare_gun,
+		/obj/item/device/radio,
+		/obj/item/tool/knife,
+		/obj/item/cell/small,
+		/obj/item/cell/medium,
+		/obj/item/device/flash,
+		/obj/item/grenade,
+		/obj/item/reagent_containers/spray/pepper,
+		/obj/item/handcuffs,
+		/obj/item/part/gun
+		)
 
 /obj/item/storage/hcases/ammo/ih/wo
 	exspand_when_spawned = FALSE //No exspanding cheats
+	can_hold = list(
+		/obj/item/ammo_magazine,
+		/obj/item/ammo_casing,
+		/obj/item/ammo_magazine/ammobox,
+		/obj/item/ammo_kit,
+		/obj/item/gun/projectile/boltgun/flare_gun,
+		/obj/item/device/radio,
+		/obj/item/tool/knife,
+		/obj/item/cell/small,
+		/obj/item/cell/medium,
+		/obj/item/device/flash,
+		/obj/item/grenade,
+		/obj/item/reagent_containers/spray/pepper,
+		/obj/item/handcuffs,
+		/obj/item/part/gun
+		)
 
 /obj/item/storage/hcases/ammo/ih/wo/populate_contents()
 	new /obj/item/handcuffs/advanced(src)
@@ -193,6 +225,22 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 
 /obj/item/storage/hcases/ammo/ih/spec_officer
 	exspand_when_spawned = FALSE //No exspanding cheats
+	can_hold = list(
+		/obj/item/ammo_magazine,
+		/obj/item/ammo_casing,
+		/obj/item/ammo_magazine/ammobox,
+		/obj/item/ammo_kit,
+		/obj/item/gun/projectile/boltgun/flare_gun,
+		/obj/item/device/radio,
+		/obj/item/tool/knife,
+		/obj/item/cell/small,
+		/obj/item/cell/medium,
+		/obj/item/device/flash,
+		/obj/item/grenade,
+		/obj/item/reagent_containers/spray/pepper,
+		/obj/item/handcuffs,
+		/obj/item/part/gun
+		)
 
 /obj/item/storage/hcases/ammo/ih/spec_officer/populate_contents()
 	new /obj/item/handcuffs/advanced(src)
@@ -204,6 +252,22 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 
 /obj/item/storage/hcases/ammo/ih/ranger_officer
 	exspand_when_spawned = FALSE //No exspanding cheats
+	can_hold = list(
+		/obj/item/ammo_magazine,
+		/obj/item/ammo_casing,
+		/obj/item/ammo_magazine/ammobox,
+		/obj/item/ammo_kit,
+		/obj/item/gun/projectile/boltgun/flare_gun,
+		/obj/item/device/radio,
+		/obj/item/tool/knife,
+		/obj/item/cell/small,
+		/obj/item/cell/medium,
+		/obj/item/device/flash,
+		/obj/item/grenade,
+		/obj/item/reagent_containers/spray/pepper,
+		/obj/item/handcuffs,
+		/obj/item/part/gun
+		)
 
 /obj/item/storage/hcases/ammo/ih/ranger_officer/populate_contents()
 	new /obj/item/handcuffs/advanced(src)
@@ -215,6 +279,22 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 
 /obj/item/storage/hcases/ammo/ih/marshal_officer
 	exspand_when_spawned = FALSE //No exspanding cheats
+	can_hold = list(
+		/obj/item/ammo_magazine,
+		/obj/item/ammo_casing,
+		/obj/item/ammo_magazine/ammobox,
+		/obj/item/ammo_kit,
+		/obj/item/gun/projectile/boltgun/flare_gun,
+		/obj/item/device/radio,
+		/obj/item/tool/knife,
+		/obj/item/cell/small,
+		/obj/item/cell/medium,
+		/obj/item/device/flash,
+		/obj/item/grenade,
+		/obj/item/reagent_containers/spray/pepper,
+		/obj/item/handcuffs,
+		/obj/item/part/gun
+		)
 
 /obj/item/storage/hcases/ammo/ih/marshal_officer/populate_contents()
 	new /obj/item/handcuffs/advanced(src)
@@ -225,14 +305,60 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 /obj/item/storage/hcases/ammo/serb
 	icon_state = "ammo_case_serb"
 	desc = "A generic ammo holding can. Can hold normal ammo magazines, packets, bullets, gun parts, a assortment of grenades and some gear. Alt+click to open and close."
+	can_hold = list(
+		/obj/item/ammo_magazine,
+		/obj/item/ammo_casing,
+		/obj/item/ammo_magazine/ammobox,
+		/obj/item/ammo_kit,
+		/obj/item/gun/projectile/boltgun/flare_gun,
+		/obj/item/device/radio,
+		/obj/item/tool/knife,
+		/obj/item/cell/small,
+		/obj/item/cell/medium,
+		/obj/item/device/flash,
+		/obj/item/grenade,
+		/obj/item/reagent_containers/spray/pepper,
+		/obj/item/handcuffs,
+		/obj/item/part/gun
+		)
 
 /obj/item/storage/hcases/ammo/blackmarket
 	icon_state = "ammo_case_blackmarket"
 	desc = "A shady looking ammo can. Can hold normal ammo magazines, packets, bullets, gun parts, a assortment of grenades and some gear. Alt+click to open and close."
-
+	can_hold = list(
+		/obj/item/ammo_magazine,
+		/obj/item/ammo_casing,
+		/obj/item/ammo_magazine/ammobox,
+		/obj/item/ammo_kit,
+		/obj/item/gun/projectile/boltgun/flare_gun,
+		/obj/item/device/radio,
+		/obj/item/tool/knife,
+		/obj/item/cell/small,
+		/obj/item/cell/medium,
+		/obj/item/device/flash,
+		/obj/item/grenade,
+		/obj/item/reagent_containers/spray/pepper,
+		/obj/item/handcuffs,
+		/obj/item/part/gun
+		)
 /obj/item/storage/hcases/ammo/blackmarket/co
 	exspand_when_spawned = FALSE //No exspanding cheats
-
+	can_hold = list(
+		/obj/item/ammo_magazine,
+		/obj/item/ammo_casing,
+		/obj/item/ammo_magazine/ammobox,
+		/obj/item/ammo_kit,
+		/obj/item/gun/projectile/boltgun/flare_gun,
+		/obj/item/device/radio,
+		/obj/item/tool/knife,
+		/obj/item/cell/small,
+		/obj/item/cell/medium,
+		/obj/item/device/flash,
+		/obj/item/grenade,
+		/obj/item/reagent_containers/spray/pepper,
+		/obj/item/handcuffs,
+		/obj/item/part/gun
+		)
 /obj/item/storage/hcases/ammo/blackmarket/co/populate_contents()
 	new /obj/item/handcuffs/advanced(src)
 	new /obj/item/voucher/blackshield/COsecondary(src) // They don't spawn with a Lamia anymore, but come with their own secondary voucher.
@@ -244,7 +370,22 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 
 /obj/item/storage/hcases/ammo/blackmarket/serg
 	exspand_when_spawned = FALSE //No exspanding cheats
-
+	can_hold = list(
+		/obj/item/ammo_magazine,
+		/obj/item/ammo_casing,
+		/obj/item/ammo_magazine/ammobox,
+		/obj/item/ammo_kit,
+		/obj/item/gun/projectile/boltgun/flare_gun,
+		/obj/item/device/radio,
+		/obj/item/tool/knife,
+		/obj/item/cell/small,
+		/obj/item/cell/medium,
+		/obj/item/device/flash,
+		/obj/item/grenade,
+		/obj/item/reagent_containers/spray/pepper,
+		/obj/item/handcuffs,
+		/obj/item/part/gun
+		)
 /obj/item/storage/hcases/ammo/blackmarket/serg/populate_contents()
 	new /obj/item/handcuffs/advanced(src)
 	new /obj/item/device/lighting/toggleable/flashlight/seclite(src)
@@ -255,7 +396,22 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 
 /obj/item/storage/hcases/ammo/blackmarket/medspec
 	exspand_when_spawned = FALSE //No exspanding cheats
-
+	can_hold = list(
+		/obj/item/ammo_magazine,
+		/obj/item/ammo_casing,
+		/obj/item/ammo_magazine/ammobox,
+		/obj/item/ammo_kit,
+		/obj/item/gun/projectile/boltgun/flare_gun,
+		/obj/item/device/radio,
+		/obj/item/tool/knife,
+		/obj/item/cell/small,
+		/obj/item/cell/medium,
+		/obj/item/device/flash,
+		/obj/item/grenade,
+		/obj/item/reagent_containers/spray/pepper,
+		/obj/item/handcuffs,
+		/obj/item/part/gun
+		)
 /obj/item/storage/hcases/ammo/blackmarket/medspec/populate_contents()
 	new /obj/item/handcuffs/advanced(src)
 	new /obj/item/device/lighting/toggleable/flashlight/seclite(src)
@@ -265,7 +421,22 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 
 /obj/item/storage/hcases/ammo/blackmarket/trooper
 	exspand_when_spawned = FALSE //No exspanding cheats
-
+	can_hold = list(
+		/obj/item/ammo_magazine,
+		/obj/item/ammo_casing,
+		/obj/item/ammo_magazine/ammobox,
+		/obj/item/ammo_kit,
+		/obj/item/gun/projectile/boltgun/flare_gun,
+		/obj/item/device/radio,
+		/obj/item/tool/knife,
+		/obj/item/cell/small,
+		/obj/item/cell/medium,
+		/obj/item/device/flash,
+		/obj/item/grenade,
+		/obj/item/reagent_containers/spray/pepper,
+		/obj/item/handcuffs,
+		/obj/item/part/gun
+		)
 /obj/item/storage/hcases/ammo/blackmarket/trooper/populate_contents()
 	new /obj/item/handcuffs/advanced(src)
 	new /obj/item/device/lighting/toggleable/flashlight/seclite(src)
@@ -276,15 +447,60 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 /obj/item/storage/hcases/ammo/excel
 	icon_state = "ammo_case_excel"
 	desc = "The peoples ammo can! Can hold normal ammo magazines, packets, bullets, gun parts, a assortment of grenades and some gear. Alt+click to open and close."
-
+	can_hold = list(
+		/obj/item/ammo_magazine,
+		/obj/item/ammo_casing,
+		/obj/item/ammo_magazine/ammobox,
+		/obj/item/ammo_kit,
+		/obj/item/gun/projectile/boltgun/flare_gun,
+		/obj/item/device/radio,
+		/obj/item/tool/knife,
+		/obj/item/cell/small,
+		/obj/item/cell/medium,
+		/obj/item/device/flash,
+		/obj/item/grenade,
+		/obj/item/reagent_containers/spray/pepper,
+		/obj/item/handcuffs,
+		/obj/item/part/gun
+		)
 /obj/item/storage/hcases/ammo/scrap
 	icon_state = "ammo_case_scrap"
 	desc = "A lacquer coated ammo can. Can hold normal ammo magazines, packets, bullets, gun parts, a assortment of grenades and some gear. Alt+click to open and close."
-
+	can_hold = list(
+		/obj/item/ammo_magazine,
+		/obj/item/ammo_casing,
+		/obj/item/ammo_magazine/ammobox,
+		/obj/item/ammo_kit,
+		/obj/item/gun/projectile/boltgun/flare_gun,
+		/obj/item/device/radio,
+		/obj/item/tool/knife,
+		/obj/item/cell/small,
+		/obj/item/cell/medium,
+		/obj/item/device/flash,
+		/obj/item/grenade,
+		/obj/item/reagent_containers/spray/pepper,
+		/obj/item/handcuffs,
+		/obj/item/part/gun
+		)
 /obj/item/storage/hcases/ammo/scrap/outsider
 	desc = "A harcase containing what little you could scavenge for your own survival. Can hold normal ammo magazines, packets, bullets, gun parts, a assortment of grenades and some gear. Alt+click to open and close."
 	exspand_when_spawned = FALSE //No exspanding cheats
-
+	can_hold = list(
+		/obj/item/ammo_magazine,
+		/obj/item/ammo_casing,
+		/obj/item/ammo_magazine/ammobox,
+		/obj/item/ammo_kit,
+		/obj/item/gun/projectile/boltgun/flare_gun,
+		/obj/item/device/radio,
+		/obj/item/tool/knife,
+		/obj/item/cell/small,
+		/obj/item/cell/medium,
+		/obj/item/device/flash,
+		/obj/item/grenade,
+		/obj/item/reagent_containers/spray/pepper,
+		/obj/item/handcuffs,
+		/obj/item/part/gun
+		)
 /obj/item/storage/hcases/ammo/scrap/outsider/populate_contents()
 	new /obj/random/gun_handmade/willspawn(src)
 	new /obj/item/device/lighting/toggleable/flashlight(src)
@@ -602,7 +818,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 		stamped = TRUE
 		var/list/options = list()
 		// Keeping this in case any other "sensible" option for a primary weapon for Lifeline Techs arrives, just add them as an option here.
-		options["Bullpip SMG with HV ammo"] = list(/obj/item/gun/projectile/automatic/c20r/sci/preloaded,/obj/item/gun_upgrade/muzzle/silencer,/obj/item/ammo_magazine/smg_35/hv,/obj/item/ammo_magazine/smg_35/hv)
+		options["SI \"MedTech\" .40 SMG with Rubber/HV ammo"] = list(/obj/item/gun/projectile/automatic/c20r/sci/med/preloaded,/obj/item/gun_upgrade/muzzle/silencer,/obj/item/ammo_magazine/smg_magnum_40/hv,/obj/item/ammo_magazine/smg_magnum_40/hv, /obj/item/ammo_magazine/smg_magnum_40/rubber, /obj/item/ammo_magazine/smg_magnum_40/rubber, /obj/item/ammo_magazine/smg_magnum_40/rubber, /obj/item/ammo_magazine/smg_magnum_40/rubber)
 		options["Soteria \"Sprocket\" laser carbine"] = list(/obj/item/gun/energy/cog/sprocket/preloaded,/obj/item/cell/medium/moebius/high)
 		options["SST \"Humility\" shotgun"] = list(/obj/item/gun/energy/sst/humility/preloaded,/obj/item/cell/medium/moebius/high)
 		var/choice = input(user,"Which gun will you take?") as null|anything in options
@@ -628,8 +844,9 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	if(!stamped)
 		stamped = TRUE
 		var/list/options = list()
-		options["SST \"Abnegate\" handgun"] = list(/obj/item/gun/energy/sst/preloaded)
-		options["\"Hera\" stun revolver"] = list(/obj/item/gun/energy/stunrevolver/sci/preloaded)
+		options["SI \"Malpractice\" handgun with Rubber/FMJ ammo"] = list(/obj/item/clothing/accessory/holster/leg, /obj/item/gun/projectile/makarov/moebius/preloaded,/obj/item/gun_upgrade/muzzle/silencer,/obj/item/ammo_magazine/highcap_pistol_35, /obj/item/ammo_magazine/highcap_pistol_35/rubber, /obj/item/ammo_magazine/highcap_pistol_35/rubber)
+		options["SST \"Abnegate\" handgun"] = list(/obj/item/clothing/accessory/holster/leg, /obj/item/gun/energy/sst/preloaded,)
+		options["SI-HG \"Hera\" stun revolver"] = list(/obj/item/clothing/accessory/holster/leg, /obj/item/gun/energy/stunrevolver/sci/preloaded)
 		var/choice = input(user,"Which gun will you take?") as null|anything in options
 		if(src && choice)
 			var/list/things_to_spawn = options[choice]

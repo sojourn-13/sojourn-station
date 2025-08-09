@@ -127,6 +127,7 @@
 	set_frequency(frequency)
 	if(buildstage == 2 && !master_is_operating())
 		elect_master()
+	mode = AALARM_MODE_SCRUBBING
 
 /obj/machinery/alarm/fire_act()
 	return
