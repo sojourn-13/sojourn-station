@@ -1,5 +1,5 @@
 /obj/item/gun/projectile/rpg
-	name = "RPG"
+	name = "RPG-7"
 	desc = "A simple, reloadable launcher with roots back to the beginings of anti-armor warfare. \
 			This particular variant is sligtly less devastating, however that's a small price to pay for negligible back-blast."
 	icon = 'icons/obj/guns/projectile/rocket.dmi'
