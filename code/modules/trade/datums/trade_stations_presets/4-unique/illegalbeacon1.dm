@@ -32,8 +32,10 @@
 			/obj/item/gun/projectile/automatic/omnirifle/solmarine = custom_good_amount_range(list(1, 1)),
 			/obj/item/gun/projectile/automatic/greasegun = custom_good_amount_range(list(2, 3)),
 			/obj/item/gun/projectile/automatic/omnirifle = custom_good_amount_range(list(1, 1)),
-			/obj/item/gun/launcher/rocket = custom_good_amount_range(list(1, 1)),
-			/obj/item/ammo_casing/rocket = custom_good_amount_range(list(2, 4))
+			/obj/item/gun/projectile/rpg = good_data(null, list(1, 1), 2500),
+			/obj/item/ammo_casing/rocket = good_data(null, list(2, 4), 1500),
+			/obj/item/ammo_casing/rocket/shrapnel = good_data(null, list(2, 4), 1500),
+			/obj/item/ammo_casing/rocket/heat = good_data(null, list(2, 4), 1500)
 		),
 		"Useful Stuff" = list(
 			// Autoinjectors defined in hypospray.dm
