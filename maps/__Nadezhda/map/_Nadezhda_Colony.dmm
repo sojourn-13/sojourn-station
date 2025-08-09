@@ -35905,6 +35905,19 @@
 	name = "murky water"
 	},
 /area/nadezhda/maintenance/undergroundfloor1west)
+"gHv" = (
+/obj/machinery/atmospherics/mains_pipe/simple/hidden{
+	dir = 4
+	},
+/obj/structure/railing{
+	icon_state = "reinforced_railing0";
+	name = "orange reinforced railing";
+	health = 140;
+	maxhealth = 140;
+	dir = 1
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/security/nuke_hallway)
 "gHw" = (
 /obj/structure/table/marble,
 /obj/machinery/recharger,
@@ -84341,17 +84354,26 @@
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/maingate)
 "pIT" = (
-/obj/machinery/atmospherics/mains_pipe/simple/hidden{
+/obj/machinery/atmospherics/pipe/simple/heat_exchanging{
 	dir = 4
+	},
+/obj/structure/cable/heavyduty{
+	icon_state = "4-8"
+	},
+/obj/structure/railing{
+	icon_state = "reinforced_railing0";
+	name = "orange reinforced railing";
+	health = 140;
+	maxhealth = 140
 	},
 /obj/structure/railing{
 	icon_state = "reinforced_railing0";
 	name = "orange reinforced railing";
 	health = 140;
 	maxhealth = 140;
-	dir = 1
+	dir = 4
 	},
-/turf/simulated/floor/plating/under,
+/turf/space,
 /area/nadezhda/security/nuke_hallway)
 "pJb" = (
 /obj/structure/table/reinforced,
@@ -86401,28 +86423,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/quartermaster/miningdock)
-"qaW" = (
-/obj/machinery/atmospherics/pipe/simple/heat_exchanging{
-	dir = 4
-	},
-/obj/structure/cable/heavyduty{
-	icon_state = "4-8"
-	},
-/obj/structure/railing{
-	icon_state = "reinforced_railing0";
-	name = "orange reinforced railing";
-	health = 140;
-	maxhealth = 140
-	},
-/obj/structure/railing{
-	icon_state = "reinforced_railing0";
-	name = "orange reinforced railing";
-	health = 140;
-	maxhealth = 140;
-	dir = 4
-	},
-/turf/space,
-/area/nadezhda/security/nuke_hallway)
 "qaZ" = (
 /obj/machinery/light/small,
 /obj/structure/barricade,
@@ -199546,7 +199546,7 @@ tad
 cNL
 cTS
 kTE
-pIT
+gHv
 cNL
 tad
 cZb
@@ -199748,7 +199748,7 @@ tad
 cNL
 cTS
 kTE
-pIT
+gHv
 cNL
 tad
 cZb
@@ -199950,7 +199950,7 @@ tad
 cNL
 cTS
 kTE
-pIT
+gHv
 cNL
 tad
 cZb
@@ -200152,7 +200152,7 @@ tad
 cNL
 cTS
 kTE
-pIT
+gHv
 cNL
 tad
 cZb
@@ -200556,7 +200556,7 @@ tad
 cNL
 cTS
 kTE
-pIT
+gHv
 cNL
 tad
 cZb
@@ -200758,7 +200758,7 @@ tad
 cNL
 cTS
 kTE
-pIT
+gHv
 cNL
 tad
 cZb
@@ -200960,7 +200960,7 @@ tad
 cNL
 cTS
 kTE
-pIT
+gHv
 cNL
 tad
 tad
@@ -201162,7 +201162,7 @@ tad
 cNL
 cTS
 kTE
-pIT
+gHv
 cNL
 tad
 tad
@@ -201364,7 +201364,7 @@ tad
 cNL
 axi
 kTE
-pIT
+gHv
 cNL
 tad
 tad
@@ -201566,7 +201566,7 @@ tad
 cNL
 cTS
 kTE
-pIT
+gHv
 cNL
 tad
 tad
@@ -201768,7 +201768,7 @@ tad
 cNL
 cTS
 kTE
-pIT
+gHv
 cNL
 tad
 tad
@@ -201970,7 +201970,7 @@ tad
 cNL
 cTS
 kTE
-pIT
+gHv
 cNL
 tad
 tad
@@ -202172,7 +202172,7 @@ tad
 cNL
 cTS
 kTE
-pIT
+gHv
 cNL
 tad
 tad
@@ -202576,7 +202576,7 @@ tad
 cNL
 cTS
 kTE
-pIT
+gHv
 cNL
 tad
 tad
@@ -202778,7 +202778,7 @@ tad
 cNL
 cTS
 kTE
-pIT
+gHv
 cNL
 tad
 tad
@@ -202980,7 +202980,7 @@ tad
 cNL
 cTS
 kTE
-pIT
+gHv
 cNL
 tad
 tad
@@ -203182,7 +203182,7 @@ tad
 cNL
 cTS
 kTE
-pIT
+gHv
 cNL
 tad
 tad
@@ -203382,7 +203382,7 @@ tad
 tad
 tad
 cNL
-qaW
+pIT
 kTE
 ilJ
 cNL
