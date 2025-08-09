@@ -16,6 +16,7 @@
 	name = "standard magazine (.35)"
 	desc = "a 10 round magazine marked for .35."
 	icon_state = "pistol"
+	ammo_color = ""
 	origin_tech = list(TECH_COMBAT = 2)
 	mag_type = MAGAZINE
 	mag_well = MAG_WELL_PISTOL
@@ -32,31 +33,37 @@
 /obj/item/ammo_magazine/pistol_35/practice
 	name = "standard magazine (.35 practice)"
 	icon_state = "pistol_p"
+	ammo_color = "-p"
 	ammo_type = /obj/item/ammo_casing/pistol_35/practice
 
 /obj/item/ammo_magazine/pistol_35/highvelocity
 	name = "standard magazine (.35 high-velocity)"
 	icon_state = "pistol_hv"
+	ammo_color = "-hv"
 	ammo_type = /obj/item/ammo_casing/pistol_35/hv
 
 /obj/item/ammo_magazine/pistol_35/rubber
 	name = "standard magazine (.35 rubber)"
 	icon_state = "pistol_r"
+	ammo_color = "-r"
 	ammo_type = /obj/item/ammo_casing/pistol_35/rubber
 
 /obj/item/ammo_magazine/pistol_35/rubber/pepperball
 	name = "standard magazine (.35 pepperball)"
 	icon_state = "pistol_pb"
+	ammo_color = "-pb"
 	ammo_type = /obj/item/ammo_casing/pistol_35/rubber/pepperball
 
 /obj/item/ammo_magazine/pistol_35/lethal
 	name = "standard magazine (.35 hollow-point)"
 	icon_state = "pistol_l"
+	ammo_color = "-l"
 	ammo_type = /obj/item/ammo_casing/pistol_35/lethal
 
 /obj/item/ammo_magazine/pistol_35/scrap
 	name = "old standard magazine (.35)"
 	icon_state = "pistol_s"
+	ammo_color = "-s"
 	ammo_type = /obj/item/ammo_casing/pistol_35/scrap
 
 /obj/item/ammo_magazine/pistol_35/scrap/empty
@@ -65,6 +72,8 @@
 /obj/item/ammo_magazine/pistol_35/laser
 	name = "standard magazine (.35 laser)"
 	icon_state = "pistol_lsr"
+	ammo_color = "-lsr"
+	mag_well = MAG_WELL_PISTOL
 	ammo_type = /obj/item/ammo_casing/pistol_35/laser
 
 /obj/item/ammo_magazine/pistol_35/laser/empty
@@ -125,6 +134,8 @@
 /obj/item/ammo_magazine/highcap_pistol_35/drum/laser
 	name = "standard drum magazine (.35 laser)"
 	icon_state = "ldrum_lsr"
+	ammo_color = "-lsr"
+	mag_well = MAG_WELL_DRUM
 	ammo_type = /obj/item/ammo_casing/pistol_35/laser
 
 /obj/item/ammo_magazine/highcap_pistol_35/drum/laser/empty
@@ -135,6 +146,7 @@
 	name = "highcap pistol magazine"
 	desc = "A 16 round magazine marked for .35."
 	icon_state = "hpistol"
+	ammo_color = ""
 	origin_tech = list(TECH_COMBAT = 2)
 	mag_type = MAGAZINE
 	mag_well = MAG_WELL_H_PISTOL
@@ -151,31 +163,38 @@
 /obj/item/ammo_magazine/highcap_pistol_35/practice
 	name = "highcap magazine (.35 practice)"
 	icon_state = "hpistol_p"
+	ammo_color = "-p"
 	ammo_type = /obj/item/ammo_casing/pistol_35/practice
 
 /obj/item/ammo_magazine/highcap_pistol_35/highvelocity
 	name = "highcap magazine (.35 high-velocity)"
 	icon_state = "hpistol_hv"
+	ammo_color = "-hv"
 	ammo_type = /obj/item/ammo_casing/pistol_35/hv
 
 /obj/item/ammo_magazine/highcap_pistol_35/rubber
 	name = "highcap magazine (.35 rubber)"
 	icon_state = "hpistol_r"
+	ammo_color = "-r"
 	ammo_type = /obj/item/ammo_casing/pistol_35/rubber
 
 /obj/item/ammo_magazine/highcap_pistol_35/rubber/pepperball
 	name = "highcap magazine (.35 pepperball)"
 	icon_state = "hpistol_pb"
+	ammo_color = "-pb"
 	ammo_type = /obj/item/ammo_casing/pistol_35/rubber/pepperball
 
 /obj/item/ammo_magazine/highcap_pistol_35/lethal
 	name = "highcap magazine (.35 hollow-point)"
 	icon_state = "hpistol_l"
+	ammo_color = "-l"
 	ammo_type = /obj/item/ammo_casing/pistol_35/lethal
 
 /obj/item/ammo_magazine/highcap_pistol_35/laser
 	name = "highcap magazine (.35 laser)"
 	icon_state = "hpistol_lsr"
+	ammo_color = "-lsr"
+	mag_well = MAG_WELL_H_PISTOL
 	ammo_type = /obj/item/ammo_casing/pistol_35/laser
 
 /obj/item/ammo_magazine/highcap_pistol_35/laser/empty
@@ -240,7 +259,8 @@
 /obj/item/ammo_magazine/smg_35/laser
 	name = "smg magazine (.35 laser)"
 	icon_state = "smg_lsr"
-	ammo_color = ""
+	ammo_color = "-lsr"
+	mag_well = MAG_WELL_SMG
 	ammo_type = /obj/item/ammo_casing/pistol_35/laser
 
 /obj/item/ammo_magazine/smg_35/laser/empty
@@ -252,6 +272,7 @@
 	name = "magnum pistol magazine"
 	desc = "A 10 round magazine marked for .40 Magnum."
 	icon_state = "magnum"
+	ammo_color = ""
 	mag_type = MAGAZINE
 	mag_well = MAG_WELL_PISTOL
 	ammo_type = /obj/item/ammo_casing/magnum_40
@@ -267,36 +288,44 @@
 /obj/item/ammo_magazine/magnum_40/practice
 	name = "magazine (.40 Magnum practice)"
 	icon_state = "magnum_p"
+	ammo_color = "-p"
 	ammo_type = /obj/item/ammo_casing/magnum_40/practice
 
 /obj/item/ammo_magazine/magnum_40/hv
 	name = "magazine (.40 Magnum high-velocity)"
 	icon_state = "magnum_hv"
+	ammo_color = "-hv"
 	ammo_type = /obj/item/ammo_casing/magnum_40/hv
 
 /obj/item/ammo_magazine/magnum_40/rubber
 	name = "magazine (.40 Magnum rubber)"
 	icon_state = "magnum_r"
+	ammo_color = "-r"
 	ammo_type = /obj/item/ammo_casing/magnum_40/rubber
 
 /obj/item/ammo_magazine/magnum_40/rubber/pepperball
 	name = "magazine(.40 Magnum pepperball)"
 	icon_state = "magnum_pb"
+	ammo_color = "-pb"
 	ammo_type = /obj/item/ammo_casing/magnum_40/rubber/pepperball
 
 /obj/item/ammo_magazine/magnum_40/lethal
 	name = "magazine (.40 Magnum hollow-point)"
 	icon_state = "magnum_l"
+	ammo_color = "-l"
 	ammo_type = /obj/item/ammo_casing/magnum_40/lethal
 
 /obj/item/ammo_magazine/magnum_40/old
 	name = "old magazine (.40 Magnum)"
 	icon_state = "magnum_s"
+	ammo_color = "-s"
 	ammo_type = /obj/item/ammo_casing/magnum_40/scrap
 
 /obj/item/ammo_magazine/magnum_40/laser
 	name = "magazine (.40 Magnum laser)"
 	icon_state = "magnum_lsr"
+	ammo_color = "-lsr"
+	mag_well = MAG_WELL_PISTOL
 	ammo_type = /obj/item/ammo_casing/magnum_40/laser
 
 /obj/item/ammo_magazine/magnum_40/laser/empty
@@ -308,6 +337,7 @@
 	name = "smg magnum magazine (.40 Magnum)"
 	desc = "A 30 round magazine marked for .40 Magnum."
 	icon_state = "smg_magnum"
+	ammo_color = ""
 	origin_tech = list(TECH_COMBAT = 3)
 	mag_type = MAGAZINE
 	mag_well = MAG_WELL_SMG
@@ -324,32 +354,48 @@
 /obj/item/ammo_magazine/smg_magnum_40/practice
 	name = "smg magazine (.40 Magnum practice)"
 	icon_state = "smg_magnum_p"
+	ammo_color = "-p"
 	ammo_type = /obj/item/ammo_casing/magnum_40/practice
 
 /obj/item/ammo_magazine/smg_magnum_40/hv
 	name = "smg magazine (.40 Magnum high-velocity)"
 	icon_state = "smg_magnum_hv"
+	ammo_color = "-hv"
 	ammo_type = /obj/item/ammo_casing/magnum_40/hv
 
 /obj/item/ammo_magazine/smg_magnum_40/rubber
 	name = "smg magazine (.40 Magnum rubber)"
 	icon_state = "smg_magnum_r"
+	ammo_color = "-r"
 	ammo_type = /obj/item/ammo_casing/magnum_40/rubber
 
 /obj/item/ammo_magazine/smg_magnum_40/rubber/pepperball
 	name = "smg magazine (.40 Magnum pepperball)"
 	icon_state = "smg_magnum_pb"
+	ammo_color = "-pb"
 	ammo_type = /obj/item/ammo_casing/magnum_40/rubber/pepperball
 
 /obj/item/ammo_magazine/smg_magnum_40/lethal
 	name = "smg magazine (.40 Magnum hollow-point)"
 	icon_state = "smg_magnum_l"
+	ammo_color = "-l"
 	ammo_type = /obj/item/ammo_casing/magnum_40/lethal
 
 /obj/item/ammo_magazine/smg_magnum_40/old
 	name = "old smg magazine (.40 Magnum)"
 	icon_state = "smg_magnum_s"
+	ammo_color = "-s"
 	ammo_type = /obj/item/ammo_casing/magnum_40/scrap
+
+/obj/item/ammo_magazine/smg_magnum_40/laser
+	name = "smg magazine (.40 Magnum laser)"
+	icon_state = "smg_magnum_lsr"
+	ammo_color = "-lsr"
+	mag_well = MAG_WELL_SMG
+	ammo_type = /obj/item/ammo_casing/pistol_35/laser
+
+/obj/item/ammo_magazine/smg_magnum_40/laser/empty
+	initial_ammo = 0
 
 ////6.5 Carbine////
 
@@ -406,6 +452,8 @@
 /obj/item/ammo_magazine/light_rifle_257/laser
 	name = "carbine magazine (laser)"
 	icon_state = "lrifle_long_lsr"
+	mag_well = MAG_WELL_RIFLE
+	ammo_color = "laser"
 	ammo_type = /obj/item/ammo_casing/light_rifle_257/laser
 
 /obj/item/ammo_magazine/light_rifle_257/laser/empty
@@ -550,6 +598,8 @@
 /obj/item/ammo_magazine/rifle_75/laser
 	name = "rifle magazine (laser)"
 	icon_state = "rifle_lsr"
+	mag_well = MAG_WELL_RIFLE
+	ammo_color = "laser"
 	ammo_type = /obj/item/ammo_casing/rifle_75/laser
 
 /obj/item/ammo_magazine/rifle_75/laser/empty
@@ -837,6 +887,9 @@
 /obj/item/ammo_magazine/heavy_rifle_408/laser
 	name = "heavy rifle magazine (laser)"
 	icon_state = "hrifle_lsr"
+	mag_well = MAG_WELL_HRIFLE
+	ammo_color = "laser"
+	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/laser
 
 /obj/item/ammo_magazine/heavy_rifle_408/laser/empty
 	initial_ammo = 0
@@ -877,6 +930,7 @@
 	name = "heavy pistol magazine"
 	desc = "A 7 round magazine marked for .50 Kurz."
 	icon_state = "kurz"
+	ammo_color = ""
 	origin_tech = list(TECH_COMBAT = 2)
 	mag_type = MAGAZINE
 	mag_well = MAG_WELL_PISTOL
@@ -893,31 +947,38 @@
 /obj/item/ammo_magazine/kurz_50/rubber
 	name = "heavy pistol magazine (rubber)"
 	icon_state = "kurz_r"
+	ammo_color = "-r"
 	ammo_type = /obj/item/ammo_casing/kurz_50/rubber
 
 /obj/item/ammo_magazine/kurz_50/rubber/pepperball
 	name = "heavy pistol magazine (pepperball)"
 	icon_state = "kurz_pb"
+	ammo_color = "-pb"
 	ammo_type = /obj/item/ammo_casing/kurz_50/rubber/pepperball
 
 /obj/item/ammo_magazine/kurz_50/practice
 	name = "heavy pistol magazine (practice)"
 	icon_state = "kurz_r"
+	ammo_color = "-p"
 	ammo_type = /obj/item/ammo_casing/kurz_50/practice
 
 /obj/item/ammo_magazine/kurz_50/hv
 	name = "heavy pistol magazine (high-velocity)"
 	icon_state = "kurz_hv"
+	ammo_color = "-hv"
 	ammo_type = /obj/item/ammo_casing/kurz_50/hv
 
 /obj/item/ammo_magazine/kurz_50/lethal
 	name = "heavy pistol magazine (hollow-point)"
 	icon_state = "kurz_l"
+	ammo_color = "-l"
 	ammo_type = /obj/item/ammo_casing/kurz_50/lethal
 
 /obj/item/ammo_magazine/kurz_50/laser
 	name = "heavy pistol magazine (laser)"
 	icon_state = "kurz_lsr"
+	ammo_color = "-lsr"
+	mag_well = MAG_WELL_PISTOL
 	ammo_type = /obj/item/ammo_casing/kurz_50/laser
 
 /obj/item/ammo_magazine/kurz_50/laser/empty

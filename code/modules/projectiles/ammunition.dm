@@ -290,6 +290,7 @@
 		if(C.caliber != caliber)
 			to_chat(user, SPAN_WARNING("[C] does not fit into [src]."))
 			return
+
 		if(stored_ammo.len)
 			var/obj/item/ammo_casing/T = removeCasing()
 			if(T)
@@ -331,6 +332,7 @@
 		return FALSE
 	if(stored_ammo.len >= max_ammo)
 		return FALSE
+
 	if(C.amount > 1)
 		C.amount -= 1
 		var/type = C.type
