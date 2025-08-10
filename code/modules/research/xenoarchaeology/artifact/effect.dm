@@ -89,16 +89,31 @@ proc/GetAnomalySusceptibility(var/mob/living/carbon/human/H)
 
 	var/protected = 0
 
+	// Advanced AMI suit provides complete immunity to anomalies
+	if(istype(H.back,/obj/item/rig/advhazmat))
+		var/obj/item/rig/advhazmat/rig = H.back
+		if(rig.suit_is_deployed() && !rig.offline)
+			protected += 1.1 // Complete immunity (over 1.0 to ensure full protection)
+
+	// Standard AMI suit provides excellent protection
 	if(istype(H.back,/obj/item/rig/hazmat))
 		var/obj/item/rig/hazmat/rig = H.back
 		if(rig.suit_is_deployed() && !rig.offline)
 			protected += 1
 
+	// Expedition anomaly suits provide good protection
 	if(istype(H.wear_suit,/obj/item/clothing/suit/space/anomaly))
 		protected += 0.6
 
 	if(istype(H.head,/obj/item/clothing/head/helmet/space/anomaly))
 		protected += 0.3
+
+	// Mining voidsuit provides moderate protection
+	if(istype(H.wear_suit,/obj/item/clothing/suit/space/void/mining))
+		protected += 0.4
+
+	if(istype(H.head,/obj/item/clothing/head/helmet/space/void/mining))
+		protected += 0.2
 
 	//latex gloves and science goggles also give a bit of bonus protection
 	if(istype(H.gloves,/obj/item/clothing/gloves/latex))
@@ -107,4 +122,4 @@ proc/GetAnomalySusceptibility(var/mob/living/carbon/human/H)
 	if(istype(H.glasses,/obj/item/clothing/glasses/powered/science))
 		protected += 0.1
 
-	return 1 - protected
+	return max(0, 1 - protected) // Ensure it can't go below 0

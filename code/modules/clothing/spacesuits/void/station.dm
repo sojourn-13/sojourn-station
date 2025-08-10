@@ -173,6 +173,7 @@
 		rad = 75
 	)
 	light_overlay = "helmet_light_dual"
+	siemens_coefficient = 0.5 // Moderate EMP resistance
 
 /obj/item/clothing/suit/space/void/mining
 	name = "mining voidsuit"
@@ -190,6 +191,7 @@
 	)
 	helmet = /obj/item/clothing/head/helmet/space/void/mining
 	price_tag = 250
+	siemens_coefficient = 0.5 // Moderate EMP resistance
 
 //CEO Rig
 /obj/item/clothing/head/helmet/space/void/goldilocks

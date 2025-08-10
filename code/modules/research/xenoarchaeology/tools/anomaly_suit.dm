@@ -5,6 +5,7 @@
 	item_state = "anomaly_suit"
 	slowdown = 0
 	armor_list = list(melee = 5, bullet = 5, energy = 6, bomb = 0, bio = 100, rad = 100)
+	siemens_coefficient = 0.3 // Good EMP resistance
 
 /obj/item/clothing/head/helmet/space/anomaly
 	name = "Expedition hood"
@@ -12,3 +13,4 @@
 	icon_state = "cespace_helmet"
 	item_state = "cespace_helmet"
 	armor_list = list(melee = 5, bullet = 5, energy = 6, bomb = 0, bio = 100, rad = 100)
+	siemens_coefficient = 0.3 // Good EMP resistance
