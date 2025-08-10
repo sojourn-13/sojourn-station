@@ -2330,12 +2330,6 @@
 /obj/structure/cable/heavyduty{
 	icon_state = "4-8"
 	},
-/obj/structure/railing{
-	icon_state = "reinforced_railing0";
-	name = "orange reinforced railing";
-	health = 140;
-	maxhealth = 140
-	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/security/nuke_hallway)
 "axj" = (
@@ -15285,12 +15279,6 @@
 /obj/structure/cable/heavyduty{
 	icon_state = "4-8"
 	},
-/obj/structure/railing{
-	icon_state = "reinforced_railing0";
-	name = "orange reinforced railing";
-	health = 140;
-	maxhealth = 140
-	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/security/nuke_hallway)
 "cUa" = (
@@ -27067,6 +27055,7 @@
 	icon_state = "1-2"
 	},
 /obj/structure/table/reinforced,
+/obj/item/reagent_containers/glass/bottle/petrel,
 /turf/simulated/floor/tiled/white/danger,
 /area/nadezhda/security/nuke_hallway)
 "faH" = (
@@ -35906,15 +35895,16 @@
 	},
 /area/nadezhda/maintenance/undergroundfloor1west)
 "gHv" = (
-/obj/machinery/atmospherics/mains_pipe/simple/hidden{
-	dir = 4
+/obj/structure/catwalk,
+/obj/structure/cable/cyan{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
+/obj/structure/railing,
 /obj/structure/railing{
-	icon_state = "reinforced_railing0";
-	name = "orange reinforced railing";
-	health = 140;
-	maxhealth = 140;
-	dir = 1
+	dir = 1;
+	tag = "icon-railing0 (NORTH)"
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/security/nuke_hallway)
@@ -39502,7 +39492,6 @@
 /obj/structure/extinguisher_cabinet{
 	pixel_y = 30
 	},
-/obj/item/reagent_containers/glass/bottle/petrel,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/security/nuke_hallway)
 "hrP" = (
@@ -44529,21 +44518,7 @@
 /obj/machinery/atmospherics/mains_pipe/simple/hidden{
 	dir = 4
 	},
-/obj/structure/railing{
-	icon_state = "reinforced_railing0";
-	name = "orange reinforced railing";
-	health = 140;
-	maxhealth = 140;
-	dir = 1
-	},
-/obj/structure/railing{
-	icon_state = "reinforced_railing0";
-	name = "orange reinforced railing";
-	health = 140;
-	maxhealth = 140;
-	dir = 4
-	},
-/turf/space,
+/turf/simulated/floor/plating/under,
 /area/nadezhda/security/nuke_hallway)
 "ilL" = (
 /turf/simulated/wall/r_wall,
@@ -50243,6 +50218,12 @@
 	},
 /turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/absolutism/skyyard)
+"jpL" = (
+/obj/machinery/atmospherics/pipe/simple/heat_exchanging{
+	dir = 4
+	},
+/turf/simulated/wall/r_wall,
+/area/nadezhda/command/hallway)
 "jpM" = (
 /obj/machinery/door/blast/shutters{
 	dir = 4;
@@ -63592,7 +63573,7 @@
 	dir = 4
 	},
 /turf/simulated/wall/r_wall,
-/area/nadezhda/security/nuke_hallway)
+/area/nadezhda/command/hallway)
 "lUO" = (
 /obj/structure/table/steel,
 /obj/random/lowkeyrandom/low_chance,
@@ -84360,20 +84341,10 @@
 /obj/structure/cable/heavyduty{
 	icon_state = "4-8"
 	},
-/obj/structure/railing{
-	icon_state = "reinforced_railing0";
-	name = "orange reinforced railing";
-	health = 140;
-	maxhealth = 140
+/obj/machinery/light/small{
+	dir = 1
 	},
-/obj/structure/railing{
-	icon_state = "reinforced_railing0";
-	name = "orange reinforced railing";
-	health = 140;
-	maxhealth = 140;
-	dir = 4
-	},
-/turf/space,
+/turf/simulated/floor/plating/under,
 /area/nadezhda/security/nuke_hallway)
 "pJb" = (
 /obj/structure/table/reinforced,
@@ -90804,6 +90775,16 @@
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/plating,
 /area/nadezhda/rnd/xenobiology)
+"qRI" = (
+/obj/machinery/atmospherics/mains_pipe/simple/hidden{
+	dir = 4
+	},
+/obj/structure/catwalk,
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/security/nuke_hallway)
 "qRL" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable/green{
@@ -100737,6 +100718,9 @@
 	},
 /obj/item/modular_computer/telescreen/preset/generic{
 	pixel_y = 28
+	},
+/obj/structure/railing{
+	dir = 8
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/security/nuke_hallway)
@@ -124694,13 +124678,6 @@
 /obj/machinery/camera/motion/security{
 	dir = 1
 	},
-/obj/structure/railing{
-	icon_state = "reinforced_railing0";
-	name = "orange reinforced railing";
-	health = 140;
-	maxhealth = 140;
-	dir = 1
-	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/security/nuke_hallway)
 "xdg" = (
@@ -125914,7 +125891,7 @@
 	id = "nuclearblast1"
 	},
 /turf/simulated/floor/plating/under,
-/area/nadezhda/security/nuke_hallway)
+/area/nadezhda/command/hallway)
 "xpm" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -127117,7 +127094,7 @@
 	specialfunctions = 4
 	},
 /turf/simulated/wall/r_wall,
-/area/nadezhda/security/nuke_hallway)
+/area/nadezhda/command/hallway)
 "xAX" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /obj/machinery/door/firedoor,
@@ -199342,10 +199319,10 @@ cZb
 vsb
 vsb
 lUE
-skO
+jpL
 xpi
 xAW
-cNL
+vsb
 vsb
 vsb
 vsb
@@ -199545,8 +199522,8 @@ cZb
 tad
 cNL
 cTS
-kTE
 gHv
+ilJ
 cNL
 tad
 cZb
@@ -199747,8 +199724,8 @@ cZb
 tad
 cNL
 cTS
-kTE
 gHv
+ilJ
 cNL
 tad
 cZb
@@ -199949,8 +199926,8 @@ cZb
 tad
 cNL
 cTS
-kTE
 gHv
+ilJ
 cNL
 tad
 cZb
@@ -200151,8 +200128,8 @@ tad
 tad
 cNL
 cTS
-kTE
 gHv
+ilJ
 cNL
 tad
 cZb
@@ -200353,7 +200330,7 @@ tad
 tad
 cNL
 axi
-kTE
+gHv
 xdd
 cNL
 tad
@@ -200555,8 +200532,8 @@ tad
 tad
 cNL
 cTS
-kTE
 gHv
+ilJ
 cNL
 tad
 cZb
@@ -200757,8 +200734,8 @@ tad
 tad
 cNL
 cTS
-kTE
 gHv
+ilJ
 cNL
 tad
 cZb
@@ -200959,8 +200936,8 @@ tad
 tad
 cNL
 cTS
-kTE
 gHv
+ilJ
 cNL
 tad
 tad
@@ -201161,8 +201138,8 @@ tad
 tad
 cNL
 cTS
-kTE
 gHv
+ilJ
 cNL
 tad
 tad
@@ -201363,8 +201340,8 @@ tad
 tad
 cNL
 axi
-kTE
 gHv
+ilJ
 cNL
 tad
 tad
@@ -201565,8 +201542,8 @@ tad
 tad
 cNL
 cTS
-kTE
 gHv
+ilJ
 cNL
 tad
 tad
@@ -201767,8 +201744,8 @@ tad
 tad
 cNL
 cTS
-kTE
 gHv
+ilJ
 cNL
 tad
 tad
@@ -201969,8 +201946,8 @@ tad
 tad
 cNL
 cTS
-kTE
 gHv
+ilJ
 cNL
 tad
 tad
@@ -202171,8 +202148,8 @@ tad
 tad
 cNL
 cTS
-kTE
 gHv
+ilJ
 cNL
 tad
 tad
@@ -202373,7 +202350,7 @@ tad
 tad
 cNL
 axi
-kTE
+gHv
 xdd
 cNL
 tad
@@ -202575,8 +202552,8 @@ tad
 tad
 cNL
 cTS
-kTE
 gHv
+ilJ
 cNL
 tad
 tad
@@ -202777,8 +202754,8 @@ tad
 tad
 cNL
 cTS
-kTE
 gHv
+ilJ
 cNL
 tad
 tad
@@ -202979,8 +202956,8 @@ tad
 tad
 cNL
 cTS
-kTE
 gHv
+ilJ
 cNL
 tad
 tad
@@ -203181,8 +203158,8 @@ tad
 tad
 cNL
 cTS
-kTE
 gHv
+ilJ
 cNL
 tad
 tad
@@ -203383,7 +203360,7 @@ tad
 tad
 cNL
 pIT
-kTE
+gHv
 ilJ
 cNL
 tad
@@ -203586,7 +203563,7 @@ tad
 cNL
 sIT
 kTE
-war
+qRI
 cNL
 tad
 cZb
