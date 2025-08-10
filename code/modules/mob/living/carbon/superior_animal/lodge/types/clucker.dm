@@ -24,6 +24,7 @@ var/global/clucker_count = 0
 	has_special_parts = TRUE //var for checking during the butcher process.
 	special_parts = list(/obj/item/animal_part/clucker_feather)
 	colony_friend = TRUE
+	research_value = 175
 
 /mob/living/carbon/superior/lodge/clucker/New()
 	..()
@@ -93,6 +94,7 @@ var/global/clucker_count = 0
 	var/amount_grown = 0
 	pass_flags = PASSTABLE
 	mob_size = MOB_MINISCULE
+	research_value = 25
 
 /mob/living/carbon/superior/lodge/chick_clucker/New()
 	..()
