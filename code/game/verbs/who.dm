@@ -2,9 +2,12 @@
 	set name = "Who"
 	set category = "OOC"
 
+	var/total_players = length(clients)
+
 	// Check if who command is restricted to admins only
 	if(config.admin_only_who && (!holder || !(R_ADMIN & holder.rights || R_MOD & holder.rights)))
 		to_chat(src, "<span class='warning'>The who command is currently restricted to administrators only.</span>")
+		to_chat(src, "<b>Total Players: [total_players]</b>")
 		return
 
 	var/msg = "<b>Current Players:</b>\n"
@@ -61,7 +64,7 @@
 	for(var/line in sortList(Lines))
 		msg += "[line]\n"
 
-	msg += "<b>Total Players: [length(Lines)]</b>"
+	msg += "<b>Total Players: [total_players]</b>"
 	to_chat(src, msg)
 
 /client/verb/adminwho()
