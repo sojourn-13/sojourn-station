@@ -196,6 +196,13 @@
 	build_type = MECHFAB
 	category = "RIG"
 
+/datum/design/research/item/clothing/rig_hazmat
+	name = "AMI control module"
+	build_path = /obj/item/rig/hazmat
+	materials = list(MATERIAL_STEEL = 30, MATERIAL_PLASTIC = 25, MATERIAL_GOLD = 10, MATERIAL SILVER = 15)
+	build_type = MECHFAB
+	category = "RIG"
+
 //misc rig things
 /datum/design/research/item/riggrapple
 	name = "hardsuit integrated grappler"
