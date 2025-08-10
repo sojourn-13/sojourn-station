@@ -2,6 +2,11 @@
 	set name = "Who"
 	set category = "OOC"
 
+	// Check if who command is restricted to admins only
+	if(config.admin_only_who && (!holder || !(R_ADMIN & holder.rights || R_MOD & holder.rights)))
+		to_chat(src, "<span class='warning'>The who command is currently restricted to administrators only.</span>")
+		return
+
 	var/msg = "<b>Current Players:</b>\n"
 
 	var/list/Lines = list()
@@ -145,4 +150,4 @@
 	if(config.show_mentors)
 		msg += "\n<b> Current Mentors ([num_mentors_online]):</b>\n" + mentmsg
 
-	to_chat(src, msg) 
+	to_chat(src, msg)

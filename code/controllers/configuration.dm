@@ -65,6 +65,7 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 	var/kick_inactive = 0				//force disconnect for inactive players after this many minutes, if non-0
 	var/show_mods = 1
 	var/show_mentors = 0
+	var/admin_only_who = 0				//restrict who command to admins only
 	var/mods_can_tempban = 0
 	var/mods_can_job_tempban = 0
 	var/mod_tempban_max = 1440
@@ -551,6 +552,9 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 
 				if("show_mentors")
 					config.show_mentors = 1
+
+				if("admin_only_who")
+					config.admin_only_who = 1
 
 				if("mods_can_tempban")
 					config.mods_can_tempban = 1
