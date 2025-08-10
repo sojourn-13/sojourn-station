@@ -1,7 +1,7 @@
 // For AI-controlled human-like mobs.
 /mob/living/carbon/superior/human
 	name = "Random Guy"
-	desc = "A random guy, report this to R4d6 or Kaz if you see this."
+	desc = "A random guy, report this to coders if you see this."
 	icon = 'icons/mob/mobs-humanoid.dmi'
 	move_to_delay = 4
 	viewRange = 8
@@ -26,3 +26,4 @@
 	friendly_to_colony = FALSE
 
 	known_languages = list(LANGUAGE_COMMON)
+	research_value = 0 //Dont do this

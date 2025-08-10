@@ -130,6 +130,7 @@
 	armor = list(melee = 3, bullet = 1, energy = 0, bomb = 5, bio = 10, rad = 25, agony = 0)
 	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_SPIDER_FRIEND, MUTATION_RAND_UNSTABLE, MUTATION_RAND_UNSTABLE, MUTATION_RAND_UNSTABLE)
 	armor_divisor = 2
+	research_value = 400
 
 /mob/living/carbon/superior/spider/nurse/queen/New()
 	..()

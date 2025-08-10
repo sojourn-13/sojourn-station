@@ -18,6 +18,7 @@
 
 	armor = list(melee = 8, bullet = 20, energy = 2, bomb = 25, bio = 100, rad = 100) //Were basiclly ballastic jell
 
+	research_value = 175
 
 /mob/living/simple/hostile/jelly/bloat
 	name = "jelly bloat"

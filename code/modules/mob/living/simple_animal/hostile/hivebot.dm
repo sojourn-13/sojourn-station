@@ -35,6 +35,7 @@
 	armor = list(melee = 3, bullet = 1, energy = 5, bomb = 25, bio = 100, rad = 25)
 	cant_gib = TRUE
 	sanity_damage = 1
+	research_value = 175
 
 /mob/living/simple/hostile/hivebot/emp_act(severity)
 	..()
@@ -172,6 +173,7 @@
 	light_range = 6
 	light_color = COLOR_LIGHTING_RED_BRIGHT
 	mob_classification = CLASSIFICATION_SYNTHETIC
+	research_value = 375
 
 /mob/living/carbon/superior/sentinal_seeker/New()
 	..()

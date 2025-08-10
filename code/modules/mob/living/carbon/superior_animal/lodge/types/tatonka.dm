@@ -31,6 +31,7 @@
 	var/datum/reagents/udder = null
 	var/offspring_left = 0
 	var/milk_type = "tatonka_milk"
+	research_value = 225
 
 /mob/living/carbon/superior/lodge/tatonka/New()
 	udder = new(50)
@@ -123,6 +124,7 @@
 	default_pixel_x = -16
 	pixel_x = -16
 	randpixel = 0
+	research_value = 30
 
 /mob/living/carbon/superior/lodge/baby_tatonka/Initialize(mapload)
 	pixel_x = -16
@@ -159,6 +161,7 @@
 	bones_amount = 12
 	has_special_parts = TRUE
 	milk_type = "tangu_milk"
+	research_value = 650
 	special_parts = list(/obj/item/animal_part/tatonka_tongue,
 		/obj/item/animal_part/tatonka_tongue,
 		/obj/item/animal_part/tangu_horn,

@@ -229,3 +229,5 @@ While it would be entirely possible to check the mob's move handlers list for th
 
 	var/click_delay_addition = 0
 	var/list/datum/action/actions = list()
+
+	var/research_value = 50

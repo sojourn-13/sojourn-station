@@ -335,6 +335,7 @@
 
 	can_burrow = TRUE
 	var/timeout = 0
+	research_value = 1500
 
 /mob/living/carbon/superior/vox/scout/pointed(atom/A as mob|obj|turf in view())
 	set name = "Point To"
@@ -359,7 +360,7 @@
 	if(ishuman(A))
 		var/mob/living/carbon/superior/H = A
 		H.stats.addPerk(PERK_ARMOR_REDUCTION)
-   
+
    //Ciriklo Pig Jockey
 /mob/living/carbon/superior/vox/pigjockey
 	name = "Rider Ciriklo"

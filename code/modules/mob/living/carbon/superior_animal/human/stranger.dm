@@ -29,6 +29,7 @@
 	var/empy_cell = FALSE
 	var/prob_tele = 20
 	never_stimulate_air = TRUE
+	research_value = 1200
 
 /mob/living/carbon/superior/human/Initialize(mapload)
 	. = ..()

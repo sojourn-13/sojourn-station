@@ -36,6 +36,7 @@
 
 	faction = "scarybat"
 	var/mob/living/owner
+	research_value = 125
 
 /mob/living/simple/hostile/scarybat/New(loc, mob/living/L as mob)
 	..()

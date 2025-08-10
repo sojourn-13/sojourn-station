@@ -40,6 +40,7 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/carbon/superior/wurm/osmium,
 	see_in_dark = 10
 	cant_gib = TRUE
 	sanity_damage = 1
+	research_value = 600
 
 	destroy_surroundings = TRUE
 

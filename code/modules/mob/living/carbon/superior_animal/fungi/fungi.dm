@@ -38,6 +38,7 @@
 	bones_amount = 0
 	follow_message = "says, \"I follow friend.\""
 	stop_message ="says, \"I stop follow friend.\""
+	research_value = 400
 
 /mob/living/carbon/superior/fungi/New()
 	..()

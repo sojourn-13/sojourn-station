@@ -33,6 +33,7 @@
 	leather_amount = 0
 	bones_amount = 0
 	faction = "neutral"
+	research_value = 2750
 
 /mob/living/simple/hostile/plant/alt
 	icon_state = "shroom_2"

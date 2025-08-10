@@ -54,6 +54,7 @@
 	var/die_temperature = 50 // slime dies instantly when its bodytemperature is below this
 
 	///////////TIME FOR SUBSPECIES
+	research_value = 800
 
 	var/colour = "grey"
 	var/coretype = /obj/item/slime_extract/grey

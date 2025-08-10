@@ -30,6 +30,7 @@
 	armor = list(melee = 2, bullet = 3, energy = 1, bomb = 20, bio = 20, rad = 0)
 
 	get_stat_modifier = TRUE
+	research_value = 100
 
 	allowed_stat_modifiers = list(
 		/datum/stat_modifier/mob/living/carbon/superior/armor/mult/positive/low = 15,

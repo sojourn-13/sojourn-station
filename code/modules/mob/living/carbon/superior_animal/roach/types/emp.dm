@@ -16,6 +16,7 @@
 	meat_type = /obj/item/reagent_containers/snacks/meat/roachmeat/elektromagnetisch
 	knockdown_odds = 1 //its affect shouldnt be stunlocks like this
 	inherent_mutations = list(MUTATION_EMP, MUTATION_DEAF, MUTATION_TOURETTES, MUTATION_EPILEPSY, MUTATION_ROACH_BLOOD)
+	research_value = 800
 
 /mob/living/carbon/superior/roach/elektromagnetisch/UnarmedAttack(atom/A, proximity)
 	. = ..()

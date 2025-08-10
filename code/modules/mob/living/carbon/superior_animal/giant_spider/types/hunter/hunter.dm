@@ -52,6 +52,7 @@
 	meat_amount = 4
 	emote_see = list("chitters.","rubs its legs.","vibrates.")
 	armor_divisor = 3
+	research_value = 200
 
 /mob/living/carbon/superior/spider/plasma/UnarmedAttack(var/atom/A, var/proximity)
 	. = ..()
@@ -72,6 +73,7 @@
 	mob_size = MOB_LARGE
 	armor = list(melee = 3, bullet = 1, energy = 0, bomb = 5, bio = 10, rad = 25, agony = 0)
 	fancy_attack_overlay = "spider_attack_flick"
+	research_value = 200
 
 /mob/living/carbon/superior/spider/fortress/UnarmedAttack(var/atom/A, var/proximity)
 	if(isliving(A))
@@ -219,6 +221,7 @@
 	mob_size = MOB_LARGE
 	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_RAND_UNSTABLE, MUTATION_RAND_UNSTABLE, MUTATION_RAND_UNSTABLE)
 	var/attack_build_up = 0
+	research_value = 500
 
 /mob/living/carbon/superior/spider/fortress/emperor/New()
 	..()
@@ -243,6 +246,7 @@
 	armor_divisor = 3
 
 	get_stat_modifier = FALSE //Were not getting armor
+	research_value = 2500
 
 /mob/living/carbon/superior/spider/fortress/emperor/reaper_spider/slip(var/slipped_on)
 	return FALSE

@@ -25,6 +25,7 @@
 	mob_size = MOB_SMALL
 	colony_friend = TRUE
 	friendly_to_colony = TRUE
+	research_value = 150
 
 /mob/living/carbon/superior/farwa/Life()
 	..()
