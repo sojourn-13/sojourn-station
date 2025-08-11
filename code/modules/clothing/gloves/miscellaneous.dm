@@ -58,12 +58,12 @@
 	siemens_coefficient = pick(0,0.1,0.3,0.5,0.5,0.75,1.35)
 
 /obj/item/clothing/gloves/thick
-	desc = "A pair of fire-resistant black work gloves."
+	desc = "A pair of fire-resistant black work gloves with light electrical insulation."
 	name = "thick gloves"
 	icon_state = "black"
 	item_state = "black"
 	armor_list = list(melee = 5, bullet = 0, energy = 5, bomb = 0, bio = 0, rad = 0)
-	siemens_coefficient = 0.5
+	siemens_coefficient = 0.2
 	permeability_coefficient = 0.05
 	price_tag = 100
 
