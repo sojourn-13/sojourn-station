@@ -343,6 +343,9 @@
 	new /obj/item/clothing/shoes/slippers(src)
 	new /obj/item/clothing/shoes/slippers(src)
 	new /obj/item/clothing/shoes/slippers(src)
+	new /obj/item/clothing/gloves/membrane(src)
+	new /obj/item/clothing/gloves/membrane(src)
+	new /obj/item/clothing/gloves/membrane(src)
 
 /obj/structure/closet/wardrobe/job/robotics_black
 	name = "robotics wardrobe"
@@ -358,8 +361,8 @@
 	new /obj/item/clothing/suit/storage/rank/robotech_jacket(src)
 	new /obj/item/clothing/shoes/color/black(src)
 	new /obj/item/clothing/shoes/color/black(src)
-	new /obj/item/clothing/gloves/thick(src)
-	new /obj/item/clothing/gloves/thick(src)
+	new /obj/item/clothing/gloves/membrane(src)
+	new /obj/item/clothing/gloves/membrane(src)
 
 /obj/structure/closet/wardrobe/job/chemistry_white
 	name = "chemistry wardrobe"

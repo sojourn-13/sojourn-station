@@ -177,6 +177,8 @@
 		new /obj/item/storage/backpack/satchel(src)
 	new /obj/item/clothing/suit/bio_suit/cmo(src)
 	new /obj/item/clothing/head/bio_hood/cmo(src)
+	new /obj/item/clothing/mask/gas(src)
+	new /obj/item/tank/oxygen(src)
 	new /obj/item/clothing/shoes/color(src)
 	switch(pick("blue", "green", "purple"))
 		if ("blue")
