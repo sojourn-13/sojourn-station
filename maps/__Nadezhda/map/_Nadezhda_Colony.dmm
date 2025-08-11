@@ -81857,6 +81857,7 @@
 /obj/item/roller,
 /obj/item/roller,
 /obj/item/storage/freezer,
+/obj/item/storage/box/gloves,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/triage_blackshield)
 "pjP" = (
@@ -102856,7 +102857,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/crew_quarters/arcade)
 "tew" = (
-/obj/structure/closet/l3closet/janitor,
+/obj/structure/closet/l3closet/general,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/crew_quarters/janitor)
 "teI" = (
@@ -110506,11 +110507,10 @@
 	name = "Residential District Maintenance"
 	})
 "uzV" = (
-/obj/structure/table/standard,
-/obj/item/storage/box/gloves,
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/structure/closet/l3closet/security,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/triage_blackshield)
 "uzW" = (
