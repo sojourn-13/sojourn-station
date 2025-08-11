@@ -1842,6 +1842,7 @@
 #include "code\modules\clothing\head\fishing.dm"
 #include "code\modules\clothing\head\hardhat.dm"
 #include "code\modules\clothing\head\helmet.dm"
+#include "code\modules\clothing\head\tracking_arrow.dm"
 #include "code\modules\clothing\head\hood.dm"
 #include "code\modules\clothing\head\jobs.dm"
 #include "code\modules\clothing\head\mindreader.dm"

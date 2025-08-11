@@ -1896,15 +1896,20 @@
 	armor_up = list(melee = 1, bullet = 5, energy = 2, bomb = 10, bio = 100, rad = 50)
 	armor_list = list(melee = 6, bullet = 6, energy = 6, bomb = 20, bio = 100, rad = 50)
 	up = TRUE
+	action_button_name = "Toggle Helmet Light"
+	brightness_on = 4
+	light_overlay = "helmet_light"
 	var/speaker_enabled = TRUE
 	var/scan_scheduled = FALSE
 	var/scan_interval = 15 SECONDS
 	var/repeat_report_after = 60 SECONDS
 	var/list/crewmembers_recently_reported = list()
+	var/obj/screen/tracking_arrow/tracking_overlay = null
 
 /obj/item/clothing/head/helmet/faceshield/paramedic/equipped(mob/M)
 	. = ..()
 	schedule_scan()
+	START_PROCESSING(SSobj, src)
 
 /obj/item/clothing/head/helmet/faceshield/paramedic/proc/schedule_scan()
 	if(scan_scheduled)
@@ -1959,8 +1964,135 @@
 
 	schedule_scan()
 
+/obj/item/clothing/head/helmet/faceshield/paramedic/proc/get_direction_to_target()
+	if(!ishuman(loc))
+		return null
+
+	var/mob/living/carbon/human/user = loc
+
+	// Check if helmet is down (active)
+	if(up)
+		return null
+
+	// Look for a Moebius tablet in user's inventory that is tracking
+	var/obj/item/modular_computer/tablet/moebius/tablet = null
+	for(var/obj/item/I in user.get_all_slots())
+		if(istype(I, /obj/item/modular_computer/tablet/moebius))
+			var/obj/item/modular_computer/tablet/moebius/T = I
+			if(T.is_tracking && T.target_mob)
+				tablet = T
+				break
+
+	if(!tablet)
+		return null
+
+	var/turf/user_turf = get_turf(user)
+	var/turf/target_turf = get_turf(tablet.target_mob)
+
+	if(!user_turf || !target_turf || user_turf.z != target_turf.z)
+		return null
+
+	return get_dir(user_turf, target_turf)
+
+/obj/item/clothing/head/helmet/faceshield/paramedic/proc/update_tracking_overlay()
+	if(!ishuman(loc))
+		remove_tracking_overlay()
+		return
+
+	var/mob/living/carbon/human/user = loc
+	if(!user.client)
+		remove_tracking_overlay()
+		return
+
+	// Remove any existing tracking overlay
+	remove_tracking_overlay()
+
+	var/direction = get_direction_to_target()
+	if(!direction)
+		return
+
+	// Create screen object for tracking arrow
+	tracking_overlay = new /obj/screen/tracking_arrow()
+
+	// Set the arrow direction icon
+	switch(direction)
+		if(NORTH)
+			tracking_overlay.icon_state = "ARROW_NORTH"
+		if(SOUTH)
+			tracking_overlay.icon_state = "ARROW_SOUTH"
+		if(EAST)
+			tracking_overlay.icon_state = "ARROW_EAST"
+		if(WEST)
+			tracking_overlay.icon_state = "ARROW_WEST"
+		if(NORTHEAST)
+			tracking_overlay.icon_state = "ARROW_NORTHEAST"
+		if(NORTHWEST)
+			tracking_overlay.icon_state = "ARROW_NORTHWEST"
+		if(SOUTHEAST)
+			tracking_overlay.icon_state = "ARROW_SOUTHEAST"
+		if(SOUTHWEST)
+			tracking_overlay.icon_state = "ARROW_SOUTHWEST"
+		else
+			qdel(tracking_overlay)
+			tracking_overlay = null
+			return
+
+	// Add the overlay to the user's screen
+	user.client.screen += tracking_overlay
+
+/obj/item/clothing/head/helmet/faceshield/paramedic/proc/remove_tracking_overlay()
+	if(tracking_overlay && ishuman(loc))
+		var/mob/living/carbon/human/user = loc
+		if(user.client)
+			user.client.screen -= tracking_overlay
+		qdel(tracking_overlay)
+	tracking_overlay = null
+
+/obj/item/clothing/head/helmet/faceshield/paramedic/dropped(mob/user)
+	. = ..()
+	remove_tracking_overlay()
+	STOP_PROCESSING(SSobj, src)
+
+/obj/item/clothing/head/helmet/faceshield/paramedic/Process()
+	update_tracking_overlay()
+
+/obj/item/clothing/head/helmet/faceshield/paramedic/set_is_up(is_up)
+	. = ..()
+	// Clear overlay when helmet is raised
+	if(is_up)
+		remove_tracking_overlay()
+
 /obj/item/clothing/head/helmet/faceshield/paramedic/AltClick()
 	toogle_speaker()
+
+/obj/item/clothing/head/helmet/faceshield/paramedic/verb/toggle_faceshield()
+	set name = "Adjust face shield"
+	set category = "Object"
+	set src in usr
+
+	if(!usr.incapacitated())
+		src.set_is_up(!src.up)
+
+		if(src.up)
+			to_chat(usr, "You push the [src] up out of your face.")
+			remove_tracking_overlay()
+		else
+			to_chat(usr, "You flip the [src] down to protect your face.")
+
+		usr.update_action_buttons()
+
+/obj/item/clothing/head/helmet/faceshield/paramedic/verb/toggle_tracking_overlay()
+	set name = "Toggle tracking overlay"
+	set category = "Object"
+	set src in usr
+
+	if(!usr.incapacitated())
+		if(tracking_overlay)
+			remove_tracking_overlay()
+			to_chat(usr, "You turn off the tracking overlay.")
+		else
+			update_tracking_overlay()
+			to_chat(usr, "You turn on the tracking overlay.")
 
 /obj/item/clothing/head/helmet/faceshield/paramedic/verb/toogle_speaker()
 	set name = "Toogle helmet's speaker"

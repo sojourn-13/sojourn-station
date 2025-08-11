@@ -58,9 +58,30 @@
 				var/obj/item/modular_computer/tablet/moebius/T = host_program.computer
 				if(istype(T))
 					var/mob/living/carbon/human/H = locate(href_list["track"]) in SSmobs.mob_list
-					T.target_mob = H
-					if(!T.is_tracking)
-						T.pinpoint()
+					
+					// Toggle tracking - if already tracking this person, stop tracking
+					if(T.target_mob == H && T.is_tracking)
+						T.target_mob = null
+						T.is_tracking = FALSE
+						
+						// Remove helmet overlay if user has paramedic helmet
+						if(ishuman(usr))
+							var/mob/living/carbon/human/user = usr
+							var/obj/item/clothing/head/helmet/faceshield/paramedic/helmet = user.head
+							if(istype(helmet))
+								helmet.remove_tracking_overlay()
+					else
+						// Start tracking this person
+						T.target_mob = H
+						if(!T.is_tracking)
+							T.pinpoint()
+
+						// Check if the user has a paramedic helmet and apply overlay
+						if(ishuman(usr))
+							var/mob/living/carbon/human/user = usr
+							var/obj/item/clothing/head/helmet/faceshield/paramedic/helmet = user.head
+							if(istype(helmet))
+								helmet.update_tracking_overlay()
 		return TOPIC_HANDLED
 
 	if(href_list["search"])
