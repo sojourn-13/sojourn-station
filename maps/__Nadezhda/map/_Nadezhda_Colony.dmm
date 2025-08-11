@@ -80820,10 +80820,10 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor2north)
 "paj" = (
-/obj/structure/closet/l3closet,
 /obj/machinery/light/small{
 	dir = 8
 	},
+/obj/structure/closet/l3closet/virology,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/sleeper)
 "paC" = (
@@ -112126,7 +112126,7 @@
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/hallway/side/f2section1)
 "uOp" = (
-/obj/structure/closet/l3closet,
+/obj/structure/closet/l3closet/virology,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/sleeper)
 "uOx" = (
