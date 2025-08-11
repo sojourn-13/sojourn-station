@@ -433,7 +433,11 @@ proc/is_blind(A)
 					if(DM && DM.anonsay)						// If the person is actually observer they have the option to be anonymous
 						lname = "Ghost of [name]"
 					else if(DM)									// Non-anons
-						lname = "[keyname] ([name])"
+						// Check if who command is restricted to admins - if so, hide ckeys from non-admins
+						if(config.admin_only_who)
+							lname = "Ghost of [name]"
+						else
+							lname = "[keyname] ([name])"
 					else										// Everyone else (dead people who didn't ghost yet, etc.)
 						lname = name
 				lname = "<span class='name'>[lname]</span> "

@@ -894,8 +894,8 @@
 /obj/item/ammo_casing/laser_223
 	name = "laser casing"
 	desc = "A .223 pulse charged laser cavity."
-	icon_state = "clrifle_c_lsr"
-	spent_icon = "clrifle_c_lsr-spent"
+	icon_state = "rifle_c_lsr"
+	spent_icon = "rifle_c_lsr-spent"
 	shell_color = "lsr"
 	caliber = CAL_SCI
 	projectile_type = /obj/item/projectile/beam/laser_223

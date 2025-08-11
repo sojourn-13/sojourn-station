@@ -338,7 +338,8 @@
 							/datum/design/research/item/clothing/armor_laserproof,
 							/datum/design/research/item/clothing/paramedic_armor,
 							/datum/design/research/item/clothing/paramedic_helmet,
-							/datum/design/research/item/clothing/rig_advhazmat)
+							/datum/design/research/item/clothing/rig_advhazmat,
+							/datum/design/research/item/clothing/rig_hazmat,)
 
 /datum/technology/advanced_unstable_plasma_weapons
 	name = "Advanced Plasma Weapon Designs"

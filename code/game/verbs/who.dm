@@ -2,9 +2,24 @@
 	set name = "Who"
 	set category = "OOC"
 
+	var/total_players = length(clients)
+	var/players_in_round = 0
+	var/players_observing = 0
+
+	// Count players in round and observing
+	for(var/client/C in clients)
+		if(isghost(C.mob))
+			players_observing++
+		else if(!isnewplayer(C.mob))
+			players_in_round++
+
 	// Check if who command is restricted to admins only
 	if(config.admin_only_who && (!holder || !(R_ADMIN & holder.rights || R_MOD & holder.rights)))
-		to_chat(src, "<span class='warning'>The who command is currently restricted to administrators only.</span>")
+		to_chat(src, "<span class='warning'>Accessing the CKeys of active players on the server is currently disabled for non-admins.</span>")
+		to_chat(src, "You have instead been shown a <b>summary of active players.</b>")
+		to_chat(src, "<b>Total Players:</b> [total_players]")
+		to_chat(src, "<b>In Round:</b> [players_in_round]")
+		to_chat(src, "<b>Observing:</b> [players_observing]")
 		return
 
 	var/msg = "<b>Current Players:</b>\n"
@@ -61,7 +76,9 @@
 	for(var/line in sortList(Lines))
 		msg += "[line]\n"
 
-	msg += "<b>Total Players: [length(Lines)]</b>"
+	msg += "<b>Total Players:</b> [total_players]\n"
+	msg += "<b>In Round:</b> [players_in_round]\n"
+	msg += "<b>Observing:</b> [players_observing]"
 	to_chat(src, msg)
 
 /client/verb/adminwho()

@@ -15,6 +15,7 @@
 	new /obj/item/clothing/under/rank/scientist(src)
 	new /obj/item/clothing/suit/storage/toggle/labcoat/science(src)
 	new /obj/item/clothing/shoes/jackboots(src)
+	new /obj/item/clothing/gloves/membrane(src)
 	new /obj/item/device/radio/headset/headset_sci(src)
 	new /obj/item/tank/air(src)
 	new /obj/item/clothing/mask/gas(src)
@@ -25,7 +26,8 @@
 
 /obj/structure/closet/secure_closet/personal/robo
 	name = "soteria roboticist's locker"
-	req_access = list(access_robotics)
+	req_access = list(access_rd)
+	access_occupy = list(access_robotics)
 	icon_state = "science"
 
 /obj/structure/closet/secure_closet/personal/robo/populate_contents()
@@ -39,10 +41,12 @@
 	new /obj/item/clothing/under/rank/roboticist(src)
 	new /obj/item/clothing/suit/storage/rank/robotech_jacket(src)
 	new /obj/item/clothing/shoes/jackboots(src)
+	new /obj/item/clothing/gloves/membrane(src)
 	new /obj/item/device/radio/headset/headset_sci(src)
 	new /obj/item/tank/air(src)
 	new /obj/item/clothing/mask/gas(src)
 	new /obj/item/storage/belt/sci(src)
+	new /obj/item/device/science_tool(src)
 	new /obj/item/device/robotanalyzer(src)
 	new /obj/item/hydrogen_fuel_cell(src)
 
@@ -64,10 +68,11 @@
 	new /obj/item/clothing/suit/storage/toggle/labcoat(src)
 	new /obj/item/clothing/shoes/color(src)
 	new /obj/item/clothing/shoes/leather(src)
-	new /obj/item/clothing/gloves/latex(src)
+	new /obj/item/clothing/gloves/membrane(src)
 	new /obj/item/device/radio/headset/heads/rd(src)
 	new /obj/item/clothing/mask/gas(src)
 	new /obj/item/rig/advhazmat/equipped(src)
+
 	//RD eclsuive disks
 	new /obj/item/pc_part/drive/disk/design/xenobio/rd(src)
 	new /obj/item/pc_part/drive/disk/design/rped/rd(src)
@@ -77,6 +82,7 @@
 	new /obj/item/storage/bag/xenobio(src)
 	new /obj/item/storage/belt/sci(src)
 	new /obj/item/bodybag/xenobio(src)
+	new /obj/item/device/science_tool(src)
 	new /obj/item/device/aicard(src)
 	//Misc
 	new /obj/item/tank/air(src)

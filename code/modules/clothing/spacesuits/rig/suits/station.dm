@@ -260,6 +260,7 @@ Technomancer RIG
 	drain = 3
 	offline_vision_restriction = 1
 	price_tag = 3000 //same as hazard suit, it is arguably better than that one because it has hella bomb armor.
+	emp_protection = 50 // Good EMP resistance for anomaly work
 
 	helm_type = /obj/item/clothing/head/helmet/space/rig/hazmat
 
@@ -313,6 +314,7 @@ Technomancer RIG
 	offline_slowdown = 3 //You better be on
 	offline_vision_restriction = 1
 	matter = list(MATERIAL_STEEL = 30, MATERIAL_PLASTIC = 30, MATERIAL_GLASS = 10, MATERIAL_GOLD = 5, MATERIAL_SILVER = 5, MATERIAL_PLASMA = 10) //Costly!
+	emp_protection = 100 // Complete immunity to EMPs for advanced suit
 	chest_type = /obj/item/clothing/suit/space/rig/advhazmat
 	helm_type =  /obj/item/clothing/head/helmet/space/rig/advhazmat
 	boot_type =  /obj/item/clothing/shoes/magboots/rig/advhazmat

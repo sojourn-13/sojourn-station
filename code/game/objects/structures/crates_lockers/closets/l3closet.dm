@@ -9,6 +9,8 @@
 	populated_contents = TRUE
 	new /obj/item/clothing/suit/bio_suit/general(src)
 	new /obj/item/clothing/head/bio_hood/general(src)
+	new /obj/item/clothing/mask/gas(src)
+	new /obj/item/tank/oxygen(src)
 
 /obj/structure/closet/l3closet/general
 
@@ -19,6 +21,8 @@
 	new /obj/item/clothing/suit/bio_suit/general(src)
 	new /obj/item/clothing/head/bio_hood/general(src)
 	new /obj/item/reagent_containers/spray/sterilizine(src)
+	new /obj/item/clothing/mask/gas(src)
+	new /obj/item/tank/oxygen(src)
 
 /obj/structure/closet/l3closet/virology
 	icon_door = "bio_viro"
@@ -27,9 +31,10 @@
 	if(populated_contents)
 		return
 	populated_contents = TRUE
-	new /obj/item/clothing/suit/bio_suit/virology(src)
-	new /obj/item/clothing/head/bio_hood/virology(src)
-	new /obj/item/clothing/mask/breath(src)
+	new /obj/item/clothing/suit/bio_suit/cmo(src)
+	new /obj/item/clothing/head/bio_hood/cmo(src)
+	new /obj/item/clothing/gloves/membrane(src)
+	new /obj/item/clothing/mask/gas(src)
 	new /obj/item/tank/oxygen(src)
 	new /obj/item/reagent_containers/spray/sterilizine(src)
 
@@ -42,6 +47,8 @@
 	populated_contents = TRUE
 	new /obj/item/clothing/suit/bio_suit/security(src)
 	new /obj/item/clothing/head/bio_hood/security(src)
+	new /obj/item/clothing/mask/gas(src)
+	new /obj/item/tank/oxygen(src)
 
 /obj/structure/closet/l3closet/janitor
 	icon_door = "bio_jan"
@@ -52,6 +59,8 @@
 	populated_contents = TRUE
 	new /obj/item/clothing/suit/bio_suit/janitor(src)
 	new /obj/item/clothing/head/bio_hood/janitor(src)
+	new /obj/item/clothing/mask/gas(src)
+	new /obj/item/tank/oxygen(src)
 
 /obj/structure/closet/l3closet/scientist
 
@@ -61,3 +70,6 @@
 	populated_contents = TRUE
 	new /obj/item/clothing/suit/bio_suit/scientist(src)
 	new /obj/item/clothing/head/bio_hood/scientist(src)
+	new /obj/item/clothing/gloves/membrane(src)
+	new /obj/item/clothing/mask/gas(src)
+	new /obj/item/tank/oxygen(src)
