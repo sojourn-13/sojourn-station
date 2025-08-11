@@ -78,7 +78,7 @@
 	icon_state = "bio_general"
 
 /obj/item/clothing/suit/bio_suit/janitor
-	icon_state = "bio_janitor"
+	icon_state = "bio_general"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	flags_inv = HIDEGLOVES|HIDEJUMPSUIT|HIDETAIL
 
