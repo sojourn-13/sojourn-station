@@ -90043,11 +90043,11 @@
 /turf/simulated/floor/industrial/ceramic,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "qJx" = (
-/obj/structure/closet/l3closet,
 /obj/machinery/light{
 	brightness_power = 1;
 	dir = 8
 	},
+/obj/structure/closet/l3closet/scientist,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/rnd/lab)
 "qJB" = (
@@ -113064,7 +113064,7 @@
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security)
 "uWo" = (
-/obj/structure/closet/l3closet,
+/obj/structure/closet/l3closet/scientist,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/rnd/lab)
 "uWr" = (
