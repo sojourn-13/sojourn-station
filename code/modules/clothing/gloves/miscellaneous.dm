@@ -63,7 +63,7 @@
 	icon_state = "black"
 	item_state = "black"
 	armor_list = list(melee = 5, bullet = 0, energy = 5, bomb = 0, bio = 0, rad = 0)
-	siemens_coefficient = 0.2
+	siemens_coefficient = 0.5
 	permeability_coefficient = 0.05
 	price_tag = 100
 
@@ -328,7 +328,7 @@
 	desc = "Heavy gloves to keep your hands intact for future experiments."
 	icon_state = "science"
 	item_state = "science"
-	armor_list = list(melee = 6, bullet = 1, energy = 5, bomb = 0, bio = 0, rad = 0)
-	siemens_coefficient = 0.5
+	armor_list = list(melee = 6, bullet = 1, energy = 5, bomb = 0, bio = 80, rad = 0)
+	siemens_coefficient = 0.2
 	permeability_coefficient = 0.05
 	price_tag = 50
