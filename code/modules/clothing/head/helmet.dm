@@ -1881,7 +1881,10 @@
 /obj/item/clothing/head/helmet/faceshield/paramedic
 	name = "advanced paramedic helmet"
 	desc = "A smart helmet that aids in medical tracking. The helmet features an integrated medical HUD system that displays health and location information for nearby personnel. \
-	<span class='notice'>Alt+Click to toggle speaker notifications, Ctrl+Click to toggle the built-in flashlight, Shift+Ctrl+Click to toggle the medical HUD. The action button adjusts the face shield.</span>"
+	<span class='notice'>Alt+Click to toggle speaker notifications.</span> \
+	<span class='notice'>Ctrl+Click to toggle the built-in flashlight.</span> \
+	<span class='notice'>Shift+Ctrl+Click to toggle the medical HUD.</span> \
+	<span class='notice'>The action button adjusts the face shield.</span>"
 	icon_state = "trauma_team"
 	item_state = "trauma_team"
 	flags_inv = HIDEEARS|BLOCKHAIR
