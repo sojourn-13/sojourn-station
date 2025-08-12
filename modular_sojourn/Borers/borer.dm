@@ -1,12 +1,15 @@
 #define BORER_EXP_LEVEL_1 20
 #define BORER_EXP_LEVEL_2 40
 #define BORER_EXP_LEVEL_3 80
-#define BORER_EXP_LEVEL_4 100 
-#define BORER_EXP_LEVEL_5 120
+#define BORER_EXP_LEVEL_4 100
+#define BORER_EXP_LEVEL_5 160 //This is fucking insano bonkers
+
+//TODO: Refactor literally all of this code
+//This sucks so badly.
 /mob/living/simple/borer
 	name = "cortical borer"
 	real_name = "cortical borer"
-	desc = "A small, quivering sluglike creature."
+	desc = "A small, quivering creature, rumoured to be part of Ancient Amethyn."
 	speak_emote = list("chirrups")
 	response_help  = "pokes"
 	response_disarm = "prods"
@@ -33,16 +36,21 @@
 	var/borer_exp = 0                             // Borer experience.
 	var/last_request
 	var/used_dominate
-	var/max_chemicals = 50					// Max chemicals produce without a host
-	var/max_chemicals_inhost = 250          // Max chemicals produce within a host
-	var/chemicals = 50                      // Chemicals used for reproduction and spitting neurotoxin.
+	var/max_chemicals = 75			// Max chemicals produce without a host. Buffed to 75 (is multiplied on level up)
+	var/max_chemicals_inhost = 150          // Max chemicals produce within a host, buffed to 150.
+	var/chemicals = 100                      // Chemicals used for reproduction and spitting neurotoxin.
 	var/mob/living/carbon/human/host        // Human host for the brain worm.
 	var/truename                            // Name used for brainworm-speak.
 	var/mob/living/captive_brain/host_brain // Used for swapping control of the body back and forth.
+	var/obj/item/organ/internal/vital/brain/hostbrain //Handles the Host's... actual brain. Why the fuck is this causing runtimes otherwise?
 	var/controlling = FALSE					// Used in human death check.
 	var/docile = 0                          // Sugar can stop borers from acting.
+	var/list/copied_stats = list()
 	var/has_reproduced
 	var/roundstart
+	var/selectedname = FALSE
+	var/emergency_leave = FALSE // I fucking hate you Erismed
+	var/datum/perk/savedperk //Held for the express purpose of either adminbus or for debugging. Just holds the perk datum while we transfer it. Converted back to a path in the relevant proc
 
 	// Abilities borer can use when outside the host
 	var/list/abilities_standalone = list(
@@ -50,7 +58,8 @@
 		/mob/living/proc/hide,
 		/mob/living/simple/borer/proc/paralyze_victim,
 		/mob/living/carbon/human/proc/commune,
-		/mob/living/simple/borer/proc/infest
+		/mob/living/simple/borer/proc/infest,
+		/mob/living/simple/borer/proc/truenamed
 		)
 
 	// Abilities borer can use when inside the host, but not in control
@@ -86,9 +95,10 @@
 
 /mob/living/simple/borer/Login()
 	..()
-	if(!roundstart && mind && !mind.antagonist.len)
+	/*if(!roundstart && mind && !mind.antagonist.len)
 		var/datum/antagonist/A = create_antag_instance(ROLE_BORER_REPRODUCED)
 		A.create_antagonist(mind,update = FALSE)
+	*/
 
 /mob/living/simple/borer/New()
 	..()
@@ -152,7 +162,7 @@
 			invisible()
 			chemicals = 0
 		else
-			chemicals -= 1
+			chemicals -= 15 //Very quick drain. Short bursts of stealth.
 
 	if(host && !stat && !(host.stat == 2))
 		// Regenerate if within a host
@@ -169,7 +179,7 @@
 				docile = FALSE
 
 		if(chemicals < max_chemicals_inhost)
-			chemicals += level + 1
+			chemicals += (level*2) + 1 //Handles Regen of Chems. Be careful not to set the multiplier above 2x. TODO: Make this an adjustable admin-var
 
 		if(controlling)
 			if(docile)
@@ -177,23 +187,45 @@
 				host.release_control()
 				return
 
-			if(prob(5))
-				host.adjustBrainLoss(0.1)
+			if(prob(1))
+				hostbrain.take_damage(1,BRUTE, 2, FALSE, FALSE, FALSE)
 
 			if(prob(host.brainloss/20))
 				host.say("*[pick(list("blink","blink_r","choke","aflap","drool","twitch","twitch_s","gasp"))]")
 
-	for(var/mob/living/L in view(7)) //Sucks to put this here, but otherwise mobs will ignore them
-		L.try_activate_ai()
+	//	for(var/mob/living/L in view(7)) //Sucks to put this here, but otherwise mobs will ignore them
+		//	L.try_activate_ai() //how about we don't lag the server ty
+
+//STATUS PANEL AND STATUS PANEL UPDATES
 
 /mob/living/simple/borer/get_status_tab_items()
 	. = ..()
-	. += "Evolution Level: [borer_level]"
-	. += "Chemicals: [host ? "[chemicals] / [max_chemicals_inhost]" : "[chemicals] / [max_chemicals]"]"
+	. += ""
 	if(host)
-		. += "Host health: [host.stat == DEAD ? "Deceased" : host.health]"
-		. += "Host brain damage: [host.getBrainLoss()]"
+		. += "Host Health and Management"
+		. += "•	Host Health: [host.stat == DEAD ? "Deceased" : round((host.health / host.maxHealth) * 100)]%"
+		if(ishuman(host))
+			var/list/internal_wound_comps = list() //ensure to not shit the bed here
+			internal_wound_comps = hostbrain.GetComponents(/datum/component/internal_wound) //Grab all internal wound component
+			. += " - Host Brain Status - "
+			. += "•   Host Brain Damage: [((hostbrain.damage/hostbrain.max_damage)*100) >= 50 ? ">50% NEURAL DECAY DETECTED. SEEK IMMEDIATE ASSISTANCE - [((hostbrain.damage/hostbrain.max_damage)*100)]" : ((hostbrain.damage/hostbrain.max_damage)*100)]%" //It'd be really funny if organs had a maxhp of 99999999999999 and only set their health instead of max hp how fun fun fun
+			if(internal_wound_comps)
+				. += "•   Internal Monitoring: [internal_wound_comps.len >= 2 ? "SEVERE NEUROLOGICAL WOUNDING DETECTED. TREATMENT RECOMMENDED - [internal_wound_comps.len] WOUNDS PRESENT." : "Minor Neurological Abnormalities Detected - [internal_wound_comps.len]"]" //Erismed really did not want to play nice.
+			else
+				. += "•   Internal Monitoring: No Wounds Detected" //Erismed really did not want to play nice.
+			. += ""
+	. += "Borer Statistics"
+	. += "•	Evolution Level: [borer_level], EXP: [borer_exp]"
+	. += "•	Chemicals: [host ? "[chemicals] / [max_chemicals_inhost]" : "[chemicals] / [max_chemicals]"]"
+	if(copied_stats.len >= 1)
+		. += "•	Current Learned Stats: [english_list(copied_stats)]"
+	if(savedperk)
+		. += "•	Currently Learned Perk: [savedperk.name]"
+		. += "•   Perk Description: [savedperk.desc]"
+		. += "•   WARNING: OVERWRITING HOST NEURONS MAY CAUSE SEVERE DAMAGE."
 
+
+//BASE PROCS
 /mob/living/simple/borer/proc/detatch()
 
 	if(!host || !controlling) return
@@ -243,6 +275,17 @@
 
 	qdel(host_brain)
 
+/mob/living/simple/borer/resist()
+	..()
+	if(emergency_leave) //hopefully this will let borers avoid the softlock
+		var/turf/T = get_turf(src.loc?.loc)
+		forceMove(T)
+		visible_message(SPAN_WARNING("With a slithering pop, [src] wiggles out of the dismembered head!"))
+		update_abilities()
+		emergency_leave = FALSE
+
+
+
 /mob/living/simple/borer/proc/leave_host()
 	if(!host) return
 
@@ -256,8 +299,11 @@
 
 	host.reset_view(null)
 	host.machine = null
-
-	var/mob/living/H = host
+	hostbrain = null
+	var/mob/living/carbon/human/H = host
+	var/obj/item/organ/external/head = H.get_organ(BP_HEAD)
+	head.implants -= src
+	head.internal_organs -= src
 	H.status_flags &= ~PASSEMOTES
 	host = null
 	update_abilities()
@@ -292,8 +338,8 @@
 		var/level = 3
 		var/added_reagents = list("meralyne", "dermaline", "dexalinp", "oxycodone", "ryetalyn", "adrenaline", "paroxetine") //Eclipse Edit: Added Adrenaline and Paroxetine
 		var/abilities_SL = list(/mob/living/simple/borer/proc/invisible)
-
-		level_up(level, added_reagents, null, abilities_SL)
+		var/abilities_IH = list(/mob/living/simple/borer/proc/read_perk, /mob/living/simple/borer/proc/write_perk)
+		level_up(level, added_reagents, abilities_IH, abilities_SL)
 
 	if((borer_exp >= BORER_EXP_LEVEL_4) && (borer_level < 4))
 		var/level = 4
@@ -306,7 +352,7 @@
 
 	if((borer_exp >= BORER_EXP_LEVEL_5) && (borer_level < 5))
 		var/level = 5
-		var/added_reagents = list("violence", "steady", "bouncer", "prosurgeon", "cherry drops", "machine binding ritual")
+		var/added_reagents = list("violence", "steady", "bouncer", "prosurgeon", "cherry drops", "greaser")
 		var/abilities_IH = list(/mob/living/simple/borer/proc/jumpstart)
 
 		level_up(level, added_reagents, abilities_IH)

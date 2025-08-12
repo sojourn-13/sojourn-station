@@ -63,7 +63,7 @@
 	switch(damage_type)
 		if(BRUTE)
 			if(!edge)
-				if(sharp) // dont even fucking ask whats the difference between this and eyes get_possible_wounds. I dont know, I wont tell you. 
+				if(sharp) // dont even fucking ask whats the difference between this and eyes get_possible_wounds. I dont know, I wont tell you.
 					if(is_organic)
 						LAZYADD(possible_wounds, subtypesof(/datum/component/internal_wound/organic/brain_sharp))
 					if(is_robotic)

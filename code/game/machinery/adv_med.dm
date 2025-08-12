@@ -281,7 +281,7 @@
 	dat += text("Body Temperature: [occ["bodytemp"]-T0C]&deg;C ([occ["bodytemp"]*1.8-459.67]&deg;F)<br><HR>")
 
 	if(occ["borer_present"])
-		dat += "Large growth detected in frontal lobe, possibly cancerous. Surgical removal is recommended.<br>"
+		dat += "Large Neurophage detected. Ensure patient consent, and remove in a secure environment if they are not wanted.<br>"
 
 	dat += text("[]\tBlood Level %: [] ([] units)</FONT><BR>", ("<font color='[occ["blood_amount"] > 80  ? "blue" : "red"]'>"), occ["blood_amount"], occ["blood_amount"])
 
@@ -377,6 +377,10 @@
 					continue
 				if(istype(I, /obj/item/material/shard/shrapnel))
 					other_wounds += "Embedded shrapnel"
+					continue
+				if(istype(I, /mob/living/simple/borer))
+					var/mob/living/simple/borer/Held = I
+					other_wounds += "Neurophage: [Held.truename]"
 					continue
 				if(istype(I, /obj/item/implant))
 					var/obj/item/implant/device = I

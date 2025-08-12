@@ -16,11 +16,13 @@ This is NOT for racial-specific perks, but rather specifically for general backg
 	name = "Lungs of Iron"
 	desc = "For whatever reason, be it natural evolution or simply spending too much time in space or low oxygen worlds your lungs are adapted to surviving with less oxygen."
 	icon_state = "lungs" // https://game-icons.net/1x1/lorc/one-eyed.html
+	copy_protected = TRUE
 
 /datum/perk/space_asshole
 	name = "Rough Life"
 	desc = "Your past life has been one of turmoil and extremes and as a result has toughened you up severely. Environmental damage from falling or explosives have less of an effect on your toughened body."
 	icon_state = "bomb" // https://game-icons.net
+	copy_protected = TRUE
 
 /datum/perk/space_asshole/assign(mob/living/L)
 	..()
@@ -45,6 +47,7 @@ This is NOT for racial-specific perks, but rather specifically for general backg
 	active = FALSE
 	passivePerk = FALSE
 	var/anti_cheat = FALSE
+	copy_protected = TRUE
 
 /datum/perk/linguist/activate()
 	..()
@@ -79,6 +82,7 @@ This is NOT for racial-specific perks, but rather specifically for general backg
 	desc = "Life as a Void Wolf has given you amazing agility. You can climb railings, walls, and ladders much faster than others. In addition you can dodge, combat roll, and stand up from prone much \
 	faster. Finally, your rough and tumble movement makes falling from high heights deal a lot less damage compared to others and you will always land on your feet."
 	icon_state = "parkour" //https://game-icons.net/1x1/delapouite/jump-across.html
+	copy_protected = TRUE
 
 /datum/perk/parkour/assign(mob/living/L)
 	..()
@@ -94,18 +98,20 @@ This is NOT for racial-specific perks, but rather specifically for general backg
 	name = "Unclean Living"
 	desc = "The bad conditions of your upbringing have led you to thrive in toxic environments, so much so that your body is dependent on having an unclean atmosphere. You feel tougher and slowly heal toxin damage when smoking."
 	icon_state = "cigarette" // https://game-icons.net
+	copy_protected = TRUE
 
 /datum/perk/blood_of_lead
 	name = "Lead Blood"
 	desc = "Maybe you grew up on a world with a toxic atmosphere, maybe solar radiation was common, or maybe its just genetics but you're adapted well to dealing with toxins."
 	icon_state = "liver" // https://game-icons.net
+	copy_protected = TRUE
 
 /datum/perk/greenthumb
 	name = "Green Thumb"
 	desc = "After growing plants for years (or at least being around those who do) you have become a botanical expert. You can get all information about plants, from stats \
 	        to harvest reagents, by examining them."
 	icon_state = "greenthumb" // https://game-icons.net/1x1/delapouite/farmer.html
-
+	//Same reasoning as other perks such as medical. Copy protect if it ends up being too strong.
 	var/virtual_scanner = new /obj/item/device/scanner/plant/perk
 
 /datum/perk/greenthumb/assign(mob/living/L)
@@ -119,6 +125,7 @@ This is NOT for racial-specific perks, but rather specifically for general backg
 			This increases chance of positive breakdowns by 30% and negative breakdowns by 20%. Seeing someone die has a random effect on you: \
 			sometimes you won’t take any sanity loss and you can even gain back sanity, or get a boost to your cognition."
 	icon_state = "eye" //https://game-icons.net/1x1/lorc/tear-tracks.html
+	copy_protected = TRUE
 
 /datum/perk/nihilist/assign(mob/living/L)
 	if(..() && ishuman(L))
@@ -141,12 +148,14 @@ This is NOT for racial-specific perks, but rather specifically for general backg
 			But it is not this day. This day you fight! \
 			Your Insight gain is faster when you are around sane people and they will recover sanity when around you. \
 			When you are around people that are low on health or sanity, you will take sanity damage."
+	copy_protected = TRUE
 
 /datum/perk/noble
 	name = "Wealthy Upbringing"
 	icon_state = "family" //https://game-icons.net
 	desc = "You came from a wealthy family of high stature, able to achieve a high education and spent most of your life capable of relaxing. \
 			Start with an heirloom weapon, higher chance to be on contractor contracts and removed sanity cap. Stay clear of filth and danger."
+	copy_protected = TRUE
 
 /datum/perk/noble/assign(mob/living/carbon/human/H)
 	if(!..() || !istype(H))
@@ -203,6 +212,7 @@ This is NOT for racial-specific perks, but rather specifically for general backg
 	desc = "You've been an addict all your life, for whatever piss poor reason you've told yourself. Your body is able to handle a variety of drugs, more than the average person, but you get \
 	easily addicted to all of them."
 	icon_state = "chemaddict" // https://game-icons.net/1x1/lorc/overdose.html
+	copy_protected = TRUE
 
 /datum/perk/addict/assign(mob/living/L)
 	..()
@@ -226,6 +236,7 @@ This is NOT for racial-specific perks, but rather specifically for general backg
 	This is in addition to knowing exactly how likely you were to fail after failing some tasks. \
 	This ability does not extend to medical matters, wounds or similar. "
 	icon_state = "obfuscation_ranking"
+	copy_protected = TRUE
 
 /datum/perk/blood_lust
 	name = "Bloodlust Aura"
@@ -234,6 +245,7 @@ This is NOT for racial-specific perks, but rather specifically for general backg
 	icon_state = "blood_lust"
 	active = FALSE
 	passivePerk = FALSE
+	copy_protected = TRUE
 
 /datum/perk/blood_lust/assign(mob/living/L)
 	if(..())
@@ -265,6 +277,7 @@ This is NOT for racial-specific perks, but rather specifically for general backg
 	desc = "Due to your intense training and upbringing you already know how to use the sheath arts, as well as how to handle the mind. \
 	All melee weapons that attack at range have a little bit extra reach when you wield them."
 	icon_state = "paintbrush"
+	copy_protected = TRUE
 
 /datum/perk/natural_style/assign(mob/living/L)
 	if(..() && ishuman(L))
@@ -287,6 +300,7 @@ This is NOT for racial-specific perks, but rather specifically for general backg
 
 	active = FALSE
 	passivePerk = FALSE
+	copy_protected = TRUE
 
 /datum/perk/map_maker/activate()
 	var/mob/living/carbon/human/user = usr
@@ -430,6 +444,7 @@ This is NOT for racial-specific perks, but rather specifically for general backg
 	active = FALSE
 	passivePerk = FALSE
 	var/anti_cheat = FALSE
+	copy_protected = TRUE
 
 /datum/perk/linguist_fbp/activate()
 	..()

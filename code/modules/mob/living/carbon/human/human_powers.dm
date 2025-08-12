@@ -192,9 +192,13 @@
 		var/mob/living/carbon/human/H = M
 		if(H.species.name == src.species.name)
 			return
-
+		log_and_message_admins("[key_name(src)] sent a telepathic (borer) message to [key_name(M)]: [text]")
 		to_chat(H, SPAN_WARNING("Your nose begins to bleed..."))
-		H.drip_blood(1)
+		H.drip_blood(25)
+		if(prob(5))
+			var/obj/item/organ/internal/vital/brain/B = H.internal_organs_by_efficiency[BP_BRAIN]
+			B.take_damage(1,BRUTE, 2, FALSE, FALSE, FALSE)
+
 
 
 /mob/living/carbon/human/proc/psychic_whisper(mob/M as mob in oview())
@@ -207,4 +211,5 @@
 		log_say("PsychicWhisper: [key_name(src)]->[M.key] : [msg]")
 		to_chat(M, "\green You hear a strange, alien voice in your head... \italic [msg]")
 		to_chat(src, "\green You said: \"[msg]\" to [M]")
+		log_and_message_admins("[key_name(src)] sent a telepathic (borer) message to [key_name(M)]: [msg]")
 	return

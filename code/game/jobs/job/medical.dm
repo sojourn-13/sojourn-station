@@ -113,15 +113,16 @@
 	department = DEPARTMENT_MEDICAL
 	department_flag = MEDICAL
 	faction = MAP_FACTION
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 3
+	spawn_positions = 3
 	supervisors = "the Chief Biolab Overseer"
 	difficulty = "Boring to Overwhelming."
 	selection_color = "#a8b69a"
 	wage = WAGE_PROFESSIONAL
 	minimum_character_age = 20
 	outfit_type = /decl/hierarchy/outfit/job/medical/doctor/medStudent
-	department_account_access = TRUE
+	alt_titles = list("Soteria Medical Student"=/decl/hierarchy/outfit/job/medical/doctor/medNurse, "Soteria Medical Intern")
+	department_account_access = FALSE
 	disallow_species = list(FORM_AGSYNTH, FORM_BSSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
 
 	access = list(
@@ -130,7 +131,7 @@
 	)
 
 	stat_modifiers = list(
-		STAT_BIO = 40,
+		STAT_BIO = 30,
 		STAT_COG = 10
 	)
 
@@ -227,6 +228,7 @@
 	selection_color = "#a8b69a"
 	alt_titles = list("Soteria Psychologist", "Soteria Empath")
 	outfit_type = /decl/hierarchy/outfit/job/medical/psychiatrist
+	department_account_access = TRUE
 	access = list(
 		access_moebius, access_medical_equip, access_morgue, access_chemistry, access_virology,
 		access_genetics, access_external_airlocks, access_research_equipment, access_medical_suits, access_xenobiology, access_eva, access_psychiatrist
