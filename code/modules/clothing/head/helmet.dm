@@ -1880,7 +1880,8 @@
 
 /obj/item/clothing/head/helmet/faceshield/paramedic
 	name = "advanced paramedic helmet"
-	desc = "A smart helmet that aids in medical tracking."
+	desc = "A smart helmet that aids in medical tracking. The helmet features an integrated medical HUD system that displays health and location information for nearby personnel. \
+	Alt+Click to toggle speaker notifications, Ctrl+Click to toggle the built-in flashlight. The action button adjusts the face shield."
 	icon_state = "trauma_team"
 	item_state = "trauma_team"
 	flags_inv = HIDEEARS|BLOCKHAIR
@@ -1910,6 +1911,9 @@
 	. = ..()
 	schedule_scan()
 	START_PROCESSING(SSobj, src)
+
+/obj/item/clothing/head/helmet/faceshield/paramedic/process_hud(var/mob/M)
+	process_med_hud(M, 1)
 
 /obj/item/clothing/head/helmet/faceshield/paramedic/attack_self(mob/user)
 	if(!user.incapacitated())
@@ -2077,7 +2081,7 @@
 /obj/item/clothing/head/helmet/faceshield/paramedic/AltClick()
 	toggle_speaker()
 
-/obj/item/clothing/head/helmet/faceshield/paramedic/ShiftClick(mob/user)
+/obj/item/clothing/head/helmet/faceshield/paramedic/CtrlClick(mob/user)
 	toggle_light()
 
 /obj/item/clothing/head/helmet/faceshield/paramedic/verb/toggle_faceshield()
