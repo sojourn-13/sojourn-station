@@ -1880,7 +1880,11 @@
 
 /obj/item/clothing/head/helmet/faceshield/paramedic
 	name = "advanced paramedic helmet"
-	desc = "A smart helmet that aids in medical tracking."
+	desc = "A smart helmet that aids in medical tracking. The helmet features an integrated medical HUD system that displays health and location information for nearby personnel. \
+	<span class='notice'>Alt+Click to toggle speaker notifications.</span> \
+	<span class='notice'>Ctrl+Click to toggle the built-in flashlight.</span> \
+	<span class='notice'>Shift+Ctrl+Click to toggle the medical HUD.</span> \
+	<span class='notice'>The action button adjusts the face shield.</span>"
 	icon_state = "trauma_team"
 	item_state = "trauma_team"
 	flags_inv = HIDEEARS|BLOCKHAIR
@@ -1896,15 +1900,40 @@
 	armor_up = list(melee = 1, bullet = 5, energy = 2, bomb = 10, bio = 100, rad = 50)
 	armor_list = list(melee = 6, bullet = 6, energy = 6, bomb = 20, bio = 100, rad = 50)
 	up = TRUE
+	action_button_name = "Adjust Face Shield"
+	brightness_on = 4
+	light_overlay = "helmet_light"
 	var/speaker_enabled = TRUE
 	var/scan_scheduled = FALSE
 	var/scan_interval = 15 SECONDS
 	var/repeat_report_after = 60 SECONDS
 	var/list/crewmembers_recently_reported = list()
+	var/obj/screen/tracking_arrow/tracking_overlay = null
+	var/obj/item/clothing/glasses/hud/health/medical_hud
+	var/last_hud_toggle = 0
+	var/hud_toggle_delay = 2 SECONDS
+
+/obj/item/clothing/head/helmet/faceshield/paramedic/New()
+	..()
+	medical_hud = new(src)
+	medical_hud.canremove = FALSE
 
 /obj/item/clothing/head/helmet/faceshield/paramedic/equipped(mob/M)
 	. = ..()
 	schedule_scan()
+	START_PROCESSING(SSobj, src)
+
+/obj/item/clothing/head/helmet/faceshield/paramedic/attack_self(mob/user)
+	if(!user.incapacitated())
+		src.set_is_up(!src.up)
+
+		if(src.up)
+			to_chat(user, "You push the [src] up out of your face.")
+			remove_tracking_overlay()
+		else
+			to_chat(user, "You flip the [src] down to protect your face.")
+
+		user.update_action_buttons()
 
 /obj/item/clothing/head/helmet/faceshield/paramedic/proc/schedule_scan()
 	if(scan_scheduled)
@@ -1959,11 +1988,163 @@
 
 	schedule_scan()
 
-/obj/item/clothing/head/helmet/faceshield/paramedic/AltClick()
-	toogle_speaker()
+/obj/item/clothing/head/helmet/faceshield/paramedic/proc/get_direction_to_target()
+	if(!ishuman(loc))
+		return null
 
-/obj/item/clothing/head/helmet/faceshield/paramedic/verb/toogle_speaker()
-	set name = "Toogle helmet's speaker"
+	var/mob/living/carbon/human/user = loc
+
+	// Check if helmet is down (active)
+	if(up)
+		return null
+
+	// Look for a Moebius tablet in user's inventory that is tracking
+	var/obj/item/modular_computer/tablet/moebius/tablet = null
+	for(var/obj/item/I in user.get_all_slots())
+		if(istype(I, /obj/item/modular_computer/tablet/moebius))
+			var/obj/item/modular_computer/tablet/moebius/T = I
+			if(T.is_tracking && T.target_mob)
+				tablet = T
+				break
+
+	if(!tablet)
+		return null
+
+	var/turf/user_turf = get_turf(user)
+	var/turf/target_turf = get_turf(tablet.target_mob)
+
+	if(!user_turf || !target_turf || user_turf.z != target_turf.z)
+		return null
+
+	return get_dir(user_turf, target_turf)
+
+/obj/item/clothing/head/helmet/faceshield/paramedic/proc/update_tracking_overlay()
+	if(!ishuman(loc))
+		remove_tracking_overlay()
+		return
+
+	var/mob/living/carbon/human/user = loc
+	if(!user.client)
+		remove_tracking_overlay()
+		return
+
+	// Remove any existing tracking overlay
+	remove_tracking_overlay()
+
+	var/direction = get_direction_to_target()
+	if(!direction)
+		return
+
+	// Create screen object for tracking arrow
+	tracking_overlay = new /obj/screen/tracking_arrow()
+
+	// Set the arrow direction icon
+	switch(direction)
+		if(EAST)
+			tracking_overlay.icon_state = "ARROW_EAST"
+		if(NORTH)
+			tracking_overlay.icon_state = "ARROW_NORTH"
+		if(NORTHEAST)
+			tracking_overlay.icon_state = "ARROW_NORTHEAST"
+		if(NORTHWEST)
+			tracking_overlay.icon_state = "ARROW_NORTHWEST"
+		if(SOUTH)
+			tracking_overlay.icon_state = "ARROW_SOUTH"
+		if(SOUTHEAST)
+			tracking_overlay.icon_state = "ARROW_SOUTHEAST"
+		if(SOUTHWEST)
+			tracking_overlay.icon_state = "ARROW_SOUTHWEST"
+		if(WEST)
+			tracking_overlay.icon_state = "ARROW_WEST"
+		else
+			qdel(tracking_overlay)
+			tracking_overlay = null
+			return
+
+	// Add the overlay to the user's screen
+	user.client.screen += tracking_overlay
+
+/obj/item/clothing/head/helmet/faceshield/paramedic/proc/remove_tracking_overlay()
+	if(tracking_overlay && ishuman(loc))
+		var/mob/living/carbon/human/user = loc
+		if(user.client)
+			user.client.screen -= tracking_overlay
+		qdel(tracking_overlay)
+	tracking_overlay = null
+
+/obj/item/clothing/head/helmet/faceshield/paramedic/dropped(mob/user)
+	. = ..()
+	remove_tracking_overlay()
+	STOP_PROCESSING(SSobj, src)
+	if(medical_hud.loc != src)
+		if(ismob(medical_hud.loc))
+			var/mob/hud_loc = medical_hud.loc
+			hud_loc.drop_from_inventory(medical_hud, src)
+			medical_hud.toggle(user, FALSE)
+			medical_hud.forceMove(src)
+
+/obj/item/clothing/head/helmet/faceshield/paramedic/Process()
+	update_tracking_overlay()
+
+/obj/item/clothing/head/helmet/faceshield/paramedic/set_is_up(is_up)
+	. = ..()
+	// Clear overlay when helmet is raised
+	if(is_up)
+		remove_tracking_overlay()
+
+/obj/item/clothing/head/helmet/faceshield/paramedic/AltClick()
+	toggle_speaker()
+
+/obj/item/clothing/head/helmet/faceshield/paramedic/CtrlClick(mob/user)
+	toggle_light()
+
+/obj/item/clothing/head/helmet/faceshield/paramedic/CtrlShiftClick(mob/user)
+	toggle_medical_hud(user)
+
+/obj/item/clothing/head/helmet/faceshield/paramedic/verb/toggle_faceshield()
+	set name = "Adjust face shield"
+	set category = "Object"
+	set src in usr
+
+	if(!usr.incapacitated())
+		src.set_is_up(!src.up)
+
+		if(src.up)
+			to_chat(usr, "You push the [src] up out of your face.")
+			remove_tracking_overlay()
+		else
+			to_chat(usr, "You flip the [src] down to protect your face.")
+
+		usr.update_action_buttons()
+
+/obj/item/clothing/head/helmet/faceshield/paramedic/verb/toggle_light()
+	set name = "Toggle helmet light"
+	set category = "Object"
+	set src in usr
+
+	if(!usr.incapacitated())
+		if(!isturf(usr.loc))
+			to_chat(usr, "You cannot turn the light on while in this [usr.loc]")
+			return
+		on = !on
+		to_chat(usr, "You [on ? "enable" : "disable"] the helmet light.")
+		update_flashlight(usr)
+
+/obj/item/clothing/head/helmet/faceshield/paramedic/verb/toggle_tracking_overlay()
+	set name = "Toggle tracking overlay"
+	set category = "Object"
+	set src in usr
+
+	if(!usr.incapacitated())
+		if(tracking_overlay)
+			remove_tracking_overlay()
+			to_chat(usr, "You turn off the tracking overlay.")
+		else
+			update_tracking_overlay()
+			to_chat(usr, "You turn on the tracking overlay.")
+
+/obj/item/clothing/head/helmet/faceshield/paramedic/verb/toggle_speaker()
+	set name = "Toggle helmet's speaker"
 	set category = "Object"
 	set src in usr
 
@@ -1975,6 +2156,29 @@
 		speaker_enabled = TRUE
 		report_health_alerts()
 
+/obj/item/clothing/head/helmet/faceshield/paramedic/proc/toggle_medical_hud(mob/user)
+	if(!user)
+		return
+	if(user.get_equipped_item(slot_head) != src)
+		to_chat(user, SPAN_WARNING("You need to be wearing the helmet to use this function."))
+		return
+	if(medical_hud in src)
+		if(user.equip_to_slot_if_possible(medical_hud, slot_glasses) && world.time > last_hud_toggle)
+			to_chat(user, SPAN_NOTICE("You activate [src]'s medical HUD display."))
+			last_hud_toggle = world.time + hud_toggle_delay
+			medical_hud.toggle(user, TRUE)
+		else
+			to_chat(user, SPAN_WARNING("You are wearing something which is in the way or trying to toggle too fast!"))
+	else
+		if(ismob(medical_hud.loc) && world.time > last_hud_toggle)
+			last_hud_toggle = world.time + hud_toggle_delay
+			var/mob/hud_loc = medical_hud.loc
+			hud_loc.drop_from_inventory(medical_hud, src)
+			medical_hud.toggle(user, FALSE)
+			to_chat(user, SPAN_NOTICE("You deactivate [src]'s medical HUD display."))
+			medical_hud.forceMove(src)
+		else
+			to_chat(user, SPAN_WARNING("You can't toggle the medical HUD so fast!"))
 
 
 
