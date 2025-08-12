@@ -2162,15 +2162,18 @@
 	if(user.get_equipped_item(slot_head) != src)
 		to_chat(user, SPAN_WARNING("You need to be wearing the helmet to use this function."))
 		return
+	if(world.time < last_hud_toggle)
+		to_chat(user, SPAN_WARNING("You can't toggle the medical HUD so fast!"))
+		return
 	if(medical_hud in src)
-		if(user.equip_to_slot_if_possible(medical_hud, slot_glasses) && world.time > last_hud_toggle)
+		if(user.equip_to_slot_if_possible(medical_hud, slot_glasses))
 			to_chat(user, SPAN_NOTICE("You activate [src]'s medical HUD display."))
 			last_hud_toggle = world.time + hud_toggle_delay
 			medical_hud.toggle(user, TRUE)
 		else
-			to_chat(user, SPAN_WARNING("You are wearing something which is in the way or trying to toggle too fast!"))
+			to_chat(user, SPAN_WARNING("You are wearing something which is in the way!"))
 	else
-		if(ismob(medical_hud.loc) && world.time > last_hud_toggle)
+		if(ismob(medical_hud.loc))
 			last_hud_toggle = world.time + hud_toggle_delay
 			var/mob/hud_loc = medical_hud.loc
 			hud_loc.drop_from_inventory(medical_hud, src)
@@ -2178,7 +2181,8 @@
 			to_chat(user, SPAN_NOTICE("You deactivate [src]'s medical HUD display."))
 			medical_hud.forceMove(src)
 		else
-			to_chat(user, SPAN_WARNING("You can't toggle the medical HUD so fast!"))
+			to_chat(user, SPAN_WARNING("Medical HUD is not currently active!"))
+	user.update_action_buttons()
 
 
 
