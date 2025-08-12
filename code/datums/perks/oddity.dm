@@ -1,5 +1,6 @@
 /datum/perk/oddity
 	gain_text = "You feel different. Exposure to oddities has changed you. Now you can't go back."
+	copy_protected = TRUE //ALL Oddity perks blacklisted by default. Unblacklist individual ones.
 
 /datum/perk/oddity/survivor
 	name = "Survivor"
@@ -80,18 +81,21 @@
 	desc = "The latent effects of an oddity have granted you an insight into firing bullets faster than anyone else; a shame it doesn't make you immune to recoil."
 	gain_text = "Your trigger finger feels more relaxed than ever..."
 	icon_state = "dual_shot" // https://game-icons.net/1x1/delapouite/bullet-impacts.html
+	copy_protected = FALSE
 
 /datum/perk/oddity/balls_of_plasteel
 	name = "True Grit"
 	desc = "Pain comes and goes, you feel as though can withstand far worse than ever before."
 	gain_text = "Pain is merely weakness leaving the body."
 	icon_state = "golem" // https://game-icons.net
+	copy_protected = FALSE
 
 /datum/perk/oddity/fast_walker
 	name = "Springheel"
 	desc = "You're sure of your movements now, slow and steady may win the race but you can prove them wrong."
 	gain_text = "You feel your pace quickening, your thoughts barely catching up with your stride..."
 	icon_state = "fast" // https://game-icons.net/1x1/delapouite/fast-forward-button.html
+	//Unblacklist if you feel like it. For obvious reasons, Borers would LOVE to copy this to every host.
 
 /datum/perk/oddity/fast_walker/assign(mob/living/L)
 	..()
@@ -103,6 +107,7 @@
 	desc = "Your skin has become harder, more durable, able to accept blunt force and endure."
 	gain_text = "After all you've endured, you can't help but feel tougher than normal, your skin feels like iron."
 	icon_state = "riotshield"
+	copy_protected = FALSE
 
 /datum/perk/oddity/harden/assign(mob/living/L)
 	..()
@@ -143,6 +148,7 @@
 	desc = "You've been exposed to something toxic, yet your body fought it off and is now strengthened against poisoning as a result."
 	gain_text = "What doesn't kill you, helps you survive it better."
 	icon_state = "alch"
+	copy_protected = FALSE
 
 /datum/perk/oddity/better_toxins/assign(mob/living/L)
 	..()
@@ -225,6 +231,7 @@
 	desc = "You're more keenly aware of your own abilities for combat. You feel more confident on your punches thrown, a bit tougher against those thrown at you, and you're starting to get the hang of shooting that one bulky gun..."
 	gain_text = "The blood pumps, the muscles harden, and your trigger finger feels easier than ever..."
 	icon_state = "muscular"
+	copy_protected = FALSE
 
 /datum/perk/oddity/strangth/assign(mob/living/L)
 	..()
@@ -242,6 +249,7 @@
 	name = "Will of Iron"
 	desc = "The body is able to succumb to many negative affects but the mind can simply ignore them. Getting addicted to things is much harder and you can stomach more chemicals."
 	icon_state = "ironpill" // https://game-icons.net/1x1/lorc/underdose.html
+	copy_protected = FALSE
 
 /datum/perk/oddity/iron_will/assign(mob/living/L)
 	..()
@@ -263,6 +271,7 @@
 	name = "Will to Power"
 	desc = "The mind protects the body by imposing limits to prevent severe harm to the self. With enough focus, you can push yourself past that limit."
 	icon_state = "ironpill" // https://game-icons.net/1x1/lorc/underdose.html
+	copy_protected = FALSE
 
 /datum/perk/oddity/mind_of_matter/assign(mob/living/L)
 	..()
@@ -281,6 +290,7 @@
 	gain_text = "Reloading with a simple mind is almost second nature..."
 	lose_text = "The reloading from the side is more complicated..."
 	icon_state = "plus_one" // https://game-icons.net/1x1/lorc/gears.html
+	copy_protected = FALSE
 
 /datum/perk/oddity/side_loading/assign(mob/living/L)
 	..()
@@ -336,6 +346,7 @@
 
 /datum/perk/nt_oddity
 	gain_text = "The Absolute chose you to expand its will."
+	copy_protected = TRUE //For obvious reasons.
 
 /datum/perk/nt_oddity/holy_light
 	name = "Holy Light"
@@ -372,6 +383,7 @@
 	lose_text = "The death heat of the universe strays further away... for now."
 	icon_state = "vortex"
 	var/initial_time
+	copy_protected = TRUE //Hm yes how about I crash bluespace again
 
 /datum/perk/bluespace/assign(mob/living/L)
 	..()
@@ -408,6 +420,7 @@
 	desc = "It's sleek contours, the expert craftsmanship... The best of hand-made mechanical genius."
 	gain_text = "What wondrous possibilities..."
 	icon_state = "tinker"
+	copy_protected = TRUE
 
 /datum/perk/guild/blackbox_insight/assign(mob/living/L)
 	..()
@@ -429,12 +442,13 @@
 /datum/perk/drug/ultrasurgeon
 	name = "Ultrasurgeon Knowledge"
 	desc = "After your fix of ultrasurgeon you can feel your mind ease just as your muscles relax."
+	copy_protected = TRUE
 
 /datum/perk/njoy
 	name = "Njoy (Active)"
 	desc = "Your mind can focus on what is real, just like when you get rid of a painful earring."
 	icon_state = "cheerful"  //https://game-icons.net/1x1/lorc/cheerful.html
-
+	copy_protected = TRUE
 	gain_text = "Your mind feels much clearer now."
 	lose_text = "You feel the shadows once more."
 

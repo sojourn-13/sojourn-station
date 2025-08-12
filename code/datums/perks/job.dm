@@ -29,6 +29,7 @@
 	var/old_max_insight = INFINITY
 	var/old_max_resting = INFINITY
 	var/old_insight_rest_gain_multiplier = 1
+	copy_protected = TRUE
 
 /datum/perk/job/artist/assign(mob/living/L)
 	..()
@@ -60,6 +61,7 @@
 	icon_state = "adrenalineburst_tim"
 	active = FALSE
 	passivePerk = FALSE
+	copy_protected = TRUE
 
 /datum/perk/timeismoney/activate()
 	var/mob/living/carbon/human/user = usr
@@ -84,6 +86,7 @@
 	desc = "Clean living in the Sol system has prevented you from building up a tolerance to most chemicals, your body can't handle the more hardcore drugs that most can and you find yourself getting \
 	addicted slightly easier."
 	icon_state = "solborn" // https://game-icons.net/1x1/lorc/overdose.html
+	copy_protected = TRUE //Origin Traits.
 
 /datum/perk/solborn/assign(mob/living/L)
 	..()
@@ -105,6 +108,7 @@
 	name = "Klutz"
 	desc = "You find a lot of tasks a little beyond your ability to perform such is using any type of weaponry, but being accident prone has at least made you used to getting hurt."
 	icon_state = "klutz"
+	copy_protected = TRUE //Blacklisted for the same reason Rez sickness is.
 
 /datum/perk/klutz/assign(mob/living/L)
 	..()
@@ -120,7 +124,7 @@
 	icon_state = "truefaith"
 	gain_text = "You feel the protection of the nearby obelisk."
 	lose_text = "You no longer feel the protection of an obelisk."
-
+	copy_protected = TRUE
 
 /datum/perk/active_sanityboost/assign(mob/living/L)
 	if(..() && ishuman(holder))
@@ -137,17 +141,19 @@
 	name = "Lazarus Protocol"
 	desc = "Your cruciform is more than just a symbol of faith. Should you ever perish, it will attempt an emergency revival that may restore your body after a short time, in which you'll be unconscious."
 	icon_state = "regrowth" // https://game-icons.net/1x1/delapouite/stump-regrowth.html
+	copy_protected = TRUE
 
 /datum/perk/community_of_saints
 	name = "Community of the Saints"
 	desc = "Your cruciform connects you to all other believers, but such connection can be distracting as well as beneficial. You take 25% longer to complete all tool-based actions that aren't instantaneous."
 	icon_state = "communityofthesaints"
+	copy_protected = TRUE
 
 /datum/perk/ear_of_quicksilver
 	name = "Ear of Quicksilver"
 	desc = "Training (and an ear implant) given to you as a Ranger makes it hard for secrets to escape your ears. Beware, loud noises are especially dangerous to you as a side effect."
 	icon_state = "ear" // https://game-icons.net
-
+	copy_protected = TRUE
 
 /datum/perk/chemist
 	name = "Periodic Table"
@@ -193,6 +199,7 @@
 /datum/perk/scribe
 	name = "Scribe"
 	desc = "Your ability to turn experiences into words knows no bounds. Paper at this point is hardly able to hold the power of your writing."
+	copy_protected = TRUE
 
 /datum/perk/scribe/assign(mob/living/L)
 	..()
@@ -209,6 +216,7 @@
 	perk_lifetime = 3 SECONDS
 	gain_text = "The scroll's smoke fills your eyes. Whats moving in the walls?"
 	lose_text = "Your eyes sting but you don't see the pain anymore."
+	copy_protected = TRUE
 
 /datum/perk/cooldown/reveal/assign(mob/living/L)
 	..()
@@ -297,6 +305,7 @@
 	gain_text = "Your body aches from the pain of returning from death, you better find a chair or bed to rest in so you can heal properly."
 	lose_text = "You finally feel like you recovered from the ravages of your body."
 	var/initial_time
+	copy_protected = TRUE //no griefing people, naughty borer/carrion
 
 /datum/perk/rezsickness/assign(mob/living/L)
 	..()
@@ -409,6 +418,7 @@
 	lose_text = "The thunder bouncing around just beneath your dermis has passed and you feel stable once again."
 	var/initial_time
 	icon_state = "slime_rez"
+	copy_protected = TRUE
 
 /datum/perk/racial/slime_rez_sickness/assign(mob/living/L)
 	..()
@@ -442,6 +452,7 @@
 	name = "Handyman"
 	desc = "Training by the Artificer's Guild has granted you the knowledge of how to take apart machines in the most efficient way possible, finding materials and supplies most people would miss. This training is taken further the more mechanically skilled or cognitively capable you are."
 	icon_state = "handyman"
+	copy_protected = TRUE
 
 /datum/perk/handyman/assign(mob/living/L)
 	..()
@@ -454,13 +465,15 @@
 	name = "Anomaly Hunter"
 	desc = "Special training from senior Prospectors and your own experience has allowed you to instinctively know the effects of greater oddities. By examining an oddity that has become an anomaly, you can tell what its greater boon or curse may be."
 	icon_state = "anomalyhunter"
+	copy_protected = TRUE //This isn't like market professional. Too strong to be able to copy.
 
 /datum/perk/market_prof
 	name = "Market Professional"
 	desc = "You've become an excellent appraiser of goods over the years. Just by looking at the item, you can know how much it would sell for in today's market rates."
 	icon_state = "marketprofessional"
+	//The only reason this isn't copy protected is it doesn't lock unique recipies and isn't gamebreaking.
 
-//Medical perks - relates to surgery and all.
+//Medical perks - relates to surgery and all - If this ends up being too OP, copy protect all of them.
 
 /datum/perk/surgical_master
 	name = "Surgery Training"
@@ -492,11 +505,13 @@
 	name = "Key Smith"
 	desc = "You have been granted a multitude of specially crafted electronic 'keys' for opening most airlocks around the colony, and the knowledge on how to use them has been solely been passed on to you. Don't get discouraged, you will eventually find the right one..."
 	icon_state = "keysmith"
+	copy_protected = TRUE //No.
 
 /datum/perk/job/blackshield_conditioning
 	name = "Blackshield Conditioning"
 	desc = "Thanks to special and intensive training received in the course of your employment with Blackshield, with all the practice gained in space you feel you can jump from greater heights and know when to duck-and-cover."
 	icon_state = "blackshieldconditioning"
+	copy_protected = TRUE //Physical trait. Not mental.
 
 /datum/perk/job/blackshield_conditioning/assign(mob/living/L)
 	..()
@@ -513,6 +528,7 @@
 	desc = "You've been through it all. Spider bites, random cuts on rusted metal, animal claws, getting shot, and even set on fire. Hell, even a few used needles in desperate times. You feel as though your body fights off the inflictions of too much NSA and addictions much better than others."
 	icon_state = "roughandtumble"
 	perk_shared_ability = PERK_SHARED_SEE_ILLEGAL_REAGENTS
+	copy_protected = TRUE
 
 /datum/perk/job/prospector_conditioning/assign(mob/living/L)
 	..()
@@ -553,6 +569,7 @@
 	name = "SI Science Training"
 	icon_state = "sitraining"
 	desc = "You know how to use RnD core consoles and Exosuit Fabs."
+	copy_protected = TRUE //No.
 
 /datum/perk/neat
 	name = "Humble Cleanser"
@@ -560,6 +577,7 @@
 			This perk reduces the total sanity damage you can take from what is happening around you. \
 			You can regain sanity by cleaning."
 	icon_state = "neat" // https://game-icons.net/1x1/delapouite/broom.html
+	copy_protected = TRUE //No.
 
 /datum/perk/neat/assign(mob/living/L)
 	if(..() && ishuman(holder))
@@ -577,12 +595,13 @@
 	desc = "You know how to channel spiritual energy during rituals. You gain additional skill points \
 			during group rituals, and have an increased regeneration of cruciform energy."
 	icon_state = "channeling"
-
+	copy_protected = TRUE
 
 /datum/perk/codespeak
 	name = "Codespeak"
 	desc = "You know Marshal codes."
 	icon_state = "codespeak" // https://game-icons.net/1x1/delapouite/police-officer-head.html
+	copy_protected = TRUE //Borers already grant omni language translation.
 	var/list/codespeak_procs = list(
 		/mob/living/carbon/human/proc/codespeak_help,
 		/mob/living/carbon/human/proc/codespeak_clear,
@@ -640,6 +659,7 @@
 	active = FALSE
 	passivePerk = FALSE
 	icon_state = "spice"
+	copy_protected = TRUE //Chefs are already under-played. No reason to destroy the role further.
 
 /datum/perk/foodappraise/activate()
 	var/mob/living/carbon/human/user = usr
@@ -692,6 +712,7 @@
 	passivePerk = FALSE
 	var/anti_cheat = FALSE
 	icon_state = "true_name"
+	copy_protected = TRUE
 
 /datum/perk/true_name/activate()
 	..()

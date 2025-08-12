@@ -38,6 +38,7 @@
 	// var/datum/action/innate/perk/perk_action
 	var/cooldown_time = 0
 	var/perk_shared_ability
+	var/copy_protected = FALSE //Handles being able to potentially copy PERKS between hosts for Borers and Carrions. Currenly unused.
 
 /datum/perk/New()
 	..()
@@ -70,8 +71,8 @@
 
 /// Proc called when the perk is assigned to a being. Should be the first thing to be called.
 /datum/perk/proc/assign(mob/living/L)
+	SHOULD_CALL_PARENT(TRUE)
 	if(istype(L))
-		SHOULD_CALL_PARENT(TRUE)
 		holder = L
 		RegisterSignal(holder, COMSIG_MOB_LIFE, PROC_REF(on_process))
 		to_chat(holder, SPAN_NOTICE("[gain_text]"))

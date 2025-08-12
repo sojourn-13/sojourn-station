@@ -129,7 +129,7 @@
 			// If they're in normally, implant removal can get them out.
 			var/obj/item/organ/external/head = H.get_organ(BP_HEAD)
 			head.implants += src //Removed the brain eating/replacing proc reference.
-
+			hostbrain = pick(host.internal_organs_by_efficiency[BP_BRAIN]) // lol lmao what the actual fuck is this code I have to do
 /*
 /mob/living/simple/borer/verb/devour_brain()
 	set category = "Abilities"
@@ -290,6 +290,81 @@
 
 	used_dominate = world.time
 
+/mob/living/simple/borer/proc/read_perk()
+	set category = "Abilities"
+	set name = "Deep Neuron Analysis (Perk Copy)"
+	set desc = "Store a Host's Perk for later transmission. Note; this is a disorientating process, and causes neural stress in the process."
+	if(stat)
+		return
+
+	if(!host)
+		to_chat(src, SPAN_WARNING("You are not inside a host body."))
+		return
+
+	if(chemicals < 250)
+		to_chat(src, SPAN_WARNING("You don't have enough chemicals!"))
+		return
+
+	if(docile)
+		to_chat(src, SPAN_DANGER("You are feeling far too docile to do that."))
+		return
+
+	if(host.stats.perks.len == 0)
+		to_chat(src, "Your host is a blank slate! They have nothing you can learn from!")
+		return
+
+	var/datum/perk/perkname = input("What perk do you wish to copy?") as null|anything in host?.stats?.perks
+	if(!perkname.copy_protected)
+		if(perkname != null) //ensure this actually exists holy moly
+			to_chat(src, SPAN_NOTICE("You forcibly dig your tendrils into the [host]'s hindbrain, dragging information involving [perkname.name] to the surface."))
+			borer_add_exp(25) //You give your Host literal braindamage.
+			savedperk = perkname
+			host.adjustBrainLoss(55) //Compensated for with take_damage to proc wounds
+			hostbrain.take_damage(2, BRUTE, 2, FALSE, FALSE, FALSE)
+			host.drip_blood(60) //Yeah, this had some pretty negative consequences
+			to_chat(host, SPAN_DANGER("Your nose starts profusely bleeding, only stopping after a few moments have passed..."))
+			chemicals -= 300 //Expensive
+		else
+			to_chat(src, SPAN_NOTICE("You carefully withdraw your tendrils from the Host's deepest layers of brain matter..."))
+	else
+		to_chat(src, SPAN_NOTICE("You cannot copy this perk!"))
+
+/mob/living/simple/borer/proc/write_perk()
+	set category = "Abilities"
+	set name = "Hind-brain Neuron Overwrite (Write Perk)"
+	set desc = "Write a Perk to a Host's neural matrix. This will damage existing tissue."
+	if(stat)
+		return
+
+	if(!host)
+		to_chat(src, SPAN_WARNING("You are not inside a host body."))
+		return
+
+	if(chemicals < 500)
+		to_chat(src, SPAN_WARNING("You don't have enough chemicals!"))
+		return
+
+	if(docile)
+		to_chat(src, SPAN_DANGER("You are feeling far too docile to do that."))
+		return
+
+	if(savedperk != null) //ensure this actually exists holy moly
+		to_chat(src, SPAN_NOTICE("You forcibly dig your tendrils into the [host]'s hindbrain, implanting information involving [savedperk.name] within. Almost immediately, a seizure begins."))
+		host.stats.addPerk(savedperk.type)
+		host.adjustBrainLoss(75) //replaced with take_damage
+		hostbrain.take_damage(3,BRUTE, 2, FALSE, FALSE, FALSE)
+		host.drip_blood(75) //Yeah, this had some pretty negative consequences
+		for(var/mob/O in viewers(host, null))
+			if(O == src)
+				continue
+			O.show_message(text(SPAN_DANGER("[src] starts having a seizure, blood leaking from their nose!")), 1)
+		host.SetParalysis(15 SECONDS)
+		host.SetJitteriness(25 SECONDS)
+		to_chat(host, SPAN_DANGER("A GOUT of blood shoots from your nose - and you quickly lose control of your limbs, falling into a seizure!"))
+		chemicals -= 500 //Even more expensive.
+	else
+		to_chat(src, SPAN_NOTICE("You have no perk saved!"))
+
 /mob/living/simple/borer/proc/assume_control()
 	set category = "Abilities"
 	set name = "Assume Control"
@@ -362,6 +437,26 @@
 
 			update_abilities()
 
+//JUMPSTART BUFFS AND NERFS
+
+/datum/reagent/borium //Borium. Essentially a copy-paste of trauma control system, but only accessible via jumpstart on a dead host. Helps them wake back up.
+	name = "Unknown Hormonal Isomer"
+	id = "borium"
+	description = "An unknown, and extremely potent isomer that cortical borers have been occasionally known to syntensize within dead, or dying hosts."
+	metabolism = REM * 0.25
+	overdose = 20 //Do not spam this.
+	scannable = FALSE
+	nerve_system_accumulations = -15
+
+/datum/reagent/borium/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	if(..())
+		M.add_chemical_effect(CE_ONCOCIDAL, 1)
+		M.add_chemical_effect(CE_BLOODCLOT, 1)
+		M.add_chemical_effect(CE_ANTITOX, 2)
+		M.add_chemical_effect(CE_STABLE, 1)
+		M.add_chemical_effect(CE_BRAINHEAL, 1)
+		M.add_chemical_effect(CE_EYEHEAL, 1)
+
 /mob/living/simple/borer/proc/jumpstart()
 	set category = "Abilities"
 	set name = "Revive Host"
@@ -376,8 +471,12 @@
 		return
 
 	if(host.getBrainLoss() >= 100)
-		to_chat(src, SPAN_WARNING("Host is brain dead!"))
+		to_chat(src, SPAN_WARNING("Host has suffered catastrophic neural degredation... This will take multiple attempts. You begin work on slowly repairing their neural structures."))
+		var/brain_damage = CLAMP((host.getBrainLoss() - 30), 200, 0) //This stops borers from sofltocking in the rare cases of infinite neural deg. They have cherry drops, so yeah.
+		visible_message(SPAN_WARNING("[host] shudders violently, seemingly rapidly regenerating damage to their head!"))
+		host.setBrainLoss(brain_damage)
 		return
+
 	visible_message(SPAN_WARNING("With a hideous, rattling moan, [host] shudders back to life!"))
 
 	var/all_damage = host.getBruteLoss() + host.getFireLoss() + host.getCloneLoss() + host.getOxyLoss() + host.getToxLoss()
@@ -388,6 +487,7 @@
 		host.adjustOxyLoss(-10)
 		all_damage = host.getBruteLoss() + host.getFireLoss() + host.getCloneLoss() + host.getOxyLoss() + host.getToxLoss()
 
+	host.reagents.add_reagent("borium", 10)
 	host.stat = UNCONSCIOUS
 	host.updatehealth()
 	host.make_jittery(100)
@@ -397,6 +497,7 @@
 	host.restore_blood()
 	host.fixblood()
 	host.update_lying_buckled_and_verb_status()
+	host.stats.addPerk(PERK_REZ_SICKNESS_SEVERE) //Being revived by brainworms sucks.
 	chemicals -= 500
 
 /mob/living/simple/borer/proc/read_mind()
@@ -415,14 +516,15 @@
 		to_chat(src, SPAN_DANGER("You are feeling far too docile to do that."))
 		return
 
-	var/list/copied_stats = list()
-	if(!host.stats)
-		for(var/stat_name in ALL_STATS)
-			var/host_stat = host.stats.getStat(stat_name, pure=TRUE)
-			var/borer_stat = stats.getStat(stat_name, pure=TRUE)
+	if(host.stats)
+		for(var/stat_name in ALL_STATS_FOR_LEVEL_UP)
+			var/host_stat = host.stats.getStat(stat_name, require_direct_value = TRUE)
+			var/borer_stat = stats.getStat(stat_name, require_direct_value = TRUE)
 			if(host_stat > borer_stat)
 				stats.setStat(stat_name, host_stat)
 				copied_stats += stat_name
+				to_chat(src, SPAN_NOTICE("You carefully extend your tendrils into the [host]'s frontal lobe, extracting knowledge on [stat_name]."))
+				borer_add_exp(8) //Flat 8 EXP each time you learn a greater stat.
 
 	var/list/copied_languages = list()
 	for(var/datum/language/L in host.languages)
@@ -433,17 +535,15 @@
 	if(host.mind)
 		host.mind.show_memory(src)
 
-	var/copied_amount = length(copied_stats) + length(copied_languages)
+	var/copied_amount = length(copied_languages)
 	if(copied_amount)
-		borer_add_exp((copied_amount*5))
-		if(length(copied_stats))
-			to_chat(src, SPAN_NOTICE("You extracted some knowledge on [english_list(copied_stats)]."))
+		borer_add_exp((copied_amount*3)) //Nerf this (TM) (~3 EXP per language)
 
 		if(length(copied_languages))
-			to_chat(src, SPAN_NOTICE("You learned [english_list(copied_languages)]."))
+			to_chat(src, SPAN_NOTICE("You carefully dig your tendrils into their language centers, taking knowledge of [english_list(copied_languages)]."))
 
 		to_chat(host, SPAN_DANGER("Your head spins, your memories thrown in disarray!"))
-		host.adjustBrainLoss(copied_amount * 4)
+		hostbrain.take_damage(0.5, BRUTE, 2, FALSE, FALSE, FALSE)
 		host?.sanity.onPsyDamage(copied_amount * 4)
 
 		host.make_dizzy(copied_amount * 4)
@@ -466,13 +566,12 @@
 		to_chat(src, SPAN_DANGER("You are feeling far too docile to do that."))
 		return
 
-	var/list/copied_stats = list()
-	for(var/stat_name in ALL_STATS)
-		var/host_stat = host.stats.getStat(stat_name, pure=TRUE)
-		var/borer_stat = stats.getStat(stat_name, pure=TRUE)
+	for(var/stat_name in ALL_STATS_FOR_LEVEL_UP)
+		var/host_stat = host.stats.getStat(stat_name, require_direct_value = TRUE)
+		var/borer_stat = stats.getStat(stat_name, require_direct_value = TRUE)
 		if(borer_stat > host_stat)
 			host.stats.setStat(stat_name, borer_stat)
-			copied_stats += stat_name
+			to_chat(src, SPAN_NOTICE("You carefully engrave knowledge of [stat_name] into your host's mind."))
 
 	var/list/copied_languages = list()
 	for(var/datum/language/L in languages)
@@ -481,16 +580,13 @@
 			copied_languages += L.name
 
 
-	var/copied_amount = length(copied_stats) + length(copied_languages)
+	var/copied_amount = length(copied_languages)
 	if(copied_amount)
-		if(length(copied_stats))
-			to_chat(src, SPAN_NOTICE("You put some knowledge on [english_list(copied_stats)] into your host's mind."))
-
 		if(length(copied_languages))
 			to_chat(src, SPAN_NOTICE("You teach your host [english_list(copied_languages)]."))
 
 		to_chat(host, SPAN_DANGER("Your head spins as new information fills your mind!"))
-		host.adjustBrainLoss(copied_amount * 2)
+		hostbrain.take_damage(0.5, BRUTE, 2, FALSE, FALSE, FALSE)
 		host?.sanity.onPsyDamage(copied_amount * 2)
 
 		host.make_dizzy(copied_amount * 2)
@@ -546,7 +642,7 @@
 	if(src.stat)
 		return
 
-	if(world.time - used_dominate < 150)
+	if(world.time - used_dominate < 300 SECONDS) //5 minute CD
 		to_chat(src, "\red <B>You cannot use that ability again so soon.</B>")
 		return
 
@@ -555,14 +651,12 @@
 		return
 
 	if(invisibility)
-		src.invisibility = 0
 		src.alpha = 255
 		used_dominate = world.time
 		to_chat(src, SPAN_NOTICE("You become visible again."))
 		return
 	else
-		src.invisibility = 26
-		src.alpha = 100
+		src.alpha = 140
 		to_chat(src, SPAN_NOTICE("You become invisible for living being."))
 		return
 
@@ -624,7 +718,7 @@
 	var/text = null
 
 	for(var/mob/living/carbon/H in oview())
-		if(H == host || H.stat == DEAD)
+		if(!(H == host|| H.stat == DEAD))
 			continue
 
 		targets += H //Fill list, prompt user with list
@@ -645,13 +739,30 @@
 		return
 
 	log_say("[key_name(src)] communed to [key_name(M)]: [text]")
-
+	log_and_message_admins("[key_name(src)] sent a telepathic (borer) message to [key_name(M)]: [text]")
 	to_chat(M, "\blue Like lead slabs crashing into the ocean, alien thoughts drop into your mind: [text]")
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 
 		to_chat(H, SPAN_WARNING("Your nose begins to bleed..."))
-		H.drip_blood(1)
+		if(prob(15))
+			H.adjustBrainLoss(25)
+		H.drip_blood(25)
+
+/mob/living/simple/borer/proc/truenamed()
+	set name = "True Name"
+	set desc = "Decide your true name. This can only be done once."
+	set category = "Abilities"
+	if(!selectedname)
+		var/msg = sanitize(input("True Name:", "Decide Your Fate") as text|null)
+		if(msg)
+			log_say("Name Change:  [key_name(src)]->[msg]")
+			truename = msg
+			selectedname = TRUE
+			to_chat(src, SPAN_PSION("You have decided your name. You shall now show as [truename] upon scans, and upon the Hivemind."))
+	else
+		to_chat(src, SPAN_PSION("You have chosen a name, or lost the intent to do so."))
+	return
 
 /mob/living/simple/borer/proc/sample_blood()
 	set category = "Abilities"
@@ -714,9 +825,9 @@
 
 
 /mob/living/simple/borer/proc/format_host_data(var/list/occ)
-	var/dat = "<font color='blue'><b>Sampling taken at [occ["stationtime"]]</b></font><br>"
-	dat += "<font color='blue'><b>Creature's vitality:</b></font><br>"
-
+	var/dat = "<font color='blue'><b>Scan performed at [occ["stationtime"]]</b></font><br>"
+	dat += "<font color='blue'><b>Occupant Statistics:</b></font><br>"
+	dat += text("ID Name: <i>[]</i><br>", occ["name"])
 	var/aux
 	switch (occ["stat"])
 		if(0)
@@ -725,18 +836,20 @@
 			aux = "Unconscious"
 		else
 			aux = "Dead"
-	dat += text("[]\tHealth %: [] ([])</font><br>", ("<font color='[occ["health"] > 50 ? "blue" : "red"]>"), occ["health"], aux)
-	dat += text("[]\t-Brute Damage %: []</font><br>", ("<font color='[occ["bruteloss"] < 60  ? "blue" : "red"]'>"), occ["bruteloss"])
-	dat += text("[]\t-Respiratory Damage %: []</font><br>", ("<font color='[occ["oxyloss"] < 60  ? "blue" : "red"]'>"), occ["oxyloss"])
-	dat += text("[]\t-Toxin Content %: []</font><br>", ("<font color='[occ["toxloss"] < 60  ? "blue" : "red"]'>"), occ["toxloss"])
-	dat += text("[]\t-Burn Severity %: []</font><br><br>", ("<font color='[occ["fireloss"] < 60  ? "blue" : "red"]'>"), occ["fireloss"])
+	dat += text("[]\t-Critical Health %: [] ([])</font><br>", ("<font color='[occ["health"] > 80 ? "blue" : "red"]'>"), occ["health"], aux)
+	dat += text("[]\t-Brute Damage: []</font><br>", ("<font color='[occ["bruteloss"] < 60  ? "blue" : "red"]'>"), occ["bruteloss"])
+	dat += text("[]\t-Burn Severity: []</font><br>", ("<font color='[occ["fireloss"] < 60  ? "blue" : "red"]'>"), occ["fireloss"])
+	dat += text("[]\t-Respiratory Damage %: []</font><br><br>", ("<font color='[occ["oxyloss"] < 60  ? "blue" : "red"]'>"), occ["oxyloss"])
 
+	dat += text("[]\tToxicity: []</font><br>", ("<font color='[occ["toxloss"] < 60  ? "blue" : "red"]'>"), occ["toxloss"] ? occ["toxloss"] : "0")
 	dat += text("[]\tRadiation Level %: []</font><br>", ("<font color='[occ["rads"] < 10  ? "blue" : "red"]'>"), occ["rads"])
-	dat += text("[]\tGenetic Tissue Damage %: []</font><br>", ("<font color='[occ["cloneloss"] < 1  ? "blue" : "red"]'>"), occ["cloneloss"])
 	dat += text("[]\tApprox. Brain Damage %: []</font><br>", ("<font color='[occ["brainloss"] < 1  ? "blue" : "red"]'>"), occ["brainloss"])
-	dat += text("[]\tNeural System Accumulation: []/[]<br>", ("<font color='[occ["NSA"] < occ["NSA_threshold"]  ? "blue" : "red"]'>"), occ["NSA"], occ["NSA_threshold"])
+	dat += text("[]\tNeural System Accumulation: []/[]</font><br>", ("<font color='[occ["NSA"] < occ["NSA_threshold"]  ? "blue" : "red"]'>"), occ["NSA"], occ["NSA_threshold"])
 	dat += text("Paralysis Summary %: [] ([] seconds left!)<br>", occ["paralysis"], round(occ["paralysis"] / 4))
 	dat += text("Body Temperature: [occ["bodytemp"]-T0C]&deg;C ([occ["bodytemp"]*1.8-459.67]&deg;F)<br><HR>")
+
+	if(occ["borer_present"])
+		dat += "Large Neurophage detected. Ensure patient consent, and remove in a secure environment if they are not wanted.<br>"
 
 	dat += text("[]\tBlood Level %: [] ([] units)</FONT><BR>", ("<font color='[occ["blood_amount"] > 80  ? "blue" : "red"]'>"), occ["blood_amount"], occ["blood_amount"])
 
@@ -751,17 +864,57 @@
 	dat += "<th>Organ</th>"
 	dat += "<th>Burn Damage</th>"
 	dat += "<th>Brute Damage</th>"
-	dat += "<th>Other Wounds</th>"
+	dat += "<th>Status</th>"
 	dat += "</tr>"
 
 	for(var/obj/item/organ/external/e in occ["external_organs"])
 		var/list/other_wounds = list()
+		var/significant = FALSE
 
-		dat += "<tr>"
+		for(var/obj/item/organ/internal/I in e.internal_organs) // I put this before the actual external organ
+			if(I.scanner_hidden) // so that I could set significant based on internal organ results.
+				continue
 
-		for(var/datum/wound/W in e.wounds) if(W.internal)
-			other_wounds += "Internal bleeding"
-			break
+			var/list/internal_wounds = list()
+			if(BP_IS_ASSISTED(I))
+				internal_wounds += "Assisted"
+			if(BP_IS_ROBOTIC(I))
+				internal_wounds += "Prosthetic"
+
+			var/total_brute_and_misc_damage = 0
+			var/total_burn_damage = 0
+
+			if(I.status & ORGAN_DEAD)
+				internal_wounds += "<font color='red'>Dead</font>"
+			else
+				if(I.rejecting)
+					internal_wounds += "being rejected"
+
+				var/list/internal_wound_comps = I.GetComponents(/datum/component/internal_wound)
+
+				for(var/datum/component/internal_wound/IW in internal_wound_comps)
+					var/severity = IW.severity
+					internal_wounds += "[IW.name] ([severity]/[IW.severity_max])"
+					if(istype(IW, /datum/component/internal_wound/organic/burn) || istype(IW, /datum/component/internal_wound/robotic/emp_burn))
+						total_burn_damage += severity
+					else
+						total_brute_and_misc_damage += severity
+				if(istype(I, /obj/item/organ/internal/appendix))
+					var/obj/item/organ/internal/appendix/A = I
+					if(A.inflamed)
+						internal_wounds += "appendicitis"
+
+			// Format internal wounds
+			var/internal_wounds_details
+			if(LAZYLEN(internal_wounds))
+				internal_wounds_details = jointext(internal_wounds, ",<br>")
+
+			if(internal_wounds_details)
+				significant = TRUE
+				dat += "<tr>"
+				dat += "<td>[I.name],<br><i>[e.name]</i></td><td>[total_burn_damage]</td><td>[total_brute_and_misc_damage]</td><td>[internal_wounds_details ? internal_wounds_details : "None"]</td><td></td>"
+				dat += "</tr>"
+
 		if(e.status & ORGAN_SPLINTED)
 			other_wounds += "Splinted"
 		if(e.status & ORGAN_BLEEDING)
@@ -775,42 +928,51 @@
 
 		if(e.rejecting)
 			other_wounds += "being rejected"
-		var/known_implants = list() //You know nothing, jon sno
 		if (e.implants.len)
 			var/unknown_body = FALSE
 			for(var/I in e.implants)
-				if(is_type_in_list(I,known_implants))
+				if(is_type_in_list(I,/obj/item/implant))
 					var/obj/item/implant/device = I
-					other_wounds -= "[device.get_scanner_name()] implanted"
-				else
-					unknown_body = TRUE
+					other_wounds += "[device.get_scanner_name()] implanted"
+					continue
+				if(is_type_in_list(I,/obj/item/organ_module/active))
+					var/obj/item/organ_module/active/simple/device = I
+					other_wounds += "[device.get_scanner_name()] detected"
+					continue
+				if(istype(I, /obj/item/implant/generic))
+					var/obj/item/implant/device = I
+					other_wounds += "[device.get_scanner_name()] detected"
+					continue
+				if(istype(I, /obj/item/material/shard/shrapnel))
+					other_wounds += "Embedded shrapnel"
+					continue
+				if(istype(I, /mob/living/simple/borer))
+					other_wounds += "Cortical Borer - It's YOU!"
+					continue
+				if(istype(I, /obj/item/implant))
+					var/obj/item/implant/device = I
+					if(!device.scanner_hidden)
+						unknown_body = TRUE
+				//Secondary fancy check for truely hidden organ modules
+				if(istype(I, /obj/item/organ_module))
+					var/obj/item/organ_module/OM = I
+					if(OM.completely_hide_from_scanners)
+						continue
+				unknown_body = TRUE
 			if(unknown_body)
-				other_wounds += "Inorganic substance detected."
-
-		if(!e.is_stump())
+				other_wounds += "Unknown body present"
+		if (e.is_stump() || e.burn_dam || e.brute_dam || other_wounds.len)
+			significant = TRUE
+			dat += "<tr>"
+		if(!e.is_stump() && significant)
 			dat += "<td>[e.name]</td><td>[e.burn_dam]</td><td>[e.brute_dam]</td><td>[other_wounds.len ? jointext(other_wounds, ":") : "None"]</td>"
-		else
+		else if (significant)
 			dat += "<td>[e.name]</td><td>-</td><td>-</td><td>Not Found</td>"
-		dat += "</tr>"
-
-	for(var/obj/item/organ/internal/I in occ["internal_organs"])
-		if(I.scanner_hidden)
+		else
 			continue
-
-		var/list/other_wounds = list()
-		if(BP_IS_ASSISTED(I))
-			other_wounds += "Assisted"
-		if(BP_IS_ROBOTIC(I))
-			other_wounds += "Prosthetic"
-
-		var/obj/item/organ/internal/bone/B = I
-		if(istype(B))
-			if(B.parent.status & ORGAN_BROKEN)
-				other_wounds += "[B.broken_description]"
-
-		dat += "<tr>"
-		dat += "<td>[I.name]</td><td>N/A</td><td>[I.damage]</td><td>[other_wounds.len ? jointext(other_wounds, ":") : "None"]</td><td></td>"
 		dat += "</tr>"
+
+
 	dat += "</table>"
 
 	var/list/species_organs = occ["species_organs"]

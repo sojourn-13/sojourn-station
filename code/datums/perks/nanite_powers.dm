@@ -8,6 +8,7 @@
 	var/emped_end_message = null	//Message displayed when EMP effect ends
 	var/emped = FALSE				//Whether we are currently being affected by an EMP
 	var/emp_duration = 0			//Duration of EMP effects
+	copy_protected = TRUE //Yeah. No.
 
 /datum/perk/nanite_power/assign(mob/living/L)
 	. = ..()
