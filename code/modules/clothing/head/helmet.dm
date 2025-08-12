@@ -1881,7 +1881,7 @@
 /obj/item/clothing/head/helmet/faceshield/paramedic
 	name = "advanced paramedic helmet"
 	desc = "A smart helmet that aids in medical tracking. The helmet features an integrated medical HUD system that displays health and location information for nearby personnel. \
-	Alt+Click to toggle speaker notifications, Ctrl+Click to toggle the built-in flashlight. The action button adjusts the face shield."
+	<span class='notice'>Alt+Click to toggle speaker notifications, Ctrl+Click to toggle the built-in flashlight, Shift+Ctrl+Click to toggle the medical HUD. The action button adjusts the face shield.</span>"
 	icon_state = "trauma_team"
 	item_state = "trauma_team"
 	flags_inv = HIDEEARS|BLOCKHAIR
@@ -1906,14 +1906,19 @@
 	var/repeat_report_after = 60 SECONDS
 	var/list/crewmembers_recently_reported = list()
 	var/obj/screen/tracking_arrow/tracking_overlay = null
+	var/obj/item/clothing/glasses/hud/health/medical_hud
+	var/last_hud_toggle = 0
+	var/hud_toggle_delay = 2 SECONDS
+
+/obj/item/clothing/head/helmet/faceshield/paramedic/New()
+	..()
+	medical_hud = new(src)
+	medical_hud.canremove = FALSE
 
 /obj/item/clothing/head/helmet/faceshield/paramedic/equipped(mob/M)
 	. = ..()
 	schedule_scan()
 	START_PROCESSING(SSobj, src)
-
-/obj/item/clothing/head/helmet/faceshield/paramedic/process_hud(var/mob/M)
-	process_med_hud(M, 1)
 
 /obj/item/clothing/head/helmet/faceshield/paramedic/attack_self(mob/user)
 	if(!user.incapacitated())
@@ -2032,22 +2037,22 @@
 
 	// Set the arrow direction icon
 	switch(direction)
-		if(NORTH)
-			tracking_overlay.icon_state = "ARROW_NORTH"
-		if(SOUTH)
-			tracking_overlay.icon_state = "ARROW_SOUTH"
 		if(EAST)
 			tracking_overlay.icon_state = "ARROW_EAST"
-		if(WEST)
-			tracking_overlay.icon_state = "ARROW_WEST"
+		if(NORTH)
+			tracking_overlay.icon_state = "ARROW_NORTH"
 		if(NORTHEAST)
 			tracking_overlay.icon_state = "ARROW_NORTHEAST"
 		if(NORTHWEST)
 			tracking_overlay.icon_state = "ARROW_NORTHWEST"
+		if(SOUTH)
+			tracking_overlay.icon_state = "ARROW_SOUTH"
 		if(SOUTHEAST)
 			tracking_overlay.icon_state = "ARROW_SOUTHEAST"
 		if(SOUTHWEST)
 			tracking_overlay.icon_state = "ARROW_SOUTHWEST"
+		if(WEST)
+			tracking_overlay.icon_state = "ARROW_WEST"
 		else
 			qdel(tracking_overlay)
 			tracking_overlay = null
@@ -2068,6 +2073,12 @@
 	. = ..()
 	remove_tracking_overlay()
 	STOP_PROCESSING(SSobj, src)
+	if(medical_hud.loc != src)
+		if(ismob(medical_hud.loc))
+			var/mob/hud_loc = medical_hud.loc
+			hud_loc.drop_from_inventory(medical_hud, src)
+			medical_hud.toggle(user, FALSE)
+			medical_hud.forceMove(src)
 
 /obj/item/clothing/head/helmet/faceshield/paramedic/Process()
 	update_tracking_overlay()
@@ -2083,6 +2094,9 @@
 
 /obj/item/clothing/head/helmet/faceshield/paramedic/CtrlClick(mob/user)
 	toggle_light()
+
+/obj/item/clothing/head/helmet/faceshield/paramedic/CtrlShiftClick(mob/user)
+	toggle_medical_hud(user)
 
 /obj/item/clothing/head/helmet/faceshield/paramedic/verb/toggle_faceshield()
 	set name = "Adjust face shield"
@@ -2139,6 +2153,29 @@
 		speaker_enabled = TRUE
 		report_health_alerts()
 
+/obj/item/clothing/head/helmet/faceshield/paramedic/proc/toggle_medical_hud(mob/user)
+	if(!user)
+		return
+	if(user.get_equipped_item(slot_head) != src)
+		to_chat(user, SPAN_WARNING("You need to be wearing the helmet to use this function."))
+		return
+	if(medical_hud in src)
+		if(user.equip_to_slot_if_possible(medical_hud, slot_glasses) && world.time > last_hud_toggle)
+			to_chat(user, SPAN_NOTICE("You activate [src]'s medical HUD display."))
+			last_hud_toggle = world.time + hud_toggle_delay
+			medical_hud.toggle(user, TRUE)
+		else
+			to_chat(user, SPAN_WARNING("You are wearing something which is in the way or trying to toggle too fast!"))
+	else
+		if(ismob(medical_hud.loc) && world.time > last_hud_toggle)
+			last_hud_toggle = world.time + hud_toggle_delay
+			var/mob/hud_loc = medical_hud.loc
+			hud_loc.drop_from_inventory(medical_hud, src)
+			medical_hud.toggle(user, FALSE)
+			to_chat(user, SPAN_NOTICE("You deactivate [src]'s medical HUD display."))
+			medical_hud.forceMove(src)
+		else
+			to_chat(user, SPAN_WARNING("You can't toggle the medical HUD so fast!"))
 
 
 
