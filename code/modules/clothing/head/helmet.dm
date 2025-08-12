@@ -2019,8 +2019,15 @@
 	var/turf/user_turf = get_turf(user)
 	var/turf/target_turf = get_turf(tablet.target_mob)
 
-	if(!user_turf || !target_turf || user_turf.z != target_turf.z)
+	if(!user_turf || !target_turf)
 		return null
+
+	// Check for Z-level differences
+	if(user_turf.z != target_turf.z)
+		if(target_turf.z > user_turf.z)
+			return "ARROW_UP"
+		else
+			return "ARROW_DOWN"
 
 	return get_dir(user_turf, target_turf)
 
@@ -2062,6 +2069,10 @@
 			tracking_overlay.icon_state = "ARROW_SOUTHWEST"
 		if(WEST)
 			tracking_overlay.icon_state = "ARROW_WEST"
+		if("Z_LEVEL_UP")
+			tracking_overlay.icon_state = "ARROW_UP"
+		if("Z_LEVEL_DOWN")
+			tracking_overlay.icon_state = "ARROW_DOWN"
 		else
 			qdel(tracking_overlay)
 			tracking_overlay = null
