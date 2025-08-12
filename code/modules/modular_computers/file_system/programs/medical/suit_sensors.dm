@@ -58,12 +58,12 @@
 				var/obj/item/modular_computer/tablet/moebius/T = host_program.computer
 				if(istype(T))
 					var/mob/living/carbon/human/H = locate(href_list["track"]) in SSmobs.mob_list
-					
+
 					// Toggle tracking - if already tracking this person, stop tracking
 					if(T.target_mob == H && T.is_tracking)
 						T.target_mob = null
 						T.is_tracking = FALSE
-						
+
 						// Remove helmet overlay if user has paramedic helmet
 						if(ishuman(usr))
 							var/mob/living/carbon/human/user = usr

@@ -1896,7 +1896,6 @@
 	armor_up = list(melee = 1, bullet = 5, energy = 2, bomb = 10, bio = 100, rad = 50)
 	armor_list = list(melee = 6, bullet = 6, energy = 6, bomb = 20, bio = 100, rad = 50)
 	up = TRUE
-	action_button_name = "Toggle Helmet Light"
 	brightness_on = 4
 	light_overlay = "helmet_light"
 	var/speaker_enabled = TRUE
@@ -2065,21 +2064,28 @@
 /obj/item/clothing/head/helmet/faceshield/paramedic/AltClick()
 	toogle_speaker()
 
-/obj/item/clothing/head/helmet/faceshield/paramedic/verb/toggle_faceshield()
-	set name = "Adjust face shield"
+/obj/item/clothing/head/helmet/faceshield/paramedic/ShiftClick(mob/user)
+	if(!user.incapacitated())
+		if(!isturf(user.loc))
+			to_chat(user, "You cannot turn the light on while in this [user.loc]")
+			return
+		on = !on
+		to_chat(user, "You [on ? "enable" : "disable"] the helmet light.")
+		update_flashlight(user)
+	return TRUE
+
+/obj/item/clothing/head/helmet/faceshield/paramedic/verb/toggle_light()
+	set name = "Toggle helmet light"
 	set category = "Object"
 	set src in usr
 
 	if(!usr.incapacitated())
-		src.set_is_up(!src.up)
-
-		if(src.up)
-			to_chat(usr, "You push the [src] up out of your face.")
-			remove_tracking_overlay()
-		else
-			to_chat(usr, "You flip the [src] down to protect your face.")
-
-		usr.update_action_buttons()
+		if(!isturf(usr.loc))
+			to_chat(usr, "You cannot turn the light on while in this [usr.loc]")
+			return
+		on = !on
+		to_chat(usr, "You [on ? "enable" : "disable"] the helmet light.")
+		update_flashlight(usr)
 
 /obj/item/clothing/head/helmet/faceshield/paramedic/verb/toggle_tracking_overlay()
 	set name = "Toggle tracking overlay"
