@@ -1896,6 +1896,7 @@
 	armor_up = list(melee = 1, bullet = 5, energy = 2, bomb = 10, bio = 100, rad = 50)
 	armor_list = list(melee = 6, bullet = 6, energy = 6, bomb = 20, bio = 100, rad = 50)
 	up = TRUE
+	action_button_name = "Adjust Face Shield"
 	brightness_on = 4
 	light_overlay = "helmet_light"
 	var/speaker_enabled = TRUE
@@ -1909,6 +1910,18 @@
 	. = ..()
 	schedule_scan()
 	START_PROCESSING(SSobj, src)
+
+/obj/item/clothing/head/helmet/faceshield/paramedic/attack_self(mob/user)
+	if(!user.incapacitated())
+		src.set_is_up(!src.up)
+
+		if(src.up)
+			to_chat(user, "You push the [src] up out of your face.")
+			remove_tracking_overlay()
+		else
+			to_chat(user, "You flip the [src] down to protect your face.")
+
+		user.update_action_buttons()
 
 /obj/item/clothing/head/helmet/faceshield/paramedic/proc/schedule_scan()
 	if(scan_scheduled)
@@ -2062,17 +2075,26 @@
 		remove_tracking_overlay()
 
 /obj/item/clothing/head/helmet/faceshield/paramedic/AltClick()
-	toogle_speaker()
+	toggle_speaker()
 
 /obj/item/clothing/head/helmet/faceshield/paramedic/ShiftClick(mob/user)
-	if(!user.incapacitated())
-		if(!isturf(user.loc))
-			to_chat(user, "You cannot turn the light on while in this [user.loc]")
-			return
-		on = !on
-		to_chat(user, "You [on ? "enable" : "disable"] the helmet light.")
-		update_flashlight(user)
-	return TRUE
+	toggle_light()
+
+/obj/item/clothing/head/helmet/faceshield/paramedic/verb/toggle_faceshield()
+	set name = "Adjust face shield"
+	set category = "Object"
+	set src in usr
+
+	if(!usr.incapacitated())
+		src.set_is_up(!src.up)
+
+		if(src.up)
+			to_chat(usr, "You push the [src] up out of your face.")
+			remove_tracking_overlay()
+		else
+			to_chat(usr, "You flip the [src] down to protect your face.")
+
+		usr.update_action_buttons()
 
 /obj/item/clothing/head/helmet/faceshield/paramedic/verb/toggle_light()
 	set name = "Toggle helmet light"
@@ -2100,8 +2122,8 @@
 			update_tracking_overlay()
 			to_chat(usr, "You turn on the tracking overlay.")
 
-/obj/item/clothing/head/helmet/faceshield/paramedic/verb/toogle_speaker()
-	set name = "Toogle helmet's speaker"
+/obj/item/clothing/head/helmet/faceshield/paramedic/verb/toggle_speaker()
+	set name = "Toggle helmet's speaker"
 	set category = "Object"
 	set src in usr
 
