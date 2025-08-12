@@ -10,7 +10,7 @@
 	dir_in = 1 //Facing North.
 	health = 900
 	deflect_chance = 15
-	damage_absorption = list("brute"=0.75,"fire"=1,"bullet"=0.8,"energy"=0.85,"bomb"=1)
+	damage_absorption = list("brute"=25,"melee"=25,"fire"=1,"bullet"=25,"energy"=25,"bomb"=1)
 	armor_level = MECHA_ARMOR_SCOUT
 	max_temperature = 25000
 	price_tag = 25000
@@ -44,7 +44,7 @@
 	armor_level = MECHA_ARMOR_LIGHT
 	health = 750
 	deflect_chance = 10
-	damage_absorption = list("brute"=0.85,"fire"=1,"bullet"=0.9,"energy"=0.95,"bomb"=1)
+	damage_absorption = list("brute"=10,"melee"=10,"fire"=1,"bullet"=10,"energy"=10,"bomb"=1)
 	price_tag = 10000
 	internal_damage_threshold = 45
 	wreckage = /obj/effect/decal/mecha_wreckage/gygax/marshals
@@ -76,7 +76,7 @@
 	initial_icon = "darkgygax"
 	health = 1200
 	deflect_chance = 25
-	damage_absorption = list("brute"=0.6,"fire"=0.8,"bullet"=0.6,"energy"=0.65,"bomb"=0.8)
+	damage_absorption = list("brute"=30,"melee"=30,"fire"=0.8,"bullet"=30,"energy"=30,"bomb"=0.8)
 	max_temperature = 45000
 	leg_overload_coeff = 1
 	wreckage = /obj/effect/decal/mecha_wreckage/gygax/dark

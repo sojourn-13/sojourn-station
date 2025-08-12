@@ -9,7 +9,7 @@
 	dir_in = 1 //Facing North.
 	health = 1400
 	deflect_chance = 20
-	damage_absorption = list("brute"=0.5,"fire"=1.1,"bullet"=0.65,"energy"=0.9,"bomb"=1)
+	damage_absorption = list("brute"=35,"melee"=35,"fire"=1.1,"bullet"=35,"energy"=35,"bomb"=1)
 	armor_level = MECHA_ARMOR_HEAVY
 	max_temperature = 30000
 	price_tag = 25000

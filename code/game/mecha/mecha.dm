@@ -38,6 +38,8 @@
 	//ranged and melee damage multipliers
 	var/r_damage_coeff = 1
 	var/m_damage_coeff = 1
+	var/r_armor_addition = 0
+	var/m_armor_addition = 0
 	var/rhit_power_use = 0
 	var/mhit_power_use = 0
 
@@ -50,7 +52,7 @@
 	var/obj/item/mecha_parts/mecha_equipment/thruster/thruster = null
 
 	//the values in this list show how much damage will pass through, not how much will be absorbed.
-	var/list/damage_absorption = list("brute"=0.8,"fire"=1.2,"bullet"=0.9,"energy"=1,"bomb"=1)
+	var/list/damage_absorption = list("brute"=6,"fire"=1.2,"bullet"=6,"energy"=6,"bomb"=1)
 	// This armor level indicates how fortified the mech's armor is.
 	var/armor_level = MECHA_ARMOR_LIGHT
 	var/obj/item/cell/large/cell
@@ -651,7 +653,7 @@
 		var/obj/machinery/atmospherics/portables_connector/possible_port = locate() in loc
 		if(possible_port)
 			var/obj/screen/alert/mech_port_available/A = occupant.throw_alert("mechaport", /obj/screen/alert/mech_port_available)
-			if(A) 
+			if(A)
 				A.target = possible_port
 		else
 			occupant.clear_alert("mechaport")
@@ -819,9 +821,9 @@ assassination method if you time it right*/
 ////////  Health related procs  ////////
 ////////////////////////////////////////
 
-/obj/mecha/proc/take_damage(amount, type = "brute")
+/obj/mecha/proc/take_damage(amount, type = "brute", armor_divisor, armor_carry_over)
 	if(amount)
-		var/damage = absorb_damage(amount,type)
+		var/damage = absorb_damage(amount,type,armor_divisor,armor_carry_over)
 		health -= damage
 		update_health()
 		log_append_to_last("Took [damage] points of damage. Damage type: \"[type]\".", 1)
@@ -832,24 +834,27 @@ assassination method if you time it right*/
 		update_health()
 		log_append_to_last("Took [amount] points of damage.", 1)
 
-/obj/mecha/proc/absorb_damage(damage,damage_type)
+/obj/mecha/proc/absorb_damage(damage,damage_type,armor_divisor,armor_carry_over)
+	if(damage_type == BRUTE || damage_type == ARMOR_MELEE || damage_type == ARMOR_BULLET || damage_type == ARMOR_ENERGY)
+		log_append_to_last("damage before math [damage]. Armory carry over [armor_carry_over]. armor divisior [armor_divisor] type: \"[type]\".", 1)
+		return max(damage-(listgetindex(damage_absorption,damage_type)+armor_carry_over)/armor_divisor,0)
 	return damage*(listgetindex(damage_absorption,damage_type) || 1)
 
-/obj/mecha/proc/hit_damage(damage, type="brute", is_melee = 0)
+/obj/mecha/proc/hit_damage(damage, type="brute", armor_divisor, is_melee = 0)
 	var/power_to_use
-	var/damage_coeff_to_use
+	var/armor_carry_over
 
 	if(is_melee)
 		power_to_use = mhit_power_use
-		damage_coeff_to_use = m_damage_coeff
+		armor_carry_over = m_armor_addition
 	else
 		power_to_use = rhit_power_use
-		damage_coeff_to_use = r_damage_coeff
+		armor_carry_over = r_armor_addition
 
 	if(power_to_use)
 		use_power(power_to_use)
 
-	take_damage(round(damage*damage_coeff_to_use), type)
+	take_damage(round(damage), type, armor_divisor, armor_carry_over)
 	start_booster_cooldown(is_melee)
 
 
@@ -961,7 +966,7 @@ assassination method if you time it right*/
 			var/final_penetration = Proj.penetrating ? Proj.penetrating - armor_level : 0
 			var/damage_multiplier = final_penetration > 0 ? max(1.5, final_penetration) : 1 // Minimum damage bonus of 50% if you beat the mech's armor
 			Proj.penetrating = 0 // Reduce this value to maintain the old penetration loop's behavior
-			hit_damage(Proj.get_structure_damage() * damage_multiplier, Proj.check_armor, is_melee=0)
+			hit_damage((Proj.damage_types[BRUTE] + Proj.damage_types[BURN]) * damage_multiplier, Proj.check_armor, Proj.armor_divisor, is_melee=0)
 
 			//AP projectiles have a chance to cause additional damage
 			if(final_penetration > 0)
@@ -1528,12 +1533,12 @@ assassination method if you time it right*/
 	anchored = FALSE
 	if(!step(src, inertial_movement) || check_for_support() || (thruster && thruster.do_move()))
 		inertial_movement = 0
-	anchored = TRUE 
+	anchored = TRUE
 
 /obj/mecha/proc/regulate_temp()
 	if(hasInternalDamage(MECHA_INT_TEMP_CONTROL))
 		return
-	
+
 	if(cabin_air && cabin_air.volume > 0)
 		var/delta = cabin_air.temperature - T20C
 		cabin_air.temperature -= max(-10, min(10, round(delta/4,0.1)))
@@ -1617,19 +1622,19 @@ assassination method if you time it right*/
 
 	if(prob(probability))
 		use_internal_tank = !use_internal_tank // Flip internal tank mode on or off
-	
+
 	if(prob(probability))
 		toggle_lights() // toggle the lights
-	
+
 	if(prob(probability)) // Some settings to screw up the radio
 		radio.broadcasting = !radio.broadcasting
-	
+
 	if(prob(probability))
 		radio.listening = !radio.listening
-	
+
 	if(prob(probability))
 		radio.set_frequency(rand(PUBLIC_LOW_FREQ,PUBLIC_HIGH_FREQ))
-	
+
 	if(prob(probability))
 		maint_access = 0 // Disallow maintenance mode
 	else
@@ -1667,7 +1672,7 @@ assassination method if you time it right*/
 		occupant_message(SPAN_DANGER("You disable [src] defense mode."))
 	log_message("Toggled defence mode.")
 
-// Radial UI 
+// Radial UI
 /obj/mecha/CtrlClick(mob/living/L)
 	if(occupant != L || !istype(L))
 		return ..()

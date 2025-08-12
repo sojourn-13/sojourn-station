@@ -9,7 +9,7 @@
 	step_energy_drain = 3
 	health = 600
 	deflect_chance = 30
-	damage_absorption = list("brute"=0.7,"fire"=0.7,"bullet"=0.7,"energy"=0.7,"bomb"=0.7)
+	damage_absorption = list("brute"=25,"melee"=25,"fire"=0.7,"bullet"=25,"energy"=25,"bomb"=0.7)
 	armor_level = MECHA_ARMOR_MEDIUM
 	max_temperature = 25000
 	price_tag = 40000

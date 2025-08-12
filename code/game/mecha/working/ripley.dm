@@ -24,7 +24,7 @@
 	price_tag = 6500
 	health = 550
 	lights_power = 8
-	damage_absorption = list("brute"=0.8,"fire"=0.5,"bullet"=0.8,"energy"=1,"bomb"=0.5)
+	damage_absorption = list("brute"=8,"melee"=8,"fire"=0.5,"bullet"=8,"energy"=8,"bomb"=0.5)
 	armor_level = MECHA_ARMOR_SCOUT
 	wreckage = /obj/effect/decal/mecha_wreckage/ripley/firefighter
 
@@ -39,6 +39,8 @@
 	opacity = 0
 	lights_power = 60
 	health = 750
+	damage_absorption = list("brute"=9,"melee"=9,"fire"=0.5,"bullet"=9,"energy"=9,"bomb"=0.5)
+	armor_level = MECHA_ARMOR_SCOUT
 	wreckage = /obj/effect/decal/mecha_wreckage/ripley/deathripley
 	price_tag = 7000
 

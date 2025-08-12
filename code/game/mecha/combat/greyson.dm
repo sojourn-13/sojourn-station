@@ -10,7 +10,7 @@
 	dir_in = 1 //Facing North.
 	health = 1500
 	deflect_chance = 25
-	damage_absorption = list("brute"=0.5,"fire"=0.7,"bullet"=0.45,"energy"=0.7,"bomb"=0.7)
+	damage_absorption = list("brute"=50,"melee"=50,"fire"=0.7,"bullet"=50,"energy"=50,"bomb"=0.7)
 	max_temperature = 60000
 	infra_luminosity = 3
 	armor_level = MECHA_ARMOR_SUPERHEAVY

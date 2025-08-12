@@ -43,8 +43,8 @@
 	name = "25mm ammunition box"
 	desc = "A heavy duty box with a feeder containing ammunition for a mech-mounted heavy machinegun."
 	icon_state = "boxhrifle-practice"
-	ammo_amount_left = 200
-	ammo_max_amout = 200
+	ammo_amount_left = 360
+	ammo_max_amout = 360
 	amount_per_click = 40 //Hack to make them impossable to go into negitives / It can still go into negatives
 	ammo_type = CAL_MECH_MACHINEGUN
 	price_tag = 30
@@ -57,8 +57,8 @@
 	name = "60mm HEAD ammunition box"
 	desc = "A heavy duty box with a feeder containing ammunition for a full-sized autocannon."
 	icon_state = "boxhrifle-practice"
-	ammo_amount_left = 40
-	ammo_max_amout = 40
+	ammo_amount_left = 80
+	ammo_max_amout = 80
 	amount_per_click = 10
 	ammo_type = CAL_MECH_AUTOCANNON
 	price_tag = 30
@@ -67,8 +67,8 @@
 	name = "30mm HEAD ammunition box"
 	desc = "A heavy duty box with a feeder containing ammunition for a mech-sized autocannon."
 	icon_state = "boxhrifle-practice"
-	ammo_amount_left = 60
-	ammo_max_amout = 60
+	ammo_amount_left = 180
+	ammo_max_amout = 180
 	amount_per_click = 30
 	ammo_type = CAL_MECH_ULTRACANNON
 	price_tag = 30
@@ -81,8 +81,8 @@
 	name = "50mm HEAD ammunition box"
 	desc = "A heavy duty box with a feeder containing ammunition for a flak cannon."
 	icon_state = "boxhrifle-hv"
-	ammo_amount_left = 30
-	ammo_max_amout = 30
+	ammo_amount_left = 90
+	ammo_max_amout = 90
 	ammo_type = CAL_MECH_SHOTGUN
 	price_tag = 30
 
