@@ -1923,11 +1923,6 @@
 	. = ..()
 	schedule_scan()
 	START_PROCESSING(SSobj, src)
-	// Auto-activate medical HUD when helmet is equipped
-	if(medical_hud && medical_hud in src)
-		if(M.equip_to_slot_if_possible(medical_hud, slot_glasses))
-			medical_hud.toggle(M, TRUE)
-			to_chat(M, SPAN_NOTICE("[src]'s medical HUD automatically activates."))
 
 /obj/item/clothing/head/helmet/faceshield/paramedic/attack_self(mob/user)
 	if(!user.incapacitated())

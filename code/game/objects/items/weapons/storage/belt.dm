@@ -2,8 +2,8 @@
 	name = "belt"
 	desc = "Can hold various things."
 	icon = 'icons/inventory/belt/icon.dmi'
-	icon_state = "utility"
-	item_state = "utility"
+	icon_state = "multibelt"
+	item_state = "multibelt"
 	storage_slots = 7
 	max_w_class = ITEM_SIZE_NORMAL
 	max_storage_space = DEFAULT_NORMAL_STORAGE
@@ -46,30 +46,47 @@
 	icon_state = "utility"
 	item_state = "utility"
 	can_hold = list(
+		// Core engineering and maintenance tools
 		/obj/item/tool,
 		/obj/item/tool_upgrade,
+
+		// Lighting and electrical systems
 		/obj/item/device/lightreplacer,
 		/obj/item/rcd,
 		/obj/item/device/lighting/toggleable/flashlight,
-		/obj/item/device/radio,
 		/obj/item/stack/cable_coil,
 		/obj/item/device/t_scanner,
+		/obj/item/cell/small,
+		/obj/item/cell/medium,
+
+		// Communication and documentation
+		/obj/item/device/radio,
+		/obj/item/hand_labeler,
+
+		// Atmospheric and environmental
 		/obj/item/device/scanner/gas,
 		/obj/item/taperoll/engineering,
+		/obj/item/extinguisher/mini,
+
+		// Robotics and automation
 		/obj/item/device/robotanalyzer,
+
+		// Botanical and agricultural tools
 		/obj/item/tool/minihoe,
 		/obj/item/tool/hatchet,
 		/obj/item/device/scanner/plant,
-		/obj/item/extinguisher/mini,
-		/obj/item/hand_labeler,
+
+		// Safety and personal equipment
 		/obj/item/clothing/gloves,
 		/obj/item/clothing/glasses,
 		/obj/item/flame/lighter,
-		/obj/item/cell/small,
-		/obj/item/cell/medium,
+
+		// Specialized maintenance chemicals
 		/obj/item/grenade/chem_grenade/cleaner,
 		/obj/item/grenade/chem_grenade/antiweed,
 		/obj/item/grenade/chem_grenade/metalfoam,
+
+		// Emergency signaling
 		/obj/item/ammo_casing/flare,
 		/obj/item/gun/projectile/boltgun/flare_gun
 	)
@@ -82,6 +99,57 @@
 	new /obj/item/tool/wirecutters(src)
 	new /obj/item/stack/cable_coil/random(src)
 
+/obj/item/storage/belt/utility/full/guild
+	name = "guild adept tool belt"
+	desc = "Can hold various tools."
+	icon_state = "utility"
+	item_state = "utility"
+	can_hold = list(
+		// Core engineering and maintenance tools
+		/obj/item/tool,
+		/obj/item/tool_upgrade,
+
+		// Lighting and electrical systems
+		/obj/item/device/lightreplacer,
+		/obj/item/rcd,
+		/obj/item/device/lighting/toggleable/flashlight,
+		/obj/item/stack/cable_coil,
+		/obj/item/device/t_scanner,
+		/obj/item/cell/small,
+		/obj/item/cell/medium,
+
+		// Communication and documentation
+		/obj/item/device/radio,
+		/obj/item/hand_labeler,
+
+		// Atmospheric and environmental
+		/obj/item/device/scanner/gas,
+		/obj/item/taperoll/engineering,
+		/obj/item/extinguisher/mini,
+
+		// Robotics and automation
+		/obj/item/device/robotanalyzer,
+
+		// Botanical and agricultural tools
+		/obj/item/tool/minihoe,
+		/obj/item/tool/hatchet,
+		/obj/item/device/scanner/plant,
+
+		// Safety and personal equipment
+		/obj/item/clothing/gloves,
+		/obj/item/clothing/glasses,
+		/obj/item/flame/lighter,
+
+		// Specialized maintenance chemicals
+		/obj/item/grenade/chem_grenade/cleaner,
+		/obj/item/grenade/chem_grenade/antiweed,
+		/obj/item/grenade/chem_grenade/metalfoam,
+
+		// Emergency signaling
+		/obj/item/ammo_casing/flare,
+		/obj/item/gun/projectile/boltgun/flare_gun
+	)
+
 /obj/item/storage/belt/utility/full/guild/populate_contents()
 	new /obj/item/tool/hammer(src)
 	new /obj/item/tool/wrench(src)
@@ -93,35 +161,54 @@
 
 /obj/item/storage/belt/utility/roboticist
 	name = "roboticist tool belt"
+	icon_state = "scibelt_alt"
+	item_state = "scibelt_alt"
 	desc = "Can hold various tools."
 	can_hold = list(
+		// Core engineering and maintenance tools
 		/obj/item/tool,
 		/obj/item/tool_upgrade,
+
+		// Lighting and electrical systems
 		/obj/item/device/lightreplacer,
 		/obj/item/rcd,
 		/obj/item/device/lighting/toggleable/flashlight,
-		/obj/item/device/radio,
 		/obj/item/stack/cable_coil,
 		/obj/item/device/t_scanner,
+		/obj/item/cell/small,
+		/obj/item/cell/medium,
+
+		// Communication and documentation
+		/obj/item/device/radio,
+		/obj/item/hand_labeler,
+
+		// Atmospheric and environmental
 		/obj/item/device/scanner/gas,
 		/obj/item/taperoll/engineering,
+		/obj/item/extinguisher/mini,
+
+		// Robotics-specific equipment
 		/obj/item/device/robotanalyzer,
+		/obj/item/gun/hydrogen/plasma_torch, // Advanced welding for robotic assembly
+
+		// Botanical and agricultural tools (for maintenance bots)
 		/obj/item/tool/minihoe,
 		/obj/item/tool/hatchet,
 		/obj/item/device/scanner/plant,
-		/obj/item/extinguisher/mini,
-		/obj/item/hand_labeler,
+
+		// Safety and personal equipment
 		/obj/item/clothing/gloves,
 		/obj/item/clothing/glasses,
 		/obj/item/flame/lighter,
-		/obj/item/cell/small,
-		/obj/item/cell/medium,
+
+		// Specialized maintenance chemicals
 		/obj/item/grenade/chem_grenade/cleaner,
 		/obj/item/grenade/chem_grenade/antiweed,
 		/obj/item/grenade/chem_grenade/metalfoam,
+
+		// Emergency signaling
 		/obj/item/gun/projectile/boltgun/flare_gun,
-		/obj/item/ammo_casing/flare,
-		/obj/item/gun/hydrogen/plasma_torch // Something that can hold a welder should be able to hold the same welder turned into a gun.
+		/obj/item/ammo_casing/flare
 	)
 
 /obj/item/storage/belt/utility/roboticist/populate_contents()
@@ -140,28 +227,55 @@
 	item_state = "hunting"
 	storage_slots = 11
 	can_hold = list(
+		// Basic tools and equipment
 		/obj/item/tool,
 		/obj/item/tool_upgrade,
-		/obj/item/device/radio,
 		/obj/item/stack/cable_coil,
+		/obj/item/cell/small,
+		/obj/item/cell/medium,
+		/obj/item/flame/lighter,
+
+		// Communication and documentation
+		/obj/item/device/radio,
+		/obj/item/hand_labeler,
+
+		// Hunting and tracking equipment
+		/obj/item/device/binoculars,
+		/obj/item/device/lighting/glowstick/flare/torch,
+
+		// Agricultural and botanical tools
 		/obj/item/tool/minihoe,
 		/obj/item/tool/hatchet,
 		/obj/item/device/scanner/plant,
+
+		// Safety and survival equipment
 		/obj/item/extinguisher/mini,
-		/obj/item/hand_labeler,
 		/obj/item/clothing/gloves,
 		/obj/item/clothing/glasses,
-		/obj/item/flame/lighter,
-		/obj/item/cell/small,
-		/obj/item/cell/medium,
+
+		// Hunting weapons and ammunition
 		/obj/item/ammo_casing,
 		/obj/item/ammo_magazine,
 		/obj/item/melee,
+		/obj/item/gun/projectile/boltgun/flare_gun,
+		/obj/item/ammo_casing/flare,
+
+		// Survival provisions
 		/obj/item/reagent_containers/snacks,
 		/obj/item/reagent_containers/drinks,
 		/obj/item/reagent_containers/glass/beaker,
 		/obj/item/reagent_containers/glass/bottle,
+
+		// Basic medical supplies for field injuries
 		/obj/item/reagent_containers/pill,
+		/obj/item/reagent_containers/syringe,
+		/obj/item/stack/medical,
+		/obj/item/device/scanner/health,
+
+		// Hunting trophies and utility
+		/obj/item/oddity/chimeric_fang_trophy,
+		/obj/item/soap
+	)
 		/obj/item/reagent_containers/syringe,
 		/obj/item/stack/medical,
 		/obj/item/device/scanner/health,
@@ -178,18 +292,29 @@
 	desc = "Waist-held holy items."
 	icon_state = "utility_neotheology"
 	can_hold_extra = list(
+		// Religious items and implements
 		/obj/item/book/ritual/cruciform,
 		/obj/item/implant/core_implant/cruciform,
+
+		// Purification and cleansing tools
 		/obj/item/soap,
 		/obj/item/reagent_containers/spray/cleaner,
+
+		// Ceremonial weapons and tools
 		/obj/item/tool/knife/dagger/nt,
 		/obj/item/tool/sword/nt/shortsword,
+
+		// Sacred beverages
 		/obj/item/reagent_containers/drinks/bottle/ntcahors,
+
+		// Emergency signaling and communication
 		/obj/item/gun/projectile/boltgun/flare_gun,
 		/obj/item/ammo_casing/flare,
+		/obj/item/device/binoculars,
+
+		// Church-sanctioned weapons
 		/obj/item/gun/energy/plasma/martyr,
-		/obj/item/gun/energy/ntpistol,
-		/obj/item/device/binoculars
+		/obj/item/gun/energy/ntpistol
 	)
 
 /obj/item/storage/belt/utility/handmade
@@ -278,6 +403,81 @@
 	icon_state = "medicalbelt"
 	item_state = "medical"
 	can_hold = list(
+		// Core diagnostic equipment
+		/obj/item/device/scanner/health,
+
+		// Advanced medical technology
+		/obj/item/dnainjector,
+
+		// Communication equipment
+		/obj/item/device/radio/headset,
+		/obj/item/device/radio,
+
+		// Medication preparation and delivery
+		/obj/item/reagent_containers/dropper,
+		/obj/item/reagent_containers/glass/beaker,
+		/obj/item/reagent_containers/glass/bottle,
+		/obj/item/reagent_containers/pill,
+		/obj/item/reagent_containers/syringe,
+		/obj/item/reagent_containers/hypospray,
+		/obj/item/storage/pill_bottle,
+
+		// Basic medical supplies
+		/obj/item/stack/medical,
+		/obj/item/tape/medical,
+		/obj/item/taperoll/medical,
+		/obj/item/stack/nanopaste,
+
+		// Patient transport and containment
+		/obj/item/bodybag,
+		/obj/item/bodybag/cryobag,
+		/obj/item/reagent_containers/blood,
+
+		// Surgical instruments
+		/obj/item/tool/bonesetter,
+		/obj/item/tool/scalpel,
+		/obj/item/tool/scalpel/advanced,
+		/obj/item/tool/scalpel/laser,
+		/obj/item/tool/tape_roll/bonegel,
+		/obj/item/tool/cautery,
+		/obj/item/tool/cautery/adv,
+		/obj/item/tool/retractor,
+		/obj/item/tool/retractor/adv,
+		/obj/item/tool/saw/circular,
+		/obj/item/tool/saw/circular/medical,
+		/obj/item/tool/hemostat,
+		/obj/item/tool/hemostat/adv,
+
+		// Personal protective equipment
+		/obj/item/clothing/mask/surgical,
+		/obj/item/clothing/head/surgery,
+		/obj/item/clothing/gloves,
+		/obj/item/clothing/glasses,
+
+		// Utility equipment
+		/obj/item/flame/lighter,
+		/obj/item/cell/small,
+		/obj/item/storage/fancy/cigarettes,
+		/obj/item/tool/crowbar,
+		/obj/item/device/lighting/toggleable/flashlight,
+		/obj/item/extinguisher/mini,
+		/obj/item/device/flash,
+
+		// Emergency signaling
+		/obj/item/ammo_casing/flare,
+		/obj/item/gun/projectile/boltgun/flare_gun,
+
+		// Breaching equipment for emergency access
+		/obj/item/hatton/moebius,
+		/obj/item/hatton_magazine/moebius
+	)
+
+/obj/item/storage/belt/medical/emt
+	name = "EMT utility belt"
+	desc = "A sturdy black webbing belt with attached pouches."
+	icon_state = "emsbelt"
+	item_state = "emsbelt"
+	can_hold = list(
 		/obj/item/device/scanner/health,
 		/obj/item/dnainjector,
 		/obj/item/device/radio/headset,
@@ -328,14 +528,85 @@
 		/obj/item/clothing/glasses,
 		/obj/item/device/radio,
 		/obj/item/ammo_casing/flare,
-		/obj/item/gun/projectile/boltgun/flare_gun
+		/obj/item/gun/projectile/boltgun/flare_gun,
+		/obj/item/hatton/moebius,
+		/obj/item/hatton_magazine/moebius,
 	)
 
-/obj/item/storage/belt/medical/emt
-	name = "EMT utility belt"
-	desc = "A sturdy black webbing belt with attached pouches."
+/obj/item/storage/belt/medical/paramedic
+	name = "paramedic utility belt"
+	desc = "A specialized belt designed for paramedics and emergency responders. Contains quick-access pouches for essential life-saving equipment."
 	icon_state = "emsbelt"
 	item_state = "emsbelt"
+	storage_slots = 9
+	max_w_class = ITEM_SIZE_NORMAL
+	can_hold = list(
+		// Core medical scanner and assessment tools
+		/obj/item/device/scanner/health,
+		/obj/item/clothing/accessory/stethoscope,
+
+		// Emergency medications and delivery systems
+		/obj/item/reagent_containers/syringe,
+		/obj/item/reagent_containers/hypospray,
+		/obj/item/reagent_containers/hypospray/autoinjector,
+		/obj/item/storage/pill_bottle,
+		/obj/item/reagent_containers/glass/bottle,
+		/obj/item/reagent_containers/glass/beaker,
+		/obj/item/reagent_containers/dropper,
+
+		// Wound care and trauma supplies
+		/obj/item/stack/medical,
+		/obj/item/tape/medical,
+		/obj/item/taperoll/medical,
+		/obj/item/bodybag,
+		/obj/item/bodybag/cryobag,
+
+		// Airway management and breathing support
+		/obj/item/clothing/mask/breath,
+		/obj/item/clothing/mask/breath/medical,
+		/obj/item/tank/emergency_oxygen,
+		/obj/item/tank/emergency_oxygen/double,
+
+		// Emergency equipment and safety
+		/obj/item/device/lighting/toggleable/flashlight,
+		/obj/item/extinguisher/mini,
+		/obj/item/ammo_casing/flare,
+		/obj/item/gun/projectile/boltgun/flare_gun,
+
+		// Communication and documentation
+		/obj/item/device/radio,
+		/obj/item/device/radio/headset,
+		/obj/item/clipboard,
+
+		// Protective equipment
+		/obj/item/clothing/head,
+		/obj/item/clothing/gloves,
+		/obj/item/clothing/gloves/latex,
+		/obj/item/clothing/mask,
+		/obj/item/clothing/glasses,
+		/obj/item/clothing/glasses/hud/health,
+
+		// Defibrillation equipment
+		/obj/item/device/defib_kit/compact,
+		/obj/item/shockpaddles,
+
+		// Basic tools for emergency procedures
+		/obj/item/tool/crowbar,
+		/obj/item/cell/small,
+		/obj/item/cell/medium,
+		/obj/item/flame/lighter,
+
+		// Breaching and emergency access equipment
+		/obj/item/hatton/moebius,
+		/obj/item/hatton_magazine/moebius,
+		/obj/item/tool/fireaxe/militia_tomahawk,
+		/obj/item/tool/baton,
+		/obj/item/melee/telebaton,
+
+		// Blood and IV supplies
+		/obj/item/reagent_containers/blood,
+		/obj/item/reagent_containers/iv_bag
+	)
 
 /obj/item/storage/belt/security
 	name = "tactical belt"
@@ -343,31 +614,23 @@
 	icon_state = "security"
 	item_state = "security"
 	can_hold = list(
+		// Personal protective equipment
 		/obj/item/clothing/head,
 		/obj/item/clothing/mask,
+		/obj/item/clothing/gloves,
+		/obj/item/clothing/glasses,
+
+		// Non-lethal weapons and restraints
 		/obj/item/grenade,
 		/obj/item/reagent_containers/spray/pepper,
 		/obj/item/handcuffs,
-		/obj/item/tool/crowbar,
 		/obj/item/device/flash,
-		/obj/item/clothing/gloves,
-		/obj/item/clothing/glasses,
+		/obj/item/melee,
+		/obj/item/tool/baton, // Stun batons for crowd control
+
+		// Firearms and ammunition
 		/obj/item/ammo_casing,
 		/obj/item/ammo_magazine,
-		/obj/item/cell/small,
-		/obj/item/cell/medium,
-		/obj/item/flame/lighter,
-		/obj/item/device/lighting/toggleable/flashlight,
-		/obj/item/modular_computer/pda,
-		/obj/item/device/radio/headset,
-		/obj/item/device/hailer,
-		/obj/item/device/megaphone,
-		/obj/item/device/t_scanner/advanced,
-		/obj/item/device/holowarrant,
-		/obj/item/melee,
-		/obj/item/device/radio,
-		/obj/item/tool/knife,
-		/obj/item/tool/shovel/combat,
 		/obj/item/gun/projectile/mk58,
 		/obj/item/gun/projectile/makarov,
 		/obj/item/gun/projectile/clarissa,
@@ -377,18 +640,41 @@
 		/obj/item/gun/projectile/olivaw,
 		/obj/item/gun/projectile/revolver/detective,
 		/obj/item/gun/energy/gun/martin,
-		/obj/item/gun/projectile/boltgun/flare_gun,
-		/obj/item/ammo_casing/flare,
+
+		// Utility tools and equipment
+		/obj/item/tool/crowbar,
+		/obj/item/cell/small,
+		/obj/item/cell/medium,
+		/obj/item/flame/lighter,
+		/obj/item/device/lighting/toggleable/flashlight,
+		/obj/item/tool/knife,
+		/obj/item/tool/shovel/combat,
+
+		// Communication and documentation
+		/obj/item/modular_computer/pda,
+		/obj/item/device/radio/headset,
+		/obj/item/device/hailer,
+		/obj/item/device/megaphone,
+		/obj/item/device/radio,
 		/obj/item/taperoll,
 		/obj/item/pen,
 		/obj/item/device/taperecorder,
 		/obj/item/clipboard,
 		/obj/item/device/camera,
 		/obj/item/folder,
+
+		// Surveillance and detection
+		/obj/item/device/t_scanner/advanced,
+		/obj/item/device/holowarrant,
+		/obj/item/device/binoculars,
+
+		// Emergency signaling
+		/obj/item/gun/projectile/boltgun/flare_gun,
+		/obj/item/ammo_casing/flare,
+
+		// Provisions for extended operations
 		/obj/item/reagent_containers/snacks,
-		/obj/item/reagent_containers/drinks,
-		/obj/item/device/binoculars, // By popular demand. - Seb
-		/obj/item/tool/baton //So it can actually hold both sizes of batons like it used to.
+		/obj/item/reagent_containers/drinks
 	)
 
 /obj/item/storage/belt/holding
@@ -512,18 +798,27 @@
 	desc = "Can hold various military and security equipment for the awakened crusader or skilled divisor. Deus Vult."
 	icon_state = "tactical_neotheology"
 	can_hold_extra = list(
+		// Religious implements and documentation
 		/obj/item/book/ritual/cruciform,
 		/obj/item/implant/core_implant/cruciform,
+
+		// Ceremonial and combat weapons
 		/obj/item/tool/knife/neotritual,
-		/obj/item/gun/energy/crossbow,
-		/obj/item/gun/energy/taser, //specially fitted to hold the counselor
 		/obj/item/tool/knife/dagger/nt,
 		/obj/item/tool/sword/nt/shortsword,
-		/obj/item/reagent_containers/drinks/bottle/ntcahors,
-		/obj/item/gun/projectile/boltgun/flare_gun,
-		/obj/item/ammo_casing/flare,
+
+		// Church-sanctioned weapons
+		/obj/item/gun/energy/crossbow,
+		/obj/item/gun/energy/taser, // The Counselor stun gun
 		/obj/item/gun/energy/plasma/martyr,
 		/obj/item/gun/energy/ntpistol,
+
+		// Sacred provisions
+		/obj/item/reagent_containers/drinks/bottle/ntcahors,
+
+		// Emergency signaling and surveillance
+		/obj/item/gun/projectile/boltgun/flare_gun,
+		/obj/item/ammo_casing/flare,
 		/obj/item/device/binoculars
 	)
 
@@ -534,6 +829,7 @@
 	item_state = "champion"
 	storage_slots = 1
 	can_hold = list(
+		// Wrestling accessories - for storing your luchador mask when not in use
 		/obj/item/clothing/mask/costume/job/luchador
 		)
 	price_tag = 50
@@ -549,8 +845,9 @@
 	icon_state = "webbing"
 	item_state = "webbing"
 	storage_slots = 14
-	max_w_class = ITEM_SIZE_SMALL //Holds 14 small items like a real harness, and hats
+	max_w_class = ITEM_SIZE_SMALL // Holds 14 small items like a real harness, and hats
 	max_storage_space = DEFAULT_NORMAL_STORAGE
+	// Web harness uses the base storage system, can hold any small items for versatile field use
 
 /obj/item/storage/belt/webbing/verb/toggle_style()
 	set name = "Adjust Style"
@@ -588,7 +885,7 @@
 	cant_hold = list(/obj/item/storage/pouch,
 					 /obj/item/storage/firstaid,
 					 /obj/item/storage/toolbox,
-					 /obj/item/storage/briefcase) //These types of storage in a belt
+					 /obj/item/storage/briefcase) // Prevents storage inception - no nested containers
 
 /obj/item/storage/belt/webbing/artificer/verb/toggle_storage()
 	set name = "Adjust Storage"
