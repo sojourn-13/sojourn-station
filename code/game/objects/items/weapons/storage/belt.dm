@@ -274,8 +274,9 @@
 
 		// Hunting trophies and utility
 		/obj/item/oddity/chimeric_fang_trophy,
-		/obj/item/soap
-	)
+		/obj/item/soap,
+
+		// Medical supplies
 		/obj/item/reagent_containers/syringe,
 		/obj/item/stack/medical,
 		/obj/item/device/scanner/health,
