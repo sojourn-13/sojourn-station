@@ -606,7 +606,6 @@
 
 		// Blood and IV supplies
 		/obj/item/reagent_containers/blood,
-		/obj/item/reagent_containers/iv_bag
 	)
 
 /obj/item/storage/belt/security
