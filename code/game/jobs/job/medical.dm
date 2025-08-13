@@ -234,6 +234,9 @@
 		access_genetics, access_external_airlocks, access_research_equipment, access_medical_suits, access_xenobiology, access_eva, access_psychiatrist
 	)
 	disallow_species = list(FORM_AGSYNTH, FORM_BSSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
+	playtimerequired = 900 //15 hours
+	ideal_character_age = 40
+	minimum_character_age = 30
 
 	perks = list(PERK_MEDICAL_EXPERT, PERK_PSI_PSYCHOLOGIST, PERK_CHEMIST)
 
