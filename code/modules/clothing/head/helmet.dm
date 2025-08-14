@@ -2102,9 +2102,9 @@
 			tracking_overlay.icon_state = "ARROW_SOUTHWEST"
 		if(WEST)
 			tracking_overlay.icon_state = "ARROW_WEST"
-		if("Z_LEVEL_UP")
+		if("ARROW_UP")
 			tracking_overlay.icon_state = "ARROW_UP"
-		if("Z_LEVEL_DOWN")
+		if("ARROW_DOWN")
 			tracking_overlay.icon_state = "ARROW_DOWN"
 		else
 			qdel(tracking_overlay)
