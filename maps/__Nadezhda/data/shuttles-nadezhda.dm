@@ -47,7 +47,7 @@
 /obj/effect/shuttle_landmark/greyson_field
 	name = "Greyson Field Office Landing Zone"
 	landmark_tag = "nav_greyson_field"
-	base_turf = /turf/simulated/floor/asteroid/dirt
+	base_turf = /turf/simulated/floor/tiled/dark/cargo
 	autoset = TRUE
 
 //Area code
@@ -56,7 +56,7 @@
 	icon_state = "shuttle"
 	requires_power = FALSE
 	dynamic_lighting = FALSE
-	base_turf = /turf/simulated/floor/plating/under
+	base_turf = /turf/simulated/floor/tiled/dark/cargo
 
 //Consoles
 /obj/machinery/computer/shuttle_control/multi/surface_transport
