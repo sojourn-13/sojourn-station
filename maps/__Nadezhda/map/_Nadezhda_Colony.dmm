@@ -22057,6 +22057,7 @@
 /obj/item/pc_part/drive/disk/design/medical/advanced,
 /obj/item/pc_part/drive/disk/design/lethal_ammo,
 /obj/machinery/smartfridge/disk,
+/obj/item/pc_part/drive/disk/design/nonlethal_ammo,
 /turf/simulated/floor/tiled/white/monofloor,
 /area/nadezhda/medical/sleeper)
 "efR" = (
