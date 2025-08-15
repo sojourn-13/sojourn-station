@@ -102,8 +102,8 @@
 /obj/item/storage/belt/utility/full/guild
 	name = "guild adept tool belt"
 	desc = "Can hold various tools."
-	icon_state = "utility"
-	item_state = "utility"
+	icon_state = "guildbelt"
+	item_state = "guildbelt"
 	can_hold = list(
 		// Core engineering and maintenance tools
 		/obj/item/tool,
