@@ -6,3 +6,12 @@
 	layer = ABOVE_HUD_LAYER
 	plane = HUD_PLANE
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+
+//Critical alert screen overlay
+/obj/screen/critical_alert
+	name = "critical alert"
+	icon = 'icons/effects/effects.dmi'
+	screen_loc = "CENTER,CENTER"
+	layer = ABOVE_HUD_LAYER
+	plane = HUD_PLANE
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT

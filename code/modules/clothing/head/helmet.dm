@@ -1909,6 +1909,7 @@
 	var/repeat_report_after = 60 SECONDS
 	var/list/crewmembers_recently_reported = list()
 	var/obj/screen/tracking_arrow/tracking_overlay = null
+	var/obj/screen/critical_alert/critical_overlay = null
 	var/obj/item/clothing/glasses/hud/health/medical_hud
 	var/last_hud_toggle = 0
 	var/hud_toggle_delay = 2 SECONDS
@@ -1924,6 +1925,12 @@
 	schedule_scan()
 	START_PROCESSING(SSobj, src)
 
+/obj/item/clothing/head/helmet/faceshield/paramedic/unequipped(mob/user)
+	. = ..()
+	remove_tracking_overlay()
+	remove_critical_overlay()
+	STOP_PROCESSING(SSobj, src)
+
 /obj/item/clothing/head/helmet/faceshield/paramedic/attack_self(mob/user)
 	if(!user.incapacitated())
 		src.set_is_up(!src.up)
@@ -1931,6 +1938,7 @@
 		if(src.up)
 			to_chat(user, "You push the [src] up out of your face.")
 			remove_tracking_overlay()
+			remove_critical_overlay()
 		else
 			to_chat(user, "You flip the [src] down to protect your face.")
 
@@ -2063,19 +2071,20 @@
 	var/mob/living/carbon/human/user = loc
 	if(!user.client)
 		remove_tracking_overlay()
+		remove_critical_overlay()
 		return
 
-	// Remove any existing tracking overlay
+	// Remove any existing overlays
 	remove_tracking_overlay()
+	remove_critical_overlay()
 
-	// Check if tracked patient is in critical condition first
+	// Check if tracked patient is in critical condition and show critical alert
 	if(is_tracked_patient_critical())
 		// Create screen object for critical alert
-		tracking_overlay = new /obj/screen/tracking_arrow()
-		tracking_overlay.icon_state = "ALERT_CRITICAL"
-		// Add the overlay to the user's screen
-		user.client.screen += tracking_overlay
-		return
+		critical_overlay = new /obj/screen/critical_alert()
+		critical_overlay.icon_state = "ALERT_CRITICAL"
+		// Add the critical overlay to the user's screen
+		user.client.screen += critical_overlay
 
 	var/direction = get_direction_to_target()
 	if(!direction)
@@ -2122,9 +2131,18 @@
 		qdel(tracking_overlay)
 	tracking_overlay = null
 
+/obj/item/clothing/head/helmet/faceshield/paramedic/proc/remove_critical_overlay()
+	if(critical_overlay && ishuman(loc))
+		var/mob/living/carbon/human/user = loc
+		if(user.client)
+			user.client.screen -= critical_overlay
+		qdel(critical_overlay)
+	critical_overlay = null
+
 /obj/item/clothing/head/helmet/faceshield/paramedic/dropped(mob/user)
 	. = ..()
 	remove_tracking_overlay()
+	remove_critical_overlay()
 	STOP_PROCESSING(SSobj, src)
 	if(medical_hud.loc != src)
 		if(ismob(medical_hud.loc))
@@ -2141,6 +2159,7 @@
 	// Clear overlay when helmet is raised
 	if(is_up)
 		remove_tracking_overlay()
+		remove_critical_overlay()
 
 /obj/item/clothing/head/helmet/faceshield/paramedic/AltClick()
 	toggle_speaker()
@@ -2162,6 +2181,7 @@
 		if(src.up)
 			to_chat(usr, "You push the [src] up out of your face.")
 			remove_tracking_overlay()
+			remove_critical_overlay()
 		else
 			to_chat(usr, "You flip the [src] down to protect your face.")
 
@@ -2186,8 +2206,9 @@
 	set src in usr
 
 	if(!usr.incapacitated())
-		if(tracking_overlay)
+		if(tracking_overlay || critical_overlay)
 			remove_tracking_overlay()
+			remove_critical_overlay()
 			to_chat(usr, "You turn off the tracking overlay.")
 		else
 			update_tracking_overlay()
