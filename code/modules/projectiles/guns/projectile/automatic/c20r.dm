@@ -91,8 +91,8 @@
 	icon = 'icons/obj/guns/projectile/si_cr20_med.dmi'
 	caliber = CAL_MAGNUM
 	mag_well = MAG_WELL_SMG|MAG_WELL_PISTOL
-	damage_multiplier = 1.5
-	penetration_multiplier = 1.8
+	damage_multiplier = 1.2
+	penetration_multiplier = 1.2
 	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE, GUN_SCOPE, GUN_MAGWELL)
 	gun_parts = list(/obj/item/part/gun/frame/c20r/sci = 1, /obj/item/part/gun/grip/black = 1, /obj/item/part/gun/mechanism/smg = 1, /obj/item/part/gun/barrel/magnum = 1)
 	price_tag = 500
