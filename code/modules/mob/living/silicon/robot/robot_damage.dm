@@ -61,6 +61,7 @@
 	if(!parts.len)	return
 	var/datum/robot_component/picked = pick(parts)
 	picked.heal_damage(brute,burn)
+	regenerate_icons() // Update overlays when damage is healed
 
 /mob/living/silicon/robot/take_organ_damage(var/brute = 0, var/burn = 0, var/sharp = 0, var/edge = 0, var/emp = 0)
 	var/list/components = get_damageable_components()
@@ -108,6 +109,8 @@
 		burn -= (burn_was-picked.electronics_damage)
 
 		parts -= picked
+
+	regenerate_icons() // Update overlays when damage is healed
 
 /mob/living/silicon/robot/take_overall_damage(var/brute = 0, var/burn = 0, var/sharp = 0, var/used_weapon = null)
 	if(status_flags & GODMODE)	return	//godmode
@@ -204,7 +207,7 @@
 	spawn(2)
 		playsound(src, 'sound/weapons/heavysmash.ogg', 100, 1, 20,20)
 	playsound(src, pick(robot_talk_heavy_sound), 100, 1, 5,5)
-	
+
 /mob/living/silicon/robot/IgniteMob()
 	..()
 	//Overpower the fire with are normal light I suppose
