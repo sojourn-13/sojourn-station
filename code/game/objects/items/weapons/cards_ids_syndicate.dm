@@ -232,11 +232,19 @@
 	registered_name = "Special Agent"
 	assignment = "Special Agent"
 
+/obj/item/card/id/syndicate/ert/aa/marshal_ert/New()
+	access = get_all_station_access()
+	..()
+
 /obj/item/card/id/syndicate/ert/aa/blackshield_ert
 	name = "Blackshield Specialist's ID card"
 	desc = "A specialized all access ID issued to agents of the Brigadier and Blackshield Militia."
 	registered_name = "Specialist"
 	assignment = "Specialist"
+
+/obj/item/card/id/syndicate/ert/aa/blackshield_ert/New()
+	access = get_all_station_access()
+	..()
 
 /obj/item/card/id/syndicate/ert/aa/guild_ert
 	name = "Guild AA ID card"
@@ -244,11 +252,19 @@
 	registered_name = "Guild ERT"
 	assignment = "Guild ERT"
 
+/obj/item/card/id/syndicate/ert/aa/guild_ert/New()
+	access = get_all_station_access()
+	..()
+
 /obj/item/card/id/syndicate/ert/aa/auditor_ert
 	name = "LSS Auditor ID card"
 	desc = "An ID card that is for top down, with access to check out and inspect anything anyware at a moments time."
 	registered_name = "LSS Auditor"
 	assignment = "LSS Auditor"
+
+/obj/item/card/id/syndicate/ert/aa/auditor_ert/New()
+	access = get_all_station_access()
+	..()
 
 /obj/item/card/id/syndicate/ert/church_ert
 	name = "Inquisitor ID card"
