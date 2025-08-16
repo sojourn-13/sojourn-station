@@ -35966,13 +35966,6 @@
 "gGd" = (
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/hallway/surface/section1)
-"gGk" = (
-/obj/effect/floor_decal/industrial_plant/steel_grate_warning,
-/obj/structure/cable/heavyduty{
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/dark/danger,
-/area/nadezhda/command/teleporter)
 "gGp" = (
 /obj/machinery/bodyscanner,
 /obj/machinery/light,
@@ -130678,11 +130671,6 @@
 /area/nadezhda/outside/forest)
 "yeG" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_warning,
-/obj/effect/floor_decal/industrial_plant/border_sides{
-	dir = 4
-	},
-/obj/effect/floor_decal/industrial_plant/border_sides,
-/obj/effect/floor_decal/industrial_plant/steel_grate_warning,
 /obj/structure/cable/heavyduty{
 	icon_state = "4-8"
 	},
@@ -150203,7 +150191,7 @@ sJl
 pqI
 ezK
 eLo
-gGk
+yeG
 mne
 ezK
 nCj
