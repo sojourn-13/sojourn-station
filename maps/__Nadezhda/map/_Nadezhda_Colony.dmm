@@ -3075,12 +3075,15 @@
 /area/nadezhda/absolutism/chapel)
 "aDD" = (
 /obj/effect/floor_decal/industrial/outline/red,
-/obj/item/gun/energy/cog,
 /obj/structure/table/rack,
+/obj/item/tool/baton/slimebaton,
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -32
 	},
+/obj/item/cell/medium/moebius/high,
+/obj/item/gun/energy/cog,
+/obj/item/cell/medium/moebius/high,
 /turf/simulated/floor/tiled/white/techfloor,
 /area/nadezhda/medical/genetics)
 "aDG" = (
@@ -41668,6 +41671,14 @@
 	dir = 1;
 	pixel_y = -32
 	},
+/obj/machinery/access_button{
+	command = "cycle_exterior";
+	frequency = 1345;
+	master_tag = "genetics_airlock_control";
+	name = "Xenogenetics Access Button";
+	pixel_y = -24;
+	req_access = list(9)
+	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/medical/genetics)
 "hKv" = (
@@ -42388,6 +42399,15 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/airlock/research{
+	autoclose = 0;
+	frequency = 1345;
+	icon_state = "door_locked";
+	id_tag = "genetics_airlock_interior";
+	locked = 1;
+	name = "Xenogenetics Internal Airlock";
+	req_access = list(55)
+	},
 /turf/simulated/floor/tiled/white/danger,
 /area/nadezhda/medical/genetics)
 "hSK" = (
@@ -45289,9 +45309,9 @@
 	command = "cycle_exterior";
 	frequency = 1379;
 	master_tag = "xeno_airlock_control";
-	name = "Xenobiology Access Button";
+	name = "Xenogenetics Access Button";
 	pixel_y = -24;
-	req_access = list(55)
+	req_access = list(9)
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -59754,6 +59774,18 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/inside_colony)
+"lgC" = (
+/obj/random/furniture/pottedplant,
+/obj/machinery/access_button{
+	command = "cycle_exterior";
+	frequency = 1345;
+	master_tag = "xeno_airlock_control";
+	name = "Xenogenetics Access Button";
+	req_access = list(9);
+	pixel_y = 24
+	},
+/turf/simulated/floor/tiled/dark/danger,
+/area/nadezhda/rnd/lab)
 "lgF" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -68829,6 +68861,22 @@
 /obj/structure/table/bench/wooden,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
+"mSa" = (
+/obj/effect/floor_decal/industrial/stand_clear/red,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/airlock/research{
+	autoclose = 0;
+	frequency = 1345;
+	icon_state = "door_locked";
+	id_tag = "genetics_airlock_exterior";
+	locked = 1;
+	name = "Xenogenetics External Airlock";
+	req_access = list(55)
+	},
+/turf/simulated/floor/tiled/white/danger,
+/area/nadezhda/medical/genetics)
 "mSb" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -69251,6 +69299,14 @@
 "mXc" = (
 /obj/machinery/light,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/access_button{
+	command = "cycle_exterior";
+	frequency = 1345;
+	master_tag = "genetics_airlock_control";
+	name = "Xenogenetics Access Button";
+	pixel_y = -24;
+	req_access = list(9)
+	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/medical/genetics)
 "mXd" = (
@@ -83834,7 +83890,10 @@
 /area/shuttle/vasiliy_shuttle_area)
 "pDc" = (
 /obj/structure/table/reinforced,
+/obj/item/tool/baton/slimebaton,
+/obj/item/cell/medium/moebius/high,
 /obj/item/gun/energy/slimegun,
+/obj/item/cell/small/moebius/high,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/rnd/xenobiology)
 "pDd" = (
@@ -109575,7 +109634,6 @@
 	},
 /area/nadezhda/medical/sleeper)
 "uou" = (
-/obj/machinery/door/airlock/multi_tile/metal,
 /obj/effect/floor_decal/industrial/stand_clear/red,
 /obj/machinery/door/firedoor/multi_tile,
 /obj/structure/cable/green{
@@ -109587,6 +109645,15 @@
 	dir = 2
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/airlock/research{
+	autoclose = 0;
+	frequency = 1345;
+	icon_state = "door_locked";
+	id_tag = "genetics_airlock_interior";
+	locked = 1;
+	name = "Xenogenetics Internal Airlock";
+	req_access = list(55)
+	},
 /turf/simulated/floor/tiled/white/danger,
 /area/nadezhda/medical/genetics)
 "uoz" = (
@@ -115371,6 +115438,11 @@
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "vrR" = (
+/obj/machinery/disposal,
+/obj/effect/floor_decal/industrial/box/red,
+/obj/structure/disposalpipe/trunk{
+	dir = 2
+	},
 /obj/machinery/access_button{
 	command = "cycle_exterior";
 	frequency = 1379;
@@ -115378,11 +115450,6 @@
 	name = "Xenobiology Access Button";
 	pixel_x = -24;
 	req_access = list(55)
-	},
-/obj/machinery/disposal,
-/obj/effect/floor_decal/industrial/box/red,
-/obj/structure/disposalpipe/trunk{
-	dir = 2
 	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/rnd/xenobiology)
@@ -116529,8 +116596,6 @@
 /area/nadezhda/rnd/xenobiology)
 "vDM" = (
 /obj/structure/table/reinforced,
-/obj/item/tool/baton,
-/obj/item/tool/baton,
 /obj/item/book/manual/xenobio_recipies,
 /obj/structure/cable/green{
 	d1 = 4;
@@ -117888,9 +117953,7 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/security/maingate/east)
 "vRi" = (
-/obj/machinery/door/airlock/multi_tile/metal,
 /obj/effect/floor_decal/industrial/stand_clear/red,
-/obj/machinery/door/firedoor/multi_tile,
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable/green{
 	d1 = 1;
@@ -117898,6 +117961,16 @@
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/firedoor/multi_tile,
+/obj/machinery/door/airlock/research{
+	autoclose = 0;
+	frequency = 1345;
+	icon_state = "door_locked";
+	id_tag = "genetics_airlock_exterior";
+	locked = 1;
+	name = "Xenogenetics External Airlock";
+	req_access = list(55)
+	},
 /turf/simulated/floor/tiled/white/danger,
 /area/nadezhda/medical/genetics)
 "vRj" = (
@@ -122485,6 +122558,15 @@
 /obj/structure/sign/warning/nosmoking/small{
 	pixel_x = -32;
 	pixel_y = 32
+	},
+/obj/machinery/embedded_controller/radio/airlock/access_controller{
+	id_tag = "genetics_airlock_control";
+	name = "Xenogenetics Access Console";
+	pixel_y = 28;
+	tag_exterior_door = "genetics_airlock_exterior";
+	tag_interior_door = "genetics_airlock_interior";
+	req_access = list(9);
+	frequency = 1345
 	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/medical/genetics)
@@ -147276,7 +147358,7 @@ abl
 wHt
 hKt
 abl
-goD
+lgC
 ufO
 sNL
 lzw
@@ -147679,7 +147761,7 @@ nTe
 hSF
 oaT
 oaT
-hSF
+mSa
 nab
 cGw
 nab
