@@ -1925,7 +1925,7 @@
 	schedule_scan()
 	START_PROCESSING(SSobj, src)
 
-/obj/item/clothing/head/helmet/faceshield/paramedic/unequipped(mob/user)
+/obj/item/clothing/head/helmet/faceshield/paramedic/dropped(mob/user)
 	. = ..()
 	remove_tracking_overlay()
 	remove_critical_overlay()
