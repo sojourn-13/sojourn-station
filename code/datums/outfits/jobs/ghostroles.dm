@@ -49,7 +49,7 @@
 							/obj/item/roller/compact  = 1,
 							/obj/item/device/defib_kit/compact/combat/adv/loaded = 1)
 	id_slot = slot_wear_id
-	id_type =  /obj/item/card/id/syndicate/ert/medical_ert
+	id_type =  /obj/item/card/id/syndicate/ert/aa/medical_ert
 
 /decl/hierarchy/outfit/marshal_ert
 	name = "Marshal Agent"
@@ -137,7 +137,7 @@
 	name = "Inquisitor"
 	l_ear = /obj/item/device/radio/headset/heads/preacher
 	id_slot = slot_wear_id
-	id_type = /obj/item/card/id/syndicate/ert/church_ert
+	id_type = /obj/item/card/id/syndicate/ert/aa/church_ert
 	uniform = /obj/item/clothing/under/rank/preacher
 	suit = /obj/item/clothing/suit/storage/chaplain/coat
 	suit_store = /obj/item/gun/energy/plasma //Dominion plasma rifle
@@ -169,7 +169,7 @@
 							/obj/item/paper_bin = 1,
 							/obj/item/modular_computer/tablet/lease/preset/command = 1)
 	id_slot = slot_wear_id
-	id_type =  /obj/item/card/id/syndicate/ert/research_ert
+	id_type =  /obj/item/card/id/syndicate/ert/aa/research_ert
 
 /decl/hierarchy/outfit/prospector_ert //criminy
 	name = "Underboss"
@@ -185,7 +185,7 @@
 	l_pocket = /obj/item/storage/pouch/ammo
 	backpack_contents = list(/obj/item/modular_computer/tablet/lease/preset/command = 1, /obj/item/gun/projectile/silvereye = 1, /obj/item/ammo_magazine/kurz_50/hv = 5, /obj/item/clothing/head/helmet/mercenary = 1, /obj/item/clothing/mask/gas  = 1)
 	id_slot = slot_wear_id
-	id_type =  /obj/item/card/id/syndicate/ert/prospector_ert
+	id_type =  /obj/item/card/id/syndicate/ert/aa/prospector_ert
 
 /decl/hierarchy/outfit/doggo
 	name = "Kriosan trooper"
