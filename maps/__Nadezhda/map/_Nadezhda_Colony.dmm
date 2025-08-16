@@ -23261,6 +23261,7 @@
 	pixel_x = 32
 	},
 /obj/structure/catwalk,
+/obj/item/reagent_containers/glass/bucket,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/medical/sleeper)
 "erc" = (
@@ -35607,9 +35608,10 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/security/maingate/east)
 "gDQ" = (
-/obj/item/stool,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/effect/decal/cleanable/dirt,
 /obj/landmark/join/start/medstudent,
-/turf/simulated/floor/tiled/white/techfloor,
+/turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/medical/sleeper)
 "gDT" = (
 /obj/machinery/light{
@@ -39031,6 +39033,12 @@
 /obj/effect/decal/cleanable/filth,
 /turf/simulated/floor/tiled/steel/danger,
 /area/nadezhda/engineering/shield_generator)
+"hnh" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/effect/decal/cleanable/dirt,
+/obj/landmark/join/start/paramedic,
+/turf/simulated/floor/tiled/dark/danger,
+/area/nadezhda/medical/sleeper)
 "hnn" = (
 /obj/effect/floor_decal/industrial/warningdust/fulltile,
 /obj/machinery/shieldwallgen{
@@ -75147,6 +75155,11 @@
 "nZe" = (
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/security/maingate)
+"nZi" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/landmark/join/start/paramedic,
+/turf/simulated/floor/tiled/dark/danger,
+/area/nadezhda/medical/sleeper)
 "nZl" = (
 /obj/random/junk/low_chance,
 /obj/effect/decal/cleanable/dirt,
@@ -118253,7 +118266,6 @@
 /obj/item/storage/bag/trash,
 /obj/item/reagent_containers/spray/cleaner,
 /obj/item/device/lightreplacer,
-/obj/item/reagent_containers/glass/bucket,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/medical/sleeper)
 "vUa" = (
@@ -122088,6 +122100,8 @@
 /obj/item/reagent_containers/blood/APlus,
 /obj/item/reagent_containers/blood/BMinus,
 /obj/item/reagent_containers/blood/BPlus,
+/obj/item/reagent_containers/blood/OMinus,
+/obj/item/reagent_containers/blood/OPlus,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/sleeper)
 "wDh" = (
@@ -125647,6 +125661,7 @@
 	dir = 10
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/landmark/join/start/medstudent,
 /turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/medical/sleeper)
 "xmK" = (
@@ -129192,14 +129207,14 @@
 /turf/simulated/floor/wood,
 /area/nadezhda/maintenance/undergroundfloor2west)
 "xUJ" = (
-/obj/machinery/door/airlock/glass_medical{
-	name = "Chemistry Lab";
-	req_access = list(45)
-	},
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/glass_medical{
+	name = "Chemistry Lab";
+	req_access = list(33)
+	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/medical/chemistry)
 "xUT" = (
@@ -145868,11 +145883,11 @@ sqv
 mgW
 rJC
 qUI
-xCT
+nZi
 cYC
+hnh
 hpm
-hpm
-hpm
+hnh
 kxd
 xQZ
 hkK
@@ -146073,7 +146088,7 @@ ceB
 hpm
 rfV
 mxv
-gDQ
+kaF
 aDX
 qUI
 lfJ
@@ -146275,7 +146290,7 @@ jjm
 mXu
 pAy
 mxv
-gDQ
+kaF
 kaF
 nRn
 wzC
@@ -146477,7 +146492,7 @@ qUI
 sdZ
 xmH
 mXu
-mXu
+gDQ
 mXu
 bDH
 bmp
