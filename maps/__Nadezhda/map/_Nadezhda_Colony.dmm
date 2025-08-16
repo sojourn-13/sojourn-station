@@ -13646,12 +13646,6 @@
 /obj/effect/floor_decal/industrial_plant/steel_grate_warning{
 	dir = 1
 	},
-/obj/effect/floor_decal/industrial_plant/border_sides{
-	dir = 4
-	},
-/obj/effect/floor_decal/industrial_plant/steel_grate_warning{
-	dir = 1
-	},
 /obj/effect/floor_decal/industrial/outline,
 /obj/structure/railing/grey{
 	dir = 4
@@ -14748,12 +14742,6 @@
 /area/nadezhda/maintenance/undergroundfloor1east)
 "cOH" = (
 /obj/machinery/constructable_frame/machine_frame,
-/obj/effect/floor_decal/industrial_plant/steel_grate_warning{
-	dir = 1
-	},
-/obj/effect/floor_decal/industrial_plant/border_sides{
-	dir = 4
-	},
 /obj/effect/floor_decal/industrial_plant/steel_grate_warning{
 	dir = 1
 	},
@@ -22368,14 +22356,12 @@
 	dir = 4
 	},
 /obj/structure/window/reinforced/iskhod{
-	dir = 9
-	},
-/obj/structure/window/reinforced/iskhod{
 	dir = 8
 	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 10
 	},
+/obj/structure/window/reinforced/iskhod,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/command/teleporter)
 "ehx" = (
@@ -26561,12 +26547,10 @@
 /obj/structure/window/reinforced/iskhod{
 	dir = 4
 	},
-/obj/structure/window/reinforced/iskhod{
-	dir = 9
-	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 6
 	},
+/obj/structure/window/reinforced/iskhod,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/command/teleporter)
 "eVW" = (
@@ -35982,6 +35966,13 @@
 "gGd" = (
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/hallway/surface/section1)
+"gGk" = (
+/obj/effect/floor_decal/industrial_plant/steel_grate_warning,
+/obj/structure/cable/heavyduty{
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/dark/danger,
+/area/nadezhda/command/teleporter)
 "gGp" = (
 /obj/machinery/bodyscanner,
 /obj/machinery/light,
@@ -43018,11 +43009,6 @@
 /area/nadezhda/engineering/engine_room)
 "hWn" = (
 /obj/machinery/constructable_frame/machine_frame,
-/obj/effect/floor_decal/industrial_plant/steel_grate_warning,
-/obj/effect/floor_decal/industrial_plant/border_sides{
-	dir = 4
-	},
-/obj/effect/floor_decal/industrial_plant/border_sides,
 /obj/effect/floor_decal/industrial_plant/steel_grate_warning,
 /obj/effect/floor_decal/industrial/outline,
 /obj/structure/railing/grey{
@@ -61731,12 +61717,6 @@
 /obj/effect/floor_decal/industrial_plant/steel_grate_warning{
 	dir = 1
 	},
-/obj/effect/floor_decal/industrial_plant/border_sides{
-	dir = 4
-	},
-/obj/effect/floor_decal/industrial_plant/steel_grate_warning{
-	dir = 1
-	},
 /obj/structure/cable/heavyduty{
 	icon_state = "1-2"
 	},
@@ -63437,14 +63417,12 @@
 	dir = 4
 	},
 /obj/structure/window/reinforced/iskhod{
-	dir = 9
-	},
-/obj/structure/window/reinforced/iskhod{
 	dir = 8
 	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 10
 	},
+/obj/structure/window/reinforced/iskhod,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/command/teleporter)
 "lRa" = (
@@ -98710,12 +98688,10 @@
 /obj/structure/window/reinforced/iskhod{
 	dir = 4
 	},
-/obj/structure/window/reinforced/iskhod{
-	dir = 3
-	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 6
 	},
+/obj/structure/window/reinforced/iskhod,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/command/teleporter)
 "smC" = (
@@ -109355,7 +109331,6 @@
 "uiI" = (
 /obj/machinery/constructable_frame/machine_frame,
 /obj/effect/floor_decal/industrial_plant/steel_warning,
-/obj/effect/floor_decal/industrial_plant/steel_warning,
 /obj/structure/cable/heavyduty{
 	icon_state = "1-2-4-8"
 	},
@@ -111384,14 +111359,6 @@
 /area/nadezhda/security/vacantoffice2)
 "uDq" = (
 /obj/machinery/constructable_frame/machine_frame,
-/obj/effect/floor_decal/industrial_plant/steel_grate_warning,
-/obj/effect/floor_decal/industrial_plant/border_sides{
-	dir = 4
-	},
-/obj/effect/floor_decal/industrial_plant/border_sides{
-	dir = 4
-	},
-/obj/effect/floor_decal/industrial_plant/border_sides,
 /obj/effect/floor_decal/industrial_plant/steel_grate_warning,
 /obj/effect/floor_decal/industrial/outline,
 /obj/structure/railing/grey,
@@ -150236,7 +150203,7 @@ sJl
 pqI
 ezK
 eLo
-yeG
+gGk
 mne
 ezK
 nCj
