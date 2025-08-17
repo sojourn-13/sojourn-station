@@ -34106,10 +34106,10 @@
 /obj/machinery/access_button{
 	command = "cycle_exterior";
 	frequency = 1345;
-	master_tag = "xeno_airlock_control";
+	master_tag = "genetics_airlock_control";
 	name = "Xenogenetics Access Button";
-	req_access = list(9);
-	pixel_y = 24
+	pixel_y = 24;
+	req_access = list(9)
 	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/lab)
@@ -41838,14 +41838,6 @@
 	dir = 1;
 	pixel_y = -32
 	},
-/obj/machinery/access_button{
-	command = "cycle_exterior";
-	frequency = 1345;
-	master_tag = "genetics_airlock_control";
-	name = "Xenogenetics Access Button";
-	pixel_y = -24;
-	req_access = list(9)
-	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/medical/genetics)
 "hKv" = (
@@ -45493,14 +45485,6 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "itg" = (
-/obj/machinery/access_button{
-	command = "cycle_exterior";
-	frequency = 1379;
-	master_tag = "xeno_airlock_control";
-	name = "Xenogenetics Access Button";
-	pixel_y = -24;
-	req_access = list(9)
-	},
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
@@ -51171,14 +51155,6 @@
 /turf/simulated/floor/industrial/ceramic,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "jwv" = (
-/obj/machinery/access_button{
-	command = "cycle_interior";
-	frequency = 1379;
-	master_tag = "xeno_airlock_control";
-	name = "Xenobiology Access Button";
-	pixel_y = 24;
-	req_access = list(55)
-	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
@@ -69558,7 +69534,7 @@
 /obj/machinery/light,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/access_button{
-	command = "cycle_exterior";
+	command = "cycle_interior";
 	frequency = 1345;
 	master_tag = "genetics_airlock_control";
 	name = "Xenogenetics Access Button";
