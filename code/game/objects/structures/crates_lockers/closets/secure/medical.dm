@@ -159,6 +159,8 @@
 	new /obj/item/storage/pouch/baton_holster(src)
 	new /obj/item/storage/pouch/medical_supply(src)
 	new /obj/item/storage/hcases/med(src)
+	new /obj/item/storage/hcases/ammo/ih(src)
+	new /obj/item/bodybag/cryobag(src)
 	new /obj/item/clothing/glasses/hud/health(src)
 	new /obj/item/clothing/suit/storage/toggle/labcoat/medspec(src)
 

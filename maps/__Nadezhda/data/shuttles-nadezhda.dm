@@ -6,7 +6,7 @@
 	shuttle_area = /area/shuttle/surface_transport_lz
 	current_location = "nav_pad_surface_transport"
 	landmark_transition = "nav_transit_surface_transport"
-	destination_tags = list("nav_pad_surface_transport", "nav_hunting_lodge", "nav_deep_forest", "nav_swamps", "nav_river_forest", "nav_space_0")
+	destination_tags = list("nav_pad_surface_transport", "nav_hunting_lodge", "nav_deep_forest", "nav_swamps", "nav_river_forest", "nav_space_0", "nav_greyson_field")
 
 /obj/effect/shuttle_landmark/surface_transport
 	name = "Surface Transport Shuttle Pad"
@@ -44,13 +44,19 @@
 	base_turf = /turf/simulated/floor/asteroid/dirt
 	autoset = TRUE
 
+/obj/effect/shuttle_landmark/greyson_field
+	name = "Greyson Field Office Landing Zone"
+	landmark_tag = "nav_greyson_field"
+	base_turf = /turf/simulated/floor/tiled/dark/cargo
+	autoset = TRUE
+
 //Area code
 /area/shuttle/surface_transport_lz
 	name = "Surface Transit Landing Pad"
 	icon_state = "shuttle"
 	requires_power = FALSE
 	dynamic_lighting = FALSE
-	base_turf = /turf/simulated/floor/plating/under
+	base_turf = /turf/simulated/floor/tiled/dark/cargo
 
 //Consoles
 /obj/machinery/computer/shuttle_control/multi/surface_transport

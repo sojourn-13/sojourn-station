@@ -290,7 +290,7 @@
 	new /obj/item/stack/medical/bruise_pack/advanced(src)
 
 /obj/item/storage/firstaid/surgery/si
-	name = "advanced surgery kit"
+	name = "soteria advanced surgery kit"
 	desc = "Contains tools for surgery. Has precise foam fitting for safe transport of highly advanced tools."
 	icon_state = "surgery_box_SI"
 	item_state = "combat_surgery_kit"
@@ -303,7 +303,7 @@
 /obj/item/storage/firstaid/surgery/si/populate_contents()
 	if (empty) return
 	new /obj/item/tool/scalpel/advanced/si(src)
-	new /obj/item/tool/scalpel/laser(src)
+	new /obj/item/tool/scalpel/laser/si(src)
 	new /obj/item/tool/hemostat/adv/si(src)
 	new /obj/item/tool/retractor/adv/si(src)
 	new /obj/item/tool/bonesetter/adv/si(src)

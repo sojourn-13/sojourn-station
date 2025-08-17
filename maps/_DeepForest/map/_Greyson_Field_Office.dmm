@@ -3730,6 +3730,10 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/nadezhda/outside/one_star/fo_internal)
+"De" = (
+/obj/effect/shuttle_landmark/greyson_field,
+/turf/simulated/floor/tiled/dark/cargo,
+/area/nadezhda/outside/one_star/fo_outside)
 "Df" = (
 /obj/effect/window_lwall_spawn/smartspawn/onestar,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
@@ -29793,7 +29797,7 @@ gk
 GV
 GV
 GV
-GV
+De
 GV
 GV
 XQ

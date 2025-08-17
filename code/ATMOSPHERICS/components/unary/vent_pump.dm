@@ -13,7 +13,7 @@
 
 	name = "air vent"
 	desc = "Has a valve and pump attached to it"
-	use_power = NO_POWER_USE
+	use_power = IDLE_POWER_USE
 	idle_power_usage = 150		//internal circuitry, friction losses and stuff
 	power_rating = 12000		//12000 W ~ 16 HP
 

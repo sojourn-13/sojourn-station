@@ -232,11 +232,19 @@
 	registered_name = "Special Agent"
 	assignment = "Special Agent"
 
+/obj/item/card/id/syndicate/ert/aa/marshal_ert/New()
+	access = get_all_station_access()
+	..()
+
 /obj/item/card/id/syndicate/ert/aa/blackshield_ert
 	name = "Blackshield Specialist's ID card"
 	desc = "A specialized all access ID issued to agents of the Brigadier and Blackshield Militia."
 	registered_name = "Specialist"
 	assignment = "Specialist"
+
+/obj/item/card/id/syndicate/ert/aa/blackshield_ert/New()
+	access = get_all_station_access()
+	..()
 
 /obj/item/card/id/syndicate/ert/aa/guild_ert
 	name = "Guild AA ID card"
@@ -244,34 +252,50 @@
 	registered_name = "Guild ERT"
 	assignment = "Guild ERT"
 
+/obj/item/card/id/syndicate/ert/aa/guild_ert/New()
+	access = get_all_station_access()
+	..()
+
 /obj/item/card/id/syndicate/ert/aa/auditor_ert
 	name = "LSS Auditor ID card"
 	desc = "An ID card that is for top down, with access to check out and inspect anything anyware at a moments time."
 	registered_name = "LSS Auditor"
 	assignment = "LSS Auditor"
 
-/obj/item/card/id/syndicate/ert/church_ert
+/obj/item/card/id/syndicate/ert/aa/auditor_ert/New()
+	access = get_all_station_access()
+	..()
+
+/obj/item/card/id/syndicate/ert/aa/church_ert
 	name = "Inquisitor ID card"
 	desc = "An ID card made for Inquisitors of the Church of the Absolute"
 	registered_name = "Inquisitor"
 	assignment = "Inquisitor"
 	access = list(access_nt_preacher, access_nt_disciple, access_morgue, access_chapel_office, access_crematorium, access_maint_tunnels, access_RC_announce, access_keycard_auth, access_heads, access_sec_doors)
 
-/obj/item/card/id/syndicate/ert/medical_ert
-	name = "Medical ID card"
-	desc = "An ID straight from the SI Medical Divisions."
-	registered_name = "Medical ERT"
-	assignment = "SI Medical ERT"
+/obj/item/card/id/syndicate/ert/aa/church_ert/New()
+	access = get_all_station_access()
+	..()
+
+/obj/item/card/id/syndicate/ert/aa/medical_ert
+	name = "SI Medical Board ID card"
+	desc = "An ID straight from the SI Medical Board."
+	registered_name = "Medical Board Representative"
+	assignment = "Medical Board Representative"
 	access = list(access_moebius, access_medical_equip, access_morgue, access_genetics, access_heads,
 		access_chemistry, access_virology, access_cmo, access_surgery, access_RC_announce,
 		access_keycard_auth, access_sec_doors, access_psychiatrist, access_eva, access_maint_tunnels,
 		access_external_airlocks, access_paramedic, access_research_equipment, access_medical_suits)
 
-/obj/item/card/id/syndicate/ert/research_ert
-	name = "SI ID card"
+/obj/item/card/id/syndicate/ert/aa/medical_ert/New()
+	access = get_all_station_access()
+	..()
+
+/obj/item/card/id/syndicate/ert/aa/research_ert
+	name = "SI Ethics Committee ID card"
 	desc = "An ID straight from the SI Ethics Committee. Wait, they have an ethics commitee?"
-	registered_name = "Ethics Commitee Agent"
-	assignment = "Ethics Commitee Agent"
+	registered_name = "Ethics Commitee Liaison"
+	assignment = "Ethics Commitee Liaison"
 	access = list(
 		access_rd, access_heads, access_tox, access_genetics, access_morgue, access_cmo,
 		access_tox_storage, access_teleporter, access_sec_doors, access_paramedic,
@@ -280,7 +304,11 @@
 		access_RC_announce, access_keycard_auth, access_tcomsat, access_gateway, access_xenoarch, access_network, access_maint_tunnels, access_research_equipment
 	) //Same as RD
 
-/obj/item/card/id/syndicate/ert/prospector_ert
+/obj/item/card/id/syndicate/ert/aa/research_ert/New()
+	access = get_all_station_access()
+	..()
+
+/obj/item/card/id/syndicate/ert/aa/prospector_ert
 	name = "Prospector Underboss ID card"
 	desc = "An ID straight from Boss Hogg, or at least from his dictation PAI. "
 	registered_name = "Underboss"
@@ -289,6 +317,10 @@
 		access_prospector, access_foreman, access_external_airlocks, access_eva, access_heads, access_sec_doors,
 		access_RC_announce, access_keycard_auth, access_maint_tunnels, access_medical_suits
 	) //same as foreman, ofc.
+
+/obj/item/card/id/syndicate/ert/aa/prospector_ert/New()
+	access = get_all_station_access()
+	..()
 
 //Event and similar IDs.
 /obj/item/card/id/syndicate/solfed

@@ -1909,6 +1909,7 @@
 	var/repeat_report_after = 60 SECONDS
 	var/list/crewmembers_recently_reported = list()
 	var/obj/screen/tracking_arrow/tracking_overlay = null
+	var/obj/screen/critical_alert/critical_overlay = null
 	var/obj/item/clothing/glasses/hud/health/medical_hud
 	var/last_hud_toggle = 0
 	var/hud_toggle_delay = 2 SECONDS
@@ -1917,11 +1918,18 @@
 	..()
 	medical_hud = new(src)
 	medical_hud.canremove = FALSE
+	medical_hud.active = TRUE  // Ensure the HUD is always active
 
 /obj/item/clothing/head/helmet/faceshield/paramedic/equipped(mob/M)
 	. = ..()
 	schedule_scan()
 	START_PROCESSING(SSobj, src)
+
+/obj/item/clothing/head/helmet/faceshield/paramedic/dropped(mob/user)
+	. = ..()
+	remove_tracking_overlay()
+	remove_critical_overlay()
+	STOP_PROCESSING(SSobj, src)
 
 /obj/item/clothing/head/helmet/faceshield/paramedic/attack_self(mob/user)
 	if(!user.incapacitated())
@@ -1930,6 +1938,7 @@
 		if(src.up)
 			to_chat(user, "You push the [src] up out of your face.")
 			remove_tracking_overlay()
+			remove_critical_overlay()
 		else
 			to_chat(user, "You flip the [src] down to protect your face.")
 
@@ -2013,10 +2022,46 @@
 	var/turf/user_turf = get_turf(user)
 	var/turf/target_turf = get_turf(tablet.target_mob)
 
-	if(!user_turf || !target_turf || user_turf.z != target_turf.z)
+	if(!user_turf || !target_turf)
 		return null
 
+	// Check for Z-level differences
+	if(user_turf.z != target_turf.z)
+		if(target_turf.z > user_turf.z)
+			return "ARROW_UP"
+		else
+			return "ARROW_DOWN"
+
 	return get_dir(user_turf, target_turf)
+
+/obj/item/clothing/head/helmet/faceshield/paramedic/proc/is_tracked_patient_critical()
+	if(!ishuman(loc))
+		return FALSE
+
+	var/mob/living/carbon/human/user = loc
+
+	// Look for a Moebius tablet in user's inventory that is tracking
+	var/obj/item/modular_computer/tablet/moebius/tablet = null
+	for(var/obj/item/I in user.get_all_slots())
+		if(istype(I, /obj/item/modular_computer/tablet/moebius))
+			var/obj/item/modular_computer/tablet/moebius/T = I
+			if(T.is_tracking && T.target_mob)
+				tablet = T
+				break
+
+	if(!tablet || !tablet.target_mob)
+		return FALSE
+
+	// Check crew repository for alert status
+	var/list/z_levels_to_scan = list(1, 2, 3, 4, 5, 8, 9)
+	for(var/z_level in z_levels_to_scan)
+		var/list/crewmembers = crew_repository.health_data(z_level)
+		if(crewmembers.len)
+			for(var/i = 1, i <= crewmembers.len, i++)
+				var/list/entry = crewmembers[i]
+				if(entry["name"] == tablet.target_mob.real_name && entry["alert"])
+					return TRUE
+	return FALSE
 
 /obj/item/clothing/head/helmet/faceshield/paramedic/proc/update_tracking_overlay()
 	if(!ishuman(loc))
@@ -2026,10 +2071,20 @@
 	var/mob/living/carbon/human/user = loc
 	if(!user.client)
 		remove_tracking_overlay()
+		remove_critical_overlay()
 		return
 
-	// Remove any existing tracking overlay
+	// Remove any existing overlays
 	remove_tracking_overlay()
+	remove_critical_overlay()
+
+	// Check if tracked patient is in critical condition and show critical alert
+	if(is_tracked_patient_critical())
+		// Create screen object for critical alert
+		critical_overlay = new /obj/screen/critical_alert()
+		critical_overlay.icon_state = "ALERT_CRITICAL"
+		// Add the critical overlay to the user's screen
+		user.client.screen += critical_overlay
 
 	var/direction = get_direction_to_target()
 	if(!direction)
@@ -2056,6 +2111,10 @@
 			tracking_overlay.icon_state = "ARROW_SOUTHWEST"
 		if(WEST)
 			tracking_overlay.icon_state = "ARROW_WEST"
+		if("ARROW_UP")
+			tracking_overlay.icon_state = "ARROW_UP"
+		if("ARROW_DOWN")
+			tracking_overlay.icon_state = "ARROW_DOWN"
 		else
 			qdel(tracking_overlay)
 			tracking_overlay = null
@@ -2072,15 +2131,24 @@
 		qdel(tracking_overlay)
 	tracking_overlay = null
 
+/obj/item/clothing/head/helmet/faceshield/paramedic/proc/remove_critical_overlay()
+	if(critical_overlay && ishuman(loc))
+		var/mob/living/carbon/human/user = loc
+		if(user.client)
+			user.client.screen -= critical_overlay
+		qdel(critical_overlay)
+	critical_overlay = null
+
 /obj/item/clothing/head/helmet/faceshield/paramedic/dropped(mob/user)
 	. = ..()
 	remove_tracking_overlay()
+	remove_critical_overlay()
 	STOP_PROCESSING(SSobj, src)
 	if(medical_hud.loc != src)
 		if(ismob(medical_hud.loc))
 			var/mob/hud_loc = medical_hud.loc
 			hud_loc.drop_from_inventory(medical_hud, src)
-			medical_hud.toggle(user, FALSE)
+			// Don't toggle the HUD off - keep it active for next use
 			medical_hud.forceMove(src)
 
 /obj/item/clothing/head/helmet/faceshield/paramedic/Process()
@@ -2091,6 +2159,7 @@
 	// Clear overlay when helmet is raised
 	if(is_up)
 		remove_tracking_overlay()
+		remove_critical_overlay()
 
 /obj/item/clothing/head/helmet/faceshield/paramedic/AltClick()
 	toggle_speaker()
@@ -2112,6 +2181,7 @@
 		if(src.up)
 			to_chat(usr, "You push the [src] up out of your face.")
 			remove_tracking_overlay()
+			remove_critical_overlay()
 		else
 			to_chat(usr, "You flip the [src] down to protect your face.")
 
@@ -2136,8 +2206,9 @@
 	set src in usr
 
 	if(!usr.incapacitated())
-		if(tracking_overlay)
+		if(tracking_overlay || critical_overlay)
 			remove_tracking_overlay()
+			remove_critical_overlay()
 			to_chat(usr, "You turn off the tracking overlay.")
 		else
 			update_tracking_overlay()
@@ -2162,23 +2233,27 @@
 	if(user.get_equipped_item(slot_head) != src)
 		to_chat(user, SPAN_WARNING("You need to be wearing the helmet to use this function."))
 		return
+	if(world.time < last_hud_toggle)
+		to_chat(user, SPAN_WARNING("You can't toggle the medical HUD so fast!"))
+		return
 	if(medical_hud in src)
-		if(user.equip_to_slot_if_possible(medical_hud, slot_glasses) && world.time > last_hud_toggle)
+		if(user.equip_to_slot_if_possible(medical_hud, slot_glasses))
 			to_chat(user, SPAN_NOTICE("You activate [src]'s medical HUD display."))
 			last_hud_toggle = world.time + hud_toggle_delay
 			medical_hud.toggle(user, TRUE)
 		else
-			to_chat(user, SPAN_WARNING("You are wearing something which is in the way or trying to toggle too fast!"))
+			to_chat(user, SPAN_WARNING("You are wearing something which is in the way!"))
 	else
-		if(ismob(medical_hud.loc) && world.time > last_hud_toggle)
+		if(ismob(medical_hud.loc))
 			last_hud_toggle = world.time + hud_toggle_delay
 			var/mob/hud_loc = medical_hud.loc
 			hud_loc.drop_from_inventory(medical_hud, src)
-			medical_hud.toggle(user, FALSE)
+			// Keep HUD active for next use
 			to_chat(user, SPAN_NOTICE("You deactivate [src]'s medical HUD display."))
 			medical_hud.forceMove(src)
 		else
-			to_chat(user, SPAN_WARNING("You can't toggle the medical HUD so fast!"))
+			to_chat(user, SPAN_WARNING("Medical HUD is not currently active!"))
+	user.update_action_buttons()
 
 
 
