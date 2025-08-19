@@ -106,7 +106,7 @@
 //Kriosan racial language. Lore: Former forced Eurolang integration due to Sol-Gov occupation has been shed and a resurgence of the Kriosan Language has eliminated traces of other languages' influence.
 /datum/language/kriosan
 	name = LANGUAGE_KRIOSAN
-	desc = "The main language of Krios, Kriosan. Mostly consisting of quill-hound noises. Any written varient of this language has been long dead, replaced by a Sol-Fed standard during their occupation."
+	desc = "The main language of Krios, Kriosan. Mostly consisting of quill-hound noises. Any written varient of this language has been long dead, replaced by a Sol-Fed standard during their occupation. However a resurgence of the Kriosan language has resulted in a rekindling of the written texts within the sector."
 	speech_verb = list("states", "rumbles")
 	ask_verb = list("stipulates", "huffs")
 	exclaim_verb = list("barks", "yips")
