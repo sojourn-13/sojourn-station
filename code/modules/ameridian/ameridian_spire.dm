@@ -87,4 +87,6 @@
 			return TRUE
 		if(istype(T, /turf/simulated/floor/beach))
 			return TRUE
+		if(istype(T, /turf/simulated/floor/rock))
+			return TRUE
 	return FALSE

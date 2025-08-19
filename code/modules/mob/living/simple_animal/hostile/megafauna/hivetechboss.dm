@@ -30,6 +30,8 @@
 	mob_classification = CLASSIFICATION_SYNTHETIC
 	projectiletype = /obj/item/projectile/goo
 
+	research_value = 3750
+
 /mob/living/simple/hostile/megafauna/hivemind_tyrant/emp_act(severity)
 	..()
 	switch(severity)
@@ -91,11 +93,9 @@
 	spawn(rand(megafauna_min_cooldown, megafauna_max_cooldown))
 		if(prob(50))
 			random_shots()
-			move_to_delay = initial(move_to_delay)
 			MoveToTarget()
 			return
 		else
 			select_spiral_attack()
-			move_to_delay = initial(move_to_delay)
 			MoveToTarget()
 			return

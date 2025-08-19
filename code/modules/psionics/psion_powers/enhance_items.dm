@@ -1,0 +1,50 @@
+/mob/living/carbon/human/psionic_tumor/proc/candle_enhancer()
+	set category = "Psionic powers.Transform"
+	set name = "(1) Forever Candle"
+	set desc = "Spend a single psi point make a candle burn brighter and forever."
+	var/psi_point_cost = 1
+	var/mob/living/carbon/human/user = src
+	var/obj/item/organ/internal/psionic_tumor/PT = user.first_organ_by_process(BP_PSION)
+
+	if(PT && PT.pay_power_cost(psi_point_cost) && PT.check_possibility())
+		if(user.get_active_hand())
+			var/obj/A = user.get_active_hand()
+			if(istype(A, /obj/item/flame/candle))
+				var/obj/item/flame/candle/C = A
+				if(!C.endless_burn)
+					C.attack_self(user)
+					C.endless_burn = TRUE
+					C.candle_light_level += 5
+					C.lit_sanity_damage += 0.5
+					C.light_color = COLOR_LIGHTING_PURPLE_BRIGHT
+					C.light(flavor_text = SPAN_NOTICE("\The [user] lights up the candle without a flame."))
+				else
+					user.show_message(SPAN_DANGER("This candle is already touched by a power greater then itself."))
+			else
+				user.show_message(SPAN_DANGER("You have to hold a candle to enhance it."))
+		else
+			user.show_message(SPAN_DANGER("You have to hold a candle to enhance it."))
+
+/mob/living/carbon/human/psionic_tumor/proc/psi_injector_enhancer()
+	set category = "Psionic powers.Transform"
+	set name = "(1) Psionic Breath"
+	set desc = "Spend a single psi point make a psionic inhaler be able to bypass masks, as well as increases its affectiveness."
+	var/psi_point_cost = 1
+	var/mob/living/carbon/human/user = src
+	var/obj/item/organ/internal/psionic_tumor/PT = user.first_organ_by_process(BP_PSION)
+
+	if(PT && PT.pay_power_cost(psi_point_cost) && PT.check_possibility())
+		if(user.get_active_hand())
+			var/obj/A = user.get_active_hand()
+			if(istype(A, /obj/item/psi_injector))
+				var/obj/item/psi_injector/pi = A
+				if(!pi.bypass_block)
+					pi.bypass_block = TRUE
+					pi.point_per_use += 1
+				else
+					user.show_message(SPAN_DANGER("This [pi] has already been enhanced."))
+			else
+				user.show_message(SPAN_DANGER("You have to hold an inhaler to enhance it."))
+		else
+			user.show_message(SPAN_DANGER("You have to hold an inhaler to enhance it."))
+

@@ -106,7 +106,7 @@
 //Kriosan racial language. Lore: Former forced Eurolang integration due to Sol-Gov occupation has been shed and a resurgence of the Kriosan Language has eliminated traces of other languages' influence.
 /datum/language/kriosan
 	name = LANGUAGE_KRIOSAN
-	desc = "The main language of Krios, Kriosan. Mostly consisting of quill-hound noises."
+	desc = "The main language of Krios, Kriosan. Mostly consisting of quill-hound noises. Any written varient of this language has been long dead, replaced by a Sol-Fed standard during their occupation."
 	speech_verb = list("states", "rumbles")
 	ask_verb = list("stipulates", "huffs")
 	exclaim_verb = list("barks", "yips")
@@ -123,7 +123,7 @@
 //Aqula racial language. Lore: Long history of indpendence from Sol, therefor their language did not intergrate much. Somewhat physical language due to showing of force, akin to grunts, posturing or facial expressions providing context to wording (I.e akin to a tonal language style but with body language instead).
 /datum/language/akula
 	name = LANGUAGE_AKULA
-	desc = "A historic language spoken by Akula for centuries. Includes physical gestures and gutteral noises, mixing both verbal and non-verbal language elements."
+	desc = "A long-lived language spoken by Akula for centuries. Includes physical gestures and gutteral noises, mixing both verbal and non-verbal communication. There is no written form of this language."
 	speech_verb = list("grunts", "utters")
 	ask_verb = list("queries")
 	exclaim_verb = list("roars")
@@ -142,7 +142,7 @@
 //Marqua racial language. Lore: Did not integrate into Sol, therefor their langauge has remained mostly untouched. Only mild influences from buisnesses, trade, and frontier languages.
 /datum/language/marqua
 	name = LANGUAGE_MARQUA
-	desc = "A language spoken commonly by Marqua across the galaxy. Most of its sounds are unique, being noted as near impossible to replicate many of the noises by other species."
+	desc = "A language spoken commonly by Marqua across the galaxy. Most of its sounds are unique, being noted as near impossible to replicate by other species."
 	speech_verb = list("warbles")
 	ask_verb = list("trills")
 	exclaim_verb = list("rythmically trills")
@@ -173,7 +173,7 @@
 //Naramad language. full credit to Yanniert for all of the details herein contained.
 /datum/language/merp
 	name = LANGUAGE_MERP
-	desc = "A crude pidgin tongue, not created by it's supposedly native speakers, but by their foreign overlords. Enforced as the only legal native language of the Naramadi people by the Federation as a means to unify the planet and make administrative work easier, while allowing them to keep a semblance of native culture."
+	desc = "A crude pidgin tongue, not created by it's supposedly native speakers, but by their foreign overlords. Enforced as the only legal native language of the Naramadi people by the Federation, it was used as a means to unify the planet and make administrative work easier, while allowing them to keep a semblance of native culture."
 	speech_verb = list("says", "clicks")
 	ask_verb = list("chirps")
 	exclaim_verb = list("croaks")
@@ -191,7 +191,7 @@
 //Cindarite language: Lore: Cindarite Voc being a languaged optimized for clear communication. Its function over form having a clear distinct lack of metaphors and emphasizes mostly on relaying any information as optimal as possible due to their upbringing in bunkers on a highly dangerous homeworld.
 /datum/language/weh
 	name = LANGUAGE_WEH
-	desc = "Cindarite Voc is language emphasizes clear communication with a distinct lack of metaphors and figures of speech to avoid unnecessary missunderstandings. It consists mostly of a combination of various hissing noises and guttural roars. Generations upon generations of living in bunkers on a highly hazardous planet resulted in Cindarite Voc from degrading from a colorful descriptive language to more rigid and functional tool to relay information."
+	desc = "Cindarite Voc is a language that emphasizes clear communication with a distinct lack of metaphors and figures of speech to avoid unnecessary misunderstandings. It consists mostly of a combination of various hissing noises and guttural roars. Generations upon generations of living in bunkers on a highly hazardous planet resulted in Cindarite Voc; devolved from a colorful descriptive language to a more rigid and functional tool to relay information."
 	speech_verb = list("says", "hisses")
 	ask_verb = list("inquires")
 	exclaim_verb = list("bellows")
@@ -211,7 +211,7 @@
 /datum/language/mrow
 
 	name = LANGUAGE_SABLEKYNE
-	desc = "The native language of the Sablekyne, Crinos, is nearly unintelligible to humans, a flowing language consisting of rolling r's, chrips, and other assorted sounds."
+	desc = "The native language of the Sablekyne, Crinos, is nearly unintelligible to humans, it's syllibants consist of rolling r's, chrips, and other assorted sounds."
 	speech_verb = list("chatters")
 	ask_verb = list("mrowls")
 	exclaim_verb = list("yelps")

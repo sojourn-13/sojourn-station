@@ -83,13 +83,14 @@
 			SB.multiply_projectile_damage(SB.golem_damage_bonus)
 			drop_amount = 0 // No loot
 
-	. = ..()
+			. = ..()
 
-	addtimer(CALLBACK(src, PROC_REF(maintain_drop_amount)), 100 MILLISECONDS) //consider converting this to ticks?
+			if(!QDELETED(src) && !is_dead(src))
+				drop_amount = initial(drop_amount) // So we still have loot
 
-/mob/living/carbon/superior/ameridian_golem/proc/maintain_drop_amount()
-	if (!is_dead(src)) // We're still alive!
-		drop_amount = initial(drop_amount) // So we still have loot
+	else
+
+		. = ..()
 
 // Stole this code from 'code/__HELPERS/matrices.dm' because otherwise the golems shrink during the shake animation. -R4d6
 /mob/living/carbon/superior/ameridian_golem/shake_animation(var/intensity = 8)

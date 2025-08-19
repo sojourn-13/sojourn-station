@@ -169,22 +169,27 @@ see multiz/movement.dm for some info.
 		// Handle people getting hurt, it's funny!
 		mover.fall_impact(src, below)
 
-
+		if(!isobj(mover))
+			return //Things that are not objs dont stun folks
 
 		for(var/mob/living/M in below)
 			var/fall_damage = mover.get_fall_damage()
+
 			if(ishuman(mover))
 				var/mob/living/carbon/human/H = mover
 				if(H.a_intent == I_HURT)
 					fall_damage = (H.mob_size + (min(min(H.stats.getStat(STAT_ROB), 1), 60) / 2)) //max is 50(a lot)
+
+			//We have the parkour perk just pass them, they can dodge it
+			if(ishuman(M))
+				if(M.stats.getPerk(PERK_PARKOUR))
+					continue
+
 			if(M == mover)
 				continue
-			if(ishuman(M))
-				if(!M.stats.getPerk(PERK_PARKOUR))
-					M.Weaken(10)
-			else
-				M.Weaken(10)
-				continue
+			//Armor + 5 so we dont get stunlocked by not waring a hat and someone throws like 1 bullet case at a time
+			if(M.getarmor(BP_HEAD, ARMOR_MELEE) + 5 < fall_damage || ismob(mover))
+				M.Weaken(clamp(1, 10, fall_damage - 5 -M.getarmor(BP_HEAD, ARMOR_MELEE)))
 			if(fall_damage >= FALL_GIB_DAMAGE)
 				M.gib()
 			else

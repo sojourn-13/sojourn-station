@@ -115,21 +115,17 @@
 	icon_state = "excelatomiton"
 	if(prob(35))
 		shoot_rocket(targetted_mob.loc, rand(0,90))
-		move_to_delay = initial(move_to_delay)
 		MoveToTarget()
 		return
 	if(prob(45))
 		select_spiral_attack()
-		move_to_delay = initial(move_to_delay)
 		MoveToTarget()
 		return
 	if(targetted_mob)
 		if(prob(75))
 			wave_shots()
-			move_to_delay = initial(move_to_delay)
 			MoveToTarget()
 			return
 		else
 			shoot_projectile(targetted_mob.loc, rand(0,90))
 			MoveToTarget()
-	move_to_delay = initial(move_to_delay)

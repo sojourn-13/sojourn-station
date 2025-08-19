@@ -287,8 +287,13 @@ var/global/list/robot_modules = list(
 					"Sleek" = "sleekstandard",
 					"Drone" = "drone-standard",
 					"Spider" = "spider",
-					"Miss" = "missm_sd"
+					"Miss" = "missm_sd",
+					"Standard Contractor" = "sfmekapeace"
 				  )
+
+	tall_sprites = list(
+				"sfmekapeace"
+				)
 
 	desc = "The baseline, jack of all trades. Can do a little of everything. Some DIY, some healing, some combat."
 	stat_modifiers = list(
@@ -379,7 +384,8 @@ var/global/list/robot_modules = list(
 				"Tall Female" = "fmekamed",
 				"Tall Male" = "mmekamed",
 				"Dullahan Medical" = "dullahanmed",
-				"FoxTrot Med" = "ftpeace"
+				"FoxTrot Med" = "ftpeace",
+				"NDA Contractor" = "sfmekamed"
 				)
 
 	tall_sprites = list(
@@ -391,7 +397,8 @@ var/global/list/robot_modules = list(
 				"mmekamed",
 				"mekasecalt",
 				"dullahanmed",
-				"ftpeace"
+				"ftpeace",
+				"sfmekamed"
 				)
 
 	desc = "A versatile medical droid, equipped with all the tools necessary for surgery, chemistry, and \
@@ -530,7 +537,9 @@ var/global/list/robot_modules = list(
 					"Tall Crate Pusher" = "fmekacargo",
 					"Tall Crate Pusher Alt" = "mmekacargo",
 					"Dullahan Hazard" = "dullahaneng",
-					"Dullahan" = "dullahancargo"
+					"Dullahan" = "dullahancargo",
+					"Constuction Contractor"= "sfmekaeng",
+					"Traffic Contractor"= "sfmekaeng"
 					)
 
 	tall_sprites = list(
@@ -545,7 +554,9 @@ var/global/list/robot_modules = list(
 				"fmekacargo",
 				"mmekacargo",
 				"dullahaneng",
-				"dullahancargo"
+				"dullahancargo",
+				"sfmekaengi",
+				"sfmekacargo",
 				)
 
 	health = 120 //Slightly above average
@@ -1016,7 +1027,8 @@ var/global/list/robot_modules = list(
 					"Tall Female Maid" = "fmekaserv",
 					"Tall Male Maid" = "mmekaserv",
 					"Dullahan Server" = "dullahanserv",
-					"Dullahan Server Alt" = "dullahanserv_alt"
+					"Dullahan Server Alt" = "dullahanserv_alt",
+					"Contractor Service" = "sfmekaserv"
 				)
 
 	tall_sprites = list(
@@ -1030,7 +1042,8 @@ var/global/list/robot_modules = list(
 					"fmekaserv",
 					"mmekaserv",
 					"dullahanserv",
-					"dullahanserv_alt"
+					"dullahanserv_alt",
+					"sfmekaserv"
 				)
 
 	health = 120
@@ -1130,7 +1143,8 @@ var/global/list/robot_modules = list(
 					"Tall Male Feline" = "mmekamine",
 					"Tall Tanker" = "k4tmine",
 					"Tall Tanker Alt" = "k4tmine_alt1",
-					"Dullahan Miner" = "dullahanmine"
+					"Dullahan Miner" = "dullahanmine",
+					"Contractor Miner" = "sfmekamine"
 				)
 
 
@@ -1141,7 +1155,8 @@ var/global/list/robot_modules = list(
 					"mmekamine",
 					"k4tmine",
 					"k4tmine_alt1",
-					"dullahanmine"
+					"dullahanmine",
+					"sfmekamine"
 				)
 
 	health = 160 //Pretty tough
@@ -1210,7 +1225,8 @@ var/global/list/robot_modules = list(
 					"Tall Tanker" = "k4tninja",
 					"Tall Female" = "fmekaninja",
 					"Tall Male" = "mmekaninja",
-					"Dullahan Researcher" = "dullahanninja"
+					"Dullahan Researcher" = "dullahanninja",
+					"Contractor Lab Specialist" = "sfmekasci"
 					)
 
 	tall_sprites = list(
@@ -1221,7 +1237,8 @@ var/global/list/robot_modules = list(
 					"k4tninja",
 					"fmekaninja",
 					"mmekaninja",
-					"dullahanninja"
+					"dullahanninja",
+					"sfmekasci"
 					)
 
 	health = 120 //Weak

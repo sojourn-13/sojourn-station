@@ -302,6 +302,22 @@
 	output = /obj/item/device/psionic_catalyst/temp_regulate
 	out_put_name = "Psionic Temperature Regulate"
 
+//All needs null for and climate as lore based balance
+/datum/eternal_ascension_resonances/psion_gas_mask
+	rune_resonance = "ClimateNull"
+	output = /obj/item/device/psionic_catalyst/psion_gas_mask
+	out_put_name = "Psionic Gas Mask"
+
+/datum/eternal_ascension_resonances/candle_enhancer
+	rune_resonance = "ClimateWarmNull"
+	output = /obj/item/device/psionic_catalyst/candle_enhancer
+	out_put_name = "Psionic Forever Candle"
+
+/datum/eternal_ascension_resonances/psi_injector_enhancer
+	rune_resonance = "ClimateClimateNull"
+	output = /obj/item/device/psionic_catalyst/psi_injector_enhancer
+	out_put_name = "Psionic Breath"
+
 /obj/structure/sign/ear
 	name = "EGO: E.A.R Music Sheet"
 	desc = "Contains helpful advice on E.A.R recpies. Unless you're reading this placeholder text, at least."

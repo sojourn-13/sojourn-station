@@ -21,6 +21,8 @@
 				tally += 0.5
 	if(stats.getPerk(PERK_FAST_WALKER))
 		tally -= 0.4
+	if(stats.getPerk(PERK_JUDGMENT_HASTE))
+		tally -= 1
 	if(stats.getPerk(PERK_NANITE_MUSCLE))
 		var/datum/perk/nanite_power/nanite_muscle/P = stats.getPerk(PERK_NANITE_MUSCLE)
 		if(!P.emped)

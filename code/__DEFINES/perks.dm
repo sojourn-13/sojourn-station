@@ -47,10 +47,6 @@
 
 //roundstart perks (job / backgrounds)
 #define PERK_NOBLE /datum/perk/noble
-#define PERK_UNFINISHED_DELIVERY /datum/perk/unfinished_delivery
-#define PERK_SANITYBOOST /datum/perk/sanityboost
-#define PERK_COMMUNITY_SAINTS /datum/perk/community_of_saints
-#define PERK_CHANNELING /datum/perk/channeling
 #define PERK_IDEALIST /datum/perk/idealist
 #define PERK_LUNGS_OF_IRON /datum/perk/lungs_of_iron
 #define PERK_BLOOD_OF_LEAD /datum/perk/blood_of_lead
@@ -104,6 +100,18 @@
 #define PERK_NATURAL_STYLE /datum/perk/natural_style
 #define PERK_MAP_MAKER /datum/perk/map_maker
 #define PERK_NO_INSPIRO /datum/perk/no_inspiro
+
+//Church Perks//
+//Self Revival Church Perks
+#define PERK_UNFINISHED_DELIVERY /datum/perk/unfinished_delivery
+#define PERK_UNFINISHED_DELIVERY_FEATHERS /datum/perk/unfinished_delivery_feathers
+#define PERK_UNFINISHED_DELIVERY_INK /datum/perk/unfinished_delivery_ink
+#define PERK_UNFINISHED_DELIVERY_VERSES /datum/perk/unfinished_delivery_verses
+
+#define PERK_SANITYBOOST /datum/perk/sanityboost
+#define PERK_COMMUNITY_SAINTS /datum/perk/community_of_saints
+#define PERK_CHANNELING /datum/perk/channeling
+
 
 #define PERK_REZ_SICKNESS /datum/perk/rezsickness
 #define PERK_REZ_SICKNESS_SEVERE /datum/perk/rezsickness/severe
@@ -254,3 +262,5 @@
 #define PERK_ARMOR_UP /datum/perk/cooldown/armor_up
 //Anti-art
 #define PERK_ARTIST_NO /datum/perk/cooldown/artist_no
+//Church Cooldown
+#define PERK_JUDGMENT_HASTE /datum/perk/cooldown/judgment_haste

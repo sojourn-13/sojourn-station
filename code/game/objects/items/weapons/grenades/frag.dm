@@ -94,3 +94,10 @@
 	qdel(smoke)
 	smoke = null
 	return ..()
+
+/obj/item/grenade/frag/impact
+	name = "SA DF-I grenade \"Seeds\""
+	desc = "A mini military-grade defensive fragmentation grenade, designed to be thrown from cover."
+	icon_state = "sting_ag"
+	impact = TRUE
+	num_fragments = 12
