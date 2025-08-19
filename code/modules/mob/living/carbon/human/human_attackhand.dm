@@ -222,9 +222,9 @@
 
 			var/real_damage = stat_damage
 			real_damage += attack.get_unarmed_damage(H)
-			real_damage *= damage_multiplier
+			real_damage *= cqc_damage_multiplier
 			real_damage += H.punch_damage_increase
-			stat_damage *= damage_multiplier
+			stat_damage *= cqc_damage_multiplier
 
 			if(HULK in H.mutations)
 				real_damage *= 2 // Hulks do twice the damage
