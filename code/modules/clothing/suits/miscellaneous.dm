@@ -10,6 +10,7 @@
 	body_parts_covered = UPPER_TORSO
 	allowed = list (/obj/item/gun/energy/lasertag)
 	siemens_coefficient = 3.0
+	tally_locking = 2
 
 /obj/item/clothing/suit/fluff/redtag
 	name = "red plasma tag armour"
@@ -20,6 +21,7 @@
 	body_parts_covered = UPPER_TORSO
 	allowed = list (/obj/item/gun/energy/lasertag)
 	siemens_coefficient = 3.0
+	tally_locking = 2
 
 /obj/item/clothing/suit/fluff/greentag
 	name = "green plasma tag armour"
@@ -30,6 +32,7 @@
 	body_parts_covered = UPPER_TORSO
 	allowed = list (/obj/item/gun/energy/lasertag)
 	siemens_coefficient = 3.0
+	tally_locking = 2
 
 /obj/item/clothing/suit/fluff/yellowtag
 	name = "yellow plasma tag armour"
@@ -40,6 +43,7 @@
 	body_parts_covered = UPPER_TORSO
 	allowed = list (/obj/item/gun/energy/lasertag)
 	siemens_coefficient = 3.0
+	tally_locking = 2
 
 /obj/item/clothing/suit/cyborg_suit
 	name = "cyborg suit"

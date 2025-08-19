@@ -197,3 +197,132 @@
 	if(air_group)
 		return 0
 	return !density
+
+
+//plasma tag foam
+/obj/structure/foamedmetal/plasma_tag
+	name = "light foamed metal"
+	desc = "A super-lightweight foamed metal wall, used for games."
+	icon = 'icons/effects/effects.dmi'
+	icon_state = "metalfoam"
+	density = 1
+	opacity = 0 // changed in New()
+	anchored = 1
+	layer = EDGED_TURF_LAYER
+	metal = 1 // 1 = aluminum, 2 = iron
+	var/team = "RED"
+	var/hits = 1
+
+/obj/structure/foamedmetal/plasma_tag/yellow
+	team = "YELLOW"
+
+/obj/structure/foamedmetal/plasma_tag/green
+	team = "GREEN"
+
+/obj/structure/foamedmetal/plasma_tag/blue
+	team = "BLUE"
+
+/obj/structure/foamedmetal/plasma_tag/bullet_act(var/obj/item/projectile/Proj)
+	if (!(Proj.testing))
+		switch(team)
+			if("RED")
+				if(!istype(Proj, /obj/item/projectile/plasma/lastertag/red))
+					hits++
+					if(prob(10*hits))
+						qdel(src)
+			if("GREEN")
+				if(!istype(Proj, /obj/item/projectile/plasma/lastertag/green))
+					hits++
+					if(prob(10*hits))
+						qdel(src)
+			if("BLUE")
+				if(!istype(Proj, /obj/item/projectile/plasma/lastertag/blue))
+					hits++
+					if(prob(10*hits))
+						qdel(src)
+			if("YELLOW")
+				if(!istype(Proj, /obj/item/projectile/plasma/lastertag/yellow))
+					hits++
+					if(prob(10*hits))
+						qdel(src)
+
+/obj/structure/foamedmetal/plasma_tag/New()
+	..()
+	if(team)
+		switch(team)
+			if("RED")
+				color = COLOR_RED
+			if("GREEN")
+				color = COLOR_GREEN
+			if("BLUE")
+				color = COLOR_BLUE
+			if("YELLOW")
+				color = COLOR_YELLOW
+
+/obj/structure/foamedmetal/plasma_tag/attackby(var/obj/item/I, var/mob/user)
+	if(!istype(I))
+		return
+	user.visible_message(
+		SPAN_WARNING("[user] smashes through the foamed metal."),
+		SPAN_NOTICE("You smash through the foamed metal with \the [I].")
+	)
+	qdel(src)
+
+/obj/item/plasma_tag_foamer
+	name = "foam dispenser"
+	desc = "A large tank of foam."
+	icon = 'icons/obj/storage.dmi'
+	icon_state = "inf_deployer"
+	w_class = ITEM_SIZE_BULKY
+	var/team = "RED"
+	color = COLOR_RED
+
+/obj/item/plasma_tag_foamer/attack_self(mob/user)
+	if(team)
+		switch(team)
+			if("RED")
+				color = COLOR_BLUE
+				to_chat(user, SPAN_NOTICE("You swap the mode from Red team Blue Team."))
+				team = "BLUE"
+			if("GREEN")
+				color = COLOR_YELLOW
+				to_chat(user, SPAN_NOTICE("You swap the mode from Green team Yellow Team."))
+				team = "YELLOW"
+			if("BLUE")
+				color = COLOR_GREEN
+				to_chat(user, SPAN_NOTICE("You swap the mode from Blue team Green Team."))
+				team = "GREEN"
+			if("YELLOW")
+				color = COLOR_BLUE
+				to_chat(user, SPAN_NOTICE("You swap the mode from Yellow team Red Team."))
+				team = "RED"
+
+/obj/item/plasma_tag_foamer/afterattack(var/atom/A, var/mob/user)
+	..(A, user)
+	if(!user)
+		return
+	if(!user.Adjacent(A))
+		to_chat(user, "You can't reach!")
+		return
+	if(istype(A, /turf))
+		try_deploy_inflatable(A, user)
+
+/obj/item/plasma_tag_foamer/proc/try_deploy_inflatable(var/turf/T, var/mob/living/user)
+	var/buildable = TRUE
+	for(var/obj/structure/foamedmetal/plasma_tag in T.contents)
+		if(plasma_tag)
+			buildable = FALSE
+			break
+	if(buildable)
+		switch(team)
+			if("RED")
+				new /obj/structure/foamedmetal/plasma_tag(T)
+			if("GREEN")
+				new /obj/structure/foamedmetal/plasma_tag/green(T)
+			if("BLUE")
+				new /obj/structure/foamedmetal/plasma_tag/blue(T)
+			if("YELLOW")
+				new /obj/structure/foamedmetal/plasma_tag/yellow(T)
+
+
+
