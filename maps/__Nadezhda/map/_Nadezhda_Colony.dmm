@@ -28440,12 +28440,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/crew_quarters/techshop)
-"fma" = (
-/obj/structure/sign/warning/nosmoking{
-	pixel_x = 32
-	},
-/turf/simulated/wall/r_wall,
-/area/nadezhda/storage/primary)
 "fmd" = (
 /obj/machinery/hologram/holopad,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -192971,7 +192965,7 @@ aoF
 hSX
 hSX
 hSX
-fma
+hSX
 hSX
 hSX
 pXU

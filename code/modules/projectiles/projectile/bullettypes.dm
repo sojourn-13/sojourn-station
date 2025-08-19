@@ -82,7 +82,7 @@
 		if(isliving(target))
 			var/mob/living/L = target
 			if(istype(L) && L.reagents)
-				reagents.trans_to_mob(L, 2, CHEM_TOUCH, copy = FALSE)
+				reagents.trans_to_mob(L, 2, CHEM_BLOOD, copy = FALSE)
 
 /obj/item/projectile/bullet/pistol_35/rubber/soporific/cbo
 	name = "soporific condensed plastic bullet"
@@ -237,7 +237,7 @@
 		if(isliving(target))
 			var/mob/living/L = target
 			if(istype(L) && L.reagents && !testing)
-				reagents.trans_to_mob(L, 3, CHEM_TOUCH, copy = FALSE)
+				reagents.trans_to_mob(L, 3, CHEM_BLOOD, copy = FALSE)
 
 /obj/item/projectile/bullet/magnum_40/scrap
 	damage_types = list(BRUTE = 15)
@@ -510,7 +510,7 @@
 		if(isliving(target))
 			var/mob/living/L = target
 			if(istype(L) && L.reagents && !testing)
-				reagents.trans_to_mob(L, 1, CHEM_TOUCH, copy = FALSE)
+				reagents.trans_to_mob(L, 1, CHEM_BLOOD, copy = FALSE)
 
 /obj/item/projectile/bullet/rifle_75/lethal
 	name = "hollow-point bullet"
@@ -902,7 +902,7 @@
 		if(isliving(target))
 			var/mob/living/L = target
 			if(istype(L) && L.reagents && !testing)
-				reagents.trans_to_mob(L, 5, CHEM_TOUCH, copy = FALSE)
+				reagents.trans_to_mob(L, 5, CHEM_BLOOD, copy = FALSE)
 
 
 /obj/item/projectile/bullet/shotgun/practice
