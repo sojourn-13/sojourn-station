@@ -256,3 +256,15 @@
 #define PERK_ARTIST_NO /datum/perk/cooldown/artist_no
 //Church Cooldown
 #define PERK_JUDGMENT_HASTE /datum/perk/cooldown/judgment_haste
+
+
+////////////////////
+//Stillpoint perks//
+////////////////////
+#define PERK_STILLPONT_CHARGE /datum/perk/stillpoint_charge
+#define PERK_STILLPONT_ARMOR /datum/perk/stillpoint_armor
+
+#define PERK_STILLPONT_RUPTURE /datum/perk/cooldown/stillpoint_rupture
+#define PERK_STILLPONT_BURN /datum/perk/cooldown/stillpoint_burn
+#define PERK_STILLPONT_TREMER /datum/perk/cooldown/stillpoint_tremer
+
