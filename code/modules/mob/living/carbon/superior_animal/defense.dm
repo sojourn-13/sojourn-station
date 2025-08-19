@@ -282,6 +282,7 @@
 	stop_automated_movement = initial(stop_automated_movement)
 	following = null
 	last_followed = null
+	lastattacker = null
 
 	density = FALSE
 	layer = LYING_MOB_LAYER

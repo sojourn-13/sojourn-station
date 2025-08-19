@@ -11,8 +11,8 @@
 	passivePerk = FALSE
 
 /datum/perk/laststand/activate()
-	var/mob/living/carbon/human/user = usr
-	if(!istype(user))
+	var/mob/living/user = holder
+	if(!isliving(user))
 		return ..()
 	if(world.time < cooldown_time)
 		to_chat(usr, SPAN_NOTICE("Your nerves are shot, you'll need to recover before you can withstand greater pain again."))
@@ -50,8 +50,8 @@
 	passivePerk = FALSE
 
 /datum/perk/suddenbrilliance/activate()
-	var/mob/living/carbon/human/user = usr
-	if(!istype(user))
+	var/mob/living/user = holder
+	if(!isliving(user))
 		return ..()
 	if(world.time < cooldown_time)
 		to_chat(usr, SPAN_NOTICE("You are mentally exhausted, you'll need more rest before you can attempt greater thought."))
@@ -97,8 +97,8 @@
 	passivePerk = FALSE
 
 /datum/perk/iwillsurvive/activate()
-	var/mob/living/carbon/human/user = usr
-	if(!istype(user))
+	var/mob/living/user = holder
+	if(!isliving(user))
 		return ..()
 	if(world.time < cooldown_time)
 		to_chat(usr, SPAN_NOTICE("The human body can only take so much, you'll need more time before you've recovered enough to use this again."))
@@ -109,6 +109,7 @@
 	user.reagents.add_reagent("adrenol", 5)
 	return ..()
 
+//Allows for you to boost *same faction* that way npcs can use this as well
 /datum/perk/battlecry
 	name = "Inspiring Battlecry"
 	desc = "Life has taught you that beyond sheer force of will, what made your kind conquer the stars was also a sense of camaraderie and cooperation among your battle brothers and sisters. Your heroic warcry can inspire yourself and others to better performance in combat."
@@ -117,27 +118,28 @@
 	passivePerk = FALSE
 
 /datum/perk/battlecry/activate()
-	var/mob/living/carbon/human/user = usr
+	var/mob/living/user = holder
 	var/list/people_around = list()
-	if(!istype(user))
+	if(!isliving(user))
 		return ..()
 	if(world.time < cooldown_time)
 		to_chat(usr, SPAN_NOTICE("You cannot muster the willpower to have a heroic moment just yet."))
 		return FALSE
 	cooldown_time = world.time + 30 MINUTES
 	log_and_message_admins("used their [src] perk.")
-	for(var/mob/living/carbon/human/H in view(user))
-		if(H != user && !isdeaf(H))
+	for(var/mob/living/H in view(user))
+		if(H != user && !isdeaf(H) && H.faction == user.faction)
 			people_around.Add(H)
 	if(people_around.len > 0)
-		for(var/mob/living/carbon/human/participant in people_around)
+		for(var/mob/living/participant in people_around)
 			to_chat(participant, SPAN_NOTICE("You feel inspired by a heroic shout!"))
 			give_boost(participant)
-	give_boost(usr)
-	usr.emote("urah")
+	give_boost(user)
+	if(ishuman(user))
+		user.emote("urah")
 	return ..()
 
-/datum/perk/battlecry/proc/give_boost(mob/living/carbon/human/participant)
+/datum/perk/battlecry/proc/give_boost(mob/living/carbon/participant)
 	var/effect_time = 2 MINUTES
 	var/amount = 10
 	var/list/stats_to_boost = list(STAT_ROB = 10, STAT_TGH = 10, STAT_VIG = 10)
@@ -200,8 +202,8 @@
 	passivePerk = FALSE
 
 /datum/perk/enhancedsenses/activate()
-	var/mob/living/carbon/human/user = usr
-	if(!istype(user))
+	var/mob/living/user = holder
+	if(!isliving(user))
 		return ..()
 	if(world.time < cooldown_time)
 		to_chat(usr, SPAN_NOTICE("You haven't quite recovered yet, your senses need more time before you may use this again."))
@@ -227,8 +229,8 @@
 	passivePerk = FALSE
 
 /datum/perk/recklessfrenzy/activate()
-	var/mob/living/carbon/human/user = usr
-	if(!istype(user))
+	var/mob/living/user = holder
+	if(!isliving(user))
 		return ..()
 	if(world.time < cooldown_time)
 		to_chat(usr, SPAN_NOTICE("Your body has been taxed to its limits, you need more time to recover before using this ability again."))
@@ -255,8 +257,8 @@
 	passivePerk = FALSE
 
 /datum/perk/adrenalineburst/activate()
-	var/mob/living/carbon/human/user = usr
-	if(!istype(user))
+	var/mob/living/user = holder
+	if(!isliving(user))
 		return ..()
 	if(world.time < cooldown_time)
 		to_chat(usr, SPAN_NOTICE("Your legs ache, you'll need more time to recover before using this again."))
@@ -287,8 +289,8 @@
 	passivePerk = FALSE
 
 /datum/perk/purgetoxins/activate()
-	var/mob/living/carbon/human/user = usr
-	if(!istype(user))
+	var/mob/living/user = holder
+	if(!isliving(user))
 		return ..()
 	if(world.time < cooldown_time)
 		to_chat(usr, SPAN_NOTICE("Your body aches with the pain of its recent purge, you'll need more rest before using this effect again."))
@@ -307,8 +309,8 @@
 	passivePerk = FALSE
 
 /datum/perk/purgeinfections/activate()
-	var/mob/living/carbon/human/user = usr
-	if(!istype(user))
+	var/mob/living/user = holder
+	if(!isliving(user))
 		return ..()
 	if(world.time < cooldown_time)
 		to_chat(usr, SPAN_NOTICE("Your chemical sacks have not refilled yet, you'll need more rest before using this effect again."))
@@ -333,8 +335,8 @@
 	passivePerk = FALSE
 
 /datum/perk/opifex_backup/activate()
-	var/mob/living/carbon/human/user = usr
-	if(!istype(user))
+	var/mob/living/user = holder
+	if(!isliving(user))
 		return ..()
 	if(world.time < cooldown_time)
 		to_chat(usr, SPAN_NOTICE("You've already retrieved your set of back up tools. You didn't lose them, did you?"))
@@ -355,8 +357,8 @@
 
 
 /datum/perk/opifex_backup_medical/activate()
-	var/mob/living/carbon/human/user = usr
-	if(!istype(user))
+	var/mob/living/user = holder
+	if(!isliving(user))
 		return ..()
 	if(world.time < cooldown_time)
 		to_chat(usr, SPAN_NOTICE("You've already retrieved your set of backup medicine. You didn't lose them, did you?"))
@@ -378,8 +380,8 @@
 	passivePerk = FALSE
 
 /datum/perk/opifex_backup_combat/activate()
-	var/mob/living/carbon/human/user = usr
-	if(!istype(user))
+	var/mob/living/user = holder
+	if(!isliving(user))
 		return ..()
 	if(world.time < cooldown_time)
 		to_chat(usr, SPAN_NOTICE("You've already retrieved your set of backup weapons. You didn't lose them, did you?"))
@@ -399,8 +401,8 @@
 	passivePerk = FALSE
 
 /datum/perk/opifex_turret/activate()
-	var/mob/living/carbon/human/user = usr
-	if(!istype(user))
+	var/mob/living/user = holder
+	if(!isliving(user))
 		return ..()
 	if(world.time < cooldown_time)
 		to_chat(usr, SPAN_NOTICE("You've already retrieved your scrap circuit. You didn't lose it, did you?"))
@@ -420,8 +422,8 @@
 	passivePerk = FALSE
 
 /datum/perk/opifex_patchkit/activate()
-	var/mob/living/carbon/human/user = usr
-	if(!istype(user))
+	var/mob/living/user = holder
+	if(!isliving(user))
 		return ..()
 	if(world.time < cooldown_time)
 		to_chat(usr, SPAN_NOTICE("You've already retrieved your patch kit. You didn't lose it, did you?"))
@@ -455,8 +457,8 @@
 	passivePerk = FALSE
 
 /datum/perk/webmaker/activate()
-	var/mob/living/carbon/human/user = usr
-	if(!istype(user))
+	var/mob/living/user = holder
+	if(!isliving(user))
 		return ..()
 	if(world.time < cooldown_time)
 		to_chat(usr, SPAN_NOTICE("You need a bit more time to build up your web reserves!"))
@@ -474,8 +476,8 @@
 	passivePerk = FALSE
 
 /datum/perk/ichor/activate()
-	var/mob/living/carbon/human/user = usr
-	if(!istype(user))
+	var/mob/living/user = holder
+	if(!isliving(user))
 		return ..()
 	if(world.time < cooldown_time)
 		to_chat(usr, SPAN_NOTICE("Your body hasn't finished recovering, you will need to wait a bit longer."))
@@ -523,8 +525,8 @@
 	passivePerk = FALSE
 
 /datum/perk/repair_goo/activate()
-	var/mob/living/carbon/human/user = usr
-	if(!istype(user))
+	var/mob/living/user = holder
+	if(!isliving(user))
 		return ..()
 	if(world.time < cooldown_time)
 		to_chat(usr, SPAN_NOTICE("Your body hasn't finished recovering, you will need to wait a bit longer."))
@@ -550,9 +552,9 @@
 	passivePerk = FALSE
 
 /datum/perk/oddity_reroll/activate()
-	var/mob/living/carbon/human/user = usr
+	var/mob/living/user = holder
 	var/obj/item/oddity/O = user.get_active_hand()
-	if(!istype(user))
+	if(!isliving(user))
 		return ..()
 	if(world.time < cooldown_time)
 		to_chat(usr, SPAN_NOTICE("The natural forces around you cannot be manipulated just yet."))
@@ -609,8 +611,8 @@
 	var/follower_type = /mob/living/carbon/superior/fungi/shroom
 
 /datum/perk/mushroom_follower/activate()
-	var/mob/living/carbon/human/user = usr
-	if(!istype(user))
+	var/mob/living/user = holder
+	if(!isliving(user))
 		return ..()
 	if(used)
 		to_chat(user, SPAN_NOTICE("You've already created your companion, you didn't lose them did you?"))
@@ -634,9 +636,9 @@
 	var/follower_type = /mob/living/carbon/superior/fungi/slime
 
 /datum/perk/slime_follower/activate()
-	var/mob/living/carbon/human/user = usr
+	var/mob/living/user = holder
 
-	if(!istype(user))
+	if(!isliving(user))
 		return ..()
 	if(used)
 		to_chat(user, SPAN_NOTICE("You've already created your companion, you didn't lose them did you?"))

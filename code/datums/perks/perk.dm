@@ -88,7 +88,7 @@
 
 /datum/perk/proc/invoke()
 	if(passivePerk)
-		log_debug("[usr] attempted to invoke a passive perk [src] - how?")
+		log_debug("[usr]/[holder] attempted to invoke a passive perk [src] - how?")
 		return
 
 	if(active && deactivate(holder))

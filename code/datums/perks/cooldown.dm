@@ -193,3 +193,84 @@
 	holder.fancy_glide -= 6
 
 	..()
+
+/datum/perk/cooldown/stillpoint_rupture
+	name = "Stillpoint Style: Entropy Mark of Rupture"
+	desc = "You where slashed by a Stillpoint weapon that after the timer will deal built up damage all at once."
+	gain_text = "Some slashes phased right into."
+	lose_text = "Slashes that once phased through you start to cut as fresh wounds..."
+	active = FALSE
+	passivePerk = FALSE
+	perk_lifetime = 1 MINUTES
+	var/damage = 0
+
+/datum/perk/cooldown/stillpoint_rupture/remove()
+	holder.adjustBruteLoss(damage)
+	..()
+
+/datum/perk/cooldown/stillpoint_burn
+	name = "Stillpoint Style: Below 0 Entropy Art of Frost"
+	desc = "You where slashed by a Stillpoint weapon that after the timer will deal built up damage and frost base harm."
+	gain_text = "Some slashes phased right into."
+	lose_text = "Slashes that once phased through you start to freeze over..."
+	active = FALSE
+	passivePerk = FALSE
+	perk_lifetime = 1 MINUTES
+	var/damage = 0
+
+/datum/perk/cooldown/stillpoint_burn/remove()
+	holder.adjustFireLoss(damage)
+
+	if(ishuman(holder))
+		var/mob/living/carbon/human/H = holder
+		H.frost += 50 + (damage * 10) //This is cracked
+		if(damage > 5)
+			//This can build up fast
+			H.bodytemperature -= ((H.frost + H.bodytemperature) * 0.1) * damage
+			//Trigger this thrice
+			H.handle_frost()
+			H.handle_frost()
+			H.handle_frost()
+	..()
+
+/datum/perk/cooldown/stillpoint_tremer
+	name = "Stillpoint Style: Art of Entropy Overflow Tremors"
+	desc = "You where slashed by a Stillpoint weapon mess with your sences of time and self being."
+	gain_text = "Some slashes phased right into."
+	lose_text = "Slashes that once phased through seem to now show themselfs."
+	active = FALSE
+	passivePerk = FALSE
+	perk_lifetime = 1 MINUTES
+	var/damage = 3
+
+/datum/perk/cooldown/stillpoint_tremer/assign()
+	..()
+	if(ishuman(holder))
+		var/mob/living/carbon/human/H = holder
+		H.click_delay_addition += 3
+		H.added_movedelay += 2
+	if(issuperioranimal(holder))
+		var/mob/living/carbon/superior/S = holder
+		S.delayed += 3
+		S.melee_delay += 3
+		S.delay_for_range += 1.5 SECONDS
+		S.delay_for_rapid_range += 0.75 SECONDS
+		S.delay_for_melee += 1 SECONDS
+		S.delay_for_all += 0.5 SECONDS
+
+/datum/perk/cooldown/stillpoint_tremer/remove()
+	if(ishuman(holder))
+		var/mob/living/carbon/human/H = holder
+		H.click_delay_addition -= 3
+		H.added_movedelay -= 2
+		H.adjustHalLoss(damage)
+	if(issuperioranimal(holder))
+		var/mob/living/carbon/superior/S = holder
+		S.delayed -= 3
+		S.melee_delay -= 3
+		S.adjustHalLoss(3*damage)
+		S.delay_for_range -= 1.5 SECONDS
+		S.delay_for_rapid_range -= 0.75 SECONDS
+		S.delay_for_melee -= 1 SECONDS
+		S.delay_for_all -= 0.5 SECONDS
+	..()
