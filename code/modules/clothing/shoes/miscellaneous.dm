@@ -18,7 +18,7 @@
 /obj/item/clothing/shoes/ablative
 	name = "ablative jackboots"
 	desc = "A thick pair of boots that excels in protecting the wearer against energy projectiles."
-	armor_list = list(melee = 2, bullet = 2, energy = 3, bomb = 30, bio = 10, rad = 0)
+	armor_list = list(melee = 2, bullet = 2, energy = 13, bomb = 10, bio = 10, rad = 0)
 	icon_state = "swat"
 	force = WEAPON_FORCE_WEAK
 	siemens_coefficient = 0.6

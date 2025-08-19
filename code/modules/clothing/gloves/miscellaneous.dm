@@ -118,7 +118,7 @@
 /obj/item/clothing/gloves/thick/ablative/militia
 	name = "militia ablative gloves"
 	desc = "A thick pair of gloves that excel at protecting the wearer against energy projectiles."
-	armor_list = list(melee = 2, bullet = 2, energy = 3, bomb = 10, bio = 0, rad = 0)
+	armor_list = list(melee = 2, bullet = 2, energy = 15, bomb = 10, bio = 0, rad = 0)
 	icon_state = "bs_ablative"
 	item_state = "ihscombat"
 

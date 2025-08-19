@@ -13,6 +13,7 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 	damage_types = list(BURN = 20)
 	armor_divisor = 1.2 //Some AP
 	wounding_mult = 1.2 //and some wounding mult
+	wounding_mult = 1.2 //and some wounding mult
 	check_armor = ARMOR_ENERGY
 	var/frequency = 1
 	hitscan = 1
@@ -71,9 +72,9 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 /obj/item/projectile/beam/laser_223
 	damage_types = list(BURN = 29) // Match .224 magnum FMJ damage
 	armor_divisor = 1.5
+	wounding_mult = 0.6
 	recoil = 5
-	wounding_mult = WOUNDING_SERIOUS
-	proj_color = "#009ac9"
+	proj_color = "#1276e9"
 /*
 /obj/item/projectile/beam/laser_223/ap
 	damage_types = list(BURN = 16)
@@ -92,33 +93,43 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 /obj/item/projectile/beam/weak/pistol_35
 	damage_types = list(BURN = 24) // Match .35 pistol FMJ damage
 	armor_divisor = 1.5
+	wounding_mult = 0.6
 	recoil = 2.5
+	proj_color = "#1276e9"
 
 /obj/item/projectile/beam/weak/light_rifle_257
 	damage_types = list(BURN = 25) // Match .257 carbine FMJ damage
 	armor_divisor = 2
+	wounding_mult = 0.6
 	recoil = 3.5
+	proj_color = "#1276e9"
 
 /obj/item/projectile/beam/weak/rifle_75
 	damage_types = list(BURN = 27) // Match 7.5mm rifle FMJ damage
 	armor_divisor = 2
-	recoil = 5
+	wounding_mult = 0.6
+	proj_color = "#1276e9"
 
 /obj/item/projectile/beam/weak/heavy_rifle_408
 	damage_types = list(BURN = 30) // Match .408 heavy rifle FMJ damage
 	armor_divisor = 3
+	wounding_mult = 0.6
 	recoil = 10
+	proj_color = "#1276e9"
 
 /obj/item/projectile/beam/weak/magnum_40
 	damage_types = list(BURN = 28) // Match .40 magnum FMJ damage
 	armor_divisor = 2
+	wounding_mult = 0.6
 	recoil = 4.5
+	proj_color = "#1276e9"
 
 /obj/item/projectile/beam/weak/kurz_50
 	damage_types = list(BURN = 36) // Match .50 kurz FMJ damage
 	armor_divisor = 2
+	wounding_mult = 0.6
 	recoil = 8
-
+	proj_color = "#1276e9"
 /*
 /obj/item/projectile/beam/laser_223/ap
 	damage_types = list(BURN = 16)
@@ -133,41 +144,6 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 	recoil = 5
 	wounding_mult = WOUNDING_WIDE
 */
-
-/obj/item/projectile/beam/weak/pistol_35
-	damage_types = list(BURN = 15)
-	armor_divisor = 1.5
-	recoil = 2.5
-
-/obj/item/projectile/beam/weak/light_rifle_257
-	damage_types = list(BURN = 14)
-	armor_divisor = 2
-	recoil = 3.5
-
-
-/obj/item/projectile/beam/weak/rifle_75
-	damage_types = list(BURN = 15.5)
-	armor_divisor = 2
-	recoil = 5
-
-
-/obj/item/projectile/beam/weak/heavy_rifle_408
-	damage_types = list(BURN = 20)
-	armor_divisor = 3
-	recoil = 10
-
-
-/obj/item/projectile/beam/weak/magnum_40
-	damage_types = list(BURN = 19)
-	armor_divisor = 2
-	recoil = 4.5
-
-
-/obj/item/projectile/beam/weak/kurz_50
-	damage_types = list(BURN = 23.5)
-	armor_divisor = 2
-	recoil = 8
-
 
 /obj/item/projectile/beam/weak/smg
 	damage_types = list(BURN = 10)
@@ -199,6 +175,8 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 /obj/item/projectile/beam/shotgun
 	damage_types = list(BURN = 45) //Normal slugs deal 45
 	armor_divisor = 1.1
+	wounding_mult = 0.6
+	proj_color = "#1276e9"
 	recoil = 2
 
 
@@ -206,6 +184,7 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 	damage_types = list(BURN = 54) // Default slug (/obj/item/projectile/bullet/shotgun) deal 54 damage
 	armor_divisor = 1.1
 	eyeblur = 4
+	proj_color = "#1276e9"
 	recoil = 4
 
 
