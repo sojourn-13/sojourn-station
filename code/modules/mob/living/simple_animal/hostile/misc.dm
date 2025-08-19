@@ -23,6 +23,7 @@
 	resistance = 8
 	has_special_parts = TRUE
 	special_parts = list(/obj/item/animal_part/wolf_tooth)
+	research_value = 75
 
 /mob/living/simple/hostile/diyaab
 	name = "diyaab"
@@ -50,6 +51,7 @@
 	special_parts = list(/obj/item/animal_part/wolf_tooth)
 	clone_difficulty = CLONE_EASY
 	inherent_mutations = list(MUTATION_DWARFISM, MUTATION_EPILEPSY, MUTATION_UNBALANCED, MUTATION_IMBECILE)
+	research_value = 75
 
 /mob/living/simple/hostile/shantak
 	name = "shantak"
@@ -75,6 +77,7 @@
 	meat_amount = 6 //Pigs are known for giving meat
 	has_special_parts = TRUE
 	special_parts = list(/obj/item/animal_part/wolf_tooth)
+	research_value = 275
 
 /mob/living/simple/yithian
 	name = "yithian"
@@ -213,6 +216,7 @@
 	bones_amount = 4
 	has_special_parts = TRUE
 	special_parts = list(/obj/item/animal_part/wolf_tooth)
+	research_value = 375
 
 /mob/living/simple/hostile/tengstalker
 	name = "tengolo stalker"
@@ -245,6 +249,7 @@
 	bones_amount = 4
 	has_special_parts = TRUE
 	special_parts = list(/obj/item/animal_part/wolf_tooth)
+	research_value = 575
 
 /mob/living/simple/hostile/tengcharge
 	name = "tengolo charger"
@@ -277,6 +282,7 @@
 	bones_amount = 4
 	has_special_parts = TRUE
 	special_parts = list(/obj/item/animal_part/wolf_tooth)
+	research_value = 200
 
 /mob/living/simple/hostile/helldiver
 	name = "hell diver"
@@ -321,6 +327,7 @@
 	has_special_parts = TRUE
 	special_parts = list(/obj/item/animal_part/helldiver_tooth)
 	inherent_mutations = list(MUTATION_MKNEWAIFUHAIR)
+	research_value = 750
 
 /mob/living/simple/hostile/helldiver/FindTarget()
 	. = ..()
@@ -386,3 +393,4 @@
 	mob_size = MOB_MEDIUM
 	has_special_parts = TRUE
 	special_parts = list(/obj/item/animal_part/tahca_antler)
+	research_value = 500
