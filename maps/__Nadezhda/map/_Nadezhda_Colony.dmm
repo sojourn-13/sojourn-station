@@ -22362,7 +22362,7 @@
 	dir = 10
 	},
 /obj/structure/window/reinforced/iskhod,
-/turf/simulated/floor/tiled/dark/violetcorener,
+/turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/command/teleporter)
 "ehx" = (
 /obj/structure/railing{
@@ -26551,7 +26551,7 @@
 	dir = 6
 	},
 /obj/structure/window/reinforced/iskhod,
-/turf/simulated/floor/tiled/dark/violetcorener,
+/turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/command/teleporter)
 "eVW" = (
 /obj/structure/cable/cyan{
@@ -31349,7 +31349,7 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 5
 	},
-/turf/simulated/floor/tiled/dark/violetcorener,
+/turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/command/teleporter)
 "fPy" = (
 /obj/structure/boulder,
@@ -63386,7 +63386,7 @@
 	dir = 10
 	},
 /obj/structure/window/reinforced/iskhod,
-/turf/simulated/floor/tiled/dark/violetcorener,
+/turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/command/teleporter)
 "lRa" = (
 /turf/simulated/wall/r_wall,
@@ -98655,7 +98655,7 @@
 	dir = 6
 	},
 /obj/structure/window/reinforced/iskhod,
-/turf/simulated/floor/tiled/dark/violetcorener,
+/turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/command/teleporter)
 "smC" = (
 /obj/structure/cable/yellow{
@@ -126492,7 +126492,7 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 5
 	},
-/turf/simulated/floor/tiled/dark/violetcorener,
+/turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/command/teleporter)
 "xqU" = (
 /obj/effect/window_lwall_spawn/smartspawn,
