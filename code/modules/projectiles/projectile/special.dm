@@ -93,7 +93,7 @@
 			L.adjustFireLoss(75)
 
 	if (!testing)
-		explosion(loc, 1, 2, 3, 5)
+		explosion(loc, 0, 2, 3, 5)
 		set_light(0)
 	return TRUE
 
