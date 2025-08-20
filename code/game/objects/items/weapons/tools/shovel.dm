@@ -69,7 +69,7 @@
 /obj/item/tool/shovel/combat/turbo
 	name = "Artificer Power Crovel"
 	desc = "A creation of the Artificer's Guild dreamed up by an adept with a love for internal combustion. Rather than a cell, this device uses a high power fuel burning engine for high-octane shoveling. An engraving on the handle reads, \"THIS MACHINE KILLS SPIDERS.\""
-	icon_state = "Powercrovel" //Sprites by Dromkii
+	icon_state = "crovel" //Sprites by Dromkii
 	item_state = "Powercrovel"
 
 	slot_flags = SLOT_BELT|SLOT_BACK //I PAID FOR THE WHOLE BACK SPRITE, I'M GONNA USE THE WHOLE BACK SPRITE
