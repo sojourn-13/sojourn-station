@@ -27,6 +27,10 @@
 	var/exspand_when_spawned = TRUE
 	no_swing = TRUE
 
+	var/change_relativePositionY = FALSE
+	var/allow_mulitable_storage = null
+
+
 /obj/item/storage/debug
 	name = "Destickinator"
 	desc = "A case that can fit legitimately anything inside it, used by Bluespace Technicians and the like to remove items stuck from people's hands. \
@@ -78,6 +82,7 @@
 	itemIcon.setDimensions(32,32) //todo: should be width/height of real object icon
 	itemIcon.setAlignment(HUD_CENTER_ALIGNMENT,HUD_CENTER_ALIGNMENT) //center
 
+
 	//todo: remove vis_contents, use mimic icon, make wrappers for dragdrop/examine/clicks, do not alter item
 	item.pixel_x = 0 //no pixel offsets inside storage
 	item.pixel_y = 0
@@ -94,7 +99,7 @@
 
 /obj/item/storage/proc/generateHUD(var/datum/hud/data)
 	RETURN_TYPE(/HUD_element)
-	var/HUD_element/main = new("storage")
+	var/HUD_element/main = new("storage[allow_mulitable_storage]")
 	main.setDeleteOnHide(TRUE)
 
 	var/HUD_element/closeButton = new
@@ -213,6 +218,11 @@
 				totalHeight = (currentSlot/maxColumnCount) * (itemBackground.getHeight() + spacingBetweenSlots)
 
 	main.setPosition(data.StorageData["Xspace"],data.StorageData["Yspace"])
+
+	if(change_relativePositionY)
+		main._relativePositionY = change_relativePositionY
+		main._updatePosition()
+
 	return main
 
 /obj/item/storage/Destroy()
@@ -242,7 +252,7 @@
 		return
 
 	if(user.s_active != src) //opening a new storage item
-		if(user.s_active) //user already had a storage item open
+		if(user.s_active && !allow_mulitable_storage) //user already had a storage item open
 			user.s_active.close(user)
 
 		for(var/obj/item/I in src)
@@ -265,7 +275,7 @@
 	if(!user.client)
 		return
 
-	user.client.hide_HUD_element("storage")
+	user.client.hide_HUD_element("storage[allow_mulitable_storage]")
 
 /obj/item/storage/proc/open(var/mob/user)
 	if(src.use_sound)
