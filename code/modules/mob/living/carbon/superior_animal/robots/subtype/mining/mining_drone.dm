@@ -168,7 +168,6 @@
 
 /mob/living/carbon/superior/robot/mining/proc/handle_ui()
 	var/dat = ""
-	dat += "<head><title>[name]</title></head>"
 	dat += "[name]<BR>"
 	dat += "<A href='?src=\ref[src];close=1'>Close</A><BR>"
 	dat += "<A href='?src=\ref[src];refresh=1'>Refresh</A><BR><BR>"
@@ -196,7 +195,7 @@
 	if(contents.len)
 		dat += "<A href='?src=\ref[src];dropore=1'>Empty Storage Compartment.</A><BR>"
 
-	return dat
+	return HTML_SKELETON_TITLE(name,dat)
 
 /mob/living/carbon/superior/robot/mining/Topic(href, href_list)
 	..()

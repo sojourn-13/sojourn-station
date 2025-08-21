@@ -149,7 +149,7 @@
 
 	data += "</div>"
 
-	usr << browse(data,"window=story;size=600x600")
+	usr << browse(HTML_SKELETON(data),"window=story;size=600x600")
 
 /datum/storyteller/proc/storyteller_panel_extra()
 	return ""

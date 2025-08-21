@@ -126,7 +126,7 @@
 
 /obj/structure/filingcabinet/Topic(href, href_list)
 	if(href_list["retrieve"])
-		usr << browse("", "window=filingcabinet") // Close the menu
+		usr << browse(null, "window=filingcabinet") // Close the menu
 
 		var/obj/item/P = locate(href_list["retrieve"]) in src //contents[retrieveindex]
 		if(istype(P) && in_range(src, usr))
