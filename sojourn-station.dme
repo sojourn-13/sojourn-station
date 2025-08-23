@@ -2205,6 +2205,7 @@
 #include "code\modules\mining\mine_point_vendor.dm"
 #include "code\modules\mining\mine_turfs.dm"
 #include "code\modules\mining\mineral_effect.dm"
+#include "code\modules\mining\mining_bell.dm"
 #include "code\modules\mining\money_bag.dm"
 #include "code\modules\mining\ore.dm"
 #include "code\modules\mining\ore_datum.dm"
