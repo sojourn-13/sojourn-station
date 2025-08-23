@@ -43,7 +43,7 @@ var/global/list/ore_data = list()
 	smelts_to = MATERIAL_IRON
 	alloy = TRUE
 	result_amount = 10
-	spread_chance = 25
+	spread_chance = 15
 	ore = /obj/item/stack/ore/iron
 	scan_icon = "mineral_common"
 
@@ -53,7 +53,7 @@ var/global/list/ore_data = list()
 	smelts_to = MATERIAL_PLASTIC
 	alloy = TRUE
 	result_amount = 10
-	spread_chance = 25
+	spread_chance = 15
 	ore = /obj/item/stack/ore/coal
 	scan_icon = "mineral_common"
 
@@ -71,7 +71,7 @@ var/global/list/ore_data = list()
 	alloy = TRUE
 	//smelts_to = something that explodes violently on the conveyor, huhuhuhu
 	result_amount = 8
-	spread_chance = 25
+	spread_chance = 15
 	ore = /obj/item/stack/ore/plasma
 	scan_icon = "mineral_uncommon"
 	xarch_ages = list(

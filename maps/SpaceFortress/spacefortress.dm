@@ -2,6 +2,7 @@
 //#include "map/blackstone_temple.dmm"
 //#include "map/space_dungeons.dmm"
 //#include "map/space_ambush.dmm"
+#include "map/mining_rifts.dmm"
 
 /obj/map_data/spacefortress
 	name = "Excelsior Fortress"
@@ -22,6 +23,14 @@
 	is_player_level = TRUE
 	is_contact_level = FALSE
 	is_accessable_level = TRUE
+	height = 1
+
+/obj/map_data/mining_rift
+	name = "Mining Rift Area"
+	is_player_level = TRUE
+	is_contact_level = FALSE
+	is_accessable_level = TRUE
+	generate_asteroid = TRUE
 	height = 1
 
 //MINING-1 // CLUSTER

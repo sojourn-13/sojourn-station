@@ -347,7 +347,13 @@
 	O.amount = mineralamount
 	return O
 
-/turf/simulated/mineral/proc/GetDrilled(var/artifact_fail = 0, give_minerals = TRUE)
+/turf/simulated/mineral/proc/GetDrilled(var/artifact_fail = 0, give_minerals = TRUE, fast_drill = FALSE)
+	if(fast_drill)
+		var/turf/simulated/floor/asteroid/N = ChangeTurf(mined_turf)
+		if(istype(N))
+			N.updateMineralOverlays(1)
+		return
+
 	//var/destroyed = 0 //used for breaking strange rocks
 	if (mineral && mineral.result_amount && give_minerals)
 

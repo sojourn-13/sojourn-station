@@ -254,6 +254,8 @@
 //////////////////
 //Cooldown perks//
 //////////////////
+//Teleportation Perk
+#define PERK_BLUESPACE_BELLCLOCK /datum/perk/cooldown/bluespace_bellclock
 
 //Exertion Perks
 #define PERK_COOLDOWN_REASON /datum/perk/cooldown/reason
