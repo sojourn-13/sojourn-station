@@ -188,6 +188,9 @@
 	return
 
 /atom/proc/reveal_blood()
+	if(was_bloodied && !fluorescent)
+		fluorescent = 1
+		blood_color = COLOR_LUMINOL
 	return
 
 /atom/proc/assume_air(datum/gas_mixture/giver)
