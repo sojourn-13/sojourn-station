@@ -572,6 +572,12 @@
 /datum/reagent/other/luminol/touch_mob(mob/living/L)
 	L.reveal_blood()
 
+/datum/reagent/other/luminol/touch_turf(turf/T)
+	T.reveal_blood()
+	// Also reveal blood on any objects on the turf
+	for(var/obj/O in T)
+		O.reveal_blood()
+
 /datum/reagent/other/arectine
 	name = "Arectine"
 	id = "arectine"

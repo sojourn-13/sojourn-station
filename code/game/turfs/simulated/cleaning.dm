@@ -128,3 +128,19 @@
 		this.blood_DNA["UNKNOWN BLOOD"] = "X*"
 	else if( istype(M, /mob/living/silicon/robot ))
 		new /obj/effect/decal/cleanable/blood/oil(src)
+
+// Reveal blood traces with luminol
+/turf/simulated/reveal_blood()
+	if(was_bloodied && !fluorescent)
+		fluorescent = 1
+		blood_color = COLOR_LUMINOL
+		// Check if there are any existing blood decals
+		for(var/obj/effect/decal/cleanable/blood/B in contents)
+			B.reveal_blood()
+			return
+		// If no blood decals exist but the turf was bloodied, create a luminol trace
+		var/obj/effect/decal/cleanable/blood/luminol_trace = new /obj/effect/decal/cleanable/blood(src)
+		luminol_trace.basecolor = COLOR_LUMINOL
+		luminol_trace.fluorescent = TRUE
+		luminol_trace.blood_DNA = list("UNKNOWN" = "O+")  // Generic blood type for traces
+		luminol_trace.update_icon()
