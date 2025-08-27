@@ -367,8 +367,8 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 						owner.stats.changeStat_withcap(stat, stat_up)
 
 				if(I.perk)
-					if(owner.stats.addPerk(I.perk))
-						I.perk = null
+					owner.stats.addPerk(I.perk)
+
 
 				if(I.self_destroy)
 					qdel(I, FALSE, TRUE) //Forcefully remove are component
