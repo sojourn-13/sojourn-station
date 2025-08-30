@@ -192,6 +192,14 @@
 
 		robot["module"] = R.module ? R.module.name : "None"
 		robot["master_ai"] = R.connected_ai ? R.connected_ai.name : "None"
+
+		// Add location information with GPS coordinates
+		var/area/robot_area = get_area(R)
+		if(robot_area)
+			robot["location"] = "[robot_area.name] ([R.x], [R.y], [R.z])"
+		else
+			robot["location"] = "Unknown ([R.x], [R.y], [R.z])"
+
 		robot["hackable"] = 0
 		/* Antag AIs know whether linked cyborgs are hacked or not.
 		if(operator && isAI(operator) && (R.connected_ai == operator) && (operator.mind.antagonist.len && operator.mind.original == operator))
