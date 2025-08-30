@@ -411,6 +411,7 @@ obj/item/ammo_casing/heavy_rifle_408/bluespace
 	icon_state = "caseless"
 	projectile_type = /obj/item/projectile/bullet/c10x24
 	is_caseless = TRUE
+	shell_color = "s" //Used for Stamp Mag
 
 //Flare, .22
 /obj/item/ammo_casing/flare
