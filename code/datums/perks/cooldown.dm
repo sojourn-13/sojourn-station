@@ -274,3 +274,64 @@
 		S.delay_for_melee -= 1 SECONDS
 		S.delay_for_all -= 0.5 SECONDS
 	..()
+
+//Used for teleporting, done like this for timer reasons
+/datum/perk/cooldown/bluespace_bellclock
+	name = "Telebell Rift Link Cave System Unit Link"
+	desc = "Advanced tracking is tooned to you to pull you back from a unfixed location replace after a set timer."
+	icon_state = "ladder"
+	perk_lifetime = 6 MINUTES
+	gain_text = "Telebell has been successfully linked it seems."
+	lose_text = "In a flash you find yourself back from whatever cave was linked."
+	var/turf/linked
+	var/linked_x
+	var/linked_y
+	var/linked_z
+
+	//not really active
+	active = FALSE
+	passivePerk = FALSE
+
+
+/datum/perk/cooldown/bluespace_bellclock/assign(mob/living/carbon/human/H)
+	..()
+	cooldown_time = world.time + 6 MINUTES + 5 //Little bit added to stop anyone form spam clicking to activate it
+	linked = get_turf(holder)
+	linked_x = holder.x
+	linked_y = holder.y
+	linked_z = holder.z
+
+	if(!isturf(linked))
+		message_admins("bluespace_bellclock was unable to get a turf, this is bad!")
+		linked = null
+
+	if(!linked_x || !linked_y || !linked_z)
+		for(var/obj/machinery/mining_bell/MB in range(3, holder))
+			if(MB)
+				linked_x = MB.x
+				linked_y = MB.y
+				linked_z = MB.z
+
+	if(!linked_x || !linked_y || !linked_z)
+		message_admins("bluespace_bellclock was unable to get a proper x/y/z, this is bad! Teleporting person to a pre-coded location, holder is [holder].")
+
+		//Hard set cords that we know are good
+		linked_x = 166
+		linked_y = 146
+		linked_z = 1
+
+/datum/perk/cooldown/bluespace_bellclock/remove()
+	if(isturf(linked))
+		go_to_bluespace(holder.loc, 6, TRUE, holder, linked)
+	else
+		holder.on_mob_jump(locate(linked_x,linked_y,linked_z))
+		spawn(1)
+			var/turf/T = get_turf(holder)
+			if(T)
+				bluespace_entropy(12, T)
+			else
+				message_admins("bluespace_bellclock was unable to get a proper x/y/z, or turf or anything, every failsafe has failed, this is bad! Holder is [holder]. May need mannual teleportation")
+
+	linked = null //Avoids hard del
+
+	..()

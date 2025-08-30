@@ -13,12 +13,10 @@
 	module = new CRUCIFORM_PRIEST_CONVERT
 	module.set_up()
 
-
 /obj/item/coreimplant_upgrade/cruciform/obey
 	name = "Obey upgrade"
 	desc = "Forces cruciform wearer to obey your orders."
 	implant_type = /obj/item/implant/core_implant/cruciform
-
 
 /obj/item/coreimplant_upgrade/cruciform/obey/on_install(var/target,var/mob/living/user_mob)
 	if(istype(user_mob))
@@ -122,7 +120,7 @@
 	desc = "This upgrade cleans tiles that the follower walks upon. Will slowly cause space vines and maint-shrooms to wither and die in the follower’s presence. Useful for the cleanly."
 	icon_state = "cleansing_presence"
 	matter = list(MATERIAL_BIOMATTER = 50, MATERIAL_SILVER = 5, MATERIAL_PLASTEEL = 5)
-	var/area_radius = 5
+	var/area_radius = 2
 
 /obj/item/cruciform_upgrade/cleansing_presence/OnInstall(var/disciple, var/_cruciform)
 	..()
@@ -151,13 +149,13 @@
 	name = "Wrath of god"
 	desc = "This upgrade make the follower deal more damage in melee, but also receive a slightly more damage from almost all sources."
 	icon_state = "wrath_of_god"
-	matter = list(MATERIAL_BIOMATTER = 50, MATERIAL_GOLD = 5, MATERIAL_PLASTEEL = 15)
+	matter = list(MATERIAL_BIOMATTER = 50, MATERIAL_SILVER = 5, MATERIAL_PLASTEEL = 15)
 	var/damage_mod = 0.1 //10% more damage in melee attacking
 	var/receive_damage_mod = 0.2 //20% more damage form all sources other then clone
 
 /obj/item/cruciform_upgrade/wrath_of_god/OnInstall(var/disciple, var/_cruciform)
 	..()
-	wearer.damage_multiplier += damage_mod
+	wearer.cqc_damage_multiplier += damage_mod
 	wearer.species.brute_mod += receive_damage_mod
 	wearer.species.burn_mod += receive_damage_mod
 	wearer.species.oxy_mod += receive_damage_mod
@@ -166,7 +164,7 @@
 
 /obj/item/cruciform_upgrade/wrath_of_god/OnUninstall()
 	..()
-	wearer.damage_multiplier -= damage_mod
+	wearer.cqc_damage_multiplier -= damage_mod
 	wearer.species.brute_mod -= receive_damage_mod
 	wearer.species.burn_mod -= receive_damage_mod
 	wearer.species.oxy_mod -= receive_damage_mod
@@ -179,3 +177,66 @@
 	icon_state = "speed_of_the_chosen"
 	matter = list(MATERIAL_BIOMATTER = 120, MATERIAL_GOLD = 5, MATERIAL_PLASTEEL = 5)
 	var/speed_increase = 0.1 //10% faster, stacks with other sorces so its to be balanced with that
+
+//Upgrades a single perk greatly, does not take the upgrade slot//
+
+//We auto remove the "upgrade" as its just annoying to spam prayers to upgrade a perk
+
+/obj/item/cruciform_upgrade/the_feathers
+	name = "Feathers of Lazarus"
+	desc = "A powerful upgrade. The first of three to be used on a faithful that has Lazarus Protocol then removed shortly after."
+	icon_state = "the_feathers"
+	matter = null
+	var/alreay_activated = FALSE
+
+/obj/item/cruciform_upgrade/the_feathers/OnInstall(var/disciple, var/_cruciform)
+	..()
+	if(alreay_activated)
+		desc = "A once powerful upgrade. The first of three to be used on a faithful that has Lazarus Protocol. This ones has been used."
+		return
+
+	//Swap out the lesser perk to a better one
+	if(wearer.stats.getPerk(PERK_UNFINISHED_DELIVERY))
+		wearer.stats.removePerk(PERK_UNFINISHED_DELIVERY)
+		wearer.stats.addPerk(PERK_UNFINISHED_DELIVERY_FEATHERS)
+		alreay_activated = TRUE
+	uninstall()
+
+/obj/item/cruciform_upgrade/the_inks
+	name = "Lazarus' Inkwell"
+	desc = "A powerful upgrade. The second of three to be used on a faithful that has Lazarus Quill then removed shortly after."
+	icon_state = "the_inks"
+	matter = null
+	var/alreay_activated = FALSE
+
+/obj/item/cruciform_upgrade/the_inks/OnInstall(var/disciple, var/_cruciform)
+	..()
+	if(alreay_activated)
+		desc = "A once powerful upgrade. The second of three to be used on a faithful that has Lazarus Quill. This ones has been used."
+		return
+	//Swap out the lesser perk to a better one
+	if(wearer.stats.getPerk(PERK_UNFINISHED_DELIVERY_FEATHERS))
+		wearer.stats.removePerk(PERK_UNFINISHED_DELIVERY_FEATHERS)
+		wearer.stats.addPerk(PERK_UNFINISHED_DELIVERY_INK)
+		alreay_activated = TRUE
+	uninstall()
+
+/obj/item/cruciform_upgrade/the_verses_wrote
+	name = "Lazarus' Verses"
+	desc = "A powerful upgrade. The third of three to be used on a faithful that has Lazarus Inkwell then removed shortly after."
+	icon_state = "the_verses_wrote"
+	matter = null
+	var/alreay_activated = FALSE
+
+/obj/item/cruciform_upgrade/the_verses_wrote/OnInstall(var/disciple, var/_cruciform)
+	..()
+	if(alreay_activated)
+		desc = "A once powerful upgrade. The third of three to be used on a faithful that has Lazarus Inkwell. This ones has been used."
+		return
+
+	//Swap out the lesser perk to a better one
+	if(wearer.stats.getPerk(PERK_UNFINISHED_DELIVERY_INK))
+		wearer.stats.removePerk(PERK_UNFINISHED_DELIVERY_INK)
+		wearer.stats.addPerk(PERK_UNFINISHED_DELIVERY_VERSES)
+		alreay_activated = TRUE
+	uninstall()

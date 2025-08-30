@@ -103,44 +103,27 @@
 	"SKRE","AHK","EHK","RAWK","KRA","AAA","EEE","KI","II","KRI","KA")
 	shorthand = "N/A"
 
-//Kriosan racial language. Lore: German creolization due to Sol-Gov occupation; therefor intelligibility with German.
+//Kriosan racial language. Lore: Former forced Eurolang integration due to Sol-Gov occupation has been shed and a resurgence of the Kriosan Language has eliminated traces of other languages' influence.
 /datum/language/kriosan
 	name = LANGUAGE_KRIOSAN
-	desc = "The main language of Krios, Kriosan Creole. Mostly consiting of quill-hound noises, posturing and many Eurolang loan words."
+	desc = "The main language of Krios, Kriosan. Mostly consisting of quill-hound noises. Any written varient of this language has been long dead, replaced by a Sol-Fed standard during their occupation. However a resurgence of the Kriosan language has resulted in a rekindling of the written texts within the sector."
 	speech_verb = list("states", "rumbles")
 	ask_verb = list("stipulates", "huffs")
 	exclaim_verb = list("barks", "yips")
+	flags = RESTRICTED // Requires a canine like tongue and teeth to speak, making it inaccessible to other species.
 	colour = "kriosan"
 	key = "k"
-	has_written_form = FALSE	//Lore reason - Creolized German and their ancient native language. Therefor their written language is 'dead' effectively.
-	partial_understanding = list(
-		LANGUAGE_EURO = 75,
-		LANGUAGE_COMMON = 10
-	)
+	has_written_form = TRUE // there's been a resurgence of the Kriosan language, resulting in a rekindling of the written texts.
 	shorthand = "KO"
-	syllables = list("Frau", "Mann", "Waffe", "Schiff", "Bombe", "Explosion", "Grenze", "Strasse", "Halle", "Pistole", "Gewehr", "Uniform", "Kind", "Arzt", \
-					 "und", "ja", "nein", "vielleicht", "ob", "man", "Faust", "Auto", "fliegen", "Asteroid", "Hose", "laufen", "fahren","Raumschiff", \
- 					 "Serbien", "Eisenhammer", "Soteria", "Atmosphaere", "Generator", "Ingenieur", "Religion", "Ratte", "Priester", "Käfer", "Armee", "Regierung", "neu", \
- 					 "alt", "verfallen", "Hoffnung", "schauen", "sterben", "elektrisch", "Teufel", "kurieren", "Fleisch", "trinken", "Auftrag", "Hilfe", "Medizin", "zeppelin", \
- 					 "verfallen", "Verfall", "National", "Laser", "Strom", "Gruppe", "Verteidigung", "verteidigen", "Suche", "Auge", "Hand", "Bein", "Kopf", \
- 					 "Flucht", "Wahrheit", "Ritter", "Einfluss", "Einfall", "Muesli", "Wand", "Fenster", "Metall", "Holz", "Glas", "Sand",  \
- 					 "Computer", "mikro", "Planet", "Universum", "Weltraum", "Turbine", "Treibstoff", "platt", "dunkel", "hell", "tauchen", "Licht", "scheinen", \
- 					 "Kaiser", "bekaempfen", "Tastatur", "Augenlicht", "verwerfen", "analysieren", "verschieben", \
- 					 "Flammen", "Feuer", "Batterie", "laser", "Unwetter", "Abflug", "behandeln", "Roboter", "Regierung", \
-					 "Unterhaltung", "Platituede", "Pferd", "Poker", "spielen", "Radio", "Baum", "Raumschlacht", "Kolonie", "kolonisieren", \
- 					 "Gas", "Schaltung", "umstuerzen", "Umsturz", "Wissenschaft", "erforschen", "Forschung", "Psychologe", "Schmerz", \
- 					 "Schmerzen", "gebrochen", "brechen", "alle", "Musik", "also", "Interesse", "Pruegel", "Alkohol", "Getraenk", \
- 					 "dynamisch", "Dynamik", "Organisation", "hauptsache", "Radio", "ueberhaupt", "weil", "deshalb", "mir", "dir", \
- 					 "dein", "mein", "ihr", "eure", "seine", "meine", "Granate", "Katze", "Hund", "Fisch", "Ziege", "aber", "dennoch", "weshalb", "deshalb", \
-					 "doch", "wieso", "denn", "ja", "halt", "auch", "schon", "denn", "etwa", "nur", "bloss", "eben", "mal", "gar", "ruhig", "eigentlich", \
-					 "eh", "nun", "erstmal", "gleich", "zumindest", "wohl", "durchaus", "sicher", "anscheinend", "eigentlich", "folgendermassen", \
-					 "ausnahmslos", "bisschen", "fortwaehrend", "augenscheinlich", "einfach", "fraglos", "ausdruecklich", "einigermassen", "freilich", \
-					 "weitem", "einmal", "ganz", "gewiss", "besonders", "endlich", "Hund", "Katze", "Ruede", "Pleite", "Schreckschraube", "Klammer", "Fuss")
+	syllables = list("arf", "ar", "aw", "ba", "bar", "bh", "bo", "bow", "bow-wow", "br", "bro", "brr", "bwar", \
+	"bwoo", "bork", "foo", "gr", "gra", "grr", "gruff", "growl", "hro", "hrm", "huff", "arf", "woof", "ruff", \
+	"oo", "ra", "raw", "ro", "roo", "rr", "snarl", "wo", "woo", "wor", "wr", "wrow", "wuff", "wur", \
+	"wroo", "wrowf", "ya", "yap", "yaw", "yar", "yarr", "yip", "yow", "yowp")
 
 //Aqula racial language. Lore: Long history of indpendence from Sol, therefor their language did not intergrate much. Somewhat physical language due to showing of force, akin to grunts, posturing or facial expressions providing context to wording (I.e akin to a tonal language style but with body language instead).
 /datum/language/akula
 	name = LANGUAGE_AKULA
-	desc = "A historic language spoken by Akula for centuries. Includes physical gestures and gutteral noises, mixing both verbal and non-verbal language elements."
+	desc = "A long-lived language spoken by Akula for centuries. Includes physical gestures and gutteral noises, mixing both verbal and non-verbal communication. There is no written form of this language."
 	speech_verb = list("grunts", "utters")
 	ask_verb = list("queries")
 	exclaim_verb = list("roars")
@@ -159,7 +142,7 @@
 //Marqua racial language. Lore: Did not integrate into Sol, therefor their langauge has remained mostly untouched. Only mild influences from buisnesses, trade, and frontier languages.
 /datum/language/marqua
 	name = LANGUAGE_MARQUA
-	desc = "A language spoken commonly by Marqua across the galaxy. Most of its sounds are unique, being noted as near impossible to replicate many of the noises by other species."
+	desc = "A language spoken commonly by Marqua across the galaxy. Most of its sounds are unique, being noted as near impossible to replicate by other species."
 	speech_verb = list("warbles")
 	ask_verb = list("trills")
 	exclaim_verb = list("rythmically trills")
@@ -190,7 +173,7 @@
 //Naramad language. full credit to Yanniert for all of the details herein contained.
 /datum/language/merp
 	name = LANGUAGE_MERP
-	desc = "A crude pidgin tongue, not created by it's supposedly native speakers, but by their foreign overlords. Enforced as the only legal native language of the Naramadi people by the Federation as a means to unify the planet and make administrative work easier, while allowing them to keep a semblance of native culture."
+	desc = "A crude pidgin tongue, not created by it's supposedly native speakers, but by their foreign overlords. Enforced as the only legal native language of the Naramadi people by the Federation, it was used as a means to unify the planet and make administrative work easier, while allowing them to keep a semblance of native culture."
 	speech_verb = list("says", "clicks")
 	ask_verb = list("chirps")
 	exclaim_verb = list("croaks")
@@ -208,7 +191,7 @@
 //Cindarite language: Lore: Cindarite Voc being a languaged optimized for clear communication. Its function over form having a clear distinct lack of metaphors and emphasizes mostly on relaying any information as optimal as possible due to their upbringing in bunkers on a highly dangerous homeworld.
 /datum/language/weh
 	name = LANGUAGE_WEH
-	desc = "Cindarite Voc is language emphasizes clear communication with a distinct lack of metaphors and figures of speech to avoid unnecessary missunderstandings. It consists mostly of a combination of various hissing noises and guttural roars. Generations upon generations of living in bunkers on a highly hazardous planet resulted in Cindarite Voc from degrading from a colorful descriptive language to more rigid and functional tool to relay information."
+	desc = "Cindarite Voc is a language that emphasizes clear communication with a distinct lack of metaphors and figures of speech to avoid unnecessary misunderstandings. It consists mostly of a combination of various hissing noises and guttural roars. Generations upon generations of living in bunkers on a highly hazardous planet resulted in Cindarite Voc; devolved from a colorful descriptive language to a more rigid and functional tool to relay information."
 	speech_verb = list("says", "hisses")
 	ask_verb = list("inquires")
 	exclaim_verb = list("bellows")
@@ -228,7 +211,7 @@
 /datum/language/mrow
 
 	name = LANGUAGE_SABLEKYNE
-	desc = "The native language of the Sablekyne, Crinos, is nearly unintelligible to humans, a flowing language consisting of rolling r's, chrips, and other assorted sounds."
+	desc = "The native language of the Sablekyne, Crinos, is nearly unintelligible to humans, it's syllibants consist of rolling r's, chrips, and other assorted sounds."
 	speech_verb = list("chatters")
 	ask_verb = list("mrowls")
 	exclaim_verb = list("yelps")

@@ -32,6 +32,7 @@
 
 	inherent_mutations = list(MUTATION_ROACH_BLOOD, MUTATION_ROACH_FRIEND, MUTATION_DEAF, MUTATION_TOURETTES, MUTATION_EPILEPSY)
 	fancy_attack_shading = "#FFFFED"
+	research_value = 150
 
 
 /mob/living/carbon/superior/roach/fuhrer/bullet_act(var/obj/item/projectile/P)

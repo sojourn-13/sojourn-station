@@ -14,6 +14,7 @@
 	speed = 4
 	sanity_damage = 2
 	meat_type = /obj/item/reagent_containers/snacks/meat/human
+	research_value = 175
 
 /mob/living/simple/hostile/creature/cult
 	faction = "cult"
@@ -38,6 +39,7 @@
 	maxHealth = 200
 	melee_damage_lower = 20
 	melee_damage_upper = 35
+	research_value = 275
 
 /mob/living/simple/hostile/retaliate/spaceman
 	name = "spaceman"
@@ -104,6 +106,7 @@
 	health = 1000
 	maxHealth = 1000
 	sanity_damage = 4
+	research_value = 7750
 
 /mob/living/simple/hostile/madminer/cultist
 	name = "cultist"
@@ -132,6 +135,7 @@
 	inherent_mutations = list(MUTATION_BLINDNESS, MUTATION_ECHOLOCATION, MUTATION_TOXIN_RESISTANCE, MUTATION_BLOOD_BANK)
 	special_parts = list(/obj/item/animal_part/sarg_horn, /obj/item/animal_part/sarg_horn)
 	armor = list(melee = 1, bullet = 2, energy = 0, bomb = 25, bio = 0, rad = 25)
+	research_value = 375
 
 /*
 #define MOOK_ATTACK_NEUTRAL 0

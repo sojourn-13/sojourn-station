@@ -114,13 +114,14 @@
 	holder.mutations.Remove(CLUMSY)
 	..()
 
+//Church Perks
+
 /datum/perk/sanityboost
 	name = "True Faith"
 	desc = "When near an obelisk, you feel your mind at ease. Your body is strengthened by its presence, resisting all forms of damage."
 	icon_state = "truefaith"
 	gain_text = "You feel the protection of the nearby obelisk."
 	lose_text = "You no longer feel the protection of an obelisk."
-
 
 /datum/perk/active_sanityboost/assign(mob/living/L)
 	if(..() && ishuman(holder))
@@ -138,16 +139,39 @@
 	desc = "Your cruciform is more than just a symbol of faith. Should you ever perish, it will attempt an emergency revival that may restore your body after a short time, in which you'll be unconscious."
 	icon_state = "regrowth" // https://game-icons.net/1x1/delapouite/stump-regrowth.html
 
+/datum/perk/unfinished_delivery_feathers
+	name = "Feathers of Lazarus"
+	desc = "Your cruciform is more than just a symbol of faith. Should you ever perish, it will perform an emergency revival that restores your body after a short time, in which you'll be unconscious. Restores some blood for non-synthetics"
+	icon_state = "regrowth" // https://game-icons.net/1x1/delapouite/stump-regrowth.html
+
+/datum/perk/unfinished_delivery_ink
+	name = "Lazarus' Inkwell"
+	desc = "Your cruciform is more than just a symbol of faith. Should you ever perish, it will perform an emergency revival that restores your body, during which you'll be unconscious. Restores blood for non-synthetics."
+	icon_state = "regrowth" // https://game-icons.net/1x1/delapouite/stump-regrowth.html
+
+/datum/perk/unfinished_delivery_verses
+	name = "Lazarus' Verses"
+	desc = "Your cruciform is more than just a symbol of faith. Should you ever perish, it will perform an emergency revival and stablization that restores your body and casts light, calls for help and restores your cruciforms faith, during which you'll be unconscious. Restores a large amount of blood for non-synthetics."
+	icon_state = "regrowth" // https://game-icons.net/1x1/delapouite/stump-regrowth.html
+
+
 /datum/perk/community_of_saints
 	name = "Community of the Saints"
 	desc = "Your cruciform connects you to all other believers, but such connection can be distracting as well as beneficial. You take 25% longer to complete all tool-based actions that aren't instantaneous."
 	icon_state = "communityofthesaints"
 
+/datum/perk/channeling
+	name = "Channeling"
+	desc = "You know how to channel spiritual energy during rituals. You gain additional skill points \
+			during group rituals, and have an increased regeneration of cruciform energy."
+	icon_state = "channeling"
+
+//End of church perks
+
 /datum/perk/ear_of_quicksilver
 	name = "Ear of Quicksilver"
 	desc = "Training (and an ear implant) given to you as a Ranger makes it hard for secrets to escape your ears. Beware, loud noises are especially dangerous to you as a side effect."
 	icon_state = "ear" // https://game-icons.net
-
 
 /datum/perk/chemist
 	name = "Periodic Table"
@@ -290,165 +314,10 @@
 	desc = "You know how to handle even the strongest alcohol in the universe and doing so improves your toughness."
 	icon_state = "inspiration"
 
-/datum/perk/rezsickness
-	name = "Revival Sickness"
-	desc = "You've recently died and have been brought back to life, the experience leaving you weakened and thus unfit for fighting for a while. You better find a bed or chair to rest into until you've fully recuperated."
-	icon_state = "revivalsickness"
-	gain_text = "Your body aches from the pain of returning from death, you better find a chair or bed to rest in so you can heal properly."
-	lose_text = "You finally feel like you recovered from the ravages of your body."
-	var/initial_time
-
-/datum/perk/rezsickness/assign(mob/living/L)
-	..()
-
-	initial_time = world.time
-	cooldown_time = world.time + 30 MINUTES
-	holder.brute_mod_perk *= 1.10
-	holder.burn_mod_perk *= 1.10
-	holder.oxy_mod_perk *= 1.10
-	holder.toxin_mod_perk *= 1.10
-	holder.stats.changeStat(STAT_ROB, -10)
-	holder.stats.changeStat(STAT_TGH, -10)
-	holder.stats.changeStat(STAT_VIG, -10)
-	if(isliving(holder))
-		var/mob/living/H = holder
-		H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/pours, "POURS", skill_gained = 0.5, learner = H)
-		if(ishuman(H))
-			var/mob/living/carbon/human/M = H
-			if(M.stats.getPerk(PERK_OVERBREATH))
-				M.mob_ablative_armor += 5
-
-/datum/perk/rezsickness/remove()
-	holder.brute_mod_perk /= 1.10
-	holder.burn_mod_perk /= 1.10
-	holder.oxy_mod_perk /= 1.10
-	holder.toxin_mod_perk /= 1.10
-	holder.stats.changeStat(STAT_ROB, 10)
-	holder.stats.changeStat(STAT_TGH, 10)
-	holder.stats.changeStat(STAT_VIG, 10)
-	..()
-
-/datum/perk/rezsickness/severe
-	name = "Severe Revival Sickness"
-	desc = "You've recently died and have been brought back to life. Your body cannot handle this traumatic experience very well, to the point where you struggle to complete even basic tasks. You better rest in a bed until it subsides before going back to work."
-	icon_state = "severerevivalsickness"
-
-/datum/perk/rezsickness/severe/assign(mob/living/L)
-	..()
-	holder.brute_mod_perk *= 1.15
-	holder.burn_mod_perk *= 1.15
-	holder.oxy_mod_perk *= 1.15
-	holder.toxin_mod_perk *= 1.15
-	holder.stats.changeStat(STAT_COG, -15)
-	holder.stats.changeStat(STAT_MEC, -15)
-	holder.stats.changeStat(STAT_BIO, -15)
-	if(ishuman(L))
-		var/mob/living/carbon/human/M = L
-		if(M.stats.getPerk(PERK_OVERBREATH))
-			M.mob_ablative_armor += 5
-
-/datum/perk/rezsickness/severe/remove()
-	holder.brute_mod_perk /= 1.15
-	holder.burn_mod_perk /= 1.15
-	holder.oxy_mod_perk /= 1.15
-	holder.toxin_mod_perk /= 1.15
-	holder.stats.changeStat(STAT_COG, 15)
-	holder.stats.changeStat(STAT_MEC, 15)
-	holder.stats.changeStat(STAT_BIO, 15)
-	..()
-
-/datum/perk/rezsickness/severe/fatal
-	name = "Fatal Revival Sickness"
-	desc = "You've recently died and have been brought back to life. Your frail constitution can barely handle the process, leaving you utterly physically and mentally wrecked. You better stay in bed for now and rest, or you risk dying even easier than before."
-	icon_state = "fatalrevivalsickness"
-
-/datum/perk/rezsickness/severe/fatal/assign(mob/living/L)
-	..()
-	holder.brute_mod_perk *= 1.25
-	holder.burn_mod_perk *= 1.25
-	holder.oxy_mod_perk *= 1.25
-	holder.toxin_mod_perk *= 1.25
-	holder.stats.changeStat(STAT_ROB, -20)
-	holder.stats.changeStat(STAT_TGH, -20)
-	holder.stats.changeStat(STAT_VIG, -20)
-	holder.stats.changeStat(STAT_COG, -20)
-	holder.stats.changeStat(STAT_MEC, -20)
-	holder.stats.changeStat(STAT_BIO, -20)
-	if(ishuman(L))
-		var/mob/living/carbon/human/M = L
-		if(M.stats.getPerk(PERK_OVERBREATH))
-			M.mob_ablative_armor += 10
-
-/datum/perk/rezsickness/severe/fatal/remove()
-	holder.brute_mod_perk /= 1.25
-	holder.burn_mod_perk /= 1.25
-	holder.oxy_mod_perk /= 1.25
-	holder.toxin_mod_perk /= 1.25
-	holder.stats.changeStat(STAT_ROB, 20)
-	holder.stats.changeStat(STAT_TGH, 20)
-	holder.stats.changeStat(STAT_VIG, 20)
-	holder.stats.changeStat(STAT_COG, 20)
-	holder.stats.changeStat(STAT_MEC, 20)
-	holder.stats.changeStat(STAT_BIO, 20)
-	..()
-
-/datum/perk/rezsickness/on_process()
-	if(!..())
-		return
-	if(cooldown_time <= world.time)
-		holder.stats.removePerk(type)
-		to_chat(holder, SPAN_NOTICE("[lose_text]"))
-		return
-	if(holder.buckled)
-		cooldown_time -= 2 SECONDS
-
-/datum/perk/racial/slime_rez_sickness
-	name = "Aulvae Decohesion Syndrome"
-	desc = "You've recently been returned to cohesion via the use of high-energy toxins which have left your form in a semi-stable state."
-	gain_text = "Your core vibrates and crackles with barely contained energy as you're revived. You feel stronger than ever, but your form is unstable and fragile. Perhaps it'd be best to lie down and allow time for this to pass, lest you loose cohesion once again."
-	lose_text = "The thunder bouncing around just beneath your dermis has passed and you feel stable once again."
-	var/initial_time
-	icon_state = "slime_rez"
-
-/datum/perk/racial/slime_rez_sickness/assign(mob/living/L)
-	..()
-	initial_time = world.time
-	cooldown_time = world.time + 30 MINUTES
-	holder.brute_mod_perk *= 1.3
-	holder.burn_mod_perk *= 1.3
-	holder.stats.changeStat(STAT_ROB, 30)
-	holder.stats.changeStat(STAT_TGH, -30)
-	holder.stats.changeStat(STAT_VIG, -30)
-
-/datum/perk/racial/slime_rez_sickness/remove()
-	holder.brute_mod_perk /= 1.3
-	holder.burn_mod_perk /= 1.3
-	holder.stats.changeStat(STAT_ROB, -30)
-	holder.stats.changeStat(STAT_TGH, 30)
-	holder.stats.changeStat(STAT_VIG, 30)
-	..()
-
-/datum/perk/racial/slime_rez_sickness/on_process()
-	if(!..())
-		return
-	if(cooldown_time <= world.time)
-		holder.stats.removePerk(type)
-		to_chat(holder, SPAN_NOTICE("[lose_text]"))
-		return
-	if(holder.buckled)
-		cooldown_time -= 2 SECONDS
-
 /datum/perk/handyman
 	name = "Handyman"
 	desc = "Training by the Artificer's Guild has granted you the knowledge of how to take apart machines in the most efficient way possible, finding materials and supplies most people would miss. This training is taken further the more mechanically skilled or cognitively capable you are."
 	icon_state = "handyman"
-
-/datum/perk/handyman/assign(mob/living/L)
-	..()
-
-
-/datum/perk/handyman/remove()
-	..()
 
 /datum/perk/stalker
 	name = "Anomaly Hunter"
@@ -476,12 +345,6 @@
 	name = "Robotics Expert"
 	desc = "Your formal training and experience in advanced mech construction and complex devices has made you more adept at working with them."
 	icon_state = "roboticsexpert"
-
-/datum/perk/robotics_expert/assign(mob/living/L)
-	..()
-
-/datum/perk/robotics_expert/remove()
-	..()
 
 /datum/perk/job/bolt_reflect
 	name = "Bolt Action Rifle Training"
@@ -571,13 +434,6 @@
 		var/mob/living/carbon/human/H = holder
 		H.sanity.view_damage_threshold -= 20
 	..()
-
-/datum/perk/channeling
-	name = "Channeling"
-	desc = "You know how to channel spiritual energy during rituals. You gain additional skill points \
-			during group rituals, and have an increased regeneration of cruciform energy."
-	icon_state = "channeling"
-
 
 /datum/perk/codespeak
 	name = "Codespeak"

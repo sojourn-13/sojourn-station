@@ -111,8 +111,11 @@ GLOBAL_LIST_INIT(nt_constructs, init_nt_constructs())
 		if(istype(t, /obj/item/stack))
 			var/obj/item/stack/S = t
 			S.use(blueprint.materials[item_type])
-		else
-			qdel(t)
+			continue
+		//Dont eat the lazbench
+		if(istype(t, /obj/structure/lazbench))
+			continue
+		qdel(t)
 
 	effect.success()
 	C.is_busy = FALSE
@@ -538,6 +541,91 @@ GLOBAL_LIST_INIT(nt_constructs, init_nt_constructs())
 		/obj/item/stack/material/plasma = 1
 	)
 	build_time = 8 SECONDS
+
+/datum/nt_blueprint/cruciform_upgrade/lazarus_bench
+	name = "Lazarus' Writings Bench"
+	build_path = /obj/structure/lazbench
+	materials = list(
+		/obj/item/stack/material/wood = 40,
+		/obj/item/stack/material/biomatter = 120,
+		/obj/item/stack/material/silver = 2,
+		/obj/item/stack/material/gold = 2,
+		/obj/item/stack/material/plasma = 1,
+		/obj/item/book/ritual/cruciform = 1,
+		/obj/item/flame/candle = 1
+
+	)
+	build_time = 15 SECONDS
+
+//Has a bit of lore, but will be rarely made if full sets are cycled.
+/datum/nt_blueprint/cruciform_upgrade/lazarus_box
+	name = "Lazarus' Work"
+	build_path = /obj/item/lazarus_box
+	materials = list(
+		/obj/structure/lazbench = 1,
+		/obj/item/stack/material/wood = 40,
+		/obj/item/stack/material/biomatter = 120,
+		/obj/item/stack/material/silver = 12,
+		/obj/item/stack/material/gold = 12,
+		/obj/item/pen = 1 //Does eat the pen,
+	)
+	build_time = 60 SECONDS
+
+//The upgrades - Lore based crafting requirements costs are less so. All should cost a stack of biomatter+ and silk
+
+/datum/nt_blueprint/cruciform_upgrade/the_feathers
+	name = "Lazarus' Work: Feathers of Lazarus"
+	build_path = /obj/item/cruciform_upgrade/the_feathers
+	materials = list(
+		/obj/structure/lazbench = 1,
+		/obj/item/lazarus_box = 1,
+		/obj/item/stack/material/biomatter = 120,
+		/obj/item/stack/material/silver = 4,
+		/obj/item/stack/material/gold = 4,
+		/obj/item/stack/material/silk = 3
+	)
+	build_time = 10 SECONDS
+
+/datum/nt_blueprint/cruciform_upgrade/the_inks
+	name = "Lazarus Work: Lazarus Inkwell"
+	build_path = /obj/item/cruciform_upgrade/the_inks
+	materials = list(
+		/obj/structure/lazbench = 1,
+		/obj/item/cruciform_upgrade/the_feathers = 1,
+		/obj/item/stack/material/biomatter = 120,
+		/obj/item/stack/material/plasma = 5,
+		/obj/item/stack/material/uranium = 5,
+		/obj/item/stack/material/silk = 3
+	)
+	build_time = 20 SECONDS
+
+/datum/nt_blueprint/cruciform_upgrade/the_verses_wrote
+	name = "Lazarus Work: Lazarus Verses"
+	build_path = /obj/item/cruciform_upgrade/the_verses_wrote
+	materials = list(
+		/obj/structure/lazbench = 1,
+		/obj/item/cruciform_upgrade/the_verses_wrote = 1,
+		/obj/item/stack/material/biomatter = 120,
+		/obj/item/stack/material/diamond = 3,
+		/obj/item/stack/material/platinum = 3,
+		/obj/item/stack/material/osmium = 3,
+		/obj/item/stack/material/plasteel = 5,
+		/obj/item/stack/material/silk = 3
+	)
+	build_time = 30 SECONDS
+
+//Full cycle a upgrade, let us recover are loses
+/datum/nt_blueprint/cruciform_upgrade/recycle_verses
+	name = "Lazarus' Recovery: Feathers of Lazarus: Phoenix"
+	build_path = /obj/item/cruciform_upgrade/the_feathers
+	materials = list(
+		/obj/structure/lazbench = 1,
+		/obj/item/cruciform_upgrade/the_verses_wrote = 1,
+		/obj/item/stack/material/biomatter = 40,
+		/obj/item/stack/material/silk = 3
+	)
+	build_time = 60 SECONDS
+
 
 /* Removed do to exploits
 //Church weapons, faster but more exspensive way for vectors to get their armorments without a disk

@@ -1,6 +1,6 @@
 /mob/living/carbon/human/psionic_tumor/proc/summan_trash_pile()
-	set category = "Psionic powers"
-	set name = "Scrap Together (4)"
+	set category = "Psionic powers.Summoning"
+	set name = "(4) Scrap Together"
 	set desc = "Spend four psi points to summon a random trash pile right in front of you."
 	var/psi_point_cost = 4
 	var/mob/living/carbon/human/user = src
@@ -21,8 +21,8 @@
 			new /obj/random/scrap/moderate_weighted(T)
 
 /mob/living/carbon/human/psionic_tumor/proc/trash_pile_compress()
-	set category = "Psionic powers"
-	set name = "Reorganize (2)"
+	set category = "Psionic powers.Transform"
+	set name = "(2) Reorganize"
 	set desc = "Spend two psi points to compress a scrap pile into a condensed cube."
 	var/psi_point_cost = 2
 	var/mob/living/carbon/human/user = src
@@ -51,8 +51,8 @@
 			return
 
 /mob/living/carbon/human/psionic_tumor/proc/trash_pile_exploid()
-	set category = "Psionic powers"
-	set name = "Discombobulate (1)"
+	set category = "Psionic powers.Transform"
+	set name = "(1) Discombobulate"
 	set desc = "Spend a single psi point to completely obliterate a trash pile."
 	var/psi_point_cost = 1
 	var/mob/living/carbon/human/user = src
