@@ -49,9 +49,9 @@
 
 /obj/machinery/telesci_inhibitor/nt_bluespace_seer/attack_hand(mob/user as mob)
 	if(active_mode)
-		to_chat(user, SPAN_NOTICE("Nullifer scanner is current on and working."))
+		to_chat(user, SPAN_NOTICE("Nullifier scanner is current on and working."))
 	else
-		to_chat(user, SPAN_NOTICE("You activate the the Nullifer, awakening it to reduce the entropy further."))
+		to_chat(user, SPAN_NOTICE("You activate the the Nullifier, awakening it to reduce the entropy further."))
 		active_mode = TRUE
 		activation_counter = 1
 		update_icon()

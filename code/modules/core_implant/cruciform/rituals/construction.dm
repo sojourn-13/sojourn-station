@@ -459,7 +459,7 @@ GLOBAL_LIST_INIT(nt_constructs, init_nt_constructs())
 
 //Requires a lot but heals bluespace, for free, like really good
 /datum/nt_blueprint/machinery/entropy_repairer
-	name = "Absolute Nullifer"
+	name = "Absolute Nullifier"
 	build_path = /obj/machinery/telesci_inhibitor/nt_bluespace_seer
 	materials = list(
 		/obj/item/stack/material/steel = 35,
