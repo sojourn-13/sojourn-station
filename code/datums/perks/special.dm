@@ -117,3 +117,90 @@
 			L.stats.addPerk(PERK_ARMOR_UP)
 	user.stats.addPerk(PERK_ARMOR_UP)
 	return ..()
+
+/datum/perk/stillpoint_charge
+	name = "Augment: Stillpoint Charge Bank"
+	desc = "Advanced storage unit that is the princeable of Stillpoints power, has an inbuilt micro AI with an artificial EGO."
+	gain_text = "A robotic voice informs you on how to use the Charge Bank. Quite handy."
+	lose_text = "A robotic voice lists off reasons your a villainess person, before frying itself."
+	var/charge = 0
+	active = FALSE
+	passivePerk = FALSE
+
+datum/perk/stillpoint_charge/activate()
+	var/mob/living/user = usr
+	if(!istype(user))
+		return ..()
+	if(world.time < cooldown_time)
+		to_chat(usr, SPAN_NOTICE("The robotic voice tells you that this feature is not ready to be used yet so soon after last deploy."))
+		return FALSE
+	var/area/A = get_area(get_turf(user))
+	if(A)
+		if(A.bluespace_entropy <= 0)
+			to_chat(usr, SPAN_NOTICE("The robotic voice tells you that this area has no entropy to collect!"))
+			return FALSE
+
+		if(A.bluespace_entropy >= 500)
+			charge += 500
+			A.bluespace_entropy -= 500
+			to_chat(usr, SPAN_NOTICE("The robotic voice tells that you have collected the maxium amount of charge in the area per a deployment. \
+			Then suggests staying around to collect the rest."))
+
+		else
+			charge = A.bluespace_entropy
+			A.bluespace_entropy = 0
+			to_chat(usr, SPAN_NOTICE("The robotic voice tells you that this area has no more entropy to collect! Then praises you for saving the day."))
+
+		cooldown_time = world.time + 5 MINUTES
+
+/datum/perk/stillpoint_charge/assign(mob/living/L)
+	..()
+	var/area/A = get_area(get_turf(L))
+	if(A)
+		if(A.bluespace_entropy <= 0)
+			return
+
+		if(A.bluespace_entropy >= 5000)
+			charge = 5000
+			A.bluespace_entropy -= 5000
+		else
+			charge = A.bluespace_entropy
+			A.bluespace_entropy = 0
+
+/datum/perk/stillpoint_armor
+	name = "Augment: Stillpoint Statis Armor Gen MK XI"
+	desc = "A Stillpoint Supportive Entropy, When holding onto a living being, active this perk to give said being armor - Costs 500 Charge from a Charge Bank"
+	gain_text = "A robotic voice informs you on how to use the Statis Armor Gen. Quite handy."
+	lose_text = "A robotic voice lists off reasons your a villainess person, before locking away this feature."
+	active = FALSE
+	passivePerk = FALSE
+
+/datum/perk/stillpoint_armor/activate()
+	var/mob/living/user = usr
+	if(!istype(user))
+		return ..()
+	if(world.time < cooldown_time)
+		to_chat(usr, SPAN_NOTICE("The robotic voice tells you that this feature is not ready to be used yet so soon after last deploy."))
+		return FALSE
+	if(user.stats.getPerk(PERK_STILLPONT_CHARGE))
+		var/datum/perk/stillpoint_charge/Charge = user.stats.getPerk(PERK_STILLPONT_CHARGE)
+		if(Charge < 500)
+			to_chat(usr, SPAN_NOTICE("The robotic voice tells you that this feature is unable to be deployed do to low charge."))
+			return FALSE
+		var/mob/living/G = get_grabbed_mob(user)
+		if(!G)
+			to_chat(usr, SPAN_NOTICE("The robotic voice tells that you must grab ahold of someone in order to deploy the Statis Armor."))
+			return FALSE
+		if(G.mob_ablative_armor >= 20)
+			to_chat(usr, SPAN_NOTICE("The robotic voice tells that whoever you are grabing already has protection, denieing your request to shield them further."))
+			return FALSE
+
+		G.mob_ablative_armor += 5 //1000 per 5, limited by max 20, assuming you dont already have armor form other perks
+		Charge.charge -= 1000
+
+		cooldown_time = world.time + 5 MINUTES
+		log_and_message_admins("used their [src] perk.")
+	else
+		to_chat(usr, SPAN_NOTICE("Without proper supporting aguments you are unable to activate this."))
+	return ..()
+
