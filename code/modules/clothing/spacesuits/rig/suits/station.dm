@@ -448,11 +448,11 @@ Technomancer RIG
 		energy = 0,
 		bomb = 0,
 		bio = 100,
-		rad = 20
+		rad = 30
 	)
 	req_access = list(access_cmo)
 	seal_delay = 4 //built for speed
-	slowdown = -0.3 //we get a bit more speed than the baseline recovery rig as this is a unique item with exactly 0 armor. This is for zipping around medical, rather than getting in the weeds
+	slowdown = -0.5 //we get a bit more speed than the baseline recovery rig as this is a unique item with exactly 0 armor. This is for zipping around medical, rather than getting in the weeds
 	ablative_armor = 0
 	ablative_max = 0 //no armor, none.
 	helm_type = /obj/item/clothing/head/helmet/space/rig/cmo
