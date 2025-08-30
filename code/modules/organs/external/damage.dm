@@ -12,10 +12,10 @@
 	var/external_wounding_multiplier = wounding_multiplier
 	switch(damage_type)
 		if(BRUTE)
-			amount = round(amount * brute_mod, 0.1)
+			amount = round(amount * owner.brute_mod_perk * owner.species.brute_mod, 0.1)
 			external_wounding_multiplier = wound_check(species?.injury_type, wounding_multiplier, edge, sharp)
 		if(BURN)
-			amount = round(amount * burn_mod, 0.1)
+			amount = round(amount * owner.burn_mod_perk * owner.species.burn_mod, 0.1)
 			external_wounding_multiplier = wound_check(species?.injury_type, wounding_multiplier, edge, sharp)
 
 	// Damage is transferred to internal organs.
