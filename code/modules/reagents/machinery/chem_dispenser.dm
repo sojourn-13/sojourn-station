@@ -473,11 +473,33 @@
 		// Call parent Initialize() so the dispenser's base initialization runs.
 		..()
 
-		// If no parts were placed on the machine (map or builder), pre-fill with tier-3 components.
-		if(!component_parts || !length(component_parts))
+		// If parts were placed by the map as default components, replace them with tier-3 parts.
+		// Detection heuristic: treat existing parts as "default" if every component is a stock_part or a cell.
+		if(component_parts && length(component_parts))
+			var/all_default = TRUE
+			for(var/obj/item/I in component_parts)
+				if(!I) continue
+				if(!(istype(I, /obj/item/stock_parts) || istype(I, /obj/item/cell)))
+					all_default = FALSE
+					break
+
+			if(all_default)
+				// Remove the map-spawned/default parts to avoid duplicates
+				for(var/obj/item/I2 in component_parts)
+					if(I2)
+						qdel(I2)
+
+				component_parts = list()
+				component_parts += new /obj/item/cell/large/moebius/omega(null)
+				component_parts += new /obj/item/stock_parts/capacitor/super(null)
+				component_parts += new /obj/item/stock_parts/matter_bin/super(null)
+				component_parts += new /obj/item/stock_parts/manipulator/pico(null)
+
+		// If there were no parts at all, pre-fill with tier-3 components (same as replacement behavior).
+		else
+			component_parts = list()
 			component_parts += new /obj/item/cell/large/moebius/omega(null)
 			component_parts += new /obj/item/stock_parts/capacitor/super(null)
-			component_parts += new /obj/item/stock_parts/matter_bin/super(null)
 			component_parts += new /obj/item/stock_parts/matter_bin/super(null)
 			component_parts += new /obj/item/stock_parts/manipulator/pico(null)
 

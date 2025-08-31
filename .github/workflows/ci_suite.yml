@@ -71,15 +71,22 @@ jobs:
       - name: Compile All Maps
         run: |
           bash tools/ci/install_byond.sh
-          # Verify BYOND zip download
+          # Debug BYOND zip download
+          echo "Listing byond.zip:"
+          ls -lh byond.zip || true
+          echo "Checking byond.zip size:"
+          stat byond.zip || true
+          echo "Checking byond.zip checksum:"
+          sha256sum byond.zip || true
+          # Fail if file is missing or too small
           if [ ! -f byond.zip ]; then
             echo "byond.zip not found! Download failed."
             exit 1
           fi
-          echo "byond.zip size:"
-          ls -lh byond.zip
-          echo "byond.zip checksum:"
-          sha256sum byond.zip
+          if [ $(stat -c%s "byond.zip") -lt 10000 ]; then
+            echo "byond.zip is too small, likely a failed download."
+            exit 1
+          fi
           unzip -l byond.zip || { echo "byond.zip is not a valid zip file!"; exit 1; }
           source $HOME/BYOND/byond/bin/byondsetup
           tools/build/build --ci dm -DCIBUILDING -DCITESTING -DALL_MAPS
@@ -120,15 +127,22 @@ jobs:
       - name: Compile Tests
         run: |
           bash tools/ci/install_byond.sh
-          # Verify BYOND zip download
+          # Debug BYOND zip download
+          echo "Listing byond.zip:"
+          ls -lh byond.zip || true
+          echo "Checking byond.zip size:"
+          stat byond.zip || true
+          echo "Checking byond.zip checksum:"
+          sha256sum byond.zip || true
+          # Fail if file is missing or too small
           if [ ! -f byond.zip ]; then
             echo "byond.zip not found! Download failed."
             exit 1
           fi
-          echo "byond.zip size:"
-          ls -lh byond.zip
-          echo "byond.zip checksum:"
-          sha256sum byond.zip
+          if [ $(stat -c%s "byond.zip") -lt 10000 ]; then
+            echo "byond.zip is too small, likely a failed download."
+            exit 1
+          fi
           unzip -l byond.zip || { echo "byond.zip is not a valid zip file!"; exit 1; }
           source $HOME/BYOND/byond/bin/byondsetup
           tools/build/build --ci dm -DCIBUILDING -DANSICOLORS
