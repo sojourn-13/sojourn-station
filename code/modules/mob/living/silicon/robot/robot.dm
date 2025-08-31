@@ -400,6 +400,7 @@
 			flavor_text = module_flavour
 		else
 			flavor_text = client.prefs.flavour_texts_robot["Default"]
+		ooc_text = client.prefs.ooc_text
 
 /mob/living/silicon/robot/verb/Namepick()
 	set category = "Silicon Commands"
