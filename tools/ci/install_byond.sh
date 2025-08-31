@@ -5,13 +5,7 @@ source dependencies.sh
 
 echo "BYOND_MAJOR: $BYOND_MAJOR"
 echo "BYOND_MINOR: $BYOND_MINOR"
-DOWNLOAD_URL="https://www.byond.com/download/build/${BYOND_MAJOR}/${BYOND_MAJOR}.${BYOND_MINOR}_byond_linux.zip"
-echo "Download URL: $DOWNLOAD_URL"
-
-echo "Testing BYOND download with headers:"
-curl -I "$DOWNLOAD_URL"
-echo "Testing BYOND download with custom user-agent:"
-curl -A "Mozilla/5.0" -I "$DOWNLOAD_URL"
+echo "Using local BYOND zip: tools/ci/515.1647_byond_linux.zip"
 
 if [ -d "$HOME/BYOND/byond/bin" ] && grep -Fxq "${BYOND_MAJOR}.${BYOND_MINOR}" $HOME/BYOND/version.txt;
 then
@@ -21,12 +15,12 @@ else
   rm -rf "$HOME/BYOND"
   mkdir -p "$HOME/BYOND"
   cd "$HOME/BYOND"
-  echo "Downloading BYOND from: $DOWNLOAD_URL"
-  curl -fSL "$DOWNLOAD_URL" -o byond.zip || { echo "BYOND download failed (HTTP error, likely 403). Check BYOND_MAJOR and BYOND_MINOR, and ensure the version is available."; exit 22; }
-  if [ ! -f byond.zip ]; then
-    echo "byond.zip not found! Download failed."
+  # Use path from repo root
+  if [ ! -f "$GITHUB_WORKSPACE/tools/ci/515.1647_byond_linux.zip" ]; then
+    echo "$GITHUB_WORKSPACE/tools/ci/515.1647_byond_linux.zip not found! Please provide it."
     exit 1
   fi
+  cp "$GITHUB_WORKSPACE/tools/ci/515.1647_byond_linux.zip" byond.zip
   echo "byond.zip size:"
   ls -lh byond.zip
   echo "byond.zip checksum:"
@@ -43,3 +37,13 @@ else
   echo "$BYOND_MAJOR.$BYOND_MINOR" > "$HOME/BYOND/version.txt"
   cd ~/
 fi
+
+echo "Cloudflare is blocking automated downloads of BYOND. Manual intervention is required."
+echo "Please download ${DOWNLOAD_URL} in your browser and place it at $HOME/BYOND/byond.zip, or upload it as a CI artifact/cache."
+exit 1
+  cd ~/
+fi
+
+echo "Cloudflare is blocking automated downloads of BYOND. Manual intervention is required."
+echo "Please download ${DOWNLOAD_URL} in your browser and place it at $HOME/BYOND/byond.zip, or upload it as a CI artifact/cache."
+exit 1
