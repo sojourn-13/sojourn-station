@@ -158,7 +158,7 @@
 				//Gun/Tool Mods
 				/obj/item/gun_upgrade/mechanism/brass_kit = 1,
 				//Armor
-				/obj/item/clothing/suit/crimsoncross_regaloutfit = 0.1, //Little rarer then even soap
+				///obj/item/clothing/suit/crimsoncross_regaloutfit = 0.1, //Little rarer then even soap
 				/obj/item/clothing/shoes/crimsoncross_warp = 1,
 				//Misc - things that are not a "gun" but still good for this
 				/obj/item/oddity/nt/seal = 0.5,
