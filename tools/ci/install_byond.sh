@@ -37,13 +37,3 @@ else
   echo "$BYOND_MAJOR.$BYOND_MINOR" > "$HOME/BYOND/version.txt"
   cd ~/
 fi
-
-echo "Cloudflare is blocking automated downloads of BYOND. Manual intervention is required."
-echo "Please download ${DOWNLOAD_URL} in your browser and place it at $HOME/BYOND/byond.zip, or upload it as a CI artifact/cache."
-exit 1
-  cd ~/
-fi
-
-echo "Cloudflare is blocking automated downloads of BYOND. Manual intervention is required."
-echo "Please download ${DOWNLOAD_URL} in your browser and place it at $HOME/BYOND/byond.zip, or upload it as a CI artifact/cache."
-exit 1
