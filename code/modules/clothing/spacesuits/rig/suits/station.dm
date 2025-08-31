@@ -404,15 +404,15 @@ Technomancer RIG
 	It is best suited for surviving and combating wild life, but has reasonably decent kevlar plating and impact pads to absorb bullets and energy blasts."
 	icon_state = "response_team"
 	armor_list = list(
-		melee = 15,
-		bullet = 4,
-		energy = 2,
-		bomb = 7,
+		melee = 10,
+		bullet = 8,
+		energy = 6,
+		bomb = 50,
 		bio = 100,
 		rad = 100
 	)
 	seal_delay = 15 //quick deploy for quick recovery
-	slowdown = 0
+	slowdown = 0.25
 	stiffness = MEDIUM_STIFFNESS
 	helm_type = /obj/item/clothing/head/helmet/space/rig/medical
 
@@ -448,11 +448,11 @@ Technomancer RIG
 		energy = 0,
 		bomb = 0,
 		bio = 100,
-		rad = 20
+		rad = 100
 	)
 	req_access = list(access_cmo)
 	seal_delay = 4 //built for speed
-	slowdown = -0.3 //we get a bit more speed than the baseline recovery rig as this is a unique item with exactly 0 armor. This is for zipping around medical, rather than getting in the weeds
+	slowdown = -0.5 //we get a bit more speed than the baseline recovery rig as this is a unique item with exactly 0 armor. This is for zipping around medical, rather than getting in the weeds
 	ablative_armor = 0
 	ablative_max = 0 //no armor, none.
 	helm_type = /obj/item/clothing/head/helmet/space/rig/cmo
