@@ -71,6 +71,16 @@ jobs:
       - name: Compile All Maps
         run: |
           bash tools/ci/install_byond.sh
+          # Verify BYOND zip download
+          if [ ! -f byond.zip ]; then
+            echo "byond.zip not found! Download failed."
+            exit 1
+          fi
+          echo "byond.zip size:"
+          ls -lh byond.zip
+          echo "byond.zip checksum:"
+          sha256sum byond.zip
+          unzip -l byond.zip || { echo "byond.zip is not a valid zip file!"; exit 1; }
           source $HOME/BYOND/byond/bin/byondsetup
           tools/build/build --ci dm -DCIBUILDING -DCITESTING -DALL_MAPS
 
@@ -110,6 +120,16 @@ jobs:
       - name: Compile Tests
         run: |
           bash tools/ci/install_byond.sh
+          # Verify BYOND zip download
+          if [ ! -f byond.zip ]; then
+            echo "byond.zip not found! Download failed."
+            exit 1
+          fi
+          echo "byond.zip size:"
+          ls -lh byond.zip
+          echo "byond.zip checksum:"
+          sha256sum byond.zip
+          unzip -l byond.zip || { echo "byond.zip is not a valid zip file!"; exit 1; }
           source $HOME/BYOND/byond/bin/byondsetup
           tools/build/build --ci dm -DCIBUILDING -DANSICOLORS
       - name: Run Tests
