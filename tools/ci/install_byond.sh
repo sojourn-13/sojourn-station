@@ -8,6 +8,11 @@ echo "BYOND_MINOR: $BYOND_MINOR"
 DOWNLOAD_URL="https://www.byond.com/download/build/${BYOND_MAJOR}/${BYOND_MAJOR}.${BYOND_MINOR}_byond_linux.zip"
 echo "Download URL: $DOWNLOAD_URL"
 
+echo "Testing BYOND download with headers:"
+curl -I "$DOWNLOAD_URL"
+echo "Testing BYOND download with custom user-agent:"
+curl -A "Mozilla/5.0" -I "$DOWNLOAD_URL"
+
 if [ -d "$HOME/BYOND/byond/bin" ] && grep -Fxq "${BYOND_MAJOR}.${BYOND_MINOR}" $HOME/BYOND/version.txt;
 then
   echo "Using cached directory."
