@@ -68421,7 +68421,7 @@
 /obj/structure/sink{
 	pixel_y = -22
 	},
-/obj/machinery/chemical_dispenser,
+/obj/machinery/chemical_dispenser/medical,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/medical/chemistry)
 "mLu" = (
@@ -69203,7 +69203,7 @@
 /obj/structure/sink{
 	pixel_y = -22
 	},
-/obj/machinery/chemical_dispenser,
+/obj/machinery/chemical_dispenser/medical,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/medical/chemistry)
 "mTn" = (

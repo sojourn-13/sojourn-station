@@ -452,3 +452,35 @@
 	level3 = list("pacid") //Now it has chems for what it's supposed to do, and worth upgrading past Picos
 
 	hacked_reagents = list("cleaner","surfactant","silicate","coolant") //So we have a reason to keep you
+
+
+// Medical dispenser: a modification of the default chemical dispenser
+// Inherit the base lists and only override what's necessary.
+/obj/machinery/chemical_dispenser/medical
+	name = "chem dispenser"
+	fancy_hack = TRUE // start with extra chems unlocked
+	accept_beaker = TRUE
+	anchored = TRUE
+	density = TRUE
+	simple_machinery = FALSE
+
+	// Provide Tier-3 components by default so the dispenser behaves as a high-end unit
+	// Keep the list empty at compile-time; instantiate parts at runtime in Initialize().
+	component_parts = list()
+
+	// Instantiate high-tier components at runtime to avoid using `new` at top-level (compile-time error).
+	Initialize()
+		// Call parent Initialize() so the dispenser's base initialization runs.
+		..()
+
+		// If no parts were placed on the machine (map or builder), pre-fill with tier-3 components.
+		if(!component_parts || !length(component_parts))
+			component_parts += new /obj/item/cell/large/moebius/omega(null)
+			component_parts += new /obj/item/stock_parts/capacitor/super(null)
+			component_parts += new /obj/item/stock_parts/matter_bin/super(null)
+			component_parts += new /obj/item/stock_parts/matter_bin/super(null)
+			component_parts += new /obj/item/stock_parts/manipulator/pico(null)
+
+		// Recalculate ratings and ensure UI/icon reflect parts
+		RefreshParts()
+
