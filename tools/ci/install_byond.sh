@@ -3,6 +3,11 @@ set -euo pipefail
 
 source dependencies.sh
 
+echo "BYOND_MAJOR: $BYOND_MAJOR"
+echo "BYOND_MINOR: $BYOND_MINOR"
+DOWNLOAD_URL="https://www.byond.com/download/build/${BYOND_MAJOR}/${BYOND_MAJOR}.${BYOND_MINOR}_byond_linux.zip"
+echo "Download URL: $DOWNLOAD_URL"
+
 if [ -d "$HOME/BYOND/byond/bin" ] && grep -Fxq "${BYOND_MAJOR}.${BYOND_MINOR}" $HOME/BYOND/version.txt;
 then
   echo "Using cached directory."
@@ -11,8 +16,8 @@ else
   rm -rf "$HOME/BYOND"
   mkdir -p "$HOME/BYOND"
   cd "$HOME/BYOND"
-  echo "Downloading BYOND from: http://www.byond.com/download/build/${BYOND_MAJOR}/${BYOND_MAJOR}.${BYOND_MINOR}_byond_linux.zip"
-  curl -fSL "http://www.byond.com/download/build/${BYOND_MAJOR}/${BYOND_MAJOR}.${BYOND_MINOR}_byond_linux.zip" -o byond.zip
+  echo "Downloading BYOND from: $DOWNLOAD_URL"
+  curl -fSL "$DOWNLOAD_URL" -o byond.zip || { echo "BYOND download failed (HTTP error, likely 403). Check BYOND_MAJOR and BYOND_MINOR, and ensure the version is available."; exit 22; }
   if [ ! -f byond.zip ]; then
     echo "byond.zip not found! Download failed."
     exit 1

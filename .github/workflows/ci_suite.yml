@@ -68,6 +68,11 @@ jobs:
         with:
           path: ~/BYOND
           key: ${{ runner.os }}-byond-${{ secrets.CACHE_PURGE_KEY }}
+      - name: Debug BYOND download URL
+        run: |
+          echo "BYOND_MAJOR: $BYOND_MAJOR"
+          echo "BYOND_MINOR: $BYOND_MINOR"
+          echo "Download URL: http://www.byond.com/download/build/${BYOND_MAJOR}/${BYOND_MAJOR}.${BYOND_MINOR}_byond_linux.zip"
       - name: Compile All Maps
         run: |
           bash tools/ci/install_byond.sh
