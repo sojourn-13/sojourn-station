@@ -67,7 +67,6 @@
 		"Bystroye Stroitel'stvo" = list(
 			/obj/item/rcd/industrial = good_data("Industrial RCD", list(-1, 1), 4500),
 			/obj/item/rcd = good_data("RCD", list(1, 2), 2500),
-			/obj/item/gun/matter/launcher/breaker = good_data("\"Breaker\" Deconstructor", list(1, 2), 3000),
 			/obj/item/hatton_magazine= good_data("Hatton TUBE", list(3, 5), 1000)
 		),
 
