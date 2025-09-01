@@ -22,7 +22,9 @@
 			/obj/machinery/portable_atmospherics/canister/oxygen,
 			/obj/item/tank/plasma,
 			/obj/machinery/pipedispenser/orderable,
-			/obj/machinery/pipedispenser/disposal/orderable
+			/obj/machinery/pipedispenser/disposal/orderable,
+			/obj/machinery/portable_atmospherics/powered/pump,
+			/obj/machinery/portable_atmospherics/powered/scrubber,
 		),
 		"Energiya" = list(
 			/obj/item/cell/large,
@@ -65,6 +67,7 @@
 		"Bystroye Stroitel'stvo" = list(
 			/obj/item/rcd/industrial = good_data("Industrial RCD", list(-1, 1), 4500),
 			/obj/item/rcd = good_data("RCD", list(1, 2), 2500),
+			/obj/item/gun/matter/launcher/breaker = good_data("\"Breaker\" Deconstructor", list(1, 2), 3000),
 			/obj/item/hatton_magazine= good_data("Hatton TUBE", list(3, 5), 1000)
 		),
 
