@@ -78,7 +78,7 @@ var/list/adminfaxes = list()	//cache for faxes that have been sent to admins
 		if(copyitem)
 			dat += "<a href ='byond://?src=\ref[src];remove=1'>Remove Item</a><br>"
 
-	user << browse(dat, "window=copier")
+	user << browse(HTML_SKELETON(dat), "window=copier")
 	onclose(user, "copier")
 	return
 

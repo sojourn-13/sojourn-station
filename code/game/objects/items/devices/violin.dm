@@ -239,7 +239,7 @@
 	if(!isliving(user) || user.stat || user.restrained() || user.lying)	return
 	user.set_machine(src)
 
-	var/dat = "<HEAD><TITLE>Violin</TITLE></HEAD><BODY>"
+	var/dat = ""
 
 	if(song)
 		if(song.lines.len > 0 && !(playing))
@@ -283,8 +283,7 @@
 					"}
 		else
 			dat += "<A href='?src=\ref[src];help=2'>Show Help</A><BR>"
-	dat += "</BODY></HTML>"
-	user << browse(dat, "window=violin;size=700x300")
+	user << browse(HTML_SKELETON_TITLE("Violin",dat), "window=violin;size=700x300")
 	onclose(user, "violin")
 
 /obj/item/device/violin/Topic(href, href_list)

@@ -3,12 +3,10 @@
 	if (!usr.client.holder)
 		return
 	log_admin("[key_name(usr)] checked the player panel.")
-	var/dat = "<html><head><meta http-equiv='X-UA-Compatible' content='IE=edge; charset=UTF-8'/><title>Player Panel</title></head>"
-
+	var/head = "<head>[HTML_SKELETON_HEAD]"
 	//javascript, the part that does most of the work~
-	dat += {"
+	head += {"
 
-		<head>
 			<script type='text/javascript'>
 
 				var locked_tabs = new Array();
@@ -183,15 +181,13 @@
 
 			</script>
 		</head>
-
-
 	"}
 
 	//body tag start + onload and onkeypress (onkeyup) javascript event calls
-	dat += "<body onload='selectTextField(); updateSearch();' onkeyup='updateSearch();'>"
+	var/body = "<body onload='selectTextField(); updateSearch();' onkeyup='updateSearch();'>"
 
 	//title + search bar
-	dat += {"
+	body += {"
 
 		<table width='560' align='center' cellspacing='0' cellpadding='5' id='maintable'>
 			<tr id='title_tr'>
@@ -211,7 +207,7 @@
 	"}
 
 	//player table header
-	dat += {"
+	body += {"
 		<span id='maintable_data_archive'>
 		<table width='560' align='center' cellspacing='0' cellpadding='5' id='maintable_data'>"}
 
@@ -288,7 +284,7 @@
 			M_key = replacetext(M_key, "\\", "")
 
 			//output for each mob
-			dat += {"
+			body += {"
 
 				<tr id='data[i]' name='[i]' onClick="addToLocked('item[i]','data[i]','notice_span[i]')">
 					<td align='center' bgcolor='[color]'>
@@ -308,7 +304,7 @@
 
 
 	//player table ending
-	dat += {"
+	body += {"
 		</table>
 		</span>
 
@@ -316,10 +312,11 @@
 			var maintable = document.getElementById("maintable_data_archive");
 			var complete_list = maintable.innerHTML;
 		</script>
-	</body></html>
+	</body>
 	"}
 
-	usr << browse(dat, "window=players;size=600x480")
+	usr << browse(HTML_SKELETON_RAW(body, head), "window=players;size=600x480")
+
 
 
 /datum/admins/proc/storyteller_panel()
