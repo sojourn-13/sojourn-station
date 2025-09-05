@@ -18,19 +18,18 @@
 	force = 0
 	required_type = /obj/mecha
 	matter = list(MATERIAL_STEEL = 15) //Its only 30 damage compared to the 15 steel 60 damage sword
-	var/extra_armor = 15
+	var/damage_reduction = 0.1
 	selectable = FALSE
 
 /obj/item/mecha_parts/mecha_equipment/fist_plating/attach(obj/mecha/M)
 	. = ..()
-	chassis.damage_absorption[BRUTE] += extra_armor
-	chassis.damage_absorption[ARMOR_MELEE] += extra_armor
-
+	for(var/i in chassis.damage_absorption)
+		chassis.damage_absorption[i] -= damage_reduction
 	update_chassis_page()
 
 /obj/item/mecha_parts/mecha_equipment/fist_plating/detach(atom/moveto=null)
-	chassis.damage_absorption[BRUTE] -= extra_armor
-	chassis.damage_absorption[ARMOR_MELEE] -= extra_armor
+	for(var/i in chassis.damage_absorption)
+		chassis.damage_absorption[i] += damage_reduction
 	. = ..()
 
 /obj/item/mecha_parts/mecha_equipment/fist_plating/get_equip_info()
@@ -47,7 +46,6 @@
 	range = 0
 	var/deflect_coeff = 1
 	var/damage_coeff = 1
-	var/extra_armor = 0
 	var/melee
 	selectable = FALSE
 
@@ -90,7 +88,6 @@
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_SILVER = 5)
 	deflect_coeff = 1.15
 	damage_coeff = 0.8
-	extra_armor = 10
 	melee = 1
 	price_tag = 600
 
@@ -98,7 +95,6 @@
 	if(..())
 		chassis.m_deflect_coeff *= deflect_coeff
 		chassis.m_damage_coeff *= damage_coeff
-		chassis.m_armor_addition += extra_armor
 		chassis.mhit_power_use += energy_drain
 
 
@@ -106,7 +102,6 @@
 	if(..())
 		chassis.m_deflect_coeff /= deflect_coeff
 		chassis.m_damage_coeff /= damage_coeff
-		chassis.m_armor_addition -= extra_armor
 		chassis.mhit_power_use -= energy_drain
 
 
@@ -118,7 +113,6 @@
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_GOLD = 5)
 	deflect_coeff = 1.15
 	damage_coeff = 0.8
-	extra_armor = 10
 	melee = 0
 	price_tag = 600
 
@@ -126,14 +120,12 @@
 	if(..())
 		chassis.r_deflect_coeff *= deflect_coeff
 		chassis.r_damage_coeff *= damage_coeff
-		chassis.r_armor_addition += extra_armor
 		chassis.rhit_power_use += energy_drain
 
 /obj/item/mecha_parts/mecha_equipment/armor_booster/antiproj_armor_booster/deactivate_boost()
 	if(..())
 		chassis.r_deflect_coeff /= deflect_coeff
 		chassis.r_damage_coeff /= damage_coeff
-		chassis.r_armor_addition -= extra_armor
 		chassis.rhit_power_use -= energy_drain
 
 
