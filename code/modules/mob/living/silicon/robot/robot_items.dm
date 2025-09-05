@@ -473,7 +473,8 @@
 						  QUALITY_BOLT_TURNING = 40,
 						  QUALITY_CUTTING = 150, //So were faster at cutting up boddies
 						  QUALITY_SAWING = 30,
-						  QUALITY_SCREW_DRIVING = 40)
+						  QUALITY_SCREW_DRIVING = 40,
+						  QUALITY_DIGGING = 80)
 
 /obj/item/tool/robotic_omni/sec
 	name = "Security omnitool"
