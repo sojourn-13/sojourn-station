@@ -14603,6 +14603,12 @@
 /obj/structure/closet/crate{
 	icon_state = "medical_lootcrate"
 	},
+/obj/random/medical_lowcost_handmade,
+/obj/random/medical_lowcost_handmade,
+/obj/random/medical_lowcost_handmade,
+/obj/random/medical_lowcost_handmade,
+/obj/random/medical_lowcost_handmade,
+/obj/random/medical_lowcost_handmade,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/medical/sleeper)
 "cNG" = (
@@ -45792,8 +45798,8 @@
 	pixel_y = 3
 	},
 /obj/item/storage/box/beakers,
-/obj/item/tool/screwdriver,
 /obj/structure/table/reinforced,
+/obj/item/tool/screwdriver,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/medical/chemistry)
 "ivl" = (
@@ -50811,14 +50817,6 @@
 /obj/random/material_resources/low_chance,
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/quartermaster/miningdock)
-"jtG" = (
-/obj/machinery/door/airlock/command{
-	name = "Telecommunications";
-	req_access = list(61)
-	},
-/obj/structure/catwalk,
-/turf/simulated/floor/plating/under,
-/area/nadezhda/command/hallway)
 "jtI" = (
 /obj/structure/window/reinforced{
 	dir = 4
@@ -83978,14 +83976,6 @@
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/turret_protected/ai_upload)
 "pBl" = (
-/obj/item/stock_parts/manipulator,
-/obj/item/circuitboard/vending,
-/obj/item/tool/screwdriver,
-/obj/item/stack/material/steel{
-	amount = 8
-	},
-/obj/item/stock_parts/console_screen,
-/obj/item/stock_parts/matter_bin,
 /obj/item/stack/cable_coil/blue,
 /obj/structure/table/rack/shelf,
 /obj/machinery/light/small{
@@ -83995,6 +83985,19 @@
 	pixel_y = 32
 	},
 /obj/item/reagent_containers/spray/cleaner,
+/obj/item/stock_parts/capacitor/super,
+/obj/item/stock_parts/capacitor/super,
+/obj/item/stock_parts/matter_bin/super,
+/obj/item/stock_parts/matter_bin/super,
+/obj/item/stock_parts/matter_bin/super,
+/obj/item/stock_parts/matter_bin/super,
+/obj/item/stock_parts/manipulator/pico,
+/obj/item/stock_parts/manipulator/pico,
+/obj/item/cell/medium/moebius/omega,
+/obj/item/cell/medium/moebius/omega,
+/obj/item/storage/rped/compact,
+/obj/item/tool/multitool/hacktool,
+/obj/item/storage/toolbox/mechanical,
 /turf/simulated/floor/tiled/white/monofloor,
 /area/nadezhda/medical/chemistry)
 "pBv" = (
@@ -95912,14 +95915,6 @@
 	},
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/nadezhda/engineering/engine_room)
-"rMD" = (
-/obj/structure/catwalk,
-/obj/machinery/door/airlock/command{
-	name = "Telecommunications";
-	req_access = list(61)
-	},
-/turf/simulated/floor/plating/under,
-/area/nadezhda/command/hallway)
 "rME" = (
 /obj/structure/low_wall,
 /mob/living/simple/jungle_bird,
@@ -195347,7 +195342,7 @@ pFw
 cZb
 cZb
 vsb
-jtG
+xuY
 qkl
 vsb
 cZb
@@ -197165,7 +197160,7 @@ tad
 tad
 cZb
 vsb
-jtG
+xuY
 qkl
 vsb
 egP
@@ -198781,7 +198776,7 @@ cZb
 cZb
 cZb
 vsb
-jtG
+xuY
 qkl
 vsb
 bUJ
@@ -199595,13 +199590,13 @@ tXr
 fdU
 ubE
 ubE
-rMD
+xuY
 ubE
 spC
 aid
 ubE
 ubE
-jtG
+xuY
 ubE
 ubE
 spC
@@ -199609,7 +199604,7 @@ aid
 ubE
 ubE
 ubE
-jtG
+xuY
 erT
 hLD
 uTo

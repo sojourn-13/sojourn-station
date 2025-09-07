@@ -32,7 +32,7 @@ GLOBAL_LIST_INIT(turret_channels, new/list(5))
 
 
 /obj/machinery/tesla_turret
-	name = "Blue-Lightning Tesla Coil Turret"
+	name = "Soteria Tesla Coil Turret"
 	desc = "An experimental Tesla Coil Turret for point-defense and pest control, developed as Soteria's answer to the Absolute's Obelisks. Bears a Soteria Logo on its central Pylon."
 	anchored = TRUE
 	density = TRUE
@@ -72,7 +72,7 @@ GLOBAL_LIST_INIT(turret_channels, new/list(5))
 	var/check_weapons = FALSE	//checks if it can shoot people that have a weapon they aren't authorized to have
 	var/check_access = FALSE	//if this is active, the turret shoots everything that does not meet the access requirements
 	var/check_ids = FALSE		//if this is active, the turret shoots everything that does have a valid ID.
-	var/check_anomalies = TRUE	//checks if it can shoot at unidentified lifeforms (ie xenos)
+	var/check_anomalies = FALSE	//checks if it can shoot at unidentified lifeforms (ie xenos)
 	var/check_synth	= FALSE 	//if active, will shoot at anything not an AI or cyborg
 	var/ailock = FALSE 			// AI cannot use this
 
