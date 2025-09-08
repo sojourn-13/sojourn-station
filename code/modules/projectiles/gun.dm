@@ -609,9 +609,10 @@
 				var/obj/item/projectile/P = projectile
 				P.proj_color = projectile_color
 
-		if(process_projectile(projectile, user, target, user.targeted_organ, clickparams))
-			handle_post_fire(user, target, pointblank, reflex, projectile)
-			update_icon()
+		if(0 >= i) //Wait till the full burst of the gun before doing this.
+			if(process_projectile(projectile, user, target, user.targeted_organ, clickparams))
+				handle_post_fire(user, target, pointblank, reflex, projectile)
+				update_icon()
 
 		if(fire_animatio) //Are bullet amination check
 			if(silenced)
