@@ -7,7 +7,7 @@
 	fire_sound = 'sound/weapons/guns/fire/m41_shoot.ogg'
 	silenced = TRUE
 	w_class = ITEM_SIZE_BULKY
-	slot_flags = SLOT_BACK|SLOT_BELT
+	slot_flags = SLOT_BACK|SLOT_BELT|SLOT_HOLSTER
 	caliber = "10x24"
 	ammo_type =  /obj/item/ammo_casing/c10x24
 	load_method = SINGLE_CASING|MAGAZINE
