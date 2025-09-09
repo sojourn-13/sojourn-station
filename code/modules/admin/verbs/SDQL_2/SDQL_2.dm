@@ -209,7 +209,7 @@ ADMIN_VERB_ADD(/client/proc/SDQL2_query, R_DEBUG, FALSE)
 
 					if (text)
 						var/static/result_offset = 0
-						usr << browse(text, "window=SDQL-result-[result_offset++]")
+						usr << browse(HTML_SKELETON(text), "window=SDQL-result-[result_offset++]")
 					else
 						to_chat(usr, "Query finished without any results.")
 
