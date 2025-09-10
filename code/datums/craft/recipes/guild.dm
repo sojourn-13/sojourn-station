@@ -1077,7 +1077,7 @@ My deeplest sorrow for this keepsake of the rnd's hoard
 		list(QUALITY_WELDING, 40, "time" = 10),
 		list(/obj/item/stack/cable_coil, 10, "time" = 10),
 		list(QUALITY_HAMMERING, 40, "time" = 10),
-		list(QUALITY_SAWING, 60, "time" = 10)
+		list(QUALITY_SAWING, 60, "time" = 10),
 		list(CRAFT_MATERIAL, 4, MATERIAL_PLATINUM, "time" = 10),
 		list(QUALITY_SCREW_DRIVING, 40, "time" = 15)
 	)
