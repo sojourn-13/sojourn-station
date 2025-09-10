@@ -965,70 +965,150 @@ My deeplest sorrow for this keepsake of the rnd's hoard
 	name = "Hand Cast Matter Bin"
 	result = /obj/item/stock_parts/matter_bin/handmade
 	steps = list(
-		list(/obj/item/stock_parts/matter_bin/super, 1),
-		list(QUALITY_SCREW_DRIVING, 10, 70),
-		list(CRAFT_MATERIAL, 1, MATERIAL_PLASTEEL), //Quite useless in most cases so were cheaper
-		list(CRAFT_MATERIAL, 1, MATERIAL_PLASMAGLASS),
-		list(QUALITY_BOLT_TURNING, 10, 70),
-		list(QUALITY_WELDING, 40),
-		list(QUALITY_HAMMERING, 40),
-		list(QUALITY_SAWING, 60)
+		list(/obj/item/stock_parts/matter_bin/super, 1, "time" = 10),
+		list(QUALITY_SCREW_DRIVING, 10, 70, "time" = 10),
+		list(CRAFT_MATERIAL, 1, MATERIAL_PLASTEEL, "time" = 10),
+		list(CRAFT_MATERIAL, 1, MATERIAL_PLASMAGLASS, "time" = 10),
+		list(QUALITY_BOLT_TURNING, 10, 70, "time" = 10),
+		list(QUALITY_WELDING, 40, "time" = 10),
+		list(QUALITY_HAMMERING, 40, "time" = 10),
+		list(QUALITY_SAWING, 60, "time" = 10)
 	)
 
 /datum/craft_recipe/guild/guild_manip
 	name = "Perfected Forged Manipulator"
 	result = /obj/item/stock_parts/manipulator/handmade
 	steps = list(
-		list(/obj/item/stock_parts/manipulator/pico, 1),
-		list(QUALITY_SCREW_DRIVING, 40, 70),
-		list(CRAFT_MATERIAL, 2, MATERIAL_PLASTEEL), //Are main thing were exspensive do to being the main crafted item
-		list(CRAFT_MATERIAL, 2, MATERIAL_PLASTIC),
-		list(QUALITY_BOLT_TURNING, 10, 70),
-		list(QUALITY_WELDING, 40),
-		list(/obj/item/stack/cable_coil, 10),
-		list(QUALITY_HAMMERING, 40),
-		list(QUALITY_SAWING, 60)
+		list(/obj/item/stock_parts/manipulator/pico, 1, "time" = 10),
+		list(QUALITY_SCREW_DRIVING, 40, 70, "time" = 10),
+		list(CRAFT_MATERIAL, 2, MATERIAL_PLASTEEL, "time" = 10),
+		list(CRAFT_MATERIAL, 2, MATERIAL_PLASTIC, "time" = 10),
+		list(QUALITY_BOLT_TURNING, 10, 70, "time" = 10),
+		list(QUALITY_WELDING, 40, "time" = 10),
+		list(/obj/item/stack/cable_coil, 10, "time" = 10),
+		list(QUALITY_HAMMERING, 40, "time" = 10),
+		list(QUALITY_SAWING, 60, "time" = 10)
 	)
 
 /datum/craft_recipe/guild/guild_laser
 	name = "Handmade Perfected Micro-Laser"
 	result = /obj/item/stock_parts/micro_laser/handmade
 	steps = list(
-		list(/obj/item/stock_parts/micro_laser/ultra, 1),
-		list(QUALITY_SCREW_DRIVING, 40, 70),
-		list(CRAFT_MATERIAL, 1, MATERIAL_PLASMAGLASS),
-		list(CRAFT_MATERIAL, 1, MATERIAL_RGLASS),
-		list(QUALITY_BOLT_TURNING, 10, 70),
-		list(QUALITY_WELDING, 40),
-		list(QUALITY_SAWING, 60)
+		list(/obj/item/stock_parts/micro_laser/ultra, 1, "time" = 10),
+		list(QUALITY_SCREW_DRIVING, 40, 70, "time" = 10),
+		list(CRAFT_MATERIAL, 1, MATERIAL_PLASMAGLASS, "time" = 10),
+		list(CRAFT_MATERIAL, 1, MATERIAL_RGLASS, "time" = 10),
+		list(QUALITY_BOLT_TURNING, 10, 70, "time" = 10),
+		list(QUALITY_WELDING, 40, "time" = 10),
+		list(QUALITY_SAWING, 60, "time" = 10)
 	)
 
 /datum/craft_recipe/guild/guild_scanner
 	name = "Manually Perfected Scanning Module"
 	result = /obj/item/stock_parts/scanning_module/handmade
 	steps = list(
-		list(/obj/item/stock_parts/scanning_module/phasic, 1),
-		list(QUALITY_SCREW_DRIVING, 40, 70),
-		list(CRAFT_MATERIAL, 1, MATERIAL_GOLD),
-		list(QUALITY_BOLT_TURNING, 10, 70),
-		list(QUALITY_WELDING, 40),
-		list(CRAFT_MATERIAL, 1, MATERIAL_SILVER),
-		list(QUALITY_SAWING, 60)
+		list(/obj/item/stock_parts/scanning_module/phasic, 1, "time" = 10),
+		list(QUALITY_SCREW_DRIVING, 40, 70, "time" = 10),
+		list(CRAFT_MATERIAL, 1, MATERIAL_GOLD, "time" = 10),
+		list(QUALITY_BOLT_TURNING, 10, 70, "time" = 10),
+		list(QUALITY_WELDING, 40, "time" = 10),
+		list(CRAFT_MATERIAL, 1, MATERIAL_SILVER, "time" = 10),
+		list(QUALITY_SAWING, 60, "time" = 10)
 	)
 
 /datum/craft_recipe/guild/guild_capacitor
 	name = "Crafted Ultra Capacitor"
 	result = /obj/item/stock_parts/capacitor/handmade
 	steps = list(
-		list(/obj/item/stock_parts/capacitor/super, 1),
-		list(QUALITY_SCREW_DRIVING, 40, 70),
-		list(CRAFT_MATERIAL, 1, MATERIAL_GOLD),
-		list(QUALITY_BOLT_TURNING, 10, 70),
-		list(QUALITY_WELDING, 40),
-		list(CRAFT_MATERIAL, 1, MATERIAL_SILVER),
-		list(QUALITY_SAWING, 60)
+		list(/obj/item/stock_parts/capacitor/super, 1, "time" = 10),
+		list(QUALITY_SCREW_DRIVING, 40, 70, "time" = 10),
+		list(CRAFT_MATERIAL, 1, MATERIAL_GOLD, "time" = 10),
+		list(QUALITY_BOLT_TURNING, 10, 70, "time" = 10),
+		list(QUALITY_WELDING, 40, "time" = 10),
+		list(CRAFT_MATERIAL, 1, MATERIAL_SILVER, "time" = 10),
+		list(QUALITY_SAWING, 60, "time" = 10)
 	)
 
+
+// --- Advanced Greyson stock parts (craftable by Artificer's Guild) ---
+
+/datum/craft_recipe/guild/greyson_capacitor_advanced
+	name = "Greyson positronic hyper capacitor"
+	result = /obj/item/stock_parts/capacitor/one_star/advanced
+	icon_state = "electronic"
+	steps = list(
+		list(/obj/item/stock_parts/capacitor/one_star, 1, "time" = 10),
+		list(QUALITY_SCREW_DRIVING, 40, 70, "time" = 10),
+		list(CRAFT_MATERIAL, 1, MATERIAL_GOLD, "time" = 10),
+		list(QUALITY_BOLT_TURNING, 10, 70, "time" = 10),
+		list(QUALITY_WELDING, 40, "time" = 10),
+		list(CRAFT_MATERIAL, 1, MATERIAL_SILVER, "time" = 10),
+		list(QUALITY_SAWING, 60, "time" = 10),
+		list(CRAFT_MATERIAL, 4, MATERIAL_PLATINUM, "time" = 10),
+		list(QUALITY_SCREW_DRIVING, 40, "time" = 15)
+	)
+
+/datum/craft_recipe/guild/greyson_scanner_advanced
+	name = "Greyson positronic multi-phasic scanning module"
+	result = /obj/item/stock_parts/scanning_module/one_star/advanced
+	icon_state = "electronic"
+	steps = list(
+		list(/obj/item/stock_parts/scanning_module/one_star, 1, "time" = 10),
+		list(QUALITY_SCREW_DRIVING, 40, 70, "time" = 10),
+		list(CRAFT_MATERIAL, 1, MATERIAL_GOLD, "time" = 10),
+		list(QUALITY_BOLT_TURNING, 10, 70, "time" = 10),
+		list(QUALITY_WELDING, 40, "time" = 10),
+		list(CRAFT_MATERIAL, 1, MATERIAL_SILVER, "time" = 10),
+		list(QUALITY_SAWING, 60, "time" = 10),
+		list(CRAFT_MATERIAL, 4, MATERIAL_PLATINUM, "time" = 10),
+		list(QUALITY_SCREW_DRIVING, 40, "time" = 15)
+	)
+
+/datum/craft_recipe/guild/greyson_manipulator_advanced
+	name = "Greyson positronic femto manipulator"
+	result = /obj/item/stock_parts/manipulator/one_star/advanced
+	icon_state = "electronic"
+	steps = list(
+		list(/obj/item/stock_parts/manipulator/one_star, 1, "time" = 10),
+		list(CRAFT_MATERIAL, 6, MATERIAL_STEEL, "time" = 10),
+		list(CRAFT_MATERIAL, 6, MATERIAL_PLASTIC, "time" = 10),
+		list(CRAFT_MATERIAL, 4, MATERIAL_PLATINUM, "time" = 10),
+		list(QUALITY_SCREW_DRIVING, 40, "time" = 15)
+	)
+
+/datum/craft_recipe/guild/greyson_laser_advanced
+	name = "Greyson positronic nano-lensed micro-laser"
+	result = /obj/item/stock_parts/micro_laser/one_star/advanced
+	icon_state = "electronic"
+	steps = list(
+		list(/obj/item/stock_parts/micro_laser/one_star, 1, "time" = 10),
+		list(QUALITY_SCREW_DRIVING, 40, 70, "time" = 10),
+		list(CRAFT_MATERIAL, 1, MATERIAL_PLASMAGLASS, "time" = 10),
+		list(CRAFT_MATERIAL, 1, MATERIAL_RGLASS, "time" = 10),
+		list(QUALITY_BOLT_TURNING, 10, 70, "time" = 10),
+		list(QUALITY_WELDING, 40, "time" = 10),
+		list(QUALITY_SAWING, 60, "time" = 10),
+		list(CRAFT_MATERIAL, 4, MATERIAL_PLATINUM, "time" = 10),
+		list(QUALITY_SCREW_DRIVING, 40, "time" = 15)
+	)
+
+/datum/craft_recipe/guild/greyson_matter_advanced
+	name = "Greyson positronic ultra-capacity matter bin"
+	result = /obj/item/stock_parts/matter_bin/one_star/advanced
+	icon_state = "electronic"
+	steps = list(
+		list(/obj/item/stock_parts/matter_bin/one_star, 1, "time" = 10),
+		list(QUALITY_SCREW_DRIVING, 10, 70, "time" = 10),
+		list(CRAFT_MATERIAL, 1, MATERIAL_PLASTEEL, "time" = 10),
+		list(CRAFT_MATERIAL, 1, MATERIAL_PLASMAGLASS, "time" = 10),
+		list(QUALITY_BOLT_TURNING, 10, 70, "time" = 10),
+		list(QUALITY_WELDING, 40, "time" = 10),
+		list(QUALITY_HAMMERING, 40, "time" = 10),
+		list(QUALITY_SAWING, 60, "time" = 10),
+		list(CRAFT_MATERIAL, 4, MATERIAL_PLATINUM, "time" = 10),
+		list(QUALITY_SCREW_DRIVING, 40, "time" = 15)
+	)
+/* Advanced versions of the basic stock parts, requiring 2 of the base part and more materials and crafting time
 /datum/craft_recipe/guild/guild_bin_alt
 	name = "Hand Cast Matter Bin Alt"
 	result = /obj/item/stock_parts/matter_bin/handmade
@@ -1042,7 +1122,7 @@ My deeplest sorrow for this keepsake of the rnd's hoard
 		list(QUALITY_HAMMERING, 40),
 		list(QUALITY_SAWING, 60)
 	)
-/*
+
 /datum/craft_recipe/guild/guild_manip_alt
 	name = "Forged Manipulator Alt"
 	result = /obj/item/stock_parts/manipulator/handmade
@@ -1102,71 +1182,152 @@ My deeplest sorrow for this keepsake of the rnd's hoard
 	name = "Box of Cast Matter Bins"
 	result = /obj/item/storage/box/guild_bin
 	steps = list(
-		list(/obj/item/stock_parts/matter_bin/super, 4),
+		list(/obj/item/stock_parts/matter_bin/super, 4, "time" = 10),
 		list(QUALITY_SCREW_DRIVING, 10, 70),
-		list(CRAFT_MATERIAL, 4, MATERIAL_PLASTEEL),
-		list(CRAFT_MATERIAL, 4, MATERIAL_PLASMAGLASS),
+		list(CRAFT_MATERIAL, 4, MATERIAL_PLASTEEL, "time" = 10),
+		list(CRAFT_MATERIAL, 4, MATERIAL_PLASMAGLASS, "time" = 10),
 		list(QUALITY_BOLT_TURNING, 10, 70),
 		list(QUALITY_WELDING, 40),
 		list(QUALITY_HAMMERING, 40),
 		list(QUALITY_SAWING, 60),
-		list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD)
+		list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD, "time" = 10)
 	)
 
 /datum/craft_recipe/guild/guild_manip_box
 	name = "Box of Forged Manipulators"
 	result = /obj/item/storage/box/guild_manip
 	steps = list(
-		list(/obj/item/stock_parts/manipulator/pico, 4),
+		list(/obj/item/stock_parts/manipulator/pico, 4, "time" = 10),
 		list(QUALITY_SCREW_DRIVING, 40, 70),
-		list(CRAFT_MATERIAL, 8, MATERIAL_PLASTEEL),
-		list(CRAFT_MATERIAL, 8, MATERIAL_PLASTIC),
+		list(CRAFT_MATERIAL, 8, MATERIAL_PLASTEEL, "time" = 10),
+		list(CRAFT_MATERIAL, 8, MATERIAL_PLASTIC, "time" = 10),
 		list(QUALITY_BOLT_TURNING, 10, 70),
 		list(QUALITY_WELDING, 40),
-		list(/obj/item/stack/cable_coil, 10),
+		list(/obj/item/stack/cable_coil, 10, "time" = 10),
 		list(QUALITY_HAMMERING, 40),
 		list(QUALITY_SAWING, 60),
-		list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD)
+		list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD, "time" = 10)
 	)
 
 /datum/craft_recipe/guild/guild_laser_box
 	name = "Box of Perfected Micro-Lasers"
 	result = /obj/item/storage/box/guild_laser
 	steps = list(
-		list(/obj/item/stock_parts/micro_laser/ultra, 4),
+		list(/obj/item/stock_parts/micro_laser/ultra, 4, "time" = 10),
 		list(QUALITY_SCREW_DRIVING, 40, 70),
-		list(CRAFT_MATERIAL, 4, MATERIAL_PLASMAGLASS),
-		list(CRAFT_MATERIAL, 4, MATERIAL_RGLASS),
+		list(CRAFT_MATERIAL, 4, MATERIAL_PLASMAGLASS, "time" =  10),
+		list(CRAFT_MATERIAL, 4, MATERIAL_RGLASS, "time" = 10),
 		list(QUALITY_BOLT_TURNING, 10, 70),
 		list(QUALITY_WELDING, 40),
 		list(QUALITY_SAWING, 60),
-		list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD)
+		list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD, "time" = 10)
 	)
 
 /datum/craft_recipe/guild/guild_scanner_box
 	name = "Box of Perfected Scanning Modules"
 	result = /obj/item/storage/box/guild_scanner
 	steps = list(
-		list(/obj/item/stock_parts/scanning_module/phasic, 4),
+		list(/obj/item/stock_parts/scanning_module/phasic, 4, "time" = 10),
 		list(QUALITY_SCREW_DRIVING, 40, 70),
-		list(CRAFT_MATERIAL, 4, MATERIAL_GOLD),
+		list(CRAFT_MATERIAL, 4, MATERIAL_GOLD, "time" = 10),
 		list(QUALITY_BOLT_TURNING, 10, 70),
 		list(QUALITY_WELDING, 40),
-		list(CRAFT_MATERIAL, 4, MATERIAL_SILVER),
+		list(CRAFT_MATERIAL, 4, MATERIAL_SILVER, "time" = 10),
 		list(QUALITY_SAWING, 60),
-		list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD)
+		list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD, "time" = 10)
 	)
 
 /datum/craft_recipe/guild/guild_capacitor_box
 	name = "Box of Crafted Ultra Capacitors"
 	result = /obj/item/storage/box/guild_capacitor
 	steps = list(
-		list(/obj/item/stock_parts/capacitor/super, 4),
+		list(/obj/item/stock_parts/capacitor/super, 4, "time" = 10),
 		list(QUALITY_SCREW_DRIVING, 40, 70),
-		list(CRAFT_MATERIAL, 4, MATERIAL_GOLD),
+		list(CRAFT_MATERIAL, 4, MATERIAL_GOLD, "time" = 10),
 		list(QUALITY_BOLT_TURNING, 10, 70),
 		list(QUALITY_WELDING, 40),
-		list(CRAFT_MATERIAL, 4, MATERIAL_SILVER),
+		list(CRAFT_MATERIAL, 4, MATERIAL_SILVER, "time" = 10),
 		list(QUALITY_SAWING, 60),
-		list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD)
+		list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD, "time" = 10)
 	)
+
+/datum/craft_recipe/guild/greyson_capacitor_box
+    name = "Box of Greyson Hyper Capacitors"
+    result = /obj/item/storage/box/greyson_capacitor
+    steps = list(
+        list(/obj/item/stock_parts/capacitor/one_star, 4, "time" = 10),
+		list(QUALITY_SCREW_DRIVING, 40, 70),
+		list(CRAFT_MATERIAL, 4, MATERIAL_GOLD, "time" = 10),
+		list(QUALITY_BOLT_TURNING, 10, 70),
+		list(QUALITY_WELDING, 40),
+		list(CRAFT_MATERIAL, 4, MATERIAL_SILVER, "time" = 10),
+		list(QUALITY_SAWING, 60),
+		list(CRAFT_MATERIAL, 1, MATERIAL_PLATINUM, "time" = 10),
+        list(QUALITY_SCREW_DRIVING, 40, "time" = 15),
+        list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD, "time" = 10)
+    )
+
+/datum/craft_recipe/guild/greyson_scanner_box
+    name = "Box of Greyson Scanning Modules"
+    result = /obj/item/storage/box/greyson_scanner
+    steps = list(
+        list(/obj/item/stock_parts/scanning_module/one_star, 4, "time" = 10),
+		list(QUALITY_SCREW_DRIVING, 40, 70),
+		list(CRAFT_MATERIAL, 4, MATERIAL_GOLD, "time" = 10),
+		list(QUALITY_BOLT_TURNING, 10, 70),
+		list(QUALITY_WELDING, 40),
+		list(CRAFT_MATERIAL, 4, MATERIAL_SILVER, "time" = 10),
+		list(QUALITY_SAWING, 60),
+		list(CRAFT_MATERIAL, 1, MATERIAL_PLATINUM, "time" = 10),
+        list(QUALITY_SCREW_DRIVING, 40, "time" = 15),
+        list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD, "time" = 10)
+    )
+
+/datum/craft_recipe/guild/greyson_manipulator_box
+    name = "Box of Greyson Manipulators"
+    result = /obj/item/storage/box/greyson_manip
+    steps = list(
+        list(/obj/item/stock_parts/manipulator/one_star, 4, "time" = 10),
+		list(/obj/item/stock_parts/manipulator/pico, 4, "time" = 10),
+		list(QUALITY_SCREW_DRIVING, 40, 70),
+		list(CRAFT_MATERIAL, 8, MATERIAL_PLASTEEL, "time" = 10),
+		list(CRAFT_MATERIAL, 8, MATERIAL_PLASTIC, "time" = 10),
+		list(QUALITY_BOLT_TURNING, 10, 70),
+		list(QUALITY_WELDING, 40),
+		list(/obj/item/stack/cable_coil, 10, "time" = 10),
+		list(QUALITY_HAMMERING, 40),
+		list(QUALITY_SAWING, 60),
+		list(CRAFT_MATERIAL, 1, MATERIAL_PLATINUM, "time" = 10),
+        list(QUALITY_SCREW_DRIVING, 40, "time" = 15),
+        list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD, "time" = 10)
+    )
+
+/datum/craft_recipe/guild/greyson_laser_box
+    name = "Box of Greyson Micro-Lasers"
+    result = /obj/item/storage/box/greyson_laser
+    steps = list(
+        list(/obj/item/stock_parts/micro_laser/one_star, 4, "time" = 10),
+        list(CRAFT_MATERIAL, 4, MATERIAL_PLASMAGLASS, "time" = 10),
+        list(CRAFT_MATERIAL, 4, MATERIAL_RGLASS, "time" = 10),
+        list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD, "time" = 10),
+		list(CRAFT_MATERIAL, 1, MATERIAL_PLATINUM, "time" = 10),
+        list(QUALITY_SCREW_DRIVING, 40, "time" = 15),
+        list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD, "time" = 10)
+    )
+
+/datum/craft_recipe/guild/greyson_matter_box
+    name = "Box of Greyson Matter Bins"
+    result = /obj/item/storage/box/greyson_bin
+    steps = list(
+	list(/obj/item/stock_parts/matter_bin/super, 4, "time" = 10),
+		list(QUALITY_SCREW_DRIVING, 10, 70),
+		list(CRAFT_MATERIAL, 4, MATERIAL_PLASTEEL, "time" = 10),
+		list(CRAFT_MATERIAL, 4, MATERIAL_PLASMAGLASS, "time" = 10),
+		list(QUALITY_BOLT_TURNING, 10, 70),
+		list(QUALITY_WELDING, 40),
+		list(QUALITY_HAMMERING, 40),
+		list(QUALITY_SAWING, 60),
+		list(CRAFT_MATERIAL, 1, MATERIAL_PLATINUM, "time" = 10),
+        list(QUALITY_SCREW_DRIVING, 40, "time" = 15),
+        list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD, "time" = 10)
+    )

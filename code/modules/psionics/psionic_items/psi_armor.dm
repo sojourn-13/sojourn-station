@@ -221,7 +221,7 @@
 /obj/item/clothing/mask/deepmaints_debuff/dropped()
 	..()
 	if(!pointremoved)
-		victim.stats.changeStat_withcap(stat_to_change, -pointamounts)
+		victim.stats.changeStat_withcap(stat_to_change, pointamounts)
 		pointremoved = TRUE
 	victim.sanity.onPsyDamage(damage_to_sanity)
 	spawn(2)
@@ -231,7 +231,7 @@
 	.=..()
 	victim = M
 	if(!pointgranted)
-		victim.stats.changeStat_withcap(stat_to_change, pointamounts)
+		victim.stats.changeStat_withcap(stat_to_change, -pointamounts)
 		pointgranted = 1
 
 /obj/item/clothing/mask/deepmaints_debuff/angry
@@ -258,9 +258,57 @@
 	damage_to_sanity = -5 //Should *heal* sanity not damage
 	pointamounts = 30 //Hope you didnt have combat chems
 
+//Deepmaints buffing ones
+/obj/item/clothing/mask/deepmaints_buff
+	name = "psionic breath mask"
+	desc = "A psionic mask stitched onto the user's mouth. This one lets makes your breath steady helping with aim."
+	icon_state = "breath_psion"
+	item_state = "breath_psion"
+
+	var/mob/living/carbon/human/masked_person
+	var/pointgranted = 0 //Did we give you your stat?
+	var/pointremoved = 0 //Did we take you your stat?
+	var/pointamounts = 5
+	var/heal_to_sanity = 15
+	var/stat_to_change = STAT_VIG
+	color = "#5B0E4F" //spooooky!!!!!
+	matter = list()
+
+/obj/item/clothing/mask/deepmaints_buff/bio
+	desc = "A psionic mask stitched onto the user's mouth. This one is rather clinical and smells of a medical bay."
+	stat_to_change = STAT_BIO
+
+/obj/item/clothing/mask/deepmaints_buff/cog
+	desc = "A psionic mask stitched onto the user's mouth. The gas mix for this mask allows you to think better."
+	stat_to_change = STAT_COG
+	pointamounts = 10
+
+/obj/item/clothing/mask/deepmaints_buff/viv
+	desc = "A psionic mask stitched onto the user's mouth. The gas mix is rather relaxing allowing your body to handle more chemicals.."
+	stat_to_change = STAT_VIV
+	pointamounts = 20
+	heal_to_sanity = 30
+
+/obj/item/clothing/mask/deepmaints_buff/dropped()
+	..()
+	if(!pointremoved)
+		masked_person.stats.changeStat_withcap(stat_to_change, -pointamounts)
+		pointremoved = TRUE
+	masked_person.sanity.onPsyDamage(-heal_to_sanity)
+	spawn(2)
+	qdel(src)
+
+
+/obj/item/clothing/mask/deepmaints_buff/equipped(var/mob/M)
+	.=..()
+	masked_person = M
+	if(!pointgranted)
+		masked_person.stats.changeStat_withcap(stat_to_change, pointamounts)
+		pointgranted = 1
+
 //The anti-psion hat
 /obj/item/clothing/head/psionic/tinfoil
-	name = "Soteria Psionic Shielding Apparatus"
+	name = "Blue-Ink Psionic Shielding Apparatus"
 	icon_state = "tinfoil"
 	desc = "The product of an eccentric scientist who was fed up with telepathic cat-calls. This device shields the wearer from recieving \
 	telepathic messages, but also prevents psions from using their abilities altogether when worn. The perfect Psionic Containment device. \
@@ -280,7 +328,6 @@
 	desc = "A set of experimental cloths made of rare materials and silk, allowing psionic users to more effectively channel psionic essence."
 	matter = list(MATERIAL_SILK = 5)
 	var/cognitive_potential = 0.1 //cube sink
-
 
 /obj/item/clothing/under/psionic_cloths/attackby(obj/item/I, mob/user)
 	if(istype(I, /obj/item/device/psionic_catalyst))

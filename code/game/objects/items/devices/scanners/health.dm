@@ -13,12 +13,39 @@
 	origin_tech = list(TECH_MAGNET = 1, TECH_BIO = 1)
 
 	var/mode = 1
+	var/advanced = FALSE
+	var/stat_locking = TRUE
+	var/flicker = "health2"
 
 	window_width = 600
 	window_height = 400
 
 /obj/item/device/scanner/health/rig
 	charge_per_use = 0
+
+
+/obj/item/device/scanner/health/greyson
+	name = "Greyson health analyzer"
+	desc = "An advanced hand-held scanner with a medical nano AI built in. \
+	With the aid of the nano AI most users are capable of using this device for medical purposes, \
+	being capable of identifying every logged chemical known to GP. \
+	Uses medium cells and is slightly bulkier than a normal health scanner."
+	icon_state = "gp_health"
+	item_state = "analyzer"
+	flicker = "gp_health2"
+	extra_bulk = 2
+
+	advanced = TRUE
+	stat_locking = FALSE
+
+	//Do to being advanced you need more space to see all the information.
+	window_height = 650
+
+	suitable_cell = /obj/item/cell/medium
+	print_report_delay = 5
+	charge_per_use = 20
+	//Built in nano-AI costs + a lot more materal, this is high tech
+	matter = list(MATERIAL_PLASTIC = 12, MATERIAL_PLASTEEL = 7, MATERIAL_PLATINUM = 6, MATERIAL_SILVER = 2, MATERIAL_GOLD = 4, MATERIAL_DIAMOND = 2)
 
 /obj/item/device/scanner/health/afterattack(atom/A, mob/user, proximity)
 	if(user.stats?.getPerk(PERK_ADVANCED_MEDICAL) && user.stats.getStat(STAT_BIO) > STAT_LEVEL_EXPERT)
@@ -30,10 +57,10 @@
 	return istype(O, /mob/living) || istype(O, /obj/structure/closet/body_bag)
 
 /obj/item/device/scanner/health/scan(atom/A, mob/user)
-	scan_data = medical_scan_action(A, user, src, mode)
+	scan_data = medical_scan_action(A, user, src, mode, src.stat_locking, src.advanced)
 	scan_title = "Health scan - [A]"
 	show_results(user)
-	flick("health2", src)
+	flick(flicker, src)
 
 /obj/item/device/scanner/health/verb/toggle_mode()
 	set name = "Switch Verbosity"
@@ -46,7 +73,16 @@
 		if(0)
 			to_chat(usr, "The scanner no longer shows limb damage.")
 
-/proc/medical_scan_action(atom/target, mob/living/user, obj/scanner, var/mode)
+
+/proc/medical_scan_action(atom/target, mob/living/user, obj/scanner, mode, stat_locking = FALSE, advanced = FALSE)
+	// If a health scanner instance was passed, respect its flags
+	var/obj/item/device/scanner/health/health_scanner = scanner
+	if(istype(scanner, /obj/item/device/scanner/health))
+		if(health_scanner.stat_locking)
+			stat_locking = TRUE
+		if(health_scanner.advanced)
+			advanced = TRUE
+
 	if (!user.IsAdvancedToolUser())
 		to_chat(user, SPAN_WARNING("You are not nimble enough to use this device."))
 		return

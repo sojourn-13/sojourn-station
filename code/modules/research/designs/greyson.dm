@@ -223,6 +223,32 @@
 	name = "greyson positronic manipulator"
 	build_path = /obj/item/stock_parts/manipulator/one_star
 
+// Advanced Greyson stock parts (require more materials to print)
+/datum/design/research/item/part/greyson_capacitor_advanced
+	name = "greyson positronic hyper capacitor"
+	build_path = /obj/item/stock_parts/capacitor/one_star/advanced
+	materials = list(MATERIAL_STEEL = 6, MATERIAL_PLASTIC = 6, MATERIAL_GLASS = 2, MATERIAL_PLATINUM = 4)
+
+/datum/design/research/item/part/greyson_scanner_advanced
+	name = "greyson positronic multi-phasic scanning module"
+	build_path = /obj/item/stock_parts/scanning_module/one_star/advanced
+	materials = list(MATERIAL_STEEL = 6, MATERIAL_PLASTIC = 6, MATERIAL_GLASS = 2, MATERIAL_PLATINUM = 4)
+
+/datum/design/research/item/part/greyson_manipulator_advanced
+	name = "greyson positronic femto manipulator"
+	build_path = /obj/item/stock_parts/manipulator/one_star/advanced
+	materials = list(MATERIAL_STEEL = 6, MATERIAL_PLASTIC = 6, MATERIAL_PLATINUM = 4)
+
+/datum/design/research/item/part/greyson_laser_advanced
+	name = "greyson positronic nano-lensed micro-laser"
+	build_path = /obj/item/stock_parts/micro_laser/one_star/advanced
+	materials = list(MATERIAL_STEEL = 6, MATERIAL_PLASTIC = 6, MATERIAL_GLASS = 2, MATERIAL_PLATINUM = 4)
+
+/datum/design/research/item/part/greyson_matter_advanced
+	name = "greyson positronic ultra-capacity matter bin"
+	build_path = /obj/item/stock_parts/matter_bin/one_star/advanced
+	materials = list(MATERIAL_PLASTIC = 6, MATERIAL_GLASS = 2, MATERIAL_PLATINUM = 4)
+
 // Greyson Machines ========================
 
 /datum/design/research/circuit/greyson_autolathe

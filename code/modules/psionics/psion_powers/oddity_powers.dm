@@ -2,7 +2,7 @@
 //Powers that affect/transform oddites in some way
 
 /mob/living/carbon/human/proc/psionic_weapon()
-	set category = "Psionic powers"
+	set category = "Psionic powers.Transform"
 	set name = "Psionic Weapon Construction (3)"
 	set desc = "Expend three psi points to reshape an oddity into a ranged weapon. The properties of the oddity used heavily influcence the final product."
 	var/psi_point_cost = 3
@@ -38,7 +38,7 @@
 		to_chat(usr, "You must hold an oddity in your active hand.")
 
 /mob/living/carbon/human/proc/psionic_melee()
-	set category = "Psionic powers"
+	set category = "Psionic powers.Transform"
 	set name = "Psionic Melee Construction (3)"
 	set desc = "Spend three psi points to reshape an oddity into a melee weapon. The properties of the oddity used heavily influcence the final product."
 	var/psi_point_cost = 3
@@ -77,7 +77,7 @@
 		to_chat(usr, "You must hold an oddity in your active hand.")
 
 /mob/living/carbon/human/proc/psionic_tool()
-	set category = "Psionic powers"
+	set category = "Psionic powers.Transform"
 	set name = "Psionic Tool Creation (2)"
 	set desc = "Spend two psi points to reshape an oddity into a tool. The properties of the oddity used heavily influcence the final product."
 	var/psi_point_cost = 2
@@ -116,7 +116,7 @@
 		to_chat(usr, "You must hold an oddity in your active hand.")
 
 /mob/living/carbon/human/proc/psychoactive_manipulation()
-	set category = "Psionic powers"
+	set category = "Psionic powers.Transform"
 	set name = "Psychoactive Manipulation (2)"
 	set desc = "Spend two psi points to alter an oddity or an anomaly in an unpredictable manner. The process could make the oddity or anomaly \
 	better or worse."
