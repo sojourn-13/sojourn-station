@@ -458,7 +458,7 @@
 	icon_state = "medigel_big_brute"
 	icon = 'icons/obj/stack/medical_big.dmi'
 	origin_tech = list(TECH_BIO = 8)
-	heal_brute = 3 //15 hp per packet, 9 packets in a kit, 135 hp total
+	heal_brute = 15 //15 hp per packet, 9 packets in a kit, 135 hp total
 	// Use medical nanites by default and keep solvent/adhesive components
 	preloaded_reagents = list("nanosymbiotes" = 2, "fbp_repair" = 1, "purgers" = 1, "oxyrush" = 1)
 	fancy_icon = TRUE

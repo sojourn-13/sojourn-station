@@ -139,7 +139,6 @@
 	materials = list(MATERIAL_STEEL = 8, MATERIAL_PLASTIC = 6)
 	category = "Medical"
 
-
 /datum/design/research/item/firstaid/fire_kit_greyson
 	name = "Greyson Empty Fire Firstaid Kit"
 	desc = "An empty Greyson-branded burn first aid kit shell designed to accept Greyson medical cartridges."
@@ -150,6 +149,7 @@
 /datum/design/research/item/firstaid/adv_kit_greyson
 	name = "Greyson Empty Multi Firstaid Kit"
 	desc = "An empty Greyson-branded multi-format first aid kit shell designed to accept Greyson medical cartridges."
+	build_path = /obj/item/storage/firstaid/greyson/multi/empty
 	materials = list(MATERIAL_STEEL = 8, MATERIAL_PLASTIC = 6)
 	category = "Medical"
 
@@ -159,7 +159,7 @@
 	name = "Greyson Advanced Treatment Pack"
 	desc = "A Greyson-branded advanced treatment pack for bruises and tissue trauma. Requires medical nanites to print."
 	build_path = /obj/item/stack/medical/bruise_pack/greyson
-	materials = list(MATERIAL_PLASTIC = 4, MATERIAL_GLASS = 2, MATERIAL_PLATINUM = 2)
+	materials = list(MATERIAL_PLASTIC = 4, MATERIAL_GLASS = 2, MATERIAL_PLATINUM = 1)
 	chemicals = list("uncap nanites" = 1)
 	category = "Medical"
 
@@ -167,7 +167,7 @@
 	name = "Greyson Advanced Burn-Treatment Pack"
 	desc = "A Greyson-branded advanced burn treatment pack preloaded with medical nanites. Requires nanite chemicals to print."
 	build_path = /obj/item/stack/medical/ointment/greyson
-	materials = list(MATERIAL_PLASTIC = 4, MATERIAL_GLASS = 2, MATERIAL_PLATINUM = 2)
+	materials = list(MATERIAL_PLASTIC = 4, MATERIAL_GLASS = 2, MATERIAL_PLATINUM = 1)
 	chemicals = list("uncap nanites" = 1)
 	category = "Medical"
 
@@ -279,15 +279,6 @@
 	build_path = /obj/item/device/mmi
 	category = "Medical"
 
-
-// Greyson bruise pack printing
-/datum/design/research/item/medical/bruise_pack_greyson
-	name = "Greyson Advanced Treatment Pack"
-	desc = "A Greyson-branded advanced treatment pack filled with programmed medical nanites. Requires nanites to print."
-	build_path = /obj/item/stack/medical/bruise_pack/greyson
-	materials = list(MATERIAL_PLASTIC = 4, MATERIAL_GLASS = 2)
-	chemicals = list("nanosymbiotes" = 4, "fbp_repair" = 1)
-	category = "Medical"
 
 /datum/design/research/item/mmi_radio
 	name = "Radio-enabled man-machine interface"
