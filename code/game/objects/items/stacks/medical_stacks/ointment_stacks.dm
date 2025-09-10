@@ -263,24 +263,3 @@
 	prevent_wasting = TRUE
 	// Preload medical nanites so Greyson ointment injects beneficial nanite reagents on use
 	preloaded_reagents = list("nanosymbiotes" = 2, "fbp_repair" = 1, "purgers" = 1, "oxyrush" = 1)
-
-/obj/item/stack/medical/ointment/greyson/attack(mob/living/carbon/M, mob/living/user)
-    if(..())
-        return 1
-
-    if(amount < 1)
-        return
-
-    // Check if the target is synthetic or carbon
-    if(ishuman(M))
-        var/obj/item/organ/external/affecting = M.get_targeted_organ(user.targeted_organ)
-
-        if(affecting && affecting.open == 1)
-            affecting.heal_damage(heal_burn, heal_burn, TRUE)
-            M.updatehealth()
-            use(1)
-            user.visible_message("[user] applies the Greyson Advanced Burn-Treatment Pack to [M].")
-        else
-            to_chat(user, "No visible burns to treat.")
-    else
-        to_chat(user, "This treatment pack can only be used on synthetic or humanoid mobs.")
