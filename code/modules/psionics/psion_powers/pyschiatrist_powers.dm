@@ -2,7 +2,7 @@
 
 // Psychiatrist/Psychologist
 /mob/living/carbon/human/proc/peace_of_mind()
-	set category = "Psionic powers"
+	set category = "Psionic powers.Healing"
 	set name = "Peace of Mind (4)"
 	set desc = "Expend four psi points to put whatever person you are currently grabbing to sleep for a short time."
 	var/psi_point_cost = 4
@@ -27,7 +27,7 @@
 		L.AdjustSleeping(60)
 
 /mob/living/carbon/human/proc/psionic_heal_other()
-	set category = "Psionic powers"
+	set category = "Psionic powers.Healing"
 	set name = "Psychosomatic Restoration (2)"
 	set desc = "Expend two psi points of your psi essence to heal the body of one you are grappling of both brute and burn. Unlike standard psionic healing, this causes no pain in the target \
 	but the effect is reduced."
@@ -46,7 +46,7 @@
 
 
 /mob/living/carbon/human/proc/meditative_focus_other()
-	set category = "Psionic powers"
+	set category = "Psionic powers.Healing"
 	set name = "Psionic Tranquility (2)"
 	set desc = "Expend two psi points of your psi essence to calm the mind of another person you are grappling and restore their sanity."
 	var/psi_point_cost = 2
@@ -79,7 +79,7 @@
 				L.sanity.changeLevel(10)
 
 /mob/living/carbon/human/proc/psionic_heal_brain()
-	set category = "Psionic powers"
+	set category = "Psionic powers.Healing"
 	set name = "Cerebral Regeneration (3)"
 	set desc = "Expend three psi points of your psi essence to heal the brain damage of another person you are grappling or yourself if you are grappling no one. When used on yourself, the cost is free."
 	var/psi_point_cost = 3
@@ -100,7 +100,7 @@
 			L.adjustBrainLoss(-60)
 
 /mob/living/carbon/human/proc/psionic_gift()
-	set category = "Psionic powers"
+	set category = "Psionic powers.Healing"
 	set name = "Gift of the Psion (4)"
 	set desc = "Expend four psi points of your psi essence to offer enhanced mental powers to whoever you are grappling. In psions, you allow them to recover their psi essence twice as often. \
 	In non-psions, you enhance the body and mind by an exceptional degree. The target must be awake to benefit from your mental guidance."

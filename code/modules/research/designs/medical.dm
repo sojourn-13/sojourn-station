@@ -55,6 +55,14 @@
 	desc = "An advanced device for identifying chemicals and their proportions."
 	build_path = /obj/item/device/scanner/reagent/adv
 
+// Greyson health scanner design
+/datum/design/research/item/medical/greyson_health_scanner
+	name = "Greyson Health Analyzer"
+	desc = "An advanced Greyson health analyzer with built-in nano-AI for expanded diagnostics."
+	build_path = /obj/item/device/scanner/health/greyson
+	materials = list(MATERIAL_PLASTIC = 2, MATERIAL_PLASTEEL = 4, MATERIAL_PLATINUM = 4, MATERIAL_SILVER = 2, MATERIAL_DIAMOND = 1)
+	category = "Medical"
+
 //Defibs
 
 /datum/design/research/item/medical/defibs
@@ -120,6 +128,40 @@
 /datum/design/research/item/regular_kit
 	name = "Empty Firstaid Kit"
 	build_path = /obj/item/storage/firstaid/regular/empty
+	category = "Medical"
+
+
+// Greyson medical kits (advanced, require nanites to fabricate)
+/datum/design/research/item/firstaid/regular_kit_greyson
+	name = "Greyson Empty Firstaid Kit"
+	desc = "An empty Greyson-branded first aid kit shell designed to accept Greyson medical cartridges. Requires nanite chemicals to fabricate."
+	build_path = /obj/item/storage/firstaid/greyson/empty
+	materials = list(MATERIAL_STEEL = 8, MATERIAL_PLASTIC = 6)
+	category = "Medical"
+
+
+/datum/design/research/item/firstaid/fire_kit_greyson
+	name = "Greyson Empty Fire Firstaid Kit"
+	desc = "Greyson-branded fire first aid kit shell. Requires medical nanites to fabricate."
+	build_path = /obj/item/storage/firstaid/greyson/burn/empty
+	materials = list(MATERIAL_STEEL = 8, MATERIAL_PLASTIC = 6)
+	category = "Medical"
+
+// Greyson burn/bruise packs
+/datum/design/research/item/medical/bruise_pack_greyson
+	name = "Greyson Advanced Treatment Pack"
+	desc = "A Greyson-branded advanced treatment pack for bruises and tissue trauma. Requires medical nanites to print."
+	build_path = /obj/item/stack/medical/bruise_pack/greyson
+	materials = list(MATERIAL_PLASTIC = 4, MATERIAL_GLASS = 2, MATERIAL_PLATINUM = 2)
+	chemicals = list("uncap nanites" = 1)
+	category = "Medical"
+
+/datum/design/research/item/medical/ointment_greyson
+	name = "Greyson Advanced Burn-Treatment Pack"
+	desc = "A Greyson-branded advanced burn treatment pack preloaded with medical nanites. Requires nanite chemicals to print."
+	build_path = /obj/item/stack/medical/ointment/greyson
+	materials = list(MATERIAL_PLASTIC = 4, MATERIAL_GLASS = 2, MATERIAL_PLATINUM = 2)
+	chemicals = list("uncap nanites" = 1)
 	category = "Medical"
 
 /datum/design/research/item/toxin_kit
@@ -228,6 +270,16 @@
 	name = "Man-machine interface"
 	build_type = PROTOLATHE | MECHFAB
 	build_path = /obj/item/device/mmi
+	category = "Medical"
+
+
+// Greyson bruise pack printing
+/datum/design/research/item/medical/bruise_pack_greyson
+	name = "Greyson Advanced Treatment Pack"
+	desc = "A Greyson-branded advanced treatment pack filled with programmed medical nanites. Requires nanites to print."
+	build_path = /obj/item/stack/medical/bruise_pack/greyson
+	materials = list(MATERIAL_PLASTIC = 4, MATERIAL_GLASS = 2)
+	chemicals = list("nanosymbiotes" = 4, "fbp_repair" = 1)
 	category = "Medical"
 
 /datum/design/research/item/mmi_radio

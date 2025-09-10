@@ -65,9 +65,11 @@
 			try_to_pain(M, user)
 
 			// Apply reagents to the user on every application
+			// Apply reagents to the user on every application, but only medical ones
 			if(preloaded_reagents && preloaded_reagents.len)
+				var/list/allowed_medical = list("quickclot" = 1, "meralyne" = 1, "dylovene" = 1, "spaceacillin" = 1, "sterilizine" = 1, "uncap nanites" = 1, "ethanol" = 1, "carbon" = 1, "glue" = 1, "holywater" = 1, "holytricord" = 1, "holyquickclot" = 1, "holydylo" = 1, "holycilin" = 1, "kelotane" = 1, "tramadol" = 1, "dermaline" = 1)
 				for(var/reagent in preloaded_reagents)
-					if(user.reagents)
+					if(user.reagents && allowed_medical[reagent])
 						user.reagents.add_reagent(reagent, preloaded_reagents[reagent])
 
 			return
@@ -194,3 +196,71 @@
 	if(fancy_icon)
 		icon_state = "[initial(icon_state)][amount]"
 	..()
+
+/obj/item/stack/medical/ointment/psionic
+	name = "Mindplasm"
+	singular_name = "Mindplasm drop"
+	desc = "A odd floating goo made out of thoughtstuff, capable of cleaning wounds and mending burns, it takes next to no skill to use."
+	icon_state = "spidergoo"
+	fancy_icon = FALSE
+	heal_burn = 5
+	bio_requirement = -15
+	needed_perk = PERK_PSION
+	stacktype_alt = null
+	amount = 3
+	max_amount = 9
+	color = "#5B0E4F" //spooooky!!!!!
+	consumable = FALSE //So we dont mess with dropping it
+	var/mob/living/carbon/holder // The one that prevent the tool from fading
+
+/obj/item/stack/medical/ointment/psionic/New(loc, mob/living/carbon/Maker)
+	..()
+	holder = Maker
+	START_PROCESSING(SSobj, src)
+
+/obj/item/stack/medical/ointment/psionic/Process()
+	if(loc != holder) // We're no longer in the psionic's hand.
+		visible_message("The [src.name] fades into nothingness.")
+		STOP_PROCESSING(SSobj, src)
+		qdel(src)
+		return
+
+/obj/item/stack/medical/ointment/psionic/update_icon()
+	color = "#5B0E4F"
+
+//MAX is 37.5 healing, MIN is 5
+/obj/item/stack/medical/ointment/psionic/grabbed_medical_skill(mob/living/carbon/user)
+	if(ishuman(user))
+		var/psionic_things = 0
+		psionic_things += round(clamp((user.stats.getStat(STAT_BIO) * 0.1), 0, 15))
+		if(user.stats.getPerk(PERK_PSI_HARMONY))
+			psionic_things += 5
+		if(user.stats.getPerk(PERK_PSI_ATTUNEMENT))
+			psionic_things += 5
+		if(user.stats.getPerk(PERK_PSI_PEACE))
+			psionic_things += 5
+		if(user.stats.getPerk(PERK_PSI_PSYCHOLOGIST))
+			psionic_things *= 1.25
+		return psionic_things
+	else
+		return FALSE
+
+/obj/item/stack/medical/ointment/greyson
+	name = "Greyson Advanced Burn-Treatment Pack" //G(P)ABTP
+	singular_name = "Greyson Advanced Burn-Treatment Pack"
+	desc = "A packet of nanites with silicon and ethanol that quickly treats burns. \
+	Due to GP-programming these nanites are able to be used on already sealed or healed wounds as long as they are able to detect still-present damage. \
+	Works on robotic limbs."
+	icon_state = "medigel_big_brute"
+	icon = 'icons/obj/stack/medical_big.dmi'
+	origin_tech = list(TECH_BIO = 8)
+	heal_burn = 3 //15 hp per packet, 9 packets in a kit, 135 hp total
+	fancy_icon = TRUE
+	amount = 5
+	max_amount = 5
+	use_timer = 60 //These are compelx things
+	always_useful = TRUE
+	extra_bulk = 2
+	prevent_wasting = TRUE
+	// Preload medical nanites so Greyson ointment injects beneficial nanite reagents on use
+	preloaded_reagents = list("nanosymbiotes" = 2, "fbp_repair" = 1, "purgers" = 1, "oxyrush" = 1)

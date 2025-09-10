@@ -75,17 +75,38 @@
 			to_chat(user, SPAN_WARNING("What [user.targeted_organ]?"))
 			return TRUE
 
+		// enhanced logic starts here
 		//log_debug("bruise_pack 2, holy_healer = [holy_healer], holy_healing = [holy_healing]")
 		if(affecting.open == 0)
-			if(affecting.is_bandaged())
+			// If organ is already bandaged and not always useful, warn and stop
+			if(affecting.is_bandaged() && !always_useful)
 				to_chat(user, SPAN_WARNING("The wounds on [M]'s [affecting.name] have already been bandaged."))
 				return 1
+			// If there are no wounds, warn and stop
+			if(!affecting.wounds.len)
+				to_chat(user, SPAN_WARNING("[M]'s [affecting.name] dosn't have wounds."))
+				return TRUE
+
+			// prevent wasting checks
+			if(prevent_wasting)
+				var/stop = TRUE
+				if(affecting.burn_dam && heal_burn)
+					stop = FALSE
+				if(affecting.brute_dam && heal_brute)
+					stop = FALSE
+				if(affecting.status & ORGAN_BLEEDING)
+					stop = FALSE
+				if(stop)
+					to_chat(user, SPAN_WARNING("The wounds on [affecting.name] cant be healed more with [src]."))
+					return TRUE
+
 			user.visible_message(
 				SPAN_NOTICE("\The [user] starts treating [M]'s [affecting.name]."),
 				SPAN_NOTICE("You start treating [M]'s [affecting.name].")
 			)
 			var/used = 0
 			var/healed_by_faith
+			var/list/allowed_medical = list("quickclot" = 1, "meralyne" = 1, "dylovene" = 1, "spaceacillin" = 1, "sterilizine" = 1, "uncap nanites" = 1, "ethanol" = 1, "carbon" = 1, "glue" = 1, "holywater" = 1, "holytricord" = 1, "holyquickclot" = 1, "holydylo" = 1, "holycilin" = 1, "kelotane" = 1, "tramadol" = 1, "dermaline" = 1)
 			if(care_about_faith && (holy_healer || holy_healing))
 				if(holy_healer)
 					healed_by_faith += heal_brute
@@ -93,14 +114,46 @@
 						healed_by_faith += bounce_faith_healer_amount //5 extra if your a tessilate or preists
 				if(holy_healing)
 					healed_by_faith += heal_brute
+					// additional holy healing effect for burn damage
+					if(holy_healing)
+						healed_by_faith += heal_burn
+
+				// salve handling: treat "salved" organs similarly to bandaged ones
+				if(affecting.open == 0 || always_useful)
+					if(affecting.is_salved() && !always_useful)
+						to_chat(user, SPAN_WARNING("The wounds on [M]'s [affecting.name] have already been salved."))
+						return TRUE
+					// prevent wasting for salving
+					if(prevent_wasting)
+						var/stop2 = TRUE
+						if(affecting.burn_dam && heal_burn)
+							stop2 = FALSE
+						if(affecting.brute_dam && heal_brute)
+							stop2 = FALSE
+						if(stop2)
+							to_chat(user, SPAN_WARNING("The wounds on [affecting.name] cant be healed more with [src]."))
+							return TRUE
+
 			for (var/datum/wound/W in affecting.wounds)
 				if(W.internal)
 					continue
-				if(W.bandaged)
+					//prevents stack wounds from eating through gear well not getting healed
+					if(prevent_wasting)
+						var/needs_healing = FALSE
+						if(affecting.burn_dam && heal_burn)
+							needs_healing = TRUE
+						if(affecting.brute_dam && heal_brute)
+							needs_healing = TRUE
+						if(affecting.status & ORGAN_BLEEDING)
+							needs_healing = TRUE
+						if(!needs_healing)
+							continue
+
+				if(W.bandaged && !always_useful)
 					continue
-				if(used == amount)
+				if(used == amount || !amount)
 					break
-				if(!do_mob(user, M, W.damage/5))
+				if(!do_mob(user, M, (W.damage + 1)/5))
 					to_chat(user, SPAN_NOTICE("You must stand still to bandage wounds."))
 					break
 				if(W.internal)
@@ -114,7 +167,6 @@
 						SPAN_NOTICE("\The [user] bandages \a [W.desc] on [M]'s [affecting.name]."),
 						SPAN_NOTICE("You bandage \a [W.desc] on [M]'s [affecting.name].")
 					)
-					//H.add_side_effect("Itch")
 				else if (W.damage_type == BRUISE)
 					user.visible_message(
 						SPAN_NOTICE("\The [user] places a bruise patch over \a [W.desc] on [M]'s [affecting.name]."),
@@ -130,16 +182,16 @@
 				// user's stat check that causing pain if they are amateurs
 				try_to_pain(M, user)
 
-				// Apply reagents to the user on every application
+				// Apply reagents to the user on every application, but only medical ones
 				if(preloaded_reagents && preloaded_reagents.len)
 					for(var/reagent in preloaded_reagents)
-						if(user.reagents)
+						if(user.reagents && allowed_medical[reagent])
 							user.reagents.add_reagent(reagent, preloaded_reagents[reagent])
 
-				// Apply injected reagents to the user (static amount per use)
+				// Apply injected reagents to the user (static amount per use) but only medical ones
 				if(injected_reagents && injected_reagents.len)
 					for(var/reagent in injected_reagents)
-						if(user.reagents && injected_reagents[reagent] > 0)
+						if(user.reagents && injected_reagents[reagent] > 0 && allowed_medical[reagent])
 							var/amount_to_apply = injected_reagents[reagent] / max_amount // Static amount per use based on initial injection
 							user.reagents.add_reagent(reagent, amount_to_apply)
 
@@ -396,3 +448,23 @@
 		return psionic_things
 	else
 		return FALSE
+
+/obj/item/stack/medical/bruise_pack/greyson
+	name = "Greyson Advanced Treatment Pack" //G(P)ATP
+	singular_name = "Greyson Advanced Treatment Pack"
+	desc = "A packet of nanites with small fibres and ethanol that treats bruises and tissue damage. \
+	Due to GP-programming these nanites are able to be used on already sealed or healed wounds as long as they are able to detect still-present damage. \
+	Works on robotic limbs."
+	icon_state = "medigel_big_brute"
+	icon = 'icons/obj/stack/medical_big.dmi'
+	origin_tech = list(TECH_BIO = 8)
+	heal_brute = 3 //15 hp per packet, 9 packets in a kit, 135 hp total
+	// Use medical nanites by default and keep solvent/adhesive components
+	preloaded_reagents = list("nanosymbiotes" = 2, "fbp_repair" = 1, "purgers" = 1, "oxyrush" = 1, "ethanol" = 6, "carbon" = 2, "glue" = 6)
+	fancy_icon = TRUE
+	amount = 5
+	max_amount = 5
+	use_timer = 60 //These are compelx things
+	always_useful = TRUE
+	extra_bulk = 2
+	prevent_wasting = TRUE

@@ -866,6 +866,55 @@ Boxes with clothing on them, unable to put them back if taken out because...
 	for(var/i in 1 to 4)
 		new /obj/item/stock_parts/capacitor/handmade(src)
 
+/obj/item/storage/box/greyson_manip
+	name = "box of femto manipulators"
+	desc = "A box containing four guild-enhanced greyson manipulators, the best that Nadezhda can produce."
+	icon_state = "box_of_doom"
+	illustration = "writing"
+
+/obj/item/storage/box/greyson_manip/populate_contents()
+	for(var/i in 1 to 4)
+		new /obj/item/stock_parts/manipulator/one_star/advanced(src)
+
+/obj/item/storage/box/greyson_bin
+	name = "box of ultra-capacity matter bins"
+	desc = "A box containing four guild-enhanced greyson matter bins, the best that Nadezhda can produce."
+	icon_state = "box_of_doom"
+	illustration = "writing"
+
+/obj/item/storage/box/greyson_bin/populate_contents()
+	for(var/i in 1 to 4)
+		new /obj/item/stock_parts/matter_bin/one_star/advanced(src)
+
+/obj/item/storage/box/greyson_laser
+	name = "box of micro-lensed micro-lasers"
+	desc = "A box containing four guild-enhanced greyson micro-lasers, the best that Nadezhda can produce."
+	icon_state = "box_of_doom"
+	illustration = "writing"
+
+/obj/item/storage/box/greyson_laser/populate_contents()
+	for(var/i in 1 to 4)
+		new /obj/item/stock_parts/micro_laser/one_star/advanced(src)
+
+/obj/item/storage/box/greyson_scanner
+	name = "box of multi-phasic scanning modules"
+	desc = "A box containing four guild-enhanced greyson scanning modules, the best that Nadezhda can produce."
+	icon_state = "box_of_doom"
+	illustration = "writing"
+
+/obj/item/storage/box/greyson_scanner/populate_contents()
+	for(var/i in 1 to 4)
+		new /obj/item/stock_parts/scanning_module/one_star/advanced(src)
+
+/obj/item/storage/box/greyson_capacitor
+	name = "box of hyper capacitors"
+	desc = "A box containing four guild-enhanced greyson capacitors, the best that Nadezhda can produce."
+	icon_state = "box_of_doom"
+	illustration = "writing"
+
+/obj/item/storage/box/greyson_capacitor/populate_contents()
+	for(var/i in 1 to 4)
+		new /obj/item/stock_parts/capacitor/one_star/advanced(src)
 
 /obj/item/storage/box/njoy
 	name = "mix Njoy packet"

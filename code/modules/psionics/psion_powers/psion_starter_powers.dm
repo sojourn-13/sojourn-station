@@ -4,7 +4,7 @@
 // Adding or tweaking powers here should be on the side of "Psions are intented to get powerful thoughout the shift"
 
 /mob/living/carbon/human/proc/psionic_telepathy()
-	set category = "Psionic powers"
+	set category = "Psionic powers.Telepathy"
 	set name = "Telepathic Projection (1)"
 	set desc = "Spend a single psi point to send a telepathic message to someone, projecting your thoughts directly into their mind. Be wary, as not all are susceptible to telepathy."
 	var/psi_point_cost = 1
