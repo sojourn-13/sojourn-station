@@ -4,7 +4,7 @@
 	Alt+click to open and close."
 	icon_state = "medigel_case_brute_preview"
 	var/real_item_state = "medigel_case_brute"
-	item_state = "firstaid-surgeon"
+	item_state = "firstaid-greyson"
 	max_storage_space = null
 	storage_slots = 9
 	max_w_class = ITEM_SIZE_NORMAL
@@ -126,3 +126,47 @@
 	Alt+click to open and close."
 	icon_state = "medigel_case_burn_preview"
 	real_item_state = "medigel_case_burn"
+
+/obj/item/storage/firstaid/greyson/multi
+    name = "Greyson Multi-Purpose Medical Kit"
+    desc = "A Greyson Smart Kit capable of holding both Advanced Trauma Kits and Advanced Burn Kits. Alt+click to open and close."
+    icon_state = "medigel_case_multi_preview"
+    real_item_state = "medigel_case_multi"
+    item_state = "firstaid-greyson"
+    max_storage_space = null
+    storage_slots = 10
+    max_w_class = ITEM_SIZE_NORMAL
+    matter = list(MATERIAL_PLASTIC = 20)
+    can_hold = list(
+        /obj/item/stack/medical/bruise_pack/advanced,
+        /obj/item/stack/medical/ointment/advanced
+    )
+    var/opened = FALSE
+
+/obj/item/storage/firstaid/greyson/multi/update_icon()
+    ..()
+    cut_overlays()
+    if(opened)
+        icon_state = "[initial(real_item_state)]"
+        var/kits = 0
+        for(var/obj/item/stack/medical/kit in contents)
+            kits++
+            if(istype(kit, /obj/item/stack/medical/bruise_pack/advanced))
+                add_overlay(image(icon, "medigel_overlay_[kits]_atk"))
+            else if(istype(kit, /obj/item/stack/medical/ointment/advanced))
+                add_overlay(image(icon, "medigel_overlay_[kits]_abk"))
+        return
+    icon_state = "[initial(real_item_state)]_closed"
+
+/obj/item/storage/firstaid/greyson/multi/populate_contents()
+    if(empty) return
+    for(var/i in 1 to 5)
+        new /obj/item/stack/medical/bruise_pack/advanced(src)
+    for(var/i in 1 to 4)
+        new /obj/item/stack/medical/ointment/advanced(src)
+
+/obj/item/storage/firstaid/greyson/multi/empty
+    name = "Greyson Multi-Purpose Medical Kit"
+    desc = "A Greyson Smart Kit capable of holding both Advanced Trauma Kits and Advanced Burn Kits. Alt+click to open and close."
+    icon_state = "medigel_case_multi_preview"
+    real_item_state = "medigel_case_multi"

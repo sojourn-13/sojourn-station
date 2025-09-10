@@ -243,6 +243,7 @@
 
 	// unlocks: first aid kit shells
 	unlocks_designs = list(
+		/datum/design/research/item/firstaid/adv_kit_greyson,
 		/datum/design/research/item/firstaid/regular_kit_greyson,
 		/datum/design/research/item/firstaid/fire_kit_greyson,
 		/datum/design/research/item/medical/bruise_pack_greyson,

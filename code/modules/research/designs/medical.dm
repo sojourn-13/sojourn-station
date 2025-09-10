@@ -131,10 +131,10 @@
 	category = "Medical"
 
 
-// Greyson medical kits (advanced, require nanites to fabricate)
+// Greyson medical kits
 /datum/design/research/item/firstaid/regular_kit_greyson
 	name = "Greyson Empty Firstaid Kit"
-	desc = "An empty Greyson-branded first aid kit shell designed to accept Greyson medical cartridges. Requires nanite chemicals to fabricate."
+	desc = "An empty Greyson-branded brute first aid kit shell designed to accept Greyson medical cartridges."
 	build_path = /obj/item/storage/firstaid/greyson/empty
 	materials = list(MATERIAL_STEEL = 8, MATERIAL_PLASTIC = 6)
 	category = "Medical"
@@ -142,10 +142,17 @@
 
 /datum/design/research/item/firstaid/fire_kit_greyson
 	name = "Greyson Empty Fire Firstaid Kit"
-	desc = "Greyson-branded fire first aid kit shell. Requires medical nanites to fabricate."
+	desc = "An empty Greyson-branded burn first aid kit shell designed to accept Greyson medical cartridges."
 	build_path = /obj/item/storage/firstaid/greyson/burn/empty
 	materials = list(MATERIAL_STEEL = 8, MATERIAL_PLASTIC = 6)
 	category = "Medical"
+
+/datum/design/research/item/firstaid/adv_kit_greyson
+	name = "Greyson Empty Multi Firstaid Kit"
+	desc = "An empty Greyson-branded multi-format first aid kit shell designed to accept Greyson medical cartridges."
+	materials = list(MATERIAL_STEEL = 8, MATERIAL_PLASTIC = 6)
+	category = "Medical"
+
 
 // Greyson burn/bruise packs
 /datum/design/research/item/medical/bruise_pack_greyson
