@@ -1,4 +1,3 @@
-
 /obj/item/stack/medical/ointment
 	name = "bottle of ointment"
 	desc = "Used to treat those nasty burns."
@@ -67,7 +66,7 @@
 			// Apply reagents to the user on every application
 			// Apply reagents to the user on every application, but only medical ones
 			if(preloaded_reagents && preloaded_reagents.len)
-				var/list/allowed_medical = list("quickclot" = 1, "meralyne" = 1, "dylovene" = 1, "spaceacillin" = 1, "sterilizine" = 1, "uncap nanites" = 1, "ethanol" = 1, "carbon" = 1, "glue" = 1, "holywater" = 1, "holytricord" = 1, "holyquickclot" = 1, "holydylo" = 1, "holycilin" = 1, "kelotane" = 1, "tramadol" = 1, "dermaline" = 1)
+				var/list/allowed_medical = list("quickclot" = 1, "meralyne" = 1, "antitox" = 1, "spaceacillin" = 1, "sterilizine" = 1, "uncap nanites" = 1, "ethanol" = 1, "carbon" = 1, "glue" = 1, "holywater" = 1, "holytricord" = 1, "holyquickclot" = 1, "holydylo" = 1, "holycilin" = 1, "kelotane" = 1, "tramadol" = 1, "dermaline" = 1)
 				for(var/reagent in preloaded_reagents)
 					if(user.reagents && allowed_medical[reagent])
 						user.reagents.add_reagent(reagent, preloaded_reagents[reagent])
@@ -110,7 +109,7 @@
 	singular_name = "Soteria branded ointment"
 	desc = "Premium burn treatment ointment manufactured by the Soteria Institute. Each application is pre-treated with a specialized medical cocktail including advanced cellular regeneration compounds, pain relief agents, detoxification chemicals, and broad-spectrum antibiotics. The ointment features Soteria's signature blue coloring and comes with more applications than standard burn treatments. Hand-crafted with care by skilled Soteria Medical personnel with care and concern."
 	icon_state = "sr_ointment"
-	preloaded_reagents = list("dermaline" = 2, "tramadol" = 2, "dylovene" = 2, "spaceacillin" = 1, "sterilizine" = 1)
+	preloaded_reagents = list("dermaline" = 2, "tramadol" = 2, "antitox" = 2, "spaceacillin" = 1, "sterilizine" = 1)
 	heal_burn = 25
 	amount = 8
 	max_amount = 8
@@ -264,3 +263,24 @@
 	prevent_wasting = TRUE
 	// Preload medical nanites so Greyson ointment injects beneficial nanite reagents on use
 	preloaded_reagents = list("nanosymbiotes" = 2, "fbp_repair" = 1, "purgers" = 1, "oxyrush" = 1)
+
+/obj/item/stack/medical/ointment/greyson/attack(mob/living/carbon/M, mob/living/user)
+    if(..())
+        return 1
+
+    if(amount < 1)
+        return
+
+    // Check if the target is synthetic or carbon
+    if(ishuman(M) || isrobot(M))
+        var/obj/item/organ/external/affecting = M.get_organ(user.targeted_organ)
+
+        if(affecting && affecting.open == 1)
+            affecting.heal_damage(heal_burn, heal_burn, TRUE)
+            M.updatehealth()
+            use(1)
+            user.visible_message("[user] applies the Greyson Advanced Burn-Treatment Pack to [M].")
+        else
+            to_chat(user, "No visible burns to treat.")
+    else
+        to_chat(user, "This treatment pack can only be used on synthetic or humanoid mobs.")

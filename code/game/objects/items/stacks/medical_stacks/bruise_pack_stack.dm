@@ -106,7 +106,7 @@
 			)
 			var/used = 0
 			var/healed_by_faith
-			var/list/allowed_medical = list("quickclot" = 1, "meralyne" = 1, "dylovene" = 1, "spaceacillin" = 1, "sterilizine" = 1, "uncap nanites" = 1, "ethanol" = 1, "carbon" = 1, "glue" = 1, "holywater" = 1, "holytricord" = 1, "holyquickclot" = 1, "holydylo" = 1, "holycilin" = 1, "kelotane" = 1, "tramadol" = 1, "dermaline" = 1)
+			var/list/allowed_medical = list("quickclot" = 1, "meralyne" = 1, "antitox" = 1, "spaceacillin" = 1, "sterilizine" = 1, "uncap nanites" = 1, "ethanol" = 1, "carbon" = 1, "glue" = 1, "holywater" = 1, "holytricord" = 1, "holyquickclot" = 1, "holydylo" = 1, "holycilin" = 1, "kelotane" = 1, "tramadol" = 1, "dermaline" = 1)
 			if(care_about_faith && (holy_healer || holy_healing))
 				if(holy_healer)
 					healed_by_faith += heal_brute
@@ -367,7 +367,7 @@
 	singular_name = "Soteria advanced gauze"
 	desc = "Premium sterile gauze manufactured by the Soteria Institute. Each strip is pre-treated with a specialized medical cocktail including quick-clotting agents, advanced healing compounds, detoxification chemicals, and broad-spectrum antibiotics. The gauze features Soteria's signature blue threading and comes with more applications than standard field dressings. Hand-crafted with care by skilled Soteria Medical personnel with care and concern."
 	icon_state = "sr_brutepack"
-	preloaded_reagents = list("quickclot" = 1, "meralyne" = 2, "dylovene" = 2, "spaceacillin" = 1, "sterilizine" = 1)
+	preloaded_reagents = list("quickclot" = 1, "meralyne" = 2, "antitox" = 2, "spaceacillin" = 1, "sterilizine" = 1)
 	fancy_icon = TRUE
 	disinfectant  = TRUE
 	amount = 8
@@ -460,7 +460,7 @@
 	origin_tech = list(TECH_BIO = 8)
 	heal_brute = 3 //15 hp per packet, 9 packets in a kit, 135 hp total
 	// Use medical nanites by default and keep solvent/adhesive components
-	preloaded_reagents = list("nanosymbiotes" = 2, "fbp_repair" = 1, "purgers" = 1, "oxyrush" = 1, "ethanol" = 6, "carbon" = 2, "glue" = 6)
+	preloaded_reagents = list("nanosymbiotes" = 2, "fbp_repair" = 1, "purgers" = 1, "oxyrush" = 1)
 	fancy_icon = TRUE
 	amount = 5
 	max_amount = 5
@@ -468,3 +468,24 @@
 	always_useful = TRUE
 	extra_bulk = 2
 	prevent_wasting = TRUE
+
+/obj/item/stack/medical/bruise_pack/greyson/attack(mob/living/carbon/M, mob/living/user)
+    if(..())
+        return 1
+
+    if(amount < 1)
+        return
+
+    // Check if the target is synthetic or carbon
+    if(ishuman(M) || isrobot(M))
+        var/obj/item/organ/external/affecting = M.get_organ(user.targeted_organ)
+
+        if(affecting && affecting.open == 1)
+            affecting.heal_damage(heal_brute, heal_brute, TRUE)
+            M.updatehealth()
+            use(1)
+            user.visible_message("[user] applies the Greyson Advanced Treatment Pack to [M].")
+        else
+            to_chat(user, "No visible wounds to treat.")
+    else
+        to_chat(user, "This treatment pack can only be used on synthetic or humanoid mobs.")
