@@ -1324,7 +1324,7 @@ My deeplest sorrow for this keepsake of the rnd's hoard
     name = "Box of Greyson Matter Bins"
     result = /obj/item/storage/box/greyson_bin
     steps = list(
-	list(/obj/item/stock_parts/matter_bin/super, 4, "time" = 10),
+	list(/obj/item/stock_parts/matter_bin/one_star, 4, "time" = 10),
 		list(QUALITY_SCREW_DRIVING, 10, 70),
 		list(CRAFT_MATERIAL, 4, MATERIAL_PLASTEEL, "time" = 10),
 		list(CRAFT_MATERIAL, 4, MATERIAL_PLASMAGLASS, "time" = 10),
