@@ -1294,7 +1294,6 @@ My deeplest sorrow for this keepsake of the rnd's hoard
     result = /obj/item/storage/box/greyson_manip
     steps = list(
         list(/obj/item/stock_parts/manipulator/one_star, 4, "time" = 10),
-		list(/obj/item/stock_parts/manipulator/pico, 4, "time" = 10),
 		list(QUALITY_SCREW_DRIVING, 40, 70),
 		list(CRAFT_MATERIAL, 8, MATERIAL_PLASTEEL, "time" = 10),
 		list(CRAFT_MATERIAL, 8, MATERIAL_PLASTIC, "time" = 10),
