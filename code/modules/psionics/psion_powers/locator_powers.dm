@@ -2,7 +2,7 @@
 // Psionic powers that assit in locating someone or something
 
 /mob/living/carbon/human/proc/detect_thoughts()
-	set category = "Psionic powers"
+	set category = "Psionic powers.Telepathy"
 	set name = "Locate Mind-Essence (5)"
 	set desc = "Spend five psi points to telepathically detect the thoughts and location of another higher life form. Does not work on animals, cruciform bearers, synthetics, or those \
 	wearing psionic protection. Can locate lingering echoes of thoughts in the deceased, allowing you to find bodies."

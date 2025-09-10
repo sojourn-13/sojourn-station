@@ -2,7 +2,7 @@
 // Powers that affect Simple/Super Mobs
 
 /mob/living/carbon/human/proc/psychic_call()
-	set category = "Psionic powers"
+	set category = "Psionic powers.Summoning"
 	set name = "Psychic Call (2)"
 	set desc = "Spend two psi points to call creatures from nearby burrows. They are not inherently friendly to you. Use at your own risks."
 	var/psi_point_cost = 2
@@ -21,7 +21,7 @@
 		to_chat(user, "You lack enough psi points to call creatures from burrows.")
 
 /mob/living/carbon/human/proc/psychic_banish()
-	set category = "Psionic powers"
+	set category = "Psionic powers.Summoning" //Well its fitting the idea rather then the direct meaning of the word
 	set name = "Psychic Banish (4)"
 	set desc = "Spend four psi points to banish nearby creatures capable of burrowing back into the holes from whence they came. Affected creatures must be able to burrow and may \
 	resist your psychic influence."
@@ -41,7 +41,7 @@
 		to_chat(user, "You lack enough psi essence to banish nearby creatures.")
 
 /mob/living/carbon/human/proc/mind_jack()
-	set category = "Psionic powers"
+	set category = "Psionic powers.Ascension"
 	set name = "Mindjack (3)"
 	set desc = "Spend three psi points to force a lesser creature to ally with you, changing it to not only ally with colonists but to turn on its former friends. Does not work on creatures \
 	incapable of proper violence, such as rats."
@@ -74,7 +74,7 @@
 			usr.show_message("\blue You are not holding someone you can use this power on.")
 
 /mob/living/carbon/human/proc/seek_the_dream()
-	set category = "Psionic powers"
+	set category = "Psionic powers.Summoning"
 	set name = "Seek the Dream (5)"
 	set desc = "Spend five psi points and wither your body and mind to call three dreaming daemons from parts unknown. They are not inherently allied to you."
 	var/psi_point_cost = 5
@@ -117,12 +117,16 @@
 		new /mob/living/simple/hostile/nightmare/dream_daemon(user.loc)
 
 /mob/living/carbon/human/proc/psionic_swarm()
-	set category = "Psionic powers"
+	set category = "Psionic powers.Summoning"
 	set name = "Psionic Swarm (2)"
-	set desc = "Spend two psi points to call forth a psionic energy cloud that will rip at foes and protect you for a short time."
+	set desc = "Spend two psi points to call forth a psionic energy cloud that will chase at foes, even if invisible and protect you for a short time from hostiles or projectiles."
 	var/psi_point_cost = 2
 	var/mob/living/carbon/human/user = src
 	var/obj/item/organ/internal/psionic_tumor/PT = user.first_organ_by_process(BP_PSION)
+
+	if(user.stats.getPerk(PERK_PSI_ATTUNEMENT))
+		to_chat(user, "Your mastery over psionics allows you to minimize the cost.")
+		psi_point_cost = 1
 
 	if(PT && PT.pay_power_cost(psi_point_cost) && PT.check_possibility())
 		user.visible_message(

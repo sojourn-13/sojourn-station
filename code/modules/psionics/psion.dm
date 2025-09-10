@@ -150,6 +150,10 @@
 	for(var/obj/item/organ/O in owner.organs)
 		if(istype(O, /obj/item/organ/external))
 			var/obj/item/organ/external/R = O
+			for(var/obj/item/material/shard/shrapnel/emshrapnel in R.implants)
+				R.implants -= emshrapnel
+				emshrapnel.loc = get_turf(owner)
+				owner.update_implants()
 			if(!BP_IS_ROBOTIC(R))
 				continue
 			owner.visible_message(SPAN_DANGER("[owner]'s [R.name] tears off."),
@@ -158,6 +162,7 @@
 			if(ishuman(owner))
 				var/mob/living/carbon/human/H = owner
 				H.update_implants()
+
 
 	for(var/obj/item/organ/O in owner.internal_organs)
 		if(istype(O, /obj/item/organ/internal))
@@ -190,6 +195,18 @@
 		if(istype(O, /obj/item/implant))
 			var/obj/item/implant/I = O
 			remove_implanted(I)
+
+/*
+	for(var/obj/item/material/shard/O in owner.contents)
+		if(istype(O, /obj/item/material/shard))
+			var/obj/item/material/shard/I = O
+			I.forceMove(get_turf(owner))
+*/
+
+	for(var/obj/item/material/shard/emshrapnel in owner.embedded)
+		owner.embedded -= emshrapnel
+		emshrapnel.on_embed_removal(owner)
+		emshrapnel.loc = get_turf(owner)
 
 
 

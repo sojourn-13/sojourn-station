@@ -444,10 +444,10 @@
 
 /obj/item/storage/firstaid/soteria/populate_contents()
 	if (empty) return
-	new /obj/item/stack/medical/bruise_pack/advanced(src)
-	new /obj/item/stack/medical/bruise_pack/advanced(src)
-	new /obj/item/stack/medical/ointment/advanced(src)
-	new /obj/item/stack/medical/ointment/advanced(src)
+	new /obj/item/stack/medical/bruise_pack/soteria(src)
+	new /obj/item/stack/medical/bruise_pack/soteria(src)
+	new /obj/item/stack/medical/ointment/soteria(src)
+	new /obj/item/stack/medical/ointment/soteria(src)
 	new /obj/item/reagent_containers/glass/bottle/inaprovaline(src)
 	new /obj/item/reagent_containers/glass/bottle/antitoxin(src)
 	new /obj/item/reagent_containers/syringe/tricordrazine(src)
@@ -469,17 +469,17 @@
 		/obj/item/reagent_containers/hypospray,
 		/obj/item/reagent_containers/glass/bottle,
 		/obj/item/reagent_containers/glass/beaker,
-		/obj/item/reagent_containers/dropper,
+		/obj/item/reagent_containers/dropper,,
 		/obj/item/clothing/gloves/latex,
 		/obj/item/bodybag/cryobag
 		)
 
 /obj/item/storage/firstaid/soteria/large/populate_contents()
 	if (empty) return
-	new /obj/item/stack/medical/bruise_pack/advanced(src)
-	new /obj/item/stack/medical/bruise_pack/advanced(src)
-	new /obj/item/stack/medical/ointment/advanced(src)
-	new /obj/item/stack/medical/ointment/advanced(src)
+	new /obj/item/stack/medical/bruise_pack/soteria(src)
+	new /obj/item/stack/medical/bruise_pack/soteria(src)
+	new /obj/item/stack/medical/ointment/soteria(src)
+	new /obj/item/stack/medical/ointment/soteria(src)
 	new /obj/item/storage/pill_bottle/tramadol(src)
 	new /obj/item/reagent_containers/glass/bottle/inaprovaline(src)
 	new /obj/item/reagent_containers/glass/bottle/antitoxin(src)

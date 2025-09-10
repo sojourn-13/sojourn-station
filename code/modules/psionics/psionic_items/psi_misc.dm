@@ -12,6 +12,7 @@
 	matter = list(MATERIAL_PLASTIC = 1, MATERIAL_GLASS = 1)
 	var/use = 4 // Number of times it can be used.
 	var/point_per_use = 1 // Amount of points it give to a psion each use.
+	var/bypass_block = FALSE
 
 /obj/item/psi_injector/update_icon()
 	if(use <= 0)
@@ -29,9 +30,11 @@
 		var/mob/living/carbon/human/T = target
 		var/obj/item/organ/internal/psionic_tumor/PT = T.random_organ_by_process(BP_PSION)
 		var/obj/item/blocked = T.check_mouth_coverage()
-		if(blocked)
+		if(blocked && !bypass_block)
 			to_chat(user, SPAN_WARNING("\The [blocked] is in the way!"))
 			return
+		if(blocked)
+			to_chat(user, SPAN_NOTICE("\The [blocked] would normally block the way but your inhaler is able to bypass it."))
 		if(PT) // Is the target a psion
 			if(use) // Do we have uses left?
 				if((PT.max_psi_points - PT.psi_points >= point_per_use) || (T.psi_blocking > 0)) // Is there space to give the psion the points? Do they need a fixup?
@@ -100,3 +103,43 @@
 			return TRUE
 	return FALSE
 
+// Psionic power cells - Half the size of the smallest of their size, but have self-charge
+
+/obj/item/cell/large/psionic
+	name = "\"Psy-cell 1000L\""
+	desc = "A large power cell formed out of a psion's mind. Though it does not hold much charge, it is capable of charging itself.  \ The mind is a wheel of constantly turning thoughts."
+	icon_state = "psion_b"
+	maxcharge = 1000
+	autorecharging = TRUE
+	autorecharge_rate = 0.1
+	starts_max_charge = FALSE
+	origin_tech = null
+	matter = null
+	preloaded_reagents = null
+	price_tag = 0
+
+/obj/item/cell/medium/psionic
+	name = "\"Psy-cell 300M\""
+	desc = "A medium power cell formed out of a psion's mind. Though it does not hold much charge, it is capable of charging itself.  \ The mind is a wheel of constantly turning thoughts."
+	icon_state = "psion_m"
+	maxcharge = 300
+	autorecharging = TRUE
+	autorecharge_rate = 0.1
+	starts_max_charge = FALSE
+	origin_tech = null
+	matter = null
+	preloaded_reagents = null
+	price_tag = 0
+
+/obj/item/cell/small/psionic
+	name = "\"Psy-cell 50S\""
+	desc = "A small power cell formed out of a psion's mind. Though it does not hold much charge, it is capable of charging itself. \ The mind is a wheel of constantly turning thoughts."
+	icon_state = "psion_s"
+	maxcharge = 50
+	autorecharging = TRUE
+	autorecharge_rate = 0.1
+	starts_max_charge = FALSE
+	origin_tech = null
+	matter = null
+	preloaded_reagents = null
+	price_tag = 0

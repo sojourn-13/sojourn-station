@@ -130,11 +130,32 @@
 	cost = 5625
 
 	unlocks_designs = list(/datum/design/research/item/part/greyson_laser,
-						   /datum/design/research/item/part/greyson_matter,
-						   /datum/design/research/item/part/greyson_module,
-						   /datum/design/research/item/part/greyson_capacitor,
-						   /datum/design/research/item/part/greyson_manipulator)
+	                           /datum/design/research/item/part/greyson_matter,
+	                           /datum/design/research/item/part/greyson_module,
+	                           /datum/design/research/item/part/greyson_capacitor,
+	                           /datum/design/research/item/part/greyson_manipulator)
 
+
+/*
+/datum/technology/GP_stockparts_advanced
+	name = "Greyson Advanced Stock Parts"
+	desc = "High-grade Greyson stock parts - advanced variants requiring specialist production."
+	tech_type = RESEARCH_GREYSON
+
+	x = 0.5
+	y = 0.95
+	icon = "greysonstockparts"
+
+	required_technologies = list(/datum/technology/GP_stockparts)
+	required_tech_levels = list(RESEARCH_ENGINEERING = 22)
+	cost = 5500
+
+	unlocks_designs = list(/datum/design/research/item/part/greyson_capacitor_advanced,
+						/datum/design/research/item/part/greyson_scanner_advanced,
+						/datum/design/research/item/part/greyson_manipulator_advanced,
+						/datum/design/research/item/part/greyson_laser_advanced,
+						/datum/design/research/item/part/greyson_matter_advanced)
+*/
 /datum/technology/GP_misc_tools
 	name = "Greyson Positronic Tools"
 	desc = "Old Greyson Positronic basic tools."
@@ -205,6 +226,45 @@
 	unlocks_designs = list(/datum/design/research/item/greyson/repair_nano,
 						   /datum/design/research/item/greyson/ai_tool)
 	cost = 7500
+
+
+/datum/technology/GP_medical
+	name = "Greyson Positronic Medical Systems"
+	desc = "Advanced Greyson medical kits and nanite-assisted treatment packs used for battlefield and clinical triage."
+	tech_type = RESEARCH_GREYSON
+
+	x = 0.55
+	y = 0.95
+	icon = "medigel_case_closed"
+
+	required_technologies = list(/datum/technology/GP_nano_toolmods)
+	required_tech_levels = list(RESEARCH_BIOTECH = 12, RESEARCH_ROBOTICS = 10)
+	cost = 2500
+
+	// unlocks: first aid kit shells
+	unlocks_designs = list(
+		/datum/design/research/item/firstaid/adv_kit_greyson,
+		/datum/design/research/item/firstaid/regular_kit_greyson,
+		/datum/design/research/item/firstaid/fire_kit_greyson,
+		/datum/design/research/item/medical/bruise_pack_greyson,
+		/datum/design/research/item/medical/ointment_greyson
+	)
+
+
+/datum/technology/GP_health
+	name = "Greyson Positronic Medical Scanner"
+	desc = "Medical positronic device designs and advanced electromechanical systems used by Greyson positronics."
+	tech_type = RESEARCH_GREYSON
+
+	x = 0.3
+	y = 0.2
+	icon = "gp_health"
+
+	required_technologies = list(/datum/technology/GP_medical)
+	required_tech_levels = list(RESEARCH_ENGINEERING = 22, RESEARCH_BIOTECH = 12)
+	cost = 1200
+
+	unlocks_designs = list(/datum/design/research/item/medical/greyson_health_scanner)
 
 /datum/technology/GP_fuel_toolmods
 	name = "Greyson Positronic Bluespace Holding Tank"
