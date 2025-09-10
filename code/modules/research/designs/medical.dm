@@ -136,21 +136,24 @@
 	name = "Greyson Empty Firstaid Kit"
 	desc = "An empty Greyson-branded brute first aid kit shell designed to accept Greyson medical cartridges."
 	build_path = /obj/item/storage/firstaid/greyson/empty
-	materials = list(MATERIAL_STEEL = 8, MATERIAL_PLASTIC = 6)
+	materials = list(MATERIAL_PLASTEEL = 8, MATERIAL_PLASTIC = 6)
+	ignore_object_materials = TRUE
 	category = "Medical"
 
 /datum/design/research/item/firstaid/fire_kit_greyson
 	name = "Greyson Empty Fire Firstaid Kit"
 	desc = "An empty Greyson-branded burn first aid kit shell designed to accept Greyson medical cartridges."
 	build_path = /obj/item/storage/firstaid/greyson/burn/empty
-	materials = list(MATERIAL_STEEL = 8, MATERIAL_PLASTIC = 6)
+	materials = list(MATERIAL_PLASTEEL = 8, MATERIAL_PLASTIC = 6)
+	ignore_object_materials = TRUE
 	category = "Medical"
 
 /datum/design/research/item/firstaid/adv_kit_greyson
 	name = "Greyson Empty Multi Firstaid Kit"
 	desc = "An empty Greyson-branded multi-format first aid kit shell designed to accept Greyson medical cartridges."
 	build_path = /obj/item/storage/firstaid/greyson/multi/empty
-	materials = list(MATERIAL_STEEL = 8, MATERIAL_PLASTIC = 6)
+	materials = list(MATERIAL_PLASTEEL = 8, MATERIAL_PLASTIC = 6)
+	ignore_object_materials = TRUE
 	category = "Medical"
 
 
@@ -161,6 +164,7 @@
 	build_path = /obj/item/stack/medical/bruise_pack/greyson
 	materials = list(MATERIAL_PLASTIC = 4, MATERIAL_GLASS = 2, MATERIAL_PLATINUM = 1)
 	chemicals = list("uncap nanites" = 1)
+	ignore_object_materials = TRUE
 	category = "Medical"
 
 /datum/design/research/item/medical/ointment_greyson
@@ -169,6 +173,7 @@
 	build_path = /obj/item/stack/medical/ointment/greyson
 	materials = list(MATERIAL_PLASTIC = 4, MATERIAL_GLASS = 2, MATERIAL_PLATINUM = 1)
 	chemicals = list("uncap nanites" = 1)
+	ignore_object_materials = TRUE
 	category = "Medical"
 
 /datum/design/research/item/toxin_kit

@@ -9,6 +9,7 @@
 	var/list/materials = list()		//List of materials. Format: "id" = amount.
 	var/list/chemicals = list()		//List of reagents. Format: "id" = amount.
 	var/adjust_materials = TRUE		//Whether material efficiency applies to this design
+	var/ignore_object_materials = FALSE	//If TRUE, don't extract materials from the instantiated object(s); use only the datum's `materials` list.
 	var/build_path = null			//The path of the object that gets created.
 	var/build_type = NONE			//Flag as to what kind machine the design is built in. See defines.
 	var/category = null 			//Primarily used for Mech Fabricators, but can be used for anything.
@@ -68,7 +69,10 @@
 //Extract matter and reagent requirements from the target object and any objects inside it.
 //Any materials specified in these designs are extras, added on top of what is extracted.
 /datum/design/proc/AssembleDesignMaterials(atom/temp_atom)
-	if(istype(temp_atom, /obj))
+	// By default, extract materials from the object and its contents. Set
+	// ignore_object_materials = TRUE on a design to prevent this and use only
+	// the explicitly-declared `materials` list.
+	if(!ignore_object_materials && istype(temp_atom, /obj))
 		for(var/obj/O in temp_atom.GetAllContents(includeSelf = TRUE))
 			AddObjectMaterials(O)
 
@@ -135,7 +139,8 @@
 /datum/design/proc/AssembleDesignUIData()
 	nano_ui_data = list(
 		"id" = "[id]", "name" = name, "desc" = desc, "time" = time,
-		"category" = category, "adjust_materials" = adjust_materials
+		"category" = category, "adjust_materials" = adjust_materials,
+		"ignore_object_materials" = ignore_object_materials
 	)
 
 	if(length(materials))
