@@ -141,7 +141,7 @@
         /obj/item/stack/medical/bruise_pack/advanced,
         /obj/item/stack/medical/ointment/advanced
     )
-    var/opened = FALSE
+    opened = FALSE
 
 /obj/item/storage/firstaid/greyson/multi/update_icon()
     ..()

@@ -272,8 +272,8 @@
         return
 
     // Check if the target is synthetic or carbon
-    if(ishuman(M) || isrobot(M))
-        var/obj/item/organ/external/affecting = M.get_organ(user.targeted_organ)
+    if(ishuman(M))
+        var/obj/item/organ/external/affecting = M.get_targeted_organ(user.targeted_organ)
 
         if(affecting && affecting.open == 1)
             affecting.heal_damage(heal_burn, heal_burn, TRUE)

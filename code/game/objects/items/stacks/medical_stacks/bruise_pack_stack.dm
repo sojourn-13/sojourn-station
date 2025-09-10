@@ -468,24 +468,3 @@
 	always_useful = TRUE
 	extra_bulk = 2
 	prevent_wasting = TRUE
-
-/obj/item/stack/medical/bruise_pack/greyson/attack(mob/living/carbon/M, mob/living/user)
-    if(..())
-        return 1
-
-    if(amount < 1)
-        return
-
-    // Check if the target is synthetic or carbon
-    if(ishuman(M) || isrobot(M))
-        var/obj/item/organ/external/affecting = M.get_organ(user.targeted_organ)
-
-        if(affecting && affecting.open == 1)
-            affecting.heal_damage(heal_brute, heal_brute, TRUE)
-            M.updatehealth()
-            use(1)
-            user.visible_message("[user] applies the Greyson Advanced Treatment Pack to [M].")
-        else
-            to_chat(user, "No visible wounds to treat.")
-    else
-        to_chat(user, "This treatment pack can only be used on synthetic or humanoid mobs.")
