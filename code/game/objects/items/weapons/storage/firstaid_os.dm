@@ -30,6 +30,7 @@
 	Alt+click to open and close."
 	icon_state = "medigel_case_brute_preview"
 	real_item_state = "medigel_case_brute"
+	empty = TRUE
 
 /obj/item/storage/firstaid/greyson/update_icon()
 	..()
@@ -126,6 +127,7 @@
 	Alt+click to open and close."
 	icon_state = "medigel_case_burn_preview"
 	real_item_state = "medigel_case_burn"
+	empty = TRUE
 
 /obj/item/storage/firstaid/greyson/multi
     name = "Greyson Multi-Purpose Medical Kit"
@@ -148,13 +150,21 @@
     cut_overlays()
     if(opened)
         icon_state = "[initial(real_item_state)]"
-        var/kits = 0
+        // We need specific overlay indices for ATK and ABK
+        // ATK overlays: 1,2,3,4,9
+        // ABK overlays: 5,6,7,8
+        var/atk_count = 0
+        var/abk_count = 0
+        // Count items and add overlays in the requested slot order
         for(var/obj/item/stack/medical/kit in contents)
-            kits++
-            if(istype(kit, /obj/item/stack/medical/bruise_pack/advanced))
-                add_overlay(image(icon, "medigel_overlay_[kits]_atk"))
-            else if(istype(kit, /obj/item/stack/medical/ointment/advanced))
-                add_overlay(image(icon, "medigel_overlay_[kits]_abk"))
+            if(istype(kit, /obj/item/stack/medical/bruise_pack/greyson))
+                atk_count++
+                if(atk_count <= 4)
+                    add_overlay(image(icon, "medigel_overlay_[atk_count]_atk"))
+            else if(istype(kit, /obj/item/stack/medical/ointment/greyson))
+                abk_count++
+                if(abk_count <= 4)
+                    add_overlay(image(icon, "medigel_overlay_[abk_count]_abk"))
         return
     icon_state = "[initial(real_item_state)]_closed"
 
@@ -162,7 +172,7 @@
     if(empty) return
     for(var/i in 1 to 5)
         new /obj/item/stack/medical/bruise_pack/advanced(src)
-    for(var/i in 1 to 4)
+    for(var/i in 1 to 5)
         new /obj/item/stack/medical/ointment/advanced(src)
 
 /obj/item/storage/firstaid/greyson/multi/empty
@@ -170,3 +180,4 @@
     desc = "A Greyson Smart Kit capable of holding both Advanced Trauma Kits and Advanced Burn Kits. Alt+click to open and close."
     icon_state = "medigel_case_multi_preview"
     real_item_state = "medigel_case_multi"
+    empty = TRUE
