@@ -1070,8 +1070,14 @@ My deeplest sorrow for this keepsake of the rnd's hoard
 	icon_state = "electronic"
 	steps = list(
 		list(/obj/item/stock_parts/manipulator/one_star, 1, "time" = 10),
-		list(CRAFT_MATERIAL, 6, MATERIAL_STEEL, "time" = 10),
-		list(CRAFT_MATERIAL, 6, MATERIAL_PLASTIC, "time" = 10),
+		list(QUALITY_SCREW_DRIVING, 40, 70, "time" = 10),
+		list(CRAFT_MATERIAL, 2, MATERIAL_PLASTEEL, "time" = 10),
+		list(CRAFT_MATERIAL, 2, MATERIAL_PLASTIC, "time" = 10),
+		list(QUALITY_BOLT_TURNING, 10, 70, "time" = 10),
+		list(QUALITY_WELDING, 40, "time" = 10),
+		list(/obj/item/stack/cable_coil, 10, "time" = 10),
+		list(QUALITY_HAMMERING, 40, "time" = 10),
+		list(QUALITY_SAWING, 60, "time" = 10)
 		list(CRAFT_MATERIAL, 4, MATERIAL_PLATINUM, "time" = 10),
 		list(QUALITY_SCREW_DRIVING, 40, "time" = 15)
 	)
