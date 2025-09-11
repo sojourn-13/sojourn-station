@@ -49,7 +49,7 @@
 /obj/item/pc_part/drive/disk/design/security/marshal_guns
 	disk_name = "Marshal \"Negotiator\" Pack"
 	icon_state = "marshal"
-	license = 20 //1:1 with blackshield guns
+	license = 40 //1:1 with blackshield guns
 	designs = list(
 		//pistol
 		/datum/design/autolathe/gun/glock = 1,
