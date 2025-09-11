@@ -28,7 +28,7 @@
 	name = "Greyson Field Abrasion Medical Kit"
 	desc = "A Greyson Smart Kit that rejects anything other than Greyson Advanced Treatment Packs. \
 	Alt+click to open and close."
-	icon_state = "medigel_case_brute_preview"
+	icon_state = "medigel_case_brute"
 	real_item_state = "medigel_case_brute"
 	empty = TRUE
 
@@ -125,7 +125,7 @@
 	name = "Greyson Field Scorch Medical Kit"
 	desc = "A Greyson Smart Kit that rejects anything other than Greyson Advanced Burn-Treatment Packs. \
 	Alt+click to open and close."
-	icon_state = "medigel_case_burn_preview"
+	icon_state = "medigel_case_burn"
 	real_item_state = "medigel_case_burn"
 	empty = TRUE
 
@@ -178,6 +178,6 @@
 /obj/item/storage/firstaid/greyson/multi/empty
     name = "Greyson Multi-Purpose Medical Kit"
     desc = "A Greyson Smart Kit capable of holding both Advanced Trauma Kits and Advanced Burn Kits. Alt+click to open and close."
-    icon_state = "medigel_case_multi_preview"
+    icon_state = "medigel_case_multi"
     real_item_state = "medigel_case_multi"
     empty = TRUE
