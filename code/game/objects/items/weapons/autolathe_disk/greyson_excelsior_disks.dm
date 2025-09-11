@@ -21,6 +21,21 @@
 		/datum/design/autolathe/part/greyson/ai = 3,
 	)
 
+/obj/item/pc_part/drive/disk/design/onestar/medical
+	disk_name = "Greyson Positronics Medical Pack"
+	icon_state = "onestar"
+	license = 5
+	designs = list(
+		/datum/design/research/item/firstaid/adv_kit_greyson = 5,
+		/datum/design/research/item/firstaid/regular_kit_greyson = 5,
+		/datum/design/research/item/firstaid/fire_kit_greyson = 5,
+		/datum/design/research/item/medical/bruise_pack_greyson = 1,
+		/datum/design/research/item/medical/ointment_greyson = 1,
+		/datum/design/research/item/medical/greyson_health_scanner = 2,
+		/datum/design/autolathe/tool/omni_surgery_onestar = 2,
+		/datum/design/autolathe/part/greyson/ai = 3
+	)
+
 /obj/item/pc_part/drive/disk/design/onestar/stockparts
 	disk_name = "Greyson Positronics Stock Parts Pack"
 	icon_state = "onestar"
