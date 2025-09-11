@@ -189,17 +189,15 @@
 							/datum/design/research/item/mechfab/modules/punch_helper,
 							/datum/design/research/item/mechfab/modules/momentum_speed_adder,
 							/datum/design/research/item/weapon/sabul,
-							/datum/design/research/item/weapon/spear,
 							/datum/design/research/item/ammo/flare_shell,
 							/datum/design/research/item/ammo/flare_shell/blue,
 							/datum/design/research/item/ammo/flare_shell/green,
-							/datum/design/research/item/ammo/mini_rocket,
 							/datum/design/research/item/ammo/grenade_net
 							)
 
 /datum/technology/adv_exotic_weaponry
 	name = "Advanced Experimental Weaponry"
-	desc = "Specisl weapon system using plasma as catalyst. Special weapon core prototipe that deal DNA damage to target."
+	desc = "Special weapon system using plasma as catalyst. Special weapon core prototype that deals DNA damage to target."
 	tech_type = RESEARCH_COMBAT
 
 	x = 0.8

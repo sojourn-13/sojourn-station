@@ -228,6 +228,7 @@
 	cost = 7500
 
 
+/*
 /datum/technology/GP_medical
 	name = "Greyson Positronic Medical Systems"
 	desc = "Advanced Greyson medical kits and nanite-assisted treatment packs used for battlefield and clinical triage."
@@ -250,7 +251,6 @@
 		/datum/design/research/item/medical/ointment_greyson
 	)
 
-
 /datum/technology/GP_health
 	name = "Greyson Positronic Medical Scanner"
 	desc = "Medical positronic device designs and advanced electromechanical systems used by Greyson positronics."
@@ -265,6 +265,7 @@
 	cost = 1200
 
 	unlocks_designs = list(/datum/design/research/item/medical/greyson_health_scanner)
+*/
 
 /datum/technology/GP_fuel_toolmods
 	name = "Greyson Positronic Bluespace Holding Tank"

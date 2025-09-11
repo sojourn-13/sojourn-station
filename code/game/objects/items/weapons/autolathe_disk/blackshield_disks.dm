@@ -3,7 +3,7 @@
 	disk_name = ""
 	name = "Blackshield 'Shall-not-be-Infringed' Pack"
 	icon_state = "blackshield"
-	license = 20
+	license = 40
 
 	designs = list(
 		/datum/design/autolathe/gun/ladon,

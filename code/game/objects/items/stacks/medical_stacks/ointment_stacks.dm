@@ -250,10 +250,10 @@
 	desc = "A packet of nanites with silicon and ethanol that quickly treats burns. \
 	Due to GP-programming these nanites are able to be used on already sealed or healed wounds as long as they are able to detect still-present damage. \
 	Works on robotic limbs."
-	icon_state = "medigel_big_brute"
+	icon_state = "medigel_big_burn"
 	icon = 'icons/obj/stack/medical_big.dmi'
 	origin_tech = list(TECH_BIO = 8)
-	heal_burn = 3 //15 hp per packet, 9 packets in a kit, 135 hp total
+	heal_burn = 15 //15 hp per packet, 9 packets in a kit, 135 hp total
 	fancy_icon = TRUE
 	amount = 5
 	max_amount = 5
