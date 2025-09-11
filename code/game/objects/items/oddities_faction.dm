@@ -172,8 +172,18 @@
 				reagent.remove_self(reagent_amount) //Purge useless reagents out
 
 		if(blood_amount)
+			// Convert nutriment into nanoblood at a 20:1 ratio
 			var/obj/item/reagent_containers/blood/empty/blood_pack = new /obj/item/reagent_containers/blood/empty(get_turf(src))
-			blood_pack.reagents.add_reagent("blood", blood_amount, list("donor"=null,"blood_DNA"=null,"blood_type"="O-","resistances"=null,"trace_chem"=null))
+			var/nano_units = blood_amount / 5
+			if(nano_units < 1)
+				// Fallback: if not enough nutriment to make a full unit, still create a tiny amount
+				nano_units = 1
+			// Add nanoblood reagent (drug)
+			if(istype(/datum/reagent/drug/nanoblood, /datum/reagent))
+				blood_pack.reagents.add_reagent("nanoblood", nano_units)
+			else
+				// If the specific datum doesn't exist, fsall back to plain blood to avoid runtime errors
+				blood_pack.reagents.add_reagent("blood", blood_amount, list("donor"=null,"blood_DNA"=null,"blood_type"="O-","resistances"=null,"trace_chem"=null))
 			blood_amount = 0
 			visible_message(SPAN_NOTICE("[src] drop [blood_pack]."))
 		else
