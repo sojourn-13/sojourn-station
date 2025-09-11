@@ -233,6 +233,12 @@
 	},
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star/fo_outside)
+"bR" = (
+/obj/effect/floor_decal/spline/fancy/three_quarters,
+/obj/structure/closet/crate/secure/loot,
+/obj/item/storage/firstaid/greyson/multi,
+/turf/simulated/floor/reinforced,
+/area/nadezhda/outside/one_star/fo_internal)
 "bS" = (
 /obj/item/gun/energy/cog,
 /obj/structure/table/onestar,
@@ -533,6 +539,10 @@
 /obj/item/clothing/head/hairflower/white,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/one_star/fo_outside)
+"ed" = (
+/obj/machinery/vending/one_star/health,
+/turf/simulated/floor/tiled/derelict/red_white_edges,
+/area/nadezhda/outside/one_star/fo_internal)
 "eh" = (
 /obj/structure/table/onestar,
 /obj/random/common_oddities/low_chance,
@@ -645,6 +655,7 @@
 /obj/item/trash/mre/os,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/greyson_inhaler,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/nadezhda/outside/one_star/fo_internal)
 "fc" = (
@@ -727,6 +738,10 @@
 /obj/structure/table/onestar,
 /turf/simulated/floor/tiled/white/cargo,
 /area/nadezhda/outside/one_star/fo_internal)
+"fR" = (
+/obj/machinery/vending/one_star/health,
+/turf/simulated/floor/tiled/derelict,
+/area/nadezhda/outside/one_star/fo_internal)
 "fT" = (
 /obj/random/surgery_tool/low_chance,
 /obj/item/circuitboard/sleeper,
@@ -755,6 +770,13 @@
 "gg" = (
 /obj/item/material/shard/shrapnel/scrap,
 /obj/item/remains/human,
+/turf/simulated/floor/reinforced,
+/area/nadezhda/outside/one_star/fo_internal)
+"gh" = (
+/obj/effect/floor_decal/spline/fancy/three_quarters,
+/obj/structure/closet/crate,
+/obj/random/medical,
+/obj/item/storage/firstaid/greyson,
 /turf/simulated/floor/reinforced,
 /area/nadezhda/outside/one_star/fo_internal)
 "gk" = (
@@ -986,6 +1008,10 @@
 /obj/item/reagent_containers/condiment/enzyme,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/outside/one_star/fo_internal)
+"hR" = (
+/obj/item/portable_destructive_analyzer,
+/turf/simulated/floor/reinforced,
+/area/nadezhda/outside/one_star/fo_outside)
 "hS" = (
 /obj/structure/table/onestar,
 /turf/simulated/floor/carpet,
@@ -1293,6 +1319,14 @@
 /obj/structure/railing,
 /turf/simulated/open,
 /area/nadezhda/outside/one_star/fo_outside)
+"kw" = (
+/obj/machinery/light{
+	dir = 8;
+	icon_state = "tube1"
+	},
+/obj/machinery/vending/one_star/health,
+/turf/simulated/floor/tiled/derelict,
+/area/nadezhda/outside/one_star/fo_internal)
 "kx" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/storage/secure/briefcase/money,
@@ -1380,6 +1414,12 @@
 /obj/machinery/chemical_dispenser/soda,
 /turf/simulated/floor/carpet/blucarpet,
 /area/nadezhda/outside/one_star/fo_internal)
+"lj" = (
+/obj/effect/floor_decal/spline/fancy/three_quarters,
+/obj/structure/closet/crate/secure/loot,
+/obj/item/storage/firstaid/greyson/burn,
+/turf/simulated/floor/reinforced,
+/area/nadezhda/outside/one_star/fo_internal)
 "ll" = (
 /obj/structure/table/onestar,
 /turf/simulated/floor/asteroid/dirt,
@@ -1391,6 +1431,7 @@
 /obj/random/lathe_disk/ammo,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/device/scanner/health/greyson,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/nadezhda/outside/one_star/fo_internal)
 "lr" = (
@@ -1461,6 +1502,12 @@
 "lU" = (
 /mob/living/carbon/superior/robot/gp/synth/ripley,
 /turf/simulated/floor/tiled/derelict,
+/area/nadezhda/outside/one_star/fo_internal)
+"lY" = (
+/obj/effect/floor_decal/spline/fancy/three_quarters,
+/obj/structure/closet/crate/secure/loot,
+/obj/item/storage/firstaid/greyson/burn/empty,
+/turf/simulated/floor/reinforced,
 /area/nadezhda/outside/one_star/fo_internal)
 "lZ" = (
 /obj/structure/salvageable/console_os,
@@ -1676,6 +1723,13 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/nadezhda/outside/one_star/fo_internal)
+"nP" = (
+/obj/effect/floor_decal/spline/fancy/three_quarters,
+/obj/structure/closet/crate,
+/obj/random/medical,
+/obj/item/storage/firstaid/greyson/empty,
+/turf/simulated/floor/reinforced,
+/area/nadezhda/outside/one_star/fo_internal)
 "nS" = (
 /obj/structure/flora/small/rock3,
 /turf/simulated/floor/asteroid/grass,
@@ -1723,6 +1777,13 @@
 /obj/effect/window_lwall_spawn/smartspawn/onestar,
 /obj/structure/invislight,
 /turf/simulated/floor/tiled/derelict,
+/area/nadezhda/outside/one_star/fo_internal)
+"oi" = (
+/obj/effect/floor_decal/spline/fancy/three_quarters,
+/obj/structure/closet/crate,
+/obj/random/medical,
+/obj/item/greyson_inhaler/burn,
+/turf/simulated/floor/reinforced,
 /area/nadezhda/outside/one_star/fo_internal)
 "oo" = (
 /obj/effect/floor_decal/industrial/danger{
@@ -1801,6 +1862,13 @@
 /obj/structure/table/onestar,
 /obj/random/material_rare,
 /turf/simulated/floor/tiled/white/cargo,
+/area/nadezhda/outside/one_star/fo_internal)
+"pi" = (
+/obj/effect/floor_decal/spline/fancy/three_quarters,
+/obj/structure/closet/crate,
+/obj/random/medical,
+/obj/item/greyson_inhaler,
+/turf/simulated/floor/reinforced,
 /area/nadezhda/outside/one_star/fo_internal)
 "pk" = (
 /obj/machinery/door/airlock/multi_tile/metal{
@@ -2220,6 +2288,14 @@
 /mob/living/carbon/superior/robot/gp/roomba/gun_ba/plasma,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/nadezhda/outside/one_star/fo_internal)
+"rS" = (
+/obj/effect/floor_decal/spline/fancy/three_quarters,
+/obj/structure/closet/crate,
+/obj/random/medical,
+/obj/item/storage/firstaid/greyson/multi/empty,
+/obj/item/greyson_inhaler,
+/turf/simulated/floor/reinforced,
+/area/nadezhda/outside/one_star/fo_internal)
 "rW" = (
 /obj/structure/invislight,
 /turf/simulated/floor/asteroid/dirt,
@@ -2592,9 +2668,17 @@
 /obj/item/stack/os_cash/random,
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/outside/one_star/fo_outside)
+"uE" = (
+/obj/effect/floor_decal/spline/fancy/three_quarters,
+/obj/structure/closet/crate,
+/obj/random/medical,
+/obj/item/storage/firstaid/greyson/burn/empty,
+/turf/simulated/floor/reinforced,
+/area/nadezhda/outside/one_star/fo_internal)
 "uG" = (
 /obj/structure/table/onestar,
 /mob/living/carbon/superior/robot/gp/roomba/chemical/med,
+/obj/item/device/scanner/health/greyson,
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star/fo_internal)
 "uJ" = (
@@ -3011,6 +3095,8 @@
 /obj/structure/table/onestar,
 /obj/machinery/light/floor,
 /obj/random/firstaid,
+/obj/item/storage/firstaid/greyson/multi,
+/obj/item/pc_part/drive/disk/design/onestar/medical,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/nadezhda/outside/one_star/fo_internal)
 "xx" = (
@@ -3224,6 +3310,13 @@
 /obj/structure/table/onestar,
 /obj/machinery/chemical_dispenser/soda,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
+/area/nadezhda/outside/one_star/fo_internal)
+"yU" = (
+/obj/effect/floor_decal/spline/fancy/three_quarters,
+/obj/structure/closet/crate,
+/obj/random/medical,
+/obj/item/storage/firstaid/greyson/multi/empty,
+/turf/simulated/floor/reinforced,
 /area/nadezhda/outside/one_star/fo_internal)
 "yZ" = (
 /obj/machinery/door/airlock,
@@ -3583,6 +3676,7 @@
 /obj/effect/decal/cleanable/blood,
 /obj/structure/table/onestar,
 /obj/item/tool/wirecutters/onestar_pliers,
+/obj/item/greyson_inhaler,
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star/fo_internal)
 "BJ" = (
@@ -4313,6 +4407,13 @@
 /obj/effect/floor_decal/industrial/road/warning1,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/nadezhda/outside/one_star/fo_internal)
+"Ia" = (
+/obj/structure/table/onestar,
+/obj/random/firstaid,
+/obj/item/greyson_inhaler/burn,
+/obj/item/greyson_inhaler/burn,
+/turf/simulated/floor/tiled/derelict/red_white_edges,
+/area/nadezhda/outside/one_star/fo_internal)
 "Ib" = (
 /obj/structure/table/onestar,
 /obj/random/tool/advanced/onestar/low_chance,
@@ -4375,6 +4476,14 @@
 /obj/structure/table/onestar,
 /obj/item/tool/knife,
 /turf/simulated/floor/carpet/blucarpet,
+/area/nadezhda/outside/one_star/fo_internal)
+"IE" = (
+/obj/effect/floor_decal/spline/fancy/three_quarters,
+/obj/structure/closet/crate,
+/obj/random/medical,
+/obj/item/greyson_inhaler/burn,
+/obj/item/greyson_inhaler,
+/turf/simulated/floor/reinforced,
 /area/nadezhda/outside/one_star/fo_internal)
 "IH" = (
 /obj/structure/table/onestar,
@@ -4709,6 +4818,13 @@
 "Lh" = (
 /obj/item/material/shard/shrapnel/scrap,
 /turf/simulated/floor/reinforced,
+/area/nadezhda/outside/one_star/fo_internal)
+"Ll" = (
+/obj/structure/table/onestar,
+/obj/random/firstaid,
+/obj/item/greyson_inhaler,
+/obj/item/greyson_inhaler,
+/turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/nadezhda/outside/one_star/fo_internal)
 "Lp" = (
 /mob/living/carbon/superior/robot/gp/synth,
@@ -5382,6 +5498,7 @@
 "QE" = (
 /obj/structure/table/onestar,
 /obj/item/pc_part/drive/disk/design/onestar/stockparts,
+/obj/item/pc_part/drive/disk/design/onestar/medical,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/nadezhda/outside/one_star/fo_internal)
 "QF" = (
@@ -5850,6 +5967,7 @@
 /obj/item/pc_part/drive/disk/design/onestar/armor,
 /obj/item/pc_part/drive/disk/design/onestar/cog,
 /obj/item/pc_part/drive/disk/design/onestar,
+/obj/item/pc_part/drive/disk/design/onestar/medical,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/nadezhda/outside/one_star/fo_internal)
 "Ux" = (
@@ -6045,6 +6163,8 @@
 /obj/structure/table/onestar,
 /obj/random/firstaid,
 /obj/machinery/light/floor,
+/obj/item/storage/firstaid/greyson/multi,
+/obj/item/pc_part/drive/disk/design/onestar/medical,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/nadezhda/outside/one_star/fo_internal)
 "VR" = (
@@ -10793,7 +10913,7 @@ ZT
 Qu
 mc
 Qc
-jZ
+kw
 no
 jm
 jm
@@ -17415,7 +17535,7 @@ ZQ
 ZQ
 ZQ
 Qu
-OW
+ed
 JI
 JI
 JI
@@ -18210,9 +18330,9 @@ OR
 OR
 OR
 OR
-Nj
-vq
-Nj
+nP
+lY
+gh
 wK
 ZT
 PN
@@ -18362,9 +18482,9 @@ OR
 zF
 OR
 OR
+IE
 Nj
-Nj
-Nj
+uE
 wK
 ZT
 PN
@@ -18514,9 +18634,9 @@ OR
 OR
 OR
 OR
+nP
 Nj
-Nj
-Nj
+pi
 wK
 ZT
 PN
@@ -21061,7 +21181,7 @@ Qu
 VG
 UZ
 FP
-OW
+Ia
 no
 zc
 Km
@@ -21221,7 +21341,7 @@ Wc
 Pq
 Wc
 no
-OW
+Ll
 vt
 UZ
 no
@@ -21525,7 +21645,7 @@ Wc
 MP
 Wc
 no
-OW
+Ll
 vt
 UZ
 no
@@ -21669,7 +21789,7 @@ Qu
 VG
 UZ
 FP
-OW
+Ia
 no
 no
 Km
@@ -32862,7 +32982,7 @@ wV
 qn
 wK
 AK
-Nj
+nP
 Nj
 no
 gC
@@ -33015,7 +33135,7 @@ qn
 Sd
 no
 Nj
-Nj
+uE
 no
 no
 iw
@@ -33471,7 +33591,7 @@ qn
 wK
 no
 Nj
-Nj
+gh
 no
 no
 wK
@@ -33774,7 +33894,7 @@ wV
 qn
 wK
 no
-vq
+lj
 Nj
 no
 no
@@ -33927,7 +34047,7 @@ qn
 wK
 no
 Nj
-Nj
+yU
 no
 no
 wK
@@ -37508,7 +37628,7 @@ wV
 wV
 wV
 rd
-nT
+hR
 nT
 nT
 nT
@@ -37593,7 +37713,7 @@ vq
 vJ
 vJ
 Nj
-vq
+bR
 Nj
 vJ
 wK
@@ -37744,9 +37864,9 @@ La
 La
 vJ
 vJ
+rS
 Nj
-Nj
-Nj
+oi
 vJ
 wK
 no
@@ -37898,7 +38018,7 @@ vJ
 Iz
 Nj
 Nj
-Nj
+uE
 vJ
 wK
 no
@@ -40490,7 +40610,7 @@ sU
 cF
 nT
 ZD
-tu
+fR
 UT
 YP
 jb
