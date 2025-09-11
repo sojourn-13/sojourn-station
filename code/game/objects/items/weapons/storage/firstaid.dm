@@ -446,6 +446,7 @@
 	if (empty) return
 	new /obj/item/stack/medical/bruise_pack/soteria(src)
 	new /obj/item/stack/medical/bruise_pack/soteria(src)
+	new /obj/item/stack/medical/bruise_pack/soteria(src)
 	new /obj/item/stack/medical/ointment/soteria(src)
 	new /obj/item/stack/medical/ointment/soteria(src)
 	new /obj/item/reagent_containers/glass/bottle/inaprovaline(src)
@@ -478,6 +479,9 @@
 	if (empty) return
 	new /obj/item/stack/medical/bruise_pack/soteria(src)
 	new /obj/item/stack/medical/bruise_pack/soteria(src)
+	new /obj/item/stack/medical/bruise_pack/soteria(src)
+	new /obj/item/stack/medical/bruise_pack/soteria(src)
+	new /obj/item/stack/medical/ointment/soteria(src)
 	new /obj/item/stack/medical/ointment/soteria(src)
 	new /obj/item/stack/medical/ointment/soteria(src)
 	new /obj/item/storage/pill_bottle/tramadol(src)
