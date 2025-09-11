@@ -174,7 +174,7 @@
 		if(blood_amount)
 			// Convert nutriment into nanoblood at a 20:1 ratio
 			var/obj/item/reagent_containers/blood/empty/blood_pack = new /obj/item/reagent_containers/blood/empty(get_turf(src))
-			var/nano_units = blood_amount / 5
+			var/nano_units = blood_amount / 4
 			if(nano_units < 1)
 				// Fallback: if not enough nutriment to make a full unit, still create a tiny amount
 				nano_units = 1
