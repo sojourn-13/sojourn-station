@@ -101,7 +101,7 @@
 
 	//Makes sure we dont runtime by asking ghosts/proc calls
 	if(isliving(user))
-		var/bolt_perk = user.stats.getPerk(PERK_BOLT_REFLECT) //Do we even have it? Try and get it
+		var/datum/perk/job/bolt_reflect/bolt_perk = user.stats.getPerk(PERK_BOLT_REFLECT) //Do we even have it? Try and get it
 		if(!bolt_perk)
 			return
 

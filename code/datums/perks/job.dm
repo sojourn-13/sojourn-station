@@ -354,7 +354,7 @@
 	passivePerk = FALSE
 	var/chichink = TRUE
 
-/datum/perk/laststand/activate()
+/datum/perk/job/bolt_reflect/activate()
 	var/mob/living/user = holder
 	if(!isliving(user))
 		return ..()
