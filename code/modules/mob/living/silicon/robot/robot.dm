@@ -1369,7 +1369,7 @@
 			if("Engineering")
 				icon = 'icons/mob/robot_tall/engi.dmi'
 
-				if(icon_state == "dullahaneng" || icon_state == "dullahancargo" )
+				if(icon_state == "dullahaneng" || icon_state == "dullahancargo")
 					icon = 'icons/mob/robot_tall/engi_dullahan.dmi'
 
 			if("Security")
@@ -1407,3 +1407,6 @@
 
 				if(icon_state == "dullahanjani" || icon_state == "dullahanpeace")
 					icon = 'icons/mob/robot_tall/janitor_dullahan.dmi'
+
+			if("Standard")
+				icon = 'icons/mob/robot_tall/standard.dmi'
