@@ -98,15 +98,26 @@
 
 /obj/item/gun/projectile/boltgun/handle_post_fire(mob/user)
 	..()
-	if(bolt_training && user.stats.getPerk(PERK_BOLT_REFLECT) && loaded.len>0)
-		to_chat(user, SPAN_NOTICE("Your hands move instinctively to chamber a new round!"))
-		bolt_act(user)
-		bolt_act(user)
-		return
-	if(bolt_training && user.stats.getPerk(PERK_BOLT_REFLECT) && loaded.len==0)
-		to_chat(user, SPAN_NOTICE("You stop your hands from instinctively chambering a new round."))
-		bolt_act(user)
-		return
+
+	//Makes sure we dont runtime by asking ghosts/proc calls
+	if(isliving(user))
+		var/datum/perk/job/bolt_reflect/bolt_perk = user.stats.getPerk(PERK_BOLT_REFLECT) //Do we even have it? Try and get it
+		if(!bolt_perk)
+			return
+
+		// /datum/perk/job/bolt_reflect in perks/job.dm basically a "is this perk active on or not?" var
+		if(bolt_perk.chichink)
+			//We have ammo so cycle it to the next shot instently.
+			if(bolt_training && user.stats.getPerk(PERK_BOLT_REFLECT) && loaded.len>1)
+				to_chat(user, SPAN_NOTICE("Your hands move instinctively to chamber a new round!"))
+				bolt_act(user)
+				bolt_act(user)
+				return
+			//Out of ammo, just cycle once so that way we dont close the bolt with a unloaded gun before reloading
+			if(bolt_training && user.stats.getPerk(PERK_BOLT_REFLECT) && loaded.len==1)
+				to_chat(user, SPAN_NOTICE("You stop your hands from instinctively chambering a new round."))
+				bolt_act(user)
+				return
 
 /obj/item/gun/projectile/boltgun/proc/bolt_act(mob/living/user)
 	playsound(src.loc, 'sound/weapons/guns/interact/rifle_boltback.ogg', 75, 1)
