@@ -63,7 +63,6 @@
 			var/healing_left = -heal_per_use //We affectively give another +45 healing for robotic lims
 			for(var/obj/item/organ/external/robotic/E in T.organs)
 				if(!healing_left)
-					to_chat(user, SPAN_NOTICE("no healing."))
 					break
 
 				if(heal_type == "brute" || heal_type == "mixed")
