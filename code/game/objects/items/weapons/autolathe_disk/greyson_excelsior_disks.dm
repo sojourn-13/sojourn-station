@@ -24,11 +24,11 @@
 /obj/item/pc_part/drive/disk/design/onestar/medical
 	disk_name = "Greyson Positronics Medical Pack"
 	icon_state = "onestar"
-	license = 5
+	license = 10
 	designs = list(
-		/datum/design/research/item/firstaid/adv_kit_greyson = 5,
-		/datum/design/research/item/firstaid/regular_kit_greyson = 5,
-		/datum/design/research/item/firstaid/fire_kit_greyson = 5,
+		/datum/design/research/item/firstaid/adv_kit_greyson = 0,
+		/datum/design/research/item/firstaid/regular_kit_greyson = 0,
+		/datum/design/research/item/firstaid/fire_kit_greyson = 0,
 		/datum/design/research/item/medical/bruise_pack_greyson = 1,
 		/datum/design/research/item/medical/ointment_greyson = 1,
 		/datum/design/research/item/medical/greyson_health_scanner = 2,
