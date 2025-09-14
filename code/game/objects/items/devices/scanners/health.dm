@@ -36,7 +36,7 @@
 	extra_bulk = 2
 
 	advanced = TRUE
-	stat_locking = FALSE
+	stat_locking = TRUE
 
 	//Do to being advanced you need more space to see all the information.
 	window_height = 650
@@ -127,11 +127,11 @@
 		return
 
 	user.visible_message(SPAN_NOTICE("[user] has analyzed [target]'s vitals."),SPAN_NOTICE("You have analyzed [target]'s vitals."))
-	. = medical_scan_results(scan_subject, mode)
+	. = medical_scan_results(scan_subject, mode, advanced)
 
 // Has to be living/carbon for the NSA check as metabolism_effects is inherent to them
 // Analyzers are meant to work only on humans (and monkeys) anyways so this virtually changes nothing.
-/proc/medical_scan_results(var/mob/living/carbon/M, var/mode)
+/proc/medical_scan_results(var/mob/living/carbon/M, var/mode, var/advanced = FALSE)
 	. = list()
 	var/dat = list()
 	if (!ishuman(M) || M.isSynthetic())
@@ -226,6 +226,22 @@
 				(org.status & ORGAN_BROKEN && !(org.status & ORGAN_SPLINTED)) ? "<font color='red'>\[Broken\]</font>" : "",
 				(org.status & ORGAN_INFECTED) ? "<font color='green'>\[Infected\]</font>" : "",
 				internal_wound_severity ? "<font color='red'>\[[internal_wound_severity] Organ Wounds\]</font>" : "")
+
+				// If this is an advanced scan, append individual wound entries (in purple) below the organ line.
+				if(advanced)
+					// The detailed wound data lives on internal organ objects. External organs store a list in internal_organs.
+					for(var/obj/item/organ/internal/I in org.internal_organs)
+						if(!I)
+							continue
+						var/list/wounds = I.get_wounds()
+						if(wounds && wounds.len)
+							dat += text("<span class='highlight'>    <font color='#863986'>Internal Wounds ([]):</font></span>", capitalize(I.name))
+							for(var/wd in wounds)
+								// wd is an assoc list with string keys: "name", "severity", "severity_max", "treatments"
+								var/wname = wd["name"]
+								var/wsev = wd["severity"]
+								var/wsevmax = wd["severity_max"]
+								dat += text("<span class='highlight'>        - [] (Severity: [] / [])</span>", wname, wsev, wsevmax)
 		else
 			dat += span("highlight", "Limbs are OK.")
 		dat += "<hr>"
