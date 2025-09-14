@@ -140,8 +140,8 @@
     max_w_class = ITEM_SIZE_NORMAL
     matter = list(MATERIAL_PLASTIC = 20)
     can_hold = list(
-        /obj/item/stack/medical/bruise_pack/advanced/greyson,
-        /obj/item/stack/medical/ointment/advanced/greyson
+        /obj/item/stack/medical/bruise_pack/greyson,
+        /obj/item/stack/medical/ointment/greyson
     )
     opened = FALSE
 
@@ -171,9 +171,9 @@
 /obj/item/storage/firstaid/greyson/multi/populate_contents()
     if(empty) return
     for(var/i in 1 to 5)
-        new /obj/item/stack/medical/bruise_pack/advanced/greyson(src)
+        new /obj/item/stack/medical/bruise_pack/greyson(src)
     for(var/i in 1 to 5)
-        new /obj/item/stack/medical/ointment/advanced/greyson(src)
+        new /obj/item/stack/medical/ointment/greyson(src)
 
 /obj/item/storage/firstaid/greyson/multi/empty
     name = "Greyson Multi-Purpose Medical Kit"
