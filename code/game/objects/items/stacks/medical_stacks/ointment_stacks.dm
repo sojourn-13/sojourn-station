@@ -66,7 +66,7 @@
 			// Apply reagents to the user on every application
 			// Apply reagents to the user on every application, but only medical ones
 			if(preloaded_reagents && preloaded_reagents.len)
-				var/list/allowed_medical = list("quickclot" = 1, "meralyne" = 1, "antitox" = 1, "spaceacillin" = 1, "sterilizine" = 1, "uncap nanites" = 1, "ethanol" = 1, "carbon" = 1, "glue" = 1, "holywater" = 1, "holytricord" = 1, "holyquickclot" = 1, "holydylo" = 1, "holycilin" = 1, "kelotane" = 1, "tramadol" = 1, "dermaline" = 1)
+				var/list/allowed_medical = list("quickclot" = 1, "meralyne" = 1, "anti_toxin" = 1, "spaceacillin" = 1, "sterilizine" = 1, "uncap nanites" = 1, "ethanol" = 1, "carbon" = 1, "glue" = 1, "holywater" = 1, "holytricord" = 1, "holyquickclot" = 1, "holydylo" = 1, "holycilin" = 1, "kelotane" = 1, "tramadol" = 1, "dermaline" = 1)
 				for(var/reagent in preloaded_reagents)
 					if(user.reagents && allowed_medical[reagent])
 						user.reagents.add_reagent(reagent, preloaded_reagents[reagent])
@@ -109,7 +109,7 @@
 	singular_name = "Soteria branded ointment"
 	desc = "Premium burn treatment ointment manufactured by the Soteria Institute. Each application is pre-treated with a specialized medical cocktail including advanced cellular regeneration compounds, pain relief agents, detoxification chemicals, and broad-spectrum antibiotics. The ointment features Soteria's signature blue coloring and comes with more applications than standard burn treatments. Hand-crafted with care by skilled Soteria Medical personnel with care and concern."
 	icon_state = "sr_ointment"
-	preloaded_reagents = list("dermaline" = 2, "tramadol" = 2, "antitox" = 2, "spaceacillin" = 1, "sterilizine" = 1)
+	preloaded_reagents = list("dermaline" = 2, "tramadol" = 2, "anti_toxin" = 2, "spaceacillin" = 1, "sterilizine" = 1)
 	heal_burn = 25
 	amount = 8
 	max_amount = 8

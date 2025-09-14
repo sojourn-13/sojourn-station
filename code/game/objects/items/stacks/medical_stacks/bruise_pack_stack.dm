@@ -106,7 +106,7 @@
 			)
 			var/used = 0
 			var/healed_by_faith
-			var/list/allowed_medical = list("quickclot" = 1, "meralyne" = 1, "antitox" = 1, "spaceacillin" = 1, "sterilizine" = 1, "uncap nanites" = 1, "ethanol" = 1, "carbon" = 1, "glue" = 1, "holywater" = 1, "holytricord" = 1, "holyquickclot" = 1, "holydylo" = 1, "holycilin" = 1, "kelotane" = 1, "tramadol" = 1, "dermaline" = 1)
+			var/list/allowed_medical = list("quickclot" = 1, "meralyne" = 1, "anti_toxin" = 1, "spaceacillin" = 1, "sterilizine" = 1, "uncap nanites" = 1, "ethanol" = 1, "carbon" = 1, "glue" = 1, "holywater" = 1, "holytricord" = 1, "holyquickclot" = 1, "holydylo" = 1, "holycilin" = 1, "kelotane" = 1, "tramadol" = 1, "dermaline" = 1)
 			if(care_about_faith && (holy_healer || holy_healing))
 				if(holy_healer)
 					healed_by_faith += heal_brute
@@ -367,7 +367,7 @@
 	singular_name = "Soteria advanced gauze"
 	desc = "Premium sterile gauze manufactured by the Soteria Institute. Each strip is pre-treated with a specialized medical cocktail including quick-clotting agents, advanced healing compounds, detoxification chemicals, and broad-spectrum antibiotics. The gauze features Soteria's signature blue threading and comes with more applications than standard field dressings. Hand-crafted with care by skilled Soteria Medical personnel with care and concern."
 	icon_state = "sr_brutepack"
-	preloaded_reagents = list("quickclot" = 1, "meralyne" = 2, "antitox" = 2, "spaceacillin" = 1, "sterilizine" = 1)
+	preloaded_reagents = list("quickclot" = 1, "meralyne" = 2, "anti_toxin" = 2, "spaceacillin" = 1, "sterilizine" = 1)
 	fancy_icon = TRUE
 	disinfectant  = TRUE
 	amount = 8
