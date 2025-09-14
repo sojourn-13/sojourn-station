@@ -76,6 +76,7 @@
 		/obj/item/stack/medical/bruise_pack/greyson = 72,
 		/obj/item/storage/firstaid/greyson/burn = 2,
 		/obj/item/stack/medical/ointment/greyson = 72,
+		/obj/item/storage/firstaid/greyson/multi = 2,
 		//obj/item/reagent_containers/food/drinks/os_coffee = 12,
 		/obj/item/clothing/mask/smokable/cigarette/os = 12
 		)
@@ -88,6 +89,7 @@
 		/obj/item/stack/medical/bruise_pack/greyson = 25,
 		/obj/item/storage/firstaid/greyson/burn = 200,
 		/obj/item/stack/medical/ointment/greyson = 25,
+		/obj/item/storage/firstaid/greyson/multi = 200,
 		//obj/item/reagent_containers/food/drinks/os_coffee = 7,
 		/obj/item/clothing/mask/smokable/cigarette/os = 5
 		)
