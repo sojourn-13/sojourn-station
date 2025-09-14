@@ -62,7 +62,7 @@
 		/datum/job/ai
 		)
 	allow_modifications = TRUE
-	restricted_to_species = list(FORM_HUMAN, FORM_EXALT_HUMAN, FORM_SABLEKYNE, FORM_KRIOSAN, FORM_AKULA, FORM_MARQUA, FORM_NARAMAD, FORM_CINDAR, FORM_AGSYNTH)
+	restricted_to_species = list(FORM_HUMAN, FORM_EXALT_HUMAN, FORM_SABLEKYNE, FORM_KRIOSAN, FORM_AKULA, FORM_MARQUA, FORM_NARAMAD, FORM_CINDAR, FORM_AGSYNTH, FORM_SOTSYNTH, FORM_BSSYNTH, FORM_UNBRANDED, FORM_FBP)
 
 /datum/category_item/setup_option/core_implant/artificer_nanogate
 	name = "Artificer Nanogate"
