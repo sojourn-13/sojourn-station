@@ -9,7 +9,7 @@
 		energy = 12,
 		bomb = 75,
 		bio = 100,
-		rad = 25
+		rad = 100
 	)
 	siemens_coefficient = 0.35
 	species_restricted = list("Human")
@@ -56,7 +56,7 @@
 		energy = 12,
 		bomb = 75,
 		bio = 100,
-		rad = 25
+		rad = 100
 	)
 	siemens_coefficient = 0.35
 	species_restricted = list("Human")
