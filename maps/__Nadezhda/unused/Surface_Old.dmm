@@ -18023,7 +18023,6 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/obj/item/pc_part/drive/disk/design/nt_bioaugment,
 /obj/item/clothing/mask/gas/germanmask,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/command/prime)

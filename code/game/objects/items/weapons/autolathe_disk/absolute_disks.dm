@@ -246,23 +246,6 @@
 
 	license = 18
 
-/obj/item/pc_part/drive/disk/design/nt_bioaugment
-	disk_name = "Strange Disk"
-	desc = "Now,where did this come from?"
-	icon_state = "onestar"
-
-	license = -1
-	designs = list(
-		/datum/design/bioprinter/bioimplant/osurgical,
-		/datum/design/bioprinter/bioimplant/oengineering,
-		/datum/design/bioprinter/bioimplant/oscythe,
-		/datum/design/bioprinter/bioimplant/oarmor,
-		/datum/design/bioprinter/bioimplant/omuscle,
-		/datum/design/research/item/mechfab/modules/hud/welder_bio,
-		/datum/design/research/item/mechfab/modules/hud/night_bio,
-		/datum/design/research/item/mechfab/modules/hud/thermal_bio
-	)
-
 // Thorn and Rose Pack - Both .35 and .40
 /obj/item/pc_part/drive/disk/design/nt/mk58
 	disk_name = "Absolute Armory - Thorn and Rose Handgun Pack"

@@ -221,3 +221,20 @@
 /obj/item/pc_part/drive/disk/design/xenobio/rd
 	disk_name = "Soteria Xenobio Equipment Factory"
 	license = -1
+
+/obj/item/pc_part/drive/disk/design/nt_bioaugment
+	disk_name = "Soteria Advanced Bioaugments Factory"
+	desc = "Advanced designs taken from the Hivemind. Not for public distribution."
+	icon_state = "data-purple"
+
+	license = -1
+	designs = list(
+		/datum/design/organ/bioimplant/osurgical,
+		/datum/design/organ/bioimplant/oengineering,
+		/datum/design/organ/bioimplant/oscythe,
+		/datum/design/organ/bioimplant/oarmor,
+		/datum/design/organ/bioimplant/omuscle,
+		/datum/design/research/item/mechfab/modules/hud/welder_bio,
+		/datum/design/research/item/mechfab/modules/hud/night_bio,
+		/datum/design/research/item/mechfab/modules/hud/thermal_bio
+	)
