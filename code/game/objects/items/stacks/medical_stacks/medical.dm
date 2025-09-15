@@ -28,6 +28,8 @@
 	var/always_useful = FALSE
 	var/use_timer = 30
 	var/prevent_wasting = FALSE
+	var/chemical_injecting = FALSE //1 = Touch 2 = Blood 3 = Eaten
+	var/reagent_transfer_rate = 0.2 //20% of reagents inside the medical item if chemical injecting will be added when used to eather blood/skin/eaten
 
 /obj/item/stack/medical/proc/try_to_save_use(mob/living/user)
 	if(ishuman(user))

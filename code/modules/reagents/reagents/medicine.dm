@@ -2,6 +2,15 @@
 /datum/reagent/medicine
 	reagent_type = "Medicine"
 
+//Unless over-coded affect touch is affectively the same as injecting. This is done at a even worse rate do to skin layer
+/datum/reagent/medicine/affect_touch(mob/living/carbon/M, alien, effect_multiplier)
+	var/bio_armor_protection = 100 - M.getarmor(null, ARMOR_BIO)
+	if(bio_armor_protection > 19) // 80 armor or more = dont do this
+		return
+	bio_armor_protection = min(0.1, 0.01 * bio_armor_protection)
+
+	affect_blood(M, alien, 0.1 - bio_armor_protection)
+
 /datum/reagent/medicine/inaprovaline
 	name = "Inaprovaline"
 	id = "inaprovaline"

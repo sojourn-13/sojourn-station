@@ -76,6 +76,18 @@
 						SPAN_DANGER("You hear something being wrapped.")
 					)
 					return
+
+			//In case anyone ever wants to make this a thing.
+			if(chemical_injecting && reagents)
+				switch(chemical_injecting)
+					if(1) //Touch
+						reagents.trans_to_mob(M, (reagents.total_volume / amount) * reagent_transfer_rate, CHEM_TOUCH)
+					if(2) //Blood
+						reagents.trans_to_mob(M, (reagents.total_volume / amount) * reagent_transfer_rate, CHEM_BLOOD)
+					if(3) //Eaten
+						reagents.trans_to_mob(M, (reagents.total_volume / amount) * reagent_transfer_rate, CHEM_INGEST)
+
+
 			affecting.status |= ORGAN_SPLINTED
 			use(1) //You cannot "waste less" of a splint! Their uses are supposed to be expended since it's one whole item not some ointment!
 		return

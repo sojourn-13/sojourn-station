@@ -7,6 +7,31 @@
 	heal_brute = 10
 	preloaded_reagents = list("silicon" = 4, "ethanol" = 8)
 	fancy_icon = TRUE
+	chemical_injecting = 1
+	var/canlase = TRUE
+
+/obj/item/stack/medical/bruise_pack/attackby(obj/item/I, mob/user)
+	..()
+	if(reagents && canlase)
+		if(istype(I, /obj/item/reagent_containers/glass))
+			var/obj/item/reagent_containers/glass/G = I
+			if(G.reagents)
+				if(reagents.total_volume >= reagents.maximum_volume)
+					to_chat(user, SPAN_WARNING("[src] is already soaked!"))
+					return
+				reagent_flags |= REFILLABLE | DRAINABLE | DRAWABLE | INJECTABLE
+				G.reagents.trans_to_obj(src, amount)
+				user.visible_message(
+					SPAN_NOTICE("[user] trys does [src] with [G]'s content."),
+					SPAN_NOTICE("You start dose [src] in [G].")
+				)
+				reagent_flags = initial(reagent_flags)
+
+
+/obj/item/stack/medical/bruise_pack/Initialize(mapload)
+	..()
+	if(reagents)
+		reagents.maximum_volume += max_amount //Some room for dosing
 
 /obj/item/stack/medical/bruise_pack/attack(mob/living/carbon/M, mob/living/user)
 	if(..())
@@ -22,7 +47,6 @@
 
 	if(ishuman(user) && care_about_faith)
 		holy_healer = check_faith_of_healer(user)
-
 
 	//log_debug("bruise_pack 0.5, holy_healer = [holy_healer], holy_healing = [holy_healing]")
 
@@ -126,6 +150,16 @@
 						to_chat(user, SPAN_WARNING("\The [src] is used up."))
 					else
 						to_chat(user, SPAN_WARNING("\The [src] is used up, but there are more wounds to treat on \the [affecting.name]."))
+
+				if(chemical_injecting && reagents)
+					switch(chemical_injecting)
+						if(1) //Touch
+							reagents.trans_to_mob(M, (reagents.total_volume / amount) * reagent_transfer_rate, CHEM_TOUCH)
+						if(2) //Blood
+							reagents.trans_to_mob(M, (reagents.total_volume / amount) * reagent_transfer_rate, CHEM_BLOOD)
+						if(3) //Eaten
+							reagents.trans_to_mob(M, (reagents.total_volume / amount) * reagent_transfer_rate, CHEM_INGEST)
+
 				use(used)
 				update_icon()
 		else
@@ -160,7 +194,7 @@
 	automatic_charge_overlays = TRUE
 	consumable = FALSE	// Will the stack disappear entirely once the amount is used up?
 	splittable = FALSE	// Is the stack capable of being splitted?
-	preloaded_reagents = list("silicon" = 4, "ethanol" = 10, "lithium" = 4)
+	preloaded_reagents = list("silicon" = 4, "ethanol" = 10, "somnadine" = 4)
 	w_class = ITEM_SIZE_SMALL
 	perk_required = TRUE
 	needed_perk = PERK_MEDICAL_EXPERT
@@ -169,6 +203,7 @@
 	stacktype_alt = /obj/item/stack/medical/bruise_pack/advanced
 	disinfectant  = TRUE
 	fancy_icon = FALSE
+	canlase = FALSE
 
 /obj/item/stack/medical/bruise_pack/advanced/large
 	name = "large advanced trauma kit"
@@ -245,6 +280,7 @@
 	bio_requirement = 15
 	stacktype_alt = null
 	care_about_faith = TRUE
+	canlase = FALSE
 
 /obj/item/stack/medical/bruise_pack/advanced/nt/update_icon()
 	if(fancy_icon)
@@ -265,6 +301,7 @@
 	color = "#5B0E4F" //spooooky!!!!!
 	consumable = FALSE //So we dont mess with dropping it
 	var/mob/living/carbon/holder // The one that prevent the tool from fading
+	canlase = FALSE
 
 /obj/item/stack/medical/bruise_pack/psionic/New(loc, mob/living/carbon/Maker)
 	..()
@@ -321,10 +358,6 @@
 	always_useful = TRUE
 	extra_bulk = 2
 	prevent_wasting = TRUE
-
-
-
-
-
-
+	chemical_injecting = 2 //We add some chemicals to blood
+	canlase = FALSE
 
