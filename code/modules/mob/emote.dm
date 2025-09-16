@@ -78,6 +78,11 @@
 		if (config.antighost && istype(M, /mob/observer))
 			if (M.admin_antighost == 0)
 				continue
+			else
+				return
+		else
+			return
+
 
 		if(get_turf(M) in messageturfs)
 			if (istype(M, /mob/observer))
