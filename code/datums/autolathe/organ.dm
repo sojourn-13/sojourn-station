@@ -78,5 +78,3 @@
 	name = "Extensive Blood Vessels"
 	materials = list(MATERIAL_BIOMATTER = 30, MATERIAL_PLASTIC = 2)
 	build_path = /obj/item/organ/internal/blood_vessel/extensive
-
-

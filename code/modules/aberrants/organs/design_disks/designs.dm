@@ -392,3 +392,15 @@
 /datum/design/organ/bioimplant/omuscle
 	name = "Organic muscle implant"
 	build_path = /obj/item/biogoop/muscle
+
+/datum/design/organ/bioimplant/thermal_bio
+	build_path = /obj/item/biogoop/thermal
+	name = "Embedded bio-thermal shades"
+
+/datum/design/organ/bioimplant/welder_bio
+	build_path = /obj/item/biogoop/welding
+	name = "Embedded bio-welder shades"
+
+/datum/design/organ/bioimplant/night_bio
+	build_path = /obj/item/biogoop/night
+	name = "Embedded bio-night vision shades"

@@ -234,7 +234,7 @@
 		/datum/design/organ/bioimplant/oscythe,
 		/datum/design/organ/bioimplant/oarmor,
 		/datum/design/organ/bioimplant/omuscle,
-		/datum/design/research/item/mechfab/modules/hud/welder_bio,
-		/datum/design/research/item/mechfab/modules/hud/night_bio,
-		/datum/design/research/item/mechfab/modules/hud/thermal_bio
+		/datum/design/organ/bioimplant/welder_bio,
+		/datum/design/organ/bioimplant/night_bio,
+		/datum/design/organ/bioimplant/thermal_bio
 	)
