@@ -165,7 +165,10 @@
 							/datum/design/research/item/ammo/pistol/empty/laser,
 							/datum/design/research/item/ammo/magum_laser,
 							/datum/design/research/item/robot_upgrade/bigknife,
-							/datum/design/research/item/weapon/slimebaton
+							/datum/design/research/item/weapon/slimebaton,
+							/datum/design/research/item/ammo/flare_shell,
+							/datum/design/research/item/ammo/flare_shell/blue,
+							/datum/design/research/item/ammo/flare_shell/green
 							)
 
 /datum/technology/exotic_weaponry
@@ -206,9 +209,7 @@
 	unlocks_designs = list(	/datum/design/research/item/weapon/centurio,
 							/datum/design/research/item/weapon/auretian,
 							/datum/design/research/item/weapon/sabul,
-							/datum/design/research/item/ammo/flare_shell,
-							/datum/design/research/item/ammo/flare_shell/blue,
-							/datum/design/research/item/ammo/flare_shell/green,
+							/datum/design/research/item/weapon/spear,
 							/datum/design/research/item/ammo/grenade_net
 						)
 
