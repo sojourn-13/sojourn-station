@@ -76,7 +76,7 @@
 		if (!M.client || istype(M, /mob/new_player))
 			continue
 		if (config.antighost && istype(M, /mob/observer))
-			if (!M.admin_antighost)
+			if (M.admin_antighost == 0)
 				continue
 
 		if(get_turf(M) in messageturfs)
