@@ -187,12 +187,7 @@
 							/datum/design/research/item/ammo/shotgun_laser,
 							/datum/design/research/item/weapon/bastion,
 							/datum/design/research/item/mechfab/modules/punch_helper,
-							/datum/design/research/item/mechfab/modules/momentum_speed_adder,
-							/datum/design/research/item/weapon/sabul,
-							/datum/design/research/item/ammo/flare_shell,
-							/datum/design/research/item/ammo/flare_shell/blue,
-							/datum/design/research/item/ammo/flare_shell/green,
-							/datum/design/research/item/ammo/grenade_net
+							/datum/design/research/item/mechfab/modules/momentum_speed_adder
 							)
 
 /datum/technology/adv_exotic_weaponry
@@ -209,7 +204,12 @@
 	cost = 3750
 
 	unlocks_designs = list(	/datum/design/research/item/weapon/centurio,
-							/datum/design/research/item/weapon/auretian
+							/datum/design/research/item/weapon/auretian,
+							/datum/design/research/item/weapon/sabul,
+							/datum/design/research/item/ammo/flare_shell,
+							/datum/design/research/item/ammo/flare_shell/blue,
+							/datum/design/research/item/ammo/flare_shell/green,
+							/datum/design/research/item/ammo/grenade_net
 						)
 
 
