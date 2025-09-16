@@ -79,27 +79,4 @@
 	materials = list(MATERIAL_BIOMATTER = 30, MATERIAL_PLASTIC = 2)
 	build_path = /obj/item/organ/internal/blood_vessel/extensive
 
-//[/IMPLANTS]
 
-/datum/design/organ/bioimplant
-	materials = list(MATERIAL_BIOMATTER = 50)
-
-/datum/design/organ/bioimplant/oscythe
-	name = "Organic arm scythe implant"
-	build_path = /obj/item/biogoop/armscythe
-
-/datum/design/organ/bioimplant/osurgical
-	name = "Organic surgery omnitool implant"
-	build_path = /obj/item/biogoop/surgical
-
-/datum/design/organ/bioimplant/oengineering
-	name = "Organic engineering omnitool implant"
-	build_path = /obj/item/biogoop/engineer
-
-/datum/design/organ/bioimplant/oarmor
-	name = "Organic exoskeleton implant"
-	build_path = /obj/item/biogoop/armor
-
-/datum/design/organ/bioimplant/omuscle
-	name = "Organic muscle implant"
-	build_path = /obj/item/biogoop/muscle

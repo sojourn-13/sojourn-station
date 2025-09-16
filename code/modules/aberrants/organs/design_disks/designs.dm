@@ -14,16 +14,16 @@
 
 /datum/design/organ/aberrant_organ/scrub_toxin_blood
 	build_path = /obj/item/organ/internal/scaffold/aberrant/scrub_toxin/blood
-	
+
 /datum/design/organ/aberrant_organ/scrub_toxin_ingest
 	build_path = /obj/item/organ/internal/scaffold/aberrant/scrub_toxin/ingest
-	
+
 /datum/design/organ/aberrant_organ/scrub_toxin_touch
 	build_path = /obj/item/organ/internal/scaffold/aberrant/scrub_toxin/touch
-	
+
 /datum/design/organ/aberrant_organ/gastric
 	build_path = /obj/item/organ/internal/scaffold/aberrant/gastric
-	
+
 /datum/design/organ/aberrant_organ/damage_response
 	build_path = /obj/item/organ/internal/scaffold/aberrant/damage_response
 
@@ -33,46 +33,46 @@
 
 /datum/design/organ/aberrant_organ/wifebeater/liver
 	build_path = /obj/item/organ/internal/scaffold/aberrant/dependent/wifebeater/liver
-	
+
 /datum/design/organ/aberrant_organ/wifebeater/stomach
 	build_path = /obj/item/organ/internal/scaffold/aberrant/dependent/wifebeater/stomach
-	
+
 /datum/design/organ/aberrant_organ/wifebeater/kidney
 	build_path = /obj/item/organ/internal/scaffold/aberrant/dependent/wifebeater/kidney
-	
+
 
 /datum/design/organ/aberrant_organ/functional_alcoholic
 	build_path = /obj/item/organ/internal/scaffold/aberrant/dependent/functional_alcoholic/random
-	
+
 /datum/design/organ/aberrant_organ/functional_alcoholic/liver
 	build_path = /obj/item/organ/internal/scaffold/aberrant/dependent/functional_alcoholic/liver
-	
+
 /datum/design/organ/aberrant_organ/functional_alcoholic/stomach
 	build_path = /obj/item/organ/internal/scaffold/aberrant/dependent/functional_alcoholic/stomach
-	
+
 /datum/design/organ/aberrant_organ/functional_alcoholic/kidney
 	build_path = /obj/item/organ/internal/scaffold/aberrant/dependent/functional_alcoholic/kidney
-	
+
 
 /datum/design/organ/aberrant_organ/classy
 	build_path = /obj/item/organ/internal/scaffold/aberrant/dependent/classy/random
-	
+
 /datum/design/organ/aberrant_organ/classy/liver
 	build_path = /obj/item/organ/internal/scaffold/aberrant/dependent/classy/liver
-	
+
 /datum/design/organ/aberrant_organ/classy/stomach
 	build_path = /obj/item/organ/internal/scaffold/aberrant/dependent/classy/stomach
-	
+
 /datum/design/organ/aberrant_organ/classy/kidney
 	build_path = /obj/item/organ/internal/scaffold/aberrant/dependent/classy/kidney
-	
+
 
 /datum/design/organ/aberrant_organ/mobster
 	build_path = /obj/item/organ/internal/scaffold/aberrant/dependent/mobster/random
-	
+
 /datum/design/organ/aberrant_organ/mobster/blood_vessel
 	build_path = /obj/item/organ/internal/scaffold/aberrant/dependent/mobster/blood_vessel
-	
+
 /datum/design/organ/aberrant_organ/mobster/liver
 	build_path = /obj/item/organ/internal/scaffold/aberrant/dependent/mobster/liver
 
@@ -365,3 +365,30 @@
 
 /datum/design/organ/teratoma/special/stat_boost
 	build_path = /obj/item/organ/internal/scaffold/aberrant/teratoma/special/stat_boost
+
+// bioimplants
+
+/datum/design/organ/bioimplant
+	category = "Bio"
+	materials = list(MATERIAL_BIOMATTER = 50)
+	starts_unlocked = FALSE
+
+/datum/design/organ/bioimplant/oscythe
+	name = "Organic arm scythe implant"
+	build_path = /obj/item/biogoop/armscythe
+
+/datum/design/organ/bioimplant/osurgical
+	name = "Organic surgery omnitool implant"
+	build_path = /obj/item/biogoop/surgical
+
+/datum/design/organ/bioimplant/oengineering
+	name = "Organic engineering omnitool implant"
+	build_path = /obj/item/biogoop/engineer
+
+/datum/design/organ/bioimplant/oarmor
+	name = "Organic exoskeleton implant"
+	build_path = /obj/item/biogoop/armor
+
+/datum/design/organ/bioimplant/omuscle
+	name = "Organic muscle implant"
+	build_path = /obj/item/biogoop/muscle
