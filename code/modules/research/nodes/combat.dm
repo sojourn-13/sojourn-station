@@ -227,7 +227,8 @@
 	cost = 1500
 
 	unlocks_designs = list(
-							/datum/design/research/item/weapon/c20r,
+							/datum/design/research/item/weapon/c20r/sci,
+							/datum/design/research/item/weapon/c20r/med,
 							/datum/design/research/item/ammo/smg_mag/lethal,
 							/datum/design/research/item/ammo/smg_mag/rubber,
 							/datum/design/research/item/ammo/laser/box,
