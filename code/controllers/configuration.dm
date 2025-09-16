@@ -102,6 +102,7 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 	var/server
 	var/banappeals
 	var/wikiurl
+	var/rulesurl
 	var/forumurl
 	var/githuburl
 	var/discordurl
@@ -464,6 +465,9 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 
 				if ("wikiurl")
 					config.wikiurl = value
+
+				if ("rulesurl")
+					config.rulesurl = value
 
 				if ("discordurl")
 					config.discordurl = value
