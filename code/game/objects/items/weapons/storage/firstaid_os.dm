@@ -172,7 +172,7 @@
     if(empty) return
     for(var/i in 1 to 5)
         new /obj/item/stack/medical/bruise_pack/greyson(src)
-    for(var/i in 1 to 5)
+    for(var/i in 1 to 4)
         new /obj/item/stack/medical/ointment/greyson(src)
 
 /obj/item/storage/firstaid/greyson/multi/empty
