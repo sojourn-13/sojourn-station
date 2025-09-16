@@ -72,19 +72,12 @@
 	for (var/turf in view(range, get_turf(src)))
 		messageturfs += turf
 
-	for(var/mob/M in GLOB.player_list)
+	for (var/mob/M in GLOB.player_list)
 		if (!M.client || istype(M, /mob/new_player))
 			continue
-		if (antighost && istype(M, /mob/observer))
-			if (is_admin(M))
-				return
-			else
+		if (config.antighost && istype(M, /mob/observer))
+			if (!M.admin_antighost)
 				continue
-
-		/* Disabled - this SHOULD be covered by the previous lines of code regarding ghosts seeing subtle-verbs.
-		if (antighost && istype(M, /mob/observer))
-			continue
-		*/
 
 		if(get_turf(M) in messageturfs)
 			if (istype(M, /mob/observer))

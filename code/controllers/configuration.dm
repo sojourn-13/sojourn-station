@@ -182,6 +182,10 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 	var/use_overmap = 0
 	var/generate_maint_ruins = 0
 
+	//antighost vars
+	var/antighost = TRUE
+	var/mob/admin_antighost = FALSE
+
 	// Event settings
 	var/expected_round_length	= 3 * 60 * 60 * 10 // 3 hours
 	var/round_end_time			= 0 //0 means no round end

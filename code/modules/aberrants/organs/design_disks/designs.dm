@@ -369,7 +369,7 @@
 // bioimplants
 
 /datum/design/organ/bioimplant
-	category = "Bio"
+	category = "Bio-Augments"
 	materials = list(MATERIAL_BIOMATTER = 50)
 	starts_unlocked = FALSE
 

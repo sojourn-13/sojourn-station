@@ -1,3 +1,6 @@
+/mob
+    var/admin_antighost = TRUE  // per-mob toggle: do they skip observers?
+
 /mob/Destroy()//This makes sure that mobs with clients/keys are not just deleted from the game.
 	STOP_PROCESSING(SSmobs, src)
 	GLOB.dead_mob_list -= src

@@ -74,6 +74,20 @@ ADMIN_VERB_ADD(/client/proc/hide_verbs, null, TRUE)
 
 	to_chat(src, "<span class='interface'>All of your adminverbs are now visible.</span>")
 
+ADMIN_VERB_ADD(/client/proc/toggle_antighost, R_ADMIN|R_MOD, TRUE)
+// Verb to toggle for client
+/client/proc/toggle_antighost()
+	set name = "Toggle Anti-Ghost"
+	set desc = "Toggle your local admin-view of subtle verbs"
+	set category = "Admin"
+	if (!holder)
+		return
+	src.mob.admin_antighost = !src.mob.admin_antighost
+	if (src.mob.admin_antighost)
+		to_chat(src, "<span class='interface'>Anti-Ghost filtering ENABLED for your view.</span>")
+	else
+		to_chat(src, "<span class='interface'>Anti-Ghost filtering DISABLED for your view.</span>")
+
 ADMIN_VERB_ADD(/client/proc/admin_ghost, R_ADMIN|R_MOD, TRUE)
 // Allows us to ghost/reenter body at will
 /client/proc/admin_ghost()
