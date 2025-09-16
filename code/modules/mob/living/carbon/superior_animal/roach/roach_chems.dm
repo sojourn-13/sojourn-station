@@ -35,7 +35,7 @@
 	if(istype(L, /mob/living/carbon/superior/roach))
 		var/mob/living/carbon/superior/roach/bug = L
 		if(bug.stat == DEAD)
-			if((bug.blattedin_revives_left >= 0) && prob(70))//Roaches sometimes can come back to life from healing vapors
+			if((bug.blattedin_revives_left > 0) && prob(70))//Roaches sometimes can come back to life from healing vapors
 				bug.visible_message("<b>\The [bug.name]</b> twitches as it comes back to life!")
 				blattedin_revive(bug)
 
