@@ -144,6 +144,9 @@
 		new /obj/item/storage/backpack/medical(src)
 	else
 		new /obj/item/storage/backpack/satchel/medical(src)
+	new /obj/item/gearbox/traumatizedteam(src)
+	new /obj/item/gunbox/traumatizedteam_sidearm(src)
+	new /obj/item/gunbox/traumatizedteam(src) // Moved the weapon selection to here
 	new /obj/item/clothing/under/rank/paramedic(src) // Not a surgery-oriented job, they don't need scrubs.
 	new /obj/item/device/lighting/toggleable/flashlight(src)
 	new /obj/item/device/radio(src)

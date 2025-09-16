@@ -661,9 +661,6 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 /obj/item/storage/hcases/med/medical_job_trama/populate_contents()
 	new /obj/item/stack/medical/bruise_pack/advanced/large(src)
 	new /obj/item/stack/medical/ointment/advanced/large(src)
-	new /obj/item/gearbox/traumatizedteam(src)
-	new /obj/item/gunbox/traumatizedteam_sidearm(src)
-	new /obj/item/gunbox/traumatizedteam(src) // Moved the weapon selection to here
 	new /obj/item/storage/firstaid/soteria/large(src)
 	new /obj/item/modular_computer/tablet/moebius/preset(src)
 
