@@ -63,14 +63,10 @@
 			affecting.salve()
 			try_to_pain(M, user)
 
-			// Apply reagents to the user on every application
 			// Apply reagents to the user on every application, but only medical ones
 			if(preloaded_reagents && preloaded_reagents.len)
-				var/list/allowed_medical = list("quickclot" = 1, "meralyne" = 1, "anti_toxin" = 1, "spaceacillin" = 1, "sterilizine" = 1, "uncap nanites" = 1, "ethanol" = 1, "carbon" = 1, "glue" = 1, "holywater" = 1, "holytricord" = 1, "holyquickclot" = 1, "holydylo" = 1, "holycilin" = 1, "kelotane" = 1, "tramadol" = 1, "dermaline" = 1)
 				for(var/reagent in preloaded_reagents)
-					if(user.reagents && allowed_medical[reagent])
-						user.reagents.add_reagent(reagent, preloaded_reagents[reagent])
-
+					reagents.trans_to_mob(M, (reagent, preloaded_reagents[reagent]), CHEM_TOUCH)
 			return
 
 		if(can_operate(H, user))        //Checks if mob is lying down on table for surgery
