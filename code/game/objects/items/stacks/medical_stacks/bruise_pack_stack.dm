@@ -185,14 +185,14 @@
 				// Apply reagents to the user on every application
 				if(preloaded_reagents && preloaded_reagents.len)
 					for(var/reagent in preloaded_reagents)
-						reagents.trans_to_mob(M, (reagent, preloaded_reagents[reagent]), CHEM_TOUCH)
+						user.reagents.add_reagent(reagent, preloaded_reagents[reagent])
 
 				// Apply injected reagents to the user (static amount per use) but only medical ones
 				if(injected_reagents && injected_reagents.len)
 					for(var/reagent in injected_reagents)
 						if(user.reagents && injected_reagents[reagent] > 0 && allowed_medical[reagent])
 							var/amount_to_apply = injected_reagents[reagent] / max_amount // Static amount per use based on initial injection
-							reagents.trans_to_mob(M, (reagent, amount_to_apply), CHEM_TOUCH)
+							user.reagents.add_reagent(reagent, amount_to_apply)
 
 				if(!try_to_save_use(user))
 					used++

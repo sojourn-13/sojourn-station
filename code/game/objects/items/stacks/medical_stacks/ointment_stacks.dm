@@ -66,7 +66,8 @@
 			// Apply reagents to the user on every application, but only medical ones
 			if(preloaded_reagents && preloaded_reagents.len)
 				for(var/reagent in preloaded_reagents)
-					reagents.trans_to_mob(M, (reagent, preloaded_reagents[reagent]), CHEM_TOUCH)
+					user.reagents.add_reagent(reagent, preloaded_reagents[reagent])
+
 			return
 
 		if(can_operate(H, user))        //Checks if mob is lying down on table for surgery
