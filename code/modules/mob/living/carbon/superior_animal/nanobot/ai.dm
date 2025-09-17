@@ -73,7 +73,6 @@
 
 /mob/living/carbon/superior/nanobot/proc/handle_ui()
 	var/dat = ""
-	dat += "<head><title>[name]</title></head>"
 	dat += "[name]<BR>"
 	dat += "<A href='?src=\ref[src];close=1'>Close</A><BR>"
 	dat += "<A href='?src=\ref[src];refresh=1'>Refresh</A><BR><BR>"
@@ -97,7 +96,7 @@
 	if(ai_flag & FOOD_MODE) // Is Food Mode installed?
 		dat += "- Food Mode : <A href='?src=\ref[src];food=1'>Dispense Food</A><BR>"
 
-	return dat
+	return HTML_SKELETON_TITLE(name,dat)
 
 /mob/living/carbon/superior/nanobot/Topic(href, href_list)
 	..()

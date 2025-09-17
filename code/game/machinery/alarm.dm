@@ -1141,7 +1141,7 @@ FIRE ALARM
 			else
 				alarm()
 			. = TRUE
-		
+
 		if("timer_set")
 			time = max(0, params["time"])
 			. = TRUE
@@ -1259,8 +1259,8 @@ Just a object used in constructing fire alarms
 			d2 = text("<A href='?src=\ref[];time=1'>Initiate Time Lock</A>", src)
 		var/second = time % 60
 		var/minute = (time - second) / 60
-		var/dat = text("<HTML><HEAD></HEAD><BODY><TT><B>Party Button</B> []\n<HR>\nTimer System: []<BR>\nTime Left: [][] <A href='?src=\ref[];tp=-30'>-</A> <A href='?src=\ref[];tp=-1'>-</A> <A href='?src=\ref[];tp=1'>+</A> <A href='?src=\ref[];tp=30'>+</A>\n</TT></BODY></HTML>", d1, d2, (minute ? text("[]:", minute) : null), second, src, src, src, src)
-		user << browse(dat, "window=partyalarm")
+		var/dat = text("<TT><B>Party Button</B> []\n<HR>\nTimer System: []<BR>\nTime Left: [][] <A href='?src=\ref[];tp=-30'>-</A> <A href='?src=\ref[];tp=-1'>-</A> <A href='?src=\ref[];tp=1'>+</A> <A href='?src=\ref[];tp=30'>+</A>\n</TT>", d1, d2, (minute ? text("[]:", minute) : null), second, src, src, src, src)
+		user << browse(HTML_SKELETON_TITLE("Party Button",dat), "window=partyalarm")
 		onclose(user, "partyalarm")
 	else
 		if (A.fire)
@@ -1277,15 +1277,15 @@ Just a object used in constructing fire alarms
 		if(minute)
 			time_string = "[minute]:[second]"
 		var/dat = {"
-			<HTML><BODY><TT>
+			<TT>
 			<B>[stars("Party Button")]</B> [d1]<HR>
 			Timer System: [d2]<BR>
 			Time Left: [time_string]
 			<A href='?src=\ref[src];tp=-30'>-</A> <A href='?src=\ref[src];tp=-1'>-</A>
 			<A href='?src=\ref[src];tp=1'>+</A> <A href='?src=\ref[src];tp=30'>+</A>
-			</TT></BODY></HTML>
+			</TT>
 		"}
-		user << browse(dat, "window=partyalarm")
+		user << browse(HTML_SKELETON(dat), "window=partyalarm")
 		onclose(user, "partyalarm")
 	return
 
