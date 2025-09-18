@@ -151,7 +151,7 @@
 	handle_casings = HOLD_CASINGS
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
 	fire_sound = 'sound/weapons/guns/fire/GLfire.ogg'
-	bulletinsert_sound = 'sound/weapons/guns/interact/shotgun_insert.ogg'
+	bulletinsert_sound = 'sound/weapons/guns/interact/china_lake_reload.ogg'
 	max_shells = 1
 	var/icon_scale = 1.3
 	fire_delay = 25
@@ -481,6 +481,8 @@
 	zoom_factors = list(1.5)
 	fire_delay = 100
 	fire_sound = 'sound/weapons/guns/fire/dmr_fire.ogg'
+	reload_sound = 'sound/weapons/guns/interact/sfrifle_magin.ogg'
+	unload_sound = 'sound/weapons/guns/interact/sfrifle_magout.ogg'
 	init_recoil = RIFLE_RECOIL(4)
 	force = WEAPON_FORCE_PAINFUL
 	twohanded = TRUE
@@ -530,6 +532,8 @@
 	zoom_factors = list(0.4)
 	ammo_type = /obj/item/ammo_casing/shotgun
 	fire_sound = 'sound/weapons/guns/fire/sbaw.ogg'
+	reload_sound = 'sound/weapons/guns/interact/ltrifle_magin.ogg'
+	unload_sound = 'sound/weapons/guns/interact/ltrifle_magout.ogg'
 	init_recoil = FOLDING_RECOIL(3)
 	damage_mult = 0.7
 	force = WEAPON_FORCE_PAINFUL
@@ -586,6 +590,8 @@
 	wield_delay = 1 SECOND
 	wield_delay_factor = 0.5// 50 vig
 	fire_sound = 'sound/weapons/guns/fire/sfrifle_fire.ogg'
+	reload_sound = 'sound/weapons/guns/interact/ltrifle_magin.ogg'
+	unload_sound = 'sound/weapons/guns/interact/ltrifle_magout.ogg'
 	init_recoil = CARBINE_RECOIL(2)
 	force = WEAPON_FORCE_PAINFUL
 	var/icon_scale = 1.1
@@ -641,6 +647,8 @@
 	wield_delay = 1 SECOND
 	wield_delay_factor = 0.5// 50 vig
 	fire_sound = 'sound/weapons/guns/fire/hpistol_fire.ogg'
+	reload_sound = 'sound/weapons/guns/interact/hpistol_magin.ogg'
+	unload_sound = 'sound/weapons/guns/interact/hpistol_magout.ogg'
 	init_recoil = HANDGUN_RECOIL(1)
 	force = WEAPON_FORCE_NORMAL
 	fire_delay = 5
