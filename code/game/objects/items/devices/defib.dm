@@ -560,7 +560,8 @@
 	if(!advanced_pads)
 		stat_changes(M)
 	else
-		log_and_message_admins("Added no rez sickness to [M] due to an advanced defib.")
+		M.stats.addPerk(PERK_REZ_SICKNESS_MILD)
+		log_and_message_admins("Added mild rez sickness to [M] due to an advanced defib.")
 		return
 /obj/item/shockpaddles/proc/stat_changes(mob/living/carbon/human/M) //This revives the mob
 	// Apply rez sickness depending on the type of defibrillator used.
