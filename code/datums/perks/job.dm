@@ -516,7 +516,7 @@
 	if(chichink)
 		to_chat(usr, SPAN_NOTICE("You will now mindlessly cycle the bolt action."))
 	else
-		to_chat(usr, SPAN_NOTICE("You will no longer cycle the bolt automatically mindlessly. What was the point of basic training?"))
+		to_chat(usr, SPAN_NOTICE("You will no longer cycle the bolt automatically. What was the point of basic training?"))
 	return ..()
 
 /datum/perk/job/jingle_jangle
