@@ -1881,7 +1881,7 @@
 
 /obj/item/clothing/head/helmet/faceshield/altyn/excelsior
 	name = "Excelsior altyn helmet"
-	desc = ""
+	desc = "An off-white titanium helmet of serbian origin and excelsior make. The slogan \"Ever Upwards\" is inscribed along the inside of the helmet just below the visor."
 	icon_state = "altyn_excelsior"
 	siemens_coefficient = 1
 	up = TRUE

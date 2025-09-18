@@ -56,9 +56,12 @@
 
 	//Secondly, cruciforms.
 	//This is handled seperately to account for the future possibility of non-humans having cruciforms. Like holy dogs!
-	if (is_neotheology_disciple(target))
+
+	//commented out as this is dumb as shit - drfarson
+	/*if (is_neotheology_disciple(target))
 		//Cruciform blocks other implants
 		return FALSE
+*/
 
 
 	//Thirdly an organic check. No implanting robots
