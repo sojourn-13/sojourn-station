@@ -630,10 +630,10 @@
 ///Snowflake  ///
 
 /obj/item/projectile/bullet/c8x16
-	damage_types = list(BRUTE = 20)
+	damage_types = list(BRUTE = 10)
 	armor_divisor = 1.5
 	wounding_mult = WOUNDING_SMALL
-	penetrating = 1.5
+	penetrating = 1
 	can_ricochet = TRUE
 	sharp = TRUE
 	step_delay = 0.3
@@ -642,10 +642,10 @@
 	recoil = 6
 
 /obj/item/projectile/bullet/c10x24
-	damage_types = list(BRUTE = 30)
+	damage_types = list(BRUTE = 25)
 	armor_divisor = 2
 	wounding_mult = WOUNDING_NORMAL
-	penetrating = 2
+	penetrating = 1
 	can_ricochet = TRUE
 	sharp = TRUE
 	step_delay = 0.3
@@ -654,10 +654,10 @@
 	recoil = 9
 
 /obj/item/projectile/bullet/c12x64
-	damage_types = list(BRUTE = 45)
+	damage_types = list(BRUTE = 40)
 	armor_divisor = 5
 	wounding_mult = WOUNDING_SERIOUS
-	penetrating = 3
+	penetrating = 2
 	can_ricochet = TRUE
 	sharp = TRUE
 	step_delay = 0.3

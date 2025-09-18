@@ -9,8 +9,9 @@
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 3)
 	serial_type = "DAS"
 	max_rockets = 1
+	var/icon_scale = 1.15
 	var/fired = 0
-	var/dispogolok = 1
+	var/disposable = 1
 	twohanded = TRUE
 	max_upgrades = 0
 
@@ -23,15 +24,16 @@
 	// Pre-load with one rocket
 	var/obj/item/ammo_casing/rocket/loaded_rocket = new /obj/item/ammo_casing/rocket/disposable(src)
 	rockets += loaded_rocket
-	update_icon()
-	// Apply initial transform (scale/rotation) if available
-	if(isnull(icon_scale))
-		var/scale_val = 1
+	var/scale_val = 1
+	if(!icon_scale)
+		scale_val = 1
 	else
-		var/scale_val = icon_scale
-	var/rot = pick(list(0, 90, 180, -90))
-	add_new_transformation(/datum/transform_type/modular, list(scale_x = scale_val, scale_y = scale_val, rotation = rot, flag = BLOB_INITIAL_TRANSFORM, priority = BLOB_INITIAL_TRANSFORM_PRIORITY))
+		scale_val = icon_scale
+	add_new_transformation(/datum/transform_type/modular, list(scale_x = scale_val, scale_y = scale_val))
+	// Ensure the correct empty/loaded icon is applied on spawn (no magazine preloaded)
+	update_icon()
 
+	
 /obj/item/gun/launcher/rocket/deimos/panah/update_icon()
 	if(fired)
 		icon_state = "panah_spent"
@@ -151,7 +153,8 @@
 	fire_sound = 'sound/weapons/guns/fire/GLfire.ogg'
 	bulletinsert_sound = 'sound/weapons/guns/interact/shotgun_insert.ogg'
 	max_shells = 1
-	fire_delay = 10
+	var/icon_scale = 1.3
+	fire_delay = 25
 	slowdown_hold = 0.5
 	init_recoil = HANDGUN_RECOIL(2)
 	twohanded = TRUE
@@ -345,6 +348,17 @@
 	// Call parent attackby for normal handling
 	return ..(A, user)
 
+/obj/item/gun/projectile/shotgun/pump/deimos/golok/New()
+	..()
+	var/scale_val = 1
+	if(!icon_scale)
+		scale_val = 1
+	else
+		scale_val = icon_scale
+	add_new_transformation(/datum/transform_type/modular, list(scale_x = scale_val, scale_y = scale_val))
+	// Ensure the correct empty/loaded icon is applied on spawn (no magazine preloaded)
+	update_icon()
+
 /obj/item/gun/projectile/shotgun/pump/deimos/parang
 	name = "DAS-250 \"Parang\" MABUL"
 	desc = "A Deimos Armament Solutions \"Parang\" Multi-purpose Advanced Ballistic Utility Launcher (MABUL). This pump action launcher fires utility shells and grenades with a magazine of five grenades or shells, but can not fire the mini-rockets the SABUL can."
@@ -365,6 +379,7 @@
 	bulletinsert_sound = 'sound/weapons/guns/interact/china_lake_reload.ogg'   // Might not be a M203 but better than a mag sound.
 	max_shells = 5
 	fire_delay = 15
+	var/icon_scale = 1
 	init_recoil = HANDGUN_RECOIL(2)
 	twohanded = TRUE
 	serial_type = "DAS"
@@ -432,6 +447,17 @@
 	..()
 	pump(user)
 
+/obj/item/gun/projectile/shotgun/pump/deimos/parang/New()
+	..()
+	var/scale_val = 1
+	if(!icon_scale)
+		scale_val = 1
+	else
+		scale_val = icon_scale
+	add_new_transformation(/datum/transform_type/modular, list(scale_x = scale_val, scale_y = scale_val))
+	// Ensure the correct empty/loaded icon is applied on spawn (no magazine preloaded)
+	update_icon()
+
 
 // Deimos Armament Solutions - Additional Weapons
 /obj/item/gun/projectile/deimos/tombak
@@ -444,6 +470,7 @@
 	slot_flags = SLOT_BACK|SLOT_BELT
 	origin_tech = list(TECH_COMBAT = 7, TECH_MATERIAL = 4)
 	serial_type = "DAS"
+	var/icon_scale = 1.3
 	gun_tags = list(GUN_PROJECTILE, GUN_SCOPE, GUN_MAGWELL, GUN_SIGHT)
 	caliber = "12x64" // uses the heavy 12x64 caseless caliber (add define if missing)
 	mag_well = MAG_WELL_CL_AMR
@@ -452,24 +479,21 @@
 	wield_delay = 1 SECOND
 	wield_delay_factor = 0.5// 50 vig
 	zoom_factors = list(1.5)
-	fire_delay = 35
+	fire_delay = 100
 	fire_sound = 'sound/weapons/guns/fire/dmr_fire.ogg'
 	init_recoil = RIFLE_RECOIL(4)
 	force = WEAPON_FORCE_PAINFUL
 	twohanded = TRUE
 	price_tag = 3500
-	init_firemodes = list(
-		SEMI_AUTO_SOMEDELAY
-	)
 
 /obj/item/gun/projectile/deimos/tombak/New()
 	..()
-	if(isnull(icon_scale))
-		var/scale_val = 1
+	var/scale_val = 1
+	if(!icon_scale)
+		scale_val = 1
 	else
-		var/scale_val = icon_scale
-	var/rot = pick(list(0, 90, 180, -90))
-	add_new_transformation(/datum/transform_type/modular, list(scale_x = scale_val, scale_y = scale_val, rotation = rot, flag = BLOB_INITIAL_TRANSFORM, priority = BLOB_INITIAL_TRANSFORM_PRIORITY))
+		scale_val = icon_scale
+	add_new_transformation(/datum/transform_type/modular, list(scale_x = scale_val, scale_y = scale_val))
 	// Ensure the correct empty/loaded icon is applied on spawn (no magazine preloaded)
 	update_icon()
 
@@ -507,25 +531,16 @@
 	ammo_type = /obj/item/ammo_casing/shotgun
 	fire_sound = 'sound/weapons/guns/fire/sbaw.ogg'
 	init_recoil = FOLDING_RECOIL(3)
+	damage_mult = 0.7
 	force = WEAPON_FORCE_PAINFUL
 	caliber = CAL_SHOTGUN
-	fire_delay = 20
+	var/icon_scale = 1
+	fire_delay = 35
 	twohanded = TRUE
 	price_tag = 1800
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY
 	)
-
-/obj/item/gun/projectile/deimos/palu/New()
-	..()
-	if(isnull(icon_scale))
-		var/scale_val = 1
-	else
-		var/scale_val = icon_scale
-	var/rot = pick(list(0, 90, 180, -90))
-	add_new_transformation(/datum/transform_type/modular, list(scale_x = scale_val, scale_y = scale_val, rotation = rot, flag = BLOB_INITIAL_TRANSFORM, priority = BLOB_INITIAL_TRANSFORM_PRIORITY))
-	// Start with empty sprite if no ammo is present on spawn
-	update_icon()
 
 /obj/item/gun/projectile/deimos/palu/update_icon()
 	var/base = initial(icon_state)
@@ -538,6 +553,17 @@
 
 /obj/item/gun/projectile/deimos/palu/handle_post_fire(mob/user)
 	..()
+	update_icon()
+
+/obj/item/gun/projectile/deimos/palu/New()
+	..()
+	var/scale_val = 1
+	if(!icon_scale)
+		scale_val = 1
+	else
+		scale_val = icon_scale
+	add_new_transformation(/datum/transform_type/modular, list(scale_x = scale_val, scale_y = scale_val))
+	// Ensure the correct empty/loaded icon is applied on spawn (no magazine preloaded)
 	update_icon()
 
 
@@ -560,10 +586,11 @@
 	wield_delay = 1 SECOND
 	wield_delay_factor = 0.5// 50 vig
 	fire_sound = 'sound/weapons/guns/fire/sfrifle_fire.ogg'
-	init_recoil = CARBINE_RECOIL(3)
+	init_recoil = CARBINE_RECOIL(2)
 	force = WEAPON_FORCE_PAINFUL
+	var/icon_scale = 1.1
 	twohanded = FALSE
-	fire_delay = 5
+	fire_delay = 10
 	price_tag = 1600
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
@@ -571,15 +598,15 @@
 		BURST_5_ROUND,
 		FULL_AUTO_600
 	)
-
 /obj/item/gun/projectile/deimos/celurit/New()
 	..()
-	if(isnull(icon_scale))
-		var/scale_val = 1
+	var/scale_val = 1
+	if(!icon_scale)
+		scale_val = 1
 	else
-		var/scale_val = icon_scale
-	var/rot = pick(list(0, 90, 180, -90))
-	add_new_transformation(/datum/transform_type/modular, list(scale_x = scale_val, scale_y = scale_val, rotation = rot, flag = BLOB_INITIAL_TRANSFORM, priority = BLOB_INITIAL_TRANSFORM_PRIORITY))
+		scale_val = icon_scale
+	add_new_transformation(/datum/transform_type/modular, list(scale_x = scale_val, scale_y = scale_val))
+	// Ensure the correct empty/loaded icon is applied on spawn (no magazine preloaded)
 	update_icon()
 
 /obj/item/gun/projectile/deimos/celurit/update_icon()
@@ -614,9 +641,10 @@
 	wield_delay = 1 SECOND
 	wield_delay_factor = 0.5// 50 vig
 	fire_sound = 'sound/weapons/guns/fire/hpistol_fire.ogg'
-	init_recoil = HANDGUN_RECOIL(2)
+	init_recoil = HANDGUN_RECOIL(1)
 	force = WEAPON_FORCE_NORMAL
 	fire_delay = 5
+	var/icon_scale = 1
 	twohanded = FALSE
 	price_tag = 900
 	init_firemodes = list(
@@ -626,12 +654,13 @@
 	
 /obj/item/gun/projectile/deimos/keris/New()
 	..()
-	if(isnull(icon_scale))
-		var/scale_val = 1
+	var/scale_val = 1
+	if(!icon_scale)
+		scale_val = 1
 	else
-		var/scale_val = icon_scale
-	var/rot = pick(list(0, 90, 180, -90))
-	add_new_transformation(/datum/transform_type/modular, list(scale_x = scale_val, scale_y = scale_val, rotation = rot, flag = BLOB_INITIAL_TRANSFORM, priority = BLOB_INITIAL_TRANSFORM_PRIORITY))
+		scale_val = icon_scale
+	add_new_transformation(/datum/transform_type/modular, list(scale_x = scale_val, scale_y = scale_val))
+	// Ensure the correct empty/loaded icon is applied on spawn (no magazine preloaded)
 	update_icon()
 
 /obj/item/gun/projectile/deimos/keris/update_icon()

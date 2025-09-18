@@ -62,7 +62,7 @@
 /obj/random/lathe_disk/bolt_gun/item_to_spawn()
 	return pickweight(list(
 				/obj/item/pc_part/drive/disk/design/guns/heavysniper = 1,
-				/obj/item/pc_part/drive/disk/design/rockets = 1,
+				/obj/item/pc_part/drive/disk/design/deimos/rockets = 1,
 				/obj/item/pc_part/drive/disk/design/guns/armstrong = 6,
 				/obj/item/pc_part/drive/disk/design/guns/custer = 4,
 				/obj/item/pc_part/drive/disk/design/guns/roe = 4,
@@ -121,7 +121,7 @@
 /obj/random/lathe_disk/rifle/item_to_spawn()
 	return pickweight(list(
 				/obj/item/pc_part/drive/disk/design/guns/bulldog = 4,
-			/obj/item/pc_part/drive/disk/design/deimos/caseless = 1,
+				/obj/item/pc_part/drive/disk/design/deimos/caseless = 1,
 				/obj/item/pc_part/drive/disk/design/guns/sol = 4,
 				/obj/item/pc_part/drive/disk/design/guns/ostwind = 5,
 				/obj/item/pc_part/drive/disk/design/guns/pulse_rifle = 1,
@@ -199,7 +199,7 @@
 	return pickweight(list(
 				/obj/item/pc_part/drive/disk/design/guns/doublebarrel = 5,
 				/obj/item/pc_part/drive/disk/design/guns/grizzly = 7,
-			/obj/item/pc_part/drive/disk/design/deimos/shotguns = 2,
+				/obj/item/pc_part/drive/disk/design/deimos/shotguns = 2,
 				/obj/item/pc_part/drive/disk/design/nt/regulator = 4,
 				/obj/item/pc_part/drive/disk/design/guns/gladstone = 5,
 				/obj/item/pc_part/drive/disk/design/nt/lemant = 2, //Has a built in shotgun, so low odds but still here
