@@ -130,7 +130,7 @@
 			list(name="Caseless Light Rifle Magazine (10x24mm)", cost=100, path=/obj/item/ammo_magazine/smg_10x24),
 			list(name="Caseless Pulse Rifle Magazine (10x24mm)", cost=450, path=/obj/item/ammo_magazine/c10x24),
 			list(name="Caseless Carbine Magazine (10x24mm)", cost=250, path=/obj/item/ammo_magazine/caseless_10x24),
-			list(name="Caseless Heavy Rifle Magazine (8x16mm)", cost=500, path=/obj/item/ammo_magazine/caseless_12x64),
+			list(name="Caseless Heavy Rifle Magazine (12x64mm)", cost=500, path=/obj/item/ammo_magazine/caseless_12x64),
 			list(name="Packet (8x16mm Caseless)", cost=500, path=/obj/item/ammo_magazine/ammobox/c8x16_small),
 			list(name="Packet (10x24mm Caseless)", cost=800, path=/obj/item/ammo_magazine/ammobox/c10x24_small),
 			list(name="Packet (12x64mm Caseless)", cost=1650, path=/obj/item/ammo_magazine/ammobox/c12x64_small),
