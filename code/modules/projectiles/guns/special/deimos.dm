@@ -636,7 +636,7 @@
 	icon_state = "keris"
 	item_state = "keris"
 	w_class = ITEM_SIZE_SMALL
-	slot_flags = list(SLOT_GRIP, SLOT_BELT)
+	slot_flags = list(SLOT_GRIP, SLOT_BELT, SLOT_HOLSTER)
 	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 2)
 	serial_type = "DAS"
 	caliber = "8x16"
