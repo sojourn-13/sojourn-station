@@ -144,6 +144,9 @@
 		new /obj/item/storage/backpack/medical(src)
 	else
 		new /obj/item/storage/backpack/satchel/medical(src)
+	new /obj/item/gearbox/traumatizedteam(src)
+	new /obj/item/gunbox/traumatizedteam_sidearm(src)
+	new /obj/item/gunbox/traumatizedteam(src) // Moved the weapon selection to here
 	new /obj/item/clothing/under/rank/paramedic(src) // Not a surgery-oriented job, they don't need scrubs.
 	new /obj/item/device/lighting/toggleable/flashlight(src)
 	new /obj/item/device/radio(src)
@@ -208,6 +211,7 @@
 	new /obj/item/clothing/gloves/latex/nitrile(src)
 	new /obj/item/pc_part/drive/disk/design/medical/advanced/cmo(src)
 	new /obj/item/pc_part/drive/disk/design/xenobio/rd(src)
+	new /obj/item/pc_part/drive/disk/design/nt_bioaugment(src)
 	new /obj/item/device/defib_kit/compact/combat/adv/loaded/cbo(src)
 	new /obj/item/circuitboard/sleeper/hyper(src)
 	new /obj/item/oddity/chem_book(src)

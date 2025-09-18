@@ -28,10 +28,15 @@
 	desc = "The lasing medium of this prototype is enclosed in a tube lined with uranium-235 and subjected to high neutron flux in a nuclear reactor core."
 	build_path = /obj/item/gun/energy/lasercannon/rnd
 
-/datum/design/research/item/weapon/c20r
-	name = "Lightweight C20R"
-	desc = "The C-20r is a lightweight and rapid-firing SMG. Uses .35 rounds."
+/datum/design/research/item/weapon/c20r/sci
+	name = "SI C-20m \"Bullpip\" .35 SMG"
+	desc = "A Soteria copy of the Scarborough Arms C-20r equipped with a .35 barrel and capable of firing from pistol and smg magazines. Not quite as good at punching through armor nor as deadly, but still reliable and versatile none the less as its often nicknamed the bullpip. Uses .35 caliber ammunition, but the barrel can be changed out to use .40 caliber ammunition instead."
 	build_path = /obj/item/gun/projectile/automatic/c20r/sci
+
+/datum/design/research/item/weapon/c20r/med
+	name = "SI C-20m \"MedTech\" .40 SMG"
+	desc = "A Soteria copy of the Scarborough Arms C-20r equipped with a .40 barrel and capable of firing from pistol and smg magazines. Slightly better at punching through armour and still reliable and versatile none the less as its often nicknamed the Medtech. Uses .40 caliber ammunition, but the barrel can be changed out to use .35 caliber ammunition instead."
+	build_path = /obj/item/gun/projectile/automatic/c20r/sci/med
 
 /datum/design/research/item/weapon/centurio
 	name = "\"Centurio\" Plasma Pistol"

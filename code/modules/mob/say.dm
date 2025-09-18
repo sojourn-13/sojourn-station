@@ -186,8 +186,7 @@
 
 	return null
 
-//Not Antighost but its more sneaky around folks
-
+// Re-eanbles this. Adjusts range of emote elsewhere to prevent people ERPing in public. It's logged but will need to re-adjusted to stop appearing as emotes later.
 /mob/verb/subtle_wrapper()
 	set name = "Subtle verb"
 	set category = "IC"

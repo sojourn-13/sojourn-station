@@ -35,13 +35,15 @@
 	set hidden = TRUE
 	openAdminUserUI()
 
-#define RULES_FILE "config/rules.html"
 /client/verb/rules()
 	set name = "Rules"
 	set desc = "Show Server Rules."
 	set hidden = TRUE
-	src << browse(file(RULES_FILE), "window=rules;size=480x320")
-#undef RULES_FILE
+	var/rulesurl = config.rulesurl
+	if(rulesurl)
+		src << link(rulesurl)
+	else
+		to_chat(src, SPAN_DANGER("The rules URL is not set in the server configuration."))
 
 /client/verb/changelog()
 	set name = "Changelog"

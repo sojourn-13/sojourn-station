@@ -248,15 +248,3 @@ the limbs and such to pull out the internal bits for other people if needed
 /datum/design/research/item/mechfab/modules/hud/welder
 	build_path = /obj/item/organ_module/active/hud/welder
 	name = "Embedded Welder Shades"
-
-/datum/design/research/item/mechfab/modules/hud/thermal_bio
-	build_path = /obj/item/biogoop/thermal
-	name = "Embedded bio-thermal shades"
-
-/datum/design/research/item/mechfab/modules/hud/welder_bio
-	build_path = /obj/item/biogoop/welding
-	name = "Embedded bio-welder shades"
-
-/datum/design/research/item/mechfab/modules/hud/night_bio
-	build_path = /obj/item/biogoop/night
-	name = "Embedded bio-night vision shades"

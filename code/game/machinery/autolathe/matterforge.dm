@@ -135,7 +135,7 @@
 				var/amount = 1
 
 				if(params["several"])
-					amount = input("How many \"[picked_design.id]\" you want to print ?", "Print several") as null|num
+					amount = input("How many \"[picked_design.name]\" you want to print ?", "Print several") as null|num
 					if(!CanUseTopic(usr) || !(picked_design in design_list) || amount == null)
 						return
 

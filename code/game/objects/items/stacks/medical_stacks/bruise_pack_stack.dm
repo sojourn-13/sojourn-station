@@ -182,11 +182,10 @@
 				// user's stat check that causing pain if they are amateurs
 				try_to_pain(M, user)
 
-				// Apply reagents to the user on every application, but only medical ones
+				// Apply reagents to the user on every application
 				if(preloaded_reagents && preloaded_reagents.len)
 					for(var/reagent in preloaded_reagents)
-						if(user.reagents && allowed_medical[reagent])
-							user.reagents.add_reagent(reagent, preloaded_reagents[reagent])
+						user.reagents.add_reagent(reagent, preloaded_reagents[reagent])
 
 				// Apply injected reagents to the user (static amount per use) but only medical ones
 				if(injected_reagents && injected_reagents.len)

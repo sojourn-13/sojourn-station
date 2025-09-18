@@ -309,7 +309,7 @@
 /obj/item/reagent_containers/hypospray/autoinjector/large/chemmaters
 	icon_state = "supeyrette" //still missing the icons from doll.
 	item_state = "supeyrette"
-	baseline_sprite = "syrette"
+	baseline_sprite = "supeyrette"
 	preloaded_reagents = list()
 
 /obj/item/reagent_containers/hypospray/autoinjector/large/meralyn

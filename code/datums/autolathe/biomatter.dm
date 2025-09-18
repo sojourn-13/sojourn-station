@@ -313,31 +313,6 @@
 	name = "Absolutism Medkit"
 	build_path = /obj/item/storage/firstaid/nt
 
-//[/IMPLANTS]
-
-/datum/design/bioprinter/bioimplant
-	materials = list(MATERIAL_BIOMATTER = 50)
-
-/datum/design/bioprinter/bioimplant/oscythe
-	name = "Organic arm scythe implant"
-	build_path = /obj/item/biogoop/armscythe
-
-/datum/design/bioprinter/bioimplant/osurgical
-	name = "Organic surgery omnitool implant"
-	build_path = /obj/item/biogoop/surgical
-
-/datum/design/bioprinter/bioimplant/oengineering
-	name = "Organic engineering omnitool implant"
-	build_path = /obj/item/biogoop/engineer
-
-/datum/design/bioprinter/bioimplant/oarmor
-	name = "Organic exoskeleton implant"
-	build_path = /obj/item/biogoop/armor
-
-/datum/design/bioprinter/bioimplant/omuscle
-	name = "Organic muscle implant"
-	build_path = /obj/item/biogoop/muscle
-
 //[/CRUCIFORM UPGRAED]
 
 /datum/design/autolathe/cruciform_upgrade

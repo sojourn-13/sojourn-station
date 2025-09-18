@@ -133,3 +133,4 @@
 	var/last_completed_asset_job = 0
 
 	var/obj/screen/click_catcher/void
+	var/admin_antighost = TRUE  // per-mob toggle: do they skip observers?

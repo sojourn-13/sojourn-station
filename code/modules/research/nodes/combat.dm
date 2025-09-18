@@ -165,7 +165,10 @@
 							/datum/design/research/item/ammo/pistol/empty/laser,
 							/datum/design/research/item/ammo/magum_laser,
 							/datum/design/research/item/robot_upgrade/bigknife,
-							/datum/design/research/item/weapon/slimebaton
+							/datum/design/research/item/weapon/slimebaton,
+							/datum/design/research/item/ammo/flare_shell,
+							/datum/design/research/item/ammo/flare_shell/blue,
+							/datum/design/research/item/ammo/flare_shell/green
 							)
 
 /datum/technology/exotic_weaponry
@@ -187,12 +190,7 @@
 							/datum/design/research/item/ammo/shotgun_laser,
 							/datum/design/research/item/weapon/bastion,
 							/datum/design/research/item/mechfab/modules/punch_helper,
-							/datum/design/research/item/mechfab/modules/momentum_speed_adder,
-							/datum/design/research/item/weapon/sabul,
-							/datum/design/research/item/ammo/flare_shell,
-							/datum/design/research/item/ammo/flare_shell/blue,
-							/datum/design/research/item/ammo/flare_shell/green,
-							/datum/design/research/item/ammo/grenade_net
+							/datum/design/research/item/mechfab/modules/momentum_speed_adder
 							)
 
 /datum/technology/adv_exotic_weaponry
@@ -209,7 +207,10 @@
 	cost = 3750
 
 	unlocks_designs = list(	/datum/design/research/item/weapon/centurio,
-							/datum/design/research/item/weapon/auretian
+							/datum/design/research/item/weapon/auretian,
+							/datum/design/research/item/weapon/sabul,
+							/datum/design/research/item/weapon/spear,
+							/datum/design/research/item/ammo/grenade_net
 						)
 
 
@@ -227,7 +228,8 @@
 	cost = 1500
 
 	unlocks_designs = list(
-							/datum/design/research/item/weapon/c20r,
+							/datum/design/research/item/weapon/c20r/sci,
+							/datum/design/research/item/weapon/c20r/med,
 							/datum/design/research/item/ammo/smg_mag/lethal,
 							/datum/design/research/item/ammo/smg_mag/rubber,
 							/datum/design/research/item/ammo/laser/box,
