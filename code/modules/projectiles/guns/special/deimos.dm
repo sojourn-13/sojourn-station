@@ -144,7 +144,7 @@
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_STEEL = 10)
 	price_tag = 1200
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 3)
-	init_recoil = HANDGUN_RECOIL(3)
+	init_recoil = HANDGUN_RECOIL(2)
 	// Accepts both utility and grenade calibers
 	caliber = list(CAL_UTILITY, CAL_GRENADE, CAL_MINIROCKET, CAL_SHOTGUN)
 	load_method = SINGLE_CASING
@@ -156,7 +156,6 @@
 	var/icon_scale = 1.3
 	fire_delay = 25
 	slowdown_hold = 0.5
-	init_recoil = HANDGUN_RECOIL(2)
 	twohanded = TRUE
 
 	var/action_open = 0  // Track if the action is open or closed
@@ -483,7 +482,7 @@
 	fire_sound = 'sound/weapons/guns/fire/dmr_fire.ogg'
 	reload_sound = 'sound/weapons/guns/interact/sfrifle_magin.ogg'
 	unload_sound = 'sound/weapons/guns/interact/sfrifle_magout.ogg'
-	init_recoil = RIFLE_RECOIL(4)
+	init_recoil = RIFLE_RECOIL(2)
 	force = WEAPON_FORCE_PAINFUL
 	twohanded = TRUE
 	price_tag = 3500
@@ -534,7 +533,7 @@
 	fire_sound = 'sound/weapons/guns/fire/sbaw.ogg'
 	reload_sound = 'sound/weapons/guns/interact/ltrifle_magin.ogg'
 	unload_sound = 'sound/weapons/guns/interact/ltrifle_magout.ogg'
-	init_recoil = FOLDING_RECOIL(3)
+	init_recoil = FOLDING_RECOIL(1)
 	damage_mult = 0.7
 	force = WEAPON_FORCE_PAINFUL
 	caliber = CAL_SHOTGUN
@@ -592,7 +591,7 @@
 	fire_sound = 'sound/weapons/guns/fire/sfrifle_fire.ogg'
 	reload_sound = 'sound/weapons/guns/interact/ltrifle_magin.ogg'
 	unload_sound = 'sound/weapons/guns/interact/ltrifle_magout.ogg'
-	init_recoil = CARBINE_RECOIL(2)
+	init_recoil = CARBINE_RECOIL(1)
 	force = WEAPON_FORCE_PAINFUL
 	var/icon_scale = 0.9
 	twohanded = FALSE
