@@ -24,6 +24,13 @@
 	var/obj/item/ammo_casing/rocket/loaded_rocket = new /obj/item/ammo_casing/rocket/disposable(src)
 	rockets += loaded_rocket
 	update_icon()
+	// Apply initial transform (scale/rotation) if available
+	if(isnull(icon_scale))
+		var/scale_val = 1
+	else
+		var/scale_val = icon_scale
+	var/rot = pick(list(0, 90, 180, -90))
+	add_new_transformation(/datum/transform_type/modular, list(scale_x = scale_val, scale_y = scale_val, rotation = rot, flag = BLOB_INITIAL_TRANSFORM, priority = BLOB_INITIAL_TRANSFORM_PRIORITY))
 
 /obj/item/gun/launcher/rocket/deimos/panah/update_icon()
 	if(fired)
@@ -457,6 +464,12 @@
 
 /obj/item/gun/projectile/deimos/tombak/New()
 	..()
+	if(isnull(icon_scale))
+		var/scale_val = 1
+	else
+		var/scale_val = icon_scale
+	var/rot = pick(list(0, 90, 180, -90))
+	add_new_transformation(/datum/transform_type/modular, list(scale_x = scale_val, scale_y = scale_val, rotation = rot, flag = BLOB_INITIAL_TRANSFORM, priority = BLOB_INITIAL_TRANSFORM_PRIORITY))
 	// Ensure the correct empty/loaded icon is applied on spawn (no magazine preloaded)
 	update_icon()
 
@@ -495,6 +508,7 @@
 	fire_sound = 'sound/weapons/guns/fire/sbaw.ogg'
 	init_recoil = FOLDING_RECOIL(3)
 	force = WEAPON_FORCE_PAINFUL
+	caliber = CAL_SHOTGUN
 	fire_delay = 20
 	twohanded = TRUE
 	price_tag = 1800
@@ -504,6 +518,12 @@
 
 /obj/item/gun/projectile/deimos/palu/New()
 	..()
+	if(isnull(icon_scale))
+		var/scale_val = 1
+	else
+		var/scale_val = icon_scale
+	var/rot = pick(list(0, 90, 180, -90))
+	add_new_transformation(/datum/transform_type/modular, list(scale_x = scale_val, scale_y = scale_val, rotation = rot, flag = BLOB_INITIAL_TRANSFORM, priority = BLOB_INITIAL_TRANSFORM_PRIORITY))
 	// Start with empty sprite if no ammo is present on spawn
 	update_icon()
 
@@ -554,6 +574,12 @@
 
 /obj/item/gun/projectile/deimos/celurit/New()
 	..()
+	if(isnull(icon_scale))
+		var/scale_val = 1
+	else
+		var/scale_val = icon_scale
+	var/rot = pick(list(0, 90, 180, -90))
+	add_new_transformation(/datum/transform_type/modular, list(scale_x = scale_val, scale_y = scale_val, rotation = rot, flag = BLOB_INITIAL_TRANSFORM, priority = BLOB_INITIAL_TRANSFORM_PRIORITY))
 	update_icon()
 
 /obj/item/gun/projectile/deimos/celurit/update_icon()
@@ -600,6 +626,12 @@
 	
 /obj/item/gun/projectile/deimos/keris/New()
 	..()
+	if(isnull(icon_scale))
+		var/scale_val = 1
+	else
+		var/scale_val = icon_scale
+	var/rot = pick(list(0, 90, 180, -90))
+	add_new_transformation(/datum/transform_type/modular, list(scale_x = scale_val, scale_y = scale_val, rotation = rot, flag = BLOB_INITIAL_TRANSFORM, priority = BLOB_INITIAL_TRANSFORM_PRIORITY))
 	update_icon()
 
 /obj/item/gun/projectile/deimos/keris/update_icon()
