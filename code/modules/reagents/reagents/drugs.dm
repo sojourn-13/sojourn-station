@@ -485,7 +485,7 @@
 	reagent_state = LIQUID
 	metabolism = REM
 	overdose = REAGENTS_OVERDOSE/10
-	color = "#8a0303"
+	color = "#492626"
 
 /datum/reagent/drug/nanoblood/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.add_chemical_effect(CE_BLOODRESTORE, 4.5 * effect_multiplier)
