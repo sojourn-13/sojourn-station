@@ -1,6 +1,6 @@
 /obj/item/gun/launcher/rocket/deimos/panah
 	name = "DAS-500 \"Panah\" SPEAR"
-	desc = "A Deimos Armament Solutions pattern \"Panah\" Single-shot Portable/Expendable Anti-tank Rocket (panah). This dispogolok launcher must be unfolded before use. Once fired, it is no longer ugolok."
+	desc = "A Deimos Armament Solutions pattern \"Panah\" Single-shot Portable/Expendable Anti-tank Rocket (SPEAR). This dispogolok launcher must be unfolded before use. Once fired, it is no longer ugolok."
 	icon = 'icons/obj/guns/projectile/deimos/panah.dmi'
 	icon_state = "panah_folded"
 	item_state = "panah_folded"
@@ -95,7 +95,7 @@
 		// After successful firing, mark as fired and digolok
 		fired = 1
 		name = "Spent DAI-500 \"Panah\" panah"
-		desc = "A used Deimos Armament Solutions pattern \"Panah\" Single-shot Portable/Expendable Anti-tank Rocket (panah). The firing mechanism has been destroyed and it's now just expensive scrap metal."
+		desc = "A used Deimos Armament Solutions pattern \"Panah\" Single-shot Portable/Expendable Anti-tank Rocket (SPEAR). The firing mechanism has been destroyed and it's now just expensive scrap metal."
 		icon_state = "panah_spent"
 		item_state = "panah_spent"
 
