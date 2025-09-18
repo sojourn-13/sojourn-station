@@ -22,9 +22,6 @@
 		/datum/design/autolathe/gun/heroic = 6,
 		// Grenade Launchers
 		/datum/design/autolathe/gun/grenade_launcher_china_lake = 4,
-		// Rocket Launchers
-		/datum/design/autolathe/gun/spear = 5,
-		/datum/design/autolathe/gun/sabul = 4,
 		// Frames
 		/datum/design/autolathe/gun_frame/discountnordwind,
 		/datum/design/autolathe/gun_frame/omni = 2,

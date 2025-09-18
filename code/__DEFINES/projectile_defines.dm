@@ -48,6 +48,10 @@
 #define MAG_WELL_PULSE		1024	// Mary sue ammo for the pulse rifle
 #define MAG_WELL_LSRIFLE	2048	// Mary sue ammo for the laser AK
 #define MAG_WELL_LINKED_BOX	4096	// Linked ammo boxes, for LMGs
+#define MAG_WELL_CL_PISTOL	8192	// Caseless pistol ammo
+#define MAG_WELL_CL_CARBINE	16384	// Caseless carbine ammo
+#define MAG_WELL_CL_AMR		32768	// Caseless anti-materiel rifle ammo
+
 
 // Slots
 #define SLOT_BARREL "barrel"

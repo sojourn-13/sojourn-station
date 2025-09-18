@@ -1804,10 +1804,6 @@
 	icon_state = "maska"
 	armor_list = list(melee = 13, bullet = 13, energy = 0, bomb = 45, bio = 0, rad = 0) // best what you can get, unless you face lasers
 
-/obj/item/clothing/head/helmet/faceshield/altyn/mardinat_yunan
-	desc = "\"Human rights are not only violated by terrorism, repression or assassination, but also by unfair economic structures that create huge inequalities.\" An Altyn-pattern helmet commonly found throughout the frontier. This example has been painted up in the national colours of Mardinat-Yunan and comes with a copy of the tenets of a galaxy's economic manifesto held against the helmet by a strap."
-	icon_state = "altyn_mardinat-yunan"
-	item_state = "altyn_mardinat-yunan"
 
 /obj/item/clothing/head/helmet/faceshield/altyn/maska/toggle_style()
 	set name = "Adjust Style"
@@ -1877,6 +1873,18 @@
 		update_wear_icon()
 		usr.update_action_buttons()
 		return 1
+
+/obj/item/clothing/head/helmet/faceshield/altyn/mardinat_yunan
+	desc = "\"Human rights are not only violated by terrorism, repression or assassination, but also by unfair economic structures that create huge inequalities.\" An Altyn-pattern helmet commonly found throughout the frontier. This example has been painted up in the national colours of Mardinat-Yunan and comes with a copy of the tenets of a galaxy's economic manifesto held against the helmet by a strap."
+	icon_state = "altyn_mardinat-yunan"
+	item_state = "altyn_mardinat-yunan"
+
+/obj/item/clothing/head/helmet/faceshield/altyn/excelsior
+	name = "Excelsior altyn helmet"
+	desc = ""
+	icon_state = "altyn_excelsior"
+	siemens_coefficient = 1
+	up = TRUE
 
 /obj/item/clothing/head/helmet/faceshield/paramedic
 	name = "advanced paramedic helmet"

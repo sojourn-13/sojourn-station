@@ -208,8 +208,8 @@
 
 	unlocks_designs = list(	/datum/design/research/item/weapon/centurio,
 							/datum/design/research/item/weapon/auretian,
-							/datum/design/research/item/weapon/sabul,
-							/datum/design/research/item/weapon/spear,
+							/datum/design/research/item/weapon/golok,
+							/datum/design/research/item/weapon/panah,
 							/datum/design/research/item/ammo/grenade_net
 						)
 

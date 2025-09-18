@@ -756,6 +756,11 @@
 	build_path = /obj/item/ammo_magazine/maxim_75
 	materials = list(MATERIAL_STEEL = 10)
 
+/datum/design/autolathe/ammo/maxim
+	name = "pan magazine 7.5mm Rifle (ball)"
+	build_path = /obj/item/ammo_magazine/maxim_75
+	materials = list(MATERIAL_STEEL = 10)
+
 /datum/design/autolathe/ammo/maxim_empty
 	name = "pan magazine 7.5mm Rifle (empty)"
 	build_path = /obj/item/ammo_magazine/maxim_75/empty
@@ -875,6 +880,21 @@
 	materials = list(MATERIAL_STEEL = 15)
 
 // Caseless
+/datum/design/autolathe/ammo/caseless_8x16
+	name = "carbine magazine (8x16mm Caseless)"
+	build_path = /obj/item/ammo_magazine/caseless_8x16
+	materials = list(MATERIAL_STEEL = 12)
+
+/datum/design/autolathe/ammo/caseless_10x24
+	name = "carbine magazine (10x24mm Caseless)"
+	build_path = /obj/item/ammo_magazine/caseless_10x24
+	materials = list(MATERIAL_STEEL = 12)
+
+/datum/design/autolathe/ammo/caseless_12x64
+	name = "heavy rifle magazine (12x64mm Caseless)"
+	build_path = /obj/item/ammo_magazine/caseless_12x64
+	materials = list(MATERIAL_STEEL = 12)
+
 /datum/design/autolathe/ammo/c10x24
 	name = "pulse rifle magazine (10x24mm Caseless)"
 	build_path = /obj/item/ammo_magazine/c10x24
@@ -937,6 +957,10 @@
 	build_path = /obj/item/ammo_casing/grenade/flash
 	materials = list(MATERIAL_STEEL = 4, MATERIAL_SILVER = 0.5, MATERIAL_GLASS = 0.5)
 
+/datum/design/autolathe/ammo/grenade/netshell
+	name = "net utility shell"
+	build_path = /obj/item/ammo_casing/grenade/net
+
 /datum/design/autolathe/ammo/fs_stinger
 	name = "Seinemetall Defense GmbH sting shell"
 	build_path = /obj/item/ammo_casing/grenade
@@ -963,3 +987,11 @@
 /datum/design/autolathe/ammo/flare_shell_g
 	name = "green flare shell"
 	build_path = /obj/item/ammo_casing/flare/green/prespawn
+
+// Rockets and DEIMOS crap
+
+/datum/design/autolathe/ammo/mini_rocket
+	name = "40mm Mini-Rocket"
+	desc = "An 40mm mini-rocket designed for the DAS-200 \"Golok\" SABUL. Has tubular shape."
+	build_path = /obj/item/ammo_casing/rocket/golok
+	materials = list(MATERIAL_STEEL = 8, MATERIAL_PLASMA = 5)

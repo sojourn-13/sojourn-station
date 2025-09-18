@@ -89697,11 +89697,11 @@
 /obj/structure/closet/crate/serbcrate{
 	name = "Heavy ordinance crate"
 	},
-/obj/item/gun/launcher/rocket/spear,
-/obj/item/gun/projectile/shotgun/pump/sabul,
-/obj/item/ammo_casing/rocket/sabul,
-/obj/item/ammo_casing/rocket/sabul,
-/obj/item/ammo_casing/rocket/sabul,
+/obj/item/gun/launcher/rocket/deimos/panah,
+/obj/item/gun/projectile/shotgun/pump/deimos/golok,
+/obj/item/ammo_casing/rocket/golok,
+/obj/item/ammo_casing/rocket/golok,
+/obj/item/ammo_casing/rocket/golok,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
 "qDf" = (

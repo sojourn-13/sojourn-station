@@ -394,7 +394,25 @@
 	max_ammo = 90
 
 
-////snowflake 10x24////
+////snowflake caseless////
+
+/obj/item/ammo_magazine/ammobox/c12x64
+	name = "ammunition box (12x64mm caseless)"
+	icon_state = "box10x24"
+	desc = "A box of 12x64mm caseless round, how odd."
+	matter = list(MATERIAL_CARDBOARD = 1)
+	caliber = "12x64"
+	ammo_type = /obj/item/ammo_casing/c12x64
+	max_ammo = 200
+
+/obj/item/ammo_magazine/ammobox/c12x64_small
+	name = "ammunition packet (12x64mm caseless)"
+	icon_state = "box10x24"
+	desc = "A box of 12x64mm caseless round, how odd."
+	matter = list(MATERIAL_CARDBOARD = 1)
+	caliber = "12x64"
+	ammo_type = /obj/item/ammo_casing/c12x64
+	max_ammo = 80 //6.6 reloads of the SWAT, 2 of the bond, almost 1 full pulse mag
 
 /obj/item/ammo_magazine/ammobox/c10x24
 	name = "ammunition box (10x24mm caseless)"
@@ -412,6 +430,24 @@
 	matter = list(MATERIAL_CARDBOARD = 1)
 	caliber = "10x24"
 	ammo_type = /obj/item/ammo_casing/c10x24
+	max_ammo = 80 //6.6 reloads of the SWAT, 2 of the bond, almost 1 full pulse mag
+
+/obj/item/ammo_magazine/ammobox/c8x16
+	name = "ammunition box (8x16mm caseless)"
+	icon_state = "box10x24"
+	desc = "A box of 8x16mm caseless round, how odd."
+	matter = list(MATERIAL_CARDBOARD = 1)
+	caliber = "8x16"
+	ammo_type = /obj/item/ammo_casing/c8x16
+	max_ammo = 200
+
+/obj/item/ammo_magazine/ammobox/c8x16_small
+	name = "ammunition packet (8x16mm caseless)"
+	icon_state = "box10x24"
+	desc = "A box of 8x16mm caseless round, how odd."
+	matter = list(MATERIAL_CARDBOARD = 1)
+	caliber = "8x16"
+	ammo_type = /obj/item/ammo_casing/c8x16
 	max_ammo = 80 //6.6 reloads of the SWAT, 2 of the bond, almost 1 full pulse mag
 
 // .223 laser

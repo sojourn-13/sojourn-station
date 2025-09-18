@@ -380,10 +380,24 @@
 
 ///10mm caseless
 /obj/item/ammo_casing/c10x24
-	desc = "A 10x24mm caseless cartidge."
+	desc = "A 10x24mm caseless rifle cartidge."
 	caliber = "10x24"
-	icon_state = "caseless"
+	icon_state = "clrifle_c_hv"
 	projectile_type = /obj/item/projectile/bullet/c10x24
+	is_caseless = TRUE
+
+/obj/item/ammo_casing/c8x16
+	desc = "A 8x16mm caseless pistol cartidge."
+	caliber = "8x16"
+	icon_state = "clrifle_c_r"
+	projectile_type = /obj/item/projectile/bullet/c8x16
+	is_caseless = TRUE
+
+/obj/item/ammo_casing/c12x64
+	desc = "A 12x64mm caseless AMR cartidge."
+	caliber = "12x64"
+	icon_state = "clrifle_c_l"
+	projectile_type = /obj/item/projectile/bullet/c12x64
 	is_caseless = TRUE
 
 //Flare, .22
@@ -826,21 +840,21 @@
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASMA = 2)
 
 /obj/item/ammo_casing/rocket/disposable
-	name = "SPEAR-7 disposable rocket"
-	desc = "An 85mm warhead designed for the SPEAR disposable rocket launcher. Has tubular shape."
+	name = "DAC-500 \"Panah\" SPEAR disposable rocket"
+	desc = "An 85mm warhead designed for the DAC-500 \"Panah\" SPEAR. Has tubular shape."
 	icon_state = "rocketshell_s"
-	projectile_type = /obj/item/projectile/bullet/rocket/spear
+	projectile_type = /obj/item/projectile/bullet/rocket/panah
 	caliber = CAL_ROCKET
 	maxamount = 1
 	reload_delay = 15
 	is_caseless = TRUE
 	w_class = ITEM_SIZE_BULKY
 
-/obj/item/ammo_casing/rocket/sabul
+/obj/item/ammo_casing/rocket/golok
 	name = "40mm mini-rocket"
-	desc = "An 40mm mini-rocket designed for the SABL utility launcher. Has tubular shape."
+	desc = "An 40mm mini-rocket designed for the DAS-200 \"Golok\" SABUL utility launcher. Has tubular shape."
 	icon_state = "rocketshell_u"
-	projectile_type = /obj/item/projectile/bullet/rocket/sabul
+	projectile_type = /obj/item/projectile/bullet/rocket/golok
 	caliber = CAL_MINIROCKET
 	maxamount = 1
 	reload_delay = 15
