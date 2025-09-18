@@ -500,6 +500,24 @@
 	name = "Bolt Action Rifle Training"
 	desc = "Through intense and repetitive training with bolt-action and lever-action rifles, you will always chamber a new round instantly after firing."
 	icon_state = "boltactionrifletraining"
+	active = FALSE
+	passivePerk = FALSE
+	var/chichink = TRUE
+
+/datum/perk/job/bolt_reflect/activate()
+	var/mob/living/user = holder
+	if(!isliving(user))
+		return ..()
+	if(world.time < cooldown_time)
+		to_chat(usr, SPAN_NOTICE("Letting go of basic training habits is taxing, wait a second!"))
+		return FALSE
+	cooldown_time = world.time + 1 SECOND //So people that doble click dont instantly toggle it off and on
+	chichink = !chichink
+	if(chichink)
+		to_chat(usr, SPAN_NOTICE("You will now cycle the bolt after every shot."))
+	else
+		to_chat(usr, SPAN_NOTICE("You will no longer cycle the bolt automatically. What was the point of basic training?"))
+	return ..()
 
 /datum/perk/job/jingle_jangle
 	name = "Key Smith"
