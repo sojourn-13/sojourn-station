@@ -509,7 +509,7 @@
 	if(!isliving(user))
 		return ..()
 	if(world.time < cooldown_time)
-		to_chat(usr, SPAN_NOTICE("Flipping back and forth from training is taxing on the mind, wait a second!"))
+		to_chat(usr, SPAN_NOTICE("Letting go of basic training habits is taxing, wait a second!"))
 		return FALSE
 	cooldown_time = world.time + 1 SECOND //So people that doble click dont instantly toggle it off and on
 	chichink = !chichink
