@@ -255,6 +255,8 @@
 	var/wieldedm = 0
 	var/cooldown = 0
 	var/busy = 0
+	// If paddles are linked to a base defib unit, this will hold that unit.
+	var/obj/item/device/defib_kit/base_unit = null
 
 /obj/item/shockpaddles/proc/set_cooldown(var/delay)
 	cooldown = 1
@@ -688,7 +690,7 @@
 	Shockpaddles that are linked to a base unit
 */
 /obj/item/shockpaddles/linked
-	var/obj/item/device/defib_kit/base_unit
+	base_unit = null
 
 /obj/item/shockpaddles/linked/New(newloc, obj/item/device/defib_kit/defib)
 	base_unit = defib

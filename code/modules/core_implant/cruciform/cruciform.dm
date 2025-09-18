@@ -146,7 +146,8 @@ var/list/disciples = list()
 /obj/item/implant/core_implant/cruciform/proc/remove_cyber()
 	if(!wearer)
 		return
-	for(var/obj/O in wearer)
+	//for(var/obj/O in wearer)
+
 /* //Our lore allows for church members to have synthetics so this area is commented out. -Kazkin
 		if(istype(O, /obj/item/organ/external))
 			var/obj/item/organ/external/R = O
