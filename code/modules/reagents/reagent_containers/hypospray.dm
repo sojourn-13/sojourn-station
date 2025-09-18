@@ -260,7 +260,7 @@
 
 /obj/item/reagent_containers/hypospray/vial
 	name = "SI medical hypospray"
-	desc = "The Soteria medical hypospray is a sterile, air-needle autoinjector for rapid administration of drugs to patients for convenience and efficiency. Uses a replaceable 30u vial."
+	desc = "The Soteria medical hypospray is a sterile, air-needle autoinjector for rapid administration of drugs to patients for convenience and efficiency. Uses a replaceable 30u vial and can inject through armour."
 	item_state = "hypo"
 	icon_state = "hypo"
 	possible_transfer_amounts = list(1,2,5,10,15,20,30)
@@ -433,7 +433,7 @@
 /obj/item/reagent_containers/hypospray/vial/combat
 	// Combat variant of the vial hypospray: different icons for loaded/empty
 	name = "SI combat hypospray"
-	desc = "The Soteria combat hypospray is a sterile, air-needle autoinjector for rapid administration of drugs to patients while under hostile fire. Uses a replaceable 30u vial."
+	desc = "The Soteria combat hypospray is a sterile, air-needle autoinjector for rapid administration of drugs to patients while under hostile fire. Uses a replaceable 30u vial and can inject through armour, in addition to being much faster than other models."
 	icon_state = "combat_hypo"
 	item_state = "combat_hypo"
 	time = 0 // faster inject time for combat variant (seconds)
