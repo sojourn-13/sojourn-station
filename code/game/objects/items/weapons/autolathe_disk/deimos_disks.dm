@@ -11,15 +11,15 @@
 	)
 
 /obj/item/pc_part/drive/disk/design/deimos/supply_spec
-	name = "Deimos Armaments Solutions: Solutions: Marshal Pack"
-	desc = "A disk from SI's experimental weapons manufacturing branch. Contains autolathe designs for Deimos pattern weapons. This one is intended explicitly for Nadezhda Marshal use only."
+	name = "Deimos Armaments Solutions: Solutions: Security Pack"
+	desc = "A disk from SI's experimental weapons manufacturing branch. Contains autolathe designs for Deimos pattern weapons. This one is intended explicitly for Nadezhda Security use only."
 	icon_state = "deimos-marshal"
 	license = 20
 
 	designs = list(
 		/datum/design/autolathe/gun/deimos/keris = 2,     // pistol
 		/datum/design/autolathe/gun/deimos/celurit = 4,   // carbine
-		/datum/design/autolathe/gun/deimos/tombak = 5,    // advanced rifle
+		/datum/design/autolathe/gun/deimos/tombak = 8,    // advanced rifle
 		/datum/design/autolathe/gun/deimos/palu = 4,      // CAWS
 		/datum/design/autolathe/gun/deimos/golok = 3,     // sabul-type
 		/datum/design/autolathe/gun/deimos/parang = 3,   // parang (mabul)

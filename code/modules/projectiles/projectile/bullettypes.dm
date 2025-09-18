@@ -642,7 +642,7 @@
 	recoil = 6
 
 /obj/item/projectile/bullet/c10x24
-	damage_types = list(BRUTE = 25)
+	damage_types = list(BRUTE = 30)
 	armor_divisor = 2
 	wounding_mult = WOUNDING_NORMAL
 	penetrating = 2
@@ -654,7 +654,7 @@
 	recoil = 9
 
 /obj/item/projectile/bullet/c12x64
-	damage_types = list(BRUTE = 60)
+	damage_types = list(BRUTE = 45)
 	armor_divisor = 5
 	wounding_mult = WOUNDING_SERIOUS
 	penetrating = 3

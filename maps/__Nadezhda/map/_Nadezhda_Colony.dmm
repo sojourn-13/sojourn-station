@@ -75914,6 +75914,7 @@
 	pixel_x = 8;
 	pixel_y = 1
 	},
+/obj/item/pc_part/drive/disk/design/deimos/supply_spec,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
 "odg" = (

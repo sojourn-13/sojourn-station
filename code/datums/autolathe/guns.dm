@@ -539,7 +539,7 @@
 /datum/design/autolathe/gun/deimos/tombak
 	name = "DAS-400 \"Tombak\" AHR"
 	build_path = /obj/item/gun/projectile/deimos/tombak
-	materials = list(MATERIAL_PLASTEEL = 30, MATERIAL_STEEL = 20, MATERIAL_PLASTIC = 10, MATERIAL_DIAMOND = 2)
+	materials = list(MATERIAL_PLASTEEL = 30, MATERIAL_STEEL = 20, MATERIAL_PLASTIC = 10, MATERIAL_DIAMOND = 6, MATERIAL_OSMIUM = 3)
 
 /datum/design/autolathe/gun/deimos/palu
 	name = "DAS-300 \"Palu\" CAWS"

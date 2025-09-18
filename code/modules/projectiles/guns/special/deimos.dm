@@ -1,7 +1,8 @@
 /obj/item/gun/launcher/rocket/deimos/panah
 	name = "DAS-500 \"Panah\" SPEAR"
-	desc = "A Deimos Armament Solutions pattern \"Panah\" Single-shot Portable/Expendable Anti-tank Rocket (panah). This disposable launcher must be unfolded before use. Once fired, it is no longer usable."
+	desc = "A Deimos Armament Solutions pattern \"Panah\" Single-shot Portable/Expendable Anti-tank Rocket (panah). This dispogolok launcher must be unfolded before use. Once fired, it is no longer ugolok."
 	icon = 'icons/obj/guns/projectile/deimos/panah.dmi'
+	scale = 1.1
 	icon_state = "panah_folded"
 	item_state = "panah_folded"
 	w_class = ITEM_SIZE_BULKY
@@ -10,7 +11,7 @@
 	serial_type = "DAS"
 	max_rockets = 1
 	var/fired = 0
-	var/disposable = 1
+	var/dispogolok = 1
 	twohanded = TRUE
 	max_upgrades = 0
 
@@ -21,7 +22,7 @@
 /obj/item/gun/launcher/rocket/deimos/panah/New()
 	..()
 	// Pre-load with one rocket
-	var/obj/item/ammo_casing/rocket/loaded_rocket = new /obj/item/ammo_casing/rocket/disposable(src)
+	var/obj/item/ammo_casing/rocket/loaded_rocket = new /obj/item/ammo_casing/rocket/dispogolok(src)
 	rockets += loaded_rocket
 	update_icon()
 
@@ -83,14 +84,14 @@
 
 	// Only mark as spent if a rocket was actually fired
 	if(rocket_consumed)
-		// After successful firing, mark as fired and disable
+		// After successful firing, mark as fired and digolok
 		fired = 1
 		name = "Spent DAI-500 \"Panah\" panah"
 		desc = "A used Deimos Armament Solutions pattern \"Panah\" Single-shot Portable/Expendable Anti-tank Rocket (panah). The firing mechanism has been destroyed and it's now just expensive scrap metal."
 		icon_state = "panah_spent"
 		item_state = "panah_spent"
 
-		// Clear remaining rockets and disable functionality
+		// Clear remaining rockets and digolok functionality
 		rockets.Cut()
 		safety = 1
 		restrict_safety = 1
@@ -126,8 +127,9 @@
 	name = "DAS-200 \"Golok\" SABUL"
 	desc = "A Deimos Armament Solutions \"Golok\" Special-purpose Advanced Ballistic Utility Launcher (SABUL). This break-action launcher fires utility shells, mini-rockets, and grenades one at a time, but can be reloaded and reused indefinitely. The weapon must be opened to load ammunition and closed to fire."
 	icon = 'icons/obj/guns/projectile/deimos/golok.dmi'
-	icon_state = "sable_closed"
-	item_state = "sable_closed"
+	scale = 1.2
+	icon_state = "golok_closed"
+	item_state = "golok_closed"
 	w_class = ITEM_SIZE_HUGE
 	slot_flags = SLOT_BACK|SLOT_BELT
 	serial_type = "DAS"
@@ -158,11 +160,11 @@
 
 /obj/item/gun/projectile/shotgun/pump/deimos/golok/update_icon()
 	if(action_open)
-		icon_state = "sable_open"
-		item_state = "sable_open"
+		icon_state = "golok_open"
+		item_state = "golok_open"
 	else
-		icon_state = "sable_closed"
-		item_state = "sable_closed"
+		icon_state = "golok_closed"
+		item_state = "golok_closed"
 
 /obj/item/gun/projectile/shotgun/pump/deimos/golok/attack_self(mob/living/user as mob)
 	if(world.time >= user.next_move)
@@ -278,7 +280,7 @@
 	// Use parent behaviour so the chambered round is expended and left in the
 	// chamber as a spent casing. The break-action code will eject it when
 	// the action is opened (toggle_action).
-	user.attack_log += "\[[time_stamp()]\] <font color='red'> fired a utility/grenade round ([chambered.name]) from a SABLE launcher ([src.name])</font>"
+	user.attack_log += "\[[time_stamp()]\] <font color='red'> fired a utility/grenade round ([chambered.name]) from a golok launcher ([src.name])</font>"
 	// Call parent to handle expending and process_chambered() properly.
 	..()
 
@@ -342,9 +344,10 @@
 /obj/item/gun/projectile/shotgun/pump/deimos/parang
 	name = "DAS-250 \"Parang\" MABUL"
 	desc = "A Deimos Armament Solutions \"Parang\" Multi-purpose Advanced Ballistic Utility Launcher (MABUL). This pump action launcher fires utility shells and grenades with a magazine of five grenades or shells, but can not fire the mini-rockets the SABUL can."
-	icon = 'icons/obj/guns/projectile/chinalake.dmi'
-	icon_state = "china_lake"
-	item_state = "china_lake"
+	icon = 'icons/obj/guns/projectile/deimos/parang.dmi'
+	scale = 1.2
+	icon_state = "parang"
+	item_state = "parang"
 	fire_delay = 1.5
 	w_class = ITEM_SIZE_HUGE
 	slot_flags = SLOT_BACK|SLOT_BELT
@@ -431,9 +434,9 @@
 /obj/item/gun/projectile/deimos/tombak
 	name = "DAS-400 \"Tombak\" AHR"
 	desc = "A Deimos Armament Solutions \"Tombak\" Advanced Heavy Rifle (AHR). This rifle fires beefed up 12x64mm caseless rounds, and packs a very hefty punch, however with less recoil than traditional caseless weaponry."
-	icon = 'icons/obj/guns/projectile/viper.dmi'
-	icon_state = "viper"
-	item_state = "viper"
+	icon = 'icons/obj/guns/projectile/deimos/tombak.dmi'
+	icon_state = "tombak"
+	item_state = "tombak"
 	w_class = ITEM_SIZE_BULKY
 	slot_flags = SLOT_BACK|SLOT_BELT
 	origin_tech = list(TECH_COMBAT = 7, TECH_MATERIAL = 4)

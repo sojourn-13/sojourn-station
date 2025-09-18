@@ -12,6 +12,7 @@
 	var/default_transfer_amount = 5
 	unacidable = 1
 	volume = 40
+	var/bypass_suit = FALSE // Whether this hypospray can bypass suits/armour when injecting
 	possible_transfer_amounts = null
 	reagent_flags = OPENCONTAINER
 	slot_flags = SLOT_BELT
@@ -77,6 +78,9 @@
 		if(H.a_intent == I_HURT)
 			user.visible_message(SPAN_WARNING("[user] tries to inject [M] with [src]! But [M] is actively resisting"), SPAN_WARNING("You begin injecting [M] but they seem to be resisting."))
 			injtime += 10
+		// If a rig or suit is deployed, apply the timing penalty and check for
+		// robotic-suit refusal. This mirrors syringe behaviour but is kept
+		// separate from the biological can_inject() checks below.
 		if((istype(RIG) && RIG.suit_is_deployed()) || istype(SS))
 			injtime += 10
 			var/obj/item/organ/external/affected = H.get_organ(BP_CHEST)
@@ -86,17 +90,31 @@
 					playsound(src.loc, 'sound/machines/buzz-two.ogg', 50, 1 -3)
 					RIG.visible_message("\icon[RIG]\The [RIG] states \"Attention: User of this suit appears to be synthetic origin\".")
 				return FALSE
-		else if(!H.can_inject(user, FALSE))
+		// If biological injection is refused, handle low-bio exceptions or
+		// allow armour-only failures to be bypassed when src.bypass_suit is set.
+		if(!H.can_inject(user, FALSE))
 			var/obj/item/organ/external/affected = H.get_organ(user.targeted_organ)
-			if(BP_IS_LIFELIKE(affected) && user && user.stats.getStat(STAT_BIO) < STAT_LEVEL_BASIC)
-				if(M.reagents)
-					var/trans = reagents.remove_any(amount_per_transfer_from_this)
-					user.visible_message(SPAN_WARNING("[user] injects [M] with [src]!"), SPAN_WARNING("You inject [M] with [src]."))
-					to_chat(user, SPAN_NOTICE("[trans] units injected, [reagents.total_volume] units remaining in \the [src]."))
-				return TRUE
-			else
-				H.can_inject(user, TRUE)
-				return FALSE
+			var/skip_due_to_armor = FALSE
+			if(src.bypass_suit)
+				if(user.targeted_organ == BP_HEAD)
+					var/obj/item/clothing/head/HHEAD = H.get_equipped_item(slot_head)
+					if(HHEAD && (HHEAD.item_flags & THICKMATERIAL))
+						skip_due_to_armor = TRUE
+				else
+					if(SS && (SS.item_flags & THICKMATERIAL))
+						skip_due_to_armor = TRUE
+			// If we did NOT skip due to armour, perform the standard can_inject
+			// fallback (low-bio auto-inject or rejection).
+			if(!skip_due_to_armor)
+				if(BP_IS_LIFELIKE(affected) && user && user.stats.getStat(STAT_BIO) < STAT_LEVEL_BASIC)
+					if(M.reagents)
+						var/trans = reagents.remove_any(amount_per_transfer_from_this)
+						user.visible_message(SPAN_WARNING("[user] injects [M] with [src]!"), SPAN_WARNING("You inject [M] with [src]."))
+						to_chat(user, SPAN_NOTICE("[trans] units injected, [reagents.total_volume] units remaining in \the [src]."))
+						return TRUE
+					else
+						H.can_inject(user, TRUE)
+						return FALSE
 	else if(!M.can_inject(user, TRUE))
 		return FALSE
 
@@ -137,30 +155,47 @@
 		if(H.a_intent == I_HURT)
 			user.visible_message(SPAN_WARNING("[user] trys to inject [M] with [src]! But [M] is actively resisting"), SPAN_WARNING("You inject begin injecting [M] with [src] but they seem to be resisting."))
 			injtime += 10 //Not as good as having a real suit on
+		// If a rig or suit is deployed, apply the timing penalty and check for
+		// robotic-suit refusal. This mirrors syringe behaviour but is kept
+		// separate from the biological can_inject() checks below.
 		if((istype(RIG) && RIG.suit_is_deployed()) || istype(SS))
 			injtime += 30
 			var/obj/item/organ/external/affected = H.get_organ(BP_CHEST)
 			if(BP_IS_ROBOTIC(affected))
 				to_chat(user, SPAN_WARNING("Injection port on [M]'s suit is refusing your [src]."))
-				// I think rig is advanced enough for this, and people will learn what causes this error
 				if(RIG)
 					playsound(src.loc, 'sound/machines/buzz-two.ogg', 50, 1 -3)
 					RIG.visible_message("\icon[RIG]\The [RIG] states \"Attention: User of this suit appears to be synthetic origin\".")
 				return
-		// check without message
-		else if(!H.can_inject(user, FALSE))
-			// lets check if user is easily fooled
+		// If biological injection is refused, handle low-bio exceptions or
+		// allow armour-only failures to be bypassed when src.bypass_suit is set.
+		if(!H.can_inject(user, FALSE))
 			var/obj/item/organ/external/affected = H.get_organ(user.targeted_organ)
-			if(BP_IS_LIFELIKE(affected) && user && user.stats.getStat(STAT_BIO) < STAT_LEVEL_BASIC)
+			var/skip_due_to_armor = FALSE
+			if(src.bypass_suit)
+				if(user.targeted_organ == BP_HEAD)
+					var/obj/item/clothing/head/HHEAD = H.get_equipped_item(slot_head)
+					if(HHEAD && (HHEAD.item_flags & THICKMATERIAL))
+						skip_due_to_armor = TRUE
+				else
+					if(SS && (SS.item_flags & THICKMATERIAL))
+						skip_due_to_armor = TRUE
+			if(skip_due_to_armor)
 				if(M.reagents)
 					var/trans = reagents.remove_any(amount_per_transfer_from_this)
 					user.visible_message(SPAN_WARNING("[user] injects [M] with [src]!"), SPAN_WARNING("You inject [M] with [src]."))
 					to_chat(user, SPAN_NOTICE("[trans] units injected, [reagents.total_volume] units remaining in \the [src]."))
 				return
 			else
-				// if he is not lets show him what actually happened
-				H.can_inject(user, TRUE)
-				return
+				if(BP_IS_LIFELIKE(affected) && user && user.stats.getStat(STAT_BIO) < STAT_LEVEL_BASIC)
+					if(M.reagents)
+						var/trans = reagents.remove_any(amount_per_transfer_from_this)
+						user.visible_message(SPAN_WARNING("[user] injects [M] with [src]!"), SPAN_WARNING("You inject [M] with [src]."))
+						to_chat(user, SPAN_NOTICE("[trans] units injected, [reagents.total_volume] units remaining in \the [src]."))
+						return TRUE
+					else
+						H.can_inject(user, TRUE)
+						return FALSE
 	else if(!M.can_inject(user, TRUE))
 		return
 	// handling injection duration on others
@@ -232,6 +267,7 @@
 	amount_per_transfer_from_this = 5
 	volume = 0
 	time = 5
+	bypass_suit = TRUE
 	var/single_use = FALSE
 	slot_flags = SLOT_BELT|SLOT_HOLSTER
 	var/obj/item/reagent_containers/glass/beaker/vial/loaded_vial
@@ -309,9 +345,20 @@
 	return
 
 
-/obj/item/reagent_containers/hypospray/vial/use_tool(obj/item/W, mob/living/user, list/click_params)
+
+obj/item/reagent_containers/hypospray/vial/use_tool(mob/living/user, atom/target, base_time, required_quality, fail_chance, required_stat, instant_finish_tier = 110, forced_sound = null, sound_repeat = 2.5 SECONDS)
 	if(istype(W, /obj/item/reagent_containers/glass/beaker/vial))
-		if(!do_after(user, 1 SECOND, src) || !(W in user))
+		// The parent use_tool signature is used so other code can call this with
+		// keyword args. We still want to accept loading from the user's hand, so
+		// detect the vial in the user's hands by searching their held items.
+		var/obj/item/W = null
+		// Look for a vial in the user's active hand or inventory that we can load
+		for(var/atom/A in user.contents)
+			if(istype(A, /obj/item/reagent_containers/glass/beaker/vial))
+				W = A
+				break
+		// If we didn't find a vial or the action was interrupted, abort.
+		if(!W || !do_after(user, 1 SECOND, src) || !(W in user))
 			return TRUE
 		// Try to unequip the vial from the user into the hypospray. Some edge cases
 		// (slot inaccessible, custom mob logic) may make unEquip fail; attempt a safe
