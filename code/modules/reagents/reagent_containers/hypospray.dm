@@ -346,7 +346,7 @@
 
 
 
-obj/item/reagent_containers/hypospray/vial/use_tool(mob/living/user, atom/target, base_time, required_quality, fail_chance, required_stat, instant_finish_tier = 110, forced_sound = null, sound_repeat = 2.5 SECONDS)
+/obj/item/reagent_containers/hypospray/vial/use_tool(mob/living/user, obj/item/W, atom/target, base_time, required_quality, fail_chance, required_stat, instant_finish_tier = 110, forced_sound = null, sound_repeat = 2.5 SECONDS)
 	if(istype(W, /obj/item/reagent_containers/glass/beaker/vial))
 		// The parent use_tool signature is used so other code can call this with
 		// keyword args. We still want to accept loading from the user's hand, so
@@ -404,7 +404,8 @@ obj/item/reagent_containers/hypospray/vial/use_tool(mob/living/user, atom/target
 /obj/item/reagent_containers/hypospray/vial/attackby(obj/item/W, mob/user)
 	// Allow clicking a vial onto the hypospray to load it, bypassing parent use_tool restrictions.
 	if(istype(W, /obj/item/reagent_containers/glass/beaker/vial))
-		return use_tool(W, user, null)
+		// call use_tool with (user, target, ...) as the parent signature expects
+		return use_tool(user, W, null)
 	return ..()
 
 

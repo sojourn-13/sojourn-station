@@ -2,7 +2,6 @@
 	name = "DAS-500 \"Panah\" SPEAR"
 	desc = "A Deimos Armament Solutions pattern \"Panah\" Single-shot Portable/Expendable Anti-tank Rocket (panah). This dispogolok launcher must be unfolded before use. Once fired, it is no longer ugolok."
 	icon = 'icons/obj/guns/projectile/deimos/panah.dmi'
-	scale = 1.1
 	icon_state = "panah_folded"
 	item_state = "panah_folded"
 	w_class = ITEM_SIZE_BULKY
@@ -22,7 +21,7 @@
 /obj/item/gun/launcher/rocket/deimos/panah/New()
 	..()
 	// Pre-load with one rocket
-	var/obj/item/ammo_casing/rocket/loaded_rocket = new /obj/item/ammo_casing/rocket/dispogolok(src)
+	var/obj/item/ammo_casing/rocket/loaded_rocket = new /obj/item/ammo_casing/rocket/disposable(src)
 	rockets += loaded_rocket
 	update_icon()
 
@@ -127,7 +126,6 @@
 	name = "DAS-200 \"Golok\" SABUL"
 	desc = "A Deimos Armament Solutions \"Golok\" Special-purpose Advanced Ballistic Utility Launcher (SABUL). This break-action launcher fires utility shells, mini-rockets, and grenades one at a time, but can be reloaded and reused indefinitely. The weapon must be opened to load ammunition and closed to fire."
 	icon = 'icons/obj/guns/projectile/deimos/golok.dmi'
-	scale = 1.2
 	icon_state = "golok_closed"
 	item_state = "golok_closed"
 	w_class = ITEM_SIZE_HUGE
@@ -345,7 +343,6 @@
 	name = "DAS-250 \"Parang\" MABUL"
 	desc = "A Deimos Armament Solutions \"Parang\" Multi-purpose Advanced Ballistic Utility Launcher (MABUL). This pump action launcher fires utility shells and grenades with a magazine of five grenades or shells, but can not fire the mini-rockets the SABUL can."
 	icon = 'icons/obj/guns/projectile/deimos/parang.dmi'
-	scale = 1.2
 	icon_state = "parang"
 	item_state = "parang"
 	fire_delay = 1.5
