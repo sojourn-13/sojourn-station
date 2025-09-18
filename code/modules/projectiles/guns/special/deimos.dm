@@ -538,7 +538,7 @@
 	damage_mult = 0.7
 	force = WEAPON_FORCE_PAINFUL
 	caliber = CAL_SHOTGUN
-	var/icon_scale = 1
+	var/icon_scale = 0.8
 	fire_delay = 35
 	twohanded = TRUE
 	price_tag = 1800
@@ -594,7 +594,7 @@
 	unload_sound = 'sound/weapons/guns/interact/ltrifle_magout.ogg'
 	init_recoil = CARBINE_RECOIL(2)
 	force = WEAPON_FORCE_PAINFUL
-	var/icon_scale = 1.1
+	var/icon_scale = 0.9
 	twohanded = FALSE
 	fire_delay = 10
 	price_tag = 1600
