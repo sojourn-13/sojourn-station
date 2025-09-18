@@ -143,7 +143,6 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
 	fire_sound = 'sound/weapons/guns/fire/GLfire.ogg'
 	bulletinsert_sound = 'sound/weapons/guns/interact/shotgun_insert.ogg'
-
 	max_shells = 1
 	fire_delay = 10
 	slowdown_hold = 0.5
@@ -448,7 +447,7 @@
 	zoom_factors = list(1.5)
 	fire_delay = 35
 	fire_sound = 'sound/weapons/guns/fire/dmr_fire.ogg'
-	init_recoil = RIFLE_RECOIL(1)
+	init_recoil = RIFLE_RECOIL(4)
 	force = WEAPON_FORCE_PAINFUL
 	twohanded = TRUE
 	price_tag = 3500
@@ -494,8 +493,9 @@
 	zoom_factors = list(0.4)
 	ammo_type = /obj/item/ammo_casing/shotgun
 	fire_sound = 'sound/weapons/guns/fire/sbaw.ogg'
-	init_recoil = FOLDING_RECOIL(0.5)
+	init_recoil = FOLDING_RECOIL(3)
 	force = WEAPON_FORCE_PAINFUL
+	fire_delay = 20
 	twohanded = TRUE
 	price_tag = 1800
 	init_firemodes = list(
@@ -540,14 +540,16 @@
 	wield_delay = 1 SECOND
 	wield_delay_factor = 0.5// 50 vig
 	fire_sound = 'sound/weapons/guns/fire/sfrifle_fire.ogg'
-	init_recoil = CARBINE_RECOIL(0.5)
+	init_recoil = CARBINE_RECOIL(3)
 	force = WEAPON_FORCE_PAINFUL
-	twohanded = TRUE
+	twohanded = FALSE
+	fire_delay = 5
 	price_tag = 1600
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
+		BURST_3_ROUND,
 		BURST_5_ROUND,
-		FULL_AUTO_300
+		FULL_AUTO_600
 	)
 
 /obj/item/gun/projectile/deimos/celurit/New()
@@ -586,8 +588,9 @@
 	wield_delay = 1 SECOND
 	wield_delay_factor = 0.5// 50 vig
 	fire_sound = 'sound/weapons/guns/fire/hpistol_fire.ogg'
-	init_recoil = HANDGUN_RECOIL(0.5)
+	init_recoil = HANDGUN_RECOIL(2)
 	force = WEAPON_FORCE_NORMAL
+	fire_delay = 5
 	twohanded = FALSE
 	price_tag = 900
 	init_firemodes = list(
