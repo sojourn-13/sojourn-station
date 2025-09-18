@@ -351,7 +351,7 @@
 		// The parent use_tool signature is used so other code can call this with
 		// keyword args. We still want to accept loading from the user's hand, so
 		// detect the vial in the user's hands by searching their held items.
-		var/obj/item/W = null
+		W = null
 		// Look for a vial in the user's active hand or inventory that we can load
 		for(var/atom/A in user.contents)
 			if(istype(A, /obj/item/reagent_containers/glass/beaker/vial))
