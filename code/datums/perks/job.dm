@@ -514,7 +514,7 @@
 	cooldown_time = world.time + 1 SECOND //So people that doble click dont instantly toggle it off and on
 	chichink = !chichink
 	if(chichink)
-		to_chat(usr, SPAN_NOTICE("You will now mindlessly cycle the bolt action."))
+		to_chat(usr, SPAN_NOTICE("You will now cycle the bolt after every shot."))
 	else
 		to_chat(usr, SPAN_NOTICE("You will no longer cycle the bolt automatically. What was the point of basic training?"))
 	return ..()
