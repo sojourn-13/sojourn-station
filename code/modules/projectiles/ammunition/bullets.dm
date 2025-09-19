@@ -499,6 +499,12 @@
 	shell_color = "lsr"
 	projectile_type = /obj/item/projectile/beam/weak/kurz_50
 
+/obj/item/ammo_casing/kurz_50/biomatter
+	desc = "A caseless .50 Kurz Caustic."
+	projectile_type = /obj/item/projectile/bullet/kurz_50/biomatter
+	icon_state = "clrifle_c_p"
+	shell_color = "s"
+	is_caseless = TRUE
 
 //// .60-06 ////
 /obj/item/ammo_casing/antim
