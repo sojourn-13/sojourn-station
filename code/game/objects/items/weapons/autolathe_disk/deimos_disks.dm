@@ -11,7 +11,7 @@
 	)
 
 /obj/item/pc_part/drive/disk/design/deimos/supply_spec
-	name = "Deimos Armaments Solutions: Solutions: Security Pack"
+	name = "Deimos Armaments Solutions: Security Pack"
 	desc = "A disk from SI's experimental weapons manufacturing branch. Contains autolathe designs for Deimos pattern weapons. This one is intended explicitly for Nadezhda Security use only."
 	icon_state = "deimos-marshal"
 	license = 20
@@ -27,7 +27,7 @@
 	)
 
 /obj/item/pc_part/drive/disk/design/deimos/caseless
-	name = "Deimos Armaments Solutions: Solutions: Caseless Pack"
+	name = "Deimos Armaments Solutions: Caseless Pack"
 	icon_state = "deimos"
 	license = 8
 	designs = list(
