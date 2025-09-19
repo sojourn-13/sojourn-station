@@ -188,7 +188,7 @@
 		STAT_COG = 10
 	)
 
-	perks = list(PERK_STALKER, PERK_PROSPECTOR_CONDITIONING)
+	perks = list(PERK_MEDICAL_EXPERT, PERK_STALKER, PERK_PROSPECTOR_CONDITIONING)
 
 	description = "The Prospector serves as hired muscle to the Foreman, positioned somewhere between meat shield and exterminator.<br>\
 	Your job is to keep the Salvagers and anyone else with you protected, handling the fighting and being the first to enter dangerous areas. <br>\
