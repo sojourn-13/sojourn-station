@@ -312,20 +312,20 @@
 	usable = 0
 	selectable = 1
 	disruptive = 1
-	vial_only = TRUE
+	vial_only = FALSE
 	injection_to_others_delay = 7 //Not nerely as long as you would think
 	interface_name = "integrated chemical injector"
 	interface_desc = "Dispenses loaded chemicals directly into the bloodstream of its target. Can be used on the wearer as well."
 
 /obj/item/rig_module/modular_injector/medical/preloaded
 	initial_beakers = list(
-		list(/obj/item/reagent_containers/glass/beaker/vial/rig_inaprovaline, "inaprovaline",15),
-		list(/obj/item/reagent_containers/glass/beaker/vial/rig_dexalinp,     "dexalinp",15),
-		list(/obj/item/reagent_containers/glass/beaker/vial/rig_tramadol,     "tramadol",15),
-		list(/obj/item/reagent_containers/glass/beaker/vial/rig_bicaridine,   "bicaridine", 15),
-		list(/obj/item/reagent_containers/glass/beaker/vial/rig_kelotane,     "kelotane",15),
-		list(/obj/item/reagent_containers/glass/beaker/vial/rig_anti_toxin,   "anti_toxin", 15),
-		list(/obj/item/reagent_containers/glass/beaker/vial/rig_spaceacillin, "spaceacillin", 15)
+		list(/obj/item/reagent_containers/glass/beaker/large, "inaprovaline",60),
+		list(/obj/item/reagent_containers/glass/beaker/large, "dexalinp",60),
+		list(/obj/item/reagent_containers/glass/beaker/large, "tramadol",60),
+		list(/obj/item/reagent_containers/glass/beaker/large, "bicaridine", 60),
+		list(/obj/item/reagent_containers/glass/beaker/large, "kelotane",60),
+		list(/obj/item/reagent_containers/glass/beaker/large, "anti_toxin", 60),
+		list(/obj/item/reagent_containers/glass/beaker/large, "spaceacillin", 60)
 	)
 
 /obj/item/rig_module/voice
