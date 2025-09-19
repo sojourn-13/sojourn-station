@@ -190,7 +190,7 @@
 		dat = text("[]<BR><BR><A href='?src=\ref[];clear=1'>Main Menu</A>", src.temphtml, src)
 	else
 		if (src.connected) //Is something connected?
-			dat = format_occupant_data(src.connected.get_occupant_data())
+			dat = format_occupant_data(src.connected.get_occupant_data(), usr)
 			dat += "<HR><A href='?src=\ref[src];print=1'>Print</A><BR>"
 		else
 			dat = SPAN_WARNING("Error: No Body Scanner connected.")
@@ -217,7 +217,7 @@
 			return
 		var/obj/item/paper/R = new(src.loc)
 		R.name = "[occupant.get_visible_name()] scan report"
-		R.info = format_occupant_data(src.connected.get_occupant_data())
+		R.info = format_occupant_data(src.connected.get_occupant_data(), usr)
 		R.update_icon()
 
 
@@ -281,7 +281,8 @@
 	dat += text("Body Temperature: [occ["bodytemp"]-T0C]&deg;C ([occ["bodytemp"]*1.8-459.67]&deg;F)<br><HR>")
 
 	if(occ["borer_present"])
-		dat += "Large Neurophage detected. Ensure patient consent, and remove in a secure environment if they are not wanted.<br>"
+		if (usr.stat_check(STAT_BIO, 30))
+			dat += "Second sapient neural signature detected. Likely cause: Anomalous neurophage.<br>"
 
 	dat += text("[]\tBlood Level %: [] ([] units)</FONT><BR>", ("<font color='[occ["blood_amount"] > 80  ? "blue" : "red"]'>"), occ["blood_amount"], occ["blood_amount"])
 
