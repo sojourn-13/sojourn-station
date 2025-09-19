@@ -337,8 +337,8 @@
 
 // .408 Heavy Rifles
 /datum/design/autolathe/gun/scoped_omnirifle
-	name = "H&S BR .408 \"Longarm\""
-	build_path = /obj/item/gun/projectile/automatic/omnirifle/scoped
+	name = "H&S .408 \"Warthog\""
+	build_path = /obj/item/gun/projectile/automatic/omnirifle/rds
 
 /datum/design/autolathe/gun/omnirifle
 	name = "H&S .408 \"Omnirifle\""
