@@ -52,7 +52,11 @@ var/global/list/modifications_types = list(
 	// Basic validation
 	if(!organ || !(organ in body_parts))
 		return FALSE
-
+	// Exception: allow appendix removal if the target has a psionic organ
+	if(organ == OP_APPENDIX && H)
+		for(var/obj/item/organ/internal/O in H.internal_organs)
+			if(istype(O, /obj/item/organ/internal/psionic_tumor))
+				return TRUE
 	// Find parent organ (if any) and validate parent-child constraints
 	var/parent_organ = null
 	for(var/organ_parent in organ_structure)
@@ -88,13 +92,7 @@ var/global/list/modifications_types = list(
 	// Non-transhuman (cruciform) protection. Most NT changes are blocked if wearer has a cruciform.
 	if(!allow_nt && H?.get_core_implant(/obj/item/implant/core_implant/cruciform))
 		to_chat(usr, "Your cruciform prevents you from using this modification.")
-		// Exception: allow appendix removal if the target has a psionic organ
-		if(organ == OP_APPENDIX && H)
-			for(var/obj/item/organ/internal/O in H.internal_organs)
-				if(istype(O, /obj/item/organ/internal/psionic_tumor))
-					return TRUE
 		return FALSE
-
 	return TRUE
 
 /datum/body_modification/proc/create_organ(var/mob/living/carbon/holder, var/organ, var/color)
