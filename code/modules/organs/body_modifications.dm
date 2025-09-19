@@ -47,11 +47,14 @@ var/global/list/modifications_types = list(
 /datum/body_modification/proc/get_mob_icon(organ, body_build = "", color="#ffffff", gender = MALE, var/datum/species_form/species_form)	//Use in setup character only
 	return new/icon('icons/mob/human.dmi', "blank")
 
+
 /datum/body_modification/proc/is_allowed(organ = "", datum/preferences/P, mob/living/carbon/human/H)
+	// Basic validation
 	if(!organ || !(organ in body_parts))
-		//usr << "[name] isn't usable for [organ]"
 		return FALSE
-	var/parent_organ
+
+	// Find parent organ (if any) and validate parent-child constraints
+	var/parent_organ = null
 	for(var/organ_parent in organ_structure)
 		var/list/organ_data = organ_structure[organ_parent]
 		if(organ in organ_data["children"])
@@ -63,6 +66,7 @@ var/global/list/modifications_types = list(
 			to_chat(usr, "[name] can't be attached to [parent.name]")
 			return FALSE
 
+	// Department restriction check
 	if(department_specific.len && !(department_specific ~= ALL_DEPARTMENTS))
 		if(H && H.mind)
 			var/department = H.mind.assigned_job.department
@@ -81,8 +85,14 @@ var/global/list/modifications_types = list(
 				to_chat(usr, "This body-mod does not match your highest-priority department.")
 				return FALSE
 
+	// Non-transhuman (cruciform) protection. Most NT changes are blocked if wearer has a cruciform.
 	if(!allow_nt && H?.get_core_implant(/obj/item/implant/core_implant/cruciform))
 		to_chat(usr, "Your cruciform prevents you from using this modification.")
+		// Exception: allow appendix removal if the target has a psionic organ
+		if(organ == OP_APPENDIX && H)
+			for(var/obj/item/organ/internal/O in H.internal_organs)
+				if(istype(O, /obj/item/organ/internal/psionic_tumor))
+					return TRUE
 		return FALSE
 
 	return TRUE
