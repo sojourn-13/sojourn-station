@@ -482,6 +482,12 @@
 	matter = list(MATERIAL_CARDBOARD = 1)
 	max_ammo = 50
 
+/obj/item/ammo_magazine/ammobox/kurz_50/biomatter
+	name = "ammunition packet (.50 Kurz Caustic)"
+	desc = "A box of caustic caseless .50 Kurz."
+	icon_state = "box50-bio"
+	ammo_type = /obj/item/ammo_casing/kurz_50/biomatter
+
 //// .60-06 ////
 
 /obj/item/ammo_magazine/ammobox/antim
