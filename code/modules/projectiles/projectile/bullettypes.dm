@@ -341,7 +341,7 @@
 
 /obj/item/projectile/bullet/kurz_50/biomatter
 	name = "biomatter bullet"
-	damage_types = list(BURN = 20, HALLOSS = 32)
+	damage_types = list(BURN = 23, HALLOSS = 33)
 	armor_divisor = 0.7
 	wounding_mult = WOUNDING_NORMAL
 	penetrating = 0
