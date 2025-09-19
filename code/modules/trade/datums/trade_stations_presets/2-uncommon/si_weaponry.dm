@@ -1,5 +1,5 @@
  /datum/trade_station/si_weaponry
-	name_pool = list("SI \"Xianhao\"" = "Soteria Experimental Weaponry")
+	name_pool = list("SI 'Xianhao'" = "Soteria Experimental Weaponry")
 	spawn_always = TRUE
 	markup = COMMON_GOODS
 	icon_states = list("moe_capital", "station")
@@ -10,7 +10,6 @@
 	base_income = 0
 	wealth = 0
 	recommendation_threshold = 2000
-	icon_states = list("deimos", "object")
 	stations_recommended = list("illegal1")
 	recommendations_needed = 1
 	hidden_inv_threshold = 2500

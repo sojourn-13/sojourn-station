@@ -134,6 +134,7 @@
 			list(name="Packet (8x16mm Caseless)", cost=500, path=/obj/item/ammo_magazine/ammobox/c8x16_small),
 			list(name="Packet (10x24mm Caseless)", cost=800, path=/obj/item/ammo_magazine/ammobox/c10x24_small),
 			list(name="Packet (12x64mm Caseless)", cost=1650, path=/obj/item/ammo_magazine/ammobox/c12x64_small),
+			list(name="Ammo Box (10x24mm Caseless)", cost=2510, path=/obj/item/ammo_magazine/ammobox/c10x24),
 		".257 Carbine, Short",
 			list(name="Short Carbine Magazine (.257)", cost=200, path=/obj/item/ammo_magazine/light_rifle_257_short),
 			list(name="Short Carbine Magazine (.257 High-Velocity)", cost=300, path=/obj/item/ammo_magazine/ammobox/light_rifle_257_small/hv),
