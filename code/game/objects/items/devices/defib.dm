@@ -556,17 +556,17 @@
 	apply_brain_damage(M, deadtime)
 
 	if(M.stats.getPerk(PERK_REZ_SICKNESS) || M.stats.getPerk(PERK_REZ_SICKNESS_SEVERE) || M.stats.getPerk(PERK_REZ_SICKNESS_FATAL))
-		log_and_message_admins("[M] already had rez sickness! Medical Malpractice or Deathwish?")
+		log_and_message_admins("[M] already had revival sickness! Medical Malpractice or Deathwish?")
 		return
 
 	if(!advanced_pads)
 		stat_changes(M)
 	else
 		M.stats.addPerk(PERK_REZ_SICKNESS_MILD)
-		log_and_message_admins("Added mild rez sickness to [M] due to an advanced defib.")
+		log_and_message_admins("Added mild revival sickness to [M] due to an advanced defib.")
 		return
 /obj/item/shockpaddles/proc/stat_changes(mob/living/carbon/human/M) //This revives the mob
-	// Apply rez sickness depending on the type of defibrillator used.
+	// Apply revival sickness depending on the type of defibrillator used.
 	// Priority: compact/combat -> severe, compact -> mild, base unit (box) -> fatal.
 	// If paddles are standalone or no base_unit is present, treat as compact (mild).
 	if(!M.stats.getPerk(PERK_REZ_SICKNESS) && !M.stats.getPerk(PERK_REZ_SICKNESS_SEVERE) && !M.stats.getPerk(PERK_REZ_SICKNESS_FATAL))
@@ -581,17 +581,17 @@
 		if(unit)
 			if(istype(unit, /obj/item/device/defib_kit/compact/combat))
 				M.stats.addPerk(PERK_REZ_SICKNESS_SEVERE)
-				log_and_message_admins("Added severe rez sickness to [M] due to a combat defib.")
+				log_and_message_admins("Added severe revival sickness to [M] due to a combat defib.")
 			else if(istype(unit, /obj/item/device/defib_kit/compact))
 				M.stats.addPerk(PERK_REZ_SICKNESS)
-				log_and_message_admins("Added mild rez sickness to [M] due to a compact defib.")
+				log_and_message_admins("Added standard revival sickness to [M] due to a compact defib.")
 			else if(istype(unit, /obj/item/device/defib_kit))
 				M.stats.addPerk(PERK_REZ_SICKNESS_FATAL)
-				log_and_message_admins("Added fatal rez sickness to [M] due to a standard box defib.")
+				log_and_message_admins("Added fatal revival sickness to [M] due to a standard box defib.")
 		else
 			// fallback: standalone/robot paddles are treated like compact defibs
 			M.stats.addPerk(PERK_REZ_SICKNESS_SEVERE)
-			log_and_message_admins("Added severe rez sickness to [M] due to an unknown defib.")
+			log_and_message_admins("Added severe revival sickness to [M] due to an unknown defib.")
 
 	// remove permanent stat loss as it's cringe
 	/* for(var/stat_to_change in ALL_STATS_FOR_DEFIBS)
@@ -611,13 +611,13 @@
 		switch(M.stats.getStat(STAT_TGH))
 			if(-1200 to 40)
 				M.stats.addPerk(PERK_REZ_SICKNESS_FATAL)
-				log_and_message_admins("Added fatal rez sickness to [M].")
+				log_and_message_admins("Added fatal revival sickness to [M].")
 			if(40 to 60)
 				M.stats.addPerk(PERK_REZ_SICKNESS_SEVERE)
-				log_and_message_admins("Added severe rez sickness to [M].")
+				log_and_message_admins("Added severe revival sickness to [M].")
 			if(60 to INFINITY)
 				M.stats.addPerk(PERK_REZ_SICKNESS)
-				log_and_message_admins("Added mild rez sickness to [M].")
+				log_and_message_admins("Added mild revival sickness to [M].")
 	*/
 /obj/item/shockpaddles/proc/apply_brain_damage(mob/living/carbon/human/H, var/deadtime)
 	if(deadtime < DEFIB_TIME_LOSS) return
