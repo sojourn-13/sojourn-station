@@ -418,7 +418,7 @@ Technomancer RIG
 	seal_delay = 10 //quick deploy for quick recovery
 	ablative_max = 15
 	ablation = ABLATION_CERAMIC
-	slowdown = 0.15
+	slowdown = 0
 	stiffness = LIGHT_STIFFNESS
 	helm_type = /obj/item/clothing/head/helmet/space/rig/tt
 	max_upgrades = 1
