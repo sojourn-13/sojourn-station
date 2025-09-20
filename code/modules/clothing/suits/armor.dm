@@ -847,6 +847,7 @@
 	name = "full body flak vest"
 	desc = "An armored, padded vest meant for heavy-duty operations, it protects well against explosives and shrapnel. This set has had kneepads and shoulderpads attached for more protection."
 	icon_state = "flakvest_fullbody"
+	item_state = "flakvest_fullbody"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	stiffness = LIGHT_STIFFNESS
 	slowdown = 0.3 // Bulkier due to protecting more
@@ -876,6 +877,15 @@
 		update_wear_icon()
 		usr.update_action_buttons()
 		return 1
+
+/obj/item/clothing/suit/armor/flakvest/excelsior
+	name = "excelsior flak vest"
+	desc = "An armored, padded, off-white vest meant for heavy-duty operations. Lighter than other vests, it doesn't protect against explosions as well as other models, but excels against bullets and shrapnel."
+	icon_state = "flakvest_excel"
+	item_state = "flakvest_excel"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO
+	slowdown = 0.15 // Lighter than standard
+	armor_list = list(melee = 8, bullet = 13, energy = 8, bomb = 30, bio = 0, rad = 0)
 
 /obj/item/clothing/suit/armor/flakvest/militia
 	name = "blackshield flak vest"
