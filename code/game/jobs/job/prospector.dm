@@ -141,7 +141,7 @@
 		STAT_VIG = 10,
 		STAT_ROB = 10
 	)
-	perks = list(PERK_JUNKBORN, PERK_STALKER, PERK_MEDICAL_EXPERT)
+	perks = list(PERK_JUNKBORN, PERK_STALKER)
 
 	description = "The Salvager is an informally trained specialist for the prospectors who functions as both an engineer and a doctor.<br>\
 	Your primary role is that of a field medic. Treat and stabilize the wounded on the combat backlines, and evacuate the critically injured.<br>\
@@ -188,7 +188,7 @@
 		STAT_COG = 10
 	)
 
-	perks = list(PERK_STALKER, PERK_PROSPECTOR_CONDITIONING)
+	perks = list(PERK_MEDICAL_EXPERT, PERK_STALKER, PERK_PROSPECTOR_CONDITIONING)
 
 	description = "The Prospector serves as hired muscle to the Foreman, positioned somewhere between meat shield and exterminator.<br>\
 	Your job is to keep the Salvagers and anyone else with you protected, handling the fighting and being the first to enter dangerous areas. <br>\

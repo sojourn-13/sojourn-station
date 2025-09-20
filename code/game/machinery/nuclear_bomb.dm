@@ -69,8 +69,6 @@ var/bomb_set
 			alarm_loop_timer = 0
 
 		// Repeating alarm loop during active sequence (4:15 minute sound)
-		if(sequence_stage >= 1) // During any active sequence stage
-
 		// Light pulsing effect for urgent states
 		if(sequence_stage >= 2) // During evacuation and final countdown
 			if(sound_timer % 20 == 0) // Pulse every 2 seconds

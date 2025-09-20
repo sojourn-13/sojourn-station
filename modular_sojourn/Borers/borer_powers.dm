@@ -849,7 +849,7 @@
 	dat += text("Body Temperature: [occ["bodytemp"]-T0C]&deg;C ([occ["bodytemp"]*1.8-459.67]&deg;F)<br><HR>")
 
 	if(occ["borer_present"])
-		dat += "Large Neurophage detected. Ensure patient consent, and remove in a secure environment if they are not wanted.<br>"
+		dat += "Second sapient neural signature detected. Likely cause: Anomalous neurophage.<br>"
 
 	dat += text("[]\tBlood Level %: [] ([] units)</FONT><BR>", ("<font color='[occ["blood_amount"] > 80  ? "blue" : "red"]'>"), occ["blood_amount"], occ["blood_amount"])
 

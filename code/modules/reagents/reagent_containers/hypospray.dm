@@ -9,17 +9,22 @@
 	item_state = "hypospray"
 	icon_state = "hypospray"
 	amount_per_transfer_from_this = 5
+	var/default_transfer_amount = 5
 	unacidable = 1
 	volume = 40
+	var/bypass_suit = FALSE // Whether this hypospray can bypass suits/armour when injecting
 	possible_transfer_amounts = null
 	reagent_flags = OPENCONTAINER
 	slot_flags = SLOT_BELT
 	preloaded_reagents = list("tricordrazine" = 40)
 	var/injtime = 0 //A simple delay in injecting
+	var/time = 8 //Standard inject time (seconds)
 
 
 /obj/item/reagent_containers/hypospray/New()
 	..()
+	// remember the default transfer amount so we can restore it when vials are removed
+	default_transfer_amount = amount_per_transfer_from_this
 	update_icon()
 
 /obj/item/reagent_containers/hypospray/update_icon()
@@ -28,13 +33,120 @@
 	else
 		icon_state = "hypospray_empty"
 
+
+/obj/item/reagent_containers/hypospray/on_reagent_change()
+	..()
+	// Keep the sprite in sync with reagent changes
+	update_icon()
+
+
+/obj/item/reagent_containers/hypospray/proc/inject_body_bag(obj/structure/closet/body_bag/bag, mob/user)
+	// Basic implementation: if a living mob is inside the bag, inject them.
+	if(!bag)
+		return FALSE
+	if(bag.opened)
+		to_chat(user, SPAN_NOTICE("The [bag] is open."))
+		return TRUE
+	if(!reagents?.total_volume)
+		to_chat(user, SPAN_WARNING("[src] is empty."))
+		return FALSE
+
+	// find a living mob inside the bag's contents
+	var/mob/living/target_mob = null
+	for(var/atom/A in bag.contents)
+		if(istype(A, /mob/living))
+			target_mob = A
+			break
+
+	if(target_mob)
+		return inject_mob(target_mob, user)
+
+	to_chat(user, SPAN_NOTICE("The [bag] is empty."))
+	return TRUE
+
+
+/obj/item/reagent_containers/hypospray/proc/inject_mob(mob/living/M, mob/user)
+	if(!M || !reagents?.total_volume)
+		return FALSE
+
+	// Determine injection duration and validate the target can be injected.
+	injtime = time
+	var/mob/living/carbon/human/H = M
+	if(istype(H))
+		var/obj/item/clothing/suit/space/SS = H.get_equipped_item(slot_wear_suit)
+		var/obj/item/rig/RIG = H.get_equipped_item(slot_back)
+		if(H.a_intent == I_HURT)
+			user.visible_message(SPAN_WARNING("[user] tries to inject [M] with [src]! But [M] is actively resisting"), SPAN_WARNING("You begin injecting [M] but they seem to be resisting."))
+			injtime += 10
+		// If a rig or suit is deployed, apply the timing penalty and check for
+		// robotic-suit refusal. This mirrors syringe behaviour but is kept
+		// separate from the biological can_inject() checks below.
+		if((istype(RIG) && RIG.suit_is_deployed()) || istype(SS))
+			injtime += 10
+			var/obj/item/organ/external/affected = H.get_organ(BP_CHEST)
+			if(BP_IS_ROBOTIC(affected))
+				to_chat(user, SPAN_WARNING("Injection port on [M]'s suit is refusing your [src]."))
+				if(RIG)
+					playsound(src.loc, 'sound/machines/buzz-two.ogg', 50, 1 -3)
+					RIG.visible_message("\icon[RIG]\The [RIG] states \"Attention: User of this suit appears to be synthetic origin\".")
+				return FALSE
+		// If biological injection is refused, handle low-bio exceptions or
+		// allow armour-only failures to be bypassed when src.bypass_suit is set.
+		if(!H.can_inject(user, FALSE))
+			var/obj/item/organ/external/affected = H.get_organ(user.targeted_organ)
+			var/skip_due_to_armor = FALSE
+			if(src.bypass_suit)
+				if(user.targeted_organ == BP_HEAD)
+					var/obj/item/clothing/head/HHEAD = H.get_equipped_item(slot_head)
+					if(HHEAD && (HHEAD.item_flags & THICKMATERIAL))
+						skip_due_to_armor = TRUE
+				else
+					if(SS && (SS.item_flags & THICKMATERIAL))
+						skip_due_to_armor = TRUE
+			// If we did NOT skip due to armour, perform the standard can_inject
+			// fallback (low-bio auto-inject or rejection).
+			if(!skip_due_to_armor)
+				if(BP_IS_LIFELIKE(affected) && user && user.stats.getStat(STAT_BIO) < STAT_LEVEL_BASIC)
+					if(M.reagents)
+						var/trans = reagents.remove_any(amount_per_transfer_from_this)
+						user.visible_message(SPAN_WARNING("[user] injects [M] with [src]!"), SPAN_WARNING("You inject [M] with [src]."))
+						to_chat(user, SPAN_NOTICE("[trans] units injected, [reagents.total_volume] units remaining in \the [src]."))
+						return TRUE
+					else
+						H.can_inject(user, TRUE)
+						return FALSE
+	else if(!M.can_inject(user, TRUE))
+		return FALSE
+
+	// If injecting someone else, perform the timed action so the progress bar shows.
+	if(M != user)
+		user.setClickCooldown(DEFAULT_QUICK_COOLDOWN)
+		user.do_attack_animation(M)
+		if(injtime)
+			user.visible_message(SPAN_WARNING("[user] begins injecting [M]!"), SPAN_WARNING("You begin injecting [M]!"))
+			if(!do_mob(user, M, injtime))
+				return FALSE
+
+	// Perform transfer, logging and feedback.
+	var/contained = reagents.log_list()
+	var/trans = reagents.trans_to_mob(M, amount_per_transfer_from_this, CHEM_BLOOD)
+	admin_inject_log(user, M, src, contained, trans)
+	to_chat(user, SPAN_NOTICE("[trans] units injected. [reagents.total_volume] units remaining in the [src]."))
+	playsound(src.loc, 'sound/machines/click.ogg', 25)
+	return TRUE
+
+
+/obj/item/reagent_containers/hypospray/proc/use_after(obj/target, mob/living/user, click_parameters)
+	// Fallback hook: child types may override. Return TRUE if handled.
+	return FALSE
+
 /obj/item/reagent_containers/hypospray/attack(mob/living/M as mob, mob/user as mob)
 	if(!reagents.total_volume)
 		to_chat(user, SPAN_WARNING("[src] is empty."))
 		return
 	if (!istype(M))
 		return
-	injtime = 0 //This -could- be abused but only in such narrow circumstances and with such meager payoff that it's fine. it's fine.
+	injtime = time //This -could- be abused but only in such narrow circumstances and with such meager payoff that it's fine. it's fine.
 	// Handling errors and injection duration
 	var/mob/living/carbon/human/H = M
 	if(istype(H))
@@ -43,30 +155,47 @@
 		if(H.a_intent == I_HURT)
 			user.visible_message(SPAN_WARNING("[user] trys to inject [M] with [src]! But [M] is actively resisting"), SPAN_WARNING("You inject begin injecting [M] with [src] but they seem to be resisting."))
 			injtime += 10 //Not as good as having a real suit on
+		// If a rig or suit is deployed, apply the timing penalty and check for
+		// robotic-suit refusal. This mirrors syringe behaviour but is kept
+		// separate from the biological can_inject() checks below.
 		if((istype(RIG) && RIG.suit_is_deployed()) || istype(SS))
 			injtime += 30
 			var/obj/item/organ/external/affected = H.get_organ(BP_CHEST)
 			if(BP_IS_ROBOTIC(affected))
 				to_chat(user, SPAN_WARNING("Injection port on [M]'s suit is refusing your [src]."))
-				// I think rig is advanced enough for this, and people will learn what causes this error
 				if(RIG)
 					playsound(src.loc, 'sound/machines/buzz-two.ogg', 50, 1 -3)
 					RIG.visible_message("\icon[RIG]\The [RIG] states \"Attention: User of this suit appears to be synthetic origin\".")
 				return
-		// check without message
-		else if(!H.can_inject(user, FALSE))
-			// lets check if user is easily fooled
+		// If biological injection is refused, handle low-bio exceptions or
+		// allow armour-only failures to be bypassed when src.bypass_suit is set.
+		if(!H.can_inject(user, FALSE))
 			var/obj/item/organ/external/affected = H.get_organ(user.targeted_organ)
-			if(BP_IS_LIFELIKE(affected) && user && user.stats.getStat(STAT_BIO) < STAT_LEVEL_BASIC)
+			var/skip_due_to_armor = FALSE
+			if(src.bypass_suit)
+				if(user.targeted_organ == BP_HEAD)
+					var/obj/item/clothing/head/HHEAD = H.get_equipped_item(slot_head)
+					if(HHEAD && (HHEAD.item_flags & THICKMATERIAL))
+						skip_due_to_armor = TRUE
+				else
+					if(SS && (SS.item_flags & THICKMATERIAL))
+						skip_due_to_armor = TRUE
+			if(skip_due_to_armor)
 				if(M.reagents)
 					var/trans = reagents.remove_any(amount_per_transfer_from_this)
 					user.visible_message(SPAN_WARNING("[user] injects [M] with [src]!"), SPAN_WARNING("You inject [M] with [src]."))
-					to_chat(user, SPAN_NOTICE("[trans] units injected. [reagents.total_volume] units remaining in \the [src]."))
+					to_chat(user, SPAN_NOTICE("[trans] units injected, [reagents.total_volume] units remaining in \the [src]."))
 				return
 			else
-				// if he is not lets show him what actually happened
-				H.can_inject(user, TRUE)
-				return
+				if(BP_IS_LIFELIKE(affected) && user && user.stats.getStat(STAT_BIO) < STAT_LEVEL_BASIC)
+					if(M.reagents)
+						var/trans = reagents.remove_any(amount_per_transfer_from_this)
+						user.visible_message(SPAN_WARNING("[user] injects [M] with [src]!"), SPAN_WARNING("You inject [M] with [src]."))
+						to_chat(user, SPAN_NOTICE("[trans] units injected, [reagents.total_volume] units remaining in \the [src]."))
+						return TRUE
+					else
+						H.can_inject(user, TRUE)
+						return FALSE
 	else if(!M.can_inject(user, TRUE))
 		return
 	// handling injection duration on others
@@ -87,6 +216,36 @@
 	to_chat(user, SPAN_NOTICE("[trans] units injected. [reagents.total_volume] units remaining in \the [src]."))
 	return
 
+
+/obj/item/reagent_containers/hypospray/vial/afterattack(atom/target, mob/user, proximity)
+	// Allow drawing from reagent containers and injecting mobs like a syringe does.
+	if(!proximity || !target)
+		return
+
+	// Drawing from reagent containers (beakers/bottles)
+	if(istype(target, /obj/item/reagent_containers/glass))
+		if(!target.reagents?.total_volume)
+			to_chat(user, SPAN_NOTICE("The [target] is empty."))
+			return
+		var/trans = target.reagents.trans_to_obj(src, amount_per_transfer_from_this)
+		to_chat(user, SPAN_NOTICE("You fill \the [src] with [trans] units of the solution."))
+		return
+
+	// Injecting into mobs or injectable objects
+	if(ismob(target) || target.is_injectable())
+		if(!reagents.total_volume)
+			to_chat(user, SPAN_NOTICE("The [src] is empty."))
+			return
+		// If it's a mob, use the existing inject_mob which handles checks/logging
+		if(ismob(target))
+			return inject_mob(target, user)
+		// Otherwise, inject into the object directly
+		var/trans = reagents.trans_to(target, amount_per_transfer_from_this)
+		user.visible_message(SPAN_WARNING("[user] injects [target] with [src]!"), SPAN_WARNING("You inject [target] with [src]."))
+		to_chat(user, SPAN_NOTICE("You inject [trans] units into [target]."))
+		return
+
+
 /obj/item/reagent_containers/hypospray/verb/empty()
 	set name = "Empty Hypospray"
 	set category = "Object"
@@ -97,6 +256,194 @@
 	if(isturf(usr.loc))
 		to_chat(usr, SPAN_NOTICE("You empty \the [src] onto the floor."))
 		reagents.splash(usr.loc, reagents.total_volume)
+
+
+/obj/item/reagent_containers/hypospray/vial
+	name = "SI medical hypospray"
+	desc = "The Soteria medical hypospray is a sterile, air-needle autoinjector for rapid administration of drugs to patients for convenience and efficiency. Uses a replaceable 30u vial and can inject through armour."
+	item_state = "hypo"
+	icon_state = "hypo"
+	possible_transfer_amounts = list(1,2,5,10,15,20,30)
+	amount_per_transfer_from_this = 5
+	volume = 0
+	time = 5
+	bypass_suit = TRUE
+	var/single_use = FALSE
+	slot_flags = SLOT_BELT|SLOT_HOLSTER
+	var/obj/item/reagent_containers/glass/beaker/vial/loaded_vial
+
+
+/obj/item/reagent_containers/hypospray/vial/attack(mob/living/M as mob, mob/user as mob)
+	// Simple wrapper for vial variant: forward to inject_mob which handles transfer/logging.
+	if(!reagents.total_volume)
+		to_chat(user, SPAN_WARNING("[src] is empty."))
+		return
+	return inject_mob(M, user)
+
+
+/obj/item/reagent_containers/hypospray/vial/update_icon()
+	// For the vial hypospray, prefer showing the "loaded" sprite when a vial
+	// object is present. This prevents the icon from appearing empty briefly
+	// when reagents are transferred into/out of the underlying reagent pool.
+	if(loaded_vial)
+		icon_state = "hypo"
+	else
+		icon_state = "hypo_empty"
+
+
+/obj/item/reagent_containers/hypospray/vial/on_reagent_change()
+	// Keep the vial hypospray icon in sync with reagent changes and vial state
+	update_icon()
+
+/obj/item/reagent_containers/hypospray/vial/New()
+	..()
+	loaded_vial = new /obj/item/reagent_containers/glass/beaker/vial(src)
+	volume = loaded_vial.volume
+	reagents.maximum_volume = loaded_vial.reagents.maximum_volume
+	// adopt the vial's transfer amount so each injection uses the expected quantity
+	amount_per_transfer_from_this = loaded_vial.amount_per_transfer_from_this
+
+	// Ensure the icon reflects the newly-loaded vial
+	update_icon()
+
+
+/obj/item/reagent_containers/hypospray/vial/proc/remove_vial(mob/user, swap_mode)
+	if(!loaded_vial)
+		return
+	reagents.trans_to_holder(loaded_vial.reagents,volume)
+	reagents.maximum_volume = 0
+	loaded_vial.update_icon()
+	user.put_in_hands(loaded_vial)
+	loaded_vial = null
+	// Refresh our icon now that the vial is gone
+	update_icon()
+	if (swap_mode != "swap") // if swapping vials, we will print a different message in another proc
+		to_chat(user, "You remove the vial from the [src].")
+
+
+/obj/item/reagent_containers/hypospray/vial/attack_hand(mob/user)
+	return ..()
+
+
+// Support click-dragging (mouse drop) to a hand UI slot to remove the vial.
+// Mirrors patterns used by guns/ammo which respond to MouseDrop when dropped
+// onto a hand slot.
+/* MouseDrop(over_object, src_location, over_location)
+   - over_object: the atom under the mouse (often a /obj/screen/inventory/hand when
+	 dragging over a hand slot)
+*/
+/obj/item/reagent_containers/hypospray/vial/MouseDrop(over_object, src_location, over_location)
+	..()
+	// If the hypospray is held by the user and the drop target is a hand
+	// inventory UI, treat this as a drag-to-hand and remove the vial.
+	if(src.loc == usr && istype(over_object, /obj/screen/inventory/hand))
+		if(loaded_vial)
+			remove_vial(usr)
+			update_icon()
+			playsound(loc, 'sound/weapons/flipblade.ogg', 50, 1)
+			return TRUE
+	return
+
+
+
+/obj/item/reagent_containers/hypospray/vial/use_tool(mob/living/user, obj/item/W, atom/target, base_time, required_quality, fail_chance, required_stat, instant_finish_tier = 110, forced_sound = null, sound_repeat = 2.5 SECONDS)
+	if(istype(W, /obj/item/reagent_containers/glass/beaker/vial))
+		// The parent use_tool signature is used so other code can call this with
+		// keyword args. We still want to accept loading from the user's hand, so
+		// detect the vial in the user's hands by searching their held items.
+		W = null
+		// Look for a vial in the user's active hand or inventory that we can load
+		for(var/atom/A in user.contents)
+			if(istype(A, /obj/item/reagent_containers/glass/beaker/vial))
+				W = A
+				break
+		// If we didn't find a vial or the action was interrupted, abort.
+		if(!W || !do_after(user, 1 SECOND, src) || !(W in user))
+			return TRUE
+		// Try to unequip the vial from the user into the hypospray. Some edge cases
+		// (slot inaccessible, custom mob logic) may make unEquip fail; attempt a safe
+		// fallback move so vials can still be loaded from the hand.
+		var/succeeded = FALSE
+		if(user.unEquip(W, src))
+			succeeded = TRUE
+		else
+			// If the vial is in the user's inventory or hands, try to forcibly move it into the hypospray.
+			if(W in user)
+				// Detach it from the user's inventory and set its location to the hypospray.
+				user.remove_from_mob(W)
+				W.loc = src
+				succeeded = TRUE
+
+		if(!succeeded)
+			to_chat(user, SPAN_WARNING("You can't unequip [W]."))
+			return TRUE
+		var/usermessage = ""
+		if(loaded_vial)
+			remove_vial(user, "swap")
+			usermessage = "You load \the [W] into \the [src] as you remove the old one."
+		else
+			usermessage = "You load \the [W] into \the [src]."
+		if(W.is_open_container())
+			W.update_icon()
+		loaded_vial = W
+		reagents.maximum_volume = loaded_vial.reagents.maximum_volume
+		// adopt the vial's volume and transfer amount so each injection uses the expected quantity
+		volume = loaded_vial.volume
+		amount_per_transfer_from_this = loaded_vial.amount_per_transfer_from_this
+		loaded_vial.reagents.trans_to_holder(reagents, volume)
+		user.visible_message(SPAN_NOTICE("[user] has loaded [W] into \the [src]."),SPAN_NOTICE("[usermessage]"))
+		update_icon()
+		playsound(src.loc, 'sound/weapons/empty.ogg', 50, 1)
+		return TRUE
+	return FALSE
+
+
+// parent-level attackby removed: vial-loading/attackby is handled by the vial subtype (use_tool / vial/attackby)
+
+
+/obj/item/reagent_containers/hypospray/vial/attackby(obj/item/W, mob/user)
+	// Allow clicking a vial onto the hypospray to load it, bypassing parent use_tool restrictions.
+	if(istype(W, /obj/item/reagent_containers/glass/beaker/vial))
+		// call use_tool with (user, target, ...) as the parent signature expects
+		return use_tool(user, W, null)
+	return ..()
+
+
+/obj/item/reagent_containers/hypospray/vial/use_after(obj/target, mob/living/user, click_parameters) // hyposprays can be dumped into, why not out? uses standard_pour_into helper checks. Hyposprays can also inject through bags
+	if (istype(target, /obj/structure/closet/body_bag))
+		inject_body_bag(target, user)
+		return TRUE
+
+	if (!reagents.total_volume && istype(target, /obj/item/reagent_containers/glass))
+		var/good_target = is_type_in_list(target, list(
+			/obj/item/reagent_containers/glass/beaker,
+			/obj/item/reagent_containers/glass/bottle
+		))
+		if (!good_target)
+			return
+		if (!target.reagents?.total_volume)
+			return TRUE
+		var/trans = target.reagents.trans_to_obj(src, amount_per_transfer_from_this)
+		to_chat(user, SPAN_NOTICE("You fill \the [src] with [trans] units of the solution."))
+		return TRUE
+	else
+		standard_pour_into(user, target)
+		return TRUE
+
+/obj/item/reagent_containers/hypospray/vial/combat
+	// Combat variant of the vial hypospray: different icons for loaded/empty
+	name = "SI combat hypospray"
+	desc = "The Soteria combat hypospray is a sterile, air-needle autoinjector for rapid administration of drugs to patients while under hostile fire. Uses a replaceable 30u vial and can inject through armour, in addition to being much faster than other models."
+	icon_state = "combat_hypo"
+	item_state = "combat_hypo"
+	time = 0 // faster inject time for combat variant (seconds)
+
+/obj/item/reagent_containers/hypospray/vial/combat/update_icon()
+	// Only show the empty combat sprite when there is no loaded vial
+	if(loaded_vial)
+		icon_state = "combat_hypo"
+	else
+		icon_state = "combat_hypo_empty"
 
 /obj/item/reagent_containers/hypospray/autoinjector
 	name = "autoinjector (inaprovaline)"

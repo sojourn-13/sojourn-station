@@ -308,10 +308,14 @@
 	copy_protected = TRUE //no griefing people, naughty borer/carrion
 
 /datum/perk/rezsickness/assign(mob/living/L)
-	..()
-
+	if(istype(L))
+		holder = L
+		RegisterSignal(holder, COMSIG_MOB_LIFE, PROC_REF(on_process))
+		to_chat(holder, SPAN_NOTICE("[gain_text]"))
+		// if(perk_action)
+		// 	perk_action.Grant(holder)
 	initial_time = world.time
-	cooldown_time = world.time + 30 MINUTES
+	cooldown_time = world.time + 20 MINUTES
 	holder.brute_mod_perk *= 1.10
 	holder.burn_mod_perk *= 1.10
 	holder.oxy_mod_perk *= 1.10
@@ -326,7 +330,7 @@
 			var/mob/living/carbon/human/M = H
 			if(M.stats.getPerk(PERK_OVERBREATH))
 				M.mob_ablative_armor += 5
-
+	return TRUE
 /datum/perk/rezsickness/remove()
 	holder.brute_mod_perk /= 1.10
 	holder.burn_mod_perk /= 1.10
@@ -335,7 +339,47 @@
 	holder.stats.changeStat(STAT_ROB, 10)
 	holder.stats.changeStat(STAT_TGH, 10)
 	holder.stats.changeStat(STAT_VIG, 10)
-	..()
+	qdel(src)
+
+/datum/perk/rezsickness
+	name = "Mild Revival Sickness"
+	desc = "You've recently died and have been brought back to life, the experience leaving you weakened and thus unfit for fighting for a while. As you were revived by Soteria, you can recover a lot quicker."
+	icon_state = "revivalsickness"
+
+/datum/perk/rezsickness/mild/assign(mob/living/L)
+	if(istype(L))
+		holder = L
+		RegisterSignal(holder, COMSIG_MOB_LIFE, PROC_REF(on_process))
+		to_chat(holder, SPAN_NOTICE("[gain_text]"))
+		// if(perk_action)
+		// 	perk_action.Grant(holder)
+	initial_time = world.time
+	cooldown_time = world.time + 10 MINUTES
+	holder.brute_mod_perk *= 1.10
+	holder.burn_mod_perk *= 1.10
+	holder.oxy_mod_perk *= 1.10
+	holder.toxin_mod_perk *= 1.10
+	holder.stats.changeStat(STAT_ROB, -10)
+	holder.stats.changeStat(STAT_TGH, -10)
+	holder.stats.changeStat(STAT_VIG, -10)
+	if(isliving(holder))
+		var/mob/living/H = holder
+		H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/pours, "POURS", skill_gained = 0.5, learner = H)
+		if(ishuman(H))
+			var/mob/living/carbon/human/M = H
+			if(M.stats.getPerk(PERK_OVERBREATH))
+				M.mob_ablative_armor += 5
+	return TRUE
+
+/datum/perk/rezsickness/mild/remove()
+	holder.brute_mod_perk /= 1.10
+	holder.burn_mod_perk /= 1.10
+	holder.oxy_mod_perk /= 1.10
+	holder.toxin_mod_perk /= 1.10
+	holder.stats.changeStat(STAT_ROB, 10)
+	holder.stats.changeStat(STAT_TGH, 10)
+	holder.stats.changeStat(STAT_VIG, 10)
+	qdel(src)
 
 /datum/perk/rezsickness/severe
 	name = "Severe Revival Sickness"
@@ -343,7 +387,14 @@
 	icon_state = "severerevivalsickness"
 
 /datum/perk/rezsickness/severe/assign(mob/living/L)
-	..()
+	if(istype(L))
+		holder = L
+		RegisterSignal(holder, COMSIG_MOB_LIFE, PROC_REF(on_process))
+		to_chat(holder, SPAN_NOTICE("[gain_text]"))
+		// if(perk_action)
+		// 	perk_action.Grant(holder)
+	initial_time = world.time
+	cooldown_time = world.time + 20 MINUTES
 	holder.brute_mod_perk *= 1.15
 	holder.burn_mod_perk *= 1.15
 	holder.oxy_mod_perk *= 1.15
@@ -355,6 +406,7 @@
 		var/mob/living/carbon/human/M = L
 		if(M.stats.getPerk(PERK_OVERBREATH))
 			M.mob_ablative_armor += 5
+	return TRUE
 
 /datum/perk/rezsickness/severe/remove()
 	holder.brute_mod_perk /= 1.15
@@ -364,7 +416,7 @@
 	holder.stats.changeStat(STAT_COG, 15)
 	holder.stats.changeStat(STAT_MEC, 15)
 	holder.stats.changeStat(STAT_BIO, 15)
-	..()
+	qdel(src)
 
 /datum/perk/rezsickness/severe/fatal
 	name = "Fatal Revival Sickness"
@@ -372,7 +424,14 @@
 	icon_state = "fatalrevivalsickness"
 
 /datum/perk/rezsickness/severe/fatal/assign(mob/living/L)
-	..()
+	if(istype(L))
+		holder = L
+		RegisterSignal(holder, COMSIG_MOB_LIFE, PROC_REF(on_process))
+		to_chat(holder, SPAN_NOTICE("[gain_text]"))
+		// if(perk_action)
+		// 	perk_action.Grant(holder)
+	initial_time = world.time
+	cooldown_time = world.time + 20 MINUTES
 	holder.brute_mod_perk *= 1.25
 	holder.burn_mod_perk *= 1.25
 	holder.oxy_mod_perk *= 1.25
@@ -387,6 +446,7 @@
 		var/mob/living/carbon/human/M = L
 		if(M.stats.getPerk(PERK_OVERBREATH))
 			M.mob_ablative_armor += 10
+	return TRUE
 
 /datum/perk/rezsickness/severe/fatal/remove()
 	holder.brute_mod_perk /= 1.25
@@ -399,7 +459,7 @@
 	holder.stats.changeStat(STAT_COG, 20)
 	holder.stats.changeStat(STAT_MEC, 20)
 	holder.stats.changeStat(STAT_BIO, 20)
-	..()
+	qdel(src)
 
 /datum/perk/rezsickness/on_process()
 	if(!..())
@@ -421,14 +481,20 @@
 	copy_protected = TRUE
 
 /datum/perk/racial/slime_rez_sickness/assign(mob/living/L)
-	..()
+	if(istype(L))
+		holder = L
+		RegisterSignal(holder, COMSIG_MOB_LIFE, PROC_REF(on_process))
+		to_chat(holder, SPAN_NOTICE("[gain_text]"))
+		// if(perk_action)
+		// 	perk_action.Grant(holder)
 	initial_time = world.time
-	cooldown_time = world.time + 30 MINUTES
+	cooldown_time = world.time + 20 MINUTES
 	holder.brute_mod_perk *= 1.3
 	holder.burn_mod_perk *= 1.3
 	holder.stats.changeStat(STAT_ROB, 30)
 	holder.stats.changeStat(STAT_TGH, -30)
 	holder.stats.changeStat(STAT_VIG, -30)
+	return TRUE
 
 /datum/perk/racial/slime_rez_sickness/remove()
 	holder.brute_mod_perk /= 1.3
@@ -436,7 +502,7 @@
 	holder.stats.changeStat(STAT_ROB, -30)
 	holder.stats.changeStat(STAT_TGH, 30)
 	holder.stats.changeStat(STAT_VIG, 30)
-	..()
+	qdel(src)
 
 /datum/perk/racial/slime_rez_sickness/on_process()
 	if(!..())

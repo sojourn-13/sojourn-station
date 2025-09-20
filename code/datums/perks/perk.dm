@@ -71,7 +71,6 @@
 
 /// Proc called when the perk is assigned to a being. Should be the first thing to be called.
 /datum/perk/proc/assign(mob/living/L)
-	SHOULD_CALL_PARENT(TRUE)
 	if(istype(L))
 		holder = L
 		RegisterSignal(holder, COMSIG_MOB_LIFE, PROC_REF(on_process))
@@ -81,7 +80,6 @@
 		return TRUE
 
 /datum/perk/proc/remove()
-	SHOULD_CALL_PARENT(TRUE)
 	// Also handled by qdelling the action but it's fine
 	// if(perk_action)
 	// 	perk_action.Remove(holder)

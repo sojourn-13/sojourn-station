@@ -688,7 +688,7 @@
 	)
 
 /obj/item/pc_part/drive/disk/design/guns/omni/longarm
-	disk_name = "H&S NM - .408 Longarm Omnirfile"
+	disk_name = "H&S NM - .408 Warthog Omnirifle"
 	icon_state = "ironhammer"
 
 	license = 8

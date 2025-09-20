@@ -146,7 +146,8 @@ var/list/disciples = list()
 /obj/item/implant/core_implant/cruciform/proc/remove_cyber()
 	if(!wearer)
 		return
-	for(var/obj/O in wearer)
+	//for(var/obj/O in wearer)
+
 /* //Our lore allows for church members to have synthetics so this area is commented out. -Kazkin
 		if(istype(O, /obj/item/organ/external))
 			var/obj/item/organ/external/R = O
@@ -160,7 +161,9 @@ var/list/disciples = list()
 			R.droplimb()
 */
 //This is the function to remove excelsior implants for cruciform bearers. Should only make cruciform bearers react badly to excelsior implants. -Kaz
-		if(istype(O, /obj/item/implant/excelsior))
+
+//commented out as this is dumb as shit - drfarson
+/*		if(istype(O, /obj/item/implant/excelsior))
 			if(O == src)
 				continue
 			var/obj/item/implant/excelsior/R = O
@@ -176,7 +179,7 @@ var/list/disciples = list()
 			if(ishuman(wearer))
 				var/mob/living/carbon/human/H = wearer
 				H.update_implants()
-
+*/
 
 /obj/item/implant/core_implant/cruciform/proc/update_data()
 	if(!wearer)

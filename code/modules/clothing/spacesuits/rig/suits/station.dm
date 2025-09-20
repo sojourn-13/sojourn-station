@@ -18,6 +18,9 @@
 /obj/item/clothing/head/helmet/space/rig/cmo
 	camera_networks = list(NETWORK_MEDICAL)
 
+/obj/item/clothing/head/helmet/space/rig/tt
+	camera_networks = list(NETWORK_MEDICAL)
+
 /obj/item/clothing/head/helmet/space/rig/hazard
 	light_overlay = "helmet_light_dual"
 	camera_networks = list(NETWORK_SECURITY)
@@ -414,7 +417,7 @@ Technomancer RIG
 	seal_delay = 15 //quick deploy for quick recovery
 	slowdown = 0.25
 	stiffness = MEDIUM_STIFFNESS
-	helm_type = /obj/item/clothing/head/helmet/space/rig/medical
+	helm_type = /obj/item/clothing/head/helmet/space/rig/tt
 
 	extra_allowed = list(
 		/obj/item/storage/firstaid,

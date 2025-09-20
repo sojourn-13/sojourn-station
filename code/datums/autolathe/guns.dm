@@ -337,8 +337,8 @@
 
 // .408 Heavy Rifles
 /datum/design/autolathe/gun/scoped_omnirifle
-	name = "H&S BR .408 \"Longarm\""
-	build_path = /obj/item/gun/projectile/automatic/omnirifle/scoped
+	name = "H&S .408 \"Warthog\""
+	build_path = /obj/item/gun/projectile/automatic/omnirifle/rds
 
 /datum/design/autolathe/gun/omnirifle
 	name = "H&S .408 \"Omnirifle\""
@@ -410,16 +410,6 @@
 /datum/design/autolathe/gun/grenade_launcher_china_lake
 	name = "SA GL \"China Lake\""
 	build_path = /obj/item/gun/projectile/shotgun/pump/china
-
-/datum/design/autolathe/gun/spear
-	name = "SI-BS \"SPEAR\" recoilless rifle"
-	build_path = /obj/item/gun/launcher/rocket/spear
-	materials = list(MATERIAL_PLASTEEL = 25, MATERIAL_STEEL = 15, MATERIAL_PLASTIC = 10, MATERIAL_PLASMA = 5)
-
-/datum/design/autolathe/gun/sabul
-	name = "SI-BS \"SABUL\" utility platform"
-	build_path = /obj/item/gun/projectile/shotgun/pump/sabul
-	materials = list(MATERIAL_PLASTEEL = 15, MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 5)
 
 // Energy
 /datum/design/autolathe/gun/taser
@@ -538,3 +528,40 @@
 /datum/design/autolathe/gun/bipod_mod
 	name = "H&S \"Stand\" bipod"
 	build_path = /obj/item/gun_upgrade/underbarrel/bipod
+
+// Deimos guns
+
+/datum/design/autolathe/gun/deimos/panah
+	name = "DAC-500 \"Panah\" SPEAR"
+	build_path = /obj/item/gun/launcher/rocket/deimos/panah
+	materials = list(MATERIAL_PLASTEEL = 25, MATERIAL_STEEL = 15, MATERIAL_PLASTIC = 10, MATERIAL_PLASMA = 5)
+
+/datum/design/autolathe/gun/deimos/tombak
+	name = "DAS-400 \"Tombak\" AHR"
+	build_path = /obj/item/gun/projectile/deimos/tombak
+	materials = list(MATERIAL_PLASTEEL = 30, MATERIAL_STEEL = 20, MATERIAL_PLASTIC = 10, MATERIAL_DIAMOND = 6, MATERIAL_OSMIUM = 3)
+
+/datum/design/autolathe/gun/deimos/palu
+	name = "DAS-300 \"Palu\" CAWS"
+	build_path = /obj/item/gun/projectile/deimos/palu
+	materials = list(MATERIAL_PLASTEEL = 20, MATERIAL_STEEL = 15, MATERIAL_PLASTIC = 5)
+
+/datum/design/autolathe/gun/deimos/parang
+	name = "DAS-250 \"Parang\" MABUL"
+	build_path = /obj/item/gun/projectile/shotgun/pump/deimos/parang
+	materials = list(MATERIAL_PLASTEEL = 15, MATERIAL_STEEL = 15, MATERIAL_PLASTIC = 5)
+
+/datum/design/autolathe/gun/deimos/golok
+	name = "DAS-200 \"Golok\" SABUL"
+	build_path = /obj/item/gun/projectile/shotgun/pump/deimos/golok
+	materials = list(MATERIAL_PLASTEEL = 15, MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 5)
+
+/datum/design/autolathe/gun/deimos/celurit
+	name = "DAS-100 \"Celurit\" SPC"
+	build_path = /obj/item/gun/projectile/deimos/celurit
+	materials = list(MATERIAL_PLASTEEL = 10, MATERIAL_STEEL = 5, MATERIAL_PLASTIC = 5)
+
+/datum/design/autolathe/gun/deimos/keris
+	name = "DAS-50 \"Keris\" SPP"
+	build_path = /obj/item/gun/projectile/deimos/keris
+	materials = list(MATERIAL_PLASTEEL = 5, MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 2)

@@ -1,80 +1,92 @@
 [
+	{
+		"url": "https://addi-bot.ca/files/Chris_Remo_-_Space_asshole_%5bRe-masted%5d_(z3-fm.com).mp3",
+		"title": "Space Asshole",
+		"duration": 2340,
+		"artist": "Chris Remo"
+	},
     {
-	"url":"https://addi-bot.ca/files/Cuban_Pete_-_Jim_Carrey(1).mp3",
-	"title":"Cuban Pete",
-	"duration":1300,
-	"artist":"Jim Carrey"
+		"url":"https://addi-bot.ca/files/Cuban_Pete_-_Jim_Carrey(1).mp3",
+		"title":"Cuban Pete",
+		"duration":1300,
+		"artist":"Jim Carrey"
     },
     {
-	"url":"https://addi-bot.ca/files/Kiss%20Me%20Goodnight%20Sergeant-major(3).mp3",
-	"title":"Kiss Me Goodnight Sergeant Major",
-	"duration":1210,
-	"artist":"Sods Opera"
+		"url":"https://addi-bot.ca/files/Kiss%20Me%20Goodnight%20Sergeant-major(3).mp3",
+		"title":"Kiss Me Goodnight Sergeant Major",
+		"duration":1210,
+		"artist":"Sods Opera"
     },
     {
-	"url":"https://addi-bot.ca/files/9.%20Beneath%20Cowdenbeath(1).mp3",
-	"title":"Beneath Cowdenbeath",
-	"duration":1490,
-	"artist":"Gloryhammer"
+		"url":"https://addi-bot.ca/files/9.%20Beneath%20Cowdenbeath(1).mp3",
+		"title":"Beneath Cowdenbeath",
+		"duration":1490,
+		"artist":"Gloryhammer"
     },
 	{
-	"url":"https://addi-bot.ca/files/16%20-%20Counter-attack(1).flac",
-	"title":"Counter-Attack",
-	"duration":920,
-	"artist":"Paul Schuegraf"
+		"url":"https://addi-bot.ca/files/16%20-%20Counter-attack(1).flac",
+		"title":"Counter-Attack",
+		"duration":920,
+		"artist":"Paul Schuegraf"
     },
     {
-	"url":"https://addi-bot.ca/files/E5M02_MainBGM_AfterHalf.mp3",
-	"title":"E5MO2",
-	"duration":4370,
-	"artist":"Masufumi Takada / Jun Fukuda"
+		"url":"https://addi-bot.ca/files/E5M02_MainBGM_AfterHalf.mp3",
+		"title":"E5MO2",
+		"duration":4370,
+		"artist":"Masufumi Takada / Jun Fukuda"
     },
     {
-	"url":"https://addi-bot.ca/files/Irr%c3%a9versible.mp3",
-	"title":"Irréversible",
-	"duration":1080,
-	"artist":"Guillaume Houzé"
+		"url":"https://addi-bot.ca/files/Irr%c3%a9versible.mp3",
+		"title":"Irréversible",
+		"duration":1080,
+		"artist":"Guillaume Houzé"
     },
     {
-	"url":"https://addi-bot.ca/files/Motes%20of%20Dust.mp3",
-	"title":"Motes of Dust",
-	"duration":4600,
-	"artist":"Unknown Artist"
+		"url":"https://addi-bot.ca/files/Motes%20of%20Dust.mp3",
+		"title":"Motes of Dust",
+		"duration":4600,
+		"artist":"Unknown Artist"
     },
     {
-	"url":"https://addi-bot.ca/files/Noosphere.mp3",
-	"title":"Noosphere",
-	"duration":3890,
-	"artist":"Guillaume David"
+		"url":"https://addi-bot.ca/files/Noosphere.mp3",
+		"title":"Noosphere",
+		"duration":3890,
+		"artist":"Guillaume David"
     },
     {
-	"url":"https://addi-bot.ca/files/Oligarkh.mp3",
-	"title":"Cyberslav",
-	"duration":1790,
-	"artist":"Oligarkh"
+		"url":"https://addi-bot.ca/files/Oligarkh.mp3",
+		"title":"Cyberslav",
+		"duration":1790,
+		"artist":"Oligarkh"
     },
     {
-	"url":"https://addi-bot.ca/files/She%20Rules%20The%20Battlefield.mp3",
-	"title":"She Rules the Battlefield",
-	"duration":1630,
-	"artist":"Yuki Kajiura"
+		"url":"https://addi-bot.ca/files/She%20Rules%20The%20Battlefield.mp3",
+		"title":"She Rules the Battlefield",
+		"duration":1630,
+		"artist":"Yuki Kajiura"
     },
     {
-	"url":"https://addi-bot.ca/files/The%20Seven%20Seas.mp3",
-	"title":"The Seven Seas",
-	"duration":1430,
-	"artist":"F777"
+		"url":"https://addi-bot.ca/files/The%20Seven%20Seas.mp3",
+		"title":"The Seven Seas",
+		"duration":1430,
+		"artist":"F777"
     },
     {
-	"url":"https://addi-bot.ca/files/Time%20Will%20Catch%20Me%20First.mp3",
-	"title":"Time Will Catch Me First",
-	"duration":2560,
-	"artist":"Peter Crowley"
+		"url":"https://addi-bot.ca/files/Time%20Will%20Catch%20Me%20First.mp3",
+		"title":"Time Will Catch Me First",
+		"duration":2560,
+		"artist":"Peter Crowley"
     },
-	    {
-	"url":"https://addi-bot.ca/files/Beneath%20the%20Mask.mp3",
-	"title":"Beneath the Mask",
-	"duration":2770,
-	"artist":"Persona 5"
-    }
+	{
+		"url":"https://addi-bot.ca/files/Beneath%20the%20Mask.mp3",
+		"title":"Beneath the Mask",
+		"duration":2770,
+		"artist":"Lyn Inaizumi, Rike Schmalz, and Shoji Meguro"
+    },
+	{
+		"url": "https://addi-bot.ca/files/partridge%20-%20escape%20from%20porkbelly.mp3",
+		"title": "Escape from Porkbelly",
+		"duration": null,
+		"artist": "Partridge"
+	}
 ]

@@ -205,7 +205,7 @@
 	new /obj/item/clothing/shoes/color/brown(src)
 	new /obj/item/device/radio/headset/heads/cmo(src)
 	new /obj/item/device/flash(src)
-	new /obj/item/reagent_containers/hypospray(src)
+	new /obj/item/reagent_containers/hypospray/vial(src)
 	new /obj/item/storage/pouch/medical_supply(src)
 	new /obj/item/clothing/shoes/reinforced/medical(src)
 	new /obj/item/clothing/gloves/latex/nitrile(src)

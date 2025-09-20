@@ -191,7 +191,7 @@
 	damage_types = list(BRUTE = 15, HALLOSS = 30)	//Basically a lower-damage HP but with more agony damage to it. Technically LTL - but not really ideal for it. Crowd-suppression.
 	armor_divisor = 0.5
 	wounding_mult = WOUNDING_SMALL
-	embed = TRUE	//If you shoot someone with a rubber, it will take out an eye - or require surgery if it's high-velocity. Anything over .35 should, realistically, fuck you up.
+	embed = FALSE	//no.
 	sharp = FALSE
 	can_ricochet = TRUE
 	//ricochet_mod = 2.5
@@ -496,6 +496,7 @@
 
 /obj/item/projectile/bullet/rifle_75/rubber/soporific
 	name = "soporific coated rubber bullet"
+	embed = FALSE
 	damage_types = list(BRUTE = 4, HALLOSS = 30) // Minor damage from blunt trauma, it's meant to be LTL
 	var/spray = "stoxin"
 
@@ -628,17 +629,41 @@
 
 ///Snowflake  ///
 
+/obj/item/projectile/bullet/c8x16
+	damage_types = list(BRUTE = 10)
+	armor_divisor = 1.5
+	wounding_mult = WOUNDING_SMALL
+	penetrating = 1
+	can_ricochet = TRUE
+	sharp = TRUE
+	step_delay = 0.3
+	affective_damage_range = 9
+	affective_ap_range = 9
+	recoil = 6
+
 /obj/item/projectile/bullet/c10x24
 	damage_types = list(BRUTE = 25)
 	armor_divisor = 2
-	wounding_mult = WOUNDING_SMALL
-	penetrating = 2
+	wounding_mult = WOUNDING_NORMAL
+	penetrating = 1
 	can_ricochet = TRUE
 	sharp = TRUE
 	step_delay = 0.3
 	affective_damage_range = 9
 	affective_ap_range = 9
 	recoil = 9
+
+/obj/item/projectile/bullet/c12x64
+	damage_types = list(BRUTE = 40)
+	armor_divisor = 5
+	wounding_mult = WOUNDING_SERIOUS
+	penetrating = 2
+	can_ricochet = TRUE
+	sharp = TRUE
+	step_delay = 0.3
+	affective_damage_range = 9
+	affective_ap_range = 9
+	recoil = 12
 
 /obj/item/projectile/bullet/auto_460
 	damage_types = list(BRUTE = 30)
@@ -662,7 +687,7 @@
 
 //// .60-06 Anti-Materiel Rifle Rounds ////
 /obj/item/projectile/bullet/antim
-	damage_types = list(BRUTE = 60)
+	damage_types = list(BRUTE = 80)
 	armor_divisor = 10
 	wounding_mult = WOUNDING_WIDE
 	nocap_structures = TRUE
@@ -675,7 +700,7 @@
 	recoil = 40
 
 /obj/item/projectile/bullet/antim/lethal
-	damage_types = list(BRUTE = 45, HALLOSS = 100)
+	damage_types = list(BRUTE = 80, HALLOSS = 100)
 	embed = TRUE
 	armor_divisor = 4
 	wounding_mult = WOUNDING_EXTREME
@@ -687,7 +712,7 @@
 	embed_mult = 3 //this round is designed for this.
 
 /obj/item/projectile/bullet/antim/incend
-	damage_types = list(BURN = 45)
+	damage_types = list(BURN = 40)
 	embed = FALSE
 	fire_stacks = 5	//BURN, BABY! BUUURN!!
 	armor_divisor = 4
@@ -698,7 +723,7 @@
 	recoil = 40
 
 /obj/item/projectile/bullet/antim/scrap
-	damage_types = list(BRUTE = 40)
+	damage_types = list(BRUTE = 50)
 	armor_divisor = 4
 	affective_damage_range = 8
 	affective_ap_range = 8
@@ -889,6 +914,7 @@
 	name = "soporific coated beanbag"
 	damage_types = list(BRUTE = 10, HALLOSS = 65) // They still hurt!
 	armor_divisor = 0.8
+	embed = FALSE
 	var/spray = "stoxin"
 
 /obj/item/projectile/bullet/shotgun/beanbag/soporific/New()

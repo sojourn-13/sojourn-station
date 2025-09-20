@@ -41,7 +41,7 @@
 	check_armor = ARMOR_BULLET
 	recoil = 75
 
-/obj/item/projectile/bullet/rocket/spear
+/obj/item/projectile/bullet/rocket/panah
 	name = "SPEAR anti-armor rocket"
 	icon_state = "rocket_spear"
 	damage_types = list(BRUTE = 150)
@@ -49,12 +49,12 @@
 	check_armor = ARMOR_BULLET
 	recoil = 75
 
-/obj/item/projectile/bullet/rocket/spear/launch(atom/target, target_zone, x_offset, y_offset, angle_offset, firer_arg)
+/obj/item/projectile/bullet/rocket/panah/launch(atom/target, target_zone, x_offset, y_offset, angle_offset, firer_arg)
 	if (!testing)
 		set_light(3.5, 1.0, "#ff4400")
 	..(target, target_zone, x_offset, y_offset, angle_offset)
 
-/obj/item/projectile/bullet/rocket/spear/on_impact(atom/target)
+/obj/item/projectile/bullet/rocket/panah/on_impact(atom/target)
 	// Severely damages mechs in one hit
 	if(istype(target, /obj/mecha))
 		var/obj/mecha/M = target
@@ -97,7 +97,7 @@
 		set_light(0)
 	return TRUE
 
-/obj/item/projectile/bullet/rocket/sabul
+/obj/item/projectile/bullet/rocket/golok
 	name = "high explosive mini-rocket"
 	icon_state = "grenade"
 	damage_types = list(BRUTE = 70)

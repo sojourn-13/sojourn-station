@@ -105,6 +105,7 @@
 #define PERK_MAP_MAKER /datum/perk/map_maker
 #define PERK_NO_INSPIRO /datum/perk/no_inspiro
 
+#define PERK_REZ_SICKNESS_MILD /datum/perk/rezsickness/mild
 #define PERK_REZ_SICKNESS /datum/perk/rezsickness
 #define PERK_REZ_SICKNESS_SEVERE /datum/perk/rezsickness/severe
 #define PERK_REZ_SICKNESS_FATAL /datum/perk/rezsickness/severe/fatal

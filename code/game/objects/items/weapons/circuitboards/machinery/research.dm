@@ -57,7 +57,7 @@
 	)
 
 /obj/item/circuitboard/autolathe_disk_cloner
-	build_name = "autolathe disk cloner"
+	build_name = "Excelsior autolathe disk cloner"
 	build_path = /obj/machinery/autolathe_disk_cloner
 	board_type = "machine"
 	origin_tech = list(TECH_ENGINEERING = 2, TECH_DATA = 2)

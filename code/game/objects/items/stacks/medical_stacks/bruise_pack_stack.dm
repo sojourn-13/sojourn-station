@@ -459,7 +459,7 @@
 	origin_tech = list(TECH_BIO = 8)
 	heal_brute = 15 //15 hp per packet, 9 packets in a kit, 135 hp total
 	// Use medical nanites by default and keep solvent/adhesive components
-	preloaded_reagents = list("nanosymbiotes" = 2, "fbp_repair" = 1, "purgers" = 1, "oxyrush" = 1)
+	preloaded_reagents = list("nanosymbiotes" = 2, "fbp_repair" = 1, , "oxyrush" = 1)
 	fancy_icon = TRUE
 	amount = 5
 	max_amount = 5

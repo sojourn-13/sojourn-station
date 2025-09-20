@@ -59,7 +59,18 @@
 	dat += "<tr style='vertical-align:top'>"
 	if(pref.modifications_allowed())
 		dat += "<td><div style='max-width:230px;width:230px;height:100%;overflow-y:auto;border-right:1px solid;padding:3px'>"
-		dat += modifications_types[pref.current_organ]
+		// Build the body modification options per-request so we can consult is_allowed()
+		for(var/mod_type in typesof(/datum/body_modification))
+			var/datum/body_modification/BM = new mod_type()
+			if(!BM.id)
+				continue
+			var/allowed = BM.is_allowed(pref.current_organ, pref, pref.mannequin)
+			// Use linkOff class for disallowed items (greys out); clickable set() only for allowed
+			if(allowed)
+				dat += "<div style = 'padding:2px' onclick=\"set('body_modification', '[BM.id]');\" class='block'><b>[BM.name]</b><br>[BM.desc]</div>"
+			else
+				dat += "<div style = 'padding:2px' class='block limited'><b>[BM.name]</b><br>[BM.desc]</div>"
+		
 		dat += "</div></td>"
 	dat += "<td style='margin-left:10px;width-max:310px;width:310px;'>"
 	dat += "<table><tr><td style='width:115px; text-align:right; margin-right:10px;'>"

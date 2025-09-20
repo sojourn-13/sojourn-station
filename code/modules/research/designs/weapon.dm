@@ -160,16 +160,16 @@
 	build_path = /obj/item/gun/projectile/automatic/ak47/akl
 
 // SI-BS launcher desgins
-/datum/design/research/item/weapon/sabul
-	name = "SI-BS \"SABUL\" utility platform"
-	desc = "A SI-BS pattern Specialised Ballistic Utility Launcher (SABUL) utility platform. This break-action launcher fires utility shells and grenades one at a time, but can be reloaded and reused indefinitely."
-	build_path = /obj/item/gun/projectile/shotgun/pump/sabul
+/datum/design/research/item/weapon/golok
+	name = "DAS-200 \"Golok\" SABUL"
+	desc = "A Deimos Armament Solutions \"Golok\" Special-purpose Advanced Ballistic Utility Launcher (SABUL). This break-action launcher fires utility shells, mini-rockets, and grenades one at a time, but can be reloaded and reused indefinitely. The weapon must be opened to load ammunition and closed to fire."
+	build_path = /obj/item/gun/projectile/shotgun/pump/deimos/golok
 	materials = list(MATERIAL_PLASTEEL = 15, MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 5)
 
-/datum/design/research/item/weapon/spear
-	name = "SI-BS \"SPEAR\" recoilless rifle"
-	desc = "A Blackshield pattern Single-shot Portable/Expendable Anti-tank Rocket (SPEAR) recoilless rifle. This disposable launcher must be unfolded before use. Once fired, it is no longer usable."
-	build_path = /obj/item/gun/launcher/rocket/spear
+/datum/design/research/item/weapon/panah
+	name = "DAC-500 \"Panah\" SPEAR"
+	desc = "A Deimos Armament Solutions pattern \"Panah\" Single-shot Portable/Expendable Anti-tank Rocket (panah). This disposable launcher must be unfolded before use. Once fired, it is no longer usable."
+	build_path = /obj/item/gun/launcher/rocket/deimos/panah
 	materials = list(MATERIAL_PLASTEEL = 25, MATERIAL_STEEL = 15, MATERIAL_PLASTIC = 10, MATERIAL_PLASMA = 5)
 
 // Plasma guns
@@ -387,8 +387,8 @@
 
 /datum/design/research/item/ammo/mini_rocket
 	name = "40mm Mini-Rocket"
-	desc = "An 40mm mini-rocket designed for the SABUL utility launcher. Has tubular shape."
-	build_path = /obj/item/ammo_casing/rocket/sabul
+	desc = "An 40mm mini-rocket designed for the DAS-200 \"Golok\" SABUL. Has tubular shape."
+	build_path = /obj/item/ammo_casing/rocket/golok
 	materials = list(MATERIAL_STEEL = 8, MATERIAL_PLASMA = 5)
 
 //Disks

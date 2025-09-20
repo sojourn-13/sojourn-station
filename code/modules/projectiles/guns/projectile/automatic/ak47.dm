@@ -2,7 +2,7 @@
 	name = "Excelsior \"Kalashnikov\" rifle"
 	desc = "\"We stand for organised terror - this should be frankly admitted. Terror is an absolute necessity during times of revolution.\"\
 		 A copy of the Kalashnikov pattern, shortened into a mid-length rifle and chambered in 7.5mm. This is an abysmal, printed copy."
-	icon = 'icons/obj/guns/projectile/ak.dmi'
+	icon = 'icons/obj/guns/projectile/ak_excel.dmi'
 	icon_state = "AK"
 	item_state = "AK"
 	item_suffix = ""
@@ -47,6 +47,9 @@
 /obj/item/gun/projectile/automatic/ak47/NM_colony
 	name = "polymer \"Kalashnikov\" rifle"
 	desc = " A copy of the Kalashnikov pattern, shortened into a mid-length rifle and chambered in 7.5mm. \nThis abysmal, printed copy of a Kalashnikov has been reclaimed and repurposed by Nadezhda Marshals, making it free of Excelsior taint."
+	icon = 'icons/obj/guns/projectile/ak.dmi'
+	icon_state = "AK"
+	item_state = "AK"
 	excelsior = FALSE
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1)
 	price_tag = 800

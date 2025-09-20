@@ -1346,3 +1346,52 @@
 
 /obj/item/ammo_magazine/rifle_223/empty
 	initial_ammo = 0
+
+//caseless ammo
+/obj/item/ammo_magazine/caseless_8x16
+	name = "caseless pistol magazine"
+	desc = "A 10 round magazine marked for 8x16mm caseless pistol."
+	icon_state = "pistol"
+	mag_type = MAGAZINE
+	mag_well = MAG_WELL_CL_PISTOL
+	caliber = "8x16"
+	matter = list(MATERIAL_STEEL = 4)
+	ammo_type = /obj/item/ammo_casing/c8x16
+	max_ammo = 10
+	multiple_sprites = 1
+
+/obj/item/ammo_magazine/caseless_8x16/empty
+	icon_state = "pistol"
+	initial_ammo = 0
+
+/obj/item/ammo_magazine/caseless_10x24
+	name = "caseless carbine magazine"
+	desc = "A 20 round magazine marked for 10x24mm caseless carbine."
+	icon_state = "rifle"
+	mag_type = MAGAZINE
+	mag_well = MAG_WELL_CL_CARBINE
+	caliber = "10x24"
+	matter = list(MATERIAL_STEEL = 4)
+	ammo_type = /obj/item/ammo_casing/c10x24
+	max_ammo = 20
+	multiple_sprites = 1
+
+/obj/item/ammo_magazine/caseless_10x24/empty
+	icon_state = "rifle"
+	initial_ammo = 0
+
+/obj/item/ammo_magazine/caseless_12x64
+	name = "caseless heavy rifle magazine"
+	desc = "A 4 round magazine marked for 12x64mm anti-materiel."
+	icon_state = "gyropistol"
+	mag_type = MAGAZINE
+	mag_well = MAG_WELL_CL_AMR
+	caliber = "12x64"
+	matter = list(MATERIAL_STEEL = 4)
+	ammo_type = /obj/item/ammo_casing/c12x64
+	max_ammo = 4
+	multiple_sprites = 1
+
+/obj/item/ammo_magazine/caseless_12x64/empty
+	icon_state = "gyropistol"
+	initial_ammo = 0
