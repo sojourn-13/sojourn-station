@@ -1,4 +1,4 @@
- /datum/trade_station/si_weaponry
+/datum/trade_station/si_weaponry
 	name_pool = list("SI 'Xianhao'" = "Soteria Experimental Weaponry")
 	spawn_always = TRUE
 	markup = COMMON_GOODS
