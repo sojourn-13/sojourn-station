@@ -29,6 +29,7 @@
 "aR" = (/obj/structure/disposalpipe/segment{dir = 8},/turf/simulated/floor/industrial/black_large_slates,/area/space)
 "aS" = (/turf/simulated/shuttle/wall/science{icon_state = "4,1"},/area/space)
 "aU" = (/obj/machinery/door/unpowered/simple/wood,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/techmaint,/area/space)
+"aV" = (/obj/machinery/atmospherics/unary/vent_pump/high_volume{dir = 4; external_pressure_bound = 0; external_pressure_bound_default = 0; frequency = 1443; icon_state = "map_vent_in"; id_tag = "air_out"; internal_pressure_bound = 2000; internal_pressure_bound_default = 2000; pressure_checks = 2; pressure_checks_default = 2; pump_direction = 0; use_power = 1},/turf/simulated/floor/plating/under,/area/space)
 "aW" = (/turf/simulated/shuttle/wall/science{icon_state = "2,1"},/area/space)
 "aY" = (/obj/random/scrap,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/techmaint,/area/space)
 "aZ" = (/turf/simulated/shuttle/wall/science{icon_state = "2,6"},/area/space)
@@ -93,6 +94,8 @@
 "cy" = (/obj/structure/window/basic/iskhod{dir = 8},/obj/structure/flora/ausbushes/ywflowers,/turf/simulated/floor/asteroid/grass/jungle,/area/space)
 "cz" = (/turf/simulated/floor/tiled/dark/brown_perforated,/area/space)
 "cB" = (/obj/effect/floor_decal/corner_kafel/white/full,/obj/effect/floor_decal/corner_kafel/white{dir = 4},/obj/effect/floor_decal/corner_kafel/gray/diagonal{dir = 4},/obj/effect/floor_decal/corner_kafel/gray{dir = 1},/turf/simulated/floor/industrial/white_large_slates,/area/space)
+"cD" = (/obj/machinery/computer/general_air_control/large_tank_control{dir = 1; input_tag = "waste_in"; name = "Gas Mix Tank Control"; output_tag = "waste_out"; sensors = list("waste_sensor"="Tank")},/turf/simulated/floor/reinforced,/area/space)
+"cE" = (/obj/machinery/atmospherics/valve/digital/open{dir = 4; name = "Mixed Air Outlet Valve"},/turf/simulated/floor/plating/under,/area/space)
 "cI" = (/obj/machinery/door/firedoor,/obj/effect/floor_decal/industrial_plant/steel_grate_border,/obj/structure/disposalpipe/segment,/turf/simulated/floor/plating/under,/area/space)
 "cM" = (/turf/simulated/shuttle/floor/science{icon_state = "6,5"},/area/space)
 "cO" = (/turf/simulated/shuttle/floor/science{icon_state = "13,3"},/area/space)
@@ -101,6 +104,7 @@
 "cR" = (/obj/machinery/atmospherics/unary/vent_scrubber,/turf/simulated/floor/carpet/blucarpet,/area/space)
 "cS" = (/obj/structure/shuttle_part/science{icon_state = "14,10"},/turf/simulated/floor/reinforced,/area/space)
 "cT" = (/obj/machinery/door/airlock/glass_medical,/turf/simulated/floor/tiled/dark/techfloor,/area/space)
+"cU" = (/obj/effect/window_lwall_spawn/smartspawnplasma,/turf/simulated/floor/plating/under,/area/space)
 "cV" = (/obj/structure/shuttle_part/science{icon_state = "8,20"},/turf/simulated/shuttle/floor/science{icon_state = "5,8"},/area/space)
 "cW" = (/obj/structure/disposalpipe/segment{dir = 8},/turf/simulated/floor/tiled/dark/golden,/area/space)
 "cY" = (/obj/structure/railing,/turf/simulated/floor/tiled/dark/gray_perforated,/area/space)
@@ -134,6 +138,7 @@
 "dZ" = (/obj/structure/railing/grey{dir = 4},/turf/simulated/open,/area/space)
 "ea" = (/turf/simulated/shuttle/wall/science{icon_state = "11,13"},/area/space)
 "eb" = (/obj/effect/floor_decal/industrial_plant/steel_grate_border{dir = 1},/obj/machinery/door/firedoor,/obj/machinery/door/airlock/glass_engineering{name = "SMES Room"; req_access = list(10)},/turf/simulated/floor/tiled/dark,/area/space)
+"ec" = (/obj/machinery/computer/general_air_control/large_tank_control{dir = 4; input_tag = "n2_in"; name = "Nitrogen Supply Control"; output_tag = "n2_out"; sensors = list("n2_sensor"="Tank")},/turf/simulated/floor/reinforced,/area/space)
 "ed" = (/obj/structure/shuttle_part/science{icon_state = "5,17"},/turf/simulated/floor/reinforced,/area/space)
 "ee" = (/obj/machinery/light_switch{pixel_x = 28},/turf/simulated/floor/tiled/cafe,/area/space)
 "eg" = (/obj/structure/table/woodentable,/obj/item/storage/box/donkpockets,/obj/machinery/firealarm{pixel_y = 32},/turf/simulated/floor/wood/wild1,/area/space)
@@ -165,6 +170,7 @@
 "eP" = (/obj/effect/floor_decal/industrial/warning{dir = 6},/turf/simulated/floor/tiled/steel/techfloor_grid,/area/space)
 "eQ" = (/obj/structure/shuttle_part/science{icon_state = "15,3"},/turf/simulated/floor/reinforced,/area/space)
 "eT" = (/obj/structure/bed/chair/office/dark{dir = 4},/obj/landmark/join/start/merchant,/turf/simulated/floor/wood/wild2,/area/space)
+"eU" = (/obj/machinery/atmospherics/unary/vent_pump{dir = 1; external_pressure_bound = 0; external_pressure_bound_default = 0; frequency = 1441; icon_state = "map_vent_in"; id_tag = "waste_out"; initialize_directions = 1; internal_pressure_bound = 4000; internal_pressure_bound_default = 4000; pressure_checks = 2; pressure_checks_default = 2; pump_direction = 0; use_power = 1},/turf/simulated/floor/plating/under,/area/space)
 "eV" = (/obj/structure/shuttle_part/escpod{icon_state = "escpodwall9"; tag = "icon-escpodwall9"},/turf/simulated/floor/tiled/dark/cargo,/area/space)
 "eW" = (/obj/effect/decal/cleanable/rubble,/obj/effect/floor_decal/industrial/loading,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/techmaint,/area/space)
 "eY" = (/obj/effect/floor_decal/industrial_plant/steel_grate_alt,/obj/effect/floor_decal/corner_techfloor_grid/diagonal,/obj/item/reagent_containers/glass/bucket,/turf/simulated/floor/industrial/black_large_slates,/area/space)
@@ -173,6 +179,7 @@
 "fb" = (/obj/effect/decal/cleanable/generic,/turf/simulated/floor/tiled/techmaint,/area/space)
 "fc" = (/obj/structure/table/marble,/obj/structure/table/marble,/obj/machinery/door/blast/shutters/glass,/obj/machinery/door/firedoor,/turf/simulated/floor/industrial/checker_large,/area/space)
 "fd" = (/obj/structure/window/basic/iskhod{dir = 1},/obj/effect/floor_decal/industrial_plant/steel_grate_alt,/turf/simulated/floor/tiled/dark/techfloor,/area/space)
+"ff" = (/obj/machinery/atmospherics/valve/digital{dir = 4; name = "N2O Outlet Valve"},/turf/simulated/floor/plating/under,/area/space)
 "fg" = (/obj/structure/table/standard,/turf/simulated/floor/carpet/blucarpet,/area/space)
 "fh" = (/obj/machinery/door/firedoor,/obj/effect/floor_decal/industrial_plant/steel_grate_border{dir = 1},/turf/simulated/floor/tiled/white/cyancorner,/area/space)
 "fi" = (/obj/structure/catwalk,/obj/structure/disposalpipe/segment,/turf/simulated/floor/plating/under,/area/space)
@@ -229,6 +236,7 @@
 "gL" = (/obj/machinery/door/firedoor,/obj/structure/disposalpipe/segment,/turf/simulated/floor/industrial/black_large_slates,/area/space)
 "gM" = (/obj/structure/disposalpipe/trunk{dir = 1},/obj/machinery/disposal,/turf/simulated/floor/plating/under,/area/space)
 "gN" = (/obj/effect/window_lwall_spawn/reinforced,/turf/space,/area/space)
+"gO" = (/obj/machinery/atmospherics/valve/digital/open{dir = 4; name = "Nitrogen Outlet Valve"},/turf/simulated/floor/plating/under,/area/space)
 "gP" = (/obj/effect/floor_decal/industrial_plant/steel_grate_border,/obj/machinery/door/firedoor/multi_tile,/obj/structure/disposalpipe/segment,/turf/simulated/floor/industrial/black_large_slates,/area/space)
 "gQ" = (/obj/machinery/seed_extractor,/turf/simulated/floor/industrial/ceramic,/area/space)
 "gR" = (/obj/structure/disposalpipe/segment{dir = 8},/obj/structure/catwalk,/turf/simulated/floor/plating/under,/area/space)
@@ -348,6 +356,7 @@
 "jZ" = (/obj/effect/floor_decal/industrial/road{dir = 4},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/dark/techfloor,/area/space)
 "ka" = (/obj/effect/floor_decal/fact_plaque/med2,/turf/simulated/floor/tiled/white/cargo,/area/space)
 "kd" = (/turf/simulated/floor/tiled/white/brown_perforated,/area/space)
+"ke" = (/obj/machinery/door/firedoor/multi_tile{dir = 2},/obj/effect/floor_decal/industrial_plant/steel_grate_warning{dir = 1},/turf/simulated/floor/plating/under,/area/space)
 "kf" = (/obj/structure/bed/chair/office/light{dir = 4},/turf/simulated/floor/tiled/white/cyancorner,/area/space)
 "kg" = (/obj/structure/medical_stand,/obj/effect/floor_decal/industrial/hatch,/turf/simulated/floor/tiled/dark/cyancorner,/area/space)
 "kh" = (/obj/effect/floor_decal/industrial/hatch/blue,/obj/structure/bed/roller,/turf/simulated/floor/tiled/dark/techfloor,/area/space)
@@ -401,6 +410,7 @@
 "lq" = (/obj/effect/floor_decal/industrial_plant,/obj/effect/floor_decal/industrial/hatch/red,/obj/structure/closet/wall_mounted/firecloset{pixel_y = 32},/turf/simulated/floor/industrial/black_large_slates,/area/space)
 "ls" = (/obj/structure/shuttle_part/science{icon_state = "15,5"},/turf/simulated/floor/reinforced,/area/space)
 "lt" = (/obj/structure/mopbucket,/obj/machinery/light/small,/turf/simulated/floor/industrial/navy_slates,/area/space)
+"lu" = (/obj/machinery/atmospherics/valve/digital{dir = 2; name = "Gas Mix Outlet Valve"},/turf/simulated/floor/plating/under,/area/space)
 "lv" = (/obj/structure/shuttle_part/science{icon_state = "8,20"},/turf/simulated/shuttle/floor/science{icon_state = "11,8"},/area/space)
 "lw" = (/obj/effect/floor_decal/industrial_plant/border{dir = 4},/obj/machinery/atmospherics/unary/vent_scrubber{dir = 4},/turf/simulated/floor/industrial/black_large_slates,/area/space)
 "lx" = (/obj/machinery/door/firedoor,/obj/structure/table/reinforced,/turf/simulated/floor/tiled/dark/techfloor,/area/space)
@@ -422,6 +432,7 @@
 "lR" = (/obj/structure/boulder,/obj/random/mob/roaches/low_chance,/turf/simulated/floor/plating/under,/area/space)
 "lS" = (/obj/machinery/recharge_station,/turf/simulated/floor/reinforced,/area/space)
 "lT" = (/obj/structure/morgue{dir = 2},/turf/simulated/floor/industrial/black_large_slates_fixed,/area/space)
+"lV" = (/obj/machinery/atmospherics/unary/outlet_injector{dir = 1; frequency = 1441; id = "waste_in"; pixel_y = 1; use_power = 1},/turf/simulated/floor/plating/under,/area/space)
 "lW" = (/obj/machinery/mech_recharger,/obj/item/device/radio/intercom{dir = 8; pixel_x = 22},/turf/simulated/floor/plating,/area/space)
 "lX" = (/obj/effect/decal/cleanable/dirt,/obj/machinery/light/small{dir = 1},/turf/simulated/floor/tiled/steel,/area/space)
 "lZ" = (/obj/structure/table/rack/shelf,/obj/random/gun_parts/frames,/obj/effect/floor_decal/industrial/hatch,/turf/simulated/floor/tiled/dark/cargo,/area/space)
@@ -433,6 +444,7 @@
 "mf" = (/obj/structure/toilet,/turf/simulated/floor/industrial/white_large_slates,/area/space)
 "mg" = (/obj/effect/floor_decal/industrial_plant/steel_grate_warning{dir = 1},/obj/machinery/door/blast/shutters{density = 0; dir = 4; icon_state = "shutter0"; id = "marshals_shutters"; name = "Lockdown Shutters"; opacity = 0},/turf/simulated/floor/industrial/navy_large_slates,/area/space)
 "mh" = (/obj/structure/janitorialcart,/turf/simulated/floor/industrial/navy_slates,/area/space)
+"mj" = (/obj/machinery/atmospherics/binary/pump{dir = 4; name = "Plasma to Connector"},/turf/simulated/floor/plating/under,/area/space)
 "mk" = (/obj/machinery/hologram/holopad,/turf/simulated/floor/carpet/blucarpet,/area/space)
 "ml" = (/obj/structure/table/rack,/turf/simulated/floor/industrial/white_large_slates,/area/space)
 "mm" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/turf/simulated/floor/tiled/steel/cyancorner,/area/space)
@@ -451,6 +463,7 @@
 "mF" = (/obj/structure/railing/grey{dir = 8},/obj/structure/flora/ausbushes/ppflowers,/obj/structure/flora/ausbushes/ywflowers,/obj/structure/flora/ausbushes/lavendergrass,/turf/simulated/floor/asteroid/grass,/area/space)
 "mG" = (/obj/structure/closet/secure_closet/personal/engineering_personal,/turf/simulated/floor/reinforced,/area/space)
 "mH" = (/obj/structure/table/gamblingtable,/obj/item/deck/cards,/turf/simulated/floor/tiled/dark/cargo,/area/space)
+"mI" = (/obj/machinery/atmospherics/valve/digital/open{dir = 4; name = "Mixed Air Inlet Valve"},/turf/simulated/floor/plating/under,/area/space)
 "mJ" = (/obj/structure/window/reinforced/iskhod,/turf/simulated/floor/tiled/steel/bar_dance,/area/space)
 "mK" = (/obj/structure/sign/department/commander{name = "SECURITY CELL"},/turf/simulated/wall/iskhod_red,/area/space)
 "mM" = (/obj/machinery/door/firedoor,/obj/machinery/door/airlock{name = "Unisex Restrooms"},/turf/simulated/floor/industrial/white_large_slates,/area/space)
@@ -507,6 +520,7 @@
 "oi" = (/obj/structure/table/standard,/obj/item/reagent_containers/spray/cleaner,/obj/random/lowkeyrandom/low_chance,/turf/simulated/floor/tiled/techmaint,/area/space)
 "oj" = (/turf/simulated/floor/industrial/black_large_slates_fixed,/area/space)
 "ol" = (/turf/simulated/shuttle/wall/escpod{icon_state = "escpodwall11"; tag = "icon-escpodwall11"},/area/space)
+"on" = (/obj/machinery/atmospherics/binary/pump{dir = 4; name = "O2 to Connector"},/turf/simulated/floor/plating/under,/area/space)
 "op" = (/obj/structure/salvageable/implant_container_os,/turf/simulated/floor/plating/under,/area/space)
 "oq" = (/obj/effect/floor_decal/industrial_plant/steel_grate_alt,/obj/effect/decal/cleanable/blood/oil/streak,/turf/simulated/floor/industrial/black_large_slates,/area/space)
 "or" = (/obj/structure/disposalpipe/trunk{dir = 1},/obj/machinery/disposal,/turf/simulated/floor/reinforced,/area/space)
@@ -579,6 +593,7 @@
 "qg" = (/obj/structure/shuttle_part/science{icon_state = "8,21"},/turf/simulated/floor/reinforced,/area/space)
 "qi" = (/turf/simulated/shuttle/wall/science{icon_state = "12,1"},/area/space)
 "qj" = (/obj/machinery/door/firedoor,/turf/simulated/open,/area/space)
+"qk" = (/obj/machinery/atmospherics/unary/vent_pump{dir = 4; external_pressure_bound = 0; external_pressure_bound_default = 0; frequency = 1441; icon_state = "map_vent_in"; id_tag = "tox_out"; initialize_directions = 1; internal_pressure_bound = 4000; internal_pressure_bound_default = 4000; pressure_checks = 2; pressure_checks_default = 2; pump_direction = 0; use_power = 1},/turf/simulated/floor/plating/under,/area/space)
 "qm" = (/obj/structure/bed/chair{dir = 1; pixel_y = 20; color = "#8D918D"},/obj/structure/girder{health = 200; color = "#8D918D"},/obj/effect/floor_decal/floordetail/edgedrain,/turf/simulated/floor/industrial/white_large_slates,/area/space)
 "qn" = (/obj/effect/floor_decal/industrial_plant/steel_grate_warning{dir = 1},/turf/simulated/floor/industrial/black_large_slates,/area/space)
 "qo" = (/obj/machinery/door/firedoor,/obj/effect/floor_decal/floordetail/edgedrain{dir = 1},/obj/effect/floor_decal/floordetail/edgedrain,/turf/simulated/floor/industrial/white_large_slates_fixed,/area/space)
@@ -629,6 +644,7 @@
 "rB" = (/obj/structure/catwalk{icon_state = "catwalk3-0"},/obj/effect/spider/stickyweb,/obj/structure/cable/cyan{d1 = 2; d2 = 8; icon_state = "2-8"},/turf/simulated/floor/plating/under,/area/space)
 "rC" = (/obj/structure/filingcabinet/filingcabinet,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/carpet/blucarpet,/area/space)
 "rD" = (/obj/machinery/door/window/iskhod/right{dir = 2},/turf/simulated/floor/tiled/dark/techfloor,/area/space)
+"rE" = (/obj/machinery/atmospherics/unary/outlet_injector{dir = 4; frequency = 1441; id = "n2_in"; use_power = 1},/turf/simulated/floor/plating/under,/area/space)
 "rF" = (/obj/structure/shuttle_part/escpod{icon_state = "escpodwall18"; tag = "icon-escpodwall18"},/turf/simulated/floor/tiled/dark/cargo,/area/space)
 "rG" = (/obj/effect/floor_decal/floordetail/edgedrain{dir = 1},/turf/simulated/floor/wood/wild4,/area/space)
 "rH" = (/obj/machinery/door/firedoor,/obj/effect/floor_decal/industrial_plant/steel_grate_border,/turf/space,/area/space)
@@ -680,6 +696,7 @@
 "sK" = (/turf/simulated/shuttle/wall/science{icon_state = "4,6"},/area/space)
 "sL" = (/obj/effect/floor_decal/industrial/shutoff,/turf/simulated/shuttle/floor/mining{icon_state = "9,23"},/area/space)
 "sO" = (/obj/effect/floor_decal/industrial_plant/steel_grate_border,/obj/effect/floor_decal/industrial_plant/steel_grate_border,/turf/simulated/wall/iskhod_green,/area/space)
+"sP" = (/obj/machinery/computer/general_air_control/large_tank_control{dir = 4; input_tag = "co2_in"; name = "Carbon Dioxide Supply Control"; output_tag = "co2_out"; sensors = list("co2_sensor"="Tank")},/turf/simulated/floor/reinforced,/area/space)
 "sQ" = (/turf/simulated/shuttle/floor/science{icon_state = "6,12"},/area/space)
 "sR" = (/obj/machinery/door/firedoor/multi_tile,/obj/effect/floor_decal/industrial_plant/steel_grate_border,/turf/simulated/floor/tiled/white/cyancorner,/area/space)
 "sS" = (/obj/structure/multiz/stairs/enter/bottom{dir = 1},/turf/simulated/floor/industrial/fancy_slates,/area/space)
@@ -702,6 +719,7 @@
 "tp" = (/obj/structure/disposalpipe/segment{dir = 4; icon_state = "pipe-c"},/turf/simulated/floor/plating/under,/area/space)
 "tq" = (/obj/effect/floor_decal/corner_kafel/white/full,/obj/effect/floor_decal/corner_kafel/white{dir = 4},/obj/effect/floor_decal/corner_kafel/gray{dir = 10},/obj/effect/floor_decal/corner_kafel/gray{dir = 5},/obj/effect/floor_decal/industrial/caution/white,/turf/simulated/floor/industrial/white_large_slates,/area/space)
 "tr" = (/obj/structure/burrow,/turf/simulated/floor/industrial/black_large_slates,/area/space)
+"ts" = (/obj/machinery/atmospherics/valve/digital/open{dir = 4; name = "Oxygen Outlet Valve"},/turf/simulated/floor/plating/under,/area/space)
 "tt" = (/obj/structure/catwalk,/obj/random/closet/low_chance,/turf/simulated/floor/plating/under,/area/space)
 "tv" = (/mob/living/carbon/superior/spider/nurse/orb_weaver,/turf/simulated/floor/plating/under,/area/space)
 "tw" = (/obj/random/closet,/turf/simulated/floor/plating/under,/area/space)
@@ -750,6 +768,7 @@
 "ur" = (/obj/effect/floor_decal/corner_techfloor_grid{dir = 8},/turf/simulated/floor/wood/wild4,/area/space)
 "us" = (/obj/effect/decal/cleanable/blood/oil/streak,/turf/simulated/shuttle/floor/mining{icon_state = "9,23"},/area/space)
 "ut" = (/obj/structure/table/rack,/obj/machinery/door/window/northright{dir = 8; name = "Atmospherics Hardsuits"; req_access = list(24)},/obj/structure/window/reinforced,/obj/structure/window/reinforced{dir = 1},/turf/simulated/floor/tiled/dark/techfloor,/area/space)
+"uu" = (/obj/machinery/atmospherics/valve/digital{dir = 4; name = "CO2 Outlet Valve"},/turf/simulated/floor/plating/under,/area/space)
 "uv" = (/obj/item/caution/cone,/turf/simulated/floor/plating/under,/area/space)
 "uw" = (/turf/simulated/shuttle/wall/science{icon_state = "3,1"},/area/space)
 "ux" = (/obj/structure/lattice,/obj/structure/lattice,/turf/simulated/open,/area/space)
@@ -789,6 +808,7 @@
 "vx" = (/obj/machinery/door/firedoor,/obj/effect/window_lwall_spawn/reinforced,/turf/simulated/floor/wood,/area/space)
 "vB" = (/obj/structure/table/woodentable,/obj/effect/decal/cleanable/dirt,/obj/random/lowkeyrandom/low_chance,/turf/simulated/floor/carpet/blucarpet,/area/space)
 "vF" = (/obj/structure/reagent_dispensers/water_cooler,/turf/simulated/floor/wood,/area/space)
+"vG" = (/obj/machinery/atmospherics/valve/digital{dir = 4; name = "Plasma Outlet Valve"},/turf/simulated/floor/plating/under,/area/space)
 "vH" = (/obj/item/stool/custom/bar_special,/turf/simulated/floor/tiled/white/brown_perforated,/area/space)
 "vI" = (/obj/structure/table/steel,/obj/effect/floor_decal/industrial/hatch,/obj/item/tool/shovel/improvised,/obj/structure/railing,/turf/simulated/floor/tiled/dark/monofloor,/area/space)
 "vJ" = (/obj/structure/table/glass,/obj/machinery/chemical_dispenser/coffee_master,/turf/simulated/floor/wood,/area/space)
@@ -835,6 +855,7 @@
 "wM" = (/obj/machinery/light/floor{dir = 8},/turf/simulated/floor/reinforced,/area/space)
 "wN" = (/obj/structure/disposalpipe/segment,/turf/simulated/floor/industrial/checker_large,/area/space)
 "wO" = (/obj/structure/railing,/turf/simulated/floor/snow/smooth{icon_state = "snow0"},/area/space)
+"wP" = (/obj/machinery/atmospherics/unary/outlet_injector{dir = 4; frequency = 1441; id = "co2_in"; pixel_y = 1; use_power = 1},/turf/simulated/floor/plating/under,/area/space)
 "wQ" = (/obj/effect/floor_decal/industrial_plant/steel_grate_alt,/obj/structure/sign/levels/deck1{pixel_y = -32},/turf/simulated/floor/industrial/black_large_slates,/area/space)
 "wR" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/steel,/area/space)
 "wS" = (/turf/simulated/shuttle/wall/escpod{icon_state = "escpodwall29"; tag = "icon-escpodwall29"},/area/space)
@@ -863,6 +884,7 @@
 "xu" = (/obj/machinery/atm{dir = 1; pixel_y = -30},/turf/simulated/floor/plating/under,/area/space)
 "xv" = (/obj/structure/catwalk,/obj/effect/floor_decal/industrial/warningdust{dir = 8},/obj/random/closet_wardrobe/low_chance,/turf/simulated/floor/plating/under,/area/space)
 "xw" = (/obj/structure/shuttle_part/science{icon_state = "13,11"},/turf/simulated/floor/reinforced,/area/space)
+"xz" = (/obj/machinery/atmospherics/unary/outlet_injector{dir = 4; frequency = 1441; id = "tox_in"; pixel_y = 1; use_power = 1},/turf/simulated/floor/plating/under,/area/space)
 "xB" = (/obj/structure/cable/cyan{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor/industrial/cafe_large,/area/space)
 "xD" = (/obj/structure/closet/crate,/obj/effect/floor_decal/industrial/danger{dir = 4},/obj/effect/floor_decal/industrial/outline/yellow,/turf/simulated/floor/tiled/techmaint,/area/space)
 "xF" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/turf/simulated/floor/tiled/steel/cyancorner,/area/space)
@@ -879,6 +901,7 @@
 "xU" = (/obj/structure/railing{dir = 8; tag = "icon-railing0 (WEST)"},/turf/simulated/floor/plating/under,/area/space)
 "xV" = (/obj/machinery/shower,/obj/structure/window/basic/iskhod{dir = 8},/obj/structure/window/basic/iskhod{dir = 4},/obj/structure/curtain/open/shower,/obj/machinery/door/window/northleft{name = "shower door"; dir = 2},/obj/item/soap,/turf/simulated/floor/industrial/white_large_slates,/area/space)
 "xW" = (/turf/simulated/floor/tiled/dark/gray_perforated,/area/space)
+"xY" = (/obj/machinery/computer/general_air_control/large_tank_control{dir = 4; frequency = 1443; input_tag = "air_in"; name = "Mixed Air Supply Control"; output_tag = "air_out"; sensors = list("air_sensor"="Tank")},/turf/simulated/floor/reinforced,/area/space)
 "xZ" = (/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{dir = 1},/obj/machinery/atmospherics/pipe/manifold/hidden/supply{dir = 1},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/steel/cyancorner,/area/space)
 "ya" = (/obj/effect/floor_decal/floordetail/edgedrain{dir = 1},/obj/effect/floor_decal/floordetail/edgedrain,/obj/effect/floor_decal/corner_techfloor_grid{dir = 6},/obj/structure/window/basic/iskhod{dir = 8},/obj/machinery/shower{dir = 4; icon_state = "shower"; pixel_x = 2},/turf/simulated/floor/industrial/white_large_slates_fixed,/area/space)
 "yb" = (/obj/effect/floor_decal/industrial_plant/steel_grate_border,/obj/machinery/door/firedoor,/obj/structure/disposalpipe/segment,/turf/simulated/floor/industrial/black_large_slates,/area/space)
@@ -989,6 +1012,7 @@
 "AW" = (/obj/item/modular_computer/console/preset/trade_orders{dir = 4},/turf/simulated/floor/plating/under,/area/space)
 "AX" = (/obj/structure/cable/cyan{d1 = 2; d2 = 8; icon_state = "2-8"},/turf/simulated/floor/industrial/cafe_large,/area/space)
 "AY" = (/obj/machinery/door/firedoor,/obj/effect/floor_decal/industrial_plant/steel_grate_border{dir = 1},/turf/simulated/floor/industrial/white_large_slates,/area/space)
+"AZ" = (/obj/machinery/atmospherics/valve/digital{dir = 1; name = "Gas Mix Inlet Valve"},/turf/simulated/floor/plating/under,/area/space)
 "Ba" = (/obj/structure/closet/secure_closet/freezer/meat,/turf/simulated/floor/tiled/white,/area/space)
 "Bb" = (/obj/structure/railing/grey{dir = 4},/obj/structure/lattice,/turf/simulated/open,/area/space)
 "Bc" = (/obj/machinery/door/firedoor,/obj/effect/floor_decal/industrial_plant/steel_grate_warning{dir = 1},/turf/simulated/floor/tiled/dark/techfloor,/area/space)
@@ -1007,6 +1031,7 @@
 "Br" = (/obj/machinery/bodyscanner,/obj/structure/window/basic/iskhod{dir = 8},/turf/simulated/floor/tiled/dark/techfloor,/area/space)
 "Bu" = (/obj/machinery/floodlight,/turf/simulated/floor/plating/under,/area/space)
 "Bv" = (/obj/effect/floor_decal/industrial_plant/steel_grate_alt,/obj/effect/floor_decal/corner_techfloor_gray/diagonal,/obj/effect/decal/cleanable/blood/oil/streak,/turf/simulated/floor/industrial/black_large_slates,/area/space)
+"Bw" = (/obj/machinery/atmospherics/unary/outlet_injector{dir = 4; frequency = 1441; id = "n2o_in"; pixel_y = 1; use_power = 1},/turf/simulated/floor/plating/under,/area/space)
 "Bx" = (/mob/living/simple/cow{name = "Betsy"},/turf/simulated/floor/asteroid/grass/jungle,/area/space)
 "By" = (/obj/structure/railing{dir = 4; tag = "icon-railing0 (EAST)"},/obj/random/closet,/turf/simulated/floor/plating/under,/area/space)
 "BA" = (/obj/effect/window_lwall_spawn/reinforced,/obj/machinery/door/blast/shutters{density = 0; dir = 2; icon_state = "shutter0"; id = "guild_workshop"; name = "Workshop Shutters"; opacity = 0},/turf/simulated/floor/industrial/black_large_slates,/area/space)
@@ -1055,6 +1080,7 @@
 "CE" = (/obj/machinery/atmospherics/pipe/simple/visible,/obj/structure/catwalk{icon_state = "catwalk12-0"},/turf/simulated/floor/plating/under,/area/space)
 "CF" = (/obj/item/modular_computer/console/preset/trade{dir = 1},/turf/simulated/floor/plating/under,/area/space)
 "CG" = (/obj/machinery/atmospherics/pipe/simple/visible{dir = 5},/obj/structure/catwalk{icon_state = "catwalk5-1"},/turf/simulated/floor/plating/under,/area/space)
+"CH" = (/obj/effect/floor_decal/industrial_plant/steel_grate_warning{dir = 1},/turf/simulated/floor/plating/under,/area/space)
 "CI" = (/obj/structure/railing/grey,/obj/structure/catwalk,/turf/simulated/floor/plating/under,/area/space)
 "CJ" = (/obj/machinery/light{dir = 1},/turf/simulated/floor/tiled/steel/cyancorner,/area/space)
 "CK" = (/obj/structure/shuttle_part/science{icon_state = "15,2"},/turf/simulated/floor/reinforced,/area/space)
@@ -1099,6 +1125,7 @@
 "DL" = (/obj/structure/railing/grey{dir = 4; pixel_x = 4},/turf/simulated/wall/iskhod_blue,/area/space)
 "DM" = (/obj/effect/decal/cleanable/rubble,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/white,/area/space)
 "DN" = (/obj/structure/closet/secure_closet/freezer/kitchen{name = "fridge"},/turf/simulated/floor/tiled/white,/area/space)
+"DO" = (/obj/machinery/computer/general_air_control/large_tank_control{dir = 4; input_tag = "n2o_in"; name = "Nitrous Oxide Supply Control"; output_tag = "n2o_out"; sensors = list("n2o_sensor"="Tank")},/turf/simulated/floor/reinforced,/area/space)
 "DQ" = (/obj/structure/railing,/obj/structure/railing{dir = 4; tag = "icon-railing0 (EAST)"},/turf/simulated/floor/plating/under,/area/space)
 "DR" = (/obj/structure/grille/broken,/obj/structure/barricade,/turf/simulated/floor/plating/under,/area/space)
 "DS" = (/obj/structure/table/standard,/obj/machinery/recharger,/turf/simulated/floor/industrial/ceramic,/area/space)
@@ -1135,6 +1162,7 @@
 "EG" = (/obj/effect/floor_decal/industrial_plant,/obj/structure/disposalpipe/junction{dir = 2; icon_state = "pipe-j2"},/turf/simulated/floor/industrial/black_large_slates,/area/space)
 "EH" = (/turf/simulated/shuttle/wall/science{icon_state = "14,7"},/area/space)
 "EI" = (/obj/structure/table/reinforced,/obj/item/borg/sight/hud/med,/obj/item/borg/sight/hud/med,/obj/item/borg/sight/hud/med,/obj/item/borg/sight/hud/med,/obj/item/borg/sight/hud/med,/turf/simulated/floor/tiled/white/cyancorner,/area/space)
+"EJ" = (/obj/effect/window_lwall_spawn/smartspawn,/turf/simulated/floor/plating/under,/area/space)
 "EK" = (/obj/structure/railing{dir = 4; icon_state = "railing0"},/obj/structure/lattice,/turf/simulated/open,/area/space)
 "EM" = (/obj/item/oddity/common/paper_bundle,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/carpet/blucarpet,/area/space)
 "EO" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/carpet/blucarpet,/area/space)
@@ -1257,6 +1285,7 @@
 "HZ" = (/obj/effect/floor_decal/industrial/danger,/turf/simulated/floor/tiled/dark/gray_perforated,/area/space)
 "Ic" = (/obj/item/mop,/obj/item/reagent_containers/glass/bucket,/turf/simulated/floor/industrial/navy_slates,/area/space)
 "Id" = (/obj/structure/flora/tree/snow/snow,/obj/structure/flora/small/snow/rock1,/turf/simulated/floor/snow/smooth{icon_state = "snow0"},/area/space)
+"If" = (/obj/machinery/atmospherics/unary/outlet_injector{dir = 4; frequency = 1443; id = "air_in"; use_power = 1},/turf/simulated/floor/plating/under,/area/space)
 "Ig" = (/turf/simulated/shuttle/floor/science{icon_state = "11,3"},/area/space)
 "Ih" = (/obj/machinery/vending/cola,/turf/simulated/floor/wood,/area/space)
 "Ii" = (/obj/machinery/honey_extractor,/turf/simulated/floor/industrial/ceramic,/area/space)
@@ -1277,6 +1306,7 @@
 "IM" = (/obj/structure/table/rack/shelf,/obj/item/packageWrap,/obj/item/packageWrap,/obj/item/clothing/accessory/armband/cargo,/obj/item/clothing/accessory/armband/cargo,/obj/item/clothing/accessory/armband/cargo,/obj/item/clothing/accessory/armband/cargo,/turf/simulated/floor/plating/under,/area/space)
 "IN" = (/obj/random/junk,/obj/structure/cable/cyan{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor/industrial/black_large_slates,/area/space)
 "IO" = (/obj/structure/catwalk,/obj/structure/mopbucket,/obj/item/mop,/turf/simulated/floor/plating/under,/area/space)
+"IP" = (/obj/machinery/atmospherics/portables_connector{dir = 8; name = "Input Connector"},/turf/simulated/floor/plating/under,/area/space)
 "IR" = (/obj/structure/shuttle_part/science{icon_state = "11,0"},/turf/simulated/floor/reinforced,/area/space)
 "IS" = (/turf/simulated/shuttle/wall/science{icon_state = "5,6"},/area/space)
 "IU" = (/obj/structure/flora/tree/snow/four,/turf/simulated/floor/snow/smooth{icon_state = "snow0"},/area/space)
@@ -1331,6 +1361,7 @@
 "Ku" = (/obj/structure/salvageable/computer_os,/turf/simulated/floor/industrial/black_large_slates,/area/space)
 "Kv" = (/obj/structure/railing/grey,/turf/simulated/open,/area/space)
 "Kw" = (/obj/structure/bed/chair/sofa/blue/left{dir = 1},/turf/simulated/floor/carpet/blucarpet,/area/space)
+"Kx" = (/obj/machinery/atmospherics/unary/vent_pump{dir = 4; external_pressure_bound = 0; external_pressure_bound_default = 0; frequency = 1441; icon_state = "map_vent_in"; id_tag = "n2o_out"; initialize_directions = 1; internal_pressure_bound = 4000; internal_pressure_bound_default = 4000; pressure_checks = 2; pressure_checks_default = 2; pump_direction = 0; use_power = 1},/turf/simulated/floor/plating/under,/area/space)
 "Ky" = (/obj/machinery/autolathe,/turf/simulated/floor/plating/under,/area/space)
 "KB" = (/obj/structure/bed/chair/office/light{dir = 4},/obj/machinery/light{dir = 8; icon_state = "tube1"; pixel_y = 0},/obj/machinery/newscaster{dir = 8; pixel_x = -30; pixel_y = 0},/turf/simulated/floor/tiled/white,/area/space)
 "KC" = (/obj/structure/closet/secure_closet/personal/patient,/turf/simulated/floor/tiled/white/cyancorner,/area/space)
@@ -1346,6 +1377,7 @@
 "KP" = (/obj/structure/table/rack/shelf,/obj/random/lowkeyrandom,/obj/random/lowkeyrandom/low_chance,/obj/effect/floor_decal/industrial/danger{dir = 1},/turf/simulated/floor/tiled/dark/gray_platform,/area/space)
 "KQ" = (/obj/structure/cable/cyan{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor/tiled/techmaint_panels,/area/space)
 "KS" = (/obj/structure/flora/pottedplant/water_root,/turf/simulated/floor/wood/wild1,/area/space)
+"KT" = (/obj/machinery/computer/general_air_control/large_tank_control{dir = 4; input_tag = "o2_in"; name = "Oxygen Supply Control"; output_tag = "o2_out"; sensors = list("o2_sensor"="Tank")},/turf/simulated/floor/reinforced,/area/space)
 "KY" = (/obj/structure/disposalpipe/junction{dir = 2; icon_state = "pipe-j2"},/turf/simulated/floor/industrial/black_large_slates,/area/space)
 "Lb" = (/obj/structure/railing/grey{dir = 8; pixel_x = -4},/obj/structure/railing/grey,/turf/simulated/open,/area/space)
 "Ld" = (/obj/effect/floor_decal/industrial/warning/corner{dir = 8},/turf/simulated/floor/tiled/dark/golden,/area/space)
@@ -1362,6 +1394,8 @@
 "Ls" = (/obj/structure/disposalpipe/segment{dir = 8},/turf/simulated/floor/tiled/dark,/area/space)
 "Lt" = (/obj/structure/catwalk,/obj/structure/largecrate,/turf/simulated/floor/plating/under,/area/space)
 "Lu" = (/obj/structure/table/rack/shelf,/obj/random/lowkeyrandom,/obj/random/lowkeyrandom,/obj/random/lowkeyrandom/low_chance,/obj/effect/floor_decal/industrial/danger,/obj/effect/floor_decal/industrial/danger{dir = 1},/turf/simulated/floor/tiled/dark/gray_platform,/area/space)
+"Lv" = (/obj/machinery/computer/general_air_control/large_tank_control{dir = 4; input_tag = "tox_in"; name = "Plasma Supply Control"; output_tag = "tox_out"; sensors = list("tox_sensor"="Tank")},/turf/simulated/floor/reinforced,/area/space)
+"Lw" = (/obj/machinery/atmospherics/binary/pump{dir = 4; name = "Mix Tank to Connector"},/turf/simulated/floor/plating/under,/area/space)
 "Lx" = (/turf/space,/area/space)
 "Ly" = (/obj/structure/closet/wall_mounted/emcloset{pixel_x = -1; pixel_y = -32},/obj/effect/floor_decal/industrial/hatch/blue,/turf/simulated/floor/reinforced,/area/space)
 "Lz" = (/obj/effect/floor_decal/industrial/danger{dir = 8; tag = "icon-danger (WEST)"},/turf/simulated/floor/tiled/dark/gray_perforated,/area/space)
@@ -1466,6 +1500,7 @@
 "Oq" = (/turf/simulated/floor/industrial/checker_large,/area/space)
 "Or" = (/obj/structure/railing,/obj/structure/railing{anchored = 1; dir = 4},/turf/simulated/open,/area/space)
 "Os" = (/obj/structure/railing{dir = 8; icon_state = "railing0"},/turf/simulated/open,/area/space)
+"Ot" = (/obj/machinery/atmospherics/portables_connector{dir = 8},/turf/simulated/floor/plating/under,/area/space)
 "Ou" = (/obj/structure/bed/chair/shuttle,/turf/simulated/floor/tiled/dark/gray_perforated,/area/space)
 "Ov" = (/obj/machinery/door/firedoor,/obj/structure/table/reinforced,/obj/effect/floor_decal/industrial_plant/steel_grate_border{dir = 1},/turf/simulated/floor/tiled/dark/techfloor,/area/space)
 "Ow" = (/obj/effect/floor_decal/industrial_plant/steel_grate_border,/obj/machinery/door/firedoor,/turf/simulated/floor/industrial/checker_large_fixed,/area/space)
@@ -1528,11 +1563,13 @@
 "Qc" = (/obj/random/junk,/turf/simulated/floor/industrial/grey_slates_long,/area/space)
 "Qd" = (/turf/simulated/floor/carpet/bcarpet,/area/space)
 "Qe" = (/obj/structure/disposalpipe/segment,/obj/machinery/door/firedoor,/turf/simulated/floor/tiled/dark,/area/space)
+"Qf" = (/obj/machinery/door/firedoor,/obj/effect/floor_decal/industrial_plant/steel_grate_warning,/turf/simulated/floor/plating/under,/area/space)
 "Qg" = (/obj/structure/cable/cyan{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/machinery/door/airlock,/turf/simulated/floor/tiled/dark/techfloor_grid,/area/space)
 "Qh" = (/obj/structure/disposalpipe/segment{dir = 1; icon_state = "pipe-c"},/turf/simulated/floor/tiled/dark,/area/space)
 "Qi" = (/turf/simulated/floor/industrial/cafe_large,/area/space)
 "Qk" = (/turf/simulated/shuttle/wall/escpod{icon_state = "escpodwall3"; tag = "icon-escpodwall3"},/area/space)
 "Ql" = (/obj/structure/closet/secure_closet/engineering_electrical,/turf/simulated/floor/industrial/grey_slates_long,/area/space)
+"Qm" = (/obj/machinery/atmospherics/binary/pump{dir = 4; name = "CO2 to Connector"},/turf/simulated/floor/plating/under,/area/space)
 "Qn" = (/obj/machinery/door/firedoor/multi_tile{dir = 2},/obj/effect/floor_decal/industrial_plant/steel_grate_border{dir = 1},/turf/simulated/floor/tiled/dark/techfloor,/area/space)
 "Qo" = (/obj/structure/shuttle_part/science{icon_state = "14,8"},/turf/simulated/floor/reinforced,/area/space)
 "Qp" = (/obj/structure/disposalpipe/segment{dir = 8; icon_state = "pipe-c"},/obj/effect/floor_decal/fact_plaque,/turf/simulated/floor/carpet/oracarpet,/area/space)
@@ -1628,6 +1665,7 @@
 "Sv" = (/obj/item/modular_computer/console/preset/civilian/professional{dir = 1},/obj/machinery/door/firedoor,/turf/simulated/floor/tiled/dark/techfloor,/area/space)
 "Sw" = (/obj/random/scrap/dense_weighted,/turf/simulated/floor/plating/under,/area/space)
 "Sx" = (/obj/structure/filingcabinet/filingcabinet,/obj/structure/flora/pottedplant/dead{oldified = 1; pixel_y = 16},/turf/simulated/floor/carpet/blucarpet,/area/space)
+"Sy" = (/obj/machinery/atmospherics/unary/outlet_injector{dir = 4; frequency = 1441; id = "o2_in"; use_power = 1},/turf/simulated/floor/plating/under,/area/space)
 "SA" = (/obj/structure/sign/departmentold/security{pixel_x = -32},/turf/simulated/floor/industrial/navy_large_slates,/area/space)
 "SB" = (/obj/machinery/disposal,/obj/structure/disposalpipe/trunk{dir = 1},/turf/simulated/floor/industrial/black_large_slates,/area/space)
 "SE" = (/obj/structure/closet/jcloset,/turf/simulated/floor/industrial/navy_slates,/area/space)
@@ -1645,6 +1683,7 @@
 "SV" = (/turf/simulated/shuttle/wall/science{icon_state = "5,10"},/area/space)
 "SW" = (/obj/machinery/door/blast/shutters{id = "Janitorial"; name = "Janitorial"; req_access = list(50)},/obj/machinery/door/firedoor/multi_tile,/turf/simulated/shuttle/floor/mining{icon_state = "9,23"},/area/space)
 "SY" = (/obj/effect/floor_decal/industrial_plant/steel_grate_warning{dir = 1},/obj/machinery/door/firedoor/multi_tile{dir = 2},/obj/machinery/door/airlock/multi_tile/metal/mait{dir = 2},/turf/simulated/floor/industrial/black_large_slates,/area/space)
+"SZ" = (/obj/machinery/atmospherics/binary/pump{dir = 4; name = "N2O to Connector"},/turf/simulated/floor/plating/under,/area/space)
 "Ta" = (/obj/machinery/portable_atmospherics/canister/oxygen,/obj/effect/floor_decal/industrial/botright/yellow,/turf/simulated/floor/tiled/dark/techfloor,/area/space)
 "Tb" = (/obj/structure/table/standard,/obj/structure/flora/pottedplant/dead{oldified = 1; pixel_y = 16},/turf/simulated/floor/tiled/steel,/area/space)
 "Te" = (/obj/random/scrap/dense_weighted,/obj/machinery/light/small{dir = 4; pixel_y = 0},/turf/simulated/floor/plating/under,/area/space)
@@ -1658,6 +1697,7 @@
 "Tr" = (/obj/structure/railing/grey{dir = 8},/obj/structure/flora/ausbushes/ppflowers,/obj/structure/flora/ausbushes/brflowers,/obj/structure/flora/ausbushes/lavendergrass,/turf/simulated/floor/asteroid/grass,/area/space)
 "Ts" = (/obj/structure/table/steel,/obj/effect/floor_decal/industrial/hatch,/obj/item/tool/shovel/improvised,/turf/simulated/floor/tiled/dark/monofloor,/area/space)
 "Tt" = (/obj/structure/cable/cyan{d1 = 1; d2 = 8; icon_state = "1-8"},/turf/simulated/floor/industrial/grey_slates_long,/area/space)
+"Tu" = (/obj/machinery/atmospherics/unary/vent_pump{dir = 4; external_pressure_bound = 0; external_pressure_bound_default = 0; frequency = 1441; icon_state = "map_vent_in"; id_tag = "n2_out"; initialize_directions = 1; internal_pressure_bound = 4000; internal_pressure_bound_default = 4000; pressure_checks = 2; pressure_checks_default = 2; pump_direction = 0; use_power = 1},/turf/simulated/floor/plating/under,/area/space)
 "Tv" = (/obj/landmark/join/start/apprentice,/turf/simulated/floor/tiled/dark,/area/space)
 "Tw" = (/obj/structure/sign/security/cells{pixel_y = 30},/turf/simulated/floor/plating/under,/area/space)
 "Tx" = (/obj/structure/shuttle_part/science{icon_state = "3,0"},/turf/simulated/floor/reinforced,/area/space)
@@ -1665,6 +1705,7 @@
 "TA" = (/obj/machinery/door/firedoor,/obj/effect/floor_decal/industrial_plant/steel_grate_warning,/turf/simulated/floor/industrial/navy_large_slates,/area/space)
 "TB" = (/obj/structure/sign/departmentold/engineering2{pixel_y = -32},/turf/simulated/floor/industrial/black_large_slates,/area/space)
 "TC" = (/obj/machinery/vending/dinnerware,/turf/simulated/floor/tiled/cafe,/area/space)
+"TD" = (/obj/machinery/atmospherics/unary/vent_pump{dir = 4; external_pressure_bound = 0; external_pressure_bound_default = 0; frequency = 1441; icon_state = "map_vent_in"; id_tag = "o2_out"; initialize_directions = 1; internal_pressure_bound = 4000; internal_pressure_bound_default = 4000; pressure_checks = 2; pressure_checks_default = 2; pump_direction = 0; use_power = 1},/turf/simulated/floor/plating/under,/area/space)
 "TE" = (/obj/effect/window_lwall_spawn/reinforced,/obj/machinery/door/firedoor,/turf/simulated/floor/industrial/grey_slates_long,/area/space)
 "TG" = (/obj/structure/low_wall,/turf/simulated/shuttle/floor/mining{icon_state = "9,23"},/area/space)
 "TH" = (/obj/effect/floor_decal/industrial_plant,/obj/effect/floor_decal/industrial/shutoff,/obj/structure/disposalpipe/segment{dir = 8},/turf/simulated/floor/industrial/black_large_slates,/area/space)
@@ -1844,6 +1885,7 @@
 "Yo" = (/obj/structure/disposalpipe/junction{dir = 1; icon_state = "pipe-j2"},/turf/simulated/floor/plating/under,/area/space)
 "Yr" = (/obj/machinery/power/port_gen/pacman/scrap/anchored,/turf/simulated/floor/plating/under,/area/space)
 "Ys" = (/obj/machinery/door/firedoor,/obj/effect/floor_decal/industrial_plant/steel_grate_border{dir = 1},/turf/simulated/floor/industrial/white_large_slates_fixed,/area/space)
+"Yt" = (/obj/machinery/atmospherics/unary/vent_pump{dir = 4; external_pressure_bound = 0; external_pressure_bound_default = 0; frequency = 1441; icon_state = "map_vent_in"; id_tag = "co2_out"; initialize_directions = 1; internal_pressure_bound = 4000; internal_pressure_bound_default = 4000; pressure_checks = 2; pressure_checks_default = 2; pump_direction = 0; use_power = 1},/turf/simulated/floor/plating/under,/area/space)
 "Yu" = (/obj/structure/disposalpipe/segment{dir = 2; icon_state = "pipe-c"},/turf/simulated/floor/plating/under,/area/space)
 "Yw" = (/obj/effect/floor_decal/corner_kafel/white/full,/obj/effect/floor_decal/corner_kafel/white{dir = 4},/obj/structure/table/steel_reinforced,/obj/machinery/chemical_dispenser/soda,/turf/simulated/floor/industrial/white_large_slates,/area/space)
 "Yx" = (/obj/structure/sign/misc/pool{pixel_y = -30},/turf/simulated/floor/industrial/black_large_slates,/area/space)
@@ -2051,45 +2093,45 @@ KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
 KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqrUrUrUrUrUrUrUrUrUrUrUKqKqKqKqKqKqKqKqrUrUYeskaRSqaRaRaRaRaRaRaRaRaRaRaRaRaRaRaRaRaRaRaRaRaRaRaRaRaRqwqzZxjQwhYeYeYeYeYeOyaRaRaRaRaRaRaRaRaRaRaRaRaRaRaRaRaRaRaRSqaRGgYerUrUKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
 KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqrUrUYeYeoAYeYeYeYeYeYeYeYeYeYeYeYeYeYeYeYeYeYeYeYeYeYeTBYeYefXjQEGqzqwaRaRaRaRaRGgYeYeYeYeYeYeYeYeYeYeYeYeYeYeYeYeYeYeYeoAYeYerUrUKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
 KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUpTTPpTsOrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
-KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqrUlqLFYeYeksYePDLFXLrUKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
-KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqrUrUrUrUrUrUrUrUrUrUrURzrUYeYeYeYeksYeYeYeYerUrUrUrUrUKqRzRzRzRzRzRzRzRzRzRzRzRzRzRzKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
-KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqrUUZUZUZUZUZUZUZrUmGYVGRrUYeYeYelMmBlMYeYeYerUGRYVmGrUKqRzUZUZUZkuuzUZUZUZUZUZUZUZRzKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
-KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqrUUZUZUZUZUZUZUZrUNnLsLsjUOCaRaRDtQplMYeYeYeAzXxXxXxrUKqRzUZUZUZUZuzUZUZZSZSZSUZUZRzKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
-KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqrUUZUZUZUZUZUZUZrUeBXxXxrUksYeYelMlMlMYeYeYerUXxXxXxrUKqRzUZUZUZUZuzUZUZZSZSZSUZUZRzKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
-KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqrUrUrUrULImnUVUVUVslLIrUeBTvmGrUksYeYeYeYeYeYeYeYerUmGTvXxrURzRzUVRzuzuzRzUZUZUZUZUZUZUZRzKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
-KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZeBTvmGrUSBYeYeYeYeYeYeYeTBrUmGTvXxUVUZUVUZUVUZUZUVUZUZUZUZUZUZUZRzKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
-KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZfWUZUZUZUZUZUZUZfWeBXxrUrUrUBABABAnTBABABArUrUrUXxXxrURzRzUVRzuzuzRzUZUZUZUZUZUZUZRzKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
-KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZrUrUrUrUrUrUrUrUrUeBXxrURqXxXxXxXxNnLsLsLsLsUwrUXxXxrUKqRzUZUZUZUZuzUZZSZSUZZSZSUZRzKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
-KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZrUKqKqrUKdKdKdxVrUeBXxrUXxXxlMlMlMmBlMlMlMXxXxrUXxXxrUKqRzUZUZUZUZuzUZZSZSUZZSZSUZRzKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
-KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZrUKqKqrUyUxKxKkQrUQhLsBdLsLsDtDtDtumlMlMlMXxXxzuXxXxrUKqRzRzRzRzRzRzUZZSZSUZZSZSUZRzKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
-KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZrUKqKqrUxnxKxnQOrUXxuHrUXxXxXxXxXxeBXxXxXxXxXxrUuHXxrUKqKqKqKqKqKqRzUZZSZSUZZSZSUZRzKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
-KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZKqKqrUrUGYrUrUrUMcrUrUrUrUrUrUrUkZrUrUrUrUrUrUrUMcrUrUrUrUrUrUKqRzUZZSZSUZZSZSUZRzKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
-KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZKqKqrUPdXxXxYVixXxRqrUEUJiLQCMXxeBXxRqXxXxSOrURqXxxSMdMdfSutrUKqRzUZZSZSUZZSZSUZRzKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
-KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZKqKqrUtgXxXxXxXxXxxprUEUXxXxXxXxxmLsLsLsLsmdrUvhXxXxMdMdXxutrUKqRzUZZSZSUZZSZSUZRzKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
-KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZKqKqrUdaXxudpLudXxBhrUEUXxXxXxXxeBXxXxXxXxXxrUwfXxXxXxXxXxutrUKqRzUZZSZSUZZSZSUZRzKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
-KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZKqKqrUXmXxudpLudXxXxrUXxXxXxXxXxeBXxXxXxXxXxrUXxXxXxXxXxXxpgrUKqRzUZZSZSUZZSZSUZRzKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
-KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZKqKqrUiFXxudpLudXxNnmqLsLsLsLsLsAGXxXxXxXxXxdKXxXxCOgZKhXxQKrUKqRzUZUZUZUZUZUZUZRzKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
-KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZKqKqrUlSXxXxXxXxXxeBUqXxXxXxXxXxeBXxXxXxXxXxUqXxQzCOgZKhXxNzrUKqRzRzRzRzRzRzRzRzRzKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
-KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZKqKqrUdAXxXxLyXxTLorrUXxXxXxXxXxeBrUrUrUrUrUrUrUrUrUrUrUwcrUrUKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
-KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZKqKqrUrUmMrUrUrUrUrUrUXxXxXxXxXxeBrUhwXxXxXxXxXxeurUpgXxXxpgrUKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
-KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZKqKqrUCqxKCQrUMphqVirUXxXxXxXxXxeBebXxXxDlDlicXxrQrUpgXxXxpgrUKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
-KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZKqKqrUxKxKxKrUMpuaVirUXxXxXxXxXxeBrUZeXxjxjSRXvQXxrUpgXxXxpgrUKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
-KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZKqKqrUmMrUmMrUMPQeNUrUrUrUrUrUrUkZrUrUrUrUrUrUrUrUrUpgXxXxpgrUKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
-KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZKqKqrUxKrUxKrUXxeBXxVVTKTKTKBPmveBTngxnwnwnwnwnwnwrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
-KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZKqKqrUtorUtorUXxeBXxajihihihePXxeBXxajihihihihihihrUUZUZUZUZUZUZUZUZUZUZUZUZUZrUKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
-KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZKqKqrUrUrUrUrUXxeBXxXxXxXxXxXxXxeBXxXxXxXxXxXxXxXxFAUZUZUZUZUZUZUZUZUZUZUZUZUZrUKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
-KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZKqKqKqKqKqKqrUXxQhLsLsLsLsLsLsLsAGXxXxXxXxXxXxXxXxEcUZUZUZUZUZUZUZUZUZUZUZUZUZrUKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
-KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZKqKqKqKqKqKqrUHxHxHxHxHxHxHxUfXxeBXxcaHxHxHxHxHxHxrUUZUZUZUZUZUZUZUZUZUZUZUZUZrUKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
-KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZKqKqKqKqKqKqrUYrYrYrYrYrYrYrwiXxeBXxgxnwnwnwnwnwnwrUUZUZUZUZUZUZUZUZUZUZUZUZUZrUKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
-KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZKqKqKqKqKqKqrUrUrUrUrUrUrUrUrUrUAPrUrUrUrUrUrUrUrUrUUZUZUZUZUZUZUZUZUZUZUZUZUZrUKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
-KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZKqKqKqKqKqKqKqKqKqKqKqKqKqrUrmNnmdXxicrUUZUZUZUZUZrUUZUZUZUZUZUZUZUZUZUZUZUZUZrUKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
-KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZKqKqKqKqKqKqKqrUrUrUrUrUrUrUicQhsqXxicrUrUrUrUrUrUrUUZUZUZUZUZUZUZUZUZUZUZUZUZrUKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
-KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZKqKqKqKqKqKqKqrUqBqBqBgngRXoXoXoBVqBqBqBqBqBqBqBqBrUUZUZUZUZUZUZUZUZUZUZUZUZUZrUKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
-KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZKqKqKqKqKqKqKqrUqBqBTfDXxtxtxtxtxtxtxtxtxtxtctqBqBrUUZUZUZUZUZUZUZUZUZUZUZUZUZrUKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
-KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZKqKqKqKqKqKqKqrUqBqBXsSQxOuRgYgYgYgYgYuRXEUZnEqBqBrUUZUZUZUZUZUZUZUZUZUZUZUZUZrUKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
-KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZKqKqKqKqKqKqKqrUqBqBbeMsMsMsMsMsMsMsMsMsMsMsoHqBqBrUUZUZUZUZUZUZUZUZUZUZUZUZUZrUKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
-KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZKqKqKqKqKqKqKqrURjqBqBqBqBqBqBqBqBqBqBqBqBqBqBqBqBrUUZUZUZUZUZUZUZUZUZUZUZUZUZrUKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
-KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZUZKqKqKqKqKqKqKqrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
+KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqrUrUrUrUrUrUrUrUrUrUrUrUrUKqKqKqKqKqKqKqKqKqKqKqKqrUlqLFYeYeksYePDLFXLrUKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
+KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqrUUZUZUZUZUZUZUZUZUZUZUZrUrUrUrUrUrUrUrUrUrUrUrURzrUYeYeYeYeksYeYeYeYerUrUrUrUrUKqRzRzRzRzRzRzRzRzRzRzRzRzRzRzKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
+KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqrUUZUZUZUZUZUZUZUZUZUZUZrUrUUZUZUZUZUZUZUZrUmGYVGRrUYeYeYelMmBlMYeYeYerUGRYVmGrUKqRzUZUZUZkuuzUZUZUZUZUZUZUZRzKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
+KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqrUUZUZUZUZUZUZUZUZUZUZUZrUrUUZUZUZUZUZUZUZrUNnLsLsjUOCaRaRDtQplMYeYeYeAzXxXxXxrUKqRzUZUZUZUZuzUZUZZSZSZSUZUZRzKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
+KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqrUrUrUrUrUrUUZUZUZUZUZUZUZUZrUrUUZUZUZUZUZUZUZrUeBXxXxrUksYeYelMlMlMYeYeYerUXxXxXxrUKqRzUZUZUZUZuzUZUZZSZSZSUZUZRzKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
+KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqrUrUrUrUrUrUrUUZUZonOtrUrUrUQfrUrUrUrUrUrUrULImnUVUVUVslLIrUeBTvmGrUksYeYeYeYeYeYeYeYerUmGTvXxrURzRzUVRzuzuzRzUZUZUZUZUZUZUZRzKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
+KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqrUUZUZaVcUqBEJUZcEUZUZUZUZUZUZUZUZUZUZUZUZCHUZUZUZUZUZUZUZCHeBTvmGrUSBYeYeYeYeYeYeYeTBrUmGTvXxUVUZUVUZUVUZUZUVUZUZUZUZUZUZUZRzKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
+KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqrUUZUZUZcUqBEJxYUZUZUZUZUZUZUZUZUZUZUZUZUZkeUZUZUZUZUZUZUZkeeBXxrUrUrUBABABAnTBABABArUrUrUXxXxrURzRzUVRzuzuzRzUZUZUZUZUZUZUZRzKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
+KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqrUUZUZIfcUqBEJUZmIUZUZUZUZUZUZUZUZUZUZUZUZrUrUrUrUrUrUrUrUrUeBXxrURqXxXxXxXxNnLsLsLsLsUwrUXxXxrUKqRzUZUZUZUZuzUZZSZSUZZSZSUZRzKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
+KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqrUrUrUrUrUqBEJUZOtUZUZUZUZUZUZUZUZUZUZUZUZrUKqKqrUKdKdKdxVrUeBXxrUXxXxlMlMlMmBlMlMlMXxXxrUXxXxrUKqRzUZUZUZUZuzUZZSZSUZZSZSUZRzKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
+KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqrUUZUZTucUqBEJUZgOUZUZUZUZUZUZUZUZUZUZUZUZrUKqKqrUyUxKxKkQrUQhLsBdLsLsDtDtDtumlMlMlMXxXxzuXxXxrUKqRzRzRzRzRzRzUZZSZSUZZSZSUZRzKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
+KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqrUUZUZUZcUqBEJecUZUZUZUZUZUZUZUZUZUZUZUZUZrUKqKqrUxnxKxnQOrUXxuHrUXxXxXxXxXxeBXxXxXxXxXxrUuHXxrUKqKqKqKqKqKqRzUZZSZSUZZSZSUZRzKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
+KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqrUUZUZrEcUqBEJUZUZUZUZUZUZUZUZUZUZUZUZUZUZrUKqKqrUrUGYrUrUrUMcrUrUrUrUrUrUrUkZrUrUrUrUrUrUrUMcrUrUrUrUrUrUKqRzUZZSZSUZZSZSUZRzKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
+KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqrUrUrUrUrUqBEJUZOtUZUZUZUZUZUZUZUZUZUZUZUZrUKqKqrUPdXxXxYVixXxRqrUEUJiLQCMXxeBXxRqXxXxSOrURqXxxSMdMdfSutrUKqRzUZZSZSUZZSZSUZRzKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
+KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqrUUZUZTDcUqBEJUZtsUZUZUZUZUZUZUZUZUZUZUZUZrUKqKqrUtgXxXxXxXxXxxprUEUXxXxXxXxxmLsLsLsLsmdrUvhXxXxMdMdXxutrUKqRzUZZSZSUZZSZSUZRzKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
+KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqrUUZUZUZcUqBEJKTUZUZUZUZUZUZUZUZUZUZUZUZUZrUKqKqrUdaXxudpLudXxBhrUEUXxXxXxXxeBXxXxXxXxXxrUwfXxXxXxXxXxutrUKqRzUZZSZSUZZSZSUZRzKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
+KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqrUUZUZSycUqBEJUZUZUZUZUZUZUZUZUZUZUZUZUZUZrUKqKqrUXmXxudpLudXxXxrUXxXxXxXxXxeBXxXxXxXxXxrUXxXxXxXxXxXxpgrUKqRzUZZSZSUZZSZSUZRzKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
+KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqrUrUrUrUrUqBEJUZUZQmOtUZUZUZUZUZUZUZUZUZUZrUKqKqrUiFXxudpLudXxNnmqLsLsLsLsLsAGXxXxXxXxXxdKXxXxCOgZKhXxQKrUKqRzUZUZUZUZUZUZUZRzKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
+KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqrUUZUZYtcUqBEJUZuuUZUZUZUZUZUZUZUZUZUZUZUZrUKqKqrUlSXxXxXxXxXxeBUqXxXxXxXxXxeBXxXxXxXxXxUqXxQzCOgZKhXxNzrUKqRzRzRzRzRzRzRzRzRzKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
+KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqrUUZUZUZcUqBEJsPUZUZUZUZUZUZUZUZUZUZUZUZUZrUKqKqrUdAXxXxLyXxTLorrUXxXxXxXxXxeBrUrUrUrUrUrUrUrUrUrUrUwcrUrUKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
+KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqrUUZUZwPcUqBEJUZUZUZUZUZUZUZUZUZUZUZUZUZUZrUKqKqrUrUmMrUrUrUrUrUrUXxXxXxXxXxeBrUhwXxXxXxXxXxeurUpgXxXxpgrUKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
+KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqrUrUrUrUrUqBEJUZUZSZOtUZUZUZUZUZUZUZUZUZUZrUKqKqrUCqxKCQrUMphqVirUXxXxXxXxXxeBebXxXxDlDlicXxrQrUpgXxXxpgrUKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
+KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqrUUZUZKxcUqBEJUZffUZUZUZUZUZUZUZUZUZUZUZUZrUKqKqrUxKxKxKrUMpuaVirUXxXxXxXxXxeBrUZeXxjxjSRXvQXxrUpgXxXxpgrUKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
+KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqrUUZUZUZcUqBEJDOUZUZUZUZUZUZUZUZUZUZUZUZUZrUKqKqrUmMrUmMrUMPQeNUrUrUrUrUrUrUkZrUrUrUrUrUrUrUrUrUpgXxXxpgrUKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
+KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqrUUZUZBwcUqBEJUZUZUZUZUZUZUZUZUZUZUZUZUZUZrUKqKqrUxKrUxKrUXxeBXxVVTKTKTKBPmveBTngxnwnwnwnwnwnwrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
+KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqrUrUrUrUrUqBEJUZUZmjOtUZUZUZUZUZUZUZUZUZUZrUKqKqrUtorUtorUXxeBXxajihihihePXxeBXxajihihihihihihrUUZUZUZUZUZUZUZUZUZUZUZUZUZrUKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
+KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqrUUZUZqkcUqBEJUZvGUZUZUZUZUZUZUZUZUZUZUZUZrUKqKqrUrUrUrUrUXxeBXxXxXxXxXxXxXxeBXxXxXxXxXxXxXxXxFAUZUZUZUZUZUZUZUZUZUZUZUZUZrUKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
+KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqrUUZUZUZcUqBEJLvUZUZUZAZUZluUZUZUZUZUZUZUZrUKqKqKqKqKqKqrUXxQhLsLsLsLsLsLsLsAGXxXxXxXxXxXxXxXxEcUZUZUZUZUZUZUZUZUZUZUZUZUZrUKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
+KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqrUUZUZxzcUqBEJUZUZUZUZUZcDUZUZLwIPUZUZUZUZrUKqKqKqKqKqKqrUHxHxHxHxHxHxHxUfXxeBXxcaHxHxHxHxHxHxrUUZUZUZUZUZUZUZUZUZUZUZUZUZrUKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
+KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqrUrUrUrUrUrUrUrUrUrUEJEJEJEJEJrUrUrUrUQfrUrUrUrUKqKqKqKqrUYrYrYrYrYrYrYrwiXxeBXxgxnwnwnwnwnwnwrUUZUZUZUZUZUZUZUZUZUZUZUZUZrUKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
+KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqrUqBqBqBqBqBrUKqrUUZUZUZUZUZrUKqKqKqKqrUrUrUrUrUrUrUrUrUrUAPrUrUrUrUrUrUrUrUrUUZUZUZUZUZUZUZUZUZUZUZUZUZrUKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
+KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqrUrUcUcUcUrUrUKqrUUZUZUZUZUZrUKqKqKqKqKqKqKqKqKqKqKqrUrmNnmdXxicrUUZUZUZUZUZrUUZUZUZUZUZUZUZUZUZUZUZUZUZrUKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
+KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqrUcUlVUZeUcUrUKqrUUZUZUZUZUZrUKqKqKqKqKqrUrUrUrUrUrUrUicQhsqXxicrUrUrUrUrUrUrUUZUZUZUZUZUZUZUZUZUZUZUZUZrUKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
+KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqrUcUUZUZUZcUrUKqrUUZUZUZUZUZrUKqKqKqKqKqrUqBqBqBgngRXoXoXoBVqBqBqBqBqBqBqBqBrUUZUZUZUZUZUZUZUZUZUZUZUZUZrUKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
+KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqrUcUUZUZUZcUrUKqrUUZUZUZUZUZrUKqKqKqKqKqrUqBqBTfDXxtxtxtxtxtxtxtxtxtxtctqBqBrUUZUZUZUZUZUZUZUZUZUZUZUZUZrUKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
+KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqrUrUcUcUcUrUrUKqrUUZUZUZUZUZrUKqKqKqKqKqrUqBqBXsSQxOuRgYgYgYgYgYuRXEUZnEqBqBrUUZUZUZUZUZUZUZUZUZUZUZUZUZrUKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
+KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqrUrUrUrUrUrUrUKqrUrUrUrUrUrUrUKqKqKqKqKqrUqBqBbeMsMsMsMsMsMsMsMsMsMsMsoHqBqBrUUZUZUZUZUZUZUZUZUZUZUZUZUZrUKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
+KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqrURjqBqBqBqBqBqBqBqBqBqBqBqBqBqBqBqBrUUZUZUZUZUZUZUZUZUZUZUZUZUZrUKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
+KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUrUKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
 KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
 KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
 KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
