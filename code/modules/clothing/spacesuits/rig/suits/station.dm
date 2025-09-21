@@ -414,7 +414,7 @@ Technomancer RIG
 		bio = 100,
 		rad = 100
 	)
-	req_access = list(access_medical)
+	req_one_access = list(access_medical)
 	seal_delay = 10 //quick deploy for quick recovery
 	ablative_max = 15
 	ablation = ABLATION_CERAMIC
