@@ -349,7 +349,7 @@
 "jQ" = (/obj/effect/floor_decal/industrial_plant,/turf/simulated/floor/industrial/black_large_slates,/area/space)
 "jS" = (/obj/machinery/power/smes/buildable{RCon_tag = "Engine - Main - 2"; charge = 5e+006; cur_coils = 4; input_attempt = 1; input_level = 5e+006; input_level_max = 5e+006; output_attempt = 1; output_level = 5e+006; output_level_max = 5e+006},/turf/simulated/floor/reinforced,/area/space)
 "jT" = (/obj/structure/railing/grey{dir = 4},/obj/machinery/door/firedoor,/obj/structure/table/glass,/obj/effect/floor_decal/industrial_plant/steel_grate_border{dir = 1},/turf/simulated/floor/tiled/dark/techfloor,/area/space)
-"jU" = (/obj/effect/floor_decal/industrial_plant/steel_grate_border{dir = 1},/obj/machinery/door/firedoor,/obj/machinery/door/airlock/glass_engineering{name = "Engineering Lobby Access"; req_access = list(10)},/obj/structure/disposalpipe/segment{dir = 8},/turf/simulated/floor/tiled/dark,/area/space)
+"jU" = (/obj/effect/floor_decal/industrial_plant/steel_grate_border{dir = 1},/obj/machinery/door/firedoor,/obj/structure/disposalpipe/segment{dir = 8},/turf/simulated/floor/tiled/dark,/area/space)
 "jV" = (/obj/effect/floor_decal/industrial/warningred{dir = 4},/turf/simulated/floor/tiled/dark/cargo,/area/space)
 "jX" = (/obj/structure/table/glass,/turf/simulated/floor/tiled/steel/bar_light,/area/space)
 "jY" = (/obj/machinery/button/windowtint,/turf/simulated/wall/iskhod_blue,/area/space)
@@ -952,7 +952,7 @@
 "zq" = (/obj/effect/floor_decal/industrial/warningred{dir = 4},/obj/structure/window/basic/iskhod{dir = 4},/obj/structure/multiz/stairs/active/bottom{dir = 8},/turf/simulated/floor/tiled/white/cargo,/area/space)
 "zr" = (/obj/effect/shuttle_landmark/mercshuttle_colony,/turf/simulated/floor/tiled/dark/gray_platform,/area/space)
 "zt" = (/obj/structure/flora/small/snow/rock6,/turf/simulated/floor/snow/smooth{icon_state = "snow0"},/area/space)
-"zu" = (/obj/machinery/door/firedoor,/obj/effect/floor_decal/industrial_plant/steel_grate_border{dir = 1},/obj/machinery/door/airlock/glass_engineering{name = "Engineering Front Desk"; req_access = list(10)},/turf/simulated/floor/tiled/dark,/area/space)
+"zu" = (/obj/machinery/door/firedoor,/obj/effect/floor_decal/industrial_plant/steel_grate_border{dir = 1},/turf/simulated/floor/tiled/dark,/area/space)
 "zv" = (/obj/structure/railing{dir = 8; tag = "icon-railing0 (WEST)"},/turf/simulated/shuttle/floor/mining{icon_state = "9,23"},/area/space)
 "zw" = (/obj/structure/catwalk{icon_state = "catwalk3-0"},/obj/structure/grille,/obj/structure/barricade,/turf/simulated/floor/plating/under,/area/space)
 "zx" = (/obj/machinery/vending/printomat,/obj/machinery/power/apc{dir = 1; name = "North APC"; pixel_y = 28},/turf/simulated/floor/industrial/concrete_bricks,/area/space)
@@ -994,7 +994,6 @@
 "Aw" = (/turf/simulated/shuttle/wall/science{icon_state = "11,6"},/area/space)
 "Ax" = (/obj/structure/flora/pottedplant/minitree,/turf/simulated/floor/wood,/area/space)
 "Ay" = (/obj/machinery/door/firedoor,/obj/machinery/door/airlock,/turf/simulated/floor/tiled/dark/techfloor,/area/space)
-"Az" = (/obj/effect/floor_decal/industrial_plant/steel_grate_border{dir = 1},/obj/machinery/door/firedoor,/obj/machinery/door/airlock/glass_engineering{name = "Engineering Lobby Access"; req_access = list(10)},/turf/simulated/floor/tiled/dark,/area/space)
 "AA" = (/obj/structure/lattice,/turf/simulated/wall/iskhod_red,/area/space)
 "AB" = (/obj/machinery/vending/tool,/turf/simulated/floor/industrial/concrete_bricks,/area/space)
 "AC" = (/obj/structure/shuttle_part/science{icon_state = "8,21"},/obj/effect/shuttle_landmark/vasiliy_home,/turf/simulated/floor/reinforced,/area/space)
@@ -1016,7 +1015,7 @@
 "Ba" = (/obj/structure/closet/secure_closet/freezer/meat,/turf/simulated/floor/tiled/white,/area/space)
 "Bb" = (/obj/structure/railing/grey{dir = 4},/obj/structure/lattice,/turf/simulated/open,/area/space)
 "Bc" = (/obj/machinery/door/firedoor,/obj/effect/floor_decal/industrial_plant/steel_grate_warning{dir = 1},/turf/simulated/floor/tiled/dark/techfloor,/area/space)
-"Bd" = (/obj/machinery/door/firedoor,/obj/effect/floor_decal/industrial_plant/steel_grate_border{dir = 1},/obj/machinery/door/airlock/glass_engineering{name = "Engineering Front Desk"; req_access = list(10)},/obj/structure/disposalpipe/segment{dir = 8},/turf/simulated/floor/tiled/dark,/area/space)
+"Bd" = (/obj/machinery/door/firedoor,/obj/effect/floor_decal/industrial_plant/steel_grate_border{dir = 1},/obj/structure/disposalpipe/segment{dir = 8},/turf/simulated/floor/tiled/dark,/area/space)
 "Be" = (/obj/structure/disposalpipe/segment{dir = 4; icon_state = "pipe-c"},/turf/simulated/floor/wood/wild3,/area/space)
 "Bf" = (/obj/structure/catwalk,/obj/machinery/atmospherics/unary/vent_scrubber,/turf/simulated/floor/plating/under,/area/space)
 "Bg" = (/turf/simulated/shuttle/wall/science{icon_state = "4,7"},/area/space)
@@ -2096,7 +2095,7 @@ KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
 KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqrUrUrUrUrUrUrUrUrUrUrUrUrUKqKqKqKqKqKqKqKqKqKqKqKqrUlqLFYeYeksYePDLFXLrUKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
 KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqrUUZUZUZUZUZUZUZUZUZUZUZrUrUrUrUrUrUrUrUrUrUrUrURzrUYeYeYeYeksYeYeYeYerUrUrUrUrUKqRzRzRzRzRzRzRzRzRzRzRzRzRzRzKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
 KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqrUUZUZUZUZUZUZUZUZUZUZUZrUrUUZUZUZUZUZUZUZrUmGYVGRrUYeYeYelMmBlMYeYeYerUGRYVmGrUKqRzUZUZUZkuuzUZUZUZUZUZUZUZRzKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
-KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqrUUZUZUZUZUZUZUZUZUZUZUZrUrUUZUZUZUZUZUZUZrUNnLsLsjUOCaRaRDtQplMYeYeYeAzXxXxXxrUKqRzUZUZUZUZuzUZUZZSZSZSUZUZRzKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
+KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqrUUZUZUZUZUZUZUZUZUZUZUZrUrUUZUZUZUZUZUZUZrUNnLsLsjUOCaRaRDtQplMYeYeYezoXxXxXxrUKqRzUZUZUZUZuzUZUZZSZSZSUZUZRzKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
 KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqrUrUrUrUrUrUUZUZUZUZUZUZUZUZrUrUUZUZUZUZUZUZUZrUeBXxXxrUksYeYelMlMlMYeYeYerUXxXxXxrUKqRzUZUZUZUZuzUZUZZSZSZSUZUZRzKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
 KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqrUrUrUrUrUrUrUUZUZonOtrUrUrUQfrUrUrUrUrUrUrULImnUVUVUVslLIrUeBTvmGrUksYeYeYeYeYeYeYeYerUmGTvXxrURzRzUVRzuzuzRzUZUZUZUZUZUZUZRzKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
 KqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqrUUZUZaVcUqBEJUZcEUZUZUZUZUZUZUZUZUZUZUZUZCHUZUZUZUZUZUZUZCHeBTvmGrUSBYeYeYeYeYeYeYeTBrUmGTvXxUVUZUVUZUVUZUZUVUZUZUZUZUZUZUZRzKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKqKq
