@@ -199,9 +199,11 @@
 
 	//Always trunc so that way we avoid matter doups with 0.2 steel sheets
 	if(materials_stored[material_type] + M.amount > storage_capacity)
-		materials_used = trunc(storage_capacity - materials_stored[material_type])
+		materials_used = sign(storage_capacity - materials_stored[material_type])
 	else
-		materials_used = trunc(M.amount)
+		materials_used = ceil(M.amount)
+		materials_used = floor(M.amount)
+		materials_used = fract(M.amount)
 
 
 
