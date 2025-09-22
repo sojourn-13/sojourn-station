@@ -78,9 +78,9 @@ var/last_staff_request_time = 0
         if(copyitem)
             dat += "<a href ='byond://?src=\ref[src];remove=1'>Remove Item</a><br>"
 
-	user << browse(HTML_SKELETON(dat), "window=copier")
-	onclose(user, "copier")
-	return
+    user << browse(HTML_SKELETON(dat), "window=copier")
+    onclose(user, "copier")
+    return
 
 /obj/machinery/photocopier/faxmachine/attackby(obj/item/I, mob/user)
     if(istype(I, /obj/item/card/id) && user.unEquip(I))
