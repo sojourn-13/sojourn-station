@@ -32549,9 +32549,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 9
 	},
-/obj/machinery/light/small{
-	dir = 8
-	},
 /obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/rnd/xenobiology/xenoflora)
@@ -91101,8 +91098,8 @@
 /obj/structure/railing{
 	dir = 1
 	},
-/obj/machinery/camera/network/research{
-	dir = 4
+/obj/machinery/light/small{
+	dir = 8
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/rnd/xenobiology/xenoflora)
