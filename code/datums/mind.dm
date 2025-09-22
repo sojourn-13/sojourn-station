@@ -138,7 +138,7 @@
 			output += "<br><b>Your [A.role_text] objectives:</b>"
 		output += "[A.print_objectives(FALSE)]"
 	output += print_individualobjectives()
-	recipient << browse(output, "window=memory")
+	recipient << browse(HTML_SKELETON_TITLE("[current.real_name]'s Memory",output), "window=memory")
 
 /datum/mind/proc/edit_memory()
 	if(SSticker.current_state != GAME_STATE_PLAYING)

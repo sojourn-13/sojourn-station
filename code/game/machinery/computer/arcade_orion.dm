@@ -96,7 +96,7 @@
 		if(ORION_VIEW_MAIN)
 			if(event == ORION_TRAIL_START) //new game? New game.
 				dat = "<center><h1>Chromin Trail[emagged ? ": Realism Edition" : ""]</h1><br>Learn how our ancestors got to Chromin 8, and have fun in the process!</center><br><P ALIGN=Right><a href='?src=\ref[src];continue=1'>Start New Game</a></P>"
-				user << browse(dat, "window=arcade")
+				user << browse(HTML_SKELETON(dat), "window=arcade")
 				return
 			else
 				event_title = event

@@ -574,21 +574,21 @@
 		return pick(L)
 
 //Tells everyone thats living to awaken, if in range.
-//If you run this proc a lot use care_about_sightline = TRUE as an optimization
-/proc/activate_mobs_in_range(atom/caller , distance, care_about_sightline = TRUE)
-	var/turf/starting_point = get_turf(caller)
+//If you run this proc a lot use orgin = TRUE as an optimization
+/proc/activate_mobs_in_range(atom/orgin , distance, care_about_sightline = TRUE)
+	var/turf/starting_point = get_turf(orgin)
 	if(!starting_point)
 		return FALSE
 	if(!care_about_sightline)
 		for(var/mob/living/potential_attacker in orange(distance, starting_point))
-			if(potential_attacker == caller)
+			if(potential_attacker == orgin)
 				continue
 			if(potential_attacker.stat == DEAD)
 				continue
 			potential_attacker.try_activate_ai()
 	else
 		for(var/mob/living/potential_attacker in ohearers(distance, starting_point))
-			if(potential_attacker == caller)
+			if(potential_attacker == orgin)
 				continue
 			if(potential_attacker.stat == DEAD)
 				continue
