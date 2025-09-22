@@ -94,5 +94,6 @@
 	new /obj/item/oddity/chem_book(src)
 	new /obj/item/clothing/accessory/holster/saber/rapiersci/occupied(src)
 	new /obj/item/gun/energy/glock/sci(src)
+	new /obj/item/clothing/accessory/holster/waist(src)
 	new /obj/item/cell/medium/moebius/high(src)
 	new /obj/item/cell/medium/moebius/high(src)
