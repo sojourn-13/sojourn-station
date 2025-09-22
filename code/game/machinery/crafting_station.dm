@@ -197,15 +197,11 @@
 		to_chat(user, SPAN_WARNING("The [src] is full of [material_type]."))
 		return
 
-	//Always trunc so that way we avoid matter doups with 0.2 steel sheets
+	//Always trunc but trunc dosnt atm complie so silently subtract half and round, this is affectively doing the same outside the most minor of cases
 	if(materials_stored[material_type] + M.amount > storage_capacity)
-		materials_used = sign(storage_capacity - materials_stored[material_type])
+		materials_used = round(storage_capacity - materials_stored[material_type] - 0.5)
 	else
-		materials_used = ceil(M.amount)
-		materials_used = floor(M.amount)
-		materials_used = fract(M.amount)
-
-
+		materials_used = round(M.amount)
 
 	materials_stored[material_type] += materials_used
 
