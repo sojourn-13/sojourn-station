@@ -59,9 +59,10 @@
 	item_state = "format_bound_small"
 	fire_sound = 'sound/weapons/rail.ogg'
 	charge_cost = 50
+	w_class = ITEM_SIZE_SMALL
 	gun_tags = list(GUN_PROJECTILE, GUN_LASER, GUN_ENERGY)
 	suitable_cell = /obj/item/cell/medium
-	fire_delay = 6
+	fire_delay = 5
 	init_recoil = CARBINE_RECOIL(0.8)
 	can_dual = TRUE
 	damage_multiplier = 1.5
