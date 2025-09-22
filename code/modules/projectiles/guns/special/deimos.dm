@@ -24,16 +24,10 @@
 	// Pre-load with one rocket
 	var/obj/item/ammo_casing/rocket/loaded_rocket = new /obj/item/ammo_casing/rocket/disposable(src)
 	rockets += loaded_rocket
-	var/scale_val = 1
-	if(!icon_scale)
-		scale_val = 1
-	else
-		scale_val = icon_scale
-	add_new_transformation(/datum/transform_type/modular, list(scale_x = scale_val, scale_y = scale_val))
 	// Ensure the correct empty/loaded icon is applied on spawn (no magazine preloaded)
 	update_icon()
 
-	
+
 /obj/item/gun/launcher/rocket/deimos/panah/update_icon()
 	if(fired)
 		icon_state = "panah_spent"
@@ -349,12 +343,8 @@
 
 /obj/item/gun/projectile/shotgun/pump/deimos/golok/New()
 	..()
-	var/scale_val = 1
-	if(!icon_scale)
-		scale_val = 1
-	else
-		scale_val = icon_scale
-	add_new_transformation(/datum/transform_type/modular, list(scale_x = scale_val, scale_y = scale_val))
+
+
 	// Ensure the correct empty/loaded icon is applied on spawn (no magazine preloaded)
 	update_icon()
 
@@ -448,12 +438,8 @@
 
 /obj/item/gun/projectile/shotgun/pump/deimos/parang/New()
 	..()
-	var/scale_val = 1
-	if(!icon_scale)
-		scale_val = 1
-	else
-		scale_val = icon_scale
-	add_new_transformation(/datum/transform_type/modular, list(scale_x = scale_val, scale_y = scale_val))
+
+
 	// Ensure the correct empty/loaded icon is applied on spawn (no magazine preloaded)
 	update_icon()
 
@@ -489,12 +475,8 @@
 
 /obj/item/gun/projectile/deimos/tombak/New()
 	..()
-	var/scale_val = 1
-	if(!icon_scale)
-		scale_val = 1
-	else
-		scale_val = icon_scale
-	add_new_transformation(/datum/transform_type/modular, list(scale_x = scale_val, scale_y = scale_val))
+
+
 	// Ensure the correct empty/loaded icon is applied on spawn (no magazine preloaded)
 	update_icon()
 
@@ -560,12 +542,8 @@
 
 /obj/item/gun/projectile/deimos/palu/New()
 	..()
-	var/scale_val = 1
-	if(!icon_scale)
-		scale_val = 1
-	else
-		scale_val = icon_scale
-	add_new_transformation(/datum/transform_type/modular, list(scale_x = scale_val, scale_y = scale_val))
+
+
 	// Ensure the correct empty/loaded icon is applied on spawn (no magazine preloaded)
 	update_icon()
 
@@ -605,12 +583,8 @@
 	)
 /obj/item/gun/projectile/deimos/celurit/New()
 	..()
-	var/scale_val = 1
-	if(!icon_scale)
-		scale_val = 1
-	else
-		scale_val = icon_scale
-	add_new_transformation(/datum/transform_type/modular, list(scale_x = scale_val, scale_y = scale_val))
+
+
 	// Ensure the correct empty/loaded icon is applied on spawn (no magazine preloaded)
 	update_icon()
 
@@ -658,15 +632,11 @@
 		SEMI_AUTO_NODELAY,
 		BURST_2_ROUND
 	)
-	
+
 /obj/item/gun/projectile/deimos/keris/New()
 	..()
-	var/scale_val = 1
-	if(!icon_scale)
-		scale_val = 1
-	else
-		scale_val = icon_scale
-	add_new_transformation(/datum/transform_type/modular, list(scale_x = scale_val, scale_y = scale_val))
+
+
 	// Ensure the correct empty/loaded icon is applied on spawn (no magazine preloaded)
 	update_icon()
 
