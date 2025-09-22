@@ -518,6 +518,7 @@
 
 	var/move_onto_next = FALSE
 	var/burst_delay_pre = burst_delay
+	var/steel_rain_shot = FALSE //Tracks if we are a fast free shot or not.
 
 	var/i = burst
 	while(i)
@@ -545,6 +546,7 @@
 				projectile = pew
 				burst_delay = 0.1 //Shoot every basically at once
 				shoot_time = 0.1
+				steel_rain_shot = TRUE
 			else
 				//normal shooting again
 				burst_delay = burst_delay_pre
@@ -552,6 +554,7 @@
 				projectile = Project
 				Project = null
 				move_onto_next = TRUE
+				steel_rain_shot = FALSE
 		else
 			//we are not a bullet thus have no reason to stick around
 			move_onto_next = TRUE
@@ -609,7 +612,13 @@
 				var/obj/item/projectile/P = projectile
 				P.proj_color = projectile_color
 
-		if(0 >= i) //Wait till the full burst of the gun before doing this.
+		//We do steel rain shot slightly wierd as we want to add the recoil but not handle post fire yet
+		if(steel_rain_shot)
+			process_projectile(projectile, user, target, user.targeted_organ, clickparams)
+			kickback(user, projectile, 0)
+			user.handle_recoil(src)
+
+		if(0 <= i && !steel_rain_shot)
 			if(process_projectile(projectile, user, target, user.targeted_organ, clickparams))
 				handle_post_fire(user, target, pointblank, reflex, projectile)
 				update_icon()
