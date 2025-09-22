@@ -197,10 +197,11 @@
 		to_chat(user, SPAN_WARNING("The [src] is full of [material_type]."))
 		return
 
+	//Always trunc so that way we avoid matter doups with 0.2 steel sheets
 	if(materials_stored[material_type] + M.amount > storage_capacity)
-		materials_used = storage_capacity - materials_stored[material_type]
+		materials_used = trunc(storage_capacity - materials_stored[material_type])
 	else
-		materials_used = M.amount
+		materials_used = trunc(M.amount)
 
 	materials_stored[material_type] += materials_used
 
