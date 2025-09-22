@@ -240,7 +240,7 @@ GLOBAL_VAR_INIT(score_technomancer_faction_item_loss, 0)
 
 	GLOB.ironhammer_score = GLOB.initial_ironhammer_score + GLOB.ironhammer_objectives_score + GLOB.score_antag_contracts + GLOB.ironhammer_operative_dead_score + GLOB.captured_or_dead_antags_score
 
-	//Lonestar score 
+	//Lonestar score
 	GLOB.score_guild_faction_item_loss -= 150 * GLOB.guild_faction_item_loss // ~-300
 	GLOB.guild_objectives_score = GLOB.guild_objectives_completed * 25 // ~100
 	GLOB.guild_profit_score	= round(GLOB.supply_profit/50) // ? review it //target_max~500//
@@ -365,7 +365,7 @@ GLOBAL_VAR_INIT(score_technomancer_faction_item_loss, 0)
 	dat += "<br><hr>"
 	dat += "<b><u>Your total score is:</u></b> [get_color_score(final_score, final_score, max_personal_score)] Points<br>"
 
-	src << browse(dat, "window=roundstats;size=500x600")
+	src << browse(HTML_SKELETON(dat), "window=roundstats;size=500x600")
 
 /mob/proc/get_faction_score()
 	if(mind && mind.assigned_job && mind.assigned_job.department)

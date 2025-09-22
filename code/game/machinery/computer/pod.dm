@@ -112,7 +112,7 @@
 	if(..())
 		return
 
-	var/dat = "<HTML><BODY><TT><B>[title]</B>"
+	var/dat = "<TT><B>[title]</B>"
 	user.set_machine(src)
 	if(connected)
 		var/d2
@@ -133,8 +133,8 @@
 		dat += "<HR>\nPower Level: [temp]<BR>\n<A href = '?src=\ref[src];alarm=1'>Firing Sequence</A><BR>\n<A href = '?src=\ref[src];drive=1'>Test Fire Driver</A><BR>\n<A href = '?src=\ref[src];door=1'>Toggle Outer Door</A><BR>"
 	else
 		dat += "<BR>\n<A href = '?src=\ref[src];door=1'>Toggle Outer Door</A><BR>"
-	dat += "<BR><BR><A href='?src=\ref[user];mach_close=computer'>Close</A></TT></BODY></HTML>"
-	user << browse(dat, "window=computer;size=400x500")
+	dat += "<BR><BR><A href='?src=\ref[user];mach_close=computer'>Close</A></TT>"
+	user << browse(HTML_SKELETON_TITLE("[title]", dat), "window=computer;size=400x500")
 	add_fingerprint(usr)
 	onclose(user, "computer")
 	return

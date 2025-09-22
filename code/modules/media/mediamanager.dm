@@ -137,7 +137,7 @@
 		if(2)
 			playerstyle = PLAYER_HTML5_HTML
 	owner << browse(null, "window=[WINDOW_ID]")
-	owner << browse(playerstyle, "window=[WINDOW_ID]")
+	owner << browse(HTML_SKELETON(playerstyle), "window=[WINDOW_ID]")
 	send_update()
 
 // Tell the player to play something via JS.

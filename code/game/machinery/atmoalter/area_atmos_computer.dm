@@ -28,9 +28,35 @@
 			return
 		src.add_fingerprint(usr)
 		var/dat = {"
-		<html>
-			<head>
-				<style type="text/css">
+				<center><h1>Area Air Control</h1></center>
+				<font color="red">[status]</font><br>
+				<a href="?src=\ref[src];scan=1">Scan</a>
+				<table border="1" width="90%">"}
+		for(var/obj/machinery/portable_atmospherics/powered/scrubber/huge/scrubber in connectedscrubbers)
+			dat += {"
+					<tr>
+						<td>
+							[scrubber.name]<br>
+							Pressure: [round(scrubber.air_contents.return_pressure(), 0.01)] kPa<br>
+							Flow Rate: [round(scrubber.last_flow_rate,0.1)] L/s<br>
+						</td>
+						<td width="150">
+							<a class="green" href="?src=\ref[src];scrub=\ref[scrubber];toggle=1">Turn On</a>
+							<a class="red" href="?src=\ref[src];scrub=\ref[scrubber];toggle=0">Turn Off</a><br>
+							Load: [round(scrubber.last_power_draw)] W
+						</td>
+					</tr>"}
+
+		dat += {"
+				</table><br>
+				<i>[zone]</i>
+				"}
+
+		status = ""
+
+		var/datum/browser/popup = new (usr, "area_atmos_computer","Area Air Control", 400, 400)
+		popup.set_content(dat)
+		popup.add_head_content({"<style type="text/css">
 					a.green:link
 					{
 						color:#00CC00;
@@ -63,35 +89,8 @@
 					{
 						color:#FF0000;
 					}
-				</style>
-			</head>
-			<body>
-				<center><h1>Area Air Control</h1></center>
-				<font color="red">[status]</font><br>
-				<a href="?src=\ref[src];scan=1">Scan</a>
-				<table border="1" width="90%">"}
-		for(var/obj/machinery/portable_atmospherics/powered/scrubber/huge/scrubber in connectedscrubbers)
-			dat += {"
-					<tr>
-						<td>
-							[scrubber.name]<br>
-							Pressure: [round(scrubber.air_contents.return_pressure(), 0.01)] kPa<br>
-							Flow Rate: [round(scrubber.last_flow_rate,0.1)] L/s<br>
-						</td>
-						<td width="150">
-							<a class="green" href="?src=\ref[src];scrub=\ref[scrubber];toggle=1">Turn On</a>
-							<a class="red" href="?src=\ref[src];scrub=\ref[scrubber];toggle=0">Turn Off</a><br>
-							Load: [round(scrubber.last_power_draw)] W
-						</td>
-					</tr>"}
-
-		dat += {"
-				</table><br>
-				<i>[zone]</i>
-			</body>
-		</html>"}
-		user << browse("[dat]", "window=miningshuttle;size=400x400")
-		status = ""
+					</style>"})
+		popup.open()
 
 	Topic(href, href_list)
 		if(..())

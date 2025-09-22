@@ -88,7 +88,7 @@ SUBSYSTEM_DEF(vote)
 /datum/controller/subsystem/vote/proc/interface(client/C)
 	if(!C)
 		return
-	var/data = "<html><head><title>Voting Panel</title></head><body>"
+	var/data = ""
 
 	var/admin = check_rights(R_ADMIN|R_MOD|R_FUN, FALSE, C)
 
@@ -156,8 +156,8 @@ SUBSYSTEM_DEF(vote)
 			data += "<li><i>There is no available votes here now.</i></li>"
 
 		data += "</ul><hr>"
-	data += "<a href='?src=\ref[src];close=1' style='position:absolute;right:50px'>Close</a></body></html>"
-	return data
+	data += "<a href='?src=\ref[src];close=1' style='position:absolute;right:50px'>Close</a>"
+	return HTML_SKELETON_TITLE("Voting Panel", data)
 
 
 /datum/controller/subsystem/vote/Topic(href,href_list[],hsrc)
