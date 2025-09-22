@@ -105,7 +105,7 @@
 		var/list/recipe_data = recipe.get_ui_data(user, productivity_bonus)
 
 		recipes += list(recipe_data)
-	
+
 	data["recipes"] = recipes
 	return data
 
@@ -148,7 +148,7 @@
 	switch(action)
 		if("craft")
 			var/type = text2path(params["type"])
-			
+
 			var/datum/recipe_crafting_station/recipe = GLOB.all_crafting_station_recipes[type]
 			if(!istype(recipe))
 				to_chat(usr, SPAN_DANGER("BUG: [type] is an unrecogized crafting recipe."))
@@ -169,7 +169,7 @@
 				var/list/costs = recipe.get_cost(usr, productivity_bonus)
 				for(var/mat in costs)
 					materials_stored[mat] -= costs[mat]
-				
+
 				recipe.make_result(usr, src, productivity_bonus)
 				. = TRUE
 
@@ -197,10 +197,11 @@
 		to_chat(user, SPAN_WARNING("The [src] is full of [material_type]."))
 		return
 
+	//Always trunc but trunc dosnt atm complie so silently subtract half and round, this is affectively doing the same outside the most minor of cases
 	if(materials_stored[material_type] + M.amount > storage_capacity)
-		materials_used = storage_capacity - materials_stored[material_type]
+		materials_used = round(storage_capacity - materials_stored[material_type] - 0.5)
 	else
-		materials_used = M.amount
+		materials_used = round(M.amount)
 
 	materials_stored[material_type] += materials_used
 
