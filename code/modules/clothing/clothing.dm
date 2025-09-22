@@ -22,6 +22,8 @@
 							/obj/item/tool_upgrade/refinement = TRUE,
 							/obj/item/gun_upgrade = TRUE, // Goodbye tacticool clothing
 							/obj/item/tool_upgrade/artwork_tool_mod = TRUE)
+	var/tally_locking = -100
+
 
 /obj/item/clothing/Initialize(mapload, ...)
 	. = ..()

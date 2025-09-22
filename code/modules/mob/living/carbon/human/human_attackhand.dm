@@ -222,9 +222,9 @@
 
 			var/real_damage = stat_damage
 			real_damage += attack.get_unarmed_damage(H)
-			real_damage *= damage_multiplier
+			real_damage *= cqc_damage_multiplier
 			real_damage += H.punch_damage_increase
-			stat_damage *= damage_multiplier
+			stat_damage *= cqc_damage_multiplier
 
 			if(HULK in H.mutations)
 				real_damage *= 2 // Hulks do twice the damage
@@ -417,7 +417,7 @@
 	for(var/datum/unarmed_attack/u_attack in species.unarmed_attacks)
 		dat += "<b>Primarily [u_attack.attack_name] </b><br/><br/><br/>"
 
-	src << browse(dat, "window=checkattack")
+	src << browse(HTML_SKELETON(dat), "window=checkattack")
 	return
 
 /mob/living/carbon/human/check_attacks()
@@ -432,7 +432,7 @@
 		else
 			dat += "<b>Primarily [u_attack.attack_name]</b> - <a href='byond://?src=\ref[src];default_attk=\ref[u_attack]'>set default</a><br/><br/><br/>"
 
-	src << browse(dat, "window=checkattack")
+	src << browse(HTML_SKELETON(dat), "window=checkattack")
 
 /mob/living/carbon/human/Topic(href, href_list)
 	if(href_list["default_attk"])

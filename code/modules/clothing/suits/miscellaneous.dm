@@ -10,6 +10,7 @@
 	body_parts_covered = UPPER_TORSO
 	allowed = list (/obj/item/gun/energy/lasertag)
 	siemens_coefficient = 3.0
+	tally_locking = 2
 
 /obj/item/clothing/suit/fluff/redtag
 	name = "red plasma tag armour"
@@ -20,6 +21,7 @@
 	body_parts_covered = UPPER_TORSO
 	allowed = list (/obj/item/gun/energy/lasertag)
 	siemens_coefficient = 3.0
+	tally_locking = 2
 
 /obj/item/clothing/suit/fluff/greentag
 	name = "green plasma tag armour"
@@ -30,6 +32,7 @@
 	body_parts_covered = UPPER_TORSO
 	allowed = list (/obj/item/gun/energy/lasertag)
 	siemens_coefficient = 3.0
+	tally_locking = 2
 
 /obj/item/clothing/suit/fluff/yellowtag
 	name = "yellow plasma tag armour"
@@ -40,6 +43,7 @@
 	body_parts_covered = UPPER_TORSO
 	allowed = list (/obj/item/gun/energy/lasertag)
 	siemens_coefficient = 3.0
+	tally_locking = 2
 
 /obj/item/clothing/suit/cyborg_suit
 	name = "cyborg suit"
@@ -465,7 +469,6 @@ obj/item/clothing/suit/gownrisque/alt
 	price_tag = 50
 
 /obj/item/clothing/suit/hev
-
 	name = "Hazardous Enviroment Protection suit" //funny reference suit. stronk rare and includes some degree of fire and hazard protection just not a space suit.
 	desc = "An advanced suit designed to protect you from the harshest of enviroments as long as that enviroment is not space. A shame most of it's systems seem broken down..."
 	icon_state = "rad"
@@ -493,3 +496,34 @@ obj/item/clothing/suit/gownrisque/alt
 	min_cold_protection_temperature= SPACE_SUIT_MIN_COLD_PROTECTION_TEMPERATURE
 	unacidable = TRUE
 	price_tag = 2000
+
+/obj/item/clothing/suit/stamped_suit
+	name = "\"Wired\" Executive Suit"
+	desc = "A stiff and dreary looking suit, seems to have metal wire woven as in every thread"
+	icon_state = "checkered_suit"
+	item_state = "checkered_suit"
+	w_class = ITEM_SIZE_BULKY
+	stiffness = MEDIUM_STIFFNESS
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+	armor_list = list(
+		melee = 9,
+		bullet = 12,
+		energy = 3, //Its made of metal lasers heat us up and burn us
+		bomb = 10,
+		bio = 50,
+		rad = 50
+	)
+	//Cheap armor
+	matter = list(MATERIAL_STEEL = 5, MATERIAL_PLASTIC = 2)
+	equip_delay = 1 SECONDS
+	price_tag = 600
+
+/obj/item/clothing/suit/stamped_suit/examine(mob/user)
+	..()
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		if(istype(H.glasses, /obj/item/clothing/glasses/stamped_lens))
+			to_chat(user, SPAN_NOTICE("According to [H.glasses]'s info on, this is a STAMP CORP executive suit used for protecting VIP's with a specal type of metal wire weaving, \
+			thats designed to stop bullets and reduce impacts."))
+
+			to_chat(user, SPAN_NOTICE("Legal Code 9223: Illegal production of STAMP CORP protective gear."))

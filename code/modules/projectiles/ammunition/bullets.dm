@@ -173,6 +173,9 @@
 /obj/item/ammo_casing/light_rifle_257/prespawned
 	amount = 10
 
+/obj/item/ammo_casing/light_rifle_257/spent
+	projectile_type = null
+
 /obj/item/ammo_casing/light_rifle_257/practice
 	desc = "A 6.5mm practice bullet casing."
 	icon_state = "srifle_c_p"
@@ -227,6 +230,25 @@
 /obj/item/ammo_casing/light_rifle_257/laser
 	desc = "A 6.5mm laser casing."
 	projectile_type = /obj/item/projectile/beam/weak/light_rifle_257
+
+
+/obj/item/ammo_casing/light_rifle_257/bluespace
+	desc = "A low-range 6.5mm bluespace casing."
+	icon_state = "srifle_c_bs"
+	spent_icon = "srifle_c_bs-spent"
+	shell_color = "bs"
+	projectile_type = /obj/item/projectile/bullet/light_rifle_257/bluespace
+
+/obj/item/ammo_casing/light_rifle_257/bluespace/prespawned
+	amount = 10
+
+//Total of 30 rounds, 10+ 10x2
+/obj/item/ammo_casing/light_rifle_257/bluespace/prespawned/SI/New()
+	..()
+	if(loc)
+		new /obj/item/ammo_casing/light_rifle_257/bluespace/prespawned(src.loc)
+		new /obj/item/ammo_casing/light_rifle_257/bluespace/prespawned(src.loc)
+
 
 //// 7.62mm Rifle ////
 
@@ -288,6 +310,22 @@
 /obj/item/ammo_casing/rifle_75/laser
 	desc = "A 7.62mm laser casing."
 	projectile_type = /obj/item/projectile/beam/weak/rifle_75
+
+obj/item/ammo_casing/rifle_75/bluespace
+	desc = "A low-range 7.62mm bluespace casing."
+	icon_state = "srifle_c_bs"
+	spent_icon = "srifle_c_bs-spent"
+	shell_color = "bs"
+	projectile_type = /obj/item/projectile/bullet/rifle_75/bluespace
+
+/obj/item/ammo_casing/rifle_75/bluespace/prespawned
+	amount = 10
+
+//Total of 20 rounds, 10+10
+/obj/item/ammo_casing/rifle_75/bluespace/prespawned/SI/New()
+	..()
+	if(loc)
+		new /obj/item/ammo_casing/rifle_75/bluespace/prespawned(src.loc)
 
 //// 8.6mm heavy rifle////
 
@@ -356,6 +394,16 @@
 /obj/item/ammo_casing/heavy_rifle_408/hv/spent
 	projectile_type = null
 
+obj/item/ammo_casing/heavy_rifle_408/bluespace
+	desc = "A low-range 8.6mm bluespace casing."
+	icon_state = "srifle_c_bs"
+	spent_icon = "srifle_c_bs-spent"
+	shell_color = "bs"
+	projectile_type = /obj/item/projectile/bullet/heavy_rifle_408/bluespace
+
+/obj/item/ammo_casing/heavy_rifle_408/bluespace/prespawned
+	amount = 10
+
 ///10mm caseless
 /obj/item/ammo_casing/c10x24
 	desc = "A 10x24mm caseless cartidge."
@@ -363,6 +411,7 @@
 	icon_state = "caseless"
 	projectile_type = /obj/item/projectile/bullet/c10x24
 	is_caseless = TRUE
+	shell_color = "s" //Used for Stamp Mag
 
 //Flare, .22
 /obj/item/ammo_casing/flare

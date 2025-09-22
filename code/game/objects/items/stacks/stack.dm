@@ -106,7 +106,8 @@
 	if (recipes_sublist && recipe_list[recipes_sublist] && istype(recipe_list[recipes_sublist], /datum/stack_recipe_list))
 		var/datum/stack_recipe_list/srl = recipe_list[recipes_sublist]
 		recipe_list = srl.recipes
-	var/t1 = text("<HTML><HEAD><title>Constructions from []</title></HEAD><body><TT>Amount Left: []<br>", src, src.get_amount())
+
+	var/t1 = "<TT>Amount Left: [src.get_amount()]<br>"
 	for(var/i=1;i<=recipe_list.len,i++)
 		var/E = recipe_list[i]
 		if (isnull(E))
@@ -146,8 +147,8 @@
 				if (!(max_multiplier in multipliers))
 					t1 += " <A href='?src=\ref[src];make=[i];multiplier=[max_multiplier]'>[max_multiplier*R.res_amount]x</A>"
 
-	t1 += "</TT></body></HTML>"
-	user << browse(t1, "window=stack")
+	t1 += "</TT>"
+	user << browse(HTML_SKELETON_TITLE("Constructions from [src]",t1), "window=stack")
 	onclose(user, "stack")
 	return
 
@@ -310,6 +311,18 @@
 					S.blood_DNA = list()
 				LAZYINITLIST(S.blood_DNA)
 				S.blood_DNA |= blood_DNA
+
+		//Hack to prevent reagent loss
+		if(reagents)
+			reagent_flags |= REFILLABLE | DRAINABLE | DRAWABLE | INJECTABLE
+
+			var/difference = abs(orig_amount - transfer)
+			var/transfer_persent = difference / orig_amount
+
+			reagents.trans_to_obj(S, reagents.total_volume * transfer_persent)
+			reagent_flags = initial(reagent_flags)
+
+
 		return transfer
 	return 0
 
@@ -340,6 +353,21 @@
 	var/orig_amount = src.amount
 	if (transfer && src.use(transfer))
 		var/obj/item/stack/S = new src.type(loc, transfer)
+
+		//Prevents douping with preloaded reagents
+		if(S.reagents)
+			S.reagents.clear_reagents()
+
+		//Hack to prevent reagent loss
+		if(reagents)
+			reagent_flags |= REFILLABLE | DRAINABLE | DRAWABLE | INJECTABLE
+
+			var/difference = abs(orig_amount - transfer)
+			var/transfer_persent = difference / orig_amount
+
+			reagents.trans_to_obj(S, reagents.total_volume * transfer_persent)
+			reagent_flags = initial(reagent_flags)
+
 		S.color = color
 		if (prob(transfer/orig_amount * 100))
 			transfer_fingerprints_to(S)

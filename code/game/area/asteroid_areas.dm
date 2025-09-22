@@ -47,6 +47,10 @@
 	icon_state = "unexplored"
 	turf_initializer = new /datum/turf_initializer/mining()
 
+/area/mine/unexplored/deep
+	name = "Deep Mine"
+	area_light_color = "#808080" //A gray for any natural/built lighting
+
 /area/mine/gulag
 	name = "Labor Mines"
 	has_gravity = 1

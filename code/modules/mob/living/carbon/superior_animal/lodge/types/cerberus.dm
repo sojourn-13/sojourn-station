@@ -18,6 +18,7 @@
 	colony_friend = TRUE
 	friendly_to_colony = TRUE
 	randpixel = 0
+	research_value = 100
 
 /mob/living/carbon/superior/lodge/cerberus/Life()
 	. = ..()
@@ -67,6 +68,7 @@
 	default_pixel_x = -16
 	pixel_x = -16
 	randpixel = 0
+	research_value = 500
 
 /mob/living/carbon/superior/lodge/cerberus/chimera/Life()
 	. =..()
@@ -85,6 +87,7 @@
 	melee_damage_lower = 40
 	melee_damage_upper = 45
 	armor = list(melee = 7, bullet = 7, energy = 5, bomb = 5, bio = 10, rad = 25)
+	research_value = 7500
 
 /mob/living/carbon/superior/lodge/cerberus/chimera/sun
 	name = "Solis"
@@ -97,6 +100,7 @@
 	melee_damage_lower = 50
 	melee_damage_upper = 55
 	armor = list(melee = 10, bullet = 10, energy = 7, bomb = 10, bio = 15, rad = 25)
+	research_value = 7500
 
 //Baby cerberus
 //Grows into a cerberus or chimera. Credit to BigBimmer#2319 for the sprite.
@@ -119,6 +123,7 @@
 	colony_friend = TRUE
 	friendly_to_colony = TRUE
 	randpixel = 0
+	research_value = 75
 
 /mob/living/carbon/superior/lodge/baby_cerberus/add_initial_transforms()
 	. = ..()

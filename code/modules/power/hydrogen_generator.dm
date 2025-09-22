@@ -181,7 +181,6 @@
 
 /obj/machinery/power/hydrogen_gen/proc/handle_ui()
 	var/dat = ""
-	dat += "<head><title>Hydrogen Generator</title></head>"
 	dat += "Hydrogen Generator<BR>"
 	dat += "<A href='?src=\ref[src];close=1'>Close</A><BR>"
 	dat += "<A href='?src=\ref[src];refresh=1'>Refresh</A><BR><BR>"
@@ -199,7 +198,7 @@
 		dat += "- <A href='?src=\ref[src];strengthdown=1'>--</A>|<A href='?src=\ref[src];strengthup=1'>++</A><BR><BR>"
 		dat += "- Current Power Output : [(power_gen * power_output)/1000] KW.<BR>"
 
-	return dat
+	return HTML_SKELETON_TITLE("Hydrogen Generator",dat)
 
 /obj/machinery/power/hydrogen_gen/Topic(href, href_list)
 

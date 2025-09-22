@@ -532,3 +532,37 @@
 		electrocute_mob(target, 1)
 		new/obj/effect/sparks(target.loc)
 	return TRUE
+
+//Stillpoint projectiles
+
+//For reasons we are a bullet
+/obj/item/projectile/bullet/still_point_glave
+	name = "Entropy Locked Slash"
+	damage_types = list(BRUTE = 25)
+	armor_divisor = 1.15
+	penetrating = 0
+	step_delay = 0.4
+	sharp = TRUE	// Sword slashes are infact sharp
+	embed = FALSE
+	can_ricochet = FALSE
+	check_armour = ARMOR_MELEE
+	//Rapidly fall off
+	affective_damage_range = 1
+	affective_ap_range = 1
+
+/obj/item/projectile/bullet/still_point_glave/attack_mob(mob/living/target_mob, distance, miss_modifier=0)
+	if(target_mob.faction == "Stillpoint")
+		return FALSE
+	else
+		return ..()
+
+/obj/item/projectile/bullet/still_point_glave/on_impact(atom/target)
+	if (!testing)
+		if(isliving(target))
+			var/mob/living/L = target
+			if(!L.stats.getPerk(PERK_STILLPONT_RUPTURE))
+				L.stats.addPerk(PERK_STILLPONT_RUPTURE)
+			if(L.stats.getPerk(PERK_STILLPONT_RUPTURE))
+				var/datum/perk/cooldown/stillpoint_rupture/rupture = L.stats.getPerk(PERK_STILLPONT_RUPTURE)
+				rupture.damage += 2 //scary
+	return TRUE

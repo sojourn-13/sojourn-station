@@ -122,8 +122,12 @@
 
 /obj/machinery/computer/telesci_console/proc/openPortal()
 	portalOpened = TRUE
-	telepad.openPortal(targetX, targetY, targetZ)
 	var/area/portalarea = get_area(get_turf(locate(targetX,targetY,targetZ)))
+
+	//Really need these areas to NOT be able to get to with telesci
+	if(!portalarea.name == "Junk Field" && !portalarea.name == "Deep Mine")
+		telepad.openPortal(targetX, targetY, targetZ)
+
 	if(portalarea.tele_inhibited())
 		for(var/obj/machinery/telesci_relay/relay in telepad.relaysInUse)
 			relay.chanceExplode()

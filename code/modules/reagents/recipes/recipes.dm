@@ -926,6 +926,11 @@
 	required_reagents = list("cleaner" = 2, "pacid" = 1, "sulfur" = 1)
 	result_amount = 2
 
+/datum/chemical_reaction/matter_deconstructor
+	result = "deconstructor"
+	required_reagents = list("rejuvenating_agent" = 2, "nanites" = 3, "woodpulp" = 5)
+	result_amount = 1
+
 /datum/chemical_reaction/glue
 	result = "glue"
 	required_reagents = list("plasticide" = 1, "ethanol" = 1, "carbon" = 1)

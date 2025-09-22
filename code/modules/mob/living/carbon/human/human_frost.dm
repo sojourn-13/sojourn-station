@@ -7,6 +7,12 @@
 /mob/living/carbon/human/proc/handle_frost()
 	if(frost <= -1)
 		frost = 0
+		return
+
+	if(!frost)
+		return
+	else
+		frost -= 1
 
 	var/synth = FALSE
 	var/gained_frost_harm = 0

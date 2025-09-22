@@ -58,3 +58,12 @@
 /datum/design/autolathe/clothing/firefly_glasses
 	name = "\"Firefly\" Glasses"
 	build_path = /obj/item/clothing/glasses/firefly_glasses
+
+//Stamp Branch
+/datum/design/autolathe/clothing/stamped_wired_suit
+	name = "\"Wired\" Executive Suit"
+	build_path = /obj/item/clothing/suit/stamped_suit
+
+/datum/design/autolathe/clothing/stamped_huds
+	name = "\"Stamped\" lens"
+	build_path = /obj/item/clothing/glasses/stamped_lens

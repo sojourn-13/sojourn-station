@@ -8,8 +8,16 @@
 	to_chat(user, SPAN_NOTICE("Dust disappears as you touch it"))
 	qdel(src)
 
+/obj/item/bluespace_dust/New()
+	..()
+	pixel_x = rand(-15, 15)
+	pixel_y = rand(-15, 15)
 
-// Bluespace crystals, used in telescience and when crushed it will blink you to a random turf.
+/obj/item/bluespace_dust/small
+	name = "bluespace dust"
+	desc = "A small pile of blue dust"
+	icon = 'icons/obj/telescience.dmi'
+	icon_state = "small_dust"
 
 // Bluespace crystals, used in telescience and when crushed it will blink you to a random turf.
 

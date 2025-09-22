@@ -70,6 +70,7 @@
 	var/treatment_fire = "dermaline"
 	var/treatment_tox = "carthatoline"
 	never_stimulate_air = TRUE
+	research_value = 1500
 
 /mob/living/carbon/superior/nanobot/handle_breath(datum/gas_mixture/breath) //we dont care about the air
 	return

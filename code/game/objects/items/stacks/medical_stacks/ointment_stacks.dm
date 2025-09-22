@@ -10,6 +10,7 @@
 	preloaded_reagents = list("silicon" = 4, "carbon" = 8)
 	fancy_icon = TRUE
 	disinfectant  = TRUE
+	chemical_injecting = 1 //We add some kelotine to the skin
 
 /obj/item/stack/medical/ointment/attack(mob/living/carbon/M, mob/living/user)
 	if(..())
@@ -73,6 +74,14 @@
 			affecting.heal_damage(0,heal_burn)
 			affecting.salve()
 			try_to_pain(M, user)
+			if(chemical_injecting && reagents)
+				switch(chemical_injecting)
+					if(1) //Touch
+						reagents.trans_to_mob(M, reagents.total_volume * reagent_transfer_rate, CHEM_TOUCH)
+					if(2) //Blood
+						reagents.trans_to_mob(M, reagents.total_volume * reagent_transfer_rate, CHEM_BLOOD)
+					if(3) //Eaten
+						reagents.trans_to_mob(M, reagents.total_volume * reagent_transfer_rate, CHEM_INGEST)
 			return
 
 		if(can_operate(H, user))        //Checks if mob is lying down on table for surgery
@@ -122,7 +131,7 @@
 	automatic_charge_overlays = TRUE
 	consumable = FALSE	// Will the stack disappear entirely once the amount is used up?
 	splittable = FALSE	// Is the stack capable of being splitted?
-	preloaded_reagents = list("silicon" = 4, "ethanol" = 10, "mercury" = 4)
+	preloaded_reagents = list("silicon" = 4, "ethanol" = 10, "carbon" = 4)
 	w_class = ITEM_SIZE_SMALL
 	perk_required = TRUE
 	needed_perk = PERK_MEDICAL_EXPERT
@@ -259,3 +268,4 @@
 	always_useful = TRUE
 	extra_bulk = 2
 	prevent_wasting = TRUE
+	chemical_injecting = 2 //We add some chemicals to blood

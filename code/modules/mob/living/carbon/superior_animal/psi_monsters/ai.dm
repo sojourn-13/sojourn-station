@@ -16,9 +16,14 @@
 		target_mob = null
 		playsound(src.loc, list('sound/hallucinations/growl1.ogg', 'sound/hallucinations/growl2.ogg', 'sound/hallucinations/growl3.ogg'), 120, 1)
 
+	//First drop embeded items.
+	drop_embedded()
+
+	//Now anything left inside isnt embeded so we can safely do this
 	for(var/obj/item/I in src)
 		drop_from_inventory(I)
 		I.throw_at(get_edge_target_turf(src,pick(alldirs)), rand(1,3), round(30/I.w_class))
+
 
 	if(GLOB.deepmaints_data_bool["deepmaints_ash_drops"])
 		new momento_mori(src.loc)

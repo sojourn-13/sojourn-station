@@ -319,12 +319,14 @@ datum/breakdown/common/noinsight
 			if(power_use && I.power > power_use)
 				I.power -= power_use
 				restore_sanity_post = sanity_heal
-				var/datum/ritual/cruciform/base/prayer =  pick(\
+				//Looks gross as we have to daisy chain this to function (unless another easier way is found)
+				var/prayer =  pick(\
 				/datum/ritual/cruciform/base/flare, \
 				/datum/ritual/cruciform/base/reveal, \
 				/datum/ritual/cruciform/base/relief, \
 				/datum/ritual/cruciform/base/soul_hunger)
-				prayer.perform(H, I)
+				var/datum/ritual/cruciform/base/P = new prayer
+				P.activate(H, I)
 	..()
 
 //Psionic based breakdowns

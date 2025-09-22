@@ -137,6 +137,9 @@
 	if(istype(L))
 		L.adjust_fire_stacks(amount / 15)
 
+/datum/reagent/ethanol/affect_touch(var/mob/living/carbon/M, var/alien, var/effect_multiplier) // Hydrazine is both toxic and flammable.
+	M.add_chemical_effect(CE_TOXIN, -0.1) //Small affect to make this slightly useful to splash on
+
 /datum/reagent/ethanol/on_mob_add(mob/living/L)
 	..()
 	LEGACY_SEND_SIGNAL(L, COMSIG_CARBON_HAPPY, src, MOB_ADD_DRUG)

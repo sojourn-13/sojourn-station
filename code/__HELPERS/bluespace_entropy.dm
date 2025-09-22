@@ -2,6 +2,7 @@ GLOBAL_VAR_INIT(bluespace_hazard_threshold, 100)
 GLOBAL_VAR_INIT(bluespace_entropy, 0)
 GLOBAL_VAR_INIT(bluespace_gift, 0)
 GLOBAL_VAR_INIT(bluespace_distotion_cooldown, 10 MINUTES)
+GLOBAL_VAR_INIT(bluespace_cleanup_crew, 0)
 
 /area
 	var/bluespace_entropy = 0
@@ -36,6 +37,11 @@ GLOBAL_VAR_INIT(bluespace_distotion_cooldown, 10 MINUTES)
 				GLOB.bluespace_distotion_cooldown = world.time + (10 MINUTES / GLOB.chaos_level)
 			bluespace_distorsion(T, minor_distortion)
 			A.bluespace_entropy -= rand(A.bluespace_hazard_threshold, A.bluespace_hazard_threshold*1.5)
+
+	//Soj edit
+	if(A.bluespace_entropy > 15000 && !GLOB.bluespace_cleanup_crew)
+		bluespace_cleanup_detail(T, minor_distortion)
+		GLOB.bluespace_cleanup_crew++
 
 /proc/bluespace_distorsion(turf/T, minor_distortion=FALSE)
 	var/bluespace_event = rand(1, 100)
@@ -218,3 +224,40 @@ GLOBAL_VAR_INIT(bluespace_distotion_cooldown, 10 MINUTES)
 			if(Ttarget)
 				new /obj/item/bluespace_leak(Ttarget)
 				do_sparks(3, 0, Ttarget)
+
+//soj edit
+/proc/bluespace_cleanup_detail(turf/T, minor_distortion)
+	var/area/A = get_area(T)
+	var/turf/Ttarget = T
+	Ttarget = get_random_secure_turf_in_range(Ttarget, 5)
+	new /mob/living/carbon/superior/human/stillpoint/wrath(Ttarget)
+	Ttarget = get_random_secure_turf_in_range(Ttarget, 5)
+	new /mob/living/carbon/superior/human/stillpoint/gloom(Ttarget)
+	Ttarget = get_random_secure_turf_in_range(Ttarget, 5)
+	new /mob/living/carbon/superior/human/stillpoint/glutteny(Ttarget)
+	Ttarget = get_random_secure_turf_in_range(Ttarget, 5)
+	new /mob/living/carbon/superior/human/stillpoint/lust(Ttarget)
+	Ttarget = get_random_secure_turf_in_range(Ttarget, 5)
+	new /mob/living/carbon/superior/human/stillpoint/envy(Ttarget)
+	Ttarget = get_random_secure_turf_in_range(Ttarget, 5)
+	new /mob/living/carbon/superior/human/stillpoint/pride(Ttarget)
+	Ttarget = get_random_secure_turf_in_range(Ttarget, 5)
+	new /mob/living/carbon/superior/human/stillpoint/sloth(Ttarget)
+	Ttarget = get_random_secure_turf_in_range(Ttarget, 5)
+	new /mob/living/carbon/superior/human/stillpoint/angst(Ttarget)
+	Ttarget = get_random_secure_turf_in_range(Ttarget, 5)
+	new /mob/living/carbon/superior/human/stillpoint/madness(Ttarget)
+	level_sixteen_announcement(A)
+
+//This is important information
+/proc/level_sixteen_announcement(area/A)
+	command_announcement.Announce("Confirmed detection of level 16 entropy-hazard-team within the [station_name()], area isolated to [A.name]. Combat Personal may wish to clear this area of hostile terrorist group \"Stillpoint Celestial Keepers\".", "Entropy Hazard Team Alert")
+	var/decl/security_state/security_state = decls_repository.get_decl(GLOB.maps_data.security_state)
+	security_state.set_security_level(security_state.all_security_levels[3], TRUE)
+
+
+
+
+
+
+

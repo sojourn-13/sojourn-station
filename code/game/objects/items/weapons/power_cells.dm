@@ -604,9 +604,17 @@
 	var/inuse = FALSE
 
 /obj/item/device/manual_charger/attackby(obj/item/I, mob/user)
-	if(istype(I, suitable_cell) && insert_item(I, user) && !cell)
-		cell = I
-		return
+	if(!cell)
+		if(istype(I, suitable_cell))
+			if(insert_item(I, user))
+				cell = I
+				return
+			else
+				to_chat(user, SPAN_WARNING("[I] is unable to be inserted into [src]."))
+		else
+			to_chat(user, SPAN_WARNING("You are unable to charge [I] in [src]."))
+	else
+		to_chat(user, SPAN_WARNING("[src] already has a loaded cell inside."))
 	..()
 
 /obj/item/device/manual_charger/MouseDrop(over_object)
