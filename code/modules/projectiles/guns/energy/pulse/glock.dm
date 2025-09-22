@@ -89,7 +89,7 @@
 	gun_tags = list(GUN_LASER, GUN_ENERGY, GUN_SIGHT)
 	init_firemodes = list(
 		list(mode_name="kill shot", mode_desc="A small laser beam capable of personal defense and shooting through windows and grilles.", projectile_type=/obj/item/projectile/beam, fire_sound='sound/weapons/energy/laser_pistol.ogg', charge_cost=50, fire_delay=10, icon="kill", projectile_color = "#e4562b"),
-		list(mode_name="plasma bolt", mode_desc="Hard hitting heavy plasma bolts built to reduce the armour of a target.", projectile_type=/obj/item/projectile/plasma, fire_sound='sound/weapons/energy/pulse.ogg', charge_cost=100, fire_delay=25, icon="vaporize", projectile_color = "#00AAFF"),
+		list(mode_name="plasma bolt", mode_desc="Hard hitting heavy plasma bolts built to reduce the armour of a target.", projectile_type=/obj/item/projectile/plasma, fire_sound='sound/weapons/energy/pulse.ogg', charge_cost=100, fire_delay=25, icon="destroy", projectile_color = "#00AAFF"),
 		list(mode_name="ion shot", mode_desc="An iodizing shot to disable cells, electronics and cybernetics. Works on mechs and synthtic life.", projectile_type=/obj/item/projectile/ion, fire_sound='sound/effects/supermatter.ogg', charge_cost=150, fire_delay=25, icon="stun", projectile_color = "#dfdc39"),
 	)
 	serial_type = "SI-NM"
