@@ -531,8 +531,8 @@
 /obj/item/clothing/head/helmet/marshal
 	name = "marshal helmet"
 	desc = "Standard operator gear. Protects the head from impacts. Painted in marshal colors."
-	icon_state = "helmet"
-	icon_state = "helmet"
+	icon_state = "helmet_marshal"
+	icon_state = "helmet_marshal"
 	armor_list = list(melee =7, bullet = 7, energy = 6, bomb = 25, bio = 70, rad = 0)
 	body_parts_covered = HEAD|EARS
 
