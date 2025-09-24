@@ -322,8 +322,13 @@
 			O.forceMove(R)
 		qdel(I)
 	qdel(R.module)
-
-	return ..()
+	// Explicitly delete the robot occupant and clear the pod's occupant to
+	// ensure drones are qdelled reliably (don't rely on falling back to the
+	// human-specific parent despawn which may not be appropriate).
+	var/var_tmp = occupant
+	qdel(var_tmp)
+	set_occupant(null)
+	return
 
 // This function can not be undone; do not call this unless you are sure
 // Also make sure there is a valid control computer
