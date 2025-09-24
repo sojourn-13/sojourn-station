@@ -326,6 +326,8 @@
 	// ensure drones are qdelled reliably (don't rely on falling back to the
 	// human-specific parent despawn which may not be appropriate).
 	var/var_tmp = occupant
+	// Detach the occupant from the pod/container so the container doesn't keep a stale loc reference
+	var_tmp.loc = null
 	qdel(var_tmp)
 	set_occupant(null)
 	return
@@ -494,7 +496,9 @@
 
 	record?.Destroy() // Delete the crew record
 
-	// Delete the mob.
+	// Delete the mob. Detach first so containers don't retain a stale reference to the deleted obj
+	if(occupant)
+		occupant.loc = null
 	qdel(occupant)
 	set_occupant(null)
 
