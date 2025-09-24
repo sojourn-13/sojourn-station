@@ -71,5 +71,5 @@
 	build_path = /obj/item/storage/bag/trash
 
 /datum/design/autolathe/misc/caution
-	name = "Wet Floor sign"
+	name = "wet floor sign"
 	build_path = /obj/item/caution
