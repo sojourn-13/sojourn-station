@@ -202,6 +202,7 @@
 		/datum/design/autolathe/device/hand_labeler,
 		/datum/design/research/item/light_replacer,
 		/datum/design/autolathe/part/cable_coil,
+		/datum/design/autolathe/misc/caution,
 		)
 
 /obj/item/pc_part/drive/disk/design/scav
