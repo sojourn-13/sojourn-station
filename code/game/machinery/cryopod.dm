@@ -451,7 +451,7 @@
 			if(total_damage >= 15)
 				injured = TRUE
 			// Consider if revival sickness perks are present
-			if(B.stats && (B.stats.getPerk(PERK_REZ_SICKNESS) || B.stats.getPerk(PERK_REZ_SICKNESS_SEVERE) || B.stats.getPerk(PERK_REZ_SICKNESS_FATAL)))
+			if(B.stats && (B.stats.getPerk(PERK_REZ_SICKNESS_MILD) || B.stats.getPerk(PERK_REZ_SICKNESS) || B.stats.getPerk(PERK_REZ_SICKNESS_SEVERE) || B.stats.getPerk(PERK_REZ_SICKNESS_FATAL)))
 				injured = TRUE
 		else
 			// If the occupant is not currently inhabiting a body, we assume they are not injured to be safe.
