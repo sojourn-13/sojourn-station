@@ -478,10 +478,10 @@
 				G.set_respawn_bonus("CRYOSLEEP", config.cryopod_spawn_bonus ? config.cryopod_spawn_bonus MINUTES : CRYOPOD_SPAWN_BONUS)
 				if(istype(M))
 					M.set_respawn_bonus("CRYOSLEEP", config.cryopod_spawn_bonus ? config.cryopod_spawn_bonus MINUTES : CRYOPOD_SPAWN_BONUS)
-			else
-				// Notify occupant (or their ghost) that no reduction was applied due to injury
-				if (!(G.get_respawn_bonus("CRYOSLEEP")))
-					to_chat(G, SPAN_DANGER("Your body was put into cryostorage, but because it is not in good health, your crew respawn time was not reduced. Please seek medical attention to qualify for the reduced respawn timer."))
+				else
+					// Notify occupant (or their ghost) that no reduction was applied due to injury
+					if (!(G.get_respawn_bonus("CRYOSLEEP")))
+						to_chat(G, SPAN_DANGER("Your body was put into cryostorage, but because it is not in good health, your crew respawn time was not reduced. Please seek medical attention to qualify for the reduced respawn timer."))
 
 	//This should guarantee that ghosts don't spawn.
 	occupant.ckey = null
