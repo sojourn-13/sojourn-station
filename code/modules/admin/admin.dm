@@ -27,7 +27,8 @@ var/global/floorIsLava = 0
 	for(var/client/C in admins)
 		if(check_rights(R_ADMIN | R_DEBUG, 0, C.mob))
 			if(C.get_preference_value(/datum/client_preference/staff/show_attack_logs) == GLOB.PREF_SHOW)
-				var/msg = "<span class=\"log_message\"><span class=\"prefix\">[create_text_tag(tag, "[tagtext]:", C)]</span> <span class=\"message\">[text]</span></span>"
+				// Wrap attack messages so frontend can classify them as both admin logs and attack logs
+				var/msg = "<span class=\"log_message attack_log\"><span class=\"prefix\">[create_text_tag(tag, "[tagtext]:", C)]</span> <span class=\"message\">[text]</span></span>"
 				to_chat(C, msg)
 
 /**

@@ -137,12 +137,14 @@ export const MESSAGE_TYPES = [
     type: MESSAGE_TYPE_ATTACKLOG,
     name: 'Attack Log',
     description: 'Urist McTraitor has shot John Doe',
+    selector: '.attack_log',
     admin: true,
   },
   {
     type: MESSAGE_TYPE_DEBUG,
     name: 'Debug Log',
     description: 'DEBUG: SSPlanets subsystem Recover().',
+    selector: '.debug_message',
     admin: true,
   },
 ];
