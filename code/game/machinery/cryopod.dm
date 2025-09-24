@@ -303,7 +303,7 @@
 		if(world.time - time_entered < time_till_despawn)
 			return
 
-		if(!occupant.client && occupant.stat<2) //Occupant is living and has no client.
+		if(!occupant.client) //Occupant has no controlling client; remove them regardless of stat.
 			if(!control_computer)
 				if(!find_control_computer(urgent=1))
 					return
@@ -325,9 +325,8 @@
 	// Explicitly delete the robot occupant and clear the pod's occupant to
 	// ensure drones are qdelled reliably (don't rely on falling back to the
 	// human-specific parent despawn which may not be appropriate).
-	var/var_tmp = occupant
+	var/mob/var_tmp = occupant
 	// Detach the occupant from the pod/container so the container doesn't keep a stale loc reference
-	var_tmp.loc = null
 	qdel(var_tmp)
 	set_occupant(null)
 	return
