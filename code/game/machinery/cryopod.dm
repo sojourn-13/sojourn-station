@@ -325,7 +325,6 @@
 	// Explicitly delete the robot occupant and clear the pod's occupant to
 	// ensure drones are qdelled reliably (don't rely on falling back to the
 	// human-specific parent despawn which may not be appropriate).
-	var/mob/var_tmp = occupant
 	// Detach the occupant from the pod/container so the container doesn't keep a stale loc reference
 	if(occupant)
 		occupant.loc = null
