@@ -1373,7 +1373,7 @@
 	caliber = "10x24"
 	matter = list(MATERIAL_STEEL = 4)
 	ammo_type = /obj/item/ammo_casing/c10x24
-	max_ammo = 20
+	max_ammo = 40
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/caseless_10x24/empty

@@ -215,10 +215,10 @@
 /datum/gear/fluff/drfarson_katana_saya
 	ckey_whitelist = list("drfarson")
 	display_name = "Embroidered Occult Saya"
-	path = /obj/item/clothing/accessory/holster/saber/occult
+	path = /obj/item/clothing/accessory/holster/saber/rapiersci/occult
 
 // drfarson
-/obj/item/clothing/accessory/holster/saber/occult
+/obj/item/clothing/accessory/holster/saber/rapiersci/occult
 	name = "embroidered occult saya"
 	desc = "A sleek hardened ebony material covers the entire saya in multifaceted shapes, the runes on it seem to shift and change as you look at them, probing your mind."
 	icon_state = "rapiersci_holster"

@@ -266,7 +266,7 @@
 
 	populate_contents()
 		new /obj/item/clothing/suit/storage/vest/ironhammer(src)
-		new /obj/item/clothing/head/helmet/marshal_full(src)
+		new /obj/item/clothing/head/helmet/marshal(src)
 
 
 /obj/item/storage/box/m_kit/armored_overcoat
