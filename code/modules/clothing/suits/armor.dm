@@ -1287,6 +1287,29 @@
 		usr.update_action_buttons()
 		return 1
 
+//yunan armor
+/obj/item/clothing/suit/armor/platecarrier/yunan
+	name = "placeholder yunan plate carrier for later use"
+	desc = "placeholder object, do not use. \
+	spawn the actual armour instead, you dipshit."
+	icon_state = "platecarrier_yunan_fullbody"
+	item_state = "platecarrier_yunan_fullbody"
+	blood_overlay_type = "armor"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO
+	stiffness = 0
+	slowdown = 0
+
+/obj/item/clothing/suit/armor/platecarrier/yunan/full
+	name = "full body plate carrier"
+	desc = "A cut down armor vest carrying trauma plates and light ballistic meshes with a bold purple stripe along the chest and shoulders. It has been improved by adding shoulderpads, though leg protection has been omitted for the sake of mobility. \
+	Various torn out pieces of scripture have been secured to the armor by wax seals, one of which reading \"I pity the man who wants a coat so cheap that the man or woman who produces the cloth will starve in the process.\""
+	icon_state = "platecarrier_yunan_fullbody"
+	item_state = "platecarrier_yunan_fullbody"
+	blood_overlay_type = "armor"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
+	stiffness = 0
+	slowdown = 0
+
 //Blackshield armor
 /obj/item/clothing/suit/armor/platecarrier/militia
 	name = "blackshield plate carrier"
