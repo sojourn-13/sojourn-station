@@ -327,7 +327,9 @@
 	// human-specific parent despawn which may not be appropriate).
 	var/mob/var_tmp = occupant
 	// Detach the occupant from the pod/container so the container doesn't keep a stale loc reference
-	qdel(var_tmp)
+	if(occupant)
+		occupant.loc = null
+	qdel(occupant)
 	set_occupant(null)
 	return
 
