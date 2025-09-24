@@ -52,7 +52,7 @@
 	matter = list(MATERIAL_PLASTEEL = 18, MATERIAL_STEEL = 10,  MATERIAL_SILVER = 12, MATERIAL_PLATINUM = 0.2)
 	price_tag = 1600
 
-/obj/item/gun/energy/sst/cbo
+/obj/item/gun/energy/sst/formatbound/cbo
 	name = "SST \"Resolute\" handgun"
 	desc = "The \"Resolute\" is a special-issue \"Soteria Surface Tension\" handgun, designed for CBOs, based on the \"Format Bound\" design. It features selectable fire modes for both rubber anesthetic and hollow-point rounds, offering both non-lethal and lethal options for self-defense."
 	icon_state = "format_bound_small"
