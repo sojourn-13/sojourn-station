@@ -15,7 +15,7 @@
 	desc = "Used for sweeping, and flying into the night while cackling. Black cat not included."
 	icon = 'icons/obj/wizard.dmi'
 	icon_state = "broom"
-	matter= list(MATERIAL_WOOD = 5)
+	matter = list(MATERIAL_WOOD = 5)
 
 /obj/item/staff/gentcane
 	name = "Gentleman's Cane"
@@ -23,7 +23,7 @@
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "cane"
 	item_state = "stick"
-	matter= list(MATERIAL_WOOD = 5)
+	matter = list(MATERIAL_WOOD = 5)
 
 /obj/item/staff/stick
 	name = "stick"
