@@ -33,7 +33,7 @@
 			return
 
 	user.set_machine(src)
-	var/dat = "<HEAD><TITLE>Operating Computer</TITLE><META HTTP-EQUIV='Refresh' CONTENT='10'></HEAD><BODY>\n"
+	var/dat = ""
 	dat += "<A HREF='?src=\ref[user];mach_close=op'>Close</A><br><br>" //| <A HREF='?src=\ref[user];update=1'>Update</A>"
 	if(table && (table.check_victim()))
 		victim = table.victim
@@ -69,9 +69,11 @@
 <BR>
 <B>No Patient Detected</B>
 "}
-	user << browse(dat, "window=op")
-	onclose(user, "op")
 
+	var/datum/browser/popup = new (usr, "op","Operating Computer", 400, 400)
+	popup.set_content(dat)
+	popup.add_head_content("<META HTTP-EQUIV='Refresh' CONTENT='10'>")
+	popup.open(TRUE)
 
 /obj/machinery/computer/operating/Topic(href, href_list)
 	if(..())

@@ -244,7 +244,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_display_del_log, R_ADMIN|R_DEBUG, FALSE)
 
 	dellog += "</ol>"
 
-	usr << browse(HTML_SKELETON(dellog.Join()), "window=dellog")
+	usr << browse(HTML_SKELETON(dellog), "window=dellog")
 
 ADMIN_VERB_ADD(/client/proc/cmd_debug_make_powernets, R_DEBUG, FALSE)
 /client/proc/cmd_debug_make_powernets()

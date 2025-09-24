@@ -22,23 +22,19 @@ type Props = Partial<{
 
 export function Layout(props: Props) {
   const { className, children, ...rest } = props;
-  
-  let { theme } = props;
-  
-  // use user prefs for theme if the UI doesn't force a theme
-  if (theme === undefined) {
+
+  const resolvedTheme = (() => {
+    if (props.theme !== undefined) return props.theme;
+
     const { config } = useBackend();
     const { default_theme } = config.window;
+    return default_theme ?? 'nanotrasen';
+  })();
 
-    if (default_theme !== null) {
-      theme = default_theme;
-    } else {
-      theme = "nanotrasen";
-    }
-  }
+  document.documentElement.className = `theme-${resolvedTheme}`;
 
   return (
-    <div className={'theme-' + theme}>
+    <div className={'theme-' + resolvedTheme}>
       <div
         className={classes(['Layout', className, computeBoxClassName(rest)])}
         {...computeBoxProps(rest)}

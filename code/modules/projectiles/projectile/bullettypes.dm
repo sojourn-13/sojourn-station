@@ -339,6 +339,20 @@
 	recoil = 16
 
 
+/obj/item/projectile/bullet/kurz_50/biomatter
+	name = "biomatter bullet"
+	damage_types = list(BURN = 23, HALLOSS = 33)
+	armor_divisor = 0.7
+	wounding_mult = WOUNDING_NORMAL
+	penetrating = 0
+	can_ricochet = FALSE
+	embed = FALSE
+	sharp = FALSE
+	step_delay = 0.65
+	check_armor = ARMOR_BIO
+	recoil = 8
+
+
 //Carbines and rifles
 //*********************************//
 

@@ -860,6 +860,7 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 	desc = "An old issue of The Griffon, a widely-circulated galactic newspaper."
 	icon = 'icons/obj/bureaucracy.dmi'
 	icon_state = "newspaper"
+	matter = list(MATERIAL_BIOMATTER = 2)
 	w_class = ITEM_SIZE_SMALL	//Let's make it fit in trashbags!
 	attack_verb = list("bapped")
 	var/screen = 0
@@ -946,7 +947,7 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 					dat+="<BR><I>There is a small scribble near the end of this page... It reads: \"[src.scribble]\"</I>"
 				dat+= "<HR><DIV STYLE='float:left;'><A href='?src=[REF(src)];prev_page=1'>Previous Page</A></DIV>"
 			else
-				dat+="I'm sorry to break your immersion. This shit's bugged. Report this bug to Agouri, polyxenitopalidou@gmail.com"
+				dat+="I'm sorry to break your immersion. This shit's bugged. Report this bug to code staff"
 
 		dat+="<BR><HR><div align='center'>[src.curr_page+1]</div>"
 		human_user << browse(HTML_SKELETON(dat), "window=newspaper_main;size=300x400")
