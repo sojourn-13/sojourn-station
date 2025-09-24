@@ -183,6 +183,10 @@
 	var/applies_stasis = 1
 	var/cryo_announcement = TRUE
 
+	// vars regarding injuries and calculation
+	var/injured = FALSE
+	var/total_damage = 0
+
 	// These items are preserved when the process() despawn proc occurs.
 	var/list/preserve_items = list(
 		/obj/item/hand_tele,
@@ -423,22 +427,43 @@
 
 	visible_message("<span class='notice'>\The [initial(name)] hums and hisses as it moves [occupant.real_name] into storage.</span>")
 
+	if(occupant.mind && occupant.mind.current)
+		var/mob/living/carbon/human/B = occupant.mind.current
+		if(B)
+			// Consider explicit internal organ wounds or bad external organs
+			for(var/obj/item/organ/o in B.internal_organs)
+				if(o.damage && o.damage > 0)
+					injured = TRUE
+			for(var/e in B.bad_external_organs)
+				injured = TRUE
+			// Consider injured if brute + fire damage meets threshold
+			total_damage += B.getBruteLoss()
+			total_damage += B.getFireLoss()
+			if(total_damage >= 15)
+				injured = TRUE
+			// Consider if revival sickness perks are present
+			if(B.stats && (B.stats.getPerk(PERK_REZ_SICKNESS) || B.stats.getPerk(PERK_REZ_SICKNESS_SEVERE) || B.stats.getPerk(PERK_REZ_SICKNESS_FATAL)))
+				injured = TRUE
+		else
+			// If the occupant is not currently inhabiting a body, we assume they are injured to be safe.
+			injured = FALSE
 
-	//When the occupant is put into storage, their respawn time is reduced.
+	//When the occupant is put into storage, their respawn time may be reduced.
 	//This check exists for the benefit of people who get put into cryostorage while SSD and come back later
-	if (occupant.in_good_health())
-		if (occupant.mind && occupant.mind.key)
-
-			//Whoever inhabited this body is long gone, we need some black magic to find where and who they are now
-			var/mob/M = key2mob(occupant.mind.key)
-			if (istype(M))
+	if (occupant.mind && occupant.mind.key)
+		//Whoever inhabited this body is long gone, we need some black magic to find where and who they are now
+		var/mob/M = key2mob(occupant.mind.key)
+		if (istype(M))
+			// If the occupant is in good health and they don't already have the bonus, apply it and notify
+			if (!injured)
 				if (!(M.get_respawn_bonus("CRYOSLEEP")))
-					//We send a message to the occupant's current mob - probably a ghost, but who knows.
-					to_chat(M, SPAN_NOTICE("Because your body was put into cryostorage, your crew respawn time has been reduced by [CRYOPOD_SPAWN_BONUS_DESC]."))
-					M << 'sound/effects/magic/blind.ogg' //Play this sound to a player whenever their respawn time gets reduced
-
-				//Going safely to cryo will allow the patient to respawn more quickly
-				M.set_respawn_bonus("CRYOSLEEP", CRYOPOD_SPAWN_BONUS)
+					to_chat(M, SPAN_NOTICE("Because your body was put into cryostorage in good health, your crew respawn time has been reduced by [CRYOPOD_SPAWN_BONUS_DESC]."))
+					M << 'sound/effects/magic/blind.ogg'
+					M.set_respawn_bonus("CRYOSLEEP", config.cryopod_spawn_bonus ? config.cryopod_spawn_bonus MINUTES : CRYOPOD_SPAWN_BONUS)
+				else
+					// Notify occupant (or their ghost) that no reduction was applied due to injury
+					if (!(M.get_respawn_bonus("CRYOSLEEP")))
+						to_chat(M, SPAN_DANGER("Your body was put into cryostorage, but because it is not in good health, your crew respawn time was not reduced. Please seek medical attention to qualify for the reduced respawn timer."))
 
 	//This should guarantee that ghosts don't spawn.
 	occupant.ckey = null
@@ -626,8 +651,8 @@
 		if (notifications)
 			to_chat(occupant, SPAN_NOTICE("[on_enter_occupant_message]"))
 			to_chat(occupant, SPAN_NOTICE("<b>If you ghost, log out or close your client now, your character will shortly be permanently removed from the round.</b>"))
-		if (occupant.in_good_health() && notifications)
-			to_chat(occupant, SPAN_NOTICE("<b>Your respawn time will be reduced by 20 minutes, allowing you to respawn as a crewmember much more quickly.</b>"))
+		if (!injured && notifications)
+			to_chat(occupant, SPAN_NOTICE("<b>Your respawn time will be reduced by [CRYOPOD_SPAWN_BONUS_DESC], allowing you to respawn as a crewmember much more quickly.</b>"))
 		else if (notifications)
 			to_chat(occupant, SPAN_DANGER("<b>Because you are not in good health, going into cryosleep will not reduce your crew respawn time. \
 			If you wish to respawn as a different crewmember, you should treat your injuries at medical first</b>"))

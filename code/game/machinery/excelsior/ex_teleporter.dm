@@ -356,9 +356,9 @@ var/global/excelsior_last_draft = 0
 
 /obj/machinery/complant_teleporter/proc/teleport_out(var/mob/living/affecting, var/mob/living/user)
 	flick("teleporting", src)
-	to_chat(affecting, SPAN_NOTICE("You have been teleported to haven, your crew respawn time is reduced by 15 minutes."))
+	to_chat(affecting, SPAN_NOTICE("You have been teleported to haven. Your crew respawn time has been reduced by [CRYOPOD_SPAWN_BONUS_DESC]."))
 	visible_message("\the [src] teleporter closes and [affecting] disapears.")
-	affecting.set_respawn_bonus("TELEPORTED_TO_EXCEL", 15 MINUTES)
+	affecting.set_respawn_bonus("TELEPORTED_TO_EXCEL", config.cryopod_spawn_bonus ? config.cryopod_spawn_bonus MINUTES : CRYOPOD_SPAWN_BONUS)
 	affecting << 'sound/effects/magic/blind.ogg'  //Play this sound to a player whenever their respawn time gets reduced
 	qdel(affecting)
 

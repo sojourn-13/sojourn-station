@@ -60,6 +60,7 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 	var/allow_ai = 0					// allow ai job
 	var/hostedby = null
 	var/respawn_delay = 5
+	var/cryopod_spawn_bonus = 15 // minutes to reduce respawn time when ghosting from a cryopod (if in good health)
 	var/guest_jobban = 1
 	var/usewhitelist = 0
 	var/kick_inactive = 0				//force disconnect for inactive players after this many minutes, if non-0
