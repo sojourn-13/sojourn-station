@@ -318,7 +318,7 @@
 			if(O.damage && O.damage > 0)
 				return TRUE
 
-\	// Total brute + burn damage threshold.
+	// Total brute + burn damage threshold.
 	var/total_damage = body.getBruteLoss() + body.getFireLoss()
 	if(total_damage >= 25)
 		return TRUE
