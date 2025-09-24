@@ -515,7 +515,7 @@
 	fire_sound = 'sound/weapons/guns/fire/sbaw.ogg'
 	reload_sound = 'sound/weapons/guns/interact/ltrifle_magin.ogg'
 	unload_sound = 'sound/weapons/guns/interact/ltrifle_magout.ogg'
-	init_recoil = FOLDING_RECOIL(1)
+	init_recoil = FOLDING_RECOIL(1.5)
 	damage_mult = 0.7
 	force = WEAPON_FORCE_PAINFUL
 	caliber = CAL_SHOTGUN
@@ -569,7 +569,7 @@
 	fire_sound = 'sound/weapons/guns/fire/sfrifle_fire.ogg'
 	reload_sound = 'sound/weapons/guns/interact/ltrifle_magin.ogg'
 	unload_sound = 'sound/weapons/guns/interact/ltrifle_magout.ogg'
-	init_recoil = CARBINE_RECOIL(1)
+	init_recoil = CARBINE_RECOIL(0.8)
 	force = WEAPON_FORCE_PAINFUL
 	var/icon_scale = 0.9
 	twohanded = FALSE
