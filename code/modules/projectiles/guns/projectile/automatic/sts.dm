@@ -186,17 +186,12 @@
 	serial_type = "NM"
 	gun_parts = list(/obj/item/part/gun/frame/sts = 1, /obj/item/part/gun/grip/rubber = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/lrifle = 1)
 
-	max_upgrades = 2 // We got good baseline lets not get out of hand here
+	max_upgrades = 4 // We got good baseline lets not get out of hand here
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
 		BURST_2_ROUND,
 		FULL_AUTO_300
 		)
-
-	blacklist_upgrades = list(/obj/item/tool_upgrade/augment/expansion = TRUE,
-							  /obj/item/gun_upgrade/mechanism/greyson_master_catalyst = TRUE,
-							  /obj/item/tool_upgrade/productivity/ergonomic_grip = TRUE,
-							  /obj/item/tool_upgrade/refinement/stabilized_grip = TRUE)
 
 /obj/item/gun/projectile/automatic/sts/rifle/blackshield/sawn
 	name = "short-barreled Blackshield \"STS PARA\" rifle"
