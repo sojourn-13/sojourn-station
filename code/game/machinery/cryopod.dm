@@ -418,16 +418,20 @@
 
 
 	//Make an announcement and log the person entering storage.
+	// Always add to the control computer's frozen crew list, but avoid spamming
+	// admins with robot/storage unit entries. Only organic humans should trigger
+	// admin logs/messages.
 	control_computer.frozen_crew += "[occupant.real_name]" + "[occupant.mind ? ", [occupant.mind.assigned_role]" : ""]" + " - [stationtime2text()]"
-	control_computer._admin_logs += "[key_name(occupant)]" + "[occupant.mind ? ", ([occupant.mind.assigned_role])" : ""]" + " at [stationtime2text()]"
-	log_and_message_admins("[key_name(occupant)]" + "[occupant.mind ? " ([occupant.mind.assigned_role])" : ""]" + " entered cryostorage.")
+	if(ishuman(occupant))
+		control_computer._admin_logs += "[key_name(occupant)]" + "[occupant.mind ? ", ([occupant.mind.assigned_role])" : ""]" + " at [stationtime2text()]"
+		log_and_message_admins("[key_name(occupant)]" + "[occupant.mind ? " ([occupant.mind.assigned_role])" : ""]" + " entered cryostorage.")
 
 	if(cryo_announcement)
 		announce.autosay("[occupant.real_name]" + "[occupant.mind ? ", [occupant.mind.role_alt_title ? occupant.mind.role_alt_title : occupant.mind.assigned_role]" : ""]" + ", [on_store_message]", "[on_store_name]")
 
 	visible_message("<span class='notice'>\The [initial(name)] hums and hisses as it moves [occupant.real_name] into storage.</span>")
 
-	if(occupant.mind && occupant.mind.current)
+	if(ishuman(occupant) && occupant.mind && occupant.mind.current)
 		var/mob/living/carbon/human/B = occupant.mind.current
 		if(B)
 			// Consider explicit internal organ wounds or bad external organs
@@ -445,7 +449,7 @@
 			if(B.stats && (B.stats.getPerk(PERK_REZ_SICKNESS) || B.stats.getPerk(PERK_REZ_SICKNESS_SEVERE) || B.stats.getPerk(PERK_REZ_SICKNESS_FATAL)))
 				injured = TRUE
 		else
-			// If the occupant is not currently inhabiting a body, we assume they are injured to be safe.
+			// If the occupant is not currently inhabiting a body, we assume they are not injured to be safe.
 			injured = FALSE
 
 	//When the occupant is put into storage, their respawn time may be reduced.
@@ -526,8 +530,10 @@
 
 		// Book keeping!
 		var/turf/location = get_turf(src)
-		log_admin("[key_name_admin(affecting)] has entered a stasis pod. (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[location.x];Y=[location.y];Z=[location.z]'>JMP</a>)")
-		message_admins("<span class='notice'>[key_name_admin(affecting)] has entered a stasis pod.</span>")
+		// Avoid spamming admins with robotic/non-organic entries. Only humans should trigger admin notifications.
+		if(ishuman(affecting))
+			log_admin("[key_name_admin(affecting)] has entered a stasis pod. (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[location.x];Y=[location.y];Z=[location.z]'>JMP</a>)")
+			message_admins("<span class='notice'>[key_name_admin(affecting)] has entered a stasis pod.</span>")
 		if(user == affecting)
 			src.add_fingerprint(affecting)
 
