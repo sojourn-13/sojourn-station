@@ -592,21 +592,17 @@
 	if(href_list["flavor_more"])
 		//if(src in view(usr)) //Flavor at any range
 		var/dat = {"
-			<html><head><title>[name]</title></head>
-			<body><tt>[replacetext(flavor_text, "\n", "<br>")]</tt></body>
-			</html>
-		"}
-		usr << browse(dat, "window=[name]_flavor;size=500x200")
+				<body><tt>[replacetext(flavor_text, "\n", "<br>")]</tt></body>
+				"}
+		usr << browse(HTML_SKELETON_TITLE(name,dat), "window=[name]_flavor;size=500x200")
 		onclose(usr, "[name]")
 	if(href_list["flavor_change"])
 		update_flavor_text()
 	if(href_list["ooc_text"])
 		var/dat = {"
-				<html><head><title>[name]</title></head>
 				<body><tt>[replacetext(ooc_text, "\n", "<br>")]</tt></body>
-				</html>
 			"}
-		usr << browse(dat, "window=[name]_ooc;size=500x200")
+		usr << browse(HTML_SKELETON_TITLE(name,dat), "window=[name]_ooc;size=500x200")
 		onclose(usr, "[name]")
 //	..()
 	return

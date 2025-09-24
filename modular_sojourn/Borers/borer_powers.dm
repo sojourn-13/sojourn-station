@@ -788,7 +788,7 @@
 			dat = SPAN_WARNING("This is a bug.")
 
 	dat += text("<BR><A href='?src=\ref[];mach_close=scanconsole'>Close</A>", src)
-	src << browse(dat, "window=scanconsole;size=430x600")
+	src << browse(HTML_SKELETON(dat), "window=scanconsole;size=430x600")
 	return
 
 /mob/living/simple/borer/proc/get_host_data()

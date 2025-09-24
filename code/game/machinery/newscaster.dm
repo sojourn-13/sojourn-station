@@ -947,7 +947,7 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 					dat+="<BR><I>There is a small scribble near the end of this page... It reads: \"[src.scribble]\"</I>"
 				dat+= "<HR><DIV STYLE='float:left;'><A href='?src=[REF(src)];prev_page=1'>Previous Page</A></DIV>"
 			else
-				dat+="I'm sorry to break your immersion. This shit's bugged. Report this bug to Agouri, polyxenitopalidou@gmail.com"
+				dat+="I'm sorry to break your immersion. This shit's bugged. Report this bug to code staff"
 
 		dat+="<BR><HR><div align='center'>[src.curr_page+1]</div>"
 		human_user << browse(HTML_SKELETON(dat), "window=newspaper_main;size=300x400")
