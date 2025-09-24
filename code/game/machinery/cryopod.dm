@@ -326,9 +326,8 @@
 	// ensure drones are qdelled reliably (don't rely on falling back to the
 	// human-specific parent despawn which may not be appropriate).
 	// Detach the occupant from the pod/container so the container doesn't keep a stale loc reference
-	if(occupant)
-		occupant.loc = null
 	qdel(occupant)
+	occupant = null
 	set_occupant(null)
 	return
 
