@@ -463,25 +463,24 @@
 		//Whoever inhabited this body is long gone, we need some black magic to find where and who they are now
 		var/mob/M = key2mob(occupant.mind.key)
 		var/mob/observer/ghost/G = M
-		if (istype(M))
-			// If the occupant is in good health and they don't already have the bonus, apply it and notify
-			if (!injured)
-				// Prefer applying the bonus to the ghost/mind.current if present so the observer's MayRespawn sees it.
-				if(M.mind && M.mind.current && isobserver(M.mind.current))
-					G = M.mind.current
+		// If the occupant is in good health and they don't already have the bonus, apply it and notify
+		if (!injured)
+			// Prefer applying the bonus to the ghost/mind.current if present so the observer's MayRespawn sees it.
+			if(M.mind && M.mind.current && isobserver(M.mind.current))
+				G = M.mind.current
 
+			if (!(G.get_respawn_bonus("CRYOSLEEP")))
+				// Notify the ghost/observer only — it's the object that uses MayRespawn.
+				to_chat(G, SPAN_NOTICE("Because your body was put into cryostorage in good health, your crew respawn time has been reduced by [CRYOPOD_SPAWN_BONUS_DESC]."))
+				G << 'sound/effects/magic/blind.ogg'
+				// Apply the bonus to both the observer (so MayRespawn sees it) and the living mob (for completeness).
+				G.set_respawn_bonus("CRYOSLEEP", config.cryopod_spawn_bonus ? config.cryopod_spawn_bonus MINUTES : CRYOPOD_SPAWN_BONUS)
+				if(istype(M))
+					M.set_respawn_bonus("CRYOSLEEP", config.cryopod_spawn_bonus ? config.cryopod_spawn_bonus MINUTES : CRYOPOD_SPAWN_BONUS)
+			else
+				// Notify occupant (or their ghost) that no reduction was applied due to injury
 				if (!(G.get_respawn_bonus("CRYOSLEEP")))
-					// Notify the ghost/observer only — it's the object that uses MayRespawn.
-					to_chat(G, SPAN_NOTICE("Because your body was put into cryostorage in good health, your crew respawn time has been reduced by [CRYOPOD_SPAWN_BONUS_DESC]."))
-					G << 'sound/effects/magic/blind.ogg'
-					// Apply the bonus to both the observer (so MayRespawn sees it) and the living mob (for completeness).
-					G.set_respawn_bonus("CRYOSLEEP", config.cryopod_spawn_bonus ? config.cryopod_spawn_bonus MINUTES : CRYOPOD_SPAWN_BONUS)
-					if(istype(M))
-						M.set_respawn_bonus("CRYOSLEEP", config.cryopod_spawn_bonus ? config.cryopod_spawn_bonus MINUTES : CRYOPOD_SPAWN_BONUS)
-				else
-					// Notify occupant (or their ghost) that no reduction was applied due to injury
-					if (!(G.get_respawn_bonus("CRYOSLEEP")))
-						to_chat(G, SPAN_DANGER("Your body was put into cryostorage, but because it is not in good health, your crew respawn time was not reduced. Please seek medical attention to qualify for the reduced respawn timer."))
+					to_chat(G, SPAN_DANGER("Your body was put into cryostorage, but because it is not in good health, your crew respawn time was not reduced. Please seek medical attention to qualify for the reduced respawn timer."))
 
 	//This should guarantee that ghosts don't spawn.
 	occupant.ckey = null
