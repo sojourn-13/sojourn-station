@@ -359,8 +359,8 @@ var/list/_client_preferences_by_type
 
 	// Prevent manual toggling from the client preferences UI. Server-side code still
 	// references this datum, but we don't want it exposed in the global prefs.
-	datum/client_preference/staff/show_attack_logs/may_set(var/mob/preference_mob)
-		return FALSE
+/datum/client_preference/staff/show_attack_logs/may_set(var/mob/preference_mob)
+	return FALSE
 
 /********************
 * Debug Preferences *
@@ -375,5 +375,5 @@ var/list/_client_preferences_by_type
 
 	// Prevent toggling debug logs from the client preferences UI. Leave server-side
 	// emission intact, but only admins with tools/commands can view debug messages.
-	datum/client_preference/staff/show_debug_logs/may_set(var/mob/preference_mob)
-		return FALSE
+/datum/client_preference/staff/show_debug_logs/may_set(var/mob/preference_mob)
+	return FALSE
