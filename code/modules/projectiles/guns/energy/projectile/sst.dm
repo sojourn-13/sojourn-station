@@ -68,8 +68,8 @@
 	damage_multiplier = 1.5
 	w_class = ITEM_SIZE_NORMAL
 	init_firemodes = list(
-		list(mode_name="non-lethal", mode_desc="fires a powerful .40 non-embedding rubber round laced with concentrated soporific compound", projectile_type = /obj/item/projectile/bullet/magnum_40/rubber/soporific, charge_cost = 60, icon="stun", fire_sound='sound/weapons/rail.ogg'),
-		list(mode_name="lethal", mode_desc="fires a standard .40 full-metal jacket round", projectile_type = /obj/item/projectile/bullet/magnum_40, charge_cost = 120, icon="kill", fire_sound='sound/weapons/rail.ogg')
+		list(mode_name="non-lethal", mode_desc="fires a powerful .40 non-embedding rubber round laced with concentrated soporific compound", projectile_type = /obj/item/projectile/bullet/magnum_40/rubber/soporific, charge_cost = 50, icon="stun", fire_sound='sound/weapons/rail.ogg'),
+		list(mode_name="lethal", mode_desc="fires a standard .40 full-metal jacket round", projectile_type = /obj/item/projectile/bullet/magnum_40, charge_cost = 100, icon="kill", fire_sound='sound/weapons/rail.ogg')
 	)
 	matter = list(MATERIAL_PLASTEEL = 18, MATERIAL_STEEL = 10,  MATERIAL_SILVER = 12, MATERIAL_PLATINUM = 5)
 	price_tag = 2500
