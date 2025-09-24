@@ -26,6 +26,26 @@
 	I.req_gun_tags = list(GUN_SILENCABLE)
 	I.prefix = "silenced"
 
+// Integrated non-removable silencer variant
+/obj/item/gun_upgrade/muzzle/silencer/integrated
+	name = "Integrated Silencer"
+	desc = "A factory-integrated, non-removable silencer. It is part of the weapon and cannot be detached without specialised tools."
+	matter = list(MATERIAL_PLASTEEL = 4, MATERIAL_PLASTIC = 1)
+	icon_state = "silencer"
+	price_tag = 180
+	can_remove = FALSE
+
+/obj/item/gun_upgrade/muzzle/silencer/integrated/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.weapon_upgrades = list(
+		GUN_UPGRADE_SILENCER = TRUE,
+		UPGRADE_BULK = 1
+		)
+	I.gun_loc_tag = GUN_MUZZLE
+	I.req_gun_tags = list(GUN_SILENCABLE)
+	can_remove = FALSE
+
 /obj/item/gun_upgrade/muzzle/pain_maker
 	name = "SA \"PainMaker\" muzzle"
 	desc = "A threaded barrel that can be attached to the muzzle of most projectile guns. \
