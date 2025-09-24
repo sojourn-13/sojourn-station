@@ -138,8 +138,15 @@
 								)
 
 /obj/item/gun/projectile/makarov/moebius/preloaded_cbo
-	initialized_upgrades = list(/obj/item/gun_upgrade/muzzle/silencer
-								)
+	name = "SI HG .35 \"Palliative Care\"" // SI stands for Soteria Institution
+	desc = "A small, easily concealable, but somewhat underpowered gun produced by SI as based off the \"Little Comet\" but ended up being a copy of the \"Clarissa\" with white paint. Uses .35 rounds and is capable of firing from both pistol and smg magazines. \
+	This one is custom made for Soteria Biolab Overseers, having an integrated silencer that cannot be removed, in addition to a laser sight for improved accuracy."
+	icon = 'icons/obj/guns/projectile/cbo.dmi'
+	icon_state = "cbo"
+	item_state = "cbo"
+	init_recoil = HANDGUN_RECOIL(0.2)
+	initialized_upgrades = list(/obj/item/gun_upgrade/muzzle/silencer/integrated
+					)
 
 /obj/item/gun/projectile/makarov/moebius/preloaded_cbo/New()
 	. = ..()
