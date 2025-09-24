@@ -454,9 +454,6 @@
 			// Consider if revival sickness perks are present
 			if(B.stats && (B.stats.getPerk(PERK_REZ_SICKNESS_MILD) || B.stats.getPerk(PERK_REZ_SICKNESS) || B.stats.getPerk(PERK_REZ_SICKNESS_SEVERE) || B.stats.getPerk(PERK_REZ_SICKNESS_FATAL)))
 				injured = TRUE
-		else
-			// If the occupant is not currently inhabiting a body, we assume they are not injured to be safe.
-			injured = FALSE
 
 	//When the occupant is put into storage, their respawn time may be reduced.
 	//This check exists for the benefit of people who get put into cryostorage while SSD and come back later
@@ -496,9 +493,8 @@
 	record?.Destroy() // Delete the crew record
 
 	// Delete the mob. Detach first so containers don't retain a stale reference to the deleted obj
-	if(occupant)
-		occupant.loc = null
 	qdel(occupant)
+	occupant = null
 	set_occupant(null)
 
 /obj/machinery/cryopod/affect_grab(var/mob/user, var/mob/target)
