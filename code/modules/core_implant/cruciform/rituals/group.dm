@@ -63,7 +63,7 @@
 
 /datum/ritual/group/cruciform/stat/cognition
 	name = "Discovery of the Path"
-	desc = "Boosts Cognition stat to 3 + 2 for each participant permanently, if god wills it."
+	desc = "Boosts Cognition stat by 3 + 2 for each participant permanently, if god wills it."
 	phrase = "Dedit quoque Deus sapientiam Salomoni et prudentiam multam nimis et latitudinem cordis quasi harenam quae est in litore maris." //1 Kings 4:29-34
 	phrases = list(
 		"Dedit quoque Deus sapientiam Salomoni et prudentiam multam nimis et latitudinem cordis quasi harenam quae est in litore maris.",
@@ -81,7 +81,7 @@
 
 /datum/ritual/group/cruciform/stat/biology
 	name = "Creation of Vitae"
-	desc = "Boosts Biology stat to 3 + 2 for each participant permanently, if god wills it."
+	desc = "Boosts Biology stat by 3 + 2 for each participant permanently, if god wills it."
 	phrase = "Convocatis autem duodecim apostolis dedit illis virtutem et potestatem super omnia daemonia et ut languores curarent." //Luke 9:1-6
 	phrases = list(
 		"Convocatis autem duodecim apostolis dedit illis virtutem et potestatem super omnia daemonia et ut languores curarent.",
@@ -99,7 +99,7 @@
 
 /datum/ritual/group/cruciform/robustness
 	name = "Strength of the Absolute"
-	desc = "Boosts Robustness stat to 3 + 2 for each participant permanently, if god wills it."
+	desc = "Boosts Robustness stat by 3 + 2 for each participant permanently, if god wills it."
 	phrase = "Audi Israhel tu transgredieris hodie Iordanem ut possideas nationes maximas et fortiores te civitates ingentes et ad caelum usque muratas." //Dueteronomy 9:1-6
 	phrases = list(
 		"Audi Israhel tu transgredieris hodie Iordanem ut possideas nationes maximas et fortiores te civitates ingentes et ad caelum usque muratas.",
@@ -117,7 +117,7 @@
 
 /datum/ritual/group/cruciform/toughness
 	name = "Reclamation of Endurance"
-	desc = "Boosts Toughness stat to 3 + 2 for each participant permanently, if god wills it."
+	desc = "Boosts Toughness stat by 3 + 2 for each participant permanently, if god wills it."
 	phrase = "In finem psalmus David." //Psalm 19:1-6
 	phrases = list(
 		"In finem psalmus David.",
