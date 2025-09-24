@@ -46,7 +46,7 @@
 
 /datum/ritual/group/cruciform/stat/mechanical
 	name = "Value of Labor"
-	desc = "Boosts Mechanical stat to 3 + 2 for each participant permanently, if god wills it."
+	desc = "Boosts Mechanical stat by 3 + 2 for each participant permanently, if god wills it."
 	phrase = "Filius sapiens laetificat patrem, filius vero stultus moestitia est matris suae." //Proverbs 10:1-5
 	phrases = list(
 		"Filius sapiens laetificat patrem, filius vero stultus moestitia est matris suae.",
