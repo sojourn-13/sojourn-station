@@ -704,3 +704,10 @@
 	icon_state = "jackal"
 	colored_layers = 2
 	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/tail/cow_alt
+    name = "Cow Tail, Alt"
+    desc = ""
+    icon_state = "cowtail_alt"
+    colored_layers = 2
+    blend = ICON_MULTIPLY
