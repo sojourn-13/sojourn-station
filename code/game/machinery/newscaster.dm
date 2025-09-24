@@ -860,6 +860,7 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 	desc = "An old issue of The Griffon, a widely-circulated galactic newspaper."
 	icon = 'icons/obj/bureaucracy.dmi'
 	icon_state = "newspaper"
+	matter = list(MATERIAL_BIOMATTER = 2)
 	w_class = ITEM_SIZE_SMALL	//Let's make it fit in trashbags!
 	attack_verb = list("bapped")
 	var/screen = 0

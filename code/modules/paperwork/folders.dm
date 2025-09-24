@@ -3,6 +3,7 @@
 	desc = "A folder."
 	icon = 'icons/obj/bureaucracy.dmi'
 	icon_state = "folder"
+	matter = list(MATERIAL_BIOMATTER = 3)
 	w_class = ITEM_SIZE_TINY
 	/// The background color for tgui in hex (with a `#`)
 	var/bg_color = "#7f7f7f"
