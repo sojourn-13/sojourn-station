@@ -426,11 +426,7 @@ Technomancer RIG
 		/obj/item/roller
 	)
 
-
 /obj/item/rig/recovery_suit/equipped
-	req_access = null
-	req_one_access = null
-
 	initial_modules = list(
 		/obj/item/rig_module/modular_injector/medical/preloaded,
 		/obj/item/rig_module/maneuvering_jets,
