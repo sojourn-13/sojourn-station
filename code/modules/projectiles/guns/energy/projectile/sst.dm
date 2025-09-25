@@ -70,17 +70,17 @@
 	can_dual = TRUE
 	damage_multiplier = 1.5
 	init_firemodes = list(
-		list(mode_name="non-lethal", mode_desc="fires a powerful .40 non-embedding rubber round laced with concentrated soporific compound", projectile_type = /obj/item/projectile/bullet/magnum_40/rubber/soporific, charge_cost = 50, icon="stun", fire_sound='sound/weapons/rail.ogg'),
-		list(mode_name="lethal", mode_desc="fires a standard .40 full-metal jacket round", projectile_type = /obj/item/projectile/bullet/magnum_40, charge_cost = 100, icon="kill", fire_sound='sound/weapons/rail.ogg')
+		list(mode_name="non-lethal", mode_desc="fires a powerful .40 non-embedding rubber round laced with concentrated soporific compound", projectile_type = /obj/item/projectile/bullet/magnum_40/rubber/soporific, charge_cost = 100, icon="stun", fire_sound='sound/weapons/rail.ogg'),
+		list(mode_name="lethal", mode_desc="fires a standard .40 full-metal jacket round", projectile_type = /obj/item/projectile/bullet/magnum_40, charge_cost = 200, icon="kill", fire_sound='sound/weapons/rail.ogg')
 	)
 	//no deconstructing, selling, or recycling as this is a unique HoS weapon
 	matter = null
 	origin_tech = null
 	price_tag = null
 
-/obj/item/gun/energy/sst/cbo/preloaded
+/obj/item/gun/energy/sst/formatbound/cbo/preloaded
 
-/obj/item/gun/energy/sst/cbo/preloaded/New()
+/obj/item/gun/energy/sst/formatbound/cbo/preloaded/New()
 	cell = new /obj/item/cell/medium/moebius/high(src)
 	. = ..()
 	update_icon()
