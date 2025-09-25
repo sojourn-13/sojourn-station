@@ -440,7 +440,7 @@ Technomancer RIG
 
 /obj/item/rig/cmo
 	name = "SI 'Retainer' control module"
-	suit_type = "SI 'Retainer"
+	suit_type = "SI 'Retainer' hardsuit"
 	desc = "An upgraded and updated Soteria 'Retainer' RIGsuit made for field surgery in dangerous locations, this suit has undergone a series of upgrades to improve its utility \
 	for Soteria's resident overworked Chief Biolab Overseer.  Improved servos are paired with neural-mnemonic sensors allowing the user unmatched speed and dexterity- one can easily forget that they are even wearing the suit."
 	icon_state = "cmo_rig"
