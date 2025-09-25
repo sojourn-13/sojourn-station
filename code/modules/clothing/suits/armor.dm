@@ -1306,7 +1306,7 @@
 	icon_state = "platecarrier_yunan_fullbody"
 	item_state = "platecarrier_yunan_fullbody"
 	blood_overlay_type = "armor"
-	armor_list = list(melee = 10, bullet = 13, energy = 8, bomb = 15, bio = 0, rad = 0)
+	armor_list = list(melee = 10, bullet = 14, energy = 8, bomb = 15, bio = 0, rad = 0)
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
 	stiffness = 0
 	slowdown = 0
