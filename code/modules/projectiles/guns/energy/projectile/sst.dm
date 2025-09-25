@@ -68,7 +68,7 @@
 	fire_delay = 5
 	init_recoil = CARBINE_RECOIL(0.8)
 	can_dual = TRUE
-	max_upgrades = 3 // Already tinkered enough, smaller frame, good stats
+	max_upgrades = 3 // Already tinkered enough, smaller frame, good stats, no cheesing this one
 	damage_multiplier = 1.2
 	blacklist_upgrades = list(/obj/item/tool_upgrade/augment/expansion = TRUE)
 	init_firemodes = list(
