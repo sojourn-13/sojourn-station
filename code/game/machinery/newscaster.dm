@@ -861,6 +861,7 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 	icon = 'icons/obj/bureaucracy.dmi'
 	icon_state = "newspaper"
 	matter = list(MATERIAL_BIOMATTER = 2)
+	ignore_object_materials = TRUE
 	w_class = ITEM_SIZE_SMALL	//Let's make it fit in trashbags!
 	attack_verb = list("bapped")
 	var/screen = 0
