@@ -243,9 +243,12 @@
 		to_chat(feedback, "<span class='boldannounce'>[setup_restricted ? "You are playing a species that cannot take this job." : "The job conflicts with one of your setup options."]</span>")
 		return TRUE
 
-	if(minimum_character_age && (prefs.age < minimum_character_age))
-		to_chat(feedback, "<span class='boldannounce'>Not old enough. Minimum character age is [minimum_character_age].</span>")
-		return TRUE
+       var/age_requirement = minimum_character_age
+       if(prefs && prefs.mob && prefs.mob.stats && prefs.mob.stats.getPerk && prefs.mob.stats.getPerk(PERK_NEPOTISM))
+	       age_requirement = max(0, age_requirement - 5)
+       if(age_requirement && (prefs.age < age_requirement))
+	       to_chat(feedback, "<span class='boldannounce'>Not old enough. Minimum character age is [age_requirement].</span>")
+	       return TRUE
 
 	if(!is_experienced_enough(prefs.client))
 		to_chat(feedback, "<span class='boldannounce'>Not experienced enough. This job requires that you play [coltimerequired] minutes of colonist and [playtimerequired] in the [department] department.</span>")

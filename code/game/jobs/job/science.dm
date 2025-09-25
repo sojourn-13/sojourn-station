@@ -25,7 +25,7 @@
 		access_RC_announce, access_keycard_auth, access_tcomsat, access_gateway, access_xenoarch, access_network, access_maint_tunnels, access_research_equipment, access_heads_vault
 	)
 	ideal_character_age = 40
-	minimum_character_age = 25
+	minimum_character_age = 30
 
 	stat_modifiers = list(
 		STAT_MEC = 25,
