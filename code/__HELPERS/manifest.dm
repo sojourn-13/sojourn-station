@@ -18,16 +18,16 @@
 		list("names" = list(), "header" = "Artificers Guild", "flag" = ENGINEERING),
 		list("names" = list(), "header" = "Prospector", "flag" = PROSPECTORS),
 		list("names" = list(), "header" = "Civilian", "flag" = CIVILIAN),
-		list("names" = list(), "header" = "Miscellaneous", "flag" = MISC),
-		list("names" = list(), "header" = "Silicon"),
-		list("names" = list(), "header" = "Lodge", "flag" = LODGE)
+		list("names" = list(), "header" = "Silicon", "flag" = SILICON),
+		list("names" = list(), "header" = "Lodge", "flag" = LODGE),
+		list("names" = list(), "header" = "Miscellaneous", "flag" = MISC)
 	)
 	var/list/misc //Special departments for easier access
 	var/list/bot
 	for(var/list/department in dept_data)
 		if(department["flag"] == MISC)
 			misc = department["names"]
-		if(isnull(department["flag"]))
+		if(department["flag"] == SILICON)
 			bot = department["names"]
 
 	var/list/isactive = new()
@@ -73,9 +73,10 @@
 		if(job)
 			for(var/list/department in dept_data)
 				var/list/names = department["names"]
-				if(job.department_flag & department["flag"])
+				if(department["flag"] && (job.department_flag & department["flag"]))
 					names[name] = rank
 					found_place = 1
+					break
 		if(!found_place)
 			misc[name] = rank
 
