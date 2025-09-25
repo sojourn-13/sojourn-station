@@ -147,10 +147,10 @@
 		if (M.get_respawn_bonus("CORPSE_HANDLING"))
 			return // we got this one already
 		//We send a message to the occupant's current mob - probably a ghost, but who knows.
-		to_chat(M, SPAN_NOTICE("Your remains have been collected and properly stored. Your crew respawn time is reduced by 8 minutes."))
+		to_chat(M, SPAN_NOTICE("Your remains have been collected and properly stored.  Your crew respawn time has been reduced by [CRYOPOD_SPAWN_BONUS_DESC]."))
 		M << 'sound/effects/magic/blind.ogg' //Play this sound to a player whenever their respawn time gets reduced
 
-		M.set_respawn_bonus("CORPSE_HANDLING", 8 MINUTES)
+		M.set_respawn_bonus("CORPSE_HANDLING", config.cryopod_spawn_bonus ? config.cryopod_spawn_bonus MINUTES : CRYOPOD_SPAWN_BONUS)
 
 
 

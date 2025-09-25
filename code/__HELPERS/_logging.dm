@@ -75,7 +75,8 @@
 
 	for(var/client/C in admins)
 		if(C.get_preference_value(/datum/client_preference/staff/show_debug_logs) == GLOB.PREF_SHOW)
-			to_chat(C, "DEBUG: [text]")
+			// Wrap debug messages so frontend can filter them via .debug_message selector
+			to_chat(C, "<span class=\"debug_message\">DEBUG: [text]</span>")
 
 /proc/log_game(text)
 	if (config.log_game)

@@ -158,9 +158,9 @@ Works together with spawning an observer, noted above.
 		//This is duplicated in the cryopod code for robustness. The message will not display twice
 		if (istype(loc, /obj/machinery/cryopod) && in_perfect_health())
 			if (!get_respawn_bonus("CRYOSLEEP"))
-				to_chat(src, SPAN_NOTICE("Because you ghosted from a cryopod in good health, your crew respawn time has been reduced by [CRYOPOD_SPAWN_BONUS_DESC]."))
+				to_chat(src, SPAN_NOTICE("Because you ghosted from a cryopod in good health, Your crew respawn time has been reduced by [CRYOPOD_SPAWN_BONUS_DESC]."))
 				src << 'sound/effects/magic/blind.ogg' //Play this sound to a player whenever their respawn time gets reduced
-			set_respawn_bonus("CRYOSLEEP", CRYOPOD_SPAWN_BONUS)
+			set_respawn_bonus("CRYOSLEEP", config.cryopod_spawn_bonus ? config.cryopod_spawn_bonus MINUTES : CRYOPOD_SPAWN_BONUS)
 
 		ghost.ckey = ckey
 		ghost.client = client
@@ -191,7 +191,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 					return
 				src.client.admin_ghost()
 		else
-			response = alert(src, "Are you -sure- you want to ghost?\n(You are alive. If you ghost, you won't be able to play this round for another 30 minutes! You can't change your mind so choose wisely!)", "Are you sure you want to ghost?", "Ghost", "Stay in body")
+			response = alert(src, "Are you -sure- you want to ghost?\n(You are alive. If you ghost, you won't be able to play this round for another 20 minutes! You can't change your mind so choose wisely!)", "Are you sure you want to ghost?", "Ghost", "Stay in body")
 		if(response != "Ghost")
 			return
 		resting = 1
@@ -707,9 +707,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	var/timedifference = world.time- get_death_time(respawn_type)
 	var/respawn_time = 0
 	if (respawn_type == CREW)
-		respawn_time = config.respawn_delay MINUTES
-
-		//Here we factor in bonuses added from cryosleep and similar things
+		respawn_time = config.respawn_delay MINUTES // Default respawn time
 		timedifference += get_respawn_bonus()
 	else if (respawn_type == ANIMAL)
 		respawn_time = ANIMAL_SPAWN_DELAY
