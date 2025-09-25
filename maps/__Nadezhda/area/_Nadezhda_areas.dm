@@ -539,7 +539,7 @@
 	name = "Cargo Substation"
 
 /area/nadezhda/maintenance/substation/servist
-	name = "Servist Substation"
+	name = "Service Substation"
 
 /area/nadezhda/maintenance/substation/misc1
 	name = "MISC Substation 1"
