@@ -54,7 +54,10 @@
 
 /obj/item/gun/energy/sst/formatbound/cbo
 	name = "SST \"Resolute\" handgun"
-	desc = "The \"Resolute\" is a special-issue \"Soteria Surface Tension\" handgun, designed for CBOs, based on the \"Format Bound\" design. It features selectable fire modes for both rubber anesthetic and full-metal jacket rounds, offering both non-lethal and lethal options for self-defense."
+	desc = "The \"Resolute\" is a special-issue \"Soteria Surface Tension\" handgun, designed for CBOs, based on the \"Format Bound\" design. \
+	Having been made smaller, more compact, and energy efficient, this gun is a versatile tool for close-quarters engagements. \
+	It features selectable fire modes for both rubber anesthetic and full-metal jacket rounds, \
+	offering both non-lethal and lethal options for self-defense against threats both monstrous and human."
 	icon_state = "format_bound_small"
 	item_state = "format_bound_small"
 	fire_sound = 'sound/weapons/rail.ogg'
@@ -71,8 +74,10 @@
 		list(mode_name="non-lethal", mode_desc="fires a powerful .40 non-embedding rubber round laced with concentrated soporific compound", projectile_type = /obj/item/projectile/bullet/magnum_40/rubber/soporific, charge_cost = 50, icon="stun", fire_sound='sound/weapons/rail.ogg'),
 		list(mode_name="lethal", mode_desc="fires a standard .40 full-metal jacket round", projectile_type = /obj/item/projectile/bullet/magnum_40, charge_cost = 100, icon="kill", fire_sound='sound/weapons/rail.ogg')
 	)
-	matter = list(MATERIAL_PLASTEEL = 18, MATERIAL_STEEL = 10,  MATERIAL_SILVER = 12, MATERIAL_PLATINUM = 5)
-	price_tag = 2500
+	//no deconstructing, selling, or recycling as this is a unique HoS weapon
+	matter = null
+	origin_tech = null
+	price_tag = null
 
 /obj/item/gun/energy/sst/cbo/preloaded
 
