@@ -652,7 +652,8 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	//Has medicals items inside it to save on spawn storage.
 	new /obj/item/storage/firstaid/soteria/large(src)
 	new /obj/item/modular_computer/tablet/moebius/preset(src)
-	new /obj/item/gun/projectile/makarov/moebius/preloaded_cbo(src)
+	new /obj/item/gun/energy/sst/cbo/preloaded(src)
+	new /obj/item/cell/medium/moebius/high(src)
 	new /obj/item/gun_upgrade/trigger/dnalock(src)
 
 /obj/item/storage/hcases/med/medical_job_trama
