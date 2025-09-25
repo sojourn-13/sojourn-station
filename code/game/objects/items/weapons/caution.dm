@@ -4,6 +4,7 @@
 	icon = 'icons/obj/janitor.dmi'
 	icon_state = "caution"
 	matter = list(MATERIAL_BIOMATTER = 2, MATERIAL_PLASTIC = 3)
+	ignore_object_materials = true
 	force = WEAPON_FORCE_HARMLESS
 	throwforce = WEAPON_FORCE_HARMLESS
 	throw_speed = 1
