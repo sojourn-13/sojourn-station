@@ -82,7 +82,7 @@
 		if(isliving(target))
 			var/mob/living/L = target
 			if(istype(L) && L.reagents)
-				reagents.trans_to_mob(L, 2, CHEM_BLOOD, copy = FALSE)
+				reagents.trans_to_mob(L, 2, CHEM_TOUCH, copy = FALSE)
 
 /obj/item/projectile/bullet/pistol_35/rubber/soporific/cbo
 	name = "soporific condensed plastic bullet"
@@ -237,7 +237,20 @@
 		if(isliving(target))
 			var/mob/living/L = target
 			if(istype(L) && L.reagents && !testing)
-				reagents.trans_to_mob(L, 3, CHEM_BLOOD, copy = FALSE)
+				reagents.trans_to_mob(L, 3, CHEM_TOUCH, copy = FALSE)
+
+/obj/item/projectile/bullet/magnum_40/rubber/soporific/cbo
+	name = "condenseed soporific coated rubber bullet"
+	damage_types = list(BRUTE = 0, HALLOSS = 35)
+	can_ricochet = FALSE
+	embed = FALSE
+
+/obj/item/projectile/bullet/magnum_40/rubber/soporific/cbo/on_hit(atom/target, def_zone = null)
+	if(!testing)
+		if(isliving(target))
+			var/mob/living/L = target
+			if(istype(L) && L.reagents)
+				L.reagents.add_reagent("stoxin", 5)
 
 /obj/item/projectile/bullet/magnum_40/scrap
 	damage_types = list(BRUTE = 15)
@@ -525,7 +538,7 @@
 		if(isliving(target))
 			var/mob/living/L = target
 			if(istype(L) && L.reagents && !testing)
-				reagents.trans_to_mob(L, 1, CHEM_BLOOD, copy = FALSE)
+				reagents.trans_to_mob(L, 1, CHEM_TOUCH, copy = FALSE)
 
 /obj/item/projectile/bullet/rifle_75/lethal
 	name = "hollow-point bullet"
@@ -942,7 +955,7 @@
 		if(isliving(target))
 			var/mob/living/L = target
 			if(istype(L) && L.reagents && !testing)
-				reagents.trans_to_mob(L, 5, CHEM_BLOOD, copy = FALSE)
+				reagents.trans_to_mob(L, 5, CHEM_TOUCH, copy = FALSE)
 
 
 /obj/item/projectile/bullet/shotgun/practice
@@ -1358,7 +1371,7 @@
 		if(isliving(target))
 			var/mob/living/injectee = target
 			admin_inject_log(original_firer, target, src, reagents.log_list(), 5)
-			reagents.trans_to_mob(injectee, 5, CHEM_BLOOD)
+			reagents.trans_to_mob(injectee, 5, CHEM_TOUCH)
 		else
 			reagents.trans_to(target, 5)
 	return TRUE

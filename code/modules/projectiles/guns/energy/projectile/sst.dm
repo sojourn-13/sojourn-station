@@ -68,11 +68,10 @@
 	fire_delay = 5
 	init_recoil = CARBINE_RECOIL(0.8)
 	can_dual = TRUE
-	max_upgrades = 2
-	damage_multiplier = 1
+	damage_multiplier = 1.4
 	init_firemodes = list(
-		list(mode_name="non-lethal", mode_desc="fires a powerful .40 non-embedding rubber round laced with concentrated soporific compound", projectile_type = /obj/item/projectile/bullet/magnum_40/rubber/soporific, charge_cost = 100, icon="stun", fire_sound='sound/weapons/rail.ogg'),
-		list(mode_name="lethal", mode_desc="fires a standard .40 full-metal jacket round", projectile_type = /obj/item/projectile/bullet/magnum_40, charge_cost = 100, icon="kill", fire_sound='sound/weapons/rail.ogg')
+		list(mode_name="non-lethal", mode_desc="fires a powerful .40 non-embedding rubber round laced with concentrated soporific compound", projectile_type = /obj/item/projectile/bullet/magnum_40/rubber/soporific/cbo, charge_cost = 75, icon="stun", fire_sound='sound/weapons/rail.ogg'),
+		list(mode_name="lethal", mode_desc="fires a standard .40 full-metal jacket round", projectile_type = /obj/item/projectile/bullet/magnum_40, charge_cost = 75, icon="kill", fire_sound='sound/weapons/rail.ogg')
 	)
 	//no deconstructing, selling, or recycling as this is a unique HoS weapon
 	matter = null
