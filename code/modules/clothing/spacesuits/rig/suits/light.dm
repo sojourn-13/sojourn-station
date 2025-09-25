@@ -41,7 +41,7 @@
 
 /obj/item/rig/light/ultra_light
 	name = "SI 'Proto-Spacer' control module"
-	desc = "An ultra light, unarmored rig suit. The precursor to the Soteria retainer model, quite lacking in armor and EMP protection but capable of fitting hardsuit modules."
+	desc = "An ultra light, unarmored rig suit. The precursor to the Soteria reclaimer model, quite lacking in armor and EMP protection but capable of fitting hardsuit modules."
 	icon_state = "hacker_rig"
 	suit_type = "SI 'Spacer"
 	armor_list = list(
@@ -75,9 +75,9 @@
 	camera_networks = list(NETWORK_RESEARCH)
 
 /obj/item/rig/light/hacker/steward
-	name = "SI 'Retainer' control module"
+	name = "SI 'Reclaimer' control module"
 	desc = "A Soteria Institute modification of the traditional light rig built for equal parts utility and defense."
-	suit_type = "SI 'retainer"
+	suit_type = "SI 'Reclaimer' hardsuit"
 	armor_list = list(
 		melee = 7,
 		bullet = 6,

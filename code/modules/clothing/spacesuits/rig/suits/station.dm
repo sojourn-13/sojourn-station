@@ -429,9 +429,7 @@ Technomancer RIG
 		/obj/item/roller
 	)
 
-
 /obj/item/rig/recovery_suit/equipped
-	req_access = list(access_medical)
 	initial_modules = list(
 		/obj/item/rig_module/modular_injector/medical/preloaded,
 		/obj/item/rig_module/maneuvering_jets,
@@ -441,9 +439,9 @@ Technomancer RIG
 		)
 
 /obj/item/rig/cmo
-	name = "SI 'Medtek' control module"
-	suit_type = "SI 'Medtek"
-	desc = "An upgraded and updated Soteria 'Retainer' RIGsuit made for field surgery in dangerous locations, this suit has undergone a series of upgrades to improve its utility \
+	name = "SI 'Retainer' control module"
+	suit_type = "SI 'Retainer' hardsuit"
+	desc = "An upgraded and updated Soteria 'Reclaimer' RIGsuit made for field surgery in dangerous locations, this suit has undergone a series of upgrades to improve its utility \
 	for Soteria's resident overworked Chief Biolab Overseer.  Improved servos are paired with neural-mnemonic sensors allowing the user unmatched speed and dexterity- one can easily forget that they are even wearing the suit."
 	icon_state = "cmo_rig"
 	armor_list = list(
