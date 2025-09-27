@@ -5,11 +5,6 @@
 	set category = "OOC"
 	set desc = "Link your Discord account using a verification code from the Discord bot."
 
-	if(!src || !ismob(src))
-		return
-	if(!usr.client)
-		return
-
 	var/verification_code = alert("Please enter the verification code from the Discord bot:", "Link Discord", "Enter Code", "Cancel")
 	if(verification_code == "Cancel" || !verification_code)
 		return
