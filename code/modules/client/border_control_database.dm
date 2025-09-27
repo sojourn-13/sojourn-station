@@ -85,10 +85,6 @@ ADMIN_VERB_ADD(/client/proc/BC_MigrateToDatabase, R_ADMIN, FALSE)
 	set name = "Border Control - Migrate to Database"
 	set category = "Admin"
 
-	if(!config.sql_enabled)
-		to_chat(src, "<span class='warning'>SQL is not enabled in the configuration.</span>")
-		return
-
 	var/confirm = alert("This will migrate border control whitelist to the database. Continue?", "Migrate Border Control", "Yes", "No")
 	if(confirm != "Yes")
 		return
