@@ -101,7 +101,9 @@ var/database_whitelist_loaded = 0
 		return 0
 
 	check_query.Execute()
-	var/exists = check_query.NextRow()	var/DBQuery/query
+	var/exists = check_query.NextRow()
+
+	var/DBQuery/query
 	if(exists)
 		// Update existing entry - using direct values instead of parameters
 		var/safe_notes = notes ? "'" + notes + "'" : "NULL"
