@@ -512,3 +512,10 @@ update_flag
 	src.air_contents.adjust_gas("plasma", MolesForPressure())
 	src.update_icon()
 	return 1
+
+/obj/machinery/portable_atmospherics/canister/hydrogen/engine_setup/New()
+	..()
+	src.air_contents.adjust_gas("hydrogen", MolesForPressure())
+	src.update_icon()
+	return 1
+
