@@ -68,6 +68,12 @@
 	canister_color = "grey"
 	can_label = 0
 
+/obj/machinery/portable_atmospherics/canister/hydrogen
+	name = "canister \[Hydrogen]"
+	icon_state = "purple"
+	canister_color = "purple"
+	can_label = 0
+
 /obj/machinery/portable_atmospherics/canister/air/airlock
 	start_pressure = 3 * ONE_ATMOSPHERE
 
@@ -95,7 +101,10 @@
 	name = "canister \[N2O]"
 	icon_state = "redws"
 	canister_color = "redws"
-
+/obj/machinery/portable_atmospherics/canister/empty/hydrogen
+	name = "canister \[Hydrogen]"
+	icon_state = "purple"
+	canister_color = "purple"
 
 
 
@@ -458,6 +467,12 @@ update_flag
 /obj/machinery/portable_atmospherics/canister/carbon_dioxide/New()
 	..()
 	src.air_contents.adjust_gas("carbon_dioxide", MolesForPressure())
+	src.update_icon()
+	return 1
+
+/obj/machinery/portable_atmospherics/canister/hydrogen/New()
+	..()
+	src.air_contents.adjust_gas("hydrogen", MolesForPressure())
 	src.update_icon()
 	return 1
 
