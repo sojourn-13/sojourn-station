@@ -11,12 +11,27 @@ var/database_whitelist_loaded = 0
 	return 1
 
 /proc/load_database_whitelist()
+	log_world("DEBUG: Attempting to load database whitelist...")
+	log_world("DEBUG: SQL enabled status: [config.sql_enabled]")
+	
+	if(!config.sql_enabled)
+		log_world("DEBUG: SQL is disabled in config. Using file-based system.")
+		load_whitelist()
+		return
+		
 	if(!establish_db_connection())
 		// Fall back to file-based system if database is not available
 		log_world("Database connection failed for whitelist. Using file-based system.")
+		log_world("DEBUG: Failed DB connections count: [failed_db_connections]")
+		if(dbcon)
+			log_world("DEBUG: Database error: [dbcon.ErrorMsg()]")
+		else
+			log_world("DEBUG: No database connection object exists")
 		load_whitelist() // Call the old file-based function
 		return
 
+	log_world("DEBUG: Database connection established successfully for whitelist")
+	
 	// Create whitelist table if it doesn't exist
 	create_whitelist_table()
 
@@ -38,10 +53,13 @@ var/database_whitelist_loaded = 0
 	log_world("Loaded [database_whitelist.len] entries from database whitelist.")
 
 /proc/create_whitelist_table()
+	log_world("DEBUG: Attempting to create whitelist table...")
 	var/DBQuery/query = dbcon.NewQuery("CREATE TABLE IF NOT EXISTS whitelist (id INT AUTO_INCREMENT PRIMARY KEY, ckey VARCHAR(32) NOT NULL, added_by VARCHAR(32), added_date DATETIME DEFAULT CURRENT_TIMESTAMP, active BOOLEAN DEFAULT TRUE, notes TEXT, UNIQUE KEY unique_ckey (ckey), INDEX idx_ckey_active (ckey, active), INDEX idx_active (active)) ENGINE=InnoDB DEFAULT CHARSET=utf8")
 
 	if(!query.Execute())
 		log_world("Failed to create whitelist table: [query.ErrorMsg()]")
+	else
+		log_world("DEBUG: Whitelist table created/verified successfully")
 
 /proc/check_database_whitelist(mob/M)
 	var/ckey_to_check = ckey(M.ckey)
