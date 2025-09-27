@@ -446,7 +446,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 			    but in order to play, you'll need to be whitelisted!  Please visit our discord to submit an access request!")
 		return
 
-	if(!BC_IsDiscordLinked(usr.ckey) && !usr.client.holder)
+	if(config.require_discord_linking && !BC_IsDiscordLinked(usr.ckey) && !usr.client.holder)
 		usr << SPAN_DANGER("Discord Account Linking Required! You must link your Discord account before joining. \
 			   Use the /link command in our Discord server or the 'Link Discord to CKey' verb in the OOC tab.")
 		return
@@ -592,7 +592,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 				but in order to play, you'll need to be whitelisted!  Please visit our discord to submit an access request!"))
 		return 0
 
-	if(!BC_IsDiscordLinked(usr.ckey) && !usr.client.holder)
+	if(config.require_discord_linking && !BC_IsDiscordLinked(usr.ckey) && !usr.client.holder)
 		to_chat(usr, SPAN_DANGER("Discord Account Linking Required! You must link your Discord account before joining. \
 			   Use the /link command in our Discord server or the 'Link Discord to CKey' verb in the OOC tab."))
 		return 0
