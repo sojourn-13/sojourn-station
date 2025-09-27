@@ -65,7 +65,6 @@ var/bomb_set
 
 		alarm_loop_timer += 2
 		if(alarm_loop_timer >= 510) // 255 seconds = 4:15 minutes (510 deciseconds with 2-second increments)
-			world << sound('sound/effects/2.mp3', volume = 75)
 			alarm_loop_timer = 0
 
 		// Repeating alarm loop during active sequence (4:15 minute sound)
@@ -612,7 +611,7 @@ var/bomb_set
 	world << sound('sound/effects/siren.ogg', volume = 75)
 
 	// Start the repeating alarm loop immediately
-	world << sound('sound/effects/2.mp3', volume = 75)
+	world << sound('sound/effects/2.mp3', volume = 75, repeat = 1)
 
 	return TRUE
 

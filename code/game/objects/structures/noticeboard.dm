@@ -228,9 +228,24 @@
 
 /obj/structure/noticeboard/medical/New()
 	var/obj/item/paper/P = new()
-	P.name = "Memo RE: Initial setup"
-	P.info = "<br>Note to all biolab staff:<br> Please remember to set up the cryo cooler to 80K, attach anesthetic tanks to the surgery stands and make the following basic chems -<br><ul> <li> Bicaridine<br><li> Keloderm (1 part Kelotane, 1 part Dermaline)<br>\
-	<li> Carthatoline<br><li> Dexalin Plus (in 5u pills)<br> <li> Tramadol (in 5u pills)<br><li> Sanguinum<br><li> Peridaxon using the leftover Cronexadone<br><li> Cronexadone (to be mixed in two parts with the beakers next to the cryo tubes)</ul><br>Thank you Dears - Dr M. Bright"
+	P.name = "Preparation Log"
+	P.info = "<center><h2><b>Soteria Institute - Medical Department</b></h2><br>\
+	<i>Preparation log</i><br>\
+	<small>DATE: [time2text(world.realtime, "DD/MM/YYYY")] | SI-MED-051-A</small><br>\
+	<small><i>Working Copy 3</i></small></center><hr>\
+	<table border='1'>\
+	<tr><td><b><center>Task</center></b></td><td><b><center>Time of<br>Completion:</center></b></td><td><b><center>Performed<br>By:</center></b></td></tr>\
+	<tr><td><b>Cryogenics Setup</b><br><small>Set Temperature to 30K, Set Regulator to 250 kPa, Turn on Cooler.</small></td><td><center>__________</center></td><td><center>__________</center></td></tr>\
+	<tr><td><b>Operating Theatre Check</b><br><small>Surgical Kit Completeness, Anasthetic Tank Regulator Pressure, Clearing of Contaminants.</small></td><td><center>__________</center></td><td><center>__________</center></td></tr>\
+	<tr><td><b>Primary Cleaning</b><br><small>Emergency Treatment Center, Organ Lab, Cryogenics Lab, Operating Theatre.</small></td><td><center>__________</center></td><td><center>__________</center></td></tr>\
+	<tr><td><b>Basic Chems</b><br><small>Cronexidone, Dexalin Plus, Bicaridine, KeloDerm, Tramadol.</small></td><td><center>__________</center></td><td><center>__________</center></td></tr>\
+	<tr><td><b>Advanced Chems</b><br><small>Oxycodone, Peridaxon, Carthatoline, Sanguinum, Alkysine.</small></td><td><center>__________</center></td><td><center>__________</center></td></tr>\
+	<tr><td><b>Specialized Chems</b><br><small>Imidazoline, Ethylredoxrazine, HyroArith, Artithrazine, Ryetalin, Trypsin.</small></td><td><center>__________</center></td><td><center>__________</center></td></tr>\
+	<tr><td><b>Invoice Preparation</b><br><small>Use Carbon Copies, Preferably.</small></td><td><center>__________</center></td><td><center>__________</center></td></tr>\
+	<tr><td><b>Second Cleaning</b><br><small>Lower Level Medical, Psych Ward, Medical Prep, Additional Rooms.</small></td><td><center>__________</center></td><td><center>__________</center></td></tr>\
+	</table><br>\
+	Signature of on-shift Chief Biolab Overseer: __________<br>\
+	<small>If no CBO is on shift, leave field blank. Form must be stamped and signed by a CBO before the end of the shift to be fully valid.</small>"
 	P.add_overlay(list("paper_stamp-dots"))
 	P.stamped &= STAMP_FACTION
 	src.contents += P

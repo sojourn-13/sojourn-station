@@ -61,17 +61,17 @@
 	icon_state = "format_bound_small"
 	item_state = "format_bound_small"
 	fire_sound = 'sound/weapons/rail.ogg'
-	charge_cost = 50
+	charge_cost = 100
 	w_class = ITEM_SIZE_SMALL
 	gun_tags = list(GUN_PROJECTILE, GUN_LASER, GUN_ENERGY)
 	suitable_cell = /obj/item/cell/medium
 	fire_delay = 5
 	init_recoil = CARBINE_RECOIL(0.8)
 	can_dual = TRUE
-	damage_multiplier = 1.2
+	damage_multiplier = 1.4
 	init_firemodes = list(
-		list(mode_name="non-lethal", mode_desc="fires a powerful .40 non-embedding rubber round laced with concentrated soporific compound", projectile_type = /obj/item/projectile/bullet/magnum_40/rubber/soporific/cbo, charge_cost = 75, icon="stun", fire_sound='sound/weapons/rail.ogg'),
-		list(mode_name="lethal", mode_desc="fires a standard .40 full-metal jacket round", projectile_type = /obj/item/projectile/bullet/magnum_40, charge_cost = 75, icon="kill", fire_sound='sound/weapons/rail.ogg')
+		list(mode_name="non-lethal", mode_desc="fires a powerful .40 non-embedding rubber round laced with concentrated soporific compound", projectile_type = /obj/item/projectile/bullet/magnum_40/rubber/soporific/cbo, icon="stun", fire_sound='sound/weapons/rail.ogg'),
+		list(mode_name="lethal", mode_desc="fires a standard .40 full-metal jacket round", projectile_type = /obj/item/projectile/bullet/magnum_40, damage_multiplier = 0.8, icon="kill", fire_sound='sound/weapons/rail.ogg')
 	)
 	//no deconstructing, selling, or recycling as this is a unique HoS weapon
 	matter = null
