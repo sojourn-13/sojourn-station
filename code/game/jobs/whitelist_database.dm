@@ -156,8 +156,8 @@ var/database_whitelist_loaded = 0
 
 	log_world("DEBUG: Cleaned ckeys for removal - target: [target_ckey]")
 
-	// Use direct SQL construction instead of parameters
-	var/query_string = "UPDATE whitelist SET active = 0 WHERE ckey = '" + target_ckey + "'"
+	// Use direct SQL construction to DELETE the record completely
+	var/query_string = "DELETE FROM whitelist WHERE ckey = '" + target_ckey + "'"
 	log_world("DEBUG: Remove query string: [query_string]")
 
 	var/DBQuery/query = dbcon.NewQuery(query_string)
