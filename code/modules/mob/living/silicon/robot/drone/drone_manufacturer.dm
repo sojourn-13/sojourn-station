@@ -110,11 +110,6 @@
 			    but in order to play, you'll need to be whitelisted!  Please visit our discord to submit an access request!")
 		return
 
-	if(config.require_discord_linking && !BC_IsDiscordLinked(user.ckey) && !usr.client.holder)
-		user << SPAN_DANGER("Discord Account Linking Required! You must link your Discord account before joining. \
-			   Use the /link command in our Discord server or the 'Link Discord to CKey' verb in the OOC tab.")
-		return
-
 	if(!user.MayRespawn(1, MINISYNTH))
 		return
 
