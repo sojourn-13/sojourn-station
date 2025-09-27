@@ -140,7 +140,7 @@
 				alert("Border Control is enabled, and you haven't been whitelisted!  You're welcome to observe, \
 					   but in order to play, you'll need to be whitelisted!  Please visit our discord to submit an access request!" , "Border Control Active")
 				ready = 0
-			else if(!BC_IsDiscordLinked(ckey) && !usr.client.holder)
+			else if(config.require_discord_linking && !BC_IsDiscordLinked(ckey) && !usr.client.holder)
 				alert("Discord Account Linking Required! You must link your Discord account before joining. \
 					   Use the /link command in our Discord server or the 'Link Discord to CKey' verb in the OOC tab.", "Discord Linking Required")
 				ready = 0
@@ -233,7 +233,7 @@
 				   but in order to play, you'll need to be whitelisted!  Please visit our discord to submit an access request!" , "Border Control Active")
 			return 0
 
-		if(!BC_IsDiscordLinked(ckey) && !usr.client.holder)
+		if(config.require_discord_linking && !BC_IsDiscordLinked(ckey) && !usr.client.holder)
 			alert("Discord Account Linking Required! You must link your Discord account before joining. \
 				   Use the /link command in our Discord server or the 'Link Discord to CKey' verb in the OOC tab.", "Discord Linking Required")
 			return 0
@@ -311,7 +311,7 @@
 			but in order to play, you'll need to be whitelisted!  Please visit our discord to submit an access request!" , "Border Control Active")
 		return FALSE
 
-	if(!BC_IsDiscordLinked(ckey) && !usr.client.holder)
+	if(config.require_discord_linking && !BC_IsDiscordLinked(ckey) && !usr.client.holder)
 		alert("Discord Account Linking Required! You must link your Discord account before joining. \
 			   Use the /link command in our Discord server or the 'Link Discord to CKey' verb in the OOC tab.", "Discord Linking Required")
 		return FALSE
