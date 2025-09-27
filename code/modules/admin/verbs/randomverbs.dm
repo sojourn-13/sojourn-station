@@ -56,6 +56,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_world_narrate, R_FUN, FALSE)
 	log_and_message_admins("GlobalNarrate: [key_name(usr)] : [msg]", usr)
 
 
+
 ADMIN_VERB_ADD(/client/proc/cmd_admin_direct_narrate, R_ADMIN, FALSE)
 //send text directly to a player with no padding. Useful for narratives and fluff-text
 /client/proc/cmd_admin_direct_narrate(var/mob/M)	// Targetted narrate -- TLE

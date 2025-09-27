@@ -21,6 +21,21 @@ proc/BC_IsKeyAllowedToConnect(var/key)
 		return BC_IsKeyWhitelisted(key)
 
 //////////////////////////////////////////////////////////////////////////////////
+proc/BC_IsDiscordLinked(var/key)
+	key = ckey(key)
+
+	if(!dbcon || !dbcon.IsConnected())
+		return 0
+
+	var/DBQuery/query = dbcon.NewQuery("SELECT discord_id FROM players WHERE ckey = '[key]' AND discord_id IS NOT NULL AND discord_id != ''")
+	if(!query.Execute())
+		return 0
+
+	if(query.NextRow())
+		return 1
+	return 0
+
+//////////////////////////////////////////////////////////////////////////////////
 proc/BC_IsKeyWhitelisted(var/key)
 	key = ckey(key)
 
