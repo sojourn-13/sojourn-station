@@ -5,12 +5,7 @@
 	set category = "OOC"
 	set desc = "Link your Discord account using a verification code from the Discord bot."
 
-	var/verification_code = alert("Please enter the verification code from the Discord bot:", "Link Discord", "Enter Code", "Cancel")
-	if(verification_code == "Cancel" || !verification_code)
-		return
-
-	// Get the actual code through a private input
-	verification_code = input("Enter your 6-digit verification code:", "Discord Verification") as text|null
+	var/verification_code = input("Please enter the 6-digit verification code from the Discord bot:", "Link Discord") as text|null
 	if(!verification_code)
 		return
 
