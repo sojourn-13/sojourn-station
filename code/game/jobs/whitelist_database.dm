@@ -13,12 +13,12 @@ var/database_whitelist_loaded = 0
 /proc/load_database_whitelist()
 	log_world("DEBUG: Attempting to load database whitelist...")
 	log_world("DEBUG: SQL enabled status: [config.sql_enabled]")
-	
+
 	if(!config.sql_enabled)
 		log_world("DEBUG: SQL is disabled in config. Using file-based system.")
 		load_whitelist()
 		return
-		
+
 	if(!establish_db_connection())
 		// Fall back to file-based system if database is not available
 		log_world("Database connection failed for whitelist. Using file-based system.")
@@ -31,7 +31,7 @@ var/database_whitelist_loaded = 0
 		return
 
 	log_world("DEBUG: Database connection established successfully for whitelist")
-	
+
 	// Create whitelist table if it doesn't exist
 	create_whitelist_table()
 
@@ -78,24 +78,56 @@ var/database_whitelist_loaded = 0
 	return (ckey_to_check in database_whitelist)
 
 /proc/add_to_database_whitelist(var/target_ckey, var/added_by_ckey = null, var/notes = null)
+	log_world("DEBUG: Attempting to add [target_ckey] to database whitelist")
+
 	if(!establish_db_connection())
+		log_world("DEBUG: Database connection failed when adding [target_ckey]")
 		return 0
+
+	log_world("DEBUG: Database connection established for adding [target_ckey]")
 
 	target_ckey = ckey(target_ckey)
 	if(added_by_ckey)
 		added_by_ckey = ckey(added_by_ckey)
 
-	var/DBQuery/query = dbcon.NewQuery("INSERT INTO whitelist (ckey, added_by, notes) VALUES (?, ?, ?) ON DUPLICATE KEY UPDATE active = TRUE, added_by = VALUES(added_by), notes = VALUES(notes), added_date = CURRENT_TIMESTAMP")
+	log_world("DEBUG: Cleaned ckeys - target: [target_ckey], added_by: [added_by_ckey]")
 
-	if(query.Execute(list(target_ckey, added_by_ckey, notes)))
-		// Update cache
-		if(database_whitelist_loaded)
-			database_whitelist[target_ckey] = 1
-		log_admin("Added [target_ckey] to database whitelist" + (added_by_ckey ? " by [added_by_ckey]" : ""))
-		return 1
-	else
-		log_world("Failed to add [target_ckey] to database whitelist: [query.ErrorMsg()]")
+	// First check if the entry already exists
+	var/DBQuery/check_query = dbcon.NewQuery("SELECT id FROM whitelist WHERE ckey = ?")
+	if(!check_query)
+		log_world("Failed to create check query for [target_ckey]")
 		return 0
+
+	check_query.Execute(list(target_ckey))
+	var/exists = check_query.NextRow()
+
+	var/DBQuery/query
+	if(exists)
+		// Update existing entry
+		query = dbcon.NewQuery("UPDATE whitelist SET active = 1, added_by = ?, notes = ?, added_date = CURRENT_TIMESTAMP WHERE ckey = ?")
+		if(!query)
+			log_world("Failed to create update query for [target_ckey]")
+			return 0
+		log_world("DEBUG: Update query created successfully for [target_ckey]")
+		if(!query.Execute(list(added_by_ckey, notes, target_ckey)))
+			log_world("Failed to update [target_ckey] in database whitelist: [query.ErrorMsg()]")
+			return 0
+	else
+		// Insert new entry
+		query = dbcon.NewQuery("INSERT INTO whitelist (ckey, added_by, notes, active) VALUES (?, ?, ?, 1)")
+		if(!query)
+			log_world("Failed to create insert query for [target_ckey]")
+			return 0
+		log_world("DEBUG: Insert query created successfully for [target_ckey]")
+		if(!query.Execute(list(target_ckey, added_by_ckey, notes)))
+			log_world("Failed to add [target_ckey] to database whitelist: [query.ErrorMsg()]")
+			return 0
+
+	// Update cache
+	if(database_whitelist_loaded)
+		database_whitelist[target_ckey] = 1
+	log_admin("Added [target_ckey] to database whitelist" + (added_by_ckey ? " by [added_by_ckey]" : ""))
+	return 1
 
 /proc/remove_from_database_whitelist(var/target_ckey, var/removed_by_ckey = null)
 	if(!establish_db_connection())
