@@ -180,7 +180,11 @@ GUEST_JOBBAN
 
 ## Uncomment this to stop people connecting to your server without a registered ckey. (i.e. guest-* are all blocked from connecting)
 GUEST_BAN
-## Set to jobban everyone who's key is not listed in data/whitelist.txt from Captain, HoS, HoP, CE, RD, CMO, Warden, Security, Detective, and AI positions.
+## Set to jobban everyone who's key is not listed in the whitelist from Captain, HoS, HoP, CE, RD, CMO, Warden, Security, Detective, and AI positions.
+## The whitelist system will use the MySQL database if SQL_ENABLED is set and the database connection is available.
+## If database is unavailable, it will fall back to the file-based system (data/whitelist.txt).
+## Database whitelist provides better performance, admin tools, and audit trails.
+## Use admin verbs: "Database Whitelist - Add Player", "Database Whitelist - Remove Player", "Database Whitelist - Migrate from File"
 ## Uncomment to 1 to jobban, leave commented out to allow these positions for everyone (but see GUEST_JOBBAN above and regular jobbans)
 # USEWHITELIST
 

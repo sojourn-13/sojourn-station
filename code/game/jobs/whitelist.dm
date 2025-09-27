@@ -12,6 +12,11 @@ var/list/whitelist = list()
 	if(!whitelist.len)	whitelist = null
 
 /proc/check_whitelist(mob/M /*, var/rank*/)
+	// First try database whitelist
+	if(config.sql_enabled)
+		return check_database_whitelist(M)
+
+	// Fall back to file-based whitelist
 	if(!whitelist)
 		return 0
 	return ("[M.ckey]" in whitelist)
