@@ -1573,6 +1573,7 @@
 #include "code\game\turfs\unsimulated\floor.dm"
 #include "code\game\turfs\unsimulated\walls.dm"
 #include "code\game\verbs\fit_viewport.dm"
+#include "code\game\verbs\link_discord_secure.dm"
 #include "code\game\verbs\ooc.dm"
 #include "code\game\verbs\who.dm"
 #include "code\js\byjax.dm"
