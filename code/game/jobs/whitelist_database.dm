@@ -113,13 +113,19 @@ var/database_whitelist_loaded = 0
 			log_world("Failed to update [target_ckey] in database whitelist: [query.ErrorMsg()]")
 			return 0
 	else
-		// Insert new entry
-		query = dbcon.NewQuery("INSERT INTO whitelist (ckey, added_by, notes, active) VALUES (?, ?, ?, 1)")
+		// Insert new entry - using direct values instead of parameters for testing
+		var/safe_notes = notes ? "'" + notes + "'" : "NULL"
+		var/safe_added_by = added_by_ckey ? "'" + added_by_ckey + "'" : "NULL"
+		var/query_string = "INSERT INTO whitelist (ckey, added_by, notes, active) VALUES ('" + target_ckey + "', " + safe_added_by + ", " + safe_notes + ", 1)"
+
+		log_world("DEBUG: Query string: [query_string]")
+
+		query = dbcon.NewQuery(query_string)
 		if(!query)
 			log_world("Failed to create insert query for [target_ckey]")
 			return 0
 		log_world("DEBUG: Insert query created successfully for [target_ckey]")
-		if(!query.Execute(list(target_ckey, added_by_ckey, notes)))
+		if(!query.Execute())
 			log_world("Failed to add [target_ckey] to database whitelist: [query.ErrorMsg()]")
 			return 0
 
