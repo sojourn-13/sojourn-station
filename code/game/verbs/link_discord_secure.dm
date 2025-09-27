@@ -9,6 +9,11 @@
 	if(!verification_code)
 		return
 
+	// Validate code format (6 digits)
+	if(length(verification_code) != 6 || !isnum(text2num(verification_code)))
+		to_chat(src, "Invalid verification code format. Please enter a 6-digit numeric code.")
+		return
+
 	// Check if verification code exists and get Discord ID
 	var/DBQuery/query = dbcon.NewQuery("SELECT discord_id FROM discord_verification WHERE ckey = '[usr.ckey]' AND code = '[verification_code]' AND expires > NOW()")
 	if(!query.Execute())
