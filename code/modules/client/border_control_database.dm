@@ -43,7 +43,7 @@
 			whitelistedCkeys.Remove(key)
 		BC_SaveWhitelist()
 		return 1// Enhanced admin verbs for border control with database integration
-ADMIN_VERB_ADD(/client/proc/BC_WhitelistKeyVerbDB, R_ADMIN, FALSE)
+/*ADMIN_VERB_ADD(/client/proc/BC_WhitelistKeyVerbDB, R_ADMIN, FALSE)
 /client/proc/BC_WhitelistKeyVerbDB()
 	set name = "Border Control - Whitelist Key (Database)"
 	set category = "Admin"
@@ -82,7 +82,7 @@ ADMIN_VERB_ADD(/client/proc/BC_RemoveKeyVerbDB, R_ADMIN, FALSE)
 // Migration verb for border control
 ADMIN_VERB_ADD(/client/proc/BC_MigrateToDatabase, R_ADMIN, FALSE)
 /client/proc/BC_MigrateToDatabase()
-	set name = "Border Control - Migrate to Database"
+	set name = "Database Whitelist - Migrate to Database"
 	set category = "Admin"
 
 	var/confirm = alert("This will migrate border control whitelist to the database. Continue?", "Migrate Border Control", "Yes", "No")
@@ -112,3 +112,4 @@ ADMIN_VERB_ADD(/client/proc/BC_MigrateToDatabase, R_ADMIN, FALSE)
 
 	to_chat(src, "<span class='notice'>Border control migration completed: [migrated_count] successful, [failed_count] failed.</span>")
 	log_and_message_admins("[key_name(src)] migrated border control whitelist to database: [migrated_count] successful, [failed_count] failed.")
+*/
