@@ -40,6 +40,8 @@
 
 /obj/machinery/portable_atmospherics/canister/nitrogen/prechilled
 	name = "canister: \[N2 (Cooling)]"
+	icon_state = "lightyellow"
+	canister_color = "lightyellow"
 
 /obj/machinery/portable_atmospherics/canister/oxygen
 	name = "canister: \[O2]"
@@ -49,7 +51,9 @@
 
 /obj/machinery/portable_atmospherics/canister/oxygen/prechilled
 	name = "canister: \[O2 (Cryo)]"
-
+	icon_state = "lightblue"
+	canister_color = "lightblue"
+	can_label = 0
 /obj/machinery/portable_atmospherics/canister/plasma
 	name = "canister \[Plasma]"
 	icon_state = "orange"
@@ -344,6 +348,9 @@ update_flag
 					"\[Plasma\]" = "orange", \
 					"\[CO2\]" = "black", \
 					"\[Air\]" = "grey", \
+					"\[Hydrogen\]" = "purple", \
+					"\[O2 (Cryo)\]" = "lightblue", \
+					"\[N2 (Cooling)\]" = "lightyellow", \
 					"\[CAUTION\]" = "yellow", \
 				)
 				var/label = input("Choose canister label", "Gas canister") as null|anything in colors
