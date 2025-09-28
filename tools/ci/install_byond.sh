@@ -16,11 +16,11 @@ else
   mkdir -p "$HOME/BYOND"
   cd "$HOME/BYOND"
   # Use path from repo root
-  if [ ! -f "$GITHUB_WORKSPACE/tools/ci/515.1647_byond_linux.zip" ]; then
-    echo "$GITHUB_WORKSPACE/tools/ci/515.1647_byond_linux.zip not found! Please provide it."
+  if [ ! -f "$GITHUB_WORKSPACE/tools/ci/byond_working.zip" ]; then
+    echo "$GITHUB_WORKSPACE/tools/ci/byond_working.zip not found! Please provide it."
     exit 1
   fi
-  cp "$GITHUB_WORKSPACE/tools/ci/515.1647_byond_linux.zip" byond.zip
+  cp "$GITHUB_WORKSPACE/tools/ci/byond_working.zip" byond.zip
   echo "byond.zip size:"
   ls -lh byond.zip
   echo "byond.zip checksum:"

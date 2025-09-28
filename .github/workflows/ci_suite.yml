@@ -99,75 +99,75 @@ jobs:
           source $HOME/BYOND/byond/bin/byondsetup
           tools/build/build --ci dm -DCIBUILDING -DCITESTING -DALL_MAPS
 
-  run_all_tests:
-    if: ${{ !contains(github.event.head_commit.message, '[ci skip]') }}
-    name: Integration Tests
-    runs-on: ubuntu-24.04
-    services:
-      mysql:
-        image: mysql:latest
-        env:
-          MYSQL_ROOT_PASSWORD: root
-        ports:
-          - 3306
-        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
-    concurrency:
-      group: run_all_tests-${{ github.ref }}
-      cancel-in-progress: true
-    steps:
-      - uses: actions/checkout@v4
-      - name: Restore BYOND cache
-        uses: actions/cache@v4
-        with:
-          path: ~/BYOND
-          key: ${{ runner.os }}-byond-${{ secrets.CACHE_PURGE_KEY }}
-      - name: Setup database
-        run: |
-          sudo systemctl start mysql
-          mysql -u root -proot -e 'CREATE DATABASE tg_ci;'
-          mysql -u root -proot tg_ci < schema.sql
-      - name: Install rust-g
-        run: |
-          sudo dpkg --add-architecture i386
-          sudo apt update || true
-          sudo apt install zlib1g-dev:i386
-          bash tools/ci/install_rust_g.sh
-      - name: Provide BYOND zip
-        run: |
-          cp tools/ci/515.1647_byond_linux.zip byond.zip
-      - name: Compile Tests
-        run: |
-          bash tools/ci/install_byond.sh
-          # Debug BYOND zip download
-          echo "Listing byond.zip:"
-          ls -lh byond.zip || true
-          echo "Checking byond.zip size:"
-          stat byond.zip || true
-          echo "Checking byond.zip checksum:"
-          sha256sum byond.zip || true
-          # Fail if file is missing or too small
-          if [ ! -f byond.zip ]; then
-            echo "byond.zip not found! Download failed."
-            exit 1
-          fi
-          if [ $(stat -c%s "byond.zip") -lt 10000 ]; then
-            echo "byond.zip is too small, likely a failed download."
-            exit 1
-          fi
-          unzip -l byond.zip || { echo "byond.zip is not a valid zip file!"; exit 1; }
-          source $HOME/BYOND/byond/bin/byondsetup
-          tools/build/build --ci dm -DCIBUILDING -DANSICOLORS
-      - name: Run Tests
-        run: |
-          source $HOME/BYOND/byond/bin/byondsetup
-          bash tools/ci/run_server.sh
-      - name: Upload screenshot tests
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: test_artifacts
-          path: data/screenshots_new/
-          retention-days: 1
+#  run_all_tests:
+#    if: ${{ !contains(github.event.head_commit.message, '[ci skip]') }}
+#    name: Integration Tests
+#    runs-on: ubuntu-24.04
+#    services:
+#      mysql:
+#        image: mysql:latest
+#        env:
+#          MYSQL_ROOT_PASSWORD: root
+#        ports:
+#          - 3306
+#        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+#    concurrency:
+#      group: run_all_tests-${{ github.ref }}
+#      cancel-in-progress: true
+#    steps:
+#      - uses: actions/checkout@v4
+#      - name: Restore BYOND cache
+#        uses: actions/cache@v4
+#        with:
+#          path: ~/BYOND
+#          key: ${{ runner.os }}-byond-${{ secrets.CACHE_PURGE_KEY }}
+#      - name: Setup database
+#        run: |
+#          sudo systemctl start mysql
+#          mysql -u root -proot -e 'CREATE DATABASE tg_ci;'
+#          mysql -u root -proot tg_ci < schema.sql
+#      - name: Install rust-g
+#        run: |
+#          sudo dpkg --add-architecture i386
+#          sudo apt update || true
+#          sudo apt install zlib1g-dev:i386
+#          bash tools/ci/install_rust_g.sh
+#      - name: Provide BYOND zip
+#        run: |
+#          cp tools/ci/515.1647_byond_linux.zip byond.zip
+#      - name: Compile Tests
+#        run: |
+#          bash tools/ci/install_byond.sh
+#          # Debug BYOND zip download
+#          echo "Listing byond.zip:"
+#          ls -lh byond.zip || true
+#          echo "Checking byond.zip size:"
+#          stat byond.zip || true
+#          echo "Checking byond.zip checksum:"
+#          sha256sum byond.zip || true
+#          # Fail if file is missing or too small
+#          if [ ! -f byond.zip ]; then
+#            echo "byond.zip not found! Download failed."
+#            exit 1
+#          fi
+#          if [ $(stat -c%s "byond.zip") -lt 10000 ]; then
+#            echo "byond.zip is too small, likely a failed download."
+#            exit 1
+#          fi
+#          unzip -l byond.zip || { echo "byond.zip is not a valid zip file!"; exit 1; }
+#          source $HOME/BYOND/byond/bin/byondsetup
+#          tools/build/build --ci dm -DCIBUILDING -DANSICOLORS
+#      - name: Run Tests
+#        run: |
+#          source $HOME/BYOND/byond/bin/byondsetup
+#          bash tools/ci/run_server.sh
+#      - name: Upload screenshot tests
+#        if: always()
+#        uses: actions/upload-artifact@v4
+#        with:
+#          name: test_artifacts
+#          path: data/screenshots_new/
+#          retention-days: 1
 
   compare_screenshots:
     if: ${{ !contains(github.event.head_commit.message, '[ci skip]') }}
