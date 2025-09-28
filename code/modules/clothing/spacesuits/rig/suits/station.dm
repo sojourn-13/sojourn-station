@@ -414,14 +414,18 @@ Technomancer RIG
 		bio = 100,
 		rad = 100
 	)
-	req_one_access = list(access_medical)
-	seal_delay = 10 //quick deploy for quick recovery
-	ablative_max = 15
+
+	req_access = null
+	req_one_access = null
+
+	ablative_max = 10
 	ablation = ABLATION_CERAMIC
-	slowdown = 0
-	stiffness = LIGHT_STIFFNESS
-	helm_type = /obj/item/clothing/head/helmet/space/rig/tt
-	max_upgrades = 1
+
+	seal_delay = 15 //quick deploy for quick recovery
+	slowdown = 0.25
+	stiffness = MEDIUM_STIFFNESS
+	helm_type = /obj/item/clothing/head/helmet/space/rig/medical
+
 	extra_allowed = list(
 		/obj/item/storage/firstaid,
 		/obj/item/device/scanner/health,
@@ -430,6 +434,9 @@ Technomancer RIG
 	)
 
 /obj/item/rig/recovery_suit/equipped
+	req_access = list(access_paramedic)
+	req_one_access = list()
+
 	initial_modules = list(
 		/obj/item/rig_module/modular_injector/medical/preloaded,
 		/obj/item/rig_module/maneuvering_jets,
