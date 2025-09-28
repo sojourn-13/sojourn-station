@@ -133,7 +133,7 @@
 	total_positions = 10
 	spawn_positions = 10
 	flag = OUTSIDER
-	faction = MAP_FACTION
+	faction = FACTION_NEUTRAL
 	department = DEPARTMENT_INDEPENDENT
 	department_flag = INDEPENDENT
 	supervisors = "nobody! You're an outsider"
