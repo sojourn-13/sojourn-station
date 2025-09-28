@@ -178,7 +178,7 @@
 
 	access = list(
 		access_moebius, access_medical_equip, access_morgue, access_surgery, access_chemistry, access_virology, access_orderly, access_medical_suits,
-		access_psychiatrist, access_genetics, access_robotics, access_xenobiology, access_tox, access_xenoarch, access_eva
+		access_psychiatrist, access_genetics, access_paramedic, access_robotics, access_xenobiology, access_tox, access_xenoarch, access_eva
 	)
 
 	stat_modifiers = list(
