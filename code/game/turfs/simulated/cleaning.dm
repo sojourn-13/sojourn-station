@@ -133,6 +133,13 @@
 				B.blood_DNA[M.dna.unique_enzymes] = M.dna.b_type
 			return 1 //we bloodied the floor
 		blood_splatter(src,M.get_blood(),1)
+		// mark the turf as having been bloodied for forensic traces
+		was_bloodied = TRUE
+		if(!blood_DNA || !istype(blood_DNA,/list))
+			blood_DNA = list()
+		if(istype(M.dna, /datum/dna))
+			if(!blood_DNA[M.dna.unique_enzymes])
+				blood_DNA[M.dna.unique_enzymes] = M.dna.b_type
 		return 1 //we bloodied the floor
 	return 0
 
@@ -143,6 +150,14 @@
 		this.blood_DNA["UNKNOWN BLOOD"] = "X*"
 	else if( istype(M, /mob/living/silicon/robot ))
 		new /obj/effect/decal/cleanable/blood/oil(src)
+	else
+		// Normal human/organism blood: ensure the turf records it
+		was_bloodied = TRUE
+		if(!blood_DNA || !istype(blood_DNA,/list))
+			blood_DNA = list()
+		if(istype(M.dna, /datum/dna))
+			if(!blood_DNA[M.dna.unique_enzymes])
+				blood_DNA[M.dna.unique_enzymes] = M.dna.b_type
 
 // Reveal blood traces with luminol
 /turf/simulated/reveal_blood()
@@ -165,13 +180,7 @@
 // Removes visible decals/overlays and fluorescent state but does not clear
 // forensic markers. Returns TRUE if any visible overlays/decals were removed.
 /turf/simulated/clean_blood_preserve_was()
-	var/changed = FALSE
-	// Turn off fluorescent visual state on the turf
-	if(fluorescent)
-		fluorescent = 0
-		changed = TRUE
-	// Remove any visible blood decals/overlays but don't touch was_bloodied
-	for(var/obj/effect/decal/cleanable/B in contents)
-		B.clean_blood()
-		changed = TRUE
-	return changed
+	if(!simulated)
+		return
+	was_bloodied = TRUE
+	fluorescent = 0
