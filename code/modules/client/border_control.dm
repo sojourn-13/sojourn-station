@@ -26,7 +26,7 @@ proc/BC_IsDiscordLinked(var/key)
 	key = ckey(key)
 	if(!config.sql_enabled || !establish_db_connection())
 		return 0
-	if (!config.require_discord_linking)
+	if (config.require_discord_linking == 0)
 		return 1
 	if(!dbcon || !dbcon.IsConnected())
 		return 0
