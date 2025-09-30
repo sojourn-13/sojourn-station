@@ -604,7 +604,9 @@ obj/item/storage/pouch/large_generic/advmedic/populate_contents()
 	matter = list(MATERIAL_BIOMATTER = 24) // Two holsters in one!
 	slot_flags = SLOT_BELT|SLOT_DENYPOCKET
 	max_w_class = ITEM_SIZE_HUGE
-	storage_slots = 2
+	storage_slots = 0
+	acts_as_holster = TRUE
+	holster_slots = 2
 
 /obj/item/storage/pouch/pistol_holster/cowboy/update_icon()
 	..()
