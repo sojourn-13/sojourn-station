@@ -20,7 +20,8 @@
 	var/collection_mode = TRUE //0 = pick one at a time, 1 = pick all on tile
 	var/use_sound = "rustle" //sound played when used. null for no sound.
 	contained_sprite = FALSE
-
+	var/acts_as_holster = FALSE // other systems can query this to treat the belt as a holster
+	var/holster_slots = 1 // how many holster-capable slots we provide
 	var/insertion_sound
 	var/extraction_sound
 
@@ -315,7 +316,11 @@
 		return 0
 
 	if(can_hold.len)
-		if(!is_type_in_list(W, can_hold))
+		// If this storage declares it acts_as_holster, accept items flagged SLOT_HOLSTER
+		if(src && src.acts_as_holster && (W.slot_flags & SLOT_HOLSTER))
+			// allow holsterable items even if not explicitly in can_hold
+			return 1
+		else if(!is_type_in_list(W, can_hold))
 			if(!stop_messages && ! istype(W, /obj/item/hand_labeler))
 				to_chat(usr, SPAN_NOTICE("[src] cannot hold \the [W]."))
 			return 0
