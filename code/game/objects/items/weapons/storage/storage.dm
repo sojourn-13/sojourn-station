@@ -21,7 +21,7 @@
 	var/use_sound = "rustle" //sound played when used. null for no sound.
 	contained_sprite = FALSE
 	var/acts_as_holster = FALSE // other systems can query this to treat the belt as a holster
-	var/holster_slots = 1 // how many holster-capable slots we provide
+	var/holster_slots = 0 // how many holster-capable slots we provide
 	var/insertion_sound
 	var/extraction_sound
 
