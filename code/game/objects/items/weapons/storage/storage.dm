@@ -45,7 +45,7 @@
 	. = ..()
 
 	// Ensure holstered list matches holster_slots
-	if(holster_slots && holstered.len < holster_slots)
+	if(acts_as_holster && holster_slots && holstered.len < holster_slots)
 		for(var/i = holstered.len + 1, i <= holster_slots, i++)
 			holstered += null
 
@@ -81,6 +81,11 @@
 // Global helper: holster into any storage-like atom (centralized logic)
 /proc/holster_into(var/obj/item/storage/S, obj/item/W as obj, mob/living/user)
 	if(!istype(W))
+		return 0
+
+	// Only storages that explicitly act as holsters should accept holstering.
+	if(!S.acts_as_holster)
+		to_chat(user, SPAN_WARNING("[S] cannot be used as a holster."))
 		return 0
 	if(!(W.slot_flags & SLOT_HOLSTER) && S.can_hold.len && !is_type_in_list(W, S.can_hold))
 		to_chat(user, SPAN_WARNING("[W] won't fit in [S]!"))
@@ -140,6 +145,11 @@
 	if(!isliving(usr))
 		return
 	if(usr.stat)
+		return
+
+	// Only storages that act as holsters should provide the holster action.
+	if(!src.acts_as_holster)
+		to_chat(usr, SPAN_WARNING("You cannot holster items into [src]."))
 		return
 
 	if(src.get_first_occupied_holster())
