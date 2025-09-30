@@ -736,6 +736,19 @@
 	else
 		verbs -= /obj/item/storage/verb/toggle_gathering_mode
 
+	// Manage holster verb presence based on acts_as_holster
+	if(acts_as_holster)
+		// Ensure holster_slots is sane
+		if(!holster_slots)
+			holster_slots = 1
+		verbs += /obj/item/storage/verb/holster_verb
+		// Ensure holstered list matches holster_slots
+		if(holstered.len < holster_slots)
+			for(var/i = holstered.len + 1, i <= holster_slots, i++)
+				holstered += null
+	else
+		verbs -= /obj/item/storage/verb/holster_verb
+
 	if(isnull(max_storage_space) && !isnull(storage_slots))
 		max_storage_space = storage_slots*BASE_STORAGE_COST(max_w_class)
 
