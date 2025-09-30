@@ -28,6 +28,9 @@
 */
 
 /turf/simulated/clean_blood()
+	// Preserve the was_bloodied marker on the turf while removing visible
+	// blood decals/overlays. Individual decals will be removed below; call
+	// their clean_blood so they can null out their internals if needed.
 	for(var/obj/effect/decal/cleanable/blood/B in contents)
 		B.clean_blood()
 	..()
@@ -36,7 +39,19 @@
 /turf/proc/clean(atom/source, mob/user)
 	var/amt = 0  // Amount of filth collected (for holy vacuum cleaner)
 	if(source.reagents.has_reagent("water", 1) || source.reagents.has_reagent("cleaner", 1) || source.reagents.has_reagent("holywater", 1) || source.reagents.has_reagent("sterilizine", 1))
-		clean_blood()
+		// If the cleaning source contains sterilizine, perform a full clean
+		// (sterilizine intentionally clears forensic traces). Otherwise,
+		// perform a preserve-clean: remove visible decals/overlays but keep
+		// the turf's `was_bloodied` flag intact so luminol traces still work.
+		var/full_clean = source.reagents.has_reagent("sterilizine", 1)
+		if(full_clean)
+			clean_blood()
+		else
+			// Preserve the forensic marker on the turf while removing visible overlays.
+			// The turf's own clean_blood is conservative, but we call a preserve helper
+			// to be explicit and future-proof.
+			src.clean_blood_preserve_was()
+
 		for(var/obj/effect/O in src)
 			if(istype(O,/obj/effect/decal/cleanable) || istype(O,/obj/effect/overlay) && !istype(O,/obj/effect/overlay/water))
 				amt++
@@ -144,3 +159,19 @@
 		luminol_trace.fluorescent = TRUE
 		luminol_trace.blood_DNA = list("UNKNOWN" = "O+")  // Generic blood type for traces
 		luminol_trace.update_icon()
+
+
+// Like clean_blood but preserves the turf's was_bloodied flag and blood_DNA.
+// Removes visible decals/overlays and fluorescent state but does not clear
+// forensic markers. Returns TRUE if any visible overlays/decals were removed.
+/turf/simulated/clean_blood_preserve_was()
+	var/changed = FALSE
+	// Turn off fluorescent visual state on the turf
+	if(fluorescent)
+		fluorescent = 0
+		changed = TRUE
+	// Remove any visible blood decals/overlays but don't touch was_bloodied
+	for(var/obj/effect/decal/cleanable/B in contents)
+		B.clean_blood()
+		changed = TRUE
+	return changed

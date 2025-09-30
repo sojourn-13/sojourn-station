@@ -134,7 +134,8 @@
 	else if (istype(src, /obj/item/clothing/under))
 		var/obj/item/clothing/under/S = src
 		if (S.accessories.len)
-			H = locate() in S.accessories
+			// Find the holster accessory instance attached to this suit (if any)
+			H = locate(/obj/item/clothing/accessory/holster) in S.accessories
 
 	if (!H)
 		to_chat(usr, SPAN_WARNING("Something is very wrong."))
