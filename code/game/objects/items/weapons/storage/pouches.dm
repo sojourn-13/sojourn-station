@@ -513,8 +513,9 @@ obj/item/storage/pouch/large_generic/advmedic/populate_contents()
 	desc = "Can hold a handgun in."
 	icon_state = "pistol_holster"
 	item_state = "pistol_holster"
-
-	storage_slots = 1
+	storage_slots = 0
+	acts_as_holster = TRUE
+	holster_slots = 1
 	w_class = ITEM_SIZE_SMALL
 	max_w_class = ITEM_SIZE_NORMAL
 	plus_extra_bulk = -1
