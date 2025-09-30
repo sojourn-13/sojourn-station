@@ -46,7 +46,7 @@ proc/BC_IsKeyWhitelisted(var/key)
 	// If SQL is enabled, always check the database directly so border control
 	// reflects the latest whitelist state on every connection attempt.
 	if(config.sql_enabled && dbcon && dbcon.IsConnected())
-		var/DBQuery/q = dbcon.NewQuery("SELECT 1 FROM whitelist WHERE ckey = '[key]'")
+		var/DBQuery/q = dbcon.NewQuery("SELECT ckey FROM whitelist WHERE ckey = '[key]'")
 		if(!q)
 			log_and_message_admins("[key] whitelist check: failed to prepare DB query (null query object).")
 			// fall back to file-based check
@@ -56,7 +56,7 @@ proc/BC_IsKeyWhitelisted(var/key)
 		else
 			if(q.NextRow())
 				return 1
-			// No match in DB; explicit not whitelisted
+			// No match in DB; explicitly not whitelisted
 			return 0
 
 	// Fall back to file-backed whitelist
