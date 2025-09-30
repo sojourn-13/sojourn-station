@@ -69,6 +69,15 @@
 			return i
 	return 0
 
+// Return last occupied holster index or 0 if none
+/obj/item/storage/proc/get_last_occupied_holster()
+	if(!holster_slots)
+		return 0
+	for(var/i = holster_slots, i >= 1, i--)
+		if(holstered[i])
+			return i
+	return 0
+
 // Holster an item from user's active hand into the storage
 /obj/item/storage/proc/holster(obj/item/W as obj, mob/living/user)
 	return holster_into(src, W, user)
@@ -76,6 +85,10 @@
 // Unholster the first occupied holster into the user's active hand
 /obj/item/storage/proc/unholster(mob/living/user)
 	return unholster_from(src, user)
+
+// Unholster the last occupied holster into the user's active hand
+/obj/item/storage/proc/unholster_last(mob/living/user)
+	return unholster_last_from(src, user)
 
 
 // Global helper: holster into any storage-like atom (centralized logic)
@@ -112,6 +125,34 @@
 // Global helper: unholster from any storage-like atom
 /proc/unholster_from(var/obj/item/storage/S, mob/living/user)
 	var/index = S.get_first_occupied_holster()
+	// Note: default unholster behaviour pulls from the first occupied holster
+	if(!index)
+		to_chat(user, SPAN_NOTICE("There is nothing holstered."))
+		return 0
+	var/obj/item/W = S.holstered[index]
+	if(!W)
+		S.holstered[index] = null
+		return 0
+
+	if(user.lying)
+		to_chat(user, SPAN_WARNING("You need to be standing!"))
+		return 0
+
+	if(istype(user.get_active_hand(),/obj))
+		to_chat(user, SPAN_WARNING("You need an empty hand to draw \the [W]!"))
+		return 0
+
+	S.remove_from_storage(W, user)
+	user.put_in_active_hand(W)
+	W.add_fingerprint(user)
+	playsound(user, 'sound/effects/holsterout.ogg', 75, 0)
+	S.holstered[index] = null
+	S.update_icon()
+	return 1
+
+// Unholster using the last occupied holster slot (LIFO behaviour)
+/proc/unholster_last_from(var/obj/item/storage/S, mob/living/user)
+	var/index = S.get_last_occupied_holster()
 	if(!index)
 		to_chat(user, SPAN_NOTICE("There is nothing holstered."))
 		return 0
@@ -152,8 +193,25 @@
 		to_chat(usr, SPAN_WARNING("You cannot holster items into [src]."))
 		return
 
-	if(src.get_first_occupied_holster())
-		src.unholster(usr)
+	// Use last-in-first-out behaviour: unholster the last holstered item when H is pressed
+	var/last_idx = src.get_last_occupied_holster()
+	if(last_idx)
+		// If user has an empty hand, just unholster into it.
+		if(!istype(usr.get_active_hand(), /obj))
+			src.unholster_last(usr)
+		else
+			// If user's hand is occupied, try to holster the currently held item into this storage first (swap behaviour).
+			var/obj/item/cur = usr.get_active_hand()
+			if(src.can_be_inserted(cur, TRUE) && src.holster(cur, usr))
+				// Successfully holstered current item; now unholster the last one into the now-empty hand.
+				src.unholster_last(usr)
+			else
+				// Cannot holster current item; inform the user about needing an empty hand to draw the holstered item.
+				var/obj/item/peekW = src.holstered[last_idx]
+				if(peekW)
+					to_chat(usr, SPAN_WARNING("You need an empty hand to draw \the [peekW]!"))
+				else
+					to_chat(usr, SPAN_NOTICE("There is nothing holstered."))
 	else
 		var/obj/item/H = usr.get_active_hand()
 		if(!istype(H, /obj/item))
