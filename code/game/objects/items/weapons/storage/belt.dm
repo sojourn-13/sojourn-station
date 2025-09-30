@@ -613,7 +613,7 @@
 	desc = "Can hold various military and security equipment. Even has some clamps to allow you to hold masks and hats."
 	icon_state = "security"
 	item_state = "security"
-	storage_slots = 7
+	storage_slots = 8
 	// Behaves as a holster as well as a storage belt
 	acts_as_holster = TRUE // other systems can query this to treat the belt as a holster
 	holster_slots = 1 // how many holster-capable slots we provide
