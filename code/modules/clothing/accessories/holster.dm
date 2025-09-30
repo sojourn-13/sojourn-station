@@ -102,12 +102,19 @@
 	if(sheath_arts)
 		to_chat(user, "This is a sheath that will relay the stored item as the attacking weapon.")
 
+
 /obj/item/clothing/accessory/holster/on_attached(obj/item/clothing/under/S, mob/user as mob)
 	..()
-	has_suit.verbs += /obj/item/clothing/accessory/holster/verb/holster_verb
+	// Add the holster verb to the specific suit instance we were attached to,
+	// not the suit class, so that other suits/jumpsuits don't gain the verb.
+	if (S)
+		S.verbs += /obj/item/clothing/accessory/holster/verb/holster_verb
+
 
 /obj/item/clothing/accessory/holster/on_removed(mob/user as mob)
-	has_suit.verbs -= /obj/item/clothing/accessory/holster/verb/holster_verb
+	// Remove the holster verb from the specific suit instance we were attached to.
+	if (has_suit)
+		has_suit.verbs -= /obj/item/clothing/accessory/holster/verb/holster_verb
 	..()
 
 //For the holster hotkey
