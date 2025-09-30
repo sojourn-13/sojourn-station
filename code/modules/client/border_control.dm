@@ -9,9 +9,6 @@ var/whitelistLoaded = 0
 //////////////////////////////////////////////////////////////////////////////////
 proc/BC_IsKeyAllowedToConnect(var/key)
 	key = ckey(key)
-	if(BC_IsDiscordLinked(key) == 0)
-		log_and_message_admins("[key] attempted to connect but does not have a linked Discord account. Connection denied.")
-		return 0
 	if(config.borderControl == BORDER_CONTROL_DISABLED)
 		return 1
 	else if (config.borderControl == BORDER_CONTROL_LEARNING)
@@ -25,9 +22,6 @@ proc/BC_IsKeyAllowedToConnect(var/key)
 //////////////////////////////////////////////////////////////////////////////////
 proc/BC_IsDiscordLinked(var/key)
 	key = ckey(key)
-	if(!config.sql_enabled)
-		return 0
-
 	// Try to establish a DB connection but don't block connections if the DB
 	// is temporarily unavailable; in that case, allow the player rather than
 	// denying them.
