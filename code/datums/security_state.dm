@@ -169,7 +169,16 @@
 * The default security state and levels setup
 */
 /decl/security_state/default
-	all_security_levels = list(/decl/security_level/default/code_green, /decl/security_level/default/code_blue, /decl/security_level/default/code_red, /decl/security_level/default/code_delta)
+	// Include department-specific intermediate alerts used on some maps
+	// Order: Green < Violet (Medical) < Orange (Engineering) < Blue < Red < Delta
+	all_security_levels = list(
+		/decl/security_level/default/code_green,
+		/decl/security_level/default/code_violet,
+		/decl/security_level/default/code_orange,
+		/decl/security_level/default/code_blue,
+		/decl/security_level/default/code_red,
+		/decl/security_level/default/code_delta
+	)
 
 /decl/security_level/default
 	icon = 'icons/misc/security_state.dmi'
@@ -208,7 +217,13 @@
 
 	overlay_status_display = "status_display_green"
 
-	down_description = "All threats to the colony have passed. Security may not have weapons visible, privacy laws are once again fully enforced."
+	down_description = "All threats to the colony have passed. Security may not have weapons unholstered unless necessary, privacy laws are once again fully enforced."
+
+/decl/security_level/default/code_green/switching_down_to()
+	if(down_description)
+		var/static/datum/announcement/priority/security/security_announcement_green_down = new(do_log = 0, do_newscast = 1, new_sound = sound('sound/misc/notice1.ogg'))
+		security_announcement_green_down.Announce(down_description, "Attention! Alert level changed to [name]!")
+	notify_station()
 
 /decl/security_level/default/code_blue
 	name = "code blue"
@@ -224,8 +239,42 @@
 
 	overlay_status_display = "status_display_blue"
 
-	up_description = "The colony has received reliable information about possible hostile activity in the colony. Security staff may have weapons visible, random searches are permitted."
-	down_description = "The immediate threat has passed. Security may no longer have weapons drawn at all times, but may continue to have them visible. Random searches are still allowed."
+	up_description = "A major security emergency has developed. Security personnel are to report to their supervisor for orders, are permitted to demand ID be shown by all staff, may conduct random searches of colonists, and may carry weaponry unholstered on their person."
+	down_description = "Code blue procedures are now in effect. Security personnel are to report to their supervisor for orders, are permitted to demand ID be shown by all staff, may conduct random searches of colonists, and may carry weaponry unholstered on their person."
+
+/decl/security_level/default/code_violet
+	name = "code violet"
+
+	light_max_bright = 0.5
+	light_inner_range = 0.1
+	light_outer_range = 2
+	light_color_alarm = COLOR_LIGHTING_PURPLE_MACHINERY
+	light_color_status_display = COLOR_LIGHTING_PURPLE_MACHINERY
+
+	overlay_alarm = "alarm_violet"
+	overlay_firealarm = "overlay_blue"
+
+	overlay_status_display = "status_display_violet"
+
+	up_description = "A major medical emergency has developed. Medical personnel are required to report to their supervisor for orders, and non-medical personnel are required to obey all relevant instructions from medical staff."
+	down_description = "Code violet procedures are now in effect; Medical personnel are required to report to their supervisor for orders, and non-medical personnel are required to obey relevant instructions from medical staff."
+
+/decl/security_level/default/code_orange
+	name = "code orange"
+
+	light_max_bright = 0.5
+	light_inner_range = 0.1
+	light_outer_range = 2
+	light_color_alarm = COLOR_LIGHTING_ORANGE_MACHINERY
+	light_color_status_display = COLOR_LIGHTING_ORANGE_MACHINERY
+
+	overlay_alarm = "alarm_orange"
+	overlay_firealarm = "overlay_blue"
+
+	overlay_status_display = "status_display_orange"
+
+	up_description = "A major engineering emergency has developed. Engineering personnel are required to report to their supervisor for orders, and non-engineering personnel are required to evacuate any affected areas and obey relevant instructions from engineering staff."
+	down_description = "Code orange procedures are now in effect; Engineering personnel are required to report to their supervisor for orders, and non-engineering personnel are required to evacuate any affected areas and obey relevant instructions from engineering staff."
 
 /decl/security_level/default/code_red
 	name = "code red"
@@ -241,8 +290,20 @@
 
 	overlay_status_display = "status_display_red"
 
-	up_description = "There is an immediate serious threat to the colony. Security may have weapons unholstered at all times. Random searches are allowed and advised."
-	down_description = "The self-destruct mechanism has been deactivated, there is still however an immediate serious threat to the colony. Security may have weapons unholstered at all times, random searches are allowed and advised."
+	up_description = "A severe emergency has occurred. All staff are to report to their supervisor for orders. All crew should obey orders from relevant emergency personnel. Security personnel are permitted to search staff and facilities at will, may demand ID, and may have weapons unholstered and unsafetied at any time.  Suit sensors must be turned on and set to tracking beacon."
+	down_description = "Code Delta has been disengaged. All staff are to report to their supervisor for orders. All crew should obey orders from relevant emergency personnel. Security personnel are permitted to search staff and facilities at will, may demand ID, and may have weapons unholstered and unsafetied at any time. Suit sensors remain mandatory on tracking beacon."
+
+	var/static/datum/announcement/priority/security/security_announcement_red = new(do_log = 0, do_newscast = 1, new_sound = sound('sound/misc/redalert1.ogg'))
+
+/decl/security_level/default/code_red/switching_up_to()
+	if(up_description)
+		security_announcement_red.Announce(up_description, "Attention! Alert level elevated to [name]!")
+	notify_station()
+
+/decl/security_level/default/code_red/switching_down_to()
+	if(down_description)
+		security_announcement_red.Announce(down_description, "Attention! Alert level changed to [name]!")
+	notify_station()
 
 /decl/security_level/default/code_delta
 	name = "code delta"
