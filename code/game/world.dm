@@ -411,10 +411,12 @@ proc/establish_db_connection()
 	if(failed_db_connections > FAILED_DB_CONNECTION_CUTOFF)
 		return 0
 
-	if(!dbcon || !dbcon.IsConnected())
+	// Ensure dbcon exists before calling methods on it to avoid runtime errors
+	if(!dbcon)
 		return setup_database_connection()
-	else
-		return 1
+	if(!dbcon.IsConnected())
+		return setup_database_connection()
+	return 1
 
 /world/proc/incrementMaxZ()
 	maxz++
