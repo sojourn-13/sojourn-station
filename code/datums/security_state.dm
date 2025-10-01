@@ -221,7 +221,7 @@
 
 /decl/security_level/default/code_green/switching_down_to()
 	if(down_description)
-		var/static/datum/announcement/priority/security/security_announcement_green_down = new(do_log = 0, do_newscast = 1, new_sound = sound('sound/misc/notice1.ogg'))
+		var/static/datum/announcement/priority/security/security_announcement_green_down = new(do_log = 0, do_newscast = 1, new_sound = sound('sound/misc/notice2.ogg'))
 		security_announcement_green_down.Announce(down_description, "Attention! Alert level changed to [name]!")
 	notify_station()
 
