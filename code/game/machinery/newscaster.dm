@@ -69,10 +69,24 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 
 /datum/feed_network/New()
 	CreateFeedChannel("Colony Announcements", "SS13", 1, 1, "New Colony Announcement Available")
-	// Attempt to load additional channels/messages from the SQL database if configured
-	LoadFromDatabase()
+	// DB loading is deferred to world startup to avoid attempting DB calls during early datum New() time
+	// world.connectDB() will attempt to call news_network.LoadFromDatabase() once DB is available.
 
 /datum/feed_network/proc/CreateFeedChannel(var/channel_name, var/author, var/locked, var/adminChannel = 0, var/announcement_message)
+	// If a channel with this name already exists in memory, reuse it to avoid duplicates
+	for(var/datum/feed_channel/exists in network_channels)
+		if(exists.channel_name == channel_name)
+			// update properties in case something changed
+			exists.author = author
+			exists.locked = locked
+			exists.is_admin_channel = adminChannel
+			if(announcement_message)
+				exists.announcement = announcement_message
+			else
+				exists.announcement = "Breaking news from [channel_name]!"
+			// ensure db_id if possible will be set below when persisting/checking DB
+			return exists
+
 	var/datum/feed_channel/newChannel = new /datum/feed_channel
 	newChannel.channel_name = channel_name
 	newChannel.author = author
@@ -211,8 +225,7 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 	if(!config)
 		return 0
 
-	if(!establish_db_connection())
-		establish_db_connection()
+	log_world("DEBUG: Newscaster attempting DB load. SQL enabled status: [config.sql_enabled]")
 
 	// Load channels
 	var/DBQuery/q = dbcon.NewQuery("SELECT id, channel_name, author, locked, is_admin_channel, announcement FROM news_channels ORDER BY id ASC")
@@ -222,20 +235,58 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 
 	// channel_by_id will be a list keyed numerically by DB id where possible
 	var/list/channel_by_id = list()
+	var/num_db_channels = 0
 	while(q.NextRow())
 		var/chan_id = q.item[1]
-		var/datum/feed_channel/FC = new /datum/feed_channel
-		FC.channel_name = q.item[2]
-		FC.author = q.item[3]
-		FC.locked = q.item[4]
-		FC.is_admin_channel = q.item[5]
-		FC.announcement = q.item[6]
-		network_channels += FC
+		num_db_channels++
+		var/chan_name = q.item[2]
+		var/db_author = q.item[3]
+		var/db_locked = q.item[4]
+		var/db_admin = q.item[5]
+		var/db_announcement = q.item[6]
+
+		// Try to find an existing in-memory channel first by DB id, then by name
+		var/datum/feed_channel/FC = null
+		// search by db_id
+		for(var/datum/feed_channel/exists in network_channels)
+			if(exists.db_id && exists.db_id == chan_id)
+				FC = exists
+				break
+		// if no db_id match, try name match (to handle pre-created defaults)
+		if(!FC)
+			for(var/datum/feed_channel/exists2 in network_channels)
+				if(exists2.channel_name == chan_name)
+					FC = exists2
+					break
+
+		var/was_existing = FALSE
+		if(!FC)
+			FC = new /datum/feed_channel
+			network_channels += FC
+		else
+			was_existing = TRUE
+
+		// Update the channel fields from DB record
+		FC.channel_name = chan_name
+		FC.author = db_author
+		FC.locked = db_locked
+		FC.is_admin_channel = db_admin
+		FC.announcement = db_announcement
+		FC.db_id = chan_id
+
 		// ensure list can hold at least chan_id
 		if(channel_by_id.len < chan_id)
 			channel_by_id.len = chan_id
 		channel_by_id[chan_id] = FC
+		// diagnostic log to help debug missing channels
+		var/verb = "created"
+		if(was_existing)
+			verb = "reused"
+		log_world("Newscaster: DB channel [chan_id] '[chan_name]' loaded ([verb])")
 	q.Close()
+
+	if(num_db_channels == 0)
+		log_world("Newscaster: no channels found in DB (news_channels table empty)")
 
 	// Load recent messages — limit to last 200 messages to avoid huge loads
 	var/DBQuery/q2 = dbcon.NewQuery("SELECT id, channel_id, author, body, message_type, DATE_FORMAT(time_stamp, '%Y-%m-%d %H:%i:%s') as ts, is_admin_message FROM news_messages WHERE channel_id IS NOT NULL ORDER BY time_stamp DESC LIMIT 200")

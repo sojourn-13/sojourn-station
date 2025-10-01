@@ -79,8 +79,8 @@ var/global/datum/computer_file/data/email_account/service/payroll/payroll_mailer
 
 	payroll_mailer = new
 
-	news_network.CreateFeedChannel("Nyx Daily", "SolGov Minister of Information", 1, 1)
-	news_network.CreateFeedChannel("The Gibson Gazette", "Editor Mike Hammers", 1, 1)
+	// News channels are created at roundstart to ensure DB loading and deduplication
+	// happens after the world's DB connection is established. See /hook/roundstart/proc/init_news_network().
 
 	for(var/loc_type in typesof(/datum/trade_destination) - /datum/trade_destination)
 		var/datum/trade_destination/D = new loc_type
@@ -102,6 +102,22 @@ var/global/datum/computer_file/data/email_account/service/payroll/payroll_mailer
 
 	economy_init = 1
 	return 1
+
+
+/hook/roundstart/proc/init_news_network()
+	// Create default in-memory channels; LoadFromDatabase will reconcile DB channels with these.
+	if(!news_network)
+		return
+
+	news_network.CreateFeedChannel("Nyx Daily", "SolGov Minister of Information", 1, 1)
+	news_network.CreateFeedChannel("The Gibson Gazette", "Editor Mike Hammers", 1, 1)
+
+	// Attempt to load DB channels/messages if SQL is enabled and DB is available
+
+	if(establish_db_connection())
+		news_network.LoadFromDatabase()
+	else
+		log_world("Newscaster: DB not available at roundstart; will keep in-memory defaults.")
 
 
 /proc/create_department_account(var/datum/department/department)
