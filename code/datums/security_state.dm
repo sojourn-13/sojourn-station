@@ -252,7 +252,7 @@
 	light_color_status_display = COLOR_LIGHTING_PURPLE_MACHINERY
 
 	overlay_alarm = "alarm_violet"
-	overlay_firealarm = "overlay_blue"
+	overlay_firealarm = "overlay_violet"
 
 	overlay_status_display = "status_display_violet"
 
@@ -269,7 +269,7 @@
 	light_color_status_display = COLOR_LIGHTING_ORANGE_MACHINERY
 
 	overlay_alarm = "alarm_orange"
-	overlay_firealarm = "overlay_blue"
+	overlay_firealarm = "overlay_orange"
 
 	overlay_status_display = "status_display_orange"
 
