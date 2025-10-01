@@ -90,6 +90,7 @@
 	mob_swap_flags = ~HEAVY
 
 	var/flash_protection = 0				// Total level of flash protection
+	var/ear_protection = 0					// Total level of ear protection
 	var/psi_blocking = 0					// Total level of psi protection
 	var/psi_blocking_additive = 0			// Added level of psi protection, form things like perks or other such things.
 	var/equipment_tint_total = 0			// Total level of visualy impairing items

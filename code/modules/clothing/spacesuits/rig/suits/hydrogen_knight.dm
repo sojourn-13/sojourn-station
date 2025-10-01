@@ -38,7 +38,7 @@
 	name = "helmet"
 	camera_networks = list(NETWORK_RESEARCH)
 	retract_while_active = TRUE
-	flash_protection = FLASH_PROTECTION_MODERATE
+	flash_protection = FLASH_PROTECTION_MAJOR
 
 /obj/item/clothing/shoes/magboots/rig/hydrogen_knight
 	name = "greaves"

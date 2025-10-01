@@ -5,7 +5,7 @@
 	item_state = "welding-g"
 	action_button_name = "Flip Welding Goggles"
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 2)
-	flash_protection = FLASH_PROTECTION_MODERATE
+	flash_protection = FLASH_PROTECTION_MAJOR
 	tint = TINT_HEAVY
 	obscuration = HEAVY_OBSCURATION
 
@@ -46,5 +46,6 @@
 	icon_state = "rwelding-g"
 	item_state = "rwelding-g"
 	prescription = TRUE
+	flash_protection = FLASH_PROTECTION_MAJOR
 	tint = TINT_NONE
 	obscuration = MEDIUM_OBSCURATION
