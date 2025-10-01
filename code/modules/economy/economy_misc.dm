@@ -109,8 +109,6 @@ var/global/datum/computer_file/data/email_account/service/payroll/payroll_mailer
 	if(!news_network)
 		return
 
-	news_network.CreateFeedChannel("Nyx Daily", "SolGov Minister of Information", 1, 1)
-	news_network.CreateFeedChannel("The Gibson Gazette", "Editor Mike Hammers", 1, 1)
 	news_network.LoadFromDatabase()
 
 
