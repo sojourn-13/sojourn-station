@@ -513,8 +513,9 @@ obj/item/storage/pouch/large_generic/advmedic/populate_contents()
 	desc = "Can hold a handgun in."
 	icon_state = "pistol_holster"
 	item_state = "pistol_holster"
-
 	storage_slots = 1
+	acts_as_holster = TRUE
+	holster_slots = 1
 	w_class = ITEM_SIZE_SMALL
 	max_w_class = ITEM_SIZE_NORMAL
 	plus_extra_bulk = -1
@@ -605,6 +606,8 @@ obj/item/storage/pouch/large_generic/advmedic/populate_contents()
 	slot_flags = SLOT_BELT|SLOT_DENYPOCKET
 	max_w_class = ITEM_SIZE_HUGE
 	storage_slots = 2
+	acts_as_holster = TRUE
+	holster_slots = 2
 
 /obj/item/storage/pouch/pistol_holster/cowboy/update_icon()
 	..()
