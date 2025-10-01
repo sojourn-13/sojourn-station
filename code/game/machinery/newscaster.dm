@@ -212,8 +212,7 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 		return 0
 
 	if(!establish_db_connection())
-		log_world("Newscaster: DB disabled or unavailable; skipping news load.")
-		return 0
+		establish_db_connection()
 
 	// Load channels
 	var/DBQuery/q = dbcon.NewQuery("SELECT id, channel_name, author, locked, is_admin_channel, announcement FROM news_channels ORDER BY id ASC")
