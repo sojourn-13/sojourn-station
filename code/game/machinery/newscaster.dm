@@ -100,7 +100,8 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 	network_channels += newChannel
 
 	// Attempt to persist channel immediately to DB for admin channels or if DB is enabled
-	if(config && establish_db_connection())
+	// However, never persist the built-in 'Colony Announcements' default channel.
+	if(channel_name != "Colony Announcements" && config && establish_db_connection())
 		var/sql_channel_name = sanitizeSQL(channel_name)
 		var/sql_author = sanitizeSQL(author)
 		var/DBQuery/chk = dbcon.NewQuery("SELECT id FROM news_channels WHERE channel_name = '[sql_channel_name]' LIMIT 1")
