@@ -51,7 +51,7 @@
 	price_tag = 175
 
 /obj/item/tool/shovel/combat/marqua
-	name = "Mar'quaian crovel"
+	name = "Mar'quaian combat shovel"
 	desc = "A sharp, balanced crovel made from a strange alloy."
 	icon_state = "clustertool-shovel"
 	force = WEAPON_FORCE_DANGEROUS
