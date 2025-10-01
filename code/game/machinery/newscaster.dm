@@ -123,6 +123,30 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 		else
 			log_world("Newscaster: failed to query channels when creating '[channel_name]': [chk.ErrorMsg()]")
 
+	// If we succeeded in getting a DB id for this channel, load its recent messages so the
+	// in-memory channel is populated immediately after creation.
+	if(newChannel.db_id && config && establish_db_connection())
+		var/DBQuery/qm = dbcon.NewQuery("SELECT id, author, body, message_type, DATE_FORMAT(time_stamp, '%Y-%m-%d %H:%i:%s') as ts, is_admin_message FROM news_messages WHERE channel_id = [newChannel.db_id] ORDER BY time_stamp ASC")
+		if(qm.Execute())
+			while(qm.NextRow())
+				var/datum/feed_message/msg = new /datum/feed_message
+				msg.db_id = qm.item[1]
+				msg.author = qm.item[2]
+				msg.body = qm.item[3]
+				if(qm.item[4])
+					msg.message_type = qm.item[4]
+				msg.time_stamp = qm.item[5]
+				msg.is_admin_message = qm.item[6]
+				// Insert into the new channel (this will call update() on the channel)
+				insert_message_in_channel(newChannel, msg)
+			qm.Close()
+		else
+			log_world("Newscaster DB: failed to query messages for new channel '[channel_name]': [qm.ErrorMsg()]")
+
+	// Return the created channel so callers can use it immediately
+	return newChannel
+
+
 /datum/feed_network/proc/SubmitArticle(msg, author, channel_name, obj/item/photo/picture, adminMessage = FALSE, message_type = "", allow_comments = TRUE, update_alert = TRUE)
 	var/datum/feed_message/newMsg = new /datum/feed_message
 	newMsg.author = author
@@ -144,8 +168,7 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 		if(channel_name == "Colony Announcements")
 			// Keep colony announcements in-memory only; do not create DB noise.
 			log_world("Newscaster: skipping DB persist for message from 'Colony Announcements'")
-		else
-			if(establish_db_connection())
+		if(establish_db_connection())
 			// Ensure channel exists in DB; attempt to create if missing
 			var/sql_channel_name = sanitizeSQL(channel_name)
 			var/sql_author = sanitizeSQL(author)
@@ -183,7 +206,8 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 						log_world("Newscaster DB: failed to fetch last_insert_id: [last.ErrorMsg()]")
 			else
 				log_world("Newscaster DB: failed to ensure channel exists for [channel_name]")
-
+		else
+			log_world("Newscaster: DB not available; admin message not persisted")
 	for(var/datum/feed_channel/FC in network_channels)
 		if(FC.channel_name == channel_name)
 			insert_message_in_channel(FC, newMsg) //Adding message to the network's appropriate feed_channel
@@ -276,6 +300,11 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 					was_existing = TRUE
 		else
 			was_existing = TRUE
+
+		// If we failed to get or create a channel for this DB record, skip it and log.
+		if(!FC)
+			log_world("Newscaster: failed to create or find channel for DB id [chan_id] '[chan_name]'; skipping")
+			continue
 
 		// Update the channel fields from DB record
 		FC.channel_name = chan_name
