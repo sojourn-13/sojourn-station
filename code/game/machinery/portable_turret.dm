@@ -46,6 +46,8 @@
 // Used to not target allied mobs
 	var/colony_allied_turret = FALSE //Are we allied with the colony?
 
+	// Filter neutral faction mobs (default ON for colony turrets that support it)
+	var/filter_neutral = TRUE
 	var/check_arrest = TRUE	//checks if the perp is set to arrest
 	var/check_records = TRUE	//checks if a security record exists at all
 	var/check_weapons = FALSE	//checks if it can shoot people that have a weapon they aren't authorized to have
@@ -240,6 +242,7 @@ var/list/turret_icons
 		settings[++settings.len] = list("category" = "Check Access Authorization", "setting" = "check_access", "value" = check_access)
 		settings[++settings.len] = list("category" = "Check misc. Lifeforms", "setting" = "check_anomalies", "value" = check_anomalies)
 		settings[++settings.len] = list("category" = "Check misc. Alliement To Local SI Systems", "setting" = "colony_allied_turret", "value" = colony_allied_turret)
+		settings[++settings.len] = list("category" = "Filter out Neutral Faction", "setting" = "filter_neutral", "value" = filter_neutral)
 		data["settings"] = settings
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
@@ -293,6 +296,8 @@ var/list/turret_icons
 			check_anomalies = value
 		else if(href_list["command"] == "colony_allied_turret")
 			colony_allied_turret = value
+		else if(href_list["command"] == "filter_neutral")
+			filter_neutral = value
 
 		return 1
 
@@ -637,6 +642,10 @@ var/list/turret_icons
 	if(!check_trajectory(L, src))	//check if we have true line of sight
 		return TURRET_NOT_TARGET
 
+	// Filter neutral-faction mobs if requested
+	if(filter_neutral && L.faction == FACTION_NEUTRAL)
+		return TURRET_NOT_TARGET
+
 	if(emagged)		// If emagged not even the dead get a rest
 		return L.stat ? TURRET_SECONDARY_TARGET : TURRET_PRIORITY_TARGET
 
@@ -681,6 +690,12 @@ var/list/turret_icons
 	if(L.faction == "onestar")
 		return TURRET_NOT_TARGET
 	return 	..()
+
+// Ensure gate/wall turrets ignore neutral-faction mobs (outsiders etc.)
+/obj/machinery/porta_turret/gate/assess_living(var/mob/living/L)
+	if(L.faction == FACTION_NEUTRAL)
+		return TURRET_NOT_TARGET
+	return ..()
 
 /obj/machinery/porta_turret/proc/assess_perp(var/mob/living/carbon/human/H)
 	if(!H || !istype(H))

@@ -968,19 +968,14 @@ We don't use this but we might find use for it. Porting it since it was updated 
 	touch_met = 5
 	nerve_system_accumulations = 0
 
-/datum/reagent/medicine/sterilizine/affect_touch(mob/living/carbon/M, alien, effect_multiplier)
-	for(var/obj/item/I in M.contents)
-		I.was_bloodied = null
-	M.was_bloodied = null
-
 /datum/reagent/medicine/sterilizine/touch_obj(var/obj/O)
-	O.was_bloodied = null
+	// Use the object's clean_blood so it clears forensic markers
+	O.clean_blood()
+	return TRUE
 
 /datum/reagent/medicine/sterilizine/touch_turf(var/turf/T)
-	for(var/obj/item/I in T.contents)
-		I.was_bloodied = null
-	for(var/obj/effect/decal/cleanable/blood/B in T)
-		qdel(B)
+	// Use the turf's clean_blood to clear forensic markers on the turf
+	T.clean_blood()
 	return TRUE
 
 /datum/reagent/medicine/leporazine

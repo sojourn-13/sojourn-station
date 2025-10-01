@@ -18,6 +18,7 @@ GLOBAL_LIST_INIT(turret_channels, new/list(5))
 	var/check_synth = FALSE		//if active, will shoot at anything not an AI or cyborg
 	var/ailock = FALSE			//Silicons cannot use this
 	var/colony_allied_turret = TRUE //If we target friendly to colony critters
+	var/filter_neutral = TRUE	//If true, ignore FACTION_NEUTRAL mobs by default
 	var/list/current_access_list = list(access_moebius, access_robotics, access_security, access_heads)
 
 	var/list/registered_names = list()
@@ -171,6 +172,7 @@ GLOBAL_LIST_INIT(turret_channels, new/list(5))
 	settings[++settings.len] = list("category" = "Target Fauna", "setting" = "check_anomalies", "value" = shock_net.check_anomalies)
 	settings[++settings.len] = list("category" = "Filter out Colony Members", "setting" = "colony_allied_turret", "value" = shock_net.colony_allied_turret)
 	settings[++settings.len] = list("category" = "Toggle AI Access", "setting" = "ailock", "value" = shock_net.ailock)
+	settings[++settings.len] = list("category" = "Filter out Neutral Faction", "setting" = "filter_neutral", "value" = shock_net.filter_neutral)
 	data["settings"] = settings
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
@@ -207,6 +209,8 @@ GLOBAL_LIST_INIT(turret_channels, new/list(5))
 				shock_net.colony_allied_turret = value
 			if("ailock")
 				shock_net.ailock = value
+			if("filter_neutral")
+				shock_net.filter_neutral = value
 
 		playsound(loc, 'sound/machines/machine_switch.ogg', 100, 1)
 
@@ -536,6 +540,10 @@ GLOBAL_LIST_INIT(turret_channels, new/list(5))
 		return TURRET_NOT_TARGET
 
 	if(colony_allied_turret && L.colony_friend) //Dont target colony pets if were allied with them
+		return TURRET_NOT_TARGET
+
+	// Don't target neutral-faction mobs (e.g., Outsider set to FACTION_NEUTRAL)
+	if(shock_net.filter_neutral && L.faction == FACTION_NEUTRAL)
 		return TURRET_NOT_TARGET
 
 	if(!colony_allied_turret && !L.colony_friend) //If were not allied to the colony we dont attack anything thats against the colony
