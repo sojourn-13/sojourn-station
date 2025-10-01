@@ -139,8 +139,13 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 		newMsg.message_type = message_type
 
 	// If this is an admin message and SQL is available, persist to DB
+	// However, do not persist messages from the built-in 'Colony Announcements' channel.
 	if(adminMessage && config)
-		if(establish_db_connection())
+		if(channel_name == "Colony Announcements")
+			// Keep colony announcements in-memory only; do not create DB noise.
+			log_world("Newscaster: skipping DB persist for message from 'Colony Announcements'")
+		else
+			if(establish_db_connection())
 			// Ensure channel exists in DB; attempt to create if missing
 			var/sql_channel_name = sanitizeSQL(channel_name)
 			var/sql_author = sanitizeSQL(author)
