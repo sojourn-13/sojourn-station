@@ -70,11 +70,7 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 /datum/feed_network/New()
 	CreateFeedChannel("Colony Announcements", "SS13", 1, 1, "New Colony Announcement Available")
 	// Attempt to load additional channels/messages from the SQL database if configured
-	if(config)
-		if(establish_db_connection())
-			LoadFromDatabase()
-		else
-			log_world("Newscaster: DB not available; skipping news load.")
+	LoadFromDatabase()
 
 /datum/feed_network/proc/CreateFeedChannel(var/channel_name, var/author, var/locked, var/adminChannel = 0, var/announcement_message)
 	var/datum/feed_channel/newChannel = new /datum/feed_channel
