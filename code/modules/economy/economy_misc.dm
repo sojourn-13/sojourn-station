@@ -111,13 +111,7 @@ var/global/datum/computer_file/data/email_account/service/payroll/payroll_mailer
 
 	news_network.CreateFeedChannel("Nyx Daily", "SolGov Minister of Information", 1, 1)
 	news_network.CreateFeedChannel("The Gibson Gazette", "Editor Mike Hammers", 1, 1)
-
-	// Attempt to load DB channels/messages if SQL is enabled and DB is available
-
-	if(establish_db_connection())
-		news_network.LoadFromDatabase()
-	else
-		log_world("Newscaster: DB not available at roundstart; will keep in-memory defaults.")
+	news_network.LoadFromDatabase()
 
 
 /proc/create_department_account(var/datum/department/department)

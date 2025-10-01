@@ -261,8 +261,15 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 
 		var/was_existing = FALSE
 		if(!FC)
-			FC = new /datum/feed_channel
-			network_channels += FC
+			// Use the centralized CreateFeedChannel so persistence and de-duplication logic
+			// (and any side-effects) happen in one place instead of constructing datums here.
+			FC = CreateFeedChannel(chan_name, db_author, db_locked, db_admin, db_announcement)
+			// CreateFeedChannel will either return an existing channel or a newly-created one
+			// that has been added to network_channels.
+			if(FC)
+				// If the returned channel already had a db_id set, it was an existing entry.
+				if(FC.db_id)
+					was_existing = TRUE
 		else
 			was_existing = TRUE
 

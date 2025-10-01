@@ -412,9 +412,7 @@ var/failed_old_db_connections = 0
 		return 0
 
 	// Ensure dbcon exists before calling methods on it to avoid runtime errors
-	if(!dbcon)
-		return setup_database_connection()
-	if(!dbcon.IsConnected())
+	if(!dbcon || !dbcon.IsConnected())
 		return setup_database_connection()
 	return 1
 
