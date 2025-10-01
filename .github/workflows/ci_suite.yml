@@ -103,6 +103,10 @@ jobs:
     if: ${{ !contains(github.event.head_commit.message, '[ci skip]') }}
     name: Integration Tests
     runs-on: ubuntu-24.04
+    # Expose whether initializations completed as a job output
+    outputs:
+      initialized: ${{ steps.start_server.outputs.initialized }}
+      init_time: ${{ steps.start_server.outputs.init_time }}
     services:
       mysql:
         image: mysql:latest
@@ -141,7 +145,9 @@ jobs:
           source $HOME/BYOND/byond/bin/byondsetup
           tools/build/build --ci dm -DCIBUILDING -DANSICOLORS
       - name: Start server and exit after game loads
+        id: start_server
         run: |
+          set -eo pipefail
           # Start the server in background
           source $HOME/BYOND/byond/bin/byondsetup || true
           bash tools/ci/run_server.sh &>/tmp/run_server.out &
@@ -150,12 +156,12 @@ jobs:
           # Look for load indicators in recent logs or running processes/ports
           detect_loaded() {
             # check common keywords in server output file
-            if grep -i -m1 -E "game (has )?loaded|server started|started listening|round started|map loaded|initiali[sz]ation(s)? (complete|finished)|initializations complete" /tmp/run_server.out >/dev/null 2>&1; then
+            if grep -i -m1 -E "initiali[sz]ation(s)? (complete|finished)|initializations complete|initialisations complete" /tmp/run_server.out >/dev/null 2>&1; then
               return 0
             fi
             # check data logs
             if ls data/logs/*.log >/dev/null 2>&1; then
-              if grep -i -m1 -E "game (has )?loaded|server started|started listening|round started|map loaded|initiali[sz]ation(s)? (complete|finished)|initializations complete" data/logs/*.log >/dev/null 2>&1; then
+              if grep -i -m1 -E "initiali[sz]ation(s)? (complete|finished)|initializations complete|initialisations complete" data/logs/*.log >/dev/null 2>&1; then
                 return 0
               fi
             fi
@@ -173,7 +179,10 @@ jobs:
           TIMEOUT=120
           for i in $(seq 1 $TIMEOUT); do
             if detect_loaded; then
-              echo "Initializations complete within $i seconds"
+              echo "Initialisations complete within $i seconds"
+              # Export outputs so workflow can mark success based on detection
+              echo "initialized=true" >> "$GITHUB_OUTPUT"
+              echo "init_time=$i" >> "$GITHUB_OUTPUT"
               # stop server cleanly if possible
               kill $SERVER_PID >/dev/null 2>&1 || true
               wait $SERVER_PID 2>/dev/null || true
@@ -182,6 +191,9 @@ jobs:
             sleep 1
           done
           echo "Timeout: game did not indicate it was loaded within ${TIMEOUT}s"
+          # mark output as false on timeout
+          echo "initialized=false" >> "$GITHUB_OUTPUT"
+          echo "init_time=0" >> "$GITHUB_OUTPUT"
           # dump recent server output for debugging
           echo "=== /tmp/run_server.out (last 200 lines) ==="
           tail -n 200 /tmp/run_server.out || true
