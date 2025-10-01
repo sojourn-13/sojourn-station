@@ -183,8 +183,6 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 						log_world("Newscaster DB: failed to fetch last_insert_id: [last.ErrorMsg()]")
 			else
 				log_world("Newscaster DB: failed to ensure channel exists for [channel_name]")
-		else
-			log_world("Newscaster: DB not available; admin message not persisted")
 
 	for(var/datum/feed_channel/FC in network_channels)
 		if(FC.channel_name == channel_name)
