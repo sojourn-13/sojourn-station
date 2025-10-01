@@ -101,27 +101,8 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 
 	// Attempt to persist channel immediately to DB for admin channels or if DB is enabled
 	// However, never persist the built-in 'Colony Announcements' default channel.
-	if(channel_name != "Colony Announcements" && config && establish_db_connection())
-		var/sql_channel_name = sanitizeSQL(channel_name)
-		var/sql_author = sanitizeSQL(author)
-		var/DBQuery/chk = dbcon.NewQuery("SELECT id FROM news_channels WHERE channel_name = '[sql_channel_name]' LIMIT 1")
-		if(chk.Execute())
-			while(chk.NextRow())
-				newChannel.db_id = chk.item[1]
-			chk.Close()
-			if(!newChannel.db_id)
-				var/DBQuery/ins = dbcon.NewQuery("INSERT INTO news_channels (channel_name, author, locked, is_admin_channel, announcement) VALUES ('[sql_channel_name]', '[sql_author]', [locked], [adminChannel], '[sanitizeSQL(newChannel.announcement)]')")
-				if(ins.Execute())
-					var/DBQuery/last = dbcon.NewQuery("SELECT LAST_INSERT_ID() as id")
-					if(last.Execute())
-						while(last.NextRow())
-							newChannel.db_id = last.item[1]
-					last.Close()
-				else
-					log_world("Newscaster DB: failed to insert channel '[channel_name]': [ins.ErrorMsg()]")
-
-		else
-			log_world("Newscaster: failed to query channels when creating '[channel_name]': [chk.ErrorMsg()]")
+	if(channel_name != "Colony Announcements")
+		newChannel.db_id = EnsureChannelInDB(channel_name, author, locked, adminChannel, newChannel.announcement)
 
 	// If we succeeded in getting a DB id for this channel, load its recent messages so the
 	// in-memory channel is populated immediately after creation.
@@ -384,6 +365,48 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 		message_count += length(FC.messages)
 	log_world("Newscaster: loaded [channel_count] channels and [message_count] messages from DB")
 	return 1
+
+
+// Ensure the channel exists in DB: return id if found/created, 0 on failure.
+/datum/feed_network/proc/EnsureChannelInDB(var/channel_name, var/author, var/locked = 0, var/adminChannel = 0, var/announcement_message = "")
+	if(!config)
+		return 0
+	if(!establish_db_connection())
+		return 0
+	var/sql_channel_name = sanitizeSQL(channel_name)
+	var/sql_author = sanitizeSQL(author)
+	var/DBQuery/chk = dbcon.NewQuery("SELECT id FROM news_channels WHERE channel_name = '[sql_channel_name]' LIMIT 1")
+	if(!chk.Execute())
+		log_world("Newscaster DB: failed to query channels in EnsureChannelInDB: [chk.ErrorMsg()]")
+		return 0
+	var/chan_id = 0
+	while(chk.NextRow())
+		chan_id = chk.item[1]
+	chk.Close()
+	if(chan_id)
+		return chan_id
+	// Not found: try to insert
+	var/DBQuery/ins = dbcon.NewQuery("INSERT INTO news_channels (channel_name, author, locked, is_admin_channel, announcement) VALUES ('[sql_channel_name]', '[sql_author]', [locked], [adminChannel], '[sanitizeSQL(announcement_message)]')")
+	if(!ins.Execute())
+		// insertion failed; it may be a transient DB error or a race where another process inserted it.
+		log_world("Newscaster DB: failed to insert channel '[channel_name]': [ins.ErrorMsg()]")
+		// Try to re-query in case it was inserted by another process concurrently
+		var/DBQuery/rechk = dbcon.NewQuery("SELECT id FROM news_channels WHERE channel_name = '[sql_channel_name]' LIMIT 1")
+		if(rechk.Execute())
+			while(rechk.NextRow())
+				chan_id = rechk.item[1]
+			rechk.Close()
+			return chan_id
+		else
+			log_world("Newscaster DB: re-query failed after insert failure: [rechk.ErrorMsg()]")
+			return 0
+	else
+		var/DBQuery/last = dbcon.NewQuery("SELECT LAST_INSERT_ID() as id")
+		if(last.Execute())
+			while(last.NextRow())
+				chan_id = last.item[1]
+			last.Close()
+		return chan_id
 
 /obj/machinery/newscaster
 	name = "newscaster"
