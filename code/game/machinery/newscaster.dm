@@ -269,13 +269,27 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 		if(!FC)
 			continue
 		var/datum/feed_message/newMsg = new /datum/feed_message
-		newMsg.author = m["author"]
-		newMsg.body = m["body"]
+		// Normalize DB-loaded fields: some DB rows may have surrounding single quotes
+		// due to earlier sanitizeSQL behavior. Strip them if present.
+		var/loaded_author = m["author"]
+		var/loaded_body = m["body"]
+		var/loaded_type = m["message_type"]
+		if(loaded_author && dd_hasprefix(loaded_author, "'"))
+			loaded_author = copytext(loaded_author, 2, length(loaded_author) - 1)
+		if(loaded_body && dd_hasprefix(loaded_body, "'"))
+			loaded_body = copytext(loaded_body, 2, length(loaded_body) - 1)
+		if(loaded_type && dd_hasprefix(loaded_type, "'"))
+			loaded_type = copytext(loaded_type, 2, length(loaded_type) - 1)
+
+		newMsg.author = loaded_author
+		newMsg.body = loaded_body
 		newMsg.time_stamp = m["time_stamp"]
 		newMsg.is_admin_message = m["is_admin_message"]
 		// store DB id for later persistence actions
 		newMsg.db_id = m["id"]
-		if(m["message_type"]) newMsg.message_type = m["message_type"]
+		if(loaded_type)
+			newMsg.message_type = loaded_type
+
 		insert_message_in_channel(FC, newMsg)
 
 	var/channel_count = length(network_channels)
