@@ -136,24 +136,24 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 			// Try to find channel id
 			var/DBQuery/check = dbcon.NewQuery("SELECT id FROM news_channels WHERE channel_name = '[sql_channel_name]' LIMIT 1")
 			check.Execute()
-			var/chan_id = null
+			var/chan_id_num = null
 			while(check.NextRow())
-				chan_id = check.item[1]
+				chan_id_num = check.item[1]
 			check.Close()
-			if(!chan_id)
+			if(!chan_id_num)
 				// create channel
 				var/DBQuery/insert_ch = dbcon.NewQuery("INSERT INTO news_channels (channel_name, author, locked, is_admin_channel, announcement) VALUES ('[sql_channel_name]', '[sql_author]', 1, 1, '')")
 				if(insert_ch.Execute())
-					chan_id = dbcon.NewQuery("SELECT LAST_INSERT_ID() as id")
-					if(chan_id.Execute())
-						while(chan_id.NextRow())
-							chan_id = chan_id.item[1]
-						chan_id.Close()
+					var/DBQuery/lastq = dbcon.NewQuery("SELECT LAST_INSERT_ID() as id")
+					if(lastq.Execute())
+						while(lastq.NextRow())
+							chan_id_num = lastq.item[1]
+						lastq.Close()
 			// Insert the message
-			if(chan_id)
+			if(chan_id_num)
 				var/sql_body = sanitizeSQL(msg)
 				var/sql_type = sanitizeSQL(message_type)
-				var/DBQuery/ins = dbcon.NewQuery("INSERT INTO news_messages (channel_id, author, body, message_type, time_stamp, is_admin_message) VALUES ([chan_id], '[sql_author]', '[sql_body]', '[sql_type]', Now(), 1)")
+				var/DBQuery/ins = dbcon.NewQuery("INSERT INTO news_messages (channel_id, author, body, message_type, time_stamp, is_admin_message) VALUES ([chan_id_num], '[sql_author]', '[sql_body]', '[sql_type]', Now(), 1)")
 				if(!ins.Execute())
 					log_world("Newscaster DB: failed to insert message: [ins.ErrorMsg()]")
 				else
@@ -848,12 +848,12 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 			else
 				FC.author = FC.backup_author
 			FC.update()
-				// Persist censored author state to DB if channel exists in DB
-				if(config && establish_db_connection() && FC.db_id)
-					var/sql_censored_author = sanitizeSQL(FC.author)
-					var/DBQuery/update = dbcon.NewQuery("UPDATE news_channels SET author='[sql_censored_author]' WHERE id=[FC.db_id]")
-					if(!update.Execute())
-						log_world("Newscaster DB: failed to update channel author for id [FC.db_id]: [update.ErrorMsg()]")
+			// Persist censored author state to DB if channel exists in DB
+			if(config && establish_db_connection() && FC.db_id)
+				var/sql_censored_author = sanitizeSQL(FC.author)
+				var/DBQuery/update = dbcon.NewQuery("UPDATE news_channels SET author='[sql_censored_author]' WHERE id=[FC.db_id]")
+				if(!update.Execute())
+					log_world("Newscaster DB: failed to update channel author for id [FC.db_id]: [update.ErrorMsg()]")
 			src.updateUsrDialog()
 
 		else if(href_list["censor_channel_story_author"])
@@ -867,12 +867,12 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 			else
 				MSG.author = MSG.backup_author
 			MSG.parent_channel.update()
-				// Persist message author censorship to DB if message has db_id
-				if(config && establish_db_connection() && MSG.db_id)
-					var/sql_author = sanitizeSQL(MSG.author)
-					var/DBQuery/upm = dbcon.NewQuery("UPDATE news_messages SET author='[sql_author]' WHERE id=[MSG.db_id]")
-					if(!upm.Execute())
-						log_world("Newscaster DB: failed to update message author id [MSG.db_id]: [upm.ErrorMsg()]")
+			// Persist message author censorship to DB if message has db_id
+			if(config && establish_db_connection() && MSG.db_id)
+				var/sql_author = sanitizeSQL(MSG.author)
+				var/DBQuery/upm = dbcon.NewQuery("UPDATE news_messages SET author='[sql_author]' WHERE id=[MSG.db_id]")
+				if(!upm.Execute())
+					log_world("Newscaster DB: failed to update message author id [MSG.db_id]: [upm.ErrorMsg()]")
 			src.updateUsrDialog()
 
 		else if(href_list["censor_channel_story_body"])
@@ -893,13 +893,13 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 				MSG.img = MSG.backup_img
 
 			MSG.parent_channel.update()
-				// Persist message censorship to DB if message has db_id
-				if(config && establish_db_connection() && MSG.db_id)
-					var/sql_body = sanitizeSQL(MSG.body)
-					var/sql_caption = sanitizeSQL(MSG.caption)
-					var/DBQuery/upb = dbcon.NewQuery("UPDATE news_messages SET body='[sql_body]', caption='[sql_caption]' WHERE id=[MSG.db_id]")
-					if(!upb.Execute())
-						log_world("Newscaster DB: failed to update message body id [MSG.db_id]: [upb.ErrorMsg()]")
+			// Persist message censorship to DB if message has db_id
+			if(config && establish_db_connection() && MSG.db_id)
+				var/sql_body = sanitizeSQL(MSG.body)
+				var/sql_caption = sanitizeSQL(MSG.caption)
+				var/DBQuery/upb = dbcon.NewQuery("UPDATE news_messages SET body='[sql_body]', caption='[sql_caption]' WHERE id=[MSG.db_id]")
+				if(!upb.Execute())
+					log_world("Newscaster DB: failed to update message body id [MSG.db_id]: [upb.ErrorMsg()]")
 			src.updateUsrDialog()
 
 		else if(href_list["pick_d_notice"])
@@ -915,11 +915,11 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 				return
 			FC.censored = !FC.censored
 			FC.update()
-				// Persist D-Notice (censored flag) to DB if available
-				if(config && establish_db_connection() && FC.db_id)
-					var/DBQuery/upc = dbcon.NewQuery("UPDATE news_channels SET censored=[(FC.censored) ? (1) : (0)] WHERE id=[FC.db_id]")
-					if(!upc.Execute())
-						log_world("Newscaster DB: failed to update censored state for channel id [FC.db_id]: [upc.ErrorMsg()]")
+			// Persist D-Notice (censored flag) to DB if available
+			if(config && establish_db_connection() && FC.db_id)
+				var/DBQuery/upc = dbcon.NewQuery("UPDATE news_channels SET censored=[(FC.censored) ? (1) : (0)] WHERE id=[FC.db_id]")
+				if(!upc.Execute())
+					log_world("Newscaster DB: failed to update censored state for channel id [FC.db_id]: [upc.ErrorMsg()]")
 			src.updateUsrDialog()
 
 		else if(href_list["view"])
