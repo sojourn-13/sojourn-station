@@ -101,13 +101,13 @@
 	item_state = "zwang"
 	item_charge_meter = TRUE
 	can_dual = TRUE
-	charge_cost = 160
+	charge_cost = 50
 	matter = list(MATERIAL_PLASTEEL = 13, MATERIAL_PLASTIC = 6, MATERIAL_SILVER = 6)
 	price_tag = 1400
 
 	init_firemodes = list(
-		list(mode_name="stunshot", projectile_type=/obj/item/projectile/energy/electrode/stunshot, fire_sound = 'sound/weapons/energy/Taser.ogg', fire_delay=35, icon="stun"),
-		list(mode_name="lethal", projectile_type=/obj/item/projectile/beam/midlaser, fire_sound='sound/weapons/energy/laser_pistol.ogg', fire_delay=10, icon="kill"),
+		list(mode_name="stunshot", projectile_type=/obj/item/projectile/energy/electrode, fire_sound = 'sound/weapons/energy/Taser.ogg', charge_cost = 50, icon="stun"),
+		list(mode_name="lethal", projectile_type=/obj/item/projectile/beam/midlaser, fire_sound='sound/weapons/energy/laser_pistol.ogg', charge_cost = 25, icon="kill"),
 	)
 	serial_type = "NM"
 
