@@ -101,7 +101,7 @@
 	name = "forensics swat gloves"
 	icon_state = "combat_fors"
 	item_state = "combat_fors"
-	armor_list = list(melee = 6, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee = 2, bullet = 2, energy = 2, bomb = 0, bio = 15, rad = 0)
 	permeability_coefficient = 0.10
 	siemens_coefficient = 0
 	price_tag = 200
