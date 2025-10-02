@@ -101,7 +101,7 @@
 /obj/item/gun/projectile/revolver/rev10/mateba/worse
 	name = "\"Rhino\" autorevolver"
 	desc = "The \"Rhino\" autorevolver is a unique semiautomatic revolver chambered in .50 Kurz whose patents were acquired by Marshals for production. \
-			It seems to be a cheaper, less refined version of the Mateba, lacking its precision machining and recoil compensator. \"
+	It seems to be a cheaper, less refined version of the Mateba, lacking its precision machining and recoil compensator. "
 	icon = 'icons/obj/guns/projectile/mateba_old.dmi'
 	icon_state = "mateba"
 	item_state = "mateba"
