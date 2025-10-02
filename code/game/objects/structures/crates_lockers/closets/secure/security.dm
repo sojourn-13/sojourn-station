@@ -169,7 +169,6 @@
 	if(populated_contents)
 		return
 	populated_contents = TRUE
-	new /obj/item/clothing/gloves/thick/swat/fors(src)
 	new /obj/item/clothing/under/rank/inspector(src)
 	new /obj/item/clothing/mask/gas/ihs(src)
 	new /obj/item/clothing/gloves/thick(src)
