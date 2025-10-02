@@ -106,8 +106,8 @@
 	price_tag = 1400
 
 	init_firemodes = list(
-		list(mode_name="stunshot", projectile_type=/obj/item/projectile/energy/electrode, fire_sound = 'sound/weapons/energy/Taser.ogg', charge_cost = 50, icon="stun"),
-		list(mode_name="lethal", projectile_type=/obj/item/projectile/beam/midlaser, fire_sound='sound/weapons/energy/laser_pistol.ogg', charge_cost = 50, icon="kill"),
+		list(mode_name="stunshot", projectile_type=/obj/item/projectile/energy/electrode, fire_sound = 'sound/weapons/energy/Taser.ogg', charge_cost = 100, icon="stun"),
+		list(mode_name="lethal", projectile_type=/obj/item/projectile/beam/midlaser, fire_sound='sound/weapons/energy/laser_pistol.ogg', charge_cost = 100, icon="kill"),
 	)
 	serial_type = "NM"
 
