@@ -11,7 +11,6 @@
 	item_charge_meter = TRUE
 	fire_sound = 'sound/weapons/energy/laser_pistol.ogg'
 	can_dual = TRUE
-	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 4, TECH_POWER = 6)
 	w_class = ITEM_SIZE_NORMAL
 	slot_flags = SLOT_BELT|SLOT_HOLSTER
 	projectile_type = /obj/item/projectile/beam/midlaser
@@ -19,8 +18,6 @@
 	charge_cost = 80
 	fire_delay = 10
 	zoom_factors = list(0.4)
-	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_STEEL = 10, MATERIAL_SILVER = 4, MATERIAL_PLASMA = 8)
-	price_tag = 8000
 	damage_multiplier = 1
 	penetration_multiplier = 1
 	init_recoil = CARBINE_RECOIL(0.5)
@@ -35,6 +32,10 @@
 	wield_delay = 0.3 SECOND
 	wield_delay_factor = 0.2 // 20 vig
 
+	//no deconstructing, selling, or recycling as this is a unique HoS weapon
+	matter = null
+	origin_tech = null
+	price_tag = null
 /obj/item/gun/energy/glock/update_icon()
 	var/iconstring = initial(icon_state)
 	var/itemstring = ""
@@ -73,7 +74,6 @@
 	item_charge_meter = TRUE
 	fire_sound = 'sound/weapons/energy/laser_pistol.ogg'
 	can_dual = TRUE
-	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 4, TECH_POWER = 6)
 	w_class = ITEM_SIZE_NORMAL
 	slot_flags = SLOT_BELT|SLOT_HOLSTER
 	projectile_type = /obj/item/projectile/beam/midlaser
@@ -81,21 +81,24 @@
 	charge_cost = 80
 	fire_delay = 10
 	zoom_factors = list(0.4)
-	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_STEEL = 10, MATERIAL_SILVER = 4, MATERIAL_PLASMA = 8)
-	price_tag = 8000
 	damage_multiplier = 1
 	penetration_multiplier = 1
 	init_recoil = CARBINE_RECOIL(0.5)
 	gun_tags = list(GUN_LASER, GUN_ENERGY, GUN_SIGHT)
 	init_firemodes = list(
-		list(mode_name="kill shot", mode_desc="A small laser beam capable of personal defense and shooting through windows and grilles.", projectile_type=/obj/item/projectile/beam, fire_sound='sound/weapons/energy/laser_pistol.ogg', charge_cost=50, fire_delay=10, icon="kill", projectile_color = "#e4562b"),
-		list(mode_name="plasma bolt", mode_desc="Hard hitting heavy plasma bolts built to reduce the armour of a target.", projectile_type=/obj/item/projectile/plasma, fire_sound='sound/weapons/energy/pulse.ogg', charge_cost=100, fire_delay=25, icon="destroy", projectile_color = "#00AAFF"),
-		list(mode_name="ion shot", mode_desc="An iodizing shot to disable cells, electronics and cybernetics. Works on mechs and synthtic life.", projectile_type=/obj/item/projectile/ion, fire_sound='sound/effects/supermatter.ogg', charge_cost=150, fire_delay=25, icon="stun", projectile_color = "#dfdc39"),
+		list(mode_name="kill shot", mode_desc="A small laser beam capable of personal defense and shooting through windows and grilles.", projectile_type=/obj/item/projectile/beam, fire_sound='sound/weapons/energy/laser_pistol.ogg', charge_cost=50, fire_delay=10, icon="kill", projectile_color = "#00AAFF"),
+		list(mode_name="plasma bolt", mode_desc="Hard hitting heavy plasma bolts built to reduce the armour of a target.", projectile_type=/obj/item/projectile/plasma, fire_sound='sound/weapons/energy/pulse.ogg', charge_cost=100, fire_delay=25, icon="destroy", projectile_color = "#34c4b0"),
+		list(mode_name="ion shot", mode_desc="An iodizing shot to disable cells, electronics and cybernetics. Works on mechs and synthtic life.", projectile_type=/obj/item/projectile/ion, fire_sound='sound/effects/supermatter.ogg', charge_cost=150, fire_delay=25, icon="stun", projectile_color = "#e49929"),
 	)
 	serial_type = "SI-NM"
 
 	wield_delay = 0.3 SECOND
 	wield_delay_factor = 0.2 // 20 vig
+
+	//no deconstructing, selling, or recycling as this is a unique HoS weapon
+	matter = null
+	origin_tech = null
+	price_tag = null
 
 /obj/item/gun/energy/glock/sci/update_icon()
 	var/iconstring = initial(icon_state)
@@ -121,3 +124,10 @@
 		iconstring += "_slide"
 
 	icon_state = iconstring
+
+/obj/item/gun/energy/glock/sci/preloaded
+
+/obj/item/gun/energy/glock/sci/preloaded/New()
+	cell = new /obj/item/cell/medium/moebius/high(src)
+	. = ..()
+	update_icon()

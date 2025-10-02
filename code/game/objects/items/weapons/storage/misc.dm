@@ -166,3 +166,30 @@
 /obj/item/storage/chewables/tobacco/dyn/populate_contents()
 	for(var/i in 1 to 6)
 		new /obj/item/clothing/mask/chewable/tobacco/dyn(src)
+
+/*
+ * SI Special Issue Gun Kits
+ */
+
+/obj/item/storage/box/si_kit
+	name = "\"Placeholder\" SI Gun Kit"
+	desc = "A kit containing a versatile gun."
+
+/obj/item/storage/box/si_kit/cro
+	name = "\"Starburst\" Advanced Energy Pistol Kit"
+	desc = "A kit containing a versatile plasma pistol with ion and laser firemodes."
+
+	populate_contents()
+		new /obj/item/gun/energy/glock/sci/preloaded(src)
+		new /obj/item/cell/medium/moebius/high(src)
+		new /obj/item/clothing/accessory/holster/waist(src)
+
+// Resolute Kit
+/obj/item/storage/box/si_kit/cbo
+	name = "\"Resolute\" SST Pistol Kit"
+	desc = "A kit containing a souped up SST with an additional lethal mode."
+
+	populate_contents()
+		new /obj/item/gun/energy/sst/formatbound/cbo/preloaded(src)
+		new /obj/item/cell/medium/moebius/high(src)
+		new /obj/item/storage/pouch/pistol_holster(src)
