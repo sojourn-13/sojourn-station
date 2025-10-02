@@ -40,7 +40,7 @@
 	matter = list(MATERIAL_PLASTEEL = 8)
 	result = /obj/item/gun/projectile/automatic/ak47/sa
 	gripvars = list(/obj/item/part/gun/grip/excel, /obj/item/part/gun/grip/wood, /obj/item/part/gun/grip/black, /obj/item/part/gun/grip/rubber, /obj/item/part/gun/grip/serb)
-	resultvars = list(/obj/item/gun/projectile/automatic/ak47, /obj/item/gun/projectile/automatic/ak47/sa, /obj/item/gun/projectile/automatic/ak47/NM_colony, /obj/item/gun/projectile/automatic/ak47/NM_colony/improved, /obj/item/gun/projectile/automatic/ak47/sa/tac)
+	resultvars = list(/obj/item/gun/projectile/automatic/ak47, /obj/item/gun/projectile/automatic/ak47/sa, /obj/item/gun/projectile/automatic/ak47/NM_colony, /obj/item/gun/projectile/automatic/ak47/sa/tac, /obj/item/gun/projectile/automatic/ak47/NM_colony/improved)
 	mechanismvar = /obj/item/part/gun/mechanism/autorifle
 	barrelvars = list(/obj/item/part/gun/barrel/lrifle)
 
@@ -95,7 +95,7 @@
 /obj/item/gun/projectile/automatic/ak47/saiga
 	name = "Excelsior \"Saiga 12\" shotgun"
 	desc = "\"Let the ruling classes tremble at a Communistic revolution. The proletarians have nothing to lose but their chains. They have a world to win...\"\nA bulked up and modified version of the Kalashnikov made to fire 20mm shotgun shells, taking magazines similar to the Sol Federation SBAW design."
-	icon = 'icons/obj/guns/projectile/saiga12.dmi'
+	icon = 'icons/obj/guns/projectile/saiga12_excel.dmi'
 	icon_state = "saiga"
 	item_state = "saiga"
 	fire_sound = 'sound/weapons/guns/fire/saiga_fire.ogg'
@@ -111,6 +111,7 @@
 /obj/item/gun/projectile/automatic/ak47/saiga/NM_colony
 	name = "\"Saigini 12\" shotgun"
 	desc = "A bulked up and modified version of the Kalashnikov made to fire 20mm shotgun shells, taking magazines similar to the Sol Federation SBAW design. \nThis model of the \"Saiga\" shotgun has been reclaimed and repurposed by Nadezhda Marshals, making it free of Excelsior taint."
+	icon = 'icons/obj/guns/projectile/saiga12.dmi'
 	icon_state = "saiga-bs"
 	item_state = "saiga-bs"
 	penetration_multiplier = 0.9 //Non-Excelsior varient, it's powerful as is. Pug on crack.

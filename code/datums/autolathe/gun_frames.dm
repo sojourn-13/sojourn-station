@@ -45,6 +45,10 @@ This is mostly used for Marshal gun crafting to make it so they can make guns bu
 	name = ".257/7.5mm Wind frame"
 	build_path = /obj/item/part/gun/frame/nord
 
+/datum/design/autolathe/gun_frame/wind
+	name = "7.5mm AK47 frame"
+	build_path = /obj/item/part/gun/frame/ak47
+
 //Marshal Surplus
 
 /datum/design/autolathe/gun_frame/glock
