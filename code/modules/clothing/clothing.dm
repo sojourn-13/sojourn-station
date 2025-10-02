@@ -360,6 +360,9 @@ BLIND     // can't see anything
 	siemens_coefficient = 0.75
 	var/wired = 0
 	var/clipped = 0
+	// Forensics properties: optional custom fiber string and glowing marker
+	var/forensics_fibers = null
+	var/forensics_glowing = 0
 	body_parts_covered = ARMS
 	armor_list = list(melee = 2, bullet = 0, energy = 3, bomb = 0, bio = 0, rad = 0)
 	slot_flags = SLOT_GLOVES
