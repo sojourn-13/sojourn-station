@@ -23,7 +23,7 @@
 	gun_tags = list(GUN_LASER, GUN_ENERGY)
 	init_firemodes = list(
 		list(mode_name="heavy stunshot", projectile_type=/obj/item/projectile/energy/electrode/stunshot, fire_sound= 'sound/weapons/energy/Taser.ogg', charge_cost = 100, icon="stun"),
-		list(mode_name="heavy lethal", projectile_type=/obj/item/projectile/beam/heavylaser, fire_sound='sound/weapons/guns/fire/sunrise_fire.ogg', charge_cost = 50, icon="kill"),
+		list(mode_name="heavy lethal", projectile_type=/obj/item/projectile/beam/heavylaser, fire_sound='sound/weapons/guns/fire/sunrise_fire.ogg', charge_cost = 100, icon="kill"),
 	)
 	serial_type = "NM"
 
