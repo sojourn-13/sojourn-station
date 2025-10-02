@@ -95,6 +95,20 @@
 	armor_list = list(melee = 6, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
 	price_tag = 150
 
+// Forensics variant: leaves identifiable glowing fibers
+/obj/item/clothing/gloves/thick/swat/fors
+	desc = "A pair of heavy gloves used by forensic specialists. They leave faint, glowing fibers when interacting with surfaces."
+	name = "forensics swat gloves"
+	icon_state = "combat_fors"
+	item_state = "combat_fors"
+	armor_list = list(melee = 2, bullet = 2, energy = 2, bomb = 0, bio = 15, rad = 0)
+	permeability_coefficient = 0.10
+	siemens_coefficient = 0
+	price_tag = 200
+	// Custom forensics fiber string recorded by add_fibers()
+	forensics_fibers = "Glowing material from a pair of forensics gloves. They illuminate under UV light."
+	forensics_glowing = 1
+
 /obj/item/clothing/gloves/thick/swat/insulated
 	name = "insulated combat gloves"
 	desc = "A pair of fire and impact-resistant security combat gloves. \
@@ -135,11 +149,12 @@
 
 /obj/item/clothing/gloves/thick/swat/blackshield_corpsman
 	name = "corpsman combat gloves"
-	desc = "A pair of fire and impact-resistant corpsman combat gloves." // No lying, it's not anti-germs.
+	desc = "A pair of fire and impact-resistant corpsman combat gloves. Also protects against minor biological threats." // No lying, it's not anti-germs.
 	icon_state = "corpsman_base_gloves"
 	item_state = "corpsman_base_gloves"
 	armor_list = list(melee = 6, bullet = 5, energy = 5, bomb = 0, bio = 15, rad = 0)
 	siemens_coefficient = 0
+	permeability_coefficient = 0.05
 	price_tag = 250
 
 /obj/item/clothing/gloves/thick/swat/blackshield_corpsman/verb/toggle_style()
