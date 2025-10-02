@@ -103,7 +103,7 @@
 
 /datum/reagent/medicine/varceptol/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	M.heal_organ_damage(9 * removed, 0)
-	M.add_chemical_effect(CE_ANTITOX, 3 * removed)
+	M.add_chemical_effect(CE_ANTITOX, 3)
 
 /datum/reagent/medicine/meralyne
 	name = "Meralyne"
@@ -1310,7 +1310,7 @@ We don't use this but we might find use for it. Porting it since it was updated 
 
 /datum/reagent/medicine/purger/overdose(mob/living/carbon/M, alien)
 	. = ..()
-	M.add_chemical_effect(CE_PURGER, 2)
+	M.add_chemical_effect(CE_PURGER, 3)
 
 /datum/reagent/medicine/addictol
 	name = "Addictol"

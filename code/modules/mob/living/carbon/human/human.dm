@@ -656,6 +656,9 @@ var/list/rank_prefix = list(\
 
 	return flash_protection
 
+/mob/living/carbon/human/earcheck()
+	return ear_protection
+
 //Used by various things that knock people out by applying blunt trauma to the head.
 //Checks that the species has a "head" (brain containing organ) and that hit_zone refers to it.
 /mob/living/carbon/human/proc/headcheck(var/target_zone, var/brain_tag = BP_BRAIN)
