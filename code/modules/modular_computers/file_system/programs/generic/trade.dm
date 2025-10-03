@@ -255,7 +255,7 @@
 		if(!TU)
 			return
 		var/spu = TU.spawn_probability ? TU.spawn_probability : 60
-	var/required = max(1000, round(1000.0 / max(1, spu))) * 2
+		var/required = max(1000, round(1000.0 / max(1, spu))) * 2
 		if(SStrade.export_points < required)
 			to_chat(usr, SPAN_WARNING("Not enough export points to unlock station."))
 			return TRUE
@@ -634,7 +634,7 @@
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if (!ui)
-	ui = new(user, src, ui_key, "trade.tmpl", name, 2000, 800, state = state)
+		ui = new(user, src, ui_key, "trade.tmpl", name, 2000, 800, state = state)
 
 		// template keys starting with _ are not appended to the UI automatically and have to be called manually
 		ui.add_template("_goods", "trade_goods.tmpl")
