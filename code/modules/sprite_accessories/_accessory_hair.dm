@@ -119,6 +119,18 @@
 	name = "Bob"
 	icon_state = "bobcut"
 
+/datum/sprite_accessory/hair/bob2
+	name = "Bob 2"
+	icon_state = "bob2"
+
+/datum/sprite_accessory/hair/bob3
+	name = "Bob 3"
+	icon_state = "bob3"
+
+/datum/sprite_accessory/hair/bob4
+	name = "Bob 4"
+	icon_state = "bob4"
+
 /datum/sprite_accessory/hair/bobcurl
 	name = "Bobcurl"
 	icon_state = "bobcurl"
@@ -261,6 +273,10 @@
 	name = "Daisy"
 	icon_state = "daisy"
 
+/datum/sprite_accessory/hair/diagonalbangs
+	name = "diagonal bangs"
+	icon_state = "diagonalbangs"
+
 /datum/sprite_accessory/hair/depresso
 	name = "Depresso"
 	icon_state = "depresso"
@@ -297,6 +313,26 @@
 /datum/sprite_accessory/hair/emo
 	name = "Emo"
 	icon_state = "emo"
+
+/datum/sprite_accessory/hair/fade
+	name = "fade"
+	icon_state = "fade-none"
+
+/datum/sprite_accessory/hair/fadelow
+	name = "fade low"
+	icon_state = "fade-low"
+
+/datum/sprite_accessory/hair/fademedium
+	name = "fade medium"
+	icon_state = "fade-medium"
+
+/datum/sprite_accessory/hair/fadehigh
+	name = "fade high"
+	icon_state = "fade-high"
+
+/datum/sprite_accessory/hair/fadebald
+	name = "fade bald"
+	icon_state = "fade-bald"
 
 /datum/sprite_accessory/hair/fringeemo
 	name = "Emo Fringe"
