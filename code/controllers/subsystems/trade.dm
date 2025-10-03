@@ -737,7 +737,7 @@ SUBSYSTEM_DEF(trade)
 			break
 		if(unlocks >= initial_unlock_count)
 			break
-		var/required = max(1000, round((max(1, station.unique_good_count) + max(1, station.base_income / 1000)) * 50)) // required points heuristic (much reduced multiplier)
+	var/required = max(1000, round((max(1, station.unique_good_count) + max(1, station.base_income / 1000)) * 50)) * 2 // required points heuristic (much reduced multiplier)
 		if(export_points >= required)
 			export_points -= required
 			discovered_stations |= station
