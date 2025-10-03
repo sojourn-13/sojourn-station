@@ -235,7 +235,13 @@
 /datum/trade_station/proc/try_recommendation()
 	if(favor >= recommendation_threshold)
 		recommendation_unlocked = TRUE
-		SStrade.discover_by_uid(stations_recommended)
+		// Force-discover the recommended stations immediately and decrement their recommendations_needed
+		if(islist(stations_recommended) && stations_recommended.len)
+			var/list/uid_with_flag = stations_recommended.Copy()
+			uid_with_flag += TRUE
+			SStrade.discover_by_uid(uid_with_flag)
+		else
+			SStrade.discover_by_uid(stations_recommended)
 
 /datum/trade_station/proc/get_good_amount(cat, index)
 	. = 0
@@ -272,7 +278,14 @@
 	if(!isnum(income))
 		return
 	wealth += income
-	favor += income * (is_offer ? 1 : favour_purchase_ratio)
+	// Station keeps its favour value for UI/thresholds, but we also push a proportional
+	// amount into the global unlock pool so exports/purchases help unlocking stations.
+	var/var/favour_gain = income * (is_offer ? 1 : favour_purchase_ratio)
+	favor += favour_gain
+	// Convert favour_gain (credits-worth) into global export points without consuming station favour
+	if(isnum(favour_gain) && favour_gain > 0)
+		// SStrade expects credits to convert to points, so use the raw credit equivalent
+		SStrade.add_export_points(favour_gain)
 
 	// Unlocks without needing to wait for update tick
 	if(!hidden_inv_unlocked)

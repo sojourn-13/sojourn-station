@@ -247,6 +247,23 @@
 		station = S
 		return TRUE
 
+	if(href_list["PRG_unlock_station"])
+		var/uid = href_list["PRG_unlock_station"]
+		if(!uid)
+			return
+		var/datum/trade_station/TU = SStrade.get_station_by_uid(uid)
+		if(!TU)
+			return
+		var/spu = TU.spawn_probability ? TU.spawn_probability : 60
+		var/required = max(1000, round(1000.0 / max(1, spu)))
+		if(SStrade.export_points < required)
+			to_chat(usr, SPAN_WARNING("Not enough export points to unlock station."))
+			return TRUE
+		SStrade.export_points -= required
+		SStrade.discover_by_uid(list(uid, TRUE))
+		to_chat(usr, "Station unlocked.")
+		return TRUE
+
 	if(href_list["PRG_disallow_mass"])
 		if(!station)
 			return
@@ -733,6 +750,21 @@
 
 		.["trade_tree"] = trade_tree
 		.["tree_lines"] = line_list
+
+		// Also build a list of locked stations that can be unlocked via export points
+		var/list/unlockables = list()
+		for(var/station in SStrade.all_stations)
+			var/datum/trade_station/TS2 = station
+			if(SStrade.discovered_stations.Find(TS2))
+				continue
+			// Use a lightweight heuristic based on inventory size and base income instead of spawn_probability
+			var/impact = max(1, TS2.unique_good_count) + max(1, TS2.base_income / 1000)
+			var/required_points = max(1000, round(50.0 * impact))
+			LAZYADD(unlockables, list(list("uid" = TS2.uid, "name" = TS2.name, "required" = required_points)))
+		.["unlockables"] = unlockables
+
+		// expose current global export points to the UI
+		.["export_points"] = SStrade.export_points
 
 	if(PRG.prg_screen == PRG_MAIN)
 		if(!PRG.station)
