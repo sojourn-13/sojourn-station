@@ -280,7 +280,7 @@
 	wealth += income
 	// Station keeps its favour value for UI/thresholds, but we also push a proportional
 	// amount into the global unlock pool so exports/purchases help unlocking stations.
-	var/var/favour_gain = income * (is_offer ? 1 : favour_purchase_ratio)
+	var/favour_gain = income * (is_offer ? 1 : favour_purchase_ratio)
 	favor += favour_gain
 	// Convert favour_gain (credits-worth) into global export points without consuming station favour
 	if(isnum(favour_gain) && favour_gain > 0)
