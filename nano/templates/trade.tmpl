@@ -161,14 +161,11 @@
 					Select a trade station.
 				{{/if}}
 
-				{{/* Show global export points and unlockables when in tree view */}}
-				{{if data.export_points}}
-					<hr>
-					<div class="item">
-						<div class="itemLabel">Export Points:</div>
-						<div class="itemContent">{{:data.export_points}}</div>
-					</div>
-				{{/if}}
+				<hr>
+				<div class="item">
+					<div class="itemLabel">Export Points:</div>
+					<div class="itemContent">{{:data.export_points ? data.export_points : 0}}</div>
+				</div>
 
 				{{if data.unlockables}}
 					<hr>
@@ -178,11 +175,14 @@
 							{{for data.unlockables}}
 								<div style="margin-bottom:6px;">
 									<b>{{:value.name}}</b> — {{:value.required}} pts
-									{{:helper.link('Unlock', null, {'PRG_unlock_station' : value.uid}, data.export_points >= value.required ? null : 'disabled')}}
+									{{if value.uid != data.station_id}}
+										{{:helper.link('Unlock', null, {'PRG_unlock_station' : value.uid}, data.export_points >= value.required ? null : 'disabled')}}
+									{{/if}}
 								</div>
 							{{/for}}
 						</div>
 					</div>
+
 				{{/if}}
 			</td>
 		</tr>
