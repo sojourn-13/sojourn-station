@@ -28,10 +28,10 @@
 	serial_type = "NM"
 
 /obj/item/gun/energy/peacekeeper/update_icon()
-	..()
 	cut_overlays()
 	var/iconstring = initial(icon_state)
 	var/itemstring = ""
+
 
 	if(charge_meter)
 		var/ratio = 0
@@ -49,15 +49,24 @@
 		if(item_charge_meter)
 			itemstring += "-[item_modifystate][ratio]"
 
-	if (!cell)
-		iconstring += "-slide"
+		// show mode overlays (stun/lethal) only if we have enough charge for the current mode
+		var/datum/firemode/current_mode = firemodes[sel_mode]
+		if(current_mode && cell && cell.charge >= (charge_cost ? charge_cost : 0))
+			update_mode()
+
+	// If there's no cell installed, use the slide variant. Place this after any assignments
+	// to `iconstring` so it doesn't get overwritten by the charge-meter logic above.
+	if(!cell)
+		iconstring += "_slide"
 
 	if(wielded)
 		itemstring += "_doble"
 
 /obj/item/gun/energy/peacekeeper/proc/update_mode()
 	var/datum/firemode/current_mode = firemodes[sel_mode]
-	if(current_mode.name == "stunshot")
+	if(current_mode.name == "heavy stunshot")
 		add_overlay("peacekeeper")
-	else
+	if(current_mode.name == "heavy lethal")
 		add_overlay("lpeacekeeper")
+	else
+		add_overlay("peacekeeper")
