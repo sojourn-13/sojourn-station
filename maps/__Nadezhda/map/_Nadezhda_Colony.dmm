@@ -2523,21 +2523,15 @@
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/security/barracks)
 "azi" = (
-/obj/structure/closet/crate/secure/weapon{
-	name = ".257 ammo crate"
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
-/obj/item/ammo_magazine/ammobox/light_rifle_257_small,
-/obj/item/ammo_magazine/ammobox/light_rifle_257_small,
-/obj/item/ammo_magazine/ammobox/rifle_75_small,
-/obj/item/ammo_magazine/ammobox/rifle_75_small,
-/obj/item/ammo_magazine/light_rifle_257,
-/obj/item/ammo_magazine/light_rifle_257,
-/obj/item/ammo_magazine/light_rifle_257,
-/obj/item/ammo_magazine/rifle_75,
-/obj/item/ammo_magazine/rifle_75,
-/obj/item/ammo_magazine/rifle_75,
-/turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/command/armory)
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/white/danger,
+/area/nadezhda/security/nuke_hallway)
 "azl" = (
 /obj/machinery/door/airlock/external{
 	frequency = 1380;
@@ -3698,6 +3692,7 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/danger,
 /area/nadezhda/security/nuke_hallway)
 "aKu" = (
@@ -8500,6 +8495,7 @@
 	icon_state = "0-8"
 	},
 /obj/effect/floor_decal/industrial/outline/red,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/security/nuke_hallway)
 "bFy" = (
@@ -9283,6 +9279,7 @@
 /obj/effect/floor_decal/industrial/caution{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/danger,
 /area/nadezhda/security/nuke_hallway)
 "bMs" = (
@@ -12588,18 +12585,21 @@
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/hallway/surface/section1)
 "cuS" = (
-/obj/structure/table/rack/shelf,
-/obj/item/storage/firstaid/ifak,
-/obj/item/storage/firstaid/ifak,
-/obj/item/storage/pill_bottle/dylovene,
-/obj/item/storage/firstaid/regular,
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/item/storage/firstaid/ifak,
-/obj/item/storage/firstaid/ifak,
-/obj/item/device/scanner/health,
-/turf/simulated/floor/tiled/dark/gray_platform,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/clothing/gloves/thick/combat,
+/obj/item/clothing/gloves/thick/combat,
+/obj/item/clothing/gloves/thick/combat,
+/obj/item/clothing/gloves/thick/combat,
+/obj/item/clothing/suit/armor/platecarrier,
+/obj/item/clothing/suit/armor/platecarrier,
+/obj/item/clothing/suit/armor/platecarrier,
+/obj/item/clothing/suit/armor/platecarrier,
+/obj/item/clothing/head/helmet/ballistic/bulletproof,
+/obj/item/clothing/head/helmet/ballistic/bulletproof,
+/obj/item/clothing/head/helmet/ballistic/bulletproof,
+/obj/item/clothing/head/helmet/ballistic/bulletproof,
+/obj/structure/table/rack,
+/turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/command/armory)
 "cuV" = (
 /obj/machinery/door/airlock/multi_tile/glass{
@@ -12774,14 +12774,14 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/machinery/light/small{
+	dir = 8
+	},
 /obj/machinery/button/remote/blast_door{
 	id = "bridge_armory";
 	pixel_x = -26;
 	pixel_y = 16;
 	req_access = list(20)
-	},
-/obj/machinery/light/small{
-	dir = 8
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/command/hallway)
@@ -12858,6 +12858,19 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/shuttle/vasiliy_shuttle_area)
+"cwY" = (
+/obj/machinery/camera/network/command,
+/obj/structure/closet/crate/secure/weapon{
+	name = "grenade launcher crate"
+	},
+/obj/item/storage/box/flash_grenade_shells,
+/obj/item/storage/box/emp_grenade_shells,
+/obj/item/storage/box/frag_grenade_shells,
+/obj/item/storage/box/blast_grenade_shells,
+/obj/item/storage/pouch/tubular,
+/obj/item/gun/projectile/grenade/lenar,
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/nadezhda/command/armory)
 "cxh" = (
 /obj/structure/multiz/stairs/enter/bottom,
 /obj/machinery/door/window{
@@ -20631,23 +20644,9 @@
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/nadezhda/command/panic_room)
 "dRS" = (
-/obj/item/gun/projectile/shotgun/pump/bull{
-	pixel_y = 8
-	},
-/obj/item/gun/projectile/shotgun/pump/bull,
-/obj/structure/closet/crate/secure/weapon{
-	name = "shotgun crate"
-	},
-/obj/item/ammo_magazine/ammobox/shotgun/beanbags,
-/obj/item/ammo_magazine/ammobox/shotgun/stunshells,
-/obj/item/device/radio/intercom{
-	pixel_y = 24
-	},
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/command/armory)
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/white/danger,
+/area/nadezhda/security/nuke_hallway)
 "dRV" = (
 /obj/structure/catwalk,
 /obj/effect/decal/cleanable/dirt,
@@ -21664,15 +21663,16 @@
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/docking)
 "ebC" = (
-/obj/item/gun/projectile/automatic/ostwind{
-	pixel_y = 8
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/reinforced,
+/obj/item/stack/material/steel/full,
+/obj/item/stack/material/plastic{
+	amount = 120
 	},
-/obj/structure/closet/crate/secure/weapon{
-	name = "rifle crate"
+/obj/item/stack/material/glass{
+	amount = 60
 	},
-/obj/item/gun/projectile/automatic/nordwind,
-/obj/machinery/camera/network/command,
-/turf/simulated/floor/tiled/dark/gray_platform,
+/turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/command/armory)
 "ebE" = (
 /obj/effect/decal/cleanable/spiderling_remains,
@@ -27337,6 +27337,7 @@
 /obj/item/ammo_magazine/ammobox/shotgun/beanbags,
 /obj/item/ammo_magazine/ammobox/shotgun/stunshells,
 /obj/item/melee/telebaton,
+/obj/item/ammo_casing/shotgun/incendiary,
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/crew_quarters/kitchen)
 "fcx" = (
@@ -29379,6 +29380,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/security/nuke_hallway)
 "fvv" = (
@@ -29909,6 +29911,13 @@
 /area/nadezhda/maintenance{
 	name = "Residential District Maintenance"
 	})
+"fzY" = (
+/obj/machinery/atmospherics/mains_pipe/simple/hidden{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/white/danger,
+/area/nadezhda/security/nuke_hallway)
 "fAf" = (
 /obj/structure/closet/random_hostilemobs,
 /obj/machinery/light/small,
@@ -32009,6 +32018,7 @@
 	dir = 4;
 	tag = "icon-danger (EAST)"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/security/nuke_hallway)
 "fWf" = (
@@ -34454,11 +34464,9 @@
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/security/prisoncells)
 "gqO" = (
-/obj/item/storage/toolbox/emergency,
 /obj/structure/table/rack/shelf,
 /obj/item/storage/box/flares,
 /obj/item/storage/box/flares,
-/obj/item/storage/box/handcuffs,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/command/armory)
 "gqS" = (
@@ -38237,6 +38245,34 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/crew_quarters)
+"hcW" = (
+/obj/machinery/alarm{
+	pixel_y = 32
+	},
+/obj/item/gun/projectile/automatic/ostwind{
+	pixel_y = 8
+	},
+/obj/item/gun/projectile/automatic/ostwind,
+/obj/item/gun/projectile/automatic/nordwind{
+	pixel_y = -6
+	},
+/obj/structure/closet/crate/secure/weapon{
+	name = "rifle crate"
+	},
+/obj/item/ammo_magazine/ammobox/light_rifle_257_small,
+/obj/item/ammo_magazine/ammobox/light_rifle_257_small,
+/obj/item/ammo_magazine/ammobox/rifle_75_small,
+/obj/item/ammo_magazine/light_rifle_257,
+/obj/item/ammo_magazine/light_rifle_257,
+/obj/item/ammo_magazine/light_rifle_257,
+/obj/item/ammo_magazine/light_rifle_257,
+/obj/item/ammo_magazine/light_rifle_257,
+/obj/item/ammo_magazine/light_rifle_257,
+/obj/item/ammo_magazine/rifle_75,
+/obj/item/ammo_magazine/rifle_75,
+/obj/item/ammo_magazine/rifle_75,
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/nadezhda/command/armory)
 "hcX" = (
 /obj/structure/flora/small/rock3,
 /turf/simulated/floor/asteroid/grass,
@@ -41519,6 +41555,7 @@
 	},
 /obj/machinery/smartfridge/disk,
 /obj/structure/table/steel,
+/obj/item/pc_part/drive/disk/design/lethal_ammo,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
 "hIw" = (
@@ -41757,6 +41794,9 @@
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber{
 	dir = 1
+	},
+/obj/machinery/telesci_inhibitor/mini{
+	pixel_y = -32
 	},
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/nadezhda/command/armory)
@@ -44381,6 +44421,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/command/armory)
 "iiA" = (
@@ -45811,6 +45852,9 @@
 	dir = 1
 	},
 /obj/structure/bed/chair/comfy/black,
+/obj/structure/fireaxecabinet{
+	pixel_y = 30
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/command/panic_room)
 "ivm" = (
@@ -45986,17 +46030,18 @@
 /turf/simulated/floor/rock,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "iyh" = (
-/obj/structure/closet/crate/secure/weapon{
-	name = "pistol crate"
+/obj/machinery/light_switch{
+	pixel_y = 32
 	},
-/obj/item/gun/projectile/revolver/tacticool_revolver,
-/obj/item/gun/projectile/revolver/rev10,
-/obj/item/ammo_magazine/speed_loader_kurz_50/lethal,
-/obj/item/ammo_magazine/speed_loader_kurz_50/lethal,
-/obj/item/ammo_magazine/speed_loader_magnum_40,
-/obj/item/ammo_magazine/speed_loader_magnum_40,
-/obj/item/ammo_magazine/ammobox/kurz_50,
-/obj/item/ammo_magazine/ammobox/magnum_40,
+/obj/structure/table/reinforced,
+/obj/machinery/smartfridge/disk,
+/obj/item/pc_part/drive/disk/design/lethal_ammo,
+/obj/item/pc_part/drive/disk/design/nonlethal_ammo,
+/obj/random/lathe_disk/advanced/low_chance,
+/obj/item/pc_part/drive/disk/design/guns/ostwind,
+/obj/item/pc_part/drive/disk/design/guns/glock,
+/obj/item/pc_part/drive/disk/design/ammo_boxes_smallarms,
+/obj/item/pc_part/drive/disk/design/ammo_boxes_rifle,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/command/armory)
 "iyi" = (
@@ -50547,6 +50592,22 @@
 	},
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/hallway/side/f2section1)
+"jrj" = (
+/obj/machinery/telesci_inhibitor/mini{
+	pixel_y = 29
+	},
+/obj/structure/closet/crate/secure/weapon{
+	name = "shotgun crate"
+	},
+/obj/item/gun/projectile/shotgun/pump/bull{
+	pixel_y = 8
+	},
+/obj/item/gun/projectile/shotgun/pump/bull,
+/obj/item/ammo_magazine/ammobox/shotgun,
+/obj/item/ammo_magazine/ammobox/shotgun/buckshot,
+/obj/item/ammo_magazine/ammobox/shotgun/stunshells,
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/nadezhda/command/armory)
 "jrk" = (
 /obj/structure/cable/cyan{
 	d1 = 4;
@@ -56929,6 +56990,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/danger,
 /area/nadezhda/security/nuke_hallway)
 "kAi" = (
@@ -59329,6 +59391,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/hallway/side/f2section1)
+"lag" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/machinery/autolathe,
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/nadezhda/command/armory)
 "lan" = (
 /obj/random/cluster/spiders/low_chance,
 /obj/effect/decal/cleanable/dirt,
@@ -60218,6 +60287,10 @@
 	},
 /turf/simulated/floor/rock,
 /area/nadezhda/maintenance/undergroundfloor1north)
+"ljv" = (
+/obj/item/contraband/poster/placed/generic/no_erp,
+/turf/simulated/wall/church_reinforced,
+/area/nadezhda/command/prime)
 "ljE" = (
 /obj/effect/decal/cleanable/generic,
 /obj/effect/decal/cleanable/dirt,
@@ -65074,17 +65147,10 @@
 /turf/simulated/floor/industrial/navy_slates,
 /area/nadezhda/maintenance/undergroundfloor2north)
 "mfT" = (
-/obj/structure/table/rack/shelf,
-/obj/item/clothing/suit/armor/platecarrier,
-/obj/item/clothing/suit/armor/platecarrier,
-/obj/item/clothing/gloves/thick/combat,
-/obj/item/clothing/gloves/thick/combat,
-/obj/item/storage/belt/security,
-/obj/item/storage/belt/security,
-/obj/machinery/telesci_inhibitor/mini{
-	pixel_y = 29
-	},
-/turf/simulated/floor/tiled/dark/gray_platform,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/reinforced,
+/obj/item/storage/box/handcuffs,
+/turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/command/armory)
 "mfX" = (
 /obj/structure/flora/small/bushb3,
@@ -69882,6 +69948,7 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/danger,
 /area/nadezhda/security/nuke_hallway)
 "mZI" = (
@@ -71473,6 +71540,7 @@
 	d2 = 8;
 	icon_state = "2-8"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/security/nuke_hallway)
 "noN" = (
@@ -73134,8 +73202,7 @@
 /obj/machinery/alarm{
 	pixel_y = 32
 	},
-/obj/machinery/autolathe,
-/obj/random/lathe_disk/advanced/low_chance,
+/obj/structure/table/woodentable,
 /turf/simulated/floor/wood,
 /area/nadezhda/command/fo)
 "nCY" = (
@@ -76047,10 +76114,7 @@
 /area/nadezhda/command/tcommsat/computer)
 "oes" = (
 /obj/machinery/newscaster/directional/north,
-/obj/item/pc_part/drive/disk/design/nonlethal_ammo,
 /obj/structure/table/woodentable,
-/obj/item/pc_part/drive/disk/design/lethal_ammo,
-/obj/machinery/smartfridge/disk,
 /obj/machinery/light/small{
 	dir = 1
 	},
@@ -77384,6 +77448,7 @@
 	dir = 4;
 	tag = "icon-danger (EAST)"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/security/nuke_hallway)
 "oqM" = (
@@ -78988,6 +79053,7 @@
 	brightness_power = 1;
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/danger,
 /area/nadezhda/security/nuke_hallway)
 "oFu" = (
@@ -83232,10 +83298,12 @@
 /area/nadezhda/medical/chemistry)
 "pui" = (
 /obj/structure/table/rack/shelf,
-/obj/item/device/lighting/toggleable/flashlight,
-/obj/item/device/lighting/toggleable/flashlight,
-/obj/item/cell/small,
-/obj/item/cell/small,
+/obj/item/storage/firstaid,
+/obj/item/storage/firstaid,
+/obj/item/storage/firstaid/radiation,
+/obj/item/storage/firstaid/o2,
+/obj/item/storage/firstaid/ifak,
+/obj/item/storage/firstaid/ifak,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/command/armory)
 "puj" = (
@@ -85819,18 +85887,9 @@
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "pSn" = (
-/obj/structure/table/rack,
-/obj/item/storage/pouch/ammo,
-/obj/item/ammo_magazine/smg_35,
-/obj/item/ammo_magazine/smg_35,
-/obj/item/ammo_magazine/smg_35,
-/obj/item/ammo_magazine/smg_35,
-/obj/random/pouch/low_chance,
-/obj/machinery/light_switch{
-	pixel_y = 32
-	},
-/turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/command/armory)
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/security/nuke_hallway)
 "pSz" = (
 /obj/structure/flora/small/bushb1,
 /obj/structure/flora/small/bushb1,
@@ -90067,6 +90126,7 @@
 /area/nadezhda/maintenance/undergroundfloor2west)
 "qGf" = (
 /obj/structure/closet/secure_closet/engineering_electrical,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/security/nuke_hallway)
 "qGo" = (
@@ -90734,6 +90794,7 @@
 	light_color = "#0892d0"
 	},
 /obj/effect/floor_decal/industrial/shutoff,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/security/nuke_hallway)
 "qND" = (
@@ -90819,8 +90880,8 @@
 /area/nadezhda/command/cbo)
 "qOs" = (
 /obj/structure/table/standard,
-/obj/item/device/defib_kit,
-/obj/item/cell/large,
+/obj/item/device/defib_kit/compact/combat,
+/obj/item/cell/medium,
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/nadezhda/security/triage_blackshield)
 "qOC" = (
@@ -91173,6 +91234,12 @@
 "qRX" = (
 /obj/effect/floor_decal/steeldecal/steel_decals10,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/button/remote/blast_door{
+	id = "bridge_armory";
+	pixel_x = 26;
+	pixel_y = 16;
+	req_access = list(20)
+	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/command/armory)
 "qRZ" = (
@@ -91775,6 +91842,11 @@
 	pixel_y = 8
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/table/rack,
+/obj/item/storage/toolbox/mechanical{
+	pixel_y = 5
+	},
+/obj/item/storage/toolbox/electrical,
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/command/armory)
 "qXW" = (
@@ -94879,6 +94951,15 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/navy_slates,
 /area/nadezhda/maintenance/undergroundfloor1north)
+"rCo" = (
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/white/danger,
+/area/nadezhda/security/nuke_hallway)
 "rCt" = (
 /obj/structure/flora/small/bushc3,
 /turf/unsimulated/wall/jungle,
@@ -95106,6 +95187,7 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/danger,
 /area/nadezhda/security/nuke_hallway)
 "rFc" = (
@@ -104487,6 +104569,7 @@
 /obj/structure/sign/warning/radioactive/small{
 	pixel_x = 32
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/danger,
 /area/nadezhda/security/nuke_hallway)
 "trV" = (
@@ -106640,14 +106723,7 @@
 /turf/simulated/floor/tiled/steel/danger,
 /area/nadezhda/engineering/atmos)
 "tLF" = (
-/obj/structure/table/rack/shelf,
-/obj/item/stack/material/steel/full,
-/obj/item/stack/material/plastic{
-	amount = 120
-	},
-/obj/item/stack/material/glass{
-	amount = 60
-	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood,
 /area/nadezhda/command/fo)
 "tLG" = (
@@ -109113,6 +109189,7 @@
 	name = "shower door"
 	},
 /obj/effect/floor_decal/spline/fancy,
+/obj/item/device/measuring_tape,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/command/prime)
 "uhj" = (
@@ -110966,15 +111043,20 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor2north)
 "uAl" = (
+/obj/effect/decal/cleanable/dirt,
 /obj/structure/table/rack,
-/obj/item/gun/projectile/automatic/texan{
-	pixel_y = 8
-	},
-/obj/item/gun/projectile/automatic/texan,
-/obj/machinery/alarm{
-	pixel_y = 32
-	},
-/turf/simulated/floor/tiled/dark/gray_platform,
+/obj/item/storage/pouch/ammo,
+/obj/item/storage/pouch/ammo,
+/obj/item/storage/pouch/ammo,
+/obj/item/storage/belt/webbing,
+/obj/item/storage/belt/webbing,
+/obj/item/storage/belt/webbing,
+/obj/item/storage/belt/webbing,
+/obj/item/clothing/accessory/holster/hip,
+/obj/item/clothing/accessory/holster/hip,
+/obj/item/storage/pouch/pistol_holster,
+/obj/item/storage/pouch/pistol_holster,
+/turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/command/armory)
 "uAn" = (
 /obj/structure/cable/cyan{
@@ -116006,6 +116088,19 @@
 	},
 /turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/command/tcommsat/computer)
+"vtX" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/rack,
+/obj/item/device/lighting/toggleable/flashlight/heavy,
+/obj/item/device/lighting/toggleable/flashlight/heavy,
+/obj/item/device/lighting/toggleable/flashlight/heavy,
+/obj/item/device/lighting/toggleable/flashlight/heavy,
+/obj/item/cell/medium,
+/obj/item/cell/medium,
+/obj/item/cell/medium,
+/obj/item/cell/medium,
+/turf/simulated/floor/tiled/steel/gray_perforated,
+/area/nadezhda/command/armory)
 "vue" = (
 /obj/structure/catwalk,
 /obj/structure/table/rack/shelf,
@@ -118491,6 +118586,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/fancy_slates,
 /area/nadezhda/maintenance/undergroundfloor2west)
+"vSE" = (
+/obj/structure/closet/radiation,
+/obj/item/tank/emergency_oxygen/double,
+/obj/item/clothing/mask/breath,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/white/danger,
+/area/nadezhda/security/nuke_hallway)
 "vSH" = (
 /obj/random/structures/low_chance,
 /turf/simulated/floor/industrial/concrete_bricks,
@@ -121088,6 +121190,14 @@
 /obj/machinery/atmospherics/pipe/zpipe/down,
 /turf/simulated/open,
 /area/nadezhda/engineering/engine_room)
+"wpz" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/dark/monofloor,
+/area/nadezhda/security/armory_blackshield)
 "wpA" = (
 /obj/structure/shuttle_part/science{
 	icon_state = "2,0"
@@ -121287,6 +121397,7 @@
 	icon_state = "0-2"
 	},
 /obj/effect/floor_decal/industrial/shutoff,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/security/nuke_hallway)
 "wqF" = (
@@ -122031,6 +122142,34 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/nadezhda/maintenance/undergroundfloor2west)
+"wxU" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/item/device/radio/intercom{
+	pixel_y = 24
+	},
+/obj/item/gun/projectile/ladon/hs{
+	pixel_y = 6
+	},
+/obj/item/gun/projectile/ladon/hs,
+/obj/item/gun/projectile/ladon/hs{
+	pixel_y = -6
+	},
+/obj/structure/closet/crate/secure/weapon{
+	name = "pistol crate"
+	},
+/obj/item/ammo_magazine/magnum_40,
+/obj/item/ammo_magazine/magnum_40,
+/obj/item/ammo_magazine/magnum_40,
+/obj/item/ammo_magazine/magnum_40,
+/obj/item/ammo_magazine/magnum_40,
+/obj/item/ammo_magazine/magnum_40,
+/obj/item/ammo_magazine/ammobox/magnum_40,
+/obj/item/ammo_magazine/ammobox/magnum_40,
+/obj/item/ammo_magazine/ammobox/magnum_40,
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/nadezhda/command/armory)
 "wyg" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 10
@@ -124730,6 +124869,8 @@
 	dir = 1;
 	pixel_y = -32
 	},
+/obj/item/device/radio,
+/obj/item/device/radio,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/command/armory)
 "wYI" = (
@@ -192529,7 +192670,7 @@ bfO
 bfO
 bfO
 bfO
-bfO
+wpz
 jhO
 wCx
 dnV
@@ -192924,7 +193065,7 @@ krN
 vsb
 cZb
 cZb
-cZb
+hLL
 wCx
 wCx
 wCx
@@ -193126,12 +193267,12 @@ krN
 vsb
 cZb
 cZb
-cZb
-cZb
 wMZ
-mfT
-iyh
-azi
+jrj
+mwc
+mwc
+mwc
+mwc
 gqO
 wMZ
 vsb
@@ -193328,11 +193469,11 @@ krN
 vsb
 cZb
 cZb
-cZb
-cZb
 wMZ
-cuS
+wxU
 mwc
+cuS
+vtX
 mwc
 pui
 wMZ
@@ -193530,9 +193671,9 @@ krN
 vsb
 cZb
 cZb
-cZb
-cZb
 wMZ
+hcW
+mwc
 uAl
 qXV
 pvM
@@ -193732,11 +193873,11 @@ krN
 vsb
 cZb
 cZb
-cZb
-cZb
 wMZ
-ebC
+cwY
 mwc
+ebC
+mfT
 qxC
 wYA
 wMZ
@@ -193934,10 +194075,10 @@ ibG
 vsb
 cZb
 cZb
-cZb
-cZb
 wMZ
-dRS
+lag
+mwc
+mwc
 mwc
 iip
 pWj
@@ -194136,10 +194277,10 @@ krN
 vsb
 cZb
 cZb
-cZb
-cZb
 wMZ
-pSn
+iyh
+mwc
+mwc
 qRX
 wNz
 hJZ
@@ -194338,8 +194479,8 @@ krN
 vsb
 vsb
 vsb
-vsb
-vsb
+wMZ
+wMZ
 wMZ
 wMZ
 cnC
@@ -204835,11 +204976,11 @@ tad
 tad
 cNL
 qNA
-wLG
+pSn
 noM
 ooz
-pcf
-pcf
+rCo
+azi
 mZE
 nyX
 cwb
@@ -205037,13 +205178,13 @@ tad
 tad
 cNL
 fWb
-wLG
+pSn
 wLG
 cNL
 aKp
-iDB
-iDB
-nyX
+dRS
+dRS
+fzY
 pAH
 cNL
 tad
@@ -205246,7 +205387,7 @@ far
 pcf
 rER
 nyX
-cWU
+vSE
 cNL
 tad
 tad
@@ -205445,9 +205586,9 @@ uwy
 bFu
 qYW
 aeq
-iDB
+dRS
 kAh
-nyX
+fzY
 bzd
 cNL
 tad
@@ -242450,7 +242591,7 @@ gBD
 gBD
 gBD
 gBD
-eFf
+ljv
 ugX
 vEY
 eFf
