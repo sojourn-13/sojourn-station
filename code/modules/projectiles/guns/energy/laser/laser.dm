@@ -115,10 +115,21 @@
 	wield_delay_factor = 0.2 // 20 vig
 
 /obj/item/gun/energy/zwang/update_icon()
+	// Determine base icon state based on firemode
+	var/base_state = "zwang"  // default
+	if(firemodes && firemodes.len && sel_mode <= firemodes.len)
+		var/datum/firemode/current_mode = firemodes[sel_mode]
+		if(current_mode && current_mode.name == "stunshot")
+			base_state = "tazer_zwang"
+		else if(current_mode && current_mode.name == "lethal")
+			base_state = "laser_zwang"
+
+	// Set the modifystate so parent update_icon uses our base state
+	modifystate = base_state
+
+	// Call parent to handle battery charge levels
 	..()
-	cut_overlays()
-	var/datum/firemode/current_mode = firemodes[sel_mode]
-	if(current_mode.name == "stunshot")
-		add_overlay("tazer_zwang")
-	else
-		add_overlay("laser_zwang")
+
+	// If charge_meter is disabled, just use the base state
+	if(!charge_meter)
+		icon_state = base_state
