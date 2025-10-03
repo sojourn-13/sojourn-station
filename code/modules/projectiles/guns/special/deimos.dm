@@ -39,7 +39,7 @@
 		icon_state = "panah_unfolded"
 		item_state = "panah_unfolded"
 	if(wielded)
-		itemstring += "_doble"
+		item_state += "_doble"
 
 /obj/item/gun/launcher/rocket/deimos/panah/toggle_safety(mob/living/user)
 	if(fired)
@@ -169,7 +169,7 @@
 		icon_state = "golok_closed"
 		item_state = "golok_closed"
 	if(wielded)
-		itemstring += "_doble"
+		item_state += "_doble"
 
 /obj/item/gun/projectile/shotgun/pump/deimos/golok/attack_self(mob/living/user as mob)
 	if(world.time >= user.next_move)
@@ -494,7 +494,7 @@
 			icon_state = base
 	item_state = icon_state
 	if(wielded)
-		itemstring += "_doble"
+		item_state += "_doble"
 
 /obj/item/gun/projectile/deimos/tombak/handle_post_fire(mob/user)
 	// Let parent consume ammo, then refresh sprite
@@ -543,7 +543,7 @@
 			icon_state = base
 	item_state = icon_state
 	if(wielded)
-		itemstring += "_doble"
+		item_state += "_doble"
 
 /obj/item/gun/projectile/deimos/palu/handle_post_fire(mob/user)
 	..()
@@ -606,7 +606,7 @@
 			icon_state = base
 	item_state = icon_state
 	if(wielded)
-		itemstring += "_doble"
+		item_state += "_doble"
 
 /obj/item/gun/projectile/deimos/celurit/handle_post_fire(mob/user)
 	..()
@@ -659,7 +659,7 @@
 		icon_state = base
 	item_state = icon_state
 	if(wielded)
-		itemstring += "_doble"
+		item_state += "_doble"
 
 /obj/item/gun/projectile/deimos/keris/handle_post_fire(mob/user)
 	..()

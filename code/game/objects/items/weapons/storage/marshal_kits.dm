@@ -137,6 +137,8 @@
 	populate_contents()
 		new /obj/item/gun/energy/peacekeeper(src)
 		new /obj/item/cell/medium/high(src)
+		new /obj/item/cell/medium/high(src)
+		new /obj/item/cell/medium/high(src)
 		new /obj/item/storage/pouch/tubular(src) //MOs get this too
 
 // Secondary kits
