@@ -28,10 +28,12 @@
 	var/list/meals = list()
 	var/list/canned_drinks = list()
 
-	// Collect types from the type tree
-	snacks = lunchables_lunches()
-	meals = lunchables_snacks()
-	canned_drinks = lunchables_drinks()
+	// Collect types from the type tree and convert them into name->path
+	// assoc lists so the loadout UI displays human-friendly names instead
+	// of raw type paths.
+	snacks = init_lunchable_list(lunchables_lunches())
+	meals = init_lunchable_list(lunchables_snacks())
+	canned_drinks = init_lunchable_list(lunchables_drinks())
 
 	// Register tweaks
 	gear_tweaks += new /datum/gear_tweak/contents/snack(snacks)
