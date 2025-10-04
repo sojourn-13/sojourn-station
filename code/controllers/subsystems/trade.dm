@@ -703,8 +703,6 @@ SUBSYSTEM_DEF(trade)
 	var/points = credits * export_points_per_credit
 	export_points += points
 
-	// Try unlocking stations if we accumulated enough points
-	try_unlock_stations_from_exports()
 
 
 /datum/controller/subsystem/trade/proc/try_unlock_stations_from_exports()
