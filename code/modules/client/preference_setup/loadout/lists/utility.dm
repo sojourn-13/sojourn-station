@@ -16,6 +16,7 @@
 /datum/gear/lunchbox
 	display_name = "lunch box"
 	path = /obj/item/storage/lunchbox
+	sort_category = "Utility"
 	cost = 2
 
 /datum/gear/lunchbox/New()
