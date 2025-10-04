@@ -27,155 +27,40 @@
 	var/list/meals = list()
 	var/list/canned_drinks = list()
 
-	// Build assoc lists from the project's type system using the global
-	// helper `atomtypes2nameassoclist`. This avoids nested proc definitions
-	// (which are not allowed inside another proc) and ensures we include all
-	// relevant types present in the codebase.
+	// Collect types from the type tree
+	snacks = lunchables_lunches()
+	meals = lunchables_snacks()
+	canned_drinks = lunchables_drinks()
 
-	// Collect snack types from openable snack containers (like MRE)
-	snacks = atomtypes2nameassoclist(subtypesof(/obj/item/reagent_containers/snacks/openable))
-
-	// Collect meal types from reagent_containers/snacks
-	meals = atomtypes2nameassoclist(subtypesof(/obj/item/reagent_containers/snacks))
-
-	// Collect canned drinks under reagent_containers/drinks/cans and generic drinks
-	canned_drinks = atomtypes2nameassoclist(subtypesof(/obj/item/reagent_containers/drinks/cans))
-	canned_drinks += atomtypes2nameassoclist(subtypesof(/obj/item/reagent_containers/drinks))
-
-	// Fallback: ensure there is at least one option per category
-	if(!meals.len)
-		meals["Instant Ramen"] = /obj/item/reagent_containers/drinks/dry_ramen/premade
-	if(!canned_drinks.len)
-		canned_drinks["Cola"] = /obj/item/reagent_containers/drinks/cans/cola
-
-	// Register a separate labelled contents tweak for each category so the
-	// loadout UI shows three independent selection links (Snack, Meal, Drink).
+	// Register tweaks
 	gear_tweaks += new /datum/gear_tweak/contents/snack(snacks)
 	gear_tweaks += new /datum/gear_tweak/contents/meal(meals)
 	gear_tweaks += new /datum/gear_tweak/contents/drink(canned_drinks)
 
-/datum/gear/lunchbox_cat
+
+/datum/gear/lunchbox/cat
 	display_name = "cat lunch box"
 	path = /obj/item/storage/lunchbox/cat
 	cost = 2
 
-/datum/gear/lunchbox_cat/New()
+/datum/gear/lunchbox/cat/New()
 	..()
-	// Build dynamic lists containing all matching food/drink types so the lunchbox
-	// selection includes every available snack, meal, and canned drink without
-	// hardcoding individual paths.
-	var/list/snacks = list()
-	var/list/meals = list()
-	var/list/canned_drinks = list()
 
-	// Build assoc lists from the project's type system using the global
-	// helper `atomtypes2nameassoclist`. This avoids nested proc definitions
-	// (which are not allowed inside another proc) and ensures we include all
-	// relevant types present in the codebase.
-
-	// Collect snack types from openable snack containers (like MRE)
-	snacks = atomtypes2nameassoclist(subtypesof(/obj/item/reagent_containers/snacks/openable))
-
-	// Collect meal types from reagent_containers/snacks
-	meals = atomtypes2nameassoclist(subtypesof(/obj/item/reagent_containers/snacks))
-
-	// Collect canned drinks under reagent_containers/drinks/cans and generic drinks
-	canned_drinks = atomtypes2nameassoclist(subtypesof(/obj/item/reagent_containers/drinks/cans))
-	canned_drinks += atomtypes2nameassoclist(subtypesof(/obj/item/reagent_containers/drinks))
-
-	// Fallback: ensure there is at least one option per category
-	if(!meals.len)
-		meals["Instant Ramen"] = /obj/item/reagent_containers/drinks/dry_ramen/premade
-	if(!canned_drinks.len)
-		canned_drinks["Cola"] = /obj/item/reagent_containers/drinks/cans/cola
-
-	// Register a separate labelled contents tweak for each category so the
-	// loadout UI shows three independent selection links (Snack, Meal, Drink).
-	gear_tweaks += new /datum/gear_tweak/contents/snack(snacks)
-	gear_tweaks += new /datum/gear_tweak/contents/meal(meals)
-	gear_tweaks += new /datum/gear_tweak/contents/drink(canned_drinks)
-
-/datum/gear/lunchbox_rainbow
+/datum/gear/lunchbox/rainbow
 	display_name = "rainbow lunch box"
 	path = /obj/item/storage/lunchbox/rainbow
 	cost = 2
 
-/datum/gear/lunchbox_rainbow/New()
+/datum/gear/lunchbox/rainbow/New()
 	..()
-	// Build dynamic lists containing all matching food/drink types so the lunchbox
-	// selection includes every available snack, meal, and canned drink without
-	// hardcoding individual paths.
-	var/list/snacks = list()
-	var/list/meals = list()
-	var/list/canned_drinks = list()
 
-	// Build assoc lists from the project's type system using the global
-	// helper `atomtypes2nameassoclist`. This avoids nested proc definitions
-	// (which are not allowed inside another proc) and ensures we include all
-	// relevant types present in the codebase.
-
-	// Collect snack types from openable snack containers (like MRE)
-	snacks = atomtypes2nameassoclist(subtypesof(/obj/item/reagent_containers/snacks/openable))
-
-	// Collect meal types from reagent_containers/snacks
-	meals = atomtypes2nameassoclist(subtypesof(/obj/item/reagent_containers/snacks))
-
-	// Collect canned drinks under reagent_containers/drinks/cans and generic drinks
-	canned_drinks = atomtypes2nameassoclist(subtypesof(/obj/item/reagent_containers/drinks/cans))
-	canned_drinks += atomtypes2nameassoclist(subtypesof(/obj/item/reagent_containers/drinks))
-
-	// Fallback: ensure there is at least one option per category
-	if(!meals.len)
-		meals["Instant Ramen"] = /obj/item/reagent_containers/drinks/dry_ramen/premade
-	if(!canned_drinks.len)
-		canned_drinks["Cola"] = /obj/item/reagent_containers/drinks/cans/cola
-
-	// Register a separate labelled contents tweak for each category so the
-	// loadout UI shows three independent selection links (Snack, Meal, Drink).
-	gear_tweaks += new /datum/gear_tweak/contents/snack(snacks)
-	gear_tweaks += new /datum/gear_tweak/contents/meal(meals)
-	gear_tweaks += new /datum/gear_tweak/contents/drink(canned_drinks)
-
-/datum/gear/lunchbox_church
+/datum/gear/lunchbox/church
 	display_name = "church lunch box"
 	path = /obj/item/storage/lunchbox/lemniscate
 	cost = 2
 
-/datum/gear/lunchbox_church/New()
+/datum/gear/lunchbox/church/New()
 	..()
-	// Build dynamic lists containing all matching food/drink types so the lunchbox
-	// selection includes every available snack, meal, and canned drink without
-	// hardcoding individual paths.
-	var/list/snacks = list()
-	var/list/meals = list()
-	var/list/canned_drinks = list()
-
-	// Build assoc lists from the project's type system using the global
-	// helper `atomtypes2nameassoclist`. This avoids nested proc definitions
-	// (which are not allowed inside another proc) and ensures we include all
-	// relevant types present in the codebase.
-
-	// Collect snack types from openable snack containers (like MRE)
-	snacks = atomtypes2nameassoclist(subtypesof(/obj/item/reagent_containers/snacks/openable))
-
-	// Collect meal types from reagent_containers/snacks
-	meals = atomtypes2nameassoclist(subtypesof(/obj/item/reagent_containers/snacks))
-
-	// Collect canned drinks under reagent_containers/drinks/cans and generic drinks
-	canned_drinks = atomtypes2nameassoclist(subtypesof(/obj/item/reagent_containers/drinks/cans))
-	canned_drinks += atomtypes2nameassoclist(subtypesof(/obj/item/reagent_containers/drinks))
-
-	// Fallback: ensure there is at least one option per category
-	if(!meals.len)
-		meals["Instant Ramen"] = /obj/item/reagent_containers/drinks/dry_ramen/premade
-	if(!canned_drinks.len)
-		canned_drinks["Cola"] = /obj/item/reagent_containers/drinks/cans/cola
-
-	// Register a separate labelled contents tweak for each category so the
-	// loadout UI shows three independent selection links (Snack, Meal, Drink).
-	gear_tweaks += new /datum/gear_tweak/contents/snack(snacks)
-	gear_tweaks += new /datum/gear_tweak/contents/meal(meals)
-	gear_tweaks += new /datum/gear_tweak/contents/drink(canned_drinks)
 
 /datum/gear/utility/cane
 	display_name = "cane"
@@ -317,4 +202,3 @@
 	path = /obj/item/storage/box/costume
 	flags = GEAR_HAS_TYPE_SELECTION
 	cost = 1 //Style at a cost! - also cardboard
-
