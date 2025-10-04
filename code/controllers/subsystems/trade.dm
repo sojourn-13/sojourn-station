@@ -714,8 +714,12 @@ SUBSYSTEM_DEF(trade)
 
 	var/list/locked_candidates = list()
 	for(var/datum/trade_station/station in all_stations)
+		// Defensive checks: skip null, deleted, or wrong-typed entries which can crash when
+		// accessing members like .uid or .unique_good_count.
+		if(!station || QDELETED(station) || !istype(station, /datum/trade_station))
+			continue
 		if(!discovered_stations.Find(station))
-			// skip stations that are forced to be spawn_always or have zero uid
+			// skip stations that are forced to be spawn_always or have zero/invalid uid
 			if(!station.uid)
 				continue
 			locked_candidates += station
@@ -745,6 +749,11 @@ SUBSYSTEM_DEF(trade)
 			// Ensure station is initialized (spawned) when discovered if not spawned yet
 			if(!all_stations.Find(station))
 				init_station(station)
+		// Remove the station from the weightlist so it cannot be picked again and
+		// to ensure the loop progresses even if export_points are insufficient
+		// for other stations. This prevents pickweight from repeatedly returning
+		// the same station and causing an infinite loop.
+		weightlist.Remove(station)
 
 
 /datum/controller/subsystem/trade/proc/get_export_price_multiplier(atom/movable/target)
