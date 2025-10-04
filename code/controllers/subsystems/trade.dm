@@ -15,7 +15,7 @@ SUBSYSTEM_DEF(trade)
 
 	// Export / unlock points system
 	var/export_points = 0                    // Points accumulated from exports (global pool used to unlock stations)
-	var/export_points_per_credit = 0.5    // How many unlock points are awarded per export credit (tweak as needed)
+	var/export_points_per_credit = 0.8    // How many unlock points are awarded per export credit (tweak as needed)
 	var/initial_unlock_count = 2            // How many high-value stations to unlock at roundstart
 
 	// For exports
