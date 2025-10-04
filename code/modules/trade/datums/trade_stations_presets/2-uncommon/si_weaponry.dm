@@ -20,7 +20,7 @@
 			/obj/item/gun/energy/sst = good_data("Soteria SST \"Abnegate\" Handgun", list(1,2), 1500),
 			/obj/item/gun/energy/sst/formatbound = good_data("Soteria SST \"Format Bound\" Handgun", list(1,2), 1750),
 			/obj/item/gun/energy/sst/humility = good_data("Soteria SST \"Humility\" Shotgun", list(1,1), 2500),
-			/obj/item/gun/energy/cog/sprocket = good_data("Soteria SST \"Sprocket\" Carbine", list(1,2), 1000),
+			/obj/item/gun/energy/cog/sprocket = good_data("Soteria \"Sprocket\" Laser Carbine", list(1,2), 1000),
 			/obj/item/gun/launcher/syringe = good_data("Syringe Gun", list(1,2), 600),
 			/obj/item/pc_part/drive/disk/design/medical = good_data("Soteria Medical Designs Disk", list(1,2), 900),
 		)
@@ -40,9 +40,9 @@
 			/obj/item/pc_part/drive/disk/design/deimos/rockets = good_data("Deimos Rockets Pack", list(1, 2), 5000),
 		)
 	)
-	
+
 	offer_types = list(
-		/obj/item/pc_part/drive/disk/design/deimos = offer_data("Deimos Disk Supply", 1200, 1),
+		/obj/item/pc_part/drive/disk/design/deimos/caseless = offer_data("Deimos Caseless Disk", 1200, 1),
 		/obj/item/pc_part/drive/disk/design/deimos/launchers = offer_data("Deimos Launcher Disk", 800, 1),
 		/obj/item/pc_part/drive/disk/design/deimos/shotguns = offer_data("Deimos Shotgun Disk", 700, 1),
 		/obj/item/ammo_casing/grenade = offer_data("Grenades", 300, 3),
