@@ -6,6 +6,7 @@
 	uid = "moe_adv"
 	tree_x = 0.26
 	tree_y = 0.8
+	export_point_cost_mult = 1.25
 	spawn_always = TRUE
 	markup = UNCOMMON_GOODS
 	offer_limit = 1

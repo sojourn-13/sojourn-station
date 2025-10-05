@@ -37,7 +37,6 @@
 	var/obj/machinery/trade_beacon/sending/sending
 	var/obj/machinery/trade_beacon/receiving/receiving
 	var/datum/money_account/account
-
 	var/list/shoppinglist = list()		// list(
 										// 		station reference = list(
 										//			"category" = list(
@@ -252,10 +251,11 @@
 		if(!uid)
 			return
 		var/datum/trade_station/TU = SStrade.get_station_by_uid(uid)
+		var/mult = TU.export_point_cost_mult
 		if(!TU)
 			return
 		var/spu = TU.spawn_probability ? TU.spawn_probability : 60
-		var/required = max(1000, round(1000.0 / max(1, spu))) * 2
+		var/required = max(1000, round(1000.0 / max(1, spu))) * mult // required points heuristic
 		if(SStrade.export_points < required)
 			to_chat(usr, SPAN_WARNING("Not enough export points to unlock station."))
 			return TRUE
@@ -755,11 +755,12 @@
 		var/list/unlockables = list()
 		for(var/station in SStrade.all_stations)
 			var/datum/trade_station/TS2 = station
+			var/mult = TS2.export_point_cost_mult
 			if(SStrade.discovered_stations.Find(TS2))
 				continue
 			// Use a lightweight heuristic based on inventory size and base income instead of spawn_probability
 			var/impact = max(1, TS2.unique_good_count) + max(1, TS2.base_income / 1000)
-			var/required_points = max(1000, round(50.0 * impact)) * 2
+			var/required_points = max(1000, round(100.0 * impact)) * mult
 			LAZYADD(unlockables, list(list("uid" = TS2.uid, "name" = TS2.name, "required" = required_points)))
 		.["unlockables"] = unlockables
 

@@ -1,4 +1,5 @@
 /datum/trade_station/cybermoebus
+	export_point_cost_mult = 1.75
 	spawn_probability = 0 //were bugged
 	name_pool = list("FTS 'PentaOptium'" = "Free Trade Station 'PentaOptium'. \"Oh, you, I think I can sell you some cybernetics.\"")
 	inventory = list(

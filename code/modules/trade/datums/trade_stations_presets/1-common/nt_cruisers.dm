@@ -9,6 +9,7 @@
 	uid = "nt_basic"
 	tree_x = 0.34
 	tree_y = 0.9
+	export_point_cost_mult = 1
 	start_discovered = TRUE
 	spawn_always = TRUE
 	base_income = 1600

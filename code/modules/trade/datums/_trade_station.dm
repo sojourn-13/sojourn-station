@@ -18,7 +18,6 @@
 
 	var/list/forced_overmap_zone 	// list(list(minx, maxx), list(miny, maxy))
 	var/overmap_opacity = 0
-
 	var/list/name_pool = list()
 
 	var/markup = WHOLESALE_GOODS
@@ -36,7 +35,7 @@
 
 	var/base_income = 1600				// Lets stations restock without player interaction.
 	var/wealth = 0						// The abstract value of the goods sold to the station via offers + base income. Represents the station's ability to produce or purchase goods.
-
+	var/export_point_cost_mult = 1		// Multiplier for export point costs, for events or game modes that want to adjust the rate of station unlocking
 	var/favor = 0							// For keeping track of how much wealth a station has handled with the players. Triggers events when certain thresholds are reached.
 	var/hidden_inv_threshold = 2000			// Amount of favor required to unlock secret inventory
 	var/hidden_inv_unlocked = FALSE

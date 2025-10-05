@@ -9,6 +9,7 @@
 	markup = COMMON_GOODS
 	base_income = 1600
 	wealth = 0
+	export_point_cost_mult = 1.25
 	hidden_inv_threshold = 2000
 	recommendation_threshold = 3000
 	stations_recommended = list("trapper")

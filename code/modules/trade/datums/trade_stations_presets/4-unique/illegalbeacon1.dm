@@ -3,6 +3,7 @@
 		"NSTB 'Arau'" = "Nefarious-Space Trade Beacon 'Arau'. The trade beacon is sending an automated message: \"Hey, buddy. Interested in our 'legal' goods?\""
 	)
 	uid = "illegal1"
+	export_point_cost_mult = 2.5
 	tree_x = 0.62
 	tree_y = 0.5
 	spawn_always = TRUE

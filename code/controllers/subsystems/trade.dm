@@ -735,11 +735,12 @@ SUBSYSTEM_DEF(trade)
 	var/unlocks = 0
 	while(unlocks < initial_unlock_count && length(weightlist))
 		var/datum/trade_station/station = pickweight(weightlist)
+		var/mult = station.export_point_cost_mult
 		if(!station)
 			break
 		if(unlocks >= initial_unlock_count)
 			break
-		var/required = max(1000, round((max(1, station.unique_good_count) + max(1, station.base_income / 1000)) * 50)) * 2 // required points heuristic (much reduced multiplier)
+		var/required = max(1000, round((max(1, station.unique_good_count) + max(1, station.base_income / 1000)) * 100)) * mult // required points heuristic (much reduced multiplier)
 		if(export_points >= required)
 			export_points -= required
 			discovered_stations |= station

@@ -12,6 +12,7 @@
 	offer_limit = 20
 	base_income = 3200
 	wealth = 0
+	export_point_cost_mult = 1.25
 	hidden_inv_threshold = 2000
 	//recommendations_needed = 1
 	stations_recommended = list("rigs")

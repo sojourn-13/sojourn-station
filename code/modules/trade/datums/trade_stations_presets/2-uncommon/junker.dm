@@ -11,6 +11,7 @@
 	markup = COMMON_GOODS
 	base_income = 3200
 	wealth = -48000		// REALLY good gear so were in debt
+	export_point_cost_mult = 1.25
 	hidden_inv_threshold = 8000
 	inventory = list(
 		"Spare Parts" = list(

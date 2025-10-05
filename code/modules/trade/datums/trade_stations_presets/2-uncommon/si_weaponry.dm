@@ -9,6 +9,7 @@
 	offer_limit = 12
 	base_income = 0
 	wealth = 0
+	export_point_cost_mult = 1.25
 	recommendation_threshold = 2000
 	stations_recommended = list("illegal1")
 	recommendations_needed = 1
