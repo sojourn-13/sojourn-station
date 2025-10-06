@@ -116,7 +116,7 @@
 	item_state = "saiga-bs"
 	penetration_multiplier = 0.9 //Non-Excelsior varient, it's powerful as is. Pug on crack.
 	excelsior = FALSE
-	damage_multiplier = 10 //cheaper
+	damage_multiplier = 1 //cheaper
 	origin_tech = list(TECH_COMBAT = 9, TECH_MATERIAL = 1)
 	price_tag = 800
 	serial_type = "NM"
