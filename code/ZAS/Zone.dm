@@ -166,29 +166,6 @@ Class Procs:
 		if(E.sleeping)
 			E.recheck()
 
-	// Handle condensation from the air.
-	for(var/g in air.gas)
-		var/product = gas_data.condensation_products[g]
-		if(product && air.temperature <= gas_data.condensation_points[g])
-			var/condensation_area = air.group_multiplier
-			while(condensation_area > 0)
-				condensation_area--
-				var/condense_amt = min(air.gas[g], rand(3,5))
-				if(condense_amt < 1)
-					break
-				air.adjust_gas(g, -condense_amt)
-				// TODO: Add fluid system integration when available
-
-	// Update atom temperature.
-	if(abs(air.temperature - last_air_temperature) >= 10) // 10K threshold
-		last_air_temperature = air.temperature
-		for(var/turf/simulated/T in contents)
-			for(var/check_atom in T.contents)
-				var/atom/checking = check_atom
-				if(checking.simulated)
-					// TODO: Add temperature equilibrium when system is available
-					continue
-			LEGACY_SEND_SIGNAL(src, COMSIG_ZAS_TICK, src)
 
 	LEGACY_SEND_SIGNAL(src, COMSIG_ZAS_TICK, src)
 
