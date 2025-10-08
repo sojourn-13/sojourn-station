@@ -938,8 +938,8 @@ ADMIN_VERB_ADD(/client/proc/admin_cancel_shuttle, R_ADMIN|R_FUN, FALSE)
 
 	to_chat(usr, text("\red <b>Attack Log for []</b>", mob))
 	for(var/t in M.attack_log)
-		// Send each attack log line wrapped in an attack_log class so frontend filters can catch it
-		to_chat(usr, "<span class='attack_log'>" + t + "</span>")
+		// Send each attack log line with explicit type so frontend classifies it correctly
+		to_chat(usr, html = "<span class='attack_log'>" + t + "</span>", type = MESSAGE_TYPE_ATTACKLOG)
 
 
 ADMIN_VERB_ADD(/client/proc/everyone_random, R_FUN, FALSE)

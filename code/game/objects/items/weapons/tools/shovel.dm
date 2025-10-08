@@ -38,8 +38,8 @@
 	price_tag = 10
 
 /obj/item/tool/shovel/combat
-	name = "combat crovel"
-	desc = "A plasteel crovel with a sharp head, serrated side, crowbar lever on the pommel, and a fold-able winch for easy transport. For when you need to dig out trenches, hammer barricades together, cave in skulls, and cut your steak."
+	name = "combat shovel"
+	desc = "A plasteel combat shovel with a sharp head, serrated side, crowbar lever on the pommel, and a fold-able winch for easy transport. For when you need to dig out trenches, hammer barricades together, cave in skulls, and cut your steak."
 	icon_state = "combat_shovel"
 	force = WEAPON_FORCE_DANGEROUS
 	throwforce = WEAPON_FORCE_DANGEROUS

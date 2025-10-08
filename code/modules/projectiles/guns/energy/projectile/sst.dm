@@ -71,7 +71,7 @@
 	damage_multiplier = 1.4
 	init_firemodes = list(
 		list(mode_name="non-lethal", mode_desc="fires a powerful .40 non-embedding rubber round laced with concentrated soporific compound", projectile_type = /obj/item/projectile/bullet/magnum_40/rubber/soporific/cbo, icon="stun", fire_sound='sound/weapons/rail.ogg'),
-		list(mode_name="lethal", mode_desc="fires a standard .40 full-metal jacket round", projectile_type = /obj/item/projectile/bullet/magnum_40, damage_multiplier = 0.8, icon="kill", fire_sound='sound/weapons/rail.ogg')
+		list(mode_name="lethal", mode_desc="fires a standard .40 full-metal jacket round", projectile_type = /obj/item/projectile/bullet/magnum_40, icon="kill", fire_sound='sound/weapons/rail.ogg')
 	)
 	//no deconstructing, selling, or recycling as this is a unique HoS weapon
 	matter = null

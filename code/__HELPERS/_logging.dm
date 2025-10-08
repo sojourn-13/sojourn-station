@@ -75,8 +75,8 @@
 
 	for(var/client/C in admins)
 		if(C.get_preference_value(/datum/client_preference/staff/show_debug_logs) == GLOB.PREF_SHOW)
-			// Wrap debug messages so frontend can filter them via .debug_message selector
-			to_chat(C, "<span class=\"debug_message\">DEBUG: [text]</span>")
+			// Send debug messages with explicit type so tgui classifies them without relying on HTML parsing
+			to_chat(C, html = "<span class=\"debug_message\">DEBUG: [text]</span>", type = MESSAGE_TYPE_DEBUG)
 
 /proc/log_game(text)
 	if (config.log_game)

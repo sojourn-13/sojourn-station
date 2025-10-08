@@ -29,7 +29,7 @@ var/global/floorIsLava = 0
 			if(C.get_preference_value(/datum/client_preference/staff/show_attack_logs) == GLOB.PREF_SHOW)
 				// Wrap attack messages so frontend can classify them as both admin logs and attack logs
 				var/msg = "<span class=\"attack_log\"><span class=\"prefix\">[create_text_tag(tag, "[tagtext]:", C)]</span> <span class=\"message\">[text]</span></span>"
-				to_chat(C, msg)
+				to_chat(C, html = msg, type = MESSAGE_TYPE_ATTACKLOG)
 
 /**
  * Sends a message to the staff able to see admin tickets

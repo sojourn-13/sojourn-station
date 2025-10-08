@@ -219,7 +219,10 @@
 	data["cell"] = cell ? capitalize(cell.name) : null
 	data["cellCharge"] = cell ? cell.charge : 0
 	data["cellMaxCharge"] = cell ? cell.maxcharge : 1
-
+	if(data["access"])
+		var/settings[0]
+		settings[++settings.len] = list("category" = "Filter out Neutral Faction", "setting" = "filter_neutral", "value" = filter_neutral)
+		data["settings"] = settings
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if (!ui)
 		ui = new(user, src, ui_key, "turret_control_artificer.tmpl", "Turret Controls", 500, 300)
@@ -231,6 +234,10 @@
 	if(href_list["command"] == "eject_cell")
 		cell.forceMove(src.loc)
 		cell = null
+		return 1
+	if(href_list["command"] == "filter_neutral")
+		var/value = text2num(href_list["value"])
+		filter_neutral = value
 		return 1
 	.=..()
 
@@ -357,7 +364,7 @@
 	if(ishuman(L))
 		return TURRET_NOT_TARGET
 
-	if(L.faction == "neutral")
+	if(filter_neutral && L.faction == FACTION_NEUTRAL)
 		return TURRET_NOT_TARGET
 
 	if(is_excelsior(L))
