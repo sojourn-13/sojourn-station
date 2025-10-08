@@ -382,8 +382,8 @@
 
 	var/safe_exhaled_max = 10
 	var/safe_toxins_max = 0.2
-	var/SA_para_min = 1
-	var/SA_sleep_min = 5
+	// Removed legacy SA_para_min / SA_sleep_min constants. Sleeping agent now handled by generic
+	// gas->reagent conversion below using partial pressure tiers.
 
 	var/lung_efficiency = get_organ_efficiency(OP_LUNGS)
 
@@ -421,6 +421,42 @@
 
 	var/inhaled_gas_used = inhaling/6
 	breath.adjust_gas(breath_type, -inhaled_gas_used, update = 0) //update afterwards
+
+	/*
+		Unified gas -> reagent inhalation system:
+		For any gas with gas_data.breathed_product[g] defined we absorb 1/BREATH_ABSORPTION_DIVISOR
+		of its present moles in the sampled breath, convert to reagent units using
+		BREATHED_REAGENT_MOLES_PER_UNIT, and add to bloodstream.
+
+		Special handling (sleeping_agent / GAS_N2O): replicate old staged effects by enforcing
+		minimum reagent doses according to partial pressure tiers (kPa):
+		  >5 kPa  -> at least 7u (old 2 + additional 5 sleep dose)
+		  >1 kPa  -> at least 2u (paralysis tier)
+		  >0.15 kPa -> at least 1u (warning tier)
+	*/
+	if(reagents && lung_efficiency > 0)
+		for(var/g in breath.gas)
+			var/current_moles = breath.gas[g]
+			if(!current_moles)
+				continue
+			var/product_path = gas_data.breathed_product[g]
+			if(!product_path)
+				continue
+			var/absorbed = current_moles / BREATH_ABSORPTION_DIVISOR
+			if(absorbed <= 0)
+				continue
+			breath.adjust_gas(g, -absorbed, update = 0)
+			var/amount = absorbed / BREATHED_REAGENT_MOLES_PER_UNIT
+			if(g == GAS_N2O)
+				var/SA_pp = (current_moles / max(breath.total_moles, 0.0001)) * breath_pressure
+				if(SA_pp > 5 && amount < 7)
+					amount = 7
+				else if(SA_pp > 1 && amount < 2)
+					amount = 2
+				else if(SA_pp > 0.15 && amount < 1)
+					amount = 1
+			if(amount > 0)
+				reagents.add_reagent(product_path, amount, safety = 1)
 
 	if(exhale_type)
 		breath.adjust_gas_temp(exhale_type, inhaled_gas_used, bodytemperature, update = 0) //update afterwards
@@ -464,18 +500,6 @@
 		plasma_alert = 1
 	else
 		plasma_alert = 0
-
-	// If there's some other shit in the air lets deal with it here.
-	if(breath.gas["sleeping_agent"])
-		var/SA_pp = (breath.gas["sleeping_agent"] / breath.total_moles) * breath_pressure
-		if(SA_pp > SA_para_min)		// Enough to make us paralysed for a bit
-			reagents.add_reagent("sagent", 2)
-			if(SA_pp > SA_sleep_min)	// Enough to make us sleep as well
-				reagents.add_reagent("sagent", 5)
-		else if(SA_pp > 0.15)	// There is sleeping gas in their lungs, but only a little, so give them a bit of a warning
-			reagents.add_reagent("sagent", 1)
-
-		breath.adjust_gas("sleeping_agent", -breath.gas["sleeping_agent"]/6, update = 0) //update after
 
 	// Were we able to breathe?
 	var/failed_breath = failed_inhale || failed_exhale

@@ -22,6 +22,12 @@
 #define HUMAN_HEAT_CAPACITY 280000 //J/K For 80kg person
 #define STD_BREATH_VOLUME      12 // Liters in a normal breath.
 
+// Gas -> reagent inhalation conversion tuning.
+// Fraction of each present gas (by moles) removed per successful breath for reagent conversion.
+#define BREATH_ABSORPTION_DIVISOR 6
+// How many moles of absorbed gas correspond to 1 reagent unit placed into the bloodstream.
+#define BREATHED_REAGENT_MOLES_PER_UNIT 0.001
+
 #define SOUND_MINIMUM_PRESSURE 10
 
 #define PRESSURE_DAMAGE_COEFFICIENT 4 // The amount of pressure damage someone takes is equal to (pressure / HAZARD_HIGH_PRESSURE)*PRESSURE_DAMAGE_COEFFICIENT, with the maximum of MAX_PRESSURE_DAMAGE.
