@@ -569,7 +569,7 @@
 	M.add_chemical_effect(CE_SLOWDOWN, 1)
 	M.adjustNutrition(-25)
 
-datum/reagent/drug/nosfernium/overdose(var/mob/living/carbon/human/M, var/alien)
+/datum/reagent/drug/nosfernium/overdose(var/mob/living/carbon/human/M, var/alien)
 	M.adjustBrainLoss(5) // This is meant to be lethal. If you survive this give your doctor a pat on the back.
 
 /datum/reagent/nitrous_oxide
