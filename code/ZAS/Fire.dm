@@ -16,12 +16,6 @@ If it gains pressure too slowly, it may leak or just rupture instead of explodin
 /turf
 	var/tmp/obj/fire/fire = null
 
-/atom/movable/proc/is_burnable()
-	return FALSE
-
-/mob/is_burnable()
-	return simulated
-
 //Some legacy definitions so fires can be started.
 atom/proc/temperature_expose(datum/gas_mixture/air, exposed_temperature, exposed_volume)
 	return null
@@ -346,9 +340,6 @@ turf/proc/hotspot_expose(exposed_temperature, exposed_volume, soh = 0)
 		log_debug("used_gas_fuel = [used_gas_fuel]; used_liquid_fuel = [used_liquid_fuel]; total = [used_fuel]")
 		log_debug("new temperature = [temperature]; new pressure = [return_pressure()]")
 		#endif
-
-		if(temperature < 220)
-			firelevel = 0
 
 		return firelevel
 

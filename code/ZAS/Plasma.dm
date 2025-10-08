@@ -1,4 +1,4 @@
-var/global/image/contamination_overlay = image('icons/effects/contamination.dmi')
+var/image/contamination_overlay = image('icons/effects/contamination.dmi')
 
 /pl_control
 	var/PLASMA_DMG = 3
@@ -42,7 +42,6 @@ var/global/image/contamination_overlay = image('icons/effects/contamination.dmi'
 
 /mob/living/carbon/human/pl_effects()
 	//Handles all the bad things plasma can do.
-
 	if(stat >= DEAD)
 		return
 
@@ -66,8 +65,8 @@ var/global/image/contamination_overlay = image('icons/effects/contamination.dmi'
 				if(!wear_mask)
 					burn_eyes()
 				else
-			if(!(wear_mask.body_parts_covered & EYES))
-				burn_eyes()
+					if(!(wear_mask.body_parts_covered & EYES))
+						burn_eyes()
 
 /mob/living/carbon/human/proc/burn_eyes()
 	//The proc that handles eye burning.

@@ -65,6 +65,10 @@
 				I.color = gas.tile_color
 			gas_data.tile_overlay[gas.id] = I
 		gas_data.flags[gas.id] = gas.flags
+		gas_data.burn_product[gas.id] = gas.burn_product
+		gas_data.breathed_product[gas.id] = gas.breathed_product
+		gas_data.condensation_points[gas.id] = gas.condensation_point
+		gas_data.condensation_products[gas.id] = gas.condensation_product
 
 	return TRUE
 

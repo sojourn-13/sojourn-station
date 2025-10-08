@@ -52,8 +52,6 @@ Class Procs:
 	var/list/edges
 
 	var/datum/gas_mixture/air = new
-	var/list/graphic_add = list()
-	var/list/graphic_remove = list()
 	var/last_air_temperature = T20C
 
 /zone/New()
@@ -94,8 +92,8 @@ Class Procs:
 		LAZYREMOVE(fuel_objs, fuel)
 	T.zone = null
 	T.update_graphic(graphic_remove = air.graphic)
-	if(length(contents))
-		air.group_multiplier = length(contents)
+	if(contents.len)
+		air.group_multiplier = contents.len
 	else
 		c_invalidate()
 
@@ -146,26 +144,22 @@ Class Procs:
 /zone/proc/add_tile_air(datum/gas_mixture/tile_air)
 	//air.volume += CELL_VOLUME
 	air.group_multiplier = 1
-	air.multiply(length(contents))
+	air.multiply(contents.len)
 	air.merge(tile_air)
-	air.divide(length(contents)+1)
-	air.group_multiplier = length(contents)+1
+	air.divide(contents.len+1)
+	air.group_multiplier = contents.len+1
 
 /zone/proc/tick()
-	// Update fires.
-	if(air.temperature >= PLASMA_FLASHPOINT && !(src in SSair.active_fire_zones) && air.check_combustability() && length(contents))
+	if(air.temperature >= PLASMA_FLASHPOINT && !(src in SSair.active_fire_zones) && air.check_combustability() && contents.len)
 		var/turf/T = pick(contents)
 		if(istype(T))
 			T.create_fire(vsc.fire_firelevel_multiplier)
 
 	var/list/graphic_add = list()
 	var/list/graphic_remove = list()
-	// Update gas overlays.
 	if(air.check_tile_graphic(graphic_add, graphic_remove))
 		for(var/turf/simulated/T in contents)
 			T.update_graphic(graphic_add, graphic_remove)
-		graphic_add.Cut()
-		graphic_remove.Cut()
 
 	// Update connected edges.
 	for(var/connection_edge/E in edges)
@@ -194,7 +188,7 @@ Class Procs:
 				if(checking.simulated)
 					// TODO: Add temperature equilibrium when system is available
 					continue
-			CHECK_TICK
+			LEGACY_SEND_SIGNAL(src, COMSIG_ZAS_TICK, src)
 
 	LEGACY_SEND_SIGNAL(src, COMSIG_ZAS_TICK, src)
 

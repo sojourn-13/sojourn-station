@@ -5,17 +5,17 @@
 /turf/var/datum/gas_mixture/air
 
 /turf/simulated/proc/update_graphic(list/graphic_add = null, list/graphic_remove = null)
-	if(graphic_add && length(graphic_add))
+	if (LAZYLEN(graphic_add))
 		vis_contents += graphic_add
-	if(graphic_remove && length(graphic_remove))
+	if(LAZYLEN(graphic_remove))
 		vis_contents -= graphic_remove
 
 /turf/proc/update_air_properties()
-	var/s_block
-	ATMOS_CANPASS_TURF(s_block, src, src)
-	if(s_block & AIR_BLOCKED)
+	var/block
+	ATMOS_CANPASS_TURF(block, src, src)
+	if(block & AIR_BLOCKED)
 		//dbg(blocked)
-		return 1
+		return TRUE
 
 	#ifdef MULTIZAS
 	for(var/d = 1, d < 64, d *= 2)
@@ -28,14 +28,15 @@
 		if(!unsim)
 			continue
 
-		var/block
 		ATMOS_CANPASS_TURF(block, unsim, src)
+
 		if(block & AIR_BLOCKED)
 			//unsim.dbg(air_blocked, turn(180,d))
 			continue
 
 		var/r_block
 		ATMOS_CANPASS_TURF(r_block, src, unsim)
+
 		if(r_block & AIR_BLOCKED)
 			continue
 
