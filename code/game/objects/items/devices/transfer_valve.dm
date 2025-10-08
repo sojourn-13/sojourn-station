@@ -158,16 +158,11 @@
 /obj/item/device/transfer_valve/proc/merge_gases()
 	if(valve_open)
 		return
-
-	// Merge the gases from both tanks
 	tank_two.air_contents.volume += tank_one.air_contents.volume
 	var/datum/gas_mixture/temp
 	temp = tank_one.air_contents.remove_ratio(1)
 	tank_two.air_contents.merge(temp)
 	valve_open = 1
-
-	// Now check if the merged gases will explode
-	check_ttv_explosion()
 
 /obj/item/device/transfer_valve/proc/split_gases()
 	if(!valve_open)
@@ -223,82 +218,7 @@
 
 	src.update_icon()
 
-// Check for TTV explosion using traditional fuel_moles formula with pressure scaling
-// The gases have already been merged at this point
-/obj/item/device/transfer_valve/proc/check_ttv_explosion()
-	if(!tank_two || !tank_two.air_contents)
-		return
-
-	// React the gases multiple times to simulate combustion and build up pressure/temperature
-	// This is what makes plasma + oxygen explode
-	tank_two.air_contents.react()
-	tank_two.air_contents.react()
-	tank_two.air_contents.react()
-
-	// Calculate fuel_moles using the traditional formula: plasma + oxygen/6
-	var/fuel_moles = tank_two.air_contents.gas["plasma"] + tank_two.air_contents.gas["oxygen"] / 6
-	var/strength = 1
-
-	// Calculate total pressure in kPa after reactions
-	var/total_pressure_kpa = tank_two.air_contents.return_pressure() / 101.325
-
-	// Apply pressure-based scaling factor to match empirical data
-	// Tuned to match the target chart: 400kPa→10, 500→17, 600→21, 700→25, 800→31, 900→35
-	var/pressure_multiplier = 1.0
-	if(total_pressure_kpa >= 400)  // Only scale for pressures that would cause explosions
-		// Linear scaling: 400 kPa = 10x, 900 kPa = 14x
-		pressure_multiplier = 10.0 + ((total_pressure_kpa - 400) / 500) * 4.0
-		pressure_multiplier = min(pressure_multiplier, 14.0)  // Cap at 14x
-
-	var/turf/ground_zero = get_turf(src)
-
-	// Use temperature tiers like assembly bombs, but with pressure multiplier
-	if(tank_two.air_contents.temperature > (T0C + 400))
-		strength = (fuel_moles/15) * pressure_multiplier
-
-		if(strength >= 1)
-			explosion(ground_zero, round(strength,1), round(strength*2,1), round(strength*3,1), round(strength*4,1))
-			qdel(src)
-			message_admins("A TTV explosion has occurred! last key to touch the tank was [src.fingerprintslast].")
-			log_game("A TTV explosion has occurred! last key to touch the tank was [src.fingerprintslast].")
-		else if(strength >= 0.5)
-			explosion(ground_zero, 0, 1, 2, 4)
-			qdel(src)
-			message_admins("A TTV explosion has occurred! last key to touch the tank was [src.fingerprintslast].")
-			log_game("A TTV explosion has occurred! last key to touch the tank was [src.fingerprintslast].")
-		else if(strength >= 0.2)
-			explosion(ground_zero, 0, 0, 1, 2)
-			qdel(src)
-			message_admins("A TTV explosion has occurred! last key to touch the tank was [src.fingerprintslast].")
-			log_game("A TTV explosion has occurred! last key to touch the tank was [src.fingerprintslast].")
-		// If too weak, just leave the gases mixed in the tanks
-
-	else if(tank_two.air_contents.temperature > (T0C + 250))
-		strength = (fuel_moles/20) * pressure_multiplier
-
-		if(strength >= 1)
-			explosion(ground_zero, 0, round(strength,1), round(strength*2,1), round(strength*3,1))
-			qdel(src)
-			message_admins("A TTV explosion has occurred! last key to touch the tank was [src.fingerprintslast].")
-			log_game("A TTV explosion has occurred! last key to touch the tank was [src.fingerprintslast].")
-		else if(strength >= 0.5)
-			explosion(ground_zero, 0, 0, 1, 2)
-			qdel(src)
-			message_admins("A TTV explosion has occurred! last key to touch the tank was [src.fingerprintslast].")
-			log_game("A TTV explosion has occurred! last key to touch the tank was [src.fingerprintslast].")
-		// If too weak, just leave the gases mixed in the tanks
-
-	else if(tank_two.air_contents.temperature > (T0C + 100))
-		strength = (fuel_moles/25) * pressure_multiplier
-
-		if(strength >= 1)
-			explosion(ground_zero, 0, 0, round(strength,1), round(strength*3,1))
-			qdel(src)
-			message_admins("A TTV explosion has occurred! last key to touch the tank was [src.fingerprintslast].")
-			log_game("A TTV explosion has occurred! last key to touch the tank was [src.fingerprintslast].")
-		// If too weak, just leave the gases mixed in the tanks
-	// If too cold (<100C), just leave the gases mixed in the tanks
-
 // this doesn't do anything but the timer etc. expects it to be here
+// eventually maybe have it update icon to show state (timer, prox etc.) like old bombs
 /obj/item/device/transfer_valve/proc/c_state()
 	return
