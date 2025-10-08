@@ -253,9 +253,12 @@ var/list/global/tank_gauge_cache = list()
 
 	var/pressure = air_contents.return_pressure()
 	if(pressure > TANK_FRAGMENT_PRESSURE)
-		if(!istype(src.loc,/obj/item/device/transfer_valve))
-			message_admins("Explosive tank rupture! last key to touch the tank was [src.fingerprintslast].")
-			log_game("Explosive tank rupture! last key to touch the tank was [src.fingerprintslast].")
+		// If tank is in a transfer valve, let the TTV handle explosions using fuel_moles
+		if(istype(src.loc,/obj/item/device/transfer_valve))
+			return 0
+			
+		message_admins("Explosive tank rupture! last key to touch the tank was [src.fingerprintslast].")
+		log_game("Explosive tank rupture! last key to touch the tank was [src.fingerprintslast].")
 
 		//Give the gas a chance to build up more pressure through reacting
 		air_contents.react()
