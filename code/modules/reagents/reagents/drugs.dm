@@ -571,3 +571,35 @@
 
 datum/reagent/drug/nosfernium/overdose(var/mob/living/carbon/human/M, var/alien)
 	M.adjustBrainLoss(5) // This is meant to be lethal. If you survive this give your doctor a pat on the back.
+
+/datum/reagent/nitrous_oxide
+	name = "Nitrous Oxide"
+	description = "A chemical compound used as an anaesthetic and for pain relief."
+	taste_description = "nothing"
+	reagent_state = LIQUID
+	color = COLOR_GRAY80
+	metabolism = REM
+	var/do_giggle = TRUE
+
+/datum/reagent/nitrous_oxide/affect_blood(mob/living/carbon/M, removed)
+	if (volume > 2)
+		M.Sleeping(10)
+	var/dosage = volume // Simplified dosage tracking
+	if(dosage >= 10)
+		if (prob(5)) M.Sleeping(3)
+		M.dizziness =  max(M.dizziness, 3)
+		M.confused = max(M.confused, 3)
+	if(dosage >= 2)
+		if(prob(5)) M.Paralyse(1)
+		M.drowsyness = max(M.drowsyness, 3)
+		M.slurring =   max(M.slurring, 3)
+	if(do_giggle && prob(20))
+		M.emote(pick("giggle", "laugh"))
+	M.add_chemical_effect(CE_PULSE, -1)
+
+/datum/reagent/nitrous_oxide/xenon
+	name = "Xenon"
+	description = "A nontoxic gas used as a general anaesthetic."
+	do_giggle = FALSE
+	taste_description = "nothing"
+	color = COLOR_GRAY80

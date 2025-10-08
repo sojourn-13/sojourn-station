@@ -824,3 +824,70 @@
 		M.apply_effect(agony_amount, HALLOSS, 0)
 		if(prob(5))
 			to_chat(M, SPAN_DANGER("You feel like your insides are burning!"))
+
+/datum/reagent/toxin/boron
+	name = "Boron"
+	id = "boron"
+	description = "A toxic metalloid element."
+	taste_description = "bitterness"
+	reagent_state = SOLID
+	color = "#8B4513"
+	strength = 2
+	metabolism = REM * 0.75
+	nerve_system_accumulations = 40
+
+/datum/reagent/toxin/boron/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	..()
+	if(prob(10))
+		M.adjustBrainLoss(1)
+
+/datum/reagent/toxin/bromide
+	name = "Bromide"
+	id = "bromide"
+	description = "A toxic halogen compound."
+	taste_description = "bitter chemical"
+	reagent_state = LIQUID
+	color = "#8B0000"
+	strength = 2
+	nerve_system_accumulations = 35
+
+/datum/reagent/toxin/bromide/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	..()
+	if(prob(15))
+		M.confused = max(M.confused, 3)
+
+/datum/reagent/toxin/methyl_bromide
+	name = "Methyl Bromide"
+	id = "methyl_bromide"
+	description = "A highly toxic pesticide gas."
+	taste_description = "acrid chemical"
+	reagent_state = GAS
+	color = "#FF6347"
+	strength = 3
+	metabolism = REM * 0.5
+	nerve_system_accumulations = 50
+
+/datum/reagent/toxin/methyl_bromide/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	..()
+	if(prob(20))
+		var/datum/gas_mixture/environment = M.loc.return_air()
+		if(environment)
+			environment.adjust_gas(GAS_METHYL_BROMIDE, volume * 0.1)
+
+/datum/reagent/toxin/chlorine
+	name = "Chlorine"
+	id = "chlorine"
+	description = "A toxic halogen gas."
+	taste_description = "bleach"
+	reagent_state = GAS
+	color = "#C5F72D"
+	strength = 2
+	metabolism = REM * 0.75
+	nerve_system_accumulations = 40
+
+/datum/reagent/toxin/chlorine/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	..()
+	if(prob(15))
+		var/datum/gas_mixture/environment = M.loc.return_air()
+		if(environment)
+			environment.adjust_gas(GAS_CHLORINE, volume * 0.1)

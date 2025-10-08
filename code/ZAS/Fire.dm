@@ -16,6 +16,12 @@ If it gains pressure too slowly, it may leak or just rupture instead of explodin
 /turf
 	var/tmp/obj/fire/fire = null
 
+/atom/movable/proc/is_burnable()
+	return FALSE
+
+/mob/is_burnable()
+	return simulated
+
 //Some legacy definitions so fires can be started.
 atom/proc/temperature_expose(datum/gas_mixture/air, exposed_temperature, exposed_volume)
 	return null
@@ -38,7 +44,6 @@ turf/proc/hotspot_expose(exposed_temperature, exposed_volume, soh = 0)
 
 	if(air_contents.check_combustability(liquid))
 		igniting = 1
-
 		create_fire(exposed_temperature)
 	return igniting
 
@@ -327,8 +332,9 @@ turf/proc/hotspot_expose(exposed_temperature, exposed_volume, soh = 0)
 
 		//remove_by_flag() and adjust_gas() handle the group_multiplier for us.
 		remove_by_flag(XGM_GAS_OXIDIZER, used_oxidizers)
-		remove_by_flag(XGM_GAS_FUEL, used_gas_fuel)
-		adjust_gas(GAS_CO2, used_oxidizers)
+		var/datum/gas_mixture/burned_fuel = remove_by_flag(XGM_GAS_FUEL, used_gas_fuel)
+		for(var/g in burned_fuel.gas)
+			adjust_gas(gas_data.burn_product[g], burned_fuel.gas[g])
 
 		if(zone)
 			zone.remove_liquidfuel(used_liquid_fuel, !check_combustability())
@@ -341,6 +347,9 @@ turf/proc/hotspot_expose(exposed_temperature, exposed_volume, soh = 0)
 		log_debug("used_gas_fuel = [used_gas_fuel]; used_liquid_fuel = [used_liquid_fuel]; total = [used_fuel]")
 		log_debug("new temperature = [temperature]; new pressure = [return_pressure()]")
 		#endif
+
+		if(temperature < 220)
+			firelevel = 0
 
 		return firelevel
 

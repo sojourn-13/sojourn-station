@@ -1,13 +1,17 @@
-var/image/contamination_overlay = image('icons/effects/contamination.dmi')
+var/global/image/contamination_overlay = image('icons/effects/contamination.dmi')
 
 /pl_control
 	var/PLASMA_DMG = 3
 	var/PLASMA_DMG_NAME = "Plasma Damage Amount"
 	var/PLASMA_DMG_DESC = "Self Descriptive"
 
+	var/CLOTH_CONTAMINATION = 1
+	var/CLOTH_CONTAMINATION_NAME = "Cloth Contamination"
+	var/CLOTH_CONTAMINATION_DESC = "If this is on, plasma does damage by getting into cloth."
+
 	var/PLASMAGUARD_ONLY = FALSE
 	var/PLASMAGUARD_ONLY_NAME = "\"PlasmaGuard Only\""
-	var/PLASMAGUARD_ONLY_DESC = "If this is on, only biosuits and spacesuits protect against ill effects."
+	var/PLASMAGUARD_ONLY_DESC = "If this is on, only biosuits and spacesuits protect against contamination and ill effects."
 
 	var/GENETIC_CORRUPTION = FALSE
 	var/GENETIC_CORRUPTION_NAME = "Genetic Corruption Chance"
@@ -20,6 +24,10 @@ var/image/contamination_overlay = image('icons/effects/contamination.dmi')
 	var/EYE_BURNS = TRUE
 	var/EYE_BURNS_NAME = "Eye Burns"
 	var/EYE_BURNS_DESC = "Plasma burns the eyes of anyone not wearing eye protection."
+
+	var/CONTAMINATION_LOSS = 0.02
+	var/CONTAMINATION_LOSS_NAME = "Contamination Loss"
+	var/CONTAMINATION_LOSS_DESC = "How much toxin damage is dealt from contaminated clothing"
 
 	var/PLASMA_HALLUCINATION = FALSE
 	var/PLASMA_HALLUCINATION_NAME = "Plasma Hallucination"
@@ -34,6 +42,7 @@ var/image/contamination_overlay = image('icons/effects/contamination.dmi')
 
 /mob/living/carbon/human/pl_effects()
 	//Handles all the bad things plasma can do.
+
 	if(stat >= DEAD)
 		return
 
@@ -57,8 +66,8 @@ var/image/contamination_overlay = image('icons/effects/contamination.dmi')
 				if(!wear_mask)
 					burn_eyes()
 				else
-					if(!(wear_mask.body_parts_covered & EYES))
-						burn_eyes()
+			if(!(wear_mask.body_parts_covered & EYES))
+				burn_eyes()
 
 /mob/living/carbon/human/proc/burn_eyes()
 	//The proc that handles eye burning.
