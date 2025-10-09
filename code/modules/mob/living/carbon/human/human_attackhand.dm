@@ -62,11 +62,11 @@
 			if(can_operate(src, M) && do_surgery(src, M, null))
 				return 1
 			// CPR can be performed on critical, dead, cardiac arrest, or severe oxygen loss patients
-			if(istype(H) && (health < HEALTH_THRESHOLD_CRIT || stat == DEAD || getOxyLoss() >= 80))
-				var/obj/item/organ/internal/vital/heart/heart = random_organ_by_process(OP_HEART)
-				var/cardiac_arrest = heart && (heart.pulse == PULSE_NONE) && !(heart.status & ORGAN_DEAD)
-				var/severe_oxyloss = getOxyLoss() >= 80
+			var/obj/item/organ/internal/vital/heart/heart = random_organ_by_process(OP_HEART)
+			var/cardiac_arrest = heart && (heart.pulse == PULSE_NONE) && !(heart.status & ORGAN_DEAD)
 
+			if(istype(H) && (health < HEALTH_THRESHOLD_CRIT || stat == DEAD || getOxyLoss() >= 80 || cardiac_arrest))
+				var/severe_oxyloss = getOxyLoss() >= 80
 				// Only perform CPR if they're critical/dead OR in cardiac arrest OR have severe oxygen loss
 				if(health >= HEALTH_THRESHOLD_CRIT && !cardiac_arrest && !severe_oxyloss)
 					help_shake_act(M)
@@ -109,9 +109,9 @@
 					adjustOxyLoss(-(min(getOxyLoss(), cpr_efficiency)))
 					updatehealth()
 
-				// Heart restart attempt if in cardiac arrest, recently dead, or severe oxygen loss
+				// Heart restart attempt if in cardiac arrest or recently dead
 				var/heart_restart_attempted = FALSE
-				if(cardiac_arrest || (stat == DEAD && health > HEALTH_THRESHOLD_DEAD) || severe_oxyloss)
+				if(cardiac_arrest || (stat == DEAD && health > HEALTH_THRESHOLD_DEAD))
 					heart_restart_attempted = TRUE
 					cpr_successes++
 					last_cpr_time = world.time

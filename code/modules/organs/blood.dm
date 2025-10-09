@@ -264,7 +264,9 @@ proc/blood_splatter(var/target,var/datum/reagent/organic/blood/source,var/large)
 	// Don't override blood_volume here - use the actual circulation volume!
 	// blood_volume = 100  // <-- This was the bug!
 
-	var/blood_volume_mod = max(0, 1 - getOxyLoss()/(species.total_health/2))
+	// Reduce the impact of oxygen loss on blood oxygenation to prevent feedback loops
+	// This prevents brain damage → oxygen loss → poor blood oxygenation → more oxygen loss
+	var/blood_volume_mod = max(0.3, 1 - getOxyLoss()/(species.total_health * 1.5)) // Increased divisor and added minimum
 	var/oxygenated_mult = 0
 	if(chem_effects[CE_OXYGENATED] == 1) // Dexalin.
 		oxygenated_mult = 0.5

@@ -152,7 +152,8 @@
 				should_stop = TRUE
 
 		// Original conditions
-		should_stop = should_stop || prob(max(0, owner.getBrainLoss() - owner.maxHealth * 0.75)) //brain failing to work heart properly
+		// Removed brain damage heart failure - brain damage should not directly cause heart issues
+		// should_stop = should_stop || prob(max(0, owner.getBrainLoss() - owner.maxHealth * 0.75)) //brain failing to work heart properly
 		should_stop = should_stop || (prob(10) && pulse == PULSE_THREADY) //erratic heart patterns, increased chance
 
 		if(should_stop) // The heart has stopped due to traumatic or cardiovascular shock.

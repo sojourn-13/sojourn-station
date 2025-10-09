@@ -201,7 +201,7 @@
 	if(pulse == PULSE_NONE || getOxyLoss() >= 100)
 		// Calculate brain damage based on oxygen loss percentage
 		var/oxygen_loss = getOxyLoss()
-		var/damage_amount = 10 // Base damage when heart stops (increased from 1)
+		var/damage_amount = 2 // Base damage when heart stops (increased from 1)
 
 		if(oxygen_loss >= 100)
 			// Scale damage based on oxygen loss: 100 oxyloss = 10 damage, 150 oxyloss = 15 damage, 200 oxyloss = 20 damage, etc.

@@ -371,7 +371,7 @@
 
 	// Add facial disfigurement warning if present
 	if(occ["face_mangled"])
-		dat += "<div class='notice' style='color: orange; font-weight: bold;'>⚠ FACIAL DISFIGUREMENT DETECTED ⚠</div><br>"
+		dat += "<div class='notice' style='color: black; font-weight: bold;'>⚠ FACIAL DISFIGUREMENT DETECTED ⚠</div><br>"
 
 	// Organ status table
 	dat += "<table class='block' width='95%'>"
