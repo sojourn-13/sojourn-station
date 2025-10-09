@@ -53,7 +53,8 @@
         } \
         if(F) { \
             if(F.fluid_amount >= FLUID_MAX_DEPTH) continue; \
-				var/new_amount = min(FLUID_MAX_DEPTH, F.fluid_amount + FLUID_DEEP); \
+            if(!dry_run) { \
+                var/new_amount = min(FLUID_MAX_DEPTH, F.fluid_amount + FLUID_DEEP); \
 				SET_FLUID_DEPTH(F, new_amount); \
             } \
         } \
