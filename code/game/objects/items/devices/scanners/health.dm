@@ -321,22 +321,18 @@
 
 	// Add shock status display
 	if(H.shock_stage)
-		var/shock_text = ""
+		var/shock_level = H.get_shock_level_text()
 		var/shock_color = ""
 		if(H.shock_stage < 40)
-			shock_text = "Mild shock detected"
 			shock_color = "#ffaa00"
 		else if(H.shock_stage < 80)
-			shock_text = "Moderate shock detected"
 			shock_color = "#ff6600"
 		else if(H.shock_stage < 120)
-			shock_text = "Severe shock detected"
 			shock_color = "#ff3300"
 		else
-			shock_text = "CRITICAL shock detected"
 			shock_color = "#ff0000"
 
-		dat += "<font color='[shock_color]'><b>[shock_text]</b> (Stage: [H.shock_stage])</font>"
+		dat += "<font color='[shock_color]'><b>[shock_level] shock detected</b></font>"
 
 		// Advanced scanner shows more detailed shock information
 		if(advanced)

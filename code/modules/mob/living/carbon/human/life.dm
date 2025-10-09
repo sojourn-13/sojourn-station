@@ -1230,8 +1230,8 @@
 	// Restart heart pulse if we have a heart - similar to defib functionality but better
 	var/obj/item/organ/internal/vital/heart/heart = random_organ_by_process(OP_HEART)
 	if(heart && !(heart.status & ORGAN_DEAD))
-		heart.pulse = PULSE_NORMAL  // Start with normal pulse as this is admin healing
-		pulse = PULSE_NORMAL  // Sync to owner for scanner/HUD compatibility
+		heart.pulse = PULSE_NORM  // Start with normal pulse as this is admin healing
+		pulse = PULSE_NORM  // Sync to owner for scanner/HUD compatibility
 		// Force immediate HUD update to show heart restarted
 		hud_updateflag |= 1 << HEALTH_HUD
 		handle_regular_hud_updates()

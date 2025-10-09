@@ -96,6 +96,14 @@
 	if(traumatic_shock > soft_crit_threshold + SHOCK_STAGE_BUFFER)
 		shock_stage_speed = 2
 
+	// Apply painkiller effects to shock stage reduction
+	var/painkiller_reduction = get_painkiller()
+	var/effective_shock_reduction = shock_stage_speed
+	if(painkiller_reduction > 0)
+		// Painkillers provide additional shock reduction
+		// More painkillers = faster shock recovery
+		effective_shock_reduction += min(painkiller_reduction / 10, 3) // Cap at 3 additional reduction per tick
+
 	//Handle shock
 	if(shock_stage <= traumatic_shock)	//Shock stage slowly climbs to traumatic shock
 		shock_stage = min(shock_stage + shock_stage_speed, traumatic_shock)
@@ -105,7 +113,7 @@
 			shock_stage = round(shock_stage / 2) * 2 //rounded to the nearest even sumber, so messages show up
 
 	else
-		shock_stage = max(shock_stage - shock_stage_speed, 0)
+		shock_stage = max(shock_stage - effective_shock_reduction, 0)
 		return
 
 	if(shock_resist || soft_crit_threshold > traumatic_shock)
@@ -172,3 +180,16 @@
 #undef SOFTCRIT_TRAUMATIC_SHOCK
 #undef HARDCRIT_TRAUMATIC_SHOCK
 #undef SHOCK_STAGE_BUFFER
+
+// Helper function to convert numeric shock stage to descriptive level
+/mob/living/carbon/proc/get_shock_level_text()
+	if(shock_stage <= 0)
+		return "None"
+	else if(shock_stage < 40)
+		return "Mild"
+	else if(shock_stage < 80)
+		return "Moderate"
+	else if(shock_stage < 120)
+		return "Severe"
+	else
+		return "Critical"
