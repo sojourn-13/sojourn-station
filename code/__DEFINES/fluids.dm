@@ -53,7 +53,7 @@
         } \
         if(F) { \
             if(F.fluid_amount >= FLUID_MAX_DEPTH) continue; \
-            if(!dry_run) SET_FLUID_DEPTH(F, FLUID_MAX_DEPTH); \
+            if(!dry_run) SET_FLUID_DEPTH(F, min(FLUID_MAX_DEPTH, F.fluid_amount + FLUID_DEEP)); \
         } \
     } \
     if(!flooded_a_neighbor) REMOVE_ACTIVE_FLUID_SOURCE(T)

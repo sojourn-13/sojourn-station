@@ -113,7 +113,7 @@
 /obj/item/organ/internal/vital/lungs/proc/rupture()
 	var/obj/item/organ/external/parent = owner.get_organ(parent_organ_base)
 	if(istype(parent))
-		owner.custom_pain("You feel a stabbing pain in your [parent.name]!", 50, affecting = parent)
+		owner.custom_pain("You feel a stabbing pain in your [parent.name]!", 50)
 	take_damage(min_broken_damage, BRUTE)
 
 //exposure to extreme pressures can rupture lungs

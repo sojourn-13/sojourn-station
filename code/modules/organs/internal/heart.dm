@@ -302,7 +302,7 @@
 
 			// Simplified arterial bleeding check
 			if(temp.status & ORGAN_BLEEDING && open_wound)
-				var/bleed_amount = floor(owner.vessel.total_volume / 400) * 2
+				var/bleed_amount = round(owner.vessel.total_volume / 400) * 2
 				if(bleed_amount)
 					blood_max += bleed_amount
 					do_spray += "[temp.name]"
@@ -328,7 +328,7 @@
 			//AB occurs every heartbeat, this only throttles the visible effect
 			next_blood_squirt = world.time + 80
 			var/turf/sprayloc = get_turf(owner)
-			blood_max -= owner.drip(ceil(blood_max/3), sprayloc)
+			blood_max -= owner.drip(round(blood_max/3) + 1, sprayloc)
 			if(blood_max > 0)
 				blood_max -= owner.blood_squirt(blood_max, sprayloc)
 				if(blood_max > 0)

@@ -10,18 +10,11 @@
 #define BLOOD_VOLUME_BAD      0.70
 #define BLOOD_VOLUME_SURVIVE  0.40
 
-// Chemical effects
-#define CE_ANTIBIOTIC   "antibiotic"
-#define CE_NOPULSE      "nopulse"
+// Chemical effects - Note: CE_ANTIBIOTIC is defined in chemistry.dm
+// CE_NOPULSE is defined in mobs.dm
 #define CE_BREATHLOSS   "breathloss"
 
-// Pulse constants
-#define PULSE_NONE     0
-#define PULSE_SLOW     1
-#define PULSE_NORM     2
-#define PULSE_FAST     3
-#define PULSE_2FAST    4
-#define PULSE_THREADY  5
+// Pulse constants are defined in mobs.dm
 
 // Organ status flags for new system
 #define ORGAN_ASSISTED  0x40  // Organ is being assisted
