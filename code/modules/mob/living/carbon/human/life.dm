@@ -91,11 +91,14 @@
 		if(!client)
 			species.handle_npc(src)
 
-		// Update HUD after organ processing to reflect current pulse
+		// Update HUD after organ processing to reflect current pulse - now updating much faster
 		handle_regular_hud_updates()
 
 	if(!handle_some_updates())
 		return											//We go ahead and process them 5 times for HUD images and other stuff though.
+
+	// Additional HUD updates for faster responsiveness - update health HUD more frequently
+	handle_regular_hud_updates()
 
 	//Update our name based on whether our face is obscured/disfigured
 	name = get_visible_name()
@@ -1090,9 +1093,9 @@
 				if(PULSE_NONE)
 					holder.icon_state = "hudhealth-100" // No pulse = dead state
 				if(PULSE_SLOW)
-					holder.icon_state = "hudhealth100" // Slow pulse = warning state (blue)
+					holder.icon_state = "hudhealth80" // Slow pulse = warning state (blue)
 				if(PULSE_NORM)
-					holder.icon_state = "hudhealth80" // Normal heart rate = healthy (green)
+					holder.icon_state = "hudhealth100" // Normal heart rate = healthy (green)
 				if(PULSE_FAST)
 					holder.icon_state = "hudhealth60" // Fast heart rate = moderate concern (yellow)
 				if(PULSE_2FAST)
