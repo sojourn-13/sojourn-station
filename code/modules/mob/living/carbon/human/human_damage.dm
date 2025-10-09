@@ -52,7 +52,9 @@
 	if(species && species.has_process[BP_BRAIN])
 		var/obj/item/organ/internal/vital/brain/sponge = random_organ_by_process(BP_BRAIN)
 		if(sponge)
-			sponge.take_damage(amount)
+			// Calculate the organ damage needed for the desired brain loss amount
+			var/target_organ_damage = (amount / 200) * sponge.max_damage
+			sponge.damage = target_organ_damage
 			brainloss = (sponge.damage / sponge.max_damage) * 200
 		else
 			brainloss = 200
@@ -67,7 +69,14 @@
 	if(species && species.has_process[BP_BRAIN])
 		var/obj/item/organ/internal/vital/brain/sponge = random_organ_by_process(BP_BRAIN)
 		if(sponge)
-			brainloss = (sponge.damage / sponge.max_damage) * 200
+			// Only recalculate brain loss from organ damage if:
+			// 1. The organ has actual damage AND
+			// 2. The calculated damage would be higher than current brainloss
+			// This preserves accumulated hypoxia damage and manual settings
+			if(sponge.damage > 0)
+				var/calculated_brainloss = (sponge.damage / sponge.max_damage) * 200
+				if(calculated_brainloss > brainloss)
+					brainloss = calculated_brainloss
 		else
 			brainloss = 200
 	else

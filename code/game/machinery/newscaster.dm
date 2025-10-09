@@ -234,7 +234,17 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 	if(!config)
 		return 0
 
+	// Temporary workaround: Disable database loading to prevent crashes
+	if(!config.sql_enabled)
+		log_world("DEBUG: Newscaster DB load disabled - SQL not enabled")
+		return 0
+
 	log_world("DEBUG: Newscaster attempting DB load. SQL enabled status: [config.sql_enabled]")
+
+	// Additional safety check for database connection
+	if(!dbcon)
+		log_world("DEBUG: Newscaster DB load skipped - no database connection")
+		return 0
 
 	// Load channels
 	var/DBQuery/q = dbcon.NewQuery("SELECT id, channel_name, author, locked, is_admin_channel, announcement FROM news_channels ORDER BY id ASC")

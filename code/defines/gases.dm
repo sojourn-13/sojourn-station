@@ -4,7 +4,7 @@
 	specific_heat = 20	// J/(mol*K)
 	molar_mass = 0.032	// kg/mol
 	flags = XGM_GAS_OXIDIZER | XGM_GAS_FUSION_FUEL
-	breathed_product = /datum/reagent/oxygen
+	breathed_product = "oxygen"
 
 /decl/xgm_gas/nitrogen
 	id = GAS_NITROGEN
@@ -23,7 +23,7 @@
 	name = "Methyl Bromide"
 	specific_heat = 42.59 // J/(mol*K)
 	molar_mass = 0.095	  // kg/mol
-	breathed_product = /datum/reagent/toxin/methyl_bromide
+	breathed_product = "methyl_bromide"
 
 /decl/xgm_gas/plasma
 	id = GAS_PLASMA
@@ -49,7 +49,7 @@
 	specific_heat = 40	// J/(mol*K)
 	molar_mass = 0.044	// kg/mol. N2O
 	flags = XGM_GAS_OXIDIZER //N2O is a powerful oxidizer
-	breathed_product = /datum/reagent/nitrous_oxide
+	breathed_product = "nitrous_oxide"
 
 /decl/xgm_gas/methane
 	id = GAS_METHANE
@@ -106,7 +106,7 @@
 	specific_heat = 80	// J/(mol*K)
 	molar_mass = 0.004	// kg/mol
 	flags = XGM_GAS_FUSION_FUEL
-	breathed_product = /datum/reagent/helium
+	breathed_product = "helium"
 
 /decl/xgm_gas/argon
 	id = GAS_ARGON
@@ -132,7 +132,7 @@
 	name = "Xenon"
 	specific_heat = 3	// J/(mol*K)
 	molar_mass = 0.054	// kg/mol
-	breathed_product = /datum/reagent/nitrous_oxide/xenon
+	breathed_product = "xenon"
 
 /decl/xgm_gas/nitrodioxide
 	id = GAS_NO2
@@ -141,7 +141,7 @@
 	specific_heat = 37	// J/(mol*K)
 	molar_mass = 0.054	// kg/mol
 	flags = XGM_GAS_OXIDIZER
-	breathed_product = /datum/reagent/toxin
+	breathed_product = "toxin"
 
 /decl/xgm_gas/nitricoxide
 	id = GAS_NO
@@ -159,7 +159,7 @@
 	specific_heat = 5	// J/(mol*K)
 	molar_mass = 0.017	// kg/mol
 	flags = XGM_GAS_CONTAMINANT
-	breathed_product = /datum/reagent/toxin/chlorine
+	breathed_product = "chlorine"
 
 /decl/xgm_gas/vapor
 	id = GAS_STEAM
@@ -185,14 +185,14 @@
 
 	specific_heat = 20	// J/(mol*K)
 	molar_mass = 0.017	// kg/mol
-	breathed_product = /datum/reagent/toxin/ammonia
+	breathed_product = "ammonia"
 
 /decl/xgm_gas/carbon_monoxide
 	id = GAS_CO
 	name = "Carbon Monoxide"
 	specific_heat = 30	// J/(mol*K)
 	molar_mass = 0.028	// kg/mol
-	breathed_product = /datum/reagent/carbon_monoxide
+	breathed_product = "carbon_monoxide"
 
 /decl/xgm_gas/boron
 	id = GAS_BORON
@@ -200,4 +200,4 @@
 	specific_heat = 11
 	molar_mass = 0.011
 	flags = XGM_GAS_FUSION_FUEL
-	breathed_product = /datum/reagent/toxin/boron
+	breathed_product = "boron"

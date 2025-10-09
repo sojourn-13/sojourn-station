@@ -23,6 +23,8 @@
 	nutriment_req = 6
 	var/mob/living/carbon/brain/brainmob = null
 	var/timer_id
+	var/last_hypoxia_damage = 0 // Timestamp of last brain damage application
+	var/round_start_grace = 0 // Timestamp when brain was installed in owner
 
 /obj/item/organ/internal/vital/brain/xeno
 	name = "thinkpan"

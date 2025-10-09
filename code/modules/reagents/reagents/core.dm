@@ -225,13 +225,16 @@
 // This is only really used to poison vox.
 /datum/reagent/oxygen
 	name = "Oxygen"
+	id = "oxygen"
 	description = "An ubiquitous oxidizing agent."
 	taste_description = "nothing"
 	reagent_state = LIQUID
 	color = COLOR_GRAY80
+	scannable = FALSE  // Don't show oxygen in medical scanners
 
 /datum/reagent/carbon_monoxide
 	name = "Carbon Monoxide"
+	id = "carbon_monoxide"
 	description = "A dangerous carbon comubstion byproduct."
 	taste_description = "stale air"
 	reagent_state = LIQUID
@@ -264,6 +267,7 @@
 
 /datum/reagent/helium
 	name = "Helium"
+	id = "helium"
 	description = "A noble gas. It makes your voice squeaky."
 	taste_description = "nothing"
 	reagent_state = LIQUID
@@ -272,6 +276,7 @@
 
 /datum/reagent/ammonia
 	name = "Ammonia"
+	id = "ammonia"
 	description = "A caustic substance commonly used in cleaning products."
 	taste_description = "cleaning products"
 	reagent_state = LIQUID

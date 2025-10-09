@@ -420,6 +420,7 @@
 		M.emote(pick("twitch", "blink_r", "shiver"))
 	M.add_chemical_effect(CE_SPEEDBOOST, 0.5)
 	M.add_chemical_effect(CE_PULSE, 2)
+	M.add_chemical_effect(CE_HEARTRESTART, effect_multiplier) // Powerful stimulant can restart heart
 	M.nutrition = max(M.nutrition - 0.5 * effect_multiplier, 0)
 	M.stats.addTempStat(STAT_VIG, -STAT_LEVEL_EXPERT, 60 SECONDS)
 
@@ -574,11 +575,13 @@
 
 /datum/reagent/nitrous_oxide
 	name = "Nitrous Oxide"
+	id = "nitrous_oxide"
 	description = "A chemical compound used as an anaesthetic and for pain relief."
 	taste_description = "nothing"
 	reagent_state = LIQUID
 	color = COLOR_GRAY80
 	metabolism = REM
+	scannable = TRUE  // Show nitrous oxide in medical scanners
 	var/do_giggle = TRUE
 
 /datum/reagent/nitrous_oxide/affect_blood(mob/living/carbon/M, removed)
@@ -608,6 +611,7 @@
 
 /datum/reagent/nitrous_oxide/xenon
 	name = "Xenon"
+	id = "xenon"
 	description = "A nontoxic gas used as a general anaesthetic."
 	do_giggle = FALSE
 	taste_description = "nothing"

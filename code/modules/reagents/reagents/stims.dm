@@ -123,6 +123,7 @@
 	M.stats.addTempStat(STAT_ROB, STAT_LEVEL_BASIC, STIM_TIME, "violence")
 	M.stats.addTempStat(STAT_VIG, -STAT_LEVEL_BASIC, STIM_TIME, "violence")
 	M.add_chemical_effect(CE_PULSE, 1)
+	M.add_chemical_effect(CE_HEARTRESTART, effect_multiplier * 0.3) // Mild heart restart capability
 	M.add_chemical_effect(CE_SPEECH_VOLUME, rand(3,4))
 
 /datum/reagent/stim/violence/withdrawal_act(mob/living/carbon/M)
@@ -313,6 +314,8 @@
 	M.stats.addTempStat(STAT_ROB, STAT_LEVEL_ADEPT, STIM_TIME, "violence_ultra")
 	M.stats.addTempStat(STAT_VIG, -STAT_LEVEL_BASIC, STIM_TIME, "violence_ultra")
 	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_BASIC, STIM_TIME, "violence_ultra")
+	M.add_chemical_effect(CE_HEARTRESTART, effect_multiplier * 0.8) // Strong stimulant can restart heart
+	M.add_chemical_effect(CE_PULSE, 2) // Also increases pulse rate
 
 /datum/reagent/stim/violence_ultra/withdrawal_act(mob/living/carbon/M)
 	M.stats.addTempStat(STAT_ROB, -STAT_LEVEL_BASIC, STIM_TIME, "violenceUltra_w")
@@ -634,6 +637,7 @@
 /datum/reagent/stim/reviver/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	if(prob(20 * effect_multiplier))
 		M.vomit()
+	M.add_chemical_effect(CE_HEARTRESTART, 3) // Very powerful heart restart for revival
 
 /datum/reagent/stim/reviver/on_mob_add(mob/living/carbon/human/L)
 	. = ..()

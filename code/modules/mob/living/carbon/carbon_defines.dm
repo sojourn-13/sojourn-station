@@ -35,6 +35,8 @@
 	var/lastpuke = 0
 
 	var/cpr_time = 1.0
+	var/cpr_successes = 0  // Track consecutive successful CPR attempts for heart restart
+	var/last_cpr_time = 0  // Track when last CPR was performed
 	nutrition = 400.0//Carbon
 
 	var/flesh_color = "#A10808"

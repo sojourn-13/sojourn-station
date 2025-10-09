@@ -17,6 +17,8 @@
 		lung_process()
 	if(should_have_process(OP_STOMACH))
 		stomach_process()
+	if(should_have_process(BP_BRAIN))  // Add brain processing
+		brain_process()
 	if(is_carrion(src))
 		carrion_process()
 
@@ -109,6 +111,10 @@
 	handle_heart_blood()
 
 /mob/living/carbon/human/proc/handle_pulse()
+	// Pulse is now handled by individual heart organs in heart.dm
+	// This legacy system is disabled to prevent conflicts with the advanced heart system
+
+	// Only handle robotic heart checks and death states
 	var/roboheartcheck = TRUE //Check if all hearts are robotic
 	for(var/obj/item/organ/internal/vital/heart in organ_list_by_process(OP_HEART))
 		if(!BP_IS_ROBOTIC(heart))
@@ -119,16 +125,13 @@
 		pulse = PULSE_NONE	//that's it, you're dead (or your metal heart is), nothing can influence your pulse
 		return
 
-	if(life_tick % 5 == 0)//update pulse every 5 life ticks (~1 tick/sec, depending on server load)
-		pulse = PULSE_NORM
+	// Handle special conditions that override heart pulse
+	if(status_flags & FAKEDEATH || chem_effects[CE_NOPULSE])
+		pulse = PULSE_NONE		//pretend that we're dead. unlike actual death, can be influenced by meds
+		return
 
-		if(get_blood_volume() * effective_blood_volume <= total_blood_req + BLOOD_VOLUME_BAD_MODIFIER)	//how much blood do we have
-			pulse  = PULSE_THREADY	//not enough :(
-
-		if(status_flags & FAKEDEATH || chem_effects[CE_NOPULSE])
-			pulse = PULSE_NONE		//pretend that we're dead. unlike actual death, can be inflienced by meds
-
-		pulse = CLAMP(pulse + chem_effects[CE_PULSE], PULSE_SLOW, PULSE_2FAST)
+	// Otherwise, let the heart organ handle pulse calculation and sync
+	// Heart organs will set owner.pulse = pulse automatically
 
 /mob/living/carbon/human/proc/handle_heart_blood()
 	var/heart_efficiency = get_organ_efficiency(OP_HEART)
@@ -182,6 +185,32 @@
 			adjustNutrition(-10)
 		else if(nutrition >= 200)
 			adjustNutrition(-2)
+
+
+/mob/living/carbon/human/proc/brain_process()
+	// Handle brain hypoxia damage from heart failure
+	// Only process if we have an organic brain
+	if(!should_have_process(BP_BRAIN))
+		return
+
+	var/obj/item/organ/internal/vital/brain/brain_organ = random_organ_by_process(BP_BRAIN)
+	if(!brain_organ || BP_IS_ROBOTIC(brain_organ))
+		return
+
+	// Apply brain damage from hypoxia when heart stops OR oxygen loss is below 100
+	if(pulse == PULSE_NONE || getOxyLoss() >= 100)
+		// Calculate brain damage based on oxygen loss percentage
+		var/oxygen_loss = getOxyLoss()
+		var/damage_amount = 10 // Base damage when heart stops (increased from 1)
+
+		if(oxygen_loss >= 100)
+			// Scale damage based on oxygen loss: 100 oxyloss = 10 damage, 150 oxyloss = 15 damage, 200 oxyloss = 20 damage, etc.
+			damage_amount = (oxygen_loss / 100) * 10
+
+		// Directly add to brainloss variable instead of using organ damage
+		brainloss = min(brainloss + damage_amount, 200) // Cap at 200 (max brain damage)
+		if(prob(50))
+			to_chat(src, SPAN_DANGER("Your brain is starved of oxygen!"))
 
 
 /mob/living/carbon/human/proc/lung_process()

@@ -38,6 +38,7 @@
 	matter = list(MATERIAL_BIOMATTER = 20)
 
 	var/death_time // limits organ self recovery
+	var/germ_level = 0				// Infection/contamination level - Ported from Baystation12
 
 /obj/item/organ/Destroy()
 	if(parent || owner)
@@ -136,31 +137,42 @@
 	if(loc != owner)
 		owner = null
 
-	//check if we've hit max_damage
-	if(damage >= max_damage)
-		die()
-
 	//dead already, no need for more processing
 	if(status & ORGAN_DEAD)
 		return
-	// Don't process if we're in a freezer, an MMI or a stasis bag.or a freezer or something I dunno
+
+	//check if we've hit max_damage
+	if(damage >= max_damage)
+		die()
+		return
+
+	//Process infections (Ported from Baystation12)
+	if (BP_IS_ROBOTIC(src) || (owner && owner.species && (owner.species.flags & NO_BREATHE)))
+		germ_level = 0
+		return
+
+	// Don't process if we're in a freezer, an MMI or a stasis bag.
 	if(is_in_stasis())
 		return
 
-	if(BP_IS_ROBOTIC(src))
-		return
-
-	if(!owner)
-		if(reagents)
-			var/datum/reagent/organic/blood/B = locate(/datum/reagent/organic/blood) in reagents.reagent_list
-			if(B && prob(40))
-				reagents.remove_reagent("blood",0.1)
-				blood_splatter(src,B,1)
+	if(!owner && reagents)
+		var/datum/reagent/organic/blood/B = locate(/datum/reagent/organic/blood) in reagents.reagent_list
+		if(B && prob(40))
+			reagents.remove_reagent("blood",0.1)
+			blood_splatter(src,B,1)
 		if(config.organs_decay)
-			if(prob(5))
-				take_damage(12, TOX)	// Will cause toxin accumulation wounds
-	else
+			take_damage(rand(1,3), BRUTE)
+		germ_level += rand(2,6)
+		if(germ_level >= INFECTION_LEVEL_TWO)
+			germ_level += rand(2,6)
+		if(germ_level >= INFECTION_LEVEL_THREE)
+			die()
+
+	else if(owner && owner.bodytemperature >= 170)	//cryo stops germs from moving and doing their bad stuffs
+		//** Handle antibiotics and curing infections
+		handle_antibiotics()
 		handle_rejection()
+		handle_germ_effects()
 
 /obj/item/organ/examine(mob/user)
 	..(user)
@@ -178,6 +190,58 @@
 			rejecting++ //Rejection severity increases over time.
 			if(rejecting % 10 == 0) //Only fire every ten rejection ticks.
 				take_damage(round(rejecting / 50), TOX)		// Will cause toxin accumulation wounds
+
+// Infection system functions - Ported from Baystation12
+/obj/item/organ/proc/handle_germ_effects()
+	//** Handle the effects of infections
+	if(!owner)
+		return
+
+	var/virus_immunity = owner.virus_immunity() //reduces the amount of times we need to call this proc
+	var/antibiotics = owner.reagents?.get_reagent_amount("spaceacillin") || 0
+
+	if (germ_level > 0 && germ_level < INFECTION_LEVEL_ONE/2 && prob(virus_immunity*0.3))
+		germ_level--
+
+	if (germ_level >= INFECTION_LEVEL_ONE/2)
+		//aiming for germ level to go from ambient to INFECTION_LEVEL_TWO in an average of 15 minutes, when immunity is full.
+		if(antibiotics < 5 && prob(round(germ_level/6 * owner.immunity_weakness() * 0.01)))
+			if(virus_immunity > 0)
+				germ_level += clamp(round(1/virus_immunity), 1, 10) // Immunity starts at 100. This doubles infection rate at 50% immunity. Rounded to nearest whole.
+			else // Will only trigger if immunity has hit zero. Once it does, 10x infection rate.
+				germ_level += 10
+
+	if(germ_level >= INFECTION_LEVEL_ONE)
+		var/fever_temperature = (owner.species.heat_level_1 - owner.species.body_temperature - 5)* min(germ_level/INFECTION_LEVEL_TWO, 1) + owner.species.body_temperature
+		owner.bodytemperature += clamp((fever_temperature - T0C)/BODYTEMP_COLD_DIVISOR + 1, 0, fever_temperature - owner.bodytemperature)
+
+	if (germ_level >= INFECTION_LEVEL_TWO)
+		var/obj/item/organ/external/parent_limb = owner.get_organ(parent_organ_base)
+		//spread germs
+		if (antibiotics < 5 && parent_limb && parent_limb.germ_level < germ_level && ( parent_limb.germ_level < INFECTION_LEVEL_ONE*2 || prob(owner.immunity_weakness() * 0.3) ))
+			parent_limb.germ_level++
+
+		if (prob(3))	//about once every 30 seconds
+			take_damage(1, BRUTE, silent=prob(30))
+
+//Germs
+/obj/item/organ/proc/handle_antibiotics()
+	if(!owner || !germ_level)
+		return
+
+	var/antibiotics = owner.chem_effects[CE_ANTIBIOTIC]
+	if (!antibiotics)
+		return
+
+	if (germ_level < INFECTION_LEVEL_ONE)
+		germ_level = 0	//cure instantly
+	else if (germ_level < INFECTION_LEVEL_TWO)
+		germ_level -= 5	//at germ_level == 500, this should cure the infection in 5 minutes
+	else
+		germ_level -= 3 //at germ_level == 1000, this will cure the infection in 10 minutes
+	if(owner && owner.lying)
+		germ_level -= 2
+	germ_level = max(0, germ_level)
 
 /obj/item/organ/proc/receive_chem(chemical as obj)
 	return FALSE
@@ -337,3 +401,46 @@
 
 /obj/item/organ/proc/is_usable()
 	return !(status & (ORGAN_CUT_AWAY|ORGAN_DEAD))
+
+// Medical scan results showing infection status - Ported from Baystation12
+/obj/item/organ/proc/get_scan_results(tag = FALSE)
+	. = list()
+	if(BP_IS_ROBOTIC(src))
+		. += tag ? "<span style='font-weight: bold; color: blue'>Mechanical</span>" : "Mechanical"
+	else if(status & ORGAN_ASSISTED)
+		. += tag ? "<span style='font-weight: bold; color: blue'>Assisted</span>" : "Assisted"
+
+	if(status & ORGAN_CUT_AWAY)
+		. += tag ? "<span style='font-weight: bold; color: red'>Severed</span>" : "Severed"
+	if(status & ORGAN_DEAD)
+		if(BP_IS_ROBOTIC(src))
+			if(can_recover())
+				. += tag ? "<span style='font-weight: bold; color: orange'>Failing</span>" : "Failing"
+			else
+				. += tag ? "<span style='font-weight: bold; color: red'>Irreparably Damaged</span>" : "Irreparably Damaged"
+		else
+			if(can_recover())
+				. += tag ? "<span style='font-weight: bold; color: orange'>Decaying</span>" : "Decaying"
+			else
+				. += tag ? "<span style='font-weight: bold; color: red'>Necrotic</span>" : "Necrotic"
+
+	// Infection status display
+	var/germ_message
+	switch (germ_level)
+		if (INFECTION_LEVEL_ONE to INFECTION_LEVEL_ONE + ((INFECTION_LEVEL_TWO - INFECTION_LEVEL_ONE) / 3))
+			germ_message = "Mild Infection"
+		if (INFECTION_LEVEL_ONE + ((INFECTION_LEVEL_TWO - INFECTION_LEVEL_ONE) / 3) to INFECTION_LEVEL_ONE + (2 * (INFECTION_LEVEL_TWO - INFECTION_LEVEL_ONE) / 3))
+			germ_message = "Mild Infection+"
+		if (INFECTION_LEVEL_ONE + (2 * (INFECTION_LEVEL_TWO - INFECTION_LEVEL_ONE) / 3) to INFECTION_LEVEL_TWO)
+			germ_message = "Moderate Infection"
+		if (INFECTION_LEVEL_TWO to INFECTION_LEVEL_TWO + ((INFECTION_LEVEL_THREE - INFECTION_LEVEL_TWO) / 3))
+			germ_message = "Moderate Infection+"
+		if (INFECTION_LEVEL_TWO + ((INFECTION_LEVEL_THREE - INFECTION_LEVEL_TWO) / 3) to INFECTION_LEVEL_TWO + (2 * (INFECTION_LEVEL_THREE - INFECTION_LEVEL_TWO) / 3))
+			germ_message = "Severe Infection"
+		if (INFECTION_LEVEL_TWO + (2 * (INFECTION_LEVEL_THREE - INFECTION_LEVEL_TWO) / 3) to INFECTION_LEVEL_THREE)
+			germ_message = "Severe Infection+"
+		if (INFECTION_LEVEL_THREE to INFINITY)
+			germ_message = "Septic"
+
+	if(germ_message)
+		. += tag ? "<span style='font-weight: bold; color: orange'>[germ_message]</span>" : germ_message

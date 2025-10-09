@@ -61,7 +61,17 @@
 		if(I_HELP)
 			if(can_operate(src, M) && do_surgery(src, M, null))
 				return 1
-			if(istype(H) && health < HEALTH_THRESHOLD_CRIT && health > HEALTH_THRESHOLD_DEAD)
+			// CPR can be performed on critical, dead, cardiac arrest, or severe oxygen loss patients
+			if(istype(H) && (health < HEALTH_THRESHOLD_CRIT || stat == DEAD || getOxyLoss() >= 80))
+				var/obj/item/organ/internal/vital/heart/heart = random_organ_by_process(OP_HEART)
+				var/cardiac_arrest = heart && (heart.pulse == PULSE_NONE) && !(heart.status & ORGAN_DEAD)
+				var/severe_oxyloss = getOxyLoss() >= 80
+
+				// Only perform CPR if they're critical/dead OR in cardiac arrest OR have severe oxygen loss
+				if(health >= HEALTH_THRESHOLD_CRIT && !cardiac_arrest && !severe_oxyloss)
+					help_shake_act(M)
+					return 1
+
 				if(!H.check_has_mouth())
 					to_chat(H, SPAN_DANGER("You don't have a mouth, you cannot perform CPR!"))
 					return
@@ -78,6 +88,10 @@
 				if (!cpr_time)
 					return 0
 
+				// Reset CPR success counter if too much time has passed (>30 seconds)
+				if(world.time > last_cpr_time + 300)  // 30 seconds in deciseconds
+					cpr_successes = 0
+
 				cpr_time = 0
 				spawn(30)
 					cpr_time = 1
@@ -88,11 +102,61 @@
 					return
 
 				var/cpr_efficiency = 3 + max(0, 2 * (H.stats.getStat(STAT_BIO) / 10))
-				adjustOxyLoss(-(min(getOxyLoss(), cpr_efficiency)))
-				updatehealth()
-				H.visible_message(SPAN_DANGER("\The [H] performs CPR on \the [src]!"))
-				to_chat(src, SPAN_NOTICE("You feel a breath of fresh air enter your lungs. It feels good."))
-				to_chat(H, SPAN_WARNING("Repeat at least every 7 seconds."))
+				var/skill_bonus = H.stats.getStat(STAT_BIO) / 5  // Biology skill helps with success rate
+
+				// Standard CPR - reduce oxygen loss if alive
+				if(stat != DEAD)
+					adjustOxyLoss(-(min(getOxyLoss(), cpr_efficiency)))
+					updatehealth()
+
+				// Heart restart attempt if in cardiac arrest, recently dead, or severe oxygen loss
+				var/heart_restart_attempted = FALSE
+				if(cardiac_arrest || (stat == DEAD && health > HEALTH_THRESHOLD_DEAD) || severe_oxyloss)
+					heart_restart_attempted = TRUE
+					cpr_successes++
+					last_cpr_time = world.time
+
+					// Calculate heart restart chance
+					var/restart_chance = 0
+					if(cpr_successes >= 3)  // Minimum 3 successful CPR attempts
+						restart_chance = 5 + (cpr_successes - 3) * 3 + skill_bonus  // Start at 5%, increase 3% per extra attempt + skill
+						restart_chance = min(restart_chance, 25)  // Cap at 25%
+
+					if(restart_chance > 0 && prob(restart_chance))
+						// Heart restart success!
+						if(heart)
+							heart.pulse = PULSE_SLOW  // Start with slow pulse
+							to_chat(src, SPAN_NOTICE("You feel your heart suddenly kick back to life!"))
+							to_chat(H, span_nicegreen("You feel a weak pulse returning under your hands!"))
+							H.visible_message(SPAN_NOTICE("\The [H] has successfully restarted [src]'s heart!"))
+
+							// Force immediate HUD update
+							hud_updateflag |= 1 << HEALTH_HUD
+							handle_regular_hud_updates()
+
+							// Reduce some oxygen damage from successful restart
+							adjustOxyLoss(-20)
+							updatehealth()
+
+							cpr_successes = 0  // Reset counter after success
+						else
+							to_chat(H, SPAN_WARNING("They don't have a heart to restart!"))
+
+				if(heart_restart_attempted)
+					if(cpr_successes == 1)
+						H.visible_message(SPAN_DANGER("\The [H] performs chest compressions on \the [src]!"))
+						to_chat(H, SPAN_WARNING("Continue CPR - you need multiple attempts to restart their heart. ([cpr_successes]/3 minimum)"))
+					else if(cpr_successes < 3)
+						H.visible_message(SPAN_DANGER("\The [H] continues chest compressions on \the [src]!"))
+						to_chat(H, SPAN_WARNING("Keep trying - you need at least 3 attempts to restart their heart. ([cpr_successes]/3)"))
+					else
+						H.visible_message(SPAN_DANGER("\The [H] performs intensive chest compressions on \the [src]!"))
+						var/chance_display = min(5 + (cpr_successes - 3) * 3 + skill_bonus, 25)
+						to_chat(H, SPAN_WARNING("Heart restart chance: [chance_display]%. Keep trying! ([cpr_successes] attempts)"))
+				else
+					H.visible_message(SPAN_DANGER("\The [H] performs CPR on \the [src]!"))
+					to_chat(src, SPAN_NOTICE("You feel a breath of fresh air enter your lungs. It feels good."))
+					to_chat(H, SPAN_WARNING("Repeat at least every 7 seconds."))
 
 			else
 				help_shake_act(M)

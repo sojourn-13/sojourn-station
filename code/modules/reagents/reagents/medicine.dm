@@ -21,6 +21,7 @@
 	M.adjustOxyLoss(-0.5 * effect_multiplier) // Should help stall for time against oxyloss killing you to heavy bloodloss or lung/heart damage until your eventual rescue, but won't heal it outright.
 	M.add_chemical_effect(CE_OXYGENATED, 1)
 	M.add_chemical_effect(CE_BLOODCLOT, 0.1) // Emergency stop bleeding, still lowest tier
+	M.add_chemical_effect(CE_HEARTRESTART, effect_multiplier * 0.5) // Weak heart restart capability
 
 /datum/reagent/medicine/bicaridine
 	name = "Bicaridine"
@@ -287,6 +288,7 @@
 				return
 			if(C.damage > 0)
 				C.damage = max(C.damage - 5 * removed, 0)
+	M.add_chemical_effect(CE_HEARTRESTART, 1.5) // Strong heart restart capability
 
 /datum/reagent/medicine/dexalin
 	name = "Dexalin"

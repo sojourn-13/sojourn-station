@@ -91,6 +91,9 @@
 		if(!client)
 			species.handle_npc(src)
 
+		// Update HUD after organ processing to reflect current pulse
+		handle_regular_hud_updates()
+
 	if(!handle_some_updates())
 		return											//We go ahead and process them 5 times for HUD images and other stuff though.
 
@@ -422,41 +425,7 @@
 	var/inhaled_gas_used = inhaling/6
 	breath.adjust_gas(breath_type, -inhaled_gas_used, update = 0) //update afterwards
 
-	/*
-		Unified gas -> reagent inhalation system:
-		For any gas with gas_data.breathed_product[g] defined we absorb 1/BREATH_ABSORPTION_DIVISOR
-		of its present moles in the sampled breath, convert to reagent units using
-		BREATHED_REAGENT_MOLES_PER_UNIT, and add to bloodstream.
-
-		Special handling (sleeping_agent / GAS_N2O): replicate old staged effects by enforcing
-		minimum reagent doses according to partial pressure tiers (kPa):
-		  >5 kPa  -> at least 7u (old 2 + additional 5 sleep dose)
-		  >1 kPa  -> at least 2u (paralysis tier)
-		  >0.15 kPa -> at least 1u (warning tier)
-	*/
-	if(reagents && lung_efficiency > 0)
-		for(var/g in breath.gas)
-			var/current_moles = breath.gas[g]
-			if(!current_moles)
-				continue
-			var/product_path = gas_data.breathed_product[g]
-			if(!product_path)
-				continue
-			var/absorbed = current_moles / BREATH_ABSORPTION_DIVISOR
-			if(absorbed <= 0)
-				continue
-			breath.adjust_gas(g, -absorbed, update = 0)
-			var/amount = absorbed / BREATHED_REAGENT_MOLES_PER_UNIT
-			if(g == GAS_N2O)
-				var/SA_pp = (current_moles / max(breath.total_moles, 0.0001)) * breath_pressure
-				if(SA_pp > 5 && amount < 7)
-					amount = 7
-				else if(SA_pp > 1 && amount < 2)
-					amount = 2
-				else if(SA_pp > 0.15 && amount < 1)
-					amount = 1
-			if(amount > 0)
-				reagents.add_reagent(product_path, amount, safety = 1)
+	// Gas -> reagent inhalation is now handled by the lungs organ in lungs.dm
 
 	if(exhale_type)
 		breath.adjust_gas_temp(exhale_type, inhaled_gas_used, bodytemperature, update = 0) //update afterwards
@@ -504,7 +473,24 @@
 	// Were we able to breathe?
 	var/failed_breath = failed_inhale || failed_exhale
 	if (!failed_breath)
-		adjustOxyLoss(-5)
+		// Check if blood can actually carry oxygen before healing oxygen loss
+		var/blood_oxygenation = get_blood_oxygenation()
+
+		// Reduced oxygen healing if blood can't carry oxygen properly
+		if(blood_oxygenation >= BLOOD_VOLUME_OKAY)
+			adjustOxyLoss(-5) // Full effectiveness
+		else if(blood_oxygenation >= BLOOD_VOLUME_BAD)
+			adjustOxyLoss(-3) // Reduced effectiveness
+		else if(blood_oxygenation >= BLOOD_VOLUME_SURVIVE)
+			adjustOxyLoss(-1) // Minimal effectiveness
+		// If blood oxygenation is below survival levels, breathing doesn't help much
+
+		// Add feedback for poor blood circulation affecting breathing
+		if(blood_oxygenation < BLOOD_VOLUME_BAD && prob(10))
+			if(blood_oxygenation < BLOOD_VOLUME_SURVIVE)
+				to_chat(src, SPAN_DANGER("You're breathing but you still feel breathless!"))
+			else
+				to_chat(src, SPAN_WARNING("Your breathing feels less effective than it should be."))
 
 	handle_temperature_effects(breath)
 
@@ -876,19 +862,14 @@
 			blinded = 1
 			silent = 0
 			return 1
-		if(health <= death_threshold) //No health = death
-			if(stats.getPerk(PERK_UNFINISHED_DELIVERY) && prob(33)) //Unless you have this perk
-				heal_organ_damage(20, 20)
-				adjustOxyLoss(-100)
-				AdjustSleeping(rand(20,30))
-				updatehealth()
-				stats.removePerk(PERK_UNFINISHED_DELIVERY)
-				learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/return_to_sender, "RETURN_TO_SENDER", skill_gained = 1, learner = src)
-			else
-				death()
-				blinded = 1
-				silent = 0
-				return 1
+
+		// Brain death - critical brain damage causes death regardless of other health
+		if(species.has_process[BP_BRAIN] && getBrainLoss() >= 200) //Complete brain death
+			to_chat(src, SPAN_DANGER("Your brain can no longer sustain life..."))
+			death()
+			blinded = 1
+			silent = 0
+			return 1
 
 		//UNCONSCIOUS. NO-ONE IS HOME
 		if(getOxyLoss() > (species.total_health/2))
@@ -897,7 +878,19 @@
 		if(hallucination_power)
 			handle_hallucinations()
 
-		if(paralysis || sleeping)
+		// Check for injury-induced unconsciousness from severe trauma or brain damage
+		var/injury_unconscious = FALSE
+		if(health <= HEALTH_THRESHOLD_SOFTCRIT) // At or below soft critical (0 health)
+			injury_unconscious = TRUE
+		else if(getBrainLoss() >= 60) // Significant brain damage
+			injury_unconscious = TRUE
+		else
+			// Calculate total injury severity for pain-induced unconsciousness
+			var/total_damage = getBruteLoss() + getFireLoss() + getToxLoss()
+			if(total_damage >= 80) // High total damage
+				injury_unconscious = TRUE
+
+		if(paralysis || sleeping || injury_unconscious)
 			blinded = 1
 			stat = UNCONSCIOUS
 			adjustHalLoss(-3)
@@ -916,6 +909,16 @@
 				if(prob(2) && health)
 					spawn(0)
 						emote("snore")
+
+			// Display injury unconsciousness messages
+			if(injury_unconscious && !paralysis && !sleeping)
+				if(prob(10)) // Occasional pain messages while unconscious
+					if(getBrainLoss() >= 60)
+						to_chat(src, SPAN_DANGER("Your damaged brain struggles to maintain consciousness..."))
+					else if(health <= HEALTH_THRESHOLD_SOFTCRIT)
+						to_chat(src, SPAN_DANGER("The pain from your injuries overwhelms your consciousness..."))
+					else
+						to_chat(src, SPAN_DANGER("Waves of agony wash over your battered body..."))
 		//CONSCIOUS
 		else
 			stat = CONSCIOUS
@@ -1065,13 +1068,23 @@
 				if(blood_percent * effective_blood_volume <= total_blood_req + BLOOD_VOLUME_BAD_MODIFIER)
 					holder.add_overlay("hud_low_blood")
 
-			var/crit_health = (health / maxHealth) * 100
-			var/external_health = (1 - (limb_health ? limb_damage / limb_health : 0)) * 100
-			var/internal_health = (1 - (organ_health ? organ_damage / organ_health : 0)) * 100
-
-			var/percentage_health = RoundHealth(min(crit_health, external_health, internal_health))	// Old: RoundHealth((health-HEALTH_THRESHOLD_CRIT)/(maxHealth-HEALTH_THRESHOLD_CRIT)*100)
-
-			holder.icon_state = "hud[percentage_health]"
+			// Heart rate based medical HUD alerts - prioritize living/dead status first
+			var/current_pulse = pulse()
+			switch(current_pulse)
+				if(PULSE_NONE)
+					holder.icon_state = "hudhealth-100" // No pulse = dead state
+				if(PULSE_SLOW)
+					holder.icon_state = "hudhealth100" // Slow pulse = warning state (blue)
+				if(PULSE_NORM)
+					holder.icon_state = "hudhealth80" // Normal heart rate = healthy (green)
+				if(PULSE_FAST)
+					holder.icon_state = "hudhealth60" // Fast heart rate = moderate concern (yellow)
+				if(PULSE_2FAST)
+					holder.icon_state = "hudhealth40" // Very fast, dangerous = poor health (orange)
+				if(PULSE_THREADY)
+					holder.icon_state = "hudhealth10" // Critical arrhythmia = critical health (red)
+				else
+					holder.icon_state = "hudhealth100" // Default fallback = healthy (blue)
 		hud_list[HEALTH_HUD] = holder
 
 	if (BITTEST(hud_updateflag, LIFE_HUD))
@@ -1214,6 +1227,15 @@
 	sanity.setLevel(sanity.max_level)
 	restore_blood()
 
+	// Restart heart pulse if we have a heart - similar to defib functionality but better
+	var/obj/item/organ/internal/vital/heart/heart = random_organ_by_process(OP_HEART)
+	if(heart && !(heart.status & ORGAN_DEAD))
+		heart.pulse = PULSE_NORMAL  // Start with normal pulse as this is admin healing
+		pulse = PULSE_NORMAL  // Sync to owner for scanner/HUD compatibility
+		// Force immediate HUD update to show heart restarted
+		hud_updateflag |= 1 << HEALTH_HUD
+		handle_regular_hud_updates()
+
 	// If a limb was missing, regrow
 	if(LAZYLEN(organs) < 7)
 		var/list/tags_to_grow = list(BP_HEAD, BP_CHEST, BP_GROIN, BP_L_ARM, BP_R_ARM, BP_L_LEG, BP_R_LEG)
@@ -1284,3 +1306,103 @@
 		sight |= SEE_MOBS
 	if(CE_DARKSIGHT in chem_effects)//TODO: Move this to where it belongs, doesn't work without being right here for now. -Kaz/k5.
 		see_invisible = min(see_invisible, chem_effects[CE_DARKSIGHT])
+
+// Immunity and infection system functions - Ported from Baystation12
+/mob/living/carbon/human/proc/virus_immunity()
+	// Base immunity of 100
+	var/immunity = 100
+
+	// Reduce immunity based on shock/damage
+	if(shock_stage)
+		immunity -= shock_stage / 2
+
+	// Reduce immunity based on health
+	if(health < maxHealth)
+		immunity -= (maxHealth - health) / 2
+
+	// Reduce immunity if we're malnourished
+	if(nutrition < 250)
+		immunity -= (250 - nutrition) / 10
+
+	// Chemical effects
+	if(chem_effects[CE_TOXIN])
+		immunity -= chem_effects[CE_TOXIN] * 10
+
+	return max(immunity, 0)
+
+/mob/living/carbon/human/proc/immunity_weakness()
+	var/immunity = virus_immunity()
+	return max(100 - immunity, 10) // Returns weakness from 10 to 100
+
+// Medical system support functions
+/mob/living/carbon/human/proc/InStasis()
+	return stat == DEAD || (status_flags & GODMODE)
+
+/mob/living/carbon/human/proc/is_real_dead()
+	return stat == DEAD
+
+/mob/living/carbon/human/proc/drip(amount, location)
+	if(!amount || amount <= 0)
+		return 0
+
+	if(!vessel || !vessel.total_volume)
+		return 0
+
+	var/actual_amount = min(amount, vessel.total_volume)
+
+	if(location)
+		vessel.trans_to(location, actual_amount)
+	else
+		vessel.remove_reagent(/datum/reagent/organic/blood, actual_amount)
+
+	return actual_amount
+
+/mob/living/carbon/human/proc/blood_squirt(amount, location)
+	if(!amount || amount <= 0)
+		return 0
+
+	if(!vessel || !vessel.total_volume)
+		return 0
+
+	var/actual_amount = min(amount, vessel.total_volume)
+
+	// Create blood splatter at location
+	if(location && isturf(location))
+		new /obj/effect/decal/cleanable/blood/splatter(location)
+		vessel.remove_reagent(/datum/reagent/organic/blood, actual_amount)
+	else
+		vessel.remove_reagent(/datum/reagent/organic/blood, actual_amount)
+
+	return actual_amount
+
+// Enhanced blood circulation handling - checks for oxygen transport issues
+/mob/living/carbon/human/handle_blood()
+	if(!need_breathe())
+		return
+
+	var/blood_oxygenation = get_blood_oxygenation()
+
+	// If blood circulation is severely impaired, cause oxygen loss even if breathing
+	if(blood_oxygenation < BLOOD_VOLUME_OKAY)
+		var/oxygen_loss_rate = 0
+
+		if(blood_oxygenation < BLOOD_VOLUME_SURVIVE)
+			oxygen_loss_rate = 3 // Severe hypoxia
+			if(prob(5))
+				to_chat(src, SPAN_DANGER("You feel like you're suffocating despite breathing!"))
+		else if(blood_oxygenation < BLOOD_VOLUME_BAD)
+			oxygen_loss_rate = 2 // Moderate hypoxia
+			if(prob(3))
+				to_chat(src, SPAN_WARNING("You feel dizzy and short of breath."))
+		else
+			oxygen_loss_rate = 1 // Mild hypoxia
+			if(prob(1))
+				to_chat(src, SPAN_NOTICE("You feel a bit lightheaded."))
+
+		adjustOxyLoss(oxygen_loss_rate)
+
+		// Update oxygen alert based on circulation issues
+		if(blood_oxygenation < BLOOD_VOLUME_SURVIVE)
+			oxygen_alert = max(oxygen_alert, 2)
+		else if(blood_oxygenation < BLOOD_VOLUME_BAD)
+			oxygen_alert = max(oxygen_alert, 1)

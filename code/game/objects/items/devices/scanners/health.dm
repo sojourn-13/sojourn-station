@@ -242,6 +242,21 @@
 								var/wsev = wd["severity"]
 								var/wsevmax = wd["severity_max"]
 								dat += text("<span class='highlight'>        - [] (Severity: [] / [])</span>", wname, wsev, wsevmax)
+
+						// Add infection status - Ported from Baystation12
+						if(I.germ_level)
+							var/infection_color = "green"
+							var/infection_text = "Clean"
+							if(I.germ_level >= INFECTION_LEVEL_THREE)
+								infection_color = "red"
+								infection_text = "Septic"
+							else if(I.germ_level >= INFECTION_LEVEL_TWO)
+								infection_color = "orange"
+								infection_text = "Severe Infection"
+							else if(I.germ_level >= INFECTION_LEVEL_ONE)
+								infection_color = "yellow"
+								infection_text = "Mild Infection"
+							dat += text("<span class='highlight'>    <font color='[]'>Infection Status: []</font></span>", infection_color, infection_text)
 		else
 			dat += span("highlight", "Limbs are OK.")
 		dat += "<hr>"
@@ -281,12 +296,14 @@
 		dat += SPAN_WARNING("Subject appears to have cellular corruption.")
 	if (M.has_brain_worms())
 		dat += SPAN_WARNING("Subject has an anomalous neural pattern. Further investigation required.")
-	else if (M.getBrainLoss() >= 60 || !M.has_brain())
+	else if ((M.getBrainLoss() >= 60 || !M.has_brain()) && M.stat == DEAD)
 		dat += SPAN_WARNING("Subject is brain dead.")
+	else if (M.getBrainLoss() >= 60)
+		dat += SPAN_WARNING("Critical brain damage detected. Subject requires immediate medical attention.")
 	else if (M.getBrainLoss() >= 25)
 		dat += SPAN_WARNING("Severe brain damage detected. Subject likely to have a traumatic brain injury.")
 	else if (M.getBrainLoss() >= 10)
-		dat += SPAN_WARNING("Significant brain damage detected. Subject may have had a concussion.")
+		dat += SPAN_WARNING("Significant brain damage detected. Subject may have had a minor brain injury.")
 
 	if(H.vessel)
 		var/blood_volume = H.vessel.get_reagent_amount("blood")
@@ -301,4 +318,31 @@
 		else
 			dat += span("highlight", "Blood Level Normal: [blood_percent]% [blood_volume]cl. Type: [blood_type]")
 	dat += "<span class='highlight'>Subject's pulse: <font color='[H.pulse() == PULSE_THREADY || H.pulse() == PULSE_NONE ? "red" : "#0080ff"]'>[H.get_pulse(GETPULSE_TOOL)] bpm.</font></span>"
+
+	// Add shock status display
+	if(H.shock_stage)
+		var/shock_text = ""
+		var/shock_color = ""
+		if(H.shock_stage < 40)
+			shock_text = "Mild shock detected"
+			shock_color = "#ffaa00"
+		else if(H.shock_stage < 80)
+			shock_text = "Moderate shock detected"
+			shock_color = "#ff6600"
+		else if(H.shock_stage < 120)
+			shock_text = "Severe shock detected"
+			shock_color = "#ff3300"
+		else
+			shock_text = "CRITICAL shock detected"
+			shock_color = "#ff0000"
+
+		dat += "<font color='[shock_color]'><b>[shock_text]</b> (Stage: [H.shock_stage])</font>"
+
+		// Advanced scanner shows more detailed shock information
+		if(advanced)
+			dat += "<font color='[shock_color]'>Traumatic shock level: [H.traumatic_shock]</font>"
+			if(H.shock_stage >= 60)
+				dat += "<font color='red'>Warning: Cardiac arrhythmia risk elevated</font>"
+			if(H.shock_stage >= 120)
+				dat += "<font color='red'>Danger: Cardiac arrest risk high</font>"
 	. = jointext(dat, "<br>")

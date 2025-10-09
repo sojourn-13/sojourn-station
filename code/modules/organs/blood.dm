@@ -260,8 +260,9 @@ proc/blood_splatter(var/target,var/datum/reagent/organic/blood/source,var/large)
 
 	if(!need_breathe())
 		return blood_volume
-	else
-		blood_volume = 100
+
+	// Don't override blood_volume here - use the actual circulation volume!
+	// blood_volume = 100  // <-- This was the bug!
 
 	var/blood_volume_mod = max(0, 1 - getOxyLoss()/(species.total_health/2))
 	var/oxygenated_mult = 0

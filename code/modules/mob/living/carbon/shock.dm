@@ -115,18 +115,22 @@
 
 	if(shock_stage == 30)
 		to_chat(src, "<span class='danger'>[pick("It hurts so much", "You really need some painkillers", "Dear god, the pain")]!</span>")
+		to_chat(src, "<span class='warning'>Your heart starts beating faster.</span>")
 
 	if(shock_stage >= 60)
 		if(shock_stage == 60)
 			emote("me",1,"is having trouble keeping their eyes open.")
+			to_chat(src, "<span class='warning'>Your heart is pounding rapidly in your chest.</span>")
 		stuttering = max(stuttering, 5)
 
 	if(shock_stage == 80)
 		to_chat(src, "<span class='danger'>[pick("The pain is excruciating", "Please, just end the pain", "Your whole body is going numb")]!</span>")
+		to_chat(src, "<span class='danger'>Your heart feels like it's going to beat out of your chest!</span>")
 
 	if (shock_stage >= 100)
 		if(shock_stage == 100)
 			emote("me",1,"'s body becomes limp.")
+			to_chat(src, "<span class='danger'>Your heart rhythm becomes dangerously irregular!</span>")
 		if(prob(2))
 			to_chat(src, "<span class='danger'>[pick("The pain is excruciating", "Please, just end the pain", "Your whole body is going numb")]!</span>")
 			Weaken(10)
@@ -135,6 +139,14 @@
 		if(prob(5))
 			to_chat(src, "<span class='danger'>[pick("The pain is excruciating", "Please, just end the pain", "Your whole body is going numb")]!</span>")
 			Weaken(10)
+		if(shock_stage == 120)
+			to_chat(src, "<span class='userdanger'>Your heart feels like it might stop at any moment!</span>")
+
+	if(shock_stage >= 140)
+		if(shock_stage == 140)
+			to_chat(src, "<span class='userdanger'>Your heart is beating erratically, skipping beats!</span>")
+		if(prob(2))
+			to_chat(src, "<span class='userdanger'>Your heart skips several beats!</span>")
 
 	if(shock_stage >= hard_crit_threshold)
 		enter_hard_crit()
