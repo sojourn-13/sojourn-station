@@ -46,17 +46,15 @@
         if((next.fluid_blocked_dirs & GLOB.reverse_dir[spread_dir]) || !next.CanFluidPass(spread_dir)) continue; \
         flooded_a_neighbor = TRUE; \
         var/obj/effect/fluid/F = locate() in next; \
-        if(!F && !dry_run) { \
+        if(!F) { \
             F = new /obj/effect/fluid(next); \
             var/datum/gas_mixture/GM = T:return_air(); \
             if(GM) F.temperature = GM.temperature; \
         } \
         if(F) { \
             if(F.fluid_amount >= FLUID_MAX_DEPTH) continue; \
-            if(!dry_run) { \
-                var/new_amount = min(FLUID_MAX_DEPTH, F.fluid_amount + FLUID_DEEP); \
-				SET_FLUID_DEPTH(F, new_amount); \
-            } \
+			var/new_amount = min(FLUID_MAX_DEPTH, F.fluid_amount + FLUID_DEEP); \
+			SET_FLUID_DEPTH(F, new_amount); \
         } \
     } \
     if(!flooded_a_neighbor) REMOVE_ACTIVE_FLUID_SOURCE(T)
