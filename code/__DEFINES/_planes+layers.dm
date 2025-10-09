@@ -90,6 +90,8 @@ What is the naming convention for planes or layers?
 #define TURF_DECAL_LAYER 2.039 //Makes turf decals appear in DM how they will look inworld.
 #define ABOVE_OPEN_TURF_LAYER 2.04
 #define CLOSED_TURF_LAYER 2.05
+#define SHALLOW_FLUID_LAYER 2.06
+#define DEEP_FLUID_LAYER 2.07
 #define ABOVE_NORMAL_TURF_LAYER 2.08
 #define LATTICE_LAYER 2.2
 #define DISPOSAL_PIPE_LAYER 2.3

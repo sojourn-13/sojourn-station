@@ -67,6 +67,7 @@
 
 	//Check if we're on fire
 	handle_fire()
+	handle_fluids()
 
 	update_pulling()
 
@@ -120,6 +121,47 @@
 
 /mob/living/proc/handle_environment(var/datum/gas_mixture/environment)
 	return
+
+/mob/living/proc/handle_fluids()
+	current_fluid_depth = 0
+	if(stat == DEAD)
+		last_drown_tick = 0
+		return
+
+	var/turf/T = get_turf(src)
+	if(!istype(T))
+		last_drown_tick = 0
+		return
+
+	var/obj/effect/fluid/F = T.GetFluid()
+	if(!F || F.fluid_amount <= FLUID_EVAPORATION_POINT)
+		last_drown_tick = 0
+		return
+
+	current_fluid_depth = max(0, F.fluid_amount)
+
+	if(on_fire && current_fluid_depth >= FLUID_EXTINGUISH_THRESHOLD)
+		ExtinguishMob()
+	else if(fire_stacks && current_fluid_depth >= FLUID_SHALLOW)
+		adjust_fire_stacks(-1)
+
+	if(waterproof || never_stimulate_air)
+		return
+
+	if(current_fluid_depth >= FLUID_OVER_MOB_HEAD)
+		if(world.time >= last_drown_tick)
+			last_drown_tick = world.time + FLUID_DROWN_TICK
+			var/oxy_damage = max(1, round(FLUID_DROWN_OXY_DAMAGE * max(0.1, oxy_mod_perk)))
+			adjustOxyLoss(oxy_damage)
+			if(client && stat != DEAD)
+				to_chat(src, SPAN_DANGER("You are drowning!"))
+	else
+		// Allow immediate drowning damage if re-submerged
+		last_drown_tick = world.time
+
+/mob/living/fluid_contact(obj/effect/fluid/source, depth)
+	..()
+	handle_fluids()
 
 /mob/living/proc/update_pulling()
 	if(pulling)

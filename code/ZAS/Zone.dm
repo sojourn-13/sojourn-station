@@ -166,6 +166,36 @@ Class Procs:
 		if(E.sleeping)
 			E.recheck()
 
+	// Handle condensation from the air.
+	for(var/g in air.gas)
+		var/product = gas_data.condensation_products[g]
+		if(product && air.temperature <= gas_data.condensation_points[g])
+			var/condensation_area = air.group_multiplier
+			var/list/condensation_turfs = list()
+
+			// Collect turfs where we'll spawn water
+			for(var/turf/simulated/T in contents)
+				if(condensation_area > 0)
+					condensation_turfs += T
+					condensation_area--
+
+			// Condense gas and spawn fluid
+			for(var/turf/simulated/T in condensation_turfs)
+				if(locate(/obj/item/device/transfer_valve) in T)
+					continue
+				var/condense_amt = min(air.gas[g], rand(3,5))
+				if(condense_amt < 1)
+					break
+				air.adjust_gas(g, -condense_amt)
+
+				if(product == /datum/reagent/water)
+					var/depth_gain = condense_amt * FLUID_CONDENSE_MULTIPLIER
+					var/obj/effect/fluid/F = T.GetFluid()
+					if(F)
+						F.add_depth(depth_gain)
+					else
+						new /obj/effect/fluid(T, depth_gain)
+
 
 	// Update atom temperature.
 	if(abs(air.temperature - last_air_temperature) >= 10) // 10K threshold
@@ -174,6 +204,10 @@ Class Procs:
 			for(var/check_atom in T.contents)
 				var/atom/checking = check_atom
 				if(checking.simulated)
+					if(istype(checking, /obj/item/device/transfer_valve))
+						continue
+					if(istype(checking.loc, /obj/item/device/transfer_valve))
+						continue
 					// Don't temperature equilibrate tanks inside TTVs - they need precise control
 					if(istype(checking, /obj/item/tank))
 						var/obj/item/tank/tank = checking
