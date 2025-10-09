@@ -410,6 +410,9 @@
 	var/toxins_pp = (poison/breath.total_moles)*breath_pressure
 	var/exhaled_pp = (exhaling/breath.total_moles)*breath_pressure
 
+	var/SA_para_min = 1
+	var/SA_sleep_min = 5
+
 	// Not enough to breathe
 	if(inhale_pp < safe_pressure_min)
 		if(prob(20))
@@ -470,9 +473,22 @@
 	else
 		plasma_alert = 0
 
+	// If there's some other shit in the air lets deal with it here.
+	if(breath.gas["sleeping_agent"])
+		var/SA_pp = (breath.gas["sleeping_agent"] / breath.total_moles) * breath_pressure
+		if(SA_pp > SA_para_min)		// Enough to make us paralysed for a bit
+			reagents.add_reagent("sagent", 2)
+			if(SA_pp > SA_sleep_min)	// Enough to make us sleep as well
+				reagents.add_reagent("sagent", 5)
+		else if(SA_pp > 0.15)	// There is sleeping gas in their lungs, but only a little, so give them a bit of a warning
+			reagents.add_reagent("sagent", 1)
+
+		breath.adjust_gas("sleeping_agent", -breath.gas["sleeping_agent"]/6, update = 0) //update after
+
 	// Were we able to breathe?
 	var/failed_breath = failed_inhale || failed_exhale
 	if (!failed_breath)
+		adjustOxyLoss(-5)
 		// Check if blood can actually carry oxygen before healing oxygen loss
 		var/blood_oxygenation = get_blood_oxygenation()
 
