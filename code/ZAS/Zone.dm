@@ -166,7 +166,6 @@ Class Procs:
 		if(E.sleeping)
 			E.recheck()
 
-
 	LEGACY_SEND_SIGNAL(src, COMSIG_ZAS_TICK, src)
 
 /zone/proc/dbg_data(mob/M)
