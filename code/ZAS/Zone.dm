@@ -166,18 +166,6 @@ Class Procs:
 		if(E.sleeping)
 			E.recheck()
 
-	// Handle condensation from the air.
-	for(var/g in air.gas)
-		var/product = gas_data.condensation_products[g]
-		if(product && air.temperature <= gas_data.condensation_points[g])
-			var/condensation_area = air.group_multiplier
-			while(condensation_area > 0)
-				condensation_area--
-				var/condense_amt = min(air.gas[g], rand(3,5))
-				if(condense_amt < 1)
-					break
-				air.adjust_gas(g, -condense_amt)
-				// TODO: Add fluid system integration when available
 
 	// Update atom temperature.
 	if(abs(air.temperature - last_air_temperature) >= 10) // 10K threshold
