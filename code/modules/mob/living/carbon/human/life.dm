@@ -380,9 +380,9 @@
 	if(!breath)
 		return FALSE
 	//vars - feel free to modulate if you want more effects that are not gained with efficiency
-	var/breath_type = species.breath_type ? species.breath_type : "oxygen"
-	var/poison_type = species.poison_type ? species.poison_type : "plasma"
-	var/exhale_type = species.exhale_type ? species.exhale_type : 0
+	var/breath_type = species.breath_type ? species.breath_type : GAS_OXYGEN
+	var/poison_type = species.poison_type ? species.poison_type : GAS_PLASMA
+	var/exhale_type = species.exhale_type ? species.exhale_type : GAS_CO2
 
 	var/min_breath_pressure = species.breath_pressure
 
@@ -413,17 +413,14 @@
 	var/toxins_pp = (poison/breath.total_moles)*breath_pressure
 	var/exhaled_pp = (exhaling/breath.total_moles)*breath_pressure
 
-	var/SA_para_min = 1
-	var/SA_sleep_min = 5
-
 	// Not enough to breathe
 	if(inhale_pp < safe_pressure_min)
 		if(prob(20))
 			emote("gasp")
 
-		var/ratio = inhale_pp/safe_pressure_min
+		var/inhale_ratio = inhale_pp/safe_pressure_min
 		// Don't fuck them up too fast (space only does HUMAN_MAX_OXYLOSS after all!)
-		adjustOxyLoss(max(HUMAN_MAX_OXYLOSS*(1-ratio), 0))
+		adjustOxyLoss(max(HUMAN_MAX_OXYLOSS*(1-inhale_ratio), 0))
 		failed_inhale = 1
 
 	oxygen_alert = failed_inhale
@@ -431,7 +428,29 @@
 	var/inhaled_gas_used = inhaling/6
 	breath.adjust_gas(breath_type, -inhaled_gas_used, update = 0) //update afterwards
 
-	// Gas -> reagent inhalation is now handled by the lungs organ in lungs.dm
+	// Gas -> reagent inhalation processing - moved from lungs.dm
+	// Pass reagents from breathed gases into our body.
+	// Presumably if you breathe it you have a specialized metabolism for it, so we drop/ignore breath_type. Also avoids
+	// humans processing thousands of units of oxygen over the course of a round for the sole purpose of poisoning vox.
+	var/gas_conversion_ratio = 1 // Removed robotic check since this is in human life processing
+	// Process gas-to-reagent conversion regardless of breathing efficiency - you still inhale gases even with poor oxygen uptake
+	for(var/gasname in breath.gas)
+		// Skip the primary breath type to avoid processing massive amounts of oxygen
+		if(gasname == breath_type)
+			continue
+		var/breathed_product = gas_data.breathed_product[gasname]
+		if(breathed_product)
+			var/reagent_amount
+			// Special case for nitrous oxide - absorb 5 units per breath regardless of gas concentration
+			if(gasname == GAS_N2O && breath.gas[gasname] > 0)
+				reagent_amount = 5.0 // Fixed 5 units per breath for nitrous oxide
+			else
+				reagent_amount = breath.gas[gasname] * REAGENT_GAS_EXCHANGE_FACTOR * gas_conversion_ratio
+			// Little bit of sanity so we aren't trying to add 0.0000000001 units of CO2, and so we don't end up with 99999 units of CO2.
+			if(reagent_amount >= 0.05)
+				reagents.add_reagent(breathed_product, reagent_amount)
+				breath.adjust_gas(gasname, -breath.gas[gasname]/6, update = 0) // Consume 1/6th like other gases
+			// Moved after reagent injection so we don't instantly clear toxins
 
 	if(exhale_type)
 		breath.adjust_gas_temp(exhale_type, inhaled_gas_used, bodytemperature, update = 0) //update afterwards
@@ -451,8 +470,8 @@
 			warn_prob = 1
 			alert = 1
 			failed_exhale = 1
-			var/ratio = 1 - (safe_exhaled_max - exhaled_pp)/(safe_exhaled_max*0.3)
-			if (getOxyLoss() < 50*ratio)
+			var/exhale_ratio = 1 - (safe_exhaled_max - exhaled_pp)/(safe_exhaled_max*0.3)
+			if (getOxyLoss() < 50*exhale_ratio)
 				oxyloss = HUMAN_MAX_OXYLOSS
 		else if(exhaled_pp > safe_exhaled_max * 0.6)
 			word = pick("a little dizzy","short of breath")
@@ -468,25 +487,13 @@
 	// Too much poison in the air.
 
 	if(toxins_pp > safe_toxins_max)
-		var/ratio = CLAMP((poison/safe_toxins_max) * 10, MIN_TOXIN_DAMAGE, MAX_TOXIN_DAMAGE)
+		var/toxin_damage_ratio = CLAMP((poison/safe_toxins_max) * 10, MIN_TOXIN_DAMAGE, MAX_TOXIN_DAMAGE)
 		var/obj/item/organ/internal/I = pick(internal_organs_by_efficiency[OP_LUNGS])
-		I.take_damage(4 * ratio, TOX)
+		I.take_damage(4 * toxin_damage_ratio, TOX)
 		breath.adjust_gas(poison_type, -poison/6, update = 0) //update after
 		plasma_alert = 1
 	else
 		plasma_alert = 0
-
-	// If there's some other shit in the air lets deal with it here.
-	if(breath.gas["sleeping_agent"])
-		var/SA_pp = (breath.gas["sleeping_agent"] / breath.total_moles) * breath_pressure
-		if(SA_pp > SA_para_min)		// Enough to make us paralysed for a bit
-			reagents.add_reagent("nitrous_oxide", 2)
-			if(SA_pp > SA_sleep_min)	// Enough to make us sleep as well
-				reagents.add_reagent("nitrous_oxide", 5)
-		else if(SA_pp > 0.15)	// There is sleeping gas in their lungs, but only a little, so give them a bit of a warning
-			reagents.add_reagent("nitrous_oxide", 1)
-
-		breath.adjust_gas("sleeping_agent", -breath.gas["sleeping_agent"]/6, update = 0) //update after
 
 	// Were we able to breathe?
 	var/failed_breath = failed_inhale || failed_exhale
@@ -701,7 +708,7 @@
 
 	return
 
-/*
+
 /mob/living/carbon/human/proc/adjust_body_temperature(current, loc_temp, boost)
 	var/temperature = current
 	var/difference = abs(current-loc_temp)	//get difference
@@ -718,7 +725,7 @@
 		temperature = max(loc_temp, temperature-change)
 	temp_change = (temperature - current)
 	return temp_change
-*/
+
 
 /mob/living/carbon/human/proc/stabilize_body_temperature()
 	if (species.passive_temp_gain) // We produce heat naturally.

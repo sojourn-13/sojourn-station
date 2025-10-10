@@ -203,19 +203,8 @@
 			take_damage(1, BURN, 0, 1)
 
 	// Pass reagents from breathed gases into our body.
-	// Presumably if you breathe it you have a specialized metabolism for it, so we drop/ignore breath_type. Also avoids
-	// humans processing thousands of units of oxygen over the course of a round for the sole purpose of poisoning vox.
-	var/ratio = BP_IS_ROBOTIC(src)? 0.66 : 1
-	if(!failed_inhale)
-		for(var/gasname in breath.gas - breath_type)
-			var/breathed_product = gas_data.breathed_product[gasname]
-			if(breathed_product)
-				var/reagent_amount = breath.gas[gasname] * REAGENT_GAS_EXCHANGE_FACTOR * ratio
-				// Little bit of sanity so we aren't trying to add 0.0000000001 units of CO2, and so we don't end up with 99999 units of CO2.
-				if(reagent_amount >= 0.05)
-					owner.vessel.add_reagent(breathed_product, reagent_amount)
-					breath.adjust_gas(gasname, -breath.gas[gasname], update = 0) //update after
-				// Moved after reagent injection so we don't instantly clear toxins
+	// This logic has been moved to life.dm for better integration
+	// Gas->reagent conversion now handled in life.dm
 
 	last_successful_breath = world.time
 	breathing = 1

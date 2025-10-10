@@ -391,9 +391,13 @@
 /obj/machinery/body_scanconsole/proc/format_scan_body(var/list/occ)
 	var/dat = list()
 
-	// Add facial disfigurement warning if present
+	// Add systemic organ failure warning if present
+	if(occ["systemic_organ_failure"])
+		dat += "<div class='notice' style='color: red; font-weight: bold; border: 2px solid red; padding: 5px;'>⚠ CRITICAL: MAJOR SYSTEMIC ORGAN FAILURE DETECTED ⚠</div><br>"
+
+	// Add facial disfigurement warning if present (less intrusive)
 	if(occ["face_mangled"])
-		dat += "<div class='notice' style='color: black; font-weight: bold;'>⚠ FACIAL DISFIGUREMENT DETECTED ⚠</div><br>"
+		dat += "<div class='notice' style='color: black; font-style: italic; font-size: 0.9em;'>Note: Facial disfigurement detected</div><br>"
 
 	// Organ status table
 	dat += "<table class='block' width='95%'>"
@@ -572,13 +576,30 @@
 		"species_organs" = H.species.has_process, //Just pass a reference for this, it shouldn't ever be modified outside of the datum.
 		"NSA" = max(0, H.metabolism_effects.get_nsa()),
 		"NSA_threshold" = H.metabolism_effects.nsa_threshold,
-		"face_mangled" = FALSE
+		"face_mangled" = FALSE,
+		"systemic_organ_failure" = FALSE
 		)
 
 	// Check if face is mangled/disfigured
 	var/obj/item/organ/external/head = H.get_organ(BP_HEAD)
 	if(head && head.disfigured)
 		occupant_data["face_mangled"] = TRUE
+
+	// Check for systemic organ failure (3+ vital organs with wounds of severity 1+)
+	var/vital_organs_with_wounds = 0
+	for(var/obj/item/organ/internal/I in H.internal_organs)
+		// Check if this is a vital organ (heart, lungs, brain, liver, etc.)
+		if(istype(I, /obj/item/organ/internal/vital) || I.vital)
+			// Check if it has wounds with severity >= 1
+			var/list/wounds = I.GetComponents(/datum/component/internal_wound)
+			for(var/datum/component/internal_wound/IW in wounds)
+				if(IW.severity >= 1)
+					vital_organs_with_wounds++
+					break // Only count this organ once even if it has multiple wounds
+	
+	if(vital_organs_with_wounds >= 3)
+		// 3 or more vital organs with wounds = systemic organ failure
+		occupant_data["systemic_organ_failure"] = TRUE
 
 	return occupant_data
 

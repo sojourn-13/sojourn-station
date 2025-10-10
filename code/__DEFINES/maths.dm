@@ -13,7 +13,7 @@
 #define IDEAL_GAS_ENTROPY_CONSTANT 1164    // (mol^3 * s^3) / (kg^3 * L).
 
 // Gas-to-reagent conversion factor for breathing
-#define REAGENT_GAS_EXCHANGE_FACTOR 10
+#define REAGENT_GAS_EXCHANGE_FACTOR 50
 
 // Radiation constants.
 #define STEFAN_BOLTZMANN_CONSTANT    5.6704e-8 // W/(m^2*K^4).

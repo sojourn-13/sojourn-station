@@ -196,6 +196,26 @@
 	else // Otherwise, a green color for our nominal NSA
 		dat += span("highlight", "Neural System Accumulation: <font color='green'>[NSA] / [NSA_MAX]</font>")
 
+	// Check for systemic organ failure (3+ vital organs with wounds of severity 1+)
+	var/vital_organs_with_wounds = 0
+	for(var/obj/item/organ/internal/I in H.internal_organs)
+		// Check if this is a vital organ (heart, lungs, brain, liver, etc.)
+		if(istype(I, /obj/item/organ/internal/vital) || I.vital)
+			// Check if it has wounds with severity >= 1
+			var/list/wounds = I.GetComponents(/datum/component/internal_wound)
+			for(var/datum/component/internal_wound/IW in wounds)
+				if(IW.severity >= 1)
+					vital_organs_with_wounds++
+					break // Only count this organ once even if it has multiple wounds
+	
+	if(vital_organs_with_wounds >= 3)
+		dat += span("highlight", "<font color='red'><b>⚠ CRITICAL: MAJOR SYSTEMIC ORGAN FAILURE ⚠</b></font>")
+
+	// Check for facial disfigurement (less intrusive)
+	var/obj/item/organ/external/head = H.get_organ(BP_HEAD)
+	if(head && head.disfigured)
+		dat += span("highlight", "<font color='#666'><i>Note: Facial disfigurement detected</i></font>")
+
 	if(M.tod && (M.stat == DEAD || (M.status_flags & FAKEDEATH)))
 		dat += span("highlight", "Time of Death: [M.tod]")
 	if(mode == 1)
