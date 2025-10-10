@@ -57,41 +57,13 @@
 	//update_client_colour()
 
 /mob/living/carbon/human/proc/kidney_process()
-	var/base_kidneys_efficiency = get_organ_efficiency(OP_KIDNEYS)
-	var/toxin_penalty = min(chem_effects[CE_TOXIN] * 3, 40) // Kidneys are more sensitive to toxins than liver
-	var/kidneys_efficiency = max(0, base_kidneys_efficiency - toxin_penalty) * (1 + chem_effects[CE_PURGER])
+	var/kidneys_efficiency = get_organ_efficiency(OP_KIDNEYS) * (1 + chem_effects[CE_PURGER])
 	var/obj/item/organ/internal/kidney = random_organ_by_process(OP_KIDNEYS)
 	var/chem_toxicity = chem_effects[CE_BLOODCLOT] + chem_effects[CE_SPEEDBOOST]
 	var/toxin_strength = chem_effects[CE_TOXIN] * IORGAN_KIDNEY_TOX_RATIO + chem_toxicity
 
-	// Toxin damage calculation - full strength regardless of efficiency
-	var/toxin_damage = kidney ? max(0, (toxin_strength / (stats.getPerk(PERK_BLOOD_OF_LEAD) ? 2 : 1))) : 0
-
-	// Check if both kidneys are dead
-	var/dead_kidneys = 0
-	var/total_kidneys = 0
-	for(var/obj/item/organ/internal/kidney/K in internal_organs)
-		total_kidneys++
-		if(K.status & ORGAN_DEAD)
-			dead_kidneys++
-
-	// Kidney failure effects
-	if(dead_kidneys >= 2 || (dead_kidneys >= 1 && total_kidneys == 1)) // Both kidneys dead or only kidney dead
-		// Complete kidney failure - severe toxin buildup
-		add_chemical_effect(CE_TOXIN, 1.5)
-		if(prob(3))
-			to_chat(src, SPAN_DANGER("You feel extremely ill as waste products accumulate in your blood..."))
-	else if(kidneys_efficiency < DEAD_2_EFFICIENCY) // Severely damaged kidneys
-		// Failing kidneys generate some toxin buildup
-		if(prob(10))
-			add_chemical_effect(CE_TOXIN, 0.3)
-
-	// Enhanced toxin damage for kidneys
-	if(toxin_strength > 8 && kidney) // Lower threshold than liver since kidneys are more sensitive
-		var/extra_damage = (toxin_strength - 8) * 0.15
-		toxin_damage += extra_damage
-		if(toxin_strength > 15 && prob(3))
-			to_chat(src, SPAN_WARNING("Your back aches as toxins strain your kidneys..."))
+	// Existing damage is subtracted to prevent weaker toxins from maxing out tox wounds on the organ
+	var/toxin_damage = kidney ? (toxin_strength / (stats.getPerk(PERK_BLOOD_OF_LEAD) ? 2 : 1)) - (kidneys_efficiency / 100) - kidney.damage * 2 : 0
 
 	// Organ functions
 	// Blood regeneration if there is some space
@@ -101,18 +73,6 @@
 	if(kidneys_efficiency < BROKEN_2_EFFICIENCY)
 		if(toxin_strength > 0)
 			apply_damage(toxin_strength, TOX)	// If your kidneys aren't working, your body will start to take damage
-
-		// Secondary organ failure when kidneys fail
-		if(kidneys_efficiency < DEAD_2_EFFICIENCY && prob(2))
-			var/list/other_organs = list()
-			for(var/obj/item/organ/internal/I in internal_organs)
-				if(I != kidney && !BP_IS_ROBOTIC(I) && !(I.status & ORGAN_DEAD))
-					other_organs += I
-			if(other_organs.len)
-				var/obj/item/organ/internal/target = pick(other_organs)
-				target.take_damage(0.3, TOX) // Less damage than liver failure
-				if(prob(8))
-					to_chat(src, SPAN_WARNING("Your [target.name] struggles as kidney failure affects your entire system..."))
 
 	if(toxin_damage > 0 && kidney)
 		kidney.take_damage(toxin_damage, TOX)
@@ -126,7 +86,7 @@
 	// Existing damage is subtracted to prevent weaker toxins from maxing out tox wounds on the organ
 	var/toxin_damage = liver ? (toxin_strength / (stats.getPerk(PERK_BLOOD_OF_LEAD) ? 2 : 1)) - (liver_efficiency / 100) - liver.damage * 2 : 0
 
-	// Check if liver is dead first - dead livers don't filter anything
+	// Check if liver is dead - dead livers cause systematic organ failure
 	if(!liver || (liver.status & ORGAN_DEAD))
 		// Dead liver can't process toxins and generates waste products
 		if(liver)
@@ -167,48 +127,6 @@
 				adjustNutrition(-5)
 		return // Exit early - dead liver does nothing else
 
-	// Living liver processing starts here
-	var/base_liver_efficiency = get_organ_efficiency(OP_LIVER)
-	var/toxin_penalty = min(chem_effects[CE_TOXIN] * 2, 30) // Toxins reduce efficiency by up to 30%
-
-	// Additional strain from actively filtering toxins - liver works harder when processing more toxins
-	var/toxin_filtering_strain = 0
-	if(toxin_strength > 2) // Only apply strain when there's significant toxin load
-		toxin_filtering_strain = min((toxin_strength - 2) * 3, 25) // Up to 25% efficiency loss from strain
-		if(toxin_filtering_strain > 15 && prob(2))
-			to_chat(src, SPAN_WARNING("Your liver feels overworked from filtering toxins..."))
-
-	// Calculate effective liver efficiency with all penalties
-	liver_efficiency = max(0, base_liver_efficiency - toxin_penalty - toxin_filtering_strain) * (1 + chem_effects[CE_ANTITOX])
-
-	// Apply efficiency loss directly to the liver organ
-	if(liver && (toxin_penalty > 0 || toxin_filtering_strain > 0))
-		var/efficiency_loss_percentage = (toxin_penalty + toxin_filtering_strain)
-		// Directly modify the liver's organ efficiency - this affects the organ permanently until reset
-		liver.organ_efficiency[OP_LIVER] = max(0, liver.initial_organ_efficiency[OP_LIVER] - efficiency_loss_percentage)
-
-	// Severely damaged but not dead liver still generates some toxins
-	if(liver_efficiency < DEAD_2_EFFICIENCY)
-		if(prob(20)) // Increased chance
-			add_chemical_effect(CE_TOXIN, 1.0) // Increased toxin generation
-
-	// Enhanced toxin damage system - only for living livers
-	if(toxin_strength > 10) // High toxin levels damage liver over time
-		var/extra_damage = (toxin_strength - 10) * 0.1
-		toxin_damage += extra_damage
-		if(toxin_strength > 20 && prob(2))
-			to_chat(src, SPAN_WARNING("Your abdomen aches as toxins strain your liver..."))
-
-	// Toxin efficiency penalty feedback
-	var/total_efficiency_loss = toxin_penalty + toxin_filtering_strain
-	if(total_efficiency_loss > 20 && prob(3))
-		if(toxin_filtering_strain > 15)
-			to_chat(src, SPAN_DANGER("Your liver is severely strained from filtering heavy toxin loads!"))
-		else if(toxin_penalty > 25)
-			to_chat(src, SPAN_DANGER("Your liver feels severely poisoned and sluggish!"))
-		else
-			to_chat(src, SPAN_WARNING("You feel toxins interfering with your liver function..."))
-
 	// Bad stuff
 	// If you're not filtering well, you're in trouble. Ammonia buildup to toxic levels and damage from alcohol
 	if(liver_efficiency < BROKEN_2_EFFICIENCY)
@@ -217,19 +135,7 @@
 		if(toxin_strength > 0)
 			apply_damage(toxin_strength, TOX)	// If your liver isn't working, your body will start to take damage
 
-		// Systematic organ failure begins when liver is severely damaged
-		if(liver_efficiency < DEAD_2_EFFICIENCY && prob(3))
-			var/list/other_organs = list()
-			for(var/obj/item/organ/internal/I in internal_organs)
-				if(I != liver && !BP_IS_ROBOTIC(I) && !(I.status & ORGAN_DEAD))
-					other_organs += I
-			if(other_organs.len)
-				var/obj/item/organ/internal/target = pick(other_organs)
-				target.take_damage(0.5, TOX)
-				if(prob(10))
-					to_chat(src, SPAN_WARNING("Your [target.name] feels strained from the systemic toxin buildup..."))
-
-	if(toxin_damage > 0)
+	if(toxin_damage > 0 && liver)
 		liver.take_damage(toxin_damage, TOX)
 
 	// Blood loss or liver damage make you lose nutriments
@@ -246,10 +152,6 @@
 	handle_heart_blood()
 
 /mob/living/carbon/human/proc/handle_pulse()
-	// Pulse is now handled by individual heart organs in heart.dm
-	// This legacy system is disabled to prevent conflicts with the advanced heart system
-
-	// Only handle robotic heart checks and death states
 	var/roboheartcheck = TRUE //Check if all hearts are robotic
 	for(var/obj/item/organ/internal/vital/heart in organ_list_by_process(OP_HEART))
 		if(!BP_IS_ROBOTIC(heart))
@@ -260,18 +162,19 @@
 		pulse = PULSE_NONE	//that's it, you're dead (or your metal heart is), nothing can influence your pulse
 		return
 
-	// Handle special conditions that override heart pulse
-	if(status_flags & FAKEDEATH || chem_effects[CE_NOPULSE])
-		pulse = PULSE_NONE		//pretend that we're dead. unlike actual death, can be influenced by meds
-		return
+	if(life_tick % 5 == 0)//update pulse every 5 life ticks (~1 tick/sec, depending on server load)
+		pulse = PULSE_NORM
 
-	// Otherwise, let the heart organ handle pulse calculation and sync
-	// Heart organs will set owner.pulse = pulse automatically
+		if(get_blood_volume() * effective_blood_volume <= total_blood_req + BLOOD_VOLUME_BAD_MODIFIER)  //how much blood do we have
+			pulse  = PULSE_THREADY  //not enough :(
+
+		if(status_flags & FAKEDEATH || chem_effects[CE_NOPULSE])
+			pulse = PULSE_NONE		//pretend that we're dead. unlike actual death, can be inflienced by meds
+
+		pulse = CLAMP(pulse + chem_effects[CE_PULSE], PULSE_SLOW, PULSE_2FAST)
 
 /mob/living/carbon/human/proc/handle_heart_blood()
-	var/base_heart_efficiency = get_organ_efficiency(OP_HEART)
-	var/toxin_penalty = min(chem_effects[CE_TOXIN] * 2.5, 35) // Toxins affect heart performance
-	var/heart_efficiency = max(0, base_heart_efficiency - toxin_penalty)
+	var/heart_efficiency = get_organ_efficiency(OP_HEART)
 	var/blood_oxygenation = 0.4 * chem_effects[CE_OXYGENATED]
 	var/blood_volume = get_blood_volume() // Percentage.
 
@@ -284,6 +187,8 @@
 
 	//Effects of bloodloss
 	var/blood_safe = total_blood_req + BLOOD_VOLUME_SAFE_MODIFIER
+	var/blood_okay = total_blood_req + BLOOD_VOLUME_OKAY_MODIFIER
+	var/blood_bad = total_blood_req + BLOOD_VOLUME_BAD_MODIFIER
 
 	if(blood_volume < total_blood_req)
 		status_flags |= BLEEDOUT
@@ -291,6 +196,28 @@
 			to_chat(src, SPAN_WARNING("Your organs feel extremely heavy"))
 	else
 		status_flags &= ~BLEEDOUT
+
+	if(blood_volume < 1)
+		eye_blurry = max(eye_blurry,6)
+		adjustOxyLoss(20)
+		if(prob(15))
+			to_chat(src, SPAN_WARNING("You feel [pick("extremely tired","terribly weak","the world fade around you")]"))
+	else if(blood_volume < blood_bad)
+		eye_blurry = max(eye_blurry,6)
+		adjustOxyLoss(10)
+		if(prob(15))
+			to_chat(src, SPAN_WARNING("You feel very [pick("dizzy","woosey","faint")]"))
+	else if(blood_volume < blood_okay)
+		eye_blurry = max(eye_blurry,6)
+		adjustOxyLoss(5)
+		if(prob(15))
+			Weaken(rand(1,3))
+			to_chat(src, SPAN_WARNING("You feel [pick("dizzy","woosey","faint")]"))
+	else if(blood_volume < blood_safe)
+		if(prob(1))
+			to_chat(src, SPAN_WARNING("You feel slightly [pick("dizzy","woosey","faint")]"))
+		if(getOxyLoss() < 10)
+			adjustOxyLoss(1)
 
 	// Blood loss or heart damage make you lose nutriments
 	if(blood_volume < blood_safe || heart_efficiency < BRUISED_2_EFFICIENCY)
