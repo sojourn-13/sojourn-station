@@ -235,6 +235,9 @@
 	add_fingerprint(usr)
 
 	if(href_list["scan"])
+		// Play button click sound
+		playsound(src.loc, 'sound/machines/machine_switch.ogg', 50)
+		
 		if (!connected.occupant)
 			to_chat(usr, SPAN_WARNING("The body scanner is empty."))
 			return TOPIC_REFRESH
@@ -242,20 +245,26 @@
 			to_chat(usr, SPAN_WARNING("The body scanner cannot scan that lifeform."))
 			return TOPIC_REFRESH
 
-		var/list/scan_data = connected.get_occupant_data()
-		stored_scan_data = scan_data // Store for later access
-		SSnano.update_uis(src)
-
 		usr.visible_message(
 			SPAN_NOTICE("\The [usr] performs a scan using \the [src]."),
 			SPAN_NOTICE("You run a full-body diagnostic using \the [src]."),
 			"<i>You hear a series of beeps, followed by a deep humming sound.</i>"
 		)
-		playsound(src.loc, 'sound/machines/medbayscanner1.ogg', 50)
+
+		// Wait 0.5 seconds before displaying scan results and playing completion sound
+		spawn(5) // 5 deciseconds = 0.5 seconds
+			var/list/scan_data = connected.get_occupant_data()
+			stored_scan_data = scan_data // Store for later access
+			SSnano.update_uis(src)
+			// Play scan completion sound after delay
+			playsound(src.loc, 'sound/machines/beep-scan.mp3', 50)
 
 		return TOPIC_REFRESH
 
 	if(href_list["print"])
+		// Play button click sound
+		playsound(src.loc, 'sound/machines/machine_switch.ogg', 50)
+		
 		if(!stored_scan_data)
 			to_chat(usr, SPAN_WARNING("Error: No scan stored."))
 			return TOPIC_REFRESH
@@ -266,6 +275,9 @@
 		return TOPIC_REFRESH
 
 	if(href_list["erase"])
+		// Play button click sound
+		playsound(src.loc, 'sound/machines/machine_switch.ogg', 50)
+		
 		stored_scan_data = null
 		return TOPIC_REFRESH
 
