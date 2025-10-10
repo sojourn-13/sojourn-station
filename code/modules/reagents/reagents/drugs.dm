@@ -614,6 +614,23 @@
 	name = "Xenon"
 	id = "xenon"
 	description = "A nontoxic gas used as a general anaesthetic."
-	do_giggle = FALSE
 	taste_description = "nothing"
 	color = COLOR_GRAY80
+
+/datum/reagent/nitrous_oxide/xenon/affect_blood(mob/living/carbon/M, removed)
+	var/effective_dose = dose / 2
+	dose *= 0.75 // Reduce the dose to prevent buildup from little N2O
+	if(M.species?.reagent_tag == IS_SLIME)
+		return
+	if(issmall(M))
+		effective_dose *= 2
+	if(effective_dose < 1.5)
+		M.eye_blurry = max(M.eye_blurry, 10)
+	else if(effective_dose < 5)
+		if(prob(50))
+			M.Weaken(2)
+		M.drowsyness = max(M.drowsyness, 20)
+	else
+		M.sleeping = max(M.sleeping, 20)
+		M.drowsyness = max(M.drowsyness, 60)
+	M.add_chemical_effect(CE_PULSE, -1)

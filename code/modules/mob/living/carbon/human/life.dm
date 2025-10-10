@@ -441,9 +441,9 @@
 		var/breathed_product = gas_data.breathed_product[gasname]
 		if(breathed_product)
 			var/reagent_amount
-			// Special case for nitrous oxide - absorb 5 units per breath regardless of gas concentration
+			// Special case for nitrous oxide - absorb 3 units per breath regardless of gas concentration
 			if(gasname == GAS_N2O && breath.gas[gasname] > 0)
-				reagent_amount = 5.0 // Fixed 5 units per breath for nitrous oxide
+				reagent_amount = 2.0 + breath.gas[gasname] * REAGENT_GAS_EXCHANGE_FACTOR * gas_conversion_ratio
 			else
 				reagent_amount = breath.gas[gasname] * REAGENT_GAS_EXCHANGE_FACTOR * gas_conversion_ratio
 			// Little bit of sanity so we aren't trying to add 0.0000000001 units of CO2, and so we don't end up with 99999 units of CO2.
