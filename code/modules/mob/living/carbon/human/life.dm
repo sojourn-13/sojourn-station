@@ -34,6 +34,7 @@
 	var/temperature_alert = 0
 	var/in_stasis = 0
 	var/pulse = PULSE_NORM
+	var/breath_failure_count = 0 // Tracks consecutive breathing failures for blood oxygenation
 	var/global/list/overlays_cache = null
 
 /mob/living/carbon/human/Life()
@@ -67,11 +68,8 @@
 		process_internal_organs()
 		handle_blood()
 		stabilize_body_temperature() //Body temperature adjusts itself (self-regulation)
-
 		handle_shock()
-
 		handle_pain()
-
 		handle_medical_side_effects()
 
 		if(life_tick % 2)	//Upadated every 2 life ticks, lots of for loops in this, needs to feel smother in the UI
@@ -1401,34 +1399,4 @@
 
 	return actual_amount
 
-// Enhanced blood circulation handling - checks for oxygen transport issues
-/mob/living/carbon/human/handle_blood()
-	if(!need_breathe())
-		return
-
-	var/blood_oxygenation = get_blood_oxygenation()
-
-	// Only apply oxygen loss damage if blood oxygenation is below 80%
-	if(blood_oxygenation < 80)
-		var/oxygen_loss_rate = 0
-
-		if(blood_oxygenation < BLOOD_VOLUME_SURVIVE * 100)
-			oxygen_loss_rate = 10 // Severe hypoxia
-			if(prob(5))
-				to_chat(src, SPAN_DANGER("You feel like you're suffocating despite breathing!"))
-		else if(blood_oxygenation < BLOOD_VOLUME_BAD * 100)
-			oxygen_loss_rate = 5 // Moderate hypoxia
-			if(prob(3))
-				to_chat(src, SPAN_WARNING("You feel dizzy and short of breath."))
-		else
-			oxygen_loss_rate = 1 // Mild hypoxia
-			if(prob(1))
-				to_chat(src, SPAN_NOTICE("You feel a bit lightheaded."))
-
-		adjustOxyLoss(oxygen_loss_rate)
-
-		// Update oxygen alert based on circulation issues
-		if(blood_oxygenation < BLOOD_VOLUME_SURVIVE * 100)
-			oxygen_alert = max(oxygen_alert, 2)
-		else if(blood_oxygenation < BLOOD_VOLUME_BAD * 100)
-			oxygen_alert = max(oxygen_alert, 1)
+// Note: handle_blood() has been moved to blood.dm to consolidate blood-related processing
