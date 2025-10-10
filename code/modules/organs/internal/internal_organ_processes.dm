@@ -57,13 +57,15 @@
 	//update_client_colour()
 
 /mob/living/carbon/human/proc/kidney_process()
-	var/kidneys_efficiency = get_organ_efficiency(OP_KIDNEYS) * (1 + chem_effects[CE_PURGER])
+	var/base_kidneys_efficiency = get_organ_efficiency(OP_KIDNEYS)
+	var/toxin_penalty = min(chem_effects[CE_TOXIN] * 3, 40) // Kidneys are more sensitive to toxins than liver
+	var/kidneys_efficiency = max(0, base_kidneys_efficiency - toxin_penalty) * (1 + chem_effects[CE_PURGER])
 	var/obj/item/organ/internal/kidney = random_organ_by_process(OP_KIDNEYS)
 	var/chem_toxicity = chem_effects[CE_BLOODCLOT] + chem_effects[CE_SPEEDBOOST]
 	var/toxin_strength = chem_effects[CE_TOXIN] * IORGAN_KIDNEY_TOX_RATIO + chem_toxicity
 
-	// Existing damage is subtracted to prevent weaker toxins from maxing out tox wounds on the organ
-	var/toxin_damage = kidney ? (toxin_strength / (stats.getPerk(PERK_BLOOD_OF_LEAD) ? 2 : 1)) - (kidneys_efficiency / 100) - kidney.damage * 2 : 0
+	// Toxin damage calculation - full strength regardless of efficiency
+	var/toxin_damage = kidney ? max(0, (toxin_strength / (stats.getPerk(PERK_BLOOD_OF_LEAD) ? 2 : 1))) : 0
 
 	// Check if both kidneys are dead
 	var/dead_kidneys = 0
@@ -116,33 +118,88 @@
 		kidney.take_damage(toxin_damage, TOX)
 
 /mob/living/carbon/human/proc/liver_process()
-	var/liver_efficiency = get_organ_efficiency(OP_LIVER) * (1 + chem_effects[CE_ANTITOX])
 	var/obj/item/organ/internal/liver = random_organ_by_process(OP_LIVER)
 	var/alcohol_strength = chem_effects[CE_ALCOHOL]
 	var/toxin_strength = chem_effects[CE_TOXIN] * IORGAN_LIVER_TOX_RATIO + chem_effects[CE_ALCOHOL_TOXIC]
 
-	// Existing damage is subtracted to prevent weaker toxins from maxing out tox wounds on the organ
-	var/toxin_damage = liver ? (toxin_strength / (stats.getPerk(PERK_BLOOD_OF_LEAD) ? 2 : 1)) - (liver_efficiency / 100) - liver.damage * 2 : 0
-
-	// Liver failure toxin generation - dead liver produces endogenous toxins
-	if(liver && (liver.status & ORGAN_DEAD))
+	// Check if liver is dead first - dead livers don't filter anything
+	if(!liver || (liver.status & ORGAN_DEAD))
 		// Dead liver can't process toxins and generates waste products
-		add_chemical_effect(CE_TOXIN, 2) // Base toxin buildup from liver failure
-		if(prob(5)) // 5% chance per cycle to generate more severe toxin buildup
-			add_chemical_effect(CE_TOXIN, 1)
+		if(liver)
+			add_chemical_effect(CE_TOXIN, 3) // Increased base toxin buildup from liver failure
+			if(prob(8)) // Increased chance for more severe toxin buildup
+				add_chemical_effect(CE_TOXIN, 2) // Increased additional toxin buildup
 			if(prob(20))
 				to_chat(src, SPAN_WARNING("You feel nauseous as waste builds up in your system..."))
-	else if(liver_efficiency < DEAD_2_EFFICIENCY) // Severely damaged but not dead liver
-		// Failing liver still generates some toxins
-		if(prob(15))
-			add_chemical_effect(CE_TOXIN, 0.5)
 
-	// Enhanced toxin damage system
-	if(toxin_strength > 10 && liver) // High toxin levels damage liver over time
+			// Dead liver + existing toxins = systemic organ damage
+			if(toxin_strength > 5) // If there are significant toxins and no liver to process them
+				var/list/vulnerable_organs = list()
+				for(var/obj/item/organ/internal/I in internal_organs)
+					if(I != liver && !BP_IS_ROBOTIC(I) && !(I.status & ORGAN_DEAD))
+						vulnerable_organs += I
+
+				if(vulnerable_organs.len)
+					// Damage multiple organs when liver is dead and toxins are high
+					var/organs_to_damage = min(vulnerable_organs.len, max(1, round(toxin_strength / 8)))
+					for(var/i = 1 to organs_to_damage)
+						var/obj/item/organ/internal/target = pick_n_take(vulnerable_organs)
+						var/damage_amount = (toxin_strength / 10) * rand(0.8, 1.2) // Variable damage based on toxin level
+						target.take_damage(damage_amount, TOX)
+
+						if(prob(15))
+							to_chat(src, SPAN_DANGER("Your [target.name] is being poisoned by unfiltered toxins!"))
+
+					if(toxin_strength > 15 && prob(5))
+						to_chat(src, SPAN_DANGER("Without a functioning liver, toxins are destroying your organs!"))
+
+		// Dead liver doesn't filter toxins or process nutrients
+		// Blood loss makes you lose nutriments faster without a liver
+		var/blood_volume = get_blood_volume()
+		if(blood_volume * effective_blood_volume < total_blood_req + BLOOD_VOLUME_SAFE_MODIFIER)
+			if(nutrition >= 300)
+				adjustNutrition(-15) // Faster nutrition loss without liver
+			else if(nutrition >= 200)
+				adjustNutrition(-5)
+		return // Exit early - dead liver does nothing else
+
+	// Living liver processing starts here
+	var/base_liver_efficiency = get_organ_efficiency(OP_LIVER)
+	var/toxin_penalty = min(chem_effects[CE_TOXIN] * 2, 30) // Toxins reduce efficiency by up to 30%
+
+	// Additional strain from actively filtering toxins - liver works harder when processing more toxins
+	var/toxin_filtering_strain = 0
+	if(toxin_strength > 2) // Only apply strain when there's significant toxin load
+		toxin_filtering_strain = min((toxin_strength - 2) * 3, 25) // Up to 25% efficiency loss from strain
+		if(toxin_filtering_strain > 15 && prob(2))
+			to_chat(src, SPAN_WARNING("Your liver feels overworked from filtering toxins..."))
+
+	var/liver_efficiency = max(0, base_liver_efficiency - toxin_penalty - toxin_filtering_strain) * (1 + chem_effects[CE_ANTITOX])
+
+	// Toxin damage calculation - full strength regardless of efficiency
+	var/toxin_damage = max(0, (toxin_strength / (stats.getPerk(PERK_BLOOD_OF_LEAD) ? 2 : 1)))
+
+	// Severely damaged but not dead liver still generates some toxins
+	if(liver_efficiency < DEAD_2_EFFICIENCY)
+		if(prob(20)) // Increased chance
+			add_chemical_effect(CE_TOXIN, 1.0) // Increased toxin generation
+
+	// Enhanced toxin damage system - only for living livers
+	if(toxin_strength > 10) // High toxin levels damage liver over time
 		var/extra_damage = (toxin_strength - 10) * 0.1
 		toxin_damage += extra_damage
 		if(toxin_strength > 20 && prob(2))
 			to_chat(src, SPAN_WARNING("Your abdomen aches as toxins strain your liver..."))
+
+	// Toxin efficiency penalty feedback
+	var/total_efficiency_loss = toxin_penalty + toxin_filtering_strain
+	if(total_efficiency_loss > 20 && prob(3))
+		if(toxin_filtering_strain > 15)
+			to_chat(src, SPAN_DANGER("Your liver is severely strained from filtering heavy toxin loads!"))
+		else if(toxin_penalty > 25)
+			to_chat(src, SPAN_DANGER("Your liver feels severely poisoned and sluggish!"))
+		else
+			to_chat(src, SPAN_WARNING("You feel toxins interfering with your liver function..."))
 
 	// Bad stuff
 	// If you're not filtering well, you're in trouble. Ammonia buildup to toxic levels and damage from alcohol
@@ -164,7 +221,7 @@
 				if(prob(10))
 					to_chat(src, SPAN_WARNING("Your [target.name] feels strained from the systemic toxin buildup..."))
 
-	if(toxin_damage > 0 && liver)
+	if(toxin_damage > 0)
 		liver.take_damage(toxin_damage, TOX)
 
 	// Blood loss or liver damage make you lose nutriments
@@ -204,7 +261,9 @@
 	// Heart organs will set owner.pulse = pulse automatically
 
 /mob/living/carbon/human/proc/handle_heart_blood()
-	var/heart_efficiency = get_organ_efficiency(OP_HEART)
+	var/base_heart_efficiency = get_organ_efficiency(OP_HEART)
+	var/toxin_penalty = min(chem_effects[CE_TOXIN] * 2.5, 35) // Toxins affect heart performance
+	var/heart_efficiency = max(0, base_heart_efficiency - toxin_penalty)
 	var/blood_oxygenation = 0.4 * chem_effects[CE_OXYGENATED]
 	var/blood_volume = get_blood_volume() // Percentage.
 
@@ -260,7 +319,9 @@
 
 
 /mob/living/carbon/human/proc/lung_process()
-	var/lung_efficiency = get_organ_efficiency(OP_LUNGS)
+	var/base_lung_efficiency = get_organ_efficiency(OP_LUNGS)
+	var/toxin_penalty = min(chem_effects[CE_TOXIN] * 2.5, 35) // Toxins affect lung performance
+	var/lung_efficiency = max(0, base_lung_efficiency - toxin_penalty)
 	var/internal_oxygen = 100 - oxyloss
 
 	internal_oxygen *= lung_efficiency / 100

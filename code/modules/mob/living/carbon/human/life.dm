@@ -1406,11 +1406,11 @@
 		var/oxygen_loss_rate = 0
 
 		if(blood_oxygenation < BLOOD_VOLUME_SURVIVE * 100)
-			oxygen_loss_rate = 3 // Severe hypoxia
+			oxygen_loss_rate = 10 // Severe hypoxia
 			if(prob(5))
 				to_chat(src, SPAN_DANGER("You feel like you're suffocating despite breathing!"))
 		else if(blood_oxygenation < BLOOD_VOLUME_BAD * 100)
-			oxygen_loss_rate = 2 // Moderate hypoxia
+			oxygen_loss_rate = 5 // Moderate hypoxia
 			if(prob(3))
 				to_chat(src, SPAN_WARNING("You feel dizzy and short of breath."))
 		else
