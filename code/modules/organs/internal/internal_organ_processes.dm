@@ -118,9 +118,13 @@
 		kidney.take_damage(toxin_damage, TOX)
 
 /mob/living/carbon/human/proc/liver_process()
+	var/liver_efficiency = get_organ_efficiency(OP_LIVER) * (1 + chem_effects[CE_ANTITOX])
 	var/obj/item/organ/internal/liver = random_organ_by_process(OP_LIVER)
 	var/alcohol_strength = chem_effects[CE_ALCOHOL]
 	var/toxin_strength = chem_effects[CE_TOXIN] * IORGAN_LIVER_TOX_RATIO + chem_effects[CE_ALCOHOL_TOXIC]
+
+	// Existing damage is subtracted to prevent weaker toxins from maxing out tox wounds on the organ
+	var/toxin_damage = liver ? (toxin_strength / (stats.getPerk(PERK_BLOOD_OF_LEAD) ? 2 : 1)) - (liver_efficiency / 100) - liver.damage * 2 : 0
 
 	// Check if liver is dead first - dead livers don't filter anything
 	if(!liver || (liver.status & ORGAN_DEAD))
@@ -174,10 +178,14 @@
 		if(toxin_filtering_strain > 15 && prob(2))
 			to_chat(src, SPAN_WARNING("Your liver feels overworked from filtering toxins..."))
 
-	var/liver_efficiency = max(0, base_liver_efficiency - toxin_penalty - toxin_filtering_strain) * (1 + chem_effects[CE_ANTITOX])
+	// Calculate effective liver efficiency with all penalties
+	liver_efficiency = max(0, base_liver_efficiency - toxin_penalty - toxin_filtering_strain) * (1 + chem_effects[CE_ANTITOX])
 
-	// Toxin damage calculation - full strength regardless of efficiency
-	var/toxin_damage = max(0, (toxin_strength / (stats.getPerk(PERK_BLOOD_OF_LEAD) ? 2 : 1)))
+	// Apply efficiency loss directly to the liver organ
+	if(liver && (toxin_penalty > 0 || toxin_filtering_strain > 0))
+		var/efficiency_loss_percentage = (toxin_penalty + toxin_filtering_strain)
+		// Directly modify the liver's organ efficiency - this affects the organ permanently until reset
+		liver.organ_efficiency[OP_LIVER] = max(0, liver.initial_organ_efficiency[OP_LIVER] - efficiency_loss_percentage)
 
 	// Severely damaged but not dead liver still generates some toxins
 	if(liver_efficiency < DEAD_2_EFFICIENCY)
