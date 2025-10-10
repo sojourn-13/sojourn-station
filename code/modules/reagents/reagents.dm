@@ -55,6 +55,7 @@
 	var/list/heating_products
 
 	var/constant_metabolism = FALSE	// if metabolism factor should not change with volume or blood circulation
+	var/liver_dependent = TRUE // if this chemical requires a functioning liver to be metabolized
 
 	var/nerve_system_accumulations = 5 // Nerve system accumulations
 
@@ -113,6 +114,13 @@
 	// also blood circulation affects chemical strength (meaining if target has low blood volume or has something that lowers blood circulation chemicals will be consumed less and effect will diminished)
 	if(location == CHEM_BLOOD)
 		var/calculated_buff = (consumer.get_organ_efficiency(OP_LIVER) + consumer.get_organ_efficiency(OP_HEART)) / 200
+
+		// Check if liver is completely dead and this chemical requires liver processing
+		if(liver_dependent && consumer.get_organ_efficiency(OP_LIVER) <= 0)
+			var/obj/item/organ/internal/liver/liver = consumer.random_organ_by_process(OP_LIVER)
+			if(!liver || (liver.status & ORGAN_DEAD))
+				return 0 // Cannot process this chemical without a functioning liver
+
 		if(!constant_metabolism)
 			if(overdose)
 				removed = CLAMP(metabolism * volume/(overdose/2) * consumer.get_blood_circulation()/100 * calculated_buff, metabolism * REAGENTS_MIN_EFFECT_MULTIPLIER, metabolism * REAGENTS_MAX_EFFECT_MULTIPLIER)

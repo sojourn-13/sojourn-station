@@ -319,6 +319,32 @@
 			dat += span("highlight", "Blood Level Normal: [blood_percent]% [blood_volume]cl. Type: [blood_type]")
 	dat += "<span class='highlight'>Subject's pulse: <font color='[H.pulse() == PULSE_THREADY || H.pulse() == PULSE_NONE ? "red" : "#0080ff"]'>[H.get_pulse(GETPULSE_TOOL)] bpm.</font></span>"
 
+	// Add blood pressure and oxygenation readings
+	var/blood_pressure = H.get_blood_pressure()
+	var/oxygenation = H.get_blood_oxygenation()
+
+	var/bp_color = "green"
+	var/oxy_color = "green"
+
+	// Blood pressure color coding - normal is ~120/80
+	var/list/bp_parts = splittext(blood_pressure, "/")
+	if(length(bp_parts) >= 2)
+		var/systolic = text2num(bp_parts[1])
+		var/diastolic = text2num(bp_parts[2])
+		if(systolic < 90 || diastolic < 60 || systolic > 180 || diastolic > 110)
+			bp_color = "red"
+		else if(systolic < 100 || diastolic < 70 || systolic > 140 || diastolic > 90)
+			bp_color = "orange"
+
+	// Oxygenation color coding
+	if(oxygenation < 70)
+		oxy_color = "red"
+	else if(oxygenation < 90)
+		oxy_color = "orange"
+
+	dat += "<span class='highlight'>Blood Pressure: <font color='[bp_color]'>[blood_pressure] mmHg</font></span>"
+	dat += "<span class='highlight'>Blood Oxygenation: <font color='[oxy_color]'>[round(oxygenation, 1)]%</font></span>"
+
 	// Add shock status display
 	if(H.shock_stage)
 		var/shock_level = H.get_shock_level_text()

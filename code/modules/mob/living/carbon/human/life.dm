@@ -480,11 +480,11 @@
 	if(breath.gas["sleeping_agent"])
 		var/SA_pp = (breath.gas["sleeping_agent"] / breath.total_moles) * breath_pressure
 		if(SA_pp > SA_para_min)		// Enough to make us paralysed for a bit
-			reagents.add_reagent("sagent", 2)
+			reagents.add_reagent("nitrous_oxide", 2)
 			if(SA_pp > SA_sleep_min)	// Enough to make us sleep as well
-				reagents.add_reagent("sagent", 5)
+				reagents.add_reagent("nitrous_oxide", 5)
 		else if(SA_pp > 0.15)	// There is sleeping gas in their lungs, but only a little, so give them a bit of a warning
-			reagents.add_reagent("sagent", 1)
+			reagents.add_reagent("nitrous_oxide", 1)
 
 		breath.adjust_gas("sleeping_agent", -breath.gas["sleeping_agent"]/6, update = 0) //update after
 
@@ -1401,15 +1401,15 @@
 
 	var/blood_oxygenation = get_blood_oxygenation()
 
-	// If blood circulation is severely impaired, cause oxygen loss even if breathing
-	if(blood_oxygenation < BLOOD_VOLUME_OKAY)
+	// Only apply oxygen loss damage if blood oxygenation is below 80%
+	if(blood_oxygenation < 80)
 		var/oxygen_loss_rate = 0
 
-		if(blood_oxygenation < BLOOD_VOLUME_SURVIVE)
+		if(blood_oxygenation < BLOOD_VOLUME_SURVIVE * 100)
 			oxygen_loss_rate = 3 // Severe hypoxia
 			if(prob(5))
 				to_chat(src, SPAN_DANGER("You feel like you're suffocating despite breathing!"))
-		else if(blood_oxygenation < BLOOD_VOLUME_BAD)
+		else if(blood_oxygenation < BLOOD_VOLUME_BAD * 100)
 			oxygen_loss_rate = 2 // Moderate hypoxia
 			if(prob(3))
 				to_chat(src, SPAN_WARNING("You feel dizzy and short of breath."))
@@ -1421,7 +1421,7 @@
 		adjustOxyLoss(oxygen_loss_rate)
 
 		// Update oxygen alert based on circulation issues
-		if(blood_oxygenation < BLOOD_VOLUME_SURVIVE)
+		if(blood_oxygenation < BLOOD_VOLUME_SURVIVE * 100)
 			oxygen_alert = max(oxygen_alert, 2)
-		else if(blood_oxygenation < BLOOD_VOLUME_BAD)
+		else if(blood_oxygenation < BLOOD_VOLUME_BAD * 100)
 			oxygen_alert = max(oxygen_alert, 1)

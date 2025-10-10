@@ -13,6 +13,7 @@
 	glass_desc = "Are you sure this is tomato juice?"
 	nerve_system_accumulations = 0
 	common = TRUE //Everyone knows what blood looks like
+	liver_dependent = FALSE // Blood doesn't require liver processing
 
 /datum/reagent/organic/blood/initialize_data(var/newdata)
 	..()
@@ -78,6 +79,7 @@
 	glass_name = "water"
 	glass_desc = "The father of all refreshments."
 	nerve_system_accumulations = 0
+	liver_dependent = FALSE // Water doesn't require liver processing
 	var/fire_suppression_effect = 1 //19000 times this.
 	reagent_type = "Water"
 	common = TRUE //You know what water is.

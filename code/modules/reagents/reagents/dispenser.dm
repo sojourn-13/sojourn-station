@@ -127,6 +127,7 @@
 	taste_tag = list(TASTE_STRONG)
 	sanity_gain_ingest = 0.5
 	common = TRUE //All alchoholic reagents can be ID'd pretty easily
+	liver_dependent = TRUE // Alcohol requires liver to metabolize
 
 	glass_icon_state = "glass_clear"
 	glass_name = "ethanol"
@@ -413,7 +414,7 @@
 				our_man.remove_from_mob(C)
 				wearing_2 -= C
 				qdel(C)
-		
+
 		if (stop_loop)
 			continue
 		// third layer of clothing, no bio protection
@@ -423,7 +424,7 @@
 			our_man.worn_underwear -= U
 			qdel(U)
 		our_man.update_underwear()
-		
+
 		if(stop_loop)
 			continue
 		M.take_organ_damage(0, units_for_this_part * power * 0.1)
@@ -479,6 +480,7 @@
 	glass_name = "sugar"
 	glass_desc = "The organic compound commonly known as table sugar and sometimes called saccharose. This white, odorless, crystalline powder has a pleasing, sweet taste."
 	common = TRUE //everyone knows what sugar is
+	liver_dependent = FALSE // Basic nutrient, doesn't need liver processing
 
 /datum/reagent/organic/sugar/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	M.adjustNutrition(4 * effect_multiplier)

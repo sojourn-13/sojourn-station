@@ -326,6 +326,28 @@
 		pulse_color = "average"
 	dat += "<tr><td>Pulse:</td><td class='[pulse_color]'>[pulse_text]</td></tr>"
 
+	// Add blood pressure information
+	var/bp_color = "good"
+	var/bp_text = "[occ["blood_pressure"]] mmHg"
+	var/list/bp_parts = splittext(occ["blood_pressure"], "/")
+	if(length(bp_parts) >= 2)
+		var/systolic = text2num(bp_parts[1])
+		var/diastolic = text2num(bp_parts[2])
+		if(systolic < 90 || diastolic < 60 || systolic > 180 || diastolic > 110)
+			bp_color = "bad"
+		else if(systolic < 100 || diastolic < 70 || systolic > 140 || diastolic > 90)
+			bp_color = "average"
+	dat += "<tr><td>Blood Pressure:</td><td class='[bp_color]'>[bp_text]</td></tr>"
+
+	// Add blood oxygenation information
+	var/oxy2_color = "good"
+	var/oxy2_value = round(occ["blood_oxygenation"], 1)
+	if(oxy2_value < 70)
+		oxy2_color = "bad"
+	else if(oxy2_value < 90)
+		oxy2_color = "average"
+	dat += "<tr><td>Blood Oxygenation:</td><td class='[oxy2_color]'>[oxy2_value]%</td></tr>"
+
 	// Add shock status if present
 	if(occ["shock_stage"] > 0)
 		var/shock_color = "average"
@@ -537,6 +559,8 @@
 		"blood_type" = H.dna.b_type,
 		"pulse" = H.get_pulse(GETPULSE_TOOL),
 		"pulse_level" = H.pulse(),
+		"blood_pressure" = H.get_blood_pressure(),
+		"blood_oxygenation" = H.get_blood_oxygenation(),
 		"shock_stage" = H.shock_stage,
 		"shock_level" = H.get_shock_level_text(),
 		"traumatic_shock" = H.traumatic_shock,
