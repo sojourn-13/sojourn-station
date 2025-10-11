@@ -297,13 +297,13 @@
 						open_wound = TRUE
 
 					if(W.bleeding())
-						// Simplified bleeding - base it on wound damage and whether it's treated
-						var/bleed_factor = W.bandaged || W.clamped ? 0.3 : 1.0
-						blood_max += (W.damage / 60) * bleed_factor
+						// Enhanced bleeding - base it on wound damage and whether it's treated
+						var/bleed_factor = W.bandaged || W.clamped ? 0.4 : 1.0
+						blood_max += (W.damage / 30) * bleed_factor // Increased from /60 to /25 for faster bleeding
 
-			// Simplified arterial bleeding check
+			// Enhanced arterial bleeding check
 			if(temp.status & ORGAN_BLEEDING && open_wound)
-				var/bleed_amount = round(owner.vessel.total_volume / 600) * 1.5
+				var/bleed_amount = round(owner.vessel.total_volume / 300) * 2.5 // Increased from /600 and *1.5 for more dangerous arterial bleeding
 				if(bleed_amount)
 					blood_max += bleed_amount
 					do_spray += "[temp.name]"
