@@ -1400,3 +1400,54 @@
 	return actual_amount
 
 // Note: handle_blood() has been moved to blood.dm to consolidate blood-related processing
+
+// Burns off non-fire-resistant clothing when on fire
+/mob/living/carbon/human/proc/burn_clothing()
+	// List of clothing slots to check
+	var/list/clothing_slots = list(
+		"head" = head,
+		"wear_suit" = wear_suit, 
+		"w_uniform" = w_uniform,
+		"shoes" = shoes,
+		"gloves" = gloves,
+		"wear_mask" = wear_mask
+	)
+	
+	for(var/slot_name in clothing_slots)
+		var/obj/item/clothing/C = clothing_slots[slot_name]
+		if(!C)
+			continue
+			
+		// Check if clothing is fire-resistant
+		var/is_fire_resistant = FALSE
+		
+		// Fire suits and firefighter gear are fire resistant
+		if(istype(C, /obj/item/clothing/suit/fire) || istype(C, /obj/item/clothing/head/firefighter))
+			is_fire_resistant = TRUE
+		
+		// Check if clothing has high heat protection
+		if(C.max_heat_protection_temperature && C.max_heat_protection_temperature >= 1000) // 1000K = ~727°C
+			is_fire_resistant = TRUE
+			
+		// If not fire resistant, chance to burn off
+		if(!is_fire_resistant && prob(25)) // 25% chance per fire tick
+			visible_message(
+				SPAN_WARNING("[src]'s [C.name] [pick("burns away", "catches fire and disintegrates", "is consumed by flames")]!"),
+				SPAN_DANGER("Your [C.name] burns off!")
+			)
+			
+			// Drop the item as ash/burned remains
+			var/turf/T = get_turf(src)
+			if(T)
+				new /obj/effect/decal/cleanable/ash(T)
+			
+			// Remove from inventory
+			u_equip(C)
+			qdel(C)
+			
+			update_inv_head()
+			update_inv_wear_suit()
+			update_inv_w_uniform()
+			update_inv_shoes()
+			update_inv_gloves()
+			update_inv_wear_mask()
