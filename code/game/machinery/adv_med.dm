@@ -265,8 +265,8 @@
 		// Play button click sound
 		playsound(src.loc, 'sound/machines/machine_switch.ogg', 50)
 		if(!stored_scan_data)
-				to_chat(usr, SPAN_WARNING("Error: No scan stored."))
-				return TOPIC_REFRESH
+			to_chat(usr, SPAN_WARNING("Error: No scan stored."))
+			return TOPIC_REFRESH
 		spawn(5) // 5 deciseconds = 0.5 seconds
 			playsound(src.loc, 'sound/machines/printer.mp3', 50)
 			var/obj/item/paper/R = new(src.loc)
