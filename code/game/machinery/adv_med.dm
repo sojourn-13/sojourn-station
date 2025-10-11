@@ -397,6 +397,19 @@
 	else
 		dat += "<tr><td colspan='2'>No significant chemicals detected</td></tr>"
 
+	dat += "</table><br>"
+
+	// Stomach Contents
+	dat += "<table class='block' width='95%'>"
+	dat += "<tr><th colspan='2'>Stomach Contents</th></tr>"
+
+	if(occ["stomach_reagents"] && length(occ["stomach_reagents"]))
+		for(var/datum/reagent/R in occ["stomach_reagents"])
+			if(R.volume > 0.01) // Only show reagents with meaningful amounts
+				dat += "<tr><td colspan='2'>[R.name] detected</td></tr>"
+	else
+		dat += "<tr><td colspan='2'>No substances detected in stomach</td></tr>"
+
 	dat += "</table>"
 
 	return jointext(dat, null)
@@ -572,6 +585,7 @@
 		"bodytemp" = H.bodytemperature,
 		"borer_present" = H.has_brain_worms(),
 		"blood_reagents" = H.reagents.reagent_list.Copy(),
+		"stomach_reagents" = H.ingested ? H.ingested.reagent_list.Copy() : list(),
 		"blood_amount" = round((H.vessel.get_reagent_amount("blood") / H.species.blood_volume)*100),
 		"blood_type" = H.dna.b_type,
 		"pulse" = H.get_pulse(GETPULSE_TOOL),
@@ -654,6 +668,17 @@
 				dat += text("[]: [] units<BR>", R.name, round(R.volume, 0.1))
 	else
 		dat += "No significant chemicals detected<BR>"
+
+	dat += "<BR>"
+
+	// Display stomach contents (without quantities)
+	dat += "Stomach Contents:<BR>"
+	if(occ["stomach_reagents"] && length(occ["stomach_reagents"]))
+		for(var/datum/reagent/R in occ["stomach_reagents"])
+			if(R.volume > 0.01) // Only show reagents with meaningful amounts
+				dat += text("[] detected<BR>", R.name)
+	else
+		dat += "No substances detected in stomach<BR>"
 
 	dat += "<HR><table border='1'>"
 	dat += "<tr>"

@@ -2,6 +2,7 @@
 	name = "MiniPharma Plus"
 	desc = "Medical drug dispenser."
 	icon_state = "med"
+	pixel_x = -3
 	icon_deny = "med-deny"
 	req_access = list(access_medical_equip)
 	shut_up = 1 // Products are all free please stop offering them

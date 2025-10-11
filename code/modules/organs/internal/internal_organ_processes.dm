@@ -124,7 +124,7 @@
 					var/organs_to_damage = min(vulnerable_organs.len, max(1, round(toxin_strength / 4))) // Reduced divisor from 8 to 4
 					for(var/i = 1 to organs_to_damage)
 						var/obj/item/organ/internal/target = pick_n_take(vulnerable_organs)
-						var/damage_amount = rand(0.8, 1.2) // Increased damage (reduced divisor from 10 to 6)
+						var/damage_amount = rand(5, 10) // Increased damage (reduced divisor from 10 to 6)
 						target.take_damage(damage_amount, TOX)
 
 						if(prob(15))

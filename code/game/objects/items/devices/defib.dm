@@ -620,19 +620,15 @@
 				log_and_message_admins("Added mild revival sickness to [M].")
 	*/
 /obj/item/shockpaddles/proc/apply_brain_damage(mob/living/carbon/human/H, var/deadtime)
-	if(deadtime < DEFIB_TIME_LOSS) return
-
 	if(!H.should_have_process(BP_BRAIN)) return //no brain
 
 	var/obj/item/organ/internal/vital/brain/brain = H.random_organ_by_process(BP_BRAIN)
 	if(!brain) return //no brain
 
-	// Apply minimal brain damage on revival instead of full calculated damage
-	// This allows defibs to revive patients with brain damage but still has consequences
-	var/minimal_brain_damage = min(30, brain.max_damage * 0.2) // 20% of max damage or 30, whichever is lower
-
-	// Only apply the minimal damage if current brain damage is less
-	H.setBrainLoss(minimal_brain_damage)
+	// Defibrillation process: first remove all brain damage, then apply 80 brain damage
+	// This represents the trauma of electrical shock to restart the heart
+	H.setBrainLoss(0) // Clear all existing brain damage
+	H.adjustBrainLoss(80) // Apply 80 brain damage as revival penalty
 
 /obj/item/shockpaddles/proc/make_announcement(var/message, var/msg_class)
 	audible_message("<b>\The [src]</b> [message]", "\The [src] vibrates slightly.")
