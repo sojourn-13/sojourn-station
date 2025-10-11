@@ -11,6 +11,7 @@
 					/obj/item/reagent_containers/glass/bottle/stoxin = 4,
 					/obj/item/reagent_containers/glass/bottle/toxin = 4,
 					/obj/item/reagent_containers/syringe/spaceacillin = 4,
+					/obj/item/reagent_containers/syringe/adrenaline = 4,
 					/obj/item/reagent_containers/hypospray/autoinjector/quickclot = 10,
 					/obj/item/stack/medical/splint = 30,
 					/obj/item/reagent_containers/syringe = 12,
