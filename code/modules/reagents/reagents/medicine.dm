@@ -738,6 +738,8 @@ We don't use this but we might find use for it. Porting it since it was updated 
 		if(!BP_IS_ROBOTIC(B) && prob(75))
 			M.add_chemical_effect(CE_PAINKILLER, 10)
 			M.add_chemical_effect(CE_BRAINHEAL, 1)
+			// Direct brain damage healing - alkysine repairs neural tissue
+			M.adjustBrainLoss(-1.5 * effect_multiplier) // Heals 1.5 brain damage per tick
 
 /datum/reagent/medicine/imidazoline
 	name = "Imidazoline"
