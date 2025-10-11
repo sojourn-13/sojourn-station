@@ -39,22 +39,38 @@
 	icon_state = "frame_ak"
 	matter = list(MATERIAL_PLASTEEL = 8)
 	result = /obj/item/gun/projectile/automatic/ak47/sa
-	gripvars = list(/obj/item/part/gun/grip/excel, /obj/item/part/gun/grip/wood, /obj/item/part/gun/grip/black, /obj/item/part/gun/grip/rubber)
-	resultvars = list(/obj/item/gun/projectile/automatic/ak47, /obj/item/gun/projectile/automatic/ak47/sa, /obj/item/gun/projectile/automatic/ak47/NM_colony, /obj/item/gun/projectile/automatic/ak47/sa/tac)
+	gripvars = list(/obj/item/part/gun/grip/excel, /obj/item/part/gun/grip/wood, /obj/item/part/gun/grip/black, /obj/item/part/gun/grip/rubber, /obj/item/part/gun/grip/serb)
+	resultvars = list(/obj/item/gun/projectile/automatic/ak47, /obj/item/gun/projectile/automatic/ak47/sa, /obj/item/gun/projectile/automatic/ak47/NM_colony, /obj/item/gun/projectile/automatic/ak47/sa/tac, /obj/item/gun/projectile/automatic/ak47/NM_colony/improved)
 	mechanismvar = /obj/item/part/gun/mechanism/autorifle
 	barrelvars = list(/obj/item/part/gun/barrel/lrifle)
 
 /obj/item/gun/projectile/automatic/ak47/NM_colony
-	name = "polymer \"Kalashnikov\" rifle"
-	desc = " A copy of the Kalashnikov pattern, shortened into a mid-length rifle and chambered in 7.5mm. \nThis abysmal, printed copy of a Kalashnikov has been reclaimed and repurposed by Nadezhda Marshals, making it free of Excelsior taint."
+	name = "polymer \"Kalashnikov\" automatic rifle"
+	desc = " A cheap copy of the Kalashnikov pattern, shortened into a mid-length rifle and chambered in 7.5mm. \
+	This abysmal, printed copy of a Kalashnikov has been reclaimed and repurposed by Nadezhda Marshals, making it free of Excelsior taint but also unable to be deconstructed."
 	icon = 'icons/obj/guns/projectile/ak.dmi'
 	icon_state = "AK"
 	item_state = "AK"
 	excelsior = FALSE
-	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1)
+	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 2)
 	price_tag = 800
+	damage_multiplier = 1
 	serial_type = "NM"
 	gun_parts = list(/obj/item/part/gun/frame/ak47 = 1, /obj/item/part/gun/grip/black = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/lrifle = 1)
+
+/obj/item/gun/projectile/automatic/ak47/NM_colony/improved
+	name = "marshal polymer \"Kalashnikov\" automatic rifle"
+	desc = " A copy of the Kalashnikov pattern, shortened into a mid-length rifle and chambered in 7.5mm. \
+	This improved version of a Kalashnikov has been reclaimed and repurposed by Nadezhda Marshals, with improvements in various aspects to make it more suitable for police use."
+	icon = 'icons/obj/guns/projectile/ak_cop.dmi'
+	icon_state = "AK"
+	item_state = "AK"
+	excelsior = FALSE
+	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 2)
+	price_tag = 1600
+	damage_multiplier = 1.2 //improved so back to normal damage
+	serial_type = "NM"
+	gun_parts = list(/obj/item/part/gun/frame/ak47 = 1, /obj/item/part/gun/grip/serb = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/lrifle = 1)
 
 /obj/item/gun/projectile/automatic/ak47/update_icon()
 	..()
@@ -79,7 +95,7 @@
 /obj/item/gun/projectile/automatic/ak47/saiga
 	name = "Excelsior \"Saiga 12\" shotgun"
 	desc = "\"Let the ruling classes tremble at a Communistic revolution. The proletarians have nothing to lose but their chains. They have a world to win...\"\nA bulked up and modified version of the Kalashnikov made to fire 20mm shotgun shells, taking magazines similar to the Sol Federation SBAW design."
-	icon = 'icons/obj/guns/projectile/saiga12.dmi'
+	icon = 'icons/obj/guns/projectile/saiga12_excel.dmi'
 	icon_state = "saiga"
 	item_state = "saiga"
 	fire_sound = 'sound/weapons/guns/fire/saiga_fire.ogg'
@@ -88,16 +104,19 @@
 	origin_tech = list(TECH_COMBAT = 9, TECH_MATERIAL = 1, TECH_ILLEGAL = 4)
 	mag_well = MAG_WELL_RIFLE|MAG_WELL_DRUM // Saigas do have drum mags
 	init_recoil = RIFLE_RECOIL(1.3)
+	damage_multiplier = 1.2 //the uncheap
 	serial_type = "EXC"
 	gun_parts = list(/obj/item/part/gun/frame/saiga = 1, /obj/item/part/gun/grip/excel = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/shotgun = 1)
 
 /obj/item/gun/projectile/automatic/ak47/saiga/NM_colony
 	name = "\"Saigini 12\" shotgun"
 	desc = "A bulked up and modified version of the Kalashnikov made to fire 20mm shotgun shells, taking magazines similar to the Sol Federation SBAW design. \nThis model of the \"Saiga\" shotgun has been reclaimed and repurposed by Nadezhda Marshals, making it free of Excelsior taint."
+	icon = 'icons/obj/guns/projectile/saiga12.dmi'
 	icon_state = "saiga-bs"
 	item_state = "saiga-bs"
 	penetration_multiplier = 0.9 //Non-Excelsior varient, it's powerful as is. Pug on crack.
 	excelsior = FALSE
+	damage_multiplier = 1 //cheaper
 	origin_tech = list(TECH_COMBAT = 9, TECH_MATERIAL = 1)
 	price_tag = 800
 	serial_type = "NM"
