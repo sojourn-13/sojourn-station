@@ -299,11 +299,11 @@
 					if(W.bleeding())
 						// Simplified bleeding - base it on wound damage and whether it's treated
 						var/bleed_factor = W.bandaged || W.clamped ? 0.3 : 1.0
-						blood_max += (W.damage / 40) * bleed_factor
+						blood_max += (W.damage / 60) * bleed_factor
 
 			// Simplified arterial bleeding check
 			if(temp.status & ORGAN_BLEEDING && open_wound)
-				var/bleed_amount = round(owner.vessel.total_volume / 400) * 2
+				var/bleed_amount = round(owner.vessel.total_volume / 600) * 1.5
 				if(bleed_amount)
 					blood_max += bleed_amount
 					do_spray += "[temp.name]"
