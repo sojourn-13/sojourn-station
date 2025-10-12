@@ -25,7 +25,6 @@
 	icon_state = "biogoop"
 	desc = "A pile of formless biomatter with potential to be made useful, with the right tools."
 	matter = list(MATERIAL_BIOMATTER = 10)
-	is_organic_module = TRUE
 
 /obj/item/biogoop/muscle
 	name = "incomplete organic muscle implant"
