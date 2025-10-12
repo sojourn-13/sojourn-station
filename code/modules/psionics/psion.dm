@@ -154,6 +154,20 @@
 				R.implants -= emshrapnel
 				emshrapnel.loc = get_turf(owner)
 				owner.update_implants()
+
+			// Check for organ modules in this external organ
+			for(var/obj/item/organ_module/OM in R.implants)
+				if(OM == src)
+					continue
+				if(OM.is_organic_module == FALSE)
+					owner.visible_message(SPAN_DANGER("[OM.name] rips through [owner]'s body."),\
+					SPAN_DANGER("[OM.name] rips through your body."))
+					to_chat(owner, SPAN_DANGER("You feeling a sickeningly emptying feeling as the synthetic module within your body is forcefully shunted elsewhere by your psionic power."))
+					qdel(OM)
+					if(ishuman(owner))
+						var/mob/living/carbon/human/H = owner
+						H.update_implants()
+
 			if(!BP_IS_ROBOTIC(R))
 				continue
 			owner.visible_message(SPAN_DANGER("[owner]'s [R.name] tears off."),
@@ -178,19 +192,6 @@
 				var/mob/living/carbon/human/H = owner
 				H.update_implants()
 
-		if(istype(O, /obj/item/organ_module))
-			if(O == src)
-				continue
-			var/obj/item/organ_module/R = O
-			if(R.is_organic_module == FALSE)
-				owner.visible_message(SPAN_DANGER("[R.name] rips through [owner]'s body."),\
-				SPAN_DANGER("[R.name] rips through your body."))
-				to_chat(owner, SPAN_DANGER("You feeling a sickeningly emptying feeling as the synthetic module within your body is forcefully shunted elsewhere by your psionic power."))
-				qdel(O)
-				if(ishuman(owner))
-					var/mob/living/carbon/human/H = owner
-					H.update_implants()
-
 	for(var/obj/item/implant/O in owner.contents)
 		if(istype(O, /obj/item/implant))
 			var/obj/item/implant/I = O
@@ -214,7 +215,7 @@
 /obj/item/organ/internal/psionic_tumor/proc/remove_implanted(metal_implant)
 	if(istype(metal_implant, /obj/item/implant) && !istype(metal_implant, /obj/item/implant/generic))
 		var/obj/item/implant/R = metal_implant
-		if(R.implanted)
+		if(R.implanted && R.is_metal)
 			owner.visible_message(SPAN_DANGER("[R.name] rips through [owner]'s body."),\
 			SPAN_DANGER("[R.name] rips through your body."))
 			R.uninstall()

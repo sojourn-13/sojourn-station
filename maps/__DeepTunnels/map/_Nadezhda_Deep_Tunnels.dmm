@@ -1327,6 +1327,7 @@
 "ec" = (
 /obj/machinery/door/airlock/external,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/steel/cargo,
 /area/mine/hallway)
 "ed" = (
@@ -4106,6 +4107,7 @@
 /area/nadezhda/rnd/outpostbotany)
 "lm" = (
 /obj/effect/window_lwall_spawn/smartspawn,
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/rnd/outpostbotany)
 "ln" = (
@@ -4538,6 +4540,7 @@
 /area/nadezhda/rnd/outpostbotany)
 "mt" = (
 /obj/machinery/door/airlock/glass,
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/white/cargo,
 /area/nadezhda/rnd/outpostbotany)
 "mu" = (
@@ -5070,6 +5073,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/wood,
 /area/nadezhda/rnd/outpostbreakroom)
 "nw" = (
@@ -5774,6 +5778,7 @@
 	name = "Artifact Harvester";
 	req_access = list(65)
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/plating,
 /area/nadezhda/rnd/outpostgeneral)
 "oN" = (
@@ -5789,6 +5794,7 @@
 	name = "Isolation Two";
 	req_access = list(65)
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/rnd/anomalisoltwo)
 "oP" = (
@@ -5804,7 +5810,7 @@
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
 "oR" = (
-/obj/machinery/vending/snack,
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/wood,
 /area/nadezhda/rnd/outpostbreakroom)
 "oS" = (
@@ -5812,7 +5818,7 @@
 	dir = 1;
 	pixel_y = -28
 	},
-/obj/machinery/vending/fitness,
+/obj/machinery/vending/snack,
 /turf/simulated/floor/wood,
 /area/nadezhda/rnd/outpostbreakroom)
 "oT" = (
@@ -6010,6 +6016,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/rnd/outpostgeneral)
 "pp" = (
@@ -6045,6 +6052,9 @@
 "pt" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/toolbox/mechanical,
+/obj/structure/fireaxecabinet{
+	pixel_y = -32
+	},
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/rnd/mixing)
 "pu" = (
@@ -6351,6 +6361,7 @@
 	name = "Anomaly Research";
 	req_access = list(5)
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/rnd/outpostgeneral)
 "qj" = (
@@ -6551,6 +6562,7 @@
 	name = "Isolation One";
 	req_access = list(65)
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/rnd/anomalisolone)
 "qF" = (
@@ -6687,6 +6699,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/plating,
 /area/nadezhda/rnd/outpostgeneral)
 "ra" = (
@@ -6718,6 +6731,7 @@
 /area/nadezhda/rnd/outpostgeneral)
 "rd" = (
 /obj/effect/window_lwall_spawn/smartspawn,
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/outpostmedical)
 "re" = (
@@ -7704,6 +7718,7 @@
 	name = "Research Outpost";
 	req_access = list(5)
 	},
+/obj/machinery/door/firedoor/multi_tile,
 /turf/simulated/floor/tiled/white/danger,
 /area/nadezhda/rnd/outpostgeneral)
 "tN" = (
@@ -7711,6 +7726,7 @@
 	name = "Deep Tunnel Entrance";
 	req_access = list(5)
 	},
+/obj/machinery/door/firedoor/multi_tile,
 /turf/simulated/floor/tiled/white/monofloor,
 /area/nadezhda/rnd/outpostgeneral)
 "tP" = (
@@ -7740,6 +7756,7 @@
 /obj/structure/sign/department/anomaly{
 	pixel_y = 32
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
 "tX" = (
@@ -7818,6 +7835,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 10
+	},
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_x = 32
 	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/rnd/outpoststorage)
@@ -8113,6 +8133,10 @@
 /obj/machinery/atmospherics/binary/pump/high_power{
 	dir = 4
 	},
+/obj/structure/closet/wall_mounted/emcloset{
+	pixel_x = -1;
+	pixel_y = -32
+	},
 /turf/simulated/floor/reinforced,
 /area/nadezhda/rnd/mixing)
 "uZ" = (
@@ -8231,6 +8255,7 @@
 /area/nadezhda/rnd/mixing)
 "wn" = (
 /obj/effect/window_lwall_spawn/plasma/reinforced,
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/plating,
 /area/mine/hallway)
 "wC" = (
@@ -8267,6 +8292,13 @@
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
+"wY" = (
+/obj/structure/disposalpipe/segment,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/door/firedoor,
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/nadezhda/rnd/outpostgeneral)
 "xd" = (
 /obj/machinery/atmospherics/pipe/manifold/visible/yellow{
 	dir = 4;
@@ -8289,6 +8321,25 @@
 	},
 /turf/simulated/floor/tiled/steel/danger,
 /area/mine/hallway)
+"xL" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
+/obj/structure/closet/wall_mounted/emcloset{
+	pixel_x = -1;
+	pixel_y = -32
+	},
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/nadezhda/rnd/outpostgeneral)
 "xP" = (
 /obj/item/device/radio/intercom{
 	dir = 4;
@@ -8315,6 +8366,7 @@
 	name = "Anomaly Research";
 	req_access = list(5)
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
 "yi" = (
@@ -8349,6 +8401,12 @@
 	},
 /turf/simulated/floor/tiled/steel,
 /area/mine/hallway)
+"zT" = (
+/obj/machinery/firealarm{
+	pixel_y = 28
+	},
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/nadezhda/rnd/outpostgeneral)
 "Ag" = (
 /turf/simulated/floor/beach/water/jungledeep{
 	desc = "Filthy, stinking bilge water.";
@@ -8376,6 +8434,10 @@
 	name = "murky water"
 	},
 /area/nadezhda/rnd/mixing)
+"Bg" = (
+/obj/machinery/door/firedoor,
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/nadezhda/rnd/outpostgeneral)
 "Bj" = (
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/wall/r_wall,
@@ -8425,6 +8487,13 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/rnd/anomalisolfour)
+"BY" = (
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -28
+	},
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/nadezhda/rnd/outpostgeneral)
 "Cb" = (
 /obj/machinery/door/airlock/external{
 	req_access = list(48)
@@ -8473,6 +8542,12 @@
 	},
 /turf/simulated/floor/tiled/steel,
 /area/mine/hallway)
+"CF" = (
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_x = -32
+	},
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/nadezhda/rnd/outpostgeneral)
 "CN" = (
 /obj/machinery/atmospherics/pipe/simple/visible/yellow,
 /obj/structure/lattice,
@@ -8626,6 +8701,7 @@
 	name = "Anomaly Research";
 	req_access = list(5)
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/rnd/outpostgeneral)
 "Gz" = (
@@ -8718,6 +8794,15 @@
 "Jk" = (
 /turf/simulated/floor/asteroid,
 /area/nadezhda/quartermaster/mining_dreg)
+"Jo" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = 32
+	},
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/nadezhda/rnd/outpostgeneral)
 "JH" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -8749,6 +8834,7 @@
 /area/nadezhda/rnd/anomalisolfour)
 "Kk" = (
 /obj/effect/window_lwall_spawn/smartspawn,
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/plating,
 /area/nadezhda/rnd/outpostmedical)
 "Kn" = (
@@ -8910,6 +8996,17 @@
 /obj/machinery/atmospherics/unary/vent_scrubber,
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
+"NI" = (
+/obj/machinery/door/firedoor,
+/turf/simulated/floor/tiled/white/cargo,
+/area/nadezhda/rnd/outpostgeneral)
+"NR" = (
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = -32
+	},
+/turf/simulated/floor/tiled/white/cargo,
+/area/nadezhda/rnd/outpostgeneral)
 "Ol" = (
 /obj/structure/catwalk,
 /obj/structure/window/reinforced/plasma{
@@ -8983,6 +9080,26 @@
 	},
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/nadezhda/rnd/mixing)
+"Pk" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = -32
+	},
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/nadezhda/rnd/outpostgeneral)
 "Pr" = (
 /obj/effect/window_lwall_spawn/smartspawn,
 /obj/structure/cable{
@@ -8990,6 +9107,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/plating,
 /area/nadezhda/rnd/outpostgeneral)
 "PS" = (
@@ -9021,6 +9139,21 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
 /turf/simulated/floor/tiled/steel/danger,
 /area/mine/hallway)
+"QJ" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/door/firedoor,
+/turf/simulated/floor/wood,
+/area/nadezhda/rnd/outpostbreakroom)
 "QN" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/industrial/hatch/blue,
@@ -9066,6 +9199,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/outpostmedical)
 "RU" = (
@@ -9143,6 +9277,10 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 4
 	},
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = 28
+	},
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
 "SI" = (
@@ -9178,6 +9316,18 @@
 /obj/effect/floor_decal/industrial/hatch/red,
 /turf/simulated/floor/reinforced,
 /area/nadezhda/rnd/mixing)
+"TP" = (
+/obj/structure/disposalpipe/segment,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/door/firedoor,
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/nadezhda/rnd/outpostgeneral)
 "TS" = (
 /obj/machinery/atmospherics/pipe/simple/visible/yellow,
 /obj/structure/lattice,
@@ -9203,6 +9353,15 @@
 	req_access = list(5)
 	},
 /turf/simulated/floor/tiled/white/brown_perforated,
+/area/nadezhda/rnd/outpostgeneral)
+"Ui" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/door/firedoor,
+/turf/simulated/floor/tiled/white/cargo,
 /area/nadezhda/rnd/outpostgeneral)
 "Um" = (
 /obj/machinery/door/airlock/glass_research{
@@ -9243,6 +9402,9 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 4
 	},
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_x = 32
+	},
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
 "UO" = (
@@ -9263,6 +9425,18 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
+/area/nadezhda/rnd/outpostgeneral)
+"Vg" = (
+/obj/structure/closet/wall_mounted/emcloset{
+	pixel_x = -1;
+	pixel_y = -32
+	},
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/nadezhda/rnd/outpostgeneral)
+"Vq" = (
+/obj/effect/window_lwall_spawn/smartspawn,
+/obj/machinery/door/firedoor,
+/turf/simulated/floor/plating,
 /area/nadezhda/rnd/outpostgeneral)
 "VQ" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
@@ -9441,6 +9615,20 @@
 "Zb" = (
 /turf/simulated/floor/asteroid,
 /area/nadezhda/quartermaster/mining_outside_doc)
+"Zf" = (
+/obj/structure/disposalpipe/segment,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_x = -32
+	},
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/nadezhda/rnd/outpostgeneral)
 "Zu" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
@@ -9469,6 +9657,14 @@
 /obj/effect/window_lwall_spawn/smartspawnplasma,
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/nadezhda/rnd/mixing)
+"ZR" = (
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = 28
+	},
+/obj/machinery/door/firedoor,
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/nadezhda/rnd/outpostgeneral)
 
 (1,1,1) = {"
 aa
@@ -10053,7 +10249,7 @@ kB
 jH
 tZ
 ua
-qN
+Vq
 mW
 nq
 nW
@@ -10255,7 +10451,7 @@ kC
 kV
 lt
 lX
-qN
+Vq
 mW
 DW
 to
@@ -10457,10 +10653,10 @@ kD
 jH
 lu
 ly
-qN
-qN
+Vq
+Vq
 oM
-qN
+Vq
 ov
 oO
 pj
@@ -12274,19 +12470,19 @@ jG
 jG
 ih
 Pr
-qN
-qN
-qN
-qN
-qN
-qN
+Vq
+Vq
+Vq
+Vq
+Vq
+ih
 po
 qi
-qN
-qN
-qN
-qN
-qN
+ih
+Vq
+Vq
+Vq
+Vq
 qZ
 ih
 ih
@@ -12473,7 +12669,7 @@ jC
 jJ
 nb
 nr
-jH
+Bg
 tm
 pQ
 jH
@@ -12675,7 +12871,7 @@ ih
 jI
 nj
 nt
-jH
+Bg
 jH
 wV
 jH
@@ -12877,7 +13073,7 @@ ih
 XW
 nl
 nE
-jJ
+TP
 kX
 UL
 sv
@@ -13086,8 +13282,8 @@ ih
 ih
 mY
 nv
-oa
-oy
+QJ
+oR
 oR
 mY
 ih
@@ -13095,8 +13291,8 @@ ih
 ih
 ih
 tW
-jH
-jH
+Bg
+Bg
 ih
 lz
 lz
@@ -13501,11 +13697,11 @@ ih
 tX
 jH
 jH
+Bg
 tm
 jH
-jH
 rw
-jH
+CF
 jH
 ih
 aa
@@ -13703,7 +13899,7 @@ qF
 jH
 jH
 jH
-jH
+Bg
 jH
 jH
 jH
@@ -13905,8 +14101,8 @@ ih
 jH
 jH
 jH
-jH
-jH
+Bg
+kL
 jH
 jH
 jH
@@ -14088,7 +14284,7 @@ kK
 ih
 jH
 MY
-Co
+xL
 ih
 iu
 pR
@@ -14490,7 +14686,7 @@ iL
 EE
 jp
 ih
-jH
+zT
 jH
 nR
 ih
@@ -14694,7 +14890,7 @@ jq
 ih
 jH
 jH
-nU
+Pk
 ih
 iC
 iC
@@ -14712,7 +14908,7 @@ qq
 ih
 jH
 jH
-jH
+Vg
 ih
 aG
 au
@@ -15116,7 +15312,7 @@ qs
 ih
 jH
 jH
-jH
+BY
 ih
 dL
 em
@@ -15720,7 +15916,7 @@ ih
 ih
 ih
 ih
-jN
+Jo
 jH
 jH
 ih
@@ -16109,7 +16305,7 @@ ih
 jH
 nm
 op
-jJ
+TP
 jJ
 lI
 tn
@@ -16118,12 +16314,12 @@ nG
 jJ
 uK
 Ha
-jJ
+Zf
 UU
 RW
 VQ
 DX
-rm
+wY
 rm
 rc
 rm
@@ -16311,7 +16507,7 @@ na
 jM
 nn
 lu
-jH
+Bg
 jH
 jH
 jH
@@ -16325,7 +16521,7 @@ LS
 jH
 HP
 PS
-jH
+Bg
 jH
 jH
 vf
@@ -16513,7 +16709,7 @@ ih
 jH
 no
 lu
-kL
+ZR
 jH
 jH
 jH
@@ -16527,7 +16723,7 @@ lj
 jH
 HP
 jH
-jH
+Bg
 jH
 jH
 jH
@@ -16713,8 +16909,8 @@ mQ
 iu
 ih
 ih
-iD
-kv
+NI
+Ui
 ih
 lJ
 lJ
@@ -17316,7 +17512,7 @@ tM
 iD
 SZ
 tN
-iD
+NR
 tP
 tR
 iD
