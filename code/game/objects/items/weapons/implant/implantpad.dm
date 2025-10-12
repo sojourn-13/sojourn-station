@@ -22,6 +22,7 @@
 				src.icon_state = "implanttester_in"
 				add_overlay("implantcase")
 				add_overlay("implant_[case.implant:overlay_icon]")
+				add_overlay("implanttester_in")
 	else
 		src.icon_state = "implanttester" // farson - actually fixed this
 	return
