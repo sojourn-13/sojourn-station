@@ -68,12 +68,16 @@ var/global/list/modifications_types = list(
 
 	// Allow psions to remove organs/limbs but not get synthetic ones
 	if(has_psionic_organ)
+		// Debug output to see what's happening
+		if(usr && ismob(usr))
+			log_debug("PSIONIC DEBUG: Checking modification '[name]' (ID: [id]) with nature [nature] for organ [organ] - User: [usr.ckey]")
+
 		if(nature == MODIFICATION_REMOVED)
 			return TRUE // Psions can remove organs/limbs
 		else if(nature == MODIFICATION_SILICON || nature == MODIFICATION_LIFELIKE)
 			// Show message only once to prevent spam
 			if(usr && ismob(usr) && (!usr.last_psionic_warning || world.time > usr.last_psionic_warning + 30))
-				to_chat(usr, "Your psionic organ prevents you from using synthetic modifications.")
+				to_chat(usr, "Your psionic organ prevents you from using synthetic modifications ([name]).")
 				usr.last_psionic_warning = world.time
 			return FALSE // Psions cannot use synthetic modifications
 		// For organic modifications, continue with normal checks
