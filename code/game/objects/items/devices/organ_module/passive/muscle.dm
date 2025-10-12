@@ -16,7 +16,7 @@
 	allowed_organs = list(BP_R_LEG, BP_L_LEG)
 	icon_state = "orgmuscle"
 	matter = list(MATERIAL_BIOMATTER = 15)
-	is_organic_module = FALSE
+	is_organic_module = TRUE
 
 //Putting this here because blargh it.
 //Not like it needs to be anywhere in particular and I don't want to make an entire new file for a small parent.
@@ -25,6 +25,7 @@
 	icon_state = "biogoop"
 	desc = "A pile of formless biomatter with potential to be made useful, with the right tools."
 	matter = list(MATERIAL_BIOMATTER = 10)
+	is_organic_module = TRUE
 
 /obj/item/biogoop/muscle
 	name = "incomplete organic muscle implant"

@@ -70,7 +70,7 @@
 				dat += "<div style = 'padding:2px' onclick=\"set('body_modification', '[BM.id]');\" class='block'><b>[BM.name]</b><br>[BM.desc]</div>"
 			else
 				dat += "<div style = 'padding:2px' class='block limited'><b>[BM.name]</b><br>[BM.desc]</div>"
-		
+
 		dat += "</div></td>"
 	dat += "<td style='margin-left:10px;width-max:310px;width:310px;'>"
 	dat += "<table><tr><td style='width:115px; text-align:right; margin-right:10px;'>"
@@ -149,7 +149,16 @@
 	return TRUE
 
 /datum/preferences/proc/get_modification(var/organ)
-	if(!modifications_allowed() || !organ || !modifications_data[organ])
+	// Check if psions should be allowed to access modifications
+	var/has_psionic_organ = FALSE
+	var/datum/category_item/setup_option/core_implant/core_implant_option = get_option("Core implant")
+	if(core_implant_option && (core_implant_option.implant_organ_type == "psionic tumor" || core_implant_option.implant_organ_type == "cultured tumor"))
+		has_psionic_organ = TRUE
+
+	// Allow psions to access modifications, but the individual modifications will validate themselves
+	if(!modifications_allowed() && !has_psionic_organ)
+		return new/datum/body_modification/none
+	if(!organ || !modifications_data[organ])
 		return new/datum/body_modification/none
 	return modifications_data[organ]
 

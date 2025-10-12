@@ -52,11 +52,29 @@ var/global/list/modifications_types = list(
 	// Basic validation
 	if(!organ || !(organ in body_parts))
 		return FALSE
-	// Exception: allow appendix removal if the target has a psionic organ
-	if(organ == OP_APPENDIX && H)
+
+	// Check if player has psionic organ selected in preferences
+	var/has_psionic_organ = FALSE
+	if(P)
+		var/datum/category_item/setup_option/core_implant/core_implant_option = P.get_option("Core implant")
+		if(core_implant_option && (core_implant_option.implant_organ_type == "psionic tumor" || core_implant_option.implant_organ_type == "cultured tumor"))
+			has_psionic_organ = TRUE
+	else if(H)
+		// Check if the human actually has a psionic organ
 		for(var/obj/item/organ/internal/O in H.internal_organs)
 			if(istype(O, /obj/item/organ/internal/psionic_tumor))
-				return TRUE
+				has_psionic_organ = TRUE
+				break
+
+	// Allow psions to remove organs/limbs but not get synthetic ones
+	if(has_psionic_organ)
+		if(nature == MODIFICATION_REMOVED)
+			return TRUE // Psions can remove organs/limbs
+		else if(nature == MODIFICATION_SILICON || nature == MODIFICATION_LIFELIKE)
+			to_chat(usr, "Your psionic organ prevents you from using synthetic modifications.")
+			return FALSE // Psions cannot use synthetic modifications
+		// For organic modifications, continue with normal checks
+
 	// Find parent organ (if any) and validate parent-child constraints
 	var/parent_organ = null
 	for(var/organ_parent in organ_structure)
