@@ -222,6 +222,11 @@ the limbs and such to pull out the internal bits for other people if needed
 	name = "Death Alarm Implant"
 	build_path = /obj/item/implantcase/death_alarm
 
+/datum/design/research/item/implant/alarm_psionic
+	name = "Psionic Death Alarm Implant"
+	desc = "A non-metallic death alarm implant compatible with psionic users."
+	build_path = /obj/item/implantcase/death_alarm/psionic
+
 /datum/design/research/item/implant/track
 	name = "Tracking Implant"
 	build_path = /obj/item/implantcase/tracking

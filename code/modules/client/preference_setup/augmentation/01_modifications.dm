@@ -57,7 +57,7 @@
 	dat +=  "<script language='javascript'> [js_byjax] function set(param, value) {window.location='?src=\ref[src];'+param+'='+value;}</script>"
 	dat += "<table style='max-height:400px;height:410px; margin-left:250px; margin-right:250px'>"
 	dat += "<tr style='vertical-align:top'>"
-	if(pref.modifications_allowed())
+	if(pref.can_access_modifications())
 		dat += "<td><div style='max-width:230px;width:230px;height:100%;overflow-y:auto;border-right:1px solid;padding:3px'>"
 		// Build the body modification options per-request so we can consult is_allowed()
 		for(var/mod_type in typesof(/datum/body_modification))
@@ -70,7 +70,7 @@
 				dat += "<div style = 'padding:2px' onclick=\"set('body_modification', '[BM.id]');\" class='block'><b>[BM.name]</b><br>[BM.desc]</div>"
 			else
 				dat += "<div style = 'padding:2px' class='block limited'><b>[BM.name]</b><br>[BM.desc]</div>"
-		
+
 		dat += "</div></td>"
 	dat += "<td style='margin-left:10px;width-max:310px;width:310px;'>"
 	dat += "<table><tr><td style='width:115px; text-align:right; margin-right:10px;'>"
@@ -80,7 +80,7 @@
 		var/organ_name = capitalize(organ_tag_to_name[organ])
 		var/disp_name = mod ? mod.short_name : "Nothing"
 		dat += "<div>"
-		if(!pref.modifications_allowed())
+		if(!pref.can_access_modifications())
 			dat += "<a class='linkOff'><b>[organ_name]</b></a>"
 		else if(organ == pref.current_organ)
 
@@ -100,7 +100,7 @@
 		var/organ_name = capitalize(organ_tag_to_name[organ])
 		var/disp_name = mod ? mod.short_name : "Nothing"
 		dat += "<div>"
-		if(!pref.modifications_allowed())
+		if(!pref.can_access_modifications())
 			dat += "<a class='linkOff'><b>[organ_name]</b></a>"
 		else if(organ == pref.current_organ)
 			dat += "<div><a class='Organs_active' href='?src=\ref[src];organ=[organ]'><b>[organ_name]</b></a>"
@@ -124,7 +124,7 @@
 			dat += "<td width='33%'><b><span style='background-color:pink'>[organ_name]</span></b>"
 		else
 			dat += "<td width='33%'><b>[organ_name]</b>"
-		if(!pref.modifications_allowed())
+		if(!pref.can_access_modifications())
 			dat += "<br><a class='linkOff'>[disp_name]</a></td>"
 		else
 			dat += "<br><a href='?src=\ref[src];organ=[organ]'>[disp_name]</a></td>"
@@ -148,8 +148,23 @@
 			return FALSE
 	return TRUE
 
+/datum/preferences/proc/can_access_modifications()
+	// Check if modifications are normally allowed
+	if(modifications_allowed())
+		return TRUE
+
+	// Check if psions should be allowed to access modifications
+	var/datum/category_item/setup_option/core_implant/core_implant_option = get_option("Core implant")
+	if(core_implant_option && (core_implant_option.implant_organ_type == "psionic tumor" || core_implant_option.implant_organ_type == "cultured tumor"))
+		return TRUE
+
+	return FALSE
+
 /datum/preferences/proc/get_modification(var/organ)
-	if(!modifications_allowed() || !organ || !modifications_data[organ])
+	// Allow psions and normally allowed players to access modifications
+	if(!can_access_modifications())
+		return new/datum/body_modification/none
+	if(!organ || !modifications_data[organ])
 		return new/datum/body_modification/none
 	return modifications_data[organ]
 

@@ -241,6 +241,7 @@
 							/datum/design/research/structure/bidontrigger,
 							/datum/design/research/item/medical/compact_defibs,
 							/datum/design/research/item/implant/alarm,
+							/datum/design/research/item/implant/alarm_psionic,
 							/datum/design/research/item/petite_scanner)
 
 /datum/technology/tracker_tablet

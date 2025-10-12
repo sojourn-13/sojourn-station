@@ -21,6 +21,7 @@
 			if(istype(src.case.implant, /obj/item/implant))
 				src.icon_state = "implantpad-1"
 				add_overlay("implant_[case.implant:overlay_icon]")
+				add_overlay("implanttester_in")
 	else
 		src.icon_state = "implantpad-1" // CFW - Was implantpad-0, hotfix attempt
 	return
