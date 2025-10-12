@@ -35,7 +35,6 @@
 	scanning = 4 //Hyper has 4 scanners.
 	idle_power_usage = 30 // Complicated, high power machinery
 	active_power_usage = 400
-	color = "#a4bdba"
 	circuit = /obj/item/circuitboard/sleeper/hyper
 	level0 = list(
 		"tramadol" = "Tramadol", "dexalinp" = "Dexalin Plus", "bicaridine" = "Bicaridine", "dermaline" = "Dermaline", "carthatoline" = "Carthatoline", "peridaxon" = "Peridaxon")
