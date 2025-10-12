@@ -1276,6 +1276,7 @@
 #include "code\game\objects\items\weapons\implant\implants\chemical.dm"
 #include "code\game\objects\items\weapons\implant\implants\compressed.dm"
 #include "code\game\objects\items\weapons\implant\implants\death_alarm.dm"
+#include "code\game\objects\items\weapons\implant\implants\death_alarm_psionic.dm"
 #include "code\game\objects\items\weapons\implant\implants\excelsior.dm"
 #include "code\game\objects\items\weapons\implant\implants\explosive.dm"
 #include "code\game\objects\items\weapons\implant\implants\freedom.dm"

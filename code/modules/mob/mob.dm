@@ -1,5 +1,6 @@
 /mob
     var/admin_antighost = TRUE  // per-mob toggle: do they skip observers?
+    var/last_psionic_warning = 0  // Cooldown for psionic organ warning messages
 
 /mob/Destroy()//This makes sure that mobs with clients/keys are not just deleted from the game.
 	STOP_PROCESSING(SSmobs, src)

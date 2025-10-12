@@ -124,6 +124,7 @@
 		/obj/item/reagent_containers/hypospray/autoinjector/antirad = 10,
 
 		/obj/item/implantcase/death_alarm = 4,
+		/obj/item/implantcase/death_alarm/psionic = 2,
 		/obj/item/implanter = 4,
 
 		/obj/item/device/defib_kit = 2
@@ -166,6 +167,7 @@
 		/obj/item/reagent_containers/hypospray/autoinjector/antirad = 400,
 
 		/obj/item/implantcase/death_alarm = 25,
+		/obj/item/implantcase/death_alarm/psionic = 75,
 		/obj/item/implanter = 25,
 
 		/obj/item/device/defib_kit = 750,
