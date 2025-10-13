@@ -19,6 +19,13 @@
 	price_tag = 200
 	var/empty = FALSE
 
+// Override storage depth to allow first aid kits to work one level deeper in nested storage
+/obj/item/storage/firstaid/storage_depth_turf()
+	var/depth = ..()
+	if(depth != -1 && depth > 0)
+		return depth - 1  // Reduce depth by 1 to allow deeper nesting
+	return depth
+
 /obj/item/storage/firstaid/regular
 	icon_state = "firstaid"
 
@@ -594,6 +601,28 @@
 	use_sound = null
 	matter = list(MATERIAL_PLASTIC = 1)
 	max_storage_space = 32
+
+/obj/item/storage/pill_bottle/attack_hand(mob/user as mob)
+	// Check if the pill bottle is inside a storage container (first aid kit, belt, etc.)
+	// If so, open the pill bottle instead of removing it from the container
+	var/depth = storage_depth_turf()
+
+	// If we're nested inside storage containers, open the pill bottle
+	if(depth > 0 && istype(loc, /obj/item/storage))
+		// Open this pill bottle's contents
+		open(user)
+		src.add_fingerprint(user)
+		return
+
+	// Otherwise, use the default storage behavior (which will try to pick up the bottle)
+	..()
+
+// Override storage depth to allow pill bottles to work one level deeper in nested storage
+/obj/item/storage/pill_bottle/storage_depth_turf()
+	var/depth = ..()
+	if(depth != -1 && depth > 0)
+		return depth - 1  // Reduce depth by 1 to allow deeper nesting
+	return depth
 
 /obj/item/storage/pill_bottle/antitox
 	icon_state = "pill_green"
