@@ -106,7 +106,20 @@
 
 	//Handle shock
 	if(shock_stage <= traumatic_shock)	//Shock stage slowly climbs to traumatic shock
-		shock_stage = min(shock_stage + shock_stage_speed, traumatic_shock)
+		// Determine if shock is primarily pain-based (no major blood loss)
+		var/blood_circulation = 1.0 // Default for non-humans
+		if(ishuman(src))
+			var/mob/living/carbon/human/H = src
+			blood_circulation = H.get_blood_circulation()
+
+		var/pain_based_shock = (blood_circulation >= BLOOD_VOLUME_BAD)
+		var/adjusted_shock_speed = shock_stage_speed
+
+		// Slow down shock progression when it's primarily pain-based and at higher levels
+		if(pain_based_shock && shock_stage >= 60)
+			adjusted_shock_speed = max(1, shock_stage_speed * 0.75) // 25% slower progression
+
+		shock_stage = min(shock_stage + adjusted_shock_speed, traumatic_shock)
 
 		if(shock_stage <= round(traumatic_shock * 0.4 / 2) * 2)	//If the difference is too big shock stage jumps to 40% of traumatic shock
 			shock_stage = (traumatic_shock * 0.4)
@@ -148,11 +161,29 @@
 			to_chat(src, "<span class='danger'>[pick("The pain is excruciating", "Please, just end the pain", "Your whole body is going numb")]!</span>")
 			Weaken(10)
 		if(shock_stage == 120)
-			to_chat(src, "<span class='userdanger'>Your heart feels like it might stop at any moment!</span>")
+			// Check if this is primarily pain-based shock for more encouraging message
+			var/blood_circulation = 1.0
+			if(ishuman(src))
+				var/mob/living/carbon/human/H = src
+				blood_circulation = H.get_blood_circulation()
+
+			if(blood_circulation >= BLOOD_VOLUME_BAD)
+				to_chat(src, "<span class='userdanger'>Your heart races dangerously from the overwhelming pain - you need to get treated soon!</span>")
+			else
+				to_chat(src, "<span class='userdanger'>Your heart feels like it might stop at any moment!</span>")
 
 	if(shock_stage >= 140)
 		if(shock_stage == 140)
-			to_chat(src, "<span class='userdanger'>Your heart is beating erratically, skipping beats!</span>")
+			// Check if this is primarily pain-based shock for slightly more encouraging message
+			var/blood_circulation = 1.0
+			if(ishuman(src))
+				var/mob/living/carbon/human/H = src
+				blood_circulation = H.get_blood_circulation()
+
+			if(blood_circulation >= BLOOD_VOLUME_BAD)
+				to_chat(src, "<span class='userdanger'>Your heart is struggling desperately against the pain, beating erratically!</span>")
+			else
+				to_chat(src, "<span class='userdanger'>Your heart is beating erratically, skipping beats!</span>")
 		if(prob(2))
 			to_chat(src, "<span class='userdanger'>Your heart skips several beats!</span>")
 

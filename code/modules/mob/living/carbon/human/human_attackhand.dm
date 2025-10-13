@@ -126,6 +126,7 @@
 						// Heart restart success!
 						if(heart)
 							heart.pulse = PULSE_SLOW  // Start with slow pulse
+							heart.last_restart_time = world.time  // Set protection timer for 60 seconds
 							to_chat(src, SPAN_NOTICE("You feel your heart suddenly kick back to life!"))
 							to_chat(H, span_nicegreen("You feel a weak pulse returning under your hands!"))
 							H.visible_message(SPAN_NOTICE("\The [H] has successfully restarted [src]'s heart!"))

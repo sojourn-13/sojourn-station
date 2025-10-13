@@ -22,6 +22,7 @@
 	var/next_blood_squirt = 0
 	var/list/external_pump
 	var/thready_pulse_time = 0  // Tracks how long pulse has been at PULSE_THREADY
+	var/last_restart_time = 0  // Tracks when heart was last restarted for protection period
 
 /obj/item/organ/internal/vital/heart/die()
 	// When heart dies, pulse should stop
@@ -117,6 +118,7 @@
 		// Check for heart restart chemical effect
 		if(owner.chem_effects[CE_HEARTRESTART])
 			pulse = PULSE_SLOW // Start with slow pulse when restarted chemically
+			last_restart_time = world.time  // Set protection timer for 60 seconds
 			to_chat(owner, SPAN_NOTICE("You feel your heart suddenly kick back to life!"))
 			// Force immediate HUD update to show heart restarted
 			owner.hud_updateflag |= 1 << HEALTH_HUD
@@ -134,29 +136,54 @@
 		else if(blood_circulation < BLOOD_VOLUME_OKAY)
 			should_stop = prob(5) // Small chance if somewhat low blood
 
-		// Enhanced shock-induced cardiac arrest
-		if(owner.shock_stage >= 160) // Severe shock - heart likely to stop
-			should_stop = should_stop || prob(60)
-			if(prob(10))
-				to_chat(owner, SPAN_WARNING("You feel your heart struggling to beat under the strain..."))
-		else if(owner.shock_stage >= 120) // Critical shock
-			should_stop = should_stop || prob(30)
-		else if(owner.shock_stage >= 80) // Moderate shock
-			should_stop = should_stop || prob(10)
+		// Enhanced shock-induced cardiac arrest (more forgiving when pain-based)
+		var/pain_based_shock = (blood_circulation >= BLOOD_VOLUME_BAD) // If blood volume is okay, shock is likely pain-based
+		var/shock_heart_stop_modifier = pain_based_shock ? 0.6 : 1.0 // Reduce chances by 40% if pain-based
 
-		// Sustained shock accumulates risk over time
+		if(owner.shock_stage >= 160) // Severe shock - heart likely to stop
+			var/stop_chance = round(60 * shock_heart_stop_modifier)
+			should_stop = should_stop || prob(stop_chance)
+			if(prob(10))
+				if(pain_based_shock)
+					to_chat(owner, SPAN_WARNING("Your heart races from the overwhelming pain, but fights to keep beating..."))
+				else
+					to_chat(owner, SPAN_WARNING("You feel your heart struggling to beat under the strain..."))
+		else if(owner.shock_stage >= 120) // Critical shock
+			var/stop_chance = round(30 * shock_heart_stop_modifier)
+			should_stop = should_stop || prob(stop_chance)
+		else if(owner.shock_stage >= 80) // Moderate shock
+			var/stop_chance = round(10 * shock_heart_stop_modifier)
+			should_stop = should_stop || prob(stop_chance)
+
+		// Sustained shock accumulates risk over time (more forgiving if pain-based)
 		if(owner.shock_stage >= 80)
 			// Track how long shock has been sustained (simplified)
 			var/shock_duration_factor = min(owner.shock_stage / 20, 5) // Max 5x multiplier
-			if(prob(shock_duration_factor * 2)) // Increases chance over time
+			var/sustained_shock_chance = shock_duration_factor * 2
+			if(pain_based_shock)
+				sustained_shock_chance *= 0.5 // Half the accumulation rate for pain-based shock
+			if(prob(sustained_shock_chance)) // Increases chance over time
 				should_stop = TRUE
 
 		// Original conditions
 		// Removed brain damage heart failure - brain damage should not directly cause heart issues
 		// should_stop = should_stop || prob(max(0, owner.getBrainLoss() - owner.maxHealth * 0.75)) //brain failing to work heart properly
-		should_stop = should_stop || (prob(10) && pulse == PULSE_THREADY) //erratic heart patterns, increased chance
+
+		// Erratic heart patterns from thready pulse - much more forgiving if pain-based
+		if(pulse == PULSE_THREADY)
+			var/thready_stop_chance = 10 // Default 10% chance
+			if(pain_based_shock) // If shock is pain-based, much lower chance
+				thready_stop_chance = 2 // Reduce to 2% for pain-based thready pulse
+			should_stop = should_stop || prob(thready_stop_chance)
 
 		if(should_stop) // The heart has stopped due to traumatic or cardiovascular shock.
+			// Check if heart is within 60-second protection period after restart
+			if(last_restart_time && world.time < last_restart_time + 600) // 600 deciseconds = 60 seconds
+				// Heart is protected from stopping, show message but don't stop
+				if(prob(5)) // Occasional warning message so player knows heart is struggling
+					to_chat(owner, SPAN_WARNING("Your recently restarted heart struggles but keeps beating..."))
+				return // Don't let the heart stop during protection period
+
 			// Different messages based on cause
 			if(blood_circulation < BLOOD_VOLUME_SURVIVE)
 				to_chat(owner, SPAN_DANGER("Your heart stops beating - not enough blood to pump!"))
@@ -167,6 +194,7 @@
 
 			pulse = PULSE_NONE
 			thready_pulse_time = 0  // Reset counter when heart stops
+			last_restart_time = 0  // Clear restart protection when heart stops naturally
 			// Force immediate HUD update to show heart stopped
 			if(owner)
 				owner.pulse = PULSE_NONE
@@ -223,8 +251,34 @@
 		thready_pulse_time++
 		// Heart stops after 8-12 seconds of sustained thready pulse
 		if(thready_pulse_time >= rand(8, 12))
+			// Check if heart is within 60-second protection period after restart
+			if(last_restart_time && world.time < last_restart_time + 600) // 600 deciseconds = 60 seconds
+				// Heart is protected from stopping due to arrhythmia, show message but don't stop
+				if(prob(10)) // Occasional warning message
+					to_chat(owner, SPAN_WARNING("Your recently restarted heart struggles with arrhythmia but stabilizes..."))
+				thready_pulse_time = max(thready_pulse_time - 2, 0) // Reduce the thready time slightly to give some relief
+				return
+
+			// Check if thready pulse is primarily from pain-based shock (much more forgiving)
+			blood_circulation = owner.get_blood_circulation()
+			var/pain_based_thready = (blood_circulation >= BLOOD_VOLUME_BAD)
+
+			if(pain_based_thready && thready_pulse_time <= 5)
+				// For the first 5 checks of pain-based thready pulse, much lower chance of stopping
+				if(prob(2)) // Only 2% chance instead of 100%
+					to_chat(owner, SPAN_DANGER("Your heart gives out from sustained arrhythmia!"))
+					pulse = PULSE_NONE
+					last_restart_time = 0
+				else
+					// Give some relief and a warning message
+					if(prob(15))
+						to_chat(owner, SPAN_WARNING("Your heart struggles with the pain but fights to keep a steady rhythm..."))
+					thready_pulse_time = max(thready_pulse_time - 1, 0) // Reduce slightly to give relief
+				return
+
 			to_chat(owner, SPAN_DANGER("Your heart gives out from sustained arrhythmia!"))
 			pulse = PULSE_NONE
+			last_restart_time = 0  // Clear restart protection when heart stops naturally
 			if(owner)
 				owner.pulse = PULSE_NONE
 				owner.hud_updateflag |= 1 << HEALTH_HUD

@@ -1255,6 +1255,7 @@
 	var/obj/item/organ/internal/vital/heart/heart = random_organ_by_process(OP_HEART)
 	if(heart && !(heart.status & ORGAN_DEAD))
 		heart.pulse = PULSE_NORM  // Start with normal pulse as this is admin healing
+		heart.last_restart_time = world.time  // Set protection timer for 60 seconds
 		pulse = PULSE_NORM  // Sync to owner for scanner/HUD compatibility
 		// Force immediate HUD update to show heart restarted
 		hud_updateflag |= 1 << HEALTH_HUD
@@ -1406,45 +1407,45 @@
 	// List of clothing slots to check
 	var/list/clothing_slots = list(
 		"head" = head,
-		"wear_suit" = wear_suit, 
+		"wear_suit" = wear_suit,
 		"w_uniform" = w_uniform,
 		"shoes" = shoes,
 		"gloves" = gloves,
 		"wear_mask" = wear_mask
 	)
-	
+
 	for(var/slot_name in clothing_slots)
 		var/obj/item/clothing/C = clothing_slots[slot_name]
 		if(!C)
 			continue
-			
+
 		// Check if clothing is fire-resistant
 		var/is_fire_resistant = FALSE
-		
+
 		// Fire suits and firefighter gear are fire resistant
 		if(istype(C, /obj/item/clothing/suit/fire) || istype(C, /obj/item/clothing/head/firefighter))
 			is_fire_resistant = TRUE
-		
+
 		// Check if clothing has high heat protection
 		if(C.max_heat_protection_temperature && C.max_heat_protection_temperature >= 1000) // 1000K = ~727°C
 			is_fire_resistant = TRUE
-			
+
 		// If not fire resistant, chance to burn off
 		if(!is_fire_resistant && prob(25)) // 25% chance per fire tick
 			visible_message(
 				SPAN_WARNING("[src]'s [C.name] [pick("burns away", "catches fire and disintegrates", "is consumed by flames")]!"),
 				SPAN_DANGER("Your [C.name] burns off!")
 			)
-			
+
 			// Drop the item as ash/burned remains
 			var/turf/T = get_turf(src)
 			if(T)
 				new /obj/effect/decal/cleanable/ash(T)
-			
+
 			// Remove from inventory
 			u_equip(C)
 			qdel(C)
-			
+
 			update_inv_head()
 			update_inv_wear_suit()
 			update_inv_w_uniform()
