@@ -16,6 +16,21 @@
 
 	traumatic_shock = get_constant_pain() + get_dynamic_pain() - get_painkiller()
 
+	// Enhanced painkiller effectiveness - stronger painkillers should dramatically reduce traumatic shock
+	var/painkiller_amount = get_painkiller()
+	if(painkiller_amount > 0)
+		var/additional_reduction = 0
+		if(painkiller_amount >= 75) // Oxycodone level and above
+			additional_reduction = traumatic_shock * 0.8 // Remove 80% of remaining traumatic shock
+		else if(painkiller_amount >= 50) // Tramadol level
+			additional_reduction = traumatic_shock * 0.6 // Remove 60% of remaining traumatic shock
+		else if(painkiller_amount >= 25) // Paracetamol level
+			additional_reduction = traumatic_shock * 0.4 // Remove 40% of remaining traumatic shock
+		else // Lower level painkillers
+			additional_reduction = traumatic_shock * 0.2 // Remove 20% of remaining traumatic shock
+
+		traumatic_shock = max(0, traumatic_shock - additional_reduction)
+
 	if(slurring)
 		traumatic_shock -= 10
 
@@ -96,13 +111,23 @@
 	if(traumatic_shock > soft_crit_threshold + SHOCK_STAGE_BUFFER)
 		shock_stage_speed = 2
 
-	// Apply painkiller effects to shock stage reduction
+	// Apply painkiller effects to shock stage reduction - painkillers now aggressively reduce shock
 	var/painkiller_reduction = get_painkiller()
 	var/effective_shock_reduction = shock_stage_speed
 	if(painkiller_reduction > 0)
-		// Painkillers provide additional shock reduction
-		// More painkillers = faster shock recovery
-		effective_shock_reduction += min(painkiller_reduction / 10, 3) // Cap at 3 additional reduction per tick
+		// High-level painkillers can completely eliminate shock
+		// Oxycodone (75) should completely remove shock, tramadol (50) should be very effective
+		var/shock_reduction_multiplier = 1.0
+		if(painkiller_reduction >= 75) // Oxycodone level and above
+			shock_reduction_multiplier = 8.0 // 8x reduction speed - removes shock very quickly
+		else if(painkiller_reduction >= 50) // Tramadol level
+			shock_reduction_multiplier = 5.0 // 5x reduction speed - very effective
+		else if(painkiller_reduction >= 25) // Paracetamol level
+			shock_reduction_multiplier = 3.0 // 3x reduction speed - good effectiveness
+		else // Lower level painkillers
+			shock_reduction_multiplier = 1.5 // 1.5x reduction speed - mild improvement
+
+		effective_shock_reduction = shock_stage_speed * shock_reduction_multiplier
 
 	//Handle shock
 	if(shock_stage <= traumatic_shock)	//Shock stage slowly climbs to traumatic shock

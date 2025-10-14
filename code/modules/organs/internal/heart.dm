@@ -231,12 +231,13 @@
 	if(pulse && fibrillation)	//Dangerous arrhythmias from shock/hypoxia
 		pulse = PULSE_THREADY
 
-	// Stabilising chemicals pull the heartbeat towards the center
-	if(pulse != PULSE_NORM && is_stable)
+	// Stabilising chemicals pull the heartbeat towards the center more aggressively
+	// Only stabilize if heart is already beating (don't restart stopped hearts)
+	if(pulse != PULSE_NORM && pulse != PULSE_NONE && is_stable)
 		if(pulse > PULSE_NORM)
-			pulse--
+			pulse = max(PULSE_NORM, pulse - 2)  // Move 2 steps toward normal, but don't overshoot
 		else
-			pulse++
+			pulse = min(PULSE_NORM, pulse + 2)  // Move 2 steps toward normal, but don't overshoot
 
 	// Sync heart pulse to owner for scanner/medical tool compatibility
 	if(owner)
