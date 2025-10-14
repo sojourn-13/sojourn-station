@@ -374,7 +374,7 @@
 	if(ishuman(user) || issilicon(user))
 		var/user_is_choosing = TRUE
 		while(user_is_choosing)
-			var/action = input(user, "Producing Bolus: Alinemet type = [strongest_alinement]", "Cultivation Level: [cultivation_level]!", "Yes", "No")
+			var/action = sanitizeSafe(input(user, "Producing Bolus: Alinemet type = [strongest_alinement]", "Cultivation Level: [cultivation_level]!", "Yes", "No"))
 			//Prevents griffen by holding a menu well someone else works.
 			if(get_dist(src,user) >= 2)
 				to_chat(user, SPAN_NOTICE("Your a little to far away to do this."))
