@@ -228,7 +228,8 @@
 //The majority of items are made from this as its juices/reagents
 /obj/structure/bolus/liquid_to_soild
 	name = "Xenophobic Spacetime Substack Tracking Unit."
-	desc = "An advanced scanner that looks at the past of reagents placed inside slowly pulling out materal lost to entropy and bluespace. Alt Clt to change what type of liquid to scan."
+	desc = "An advanced scanner that looks at the past of reagents placed inside slowly pulling out materal lost to entropy and bluespace. \
+	Alt Clt to change what type of liquid to scan."
 
 	icon_state = "analyser_old"
 	reagent_flags = OPENCONTAINER //At any point in time you can just open the lid and look inside
@@ -352,9 +353,10 @@
 //                 ///
 
 /obj/structure/bolus/maker
-	name = "F.O.L: Endless Growth of Root and Seed of the Ideal World B.Y.O.N.D the Vail of Worlds at the Edge of Humanity and Space." //Fruits of Labour, Boluse Young Operations Numberical Device
+	//Fruits of Labour, Boluse Young Operations Numberical Device
+	name = "F.O.L: Endless Growth of Root and Seed of the Ideal World B.Y.O.N.D the Vail of Worlds at the Edge of Humanity and Space."
 	desc = "A large strange device that takes strange materals not able to be found normally and turns them into short lasting medical boluses. \
-	Almost all the engravings are short Latin phrases and warnings about over use of the products. Alt Click when ready to make a Boluse"
+	Almost all the engravings are short Latin phrases and warnings about over use of the products. Alt Click when ready to make a Boluse or to use the \"Help\" command."
 
 	icon = 'modular_sojourn/bolus_maker.dmi'
 	icon_state = "bolus_maker"
@@ -370,6 +372,29 @@
 	//Basically the alinement item that had the highest score is what determins type
 	var/strongest_alinement = "Will"
 
+	//List of alinements that we have successfully used to make a bolus
+	var/list/descovered_alinements = list("Will")
+
+	//Allows for reseting of the known index and production for the Will path
+	var/index_purge_unlocked = FALSE
+
+	//A way to keep track of all are recipies in game and debug issues.
+	var/debug_list = null
+
+	//Are radio
+	var/obj/item/device/radio/ring_ring
+
+/obj/structure/bolus/maker/Initialize(mapload)
+	..()
+
+	debug_list = BOLUS.recipes
+
+/obj/structure/bolus/maker/Destroy()
+	debug_list = null
+	qdel(ring_ring)
+
+	..()
+
 /obj/structure/bolus/maker/AltClick(mob/user)
 	if(ishuman(user) || issilicon(user))
 		var/user_is_choosing = TRUE
@@ -380,25 +405,46 @@
 				to_chat(user, SPAN_NOTICE("Your a little to far away to do this."))
 				user_is_choosing = FALSE
 				return
-			if(action == "Yes")
+			if(action == "Yes" || action == "Y" || action == "Ye")
 				produce_boluse(user)
 				user_is_choosing = FALSE
 				return
 
 			//Hidden Parser Stuff for code divers or folks that teach one another cool things.
 
-			if(action == "Clear")
+			if(action == "?" || action == "Help" || action == "Hint" || action == "Question" || action == "How")
+				generate_hints(user)
+				user_is_choosing = FALSE
+				return
+
+			if(action == "Index Purge." || action == "I.P")
+				if(index_purge_unlocked)
+					index_purge(user)
+					index_purge_unlocked = FALSE
+				else
+					to_chat(user, SPAN_NOTICE("You must unlock this feature first using the \"Help\" Command after descovering every bolus."))
+				user_is_choosing = FALSE
+				return
+
+			if(action == "Clear" || action == "C" || action == "Clr")
 				strongest_alinement_number = -1
 				cultivation_level = 0
 				to_chat(user, SPAN_NOTICE("Boluse cultivation Cleared. Alinement reset to Will"))
 				strongest_alinement = "Will"
+				user_is_choosing = FALSE
+				return
 
-			if(action == "Subtrack" || action == "Reduce")
+			if(action == "Subtrack" || action == "Reduce" || action == "-")
 				cultivation_level = cultivation_level * 0.9
 				to_chat(user, SPAN_NOTICE("Boluse cultivation [action] by 10%."))
+				user_is_choosing = FALSE
+				return
 
-			if(action == "Debug" || action == "Statis")
-				to_chat(user, SPAN_NOTICE("Boluse cultivation is at [cultivation_level]. Strongest Alinement is [strongest_alinement_number] for [strongest_alinement]."))
+			if(action == "Debug" || action == "Statis" || action == "Db" || action == "D.B")
+				to_chat(user, SPAN_NOTICE("Boluse cultivation is at [cultivation_level]. \
+				Strongest Alinement is [strongest_alinement_number] for [strongest_alinement]."))
+				user_is_choosing = FALSE
+				return
 
 			to_chat(user, SPAN_NOTICE("Boluse cultivation cancled."))
 			user_is_choosing = FALSE
@@ -406,16 +452,17 @@
 /obj/structure/bolus/maker/attackby(obj/item/I, mob/user)
 	if(istype(I, /obj/item/bolus_craftable))
 		var/obj/item/bolus_craftable/C = I
-		to_chat(user, "<span class='info'>With ease the [src] eats and proccesses [C] into useable Bolus materals.</span>")
+		to_chat(user, "<span class='info'>With ease the F.O.L eats and proccesses [C] into useable Bolus materals.</span>")
 		if(strongest_alinement_number < C.strangth)
 			strongest_alinement_number = C.strangth
 			strongest_alinement = C.bolus_alinement
 		cultivation_level += C.strangth
-		to_chat(user, "<span class='info'>The [src] reads back its states: Cultivation Level = [cultivation_level] with Alinement of [strongest_alinement]. The strongest Alinement value was [strongest_alinement_number].</span>")
+		to_chat(user, "<span class='info'>The F.O.L reads back its states: Cultivation Level = [cultivation_level] with Alinement of [strongest_alinement]. \
+		The strongest Alinement value was [strongest_alinement_number].</span>")
 
 		qdel(I)
 	else
-		to_chat(user, "<span class='info'>The [src] seems to not think that [I] is not a Bolus materal.</span>")
+		to_chat(user, "<span class='info'>The F.O.L seems to not think that [I] is not a Bolus materal.</span>")
 	..()
 
 /obj/structure/bolus/maker/examine(mob/user)
@@ -434,19 +481,109 @@
 	var/how_many = 0
 	var/success_number = 0
 
+	//Gather this for debug reasons
+	if(!debug_list)
+		debug_list = BOLUS.recipes
+
 	for(var/path in typesof(/datum/bolus_crafting))
-		var/datum/bolus_crafting/recipe = path
+		var/datum/bolus_crafting/recipe = BOLUS.recipes[path]
+
 		if(recipe.alinement == strongest_alinement)
 			how_many++
 			if(!(cultivation_level > recipe.max) && !(cultivation_level < recipe.min))
 				new recipe.item(src.loc)
 				completed = TRUE
 				success_number = how_many
+				//Hint System much
+				var/indexed = FALSE
+				for(var/DA in descovered_alinements)
+					if(DA == recipe.alinement)
+						indexed = TRUE
+						break
+				if(!indexed)
+					LAZYADD(descovered_alinements, recipe.alinement)
+
+				//Finding AND giving RnD points sections
+				if(!recipe.found)
+					if(recipe.awarding_points > 0)
+						for(var/obj/machinery/computer/rdconsole/RD in GLOB.computer_list) // Check every RnD computer in existance
+							if(RD.id == 1) // only core gets the science
+								RD.files.adjust_research_points(recipe.awarding_points) // Give the points
+								ring_ring.autosay("Bolus Research Uploaded, granting [recipe.awarding_points] research points!", "F.O.L Announcement System", "Science") // Make the radio say a message.
+
+					recipe.found = TRUE
+				//Writing down are descovery, used for feedback command
+				recipe.level_descovered = cultivation_level
+				if(recipe.lowest_level_descovered > cultivation_level)
+					recipe.lowest_level_descovered = cultivation_level
+				if(recipe.highest_level_descovered < cultivation_level)
+					recipe.highest_level_descovered = cultivation_level
 
 	if(!completed)
 		to_chat(user, SPAN_NOTICE("The F.O.L fails to make a boluse, wasting its materals and resetting itself."))
 	else
-		to_chat(user, SPAN_NOTICE("The F.O.L makes a bolus! It's cultivaion level: [cultivation_level], with a [strongest_alinement] Alinement. This is [success_number] out of [how_many] for [strongest_alinement]."))
+		to_chat(user, SPAN_NOTICE("The F.O.L makes a bolus! It's cultivaion level: [cultivation_level], with a [strongest_alinement] Alinement. \
+		This is [success_number] out of [how_many] for [strongest_alinement]."))
 
 	strongest_alinement_number = -1
 	cultivation_level = 0
+
+/obj/structure/bolus/maker/proc/generate_hints(mob/user)
+	var/how_many = 0
+	var/success_number = 0
+	var/total_found = 0
+	var/total_total = 0
+
+	var/held_alinement = "ERROR"
+
+	var/message = "Made F.O.L Bolus Index:\n"
+
+
+	for(var/path in typesof(/datum/bolus_crafting))
+		var/datum/bolus_crafting/recipe = BOLUS.recipes[path]
+		//Dont waste processing on unknown ones
+		if(recipe.found)
+			total_found++
+
+		//We moved past a type reset are how_many to get accurate sub-totals
+		if(recipe.alinement != held_alinement)
+			held_alinement = recipe.alinement
+			how_many = 1 //We set to 1 for math reasons so we dont have 3/2
+
+		total_total++
+		for(var/hintkey in descovered_alinements)
+			if(hintkey == recipe.alinement)
+				how_many++
+				if(recipe.found)
+					success_number++
+					message += "Following Stats for Bolus [success_number]/[how_many] for [recipe.alinement] alinement. \
+					Found with a Cultivation level of [recipe.level_descovered]. \
+					Highest Cultivation level on record is [recipe.highest_level_descovered] \
+					Lowest is [recipe.lowest_level_descovered].\n"
+
+
+	message += "Total Bolus found [total_found]/[total_total]"
+
+	to_chat(user, SPAN_NOTICE("[message]"))
+
+	if(total_found + 1 == total_total)
+		index_purge_unlocked = TRUE
+		visible_message("<b><font color='#ffaa00'>The F.O.L shimmers and prints a message on its screens \"Commend Unlocked: Index Purge.\" </font></b>")
+
+
+	return message
+
+/obj/structure/bolus/maker/proc/index_purge(mob/user)
+	cultivation_level = 42
+	strongest_alinement_number = -1
+	strongest_alinement = "Will"
+
+	descovered_alinements = list("Will")
+
+	for(var/path in typesof(/datum/bolus_crafting))
+		var/datum/bolus_crafting/recipe = BOLUS.recipes[path]
+		recipe.found = FALSE
+		recipe.level_descovered = 0
+		recipe.highest_level_descovered = 0
+		recipe.lowest_level_descovered = 0
+

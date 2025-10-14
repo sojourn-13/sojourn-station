@@ -19,7 +19,6 @@
 		return
 	..()
 
-
 /obj/item/bolus/proc/nom(mob/user)
 	if(perk && isliving(user))
 		//We buff EVERYONE around us when eating a bolus
@@ -189,6 +188,18 @@
 
 /obj/item/bolus/core_implants/nom(mob/user)
 	if(isliving(user))
+
+		if(ishuman(user))
+			var/mob/living/carbon/human/John = user
+			var/obj/item/implant/core_implant/I = John.get_core_implant(/obj/item/implant/core_implant/cruciform)
+			var/obj/item/organ/internal/psionic_tumor/PT = John.random_organ_by_process(BP_PSION)
+
+			if(!I || PT || !I.active || !I.wearer)
+				to_chat(John, SPAN_NOTICE("The Bolus seems to have no affect on you, likely do to you missing a psionic implant \
+				or a cruciform. Hopefully those around you have felt the power of the Bolus in your sted."))
+				stage += 5 //Heroism!
+
+
 		for(var/mob/living/carbon/human/H in view(5,src))
 			if(H.stat == DEAD)
 				continue
@@ -198,11 +209,14 @@
 			var/obj/item/implant/core_implant/I = H.get_core_implant(/obj/item/implant/core_implant/cruciform)
 			if(I && I.active && I.wearer)
 				I.power += stage + stage //2x for church as they need more power
+				to_chat(I.wearer, SPAN_NOTICE("A weave of power is absorbed into your [I.name]."))
 				continue
 
 			var/obj/item/organ/internal/psionic_tumor/PT = H.random_organ_by_process(BP_PSION)
 			if(PT) // Is the target a psion
 				PT.psi_points += stage
+				to_chat(PT.owner, SPAN_NOTICE("A weave of power is absorbed into your [I.name]."))
+				continue
 
 		qdel(src)
 
