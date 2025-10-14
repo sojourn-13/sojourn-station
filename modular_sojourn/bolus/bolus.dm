@@ -151,7 +151,7 @@
 
 /obj/item/bolus/healing_mkii
 	name = "Pill Bolus: Y-1027.711111111"
-	desc = "A slow working Bolus that heals the consumer greatly after its done. Type Y ehances the healing process further, but only for the one that consumed the Bolus."
+	desc = "A slow working Bolus that heals the consumer greatly after its done. Type Y enhances the healing process further, but only for the one that consumed the Bolus."
 	perk = PERK_BOLUS_AID
 
 /obj/item/bolus/healing_mkii/nom(mob/user)
@@ -165,7 +165,7 @@
 
 /obj/item/bolus/healing_mkiii
 	name = "Pill Bolus: Z-29375.09127"
-	desc = "A slow working Bolus that heals the consumer greatly after its done. Type X greatly ehances the healing process further, but only for the one that consumed the Bolus."
+	desc = "A slow working Bolus that heals the consumer greatly after its done. Type Z greatly enhances the healing process further of both Y and X, but only for the one that consumed the Bolus."
 	perk = PERK_BOLUS_AID
 
 /obj/item/bolus/healing_mkiii/nom(mob/user)
