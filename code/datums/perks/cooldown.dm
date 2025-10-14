@@ -108,7 +108,7 @@
 		if(H.mob_ablative_armor <= 0)
 			H.mob_ablative_armor = 0
 
-	if(isanimal(holder))
+	if(istype(holder, /mob/living/simple/hostile))
 		var/mob/living/simple/A = L
 		A.melee_damage_lower += 5
 		A.melee_damage_upper += 5
@@ -146,7 +146,7 @@
 			H.mob_ablative_armor = 0
 
 
-	if(isanimal(holder))
+	if(istype(holder, /mob/living/simple/hostile))
 		var/mob/living/simple/A = holder
 		A.melee_damage_lower -= 5
 		A.melee_damage_upper -= 5
