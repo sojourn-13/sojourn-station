@@ -400,10 +400,22 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		admins -= src
 	QDEL_NULL(tooltips)
 	QDEL_NULL(loot_panel)
-	if(dbcon.IsConnected())
+	if(dbcon.IsConnected() && src.id && src.id > 0)
 		var/DBQuery/query = dbcon.NewQuery("UPDATE `players` SET `last_seen` = Now() WHERE `id` = '[src.id]'")
 		if(!query.Execute())
-			log_world("Failed to update players table for user with id [src.id]. Error message: [query.ErrorMsg()].")
+			// Check if it's a connection error and attempt to reconnect once
+			if(findtext(query.ErrorMsg(), "MySQL server has gone away") || findtext(query.ErrorMsg(), "Lost connection"))
+				log_world("Player update DB: Connection lost, attempting to reconnect...")
+				if(establish_db_connection())
+					var/DBQuery/retry_query = dbcon.NewQuery("UPDATE `players` SET `last_seen` = Now() WHERE `id` = '[src.id]'")
+					if(!retry_query.Execute())
+						log_world("Failed to update players table for user with id [src.id] (retry). Error message: [retry_query.ErrorMsg()].")
+				else
+					log_world("Failed to reconnect to database for player update (id [src.id])")
+			else
+				log_world("Failed to update players table for user with id [src.id]. Error message: [query.ErrorMsg()].")
+	else if(!src.id || src.id <= 0)
+		log_world("Skipping player update for [ckey] - invalid player ID ([src.id])")
 	Master.UpdateTickRate()
 	..() //Even though we're going to be hard deleted there are still some things that want to know the destroy is happening
 	return QDEL_HINT_HARDDEL_NOW
@@ -539,7 +551,17 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 			var/DBQuery/query_update = dbcon.NewQuery("UPDATE `players` SET `last_seen` = Now(), `ip` = '[src.address]', `cid` = '[src.computer_id]', `byond_version` = '[src.byond_version]', `country` = '[src.country_code]' WHERE `id` = [src.id]")
 
 			if(!query_update.Execute())
-				log_world("Failed to update players table for user with id [src.id]. Error message: [query_update.ErrorMsg()].")
+				// Check if it's a connection error and attempt to reconnect once
+				if(findtext(query_update.ErrorMsg(), "MySQL server has gone away") || findtext(query_update.ErrorMsg(), "Lost connection"))
+					log_world("Player login DB: Connection lost, attempting to reconnect...")
+					if(establish_db_connection())
+						var/DBQuery/retry_update = dbcon.NewQuery("UPDATE `players` SET `last_seen` = Now(), `ip` = '[src.address]', `cid` = '[src.computer_id]', `byond_version` = '[src.byond_version]', `country` = '[src.country_code]' WHERE `id` = [src.id]")
+						if(!retry_update.Execute())
+							log_world("Failed to update players table for user with id [src.id] (retry). Error message: [retry_update.ErrorMsg()].")
+					else
+						log_world("Failed to reconnect to database for player login update (id [src.id])")
+				else
+					log_world("Failed to update players table for user with id [src.id]. Error message: [query_update.ErrorMsg()].")
 
 		//Panic bunker - player not in DB, so they get kicked
 		else if(config.panic_bunker && !holder && !deadmin_holder && !(ckey in GLOB.PB_bypass))

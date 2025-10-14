@@ -100,8 +100,8 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 	network_channels += newChannel
 
 	// Attempt to persist channel immediately to DB for admin channels or if DB is enabled
-	// However, never persist the built-in 'Colony Announcements' default channel.
-	if(channel_name != "Colony Announcements")
+	// However, exclude certain channels from database persistence.
+	if(!ShouldExcludeFromDatabase(channel_name))
 		newChannel.db_id = EnsureChannelInDB(channel_name, author, locked, adminChannel, newChannel.announcement)
 
 	// If we succeeded in getting a DB id for this channel, load its recent messages so the
@@ -144,18 +144,32 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 		newMsg.message_type = message_type
 
 	// If this is an admin message and SQL is available, persist to DB
-	// However, do not persist messages from the built-in 'Colony Announcements' channel.
+	// However, do not persist messages from excluded channels.
 	if(adminMessage && config)
-		if(channel_name == "Colony Announcements")
-			// Keep colony announcements in-memory only; do not create DB noise.
-			log_world("Newscaster: skipping DB persist for message from 'Colony Announcements'")
-		if(establish_db_connection())
+		if(ShouldExcludeFromDatabase(channel_name))
+			// Keep excluded channels in-memory only; do not create DB noise.
+			log_world("Newscaster: skipping DB persist for message from excluded channel '[channel_name]'")
+		else if(establish_db_connection())
 			// Ensure channel exists in DB; attempt to create if missing
 			var/sql_channel_name = sanitizeSQL(channel_name)
 			var/sql_author = sanitizeSQL(author)
-			// Try to find channel id
+			// Try to find channel id with retry logic for connection failures
 			var/DBQuery/check = dbcon.NewQuery("SELECT id FROM news_channels WHERE channel_name = '[sql_channel_name]' LIMIT 1")
-			check.Execute()
+			if(!check.Execute())
+				// Check if it's a connection error and retry once
+				if(findtext(check.ErrorMsg(), "MySQL server has gone away") || findtext(check.ErrorMsg(), "Lost connection"))
+					log_world("Newscaster DB: Connection lost, attempting to reconnect...")
+					if(establish_db_connection())
+						check = dbcon.NewQuery("SELECT id FROM news_channels WHERE channel_name = '[sql_channel_name]' LIMIT 1")
+						if(!check.Execute())
+							log_world("Newscaster DB: Retry failed for channel check: [check.ErrorMsg()]")
+							return // Give up after retry fails
+					else
+						log_world("Newscaster DB: Failed to reconnect")
+						return
+				else
+					log_world("Newscaster DB: Failed to query channel: [check.ErrorMsg()]")
+					return
 			var/chan_id_num = null
 			while(check.NextRow())
 				chan_id_num = check.item[1]
@@ -232,15 +246,43 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 	// Expected tables (best-effort): news_channels(id, channel_name, author, locked, is_admin_channel, announcement)
 	// and news_messages(id, channel_id, author, body, message_type, time_stamp, is_admin_message)
 	if(!config)
+		log_world("DEBUG: Newscaster DB load skipped - no config")
+		return 0
+
+	// Check if SQL is enabled and establish database connection
+	if(!config.sql_enabled)
+		log_world("DEBUG: Newscaster DB load disabled - SQL not enabled in config")
 		return 0
 
 	log_world("DEBUG: Newscaster attempting DB load. SQL enabled status: [config.sql_enabled]")
 
+	// Establish database connection before attempting queries
+	if(!establish_db_connection())
+		log_world("DEBUG: Newscaster DB load failed - could not establish database connection")
+		return 0
+
+	log_world("DEBUG: Newscaster DB connection established successfully")
+
+	// Ensure the required tables exist
+	CreateNewsTablesIfNeeded()
+
 	// Load channels
 	var/DBQuery/q = dbcon.NewQuery("SELECT id, channel_name, author, locked, is_admin_channel, announcement FROM news_channels ORDER BY id ASC")
 	if(!q.Execute())
-		log_world("Newscaster: failed to query news_channels: [q.ErrorMsg()]")
-		return 0
+		// Check if it's a connection error and retry once
+		if(findtext(q.ErrorMsg(), "MySQL server has gone away") || findtext(q.ErrorMsg(), "Lost connection"))
+			log_world("Newscaster: Connection lost during channel load, attempting to reconnect...")
+			if(establish_db_connection())
+				q = dbcon.NewQuery("SELECT id, channel_name, author, locked, is_admin_channel, announcement FROM news_channels ORDER BY id ASC")
+				if(!q.Execute())
+					log_world("Newscaster: Retry failed to query news_channels: [q.ErrorMsg()]")
+					return 0
+			else
+				log_world("Newscaster: Failed to reconnect during channel load")
+				return 0
+		else
+			log_world("Newscaster: failed to query news_channels: [q.ErrorMsg()]")
+			return 0
 
 	// channel_by_id will be a list keyed numerically by DB id where possible
 	var/list/channel_by_id = list()
@@ -369,6 +411,11 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 
 // Ensure the channel exists in DB: return id if found/created, 0 on failure.
 /datum/feed_network/proc/EnsureChannelInDB(var/channel_name, var/author, var/locked = 0, var/adminChannel = 0, var/announcement_message = "")
+	// Check if this channel should be excluded from database persistence
+	if(ShouldExcludeFromDatabase(channel_name))
+		log_world("Newscaster: skipping DB persist for excluded channel '[channel_name]'")
+		return 0
+
 	if(!config)
 		return 0
 	if(!establish_db_connection())
@@ -407,6 +454,84 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 				chan_id = last.item[1]
 			last.Close()
 		return chan_id
+
+// Helper function to determine if a channel should be excluded from database persistence
+/datum/feed_network/proc/ShouldExcludeFromDatabase(var/channel_name)
+	if(!channel_name)
+		return TRUE
+
+	// Convert to lowercase for case-insensitive matching
+	var/lower_name = lowertext(channel_name)
+
+	// Exclude channels with "announcements" in the name
+	if(findtext(lower_name, "announcements"))
+		return TRUE
+
+	// Exclude "nyx daily" specifically
+	if(findtext(lower_name, "nyx daily"))
+		return TRUE
+
+	// Add other exclusions here as needed
+	// Examples:
+	// if(findtext(lower_name, "daily"))
+	//     return TRUE
+	// if(findtext(lower_name, "bulletin"))
+	//     return TRUE
+
+	return FALSE
+
+// Create the news tables if they don't exist
+/datum/feed_network/proc/CreateNewsTablesIfNeeded()
+	if(!dbcon || !dbcon.IsConnected())
+		log_world("Newscaster: Cannot create tables - no database connection")
+		return FALSE
+
+	// Create news_channels table
+	var/channels_sql = {"
+		CREATE TABLE IF NOT EXISTS `news_channels` (
+			`id` int(11) NOT NULL AUTO_INCREMENT,
+			`channel_name` varchar(255) NOT NULL,
+			`author` varchar(255) NOT NULL,
+			`locked` tinyint(1) DEFAULT 0,
+			`is_admin_channel` tinyint(1) DEFAULT 0,
+			`announcement` text,
+			`censored` tinyint(1) DEFAULT 0,
+			`created_at` timestamp DEFAULT CURRENT_TIMESTAMP,
+			PRIMARY KEY (`id`),
+			UNIQUE KEY `channel_name` (`channel_name`)
+		) ENGINE=InnoDB DEFAULT CHARSET=utf8
+	"}
+
+	var/DBQuery/create_channels = dbcon.NewQuery(channels_sql)
+	if(!create_channels.Execute())
+		log_world("Newscaster: Failed to create news_channels table: [create_channels.ErrorMsg()]")
+		return FALSE
+
+	// Create news_messages table
+	var/messages_sql = {"
+		CREATE TABLE IF NOT EXISTS `news_messages` (
+			`id` int(11) NOT NULL AUTO_INCREMENT,
+			`channel_id` int(11) NOT NULL,
+			`author` varchar(255) NOT NULL,
+			`body` text NOT NULL,
+			`message_type` varchar(50) DEFAULT 'Story',
+			`time_stamp` timestamp DEFAULT CURRENT_TIMESTAMP,
+			`is_admin_message` tinyint(1) DEFAULT 0,
+			`caption` text,
+			PRIMARY KEY (`id`),
+			KEY `channel_id` (`channel_id`),
+			KEY `time_stamp` (`time_stamp`),
+			FOREIGN KEY (`channel_id`) REFERENCES `news_channels`(`id`) ON DELETE CASCADE
+		) ENGINE=InnoDB DEFAULT CHARSET=utf8
+	"}
+
+	var/DBQuery/create_messages = dbcon.NewQuery(messages_sql)
+	if(!create_messages.Execute())
+		log_world("Newscaster: Failed to create news_messages table: [create_messages.ErrorMsg()]")
+		return FALSE
+
+	log_world("Newscaster: Database tables verified/created successfully")
+	return TRUE
 
 /obj/machinery/newscaster
 	name = "newscaster"
