@@ -6,7 +6,7 @@
 /datum/bolus_crafting
 	var/min = 42 //The MINIUM we need to craft
 	var/max = 42 //The MAXIUM we before we cant be crafted
-	var/item = /obj/item/reagent_containers/glass/bottle/adminordrazine
+	var/item = /obj/item/reagent_containers/pill/adminordrazine
 	var/alinement = "Will" //What the Bolus maker must be
 
 //Immortality

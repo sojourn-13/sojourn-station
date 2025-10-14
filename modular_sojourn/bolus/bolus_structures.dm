@@ -359,6 +359,8 @@
 	icon = 'modular_sojourn/bolus_maker.dmi'
 	icon_state = "bolus_maker"
 
+	pixel_x = -18 //Better alinement to the tile
+
 	//A simple number. higher the value the different items it crafts.
 	var/cultivation_level = 0
 
@@ -380,9 +382,25 @@
 			if(action == "Yes")
 				produce_boluse(user)
 				user_is_choosing = FALSE
-			else
-				to_chat(user, SPAN_NOTICE("Boluse cultivation cancled."))
-				user_is_choosing = FALSE
+				return
+
+			//Hidden Parser Stuff for code divers or folks that teach one another cool things.
+
+			if(action == "Clear")
+				strongest_alinement_number = -1
+				cultivation_level = 0
+				to_chat(user, SPAN_NOTICE("Boluse cultivation Cleared. Alinement reset to Will"))
+				strongest_alinement = "Will"
+
+			if(action == "Subtrack" || action == "Reduce")
+				cultivation_level = cultivation_level * 0.9
+				to_chat(user, SPAN_NOTICE("Boluse cultivation [action] by 10%."))
+
+			if(action == "Debug" || action == "Statis")
+				to_chat(user, SPAN_NOTICE("Boluse cultivation is at [cultivation_level]. Strongest Alinement is [strongest_alinement_number] for [strongest_alinement]."))
+
+			to_chat(user, SPAN_NOTICE("Boluse cultivation cancled."))
+			user_is_choosing = FALSE
 
 /obj/structure/bolus/maker/attackby(obj/item/I, mob/user)
 	if(istype(I, /obj/item/bolus_craftable))
