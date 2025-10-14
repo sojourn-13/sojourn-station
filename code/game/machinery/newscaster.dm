@@ -862,6 +862,7 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 	icon_state = "newspaper"
 	w_class = ITEM_SIZE_SMALL	//Let's make it fit in trashbags!
 	attack_verb = list("bapped")
+	matter = list(MATERIAL_BIOMATTER = 1)
 	var/screen = 0
 	var/pages = 0
 	var/curr_page = 0

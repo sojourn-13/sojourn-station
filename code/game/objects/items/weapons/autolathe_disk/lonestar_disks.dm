@@ -80,7 +80,7 @@
 		/datum/design/autolathe/gun/flare_gun = 5,
 		/datum/design/autolathe/ammo/flare_shell = 2,
 		/datum/design/autolathe/ammo/flare_shell_g = 2,
-		/datum/design/autolathe/ammo/flare_shell_b = 2,
+		/datum/design/autolathe/ammo/flare_shell_b = 2
 	)
 
 /obj/item/pc_part/drive/disk/design/robustcells
@@ -94,7 +94,7 @@
 		/datum/design/autolathe/cell/medium/high = 2,
 		/datum/design/autolathe/cell/small,
 		/datum/design/autolathe/cell/small/high = 2,
-		/datum/design/autolathe/part/cell_mout,
+		/datum/design/autolathe/part/cell_mout
 	)
 
 /obj/item/pc_part/drive/disk/design/cargo
@@ -181,7 +181,7 @@
 		/datum/design/autolathe/gun/flare_gun,
 		/datum/design/autolathe/ammo/flare_shell,
 		/datum/design/autolathe/ammo/flare_shell_g,
-		/datum/design/autolathe/ammo/flare_shell_b,
+		/datum/design/autolathe/ammo/flare_shell_b
 	)
 
 /obj/item/pc_part/drive/disk/design/janitor
@@ -200,6 +200,8 @@
 		/datum/design/autolathe/device/hand_labeler,
 		/datum/design/research/item/light_replacer,
 		/datum/design/autolathe/part/cable_coil,
+		/datum/design/autolathe/misc/caution,
+		/datum/design/autolathe/misc/caution_cone
 		)
 
 /obj/item/pc_part/drive/disk/design/scav
