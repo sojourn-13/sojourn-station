@@ -54,8 +54,8 @@
 /obj/item/gun/energy/gun/nuclear/proc/update_mode()
 	var/datum/firemode/current_mode = firemodes[sel_mode]
 	switch(current_mode.name)
-		if("stun") add_overlay("nucgun-stun")
-		if("kill") add_overlay("nucgun-kill")
+		if("stunshot") add_overlay("nucgun-stun")
+		if("nuclear beam") add_overlay("nucgun-kill")
 
 /obj/item/gun/energy/gun/nuclear/update_icon()
 	cut_overlays()
