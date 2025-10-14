@@ -566,7 +566,7 @@
 
 	to_chat(user, SPAN_NOTICE("[message]"))
 
-	if(total_found + 1 == total_total)
+	if(total_found + 1 >= total_total)
 		index_purge_unlocked = TRUE
 		visible_message("<b><font color='#ffaa00'>The F.O.L shimmers and prints a message on its screens \"Commend Unlocked: Index Purge.\" </font></b>")
 
