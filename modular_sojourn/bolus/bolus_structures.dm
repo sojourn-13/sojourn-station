@@ -360,6 +360,7 @@
 	icon_state = "bolus_maker"
 
 	pixel_x = -18 //Better alinement to the tile
+	layer = 2.9 //So pills are over
 
 	//A simple number. higher the value the different items it crafts.
 	var/cultivation_level = 0
