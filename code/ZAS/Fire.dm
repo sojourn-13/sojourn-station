@@ -38,6 +38,7 @@ turf/proc/hotspot_expose(exposed_temperature, exposed_volume, soh = 0)
 
 	if(air_contents.check_combustability(liquid))
 		igniting = 1
+
 		create_fire(exposed_temperature)
 	return igniting
 
@@ -327,7 +328,7 @@ turf/proc/hotspot_expose(exposed_temperature, exposed_volume, soh = 0)
 		//remove_by_flag() and adjust_gas() handle the group_multiplier for us.
 		remove_by_flag(XGM_GAS_OXIDIZER, used_oxidizers)
 		remove_by_flag(XGM_GAS_FUEL, used_gas_fuel)
-		adjust_gas(gas_data.burn_product, used_oxidizers)
+		adjust_gas(GAS_CO2, used_oxidizers)
 
 		if(zone)
 			zone.remove_liquidfuel(used_liquid_fuel, !check_combustability())
