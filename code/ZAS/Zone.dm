@@ -52,7 +52,6 @@ Class Procs:
 	var/list/edges
 
 	var/datum/gas_mixture/air = new
-	var/last_air_temperature = T20C
 
 /zone/New()
 	SSair.add_zone(src)
@@ -161,7 +160,6 @@ Class Procs:
 		for(var/turf/simulated/T in contents)
 			T.update_graphic(graphic_add, graphic_remove)
 
-	// Update connected edges.
 	for(var/connection_edge/E in edges)
 		if(E.sleeping)
 			E.recheck()
