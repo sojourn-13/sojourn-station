@@ -47,7 +47,7 @@ jobs:
       - name: Generate per-file changelog diffs
         run: |
           mkdir -p .changelog_diffs
-          py -3 tools/generate_changelog.py --left origin1/master --right upstream1/master --per-file-out .changelog_diffs --print-diffs
+          python3 tools/generate_changelog.py --left origin1/master --right upstream1/master --per-file-out .changelog_diffs --print-diffs
           mkdir -p html/changelogs
           echo "Generated per-file changelog diffs."
 
