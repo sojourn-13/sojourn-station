@@ -97,7 +97,7 @@ jobs:
             fs.writeFileSync(summaryFile, mergedYaml, 'utf8');
             console.log(`✅ Wrote merged summarized changelog to ${summaryFile}`);
             core.setOutput('yaml_path', summaryFile);
-
+      
       - name: Commit and push summarized changelog
         env:
           GIT_AUTHOR_NAME: "Nestor Jr."
@@ -113,6 +113,8 @@ jobs:
             git push
           else
             echo "No changelog updates to commit."
+          fi
+
 
       - name: Trigger make_changelog.yml
         uses: benc-uk/workflow-dispatch@v1
