@@ -311,9 +311,10 @@
 
 /obj/machinery/vending/marshal_kit/proc/RedeemRangerSecondary(obj/item/voucher/voucher, mob/redeemer)
 	var/items = list(
+					"Counselor Kit" = /obj/item/storage/box/m_kit/taser,
 					"Deckard Kit" = /obj/item/storage/box/m_kit/deckard,
 					"Zwang Kit" = /obj/item/storage/box/m_kit/zwang,
-					"Judge Revolver Kit" = /obj/item/storage/box/m_kit/judge)
+					"Judge Kit" = /obj/item/storage/box/m_kit/judge)
 	var/selection = items[input(redeemer, "Pick your side-arm", "Marshal Voucher Redemption") as null|anything in items]
 	if(selection)
 		new selection(loc)

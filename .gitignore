@@ -230,3 +230,4 @@ aux*.pdb
 /faxes
 rust_g.dm
 jukebox.json
+bin/merge-test-prs.bat

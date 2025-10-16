@@ -101,13 +101,13 @@
 	item_state = "zwang"
 	item_charge_meter = TRUE
 	can_dual = TRUE
-	charge_cost = 160
+	charge_cost = 50
 	matter = list(MATERIAL_PLASTEEL = 13, MATERIAL_PLASTIC = 6, MATERIAL_SILVER = 6)
 	price_tag = 1400
 
 	init_firemodes = list(
-		list(mode_name="stunshot", projectile_type=/obj/item/projectile/energy/electrode/stunshot, fire_sound = 'sound/weapons/energy/Taser.ogg', fire_delay=35, icon="stun"),
-		list(mode_name="lethal", projectile_type=/obj/item/projectile/beam/midlaser, fire_sound='sound/weapons/energy/laser_pistol.ogg', fire_delay=10, icon="kill"),
+		list(mode_name="stunshot", projectile_type=/obj/item/projectile/energy/electrode, fire_sound = 'sound/weapons/energy/Taser.ogg', charge_cost = 100, icon="stun"),
+		list(mode_name="lethal", projectile_type=/obj/item/projectile/beam/midlaser, fire_sound='sound/weapons/energy/laser_pistol.ogg', charge_cost = 100, icon="kill"),
 	)
 	serial_type = "NM"
 
@@ -115,10 +115,21 @@
 	wield_delay_factor = 0.2 // 20 vig
 
 /obj/item/gun/energy/zwang/update_icon()
+	// Determine base icon state based on firemode
+	var/base_state = "zwang"  // default
+	if(firemodes && firemodes.len && sel_mode <= firemodes.len)
+		var/datum/firemode/current_mode = firemodes[sel_mode]
+		if(current_mode && current_mode.name == "stunshot")
+			base_state = "tazer_zwang"
+		else if(current_mode && current_mode.name == "lethal")
+			base_state = "laser_zwang"
+
+	// Set the modifystate so parent update_icon uses our base state
+	modifystate = base_state
+
+	// Call parent to handle battery charge levels
 	..()
-	cut_overlays()
-	var/datum/firemode/current_mode = firemodes[sel_mode]
-	if(current_mode.name == "stunshot")
-		add_overlay("tazer_zwang")
-	else
-		add_overlay("laser_zwang")
+
+	// If charge_meter is disabled, just use the base state
+	if(!charge_meter)
+		icon_state = base_state

@@ -103,7 +103,7 @@
 
 /datum/reagent/medicine/varceptol/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	M.heal_organ_damage(9 * removed, 0)
-	M.add_chemical_effect(CE_ANTITOX, 3 * removed)
+	M.add_chemical_effect(CE_ANTITOX, 3)
 
 /datum/reagent/medicine/meralyne
 	name = "Meralyne"
@@ -968,19 +968,14 @@ We don't use this but we might find use for it. Porting it since it was updated 
 	touch_met = 5
 	nerve_system_accumulations = 0
 
-/datum/reagent/medicine/sterilizine/affect_touch(mob/living/carbon/M, alien, effect_multiplier)
-	for(var/obj/item/I in M.contents)
-		I.was_bloodied = null
-	M.was_bloodied = null
-
 /datum/reagent/medicine/sterilizine/touch_obj(var/obj/O)
-	O.was_bloodied = null
+	// Use the object's clean_blood so it clears forensic markers
+	O.clean_blood()
+	return TRUE
 
 /datum/reagent/medicine/sterilizine/touch_turf(var/turf/T)
-	for(var/obj/item/I in T.contents)
-		I.was_bloodied = null
-	for(var/obj/effect/decal/cleanable/blood/B in T)
-		qdel(B)
+	// Use the turf's clean_blood to clear forensic markers on the turf
+	T.clean_blood()
 	return TRUE
 
 /datum/reagent/medicine/leporazine
@@ -1315,7 +1310,7 @@ We don't use this but we might find use for it. Porting it since it was updated 
 
 /datum/reagent/medicine/purger/overdose(mob/living/carbon/M, alien)
 	. = ..()
-	M.add_chemical_effect(CE_PURGER, 2)
+	M.add_chemical_effect(CE_PURGER, 3)
 
 /datum/reagent/medicine/addictol
 	name = "Addictol"

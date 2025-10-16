@@ -22,42 +22,31 @@
 	price_tag = 900
 	gun_tags = list(GUN_LASER, GUN_ENERGY)
 	init_firemodes = list(
-		list(mode_name="stunshot", projectile_type=/obj/item/projectile/energy/electrode/stunshot, fire_sound= 'sound/weapons/energy/Taser.ogg', fire_delay = 10, charge_cost = 150, icon="stun"),
-		list(mode_name="buckshot", projectile_type=/obj/item/projectile/bullet/pellet/shotgun/energy, fire_sound='sound/weapons/guns/fire/sunrise_fire.ogg', fire_delay = 15, charge_cost = 100, icon="kill"),
+		list(mode_name="heavy stunshot", projectile_type=/obj/item/projectile/energy/electrode/stunshot, fire_sound= 'sound/weapons/energy/Taser.ogg', charge_cost = 100, icon="stun"),
+		list(mode_name="heavy lethal", projectile_type=/obj/item/projectile/beam/heavylaser, fire_sound='sound/weapons/guns/fire/sunrise_fire.ogg', charge_cost = 100, icon="kill"),
 	)
 	serial_type = "NM"
 
 /obj/item/gun/energy/peacekeeper/update_icon()
+	// Determine base icon state based on firemode
+	var/base_state = "peacekeeper"  // default
+	if(firemodes && firemodes.len && sel_mode <= firemodes.len)
+		var/datum/firemode/current_mode = firemodes[sel_mode]
+		if(current_mode && current_mode.name == "heavy stunshot")
+			base_state = "peacekeeper"
+		else if(current_mode && current_mode.name == "heavy lethal")
+			base_state = "lpeacekeeper"
+
+	// Set the modifystate so parent update_icon uses our base state
+	modifystate = base_state
+
+	// Call parent to handle battery charge levels
 	..()
-	cut_overlays()
-	var/iconstring = initial(icon_state)
-	var/itemstring = ""
 
-	if(charge_meter)
-		var/ratio = 0
+	// If charge_meter is disabled, just use the base state
+	if(!charge_meter)
+		icon_state = base_state
 
-		//make sure that rounding down will not give us the empty state even if we have charge for a shot left.
-		if(cell && cell.charge >= charge_cost)
-			ratio = cell.charge / cell.maxcharge
-			ratio = min(max(round(ratio, 0.25) * 100, 25), 100)
-
-		if(modifystate)
-			iconstring = "[modifystate][ratio]"
-		else
-			iconstring = "[initial(icon_state)][ratio]"
-
-		if(item_charge_meter)
-			itemstring += "-[item_modifystate][ratio]"
-
-	if (!cell)
-		iconstring += "-slide"
-
-	if(wielded)
-		itemstring += "_doble"
-
-/obj/item/gun/energy/peacekeeper/proc/update_mode()
-	var/datum/firemode/current_mode = firemodes[sel_mode]
-	if(current_mode.name == "stunshot")
-		add_overlay("peacekeeper")
-	else
-		add_overlay("lpeacekeeper")
+	// Handle no cell case
+	if(!cell)
+		icon_state += "_slide"
