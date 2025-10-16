@@ -66,38 +66,12 @@ jobs:
         uses: actions/github-script@v7
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GEN_FILE: html/changelogs/generated_${{ env.TS }}.txt
         with:
           script: |
             const fs = require('fs');
-            const text = fs.readFileSync(process.env.GEN_FILE, 'utf8').slice(0, 380000);
-
-            const system = 'You are a meticulous SS13 changelog generator.';
-            const user = `
-From this auto-generated changelog text, produce a concise player-facing YAML changelog.
-
-Input changelog (between markers):
---- BEGIN INPUT ---
-${text}
---- END INPUT ---
-
-Output YAML (no markdown, no commentary). Use this structure exactly:
-author: Copilot
-changes:
-  - <prefix>: <player-facing description>
-  - <prefix>: <player-facing description>
-delete-after: true
-
-Rules:
-- Use only these prefixes (map as follows):
-    add->rscadd, del->rscdel, tweak->qol, balance->balance, fix->bugfix,
-    soundadd->soundadd, sounddel->sounddel, imageadd->imageadd, imagedel->imagedel,
-    spellcheck->spellcheck, code->code_imp, refactor->refactor, config->config,
-    admin->admin, server->server
-- Prefer concise, player-facing summaries; group technical commits together.
-- Output ONLY valid YAML.
-`;
-
+            const path = `html/changelogs/generated_${process.env.TS}.txt`;
+            const text = fs.readFileSync(path, 'utf8').slice(0, 380000);
+            const prompt = `From this auto-generated changelog text, produce a concise player-facing YAML changelog. Input changelog (between markers): --- BEGIN INPUT --- ${text} --- END INPUT --- Output YAML (no markdown, no commentary). Use this structure exactly: author: Copilot changes: - <prefix>: <player-facing description> delete-after: true Rules: use only these prefixes: add->rscadd, del->rscdel, tweak->qol, balance->balance, fix->bugfix, soundadd->soundadd, sounddel->sounddel, imageadd->imageadd, imagedel->imagedel, spellcheck->spellcheck, code->code_imp, refactor->refactor, config->config, admin->admin, server->server. Prefer concise player-facing summaries; group technical commits together. Output ONLY valid YAML.`;
             const resp = await fetch('https://models.inference.ai.azure.com/chat/completions', {
               method: 'POST',
               headers: {
@@ -108,20 +82,18 @@ Rules:
               body: JSON.stringify({
                 model: 'gpt-4o-mini',
                 messages: [
-                  { role: 'system', content: system },
-                  { role: 'user', content: user },
+                  { role: 'system', content: 'You are a meticulous SS13 changelog generator.' },
+                  { role: 'user', content: prompt },
                 ],
                 temperature: 0.2,
-                max_tokens: 2000,
+                max_tokens: 2000
               }),
             });
-
             if (!resp.ok) {
               const text = await resp.text();
               core.setFailed(`Model call failed: ${resp.status} ${text}`);
               return;
             }
-
             const data = await resp.json();
             const yamlOut = (data.choices?.[0]?.message?.content || '').trim();
             const outPath = `html/changelogs/copilot_${process.env.TS}.yml`;
