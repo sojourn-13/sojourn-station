@@ -1,27 +1,28 @@
-name: Copilot Compare Changelogs
+name: Copilot Generate Changelog
 
 on:
   workflow_dispatch:
     inputs:
-      left_ref:
-        description: "Left ref (e.g., upstream/master)"
+      base_ref:
+        description: "Base ref (e.g., upstream/master)"
         required: false
         default: "upstream/master"
-      right_ref:
-        description: "Right ref (e.g., original/master)"
+      since_ref:
+        description: "Optional since ref (e.g., last release tag)"
         required: false
-        default: "original/master"
+        default: ""
 
 jobs:
   generate:
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: write
       actions: read
       id-token: write
       models: read
+
     steps:
-      - name: Checkout this repo
+      - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
@@ -29,7 +30,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.x'
+          python-version: "3.x"
 
       - name: Add remotes and fetch
         run: |
@@ -37,134 +38,116 @@ jobs:
           git remote add original https://github.com/sojourn-13/sojourn-station.git || true
           git fetch --all --prune
 
-      - name: Compute merge-base and diffs
-        id: diff
-        run: |
-          LEFT_REF="${{ github.event.inputs.left_ref }}"
-          RIGHT_REF="${{ github.event.inputs.right_ref }}"
-          MB=$(git merge-base "$LEFT_REF" "$RIGHT_REF")
-          echo "merge-base=$MB" >> $GITHUB_OUTPUT
-          git diff -U0 "$MB..$LEFT_REF" > left.diff || true
-          git diff -U0 "$MB..$RIGHT_REF" > right.diff || true
-
-      - name: Summarize LEFT with GitHub Models
-        id: leftsum
-        uses: actions/github-script@v7
-        env:
-          DIFF_PATH: left.diff
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          script: |
-            const fs = require('fs');
-            const diff = fs.readFileSync(process.env.DIFF_PATH, 'utf8').slice(0, 380000);
-            const system = 'You are a meticulous changelog generator.';
-            const user = `From the unified diff, produce a single YAML document for SS13 changelogs with this exact structure:\nauthor: Copilot\nchanges:\n  - <prefix>: <player-facing description>\n  - <prefix>: <player-facing description>\ndelete-after: true\n\nRules:\n- Use only these prefixes (map as follows):\n  add->rscadd, del->rscdel, tweak->qol, balance->balance, fix->bugfix,\n  soundadd->soundadd, sounddel->sounddel, imageadd->imageadd, imagedel->imagedel,\n  spellcheck->spellcheck, code->code_imp, refactor->refactor, config->config,\n  admin->admin, server->server\n- Prefer concise, player-facing descriptions; group noisy low-level edits.\n- Output ONLY the YAML (no code fences, no commentary).\n\n--- DIFF START ---\n${diff}\n--- DIFF END ---\n`;
-
-            const resp = await fetch('https://models.inference.ai.azure.com/chat/completions', {
-              method: 'POST',
-              headers: {
-                'Authorization': `Bearer ${process.env.GITHUB_TOKEN}`,
-                'Content-Type': 'application/json',
-                'x-ms-model-inference-endpoint': 'gpt-4o-mini',
-              },
-              body: JSON.stringify({
-                model: 'gpt-4o-mini',
-                messages: [
-                  { role: 'system', content: system },
-                  { role: 'user', content: user },
-                ],
-                temperature: 0.2,
-                max_tokens: 2000,
-              }),
-            });
-            if (!resp.ok) {
-              const text = await resp.text();
-              core.setFailed(`Model call failed: ${resp.status} ${text}`);
-              return;
-            }
-            const data = await resp.json();
-            const out = (data.choices && data.choices[0] && data.choices[0].message && data.choices[0].message.content) || '';
-            core.setOutput('summary', out);
-            fs.mkdirSync('html/changelogs', { recursive: true });
-            fs.writeFileSync('html/changelogs/copilot_left.yml', out, 'utf8');
-
-      - name: Summarize RIGHT with GitHub Models
-        id: rightsum
-        uses: actions/github-script@v7
-        env:
-          DIFF_PATH: right.diff
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          script: |
-            const fs = require('fs');
-            const diff = fs.readFileSync(process.env.DIFF_PATH, 'utf8').slice(0, 380000);
-            const system = 'You are a meticulous changelog generator.';
-            const user = `From the unified diff, produce a single YAML document for SS13 changelogs with this exact structure:\nauthor: Copilot\nchanges:\n  - <prefix>: <player-facing description>\n  - <prefix>: <player-facing description>\ndelete-after: true\n\nRules:\n- Use only these prefixes (map as follows):\n  add->rscadd, del->rscdel, tweak->qol, balance->balance, fix->bugfix,\n  soundadd->soundadd, sounddel->sounddel, imageadd->imageadd, imagedel->imagedel,\n  spellcheck->spellcheck, code->code_imp, refactor->refactor, config->config,\n  admin->admin, server->server\n- Prefer concise, player-facing descriptions; group noisy low-level edits.\n- Output ONLY the YAML (no code fences, no commentary).\n\n--- DIFF START ---\n${diff}\n--- DIFF END ---\n`;
-
-            const resp = await fetch('https://models.inference.ai.azure.com/chat/completions', {
-              method: 'POST',
-              headers: {
-                'Authorization': `Bearer ${process.env.GITHUB_TOKEN}`,
-                'Content-Type': 'application/json',
-                'x-ms-model-inference-endpoint': 'gpt-4o-mini',
-              },
-              body: JSON.stringify({
-                model: 'gpt-4o-mini',
-                messages: [
-                  { role: 'system', content: system },
-                  { role: 'user', content: user },
-                ],
-                temperature: 0.2,
-                max_tokens: 2000,
-              }),
-            });
-            if (!resp.ok) {
-              const text = await resp.text();
-              core.setFailed(`Model call failed: ${resp.status} ${text}`);
-              return;
-            }
-            const data = await resp.json();
-            const out = (data.choices && data.choices[0] && data.choices[0].message && data.choices[0].message.content) || '';
-            core.setOutput('summary', out);
-            fs.mkdirSync('html/changelogs', { recursive: true });
-            fs.writeFileSync('html/changelogs/copilot_right.yml', out, 'utf8');
-
-      - name: Assemble report
-        run: |
-          {
-            echo "# Copilot-based Cross-Repo Changelogs";
-            echo;
-            echo "## Left: ${{ github.event.inputs.left_ref }} (vs ${{ github.event.inputs.right_ref }})";
-            echo;
-            echo '```yaml';
-            echo "${{ steps.leftsum.outputs.summary }}";
-            echo '```';
-            echo;
-            echo "## Right: ${{ github.event.inputs.right_ref }} (vs ${{ github.event.inputs.left_ref }})";
-            echo;
-            echo '```yaml';
-            echo "${{ steps.rightsum.outputs.summary }}";
-            echo '```';
-          } > changelogs_copilot.md
-
-      - name: Write YAMLs for compiler
-        run: |
-          mkdir -p html/changelogs
-          echo "${{ steps.leftsum.outputs.summary }}" > html/changelogs/copilot_left.yml
-          echo "${{ steps.rightsum.outputs.summary }}" > html/changelogs/copilot_right.yml
-
-      - name: Compile SS13 changelogs
+      - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           python -m pip install pyyaml
-          python tools/ss13_genchangelog.py html/changelogs
 
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
+      - name: Generate raw diff using Python tool
+        env:
+          BASE_REF: ${{ github.event.inputs.base_ref }}
+          SINCE_REF: ${{ github.event.inputs.since_ref }}
+        run: |
+          mkdir -p html/changelogs
+          TS="$(date +'%Y-%m-%d_%H-%M-%S')"
+          echo "TS=$TS" >> $GITHUB_ENV
+          DIFF_FILE="html/changelogs/copilot_${TS}.diff"
+          BASE_REF="${BASE_REF:-upstream/master}"
+          if [ -n "$SINCE_REF" ]; then
+            START="$SINCE_REF"
+          else
+            START="$(git merge-base "$BASE_REF" HEAD)"
+          fi
+          echo "Generating diff between $START..HEAD"
+          git diff -U0 "$START..HEAD" > "$DIFF_FILE" || true
+
+      - name: Summarize changes with GitHub Copilot
+        id: copilot_summary
+        uses: actions/github-script@v7
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DIFF_FILE: html/changelogs/copilot_${{ env.TS }}.diff
         with:
-          name: copilot-two-way-changelogs
-          path: |
-            changelogs_copilot.md
-            html/changelogs/archive/*.yml
+          script: |
+            const fs = require('fs');
+            const diff = fs.readFileSync(process.env.DIFF_FILE, 'utf8').slice(0, 380000);
+            const system = 'You are a meticulous changelog generator for SS13.';
+            const user = `From the unified diff, produce a single YAML document with this exact format:
+author: Copilot
+changes:
+  - <prefix>: <player-facing description>
+  - <prefix>: <player-facing description>
+delete-after: true
 
+Rules:
+- Use only these prefixes (map as follows):
+  add->rscadd, del->rscdel, tweak->qol, balance->balance, fix->bugfix,
+  soundadd->soundadd, sounddel->sounddel, imageadd->imageadd, imagedel->imagedel,
+  spellcheck->spellcheck, code->code_imp, refactor->refactor, config->config,
+  admin->admin, server->server
+- Prefer concise, player-facing summaries; group similar technical changes.
+- Output ONLY the YAML (no markdown, code fences, or commentary).
 
+--- DIFF START ---
+${diff}
+--- DIFF END ---`;
+
+            const resp = await fetch('https://models.inference.ai.azure.com/chat/completions', {
+              method: 'POST',
+              headers: {
+                'Authorization': `Bearer ${process.env.GITHUB_TOKEN}`,
+                'Content-Type': 'application/json',
+                'x-ms-model-inference-endpoint': 'gpt-4o-mini',
+              },
+              body: JSON.stringify({
+                model: 'gpt-4o-mini',
+                messages: [
+                  { role: 'system', content: system },
+                  { role: 'user', content: user },
+                ],
+                temperature: 0.2,
+                max_tokens: 2000,
+              }),
+            });
+
+            if (!resp.ok) {
+              const text = await resp.text();
+              core.setFailed(`Model call failed: ${resp.status} ${text}`);
+              return;
+            }
+
+            const data = await resp.json();
+            const yamlOut = (data.choices?.[0]?.message?.content || '').trim();
+            const outPath = `html/changelogs/copilot_${process.env.TS}.yml`;
+            fs.writeFileSync(outPath, yamlOut, 'utf8');
+            core.setOutput('yaml_path', outPath);
+            console.log(`✅ Wrote summarized changelog to ${outPath}`);
+
+      - name: Commit and push summarized changelog
+        env:
+          GIT_AUTHOR_NAME: "Nestor Jr."
+          GIT_AUTHOR_EMAIL: "action@github.com"
+          GIT_COMMITTER_NAME: "Nestor Jr."
+          GIT_COMMITTER_EMAIL: "action@github.com"
+        run: |
+          git config user.name "$GIT_AUTHOR_NAME"
+          git config user.email "$GIT_AUTHOR_EMAIL"
+          if [ -n "$(git status --porcelain html/changelogs)" ]; then
+            git add html/changelogs
+            git commit -m "chore(changelog): auto-generated Copilot changelog"
+            git push
+          else
+            echo "No changelog updates to commit."
+          fi
+
+      - name: Trigger make_changelog.yml
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: make_changelog.yml
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Trigger compile_changelog.yml
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: compile_changelog.yml
+          token: ${{ secrets.GITHUB_TOKEN }}
