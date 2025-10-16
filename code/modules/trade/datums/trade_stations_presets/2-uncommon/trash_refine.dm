@@ -12,6 +12,7 @@
 	offer_limit = 20
 	base_income = 0
 	wealth = 0
+	export_point_cost_mult = 1.25
 	hidden_inv_threshold = 2000
 	recommendation_threshold = 3000
 	stations_recommended = list("junker")

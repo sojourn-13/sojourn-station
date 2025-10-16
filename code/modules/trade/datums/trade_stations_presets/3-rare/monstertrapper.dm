@@ -7,6 +7,7 @@
 	uid = "trapper"
 	tree_x = 0.34
 	tree_y = 0.5
+	export_point_cost_mult = 1.75
 	start_discovered = FALSE
 	spawn_always = TRUE
 	markup = UNCOMMON_GOODS

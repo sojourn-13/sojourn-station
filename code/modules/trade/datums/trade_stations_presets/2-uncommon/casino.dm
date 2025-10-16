@@ -6,6 +6,7 @@
 	tree_x = 0.62
 	tree_y = 0.8
 	markup = 10				// High markup, low base price to prevent export abuse
+	export_point_cost_mult = 1.25
 	base_income = 0
 	wealth = 0
 	hidden_inv_threshold = 1000
