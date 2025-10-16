@@ -115,13 +115,6 @@ jobs:
             echo "No changelog updates to commit."
           fi
 
-
-      - name: Trigger make_changelog.yml
-        uses: benc-uk/workflow-dispatch@v1
-        with:
-          workflow: make_changelog.yml
-          token: ${{ secrets.PAT_TOKEN }}
-
       - name: Trigger compile_changelog.yml
         uses: benc-uk/workflow-dispatch@v1
         with:
