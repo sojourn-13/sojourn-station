@@ -73,7 +73,7 @@ jobs:
             - Output ONLY the YAML (no code fences, no commentary).
             `.trim();
 
-            const res = await github.request('POST /models/{model}/responses', {
+            const res = await github.request('POST /ai/models/{model}/responses', {
               model: 'gpt-4o-mini',
               headers: { 'X-GitHub-Api-Version': '2023-07-07' },
               input: `${prompt}\n\n--- DIFF START ---\n${diff}\n--- DIFF END ---\n`,
@@ -111,7 +111,7 @@ jobs:
             - Output ONLY the YAML (no code fences, no commentary).
             `.trim();
 
-            const res = await github.request('POST /models/{model}/responses', {
+            const res = await github.request('POST /ai/models/{model}/responses', {
               model: 'gpt-4o-mini',
               headers: { 'X-GitHub-Api-Version': '2023-07-07' },
               input: `${prompt}\n\n--- DIFF START ---\n${diff}\n--- DIFF END ---\n`,
