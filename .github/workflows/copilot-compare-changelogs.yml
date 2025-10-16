@@ -19,6 +19,7 @@ jobs:
       contents: read
       actions: read
       id-token: write
+      models: read
     steps:
       - name: Checkout this repo
         uses: actions/checkout@v4
@@ -78,6 +79,7 @@ jobs:
             if (!resp.ok) {
               const text = await resp.text();
               core.setFailed(`Model call failed: ${resp.status} ${text}`);
+              return;
             }
             const data = await resp.json();
             const out = (data.choices && data.choices[0] && data.choices[0].message && data.choices[0].message.content) || '';
@@ -117,6 +119,7 @@ jobs:
             if (!resp.ok) {
               const text = await resp.text();
               core.setFailed(`Model call failed: ${resp.status} ${text}`);
+              return;
             }
             const data = await resp.json();
             const out = (data.choices && data.choices[0] && data.choices[0].message && data.choices[0].message.content) || '';
