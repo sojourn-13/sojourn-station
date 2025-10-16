@@ -1,0 +1,139 @@
+name: Copilot Compare Changelogs
+
+on:
+  workflow_dispatch:
+    inputs:
+      left_ref:
+        description: "Left ref (e.g., upstream/master)"
+        required: false
+        default: "upstream/master"
+      right_ref:
+        description: "Right ref (e.g., original/master)"
+        required: false
+        default: "original/master"
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: read
+      id-token: write
+    steps:
+      - name: Checkout this repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Add remotes and fetch
+        run: |
+          git remote add upstream https://github.com/epic-new-soj-thing/Sojourn-Iskhod.git || true
+          git remote add original https://github.com/sojourn-13/sojourn-station.git || true
+          git fetch --all --prune
+
+      - name: Compute merge-base and diffs
+        id: diff
+        run: |
+          LEFT_REF="${{ github.event.inputs.left_ref }}"
+          RIGHT_REF="${{ github.event.inputs.right_ref }}"
+          MB=$(git merge-base "$LEFT_REF" "$RIGHT_REF")
+          echo "merge-base=$MB" >> $GITHUB_OUTPUT
+          git diff -U0 "$MB..$LEFT_REF" > left.diff || true
+          git diff -U0 "$MB..$RIGHT_REF" > right.diff || true
+
+      - name: Summarize LEFT with Copilot
+        id: leftsum
+        uses: github/copilot-actions-models/summary@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          model: gpt-4o-mini
+          input-type: diff
+          max-tokens: 20000
+          prompt: |
+            From the unified diff, produce a single YAML document for SS13 changelogs with this exact structure:
+            author: Copilot
+            changes:
+              - <prefix>: <player-facing description>
+              - <prefix>: <player-facing description>
+            delete-after: true
+
+            Rules:
+            - Use only these prefixes (map as follows):
+              add->rscadd, del->rscdel, tweak->qol, balance->balance, fix->bugfix,
+              soundadd->soundadd, sounddel->sounddel, imageadd->imageadd, imagedel->imagedel,
+              spellcheck->spellcheck, code->code_imp, refactor->refactor, config->config,
+              admin->admin, server->server
+            - Prefer concise, player-facing descriptions. Group noisy low-level changes.
+            - Output ONLY the YAML (no code fences, no commentary).
+          file-path: left.diff
+
+      - name: Summarize RIGHT with Copilot
+        id: rightsum
+        uses: github/copilot-actions-models/summary@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          model: gpt-4o-mini
+          input-type: diff
+          max-tokens: 20000
+          prompt: |
+            From the unified diff, produce a single YAML document for SS13 changelogs with this exact structure:
+            author: Copilot
+            changes:
+              - <prefix>: <player-facing description>
+              - <prefix>: <player-facing description>
+            delete-after: true
+
+            Rules:
+            - Use only these prefixes (map as follows):
+              add->rscadd, del->rscdel, tweak->qol, balance->balance, fix->bugfix,
+              soundadd->soundadd, sounddel->sounddel, imageadd->imageadd, imagedel->imagedel,
+              spellcheck->spellcheck, code->code_imp, refactor->refactor, config->config,
+              admin->admin, server->server
+            - Prefer concise, player-facing descriptions. Group noisy low-level changes.
+            - Output ONLY the YAML (no code fences, no commentary).
+          file-path: right.diff
+
+      - name: Assemble report
+        run: |
+          {
+            echo "# Copilot-based Cross-Repo Changelogs";
+            echo;
+            echo "## Left: ${{ github.event.inputs.left_ref }} (vs ${{ github.event.inputs.right_ref }})";
+            echo;
+            echo '```yaml';
+            echo "${{ steps.leftsum.outputs.summary }}";
+            echo '```';
+            echo;
+            echo "## Right: ${{ github.event.inputs.right_ref }} (vs ${{ github.event.inputs.left_ref }})";
+            echo;
+            echo '```yaml';
+            echo "${{ steps.rightsum.outputs.summary }}";
+            echo '```';
+          } > changelogs_copilot.md
+
+      - name: Write YAMLs for compiler
+        run: |
+          mkdir -p html/changelogs
+          echo "${{ steps.leftsum.outputs.summary }}" > html/changelogs/copilot_left.yml
+          echo "${{ steps.rightsum.outputs.summary }}" > html/changelogs/copilot_right.yml
+
+      - name: Compile SS13 changelogs
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install pyyaml
+          python tools/ss13_genchangelog.py html/changelogs
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: copilot-two-way-changelogs
+          path: |
+            changelogs_copilot.md
+            html/changelogs/archive/*.yml
+
+
