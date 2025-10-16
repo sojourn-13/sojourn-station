@@ -51,35 +51,36 @@ jobs:
         uses: actions/github-script@v7
         env:
           DIFF_PATH: left.diff
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           script: |
             const fs = require('fs');
-            const diff = fs.readFileSync(process.env.DIFF_PATH, 'utf8').slice(0, 400000);
-            const prompt = `
-            From the unified diff, produce a single YAML document for SS13 changelogs with this exact structure:
-            author: Copilot
-            changes:
-              - <prefix>: <player-facing description>
-              - <prefix>: <player-facing description>
-            delete-after: true
+            const diff = fs.readFileSync(process.env.DIFF_PATH, 'utf8').slice(0, 380000);
+            const system = 'You are a meticulous changelog generator.';
+            const user = `From the unified diff, produce a single YAML document for SS13 changelogs with this exact structure:\nauthor: Copilot\nchanges:\n  - <prefix>: <player-facing description>\n  - <prefix>: <player-facing description>\ndelete-after: true\n\nRules:\n- Use only these prefixes (map as follows):\n  add->rscadd, del->rscdel, tweak->qol, balance->balance, fix->bugfix,\n  soundadd->soundadd, sounddel->sounddel, imageadd->imageadd, imagedel->imagedel,\n  spellcheck->spellcheck, code->code_imp, refactor->refactor, config->config,\n  admin->admin, server->server\n- Prefer concise, player-facing descriptions; group noisy low-level edits.\n- Output ONLY the YAML (no code fences, no commentary).\n\n--- DIFF START ---\n${diff}\n--- DIFF END ---\n`;
 
-            Rules:
-            - Use only these prefixes (map as follows):
-              add->rscadd, del->rscdel, tweak->qol, balance->balance, fix->bugfix,
-              soundadd->soundadd, sounddel->sounddel, imageadd->imageadd, imagedel->imagedel,
-              spellcheck->spellcheck, code->code_imp, refactor->refactor, config->config,
-              admin->admin, server->server
-            - Prefer concise, player-facing descriptions; group noisy low-level edits.
-            - Output ONLY the YAML (no code fences, no commentary).
-            `.trim();
-
-            const res = await github.request('POST /ai/models/{model}/responses', {
-              model: 'gpt-4o-mini',
-              headers: { 'X-GitHub-Api-Version': '2023-07-07' },
-              input: `${prompt}\n\n--- DIFF START ---\n${diff}\n--- DIFF END ---\n`,
+            const resp = await fetch('https://models.inference.ai.azure.com/chat/completions', {
+              method: 'POST',
+              headers: {
+                'Authorization': `Bearer ${process.env.GITHUB_TOKEN}`,
+                'Content-Type': 'application/json',
+                'x-ms-model-inference-endpoint': 'gpt-4o-mini',
+              },
+              body: JSON.stringify({
+                messages: [
+                  { role: 'system', content: system },
+                  { role: 'user', content: user },
+                ],
+                temperature: 0.2,
+                max_tokens: 2000,
+              }),
             });
-
-            const out = (res.data && (res.data.output_text || res.data.output || ''));
+            if (!resp.ok) {
+              const text = await resp.text();
+              core.setFailed(`Model call failed: ${resp.status} ${text}`);
+            }
+            const data = await resp.json();
+            const out = (data.choices && data.choices[0] && data.choices[0].message && data.choices[0].message.content) || '';
             core.setOutput('summary', out);
             fs.mkdirSync('html/changelogs', { recursive: true });
             fs.writeFileSync('html/changelogs/copilot_left.yml', out, 'utf8');
@@ -89,35 +90,36 @@ jobs:
         uses: actions/github-script@v7
         env:
           DIFF_PATH: right.diff
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           script: |
             const fs = require('fs');
-            const diff = fs.readFileSync(process.env.DIFF_PATH, 'utf8').slice(0, 400000);
-            const prompt = `
-            From the unified diff, produce a single YAML document for SS13 changelogs with this exact structure:
-            author: Copilot
-            changes:
-              - <prefix>: <player-facing description>
-              - <prefix>: <player-facing description>
-            delete-after: true
+            const diff = fs.readFileSync(process.env.DIFF_PATH, 'utf8').slice(0, 380000);
+            const system = 'You are a meticulous changelog generator.';
+            const user = `From the unified diff, produce a single YAML document for SS13 changelogs with this exact structure:\nauthor: Copilot\nchanges:\n  - <prefix>: <player-facing description>\n  - <prefix>: <player-facing description>\ndelete-after: true\n\nRules:\n- Use only these prefixes (map as follows):\n  add->rscadd, del->rscdel, tweak->qol, balance->balance, fix->bugfix,\n  soundadd->soundadd, sounddel->sounddel, imageadd->imageadd, imagedel->imagedel,\n  spellcheck->spellcheck, code->code_imp, refactor->refactor, config->config,\n  admin->admin, server->server\n- Prefer concise, player-facing descriptions; group noisy low-level edits.\n- Output ONLY the YAML (no code fences, no commentary).\n\n--- DIFF START ---\n${diff}\n--- DIFF END ---\n`;
 
-            Rules:
-            - Use only these prefixes (map as follows):
-              add->rscadd, del->rscdel, tweak->qol, balance->balance, fix->bugfix,
-              soundadd->soundadd, sounddel->sounddel, imageadd->imageadd, imagedel->imagedel,
-              spellcheck->spellcheck, code->code_imp, refactor->refactor, config->config,
-              admin->admin, server->server
-            - Prefer concise, player-facing descriptions; group noisy low-level edits.
-            - Output ONLY the YAML (no code fences, no commentary).
-            `.trim();
-
-            const res = await github.request('POST /ai/models/{model}/responses', {
-              model: 'gpt-4o-mini',
-              headers: { 'X-GitHub-Api-Version': '2023-07-07' },
-              input: `${prompt}\n\n--- DIFF START ---\n${diff}\n--- DIFF END ---\n`,
+            const resp = await fetch('https://models.inference.ai.azure.com/chat/completions', {
+              method: 'POST',
+              headers: {
+                'Authorization': `Bearer ${process.env.GITHUB_TOKEN}`,
+                'Content-Type': 'application/json',
+                'x-ms-model-inference-endpoint': 'gpt-4o-mini',
+              },
+              body: JSON.stringify({
+                messages: [
+                  { role: 'system', content: system },
+                  { role: 'user', content: user },
+                ],
+                temperature: 0.2,
+                max_tokens: 2000,
+              }),
             });
-
-            const out = (res.data && (res.data.output_text || res.data.output || ''));
+            if (!resp.ok) {
+              const text = await resp.text();
+              core.setFailed(`Model call failed: ${resp.status} ${text}`);
+            }
+            const data = await resp.json();
+            const out = (data.choices && data.choices[0] && data.choices[0].message && data.choices[0].message.content) || '';
             core.setOutput('summary', out);
             fs.mkdirSync('html/changelogs', { recursive: true });
             fs.writeFileSync('html/changelogs/copilot_right.yml', out, 'utf8');
