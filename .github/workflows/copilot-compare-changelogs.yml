@@ -43,7 +43,8 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install pyyaml
 
-      - name: Generate raw diff using Python tool
+      - name: Generate raw changelog text
+        id: gen_cl
         env:
           BASE_REF: ${{ github.event.inputs.base_ref }}
           SINCE_REF: ${{ github.event.inputs.since_ref }}
@@ -51,28 +52,34 @@ jobs:
           mkdir -p html/changelogs
           TS="$(date +'%Y-%m-%d_%H-%M-%S')"
           echo "TS=$TS" >> $GITHUB_ENV
-          DIFF_FILE="html/changelogs/copilot_${TS}.diff"
-          BASE_REF="${BASE_REF:-upstream/master}"
+          OUTFILE="html/changelogs/generated_${TS}.txt"
+          echo "Generating changelog into $OUTFILE"
           if [ -n "$SINCE_REF" ]; then
-            START="$SINCE_REF"
+            python tools/generate_changelog.py --base "$BASE_REF" --since "$SINCE_REF" > "$OUTFILE"
           else
-            START="$(git merge-base "$BASE_REF" HEAD)"
+            python tools/generate_changelog.py --base "$BASE_REF" > "$OUTFILE"
           fi
-          echo "Generating diff between $START..HEAD"
-          git diff -U0 "$START..HEAD" > "$DIFF_FILE" || true
 
-      - name: Summarize changes with GitHub Copilot
+      - name: Summarize generated changelog with GitHub Copilot
         id: copilot_summary
         uses: actions/github-script@v7
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          DIFF_FILE: html/changelogs/copilot_${{ env.TS }}.diff
+          GEN_FILE: html/changelogs/generated_${{ env.TS }}.txt
         with:
           script: |
             const fs = require('fs');
-            const diff = fs.readFileSync(process.env.DIFF_FILE, 'utf8').slice(0, 380000);
-            const system = 'You are a meticulous changelog generator for SS13.';
-            const user = `From the unified diff, produce a single YAML document with this exact format:
+            const text = fs.readFileSync(process.env.GEN_FILE, 'utf8').slice(0, 380000);
+            const system = 'You are a meticulous SS13 changelog generator.';
+            const user = `
+From this auto-generated changelog text, produce a concise player-facing YAML changelog.
+
+Input changelog:
+---
+${text}
+---
+
+Output YAML with this exact structure:
 author: Copilot
 changes:
   - <prefix>: <player-facing description>
@@ -81,16 +88,13 @@ delete-after: true
 
 Rules:
 - Use only these prefixes (map as follows):
-  add->rscadd, del->rscdel, tweak->qol, balance->balance, fix->bugfix,
-  soundadd->soundadd, sounddel->sounddel, imageadd->imageadd, imagedel->imagedel,
-  spellcheck->spellcheck, code->code_imp, refactor->refactor, config->config,
-  admin->admin, server->server
-- Prefer concise, player-facing summaries; group similar technical changes.
-- Output ONLY the YAML (no markdown, code fences, or commentary).
-
---- DIFF START ---
-${diff}
---- DIFF END ---`;
+    add->rscadd, del->rscdel, tweak->qol, balance->balance, fix->bugfix,
+    soundadd->soundadd, sounddel->sounddel, imageadd->imageadd, imagedel->imagedel,
+    spellcheck->spellcheck, code->code_imp, refactor->refactor, config->config,
+    admin->admin, server->server
+- Prefer concise, player-facing summaries; group technical commits together.
+- Output ONLY valid YAML (no markdown or commentary).
+`;
 
             const resp = await fetch('https://models.inference.ai.azure.com/chat/completions', {
               method: 'POST',
