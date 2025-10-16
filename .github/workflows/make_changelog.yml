@@ -26,5 +26,11 @@ jobs:
           GIT_EMAIL: "action@github.com"
           GIT_NAME: "Nestor Jr."
         run: python tools/generate_cl.py
+      - name: Compile CL
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GIT_EMAIL: "action@github.com"
+          GIT_NAME: "Nestor Jr."
+        run: python tools/ss13genchangelog.py
 
 
