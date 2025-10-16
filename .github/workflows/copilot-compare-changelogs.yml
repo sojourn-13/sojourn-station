@@ -35,8 +35,8 @@ jobs:
 
       - name: Add remotes and fetch
         run: |
-          git remote add upstream https://github.com/epic-new-soj-thing/Sojourn-Iskhod.git || true
-          git remote add original https://github.com/sojourn-13/sojourn-station.git || true
+          git remote add origin1 https://github.com/epic-new-soj-thing/Sojourn-Iskhod.git || true
+          git remote add upstream1 https://github.com/sojourn-13/sojourn-station.git || true
           git fetch --all --prune
 
       - name: Install dependencies
@@ -44,24 +44,14 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install pyyaml
 
-      - name: Generate changelog text from Python script
-        id: gen_cl
-        env:
-          BASE_REF: ${{ github.event.inputs.base_ref }}
-          SINCE_REF: ${{ github.event.inputs.since_ref }}
+      - name: Generate per-file changelog diffs
         run: |
+          mkdir -p .changelog_diffs
+          py -3 tools/generate_changelog.py --left origin1/master --right upstream1/master --per-file-out .changelog_diffs --print-diffs
           mkdir -p html/changelogs
-          TS="$(date +'%Y-%m-%d_%H-%M-%S')"
-          echo "TS=$TS" >> $GITHUB_ENV
-          OUTFILE="html/changelogs/generated_${TS}.txt"
-          echo "Generating changelog → $OUTFILE"
-          if [ -n "$SINCE_REF" ]; then
-            python tools/generate_changelog.py --base "$BASE_REF" --since "$SINCE_REF" > "$OUTFILE"
-          else
-            python tools/generate_changelog.py --base "$BASE_REF" > "$OUTFILE"
-          fi
+          echo "Generated per-file changelog diffs."
 
-      - name: Summarize generated changelog with GitHub Copilot
+      - name: Summarize all changelog diffs with Copilot
         id: copilot_summary
         uses: actions/github-script@v7
         env:
@@ -69,37 +59,44 @@ jobs:
         with:
           script: |
             const fs = require('fs');
-            const path = `html/changelogs/generated_${process.env.TS}.txt`;
-            const text = fs.readFileSync(path, 'utf8').slice(0, 380000);
-            const prompt = `From this auto-generated changelog text, produce a concise player-facing YAML changelog. Input changelog (between markers): --- BEGIN INPUT --- ${text} --- END INPUT --- Output YAML (no markdown, no commentary). Use this structure exactly: author: Copilot changes: - <prefix>: <player-facing description> delete-after: true Rules: use only these prefixes: add->rscadd, del->rscdel, tweak->qol, balance->balance, fix->bugfix, soundadd->soundadd, sounddel->sounddel, imageadd->imageadd, imagedel->imagedel, spellcheck->spellcheck, code->code_imp, refactor->refactor, config->config, admin->admin, server->server. Prefer concise player-facing summaries; group technical commits together. Output ONLY valid YAML.`;
-            const resp = await fetch('https://models.inference.ai.azure.com/chat/completions', {
-              method: 'POST',
-              headers: {
-                'Authorization': `Bearer ${process.env.GITHUB_TOKEN}`,
-                'Content-Type': 'application/json',
-                'x-ms-model-inference-endpoint': 'gpt-4o-mini',
-              },
-              body: JSON.stringify({
-                model: 'gpt-4o-mini',
-                messages: [
-                  { role: 'system', content: 'You are a meticulous SS13 changelog generator.' },
-                  { role: 'user', content: prompt },
-                ],
-                temperature: 0.2,
-                max_tokens: 2000
-              }),
-            });
-            if (!resp.ok) {
-              const text = await resp.text();
-              core.setFailed(`Model call failed: ${resp.status} ${text}`);
-              return;
+            const path = require('path');
+            const TS = Date.now();
+            const summaryFile = `html/changelogs/copilot_${TS}.yml`;
+            let mergedYaml = "author: Copilot\nchanges:\n";
+            const files = fs.readdirSync('.changelog_diffs').filter(f => f.endsWith('.txt'));
+            for (const file of files) {
+              const content = fs.readFileSync(path.join('.changelog_diffs', file), 'utf8').slice(0, 380000);
+              const prompt = `From this changelog diff text, produce a concise player-facing YAML changelog. Input: ${content}. Output YAML only with structure: author: Copilot changes: - <prefix>: <player-facing description>`;
+              const resp = await fetch('https://models.inference.ai.azure.com/chat/completions', {
+                method: 'POST',
+                headers: {
+                  'Authorization': `Bearer ${process.env.GITHUB_TOKEN}`,
+                  'Content-Type': 'application/json',
+                  'x-ms-model-inference-endpoint': 'gpt-4o-mini',
+                },
+                body: JSON.stringify({
+                  model: 'gpt-4o-mini',
+                  messages: [
+                    { role: 'system', content: 'You are a meticulous SS13 changelog generator.' },
+                    { role: 'user', content: prompt },
+                  ],
+                  temperature: 0.2,
+                  max_tokens: 2000
+                }),
+              });
+              if (!resp.ok) {
+                const text = await resp.text();
+                core.setFailed(`Model call failed: ${resp.status} ${text}`);
+                return;
+              }
+              const data = await resp.json();
+              let yamlOut = (data.choices?.[0]?.message?.content || '').trim();
+              yamlOut = yamlOut.split('\n').slice(1).join('\n'); // remove repeated 'author: Copilot'
+              mergedYaml += yamlOut + "\n";
             }
-            const data = await resp.json();
-            const yamlOut = (data.choices?.[0]?.message?.content || '').trim();
-            const outPath = `html/changelogs/copilot_${process.env.TS}.yml`;
-            fs.writeFileSync(outPath, yamlOut, 'utf8');
-            core.setOutput('yaml_path', outPath);
-            console.log(`✅ Wrote summarized changelog to ${outPath}`);
+            fs.writeFileSync(summaryFile, mergedYaml, 'utf8');
+            console.log(`✅ Wrote merged summarized changelog to ${summaryFile}`);
+            core.setOutput('yaml_path', summaryFile);
 
       - name: Commit and push summarized changelog
         env:
@@ -116,16 +113,15 @@ jobs:
             git push
           else
             echo "No changelog updates to commit."
-          fi
 
       - name: Trigger make_changelog.yml
         uses: benc-uk/workflow-dispatch@v1
         with:
           workflow: make_changelog.yml
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PAT_TOKEN }}
 
       - name: Trigger compile_changelog.yml
         uses: benc-uk/workflow-dispatch@v1
         with:
           workflow: compile_changelog.yml
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PAT_TOKEN }}
