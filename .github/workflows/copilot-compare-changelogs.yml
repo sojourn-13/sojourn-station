@@ -46,15 +46,16 @@ jobs:
           git diff -U0 "$MB..$LEFT_REF" > left.diff || true
           git diff -U0 "$MB..$RIGHT_REF" > right.diff || true
 
-      - name: Summarize LEFT with Copilot
+      - name: Summarize LEFT with GitHub Models
         id: leftsum
-        uses: github/copilot-actions-models/summary@v1
+        uses: actions/github-script@v7
+        env:
+          DIFF_PATH: left.diff
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          model: gpt-4o-mini
-          input-type: diff
-          max-tokens: 20000
-          prompt: |
+          script: |
+            const fs = require('fs');
+            const diff = fs.readFileSync(process.env.DIFF_PATH, 'utf8').slice(0, 400000);
+            const prompt = `
             From the unified diff, produce a single YAML document for SS13 changelogs with this exact structure:
             author: Copilot
             changes:
@@ -68,19 +69,31 @@ jobs:
               soundadd->soundadd, sounddel->sounddel, imageadd->imageadd, imagedel->imagedel,
               spellcheck->spellcheck, code->code_imp, refactor->refactor, config->config,
               admin->admin, server->server
-            - Prefer concise, player-facing descriptions. Group noisy low-level changes.
+            - Prefer concise, player-facing descriptions; group noisy low-level edits.
             - Output ONLY the YAML (no code fences, no commentary).
-          file-path: left.diff
+            `.trim();
 
-      - name: Summarize RIGHT with Copilot
+            const res = await github.request('POST /models/{model}/responses', {
+              model: 'gpt-4o-mini',
+              headers: { 'X-GitHub-Api-Version': '2023-07-07' },
+              input: `${prompt}\n\n--- DIFF START ---\n${diff}\n--- DIFF END ---\n`,
+            });
+
+            const out = (res.data && (res.data.output_text || res.data.output || ''));
+            core.setOutput('summary', out);
+            fs.mkdirSync('html/changelogs', { recursive: true });
+            fs.writeFileSync('html/changelogs/copilot_left.yml', out, 'utf8');
+
+      - name: Summarize RIGHT with GitHub Models
         id: rightsum
-        uses: github/copilot-actions-models/summary@v1
+        uses: actions/github-script@v7
+        env:
+          DIFF_PATH: right.diff
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          model: gpt-4o-mini
-          input-type: diff
-          max-tokens: 20000
-          prompt: |
+          script: |
+            const fs = require('fs');
+            const diff = fs.readFileSync(process.env.DIFF_PATH, 'utf8').slice(0, 400000);
+            const prompt = `
             From the unified diff, produce a single YAML document for SS13 changelogs with this exact structure:
             author: Copilot
             changes:
@@ -94,9 +107,20 @@ jobs:
               soundadd->soundadd, sounddel->sounddel, imageadd->imageadd, imagedel->imagedel,
               spellcheck->spellcheck, code->code_imp, refactor->refactor, config->config,
               admin->admin, server->server
-            - Prefer concise, player-facing descriptions. Group noisy low-level changes.
+            - Prefer concise, player-facing descriptions; group noisy low-level edits.
             - Output ONLY the YAML (no code fences, no commentary).
-          file-path: right.diff
+            `.trim();
+
+            const res = await github.request('POST /models/{model}/responses', {
+              model: 'gpt-4o-mini',
+              headers: { 'X-GitHub-Api-Version': '2023-07-07' },
+              input: `${prompt}\n\n--- DIFF START ---\n${diff}\n--- DIFF END ---\n`,
+            });
+
+            const out = (res.data && (res.data.output_text || res.data.output || ''));
+            core.setOutput('summary', out);
+            fs.mkdirSync('html/changelogs', { recursive: true });
+            fs.writeFileSync('html/changelogs/copilot_right.yml', out, 'utf8');
 
       - name: Assemble report
         run: |
