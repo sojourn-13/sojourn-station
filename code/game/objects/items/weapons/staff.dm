@@ -9,6 +9,7 @@
 	throw_range = 5
 	w_class = ITEM_SIZE_SMALL
 	attack_verb = list("bludgeoned", "whacked", "disciplined")
+	matter = list(MATERIAL_WOOD = 3)
 
 /obj/item/staff/broom
 	name = "broom"
@@ -18,10 +19,11 @@
 
 /obj/item/staff/gentcane
 	name = "Gentleman's Cane"
-	desc = "An ebony can with an ivory tip."
+	desc = "An ebony cane with an ivory tip."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "cane"
 	item_state = "stick"
+	matter = list(MATERIAL_WOOD = 5)
 
 /obj/item/staff/stick
 	name = "stick"

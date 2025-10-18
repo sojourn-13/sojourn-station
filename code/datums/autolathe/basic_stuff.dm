@@ -69,3 +69,11 @@
 /datum/design/autolathe/misc/trashbag
 	name = "trash bag"
 	build_path = /obj/item/storage/bag/trash
+
+/datum/design/autolathe/misc/caution
+	name = "wet floor sign"
+	build_path = /obj/item/caution
+
+/datum/design/autolathe/misc/caution_cone
+	name = "caution cone"
+	build_path = /obj/item/caution/cone

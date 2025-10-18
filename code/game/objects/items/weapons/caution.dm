@@ -10,9 +10,12 @@
 	w_class = ITEM_SIZE_SMALL
 	attack_verb = list("warned", "cautioned", "smashed")
 	price_tag = 3
+	matter = list(MATERIAL_PLASTIC = 3)
 
 /obj/item/caution/cone
 	desc = "This cone is trying to warn you of something!"
 	name = "warning cone"
 	icon_state = "cone"
+	//Clearly its 1 sheet wrapped around, 1 sheet at the bottom
+	matter = list(MATERIAL_PLASTIC = 2)
 
