@@ -106,19 +106,18 @@
 	price_tag = 1400
 
 	init_firemodes = list(
-		list(mode_name="stunshot", projectile_type=/obj/item/projectile/energy/electrode/stunshot, fire_sound = 'sound/weapons/energy/Taser.ogg', fire_delay=35, icon="stun"),
-		list(mode_name="lethal", projectile_type=/obj/item/projectile/beam/midlaser, fire_sound='sound/weapons/energy/laser_pistol.ogg', fire_delay=10, icon="kill"),
+		list(mode_name="stunshot", projectile_type=/obj/item/projectile/energy/electrode/stunshot, fire_sound = 'sound/weapons/energy/Taser.ogg', fire_delay=35, icon="stun", modifystate = "zwangtazer"),
+		list(mode_name="lethal", projectile_type=/obj/item/projectile/beam/midlaser, fire_sound='sound/weapons/energy/laser_pistol.ogg', fire_delay=10, icon="kill", modifystate = "zwanglaser")
 	)
 	serial_type = "NM"
 
 	wield_delay = 0.3 SECOND
 	wield_delay_factor = 0.2 // 20 vig
+	var/celless_state = "zwang"
 
+//Fancy way to show that we dont have
 /obj/item/gun/energy/zwang/update_icon()
-	..()
-	cut_overlays()
-	var/datum/firemode/current_mode = firemodes[sel_mode]
-	if(current_mode.name == "stunshot")
-		add_overlay("tazer_zwang")
+	if(!cell)
+		icon_state = celless_state
 	else
-		add_overlay("laser_zwang")
+		..()

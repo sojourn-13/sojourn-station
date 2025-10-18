@@ -2,7 +2,7 @@
 	name = "\"Spider Rose\" energy pistol"
 	desc = "The Spider Rose is a versatile energy based sidearm, capable of switching between low and high capacity projectile settings. In other words: Stun or Kill."
 	icon = 'icons/obj/guns/energy/egun.dmi'
-	icon_state = "energystun100"
+	icon_state = "energy"
 	item_state = null	//so the human update icon uses the icon_state instead.
 	item_charge_meter = TRUE
 	can_dual = TRUE
@@ -13,12 +13,10 @@
 
 	projectile_type = /obj/item/projectile/beam/stun
 	origin_tech = list(TECH_COMBAT = 3, TECH_MAGNET = 2)
-	modifystate = "energystun"
-	item_modifystate = "stun"
 
 	init_firemodes = list(
-		STUNBOLT,
-		list(mode_name="kill", mode_desc="Fires a lethal laser projectile", projectile_type=/obj/item/projectile/beam, item_modifystate="kill", fire_sound='sound/weapons/energy/laser_pistol.ogg', icon="kill"), // This is so that it uses the laser pistol firing sound. Use the LETHAL define for stock energy rifles.
+		list(mode_name="stun", mode_desc="Stun bolt until they're eating the floortiles", projectile_type=/obj/item/projectile/beam/stun, item_modifystate="stun", fire_sound='sound/weapons/energy/Taser.ogg', icon="stun", item_modifystate="stun",modifystate="energystun"),
+		list(mode_name="kill", mode_desc="Fires a lethal laser projectile", projectile_type=/obj/item/projectile/beam, item_modifystate="kill", fire_sound='sound/weapons/energy/laser_pistol.ogg', icon="kill", item_modifystate="kill",modifystate="energykill"), // This is so that it uses the laser pistol firing sound. Use the LETHAL define for stock energy rifles.
 		WEAPON_CHARGE,
 		)
 	serial_type = "H&S"
@@ -26,6 +24,7 @@
 	wield_delay = 0.3 SECOND
 	wield_delay_factor = 0.2 // 20 vig
 
+//Used for Rigs
 /obj/item/gun/energy/gun/mounted
 	name = "mounted energy gun"
 	self_recharge = 1
@@ -90,7 +89,7 @@
 		add_overlay("taser_pdwu")
 	else
 		add_overlay("lazer_pdwu")
-		
+
 /obj/item/gun/energy/ntpistol
 	name = "\"Serenity\" energy pistol"
 	desc = "\"New Testament\" brand laser pistol. Small and easily concealable, it still packs a reasonable punch for a laser weapon. Refurbished after numerous copyright allegations. \
