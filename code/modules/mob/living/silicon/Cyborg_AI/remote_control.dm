@@ -10,7 +10,7 @@
 	if(!istype(user) || c_ai)
 		return
 
-	if(stat != 2 || client || key)
+	if(stat == 0 || client || key)
 		to_chat(user, "<span class='warning'>You cannot take control of an autonomous, active drone.</span>")
 		return
 
@@ -100,8 +100,10 @@
 
 	if(c_ai)
 		if(mind)
+			remove_cursor()
 			mind.transfer_to(c_ai)
 		else
+			remove_cursor()
 			c_ai.key = key
 		to_chat(c_ai, "<span class='notice'>[message]</span>")
 		c_ai.c_borg = null
@@ -113,4 +115,4 @@
 
 	remove_verb(src, /mob/living/silicon/robot/proc/release_ai_controll_verb)
 	updatename()
-	death()
+	stat = UNCONSCIOUS
