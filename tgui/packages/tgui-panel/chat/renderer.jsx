@@ -639,7 +639,7 @@ class ChatRenderer {
       .substring(0, 19)
       .replace(/[-:]/g, '')
       .replace('T', '-');
-    Byond.saveBlob(blob, `ss13-chatlog-${timestamp}.html`, '.html');
+    Byond.saveBlob(blob, `ss13-soj-chatlog-${timestamp}.html`, '.html');
   }
 }
 
