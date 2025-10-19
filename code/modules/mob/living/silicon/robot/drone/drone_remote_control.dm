@@ -10,7 +10,7 @@
 	if(!istype(user) || controlling_ai || !config.allow_drone_spawn)
 		return
 
-	if(!ai_belonged | client || key)
+	if(!ai_belonged || client || key)
 		to_chat(user, "<span class='warning'>You cannot take control of an autonomous, active drone.</span>")
 		return
 
