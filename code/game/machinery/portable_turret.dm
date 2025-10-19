@@ -601,13 +601,10 @@ var/list/turret_icons
 /obj/machinery/porta_turret/proc/assess_living(var/mob/living/L) //TODO: optimize
 	var/obj/item/card/id/id_card = L.GetIdCard()
 
-	if(!L)
+	if(id_card && (id_card.registered_name in registered_names))
 		return TURRET_NOT_TARGET
 
 	if(!istype(L))
-		return TURRET_NOT_TARGET
-
-	if(get_dist(src, L) > firing_range)	//if it's too far away, why bother?
 		return TURRET_NOT_TARGET
 
 	if(L.invisibility >= INVISIBILITY_LEVEL_ONE) // Cannot see him. see_invisible is a mob-var
@@ -616,15 +613,8 @@ var/list/turret_icons
 	if(L.stat && !emagged)		//if the perp is dead/dying, no need to bother really
 		return TURRET_NOT_TARGET	//move onto next potential victim!
 
-	if(id_card && (id_card.registered_name in registered_names))
+	if(!L)
 		return TURRET_NOT_TARGET
-
-	if(check_synth) //If it's set to attack all non-silicons, target them!
-		if(issilicon(L))
-			return TURRET_NOT_TARGET
-		if(L.lying)
-			return lethal ? TURRET_SECONDARY_TARGET : TURRET_NOT_TARGET
-		return TURRET_PRIORITY_TARGET
 
 	if(!emagged && colony_allied_turret && L.colony_friend) //Dont target colony pets if were allied with them
 		return TURRET_NOT_TARGET
@@ -641,6 +631,9 @@ var/list/turret_icons
 	if(!emagged && issilicon(L))	// Don't target silica
 		return TURRET_NOT_TARGET
 
+	if(get_dist(src, L) > firing_range)	//if it's too far away, why bother?
+		return TURRET_NOT_TARGET
+
 	if(!check_trajectory(L, src))	//check if we have true line of sight
 		return TURRET_NOT_TARGET
 
@@ -652,6 +645,11 @@ var/list/turret_icons
 
 	if(lethal && locate(/mob/living/silicon/ai) in get_turf(L))		//don't accidentally kill the AI!
 		return TURRET_NOT_TARGET
+
+	if(check_synth)	//If it's set to attack all non-silicons, target them!
+		if(L.lying)
+			return lethal ? TURRET_SECONDARY_TARGET : TURRET_NOT_TARGET
+		return TURRET_PRIORITY_TARGET
 
 	if(iscuffed(L)) // If the target is handcuffed, leave it alone
 		return TURRET_NOT_TARGET
