@@ -22,7 +22,7 @@
 	var/check_records = 1	//checks if a security record exists at all
 	var/check_weapons = 0	//checks if it can shoot people that have a weapon they aren't authorized to have
 	var/check_access = 1	//if this is active, the turret shoots everything that does not meet the access requirements
-	var/check_anomalies = 1	//checks if it can shoot at unidentified lifeforms (ie xenos)
+	var/colony_allied_turret = 1	//checks if it can shoot things that are allied to the colony
 	var/check_synth = 0 	//if active, will shoot at anything not an AI or cyborg
 	var/ailock = 0 	//Silicons cannot use this
 
@@ -46,7 +46,6 @@
 	check_records = TRUE //Sure
 	check_weapons = TRUE //So we shoot propis with their guns
 	check_access = TRUE //Respects access
-	check_anomalies = FALSE //We dont attack simples
 	check_synth = FALSE //so dont shoot are own
 
 	ailock = TRUE
@@ -148,7 +147,7 @@
 		settings[++settings.len] = list("category" = "Check Security Records", "setting" = "check_records", "value" = check_records)
 		settings[++settings.len] = list("category" = "Check Arrest Status", "setting" = "check_arrest", "value" = check_arrest)
 		settings[++settings.len] = list("category" = "Check Access Authorization", "setting" = "check_access", "value" = check_access)
-		settings[++settings.len] = list("category" = "Check misc. Lifeforms", "setting" = "check_anomalies", "value" = check_anomalies)
+		settings[++settings.len] = list("category" = "Check misc. Alliement To Local SI Systems", "setting" = "colony_allied_turret", "value" = colony_allied_turret)
 		data["settings"] = settings
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
@@ -178,8 +177,8 @@
 			check_arrest = value
 		else if(href_list["command"] == "check_access")
 			check_access = value
-		else if(href_list["command"] == "check_anomalies")
-			check_anomalies = value
+		else if(href_list["command"] == "colony_allied_turret")
+			colony_allied_turret = value
 
 		playsound(loc, 'sound/machines/machine_switch.ogg', 100, 1)
 		updateTurrets()
@@ -194,7 +193,7 @@
 	TC.check_records = check_records
 	TC.check_arrest = check_arrest
 	TC.check_weapons = check_weapons
-	TC.check_anomalies = check_anomalies
+	TC.colony_allied_turret = colony_allied_turret
 	TC.ailock = ailock
 
 	if(istype(control_area))
@@ -233,7 +232,7 @@
 		check_records = pick(0, 1)
 		check_weapons = pick(0, 1)
 		check_access = pick(0, 0, 0, 0, 1)	// check_access is a pretty big deal, so it's least likely to get turned on
-		check_anomalies = pick(0, 1)
+		colony_allied_turret = pick(0, 1)
 
 		enabled=0
 		updateTurrets()

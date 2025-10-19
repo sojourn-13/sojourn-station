@@ -50,7 +50,6 @@
 	var/check_records = TRUE	//checks if a security record exists at all
 	var/check_weapons = FALSE	//checks if it can shoot people that have a weapon they aren't authorized to have
 	var/check_access = TRUE	//if this is active, the turret shoots everything that does not meet the access requirements
-	var/check_anomalies = TRUE	//checks if it can shoot at unidentified lifeforms (ie xenos)
 	var/check_synth	 = FALSE 	//if active, will shoot at anything not an AI or cyborg
 	var/ailock = FALSE 			// AI cannot use this
 
@@ -87,7 +86,6 @@
 	check_arrest = TRUE
 	check_records = TRUE
 	check_weapons = TRUE
-	check_anomalies = TRUE
 
 /obj/machinery/porta_turret/gate
 	name = "colony defense turret"
@@ -97,7 +95,6 @@
 	check_arrest = TRUE
 	check_records = FALSE
 	check_weapons = FALSE
-	check_anomalies = TRUE
 	colony_allied_turret = TRUE
 	installation = /obj/item/gun/energy/cog
 
@@ -238,7 +235,6 @@ var/list/turret_icons
 		settings[++settings.len] = list("category" = "Check Security Records", "setting" = "check_records", "value" = check_records)
 		settings[++settings.len] = list("category" = "Check Arrest Status", "setting" = "check_arrest", "value" = check_arrest)
 		settings[++settings.len] = list("category" = "Check Access Authorization", "setting" = "check_access", "value" = check_access)
-		settings[++settings.len] = list("category" = "Check misc. Lifeforms", "setting" = "check_anomalies", "value" = check_anomalies)
 		settings[++settings.len] = list("category" = "Check misc. Alliement To Local SI Systems", "setting" = "colony_allied_turret", "value" = colony_allied_turret)
 		data["settings"] = settings
 
@@ -289,8 +285,6 @@ var/list/turret_icons
 			check_arrest = value
 		else if(href_list["command"] == "check_access")
 			check_access = value
-		else if(href_list["command"] == "check_anomalies")
-			check_anomalies = value
 		else if(href_list["command"] == "colony_allied_turret")
 			colony_allied_turret = value
 
@@ -531,7 +525,6 @@ var/list/turret_icons
 		check_records = prob(50)
 		check_weapons = prob(50)
 		check_access = prob(20)	// check_access is a pretty big deal, so it's least likely to get turned on
-		check_anomalies = prob(50)
 		if(prob(5))
 			emagged = 1
 
@@ -626,26 +619,11 @@ var/list/turret_icons
 			return lethal ? TURRET_SECONDARY_TARGET : TURRET_NOT_TARGET
 		return TURRET_PRIORITY_TARGET
 
-	if(!emagged && colony_allied_turret && L.colony_friend) //Dont target colony pets if were allied with them
-		return TURRET_NOT_TARGET
-
-	if(!emagged && !colony_allied_turret && !L.colony_friend) //If were not allied to the colony we dont attack anything thats against the colony
-		return TURRET_NOT_TARGET
-
-	if(!emagged && !colony_allied_turret && L.colony_friend) //If were not allied with the colony we attack them and their pets
-		return TURRET_SECONDARY_TARGET
-
-	if(!emagged && colony_allied_turret && !L.colony_friend) //If were allied with the colony and we attack things that are not are pets
-		return TURRET_SECONDARY_TARGET
+	if(emagged) // If emagged not even the dead get a rest
+		return L.stat ? TURRET_SECONDARY_TARGET : TURRET_PRIORITY_TARGET
 
 	if(!emagged && issilicon(L))	// Don't target silica
 		return TURRET_NOT_TARGET
-
-	if(!check_trajectory(L, src))	//check if we have true line of sight
-		return TURRET_NOT_TARGET
-
-	if(emagged)		// If emagged not even the dead get a rest
-		return L.stat ? TURRET_SECONDARY_TARGET : TURRET_PRIORITY_TARGET
 
 	if(hackfail)
 		return TURRET_PRIORITY_TARGET
@@ -656,21 +634,18 @@ var/list/turret_icons
 	if(iscuffed(L)) // If the target is handcuffed, leave it alone
 		return TURRET_NOT_TARGET
 
-	if(isanimal(L) || issmall(L)) // Animals are not so dangerous
-		if(colony_allied_turret && L.colony_friend)
-			return TURRET_NOT_TARGET
-		else
-			return check_anomalies ? TURRET_SECONDARY_TARGET : TURRET_NOT_TARGET
-
-	//if(isxenomorph(L) || isalien(L)) // Xenos are dangerous
-	//	return check_anomalies ? TURRET_PRIORITY_TARGET	: TURRET_NOT_TARGET
-
 	if(ishuman(L))	//if the target is a human, analyze threat level
 		if(assess_perp(L) < 4)
 			return TURRET_NOT_TARGET	//if threat level < 4, keep going
 
-	if(L.lying)		//if the perp is lying down, it's still a target but a less-important target
+	if(L.lying)	//if the perp is lying down, it's still a target but a less-important target
 		return lethal ? TURRET_SECONDARY_TARGET : TURRET_NOT_TARGET
+
+	if(colony_allied_turret == L.colony_friend) //Dont target colony pets if were allied with them
+		return TURRET_NOT_TARGET
+
+	if(colony_allied_turret != L.colony_friend) //If were not allied with the colony we attack them and their pets
+		return TURRET_PRIORITY_TARGET
 
 	return TURRET_PRIORITY_TARGET	//if the perp has passed all previous tests, congrats, it is now a "shoot-me!" nominee
 
@@ -812,7 +787,7 @@ var/list/turret_icons
 	var/check_records
 	var/check_arrest
 	var/check_weapons
-	var/check_anomalies
+	var/colony_allied_turret
 	var/ailock
 
 /obj/machinery/porta_turret/proc/setState(var/datum/turret_checks/TC)
@@ -827,7 +802,7 @@ var/list/turret_icons
 	check_records = TC.check_records
 	check_arrest = TC.check_arrest
 	check_weapons = TC.check_weapons
-	check_anomalies = TC.check_anomalies
+	colony_allied_turret = TC.colony_allied_turret
 	ailock = TC.ailock
 
 	src.power_change()
