@@ -228,15 +228,26 @@
 						for(var/obj/item/material/shard/shrapnel/bullet_fragment in org.implants)
 							sharpnal_amount += 1
 						if(sharpnal_amount)
-							dat += text("<font color='#ff5050'>       -^-\[Detected Shrapnel Amount:[sharpnal_amount]\]</font>")
-					for(var/obj/item/organ/internal/IGS in org.internal_organs)
-						if(IGS.status & ORGAN_DEAD)
-							dat += text("<font color='#AAC8F2'>       -^-\[[IGS]: Dead\]</font>")
-							continue
-						if(IGS.damage)
-							dat += text("<font color='#ff5050'>       -^-\[[IGS]: [IGS.damage]/[IGS.max_damage] \]</font>")
-						if(IGS.status & ORGAN_BROKEN)
-							dat += text("<font color='#ff5050'>       -^-\[[IGS]: Broken\]</font>")
+							dat += text("<font color='#ff5050'>      -^- \[Detected Shrapnel Amount:[sharpnal_amount]\]</font>")
+
+						// The detailed wound data lives on internal organ objects. External organs store a list in internal_organs.
+						for(var/obj/item/organ/internal/I in org.internal_organs)
+							if(!I)
+								continue
+							var/list/wounds = I.get_wounds()
+							if((wounds && wounds.len) || I.damage)
+								dat += text("<span class='highlight'>    <font color='#035afc'>Internal Wounds ([]) !![I.damage]/[I.max_damage]!! :</font></span>", capitalize(I.name))
+								for(var/wd in wounds)
+									// wd is an assoc list with string keys: "name", "severity", "severity_max", "treatments"
+									var/wname = wd["name"]
+									var/wsev = wd["severity"]
+									var/wsevmax = wd["severity_max"]
+									dat += text("<span class='highlight'>      -^- [] (Severity: [] / [])</span>", wname, wsev, wsevmax)
+
+							if(I.status & ORGAN_BROKEN)
+								dat += text("<font color='#ff5050'>      -^- \[[I]: !Broken!\]</font>")
+							if(I.status & ORGAN_DEAD)
+								dat += text("<font color='#0080ff'>      -^- \[Organ : !!!Dead!!!\]</font>")
 
 		else
 			dat += span("highlight", "Limbs are OK.")
