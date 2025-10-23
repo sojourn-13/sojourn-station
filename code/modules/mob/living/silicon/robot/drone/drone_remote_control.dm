@@ -10,7 +10,7 @@
 	if(!istype(user) || controlling_ai || !config.allow_drone_spawn)
 		return
 
-	if(stat != 2 || client || key)
+	if(!ai_belonged || client || key)
 		to_chat(user, "<span class='warning'>You cannot take control of an autonomous, active drone.</span>")
 		return
 
@@ -21,6 +21,7 @@
 	assume_control(user)
 
 /mob/living/silicon/robot/drone/proc/assume_control(var/mob/living/silicon/ai/user)
+	ai_belonged = TRUE
 	user.controlling_drone = src
 	controlling_ai = user
 	add_verb(src, /mob/living/silicon/robot/drone/proc/release_ai_control_verb)
@@ -64,6 +65,7 @@
 		return
 
 	var/mob/living/silicon/robot/drone/new_drone = new drone_type(get_turf(src))
+	new_drone.ai_belonged = TRUE
 	new_drone.assume_control(user)
 
 
@@ -108,4 +110,4 @@
 	remove_verb(src, /mob/living/silicon/robot/drone/proc/release_ai_control_verb)
 	full_law_reset()
 	updatename()
-	death()
+	stat = UNCONSCIOUS

@@ -107,6 +107,8 @@
 	var/braintype = "Cyborg"
 	var/intenselight = 0	// Whether cyborg's integrated light was upgraded
 
+	var/ai_belonged = FALSE //Used for AI controled borgs.
+
 	var/list/robot_verbs_default = list(
 		/mob/living/silicon/robot/proc/sensor_mode,
 		/mob/living/silicon/robot/proc/robot_checklaws

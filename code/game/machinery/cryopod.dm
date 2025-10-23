@@ -476,6 +476,12 @@
 	if(!check_occupant_allowed(affecting))
 		return
 
+	if(issilicon(affecting))
+		var/mob/living/silicon/robot/R = affecting
+		if(R.ai_belonged)
+			to_chat(usr, "<span class='notice'><B>AI based robots can not be moved to storage.</B></span>")
+			return FALSE
+
 	var/willing = null //We don't want to allow people to be forced into despawning.
 
 	if(affecting != user && affecting.client)
@@ -555,6 +561,12 @@
 	if(src.occupant)
 		to_chat(usr, "<span class='notice'><B>\The [src] is in use.</B></span>")
 		return
+
+	if(issilicon(usr))
+		var/mob/living/silicon/robot/R = usr
+		if(R.ai_belonged)
+			to_chat(usr, "<span class='notice'><B>AI based robots can not be moved to storage.</B></span>")
+			return FALSE
 
 	for(var/mob/living/carbon/slime/M in range(1,usr))
 		if(M.Victim == usr)
