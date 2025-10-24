@@ -95,7 +95,7 @@
 	add_verb(owner, owner_verbs)
 
 	for(var/obj/item/modification/organ/internal/agument/A in item_upgrades)
-		if(A.cares_about_life && !status&ORGAN_DEAD)
+		if(A.cares_about_life && !(status&ORGAN_DEAD))
 			return
 		A.sync_add(owner)
 
