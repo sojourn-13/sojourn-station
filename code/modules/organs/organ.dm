@@ -277,6 +277,10 @@
 			admin_attack_log(user, owner, "Removed a vital organ ([src])", "Had a a vital organ ([src]) removed.", "removed a vital organ ([src]) from")
 		owner.death()
 
+	if(item_upgrades)
+		for(var/obj/item/modification/organ/internal/agument/A in item_upgrades)
+			A.sync_remove()
+
 	owner = null
 	rejecting = null
 
