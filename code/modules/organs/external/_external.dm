@@ -169,7 +169,7 @@
 
 	for(var/obj/item/organ/O in internal_organs)
 		for(var/obj/item/modification/organ/internal/agument/A in O.item_upgrades)
-			if(A.cares_about_life && !O.status&ORGAN_DEAD)
+			if(A.cares_about_life && !(O.status&ORGAN_DEAD))
 				return
 			A.sync_add(owner)
 
