@@ -37,6 +37,19 @@
 	build_path = /obj/item/modification/organ/internal/electromechanical/microbattery_case
 	name = "Microbattery Case"
 
+/datum/design/research/item/mechfab/prosthesis/agu_eye_lens
+	build_path = /obj/item/modification/organ/internal/agument/eye_lens
+	name = "AutoTint(TM) Lens MK.IX"
+
+/datum/design/research/item/mechfab/prosthesis/brain_bank_cog
+	build_path = /obj/item/modification/organ/internal/agument/brain_bank_cog
+	name = "Synthic Brain Data Chip: Type C(og)"
+
+/datum/design/research/item/mechfab/prosthesis/brain_bank_bio
+	build_path = /obj/item/modification/organ/internal/agument/brain_bank_bio
+	name = "Synthic Brain Data Chip: Type B(io)"
+
+
 //Upgraded prosthesis ========================
 /datum/design/research/item/mechfab/prosthesis_moebius
 	category = CAT_PROSTHESIS

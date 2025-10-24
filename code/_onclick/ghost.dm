@@ -36,7 +36,7 @@
 	if(modifiers["shift"] && modifiers["ctrl"] && check_rights(R_ADMIN)) // Admin click shortcuts
 		client.debug_variables(A)
 		return
-	
+
 
 	if(client.buildmode)
 		build_click(src, client.buildmode, params, A)
@@ -53,6 +53,14 @@
 /atom/proc/GhostShiftClick(mob/observer/ghost/user)
 	if(user.client)
 		user.examinate(src)
+
+		if(user.health_scanner_mode)
+			if(ishuman(src) || istype(src, /obj/structure/closet/body_bag))
+				var/scan_data = medical_scan_action(src, user, null, TRUE, FALSE, TRUE)
+				var/datum/browser/popup = new(user, "scanner", "Spector's Health Scanner", 600, 650)
+				popup.set_content("[scan_data]")
+				popup.open()
+
 	return FALSE
 
 // Oh by the way this didn't work with old click code which is why clicking shit didn't spam you
