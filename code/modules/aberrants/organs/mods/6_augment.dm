@@ -3,6 +3,7 @@
 	var/perk = null
 	var/mob/living/carbon/human/linked_person = null
 	var/cares_about_life = FALSE
+	var/cares_about_psion = TRUE
 
 /obj/item/modification/organ/internal/agument/proc/sync_remove()
 	if(linked_person)
