@@ -157,7 +157,7 @@
 			for(var/obj/item/organ/org in R.internal_organs)
 				for(var/obj/item/modification/organ/internal/agument/A in org.item_upgrades)
 					if(A.cares_about_psion)
-						owner.visible_message(SPAN_DANGER("[A.name] no longer supporting you, as your psionic power delinks you from such improvements."),
+						owner.show_message(SPAN_DANGER("[A.name] no longer supporting you, as your psionic power delinks you from such improvements."))
 						A.sync_remove() //We stay inside the body but are we delink, punishing
 			if(!BP_IS_ROBOTIC(R))
 				continue
