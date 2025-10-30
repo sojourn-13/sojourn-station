@@ -81,37 +81,6 @@
 		blood_max *=  1 - chem_effects[CE_BLOODCLOT]
 	drip_blood(blood_max)
 
-	// Handle blood oxygenation and oxygen loss - moved from life.dm
-	if(!need_breathe())
-		return
-
-	var/blood_oxygenation = get_blood_oxygenation()
-
-	// Only apply oxygen loss damage if blood oxygenation is below 80%
-	if(blood_oxygenation < 80)
-		var/oxygen_loss_rate = 0
-
-		if(blood_oxygenation < BLOOD_VOLUME_SURVIVE * 100)
-			oxygen_loss_rate = 10 // Severe hypoxia
-			if(prob(5))
-				to_chat(src, SPAN_DANGER("You feel like you're suffocating despite breathing!"))
-		else if(blood_oxygenation < BLOOD_VOLUME_BAD * 100)
-			oxygen_loss_rate = 5 // Moderate hypoxia
-			if(prob(3))
-				to_chat(src, SPAN_WARNING("You feel dizzy and short of breath."))
-		else
-			oxygen_loss_rate = 1 // Mild hypoxia
-			if(prob(1))
-				to_chat(src, SPAN_NOTICE("You feel a bit lightheaded."))
-
-		adjustOxyLoss(oxygen_loss_rate)
-
-		// Update oxygen alert based on circulation issues
-		if(blood_oxygenation < BLOOD_VOLUME_SURVIVE * 100)
-			oxygen_alert = max(oxygen_alert, 2)
-		else if(blood_oxygenation < BLOOD_VOLUME_BAD * 100)
-			oxygen_alert = max(oxygen_alert, 1)
-
 //Makes a blood drop, leaking amt units of blood from the mob
 /mob/living/carbon/human/drip_blood(var/amt as num)
 
@@ -285,76 +254,26 @@ proc/blood_splatter(var/target,var/datum/reagent/organic/blood/source,var/large)
 	return 100
 
 /mob/living/carbon/human/get_blood_oxygenation()
+	var/blood_volume = get_blood_circulation()
+	if(is_asystole()) // Heart is missing or isn't beating and we're not breathing (hardcrit)
+		return min(blood_volume, total_blood_req)
+
 	if(!need_breathe())
-		return 100
-
-	// Blood oxygenation based on heart efficiency (circulation) and lung efficiency (oxygenation)
-	var/heart_efficiency = get_organ_efficiency(OP_HEART)
-	var/lung_efficiency = get_organ_efficiency(OP_LUNGS)
-
-	// Heart provides circulation, lungs provide oxygenation
-	// Both are essential for blood oxygenation
-	var/circulation_factor = max(0, heart_efficiency / 100)
-	var/oxygenation_factor = max(0, lung_efficiency / 100)
-
-	// Check for asystole (heart stopped/missing) - blood oxygenation should be severely impaired
-	if(is_asystole())
-		// Very low oxygenation when heart is stopped, but chemical oxygenation can still help
-		var/base_oxygenation = 5 // Minimal oxygenation without circulation
-		var/oxygenated_mult = 0
-		// Apply chemical oxygenation effects (Dexalin, Dexalin Plus)
-		if(chem_effects[CE_OXYGENATED] == 1) // Dexalin.
-			oxygenated_mult = 0.5
-		else if(chem_effects[CE_OXYGENATED] >= 2) // Dexplus.
-			oxygenated_mult = 0.8
-
-		// Apply chemical boost to minimal oxygenation
-		base_oxygenation = base_oxygenation + (100 - base_oxygenation) * oxygenated_mult
-
-		return min(base_oxygenation, 100)
-	
-	// Blood oxygenation is the product of circulation and oxygenation
-	var/base_oxygenation = circulation_factor * oxygenation_factor * 100
-
-	// Factor in breathing failures - if we can't breathe, blood oxygenation drops
-	if(failed_last_breath && need_breathe())
-		// Initialize consecutive breathing failure counter if not present
-		if(!breath_failure_count)
-			breath_failure_count = 0
-		
-		// Increment failure counter
-		breath_failure_count++
-		
-		// Apply increasingly severe penalty for consecutive breathing failures
-		var/breathing_penalty = 0
-		if(breath_failure_count >= 10) // 10+ failed breaths
-			breathing_penalty = 40 // Severe hypoxia
-		else if(breath_failure_count >= 5) // 5-9 failed breaths
-			breathing_penalty = 25 // Moderate hypoxia
-		else if(breath_failure_count >= 2) // 2-4 failed breaths
-			breathing_penalty = 10 // Mild hypoxia
-		else
-			breathing_penalty = 5 // Initial breathing difficulty
-		
-		// Reduce blood oxygenation based on breathing failures
-		base_oxygenation = max(5, base_oxygenation - breathing_penalty)
+		return blood_volume
 	else
-		// Reset counter when breathing successfully
-		breath_failure_count = 0
-	
-	// Apply chemical oxygenation effects (Dexalin, Dexalin Plus)
+		blood_volume = 100
+
+	var/blood_volume_mod = max(0, 1 - getOxyLoss()/(species.total_health/2))
 	var/oxygenated_mult = 0
 	if(chem_effects[CE_OXYGENATED] == 1) // Dexalin.
 		oxygenated_mult = 0.5
 	else if(chem_effects[CE_OXYGENATED] >= 2) // Dexplus.
 		oxygenated_mult = 0.8
+	blood_volume_mod = blood_volume_mod + oxygenated_mult - (blood_volume_mod * oxygenated_mult)
+	blood_volume = blood_volume * blood_volume_mod
+	return min(blood_volume, 100)
 
-	// Apply chemical boost
-	base_oxygenation = base_oxygenation + (100 - base_oxygenation) * oxygenated_mult
-
-	//Percentage of maximum blood volume, affected by the condition of circulation organs
-	return min(base_oxygenation, 100)
-
+//Percentage of maximum blood volume, affected by the condition of circulation organs
 /mob/living/carbon/proc/get_blood_circulation()
 	return 100
 

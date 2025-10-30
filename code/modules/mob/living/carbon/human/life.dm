@@ -34,7 +34,6 @@
 	var/temperature_alert = 0
 	var/in_stasis = 0
 	var/pulse = PULSE_NORM
-	var/breath_failure_count = 0 // Tracks consecutive breathing failures for blood oxygenation
 	var/global/list/overlays_cache = null
 
 /mob/living/carbon/human/Life()
@@ -68,8 +67,11 @@
 		process_internal_organs()
 		handle_blood()
 		stabilize_body_temperature() //Body temperature adjusts itself (self-regulation)
+
 		handle_shock()
+
 		handle_pain()
+
 		handle_medical_side_effects()
 
 		if(life_tick % 2)	//Upadated every 2 life ticks, lots of for loops in this, needs to feel smother in the UI
@@ -89,14 +91,8 @@
 		if(!client)
 			species.handle_npc(src)
 
-		// Update HUD after organ processing to reflect current pulse - now updating much faster
-		handle_regular_hud_updates()
-
 	if(!handle_some_updates())
 		return											//We go ahead and process them 5 times for HUD images and other stuff though.
-
-	// Additional HUD updates for faster responsiveness - update health HUD more frequently
-	handle_regular_hud_updates()
 
 	//Update our name based on whether our face is obscured/disfigured
 	name = get_visible_name()
@@ -378,16 +374,16 @@
 	if(!breath)
 		return FALSE
 	//vars - feel free to modulate if you want more effects that are not gained with efficiency
-	var/breath_type = species.breath_type ? species.breath_type : GAS_OXYGEN
-	var/poison_type = species.poison_type ? species.poison_type : GAS_PLASMA
-	var/exhale_type = species.exhale_type ? species.exhale_type : GAS_CO2
+	var/breath_type = species.breath_type ? species.breath_type : "oxygen"
+	var/poison_type = species.poison_type ? species.poison_type : "plasma"
+	var/exhale_type = species.exhale_type ? species.exhale_type : 0
 
 	var/min_breath_pressure = species.breath_pressure
 
 	var/safe_exhaled_max = 10
 	var/safe_toxins_max = 0.2
-	// Removed legacy SA_para_min / SA_sleep_min constants. Sleeping agent now handled by generic
-	// gas->reagent conversion below using partial pressure tiers.
+	var/SA_para_min = 1
+	var/SA_sleep_min = 5
 
 	var/lung_efficiency = get_organ_efficiency(OP_LUNGS)
 
@@ -416,39 +412,15 @@
 		if(prob(20))
 			emote("gasp")
 
-		var/inhale_ratio = inhale_pp/safe_pressure_min
+		var/ratio = inhale_pp/safe_pressure_min
 		// Don't fuck them up too fast (space only does HUMAN_MAX_OXYLOSS after all!)
-		adjustOxyLoss(max(HUMAN_MAX_OXYLOSS*(1-inhale_ratio), 0))
+		adjustOxyLoss(max(HUMAN_MAX_OXYLOSS*(1-ratio), 0))
 		failed_inhale = 1
 
 	oxygen_alert = failed_inhale
 
 	var/inhaled_gas_used = inhaling/6
 	breath.adjust_gas(breath_type, -inhaled_gas_used, update = 0) //update afterwards
-
-	// Gas -> reagent inhalation processing - moved from lungs.dm
-	// Pass reagents from breathed gases into our body.
-	// Presumably if you breathe it you have a specialized metabolism for it, so we drop/ignore breath_type. Also avoids
-	// humans processing thousands of units of oxygen over the course of a round for the sole purpose of poisoning vox.
-	var/gas_conversion_ratio = 1 // Removed robotic check since this is in human life processing
-	// Process gas-to-reagent conversion regardless of breathing efficiency - you still inhale gases even with poor oxygen uptake
-	for(var/gasname in breath.gas)
-		// Skip the primary breath type to avoid processing massive amounts of oxygen
-		if(gasname == breath_type)
-			continue
-		var/breathed_product = gas_data.breathed_product[gasname]
-		if(breathed_product)
-			var/reagent_amount
-			// Special case for nitrous oxide - absorb 5 units per breath regardless of gas concentration
-			if(gasname == GAS_N2O && breath.gas[gasname] > 0)
-				reagent_amount = 5.0 // Fixed 5 units per tick when nitrous oxide is present
-			else
-				reagent_amount = breath.gas[gasname] * REAGENT_GAS_EXCHANGE_FACTOR * gas_conversion_ratio
-			// Little bit of sanity so we aren't trying to add 0.0000000001 units of CO2, and so we don't end up with 99999 units of CO2.
-			if(reagent_amount >= 0.05)
-				reagents.add_reagent(breathed_product, reagent_amount)
-				breath.adjust_gas(gasname, -breath.gas[gasname]/6, update = 0) // Consume 1/6th like other gases
-			// Moved after reagent injection so we don't instantly clear toxins
 
 	if(exhale_type)
 		breath.adjust_gas_temp(exhale_type, inhaled_gas_used, bodytemperature, update = 0) //update afterwards
@@ -468,8 +440,8 @@
 			warn_prob = 1
 			alert = 1
 			failed_exhale = 1
-			var/exhale_ratio = 1 - (safe_exhaled_max - exhaled_pp)/(safe_exhaled_max*0.3)
-			if (getOxyLoss() < 50*exhale_ratio)
+			var/ratio = 1 - (safe_exhaled_max - exhaled_pp)/(safe_exhaled_max*0.3)
+			if (getOxyLoss() < 50*ratio)
 				oxyloss = HUMAN_MAX_OXYLOSS
 		else if(exhaled_pp > safe_exhaled_max * 0.6)
 			word = pick("a little dizzy","short of breath")
@@ -485,36 +457,30 @@
 	// Too much poison in the air.
 
 	if(toxins_pp > safe_toxins_max)
-		var/toxin_damage_ratio = CLAMP((poison/safe_toxins_max) * 10, MIN_TOXIN_DAMAGE, MAX_TOXIN_DAMAGE)
+		var/ratio = CLAMP((poison/safe_toxins_max) * 10, MIN_TOXIN_DAMAGE, MAX_TOXIN_DAMAGE)
 		var/obj/item/organ/internal/I = pick(internal_organs_by_efficiency[OP_LUNGS])
-		I.take_damage(4 * toxin_damage_ratio, TOX)
+		I.take_damage(4 * ratio, TOX)
 		breath.adjust_gas(poison_type, -poison/6, update = 0) //update after
 		plasma_alert = 1
 	else
 		plasma_alert = 0
 
+	// If there's some other shit in the air lets deal with it here.
+	if(breath.gas["sleeping_agent"])
+		var/SA_pp = (breath.gas["sleeping_agent"] / breath.total_moles) * breath_pressure
+		if(SA_pp > SA_para_min)		// Enough to make us paralysed for a bit
+			reagents.add_reagent("sagent", 2)
+			if(SA_pp > SA_sleep_min)	// Enough to make us sleep as well
+				reagents.add_reagent("sagent", 5)
+		else if(SA_pp > 0.15)	// There is sleeping gas in their lungs, but only a little, so give them a bit of a warning
+			reagents.add_reagent("sagent", 1)
+
+		breath.adjust_gas("sleeping_agent", -breath.gas["sleeping_agent"]/6, update = 0) //update after
+
 	// Were we able to breathe?
 	var/failed_breath = failed_inhale || failed_exhale
 	if (!failed_breath)
 		adjustOxyLoss(-5)
-		// Check if blood can actually carry oxygen before healing oxygen loss
-		var/blood_oxygenation = get_blood_oxygenation()
-
-		// Reduced oxygen healing if blood can't carry oxygen properly
-		if(blood_oxygenation >= BLOOD_VOLUME_OKAY)
-			adjustOxyLoss(-5) // Full effectiveness
-		else if(blood_oxygenation >= BLOOD_VOLUME_BAD)
-			adjustOxyLoss(-3) // Reduced effectiveness
-		else if(blood_oxygenation >= BLOOD_VOLUME_SURVIVE)
-			adjustOxyLoss(-1) // Minimal effectiveness
-		// If blood oxygenation is below survival levels, breathing doesn't help much
-
-		// Add feedback for poor blood circulation affecting breathing
-		if(blood_oxygenation < BLOOD_VOLUME_BAD && prob(10))
-			if(blood_oxygenation < BLOOD_VOLUME_SURVIVE)
-				to_chat(src, SPAN_DANGER("You're breathing but you still feel breathless!"))
-			else
-				to_chat(src, SPAN_WARNING("Your breathing feels less effective than it should be."))
 
 	handle_temperature_effects(breath)
 
@@ -706,7 +672,7 @@
 
 	return
 
-
+/*
 /mob/living/carbon/human/proc/adjust_body_temperature(current, loc_temp, boost)
 	var/temperature = current
 	var/difference = abs(current-loc_temp)	//get difference
@@ -723,7 +689,7 @@
 		temperature = max(loc_temp, temperature-change)
 	temp_change = (temperature - current)
 	return temp_change
-
+*/
 
 /mob/living/carbon/human/proc/stabilize_body_temperature()
 	if (species.passive_temp_gain) // We produce heat naturally.
@@ -886,14 +852,19 @@
 			blinded = 1
 			silent = 0
 			return 1
-
-		// Brain death - critical brain damage causes death regardless of other health
-		if(species.has_process[BP_BRAIN] && getBrainLoss() >= 200) //Complete brain death
-			to_chat(src, SPAN_DANGER("Your brain can no longer sustain life..."))
-			death()
-			blinded = 1
-			silent = 0
-			return 1
+		if(health <= death_threshold) //No health = death
+			if(stats.getPerk(PERK_UNFINISHED_DELIVERY) && prob(33)) //Unless you have this perk
+				heal_organ_damage(20, 20)
+				adjustOxyLoss(-100)
+				AdjustSleeping(rand(20,30))
+				updatehealth()
+				stats.removePerk(PERK_UNFINISHED_DELIVERY)
+				learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/return_to_sender, "RETURN_TO_SENDER", skill_gained = 1, learner = src)
+			else
+				death()
+				blinded = 1
+				silent = 0
+				return 1
 
 		//UNCONSCIOUS. NO-ONE IS HOME
 		if(getOxyLoss() > (species.total_health/2))
@@ -902,19 +873,7 @@
 		if(hallucination_power)
 			handle_hallucinations()
 
-		// Check for injury-induced unconsciousness from severe trauma or brain damage
-		var/injury_unconscious = FALSE
-		if(health <= HEALTH_THRESHOLD_SOFTCRIT) // At or below soft critical (0 health)
-			injury_unconscious = TRUE
-		else if(getBrainLoss() >= 60) // Significant brain damage
-			injury_unconscious = TRUE
-		else
-			// Calculate total injury severity for pain-induced unconsciousness
-			var/total_damage = getBruteLoss() + getFireLoss() + getToxLoss()
-			if(total_damage >= 80) // High total damage
-				injury_unconscious = TRUE
-
-		if(paralysis || sleeping || injury_unconscious)
+		if(paralysis || sleeping)
 			blinded = 1
 			stat = UNCONSCIOUS
 			adjustHalLoss(-3)
@@ -933,16 +892,6 @@
 				if(prob(2) && health)
 					spawn(0)
 						emote("snore")
-
-			// Display injury unconsciousness messages
-			if(injury_unconscious && !paralysis && !sleeping)
-				if(prob(10)) // Occasional pain messages while unconscious
-					if(getBrainLoss() >= 60)
-						to_chat(src, SPAN_DANGER("Your damaged brain struggles to maintain consciousness..."))
-					else if(health <= HEALTH_THRESHOLD_SOFTCRIT)
-						to_chat(src, SPAN_DANGER("The pain from your injuries overwhelms your consciousness..."))
-					else
-						to_chat(src, SPAN_DANGER("Waves of agony wash over your battered body..."))
 		//CONSCIOUS
 		else
 			stat = CONSCIOUS
@@ -1092,23 +1041,13 @@
 				if(blood_percent * effective_blood_volume <= total_blood_req + BLOOD_VOLUME_BAD_MODIFIER)
 					holder.add_overlay("hud_low_blood")
 
-			// Heart rate based medical HUD alerts - prioritize living/dead status first
-			var/current_pulse = pulse()
-			switch(current_pulse)
-				if(PULSE_NONE)
-					holder.icon_state = "hudhealth-100" // No pulse = dead state
-				if(PULSE_SLOW)
-					holder.icon_state = "hudhealth80" // Slow pulse = warning state (blue)
-				if(PULSE_NORM)
-					holder.icon_state = "hudhealth100" // Normal heart rate = healthy (green)
-				if(PULSE_FAST)
-					holder.icon_state = "hudhealth60" // Fast heart rate = moderate concern (yellow)
-				if(PULSE_2FAST)
-					holder.icon_state = "hudhealth40" // Very fast, dangerous = poor health (orange)
-				if(PULSE_THREADY)
-					holder.icon_state = "hudhealth10" // Critical arrhythmia = critical health (red)
-				else
-					holder.icon_state = "hudhealth100" // Default fallback = healthy (blue)
+			var/crit_health = (health / maxHealth) * 100
+			var/external_health = (1 - (limb_health ? limb_damage / limb_health : 0)) * 100
+			var/internal_health = (1 - (organ_health ? organ_damage / organ_health : 0)) * 100
+
+			var/percentage_health = RoundHealth(min(crit_health, external_health, internal_health))	// Old: RoundHealth((health-HEALTH_THRESHOLD_CRIT)/(maxHealth-HEALTH_THRESHOLD_CRIT)*100)
+
+			holder.icon_state = "hud[percentage_health]"
 		hud_list[HEALTH_HUD] = holder
 
 	if (BITTEST(hud_updateflag, LIFE_HUD))
@@ -1251,16 +1190,6 @@
 	sanity.setLevel(sanity.max_level)
 	restore_blood()
 
-	// Restart heart pulse if we have a heart - similar to defib functionality but better
-	var/obj/item/organ/internal/vital/heart/heart = random_organ_by_process(OP_HEART)
-	if(heart && !(heart.status & ORGAN_DEAD))
-		heart.pulse = PULSE_NORM  // Start with normal pulse as this is admin healing
-		heart.last_restart_time = world.time  // Set protection timer for 60 seconds
-		pulse = PULSE_NORM  // Sync to owner for scanner/HUD compatibility
-		// Force immediate HUD update to show heart restarted
-		hud_updateflag |= 1 << HEALTH_HUD
-		handle_regular_hud_updates()
-
 	// If a limb was missing, regrow
 	if(LAZYLEN(organs) < 7)
 		var/list/tags_to_grow = list(BP_HEAD, BP_CHEST, BP_GROIN, BP_L_ARM, BP_R_ARM, BP_L_LEG, BP_R_LEG)
@@ -1331,124 +1260,3 @@
 		sight |= SEE_MOBS
 	if(CE_DARKSIGHT in chem_effects)//TODO: Move this to where it belongs, doesn't work without being right here for now. -Kaz/k5.
 		see_invisible = min(see_invisible, chem_effects[CE_DARKSIGHT])
-
-// Immunity and infection system functions - Ported from Baystation12
-/mob/living/carbon/human/proc/virus_immunity()
-	// Base immunity of 100
-	var/immunity = 100
-
-	// Reduce immunity based on shock/damage
-	if(shock_stage)
-		immunity -= shock_stage / 2
-
-	// Reduce immunity based on health
-	if(health < maxHealth)
-		immunity -= (maxHealth - health) / 2
-
-	// Reduce immunity if we're malnourished
-	if(nutrition < 250)
-		immunity -= (250 - nutrition) / 10
-
-	// Chemical effects
-	if(chem_effects[CE_TOXIN])
-		immunity -= chem_effects[CE_TOXIN] * 10
-
-	return max(immunity, 0)
-
-/mob/living/carbon/human/proc/immunity_weakness()
-	var/immunity = virus_immunity()
-	return max(100 - immunity, 10) // Returns weakness from 10 to 100
-
-// Medical system support functions
-/mob/living/carbon/human/proc/InStasis()
-	return stat == DEAD || (status_flags & GODMODE)
-
-/mob/living/carbon/human/proc/is_real_dead()
-	return stat == DEAD
-
-/mob/living/carbon/human/proc/drip(amount, location)
-	if(!amount || amount <= 0)
-		return 0
-
-	if(!vessel || !vessel.total_volume)
-		return 0
-
-	var/actual_amount = min(amount, vessel.total_volume)
-
-	if(location)
-		vessel.trans_to(location, actual_amount)
-	else
-		vessel.remove_reagent(/datum/reagent/organic/blood, actual_amount)
-
-	return actual_amount
-
-/mob/living/carbon/human/proc/blood_squirt(amount, location)
-	if(!amount || amount <= 0)
-		return 0
-
-	if(!vessel || !vessel.total_volume)
-		return 0
-
-	var/actual_amount = min(amount, vessel.total_volume)
-
-	// Create blood splatter at location
-	if(location && isturf(location))
-		new /obj/effect/decal/cleanable/blood/splatter(location)
-		vessel.remove_reagent(/datum/reagent/organic/blood, actual_amount)
-	else
-		vessel.remove_reagent(/datum/reagent/organic/blood, actual_amount)
-
-	return actual_amount
-
-// Note: handle_blood() has been moved to blood.dm to consolidate blood-related processing
-
-// Burns off non-fire-resistant clothing when on fire
-/mob/living/carbon/human/proc/burn_clothing()
-	// List of clothing slots to check
-	var/list/clothing_slots = list(
-		"head" = head,
-		"wear_suit" = wear_suit,
-		"w_uniform" = w_uniform,
-		"shoes" = shoes,
-		"gloves" = gloves,
-		"wear_mask" = wear_mask
-	)
-
-	for(var/slot_name in clothing_slots)
-		var/obj/item/clothing/C = clothing_slots[slot_name]
-		if(!C)
-			continue
-
-		// Check if clothing is fire-resistant
-		var/is_fire_resistant = FALSE
-
-		// Fire suits and firefighter gear are fire resistant
-		if(istype(C, /obj/item/clothing/suit/fire) || istype(C, /obj/item/clothing/head/firefighter))
-			is_fire_resistant = TRUE
-
-		// Check if clothing has high heat protection
-		if(C.max_heat_protection_temperature && C.max_heat_protection_temperature >= 1000) // 1000K = ~727°C
-			is_fire_resistant = TRUE
-
-		// If not fire resistant, chance to burn off
-		if(!is_fire_resistant && prob(25)) // 25% chance per fire tick
-			visible_message(
-				SPAN_WARNING("[src]'s [C.name] [pick("burns away", "catches fire and disintegrates", "is consumed by flames")]!"),
-				SPAN_DANGER("Your [C.name] burns off!")
-			)
-
-			// Drop the item as ash/burned remains
-			var/turf/T = get_turf(src)
-			if(T)
-				new /obj/effect/decal/cleanable/ash(T)
-
-			// Remove from inventory
-			u_equip(C)
-			qdel(C)
-
-			update_inv_head()
-			update_inv_wear_suit()
-			update_inv_w_uniform()
-			update_inv_shoes()
-			update_inv_gloves()
-			update_inv_wear_mask()

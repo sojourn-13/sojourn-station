@@ -237,7 +237,7 @@
 	if(href_list["scan"])
 		// Play button click sound
 		playsound(src.loc, 'sound/machines/machine_switch.ogg', 50)
-		
+
 		if (!connected.occupant)
 			to_chat(usr, SPAN_WARNING("The body scanner is empty."))
 			return TOPIC_REFRESH
@@ -278,7 +278,7 @@
 	if(href_list["erase"])
 		// Play button click sound
 		playsound(src.loc, 'sound/machines/machine_switch.ogg', 50)
-		
+
 		stored_scan_data = null
 		return TOPIC_REFRESH
 
@@ -338,40 +338,6 @@
 	else if(occ["pulse_level"] == PULSE_SLOW || occ["pulse_level"] == PULSE_FAST)
 		pulse_color = "average"
 	dat += "<tr><td>Pulse:</td><td class='[pulse_color]'>[pulse_text]</td></tr>"
-
-	// Add blood pressure information
-	var/bp_color = "good"
-	var/bp_text = "[occ["blood_pressure"]] mmHg"
-	var/list/bp_parts = splittext(occ["blood_pressure"], "/")
-	if(length(bp_parts) >= 2)
-		var/systolic = text2num(bp_parts[1])
-		var/diastolic = text2num(bp_parts[2])
-		if(systolic < 90 || diastolic < 60 || systolic > 180 || diastolic > 110)
-			bp_color = "bad"
-		else if(systolic < 100 || diastolic < 70 || systolic > 140 || diastolic > 90)
-			bp_color = "average"
-	dat += "<tr><td>Blood Pressure:</td><td class='[bp_color]'>[bp_text]</td></tr>"
-
-	// Add blood oxygenation information
-	var/oxy2_color = "good"
-	var/oxy2_value = round(occ["blood_oxygenation"], 1)
-	if(oxy2_value < 70)
-		oxy2_color = "bad"
-	else if(oxy2_value < 90)
-		oxy2_color = "average"
-	dat += "<tr><td>Blood Oxygenation:</td><td class='[oxy2_color]'>[oxy2_value]%</td></tr>"
-
-	// Add shock status if present
-	if(occ["shock_stage"] > 0)
-		var/shock_color = "average"
-		var/shock_level = occ["shock_level"]
-		if(occ["shock_stage"] >= 120)
-			shock_color = "bad"
-		else if(occ["shock_stage"] >= 80)
-			shock_color = "bad"
-		else if(occ["shock_stage"] >= 40)
-			shock_color = "average"
-		dat += "<tr><td>Shock Level:</td><td class='[shock_color]'>[shock_level]</td></tr>"
 
 	// Add radiation if present
 	if(occ["radiation"] > 0)
@@ -593,7 +559,6 @@
 		"blood_pressure" = H.get_blood_pressure(),
 		"blood_oxygenation" = H.get_blood_oxygenation(),
 		"shock_stage" = H.shock_stage,
-		"shock_level" = H.get_shock_level_text(),
 		"traumatic_shock" = H.traumatic_shock,
 		"radiation" = H.radiation,
 		"clone_loss" = H.getCloneLoss(),
@@ -623,7 +588,7 @@
 				if(IW.severity >= 1)
 					vital_organs_with_wounds++
 					break // Only count this organ once even if it has multiple wounds
-	
+
 	if(vital_organs_with_wounds >= 3)
 		// 3 or more vital organs with wounds = systemic organ failure
 		occupant_data["systemic_organ_failure"] = TRUE

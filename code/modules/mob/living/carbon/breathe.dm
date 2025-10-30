@@ -56,8 +56,7 @@
 		if(istype(wear_mask, /obj/item/clothing/mask) && breath)
 			var/obj/item/clothing/mask/M = wear_mask
 			var/datum/gas_mixture/filtered = M.filter_air(breath)
-			// Don't release filtered gases back into atmosphere - they should be contained in the filter
-			qdel(filtered)  // Dispose of the filtered gases instead of releasing them
+			loc.assume_air(filtered)
 		return breath
 	return null
 

@@ -93,8 +93,6 @@
 		remove_verb(owner, P)
 
 /obj/item/organ/internal/proc/get_process_efficiency(process_define)
-	if(status & ORGAN_DEAD)
-		return 0
 	return organ_efficiency[process_define] - (organ_efficiency[process_define] * (damage / max_damage))
 
 /obj/item/organ/internal/take_damage(amount, damage_type = BRUTE, wounding_multiplier = 1, silent = FALSE, sharp = FALSE, edge = FALSE) //Deals damage to the organ itself
@@ -505,7 +503,3 @@
 		parent.number_internal_wounds += LAZYLEN(wounds)
 		parent.severity_internal_wounds += damage
 	parent.total_internal_health += max_damage
-
-// Base robotize procedure for organs
-/obj/item/organ/internal/proc/robotize()
-	return // Override in subtypes as needed

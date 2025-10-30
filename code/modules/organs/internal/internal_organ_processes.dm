@@ -17,8 +17,6 @@
 		lung_process()
 	if(should_have_process(OP_STOMACH))
 		stomach_process()
-	if(should_have_process(BP_BRAIN))  // Add brain processing
-		brain_process()
 	if(is_carrion(src))
 		carrion_process()
 
@@ -83,123 +81,16 @@
 	var/alcohol_strength = chem_effects[CE_ALCOHOL]
 	var/toxin_strength = chem_effects[CE_TOXIN] * IORGAN_LIVER_TOX_RATIO + chem_effects[CE_ALCOHOL_TOXIC]
 
-	// Toxin damage to liver organ - more damage when liver is less efficient at filtering
-	var/toxin_damage = 0
-	if(liver && toxin_strength > 0)
-		// Base damage from toxin strength
-		var/base_damage = toxin_strength / (stats.getPerk(PERK_BLOOD_OF_LEAD) ? 2 : 1)
-
-		// Liver efficiency reduces its ability to handle toxins - less efficient = more damage
-		var/efficiency_multiplier = max(0.5, (100 - liver_efficiency) / 100 + 0.5) // 0.5x to 1.5x damage
-
-		toxin_damage = base_damage * efficiency_multiplier - liver.damage * 0.5
-		toxin_damage = max(0, round(toxin_damage)) // Always at least 1 damage, no decimals
-
-	// Check if liver is dead - dead livers cause systematic organ failure
-	if(!liver || (liver.status & ORGAN_DEAD))
-		// Dead liver can't process toxins and generates waste products
-		if(liver)
-			add_chemical_effect(CE_TOXIN, 3) // Increased base toxin buildup from liver failure
-			if(prob(8)) // Increased chance for more severe toxin buildup
-				add_chemical_effect(CE_TOXIN, 2) // Increased additional toxin buildup
-			if(prob(20))
-				to_chat(src, SPAN_WARNING("You feel nauseous as waste builds up in your system..."))
-
-			// Dead liver causes constant toxin damage to the player
-			var/dead_liver_damage = 1 + (chem_effects[CE_TOXIN] * 0.3) // Base 2 + scaling with toxin level
-			apply_damage(dead_liver_damage, TOX)
-
-			if(prob(10))
-				to_chat(src, SPAN_DANGER("Your dead liver is poisoning your body!"))
-
-			// Dead liver + existing toxins = systemic organ damage (lowered threshold)
-			if(toxin_strength > 2) // Lowered from 5 to 2 - dead liver makes any toxins dangerous
-				var/list/vulnerable_organs = list()
-				for(var/obj/item/organ/internal/I in internal_organs)
-					if(I != liver && !BP_IS_ROBOTIC(I) && !(I.status & ORGAN_DEAD))
-						vulnerable_organs += I
-
-				if(vulnerable_organs.len)
-					// Damage multiple organs when liver is dead and toxins are high
-					var/organs_to_damage = min(vulnerable_organs.len, max(1, round(toxin_strength / 4))) // Reduced divisor from 8 to 4
-					for(var/i = 1 to organs_to_damage)
-						var/obj/item/organ/internal/target = pick_n_take(vulnerable_organs)
-						var/damage_amount = rand(5, 10) // Increased damage (reduced divisor from 10 to 6)
-						target.take_damage(damage_amount, TOX)
-
-						if(prob(15))
-							to_chat(src, SPAN_DANGER("Your [target.name] is being poisoned by unfiltered toxins!"))
-
-					if(toxin_strength > 8 && prob(8)) // Lowered threshold from 15 to 8, increased chance
-						to_chat(src, SPAN_DANGER("Without a functioning liver, toxins are destroying your organs!"))
-
-		// Dead liver doesn't filter toxins or process nutrients
-		// Blood loss makes you lose nutriments faster without a liver
-		var/blood_volume = get_blood_volume()
-		if(blood_volume * effective_blood_volume < total_blood_req + BLOOD_VOLUME_SAFE_MODIFIER)
-			if(nutrition >= 300)
-				adjustNutrition(-15) // Faster nutrition loss without liver
-			else if(nutrition >= 200)
-				adjustNutrition(-5)
-		return // Exit early - dead liver does nothing else
-
-	// Active toxin filtering - healthy liver removes toxins from the system (but slowly)
-	if(chem_effects[CE_TOXIN] > 0 && liver_efficiency > 0)
-		// Liver filters toxins based on efficiency - much slower now
-		// Base filtering rate: 0.3% of current toxins per tick at 100% efficiency
-		var/filter_rate = (liver_efficiency / 100) * 0.003
-
-		// Enhanced filtering with antitox effects
-		filter_rate *= (1 + chem_effects[CE_ANTITOX] * 0.3)
-
-		// Calculate how much toxin to remove
-		var/toxin_filtered = chem_effects[CE_TOXIN] * filter_rate
-
-		// Minimum filtering - even damaged livers remove some toxins (but very little)
-		if(liver_efficiency >= DEAD_2_EFFICIENCY)
-			toxin_filtered = max(toxin_filtered, 0.02) // Minimum 0.02 toxin removal per tick
-
-		// Apply toxin filtering
-		if(toxin_filtered > 0)
-			add_chemical_effect(CE_TOXIN, -toxin_filtered)
-
-			// Liver takes strain from heavy filtering
-			if(chem_effects[CE_TOXIN] > 5 && liver_efficiency < 90)
-				if(prob(2))
-					to_chat(src, SPAN_NOTICE("You feel your liver working hard to process toxins..."))
-
-	// Baseline toxin effects - toxins always cause some damage
-	if(toxin_strength > 0)
-		// Base toxin damage affects everyone, regardless of liver health
-		var/baseline_damage = toxin_strength * 0.15 // 15% of toxin strength as baseline damage
-
-		// Liver efficiency reduces but doesn't eliminate baseline damage
-		var/efficiency_reduction = (liver_efficiency / 100) * 0.7 // Max 70% reduction at 100% efficiency
-		baseline_damage *= (1 - efficiency_reduction)
-
-		if(baseline_damage > 0.05) // Apply if meaningful
-			apply_damage(baseline_damage, TOX)
-
-		if(baseline_damage > 0.3 && prob(3))
-			to_chat(src, SPAN_WARNING("You feel the effects of toxins in your system..."))
+	// Existing damage is subtracted to prevent weaker toxins from maxing out tox wounds on the organ
+	var/toxin_damage = liver ? (toxin_strength / (stats.getPerk(PERK_BLOOD_OF_LEAD) ? 2 : 1)) - (liver_efficiency / 100) - liver.damage * 2 : 0
 
 	// Bad stuff
-	// Additional toxin damage when liver efficiency is compromised
-	if(liver_efficiency < 90) // Lowered threshold further
-		// Toxin effects scale with liver damage
-		var/toxin_severity = (90 - liver_efficiency) / 90 // 0 to 1 scale
-
+	// If you're not filtering well, you're in trouble. Ammonia buildup to toxic levels and damage from alcohol
+	if(liver_efficiency < BROKEN_2_EFFICIENCY)
 		if(alcohol_strength)
 			toxin_damage += 0.5 * max(2 - (liver_efficiency * 0.01), 0) * alcohol_strength
-
 		if(toxin_strength > 0)
-			// Additional toxin damage to player, scaled by severity
-			var/extra_damage = toxin_strength * toxin_severity * 0.4 // Increased multiplier
-			if(extra_damage > 0.1) // Only apply if meaningful
-				apply_damage(extra_damage, TOX)
-
-				if(prob(8) && toxin_severity > 0.3)
-					to_chat(src, SPAN_WARNING("You feel sick as toxins overwhelm your compromised liver..."))
+			apply_damage(toxin_strength, TOX)	// If your liver isn't working, your body will start to take damage
 
 	if(toxin_damage > 0 && liver)
 		liver.take_damage(toxin_damage, TOX)
@@ -231,8 +122,8 @@
 	if(life_tick % 5 == 0)//update pulse every 5 life ticks (~1 tick/sec, depending on server load)
 		pulse = PULSE_NORM
 
-		if(get_blood_volume() * effective_blood_volume <= total_blood_req + BLOOD_VOLUME_BAD_MODIFIER)  //how much blood do we have
-			pulse  = PULSE_THREADY  //not enough :(
+		if(get_blood_volume() * effective_blood_volume <= total_blood_req + BLOOD_VOLUME_BAD_MODIFIER)	//how much blood do we have
+			pulse  = PULSE_THREADY	//not enough :(
 
 		if(status_flags & FAKEDEATH || chem_effects[CE_NOPULSE])
 			pulse = PULSE_NONE		//pretend that we're dead. unlike actual death, can be inflienced by meds
@@ -293,36 +184,8 @@
 			adjustNutrition(-2)
 
 
-/mob/living/carbon/human/proc/brain_process()
-	// Handle brain hypoxia damage from heart failure
-	// Only process if we have an organic brain
-	if(!should_have_process(BP_BRAIN))
-		return
-
-	var/obj/item/organ/internal/vital/brain/brain_organ = random_organ_by_process(BP_BRAIN)
-	if(!brain_organ || BP_IS_ROBOTIC(brain_organ))
-		return
-
-	// Apply brain damage from hypoxia when heart stops OR oxygen loss is below 100
-	if(pulse == PULSE_NONE || getOxyLoss() >= 100)
-		// Calculate brain damage based on oxygen loss percentage
-		var/oxygen_loss = getOxyLoss()
-		var/damage_amount = 2 // Base damage when heart stops (increased from 1)
-
-		if(oxygen_loss >= 100)
-			// Scale damage based on oxygen loss: 100 oxyloss = 10 damage, 150 oxyloss = 15 damage, 200 oxyloss = 20 damage, etc.
-			damage_amount = (oxygen_loss / 100) * 10
-
-		// Directly add to brainloss variable instead of using organ damage
-		brainloss = min(brainloss + damage_amount, 200) // Cap at 200 (max brain damage)
-		if(prob(50))
-			to_chat(src, SPAN_DANGER("Your brain is starved of oxygen!"))
-
-
 /mob/living/carbon/human/proc/lung_process()
-	var/base_lung_efficiency = get_organ_efficiency(OP_LUNGS)
-	var/toxin_penalty = min(chem_effects[CE_TOXIN] * 2.5, 35) // Toxins affect lung performance
-	var/lung_efficiency = max(0, base_lung_efficiency - toxin_penalty)
+	var/lung_efficiency = get_organ_efficiency(OP_LUNGS)
 	var/internal_oxygen = 100 - oxyloss
 
 	internal_oxygen *= lung_efficiency / 100
@@ -347,6 +210,9 @@
 		if(prob(15))
 			var/heavy_spot = pick("chest", "skin", "brain")
 			to_chat(src, SPAN_WARNING("Your [heavy_spot] feels too heavy for your body"))
+
+	if(lung_efficiency < BROKEN_2_EFFICIENCY)
+		adjustOxyLoss(1)
 
 /mob/living/carbon/human/proc/stomach_process()
 	var/stomach_efficiency = get_organ_efficiency(OP_STOMACH)

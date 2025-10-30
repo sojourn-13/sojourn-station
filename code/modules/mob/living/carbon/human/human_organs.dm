@@ -179,12 +179,9 @@
 
 /mob/living/carbon/human/is_asystole()
 	if(should_have_process(OP_HEART))
-		// Check if there's no pulse (asystole) rather than just if the heart is working
-		// A damaged heart might still have a pulse even if it's not fully functional
-		if(pulse() == PULSE_NONE)
+		var/obj/item/organ/internal/vital/heart/heart = random_organ_by_process(OP_HEART)
+		if(!istype(heart) || !heart.is_working())
 			return TRUE
-		else
-			return FALSE
 	return FALSE
 
 /mob/living/carbon/human/proc/organ_list_by_process(organ_process)

@@ -472,33 +472,8 @@
 				return
 			if(fire_stacks > FIRE_MAX_STACKS)
 				fire_stacks = FIRE_MAX_STACKS //Hardcap to prevent gamers from applying 300 firestacks to a mob or player. That way people dont burn for all eternity.
-			
-			// Enhanced fire damage - unprotected people should burn much more severely
-			var/base_damage = 20/(1+(NUM_E**(-0.25*(fire_stacks-10)))) //Original logistic function
-			var/final_damage = 0
-			
-			// Full protection = no damage at all
-			if(thermal_protection >= 1.0)
-				// Fully protected people take no fire damage
-				final_damage = 0
-			else
-				var/protection_multiplier = (1 - thermal_protection) // Less protection = more damage
-				final_damage = base_damage * (0.2 + (1.8 * protection_multiplier)) // Unprotected takes 2x damage, partial protection scales down
-				
-				// Extra damage for completely unprotected people (thermal_protection == 0)
-				if(thermal_protection == 0)
-					final_damage *= 1.5 // Additional 50% damage for being completely naked/unprotected
-					
-					// Burn off any non-fire-resistant clothing
-					if(ishuman(src))
-						var/mob/living/carbon/human/H = src
-						H.burn_clothing()
-			
-			adjustFireLoss(final_damage)
-			
-			// Fire burns out slower for unprotected people (they're better fuel)
-			var/extinguish_chance = thermal_protection >= 0.8 ? 40 : (thermal_protection >= 0.3 ? 25 : 15)
-			if(prob(extinguish_chance) && fire_stacks > 0)
+			adjustFireLoss(20/(1+(NUM_E**(-0.25*(fire_stacks-10))))) //Logistic function A/(1+(e^(b*(x-y))) --> A the maximum number of burn you can take b the steepness of the curve y the point of inversion and x the number of firestacks. This results in that you may try to go above 30 firestacks but you still 'only' take 20 fire damage per cycle. Who would have thought that math learned 10 years ago is useful.
+			if(prob(40) && fire_stacks > 0) //over time the fire will slowly burn itself out. This is meant to be decently slow so as to not make fire much less dangerous as its purpose is to prevent issues when mobs hit tens of thousands of fireloss. Irkalla edit: I upped the loss chance to 40 so its less feeling like you got napalmed when you just set your coat on fire or something. Fire will still proc wounds and infections. It just wont turbokill you unless you are in an inferno unprotected
 				adjust_fire_stacks(-1)
 			if(fire_stacks > 26)
 				adjust_fire_stacks(-1) //This is to simulate some processes that happen during incineration namely sintering and carbonization. Skin is porous. If something is heated pores grow and fuse and thus the surface area decreases. Carbonized skin is far less reactive than uncarbonized. So we have a decrease in surface area and a decrease in reactivity thus it gets harder to be incinerated. Very gamy explanation but thats the gist of it.

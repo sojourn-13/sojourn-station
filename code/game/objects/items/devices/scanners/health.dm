@@ -207,7 +207,7 @@
 				if(IW.severity >= 1)
 					vital_organs_with_wounds++
 					break // Only count this organ once even if it has multiple wounds
-	
+
 	if(vital_organs_with_wounds >= 3)
 		dat += span("highlight", "<font color='red'><b>⚠ CRITICAL: MAJOR SYSTEMIC ORGAN FAILURE ⚠</b></font>")
 
@@ -262,21 +262,6 @@
 								var/wsev = wd["severity"]
 								var/wsevmax = wd["severity_max"]
 								dat += text("<span class='highlight'>        - [] (Severity: [] / [])</span>", wname, wsev, wsevmax)
-
-						// Add infection status - Ported from Baystation12
-						if(I.germ_level)
-							var/infection_color = "green"
-							var/infection_text = "Clean"
-							if(I.germ_level >= INFECTION_LEVEL_THREE)
-								infection_color = "red"
-								infection_text = "Septic"
-							else if(I.germ_level >= INFECTION_LEVEL_TWO)
-								infection_color = "orange"
-								infection_text = "Severe Infection"
-							else if(I.germ_level >= INFECTION_LEVEL_ONE)
-								infection_color = "yellow"
-								infection_text = "Mild Infection"
-							dat += text("<span class='highlight'>    <font color='[]'>Infection Status: []</font></span>", infection_color, infection_text)
 		else
 			dat += span("highlight", "Limbs are OK.")
 		dat += "<hr>"
@@ -365,26 +350,28 @@
 	dat += "<span class='highlight'>Blood Pressure: <font color='[bp_color]'>[blood_pressure] mmHg</font></span>"
 	dat += "<span class='highlight'>Blood Oxygenation: <font color='[oxy_color]'>[round(oxygenation, 1)]%</font></span>"
 
-	// Add shock status display
-	if(H.shock_stage)
-		var/shock_level = H.get_shock_level_text()
+	// Add shock status display (using default system's shock tracking)
+	if(H.shock_stage > 0)
 		var/shock_color = ""
+		var/shock_text = ""
 		if(H.shock_stage < 40)
 			shock_color = "#ffaa00"
+			shock_text = "Mild"
 		else if(H.shock_stage < 80)
 			shock_color = "#ff6600"
+			shock_text = "Moderate"
 		else if(H.shock_stage < 120)
 			shock_color = "#ff3300"
+			shock_text = "Severe"
 		else
 			shock_color = "#ff0000"
+			shock_text = "Critical"
 
-		dat += "<font color='[shock_color]'><b>[shock_level] shock detected</b></font>"
+		dat += "<font color='[shock_color]'><b>[shock_text] shock detected (Level: [H.shock_stage])</b></font>"
 
 		// Advanced scanner shows more detailed shock information
 		if(advanced)
-			dat += "<font color='[shock_color]'>Traumatic shock level: [H.traumatic_shock]</font>"
-			if(H.shock_stage >= 60)
-				dat += "<font color='red'>Warning: Cardiac arrhythmia risk elevated</font>"
-			if(H.shock_stage >= 120)
-				dat += "<font color='red'>Danger: Cardiac arrest risk high</font>"
+			if(H.traumatic_shock > 0)
+				dat += "<font color='[shock_color]'>Traumatic shock level: [H.traumatic_shock]</font>"
+
 	. = jointext(dat, "<br>")

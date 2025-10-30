@@ -16,21 +16,6 @@
 
 	traumatic_shock = get_constant_pain() + get_dynamic_pain() - get_painkiller()
 
-	// Enhanced painkiller effectiveness - stronger painkillers should dramatically reduce traumatic shock
-	var/painkiller_amount = get_painkiller()
-	if(painkiller_amount > 0)
-		var/additional_reduction = 0
-		if(painkiller_amount >= 75) // Oxycodone level and above
-			additional_reduction = traumatic_shock * 0.8 // Remove 80% of remaining traumatic shock
-		else if(painkiller_amount >= 50) // Tramadol level
-			additional_reduction = traumatic_shock * 0.6 // Remove 60% of remaining traumatic shock
-		else if(painkiller_amount >= 25) // Paracetamol level
-			additional_reduction = traumatic_shock * 0.4 // Remove 40% of remaining traumatic shock
-		else // Lower level painkillers
-			additional_reduction = traumatic_shock * 0.2 // Remove 20% of remaining traumatic shock
-
-		traumatic_shock = max(0, traumatic_shock - additional_reduction)
-
 	if(slurring)
 		traumatic_shock -= 10
 
@@ -111,47 +96,16 @@
 	if(traumatic_shock > soft_crit_threshold + SHOCK_STAGE_BUFFER)
 		shock_stage_speed = 2
 
-	// Apply painkiller effects to shock stage reduction - painkillers now aggressively reduce shock
-	var/painkiller_reduction = get_painkiller()
-	var/effective_shock_reduction = shock_stage_speed
-	if(painkiller_reduction > 0)
-		// High-level painkillers can completely eliminate shock
-		// Oxycodone (75) should completely remove shock, tramadol (50) should be very effective
-		var/shock_reduction_multiplier = 1.0
-		if(painkiller_reduction >= 75) // Oxycodone level and above
-			shock_reduction_multiplier = 8.0 // 8x reduction speed - removes shock very quickly
-		else if(painkiller_reduction >= 50) // Tramadol level
-			shock_reduction_multiplier = 5.0 // 5x reduction speed - very effective
-		else if(painkiller_reduction >= 25) // Paracetamol level
-			shock_reduction_multiplier = 3.0 // 3x reduction speed - good effectiveness
-		else // Lower level painkillers
-			shock_reduction_multiplier = 1.5 // 1.5x reduction speed - mild improvement
-
-		effective_shock_reduction = shock_stage_speed * shock_reduction_multiplier
-
 	//Handle shock
 	if(shock_stage <= traumatic_shock)	//Shock stage slowly climbs to traumatic shock
-		// Determine if shock is primarily pain-based (no major blood loss)
-		var/blood_circulation = 1.0 // Default for non-humans
-		if(ishuman(src))
-			var/mob/living/carbon/human/H = src
-			blood_circulation = H.get_blood_circulation()
-
-		var/pain_based_shock = (blood_circulation >= BLOOD_VOLUME_BAD)
-		var/adjusted_shock_speed = shock_stage_speed
-
-		// Slow down shock progression when it's primarily pain-based and at higher levels
-		if(pain_based_shock && shock_stage >= 60)
-			adjusted_shock_speed = max(1, shock_stage_speed * 0.75) // 25% slower progression
-
-		shock_stage = min(shock_stage + adjusted_shock_speed, traumatic_shock)
+		shock_stage = min(shock_stage + shock_stage_speed, traumatic_shock)
 
 		if(shock_stage <= round(traumatic_shock * 0.4 / 2) * 2)	//If the difference is too big shock stage jumps to 40% of traumatic shock
 			shock_stage = (traumatic_shock * 0.4)
 			shock_stage = round(shock_stage / 2) * 2 //rounded to the nearest even sumber, so messages show up
 
 	else
-		shock_stage = max(shock_stage - effective_shock_reduction, 0)
+		shock_stage = max(shock_stage - shock_stage_speed, 0)
 		return
 
 	if(shock_resist || soft_crit_threshold > traumatic_shock)
@@ -161,22 +115,18 @@
 
 	if(shock_stage == 30)
 		to_chat(src, "<span class='danger'>[pick("It hurts so much", "You really need some painkillers", "Dear god, the pain")]!</span>")
-		to_chat(src, "<span class='warning'>Your heart starts beating faster.</span>")
 
 	if(shock_stage >= 60)
 		if(shock_stage == 60)
 			emote("me",1,"is having trouble keeping their eyes open.")
-			to_chat(src, "<span class='warning'>Your heart is pounding rapidly in your chest.</span>")
 		stuttering = max(stuttering, 5)
 
 	if(shock_stage == 80)
 		to_chat(src, "<span class='danger'>[pick("The pain is excruciating", "Please, just end the pain", "Your whole body is going numb")]!</span>")
-		to_chat(src, "<span class='danger'>Your heart feels like it's going to beat out of your chest!</span>")
 
 	if (shock_stage >= 100)
 		if(shock_stage == 100)
 			emote("me",1,"'s body becomes limp.")
-			to_chat(src, "<span class='danger'>Your heart rhythm becomes dangerously irregular!</span>")
 		if(prob(2))
 			to_chat(src, "<span class='danger'>[pick("The pain is excruciating", "Please, just end the pain", "Your whole body is going numb")]!</span>")
 			Weaken(10)
@@ -185,32 +135,6 @@
 		if(prob(5))
 			to_chat(src, "<span class='danger'>[pick("The pain is excruciating", "Please, just end the pain", "Your whole body is going numb")]!</span>")
 			Weaken(10)
-		if(shock_stage == 120)
-			// Check if this is primarily pain-based shock for more encouraging message
-			var/blood_circulation = 1.0
-			if(ishuman(src))
-				var/mob/living/carbon/human/H = src
-				blood_circulation = H.get_blood_circulation()
-
-			if(blood_circulation >= BLOOD_VOLUME_BAD)
-				to_chat(src, "<span class='userdanger'>Your heart races dangerously from the overwhelming pain - you need to get treated soon!</span>")
-			else
-				to_chat(src, "<span class='userdanger'>Your heart feels like it might stop at any moment!</span>")
-
-	if(shock_stage >= 140)
-		if(shock_stage == 140)
-			// Check if this is primarily pain-based shock for slightly more encouraging message
-			var/blood_circulation = 1.0
-			if(ishuman(src))
-				var/mob/living/carbon/human/H = src
-				blood_circulation = H.get_blood_circulation()
-
-			if(blood_circulation >= BLOOD_VOLUME_BAD)
-				to_chat(src, "<span class='userdanger'>Your heart is struggling desperately against the pain, beating erratically!</span>")
-			else
-				to_chat(src, "<span class='userdanger'>Your heart is beating erratically, skipping beats!</span>")
-		if(prob(2))
-			to_chat(src, "<span class='userdanger'>Your heart skips several beats!</span>")
 
 	if(shock_stage >= hard_crit_threshold)
 		enter_hard_crit()
@@ -236,16 +160,3 @@
 #undef SOFTCRIT_TRAUMATIC_SHOCK
 #undef HARDCRIT_TRAUMATIC_SHOCK
 #undef SHOCK_STAGE_BUFFER
-
-// Helper function to convert numeric shock stage to descriptive level
-/mob/living/carbon/proc/get_shock_level_text()
-	if(shock_stage <= 0)
-		return "None"
-	else if(shock_stage < 40)
-		return "Mild"
-	else if(shock_stage < 80)
-		return "Moderate"
-	else if(shock_stage < 120)
-		return "Severe"
-	else
-		return "Critical"
