@@ -32,7 +32,7 @@
 		crew_data["pulse"] = "synthetic"
 
 	if(!H.isSynthetic() && H.should_have_process(OP_HEART))
-		crew_data["pressure"] = H.get_blood_pressure()
+//		crew_data["pressure"] = H.get_blood_pressure()
 		crew_data["suffocation"] = round(H.getOxyLoss())
 		crew_data["burns"] = round(H.getFireLoss())
 		crew_data["trauma"] = round(H.getBruteLoss())
