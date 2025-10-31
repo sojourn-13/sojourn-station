@@ -73,9 +73,6 @@
 			to_chat(usr, "The scanner no longer shows limb damage.")
 
 /proc/medical_scan_action(atom/target, mob/living/user, obj/scanner, mode, stat_locking = FALSE, advanced = FALSE)
-	if (!user.IsAdvancedToolUser())
-		to_chat(user, SPAN_WARNING("You are not nimble enough to use this device."))
-		return
 
 	if(istype(scanner, /obj/item/device/scanner/health))
 		var/obj/item/device/scanner/health/health_scanner = scanner
@@ -83,6 +80,9 @@
 			if(!user.stats?.getPerk(PERK_ADVANCED_MEDICAL) && !usr.stat_check(STAT_BIO, STAT_LEVEL_BASIC) && !usr.stat_check(STAT_COG, 30)) //Takes 15 bio so 30 cog
 				to_chat(usr, SPAN_WARNING("Your biological understanding isn't enough to use this."))
 				return
+
+	if(!scanner)
+		scanner = "Health Scanner"
 
 	if(!advanced)
 		if ((CLUMSY in user.mutations) && prob(15))

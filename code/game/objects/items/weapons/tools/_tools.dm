@@ -1150,9 +1150,6 @@
 		var/obj/item/organ/internal/eyes/E = H.random_organ_by_process(OP_EYES)
 		if(!E)
 			return
-		if(BP_IS_ROBOTIC(E))
-			to_chat(H, SPAN_WARNING("The world suddenly dims in response to the blindingly bright light, protecting you from its shine."))
-			return
 		//so that way mob lag dosnt cheat folks into eye damage
 		H.update_equipment_vision()
 		var/safety = H.eyecheck()

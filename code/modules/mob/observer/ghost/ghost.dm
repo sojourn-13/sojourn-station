@@ -28,6 +28,8 @@ var/global/list/image/ghost_sightless_images = list() //this is a list of images
 	var/ghostvision = 1 //is the ghost able to see things humans can't?
 	var/seedarkness = 1
 
+	var/health_scanner_mode = 0 //When a ghost exsamines a mob will it give a healthscanner reading or not.
+
 	var/obj/item/tool/multitool/ghost_multitool
 	var/datum/tgui_module/manifest/manifest_panel = null
 	incorporeal_move = 1
@@ -810,3 +812,13 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		M.client.create_UI(M.type)
 		M.client.init_verbs()
 	return
+
+/mob/observer/ghost/verb/health_scanner_mode_toggle()
+	set name = "Toggle Health Scanner"
+	set category = "Ghost"
+	health_scanner_mode = !health_scanner_mode
+	if(health_scanner_mode)
+		to_chat(usr, "<span class='notice'>Health Scanner Enabled. Only works for humans!</span>")
+		return
+
+	to_chat(usr, "<span class='notice'>Health Scanner Disabled.</span>")
