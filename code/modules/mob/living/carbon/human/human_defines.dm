@@ -135,3 +135,5 @@
 	var/frost_warnings
 	var/frost_warnings_cooldown = 49
 	var/max_frost = 1200 //were out of 1.2k so are values are a bit inflated
+
+	var/oxy_armor = 0 //How much we reduce damage from oxyless we take. Will ONLY trigger when taking oxy damage, and cant heal oxy damage

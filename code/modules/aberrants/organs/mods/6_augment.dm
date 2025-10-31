@@ -117,6 +117,90 @@
 	M.resticted_to_nature = "ROBOTIC"
 	..()
 
+/obj/item/modification/organ/internal/agument/liver_buffer
+	name = "Liver Delay System Agumentation"
+	desc = "A wirey plastic set of tubes that are covered in small scales that slows toxins and other impurities in blood."
+	icon = 'icons/obj/surgery.dmi'
+	icon_state = "wiremesh"
+	matter = list(MATERIAL_PLASTIC = 0.3, MATERIAL_GLASS = 0.1, MATERIAL_GOLD = 0.1, MATERIAL_SILVER = 0.1, MATERIAL_DIAMOND = 0.1) //Carbon filtering clearly!
+	price_tag = 120
+
+/obj/item/modification/organ/internal/agument/liver_buffer/sync_add(mob/living/L)
+	..()
+	if(linked_person)
+		var/obj/item/organ/internal/liver/E = linked_person.random_organ_by_process(OP_EYES)
+		if(E)
+			E.toxin_handling_multy -= 0.25
+
+/obj/item/modification/organ/internal/agument/liver_buffer/sync_remove()
+	if(linked_person)
+		var/obj/item/organ/internal/liver/E = linked_person.random_organ_by_process(OP_EYES)
+		if(E)
+			E.toxin_handling_multy += 0.25
+	..()
+
+/obj/item/modification/organ/internal/agument/liver_buffer/New()
+	var/datum/component/modification/organ/stromal/agument/M = AddComponent(/datum/component/modification/organ/stromal/agument)
+
+	M.apply_to_types = list(/obj/item/organ/internal/liver)
+	M.examine_msg = "Can be attached to livers. Most useful in living tissue." //Duh
+	M.examine_difficulty = STAT_LEVEL_BASIC
+	M.prefix = "Delay System Agumentated"
+	..()
+
+/obj/item/modification/organ/internal/agument/nerve_sync
+	name = "Nerve SYNC type class CQC Agumentation"
+	desc = "A complex pattern of small thin plasteel wires and pins that allows the nerve to more effectively tighten grips on weapons or balled hands increasing impact power, if only slightly."
+	icon = 'icons/obj/surgery.dmi'
+	icon_state = "sync"
+	matter = list(MATERIAL_PLASTIC = 0.8, MATERIAL_GOLD = 0.1, MATERIAL_SILVER = 0.1, MATERIAL_PLASTEEL = 0.1)
+	price_tag = 250
+
+/obj/item/modification/organ/internal/agument/nerve_sync/sync_add(mob/living/L)
+	..()
+	if(linked_person)
+		linked_person.cqc_damage_multiplier += 0.01
 
 
-/obj/item/organ/internal/eyes
+/obj/item/modification/organ/internal/agument/nerve_sync/sync_remove()
+	if(linked_person)
+		linked_person.cqc_damage_multiplier -= 0.01
+	..()
+
+/obj/item/modification/organ/internal/agument/nerve_sync/New()
+	var/datum/component/modification/organ/stromal/agument/M = AddComponent(/datum/component/modification/organ/stromal/agument)
+
+	M.apply_to_types = list(/obj/item/organ/internal/nerve)
+	M.examine_msg = "Can be attached to nerves. Increases damage delt via melee and hand to hand by around 1%" //Duh
+	M.examine_difficulty = STAT_LEVEL_BASIC
+	M.prefix = "SYNC Type CQC"
+	..()
+
+/obj/item/modification/organ/internal/agument/oxy_armor_blood
+	name = "Blood-Coil-Monitor Type XI Processor"
+	desc = "A strange wrapper that goes around major blood vessels and arterys with the goal of aiding in statis when cells are suffering from asphyxia. \
+	Does not prevent organ failer or other side affects of asphyxia."
+	icon = 'icons/obj/surgery.dmi'
+	icon_state = "blood_vine"
+	matter = list(MATERIAL_GOLD = 0.1, MATERIAL_SILVER = 0.1, MATERIAL_STEEL = 0.1)
+	price_tag = 50
+
+/obj/item/modification/organ/internal/agument/oxy_armor_blood/sync_add(mob/living/L)
+	..()
+	if(linked_person)
+		linked_person.oxy_armor += 0.5
+
+
+/obj/item/modification/organ/internal/agument/oxy_armor_blood/sync_remove()
+	if(linked_person)
+		linked_person.oxy_armor -= 0.5
+	..()
+
+/obj/item/modification/organ/internal/agument/oxy_armor_blood/New()
+	var/datum/component/modification/organ/stromal/agument/M = AddComponent(/datum/component/modification/organ/stromal/agument)
+
+	M.apply_to_types = list(/obj/item/organ/internal/blood_vessel)
+	M.examine_msg = "Can be attached to blood vessels. Decreases harm from lack of internals or means of breath. These implants are unable to provide complete protection from asphyxia."
+	M.examine_difficulty = STAT_LEVEL_BASIC
+	M.prefix = "Coiled"
+	..()

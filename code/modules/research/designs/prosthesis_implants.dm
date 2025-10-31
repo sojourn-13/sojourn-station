@@ -49,6 +49,17 @@
 	build_path = /obj/item/modification/organ/internal/agument/brain_bank_bio
 	name = "Synthic Brain Data Chip: Type B(io)"
 
+/datum/design/research/item/mechfab/prosthesis/liver_buffer
+	build_path = /obj/item/modification/organ/internal/agument/liver_buffer
+	name = "Liver Delay System Agumentation"
+
+/datum/design/research/item/mechfab/prosthesis/nerve_sync
+	build_path = /obj/item/modification/organ/internal/agument/nerve_sync
+	name = "Nerve SYNC type class CQC Agumentation"
+
+/datum/design/research/item/mechfab/prosthesis/oxy_armor_blood
+	build_path = /obj/item/modification/organ/internal/agument/oxy_armor_blood
+	name = "Blood-Coil-Monitor Type XI Processor"
 
 //Upgraded prosthesis ========================
 /datum/design/research/item/mechfab/prosthesis_moebius
