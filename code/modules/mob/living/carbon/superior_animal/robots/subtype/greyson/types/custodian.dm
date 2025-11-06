@@ -120,13 +120,6 @@
 	if(prob(10))
 		cell_drop = /obj/item/cell/medium
 
-/* - This made them have natural armor against lasers that stacked, not that good also they get full fire proof as they are a robot
-/mob/living/carbon/superior/robot/gp/custodian/chef/adjustFireLoss(var/amount)
-	if(status_flags & GODMODE)
-		return FALSE	//godmode
-	fireloss = min(max(fireloss + amount/2, 0),(maxHealth*2)) //Slightly resistant to fire, because it would blow apart otherwise
-*/
-
 /mob/living/carbon/superior/robot/gp/custodian/engineer
 	name = "Greyson Positronic Engineering Drone"
 	desc = "Old and weathered Greyson Positronic drone. This one has a laser welder. It seems to be malfunctioning and hostile."
@@ -140,13 +133,37 @@
 	melee_damage_upper = 15
 	cleaning = FALSE
 	range_telegraph = "turns it's laser welder to"
+	var/heal_cooldown = 5 SECONDS
+	var/healed_coolingdown = 0
 
-/mob/living/carbon/superior/robot/gp/custodian/engineer/emp_act(severity)
-	..()
-	if(rapid)
-		rapid = FALSE
-	if(prob(95) && ranged)
-		ranged = FALSE
+/mob/living/carbon/superior/robot/gp/custodian/engineer/handle_ai()
+	. = ..()
+
+	if(stat == CONSCIOUS)
+		if(world.time > heal_cooldown + healed_coolingdown)
+			if(health < maxHealth * 0.75) //Put the mask on yourself before others
+				healed_coolingdown = heal_cooldown + world.time
+				adjustBruteLoss(-10)
+				adjustFireLoss(-10)
+				adjustOxyLoss(-15)
+				visible_message(SPAN_NOTICE("[src.name] does some field repairs on themselfs!"))
+				//Feedback that is heard and seen
+				var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
+				s.set_up(3, 1, src)
+				s.start()
+			else
+				for(var/mob/living/carbon/superior/robot/R in view(2,src))
+					if(R.health < R.maxHealth * 0.75 && R.faction == faction)
+						healed_coolingdown = heal_cooldown + world.time
+						R.adjustBruteLoss(-10)
+						R.adjustFireLoss(-10)
+						R.adjustOxyLoss(-15)
+						//Feedback that is heard and seen
+						var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
+						s.set_up(3, 1, R)
+						s.start()
+						visible_message(SPAN_NOTICE("[src.name] does some field repairs on [R.name]!"))
+						break
 
 /mob/living/carbon/superior/robot/gp/custodian/engineer/New()
 	. = ..()

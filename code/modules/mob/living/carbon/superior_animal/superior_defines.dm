@@ -310,6 +310,20 @@
 	var/fancy_attack_shading = "#C4A484" //When a new attack animation is spawned we use this colour -whitescale
 	var/randomize_attack_effect_location = TRUE //Used for fancy_attack_overlay shifting of pixels
 
+	//Blocking stuff, note this uses TGH stat and a few perks. Not an exstenstive list
+	var/can_block = FALSE //Not every mob needs to use blocking systems leave it to the smartys
+	var/mob_is_blocking = FALSE //Are we blocking currently
+	var/lower_guard_message = "lowers their defencive stance."
+	var/raise_guard_message = "raises a defencive stance."
+	var/blocking_slowdown = 1 //Same as humans
+	var/health_point_to_block = 0.5 //at 50% hp start blocking
+
+	//When blocking we will always give this much
+	var/blocking_value = 1.5
+
+	var/block_cooldown_timer = 0
+	var/block_cooldown = 0.9 SECONDS //Window where you can deal more damage well a mob is blocking
+
 //SoJ edit
 /obj/effect/effect/melee/mob_melee_animation
 	icon = 'modular_sojourn/attacks.dmi'

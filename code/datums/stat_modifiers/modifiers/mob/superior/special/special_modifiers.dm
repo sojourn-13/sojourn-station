@@ -26,6 +26,33 @@
 		superior_target.advance = TRUE
 		superior_target.advance_if_cant_see = TRUE
 
+
+//Gives a perk thats affectively +3 armor when blocking
+/datum/stat_modifier/mob/living/carbon/superior/resilience_perk
+
+	prefix = "Resilience"
+
+	description = "This one dosnt give up easily on life, when blocking it will be even harder to damage."
+
+
+	stattags = DEFENSE_STATTAG
+
+/datum/stat_modifier/mob/living/carbon/superior/resilience_perk/remove()
+
+	. = ..()
+
+	if (issuperioranimal(holder))
+		var/mob/living/carbon/superior/superior_holder = holder
+		superior_holder.stats.removePerk(PERK_RESILIENCE)
+
+/datum/stat_modifier/mob/living/carbon/superior/aggressive/apply_to(atom/target)
+
+	. = ..()
+
+	if (issuperioranimal(target))
+		var/mob/living/carbon/superior/superior_target = target
+		superior_target.stats.addPerk(PERK_RESILIENCE)
+
 /datum/stat_modifier/mob/living/carbon/superior/aggressive/savage
 
 	armor_adjustment = list(
