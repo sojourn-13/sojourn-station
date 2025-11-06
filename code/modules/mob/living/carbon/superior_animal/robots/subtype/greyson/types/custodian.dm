@@ -146,6 +146,7 @@
 				adjustBruteLoss(-10)
 				adjustFireLoss(-10)
 				adjustOxyLoss(-15)
+				updatehealth()
 				visible_message(SPAN_NOTICE("[src.name] does some field repairs on themselfs!"))
 				//Feedback that is heard and seen
 				var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
@@ -158,6 +159,7 @@
 						R.adjustBruteLoss(-10)
 						R.adjustFireLoss(-10)
 						R.adjustOxyLoss(-15)
+						R.updatehealth()
 						//Feedback that is heard and seen
 						var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
 						s.set_up(3, 1, R)

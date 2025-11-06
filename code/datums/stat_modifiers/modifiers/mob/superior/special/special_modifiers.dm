@@ -45,7 +45,7 @@
 		var/mob/living/carbon/superior/superior_holder = holder
 		superior_holder.stats.removePerk(PERK_RESILIENCE)
 
-/datum/stat_modifier/mob/living/carbon/superior/aggressive/apply_to(atom/target)
+/datum/stat_modifier/mob/living/carbon/superior/resilience_perk/apply_to(atom/target)
 
 	. = ..()
 
