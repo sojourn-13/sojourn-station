@@ -51,6 +51,11 @@
 
 	if (issuperioranimal(target))
 		var/mob/living/carbon/superior/superior_target = target
+
+		//For mobs this is done in New(), well stat_modifiers are on init. So we got to do this a bit early
+		if (!superior_target.stats)
+			superior_target.stats = new /datum/stat_holder(superior_target)
+
 		superior_target.stats.addPerk(PERK_RESILIENCE)
 
 /datum/stat_modifier/mob/living/carbon/superior/aggressive/savage
