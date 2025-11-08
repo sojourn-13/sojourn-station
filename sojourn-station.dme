@@ -2364,6 +2364,7 @@
 #include "code\modules\mob\living\carbon\superior_animal\attack.dm"
 #include "code\modules\mob\living\carbon\superior_animal\defense.dm"
 #include "code\modules\mob\living\carbon\superior_animal\life.dm"
+#include "code\modules\mob\living\carbon\superior_animal\sa_blocking.dm"
 #include "code\modules\mob\living\carbon\superior_animal\sa_breath.dm"
 #include "code\modules\mob\living\carbon\superior_animal\superior_animal.dm"
 #include "code\modules\mob\living\carbon\superior_animal\superior_defines.dm"

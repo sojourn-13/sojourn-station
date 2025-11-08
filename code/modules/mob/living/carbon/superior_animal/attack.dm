@@ -22,6 +22,9 @@
 
 	. = A.attack_generic(user = src, damage = damage, attack_message = attacktext, damagetype = melee_damage_type, attack_flag = attacking_armor_type, sharp = melee_sharp, edge = melee_sharp)
 
+	if(mob_is_blocking)
+		stop_blocking()
+
 	if(.)
 
 		if(fancy_attack_overlay)
@@ -90,6 +93,9 @@
 	if(QDELETED(firing_target))
 		loseTarget()
 		return
+
+	if(mob_is_blocking)
+		stop_blocking()
 
 	if(rapid)
 		for(var/shotsfired = 0, shotsfired < rapid_fire_shooting_amount, shotsfired++)

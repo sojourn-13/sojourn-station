@@ -1,3 +1,10 @@
+/mob/living/carbon/superior/movement_delay()
+
+	var/tally = ..()
+	if(mob_is_blocking)
+		tally += blocking_slowdown
+
+	return tally
 
 //NOTE: Don't use this proc for finding specific mobs or a very certain object; ultilize GLOBs instead of view()/mob/living/carbon/superior/proc/getObjectsInView()
 /mob/living/carbon/superior/proc/getObjectsInView()

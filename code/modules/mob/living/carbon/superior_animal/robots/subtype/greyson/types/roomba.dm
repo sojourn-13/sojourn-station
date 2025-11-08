@@ -1,5 +1,5 @@
 /mob/living/carbon/superior/robot/gp/roomba
-	name = "Greyson Positronic RMB-A unit"
+	name = "Greyson Positronic RMB-A Unit"
 	desc = "A small round drone, usually tasked with carrying out menial tasks. This one seems pretty harmless."
 	icon_state = "roomba"
 	move_to_delay = 3
@@ -18,9 +18,8 @@
 		/datum/stat_modifier/mob/living/speed/flat/positive/low = 5,
 	)
 
-
 /mob/living/carbon/superior/robot/gp/roomba/slayer
-	name = "Greyson Positronic RMB-A unit"
+	name = "Greyson Positronic RMB-A Unit"
 	desc = "A small round drone, usually tasked with carrying out menial tasks. This one seems to have a knife taped to it..?"
 	icon_state = "roomba_knife"
 	health = 30 * GREYSONWEAK_HEALTH_MOD
@@ -30,7 +29,7 @@
 	drop2 = /obj/item/tool/knife
 
 /mob/living/carbon/superior/robot/gp/roomba/trip
-	name = "Greyson Positronic RMB-A unit"
+	name = "Greyson Positronic RMB-A Unit"
 	desc = "A small round drone, usually tasked with carrying out menial tasks. This one has a baton attached to it..."
 	icon_state = "roomba_batton"
 	health = 30 * GREYSONWEAK_HEALTH_MOD
@@ -54,8 +53,9 @@
 	. = ..()
 
 /mob/living/carbon/superior/robot/gp/roomba/trip/armored
-	name = "Greyson Positronic RMB-SEC unit"
-	desc = "A small blue round drone, usually tasked with carrying out menial tasks. This one has a baton attached to it and seems to have added armor..."
+	name = "Greyson Positronic RMB-SEC Unit"
+	desc = "A small blue round drone, usually tasked with carrying out menial tasks. \
+	This one has a baton attached to it and seems to have added armor..."
 	icon_state = "roomba_IH_batton"
 	health = 80 * GREYSONWEAK_HEALTH_MOD
 	maxHealth = 80 * GREYSONWEAK_HEALTH_MOD
@@ -64,7 +64,7 @@
 	melee_damage_upper = 12
 
 /mob/living/carbon/superior/robot/gp/roomba/boomba
-	name = "Greyson Positronic RMB-A unit"
+	name = "Greyson Positronic RMB-A Unit"
 	desc = "A small round drone, usually tasked with carrying out menial tasks. Is that a fucking anti-personel mine?!"
 	icon_state = "boomba"
 	health = 15 * GREYSONWEAK_HEALTH_MOD
@@ -83,7 +83,7 @@
 		death()
 
 /mob/living/carbon/superior/robot/gp/roomba/gun_ba
-	name = "Greyson Positronic RMB-A unit"
+	name = "Greyson Positronic RMB-A Unit"
 	desc = "A small round drone, usually tasked with carrying out menial tasks. And this one has a gun."
 	icon_state = "roomba_lmg"
 	health = 30 * GREYSONWEAK_HEALTH_MOD
@@ -107,7 +107,7 @@
 		cell_drop = /obj/item/cell/medium
 
 /mob/living/carbon/superior/robot/gp/roomba/gun_ba/plasma
-	name = "Greyson Positronic RMB-SEC unit"
+	name = "Greyson Positronic RMB-SEC Unit"
 	desc = "A small blue round drone, usually tasked with carrying out menial tasks. And this one has a overclocked gun."
 	icon_state = "roomba_lmg"
 	health = 50 * GREYSONWEAK_HEALTH_MOD
@@ -118,8 +118,9 @@
 	projectiletype = /obj/item/projectile/plasma/light
 
 /mob/living/carbon/superior/robot/gp/roomba/gun_ba/armored
-	name = "Greyson Positronic RMB-SEC unit"
-	desc = "A small blue round drone, usually tasked with carrying out menial tasks. And this one has a gun and seems to have added armor."
+	name = "Greyson Positronic RMB-SEC Unit"
+	desc = "A small blue round drone, usually tasked with carrying out menial tasks, \
+	this one has a gun and seems to have added armor."
 	icon_state = "roomba_IH_lmg"
 	health = 70 * GREYSONWEAK_HEALTH_MOD
 	maxHealth = 70 * GREYSONWEAK_HEALTH_MOD
@@ -127,7 +128,7 @@
 	melee_damage_upper = 10
 
 /mob/living/carbon/superior/robot/gp/roomba/chemical
-	name = "Greyson Positronic RMB-MED unit"
+	name = "Greyson Positronic RMB-MED Unit"
 	desc = "A small round drone, usually tasked with carrying out menial tasks. This one has a hypo on the top of it..."
 	icon_state = "roomba_drugs"
 	health = 20 * GREYSONWEAK_HEALTH_MOD
@@ -146,7 +147,7 @@
 			L.reagents.add_reagent(injection_type, injection_per_hit)
 
 /mob/living/carbon/superior/robot/gp/roomba/chemical/med
-	name = "Greyson Positronic RMB-MED unit"
+	name = "Greyson Positronic RMB-MED Unit"
 	desc = "A small white round drone, usually tasked with carrying out menial tasks. This one has a hypo on the top of it..."
 	icon_state = "roomba_medical_drugs"
 	health = 20 * GREYSONWEAK_HEALTH_MOD
@@ -157,7 +158,7 @@
 	injection_type = "chloralhydrate"
 
 /mob/living/carbon/superior/robot/gp/roomba/chemical/med/healer
-	name = "Greyson Positronic RMB-MED unit"
+	name = "Greyson Positronic RMB-MED Unit"
 	desc = "A small white round drone, usually tasked with carrying out menial tasks. This one has a hypo on the top of it..."
 	icon_state = "roomba_medical_drugs"
 	health = 20 * GREYSONWEAK_HEALTH_MOD

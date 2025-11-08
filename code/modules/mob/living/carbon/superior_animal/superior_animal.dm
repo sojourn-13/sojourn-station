@@ -272,6 +272,10 @@
 	if(speak_chance && prob(speak_chance))
 		visible_emote(emote_see)
 
+	if(can_block)
+		if(health < maxHealth * health_point_to_block)
+			start_blocking()
+
 /mob/living/carbon/superior/proc/handle_hostile_stance(var/atom/targetted_mob) //here so we can jump instantly to it if hostile stance is established
 	var/already_destroying_surroundings = FALSE
 	var/calculated_walk = (comfy_range - comfy_distance) //the distance for walk_to() we will use on ranged mobs
