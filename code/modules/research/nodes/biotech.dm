@@ -319,12 +319,13 @@
 							/datum/design/research/item/mechfab/prosthesis_moebius/l_leg,
 							/datum/design/research/item/mechfab/prosthesis_moebius/groin,
 							/datum/design/research/item/mechfab/prosthesis_moebius/head,
-							/datum/design/research/item/mechfab/prosthesis_moebius/chest
+							/datum/design/research/item/mechfab/prosthesis_moebius/chest,
+							/datum/design/research/item/mechfab/prosthesis/liver_buffer
 							)
 
 /datum/technology/blood_n_guts
 	name = "Blood and Hunger Cyberware"
-	desc = "A set of cyberware for helping with hunger and blood. Storage Nutrience: Advanced Cal Keeper and Sanguin-Stash!"
+	desc = "A set of cyberware for helping with hunger and blood."
 	tech_type = RESEARCH_BIOTECH
 
 	x = 0.7
@@ -338,7 +339,8 @@
 
 	unlocks_designs = list(
 							/datum/design/research/item/mechfab/modules/snack_system,
-							/datum/design/research/item/mechfab/modules/sanguin_stash
+							/datum/design/research/item/mechfab/modules/sanguin_stash,
+							/datum/design/research/item/mechfab/prosthesis/oxy_armor_blood
 							)
 
 
@@ -367,7 +369,9 @@
 							/datum/design/research/item/mechfab/modules/runner,
 							/datum/design/research/item/mechfab/modules/hud/med,
 							/datum/design/research/item/mechfab/modules/hud/sec,
-							/datum/design/research/item/mechfab/modules/hud/welder
+							/datum/design/research/item/mechfab/modules/hud/welder,
+							/datum/design/research/item/mechfab/prosthesis/agu_eye_lens,
+							/datum/design/research/item/mechfab/prosthesis/nerve_sync
 							)
 
 /datum/technology/brain_ware
@@ -386,7 +390,9 @@
 
 	unlocks_designs = list(	/datum/design/research/item/mechfab/modules/sanity_on_a_buget,
 							/datum/design/research/item/mechfab/modules/viv_bank,
-							/datum/design/research/item/mechfab/modules/sanity_mind_helper
+							/datum/design/research/item/mechfab/modules/sanity_mind_helper,
+							/datum/design/research/item/mechfab/prosthesis/brain_bank_cog,
+							/datum/design/research/item/mechfab/prosthesis/brain_bank_bio
 							)
 
 /datum/technology/rig_medical_stuff

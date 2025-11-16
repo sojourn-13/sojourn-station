@@ -47,7 +47,19 @@
 	SEND_SIGNAL(src, COMSIG_IWOUND_FLAGS_REMOVE)
 	..()
 
+/obj/item/organ/internal/die()
+	..()
+	if(status&ORGAN_DEAD)
+		if(item_upgrades)
+			for(var/obj/item/modification/organ/internal/agument/A in item_upgrades)
+				if(A.cares_about_life && status&ORGAN_DEAD)
+					A.sync_remove()
+
 /obj/item/organ/internal/removed_mob()
+	if(item_upgrades)
+		for(var/obj/item/modification/organ/internal/agument/A in item_upgrades)
+			A.sync_remove()
+
 	for(var/process in organ_efficiency)
 		owner.internal_organs_by_efficiency[process] -= src
 	owner.internal_organs -= src
@@ -81,6 +93,11 @@
 		owner.internal_organs_by_efficiency[process] += src
 
 	add_verb(owner, owner_verbs)
+
+	for(var/obj/item/modification/organ/internal/agument/A in item_upgrades)
+		if(A.cares_about_life && !(status&ORGAN_DEAD))
+			return
+		A.sync_add(owner)
 
 /obj/item/organ/internal/proc/organ_add_verb(procpath/P)
 	owner_verbs |= P

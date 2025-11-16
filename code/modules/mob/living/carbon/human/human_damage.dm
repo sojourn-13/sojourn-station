@@ -186,6 +186,9 @@
 		amount = amount*species.oxy_mod*src.oxy_mod_perk
 		if(stats.getPerk(PERK_LUNGS_OF_IRON) && amount > 0)
 			amount *= 0.5
+		//Does not completely protect against damage, as that would lead to cases of immorality if stacked a lot.
+		if(amount > 1 && oxy_armor)
+			amount = max(1, amount - oxy_armor)
 		..(amount)
 
 /mob/living/carbon/human/setOxyLoss(var/amount)
