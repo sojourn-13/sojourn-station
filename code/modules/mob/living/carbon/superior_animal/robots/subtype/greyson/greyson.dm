@@ -1,5 +1,5 @@
 /mob/living/carbon/superior/robot/gp
-	name = "Greyson Positronic RMB-A unit"
+	name = "Greyson Positronic RMB-A Unit"
 	desc = "A small round drone, usually tasked with carrying out menial tasks. This one seems pretty harmless."
 	icon = 'icons/mob/battle_roomba.dmi'
 	icon_state = "roomba"
