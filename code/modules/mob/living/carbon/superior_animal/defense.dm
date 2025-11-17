@@ -76,14 +76,14 @@
 				can_abuse_cover = FALSE
 				break
 
-		//Tables, are complex.
-		//If someone with more time and care wants to make a system
-		//That dynamically looks at: \
-		Table Materal \
-		Checks directions proper \
-		Ensures that the table cover system is fair and logical \
+		/*Tables, are complex.
+		If someone with more time and care wants to make a system
+		That dynamically looks at:
+		Table Materal
+		Checks directions proper
+		Ensures that the table cover system is fair and logical
 		As well as fix up table code in general to fit a more realisic/gamifed balanced system
-		//Then good luck! - Trilby
+		Then good luck! - Trilby*/
 
 		if(can_abuse_cover)
 			for(var/obj/structure/table/flippy in loc)
@@ -110,8 +110,8 @@
 				can_abuse_cover = FALSE
 				break
 
-		//Low walls, are complex, please see the ablve with tables. - Trilby, p.s Tables and Low walls are coded almost 1:1, \
-		and both have what I can only describe as fundimental issues with blocking.
+		//Low walls, are complex, please see the ablve with tables. - Trilby, p.s Tables and Low walls are coded almost 1:1,
+		//and both have what I can only describe as fundimental issues with blocking.
 		if(can_abuse_cover)
 			for(var/obj/structure/low_wall/bunker_down in getstep_other)
 				if(bunker_down.check_cover(P))
