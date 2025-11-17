@@ -1033,6 +1033,10 @@
 	yo = targloc.y - startloc.y + y_offset
 	xo = targloc.x - startloc.x + x_offset
 
+	//Used for cover mechanics
+	//This also ensures that are bullet direction is legitment with redirected bullets from walls
+	dir = get_dir(startloc, targloc)
+
 	// plot the initial trajectory
 	trajectory = new()
 	trajectory.setup(starting, original, pixel_x, pixel_y, angle_offset)

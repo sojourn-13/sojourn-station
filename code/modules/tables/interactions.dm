@@ -160,4 +160,5 @@
 
 	if (user.unEquip(W, loc))
 		set_pixel_click_offset(W, params)
+
 /obj/structure/table/attack_tk() // no telehulk sorry
