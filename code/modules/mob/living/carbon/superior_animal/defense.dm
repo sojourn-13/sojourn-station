@@ -63,7 +63,7 @@
 	//We only care about cover if we are actively blocking to save on processing
 	if(mob_is_blocking)
 		//This is the tile we just came frome
-		var/turf/getstep_other = get_step(P, reverse_direction(dir))
+		var/turf/getstep_other = get_step(src, reverse_direction(P.dir))
 		var/can_abuse_cover = TRUE
 		//These are only able to be done on the same tile, tables, and shields
 		for(var/obj/structure/shield_deployed/SD in loc)
@@ -88,14 +88,15 @@
 		if(can_abuse_cover)
 			for(var/obj/structure/table/flippy in loc)
 				if(flippy.check_cover(P))
+					bullet_weaken(P, subtractor_brute = 2, mult_brute = 0.8, subtractor_burn = 4, mult_burn = 0.6)
 					can_abuse_cover = FALSE
-					return //We eated it already so...
+					break
 
 		//These are a the tile the bullet passed, but we are blocking so we abuse cover a bit to weaken the shot if unblocked
 		//Mainly grills, low walls and barricades
 
 		if(can_abuse_cover)
-			for(var/obj/structure/grille/wirefence in getstep_other)
+			for(var/obj/structure/grille/wirefence in getstep_other.contents)
 				bullet_weaken(P, subtractor_brute = 2, mult_brute = 0.8, subtractor_burn = 4, mult_burn = 0.6)
 				wirefence.health = health - P.get_structure_damage()
 				wirefence.healthCheck()
@@ -103,7 +104,7 @@
 				break
 
 		if(can_abuse_cover)
-			for(var/obj/structure/barricade/CB in getstep_other)
+			for(var/obj/structure/barricade/CB in getstep_other.contents)
 				bullet_weaken(P, subtractor_brute = 1, mult_brute = 0.9, subtractor_burn = 0, mult_burn = 0.8)
 				CB.health = health - P.get_structure_damage()
 				CB.healthCheck()
@@ -113,10 +114,11 @@
 		//Low walls, are complex, please see the ablve with tables. - Trilby, p.s Tables and Low walls are coded almost 1:1,
 		//and both have what I can only describe as fundimental issues with blocking.
 		if(can_abuse_cover)
-			for(var/obj/structure/low_wall/bunker_down in getstep_other)
+			for(var/obj/structure/low_wall/bunker_down in getstep_other.contents)
 				if(bunker_down.check_cover(P))
+					bullet_weaken(P, subtractor_brute = 2, mult_brute = 0.8, subtractor_burn = 4, mult_burn = 0.6)
 					can_abuse_cover = FALSE
-					return //We eated it already so...
+					break
 
 	. = ..()
 
