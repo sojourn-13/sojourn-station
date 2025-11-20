@@ -129,9 +129,8 @@
 /area/nadezhda/maintenance/surfacesec)
 "abn" = (
 /obj/structure/table/woodentable,
-/turf/simulated/floor/carpet/sblucarpet{
-	name = "padded blue carpet"
-	},
+/obj/item/toy/junk/xmas_cracker,
+/turf/simulated/floor/carpet,
 /area/nadezhda/crew_quarters/bar)
 "abq" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -700,9 +699,7 @@
 /obj/effect/floor_decal/spline/wood{
 	dir = 8
 	},
-/turf/simulated/floor/carpet/sblucarpet{
-	name = "padded blue carpet"
-	},
+/turf/simulated/floor/carpet,
 /area/nadezhda/crew_quarters/bar)
 "ahk" = (
 /obj/effect/decal/cleanable/rubble,
@@ -4257,7 +4254,7 @@
 	},
 /area/nadezhda/outside/forest)
 "aMW" = (
-/obj/random/furniture/pottedplant,
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/sechall)
 "aMZ" = (
@@ -4268,10 +4265,10 @@
 /turf/simulated/floor/industrial/fancy_slates,
 /area/nadezhda/maintenance/undergroundfloor2north)
 "aNa" = (
-/obj/random/furniture/pottedplant,
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/engineering/foyer)
 "aNc" = (
@@ -5999,9 +5996,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/carpet/sblucarpet{
-	name = "padded blue carpet"
-	},
+/turf/simulated/floor/carpet,
 /area/nadezhda/crew_quarters/bar)
 "bex" = (
 /obj/effect/decal/cleanable/rubble,
@@ -6578,6 +6573,7 @@
 /obj/effect/floor_decal/spline/wood{
 	dir = 1
 	},
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/wood,
 /area/nadezhda/command/smc/quarters)
 "bjl" = (
@@ -6685,12 +6681,14 @@
 "bjP" = (
 /obj/machinery/light/floor,
 /obj/effect/floor_decal/steeldecal/steel_decals_central6,
-/obj/random/furniture/pottedplant,
 /obj/effect/floor_decal/steeldecal/steel_decals10{
 	dir = 10
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/carpet,
+/obj/item/a_gift{
+	pixel_x = -20
+	},
+/turf/simulated/floor/carpet/turcarpet,
 /area/nadezhda/crew_quarters/bar)
 "bjR" = (
 /obj/machinery/door/holy{
@@ -7589,6 +7587,10 @@
 /obj/random/toolbox/low_chance,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/quartermaster/office)
+"bsW" = (
+/obj/item/gift,
+/turf/simulated/floor/carpet/turcarpet,
+/area/nadezhda/crew_quarters/bar)
 "btf" = (
 /obj/machinery/power/port_gen/pacman/scrap/anchored,
 /obj/structure/cable/yellow,
@@ -7668,7 +7670,7 @@
 /area/nadezhda/maintenance/undergroundfloor1west)
 "btG" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/bed/chair/custom/bar_special{
+/obj/structure/bed/chair/comfy/red{
 	dir = 8
 	},
 /turf/simulated/floor/wood/wild3,
@@ -9650,13 +9652,13 @@
 	dir = 8;
 	pixel_x = -3
 	},
-/obj/structure/bed/chair/comfy/brown{
-	dir = 4
-	},
-/obj/effect/floor_decal/border/carpet/black{
+/obj/effect/floor_decal/border/carpet/green{
 	dir = 8
 	},
-/turf/simulated/floor/carpet/bcarpet,
+/obj/structure/bed/chair/comfy/red{
+	dir = 4
+	},
+/turf/simulated/floor/carpet,
 /area/nadezhda/crew_quarters/bar)
 "bKW" = (
 /obj/structure/bed/chair/office/light,
@@ -11043,6 +11045,11 @@
 "bZl" = (
 /turf/simulated/floor/icewater,
 /area/nadezhda/outside/lakeside)
+"bZo" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/pottedplant/xmas,
+/turf/simulated/floor/tiled/dark/violetcorener,
+/area/nadezhda/rnd/research)
 "bZs" = (
 /obj/effect/floor_decal/snow_edge{
 	dir = 5
@@ -11155,6 +11162,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/bluecorner,
 /area/nadezhda/security/tactical_blackshield)
+"cas" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/stool/custom/bar_special,
+/turf/simulated/floor/holofloor/space{
+	layer = 1
+	},
+/area/nadezhda/crew_quarters/arcade)
 "cav" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable/green{
@@ -14318,9 +14333,7 @@
 /obj/structure/railing/grey{
 	dir = 8
 	},
-/turf/simulated/floor/carpet/sblucarpet{
-	name = "padded blue carpet"
-	},
+/turf/simulated/floor/carpet/turcarpet,
 /area/nadezhda/crew_quarters/bar)
 "cDL" = (
 /obj/machinery/body_scanconsole,
@@ -16398,8 +16411,8 @@
 /obj/structure/railing/grey{
 	dir = 8
 	},
-/obj/structure/flora/pottedplant/minitree,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/command/hallway)
 "cVZ" = (
@@ -16691,7 +16704,7 @@
 /obj/effect/floor_decal/spline/wood{
 	dir = 10
 	},
-/obj/item/stool/custom,
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/security/barracks)
 "cXS" = (
@@ -17755,11 +17768,11 @@
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/rnd/research)
 "dhR" = (
-/obj/random/furniture/pottedplant,
 /obj/machinery/light_switch{
 	dir = 8;
 	pixel_x = 32
 	},
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security)
 "dhS" = (
@@ -17916,7 +17929,6 @@
 	},
 /area/nadezhda/outside/forest)
 "diY" = (
-/obj/random/furniture/pottedplant,
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 24
 	},
@@ -17928,6 +17940,7 @@
 	pixel_x = 32
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/wood,
 /area/nadezhda/security/detectives_office)
 "djb" = (
@@ -20487,10 +20500,10 @@
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/forest)
 "dFT" = (
-/obj/random/furniture/pottedplant,
 /obj/structure/window/reinforced{
 	dir = 1
 	},
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/sechall)
 "dFV" = (
@@ -20927,13 +20940,13 @@
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/hallway/side/f2section1)
 "dJS" = (
-/obj/structure/bed/chair/custom/wood{
-	dir = 4
-	},
-/obj/effect/floor_decal/border/carpet/black{
+/obj/effect/floor_decal/border/carpet/green{
 	dir = 8
 	},
-/turf/simulated/floor/carpet/bcarpet,
+/obj/structure/bed/chair/comfy/green{
+	dir = 4
+	},
+/turf/simulated/floor/carpet,
 /area/nadezhda/crew_quarters/bar)
 "dKb" = (
 /obj/machinery/door/airlock/glass_medical{
@@ -21448,6 +21461,7 @@
 /obj/machinery/recharger,
 /obj/item/cell/small,
 /obj/item/cell/small,
+/obj/item/toy/junk/xmas_cracker,
 /turf/simulated/floor/tiled/dark/cyancorner,
 /area/nadezhda/crew_quarters/sleep/cryo2)
 "dOh" = (
@@ -22623,9 +22637,7 @@
 	pixel_y = 32
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/carpet/sblucarpet{
-	name = "padded blue carpet"
-	},
+/turf/simulated/floor/carpet,
 /area/nadezhda/crew_quarters/bar)
 "dYH" = (
 /obj/structure/railing,
@@ -23849,6 +23861,7 @@
 /obj/structure/table/standard,
 /obj/random/medical,
 /obj/random/medical,
+/obj/item/toy/junk/xmas_cracker,
 /turf/simulated/floor/tiled/dark/cyancorner,
 /area/nadezhda/crew_quarters/sleep/cryo2)
 "ejr" = (
@@ -24532,9 +24545,7 @@
 /obj/structure/bed/chair/sofa/beige/corner,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/cobweb2,
-/turf/simulated/floor/carpet/sblucarpet{
-	name = "padded blue carpet"
-	},
+/turf/simulated/floor/carpet,
 /area/nadezhda/crew_quarters/bar)
 "epk" = (
 /obj/structure/closet/wall_mounted/firecloset{
@@ -25407,7 +25418,7 @@
 /obj/effect/floor_decal/spline/wood{
 	dir = 4
 	},
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet,
 /area/nadezhda/crew_quarters/bar)
 "exg" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -26268,7 +26279,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 2
 	},
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet,
 /area/nadezhda/crew_quarters/bar)
 "eFu" = (
 /obj/effect/decal/cleanable/generic,
@@ -26819,10 +26830,10 @@
 /area/nadezhda/maintenance/undergroundfloor1north)
 "eLf" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/random/furniture/pottedplant,
 /obj/effect/floor_decal/spline/wood{
 	dir = 4
 	},
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/crew_quarters/bar)
 "eLi" = (
@@ -29251,6 +29262,7 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/security/secrecroom)
 "ffP" = (
@@ -31166,12 +31178,12 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/security/armory)
 "fwK" = (
-/obj/machinery/computer/arcade/orion_trail,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/sign/neon/gamecenter/right{
 	pixel_y = 32;
 	light_color = "#c94616"
 	},
+/obj/machinery/slotmachine,
 /turf/simulated/floor/holofloor/space{
 	layer = 1
 	},
@@ -32064,9 +32076,6 @@
 /area/nadezhda/hallway/side/f2section1)
 "fFg" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/flora/pottedplant/star_root{
-	pixel_x = -7
-	},
 /obj/machinery/light{
 	dir = 8
 	},
@@ -32075,6 +32084,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/effect/floor_decal/spline/wood,
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/crew_quarters/bar)
 "fFh" = (
@@ -38779,9 +38789,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/carpet/sblucarpet{
-	name = "padded blue carpet"
-	},
+/turf/simulated/floor/carpet/turcarpet,
 /area/nadezhda/crew_quarters/bar)
 "gOT" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -40699,10 +40707,10 @@
 	dir = 8;
 	pixel_x = -3
 	},
-/obj/structure/bed/chair/comfy/brown{
+/obj/structure/bed/chair/comfy/green{
 	dir = 4
 	},
-/turf/simulated/floor/wood/wild3,
+/turf/simulated/floor/carpet/purcarpet,
 /area/nadezhda/crew_quarters/bar)
 "hgC" = (
 /obj/machinery/shower{
@@ -41214,8 +41222,11 @@
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/tactical)
 "hlv" = (
-/obj/machinery/slotmachine,
-/turf/simulated/floor/carpet,
+/obj/structure/flora/tree/pine/xmas{
+	pixel_x = 0
+	},
+/obj/item/gift,
+/turf/simulated/floor/carpet/turcarpet,
 /area/nadezhda/crew_quarters/bar)
 "hlw" = (
 /obj/structure/table/rack,
@@ -42428,9 +42439,8 @@
 "hwZ" = (
 /obj/structure/table/woodentable,
 /obj/structure/railing/grey,
-/turf/simulated/floor/carpet/sblucarpet{
-	name = "padded blue carpet"
-	},
+/obj/item/toy/junk/xmas_cracker,
+/turf/simulated/floor/carpet/turcarpet,
 /area/nadezhda/crew_quarters/bar)
 "hxa" = (
 /turf/simulated/floor/carpet,
@@ -43268,7 +43278,7 @@
 /obj/structure/window/reinforced{
 	pixel_x = -3
 	},
-/obj/structure/bed/chair/custom/bar_special{
+/obj/structure/bed/chair/comfy/green{
 	dir = 8
 	},
 /turf/simulated/floor/wood/wild3,
@@ -43808,7 +43818,7 @@
 /obj/structure/railing/grey{
 	dir = 4
 	},
-/obj/structure/flora/pottedplant/minitree,
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/command/hallway)
 "hIx" = (
@@ -44527,7 +44537,7 @@
 /obj/item/reagent_containers/snacks/warcake{
 	pixel_y = 6
 	},
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet,
 /area/nadezhda/crew_quarters/bar)
 "hNV" = (
 /obj/machinery/chemical_dispenser/industrial{
@@ -45430,6 +45440,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/tiled/steel/golden,
 /area/nadezhda/hallway/surface/section1)
 "hXc" = (
@@ -45913,6 +45924,7 @@
 /obj/machinery/light,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/newscaster/directional/east,
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/tiled/dark/cyancorner,
 /area/nadezhda/crew_quarters/sleep/cryo2)
 "iam" = (
@@ -46058,9 +46070,7 @@
 /obj/structure/railing/grey{
 	dir = 8
 	},
-/turf/simulated/floor/carpet/sblucarpet{
-	name = "padded blue carpet"
-	},
+/turf/simulated/floor/carpet/turcarpet,
 /area/nadezhda/crew_quarters/bar)
 "ibo" = (
 /obj/structure/flora/big/bush3,
@@ -46421,7 +46431,7 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 4
 	},
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet,
 /area/nadezhda/crew_quarters/bar)
 "ieQ" = (
 /obj/effect/decal/cleanable/dirt,
@@ -47472,10 +47482,10 @@
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/nadezhda/maintenance/undergroundfloor2north)
 "ioj" = (
-/obj/structure/bed/chair/comfy/brown{
+/obj/structure/bed/chair/comfy/red{
 	dir = 8
 	},
-/turf/simulated/floor/wood/wild3,
+/turf/simulated/floor/carpet/purcarpet,
 /area/nadezhda/crew_quarters/bar)
 "ioo" = (
 /obj/structure/cable/yellow{
@@ -53787,9 +53797,7 @@
 	dir = 8
 	},
 /obj/structure/railing/grey,
-/turf/simulated/floor/carpet/sblucarpet{
-	name = "padded blue carpet"
-	},
+/turf/simulated/floor/carpet/turcarpet,
 /area/nadezhda/crew_quarters/bar)
 "jvp" = (
 /obj/machinery/door/airlock/maintenance_common,
@@ -53838,7 +53846,6 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/command/panic_room)
 "jwm" = (
-/obj/random/furniture/pottedplant,
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "North APC";
@@ -53848,6 +53855,7 @@
 	d2 = 2;
 	icon_state = "0-2"
 	},
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/security/range)
 "jwo" = (
@@ -54300,6 +54308,7 @@
 /obj/structure/table/marble,
 /obj/item/paper_bin,
 /obj/item/pen,
+/obj/item/wrapping_paper,
 /turf/simulated/floor/tiled/white/cargo,
 /area/nadezhda/hallway/side/f2section1)
 "jAY" = (
@@ -54354,9 +54363,7 @@
 /obj/structure/railing/grey{
 	dir = 4
 	},
-/turf/simulated/floor/carpet/sblucarpet{
-	name = "padded blue carpet"
-	},
+/turf/simulated/floor/carpet/turcarpet,
 /area/nadezhda/crew_quarters/bar)
 "jBL" = (
 /obj/structure/boulder,
@@ -55262,10 +55269,10 @@
 /turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/rnd/lab)
 "jKq" = (
-/obj/random/furniture/pottedplant,
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/quartermaster/office)
 "jKs" = (
@@ -62008,8 +62015,8 @@
 /turf/simulated/floor/reinforced,
 /area/nadezhda/maintenance/undergroundfloor2west)
 "kVQ" = (
-/obj/random/furniture/pottedplant,
 /obj/structure/window/reinforced,
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/sechall)
 "kVV" = (
@@ -63798,6 +63805,7 @@
 	dir = 8;
 	tag = "icon-railing0 (WEST)"
 	},
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/plating,
 /area/nadezhda/security/maingate)
 "lpb" = (
@@ -64308,6 +64316,7 @@
 /obj/machinery/camera/network/colony_underground{
 	dir = 1
 	},
+/obj/item/toy/junk/xmas_cracker,
 /turf/simulated/floor/tiled/dark/cyancorner,
 /area/nadezhda/crew_quarters/sleep/cryo2)
 "lud" = (
@@ -66016,6 +66025,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/tiled/white/gray_perforated,
 /area/nadezhda/rnd/robotics)
 "lJs" = (
@@ -66087,7 +66097,8 @@
 /area/nadezhda/dungeon/outside/farm)
 "lKe" = (
 /obj/structure/table/bar_special,
-/turf/simulated/floor/carpet/bcarpet,
+/obj/item/toy/junk/xmas_cracker,
+/turf/simulated/floor/carpet,
 /area/nadezhda/crew_quarters/bar)
 "lKh" = (
 /obj/structure/multiz/stairs/enter/bottom{
@@ -66851,6 +66862,7 @@
 /obj/machinery/alarm{
 	pixel_y = 32
 	},
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/tiled/dark/cyancorner,
 /area/nadezhda/crew_quarters/sleep/cryo2)
 "lSb" = (
@@ -67104,10 +67116,10 @@
 /area/nadezhda/maintenance/undergroundfloor1north)
 "lTV" = (
 /obj/structure/bed/chair/sofa/brown/right,
-/obj/effect/floor_decal/border/carpet/black{
+/obj/effect/floor_decal/border/carpet/green{
 	dir = 1
 	},
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet,
 /area/nadezhda/crew_quarters/bar)
 "lTW" = (
 /obj/structure/disposalpipe/segment,
@@ -68147,9 +68159,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/carpet/sblucarpet{
-	name = "padded blue carpet"
-	},
+/turf/simulated/floor/carpet/turcarpet,
 /area/nadezhda/crew_quarters/bar)
 "mdr" = (
 /obj/effect/decal/cleanable/dirt,
@@ -68850,7 +68860,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/crew_quarters/hydroponics)
 "mhY" = (
-/obj/random/furniture/pottedplant,
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/carpet/sblucarpet{
 	name = "padded blue carpet"
 	},
@@ -69932,8 +69942,8 @@
 /turf/simulated/floor/rock/manmade/road,
 /area/nadezhda/outside/inside_colony)
 "mrJ" = (
-/obj/random/furniture/pottedplant,
 /obj/machinery/light,
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/tactical_blackshield)
 "mrK" = (
@@ -70719,7 +70729,7 @@
 	pixel_x = 32;
 	pixel_y = -32
 	},
-/obj/structure/flora/pottedplant/star_root,
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/crew_quarters/bar)
 "mzo" = (
@@ -70996,7 +71006,7 @@
 "mBu" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/generic,
-/obj/structure/bed/chair/custom/bar_special{
+/obj/structure/bed/chair/comfy/green{
 	dir = 8
 	},
 /turf/simulated/floor/wood/wild3,
@@ -72657,6 +72667,11 @@
 /obj/effect/floor_decal/snow_edge,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/forest)
+"mQr" = (
+/obj/structure/table/woodentable,
+/obj/item/toy/junk/xmas_tree,
+/turf/simulated/floor/carpet/turcarpet,
+/area/nadezhda/crew_quarters/bar)
 "mQs" = (
 /obj/random/mob/termite_no_despawn,
 /obj/item/stack/material/wood,
@@ -73707,13 +73722,13 @@
 /turf/simulated/wall,
 /area/nadezhda/crew_quarters)
 "mZU" = (
-/obj/random/furniture/pottedplant,
 /obj/machinery/alarm{
 	pixel_y = 32
 	},
 /obj/structure/sign/warning/smoking/small{
 	pixel_x = 32
 	},
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/carpet/sblucarpet{
 	name = "padded blue carpet"
 	},
@@ -78181,6 +78196,11 @@
 /obj/machinery/door/airlock/hatch,
 /turf/simulated/floor/industrial/grey_slates,
 /area/nadezhda/maintenance/surfaceeast)
+"nMJ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/pottedplant/xmas,
+/turf/simulated/floor/tiled/dark/bluecorner,
+/area/nadezhda/security/sechall)
 "nMM" = (
 /obj/effect/floor_decal/snow_edge{
 	dir = 8
@@ -78274,9 +78294,7 @@
 	dir = 8;
 	pixel_x = -4
 	},
-/turf/simulated/floor/carpet/sblucarpet{
-	name = "padded blue carpet"
-	},
+/turf/simulated/floor/carpet/turcarpet,
 /area/nadezhda/crew_quarters/bar)
 "nNC" = (
 /obj/machinery/atmospherics/pipe/simple/visible/green,
@@ -79899,13 +79917,13 @@
 /area/nadezhda/medical/organ_lab)
 "obw" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/floor_decal/border/carpet/black{
-	dir = 8
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/turf/simulated/floor/carpet/bcarpet,
+/obj/effect/floor_decal/border/carpet/green{
+	dir = 8
+	},
+/turf/simulated/floor/carpet,
 /area/nadezhda/crew_quarters/bar)
 "obE" = (
 /obj/effect/decal/cleanable/dirt,
@@ -80127,7 +80145,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet,
 /area/nadezhda/crew_quarters/bar)
 "odx" = (
 /obj/effect/floor_decal/spline/wood{
@@ -80476,8 +80494,8 @@
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/atmos)
 "ogK" = (
-/obj/structure/cyberplant,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/command/captain)
 "ogQ" = (
@@ -84071,7 +84089,7 @@
 /area/nadezhda/outside/dcave)
 "oMo" = (
 /obj/structure/flora/tree/pine/xmas{
-	pixel_x = ssssssss
+	pixel_x = 0
 	},
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/inside_colony)
@@ -84918,6 +84936,7 @@
 	},
 /obj/effect/floor_decal/industrial/warningred,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/medical/sleeper)
 "oUJ" = (
@@ -86133,6 +86152,7 @@
 /obj/structure/railing{
 	dir = 4
 	},
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/plating,
 /area/nadezhda/security/maingate)
 "pfU" = (
@@ -86191,7 +86211,7 @@
 /obj/machinery/light/floor{
 	dir = 8
 	},
-/obj/random/furniture/pottedplant,
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/crew_quarters/arcade)
 "pgk" = (
@@ -91541,9 +91561,7 @@
 	dir = 4
 	},
 /mob/living/carbon/human/monkey/punpun,
-/turf/simulated/floor/carpet/sblucarpet{
-	name = "padded blue carpet"
-	},
+/turf/simulated/floor/carpet,
 /area/nadezhda/crew_quarters/bar)
 "qbx" = (
 /obj/structure/lattice,
@@ -92174,6 +92192,10 @@
 	pixel_x = -32
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/toy/junk/xmas_cracker,
+/obj/item/toy/junk/xmas_cracker,
+/obj/item/toy/junk/xmas_cracker,
+/obj/item/toy/junk/xmas_cracker,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/maingate)
 "qhn" = (
@@ -92738,8 +92760,8 @@
 /obj/structure/disposalpipe/segment{
 	dir = 8
 	},
-/obj/structure/flora/pottedplant/grave_poppers,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/crew_quarters/bar)
 "qme" = (
@@ -94541,13 +94563,13 @@
 	})
 "qCt" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/bed/chair/custom/wood{
-	dir = 4
-	},
-/obj/effect/floor_decal/border/carpet/black{
+/obj/effect/floor_decal/border/carpet/green{
 	dir = 8
 	},
-/turf/simulated/floor/carpet/bcarpet,
+/obj/structure/bed/chair/comfy/red{
+	dir = 4
+	},
+/turf/simulated/floor/carpet,
 /area/nadezhda/crew_quarters/bar)
 "qCv" = (
 /obj/machinery/light{
@@ -96270,9 +96292,7 @@
 /obj/structure/railing/grey{
 	dir = 4
 	},
-/turf/simulated/floor/carpet/sblucarpet{
-	name = "padded blue carpet"
-	},
+/turf/simulated/floor/carpet,
 /area/nadezhda/crew_quarters/bar)
 "qSQ" = (
 /obj/machinery/atmospherics/pipe/simple/visible/cyan{
@@ -97456,6 +97476,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/white_large_slates,
 /area/nadezhda/maintenance/undergroundfloor1east)
+"reE" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/bed/chair/comfy/green{
+	dir = 8
+	},
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/crew_quarters/bar)
 "reF" = (
 /obj/machinery/light/small,
 /turf/simulated/floor/rock,
@@ -99911,9 +99938,7 @@
 "rBi" = (
 /obj/structure/bed/chair/sofa/beige,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/carpet/sblucarpet{
-	name = "padded blue carpet"
-	},
+/turf/simulated/floor/carpet,
 /area/nadezhda/crew_quarters/bar)
 "rBk" = (
 /obj/machinery/power/breakerbox{
@@ -101415,9 +101440,7 @@
 	dir = 8;
 	pixel_x = -4
 	},
-/turf/simulated/floor/carpet/sblucarpet{
-	name = "padded blue carpet"
-	},
+/turf/simulated/floor/carpet/turcarpet,
 /area/nadezhda/crew_quarters/bar)
 "rOI" = (
 /obj/structure/railing/grey{
@@ -102612,7 +102635,7 @@
 /area/nadezhda/command/tcommsat/computer)
 "rZi" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/random/furniture/pottedplant,
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/tiled/white/cargo,
 /area/nadezhda/hallway/side/f2section1)
 "rZj" = (
@@ -103906,9 +103929,8 @@
 /obj/effect/floor_decal/spline/wood,
 /obj/structure/railing/grey,
 /obj/structure/table/woodentable,
-/turf/simulated/floor/carpet/sblucarpet{
-	name = "padded blue carpet"
-	},
+/obj/item/toy/junk/xmas_cracker,
+/turf/simulated/floor/carpet,
 /area/nadezhda/crew_quarters/bar)
 "skX" = (
 /obj/structure/flora/pottedplant/minitree,
@@ -105319,6 +105341,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/absolutism/hallways)
+"swp" = (
+/obj/structure/flora/pottedplant/xmas,
+/turf/simulated/floor/carpet,
+/area/nadezhda/absolutism/chapel)
 "swu" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
@@ -106058,13 +106084,13 @@
 /turf/simulated/floor/tiled/steel/danger,
 /area/nadezhda/engineering/atmos)
 "sDo" = (
-/obj/machinery/computer/arcade/battle,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/camera/network/colony_underground,
 /obj/structure/sign/neon/gamecenter{
 	pixel_y = 32;
 	light_color = "#c94616"
 	},
+/obj/machinery/slotmachine,
 /turf/simulated/floor/holofloor/space{
 	layer = 1
 	},
@@ -107229,8 +107255,8 @@
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/sechall)
 "sOJ" = (
-/obj/random/furniture/pottedplant,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/hallway/side/f2section1)
 "sOM" = (
@@ -107447,6 +107473,11 @@
 	},
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/crew_quarters/bar)
+"sQy" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/pottedplant/xmas,
+/turf/simulated/floor/tiled/white/cargo,
+/area/nadezhda/hallway/surface/section1)
 "sQz" = (
 /obj/structure/bed/chair{
 	dir = 1
@@ -110420,9 +110451,12 @@
 "tuh" = (
 /obj/machinery/light/floor,
 /obj/effect/floor_decal/steeldecal/steel_decals_central6,
-/obj/random/furniture/pottedplant,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/carpet,
+/obj/effect/spresent{
+	pixel_x = 17;
+	pixel_y = 3
+	},
+/turf/simulated/floor/carpet/turcarpet,
 /area/nadezhda/crew_quarters/bar)
 "tui" = (
 /obj/effect/decal/cleanable/dirt,
@@ -110586,9 +110620,8 @@
 /obj/structure/sign/painting/paintingtemple{
 	pixel_y = 32
 	},
-/turf/simulated/floor/carpet/sblucarpet{
-	name = "padded blue carpet"
-	},
+/obj/item/toy/junk/xmas_cracker,
+/turf/simulated/floor/carpet/turcarpet,
 /area/nadezhda/crew_quarters/bar)
 "tvJ" = (
 /obj/structure/flora/ausbushes/sparsegrass,
@@ -110841,7 +110874,7 @@
 "txD" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/carpet,
+/turf/simulated/floor/carpet/turcarpet,
 /area/nadezhda/crew_quarters/bar)
 "txJ" = (
 /turf/simulated/wall/r_wall,
@@ -111670,6 +111703,7 @@
 /area/nadezhda/hallway/surface/section1)
 "tER" = (
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/wood,
 /area/nadezhda/security/barracks)
 "tEW" = (
@@ -112814,8 +112848,8 @@
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/sechall)
 "tOt" = (
-/obj/random/furniture/pottedplant,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/security/prisoncells)
 "tOu" = (
@@ -113909,7 +113943,10 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
 	},
-/turf/simulated/floor/carpet/bcarpet,
+/obj/effect/floor_decal/border/carpet/green{
+	dir = 1
+	},
+/turf/simulated/floor/carpet,
 /area/nadezhda/crew_quarters/bar)
 "tXL" = (
 /obj/machinery/light/small{
@@ -118282,10 +118319,10 @@
 /obj/effect/floor_decal/spline/wood{
 	dir = 4
 	},
-/obj/structure/bed/chair/comfy/brown{
+/obj/structure/bed/chair/comfy/green{
 	dir = 8
 	},
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet,
 /area/nadezhda/crew_quarters/bar)
 "uLs" = (
 /obj/effect/window_lwall_spawn/plasma/reinforced,
@@ -119757,7 +119794,7 @@
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/sleeper)
 "uXc" = (
-/obj/random/furniture/pottedplant,
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/sechall)
 "uXo" = (
@@ -120180,9 +120217,7 @@
 /obj/structure/sign/painting/paintingsunset{
 	pixel_x = 32
 	},
-/turf/simulated/floor/carpet/sblucarpet{
-	name = "padded blue carpet"
-	},
+/turf/simulated/floor/carpet/turcarpet,
 /area/nadezhda/crew_quarters/bar)
 "vaY" = (
 /obj/effect/decal/cleanable/dirt,
@@ -121546,7 +121581,7 @@
 /area/nadezhda/maintenance/undergroundfloor1south)
 "vmC" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/random/furniture/pottedplant,
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/tiled/white/cargo,
 /area/nadezhda/crew_quarters/techshop)
 "vmG" = (
@@ -121692,6 +121727,19 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/crew_quarters/pool)
+"vnZ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/disposalpipe/segment,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/structure/flora/pottedplant/xmas,
+/turf/simulated/floor/tiled/dark/bluecorner,
+/area/nadezhda/security/sechall)
 "voe" = (
 /obj/effect/floor_decal/steeldecal/steel_decals10{
 	dir = 8
@@ -122598,7 +122646,8 @@
 /obj/structure/sign/painting/paintingsea{
 	pixel_y = 32
 	},
-/turf/simulated/floor/wood/wild3,
+/obj/item/toy/junk/xmas_tree,
+/turf/simulated/floor/carpet/purcarpet,
 /area/nadezhda/crew_quarters/bar)
 "vww" = (
 /obj/machinery/door/blast/regular{
@@ -122931,7 +122980,8 @@
 "vAx" = (
 /obj/machinery/light/floor,
 /obj/structure/table/bar_special,
-/turf/simulated/floor/carpet/bcarpet,
+/obj/item/toy/junk/xmas_tree,
+/turf/simulated/floor/carpet,
 /area/nadezhda/crew_quarters/bar)
 "vAy" = (
 /obj/effect/floor_decal/industrial/hatch,
@@ -124109,6 +124159,11 @@
 /area/nadezhda/rnd/circuitlab{
 	name = "Science Expedition prep"
 	})
+"vLe" = (
+/obj/structure/table/woodentable,
+/obj/item/toy/junk/xmas_cracker,
+/turf/simulated/floor/carpet/turcarpet,
+/area/nadezhda/crew_quarters/bar)
 "vLg" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -124692,7 +124747,7 @@
 /area/nadezhda/hallway/main/stairwell)
 "vQI" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/random/furniture/pottedplant,
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security)
 "vQS" = (
@@ -125066,7 +125121,6 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/command/hallway)
 "vTr" = (
-/obj/random/furniture/pottedplant,
 /obj/machinery/vending/wallmed/lobby{
 	pixel_y = -32
 	},
@@ -125081,6 +125135,7 @@
 /obj/effect/floor_decal/industrial/warningred{
 	dir = 4
 	},
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/nadezhda/medical/reception)
 "vTs" = (
@@ -128685,8 +128740,8 @@
 /turf/simulated/floor/industrial/bricks,
 /area/nadezhda/maintenance/surfaceeast)
 "wzG" = (
-/obj/random/furniture/pottedplant,
 /obj/machinery/atmospherics/unary/vent_pump,
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/sechall)
 "wzL" = (
@@ -129912,6 +129967,7 @@
 /obj/structure/table/standard,
 /obj/random/pack/tech_loot,
 /obj/random/pack/tech_loot,
+/obj/item/toy/junk/xmas_cracker,
 /turf/simulated/floor/tiled/dark/cyancorner,
 /area/nadezhda/crew_quarters/sleep/cryo2)
 "wLn" = (
@@ -131215,21 +131271,21 @@
 "wWx" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/generic,
-/obj/effect/floor_decal/border/carpet/black{
-	dir = 1
-	},
-/obj/effect/floor_decal/border/carpet/black{
-	dir = 8
-	},
-/obj/effect/floor_decal/border/carpet/black{
-	dir = 9
-	},
 /obj/structure/cyberplant{
 	emagged = 1;
 	name = "holodancer";
 	pixel_y = 12
 	},
-/turf/simulated/floor/carpet/bcarpet,
+/obj/effect/floor_decal/border/carpet/green{
+	dir = 8
+	},
+/obj/effect/floor_decal/border/carpet/green{
+	dir = 1
+	},
+/obj/effect/floor_decal/border/carpet/green{
+	dir = 9
+	},
+/turf/simulated/floor/carpet,
 /area/nadezhda/crew_quarters/bar)
 "wWI" = (
 /obj/structure/bed/chair{
@@ -131823,6 +131879,11 @@
 /obj/item/contraband/poster/placed/generic/high_class_martini,
 /turf/simulated/wall,
 /area/nadezhda/crew_quarters)
+"xdB" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/pottedplant/xmas,
+/turf/simulated/floor/tiled/white/brown_perforated,
+/area/nadezhda/command/captain)
 "xdG" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -131983,12 +132044,18 @@
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/inside_colony)
 "xfu" = (
-/obj/item/stool/custom/bar_special,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/carpet,
+/obj/item/gift{
+	pixel_x = -15;
+	pixel_y = 10
+	},
+/obj/item/a_gift{
+	pixel_y = 15
+	},
+/turf/simulated/floor/carpet/turcarpet,
 /area/nadezhda/crew_quarters/bar)
 "xfw" = (
 /obj/structure/grille,
@@ -132467,7 +132534,6 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/random/furniture/pottedplant,
 /obj/structure/disposalpipe/segment{
 	dir = 8;
 	icon_state = "pipe-c"
@@ -132475,6 +132541,7 @@
 /obj/effect/floor_decal/industrial/warningred/corner{
 	dir = 4
 	},
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/quartermaster/hangarsupply)
 "xjL" = (
@@ -133132,7 +133199,7 @@
 /obj/effect/floor_decal/industrial/warningwhite{
 	dir = 1
 	},
-/obj/random/furniture/pottedplant,
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/nadezhda/medical/reception)
 "xpD" = (
@@ -134774,6 +134841,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/sleeper)
 "xEA" = (
@@ -134920,9 +134988,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/carpet/sblucarpet{
-	name = "padded blue carpet"
-	},
+/turf/simulated/floor/carpet,
 /area/nadezhda/crew_quarters/bar)
 "xFY" = (
 /obj/structure/closet/secure_closet/freezer,
@@ -135719,11 +135785,13 @@
 /turf/simulated/floor/asteroid/dirt/flood,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "xMv" = (
-/obj/item/stool/custom/bar_special,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/carpet,
+/obj/item/a_gift{
+	pixel_y = 15
+	},
+/turf/simulated/floor/carpet/turcarpet,
 /area/nadezhda/crew_quarters/bar)
 "xMH" = (
 /obj/machinery/door/unpowered/simple/wood,
@@ -136371,9 +136439,6 @@
 /turf/simulated/floor/industrial/bricks,
 /area/nadezhda/maintenance/undergroundfloor2west)
 "xSm" = (
-/obj/structure/bed/chair{
-	dir = 4
-	},
 /obj/structure/window/reinforced{
 	dir = 8
 	},
@@ -136384,6 +136449,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/maingate)
 "xSr" = (
@@ -137666,6 +137732,7 @@
 	},
 /obj/effect/floor_decal/industrial/warningred,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/medical/sleeper)
 "yeS" = (
@@ -195931,13 +195998,13 @@ wpL
 lIc
 cvD
 brG
+bZo
 brG
 brG
-brG
-brG
+bZo
 ocT
 ocT
-brG
+bZo
 htN
 gWW
 rKB
@@ -201398,7 +201465,7 @@ iYO
 bCN
 mYi
 cdh
-btG
+reE
 btG
 mBu
 btG
@@ -203192,7 +203259,7 @@ dGA
 qLz
 oNS
 sDo
-rbu
+cas
 peN
 iRC
 qEy
@@ -203207,13 +203274,13 @@ jVr
 ljc
 cPd
 tvD
-abn
+vLe
 lTH
 oYB
 abn
 skW
 rtV
-hlv
+bsW
 xfu
 eWd
 sQx
@@ -203394,7 +203461,7 @@ mqr
 cmK
 oNS
 fwK
-rbu
+cas
 rbu
 ceX
 hTD
@@ -204018,8 +204085,8 @@ rBi
 abn
 kQT
 mUH
-abn
-abn
+vLe
+mQr
 hwZ
 rtV
 qhP
@@ -204601,7 +204668,7 @@ ugD
 uUQ
 lor
 gks
-xBo
+xdB
 xBo
 xBo
 aij
@@ -205841,7 +205908,7 @@ pOX
 fpw
 tpO
 rmP
-rwk
+swp
 myv
 tpO
 dzI
@@ -233084,7 +233151,7 @@ gsu
 teO
 kFR
 onD
-bls
+vnZ
 bls
 bls
 bls
@@ -234094,7 +234161,7 @@ tQR
 qJG
 goA
 kIN
-dje
+nMJ
 dje
 kIN
 gNj
@@ -234880,7 +234947,7 @@ bpK
 djy
 nDR
 mji
-itu
+tOt
 lPt
 mET
 dje
@@ -235320,7 +235387,7 @@ fEL
 fEL
 fEL
 fEL
-wkc
+sQy
 dfI
 fYz
 dfI
@@ -237725,7 +237792,7 @@ pbZ
 nqF
 tUs
 aMW
-fPC
+dje
 dje
 nqF
 dje
