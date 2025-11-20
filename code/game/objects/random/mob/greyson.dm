@@ -33,6 +33,7 @@
 		mobs += list(/mob/living/carbon/superior/robot/gp/synth/ripley = (3 * GLOB.chaos_level))
 		mobs += list(/mob/living/carbon/superior/robot/gp/synth/ripley/phazon = (2 * GLOB.chaos_level))
 		mobs += list(/mob/living/carbon/superior/robot/gp/roomba/boomba = (4 * GLOB.chaos_level))
+		mobs += list(/mob/living/carbon/superior/robot/gp/synth/combative = (1 * GLOB.chaos_level))
 	if(GLOB.chaos_level > 1)
 		mobs += list(/mob/living/carbon/superior/robot/gp/synth/epistol/sniper/lowestrange = (0.5 * GLOB.chaos_level))
 	return pickweight(mobs)
@@ -86,6 +87,7 @@
 		mobs += list(/mob/living/carbon/superior/robot/gp/synth/ripley = (2 * GLOB.chaos_level))
 		mobs += list(/mob/living/carbon/superior/robot/gp/synth/ripley/phazon = (1 * GLOB.chaos_level))
 		mobs += list(/mob/living/carbon/superior/robot/gp/roomba/boomba = (4 * GLOB.chaos_level))
+		mobs += list(/mob/living/carbon/superior/robot/gp/synth/combative = (1 * GLOB.chaos_level))
 
 	return pickweight(mobs)
 
@@ -144,6 +146,7 @@
 				/mob/living/carbon/superior/robot/gp/synth/epistol/esmg = 3,
 				/mob/living/carbon/superior/robot/gp/synth/epistol/rifle = 7,
 				/mob/living/carbon/superior/robot/gp/synth/epistol/heavy = 4,
+				/mob/living/carbon/superior/robot/gp/synth/combative = 5,
 				/mob/living/carbon/superior/robot/gp/roomba/trip/armored = 9,
 				/mob/living/carbon/superior/robot/gp/roomba/gun_ba/armored = 5,
 				/mob/living/carbon/superior/robot/gp/stalker = 3,
