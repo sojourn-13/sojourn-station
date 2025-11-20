@@ -3313,6 +3313,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/sleeper)
 "aDS" = (
@@ -6946,6 +6947,7 @@
 	light_color = "#0892d0"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/command/hallway)
 "bnd" = (
@@ -7056,9 +7058,11 @@
 /area/nadezhda/rnd/lab)
 "bon" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/random/furniture/pottedplant,
-/turf/simulated/floor/tiled/steel/cyancorner,
-/area/nadezhda/hallway/side/f2section1)
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/pottedplant/xmas,
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/pros/prep)
 "boA" = (
 /obj/structure/table/rack,
 /obj/structure/window/reinforced{
@@ -13607,9 +13611,9 @@
 /turf/simulated/floor/wood,
 /area/nadezhda/absolutism/vectorrooms)
 "cxw" = (
-/obj/random/furniture/pottedplant,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/white/cargo,
+/obj/structure/flora/pottedplant/xmas,
+/turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/hallway/surface/section1)
 "cxx" = (
 /obj/structure/boulder,
@@ -18614,11 +18618,11 @@
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/crew_quarters)
 "dpK" = (
-/obj/random/furniture/pottedplant,
 /obj/item/device/radio/intercom{
 	dir = 8;
 	pixel_x = 22
 	},
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/carpet,
 /area/nadezhda/crew_quarters/dorm1)
 "dpN" = (
@@ -20168,12 +20172,10 @@
 /turf/simulated/floor/industrial/blue_slates,
 /area/nadezhda/maintenance/undergroundfloor2east)
 "dDi" = (
-/obj/random/furniture/pottedplant{
-	pixel_y = 10
-	},
 /obj/effect/floor_decal/spline/wood{
 	dir = 6
 	},
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/crew_quarters)
 "dDl" = (
@@ -33972,6 +33974,10 @@
 	temperature = 80
 	},
 /area/nadezhda/command/tcommsat/computer)
+"fXQ" = (
+/obj/structure/flora/pottedplant/xmas,
+/turf/simulated/floor/tiled/dark/gray_perforated,
+/area/nadezhda/engineering/engine_waste)
 "fXT" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood/wild1,
@@ -35348,6 +35354,7 @@
 /obj/effect/floor_decal/spline/wood{
 	dir = 10
 	},
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/crew_quarters)
 "giT" = (
@@ -46628,6 +46635,7 @@
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/medical/sleeper)
 "igI" = (
@@ -48413,6 +48421,7 @@
 	pixel_y = 24
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/sleeper)
 "ixb" = (
@@ -53815,6 +53824,7 @@
 "jvz" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/tiled/steel/bar_flat,
 /area/nadezhda/crew_quarters/bar)
 "jvR" = (
@@ -55290,6 +55300,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/steel_reinforced,
+/obj/item/toy/junk/xmas_tree,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/maingate)
 "jKE" = (
@@ -57228,6 +57239,7 @@
 	dir = 1;
 	pixel_y = -32
 	},
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/tiled/steel/danger,
 /area/nadezhda/engineering/workshop)
 "kdb" = (
@@ -59999,6 +60011,7 @@
 /obj/effect/floor_decal/industrial/box/white/corners{
 	dir = 8
 	},
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/substation/science)
 "kAJ" = (
@@ -63805,7 +63818,9 @@
 	dir = 8;
 	tag = "icon-railing0 (WEST)"
 	},
-/obj/structure/flora/pottedplant/xmas,
+/obj/structure/flora/pottedplant/xmas{
+	layer = 2.85
+	},
 /turf/simulated/floor/plating,
 /area/nadezhda/security/maingate)
 "lpb" = (
@@ -65588,6 +65603,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/industrial/outline,
+/obj/item/toy/junk/xmas_tree,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/maingate)
 "lFL" = (
@@ -66000,7 +66016,6 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/substation/bridge)
 "lJl" = (
-/obj/structure/cyberplant,
 /obj/machinery/holoposter{
 	pixel_y = -32
 	},
@@ -66012,6 +66027,7 @@
 	pixel_x = -32;
 	pixel_y = -32
 	},
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/tiled/steel/bar_dance,
 /area/nadezhda/crew_quarters/bar)
 "lJo" = (
@@ -69906,6 +69922,7 @@
 /obj/item/device/radio/intercom{
 	pixel_y = 24
 	},
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/tiled/dark/cargo,
 /area/nadezhda/outside/inside_colony)
 "mry" = (
@@ -70948,6 +70965,7 @@
 "mBc" = (
 /obj/structure/disposalpipe/segment,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/hallway/surface/section1)
 "mBd" = (
@@ -71958,6 +71976,7 @@
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/security/maingate)
 "mJq" = (
@@ -74095,6 +74114,7 @@
 	dir = 9
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/hallway/side/f2section1)
 "ncR" = (
@@ -74197,6 +74217,12 @@
 /obj/item/device/lighting/toggleable/lantern,
 /turf/simulated/floor/wood/wild1,
 /area/colony)
+"nej" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/pottedplant/xmas,
+/turf/simulated/floor/tiled/steel/danger,
+/area/nadezhda/engineering/workshop)
 "nel" = (
 /obj/structure/cable/cyan{
 	d1 = 1;
@@ -75812,9 +75838,7 @@
 	name = "West APC";
 	pixel_x = -28
 	},
-/obj/random/furniture/pottedplant{
-	pixel_y = 10
-	},
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/wood,
 /area/nadezhda/crew_quarters/dorm4)
 "nsT" = (
@@ -80851,8 +80875,8 @@
 /turf/simulated/floor/industrial/sierra,
 /area/nadezhda/command/hallway)
 "ojJ" = (
-/obj/random/furniture/pottedplant,
 /obj/effect/floor_decal/steeldecal/steel_decals10,
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/crew_quarters/pool)
 "ojM" = (
@@ -81973,6 +81997,11 @@
 /obj/random/credits/c100,
 /turf/simulated/floor/industrial/cafe_large,
 /area/nadezhda/maintenance/undergroundfloor1south)
+"ots" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/pottedplant/xmas,
+/turf/simulated/floor/tiled/dark/golden,
+/area/nadezhda/absolutism/chapel)
 "ott" = (
 /obj/random/closet_maintloot/low_chance,
 /turf/simulated/floor/plating/under,
@@ -86152,7 +86181,9 @@
 /obj/structure/railing{
 	dir = 4
 	},
-/obj/structure/flora/pottedplant/xmas,
+/obj/structure/flora/pottedplant/xmas{
+	layer = 2.85
+	},
 /turf/simulated/floor/plating,
 /area/nadezhda/security/maingate)
 "pfU" = (
@@ -87709,8 +87740,8 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "ptL" = (
-/obj/random/furniture/pottedplant,
 /obj/effect/floor_decal/industrial/warningred,
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/quartermaster/hangarsupply)
 "ptP" = (
@@ -90290,6 +90321,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/pros/prep)
+"pQy" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/pottedplant/xmas,
+/turf/simulated/floor/tiled/dark/golden,
+/area/nadezhda/absolutism/chapel)
 "pQA" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/small/bushb2,
@@ -90842,7 +90881,7 @@
 /turf/simulated/wall,
 /area/nadezhda/crew_quarters/dorm3)
 "pVd" = (
-/obj/random/furniture/pottedplant,
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/tiled/white/cargo,
 /area/nadezhda/hallway/surface/section1)
 "pVg" = (
@@ -91176,12 +91215,10 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/command/panic_room)
 "pXQ" = (
-/obj/random/furniture/pottedplant{
-	pixel_y = 10
-	},
 /obj/effect/floor_decal/spline/wood{
 	dir = 5
 	},
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/crew_quarters)
 "pXU" = (
@@ -93452,6 +93489,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/crew_quarters)
 "qrP" = (
@@ -97864,11 +97902,10 @@
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/hallway/side/f2section1)
 "rhw" = (
-/obj/effect/floor_decal/spline/wood{
-	dir = 6
-	},
-/turf/simulated/floor/wood/wild3,
-/area/nadezhda/crew_quarters)
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/pottedplant/xmas,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/nadezhda/storage/primary)
 "rhy" = (
 /obj/structure/boulder,
 /turf/simulated/floor/asteroid/dirt/mud,
@@ -99086,6 +99123,7 @@
 /obj/machinery/alarm{
 	pixel_y = 32
 	},
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/wood,
 /area/nadezhda/command/fo)
 "rtC" = (
@@ -99571,7 +99609,6 @@
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/crew_quarters)
 "rxM" = (
-/obj/random/furniture/pottedplant,
 /obj/machinery/camera/network/colony_surface{
 	dir = 1
 	},
@@ -99579,6 +99616,7 @@
 	dir = 4;
 	pixel_x = -22
 	},
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/tiled/white/cargo,
 /area/nadezhda/hallway/surface/section1)
 "ryb" = (
@@ -99960,6 +99998,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/rock/manmade/road,
 /area/nadezhda/security/maingate)
 "rBD" = (
@@ -100149,6 +100188,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/ornate,
 /area/nadezhda/maintenance/undergroundfloor1west)
+"rDa" = (
+/obj/effect/floor_decal/spline/wood,
+/obj/structure/flora/pottedplant/xmas,
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/crew_quarters)
 "rDb" = (
 /obj/structure/catwalk,
 /obj/random/structures/low_chance,
@@ -102548,7 +102592,7 @@
 /turf/simulated/floor/industrial/grey_slates,
 /area/nadezhda/maintenance/surfaceeast)
 "rYx" = (
-/obj/random/furniture/pottedplant,
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/quartermaster/miningdock)
 "rYB" = (
@@ -103933,7 +103977,7 @@
 /turf/simulated/floor/carpet,
 /area/nadezhda/crew_quarters/bar)
 "skX" = (
-/obj/structure/flora/pottedplant/minitree,
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/command/hallway)
 "sle" = (
@@ -108778,6 +108822,7 @@
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "tdv" = (
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/tiled/steel/danger,
 /area/nadezhda/engineering/workshop)
 "tdw" = (
@@ -113994,7 +114039,7 @@
 	pixel_y = 32
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/random/furniture/pottedplant,
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/tiled/white/cargo,
 /area/nadezhda/hallway/surface/section1)
 "tYt" = (
@@ -116467,6 +116512,14 @@
 	temperature = 278.15
 	},
 /area/nadezhda/crew_quarters/hydroponics/garden)
+"utE" = (
+/obj/effect/floor_decal/spline/wood{
+	dir = 10
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/pottedplant/xmas,
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/crew_quarters)
 "utI" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -117984,9 +118037,7 @@
 	name = "West APC";
 	pixel_x = -28
 	},
-/obj/random/furniture/pottedplant{
-	pixel_y = 10
-	},
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/wood/wild2,
 /area/nadezhda/crew_quarters/dorm2)
 "uID" = (
@@ -118793,6 +118844,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/crew_quarters)
 "uPs" = (
@@ -124582,9 +124634,7 @@
 	name = "West APC";
 	pixel_x = -28
 	},
-/obj/random/furniture/pottedplant{
-	pixel_y = 10
-	},
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/wood/wild2,
 /area/nadezhda/crew_quarters/dorm3)
 "vOW" = (
@@ -125263,6 +125313,7 @@
 	dir = 4;
 	pixel_x = -22
 	},
+/obj/item/toy/junk/xmas_tree,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/maingate)
 "vUq" = (
@@ -126480,6 +126531,12 @@
 	},
 /turf/simulated/floor/tiled/steel/bar_dance,
 /area/nadezhda/maintenance/undergroundfloor1west)
+"weB" = (
+/obj/effect/floor_decal/industrial/outline,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/pottedplant/xmas,
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/security/maingate)
 "weI" = (
 /obj/structure/largecrate/animal/welder_roach,
 /obj/effect/decal/cleanable/dirt,
@@ -126979,9 +127036,8 @@
 /turf/simulated/floor/tiled/steel/monofloor,
 /area/nadezhda/command/tcommsat/computer)
 "wkc" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/random/furniture/pottedplant,
-/turf/simulated/floor/tiled/white/cargo,
+/obj/structure/flora/pottedplant/xmas,
+/turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/hallway/surface/section1)
 "wkf" = (
 /obj/effect/decal/cleanable/dirt,
@@ -127145,6 +127201,7 @@
 	pixel_x = -27
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/rock/manmade/road,
 /area/nadezhda/security/maingate)
 "wlx" = (
@@ -130770,6 +130827,7 @@
 "wRU" = (
 /obj/machinery/portable_atmospherics/hydroponics/soil/invisible,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/crew_quarters)
 "wSa" = (
@@ -134218,6 +134276,10 @@
 	},
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/storage/primary)
+"xza" = (
+/obj/structure/flora/pottedplant/xmas,
+/turf/simulated/floor/tiled/white/monofloor,
+/area/nadezhda/medical/organ_lab)
 "xzf" = (
 /obj/structure/closet/l3closet/scientist,
 /obj/machinery/light{
@@ -135380,6 +135442,14 @@
 /area/nadezhda/maintenance{
 	name = "Residential District Maintenance"
 	})
+"xJh" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/pottedplant/xmas,
+/turf/simulated/floor/tiled/white/brown_platform,
+/area/nadezhda/hallway/side/f2section1)
 "xJo" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/effect/floor_decal/snow_edge{
@@ -137802,6 +137872,7 @@
 	pixel_y = 32
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/quartermaster/hangarsupply)
 "yfL" = (
@@ -193419,7 +193490,7 @@ tQe
 fFh
 tQe
 uZa
-atw
+rDa
 qHa
 brw
 ivU
@@ -195236,7 +195307,7 @@ onp
 vxO
 rnP
 nWv
-mjb
+utE
 xPe
 sqp
 sqp
@@ -196630,7 +196701,7 @@ nMZ
 kjz
 agD
 tCl
-sCn
+xza
 sCn
 vkX
 eLq
@@ -197660,7 +197731,7 @@ rUv
 xMi
 xCw
 qzz
-rhw
+dDi
 sqp
 ovj
 ovj
@@ -198215,7 +198286,7 @@ cVs
 hSX
 fZb
 ghp
-ghp
+rhw
 mjZ
 vmZ
 hSX
@@ -199427,7 +199498,7 @@ cVs
 hSX
 lHG
 ghp
-ghp
+rhw
 ghp
 wzs
 hSX
@@ -205886,7 +205957,7 @@ vpF
 vpF
 qky
 wGX
-iaX
+xJh
 wGX
 lrX
 lrX
@@ -206563,7 +206634,7 @@ rSI
 jCO
 hgO
 hgO
-nEC
+fXQ
 tip
 cZb
 cZb
@@ -206710,7 +206781,7 @@ ofP
 tTJ
 sDW
 ofP
-smQ
+ots
 smQ
 smQ
 smQ
@@ -207541,7 +207612,7 @@ rUJ
 emo
 hnB
 njP
-emo
+nej
 rqu
 wcu
 dwX
@@ -208119,7 +208190,7 @@ eoV
 vpF
 bbM
 ryM
-bon
+sOJ
 tpO
 jar
 jLg
@@ -208338,7 +208409,7 @@ ykF
 ykF
 vTN
 eMs
-xVf
+pQy
 ofP
 rYr
 dxD
@@ -238866,7 +238937,7 @@ rpk
 eGu
 vJo
 jml
-pkA
+weB
 pkA
 flw
 oFK
@@ -240219,7 +240290,7 @@ ekw
 swS
 wYa
 fGi
-cxw
+sQy
 ebz
 ebz
 cMF
@@ -240643,7 +240714,7 @@ fJY
 lBK
 dWZ
 unw
-fPX
+bon
 wAP
 xdH
 pQw
@@ -241027,7 +241098,7 @@ gBD
 gBD
 gBD
 xja
-cxw
+sQy
 maR
 maR
 cMF
@@ -241431,7 +241502,7 @@ rOs
 qoY
 hcQ
 hcQ
-cxw
+sQy
 ebz
 ebz
 cMF
@@ -242239,7 +242310,7 @@ rnK
 cBA
 hcQ
 hcQ
-cxw
+sQy
 maR
 maR
 cMF
@@ -243236,7 +243307,7 @@ toT
 toT
 toT
 toT
-wkc
+sQy
 ojt
 hXM
 hZz
@@ -244249,7 +244320,7 @@ toT
 fRj
 ojt
 hXM
-sle
+cxw
 kUL
 gGd
 tEL
@@ -245057,7 +245128,7 @@ wZP
 pFC
 ojt
 hXM
-jUs
+wkc
 gGd
 gGd
 gGc
@@ -245069,7 +245140,7 @@ xja
 mse
 kUL
 kUL
-sle
+cxw
 xwi
 run
 duJ
