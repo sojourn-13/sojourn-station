@@ -25,3 +25,38 @@
 		/datum/stat_modifier/mob/living/carbon/superior/slowdraw = 8,
 		/datum/stat_modifier/mob/living/carbon/superior/slowaimed = 8,
 	)
+
+/mob/living/carbon/superior/robot/gp/death()
+
+	if(istype(lastarea, /area/crawler))
+		var/area/crawler/C = lastarea
+		C.robo_deaths += 1
+
+		//The C.level_of_threat <= is so we dont spam check every death the area
+
+		if(C.robo_deaths >= 80 && C.level_of_threat <= 0)
+			C.raise_threat(1)
+
+			..()
+			return //Fast returns to not more ifs then needed
+
+		//Lighting updates
+		if(C.robo_deaths >= 100 && C.level_of_threat <= 1)
+			C.raise_threat(2)
+
+			..()
+			return
+
+		if(C.robo_deaths >= 150 && C.level_of_threat <= 2)
+			C.raise_threat(3)
+
+			..()
+			return
+
+		//Send back up!
+		if(C.robo_deaths >= 200 && C.level_of_threat <= 3)
+			C.raise_threat(4)
+			..()
+			return
+
+	..()
