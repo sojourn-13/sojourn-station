@@ -114,6 +114,9 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 	if(value > 0)
 		new_value = max(0, value * insight_gain_multiplier * GLOB.GLOBAL_INSIGHT_MOD)
 	insight = min(insight + new_value, max_insight)
+	//If we have a negitive mult we go to zero not negitives.
+	if(insight < 0)
+		insight = 0
 
 /datum/sanity/proc/remove_insight(value)
 	insight = max(0, insight - value)
