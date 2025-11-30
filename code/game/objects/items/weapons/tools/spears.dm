@@ -108,3 +108,51 @@
 	damage_mult = 2 //We are better for hunting, worse for "real fights"
 	price_tag = 500
 	matter = list(MATERIAL_STEEL = 22, MATERIAL_WOOD = 10, MATERIAL_PLASTEEL = 4)
+
+//Sea Branch
+/obj/item/tool/spear/sea
+	name = "\"MSLP-Wave Type\" trident"
+	desc = "A golden trident with drill like tips."
+	icon_state = "trident"
+	item_state = "spear_plasteel"
+	wielded_icon = "spear_plasteel_wielded"
+	force = WEAPON_FORCE_PAINFUL
+	throwforce = WEAPON_FORCE_BRUTAL
+	armor_divisor = ARMOR_PEN_DEEP
+	//Has better tool qualities
+	tool_qualities = list(QUALITY_DIGGING = 25,  QUALITY_WIRE_CUTTING = 30, QUALITY_SCREW_DRIVING = 30)
+	matter = list(MATERIAL_PLASTEEL = 2, MATERIAL_GOLD = 15, MATERIAL_TITANIUM = 3)
+	structure_damage_factor = STRUCTURE_DAMAGE_NORMAL
+	effective_faction = list("psi_monster", "xenomorph", "stalker")
+
+/obj/item/tool/spear/sea/refresh_upgrades()
+	..()
+	if(ishuman(src.loc))
+		var/mob/living/carbon/human/H = src.loc
+		if(istype(H.head, /obj/item/clothing/head/helmet/sea))
+			extended_reach += 1
+			armor_divisor += 0.2
+		if(istype(H.gloves, /obj/item/clothing/gloves/dusters/sea))
+			extended_reach += 1
+			force += 10
+
+
+/obj/item/tool/spear/sea/examine(mob/user)
+	..()
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		if(istype(H.head, /obj/item/clothing/head/helmet/sea))
+			to_chat(user, SPAN_NOTICE("When looking at the spear with the crown on, it buzzes information to your brain cortex."))
+			to_chat(user, SPAN_NOTICE("\"The Wave Type Trident, a spear made for both underwater mining and fighting this model is typically given to common hunters to fight off the hostile Sea.\"."))
+			if(istype(H.gloves, /obj/item/clothing/gloves/dusters))
+				to_chat(user, SPAN_NOTICE("\"Dept Type gloves will allow the trident to reach even further as well as strike harder do to the Nyomatic Authority. However do to being outside of \
+				the Authority of The Diving Bell the fission based explositive tip functionality is unable to activeate\"."))
+
+
+/obj/item/tool/spear/sea/dropped(var/mob/M)
+	..()
+	refresh_upgrades(M)
+
+/obj/item/tool/spear/sea/equipped(var/mob/M)
+	..()
+	refresh_upgrades(M)

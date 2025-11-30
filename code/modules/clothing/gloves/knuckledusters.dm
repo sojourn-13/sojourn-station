@@ -128,3 +128,36 @@
 			user.punch_damage_increase -= punch_increase
 			dusters_givith = FALSE
 			to_remove_givith = FALSE
+
+//Sea Branch
+/obj/item/clothing/gloves/dusters/sea
+	name = "\"MSLP-Dept Type\" gloves"
+	desc = "A pair of gloves that seem rather well designed."
+	icon_state = "yellow"
+	item_state = "yellow"
+	armor_list = list(melee = 0, bullet = 0, energy = 3, bomb = 0, bio = 0, rad = 0)
+	siemens_coefficient = 0
+	permeability_coefficient = 0.05
+	price_tag = 200
+	matter = list(MATERIAL_PLASTEEL = 2, MATERIAL_PLASTIC = 15, MATERIAL_TITANIUM = 2)
+
+/obj/item/clothing/gloves/dusters/sea/examine(mob/user)
+	..()
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		if(istype(H.head, /obj/item/clothing/head/helmet/sea))
+			to_chat(user, SPAN_NOTICE("When looking at the gloves with the crown on, it buzzes information to your brain cortex."))
+			to_chat(user, SPAN_NOTICE("\"The Dept Type gloves, given to all people of the Kikiland Nation under the Authority of The Diving Bell to aid in combating The Sea \
+			Do to the distence from The Diving Bell functionality of gloves main features are disabled.\"."))
+
+//Slightly different intraction, gives 10% more damage to CQC
+/obj/item/clothing/gloves/dusters/sea/update_dusters(mob/living/carbon/human/user)
+	if(istype(user))
+		if(user.gloves == src && !dusters_givith)
+			user.cqc_damage_multiplier += 0.1
+			dusters_givith = TRUE
+			to_remove_givith = TRUE
+		if(to_remove_givith && !(user.gloves == src))
+			user.cqc_damage_multiplier -= 0.1
+			dusters_givith = FALSE
+			to_remove_givith = FALSE

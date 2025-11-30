@@ -20,7 +20,9 @@
 	inventory = list(
 		"Disks" = list(
 			/obj/item/pc_part/drive/disk/design/sun_branch = good_data("Sun Branch Disk", list(4, 6), 1200),
-			/obj/item/pc_part/drive/disk/design/stamped_branch = good_data("Stamp Branch Disk", list(80, 90), 600)
+			/obj/item/pc_part/drive/disk/design/stamped_branch = good_data("Stamp Branch Disk", list(80, 90), 600),
+			// /obj/item/pc_part/drive/disk/design/sea_branch = good_data("Sea Branch Disk", list(2, 10), 3200) //Accually not meant to have a disk. The alloy's used are not native
+			// /obj/item/pc_part/drive/disk/design/saint_branch = good_data("Saint of Wax Branch Disk", list(1, 1), 7200)
 		)
 	)
 	hidden_inventory = list(
@@ -36,7 +38,19 @@
 			/obj/item/clothing/suit/stamped_suit = good_data("\"Wired\" Executive Suit", list(4, 6), 800),
 			/obj/item/clothing/glasses/stamped_lens = good_data("\"Stamped\" lens", list(6, 8), 500),
 			/obj/item/ammo_magazine/stamp_10x24 = good_data("\"Spring-Lock\" Stamp Mag", list(6, 8), 500),
-		)
+		),
+		"Sea Branch Pre-Printed" = list(
+			/obj/item/tool/spear/sea = good_data("\"MSLP-Wave Type\" trident", list(4, 6), 1000),
+			/obj/item/clothing/gloves/dusters/sea = good_data("\"MSLP-Dept Type\" gloves", list(4, 6), 1500),
+			/obj/item/clothing/head/helmet/sea = good_data("\"MSLP-Calm Type\" crown", list(4, 6), 750)
+		)/*,
+		"Saint of Wax Branch Pre-Printed" = list(
+			/obj/item/tool = good_data("\"Lantern\" xxxx", list(4, 6), 5000),
+			/obj/item/gun = good_data("\"Seal"\" xxxx", list(4, 6), 3500),
+			/obj/item/clothing = good_data("\"Candelabra"\" xxxx", list(4, 6), 1000),
+			/obj/item/clothing = good_data("\"Waxy Gaze\" xxxx", list(4, 6), 2500),
+			/obj/item/clothing = good_data("\"Saint Wix's Grand Design\" xxxx", list(1, 1), 7500)
+		)*/
 	)
 	offer_types = list(
 		/obj/item/organ/internal/psionic_tumor = offer_data("Psionic Tumor", 24000, 1),
