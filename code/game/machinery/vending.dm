@@ -487,7 +487,7 @@
 /**
  * Receive payment with cashmoney.
  */
-/obj/machinery/vending/proc/pay_with_cash(obj/item/spacecash/bundle/cashmoney)
+/obj/machinery/vending/proc/pay_with_cash(obj/item/spacecash/bundle/cashmoney, var/mob/living/carbon/human/h)
 	if(currently_vending.price > cashmoney.worth)
 		// This is not a status display message, since it's something the character
 		// themselves is meant to see BEFORE putting the money in
@@ -504,6 +504,7 @@
 		cashmoney.update_icon()
 
 	// Vending machines have no idea who paid with cash
+	h.sanity.onSpend(currently_vending.price)
 	credit_purchase("(cash)")
 	return 1
 
@@ -513,7 +514,7 @@
  * Takes payment for whatever is the currently_vending item. Returns 1 if
  * successful, 0 if failed.
  */
-/obj/machinery/vending/proc/pay_with_ewallet(obj/item/spacecash/ewallet/wallet, mob/user)
+/obj/machinery/vending/proc/pay_with_ewallet(obj/item/spacecash/ewallet/wallet, mob/user, var/mob/living/carbon/human/h)
 	visible_message("<span class='info'>\The [usr] swipes \the [wallet] through \the [src].</span>")
 	if(currently_vending.price > wallet.worth)
 		purchase_message = "Insufficient funds on chargecard."
@@ -537,6 +538,7 @@
 				return TRUE
 
 			wallet.worth -= currently_vending.price
+			h.sanity.onSpend(currently_vending.price)
 			credit_purchase("[wallet.owner_name] (chargecard)")
 			return TRUE
 
@@ -551,7 +553,7 @@
  * Takes payment for whatever is the currently_vending item. Returns 1 if
  * successful, 0 if failed
  */
-/obj/machinery/vending/proc/pay_with_card(var/obj/item/card/id/I, var/obj/item/ID_container)
+/obj/machinery/vending/proc/pay_with_card(var/obj/item/card/id/I, var/obj/item/ID_container, var/mob/living/carbon/human/h)
 	if(I==ID_container || ID_container == null)
 		visible_message("<span class='info'>\The [usr] swipes \the [I] through \the [src].</span>")
 	else
@@ -592,6 +594,7 @@
 		// Give the vendor the money. We use the account owner name, which means
 		// that purchases made with stolen/borrowed card will look like the card
 		// owner made them
+		h.sanity.onSpend(currently_vending.price)
 		credit_purchase(customer_account.owner_name)
 		return 1
 

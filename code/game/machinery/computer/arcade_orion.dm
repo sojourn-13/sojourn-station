@@ -460,7 +460,7 @@
 		newgame(1)
 		src.updateUsrDialog()
 
-/obj/machinery/computer/arcade/orion_trail/proc/win()
+/obj/machinery/computer/arcade/orion_trail/proc/win(mob/living/carbon/human/h)
 	src.visible_message("\The [src] plays a triumphant tune, stating 'CONGRATULATIONS, YOU HAVE MADE IT TO CHROMIN 8.'")
 	if(emagged)
 		new /obj/item/orion_ship(src.loc)
@@ -469,6 +469,7 @@
 	else
 		prizevend()
 	event = null
+	h.sanity.onGame()
 	src.updateUsrDialog()
 
 /obj/item/orion_ship

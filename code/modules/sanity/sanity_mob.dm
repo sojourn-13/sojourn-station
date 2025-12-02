@@ -40,7 +40,12 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 #define INSIGHT_DESIRE_DRINK "drink"
 #define INSIGHT_DESIRE_SMOKING "smoking"
 #define INSIGHT_DESIRE_DRUGS "drugs"
-
+// VivI changes
+#define INSIGHT_DESIRE_ENTERTAINMENT "entertainment"
+#define INSIGHT_DESIRE_WORKOUT "a workout"
+#define INSIGHT_DESIRE_SPENDING "new stuff"
+//#define INSIGHT_DESIRE_EXPLORATION "a walk outside the colony"
+//#define INSIGHT_DESIRE_BAYSTATION "bar crawling"
 
 
 #define EAT_COOLDOWN_MESSAGE 15 SECONDS
@@ -261,6 +266,9 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 		INSIGHT_DESIRE_DRINK,
 		INSIGHT_DESIRE_SMOKING,
 		INSIGHT_DESIRE_DRUGS,
+		INSIGHT_DESIRE_ENTERTAINMENT,
+		INSIGHT_DESIRE_WORKOUT,
+		INSIGHT_DESIRE_SPENDING
 	)
 
 	for(var/i in owner.metabolism_effects.addiction_list)
@@ -478,12 +486,19 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 		var/datum/reagent/drink/virgin_drink = E           //non alcoholic drinks
 		sanity_gain *= (40 / (virgin_drink.nutrition + 10)) //you get less sanity for being a baby Unless a drink has super high nutrition I guess
 	changeLevel(sanity_gain * multiplier)
-	if(resting && E.taste_tag.len)
+	if(resting && E.taste_tag.len) //tweaked to nerf jungle juice completemy maxing rest
+		var/liquidcounter = 0
+		if(E.holder && E.holder.reagent_list)
+			for (var/datum/reagent/R in E.holder.reagent_list)
+				liquidcounter++
+		var/liquidpenalty = 1
+		if(liquidcounter > 1)                           // If we have more than 1 liquid being processed nerf that shit
+			liquidpenalty = 1 / (1 + liquidcounter / 3) // starting with 2 drinks in one glass 1 +2/3 = 1.66666... / 1 = 0.6 multiplier. If I did this math code wrong blame my highschool algebra teacher.
 		for(var/taste_tag in E.taste_tag)
 			if(multiplier <= 1 )
-				add_rest(taste_tag, 4 * 1/E.taste_tag.len)  //just so it got somme effect of things with small multipliers
+				add_rest(taste_tag, 4 * 1/E.taste_tag.len * liquidpenalty)  //just so it got some effect of things with small multipliers
 			else
-				add_rest(taste_tag, 4 * multiplier/E.taste_tag.len)
+				add_rest(taste_tag, 4 * multiplier/E.taste_tag.len * liquidpenalty)
 
 /datum/sanity/proc/onEat(obj/item/reagent_containers/snacks/snack, snack_sanity_gain, snack_sanity_message)
 	if(world.time > eat_time_message && snack_sanity_message)
@@ -492,7 +507,7 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 	changeLevel(snack_sanity_gain)
 	if(snack.cooked && resting && snack.taste_tag.len)
 		for(var/taste in snack.taste_tag)
-			add_rest(taste, snack_sanity_gain * 50/snack.taste_tag.len)
+			add_rest(taste, (snack_sanity_gain * 50/snack.taste_tag.len) + (snack.food_quality * 3)) // same as before, but food quality is added as a flat bonus. In testing, not desiring eggplant parm, but still eating it gave 5 rest. 50 quality gave 13 rest. Unsure of the mult of actually desiring it- but 39 rest of 50 quality seems pretty good
 
 /datum/sanity/proc/onSmoke(obj/item/clothing/mask/smokable/S)
 	var/smoking_change = SANITY_GAIN_SMOKE * S.quality_multiplier
@@ -521,6 +536,18 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 			H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/proper_area_smoker, "PROPER_AREA_SMOKER", skill_gained = 0.1, learner = H)
 
 	changeLevel(smoking_change)
+
+/datum/sanity/proc/onGame()
+	if(resting)
+		add_rest(INSIGHT_DESIRE_ENTERTAINMENT, 50) // make it to chromion 8 for 50 sanity
+
+/datum/sanity/proc/onWorkout()
+	if(resting)
+		add_rest(INSIGHT_DESIRE_WORKOUT, 100) // use a machine once to get max rest
+
+/datum/sanity/proc/onSpend(price)
+	if(resting)
+		add_rest(INSIGHT_DESIRE_SPENDING, (price / 10)) // credits spent divided by 10 for rest
 
 /datum/sanity/proc/onSay()
 	if(world.time < say_time)
