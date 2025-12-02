@@ -127,6 +127,7 @@
 
 /obj/item/tool/spear/sea/refresh_upgrades()
 	..()
+	//None of the below get affected by mods.
 	if(ishuman(src.loc))
 		var/mob/living/carbon/human/H = src.loc
 		if(istype(H.head, /obj/item/clothing/head/helmet/sea))
@@ -134,7 +135,7 @@
 			armor_divisor += 0.2
 		if(istype(H.gloves, /obj/item/clothing/gloves/dusters/sea))
 			extended_reach += 1
-			force += 10
+			force += 11 //Move up 2 levels if we dont have any upgrades
 
 
 /obj/item/tool/spear/sea/examine(mob/user)
