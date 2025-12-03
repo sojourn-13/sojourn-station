@@ -37,6 +37,8 @@
 	playsound(loc, 'sound/effects/meteorimpact.ogg', 50, 1)
 	density = initial(density)
 	opacity = initial(opacity)
+	reset_plane_and_layer()
+
 /obj/effect/falling_effect/singularity_act()
 	return
 
