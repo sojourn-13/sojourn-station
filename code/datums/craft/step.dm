@@ -167,6 +167,14 @@
 			building = FALSE
 			return
 
+		//Prevents folks deleting closets to get around opening them
+		if(istype(I, /obj/structure/closet))
+			var/obj/structure/closet/C = I
+			if(!C.opened)
+				to_chat(user, SPAN_WARNING("[I] must be opened to craft with!"))
+				building = FALSE
+				return
+
 		if(req_amount && istype(I, /obj/item/stack))
 			var/obj/item/stack/S = I
 			if(S.get_amount() < req_amount)
