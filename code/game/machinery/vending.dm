@@ -503,7 +503,10 @@
 	else
 		cashmoney.update_icon()
 
-	// Vending machines have no idea who paid with cash
+	if(ishuman(usr))
+		var/mob/living/carbon/human/spender = usr
+		spender.sanity.onSpend(currently_vending.price)
+
 	credit_purchase("(cash)")
 	return 1
 
@@ -535,6 +538,10 @@
 				credit_purchase("[wallet.owner_name] (chargecard)")
 				currently_vending.price += task_level //So we dont perma lower the price of things
 				return TRUE
+
+			if(ishuman(user))
+				var/mob/living/carbon/human/spender = user
+				spender.sanity.onSpend(currently_vending.price)
 
 			wallet.worth -= currently_vending.price
 			credit_purchase("[wallet.owner_name] (chargecard)")
@@ -592,6 +599,10 @@
 		// Give the vendor the money. We use the account owner name, which means
 		// that purchases made with stolen/borrowed card will look like the card
 		// owner made them
+		if(ishuman(usr))
+			var/mob/living/carbon/human/spender = usr
+			spender.sanity.onSpend(currently_vending.price)
+
 		credit_purchase(customer_account.owner_name)
 		return 1
 

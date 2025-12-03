@@ -30,6 +30,9 @@
 				food_descriptor = "The quality of this food is legendary. Words fail to describe it further. It must be eaten"
 	to_chat(user, SPAN_NOTICE(food_descriptor))
 
+	var/tastetext = jointext(taste_tag, ", ")
+	to_chat(user, SPAN_NOTICE("This could be considered [tastetext]"))
+
 
 
 	if (bitecount==0)

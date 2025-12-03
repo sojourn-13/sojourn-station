@@ -93,6 +93,7 @@
 			occupant.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/gym_goer, "GYM_GOER", skill_gained = 1, learner = occupant)
 			last_stats = occupant.stats.getStat(stat_used,pure = TRUE)
 
+		occupant.sanity.onWorkout()
 		occupant.stats.addPerk(PERK_COOLDOWN_EXERTION)
 		unlocked = FALSE
 

@@ -430,6 +430,10 @@ its easier to just keep the beam vertical.
 					to_chat(user, SPAN_NOTICE("[reagents.total_volume] units of what looks like [master_reagent.name]."))
 				else
 					to_chat(user, SPAN_NOTICE("[reagents.total_volume] units of various reagents."))
+
+			for(var/datum/reagent/R in reagents.reagent_list)
+				var/tastetext = jointext(R.taste_tag, ", ")
+				to_chat(user, SPAN_NOTICE("A quick waft will tell you it tastes like: [tastetext]"))
 // End of SoJ changes
 		else
 			if(reagent_flags & AMOUNT_VISIBLE)

@@ -469,6 +469,11 @@
 	else
 		prizevend()
 	event = null
+
+	if(ishuman(usr))
+		var/mob/living/carbon/human/H = usr
+		H.sanity.onGame()
+
 	src.updateUsrDialog()
 
 /obj/item/orion_ship
