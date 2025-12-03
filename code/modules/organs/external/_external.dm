@@ -167,7 +167,27 @@
 	if(module)
 		module.organ_installed(src, owner)
 
+	for(var/obj/item/organ/O in internal_organs)
+		for(var/obj/item/modification/organ/internal/agument/A in O.item_upgrades)
+			if(A.cares_about_life && !(O.status&ORGAN_DEAD))
+				return
+			A.sync_add(owner)
+
+/obj/item/organ/external/die()
+	..()
+	if(status&ORGAN_DEAD)
+		if(internal_organs)
+			for(var/obj/item/organ/O in internal_organs)
+				for(var/obj/item/modification/organ/internal/agument/A in O.item_upgrades)
+					if(A.cares_about_life && status&ORGAN_DEAD)
+						A.sync_remove()
+
 /obj/item/organ/external/removed(mob/living/user, redraw_mob = TRUE)
+	if(internal_organs)
+		for(var/obj/item/organ/O in internal_organs)
+			for(var/obj/item/modification/organ/internal/agument/A in O.item_upgrades)
+				A.sync_remove()
+
 	if(parent)
 		parent.children -= src
 	var/mob/living/carbon/human/victim = owner

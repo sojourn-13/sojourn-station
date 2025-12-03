@@ -77,12 +77,16 @@
 
 /mob/living/carbon/human/proc/liver_process()
 	var/liver_efficiency = get_organ_efficiency(OP_LIVER) * (1 + chem_effects[CE_ANTITOX])
-	var/obj/item/organ/internal/liver = random_organ_by_process(OP_LIVER)
+	var/obj/item/organ/internal/liver/liver = random_organ_by_process(OP_LIVER)
 	var/alcohol_strength = chem_effects[CE_ALCOHOL]
 	var/toxin_strength = chem_effects[CE_TOXIN] * IORGAN_LIVER_TOX_RATIO + chem_effects[CE_ALCOHOL_TOXIC]
 
 	// Existing damage is subtracted to prevent weaker toxins from maxing out tox wounds on the organ
 	var/toxin_damage = liver ? (toxin_strength / (stats.getPerk(PERK_BLOOD_OF_LEAD) ? 2 : 1)) - (liver_efficiency / 100) - liver.damage * 2 : 0
+
+	if(liver)
+		toxin_damage *= liver.toxin_handling_multy
+		alcohol_strength *= liver.toxin_handling_multy
 
 	// Bad stuff
 	// If you're not filtering well, you're in trouble. Ammonia buildup to toxic levels and damage from alcohol

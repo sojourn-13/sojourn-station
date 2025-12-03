@@ -9,6 +9,7 @@
 	nutriment_req = 5
 	price_tag = 800
 	w_class = ITEM_SIZE_SMALL
+	var/toxin_handling_multy = 1 //One is default, this value is a mult on toxin affect when processed by the liver
 
 /obj/item/organ/internal/liver/plant
 	name = "plant sprout"

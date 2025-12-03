@@ -648,14 +648,19 @@ var/list/rank_prefix = list(\
 ///eyecheck()
 ///Returns a number between -1 to 2
 /mob/living/carbon/human/eyecheck()
+	var/total_protection = flash_protection
 	if(!species.has_process[OP_EYES]) //No eyes, can't hurt them.
-		return FLASH_PROTECTION_MODERATE
+		total_protection += FLASH_PROTECTION_MODERATE
 
 	var/eye_efficiency = get_organ_efficiency(OP_EYES)
 	if(eye_efficiency <= 0)
-		return FLASH_PROTECTION_MODERATE
+		total_protection += FLASH_PROTECTION_MODERATE
 
-	return flash_protection
+	var/obj/item/organ/internal/eyes/E = random_organ_by_process(OP_EYES)
+	if(E)
+		total_protection += E.flash_protection
+
+	return total_protection
 
 ///earcheck()
 ///Returns a number
