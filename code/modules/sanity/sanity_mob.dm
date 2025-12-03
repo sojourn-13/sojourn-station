@@ -44,8 +44,8 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 #define INSIGHT_DESIRE_ENTERTAINMENT "entertainment"
 #define INSIGHT_DESIRE_WORKOUT "a workout"
 #define INSIGHT_DESIRE_SPENDING "new stuff"
-//#define INSIGHT_DESIRE_EXPLORATION "a walk outside the colony"
-//#define INSIGHT_DESIRE_BAYSTATION "bar crawling"
+#define INSIGHT_DESIRE_EXPLORATION "a walk outside the colony"
+#define INSIGHT_DESIRE_BAYSTATION "bar crawling"
 
 
 #define EAT_COOLDOWN_MESSAGE 15 SECONDS
@@ -200,6 +200,16 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 	var/area/my_area = get_area(owner)
 	if(!my_area)
 		return 0
+
+	if(resting)
+		if(istype(my_area, /area/nadezhda/crew_quarters))
+			var/area/nadezhda/crew_quarters/CQ = my_area
+			if(CQ.social_area)
+				onSocialArea()
+
+		if(istype(my_area, /area/nadezhda/outside) || istype(my_area, /area/nadezhda/dungeon/outside))
+			onSocialArea()
+
 	. = my_area.sanity.affect
 	if(. < 0)
 		. *= owner.stats.getStat(STAT_VIG) / STAT_LEVEL_MAX
@@ -268,7 +278,9 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 		INSIGHT_DESIRE_DRUGS,
 		INSIGHT_DESIRE_ENTERTAINMENT,
 		INSIGHT_DESIRE_WORKOUT,
-		INSIGHT_DESIRE_SPENDING
+		INSIGHT_DESIRE_SPENDING,
+		INSIGHT_DESIRE_BAYSTATION,
+		INSIGHT_DESIRE_EXPLORATION
 	)
 
 	for(var/i in owner.metabolism_effects.addiction_list)
@@ -296,6 +308,10 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 /datum/sanity/proc/print_desires()
 	if(!resting)
 		return
+
+	var/area_message = null
+	var/area/my_area = get_area(owner)
+
 	var/list/desire_names = list()
 	for(var/desire in desires)
 		if(ispath(desire))
@@ -303,7 +319,30 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 			desire_names += initial(A.name)
 		else
 			desire_names += desire
+		if(desire == INSIGHT_DESIRE_BAYSTATION)
+			area_message += "Main ::Bar Crawl Areas:: Bar, Kitchen, Arcade, Pool, Gym.\n"
+			if(my_area)
+				if(istype(my_area, /area/nadezhda/crew_quarters))
+					var/area/nadezhda/crew_quarters/CQ = my_area
+					if(!CQ.social_area)
+						area_message += "Current Area does not count as a Bar Crawl Area.\n"
+					else
+						area_message += "Area counts as a Bar Crawl Area.\n"
+
+		if(desire == INSIGHT_DESIRE_EXPLORATION)
+			area_message += "Main ::Outside Areas:: Pond, Swamp, Forest, Colony Meadows.\n"
+			if(my_area)
+				if(istype(my_area, /area/nadezhda/outside) || istype(my_area, /area/nadezhda/dungeon/outside))
+					var/area/nadezhda/crew_quarters/CQ = my_area
+					if(!CQ.social_area)
+						area_message += "Current Area does not count as a Outside Areas.\n"
+					else
+						area_message += "Area counts as a Outside Areas.\n"
+
 	to_chat(owner, SPAN_NOTICE("You desire [english_list(desire_names)]."))
+
+	if(area_message)
+		to_chat(owner, SPAN_NOTICE("[area_message]"))
 
 /datum/sanity/proc/list_desires()
 	if(!resting)
@@ -548,6 +587,14 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 /datum/sanity/proc/onSpend(price)
 	if(resting)
 		add_rest(INSIGHT_DESIRE_SPENDING, (price / 10)) // credits spent divided by 10 for rest
+
+/datum/sanity/proc/onExploration()
+	if(resting)
+		add_rest(INSIGHT_DESIRE_EXPLORATION, 0.1) // If we are are off the colony map
+
+/datum/sanity/proc/onSocialArea()
+	if(resting)
+		add_rest(INSIGHT_DESIRE_BAYSTATION, 0.1) // If we are in a location that counts social
 
 /datum/sanity/proc/onSay()
 	if(world.time < say_time)

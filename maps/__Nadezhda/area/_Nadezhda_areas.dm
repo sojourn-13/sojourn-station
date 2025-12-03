@@ -775,6 +775,7 @@
 	name = "\improper Dormitories"
 	icon_state = "Sleep"
 	area_light_color = COLOR_LIGHTING_CREW_SOFT
+	var/social_area = FALSE
 
 /area/nadezhda/crew_quarters/toilet
 	name = "\improper Dormitory Toilets"
@@ -792,6 +793,7 @@
 /area/nadezhda/crew_quarters/arcade
 	name = "Arcade"
 	icon_state = "nadezhdayellow"
+	social_area = TRUE
 
 /area/nadezhda/crew_quarters/dorm1
 	name = "\improper Dormitories"
@@ -870,23 +872,28 @@
 /area/nadezhda/crew_quarters/fitness
 	name = "\improper Fitness Room"
 	icon_state = "fitness"
+	social_area = TRUE
 
 /area/nadezhda/crew_quarters/pool
 	name = "\improper Public Pool"
 	icon_state = "fitness"
+	social_area = TRUE
 
 /area/nadezhda/crew_quarters/cafeteria
 	name = "\improper Cafeteria"
 	icon_state = "cafeteria"
+	social_area = TRUE
 
 /area/nadezhda/crew_quarters/kitchen
 	name = "\improper Kitchen"
 	icon_state = "kitchen"
+	social_area = TRUE
 
 /area/nadezhda/crew_quarters/bar
 	name = "\improper Bar"
 	icon_state = "bar"
 	sound_env = LARGE_SOFTFLOOR
+	social_area = TRUE
 
 /area/nadezhda/crew_quarters/bar/vip
 	name = "\improper VIP Room"
@@ -904,21 +911,24 @@
 	name = "\improper Theatre"
 	icon_state = "Theatre"
 	sound_env = LARGE_SOFTFLOOR
+	social_area = TRUE
 
 /area/nadezhda/crew_quarters/clownoffice
 	name = "Entertainment Studio"
 	icon_state = "erisblue"
+	social_area = TRUE
 
 /area/nadezhda/crew_quarters/library
- 	name = "\improper Library"
- 	icon_state = "library"
- 	sound_env = LARGE_SOFTFLOOR
+	name = "\improper Library"
+	icon_state = "library"
+	sound_env = LARGE_SOFTFLOOR
+	social_area = TRUE
 
 /area/nadezhda/crew_quarters/librarybackroom
 	name = "Library Backroom"
 	icon_state = "erisgreen"
 
-/area/nadezhda/crew_quarters/janitor/
+/area/nadezhda/crew_quarters/janitor
 	name = "\improper Custodial Closet"
 	icon_state = "janitor"
 
