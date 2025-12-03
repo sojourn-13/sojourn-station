@@ -10,7 +10,7 @@
 	explosion_resistance = 1
 	health = 50
 	var/destroyed = 0
-
+	var/cover_value = 20 //20% of the time a bullet (or laser) may be stopped by this if its weak
 
 /obj/structure/grille/ex_act(severity)
 	qdel(src)
@@ -54,7 +54,7 @@
 		return TRUE
 	else
 		if(istype(mover, /obj/item/projectile))
-			return prob(30)
+			return prob(cover_value)
 		else
 			return !density
 
@@ -63,6 +63,9 @@
 	if(!Proj)
 		return
 
+	if(Proj.testing)
+		return TRUE
+
 	//Flimsy grilles aren't so great at stopping projectiles. However they can absorb some of the impact
 	var/damage = Proj.get_structure_damage()
 	var/passthrough = FALSE
@@ -70,31 +73,21 @@
 	if(!damage)
 		return
 
-	//The current math for this is the projectile damage -10 for its odds, I.e 50 damage is a 40% odds to penitrate through
-	//If they click on the grille itself then we assume they are aiming at the grille itself and the extra cover behaviour is always used.
-	for(var/i in Proj.damage_types)
-		if(i == BRUTE)
-			//bullets
-			if(Proj.original == src || prob(20))
-				Proj.damage_types[i] *= between(0, Proj.damage_types[i]/60, 0.5)
-				if(prob(max((damage-10), 0)))
-					passthrough = TRUE
-			else
-				Proj.damage_types[i] *= between(0, Proj.damage_types[i]/60, 1)
-				passthrough = TRUE
-		if(i == BURN)
-			//beams and other projectiles are either blocked completely by grilles or stop half the damage.
-			if(!(Proj.original == src || prob(20)))
-				Proj.damage_types[i] *= 0.5
-				passthrough = TRUE
+	//Grills mainly stop lasers doing nothing against a bullet.
+	//Note that if we DIDNT roll cover_value twice we would be completely blocked.
+	if(prob(cover_value))
+		passthrough = TRUE
+		bullet_weaken(Proj, subtractor_brute = 2, mult_brute = 0.8, subtractor_burn = 4, mult_burn = 0.6)
 
 	if(passthrough)
 		. = PROJECTILE_CONTINUE
+
+	if(!passthrough)
+		health -= damage*2
+	else
 		damage = between(0, (damage - Proj.get_structure_damage())*(Proj.damage_types[BRUTE] ? 0.4 : 1), 10) //if the bullet passes through then the grille avoids most of the damage
 
-	if (!(Proj.testing))
-		health -= damage*2
-		healthCheck() //spawn to make sure we return properly if the grille is deleted
+	healthCheck()
 
 /obj/structure/grille/attackby(obj/item/I, mob/user)
 	if(user.a_intent == I_HELP && istype(I, /obj/item/gun))

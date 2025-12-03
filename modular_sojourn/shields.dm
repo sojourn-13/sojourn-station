@@ -1,6 +1,8 @@
 /obj/item/shield/riot/bastion
 	name = "Deployable: Bastion Shield"
-	desc = "A project inspired by an idea for a true deployable barrier, the \"Bastion Shield\" came as a surprisingly successful one, both surprisingly light and insurmountably sturdy enough to be carried out into the most dangerous combat zones. A true marvel of Guild, SI and Blackshield joint effort. When deployed, you can even brace a gun on it."
+	desc = "A project inspired by an idea for a true deployable barrier, the \"Bastion Shield\" came as a surprisingly successful one, \
+	both surprisingly light and insurmountably sturdy enough to be carried out into the most dangerous combat zones. \
+	A true marvel of Guild, SI and Blackshield joint effort. When deployed, you can even brace a gun on it."
 	icon = 'icons/obj/bastion.dmi'
 	icon_state = "bastion"
 	item_state = "bastion"
@@ -22,10 +24,11 @@
 		slot_back_str = "bastion_back"
 		)
 
-
 /obj/item/bastion_broken
 	name = "Broken: Bastion Shield"
-	desc = "Once a project inspired by an idea for a true deployable barrier, the \"Bastion Shield\" came as a surprisingly successful one, both surprisingly light and insurmountably sturdy enough to be carried out into the most dangerous combat zones. A true marvel of Guild, SI and Blackshield joint effort. \
+	desc = "Once a project inspired by an idea for a true deployable barrier, the \"Bastion Shield\" came as a surprisingly successful one, \
+	both surprisingly light and insurmountably sturdy enough to be carried out into the most dangerous combat zones. \
+	A true marvel of Guild, SI and Blackshield joint effort. \
 	Now a broken shell of its former self, maybe it can still be scrapped for what it's worth..."
 	icon = 'icons/obj/bastion.dmi'
 	icon_state = "bastion_broken"
@@ -74,7 +77,6 @@
 	if(health < 1)
 		new /obj/item/bastion_broken(get_turf(src))
 		qdel(src)
-
 
 /obj/structure/shield_deployed/attackby(obj/item/I, mob/living/user)
 	.=..()
@@ -137,8 +139,7 @@
 			return 1
 		if(istype(P, /obj/item/projectile/test) || P.testing) // Turrets need to try to kill the shield and so their test bullet needs to penetrate.
 			return 1
-		var/bad_arc = reverse_direction(dir) // Arc of directions from which we cannot block.
-		if(!check_parry_arc(src, bad_arc, P)) // This is actually for mobs but it will work for our purposes as well.
+		if(!this_direction_is_protected(P))
 			return 1
 
 		if(health >= 1)
@@ -176,8 +177,7 @@
 	if(istype(P, /obj/item/projectile/test) || P.testing) // Turrets need to try to kill the shield and so their test bullet needs to penetrate.
 		return 1
 
-	var/bad_arc = reverse_direction(dir) // Arc of directions from which we cannot block.
-	if(!check_parry_arc(src, bad_arc, P)) // This is actually for mobs but it will work for our purposes as well.
+	if(!this_direction_is_protected(P))
 		return 1
 
 	var/chance = base_cover
@@ -234,6 +234,10 @@
 
 	var/delay = (issmall(user) ? 20 : 34) * user.mod_climb_delay
 	var/duration = max(delay * user.stats.getMult(STAT_VIG, STAT_LEVEL_EXPERT), delay * 0.66)
+
+	if(user.stats?.getPerk(PERK_PARKOUR))
+		duration *= 0.15 //85% time delay reduction.
+
 	if(!do_after(user, duration))
 		LAZYREMOVE(climbers, user)
 		return
@@ -254,3 +258,34 @@
 
 	usr.visible_message(SPAN_WARNING("[user] climbed over \the [src]!"))
 	LAZYREMOVE(climbers, user)
+
+/obj/structure/shield_deployed/proc/this_direction_is_protected(obj/item/projectile/P)
+
+
+	//message_admins("dir = [dir] vs P.dir [P.dir]")
+	//This is a directional check. If you are coming in the direction of the shield then we protect ya
+	switch(dir)
+
+		if(NORTH)
+			if(P.dir == SOUTH || P.dir == SOUTHEAST || P.dir == SOUTHWEST)
+				return TRUE
+			return FALSE
+
+		if(SOUTH)
+			if(P.dir == NORTH || P.dir == NORTHEAST || P.dir == NORTHWEST)
+				return TRUE
+			return FALSE
+
+		if(EAST)
+			if(P.dir == WEST || P.dir == NORTHWEST || P.dir == SOUTHWEST)
+				return TRUE
+			return FALSE
+
+		if(WEST)
+			if(P.dir == EAST || P.dir == NORTHEAST || P.dir == SOUTHEAST)
+				return TRUE
+			return FALSE
+
+
+	//If we are without direction, then we block all.
+	return TRUE
