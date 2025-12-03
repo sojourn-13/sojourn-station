@@ -327,7 +327,7 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 					if(!CQ.social_area)
 						area_message += "Current Area does not count as a Bar Crawl Area.\n"
 					else
-						area_message += "Area counts as a Bar Crawl Area.\n"
+						area_message += "Your current area counts as a Bar Crawl Area.\n"
 
 		if(desire == INSIGHT_DESIRE_EXPLORATION)
 			area_message += "Main ::Outside Areas:: Pond, Swamp, Forest, Colony Meadows.\n"
@@ -337,7 +337,7 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 					if(!CQ.social_area)
 						area_message += "Current Area does not count as a Outside Areas.\n"
 					else
-						area_message += "Area counts as a Outside Areas.\n"
+						area_message += "Your current area counts as a Outside Areas.\n"
 
 	to_chat(owner, SPAN_NOTICE("You desire [english_list(desire_names)]."))
 
