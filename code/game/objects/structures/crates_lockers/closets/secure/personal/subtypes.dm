@@ -41,8 +41,25 @@
 	locked = FALSE
 	climbable = TRUE
 	dense_when_open = TRUE
+	var/give_rest = FALSE
 
 /obj/structure/closet/secure_closet/personal/trade/populate_contents()
 	if(populated_contents)
 		return
 	populated_contents = TRUE
+
+/obj/structure/closet/secure_closet/personal/trade/open(mob/living/user)
+	.=..()
+	if(give_rest && .)
+		if(ishuman(user))
+			var/mob/living/carbon/human/H = user
+			//Dont allow scaming of cargo/manigment stealing insight when checking contents (that would be lame)
+			if(H.real_name == registered_name)
+				H.sanity.onSpend(give_rest)
+				give_rest = FALSE
+
+/obj/structure/closet/secure_closet/personal/trade/examine(mob/user)
+	..()
+	if(give_rest && registered_name == user.real_name)
+		to_chat(user, span_nicegreen("This is the crate with your new goodies! \
+		*Opening it yourself* will give you that bit of rest you need!"))

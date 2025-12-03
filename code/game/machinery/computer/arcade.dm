@@ -250,12 +250,14 @@
 	src.updateUsrDialog()
 	return
 
-/obj/machinery/computer/arcade/battle/proc/arcade_action(mob/living/carbon/human/h)
+/obj/machinery/computer/arcade/battle/proc/arcade_action()
 	if ((src.enemy_mp <= 0) || (src.enemy_hp <= 0))
 		if(!gameover)
 			src.gameover = 1
 			src.temp = "[src.enemy_name] has fallen! Rejoice!"
-			h.sanity.onGame()
+			if(ishuman(usr))
+				var/mob/living/carbon/human/H = usr
+				H.sanity.onGame()
 
 			if(emagged)
 
