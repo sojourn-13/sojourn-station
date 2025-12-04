@@ -43,7 +43,7 @@
 /obj/screen/item_action/top_bar/weapon_info
 	icon = 'icons/mob/screen/gun_actions.dmi'
 	screen_loc = "9:16,1:13"
-	minloc = null
+	minloc = "8.5,2:13"
 	name = "Weapon Info"
 	icon_state = "info"
 	ErisOptimized_minloc = "16.5,10.3"
