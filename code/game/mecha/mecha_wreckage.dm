@@ -13,12 +13,12 @@
 	layer = TURF_LAYER + 0.6
 	var/list/welder_salvage = list(/obj/item/stack/material/plasteel,/obj/item/stack/material/steel,/obj/item/stack/rods)
 	var/list/wirecutters_salvage = list(/obj/item/stack/cable_coil)
-	var/list/crowbar_salvage
+	var/list/crowbar_salvage = list()
 	var/salvage_num = 5
 
 /obj/effect/decal/mecha_wreckage/New()
 	..()
-	crowbar_salvage = list()
+	reset_plane_and_layer()
 
 /obj/effect/decal/mecha_wreckage/ex_act(severity)
 	if(severity < 2)
