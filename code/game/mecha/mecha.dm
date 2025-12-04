@@ -164,6 +164,7 @@
 
 	for(var/atom/movable/AM in cargo)
 		AM.forceMove(loc)
+		AM.reset_plane_and_layer()
 
 	cargo.Cut()
 
