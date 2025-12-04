@@ -480,9 +480,18 @@ its easier to just keep the beam vertical.
 				else
 					to_chat(user, SPAN_NOTICE("[reagents.total_volume] units of various reagents."))
 
+			var/list/all_taste_tags = list()
 			for(var/datum/reagent/R in reagents.reagent_list)
-				var/tastetext = jointext(R.taste_tag, ", ")
-				to_chat(user, SPAN_NOTICE("A quick waft will tell you it tastes like: [tastetext]"))
+				if(islist(R.taste_tag))
+					for(var/tag in R.taste_tag)
+						all_taste_tags |= tag
+				else
+					all_taste_tags |= R.taste_tag
+
+			if(all_taste_tags.len)
+				var/the_final_taste = jointext(all_taste_tags, ", ")
+				to_chat(user, SPAN_NOTICE("A quick waft will tell you it tastes like: [the_final_taste]"))
+
 // End of SoJ changes
 		else
 			if(reagent_flags & AMOUNT_VISIBLE)
