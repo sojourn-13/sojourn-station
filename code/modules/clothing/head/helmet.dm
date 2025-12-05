@@ -1976,5 +1976,22 @@
 		report_health_alerts()
 
 
+//Sea Branch
+/obj/item/clothing/head/helmet/sea
+	name = "\"MSLP-Calm Type\" crown"
+	desc = "A regal crown that has a built in micro computer."
+	icon_state = "sea_crown"
+	armor_list = list(melee = 3, bullet = 7, energy = 7, bomb = 10, bio = 100, rad = 100)
+	matter = list(MATERIAL_SILVER = 3, MATERIAL_GOLD = 15, MATERIAL_TITANIUM = 3)
 
+/obj/item/clothing/head/helmet/sea/examine(mob/user)
+	..()
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		if(istype(H.head, /obj/item/clothing/head/helmet/sea))
+			to_chat(user, SPAN_NOTICE("When looking at the crown with the [src] on, it buzzes information to your brain cortex."))
+			to_chat(user, SPAN_NOTICE("\"The Calm Type crown, an enchanted crown using materals and computing to confert the warer from battle or commanding fatigue when dealing with hostile Sea.\"."))
 
+/obj/item/clothing/head/helmet/sea/New()
+	..()
+	AddComponent(/datum/component/clothing_sanity_protection, 2)

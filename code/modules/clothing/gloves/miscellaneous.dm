@@ -330,3 +330,4 @@
 	siemens_coefficient = 0.5
 	permeability_coefficient = 0.05
 	price_tag = 50
+

@@ -122,6 +122,9 @@
 					var/obj/item/clothing/ears/psionic_ear_rings/PESR = H.r_ear
 					bonus_return += PESR.storage_addition
 
+				if(istype(H.head, /obj/item/clothing/head/helmet/sea))
+					bonus_return += bonus_return + 5  //We get more enhanced by other affects
+
 				return bonus_return
 
 			if("psi_regen_helpers")
