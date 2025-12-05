@@ -309,14 +309,15 @@
 	alpha = 128
 	mobs = list(/mob/living/simple/hostile/hivebot = 16,
 		/mob/living/simple/hostile/hivebot/range = 12,
-		/mob/living/simple/hostile/republicon = 16,
-		/mob/living/simple/hostile/republicon/range = 8,
+		/mob/living/carbon/superior/robot/forgotton = 6, //Weaklings spawn less
+		/mob/living/carbon/superior/robot/forgotton/engineer= 16,
+		/mob/living/carbon/superior/robot/forgotton/range = 8,
 		)
 
 //This is made out of a 100 fo easier math
 /obj/random/mob/prepper/item_to_spawn()
 	if(GLOB.chaos_level > 2)
-		mobs += list(/mob/living/carbon/superior/sentinal_seeker = (0.1 * GLOB.chaos_level))
+		mobs += list(/mob/living/carbon/superior/robot/forgotton/sentinal_seeker = (0.1 * GLOB.chaos_level))
 
 	return pickweight(mobs)
 
@@ -327,14 +328,14 @@
 	spawn_nothing_percentage = 90 // Same HP and stats as a Render while being as fast as an Emperor.
 
 /obj/random/mob/prepper_boss_lowchance/item_to_spawn()
-	return /mob/living/carbon/superior/sentinal_seeker
+	return /mob/living/carbon/superior/robot/forgotton/sentinal_seeker
 
 /obj/random/mob/prepper_ranged
 	name = "random prepper base mob (range only)"
 	icon_state = "hostilemob-blue"
 	alpha = 128
 	mobs = list(/mob/living/simple/hostile/hivebot/range = 3,
-		/mob/living/simple/hostile/republicon/range = 1
+		/mob/living/carbon/superior/robot/forgotton/range = 1
 		)
 
 /obj/random/mob/prepper_ranged/item_to_spawn()

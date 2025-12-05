@@ -148,6 +148,7 @@
 				adjustOxyLoss(-15)
 				updatehealth()
 				visible_message(SPAN_NOTICE("[src.name] does some field repairs on themselfs!"))
+				playsound(loc, 'sound/items/welderdeactivate.ogg', 50, 1)
 				//Feedback that is heard and seen
 				var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
 				s.set_up(3, 1, src)
@@ -165,6 +166,7 @@
 						s.set_up(3, 1, R)
 						s.start()
 						visible_message(SPAN_NOTICE("[src.name] does some field repairs on [R.name]!"))
+						playsound(loc, 'sound/items/welderdeactivate.ogg', 50, 1)
 						break
 
 /mob/living/carbon/superior/robot/gp/custodian/engineer/New()

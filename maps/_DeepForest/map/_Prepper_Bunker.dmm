@@ -8920,7 +8920,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/entryway)
 "ZB" = (
-/mob/living/carbon/superior/sentinal_seeker,
+/mob/living/carbon/superior/robot/forgotton/sentinal_seeker,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/dungeon/outside/prepper/vault/floor5)
 "ZC" = (

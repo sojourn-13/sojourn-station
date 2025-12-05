@@ -335,3 +335,48 @@
 	linked = null //Avoids hard del
 
 	..()
+
+/datum/perk/cooldown/contempt_gaze
+	name = "Contempt Gaze"
+	desc = "A gaze of malice, hatred and blood lust mixed together."
+	icon_state = "gaze"
+	perk_lifetime = 1 MINUTES //Gives enuff time for folks to make a last stand
+	gain_text = "The eyes, the blood lust, and the unrelenting contempt tords you have shaken your core."
+	lose_text = null //No need to tell the player a short debuff is gone
+
+/datum/perk/cooldown/contempt_gaze/on_process()
+	if(ishuman(holder))
+		var/mob/living/carbon/human/H = holder
+		H.recoil += 0.25
+		H.sanity.changeLevel(-0.5)
+	..()
+
+/datum/perk/cooldown/contempt_gaze/assign()
+	..()
+	if(isanimal(holder))
+		var/mob/living/simple/A = holder
+		A.melee_damage_lower -= 2
+		A.melee_damage_upper -= 2
+		A.adjustBruteLoss(5)
+
+	if(issuperioranimal(holder))
+		var/mob/living/carbon/superior/S = holder
+		S.melee_damage_lower -= 2
+		S.melee_damage_upper -= 2
+		S.blocking_slowdown += 1
+		S.adjustBruteLoss(5)
+
+/datum/perk/cooldown/contempt_gaze/remove(mob/living/L)
+	if(isanimal(holder))
+		var/mob/living/simple/A = L
+		A.melee_damage_lower += 2
+		A.melee_damage_upper += 2
+		A.adjustBruteLoss(5)
+
+	if(issuperioranimal(holder))
+		var/mob/living/carbon/superior/S = L
+		S.melee_damage_lower += 2
+		S.melee_damage_upper += 2
+		S.blocking_slowdown -= 1
+		S.adjustBruteLoss(5)
+	..()

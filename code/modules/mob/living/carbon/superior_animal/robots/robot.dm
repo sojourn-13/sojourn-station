@@ -52,6 +52,10 @@
 	var/cell_drop = null
 	cant_gib = TRUE
 
+	//Screwdriving could be set for some mobs if required but sawing seems more universal
+	harvesting_tool = QUALITY_SAWING
+	harvesting_stat = STAT_MEC
+
 /mob/living/carbon/superior/robot/handle_breath(datum/gas_mixture/breath) //we dont care about the air
 	return
 
