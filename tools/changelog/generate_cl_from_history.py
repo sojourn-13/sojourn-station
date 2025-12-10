@@ -40,7 +40,7 @@ if not GITHUB_TOKEN:
     sys.exit(1)
 
 # Replace with your repository full name (owner/repo)
-REPO_NAME = "OWNER/REPO"  # <--- CHANGE THIS to your repo
+REPO_NAME = "epic-new-soj-thing/Sojourn-Iskhod"  # <--- CHANGE THIS to your repo
 
 def main():
     repo = Repo(REPO_PATH)
