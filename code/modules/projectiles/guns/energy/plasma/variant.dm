@@ -5,6 +5,7 @@
 	burnt to a crisp. This variant is a pistol, capable of fitting a holster for discrete travel and easy drawing."
 	icon = 'icons/obj/guns/plasma/hydrogen.dmi'
 	icon_state = "pistol"
+	crit_icon_state = "pistol_crit"
 	twohanded = FALSE
 	slot_flags = SLOT_BELT|SLOT_HOLSTER|SLOT_BACK
 	w_class = ITEM_SIZE_NORMAL
@@ -30,6 +31,7 @@
 	burnt to a crisp."
 	icon = 'icons/obj/guns/plasma/hydrogen.dmi'
 	icon_state = "cannon"
+	crit_icon_state = "cannon_crit"
 	matter = list(MATERIAL_PLASTEEL = 25, MATERIAL_MHYDROGEN = 2, MATERIAL_TRITIUM = 1)
 	origin_tech = list(TECH_COMBAT = 9, TECH_MATERIAL = 7, TECH_PLASMA = 10)
 	w_class = ITEM_SIZE_HUGE
@@ -50,6 +52,7 @@
 	desc = "An anomalous weapon refurbished by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
 	This hydrogen-plasma gun has a built-in cooling system, making it impossible to heat up and requiring no venting at all while being incredibly cell-efficient."
 	icon_state = "prifle"
+	crit_icon_state = "prifle_crit"
 	use_plasma_cost = 5 // 60 shots with its snowflake cell, 30 with normals.
 	heat_per_shot = 0 // No heat gain.
 	origin_tech = list(TECH_COMBAT = 15, TECH_MATERIAL = 7, TECH_PLASMA = 25)
@@ -68,6 +71,7 @@
 	name = "\improper Welder Gun"
 	desc = "A plasma welder converted to shoot plasma bolts. Has less range than a \"Classia\"-Pattern Plasma Pistol."
 	icon_state = "welder"
+	crit_icon_state = null
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_MHYDROGEN = 1, MATERIAL_TRITIUM = 1)
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 7, TECH_PLASMA = 7)
 	projectile_type = /obj/item/projectile/hydrogen/pistol/welder

@@ -30,8 +30,13 @@
 	to_chat(usr, SPAN_NOTICE("Items will now [sliding_behavior ? "" : "not"] slide out of [src]"))
 
 /obj/item/storage/pouch/attack_hand(mob/living/carbon/human/user)
-	if(sliding_behavior && contents.len && (src in user))
-		slide_out_item(user)
+	if(sliding_behavior && (src in user))
+		// Check for regular storage contents first
+		if(contents.len)
+			slide_out_item(user)
+		// Check for holstered items if this is a holster pouch
+		else if(acts_as_holster && get_first_occupied_holster())
+			unholster(user)
 	else
 		..()
 
@@ -52,11 +57,25 @@
 	..()
 	//Grow when we add in are items
 	pouch_size_increase()
+	// If this pouch acts as a holster, track holsterable items in the holstered list
+	// Only track items that have SLOT_HOLSTER flag
+	if(acts_as_holster && holster_slots && holster_enabled)
+		// Only track items that have SLOT_HOLSTER flag
+		if(W.slot_flags & SLOT_HOLSTER)
+			var/index = get_first_empty_holster()
+			if(index)
+				holstered[index] = W
 
 /obj/item/storage/pouch/remove_from_storage(obj/item/W as obj, atom/new_location)
 	..()
 	//So that we can accually shrink when taking items out
 	pouch_size_increase()
+	// If this pouch acts as a holster, clear the holstered list entry when items are removed
+	if(acts_as_holster && holster_slots)
+		for(var/i = 1, i <= holster_slots, i++)
+			if(holstered[i] == W)
+				holstered[i] = null
+				break
 
 //Little complex at glance but shockingly simple!
 /obj/item/storage/pouch/proc/pouch_size_increase()
@@ -513,7 +532,7 @@ obj/item/storage/pouch/large_generic/advmedic/populate_contents()
 	desc = "Can hold a handgun in."
 	icon_state = "pistol_holster"
 	item_state = "pistol_holster"
-	storage_slots = 1
+	storage_slots = 0
 	acts_as_holster = TRUE
 	holster_slots = 1
 	w_class = ITEM_SIZE_SMALL
@@ -593,7 +612,11 @@ obj/item/storage/pouch/large_generic/advmedic/populate_contents()
 /obj/item/storage/pouch/pistol_holster/update_icon()
 	..()
 	cut_overlays()
-	if(contents.len)
+	// For holster-only storage, check holstered list instead of contents
+	if(storage_slots == 0 && acts_as_holster)
+		if(get_first_occupied_holster())
+			add_overlay(image('icons/inventory/pockets/icon.dmi', "pistol_layer"))
+	else if(contents.len)
 		add_overlay(image('icons/inventory/pockets/icon.dmi', "pistol_layer"))
 
 /obj/item/storage/pouch/pistol_holster/cowboy
@@ -605,14 +628,22 @@ obj/item/storage/pouch/large_generic/advmedic/populate_contents()
 	matter = list(MATERIAL_BIOMATTER = 24) // Two holsters in one!
 	slot_flags = SLOT_BELT|SLOT_DENYPOCKET
 	max_w_class = ITEM_SIZE_HUGE
-	storage_slots = 2
+	storage_slots = 0
 	acts_as_holster = TRUE
 	holster_slots = 2
 
 /obj/item/storage/pouch/pistol_holster/cowboy/update_icon()
 	..()
 	cut_overlays()
-	if(contents.len)
+	// For holster-only storage, check holstered list instead of contents
+	if(storage_slots == 0 && acts_as_holster)
+		var/holstered_count = 0
+		for(var/i = 1, i <= holster_slots, i++)
+			if(holstered[i])
+				holstered_count++
+		if(holstered_count)
+			add_overlay(image('icons/inventory/pockets/icon.dmi', "gun_[holstered_count]"))
+	else if(contents.len)
 		add_overlay(image('icons/inventory/pockets/icon.dmi', "gun_[contents.len]"))
 
 /obj/item/storage/pouch/kniferig

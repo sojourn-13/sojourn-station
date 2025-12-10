@@ -47,6 +47,7 @@ Securing and unsecuring the flask is a long and hard task, and a failure when un
 	var/overheat_damage = 25 // Applied to the hand holding the gun.
 	serial_type = "SI"
 	var/spawn_flask = FALSE
+	var/crit_icon_state = "plasma_crit"
 
 /obj/item/gun/hydrogen/Initialize(mapload = TRUE)
 	..()
@@ -144,7 +145,7 @@ Securing and unsecuring the flask is a long and hard task, and a failure when un
 				usr.remove_from_mob(src)
 				forceMove(connected)
 
-/obj/item/gun/hydrogen/handle_post_fire(mob/living/user)
+/obj/item/gun/hydrogen/handle_post_fire(mob/living/user, atom/target, pointblank=0, reflex=0, obj/item/projectile/P)
 	..()
 	if(!secured) // Blow up if you forgot to secure the cell.
 		src.visible_message(SPAN_DANGER("The [src.name]'s plasma leaks from the unsecured container, burning its wielder's hands!"))
@@ -183,7 +184,7 @@ Securing and unsecuring the flask is a long and hard task, and a failure when un
 /obj/item/gun/hydrogen/proc/handleoverheat()
 	src.visible_message(SPAN_DANGER("[src] overheats, its surface becoming blisteringly hot as a pressure warning beeps!"))
 	playsound(loc, 'sound/weapons/energy/hydrogen_warning.ogg', 80)
-	flick("[icon_state]_crit", src)
+	flick(crit_icon_state, src)
 	addtimer(CALLBACK(src , PROC_REF(doVentsplosion)), 3 SECONDS)
 	var/mob/living/L = loc
 	if(istype(L))
