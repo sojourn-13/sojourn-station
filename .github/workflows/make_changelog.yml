@@ -3,7 +3,7 @@ name: Generate Changelog
 on:
   push:
     branches:
-      - main
+      - master
       - changelog-fixes
 
   workflow_dispatch:  # <-- allows manual triggering
