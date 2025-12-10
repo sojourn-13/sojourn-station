@@ -16,7 +16,7 @@ if not GITHUB_TOKEN:
     exit(1)
 
 REPO_NAME = "epic-new-soj-thing/Sojourn-Iskhod"  # owner/repo
-WORKFLOW_FILE = "generate-changelog.yml"         # workflow filename
+WORKFLOW_FILE = "make_changelog.yml"         # workflow filename
 MAX_PRS = 500                                    # optional limit
 DEBUG = True
 
