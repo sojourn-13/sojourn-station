@@ -33,4 +33,4 @@ jobs:
         run: pip install -r tools/changelog/requirements.txt
 
       - name: Run changelog generator
-        run: python tools/changelog/ss13_genchangelog.py
+        run: python tools/changelog/ss13_genchangelog.py html/changelog.html html/changelogs
