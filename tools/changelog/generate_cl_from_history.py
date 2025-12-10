@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """
-Scan all merged PRs in the repository, find lines in the description
+Scan merged PRs in the repository, find lines in the description
 matching certain keywords, and create a single commit with all entries
 wrapped between :cl: and /:cl: for the bot to pick up.
+Includes debug logging to track progress.
 """
 
 import os
@@ -27,10 +28,13 @@ if not GITHUB_TOKEN:
     sys.exit(1)
 
 # Repository full name
-REPO_NAME = "epic-new-soj-thing/Sojourn-Iskhod"  # Correct format: owner/repo
+REPO_NAME = "epic-new-soj-thing/Sojourn-Iskhod"  # owner/repo
 
 # Output changelog file
 CHANGELOG_FILE = "bot_changelog.txt"
+
+# Optional: limit number of PRs to scan
+MAX_PRS = 500  # prevent stalling in large repos
 
 
 def main():
@@ -54,10 +58,17 @@ def main():
 
     print("Scanning merged PR descriptions for keywords...")
 
-    # Scan merged PRs
+    pr_count = 0
     for pr in gh_repo.get_pulls(state="closed", sort="created", direction="asc"):
         if not pr.merged:
             continue
+
+        pr_count += 1
+        if pr_count > MAX_PRS:
+            print(f"Reached limit of {MAX_PRS} PRs. Stopping scan.")
+            break
+
+        print(f"Processing PR #{pr.number}: {pr.title}")
 
         description = pr.body or ""
         for line in description.splitlines():
@@ -66,6 +77,7 @@ def main():
             if any(line_lower.startswith(k) for k in KEYWORDS):
                 if line_clean not in changelog_entries:
                     changelog_entries.append(line_clean)
+                    print(f"  Found changelog line: {line_clean}")
 
     if not changelog_entries:
         print("No matching PR descriptions found. Nothing to commit.")
@@ -74,7 +86,7 @@ def main():
     # Format changelog
     changelog_content = ":cl:\n" + "\n".join(changelog_entries) + "\n/:cl:\n"
 
-    # Write to file
+    # Write file
     with open(CHANGELOG_FILE, "w", encoding="utf-8") as f:
         f.write(changelog_content)
 
@@ -83,7 +95,7 @@ def main():
     commit_message = "Generated changelog entries from merged PRs"
     repo.index.commit(commit_message)
 
-    print(f"Created a single commit with {len(changelog_entries)} changelog entries in {CHANGELOG_FILE}.")
+    print(f"Created a single commit with {len(changelog_entries)} entries in {CHANGELOG_FILE}.")
 
 
 if __name__ == "__main__":
