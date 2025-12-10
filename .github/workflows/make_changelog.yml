@@ -6,6 +6,13 @@ on:
       - main
       - changelog-fixes
 
+  workflow_dispatch:  # <-- allows manual triggering
+    inputs:
+      reason:
+        description: "Why are you manually generating the changelog?"
+        required: false
+        default: "Manual trigger"
+
 jobs:
   generate-changelog:
     runs-on: ubuntu-latest
