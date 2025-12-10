@@ -40,7 +40,7 @@ def main():
     changelog_entries = []
 
     print("Scanning previous commits for keywords...")
-    for commit in repo.iter_commits('main'):  # adjust branch if needed
+    for commit in repo.iter_commits('master'):  # adjust branch if needed
         message_lines = commit.message.splitlines()
         for line in message_lines:
             line_lower = line.lower()
