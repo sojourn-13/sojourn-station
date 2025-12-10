@@ -1,4 +1,0 @@
-author: Meghan Rossi
-delete-after: True
-changes: 
-  - bugfix: "Fixed a bug where computers and pdas held in a person's hand or inventory slots couldn't see relay chat channels created by computers and pdas lying on the ground and vice versa."
