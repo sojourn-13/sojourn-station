@@ -48,18 +48,18 @@ SUBSYSTEM_DEF(ticker)
     var/automatic_restart_time_lobby_sound_cooldown = 0
 
 /datum/controller/subsystem/ticker/Initialize(start_timeofday)
-    if(!syndicate_code_phrase)
-        syndicate_code_phrase = generate_code_phrase()
-    if(!syndicate_code_response)
-        syndicate_code_response = generate_code_phrase()
-    src.setup_objects()
-    src.setup_huds()
-    // Parse timeout from config
-    if(isnum(config["EMPTY_SERVER_RESTART_TIMEOUT"]))
-        src.empty_server_restart_timeout = text2num(config["EMPTY_SERVER_RESTART_TIMEOUT"])
-    else
-        src.empty_server_restart_timeout = 30
-    return ..()
+	if(!syndicate_code_phrase)
+		syndicate_code_phrase = generate_code_phrase()
+	if(!syndicate_code_response)
+		syndicate_code_response = generate_code_phrase()
+	src.setup_objects()
+	src.setup_huds()
+	// Parse timeout from config; fall back to default if unset or invalid
+	if(isnum(config.empty_server_restart_time) && config.empty_server_restart_time > 0)
+		src.empty_server_restart_timeout = text2num(config.empty_server_restart_time)
+	else
+		src.empty_server_restart_timeout = 30
+	return ..()
 
 /datum/controller/subsystem/ticker/proc/setup_objects()
 	populate_antag_type_list() // Set up antagonists. Do these first since character setup will rely on them

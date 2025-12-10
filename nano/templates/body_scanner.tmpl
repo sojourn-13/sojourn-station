@@ -1,0 +1,39 @@
+<h3>Body Scanner Console</h3>
+{{if !data.power}}
+	<div class="item">
+		<div class="itemLabel">
+			NO POWER
+		</div>
+	</div>
+{{else}}
+	{{if !data.connected}}
+		<div class="item">
+			<div class="itemLabel">
+				<span class='bad'>ERROR: No Body Scanner Connected</span>
+			</div>
+		</div>
+	{{else}}
+		<table class='block' width='95%'>
+			<tr><td>
+			{{if data.scanEnabled}}
+				{{if data.isCompatible}}
+					{{:helper.link( 'Scan Occupant', null, { "scan" : 1 }, null)}}
+				{{else}}
+					{{:helper.link( 'Incompatible Lifeform', null, { "scan" : 1 }, 'disabled')}}
+				{{/if}}
+			{{else}}
+				{{:helper.link( 'Scanner Empty', null, { "scan" : 1 }, 'disabled')}}
+			{{/if}}
+			</td>
+			<td>{{:helper.link('Print Scan', null, {"print" : 1}, data.printEnabled ? null : 'disabled')}}</td>
+			<td>{{:helper.link('Erase Scan', null, {"erase" : 1}, data.eraseEnabled ? null : 'disabled')}}</td>
+			</tr>
+		</table>
+		<br>
+		{{:data.html_scan_header}}
+		<br>
+		{{:data.html_scan_health}}
+		<br>
+		{{:data.html_scan_body}}
+	{{/if}}
+{{/if}}

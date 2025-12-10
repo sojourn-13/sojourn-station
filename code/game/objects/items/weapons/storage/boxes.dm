@@ -529,8 +529,8 @@
 	new /obj/item/implantcase/death_alarm(src)
 	new /obj/item/implantcase/death_alarm(src)
 	new /obj/item/implantcase/death_alarm(src)
-	new /obj/item/implantcase/death_alarm(src)
-	new /obj/item/implantcase/death_alarm(src)
+	new /obj/item/implantcase/death_alarm/psionic(src)
+	new /obj/item/implantcase/death_alarm/psionic(src)
 
 /obj/item/storage/box/flares
 	name = "box of flares"

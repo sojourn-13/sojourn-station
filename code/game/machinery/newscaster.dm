@@ -254,6 +254,11 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 		log_world("DEBUG: Newscaster DB load disabled - SQL not enabled in config")
 		return 0
 
+	// Temporary workaround: Disable database loading to prevent crashes
+	if(!config.sql_enabled)
+		log_world("DEBUG: Newscaster DB load disabled - SQL not enabled")
+		return 0
+
 	log_world("DEBUG: Newscaster attempting DB load. SQL enabled status: [config.sql_enabled]")
 
 	// Establish database connection before attempting queries

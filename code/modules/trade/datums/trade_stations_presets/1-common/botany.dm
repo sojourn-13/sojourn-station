@@ -6,6 +6,7 @@
 	uid = "botany"
 	tree_x = 0.54
 	tree_y = 0.8
+	export_point_cost_mult = 1
 	start_discovered = FALSE
 	spawn_always = TRUE
 	markup = WHOLESALE_GOODS

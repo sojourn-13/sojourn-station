@@ -5,6 +5,7 @@
 	uid = "marqua"
 	tree_x = 0.1
 	tree_y = 0.4
+	export_point_cost_mult = 3
 	start_discovered = FALSE
 	spawn_always = TRUE
 	markup = UNIQUE_GOODS

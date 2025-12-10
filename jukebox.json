@@ -2,7 +2,7 @@
 	{
 		"url": "https://addi-bot.ca/files/Chris_Remo_-_Space_asshole_%5bRe-masted%5d_(z3-fm.com).mp3",
 		"title": "Space Asshole",
-		"duration": 2340,
+		"duration":2340,
 		"artist": "Chris Remo"
 	},
     {
@@ -84,9 +84,75 @@
 		"artist":"Lyn Inaizumi, Rike Schmalz, and Shoji Meguro"
     },
 	{
-		"url": "https://addi-bot.ca/files/partridge%20-%20escape%20from%20porkbelly.mp3",
+		"url": "https://addi-bot.ca/files/partidge%20-%20escape%20from%20porkbelly.mp3",
 		"title": "Escape from Porkbelly",
-		"duration": 990,
+		"duration":990,
 		"artist": "Partridge"
+	},
+	{
+		"url": "https://addi-bot.ca/files/Every%20light%20is%20blinking%20at%20once.ogg",
+		"title": "Every Light is Blinking at Once",
+		"duration":2230,
+		"artist": "Anonymous"
+	},
+	{
+		"url": "https://addi-bot.ca/files/Lasers%20rip%20apart%20the%20bulkhead.ogg",
+		"title": "Lasers Rip Apart the Bulkhead",
+		"duration":2170,
+		"artist": "Anonymous"
+	},
+	{
+		"url": "https://addi-bot.ca/files/Phoron%20will%20make%20us%20rich.ogg",
+		"title": "Phoron Will Make Us Rich",
+		"duration":1340,
+		"artist": "Anonymous"
+	},
+	{
+		"url": "https://addi-bot.ca/files/Thunderdome.mp3",
+		"title": "Thunderdome",
+		"duration":2020,
+		"artist": "Anonymous"
+	},
+	{
+		"url": "https://addi-bot.ca/files/Traitor%20Absconditus.mp3",
+		"title": "Traitor Absconditus",
+		"duration":3300,
+		"artist": "Anonymous"
+	},
+	{
+		"url": "https://addi-bot.ca/files/Tintin%20in%20space.mp3",
+		"title": "Tintin in Space",
+		"duration":2320,
+		"artist": "Anonymous"
+	},
+	{
+		"url": "https://addi-bot.ca/files/Paulstretch.mp3",
+		"title": "Paulstretch",
+		"duration":510,
+		"artist": "Anonymous"
+	},
+	{
+		"url": "https://addi-bot.ca/files/Title2.mp3",
+		"title": "Title 2",
+		"duration":1500,
+		"artist": "Anonymous"
+	},
+	{
+		"url": "https://addi-bot.ca/files/title1.mp3",
+		"title": "Title 1",
+		"duration":1190,
+		"artist": "Anonymous"
+	},
+	{
+		"url": "https://addi-bot.ca/files/Clouds%20of%20fire.mp3",
+		"title": "Clouds of Fire",
+		"duration":1170,
+		"artist": "Anonymous"
+	},
+	{
+		"url": "https://addi-bot.ca/files/Endless%20space.mp3",
+		"title": "Endless Space",
+		"duration":2130,
+		"artist": "Anonymous"
 	}
 ]

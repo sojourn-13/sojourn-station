@@ -196,6 +196,26 @@
 	else // Otherwise, a green color for our nominal NSA
 		dat += span("highlight", "Neural System Accumulation: <font color='green'>[NSA] / [NSA_MAX]</font>")
 
+	// Check for systemic organ failure (3+ vital organs with wounds of severity 1+)
+	var/vital_organs_with_wounds = 0
+	for(var/obj/item/organ/internal/I in H.internal_organs)
+		// Check if this is a vital organ (heart, lungs, brain, liver, etc.)
+		if(istype(I, /obj/item/organ/internal/vital) || I.vital)
+			// Check if it has wounds with severity >= 1
+			var/list/wounds = I.GetComponents(/datum/component/internal_wound)
+			for(var/datum/component/internal_wound/IW in wounds)
+				if(IW.severity >= 1)
+					vital_organs_with_wounds++
+					break // Only count this organ once even if it has multiple wounds
+
+	if(vital_organs_with_wounds >= 3)
+		dat += span("highlight", "<font color='red'><b>⚠ CRITICAL: MAJOR SYSTEMIC ORGAN FAILURE ⚠</b></font>")
+
+	// Check for facial disfigurement (less intrusive)
+	var/obj/item/organ/external/head = H.get_organ(BP_HEAD)
+	if(head && head.disfigured)
+		dat += span("highlight", "<font color='#666'><i>Note: Facial disfigurement detected</i></font>")
+
 	if(M.tod && (M.stat == DEAD || (M.status_flags & FAKEDEATH)))
 		dat += span("highlight", "Time of Death: [M.tod]")
 	if(mode == 1)
@@ -281,12 +301,14 @@
 		dat += SPAN_WARNING("Subject appears to have cellular corruption.")
 	if (M.has_brain_worms())
 		dat += SPAN_WARNING("Subject has an anomalous neural pattern. Further investigation required.")
-	else if (M.getBrainLoss() >= 60 || !M.has_brain())
+	else if ((M.getBrainLoss() >= 60 || !M.has_brain()) && M.stat == DEAD)
 		dat += SPAN_WARNING("Subject is brain dead.")
+	else if (M.getBrainLoss() >= 60)
+		dat += SPAN_WARNING("Critical brain damage detected. Subject requires immediate medical attention.")
 	else if (M.getBrainLoss() >= 25)
 		dat += SPAN_WARNING("Severe brain damage detected. Subject likely to have a traumatic brain injury.")
 	else if (M.getBrainLoss() >= 10)
-		dat += SPAN_WARNING("Significant brain damage detected. Subject may have had a concussion.")
+		dat += SPAN_WARNING("Significant brain damage detected. Subject may have had a minor brain injury.")
 
 	if(H.vessel)
 		var/blood_volume = H.vessel.get_reagent_amount("blood")
@@ -301,4 +323,5 @@
 		else
 			dat += span("highlight", "Blood Level Normal: [blood_percent]% [blood_volume]cl. Type: [blood_type]")
 	dat += "<span class='highlight'>Subject's pulse: <font color='[H.pulse() == PULSE_THREADY || H.pulse() == PULSE_NONE ? "red" : "#0080ff"]'>[H.get_pulse(GETPULSE_TOOL)] bpm.</font></span>"
+
 	. = jointext(dat, "<br>")

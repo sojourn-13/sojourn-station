@@ -6,6 +6,7 @@
 	uid = "techno_adv"
 	tree_x = 0.18
 	tree_y = 0.7
+	export_point_cost_mult = 1.25
 	spawn_always = TRUE
 	markup = COMMON_GOODS
 	offer_limit = 20

@@ -1,7 +1,7 @@
 //Oddities which are specific to factions or certain jobs.
 /obj/item/biosyphon
 	name = "Biosiphon Anomaly"
-	desc = "An exceedingly rare bluespace anomaly discovered by a marshal ranger outside the colony. After weeks of study it was determined its only purpose was duplicating boxes of donuts. Soteria's disappointment was so great they gave the item to security for safe keeping. Months after its discovery it began to create refined cases of incredibly tasty donuts filled with long-lasting effective stimulants every two hours."
+	desc = "An exceedingly rare bluespace anomaly discovered by a survey team outside the colony. After weeks of study it was determined its only purpose was duplicating boxes of donuts. Soteria's disappointment was so great they gave the item to security for safe keeping. Months after its discovery it began to create refined cases of incredibly tasty donuts filled with long-lasting effective stimulants every two hours."
 	icon = 'icons/obj/device.dmi'
 	icon_state = "biosyphon"
 	item_state = "biosyphon"
@@ -172,18 +172,11 @@
 				reagent.remove_self(reagent_amount) //Purge useless reagents out
 
 		if(blood_amount)
-			// Convert nutriment into nanoblood at a 20:1 ratio
+			// Convert nutriment into nanoblood at a 2:1 ratio
 			var/obj/item/reagent_containers/blood/empty/blood_pack = new /obj/item/reagent_containers/blood/empty(get_turf(src))
-			var/nano_units = blood_amount / 4
-			if(nano_units < 1)
-				// Fallback: if not enough nutriment to make a full unit, still create a tiny amount
-				nano_units = 1
+			var/nano_units = blood_amount / 2 //2:1 ratio to make it a bit more efficient
 			// Add nanoblood reagent (drug)
-			if(istype(/datum/reagent/drug/nanoblood, /datum/reagent))
-				blood_pack.reagents.add_reagent("nanoblood", nano_units)
-			else
-				// If the specific datum doesn't exist, fsall back to plain blood to avoid runtime errors
-				blood_pack.reagents.add_reagent("blood", blood_amount, list("donor"=null,"blood_DNA"=null,"blood_type"="O-","resistances"=null,"trace_chem"=null))
+			blood_pack.reagents.add_reagent("nanoblood", nano_units)
 			blood_amount = 0
 			visible_message(SPAN_NOTICE("[src] drop [blood_pack]."))
 		else

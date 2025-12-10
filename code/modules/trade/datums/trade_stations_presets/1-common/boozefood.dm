@@ -5,6 +5,7 @@
 	uid = "commissary"
 	tree_x = 0.42
 	tree_y = 0.9
+	export_point_cost_mult = 1
 	start_discovered = TRUE
 	spawn_always = TRUE
 	base_income = 1600

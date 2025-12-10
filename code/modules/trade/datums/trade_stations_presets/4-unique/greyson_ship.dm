@@ -3,6 +3,7 @@
 	uid = "greyson"
 	tree_x = 0.66
 	tree_y = 0.7
+	export_point_cost_mult = 2.5
 	start_discovered = FALSE
 	spawn_always = TRUE
 	markup = RARE_GOODS

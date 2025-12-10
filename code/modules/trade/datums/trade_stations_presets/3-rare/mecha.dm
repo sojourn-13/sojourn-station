@@ -2,6 +2,7 @@
 	name_pool = list("UCCSJ 'Junker'" = "Urianth Construction Company Construction Shuttle 'Junker'. Seems that they construct and sell rare exosuit parts. Sensors showing that they have a roving vessel, maybe they have one last batch for sale.\
 		\"Hey, dudes, it seems you want some mechas? We currently got surplus and spare parts.\"")
 	icon_states = list("htu_frigate", "ship")
+	export_point_cost_mult = 1.75
 	tree_x = 0.78
 	tree_y = 0.8
 	base_income = 1600

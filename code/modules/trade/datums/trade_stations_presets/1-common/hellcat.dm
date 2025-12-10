@@ -5,6 +5,7 @@
 	icon_states = list("ihs_frigate", "ship")
 	tree_x = 0.82
 	tree_y = 0.9
+	export_point_cost_mult = 1
 	start_discovered = TRUE
 	markup = COMMON_GOODS
 	uid = "guns_basic"

@@ -1058,7 +1058,24 @@ var/list/rank_prefix = list(\
 
 	to_chat(usr, "You must[self ? "" : " both"] remain still until counting is finished.")
 	if(do_mob(usr, src, 60))
-		to_chat(usr, "<span class='notice'>[self ? "Your" : "[src]'s"] pulse is [src.get_pulse(GETPULSE_HAND)].</span>")
+		var/pulse_msg = "<span class='notice'>[self ? "Your" : "[src]'s"] pulse is [src.get_pulse(GETPULSE_HAND)].</span>"
+		to_chat(usr, pulse_msg)
+
+		// Add shock-related feedback
+		if(src.shock_stage)
+			var/shock_feedback = ""
+			if(src.shock_stage >= 20 && src.shock_stage < 60)
+				shock_feedback = "[self ? "Your" : "[src]'s"] heartbeat feels rapid and somewhat irregular."
+			else if(src.shock_stage >= 60 && src.shock_stage < 100)
+				shock_feedback = "[self ? "Your" : "[src]'s"] pulse feels very fast and noticeably irregular."
+			else if(src.shock_stage >= 100 && src.shock_stage < 140)
+				shock_feedback = "[self ? "Your" : "[src]'s"] pulse is racing and extremely irregular!"
+			else if(src.shock_stage >= 140)
+				shock_feedback = "[self ? "Your" : "[src]'s"] pulse is dangerously erratic, alternating between fast and slow!"
+
+			if(shock_feedback)
+				to_chat(usr, "<span class='warning'>[shock_feedback]</span>")
+
 	else
 		to_chat(usr, SPAN_WARNING("You failed to check the pulse. Try again."))
 

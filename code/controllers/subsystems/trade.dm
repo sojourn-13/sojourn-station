@@ -13,6 +13,11 @@ SUBSYSTEM_DEF(trade)
 	var/list/datum/trade_station/all_stations = list()
 	var/list/datum/trade_station/discovered_stations = list()
 
+	// Export / unlock points system
+	var/export_points = 0                    // Points accumulated from exports (global pool used to unlock stations)
+	var/export_points_per_credit = 0.8    // How many unlock points are awarded per export credit (tweak as needed)
+	var/initial_unlock_count = 2            // How many high-value stations to unlock at roundstart
+
 	// For exports
 	var/list/offer_types = list()						// List of offer datums
 	var/list/hockable_tags = list(SPAWN_EXCELSIOR)		// List of spawn tags of hockable items
@@ -81,6 +86,52 @@ SUBSYSTEM_DEF(trade)
 		weightstationlist.Remove(station_instance)
 	init_stations_by_list(stations2init)
 
+	// Randomly make a small selection of common/uncommon non-start stations discovered at roundstart
+	// We restrict the pool to stations that are not start_discovered, not spawn_always and appear to be common/uncommon
+	var/list/remaining = list()
+	for(var/path in subtypesof(/datum/trade_station))
+		var/datum/trade_station/s = new path()
+		// Only consider stations that aren't auto-start discovered or forced spawn
+		if(!s.start_discovered && !s.spawn_always)
+			// Prefer stations with actual inventory
+			if(s.unique_good_count && s.unique_good_count > 0)
+				var/already = FALSE
+				for(var/datum/trade_station/D in discovered_stations)
+					if(istype(D, path))
+						already = TRUE
+						break
+				if(!already)
+					remaining += s
+				else
+					qdel(s)
+			else
+				qdel(s)
+		else
+			qdel(s)
+
+	if(remaining.len)
+		// build a weight list based on estimated inventory value
+		var/list/weightlist = list()
+		for(var/datum/trade_station/s in remaining)
+			// weight by estimated station impact (inventory size + base income)
+			var/impact = max(1, s.unique_good_count) + max(1, s.base_income / 1000)
+			var/weight_val = max(1, round(100.0 * impact))
+			weightlist[s] = weight_val
+
+		var/picked = 0
+		while(picked < initial_unlock_count && length(weightlist))
+			var/datum/trade_station/chosen = pickweight(weightlist)
+			if(!chosen)
+				break
+			// small random chance to skip to add variety
+			if(rand(1,100) <= 30)
+				weightlist.Remove(chosen)
+				continue
+			discovered_stations |= chosen
+			weightlist.Remove(chosen)
+			picked += 1
+
+
 // Add a random trading station after the start of the round among pool of stations not already spawned
 /datum/controller/subsystem/trade/proc/AddStation(var/turf/station_loc)
 	var/list/availablestationlist = collect_available_trade_stations()
@@ -141,12 +192,26 @@ SUBSYSTEM_DEF(trade)
 			. += a
 
 /datum/controller/subsystem/trade/proc/discover_by_uid(list/uid_list)
+	// If force is passed as TRUE, we immediately unlock the target stations regardless of recommendations_needed
+	// uid_list may be a list of uids
+	var/force = FALSE
+	// If caller appended a boolean as the last element of the list, treat it as a force flag
+	if(uid_list?.len && (uid_list[uid_list.len] == TRUE || uid_list[uid_list.len] == FALSE))
+		force = uid_list[uid_list.len]
 	for(var/target_uid in uid_list)
-		for(var/datum/trade_station/station in all_stations)
-			if(station.uid == target_uid)
-				station.recommendations_needed -= 1
-				if(!station.recommendations_needed)
-					discovered_stations |= station
+		// skip the optional trailing force boolean if present
+		if(target_uid == TRUE || target_uid == FALSE)
+			continue
+		var/datum/trade_station/station = get_station_by_uid(target_uid)
+		if(!station)
+			continue
+		if(force)
+			station.recommendations_needed = 0
+			discovered_stations |= station
+		else
+			station.recommendations_needed -= 1
+			if(!station.recommendations_needed)
+				discovered_stations |= station
 
 /datum/controller/subsystem/trade/proc/get_station_by_uid(target_uid)
 	for(var/datum/trade_station/station in all_stations)
@@ -623,8 +688,72 @@ SUBSYSTEM_DEF(trade)
 		var/datum/transaction/T_backup = new(cost, lonestar_account_backup.get_name(), "Export", TRADE_SYSTEM_IC_NAME)
 		T_backup.apply_to(lonestar_account_backup)
 
+	// Award export points based on the export value to encourage exports unlocking stations
+	if(cost > 0)
+		add_export_points(cost)
 
 	senderBeacon.start_export()
+
+
+
+/datum/controller/subsystem/trade/proc/add_export_points(var/credits)
+	if(!isnum(credits) || credits <= 0)
+		return
+
+	var/points = credits * export_points_per_credit
+	export_points += points
+
+
+
+/datum/controller/subsystem/trade/proc/try_unlock_stations_from_exports()
+	// We iterate locked stations with recommendation or uid requirements and attempt to discover some
+	// using the global export_points pool. Each station will require an amount proportional to its
+	// base prices of inventory (rough heuristic) multiplied by a constant.
+
+	var/list/locked_candidates = list()
+	for(var/datum/trade_station/station in all_stations)
+		// Defensive checks: skip null, deleted, or wrong-typed entries which can crash when
+		// accessing members like .uid or .unique_good_count.
+		if(!station || QDELETED(station) || !istype(station, /datum/trade_station))
+			continue
+		if(!discovered_stations.Find(station))
+			// skip stations that are forced to be spawn_always or have zero/invalid uid
+			if(!station.uid)
+				continue
+			locked_candidates += station
+
+	if(!locked_candidates.len)
+		return
+
+	// Score stations by estimated impact (inventory and base income) and pick by weight
+	var/list/weightlist = list()
+	for(var/datum/trade_station/station in locked_candidates)
+		var/impact = max(1, station.unique_good_count) + max(1, station.base_income / 1000)
+		weightlist[station] = max(1, round(100.0 * impact))
+
+	// Unlock up to initial_unlock_count stations if points allow, preferring high value ones
+	var/unlocks = 0
+	while(unlocks < initial_unlock_count && length(weightlist))
+		var/datum/trade_station/station = pickweight(weightlist)
+		var/mult = station.export_point_cost_mult
+		if(!station)
+			break
+		if(unlocks >= initial_unlock_count)
+			break
+		var/required = max(1000, round((max(1, station.unique_good_count) + max(1, station.base_income / 1000)) * 100)) * mult // required points heuristic (much reduced multiplier)
+		if(export_points >= required)
+			export_points -= required
+			discovered_stations |= station
+			unlocks += 1
+			// Ensure station is initialized (spawned) when discovered if not spawned yet
+			if(!all_stations.Find(station))
+				init_station(station)
+		// Remove the station from the weightlist so it cannot be picked again and
+		// to ensure the loop progresses even if export_points are insufficient
+		// for other stations. This prevents pickweight from repeatedly returning
+		// the same station and causing an infinite loop.
+		weightlist.Remove(station)
+
 
 /datum/controller/subsystem/trade/proc/get_export_price_multiplier(atom/movable/target)
 	if(!target || target.anchored)
