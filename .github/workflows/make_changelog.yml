@@ -1,5 +1,5 @@
 name: Generate Changelog
-
+environment: BOT_TOKEN
 on:
   push:
     branches:
