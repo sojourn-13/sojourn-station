@@ -1,0 +1,32 @@
+tags:
+    tweak: tweak
+    soundadd: soundadd
+    sounddel: sounddel
+    add: add
+    del: del
+    imageadd: imageadd
+    imagedel: imagedel
+    maptweak: maptweak
+    spellcheck: spellcheck
+    experiment: experiment
+    balance: balance
+    admin: admin
+    server: server
+    fix: fix
+
+defaults:
+    add: Added new things
+    del: Removed old things
+    tweak: tweaked a few things
+    balance: rebalanced something
+    fix: fixed a few things
+    soundadd: added a new sound thingy
+    sounddel: removed an old sound thingy
+    imageadd: added some icons and images
+    imagedel: deleted some icons and images
+    spellcheck: fixed a few typos
+    code: changed some code
+    refactor: refactored some code
+    config: changed some config setting
+    admin: messed with admin stuff
+    server: something server ops should know
