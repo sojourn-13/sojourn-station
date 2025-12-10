@@ -3,7 +3,7 @@
 
 //backpack item
 /obj/item/device/defib_kit
-	name = "defibrillator"
+	name = "auto-resuscitator"
 	desc = "A device that delivers powerful shocks to detachable paddles that resuscitate incapacitated patients."
 	icon = 'icons/obj/defibrillator.dmi'
 	icon_state = "defibunit"
@@ -176,8 +176,8 @@
 */
 
 /obj/item/device/defib_kit/compact
-	name = "compact defibrillator"
-	desc = "A belt-equipped defibrillator that can be rapidly deployed."
+	name = "compact auto-resuscitator"
+	desc = "A belt-equipped auto-resuscitator that can be rapidly deployed."
 	icon_state = "defibcompact"
 	item_state = "defibcompact"
 	w_class = ITEM_SIZE_NORMAL
@@ -191,8 +191,8 @@
 	cell_type = /obj/item/cell/medium
 
 /obj/item/device/defib_kit/compact/combat
-	name = "combat defibrillator"
-	desc = "A belt-equipped blood-red defibrillator that can be rapidly deployed. Does not have the restrictions or safeties of conventional defibrillators and can revive through space suits."
+	name = "combat auto-resuscitator"
+	desc = "A belt-equipped blood-red auto-resuscitator that can be rapidly deployed. Does not have the restrictions or safeties of conventional auto-resuscitators and can revive through space suits."
 	paddle_type = /obj/item/shockpaddles/linked/combat
 
 	oxygain = 40
@@ -202,8 +202,8 @@
 
 
 /obj/item/device/defib_kit/compact/combat/adv
-	name = "advanced defibrillator"
-	desc = "A belt-equipped SI branded defibrillator that can be rapidly deployed. Does not have the restrictions or safeties of conventional defibrillators and can revive through space suits."
+	name = "advanced auto-resuscitator"
+	desc = "A belt-equipped SI branded auto-resuscitator that can be rapidly deployed. Does not have the restrictions or safeties of conventional auto-resuscitators and can revive through space suits."
 	paddle_type = /obj/item/shockpaddles/linked/combat/advanced
 	icon_state = "advdefibcompact"
 
@@ -221,7 +221,7 @@
 	chargetime = (1 SECONDS)
 
 /obj/item/shockpaddles/linked/combat/advanced
-	name = "advanced defibrillator paddles"
+	name = "advanced auto-resuscitator paddles"
 	desc = "A pair of ploymore-gripped paddles with flat metals surfaces that are used to deliver powerful controled electric shocks."
 	si_only = TRUE
 	advanced_pads = TRUE
@@ -229,7 +229,7 @@
 //paddles
 
 /obj/item/shockpaddles
-	name = "defibrillator paddles"
+	name = "auto-resuscitator paddles"
 	desc = "A pair of plastic-gripped paddles with flat metal surfaces that are used to deliver powerful electric shocks."
 	icon = 'icons/obj/defibrillator.dmi'
 	icon_state = "defibpaddles"
@@ -326,7 +326,7 @@
 
 	var/deadtime = world.time - H.timeofdeath
 	if (deadtime > DEFIB_TIME_LIMIT && !H.isSynthetic())
-		return "buzzes: \"Resuscitation failed - Excessive neural degeneration. Further attempts futile.\""
+		return "buzzes: \"Resuscitation failed - Excessive neural degeneration. Begin neural regeneration before further attempts.\""
 /* commenting this out for now due to it seeming to be a bit *too* sensitive.
 	if(H.getBrainLoss() >= 200)
 		return "buzzes: \"Resuscitation failed - Massive neural damage. Further attempts futile.\""
@@ -335,10 +335,10 @@
 
 	if(H.isSynthetic())
 		if(H.health + H.getOxyLoss() + H.getToxLoss() <= HEALTH_THRESHOLD_DEAD)
-			return "buzzes: \"Resuscitation failed - Severe damage detected. Begin manual repair before further attempts futile.\""
+			return "buzzes: \"Resuscitation failed - Severe bodily damage makes recovery of patient impossible via jumper cables. Begin manual repair before further attempts.\""
 
 	else if(H.health + H.getOxyLoss() <= HEALTH_THRESHOLD_DEAD || (HUSK in H.mutations) || can_defib(H))
-		return "buzzes: \"Resuscitation failed - Severe tissue damage makes recovery of patient impossible via defibrillator. Further attempts futile.\""
+		return "buzzes: \"Resuscitation failed - Severe bodily damage makes recovery of patient impossible via auto-resuscitator. Begin medical intervention before further attempts.\""
 
 	var/bad_vital_organ = check_vital_organs(H)
 	if(bad_vital_organ)
@@ -606,7 +606,7 @@
 
 		M.stats.changeStat(stat_to_change, -rngStatRemoved)
 		log_and_message_admins("Removed [-rngStatRemoved] to the [stat_to_change] stat of [M.real_name]")
-	
+
 	if(!M.stats.getPerk(PERK_REZ_SICKNESS) && !M.stats.getPerk(PERK_REZ_SICKNESS_SEVERE) && !M.stats.getPerk(PERK_REZ_SICKNESS_FATAL))
 		switch(M.stats.getStat(STAT_TGH))
 			if(-1200 to 40)
@@ -620,15 +620,15 @@
 				log_and_message_admins("Added mild revival sickness to [M].")
 	*/
 /obj/item/shockpaddles/proc/apply_brain_damage(mob/living/carbon/human/H, var/deadtime)
-	if(deadtime < DEFIB_TIME_LOSS) return
-
 	if(!H.should_have_process(BP_BRAIN)) return //no brain
 
 	var/obj/item/organ/internal/vital/brain/brain = H.random_organ_by_process(BP_BRAIN)
 	if(!brain) return //no brain
 
-	var/brain_damage = CLAMP((deadtime - DEFIB_TIME_LOSS)/(DEFIB_TIME_LIMIT - DEFIB_TIME_LOSS)*brain.max_damage, H.getBrainLoss(), brain.max_damage)
-	H.setBrainLoss(brain_damage)
+	// Defibrillation process: first remove all brain damage, then apply 80 brain damage
+	// This represents the trauma of electrical shock to restart the heart
+	H.setBrainLoss(0) // Clear all existing brain damage
+	H.adjustBrainLoss(80) // Apply 80 brain damage as revival penalty
 
 /obj/item/shockpaddles/proc/make_announcement(var/message, var/msg_class)
 	audible_message("<b>\The [src]</b> [message]", "\The [src] vibrates slightly.")
@@ -659,8 +659,8 @@
 	..()
 
 /obj/item/shockpaddles/robot
-	name = "defibrillator paddles"
-	desc = "A pair of advanced shockpaddles powered by a robot's internal power cell, able to penetrate thick clothing."
+	name = "auto-resuscitator paddles"
+	desc = "A pair of advanced resuscitator paddles powered by a robot's internal power cell, able to penetrate thick clothing."
 	chargecost = 50
 	combat = 1
 	use_on_synthetic = 0
@@ -680,8 +680,8 @@
 		return (R.cell && R.cell.checked_use(charge_amt))
 
 /obj/item/shockpaddles/robot/combat
-	name = "combat defibrillator paddles"
-	desc = "A pair of advanced shockpaddles powered by a robot's internal power cell, able to penetrate thick clothing.  This version \
+	name = "combat auto-resuscitator paddles"
+	desc = "A pair of advanced resuscitator paddles powered by a robot's internal power cell, able to penetrate thick clothing.  This version \
 	appears to be optimized for combat situations, foregoing the safety inhabitors in favor of a faster charging time."
 	safety = 0
 	chargetime = (1 SECONDS)
@@ -736,7 +736,7 @@
 
 
 /obj/item/shockpaddles/standalone
-	desc = "A pair of shockpaddles powered by a small battery."
+	desc = "A pair of resuscitator paddles powered by a small battery."
 
 	chargecost = 20
 
@@ -786,8 +786,8 @@
 	. = ..()
 
 /obj/item/shockpaddles/robot
-	name = "defibrillator paddles"
-	desc = "A pair of advanced shockpaddles powered by a robot's internal power cell, able to penetrate thick clothing."
+	name = "auto-resuscitator paddles"
+	desc = "A pair of advanced resuscitator paddles powered by a robot's internal power cell, able to penetrate thick clothing."
 	chargecost = 50
 	combat = 1
 	icon_state = "defibpaddles0"
@@ -805,15 +805,15 @@
 		return (R.cell && R.cell.checked_use(charge_amt))
 
 /obj/item/shockpaddles/robot/combat
-	name = "combat defibrillator paddles"
-	desc = "A pair of advanced shockpaddles powered by a robot's internal power cell, able to penetrate thick clothing.  This version \
+	name = "combat auto-resuscitator paddles"
+	desc = "A pair of advanced resuscitation paddles powered by a robot's internal power cell, able to penetrate thick clothing.  This version \
 	appears to be optimized for combat situations, foregoing the safety inhabitors in favor of a faster charging time."
 	safety = 0
 	chargetime = (10)
 
 /* From the Bay port, this doesn't seem to have a sprite.
 /obj/item/shockpaddles/standalone/contractor
-	name = "defibrillator paddles"
+	name = "auto-resuscitator paddles"
 	desc = "A pair of unusual looking paddles powered by an experimental miniaturized reactor. It possesses both the ability to penetrate armor and to deliver powerful shocks."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "defibpaddles0"
@@ -823,7 +823,7 @@
 	chargetime = (1 SECONDS)
 */
 
-//FBP Defibs
+//FBP Auto-resuscitators
 /obj/item/device/defib_kit/jumper_kit
 	name = "jumper cable kit"
 	desc = "A device that delivers powerful shocks to detachable jumper cables that are capable of reviving prosthetics chests."
@@ -843,7 +843,7 @@
 
 /obj/item/shockpaddles/robot/jumper
 	name = "jumper cables"
-	desc = "A pair of advanced shockpaddles powered by a robot's internal power cell, able to penetrate thick clothing."
+	desc = "A pair of advanced resuscitator paddles powered by a robot's internal power cell, able to penetrate thick clothing."
 	icon_state = "jumperpaddles0"
 	item_state = "jumperpaddles0"
 	use_on_synthetic = 1

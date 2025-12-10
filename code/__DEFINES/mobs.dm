@@ -476,8 +476,8 @@
 
 #define ORGAN_HEALTH_MULTIPLIER 1
 #define ORGAN_REGENERATION_MULTIPLIER 0.2
-#define WOUND_BLEED_MULTIPLIER 0.035 //Bleeding wounds drip damage*this units of blood per process tick, this also cheats by doble taking, so higher numbers byond 0.1 are insanely bleedy
-#define OPEN_ORGAN_BLEED_AMOUNT 0.5 //Wounds with open, unclamped incisions bleed this many units of blood per process tick
+#define WOUND_BLEED_MULTIPLIER 0.05 //Bleeding wounds drip damage*this units of blood per process tick - increased from 0.015 to make bleeding more dangerous
+#define OPEN_ORGAN_BLEED_AMOUNT 0.5 //Wounds with open, unclamped incisions bleed this many units of blood per process tick - increased from 0.25
 
 #define HEAT_MOBIGNITE_THRESHOLD 530 //minimum amount of heat an object needs to ignite a mob when it hits the mob
 

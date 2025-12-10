@@ -70,7 +70,7 @@
 	M.stats.addTempStat(STAT_VIG, 20, STIM_TIME, "kriotol")
 	M.add_chemical_effect(CE_DARKSIGHT, SEE_INVISIBLE_NOLIGHTING)
 	M.add_chemical_effect(CE_SPEEDBOOST, 0.2)
-	M.add_chemical_effect(CE_PULSE, 2)
+	M.add_chemical_effect(CE_PULSE, 1)
 
 /datum/reagent/stim/robustitol
 	name = "Robustitol"
@@ -86,10 +86,6 @@
 /datum/reagent/stim/robustitol/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.stats.addTempStat(STAT_TGH, 60, STIM_TIME, "robustitol")
 	M.stats.addTempStat(STAT_ROB, 60, STIM_TIME, "robustitol")
-	M.stats.addTempStat(STAT_COG, -100, STIM_TIME, "robustitol")
-	M.stats.addTempStat(STAT_BIO, -100, STIM_TIME, "robustitol")
-	M.stats.addTempStat(STAT_VIG, -100, STIM_TIME, "robustitol")
-	M.stats.addTempStat(STAT_MEC, -100, STIM_TIME, "robustitol")
 
 /datum/reagent/drug/robustitol/withdrawal_act(mob/living/carbon/M)
 	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_BASIC, STIM_TIME, "robustitol_w")
@@ -111,7 +107,7 @@
 	M.stats.addTempStat(STAT_TGH, 25, STIM_TIME, "naratonin")
 	M.stats.addTempStat(STAT_ROB, 25, STIM_TIME, "naratonin")
 	M.add_chemical_effect(CE_SPEEDBOOST, 0.6)
-	M.add_chemical_effect(CE_PULSE, 2)
+	M.add_chemical_effect(CE_PULSE, 1)
 
 /datum/reagent/medicine/spaceacillin/cindicillin
 	name = "Cindicillin"

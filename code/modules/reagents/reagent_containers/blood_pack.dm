@@ -94,120 +94,114 @@
 	attached_patient = null
 	STOP_PROCESSING(SSobj, src)
 
-// MouseDrop functionality to link blood bag to a person like an IV stand
-/obj/item/reagent_containers/blood/MouseDrop_T(atom/dropping, mob/user, src_location, over_location, src_control, over_control, params)
-	if(!istype(dropping, /mob/living/carbon/human))
-		return ..()
-
-	var/mob/living/carbon/human/target = dropping
-
-	// Basic validation checks
-	if(!user || !target)
-		return ..()
-
-	if(!Adjacent(user) || !target.Adjacent(user))
-		to_chat(user, SPAN_WARNING("You need to be closer to both the blood bag and [target]."))
-		return ..()
-
-	if(user.incapacitated())
-		to_chat(user, SPAN_WARNING("You can't do this while incapacitated."))
-		return ..()
-
-	if(target.stat == DEAD)
-		to_chat(user, SPAN_WARNING("There's no point in hooking up an IV to a dead person."))
-		return ..()
-
-	// Check if already connected to this blood bag or another IV
-	if(attached_patient)
-		to_chat(user, SPAN_WARNING("[src] is already connected to [attached_patient]."))
-		return ..()
-
-	var/obj/structure/medical_stand/existing_stand = null
-	for(var/obj/structure/medical_stand/stand in range(2, target))
-		if(stand.attached == target)
-			existing_stand = stand
-			break
-
-	if(existing_stand)
-		to_chat(user, SPAN_WARNING("[target] is already connected to [existing_stand]."))
-		return ..()
-
-	// Check for nearby blood bags already connected to target
-	for(var/obj/item/reagent_containers/blood/bag in range(2, target))
-		if(bag != src && bag.attached_patient == target)
-			to_chat(user, SPAN_WARNING("[target] is already connected to [bag]."))
-			return ..()
-
-	// Check if we have a medical stand nearby to attach to
-	var/obj/structure/medical_stand/nearest_stand = null
-	var/min_distance = 3
-	for(var/obj/structure/medical_stand/stand in range(2, user))
-		if(!stand.beaker && !stand.attached)
-			var/distance = get_dist(stand, user)
-			if(distance < min_distance)
-				nearest_stand = stand
-				min_distance = distance
-
-	// If we have a medical stand, use it
-	if(nearest_stand)
-		user.visible_message(
-			SPAN_NOTICE("[user] begins setting up an IV line between [src] and [target] using [nearest_stand]."),
-			SPAN_NOTICE("You begin setting up an IV line between [src] and [target] using [nearest_stand].")
-		)
-
-		if(!do_after(user, 30, target))
-			return ..()
-
-		// Move blood bag to the stand and connect everything
-		if(!user.unEquip(src, nearest_stand))
-			return ..()
-
-		nearest_stand.beaker = src
-		nearest_stand.attached = target
-		nearest_stand.update_icon()
-
-		user.visible_message(
-			SPAN_NOTICE("[user] successfully connects [src] to [target] via [nearest_stand]."),
-			SPAN_NOTICE("You successfully connect [src] to [target] via [nearest_stand]. The IV is now active.")
-		)
-
-		// Start the IV process
-		START_PROCESSING(SSobj, nearest_stand)
-
-		return TRUE
-
-	// No medical stand available, set up direct connection
-	user.visible_message(
-		SPAN_NOTICE("[user] begins setting up a direct IV line between [src] and [target]."),
-		SPAN_NOTICE("You begin setting up a direct IV line between [src] and [target].")
-	)
-
-	if(!do_after(user, 40, target)) // Takes longer without proper equipment
-		return ..()
-
-	// Set transfer rate
-	var/chosen_rate = input(user, "Choose transfer rate:", "IV Transfer Rate") as null|anything in possible_transfer_amounts
-	if(!chosen_rate)
-		return ..()
-
-	iv_transfer_rate = chosen_rate
-	attached_patient = target
-
-	user.visible_message(
-		SPAN_NOTICE("[user] successfully connects [src] directly to [target]. The IV is now active at [iv_transfer_rate] units per second."),
-		SPAN_NOTICE("You successfully connect [src] directly to [target]. The IV is now active at [iv_transfer_rate] units per second.")
-	)
-
-	// Start processing for direct IV
-	START_PROCESSING(SSobj, src)
-
-	return TRUE
-
-// MouseDrop functionality to disconnect blood bag from IV when dragged to hand/ground
+// MouseDrop functionality to connect blood bag to person or disconnect from IV when dragged to hand/ground
 /obj/item/reagent_containers/blood/MouseDrop(atom/over_object, src_location, over_location, src_control, over_control, params)
 	var/mob/user = usr
 	if(!user)
 		return ..()
+
+	// Handle dragging to a person (same logic as MouseDrop_T but in the right place)
+	if(ishuman(over_object))
+		var/mob/living/carbon/human/target = over_object
+
+		// Basic validation checks
+		if(!Adjacent(user) || !target.Adjacent(user))
+			to_chat(user, SPAN_WARNING("You need to be closer to both the blood bag and [target]."))
+			return ..()
+
+		if(user.incapacitated())
+			to_chat(user, SPAN_WARNING("You can't do this while incapacitated."))
+			return ..()
+
+		if(target.stat == DEAD)
+			to_chat(user, SPAN_WARNING("There's no point in hooking up an IV to a dead person."))
+			return ..()
+
+		// Check if already connected to this blood bag or another IV
+		if(attached_patient)
+			to_chat(user, SPAN_WARNING("[src] is already connected to [attached_patient]."))
+			return ..()
+
+		var/obj/structure/medical_stand/existing_stand = null
+		for(var/obj/structure/medical_stand/stand in range(2, target))
+			if(stand.attached == target)
+				existing_stand = stand
+				break
+
+		if(existing_stand)
+			to_chat(user, SPAN_WARNING("[target] is already connected to [existing_stand]."))
+			return ..()
+
+		// Check for nearby blood bags already connected to target
+		for(var/obj/item/reagent_containers/blood/bag in range(2, target))
+			if(bag != src && bag.attached_patient == target)
+				to_chat(user, SPAN_WARNING("[target] is already connected to [bag]."))
+				return ..()
+
+		// Check if we have a medical stand nearby to attach to
+		var/obj/structure/medical_stand/nearest_stand = null
+		var/min_distance = 3
+		for(var/obj/structure/medical_stand/stand in range(2, user))
+			if(!stand.beaker && !stand.attached)
+				var/distance = get_dist(stand, user)
+				if(distance < min_distance)
+					nearest_stand = stand
+					min_distance = distance
+
+		// If we have a medical stand, use it
+		if(nearest_stand)
+			user.visible_message(
+				SPAN_NOTICE("[user] begins setting up an IV line between [src] and [target] using [nearest_stand]."),
+				SPAN_NOTICE("You begin setting up an IV line between [src] and [target] using [nearest_stand].")
+			)
+
+			if(!do_after(user, 30, target))
+				return ..()
+
+			// Move blood bag to the stand and connect everything
+			if(!user.unEquip(src, nearest_stand))
+				return ..()
+
+			nearest_stand.beaker = src
+			nearest_stand.attached = target
+			nearest_stand.update_icon()
+
+			user.visible_message(
+				SPAN_NOTICE("[user] successfully connects [src] to [target] via [nearest_stand]."),
+				SPAN_NOTICE("You successfully connect [src] to [target] via [nearest_stand]. The IV is now active.")
+			)
+
+			// Start the IV process
+			START_PROCESSING(SSobj, nearest_stand)
+
+			return TRUE
+
+		// No medical stand available, set up direct connection
+		user.visible_message(
+			SPAN_NOTICE("[user] begins setting up a direct IV line between [src] and [target]."),
+			SPAN_NOTICE("You begin setting up a direct IV line between [src] and [target].")
+		)
+
+		if(!do_after(user, 40, target)) // Takes longer without proper equipment
+			return ..()
+
+		// Set transfer rate
+		var/chosen_rate = input(user, "Choose transfer rate:", "IV Transfer Rate") as null|anything in possible_transfer_amounts
+		if(!chosen_rate)
+			return ..()
+
+		iv_transfer_rate = chosen_rate
+		attached_patient = target
+
+		user.visible_message(
+			SPAN_NOTICE("[user] successfully connects [src] directly to [target]. The IV is now active at [iv_transfer_rate] units per second."),
+			SPAN_NOTICE("You successfully connect [src] directly to [target]. The IV is now active at [iv_transfer_rate] units per second.")
+		)
+
+		// Start processing for direct IV
+		START_PROCESSING(SSobj, src)
+
+		return TRUE
 
 	// Check if this blood bag is currently attached to a medical stand
 	var/obj/structure/medical_stand/connected_stand = null

@@ -297,12 +297,15 @@
 	reagent_state = LIQUID
 	color = "#C8A5DC"
 	reagent_type = "Organic/Stimulator"
+	liver_dependent = FALSE // Natural hormone that doesn't need liver processing
 
 /datum/reagent/adrenaline/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.SetParalysis(0)
 	M.SetWeakened(0)
 	M.stats.addTempStat(STAT_TGH, STAT_LEVEL_ADEPT * effect_multiplier, STIM_TIME, "adrenaline")
 	M.add_chemical_effect(CE_TOXIN, 3)
+	M.add_chemical_effect(CE_HEARTRESTART, effect_multiplier) // Restart stopped heart
+	M.add_chemical_effect(CE_PULSE, 2) // Also increase pulse rate
 
 /datum/reagent/adrenaline/withdrawal_act(mob/living/carbon/M)
 	M.adjustOxyLoss(15)

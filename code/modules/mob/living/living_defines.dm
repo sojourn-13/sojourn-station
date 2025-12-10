@@ -140,6 +140,9 @@
 	var/on_fire = 0 //The "Are we on fire?" var
 	var/fire_stacks
 	var/next_onfire_brn = 0 //burn
+	var/waterproof = FALSE
+	var/tmp/current_fluid_depth = 0
+	var/tmp/last_drown_tick = 0
 
 	/// Icon used for speechbubbles
 	var/bubble_icon = "default"

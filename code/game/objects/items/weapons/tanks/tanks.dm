@@ -289,7 +289,7 @@ var/list/global/tank_gauge_cache = list()
 		else
 			integrity--
 
-	else if(pressure > TANK_LEAK_PRESSURE)
+	else if(pressure > TANK_LEAK_PRESSURE && integrity <= 1)
 		#ifdef FIREDBG
 		log_debug(SPAN_WARNING("[x],[y] tank is leaking: [pressure] kPa, integrity [integrity]"))
 		#endif

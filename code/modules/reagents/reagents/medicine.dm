@@ -2,6 +2,7 @@
 /datum/reagent/medicine
 	reagent_type = "Medicine"
 
+
 /datum/reagent/medicine/inaprovaline
 	name = "Inaprovaline"
 	id = "inaprovaline"
@@ -13,14 +14,16 @@
 	metabolism = REM * 0.5
 	scannable = TRUE
 	nerve_system_accumulations = -5
+	liver_dependent = FALSE // Emergency stabilizer that works without liver
 
 /datum/reagent/medicine/inaprovaline/affect_blood(mob/living/carbon/M, alien, effect_multiplier) // No more useless chem of leftover baycode with no inference on health due to pulse not affecting anything. - Seb
-	M.add_chemical_effect(CE_PULSE, 1)
+	M.add_chemical_effect(CE_PULSE, -1)
 	M.add_chemical_effect(CE_STABLE, 1) // Keeping these useless effects for the sake of RP.
 	M.add_chemical_effect(CE_PAINKILLER, 15 * effect_multiplier)
 	M.adjustOxyLoss(-0.5 * effect_multiplier) // Should help stall for time against oxyloss killing you to heavy bloodloss or lung/heart damage until your eventual rescue, but won't heal it outright.
 	M.add_chemical_effect(CE_OXYGENATED, 1)
 	M.add_chemical_effect(CE_BLOODCLOT, 0.1) // Emergency stop bleeding, still lowest tier
+	M.add_chemical_effect(CE_HEARTRESTART, effect_multiplier * 0.5) // Weak heart restart capability
 
 /datum/reagent/medicine/bicaridine
 	name = "Bicaridine"
@@ -33,6 +36,7 @@
 	overdose = REAGENTS_OVERDOSE
 	scannable = TRUE
 	nerve_system_accumulations = 15 // Basic chems shouldn't hurt the body as much as higher potency ones.
+	liver_dependent = FALSE // Basic trauma medicine should work in emergencies even without liver
 
 /datum/reagent/medicine/bicaridine/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	if(M.species?.reagent_tag == IS_CHTMANT || M.species?.reagent_tag == IS_SLIME)
@@ -145,6 +149,7 @@
 	overdose = REAGENTS_OVERDOSE
 	scannable = TRUE
 	nerve_system_accumulations = 10
+	liver_dependent = TRUE // Burn medicine requiring liver processing
 
 /datum/reagent/medicine/kelotane/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	if(M.species?.reagent_tag == IS_CHTMANT)
@@ -199,6 +204,7 @@
 	scannable = TRUE
 	overdose = REAGENTS_OVERDOSE
 	nerve_system_accumulations = 0
+	liver_dependent = TRUE // Critical anti-toxin requiring liver processing
 
 /datum/reagent/medicine/dylovene/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.drowsyness = max(0, M.drowsyness - 0.6 * effect_multiplier)
@@ -247,6 +253,7 @@
 	color = "#225722"
 	scannable = TRUE
 	nerve_system_accumulations = -10
+	liver_dependent = FALSE // Liver healing medicine must work without liver
 
 /datum/reagent/medicine/carthatoline/affect_blood(var/mob/living/carbon/M, var/alien, effect_multiplier, var/removed = REM)
 	M.add_chemical_effect(CE_ANTITOX, 3 * (dose * 0.1)) //every 10u is 3 antitox, starts out slow but rapidly grows
@@ -287,6 +294,7 @@
 				return
 			if(C.damage > 0)
 				C.damage = max(C.damage - 5 * removed, 0)
+	M.add_chemical_effect(CE_HEARTRESTART, 1.5) // Strong heart restart capability
 
 /datum/reagent/medicine/dexalin
 	name = "Dexalin"
@@ -298,6 +306,7 @@
 	overdose = REAGENTS_OVERDOSE
 	scannable = TRUE
 	nerve_system_accumulations = 5
+	liver_dependent = FALSE // Oxygen medicine that works without liver
 
 /datum/reagent/medicine/dexalin/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	if(M.species?.reagent_tag == IS_CHTMANT)
@@ -318,6 +327,7 @@
 	overdose = REAGENTS_OVERDOSE * 0.5
 	scannable = TRUE
 	nerve_system_accumulations = 10
+	liver_dependent = FALSE // Advanced oxygen medicine that works without liver
 
 /datum/reagent/medicine/dexalinp/affect_blood(mob/living/carbon/M, alien, effect_multiplier, var/removed = REM)
 	M.adjustOxyLoss(-30 * effect_multiplier)
@@ -384,6 +394,7 @@
 	scannable = TRUE
 	overdose = REAGENTS_OVERDOSE
 	nerve_system_accumulations = 15
+	liver_dependent = FALSE // Broad-spectrum emergency medicine that works without liver
 
 /datum/reagent/medicine/tricordrazine/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	if(M.species?.reagent_tag == IS_CHTMANT)
@@ -417,6 +428,7 @@
 	metabolism = REM
 	scannable = TRUE
 	affects_dead = TRUE
+	liver_dependent = FALSE // Cryo medicine that works without liver
 
 /datum/reagent/medicine/cryoxadone/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	if(M.bodytemperature < 170)
@@ -439,6 +451,7 @@
 	metabolism = REM
 	scannable = TRUE
 	affects_dead = TRUE //This can even heal dead people.
+	liver_dependent = FALSE // Cryo medicine that works without liver
 
 /datum/reagent/medicine/cronexidone/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	if(M.bodytemperature < 170)
@@ -466,6 +479,7 @@
 	metabolism = REM
 	scannable = TRUE
 	affects_dead = TRUE
+	liver_dependent = FALSE // Cryo medicine that works without liver
 
 /datum/reagent/medicine/nanitefluid/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	if(M.bodytemperature < 170)
@@ -517,6 +531,7 @@ We don't use this but we might find use for it. Porting it since it was updated 
 	scannable = TRUE
 	metabolism = 0.1 // Who thought it was a good idea for such a mild painkiller to last a lifetime?
 	nerve_system_accumulations = -10
+	liver_dependent = FALSE // Basic painkiller that works without liver
 
 /datum/reagent/medicine/paracetamol/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.add_chemical_effect(CE_PAINKILLER, 25)
@@ -691,6 +706,7 @@ We don't use this but we might find use for it. Porting it since it was updated 
 	overdose = 5
 	scannable = TRUE
 	nerve_system_accumulations = 50
+	liver_dependent = FALSE // Neural stimulant that works directly on nervous system
 
 /datum/reagent/medicine/synaptizine/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.drowsyness = max(M.drowsyness - 5, 0)
@@ -722,6 +738,8 @@ We don't use this but we might find use for it. Porting it since it was updated 
 		if(!BP_IS_ROBOTIC(B) && prob(75))
 			M.add_chemical_effect(CE_PAINKILLER, 10)
 			M.add_chemical_effect(CE_BRAINHEAL, 1)
+			// Direct brain damage healing - alkysine repairs neural tissue
+			M.adjustBrainLoss(-1.5 * effect_multiplier) // Heals 1.5 brain damage per tick
 
 /datum/reagent/medicine/imidazoline
 	name = "Imidazoline"
