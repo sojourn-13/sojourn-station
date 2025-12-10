@@ -3,26 +3,22 @@ name: Generate Changelog from History
 # Only manual trigger
 on:
   workflow_dispatch:
-    inputs:
-      branch:
-        description: 'Branch to scan for commits'
-        required: true
-        default: 'main'
 
 jobs:
   generate-history-changelog:
     runs-on: ubuntu-latest
 
     environment:
-      name: changelog-env  # optional
-      url: https://example.com/changelog-preview
-
+      name: BOT_TOKEN  # optional
+      
     env:
       BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
 
     steps:
-      - name: Checkout repository
+      - name: Checkout master branch
         uses: actions/checkout@v3
+        with:
+          ref: master  # <-- force checkout of master branch
 
       - name: Set up Python
         uses: actions/setup-python@v4
