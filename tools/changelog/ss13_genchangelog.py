@@ -148,7 +148,7 @@ for fileName in glob.glob(os.path.join(args.ymlDir, "*.yml")):
     if today not in all_changelog_entries:
         all_changelog_entries[today] = {}
     author_entries = all_changelog_entries[today].get(cl['author'], [])
-    if len(cl['changes']):
+    if 'changes' in cl and len(cl['changes']):
         new = 0
         for change in cl['changes']:
             if change not in author_entries:
