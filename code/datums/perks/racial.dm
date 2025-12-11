@@ -193,6 +193,16 @@
 /datum/perk/linguist_for_humans/remove()
 	..()
 
+//////////////////////////////////////Exalt perks
+/*
+Exalts have these two perks, found in perks/wage.dm
+/datum/perk/nepotism
+/datum/perk/debtor
+
+Exalts have this perk, found in perks/genetic.dm
+/datum/perk/splicer
+*/
+
 //////////////////////////////////////Kriosan perks
 /datum/perk/enhancedsenses
 	name = "Enhance Senses"

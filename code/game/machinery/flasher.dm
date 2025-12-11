@@ -83,6 +83,17 @@
 			continue
 
 		var/flash_time = strength
+
+		if(issuperioranimal(O))
+			if(O.stat!=DEAD)
+				var/flash_strength = strength
+				var/mob/living/carbon/superior/S = O
+				flash_strength -= S.flash_resistances + S.eyecheck()
+				if(flash_strength > 0)
+					S.Weaken(flash_strength)
+					S.flash(flash_strength , FALSE, FALSE ,FALSE)
+				return //no need to process anything else
+
 		if (ishuman(O))
 			var/mob/living/carbon/human/H = O
 			if(!H.eyecheck() <= 0)

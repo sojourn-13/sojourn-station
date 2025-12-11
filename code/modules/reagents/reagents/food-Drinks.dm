@@ -137,6 +137,8 @@
 /datum/reagent/organic/nutriment/honey/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	..()
 	M.add_chemical_effect(CE_ANTITOX, 0.5)
+	if(M.unnatural_mutations.getMutation(MUTATION_HONEY_CRYSTALLIZATION))
+		M.add_chemical_effect(CE_BLOODCLOT, 0.75) //1/4th the bleeding, quite good for a basically free power
 
 /datum/reagent/organic/nutriment/flour
 	name = "flour"

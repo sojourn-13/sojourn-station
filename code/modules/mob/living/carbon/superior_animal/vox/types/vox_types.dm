@@ -170,8 +170,6 @@
 	ranged = FALSE
 
 	armor_divisor = 2
-
-
 	drop_items = list(/obj/item/stack/ore/glass, /obj/item/stack/ore/glass, /obj/item/stack/ore/glass, /obj/item/stack/ore/glass)
 
 	//No better armor its just a belt
@@ -196,7 +194,6 @@
 	health = 90 * VOXBIRD_HEALTH_MOD
 	armor_divisor = 1.25
 
-
 /mob/living/carbon/superior/vox/ashen/trained
 	desc = "A small predator native to these lands. They are known for their limited craftsmanship and manipulation of objects. \
 	This one seems to be using a crude spear rather then its exstreamly sharp claws as well as a blood lust aura radiating off it..."
@@ -216,15 +213,11 @@
 
 	ranged = FALSE
 	target_dummy = TRUE //Target me
-
 	armor = list(melee = 9, bullet = 9, energy = 5, bomb = 50, bio = 0, rad = 0)
 
 	delay_for_all = 0.2
-
 	attacktext = "rapidly stabs and jabs"
-
 	drop_items = list(/obj/item/tool/spear)
-
 
 //Weak Bird
 /mob/living/carbon/superior/vox/weak
@@ -256,9 +249,7 @@
 
 	maxHealth = 65 * VOXBIRD_HEALTH_MOD
 	health = 65 * VOXBIRD_HEALTH_MOD
-
 	armor = list(melee = 15, bullet = 12, energy = 12, bomb = 50, bio = 0, rad = 0)
-
 
 //Rage Bird
 /mob/living/carbon/superior/vox/rage

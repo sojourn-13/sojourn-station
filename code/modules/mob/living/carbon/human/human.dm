@@ -23,8 +23,6 @@
 	hud_list[SPECIALROLE_HUD] = image('icons/mob/hud.dmi', src, "hudblank",     ON_MOB_HUD_LAYER)
 	hud_list[STATUS_HUD_OOC]  = image('icons/mob/hud.dmi', src, "hudhealthy",   ON_MOB_HUD_LAYER)
 
-
-
 	GLOB.human_mob_list |= src
 	..()
 
@@ -123,6 +121,17 @@
 	var/obj/item/organ/internal/nanogate/N = random_organ_by_process(BP_NANOGATE)
 	if(N)
 		. += "Nanites Point: [N.nanite_points]"
+
+	if(stats.getPerk(PERK_NO_OBFUSCATION) && stats.getPerk(PERK_BLOOD_LUST))
+		. += "Bloodlust Aura: [target_dummy ? "Active" : "Inactive"]"
+
+	//If we get the perk or have no obfuscation then tell us are genetic instablity
+	if((stats.getPerk(PERK_GLUTTEN) && unnatural_mutations) || stats.getPerk(PERK_NO_OBFUSCATION))
+		. += "Genetic Instablity Level: [unnatural_mutations.total_instability]/[unnatural_mutations.allowed_instability_base]"
+		//No you dont get this for free
+		if(unnatural_mutations.processing_destabilization && stats.getPerk(PERK_NO_OBFUSCATION))
+			. += "::WARNING:: Genetic Destabilization! You are in the process of turning into a Once Was!"
+			. += "::WARNING:: Once Was Progression [unnatural_mutations.stage]/13"
 
 	src.stats.initialized = TRUE
 
@@ -660,6 +669,12 @@ var/list/rank_prefix = list(\
 	if(E)
 		total_protection += E.flash_protection
 
+	if(unnatural_mutations.getMutation(MUTATION_XENO_EYELIDS))
+		total_protection += 2
+
+	if(unnatural_mutations.getMutation(MUTATION_ADVANCED_EYELIDS))
+		total_protection += 1
+
 	return total_protection
 
 ///earcheck()
@@ -693,6 +708,10 @@ var/list/rank_prefix = list(\
 		ear_protection_questionmark *= 0.5
 		ear_protection_questionmark = round(ear_protection_questionmark)
 		ear_protection_questionmark -= 1
+
+	//We are placed After EOQ do to power creep :)
+	if(unnatural_mutations.getMutation(MUTATION_HARDEN_EARS))
+		ear_protection_questionmark += 2
 
 	return ear_protection_questionmark
 

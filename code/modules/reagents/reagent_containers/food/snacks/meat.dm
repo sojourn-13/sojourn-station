@@ -27,6 +27,36 @@
 		source_mob = meat_source.type	// these don't need sanity checks since these are inherent vars that won't be null as long as meat_source exists (ergo, handled in first check already)
 		source_name = meat_source.name
 
+/obj/item/reagent_containers/snacks/meat/On_Consume(var/mob/eater, var/mob/feeder = null)
+	//If we are a glutten we only can use the /inherent/ genes. Not the unnatural
+	if(ishuman(eater) && inherent_mutations)
+		var/mob/living/carbon/human/H = eater
+		if(H.stats.getPerk(PERK_GLUTTEN))
+			for(var/IM in inherent_mutations)
+				var/datum/genetics/mutation/new_mutation = new IM()
+				var/im_missing = TRUE
+				if(H.unnatural_mutations.getMutation(new_mutation.key))
+					var/datum/genetics/mutation/HIM = H.unnatural_mutations.getMutation(new_mutation.key)
+					im_missing = FALSE
+					//Lower are instablity a little bit per same gene, upto 75%
+					if(HIM.instability > round(initial(HIM.instability) * 0.25))
+						//Littly wierd but instability is infact done like this at the time of coding
+						HIM.instability -= 1
+						H.unnatural_mutations.total_instability -= 1
+					else
+						//We heal a little tiny bit
+						H.heal_overall_damage(0, 0.5)
+						H.vessel.add_reagent("blood", 1)
+					qdel(new_mutation)
+				if(im_missing && prob(5))
+					new_mutation.active = TRUE //We are forced active!
+					H.unnatural_mutations.addMutation(new_mutation)
+				else
+					qdel(new_mutation)
+
+	..()
+
+
 /obj/item/reagent_containers/snacks/meat/syntiflesh
 	name = "synthetic meat"
 	desc = "A synthetic slab of flesh."

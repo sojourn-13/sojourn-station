@@ -64,6 +64,7 @@
 	attacktext = "clawed"
 	drop_items = list(/obj/random/psi/always_spawn, /obj/random/psi/always_spawn)
 	armor_divisor = 1.2
+	momento_mori = /obj/effect/decal/cleanable/psi_ash/ash_wendigo
 
 /mob/living/carbon/superior/psi/cerebral_crusher
 	name = "cerebral crusher"

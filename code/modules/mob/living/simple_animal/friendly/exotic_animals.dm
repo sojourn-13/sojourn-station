@@ -20,6 +20,8 @@
 	emote_see = list("trundles around","rears up onto their hind legs and pounces a bug")
 	colony_friend = TRUE
 	sanity_damage = -1
+	inherent_mutations = list(MUTATION_ADVANCED_EYELIDS)
+
 
 /mob/living/simple/redpanda/fae
 	name = "fae panda"
@@ -52,6 +54,7 @@
 	colony_friend = TRUE
 	friendly_to_colony = TRUE
 	sanity_damage = -1
+	inherent_mutations = list(MUTATION_BLUBBER)
 
 /mob/living/simple/penguin/baby
 	name = "penguin chick"
@@ -133,7 +136,7 @@
 				"Ararrrararr.")
 	emote_hear = list("screEEEEeeches!","chirps.")
 	emote_see = list("earflicks","sniffs at the ground")
-	inherent_mutations = list(MUTATION_DWARFISM, MUTATION_IMBECILE, MUTATION_TOURETTES)
+	inherent_mutations = list(MUTATION_DWARFISM, MUTATION_IMBECILE, MUTATION_TOURETTES, MUTATION_ADVANCED_EYELIDS)
 	colony_friend = TRUE
 	faction = "pond"
 	sanity_damage = -1

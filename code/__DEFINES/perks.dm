@@ -224,6 +224,7 @@
 
 //Genetics Perks
 #define PERK_SPLICED /datum/perk/spliced
+#define PERK_GLUTTEN /datum/perk/glutten
 
 // Food perks
 #define PERK_CARNIVORE /datum/perk/carnivore

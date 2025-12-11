@@ -23,6 +23,7 @@
 		/datum/stat_modifier/mob/living/carbon/superior/brutish/xeno = 12,
 		/datum/stat_modifier/mob/living/speed/flat/positive/low = 1
 	)
+	inherent_mutations = list(MUTATION_CAT_EYES, MUTATION_PUNCH)
 
 /mob/living/carbon/superior/xenomorph/warrior/shrike/screecher
 	name = "screecher"

@@ -318,6 +318,12 @@
 	output = /obj/item/device/psionic_catalyst/psi_injector_enhancer
 	out_put_name = "Psionic Breath"
 
+//Powerful power. Make this one cost an arm and a leg
+/datum/eternal_ascension_resonances/glutten
+	rune_resonance = "GreaterNullSinkingSuppression"
+	output = /obj/item/device/psionic_catalyst/glutten
+	out_put_name = "Glutten"
+
 /obj/structure/sign/ear
 	name = "EGO: E.A.R Music Sheet"
 	desc = "Contains helpful advice on E.A.R recpies. Unless you're reading this placeholder text, at least."

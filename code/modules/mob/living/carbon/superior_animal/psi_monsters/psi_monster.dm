@@ -264,3 +264,12 @@
 	desc = "Something about these ashes feels off, as if an infinite potential exists within the dust, but it is weaker feeling than normal."
 	psion_chance = 10
 	normie_chance = 5
+
+/obj/effect/decal/cleanable/psi_ash/ash_wendigo
+	name = "strange ashes of ash wendigo"
+	desc = "Something about these ashes feels off, as if an infinite potential exists within the dust. \
+	Ashes to Ashes, Dust to Dust, the exists possable form folklore sooth even the dead."
+
+	catalyst_drop = /obj/random/psi_catalyst/ash_wendigo
+	psion_chance = 85
+	normie_chance = 80 //We want to spread are hunger

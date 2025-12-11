@@ -41,6 +41,8 @@
 	var/cooldown_time = 30 SECONDS
 	var/cooldown = 0
 
+	inherent_mutations = list(MUTATION_CAT_EYES, MUTATION_HARDEN_EARS)
+
 var/datum/xenomorph/xeno_morph_ai
 
 /datum/xenomorph
@@ -106,6 +108,7 @@ var/datum/xenomorph/xeno_morph_ai
 	attack_sound = list('sound/xenomorph/alien_bite1.ogg', 'sound/xenomorph/alien_bite2.ogg')
 	melee_damage_lower = 20
 	melee_damage_upper = 25
+	inherent_mutations = list(MUTATION_CAT_EYES, MUTATION_COW_SKIN)
 
 /mob/living/carbon/superior/xenomorph/spitter/boiler
 	name = "boiler"
@@ -122,6 +125,7 @@ var/datum/xenomorph/xeno_morph_ai
 	melee_damage_lower = 15
 	melee_damage_upper = 20
 	flash_resistances = 0
+	inherent_mutations = list(MUTATION_CAT_EYES, MUTATION_BOMB_RESIST)
 
 	move_to_delay = 6
 	turns_per_move = 18
