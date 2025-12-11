@@ -147,6 +147,25 @@
 		else
 			log_debug("Failed to tweak item: Index [i] in [json_encode(metadata)] did not result in a valid path. Valid contents: [json_encode(valid_contents)]")
 
+
+// Small labelled variants so loadout UI shows clearer link text per slot
+/datum/gear_tweak/contents/snack
+
+/datum/gear_tweak/contents/snack/get_contents(var/metadata)
+	return "Snack: [english_list(metadata, and_text = ", ")]"
+
+
+/datum/gear_tweak/contents/meal
+
+/datum/gear_tweak/contents/meal/get_contents(var/metadata)
+	return "Meal: [english_list(metadata, and_text = ", ")]"
+
+
+/datum/gear_tweak/contents/drink
+
+/datum/gear_tweak/contents/drink/get_contents(var/metadata)
+	return "Drink: [english_list(metadata, and_text = ", ")]"
+
 /*
 * Ragent adjustment
 */

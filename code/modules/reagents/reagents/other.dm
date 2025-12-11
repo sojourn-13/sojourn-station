@@ -297,12 +297,15 @@
 	reagent_state = LIQUID
 	color = "#C8A5DC"
 	reagent_type = "Organic/Stimulator"
+	liver_dependent = FALSE // Natural hormone that doesn't need liver processing
 
 /datum/reagent/adrenaline/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.SetParalysis(0)
 	M.SetWeakened(0)
 	M.stats.addTempStat(STAT_TGH, STAT_LEVEL_ADEPT * effect_multiplier, STIM_TIME, "adrenaline")
 	M.add_chemical_effect(CE_TOXIN, 3)
+	M.add_chemical_effect(CE_HEARTRESTART, effect_multiplier) // Restart stopped heart
+	M.add_chemical_effect(CE_PULSE, 2) // Also increase pulse rate
 
 /datum/reagent/adrenaline/withdrawal_act(mob/living/carbon/M)
 	M.adjustOxyLoss(15)
@@ -400,7 +403,8 @@
 	common = TRUE //It's just ammonia and water, and the Janitor should be able to know what they are working with.
 
 /datum/reagent/other/space_cleaner/touch_obj(obj/O)
-	O.clean_blood()
+	// Use the preserve version so the forensic 'was_bloodied' flag remains set.
+	O.clean_blood_preserve_was()
 	O.color = "white"
 
 /datum/reagent/other/space_cleaner/touch_turf(turf/T)
@@ -409,9 +413,12 @@
 			var/turf/simulated/S = T
 			if(S.wet >= 2)
 				S.wet_floor(1, TRUE)
+		// Only clear visible decals/overlays and turf wetness; preserve the turf's
+		// was_bloodied flag so luminol traces still work. Most of the heavy
+		// metadata like blood_DNA is left intact.
 		T.clean_blood()
 		for(var/obj/effect/O in T)
-			if(istype(O,/obj/effect/decal/cleanable) || istype(O,/obj/effect/overlay) && !istype(O,/obj/effect/overlay/water))
+			if(istype(O,/obj/effect/decal/cleanable) || (istype(O,/obj/effect/overlay) && !istype(O,/obj/effect/overlay/water)))
 				qdel(O)
 		for(var/obj/item/bluespace_leak/BSL in T)
 			if(istype(BSL,/obj/item/bluespace_leak))

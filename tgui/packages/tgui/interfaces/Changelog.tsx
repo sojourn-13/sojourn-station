@@ -31,6 +31,8 @@ const icons = {
   refactor: { icon: 'tools', color: 'green' },
   rscadd: { icon: 'check-circle', color: 'green' },
   rscdel: { icon: 'times-circle', color: 'red' },
+  add: { icon: 'check-circle', color: 'green' },
+  del: { icon: 'times-circle', color: 'red' },
   server: { icon: 'server', color: 'purple' },
   sound: { icon: 'volume-high', color: 'green' },
   soundadd: { icon: 'tg-sound-plus', color: 'green' },

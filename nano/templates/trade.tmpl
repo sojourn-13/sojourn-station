@@ -36,7 +36,7 @@
 				{{else}}
 					{{:helper.link("Receiving Beacon", 'link', {'PRG_receiving' : 1})}}
 				{{/if}}
-			<td>		
+			<td>
 				{{if data.sending}}
 					{{:helper.link("Sending Beacon: " + data.sending, null, {'PRG_sending' : 1})}}
 				{{else}}
@@ -159,6 +159,30 @@
 					{{/if}}
 				{{else}}
 					Select a trade station.
+				{{/if}}
+
+				<hr>
+				<div class="item">
+					<div class="itemLabel">Export Points:</div>
+					<div class="itemContent">{{:data.export_points ? data.export_points : 0}}</div>
+				</div>
+
+				{{if data.unlockables}}
+					<hr>
+					<div class="item">
+						<div class="itemLabel">Unlockable Stations:</div>
+						<div class="itemContent">
+							{{for data.unlockables}}
+								<div style="margin-bottom:6px;">
+									<b>{{:value.name}}</b> — {{:value.required}} pts
+									{{if value.uid != data.station_id}}
+										{{:helper.link('Unlock', null, {'PRG_unlock_station' : value.uid}, data.export_points >= value.required ? null : 'disabled')}}
+									{{/if}}
+								</div>
+							{{/for}}
+						</div>
+					</div>
+
 				{{/if}}
 			</td>
 		</tr>

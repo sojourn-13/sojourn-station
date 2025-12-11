@@ -62,11 +62,8 @@
 		list(mode_name="lethal", mode_desc="Fires a concentrated laser blast", projectile_type=/obj/item/projectile/beam, charge_cost = 50, icon="kill", fire_sound='sound/weapons/energy/laser_rifle.ogg')
 	)
 	max_upgrades = 3 // Already tinkered enough, smaller frame, good stats
-	blacklist_upgrades = list(/obj/item/gun_upgrade/mechanism/greyson_master_catalyst = TRUE, // No warcrimes in medbay please
-							  /obj/item/tool_upgrade/augment/expansion = TRUE, // No cheating either. You get three upgrades, make the most of them.
-							  )
 	serial_type = "GP-SI"
-	allow_greyson_mods = FALSE
+	allow_greyson_mods = TRUE
 
 /obj/item/gun/energy/cog/sprocket/update_icon() // Necessary for the folded and unfolded states
 	var/iconstring = initial(icon_state)

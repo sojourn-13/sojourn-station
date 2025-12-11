@@ -492,6 +492,11 @@
 	build_path = /obj/item/ammo_magazine/ammobox/kurz_50/lethal
 	materials = list(MATERIAL_STEEL = 12)
 
+/datum/design/autolathe/ammo/kurz_ammobox_biomatter
+	name = "ammunition box (.50 Kurz caustic)"
+	build_path = /obj/item/ammo_magazine/ammobox/kurz_50/biomatter
+	materials = list(MATERIAL_BIOMATTER = 30)
+
 // .257 Carbine Mags
 /datum/design/autolathe/ammo/lrifle
 	name = ".257 carbine magazine (ball)"

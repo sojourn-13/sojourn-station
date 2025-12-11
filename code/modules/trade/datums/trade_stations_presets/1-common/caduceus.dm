@@ -9,6 +9,7 @@
 	uid = "moe_basic"
 	spawn_always = TRUE
 	markup = COMMON_GOODS
+	export_point_cost_mult = 1
 	offer_limit = 20
 	base_income = 1600
 	wealth = 0

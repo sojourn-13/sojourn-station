@@ -239,7 +239,7 @@
 	dat += "<BR><A href='?src=\ref[user];refresh=1'>Refresh</A>"
 	dat += "<BR><A href='?src=\ref[user];mach_close=mob[name]'>Close</A>"
 
-	user << browse(dat, text("window=mob[name];size=340x540"))
+	user << browse(HTML_SKELETON(dat), text("window=mob[name];size=340x540"))
 	onclose(user, "mob[name]")
 	return
 
@@ -656,6 +656,9 @@ var/list/rank_prefix = list(\
 
 	return flash_protection
 
+/mob/living/carbon/human/earcheck()
+	return ear_protection
+
 //Used by various things that knock people out by applying blunt trauma to the head.
 //Checks that the species has a "head" (brain containing organ) and that hit_zone refers to it.
 /mob/living/carbon/human/proc/headcheck(var/target_zone, var/brain_tag = BP_BRAIN)
@@ -1055,7 +1058,24 @@ var/list/rank_prefix = list(\
 
 	to_chat(usr, "You must[self ? "" : " both"] remain still until counting is finished.")
 	if(do_mob(usr, src, 60))
-		to_chat(usr, "<span class='notice'>[self ? "Your" : "[src]'s"] pulse is [src.get_pulse(GETPULSE_HAND)].</span>")
+		var/pulse_msg = "<span class='notice'>[self ? "Your" : "[src]'s"] pulse is [src.get_pulse(GETPULSE_HAND)].</span>"
+		to_chat(usr, pulse_msg)
+
+		// Add shock-related feedback
+		if(src.shock_stage)
+			var/shock_feedback = ""
+			if(src.shock_stage >= 20 && src.shock_stage < 60)
+				shock_feedback = "[self ? "Your" : "[src]'s"] heartbeat feels rapid and somewhat irregular."
+			else if(src.shock_stage >= 60 && src.shock_stage < 100)
+				shock_feedback = "[self ? "Your" : "[src]'s"] pulse feels very fast and noticeably irregular."
+			else if(src.shock_stage >= 100 && src.shock_stage < 140)
+				shock_feedback = "[self ? "Your" : "[src]'s"] pulse is racing and extremely irregular!"
+			else if(src.shock_stage >= 140)
+				shock_feedback = "[self ? "Your" : "[src]'s"] pulse is dangerously erratic, alternating between fast and slow!"
+
+			if(shock_feedback)
+				to_chat(usr, "<span class='warning'>[shock_feedback]</span>")
+
 	else
 		to_chat(usr, SPAN_WARNING("You failed to check the pulse. Try again."))
 

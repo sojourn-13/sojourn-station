@@ -20,11 +20,11 @@
 	if (occupant && is_dead(occupant))
 		var/mob/M = key2mob(occupant.mind.key)
 		//We send a message to the occupant's current mob - probably a ghost, but who knows.
-		to_chat(M, SPAN_NOTICE("Your remains have been committed to the void. Your crew respawn time has been reduced by 15 minutes."))
+		to_chat(M, SPAN_NOTICE("Your remains have been committed to the void. Your crew respawn time has been reduced by [CRYOPOD_SPAWN_BONUS_DESC]."))
 		M << 'sound/effects/magic/blind.ogg' //Play this sound to a player whenever their respawn time gets reduced
 
 		//A proper funeral for the corpse allows a faster respawn
-		M.set_respawn_bonus("CORPSE_HANDLING", 15 MINUTES)
+		M.set_respawn_bonus("CORPSE_HANDLING", config.cryopod_spawn_bonus ? config.cryopod_spawn_bonus MINUTES : CRYOPOD_SPAWN_BONUS)
 
 		qdel(occupant)
 		qdel(src)

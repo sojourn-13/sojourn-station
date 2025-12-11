@@ -13,8 +13,7 @@
 		if(W.is_equipped())
 			M.drop_from_inventory(W)
 
-	log_admin("[key_name(usr)] made [key_name(M)] drop everything!")
-	message_admins("[key_name_admin(usr)] made [key_name_admin(M)] drop everything!", 1)
+	log_and_message_admins("made [key_name(M)] drop everything!", usr)
 
 ADMIN_VERB_ADD(/client/proc/cmd_admin_subtle_message, R_FUN, FALSE)
 //send an message to somebody as a 'voice in their head'
@@ -36,8 +35,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_subtle_message, R_FUN, FALSE)
 			if(usr.client.holder)
 				to_chat(M, "\bold You hear a voice in your head... \italic [msg]")
 
-	log_admin("SubtlePM: [key_name(usr)] -> [key_name(M)] : [msg]")
-	message_admins("\blue \bold SubtleMessage: [key_name_admin(usr)] -> [key_name_admin(M)] : [msg]", 1)
+	log_and_message_admins("SubtlePM: [key_name(usr)] -> [key_name(M)] : [msg]", usr)
 
 
 ADMIN_VERB_ADD(/client/proc/cmd_admin_world_narrate, R_FUN, FALSE)
@@ -55,8 +53,8 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_world_narrate, R_FUN, FALSE)
 	if (!msg)
 		return
 	to_chat(world, "[msg]")
-	log_admin("GlobalNarrate: [key_name(usr)] : [msg]")
-	message_admins("\blue \bold GlobalNarrate: [key_name_admin(usr)] : [msg]<BR>", 1)
+	log_and_message_admins("GlobalNarrate: [key_name(usr)] : [msg]", usr)
+
 
 
 ADMIN_VERB_ADD(/client/proc/cmd_admin_direct_narrate, R_ADMIN, FALSE)
@@ -81,8 +79,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_direct_narrate, R_ADMIN, FALSE)
 		return
 
 	to_chat(M, msg)
-	log_admin("DirectNarrate: [key_name(usr)] to ([M.name]/[M.key]): [msg]")
-	message_admins("\blue \bold DirectNarrate: [key_name(usr)] to ([M.name]/[M.key]): [msg]<BR>", 1)
+	log_and_message_admins("DirectNarrate: [key_name(usr)] to ([M.name]/[M.key]): [msg]", usr)
 
 
 /client/proc/cmd_admin_godmode(mob/M as mob in SSmobs.mob_list)
@@ -94,8 +91,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_direct_narrate, R_ADMIN, FALSE)
 	M.status_flags ^= GODMODE
 	to_chat(usr, "\blue Toggled [(M.status_flags & GODMODE) ? "ON" : "OFF"]")
 
-	log_admin("[key_name(usr)] has toggled [key_name(M)]'s nodamage to [(M.status_flags & GODMODE) ? "On" : "Off"]")
-	message_admins("[key_name_admin(usr)] has toggled [key_name_admin(M)]'s nodamage to [(M.status_flags & GODMODE) ? "On" : "Off"]", 1)
+	log_and_message_admins("has toggled [key_name(M)]'s nodamage to [(M.status_flags & GODMODE) ? "On" : "Off"]", usr)
 
 
 
@@ -130,8 +126,7 @@ proc/cmd_admin_mute(mob/M as mob, mute_type, automute = 0)
 	if(automute)
 		muteunmute = "auto-muted"
 		M.client.prefs.muted |= mute_type
-		log_admin("SPAM AUTOMUTE: [muteunmute] [key_name(M)] from [mute_string]")
-		message_admins("SPAM AUTOMUTE: [muteunmute] [key_name_admin(M)] from [mute_string].", 1)
+		log_and_message_admins("SPAM AUTOMUTE: [muteunmute] [key_name(M)] from [mute_string]", usr)
 		to_chat(M, "<span class='alert'>You have been [muteunmute] from [mute_string] by the SPAM AUTOMUTE system. Contact an admin.</span>")
 
 		return
@@ -143,8 +138,7 @@ proc/cmd_admin_mute(mob/M as mob, mute_type, automute = 0)
 		muteunmute = "muted"
 		M.client.prefs.muted |= mute_type
 
-	log_admin("[key_name(usr)] has [muteunmute] [key_name(M)] from [mute_string]")
-	message_admins("[key_name_admin(usr)] has [muteunmute] [key_name_admin(M)] from [mute_string].", 1)
+	log_and_message_admins("[key_name(usr)] has [muteunmute] [key_name(M)] from [mute_string]", usr)
 	to_chat(M, "<span class = 'alert'>You have been [muteunmute] from [mute_string].</span>")
 
 
@@ -157,8 +151,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_add_random_ai_law, R_FUN, FALSE)
 		return
 	var/confirm = alert(src, "You sure?", "Confirm", "Yes", "No")
 	if(confirm != "Yes") return
-	log_admin("[key_name(src)] has added a random AI law.")
-	message_admins("[key_name_admin(src)] has added a random AI law.", 1)
+	log_and_message_admins("[key_name(src)] has added a random AI law.", src)
 
 	var/show_log = alert(src, "Show ion message?", "Message", "Yes", "No")
 	if(show_log == "Yes")
@@ -239,8 +232,7 @@ ADMIN_VERB_ADD(/client/proc/allow_character_respawn, R_ADMIN, FALSE)
 	G.can_reenter_corpse = 1
 	G << 'sound/effects/magic/blind.ogg' //Play this sound to a player whenever their respawn time gets reduced
 	G:show_message(text("\blue <B>You may now respawn.  You should roleplay as if you learned nothing about the round during your time with the dead.</B>"), 1)
-	log_admin("[key_name(usr)] allowed [key_name(G)] to bypass the 5 minute respawn limit")
-	message_admins("Admin [key_name_admin(usr)] allowed [key_name_admin(G)] to bypass the 5 minute respawn limit", 1)
+	log_and_message_admins("[key_name(usr)] allowed [key_name(G)] to bypass the 5 minute respawn limit", usr)
 
 
 ADMIN_VERB_ADD(/client/proc/toggle_antagHUD_use, R_ADMIN, FALSE)
@@ -273,8 +265,7 @@ ADMIN_VERB_ADD(/client/proc/toggle_antagHUD_use, R_ADMIN, FALSE)
 		to_chat(src, "\blue <B>AntagHUD usage has been enabled</B>")
 
 
-	log_admin("[key_name(usr)] has [action] antagHUD usage for observers")
-	message_admins("Admin [key_name_admin(usr)] has [action] antagHUD usage for observers", 1)
+	log_and_message_admins("[key_name(usr)] has [action] antagHUD usage for observers", usr)
 
 
 ADMIN_VERB_ADD(/client/proc/toggle_antagHUD_restrictions, R_ADMIN, FALSE)
@@ -301,8 +292,7 @@ ADMIN_VERB_ADD(/client/proc/toggle_antagHUD_restrictions, R_ADMIN, FALSE)
 		config.antag_hud_restricted = 1
 		to_chat(src, "\red <B>AntagHUD restrictions have been enabled</B>")
 
-	log_admin("[key_name(usr)] has [action] on joining the round if they use AntagHUD")
-	message_admins("Admin [key_name_admin(usr)] has [action] on joining the round if they use AntagHUD", 1)
+	log_and_message_admins("[key_name(usr)] has [action] on joining the round if they use AntagHUD", usr)
 
 
 ADMIN_VERB_ADD(/client/proc/spawn_character, R_ADMIN, FALSE)
@@ -460,8 +450,7 @@ ADMIN_VERB_ADD(/client/proc/spawn_character, R_ADMIN, FALSE)
 	if(announce)
 		AnnounceArrival(new_character, new_character.mind.assigned_role)
 
-	log_admin("[admin] has spawned [player_key]'s character [new_character.real_name].")
-	message_admins("[admin] has spawned [player_key]'s character [new_character.real_name].", 1)
+	log_and_message_admins("[admin] has spawned [player_key]'s character [new_character.real_name].", src)
 
 	to_chat(new_character, "You have been fully spawned. Enjoy the game.")
 
@@ -560,7 +549,7 @@ ADMIN_VERB_ADD(/client/proc/respawn_character, R_ADMIN, FALSE)
 
 	var/datum/spawnpoint/spawnpoint = SSjob.get_spawnpoint_for(new_character.client, new_character.mind.assigned_role)
 	if (!spawnpoint.put_mob(new_character))
-		message_admins("\blue [admin] has tried to respawn [player_key] as [new_character.real_name] but they declined to spawn in harmful environment.", 1)
+		log_and_message_admins("[admin] has tried to respawn [player_key] as [new_character.real_name] but they declined to spawn in harmful environment.", src)
 		return
 
 	//Now for special roles and equipment.
@@ -576,7 +565,7 @@ ADMIN_VERB_ADD(/client/proc/respawn_character, R_ADMIN, FALSE)
 			if(alert(new_character,"Would you like an active AI to announce this character?",,"No","Yes")=="Yes")
 				call(/proc/AnnounceArrival)(new_character, new_character.mind.assigned_role)
 
-	message_admins("\blue [admin] has respawned [player_key] as [new_character.real_name].", 1)
+	log_and_message_admins("[admin] has respawned [player_key] as [new_character.real_name].", src)
 
 	to_chat(new_character, "You have been fully respawned. Enjoy the game.")
 	AnnounceArrival(new_character, new_character.mind.assigned_role, spawnpoint.message)	//will not broadcast if there is no message
@@ -603,8 +592,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_add_freeform_ai_law, R_FUN, FALSE)
 				to_chat(O, "\red " + input + "\red...LAWS UPDATED")
 				O.show_laws()
 
-	log_admin("Admin [key_name(usr)] has added a new AI law - [input]")
-	message_admins("Admin [key_name_admin(usr)] has added a new AI law - [input]", 1)
+	log_and_message_admins("Admin [key_name(usr)] has added a new AI law - [input]", usr)
 
 	var/show_log = alert(src, "Show ion message?", "Message", "Yes", "No")
 	if(show_log == "Yes")
@@ -624,8 +612,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_rejuvenate, R_ADMIN|R_MOD, FALSE)
 		alert("Cannot revive a ghost")
 		return
 	M.revive()
-	log_admin("[key_name(usr)] healed / revived [key_name(M)]")
-	message_admins("\red Admin [key_name_admin(usr)] healed / revived [key_name_admin(M)]!", 1)
+	log_and_message_admins("[key_name(usr)] healed / revived [key_name(M)]", usr)
 
 
 ADMIN_VERB_ADD(/client/proc/cmd_admin_create_centcom_report, R_FUN, FALSE)
@@ -652,8 +639,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_create_centcom_report, R_FUN, FALSE)
 			to_chat(world, "\red New [company_name] Update available at all communication consoles.")
 			world << sound('sound/AI/commandreport.ogg')
 
-	log_admin("[key_name(src)] has created a command report: [input]")
-	message_admins("[key_name_admin(src)] has created a command report", 1)
+	log_and_message_admins("[key_name(src)] has created a command report: [input]", src)
 
 
 ADMIN_VERB_ADD(/client/proc/cmd_admin_delete, R_ADMIN|R_SERVER|R_DEBUG, FALSE)
@@ -667,8 +653,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_delete, R_ADMIN|R_SERVER|R_DEBUG, FALSE)
 		return
 
 	if (alert(src, "Are you sure you want to delete:\n[O]\nat ([O.x], [O.y], [O.z])?", "Confirmation", "Yes", "No") == "Yes")
-		log_admin("[key_name(usr)] deleted [O] at ([O.x],[O.y],[O.z])")
-		message_admins("[key_name_admin(usr)] deleted [O] at ([O.x],[O.y],[O.z])", 1)
+		log_and_message_admins("[key_name(usr)] deleted [O] at ([O.x],[O.y],[O.z])", usr)
 
 		qdel(O)
 
@@ -726,8 +711,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_list_open_jobs, R_ADMIN|R_DEBUG, FALSE)
 	if (heavy || light)
 
 		empulse(O, heavy, light)
-		log_admin("[key_name(usr)] created an EM Pulse ([heavy],[light]) at ([O.x],[O.y],[O.z])")
-		message_admins("[key_name_admin(usr)] created an EM PUlse ([heavy],[light]) at ([O.x],[O.y],[O.z])", 1)
+		log_and_message_admins("[key_name(usr)] created an EM Pulse ([heavy],[light]) at ([O.x],[O.y],[O.z])", usr)
 
 
 		return
@@ -745,8 +729,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_list_open_jobs, R_ADMIN|R_DEBUG, FALSE)
 	//Due to the delay here its easy for something to have happened to the mob
 	if(!M)	return
 
-	log_admin("[key_name(usr)] has gibbed [key_name(M)]")
-	message_admins("[key_name_admin(usr)] has gibbed [key_name_admin(M)]", 1)
+	log_and_message_admins("[key_name(usr)] has gibbed [key_name(M)]", usr)
 
 	if(isobserver(M))
 		gibs(M.loc)
@@ -955,7 +938,8 @@ ADMIN_VERB_ADD(/client/proc/admin_cancel_shuttle, R_ADMIN|R_FUN, FALSE)
 
 	to_chat(usr, text("\red <b>Attack Log for []</b>", mob))
 	for(var/t in M.attack_log)
-		to_chat(usr, t)
+		// Send each attack log line with explicit type so frontend classifies it correctly
+		to_chat(usr, html = "<span class='attack_log'>" + t + "</span>", type = MESSAGE_TYPE_ATTACKLOG)
 
 
 ADMIN_VERB_ADD(/client/proc/everyone_random, R_FUN, FALSE)

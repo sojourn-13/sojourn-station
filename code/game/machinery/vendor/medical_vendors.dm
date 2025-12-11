@@ -2,6 +2,7 @@
 	name = "MiniPharma Plus"
 	desc = "Medical drug dispenser."
 	icon_state = "med"
+	pixel_x = -3
 	icon_deny = "med-deny"
 	req_access = list(access_medical_equip)
 	shut_up = 1 // Products are all free please stop offering them
@@ -11,6 +12,7 @@
 					/obj/item/reagent_containers/glass/bottle/stoxin = 4,
 					/obj/item/reagent_containers/glass/bottle/toxin = 4,
 					/obj/item/reagent_containers/syringe/spaceacillin = 4,
+					/obj/item/reagent_containers/syringe/adrenaline = 4,
 					/obj/item/reagent_containers/hypospray/autoinjector/quickclot = 10,
 					/obj/item/stack/medical/splint = 30,
 					/obj/item/reagent_containers/syringe = 12,
@@ -124,6 +126,7 @@
 		/obj/item/reagent_containers/hypospray/autoinjector/antirad = 10,
 
 		/obj/item/implantcase/death_alarm = 4,
+		/obj/item/implantcase/death_alarm/psionic = 2,
 		/obj/item/implanter = 4,
 
 		/obj/item/device/defib_kit = 2
@@ -166,6 +169,7 @@
 		/obj/item/reagent_containers/hypospray/autoinjector/antirad = 400,
 
 		/obj/item/implantcase/death_alarm = 25,
+		/obj/item/implantcase/death_alarm/psionic = 75,
 		/obj/item/implanter = 25,
 
 		/obj/item/device/defib_kit = 750,

@@ -2,9 +2,9 @@
 	set category = "Admin"
 	set name = "Adminhelp"
 
+	// Allow non-whitelisted players to send adminhelp. Keep a warning message for admins.
 	if(!BC_IsKeyAllowedToConnect(ckey) && !usr.client.holder)
-		to_chat(src, "Non-Whitelisted may get any administation help.")
-		return
+		to_chat(src, "Warning: Your key is not whitelisted. Staff may take longer to respond.")
 
 	if(say_disabled)	//This is here to try to identify lag problems
 		to_chat(usr, "\red Speech is currently admin-disabled.")

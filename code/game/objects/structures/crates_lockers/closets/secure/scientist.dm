@@ -93,3 +93,4 @@
 	new /obj/item/circuitboard/aicore(src)
 	new /obj/item/oddity/chem_book(src)
 	new /obj/item/clothing/accessory/holster/saber/rapiersci/occupied(src)
+	new /obj/item/storage/box/si_kit/cro(src)

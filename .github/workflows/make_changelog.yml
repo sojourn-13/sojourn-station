@@ -1,0 +1,43 @@
+name: Generate Changelog
+
+on:
+  push:
+    branches:
+      - master
+      - changelog-fixes
+
+  workflow_dispatch:  # <-- allows manual triggering
+    inputs:
+      reason:
+        description: "Why are you manually generating the changelog?"
+        required: false
+        default: "Manual trigger"
+
+jobs:
+  generate-changelog:
+    runs-on: ubuntu-latest
+
+    environment:
+      name: BOT_TOKEN
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: pip install -r tools/changelog/requirements.txt
+
+      - name: Run generate_cl.py
+        env:
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+          GIT_EMAIL: "${{ secrets.BOT_EMAIL }}"
+          GIT_NAME: "${{ secrets.BOT_NAME }}"
+        run: python tools/changelog/generate_cl.py
+        
+      - name: Run changelog generator
+        run: python tools/changelog/ss13_genchangelog.py html/changelog.html html/changelogs

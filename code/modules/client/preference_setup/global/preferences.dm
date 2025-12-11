@@ -355,7 +355,12 @@ var/list/_client_preferences_by_type
 	key = "CHAT_ATTACKLOGS"
 	options = list(GLOB.PREF_SHOW, GLOB.PREF_HIDE)
 	flags = R_ADMIN
-	default_value = GLOB.PREF_HIDE
+	default_value = GLOB.PREF_SHOW
+
+	// Prevent manual toggling from the client preferences UI. Server-side code still
+	// references this datum, but we don't want it exposed in the global prefs.
+/datum/client_preference/staff/show_attack_logs/may_set(var/mob/preference_mob)
+	return FALSE
 
 /********************
 * Debug Preferences *
@@ -365,5 +370,10 @@ var/list/_client_preferences_by_type
 	description = "Debug Log Messages"
 	key = "CHAT_DEBUGLOGS"
 	options = list(GLOB.PREF_SHOW, GLOB.PREF_HIDE)
-	default_value = GLOB.PREF_HIDE
+	default_value = GLOB.PREF_SHOW
 	flags = R_ADMIN|R_DEBUG
+
+	// Prevent toggling debug logs from the client preferences UI. Leave server-side
+	// emission intact, but only admins with tools/commands can view debug messages.
+/datum/client_preference/staff/show_debug_logs/may_set(var/mob/preference_mob)
+	return FALSE

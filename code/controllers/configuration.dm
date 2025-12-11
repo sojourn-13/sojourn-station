@@ -27,6 +27,7 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 	var/log_runtime = 0					// logs world.log to a file
 	var/log_world_output = 0			// log log_world(messages)
 	var/sql_enabled = 1					// for sql switching
+	var/require_discord_linking = FALSE	// require Discord linking to join the game
 	var/allow_admin_ooccolor = 0		// Allows admins with relevant permissions to have their own ooc color
 	var/allow_vote_restart = 0 			// allow votes to e
 	var/automatic_restart_time = 0		// server will begin ending the round at this time
@@ -59,7 +60,8 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 	var/allow_random_events = 0			// enables random events mid-round when set to 1
 	var/allow_ai = 0					// allow ai job
 	var/hostedby = null
-	var/respawn_delay = 5
+	var/respawn_delay = 20
+	var/cryopod_spawn_bonus = 15 // minutes to reduce respawn time when ghosting from a cryopod (if in good health)
 	var/guest_jobban = 1
 	var/usewhitelist = 0
 	var/kick_inactive = 0				//force disconnect for inactive players after this many minutes, if non-0
@@ -322,6 +324,9 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 
 				if ("sql_enabled")
 					config.sql_enabled = text2num(value)
+
+				if ("require_discord_linking")
+					config.require_discord_linking = TRUE
 
 				if ("log_say")
 					config.log_say = 1

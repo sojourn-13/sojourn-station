@@ -2,6 +2,7 @@
 	uid = "bluespace"
 	tree_x = 0.26
 	tree_y = 0.4
+	export_point_cost_mult = 2.5
 	start_discovered = FALSE
 	spawn_always = TRUE
 	markup = UNIQUE_GOODS

@@ -16,7 +16,7 @@
 	var/translate_hive = 0
 	var/obj/item/device/encryptionkey/keyslot1 = null
 	var/obj/item/device/encryptionkey/keyslot2 = null
-
+	var/ear_protection = EAR_PROTECTION_NONE
 	var/ks1type = /obj/item/device/encryptionkey
 	var/ks2type = null
 
@@ -101,6 +101,7 @@
 	icon_state = "sec_headset_bowman"
 	item_state = "headset"
 	adhoc_fallback = TRUE
+	ear_protection = EAR_PROTECTION_MODERATE
 
 /obj/item/device/radio/headset/headset_blackshield
 	name = "blackshield radio headset"
@@ -124,6 +125,7 @@
 	icon_state = "bs_bowman_headset"
 	item_state = "bs_bowman_headset"
 	adhoc_fallback = TRUE
+	ear_protection = EAR_PROTECTION_MODERATE
 
 /obj/item/device/radio/headset/headset_blackshield/bowman/corps
 	name = "corpsman bowman headset"
@@ -253,6 +255,7 @@
 /obj/item/device/radio/headset/heads/hos/bowman		//Wearing a Marshal bowman aids against flashbangs. Same stats otherwise.
 	name = "warrant officer bowman headset"
 	desc = "The headset of the men who lock away your worthless lives, in a comfortable bowman style.\nThis has a small symbol denoting its built-in backup transmitter."
+	ear_protection = EAR_PROTECTION_MODERATE
 	icon_state = "wo_headset_bowman"
 
 /obj/item/device/radio/headset/heads/bscom
@@ -269,6 +272,7 @@
 	icon_state = "bs_bowman_headset"
 	item_state = "bs_bowman_headset"
 	adhoc_fallback = TRUE
+	ear_protection = EAR_PROTECTION_MODERATE
 	ks2type = /obj/item/device/encryptionkey/heads/hos
 
 /obj/item/device/radio/headset/heads/ce

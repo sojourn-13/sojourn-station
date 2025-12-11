@@ -10,6 +10,7 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 	var/message_type ="Story"
 	var/datum/feed_channel/parent_channel
 	var/is_admin_message = 0
+	var/db_id = 0
 	///Is there an image tied to the feed message?
 	var/icon/img = null
 	///At what time was the full-size article sent? Time is in station time.
@@ -27,6 +28,7 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 	var/channel_name=""
 	var/list/datum/feed_message/messages = list()
 	var/locked=0
+	var/db_id = 0
 	var/author=""
 	var/backup_author=""
 	var/views=0
@@ -67,18 +69,64 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 
 /datum/feed_network/New()
 	CreateFeedChannel("Colony Announcements", "SS13", 1, 1, "New Colony Announcement Available")
+	// DB loading is deferred to world startup to avoid attempting DB calls during early datum New() time
+	// world.connectDB() will attempt to call news_network.LoadFromDatabase() once DB is available.
 
 /datum/feed_network/proc/CreateFeedChannel(var/channel_name, var/author, var/locked, var/adminChannel = 0, var/announcement_message)
+	// If a channel with this name already exists in memory, reuse it to avoid duplicates
+	for(var/datum/feed_channel/exists in network_channels)
+		if(exists.channel_name == channel_name)
+			// update properties in case something changed
+			exists.author = author
+			exists.locked = locked
+			exists.is_admin_channel = adminChannel
+			if(announcement_message)
+				exists.announcement = announcement_message
+			else
+				exists.announcement = "Breaking news from [channel_name]!"
+			// ensure db_id if possible will be set below when persisting/checking DB
+			return exists
+
 	var/datum/feed_channel/newChannel = new /datum/feed_channel
 	newChannel.channel_name = channel_name
 	newChannel.author = author
 	newChannel.locked = locked
 	newChannel.is_admin_channel = adminChannel
+	newChannel.db_id = 0
 	if(announcement_message)
 		newChannel.announcement = announcement_message
 	else
 		newChannel.announcement = "Breaking news from [channel_name]!"
 	network_channels += newChannel
+
+	// Attempt to persist channel immediately to DB for admin channels or if DB is enabled
+	// However, exclude certain channels from database persistence.
+	if(!ShouldExcludeFromDatabase(channel_name))
+		newChannel.db_id = EnsureChannelInDB(channel_name, author, locked, adminChannel, newChannel.announcement)
+
+	// If we succeeded in getting a DB id for this channel, load its recent messages so the
+	// in-memory channel is populated immediately after creation.
+	if(newChannel.db_id && config && establish_db_connection())
+		var/DBQuery/qm = dbcon.NewQuery("SELECT id, author, body, message_type, DATE_FORMAT(time_stamp, '%Y-%m-%d %H:%i:%s') as ts, is_admin_message FROM news_messages WHERE channel_id = [newChannel.db_id] ORDER BY time_stamp ASC")
+		if(qm.Execute())
+			while(qm.NextRow())
+				var/datum/feed_message/msg = new /datum/feed_message
+				msg.db_id = qm.item[1]
+				msg.author = qm.item[2]
+				msg.body = qm.item[3]
+				if(qm.item[4])
+					msg.message_type = qm.item[4]
+				msg.time_stamp = qm.item[5]
+				msg.is_admin_message = qm.item[6]
+				// Insert into the new channel (this will call update() on the channel)
+				insert_message_in_channel(newChannel, msg)
+			qm.Close()
+		else
+			log_world("Newscaster DB: failed to query messages for new channel '[channel_name]': [qm.ErrorMsg()]")
+
+	// Return the created channel so callers can use it immediately
+	return newChannel
+
 
 /datum/feed_network/proc/SubmitArticle(msg, author, channel_name, obj/item/photo/picture, adminMessage = FALSE, message_type = "", allow_comments = TRUE, update_alert = TRUE)
 	var/datum/feed_message/newMsg = new /datum/feed_message
@@ -86,6 +134,8 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 	newMsg.body = msg
 	newMsg.time_stamp = "[stationtime2text()]"
 	newMsg.is_admin_message = adminMessage
+	// If we later persist this message, record its DB id here
+	newMsg.db_id = 0
 	if(picture)
 		newMsg.img = picture.img
 		newMsg.caption = picture.scribble
@@ -93,6 +143,66 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 	if(message_type)
 		newMsg.message_type = message_type
 
+	// If this is an admin message and SQL is available, persist to DB
+	// However, do not persist messages from excluded channels.
+	if(adminMessage && config)
+		if(ShouldExcludeFromDatabase(channel_name))
+			// Keep excluded channels in-memory only; do not create DB noise.
+			log_world("Newscaster: skipping DB persist for message from excluded channel '[channel_name]'")
+		else if(establish_db_connection())
+			// Ensure channel exists in DB; attempt to create if missing
+			var/sql_channel_name = sanitizeSQL(channel_name)
+			var/sql_author = sanitizeSQL(author)
+			// Try to find channel id with retry logic for connection failures
+			var/DBQuery/check = dbcon.NewQuery("SELECT id FROM news_channels WHERE channel_name = '[sql_channel_name]' LIMIT 1")
+			if(!check.Execute())
+				// Check if it's a connection error and retry once
+				if(findtext(check.ErrorMsg(), "MySQL server has gone away") || findtext(check.ErrorMsg(), "Lost connection"))
+					log_world("Newscaster DB: Connection lost, attempting to reconnect...")
+					if(establish_db_connection())
+						check = dbcon.NewQuery("SELECT id FROM news_channels WHERE channel_name = '[sql_channel_name]' LIMIT 1")
+						if(!check.Execute())
+							log_world("Newscaster DB: Retry failed for channel check: [check.ErrorMsg()]")
+							return // Give up after retry fails
+					else
+						log_world("Newscaster DB: Failed to reconnect")
+						return
+				else
+					log_world("Newscaster DB: Failed to query channel: [check.ErrorMsg()]")
+					return
+			var/chan_id_num = null
+			while(check.NextRow())
+				chan_id_num = check.item[1]
+			check.Close()
+			if(!chan_id_num)
+				// create channel
+				var/DBQuery/insert_ch = dbcon.NewQuery("INSERT INTO news_channels (channel_name, author, locked, is_admin_channel, announcement) VALUES ('[sql_channel_name]', '[sql_author]', 1, 1, '')")
+				if(insert_ch.Execute())
+					var/DBQuery/lastq = dbcon.NewQuery("SELECT LAST_INSERT_ID() as id")
+					if(lastq.Execute())
+						while(lastq.NextRow())
+							chan_id_num = lastq.item[1]
+						lastq.Close()
+			// Insert the message
+			if(chan_id_num)
+				var/sql_body = sanitizeSQL(msg)
+				var/sql_type = sanitizeSQL(message_type)
+				var/DBQuery/ins = dbcon.NewQuery("INSERT INTO news_messages (channel_id, author, body, message_type, time_stamp, is_admin_message) VALUES ([chan_id_num], '[sql_author]', '[sql_body]', '[sql_type]', Now(), 1)")
+				if(!ins.Execute())
+					log_world("Newscaster DB: failed to insert message: [ins.ErrorMsg()]")
+				else
+					// capture the inserted id and store on the message
+					var/DBQuery/last = dbcon.NewQuery("SELECT LAST_INSERT_ID() as id")
+					if(last.Execute())
+						while(last.NextRow())
+							newMsg.db_id = last.item[1]
+						last.Close()
+					else
+						log_world("Newscaster DB: failed to fetch last_insert_id: [last.ErrorMsg()]")
+			else
+				log_world("Newscaster DB: failed to ensure channel exists for [channel_name]")
+		else
+			log_world("Newscaster: DB not available; admin message not persisted")
 	for(var/datum/feed_channel/FC in network_channels)
 		if(FC.channel_name == channel_name)
 			insert_message_in_channel(FC, newMsg) //Adding message to the network's appropriate feed_channel
@@ -129,6 +239,304 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 		clean.Insert(photo, "", SOUTH, 1, 0)
 		fcopy(clean, "[GLOB.log_directory]/photos/[photo_file].png")
 	return photo_file
+
+// Load feed channels and recent messages from the SQL database into the in-memory network.
+// This is best-effort: failures are logged but won't stop world startup.
+/datum/feed_network/proc/LoadFromDatabase()
+	// Expected tables (best-effort): news_channels(id, channel_name, author, locked, is_admin_channel, announcement)
+	// and news_messages(id, channel_id, author, body, message_type, time_stamp, is_admin_message)
+	if(!config)
+		log_world("DEBUG: Newscaster DB load skipped - no config")
+		return 0
+
+	// Check if SQL is enabled and establish database connection
+	if(!config.sql_enabled)
+		log_world("DEBUG: Newscaster DB load disabled - SQL not enabled in config")
+		return 0
+
+	// Temporary workaround: Disable database loading to prevent crashes
+	if(!config.sql_enabled)
+		log_world("DEBUG: Newscaster DB load disabled - SQL not enabled")
+		return 0
+
+	log_world("DEBUG: Newscaster attempting DB load. SQL enabled status: [config.sql_enabled]")
+
+	// Establish database connection before attempting queries
+	if(!establish_db_connection())
+		log_world("DEBUG: Newscaster DB load failed - could not establish database connection")
+		return 0
+
+	log_world("DEBUG: Newscaster DB connection established successfully")
+
+	// Ensure the required tables exist
+	CreateNewsTablesIfNeeded()
+
+	// Load channels
+	var/DBQuery/q = dbcon.NewQuery("SELECT id, channel_name, author, locked, is_admin_channel, announcement FROM news_channels ORDER BY id ASC")
+	if(!q.Execute())
+		// Check if it's a connection error and retry once
+		if(findtext(q.ErrorMsg(), "MySQL server has gone away") || findtext(q.ErrorMsg(), "Lost connection"))
+			log_world("Newscaster: Connection lost during channel load, attempting to reconnect...")
+			if(establish_db_connection())
+				q = dbcon.NewQuery("SELECT id, channel_name, author, locked, is_admin_channel, announcement FROM news_channels ORDER BY id ASC")
+				if(!q.Execute())
+					log_world("Newscaster: Retry failed to query news_channels: [q.ErrorMsg()]")
+					return 0
+			else
+				log_world("Newscaster: Failed to reconnect during channel load")
+				return 0
+		else
+			log_world("Newscaster: failed to query news_channels: [q.ErrorMsg()]")
+			return 0
+
+	// channel_by_id will be a list keyed numerically by DB id where possible
+	var/list/channel_by_id = list()
+	var/num_db_channels = 0
+	while(q.NextRow())
+		var/chan_id = q.item[1]
+		num_db_channels++
+		var/chan_name = q.item[2]
+		var/db_author = q.item[3]
+		var/db_locked = q.item[4]
+		var/db_admin = q.item[5]
+		var/db_announcement = q.item[6]
+
+		// Try to find an existing in-memory channel first by DB id, then by name
+		var/datum/feed_channel/FC = null
+		// search by db_id
+		for(var/datum/feed_channel/exists in network_channels)
+			if(exists.db_id && exists.db_id == chan_id)
+				FC = exists
+				break
+		// if no db_id match, try name match (to handle pre-created defaults)
+		if(!FC)
+			for(var/datum/feed_channel/exists2 in network_channels)
+				if(exists2.channel_name == chan_name)
+					FC = exists2
+					break
+
+		var/was_existing = FALSE
+		if(!FC)
+			// Use the centralized CreateFeedChannel so persistence and de-duplication logic
+			// (and any side-effects) happen in one place instead of constructing datums here.
+			FC = CreateFeedChannel(chan_name, db_author, db_locked, db_admin, db_announcement)
+			// CreateFeedChannel will either return an existing channel or a newly-created one
+			// that has been added to network_channels.
+			if(FC)
+				// If the returned channel already had a db_id set, it was an existing entry.
+				if(FC.db_id)
+					was_existing = TRUE
+		else
+			was_existing = TRUE
+
+		// If we failed to get or create a channel for this DB record, skip it and log.
+		if(!FC)
+			log_world("Newscaster: failed to create or find channel for DB id [chan_id] '[chan_name]'; skipping")
+			continue
+
+		// Update the channel fields from DB record
+		FC.channel_name = chan_name
+		FC.author = db_author
+		FC.locked = db_locked
+		FC.is_admin_channel = db_admin
+		FC.announcement = db_announcement
+		FC.db_id = chan_id
+
+		// ensure list can hold at least chan_id
+		if(channel_by_id.len < chan_id)
+			channel_by_id.len = chan_id
+		channel_by_id[chan_id] = FC
+		// diagnostic log to help debug missing channels
+		var/verb = "created"
+		if(was_existing)
+			verb = "reused"
+		log_world("Newscaster: DB channel [chan_id] '[chan_name]' loaded ([verb])")
+	q.Close()
+
+	if(num_db_channels == 0)
+		log_world("Newscaster: no channels found in DB (news_channels table empty)")
+
+	// Load recent messages — limit to last 200 messages to avoid huge loads
+	var/DBQuery/q2 = dbcon.NewQuery("SELECT id, channel_id, author, body, message_type, DATE_FORMAT(time_stamp, '%Y-%m-%d %H:%i:%s') as ts, is_admin_message FROM news_messages WHERE channel_id IS NOT NULL ORDER BY time_stamp DESC LIMIT 200")
+	if(!q2.Execute())
+		log_world("Newscaster: failed to query news_messages: [q2.ErrorMsg()]")
+		return 1
+
+	// Messages were selected newest-first; insert them so channels end up in chronological order
+	var/list/msg_buffer = list()
+	while(q2.NextRow())
+		var/msgrec = list(
+			"id" = q2.item[1],
+			"channel_id" = q2.item[2],
+			"author" = q2.item[3],
+			"body" = q2.item[4],
+			"message_type" = q2.item[5],
+			"time_stamp" = q2.item[6],
+			"is_admin_message" = q2.item[7]
+		)
+		msg_buffer += msgrec
+	q2.Close()
+
+	for(var/I = msg_buffer.len; I >= 1; I--)
+		var/m = msg_buffer[I]
+		var/FC = channel_by_id[m["channel_id"]]
+		if(!FC)
+			continue
+		var/datum/feed_message/newMsg = new /datum/feed_message
+		// Normalize DB-loaded fields: some DB rows may have surrounding single quotes
+		// due to earlier sanitizeSQL behavior. Strip them if present.
+		var/loaded_author = m["author"]
+		var/loaded_body = m["body"]
+		var/loaded_type = m["message_type"]
+		if(loaded_author && dd_hasprefix(loaded_author, "'"))
+			loaded_author = copytext(loaded_author, 2, length(loaded_author) - 1)
+		if(loaded_body && dd_hasprefix(loaded_body, "'"))
+			loaded_body = copytext(loaded_body, 2, length(loaded_body) - 1)
+		if(loaded_type && dd_hasprefix(loaded_type, "'"))
+			loaded_type = copytext(loaded_type, 2, length(loaded_type) - 1)
+
+		newMsg.author = loaded_author
+		newMsg.body = loaded_body
+		newMsg.time_stamp = m["time_stamp"]
+		newMsg.is_admin_message = m["is_admin_message"]
+		// store DB id for later persistence actions
+		newMsg.db_id = m["id"]
+		if(loaded_type)
+			newMsg.message_type = loaded_type
+
+		insert_message_in_channel(FC, newMsg)
+
+	var/channel_count = length(network_channels)
+	var/message_count = 0
+	for(var/datum/feed_channel/FC in network_channels)
+		message_count += length(FC.messages)
+	log_world("Newscaster: loaded [channel_count] channels and [message_count] messages from DB")
+	return 1
+
+
+// Ensure the channel exists in DB: return id if found/created, 0 on failure.
+/datum/feed_network/proc/EnsureChannelInDB(var/channel_name, var/author, var/locked = 0, var/adminChannel = 0, var/announcement_message = "")
+	// Check if this channel should be excluded from database persistence
+	if(ShouldExcludeFromDatabase(channel_name))
+		log_world("Newscaster: skipping DB persist for excluded channel '[channel_name]'")
+		return 0
+
+	if(!config)
+		return 0
+	if(!establish_db_connection())
+		return 0
+	var/sql_channel_name = sanitizeSQL(channel_name)
+	var/sql_author = sanitizeSQL(author)
+	var/DBQuery/chk = dbcon.NewQuery("SELECT id FROM news_channels WHERE channel_name = '[sql_channel_name]' LIMIT 1")
+	if(!chk.Execute())
+		log_world("Newscaster DB: failed to query channels in EnsureChannelInDB: [chk.ErrorMsg()]")
+		return 0
+	var/chan_id = 0
+	while(chk.NextRow())
+		chan_id = chk.item[1]
+	chk.Close()
+	if(chan_id)
+		return chan_id
+	// Not found: try to insert
+	var/DBQuery/ins = dbcon.NewQuery("INSERT INTO news_channels (channel_name, author, locked, is_admin_channel, announcement) VALUES ('[sql_channel_name]', '[sql_author]', [locked], [adminChannel], '[sanitizeSQL(announcement_message)]')")
+	if(!ins.Execute())
+		// insertion failed; it may be a transient DB error or a race where another process inserted it.
+		log_world("Newscaster DB: failed to insert channel '[channel_name]': [ins.ErrorMsg()]")
+		// Try to re-query in case it was inserted by another process concurrently
+		var/DBQuery/rechk = dbcon.NewQuery("SELECT id FROM news_channels WHERE channel_name = '[sql_channel_name]' LIMIT 1")
+		if(rechk.Execute())
+			while(rechk.NextRow())
+				chan_id = rechk.item[1]
+			rechk.Close()
+			return chan_id
+		else
+			log_world("Newscaster DB: re-query failed after insert failure: [rechk.ErrorMsg()]")
+			return 0
+	else
+		var/DBQuery/last = dbcon.NewQuery("SELECT LAST_INSERT_ID() as id")
+		if(last.Execute())
+			while(last.NextRow())
+				chan_id = last.item[1]
+			last.Close()
+		return chan_id
+
+// Helper function to determine if a channel should be excluded from database persistence
+/datum/feed_network/proc/ShouldExcludeFromDatabase(var/channel_name)
+	if(!channel_name)
+		return TRUE
+
+	// Convert to lowercase for case-insensitive matching
+	var/lower_name = lowertext(channel_name)
+
+	// Exclude channels with "announcements" in the name
+	if(findtext(lower_name, "announcements"))
+		return TRUE
+
+	// Exclude "nyx daily" specifically
+	if(findtext(lower_name, "nyx daily"))
+		return TRUE
+
+	// Add other exclusions here as needed
+	// Examples:
+	// if(findtext(lower_name, "daily"))
+	//     return TRUE
+	// if(findtext(lower_name, "bulletin"))
+	//     return TRUE
+
+	return FALSE
+
+// Create the news tables if they don't exist
+/datum/feed_network/proc/CreateNewsTablesIfNeeded()
+	if(!dbcon || !dbcon.IsConnected())
+		log_world("Newscaster: Cannot create tables - no database connection")
+		return FALSE
+
+	// Create news_channels table
+	var/channels_sql = {"
+		CREATE TABLE IF NOT EXISTS `news_channels` (
+			`id` int(11) NOT NULL AUTO_INCREMENT,
+			`channel_name` varchar(255) NOT NULL,
+			`author` varchar(255) NOT NULL,
+			`locked` tinyint(1) DEFAULT 0,
+			`is_admin_channel` tinyint(1) DEFAULT 0,
+			`announcement` text,
+			`censored` tinyint(1) DEFAULT 0,
+			`created_at` timestamp DEFAULT CURRENT_TIMESTAMP,
+			PRIMARY KEY (`id`),
+			UNIQUE KEY `channel_name` (`channel_name`)
+		) ENGINE=InnoDB DEFAULT CHARSET=utf8
+	"}
+
+	var/DBQuery/create_channels = dbcon.NewQuery(channels_sql)
+	if(!create_channels.Execute())
+		log_world("Newscaster: Failed to create news_channels table: [create_channels.ErrorMsg()]")
+		return FALSE
+
+	// Create news_messages table
+	var/messages_sql = {"
+		CREATE TABLE IF NOT EXISTS `news_messages` (
+			`id` int(11) NOT NULL AUTO_INCREMENT,
+			`channel_id` int(11) NOT NULL,
+			`author` varchar(255) NOT NULL,
+			`body` text NOT NULL,
+			`message_type` varchar(50) DEFAULT 'Story',
+			`time_stamp` timestamp DEFAULT CURRENT_TIMESTAMP,
+			`is_admin_message` tinyint(1) DEFAULT 0,
+			`caption` text,
+			PRIMARY KEY (`id`),
+			KEY `channel_id` (`channel_id`),
+			KEY `time_stamp` (`time_stamp`),
+			FOREIGN KEY (`channel_id`) REFERENCES `news_channels`(`id`) ON DELETE CASCADE
+		) ENGINE=InnoDB DEFAULT CHARSET=utf8
+	"}
+
+	var/DBQuery/create_messages = dbcon.NewQuery(messages_sql)
+	if(!create_messages.Execute())
+		log_world("Newscaster: Failed to create news_messages table: [create_messages.ErrorMsg()]")
+		return FALSE
+
+	log_world("Newscaster: Database tables verified/created successfully")
+	return TRUE
 
 /obj/machinery/newscaster
 	name = "newscaster"
@@ -693,6 +1101,12 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 			else
 				FC.author = FC.backup_author
 			FC.update()
+			// Persist censored author state to DB if channel exists in DB
+			if(config && establish_db_connection() && FC.db_id)
+				var/sql_censored_author = sanitizeSQL(FC.author)
+				var/DBQuery/update = dbcon.NewQuery("UPDATE news_channels SET author='[sql_censored_author]' WHERE id=[FC.db_id]")
+				if(!update.Execute())
+					log_world("Newscaster DB: failed to update channel author for id [FC.db_id]: [update.ErrorMsg()]")
 			src.updateUsrDialog()
 
 		else if(href_list["censor_channel_story_author"])
@@ -706,6 +1120,12 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 			else
 				MSG.author = MSG.backup_author
 			MSG.parent_channel.update()
+			// Persist message author censorship to DB if message has db_id
+			if(config && establish_db_connection() && MSG.db_id)
+				var/sql_author = sanitizeSQL(MSG.author)
+				var/DBQuery/upm = dbcon.NewQuery("UPDATE news_messages SET author='[sql_author]' WHERE id=[MSG.db_id]")
+				if(!upm.Execute())
+					log_world("Newscaster DB: failed to update message author id [MSG.db_id]: [upm.ErrorMsg()]")
 			src.updateUsrDialog()
 
 		else if(href_list["censor_channel_story_body"])
@@ -726,6 +1146,13 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 				MSG.img = MSG.backup_img
 
 			MSG.parent_channel.update()
+			// Persist message censorship to DB if message has db_id
+			if(config && establish_db_connection() && MSG.db_id)
+				var/sql_body = sanitizeSQL(MSG.body)
+				var/sql_caption = sanitizeSQL(MSG.caption)
+				var/DBQuery/upb = dbcon.NewQuery("UPDATE news_messages SET body='[sql_body]', caption='[sql_caption]' WHERE id=[MSG.db_id]")
+				if(!upb.Execute())
+					log_world("Newscaster DB: failed to update message body id [MSG.db_id]: [upb.ErrorMsg()]")
 			src.updateUsrDialog()
 
 		else if(href_list["pick_d_notice"])
@@ -741,6 +1168,11 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 				return
 			FC.censored = !FC.censored
 			FC.update()
+			// Persist D-Notice (censored flag) to DB if available
+			if(config && establish_db_connection() && FC.db_id)
+				var/DBQuery/upc = dbcon.NewQuery("UPDATE news_channels SET censored=[(FC.censored) ? (1) : (0)] WHERE id=[FC.db_id]")
+				if(!upc.Execute())
+					log_world("Newscaster DB: failed to update censored state for channel id [FC.db_id]: [upc.ErrorMsg()]")
 			src.updateUsrDialog()
 
 		else if(href_list["view"])
@@ -860,6 +1292,7 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 	desc = "An old issue of The Griffon, a widely-circulated galactic newspaper."
 	icon = 'icons/obj/bureaucracy.dmi'
 	icon_state = "newspaper"
+	matter = list(MATERIAL_BIOMATTER = 2)
 	w_class = ITEM_SIZE_SMALL	//Let's make it fit in trashbags!
 	attack_verb = list("bapped")
 	var/screen = 0
@@ -946,7 +1379,7 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 					dat+="<BR><I>There is a small scribble near the end of this page... It reads: \"[src.scribble]\"</I>"
 				dat+= "<HR><DIV STYLE='float:left;'><A href='?src=[REF(src)];prev_page=1'>Previous Page</A></DIV>"
 			else
-				dat+="I'm sorry to break your immersion. This shit's bugged. Report this bug to Agouri, polyxenitopalidou@gmail.com"
+				dat+="I'm sorry to break your immersion. This shit's bugged. Report this bug to code staff"
 
 		dat+="<BR><HR><div align='center'>[src.curr_page+1]</div>"
 		human_user << browse(HTML_SKELETON(dat), "window=newspaper_main;size=300x400")

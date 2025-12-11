@@ -5,6 +5,7 @@
 	uid = "factio_basic"
 	tree_x = 0.66
 	tree_y = 0.9
+	export_point_cost_mult = 1
 	start_discovered = TRUE
 	spawn_always = TRUE
 	markup = COMMON_GOODS

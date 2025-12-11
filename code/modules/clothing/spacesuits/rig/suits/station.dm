@@ -408,16 +408,23 @@ Technomancer RIG
 	icon_state = "response_team"
 	armor_list = list(
 		melee = 10,
-		bullet = 8,
-		energy = 6,
+		bullet = 10,
+		energy = 10,
 		bomb = 50,
 		bio = 100,
 		rad = 100
 	)
+
+	req_access = null
+	req_one_access = null
+
+	ablative_max = 10
+	ablation = ABLATION_CERAMIC
+
 	seal_delay = 15 //quick deploy for quick recovery
 	slowdown = 0.25
 	stiffness = MEDIUM_STIFFNESS
-	helm_type = /obj/item/clothing/head/helmet/space/rig/tt
+	helm_type = /obj/item/clothing/head/helmet/space/rig/medical
 
 	extra_allowed = list(
 		/obj/item/storage/firstaid,
@@ -426,10 +433,9 @@ Technomancer RIG
 		/obj/item/roller
 	)
 
-
 /obj/item/rig/recovery_suit/equipped
-	req_access = null
-	req_one_access = null
+	req_access = list(access_paramedic)
+	req_one_access = list()
 
 	initial_modules = list(
 		/obj/item/rig_module/modular_injector/medical/preloaded,
@@ -440,9 +446,9 @@ Technomancer RIG
 		)
 
 /obj/item/rig/cmo
-	name = "SI 'Medtek' control module"
-	suit_type = "SI 'Medtek"
-	desc = "An upgraded and updated Soteria 'Retainer' RIGsuit made for field surgery in dangerous locations, this suit has undergone a series of upgrades to improve its utility \
+	name = "SI 'Retainer' control module"
+	suit_type = "SI 'Retainer' hardsuit"
+	desc = "An upgraded and updated Soteria 'Reclaimer' RIGsuit made for field surgery in dangerous locations, this suit has undergone a series of upgrades to improve its utility \
 	for Soteria's resident overworked Chief Biolab Overseer.  Improved servos are paired with neural-mnemonic sensors allowing the user unmatched speed and dexterity- one can easily forget that they are even wearing the suit."
 	icon_state = "cmo_rig"
 	armor_list = list(

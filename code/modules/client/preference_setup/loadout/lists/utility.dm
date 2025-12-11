@@ -16,22 +16,54 @@
 /datum/gear/lunchbox
 	display_name = "lunch box"
 	path = /obj/item/storage/lunchbox
-	cost = 0
+	sort_category = "Utility"
+	cost = 2
 
-/datum/gear/lunchbox_cat
+/datum/gear/lunchbox/New()
+	..()
+	// Build dynamic lists containing all matching food/drink types so the lunchbox
+	// selection includes every available snack, meal, and canned drink without
+	// hardcoding individual paths.
+	var/list/snacks = list()
+	var/list/meals = list()
+	var/list/canned_drinks = list()
+
+	// Collect types from the type tree and convert them into name->path
+	// assoc lists so the loadout UI displays human-friendly names instead
+	// of raw type paths.
+	snacks = init_lunchable_list(lunchables_lunches())
+	meals = init_lunchable_list(lunchables_snacks())
+	canned_drinks = init_lunchable_list(lunchables_drinks())
+
+	// Register tweaks
+	gear_tweaks += new /datum/gear_tweak/contents/snack(snacks)
+	gear_tweaks += new /datum/gear_tweak/contents/meal(meals)
+	gear_tweaks += new /datum/gear_tweak/contents/drink(canned_drinks)
+
+
+/datum/gear/lunchbox/cat
 	display_name = "cat lunch box"
 	path = /obj/item/storage/lunchbox/cat
-	cost = 0
+	cost = 2
 
-/datum/gear/lunchbox_rainbow
+/datum/gear/lunchbox/cat/New()
+	..()
+
+/datum/gear/lunchbox/rainbow
 	display_name = "rainbow lunch box"
 	path = /obj/item/storage/lunchbox/rainbow
-	cost = 0
+	cost = 2
 
-/datum/gear/lunchbox_church
+/datum/gear/lunchbox/rainbow/New()
+	..()
+
+/datum/gear/lunchbox/church
 	display_name = "church lunch box"
 	path = /obj/item/storage/lunchbox/lemniscate
-	cost = 0
+	cost = 2
+
+/datum/gear/lunchbox/church/New()
+	..()
 
 /datum/gear/utility/cane
 	display_name = "cane"
@@ -173,4 +205,3 @@
 	path = /obj/item/storage/box/costume
 	flags = GEAR_HAS_TYPE_SELECTION
 	cost = 1 //Style at a cost! - also cardboard
-

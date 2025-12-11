@@ -31,6 +31,7 @@
 	price_tag = 100
 	tool_qualities = list(QUALITY_ARMOR = 100)
 	max_upgrades = 1
+	ear_protection = EAR_PROTECTION_MINOR
 
 /obj/item/clothing/head/helmet/tanker
 	name = "tanker helmet"
@@ -531,8 +532,8 @@
 /obj/item/clothing/head/helmet/marshal
 	name = "marshal helmet"
 	desc = "Standard operator gear. Protects the head from impacts. Painted in marshal colors."
-	icon_state = "helmet"
-	icon_state = "helmet"
+	icon_state = "helmet_marshal"
+	icon_state = "helmet_marshal"
 	armor_list = list(melee =7, bullet = 7, energy = 6, bomb = 25, bio = 70, rad = 0)
 	body_parts_covered = HEAD|EARS
 
@@ -1080,7 +1081,7 @@
 	armor_list = list(melee = 10, bullet = 10, energy = 10, bomb = 60, bio = 100, rad = 100)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
-	flash_protection = FLASH_PROTECTION_MODERATE
+	flash_protection = FLASH_PROTECTION_MAJOR
 	action_button_name = "Toggle Headlamp"
 	light_overlay = "technohelmet_light"
 	brightness_on = 4

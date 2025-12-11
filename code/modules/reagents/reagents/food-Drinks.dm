@@ -14,6 +14,7 @@
 	var/injectable = 0
 	color = "#664330"
 	common = TRUE //People should know that plant food is plant food let's be real
+	liver_dependent = FALSE // Basic nutrients, naturally processed without liver
 
 /datum/reagent/organic/nutriment/mix_data(var/list/newdata, var/newamount)
 	if(!islist(newdata) || !newdata.len)
@@ -89,6 +90,7 @@
 	injectable = 1
 	common = TRUE //It's basically sugar
 	price_per_unit = 0.725
+	liver_dependent = FALSE // Essential nutrient, naturally metabolized without liver
 
 /datum/reagent/organic/nutriment/protein
 	name = "Protein"
@@ -98,6 +100,7 @@
 	color = "#440000"
 	common = TRUE //Protein Shake
 	price_per_unit = 0.13
+	liver_dependent = FALSE // Essential nutrient, naturally processed without liver
 
 /datum/reagent/organic/nutriment/protein/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	if(VAMPIRE in M.mutations)

@@ -37,7 +37,6 @@
 	var/obj/machinery/trade_beacon/sending/sending
 	var/obj/machinery/trade_beacon/receiving/receiving
 	var/datum/money_account/account
-
 	var/list/shoppinglist = list()		// list(
 										// 		station reference = list(
 										//			"category" = list(
@@ -245,6 +244,24 @@
 			return
 		set_chosen_category()
 		station = S
+		return TRUE
+
+	if(href_list["PRG_unlock_station"])
+		var/uid = href_list["PRG_unlock_station"]
+		if(!uid)
+			return
+		var/datum/trade_station/TU = SStrade.get_station_by_uid(uid)
+		var/mult = TU.export_point_cost_mult
+		if(!TU)
+			return
+		var/spu = TU.spawn_probability ? TU.spawn_probability : 60
+		var/required = max(1000, round(1000.0 / max(1, spu))) * mult // required points heuristic
+		if(SStrade.export_points < required)
+			to_chat(usr, SPAN_WARNING("Not enough export points to unlock station."))
+			return TRUE
+		SStrade.export_points -= required
+		SStrade.discover_by_uid(list(uid, TRUE))
+		to_chat(usr, "Station unlocked.")
 		return TRUE
 
 	if(href_list["PRG_disallow_mass"])
@@ -617,7 +634,7 @@
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if (!ui)
-		ui = new(user, src, ui_key, "trade.tmpl", name, 1000, 800, state = state)
+		ui = new(user, src, ui_key, "trade.tmpl", name, 2000, 800, state = state)
 
 		// template keys starting with _ are not appended to the UI automatically and have to be called manually
 		ui.add_template("_goods", "trade_goods.tmpl")
@@ -626,8 +643,7 @@
 		ui.add_template("_orders", "trade_orders.tmpl")
 		ui.add_template("_saved", "trade_saved.tmpl")
 		ui.add_template("_logs", "trade_log.tmpl")
-
-		ui.set_auto_update(1)
+		ui.set_auto_update(10)
 		ui.set_initial_data(data)
 		ui.open()
 
@@ -734,6 +750,22 @@
 
 		.["trade_tree"] = trade_tree
 		.["tree_lines"] = line_list
+
+		// Also build a list of locked stations that can be unlocked via export points
+		var/list/unlockables = list()
+		for(var/station in SStrade.all_stations)
+			var/datum/trade_station/TS2 = station
+			var/mult = TS2.export_point_cost_mult
+			if(SStrade.discovered_stations.Find(TS2))
+				continue
+			// Use a lightweight heuristic based on inventory size and base income instead of spawn_probability
+			var/impact = max(1, TS2.unique_good_count) + max(1, TS2.base_income / 1000)
+			var/required_points = max(1000, round(100.0 * impact)) * mult
+			LAZYADD(unlockables, list(list("uid" = TS2.uid, "name" = TS2.name, "required" = required_points)))
+		.["unlockables"] = unlockables
+
+		// expose current global export points to the UI
+		.["export_points"] = SStrade.export_points
 
 	if(PRG.prg_screen == PRG_MAIN)
 		if(!PRG.station)

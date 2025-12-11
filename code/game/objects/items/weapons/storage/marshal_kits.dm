@@ -137,6 +137,8 @@
 	populate_contents()
 		new /obj/item/gun/energy/peacekeeper(src)
 		new /obj/item/cell/medium/high(src)
+		new /obj/item/cell/medium/high(src)
+		new /obj/item/cell/medium/high(src)
 		new /obj/item/storage/pouch/tubular(src) //MOs get this too
 
 // Secondary kits
@@ -219,6 +221,17 @@
 		new /obj/item/ammo_magazine/speed_loader_rifle_75(src) //Still a full box
 		new /obj/item/clothing/accessory/holster/armpit(src)
 
+/obj/item/storage/box/m_kit/mateba_worse
+	name = "Rhino Secondary Kit"
+	desc = "An equipment kit containing a specialized semiautomatic .50 Kurz revolver. Great recoil control and even better stopping power, a flashy weapon of high-ranked detectives."
+
+	populate_contents()
+		new /obj/item/gun/projectile/revolver/rev10/mateba/worse(src)
+		new /obj/item/ammo_magazine/speed_loader_kurz_50/rubber/pepperball(src)
+		new /obj/item/ammo_magazine/speed_loader_kurz_50(src)
+		new /obj/item/ammo_magazine/speed_loader_kurz_50(src)
+		new /obj/item/clothing/accessory/holster/armpit(src)
+
 // Warrant Officer secondaries (from voucher)
 /obj/item/storage/box/m_kit/mateba
 	name = "\improper Mateba Secondary Kit"
@@ -266,7 +279,7 @@
 
 	populate_contents()
 		new /obj/item/clothing/suit/storage/vest/ironhammer(src)
-		new /obj/item/clothing/head/helmet/marshal_full(src)
+		new /obj/item/clothing/head/helmet/marshal(src)
 
 
 /obj/item/storage/box/m_kit/armored_overcoat

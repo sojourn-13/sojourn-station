@@ -20,7 +20,7 @@
 			{{:helper.link('On', null, {'command' : 'lethal', 'value' : 1},  data.lethal ?'selected' : null)}}
 			{{:helper.link('Off',null, {'command' : 'lethal', 'value' : 0}, !data.lethal ? 'redButton' : null)}}
 		</div>
-	</div>	
+	</div>
 {{/if}}
 
 {{for data.settings}}
@@ -34,3 +34,14 @@
 		</div>
 	</div>
 {{/for}}
+{{if data.filter_neutral !== undefined}}
+	<div class="item">
+		<div class="itemLabelWide">
+			Filter out Neutral Faction
+		</div>
+		<div class="itemContentNarrow">
+			{{:helper.link('Active', null, {'command' : 'filter_neutral', 'value' : 1},  data.filter_neutral ? 'selected' : null)}}
+			{{:helper.link('Disabled',null, {'command' : 'filter_neutral', 'value' : 0}, !data.filter_neutral ? 'selected' : null)}}
+		</div>
+	</div>
+{{/if}}

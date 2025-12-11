@@ -82,7 +82,7 @@
 		if(isliving(target))
 			var/mob/living/L = target
 			if(istype(L) && L.reagents)
-				reagents.trans_to_mob(L, 2, CHEM_BLOOD, copy = FALSE)
+				reagents.trans_to_mob(L, 2, CHEM_TOUCH, copy = FALSE)
 
 /obj/item/projectile/bullet/pistol_35/rubber/soporific/cbo
 	name = "soporific condensed plastic bullet"
@@ -237,7 +237,20 @@
 		if(isliving(target))
 			var/mob/living/L = target
 			if(istype(L) && L.reagents && !testing)
-				reagents.trans_to_mob(L, 3, CHEM_BLOOD, copy = FALSE)
+				reagents.trans_to_mob(L, 3, CHEM_TOUCH, copy = FALSE)
+
+/obj/item/projectile/bullet/magnum_40/rubber/soporific/cbo
+	name = "condenseed soporific coated rubber bullet"
+	damage_types = list(BRUTE = 0, HALLOSS = 35)
+	can_ricochet = FALSE
+	embed = FALSE
+
+/obj/item/projectile/bullet/magnum_40/rubber/soporific/cbo/on_hit(atom/target, def_zone = null)
+	if(!testing)
+		if(isliving(target))
+			var/mob/living/L = target
+			if(istype(L) && L.reagents)
+				L.reagents.add_reagent("stoxin", 5)
 
 /obj/item/projectile/bullet/magnum_40/scrap
 	damage_types = list(BRUTE = 15)
@@ -337,6 +350,20 @@
 	nocap_structures = TRUE //We can breach doors rather well
 	sharp = TRUE
 	recoil = 16
+
+
+/obj/item/projectile/bullet/kurz_50/biomatter
+	name = "biomatter bullet"
+	damage_types = list(BURN = 23, HALLOSS = 33)
+	armor_divisor = 0.7
+	wounding_mult = WOUNDING_NORMAL
+	penetrating = 0
+	can_ricochet = FALSE
+	embed = FALSE
+	sharp = FALSE
+	step_delay = 0.65
+	check_armor = ARMOR_BIO
+	recoil = 8
 
 
 //Carbines and rifles
@@ -511,7 +538,7 @@
 		if(isliving(target))
 			var/mob/living/L = target
 			if(istype(L) && L.reagents && !testing)
-				reagents.trans_to_mob(L, 1, CHEM_BLOOD, copy = FALSE)
+				reagents.trans_to_mob(L, 1, CHEM_TOUCH, copy = FALSE)
 
 /obj/item/projectile/bullet/rifle_75/lethal
 	name = "hollow-point bullet"
@@ -928,7 +955,7 @@
 		if(isliving(target))
 			var/mob/living/L = target
 			if(istype(L) && L.reagents && !testing)
-				reagents.trans_to_mob(L, 5, CHEM_BLOOD, copy = FALSE)
+				reagents.trans_to_mob(L, 5, CHEM_TOUCH, copy = FALSE)
 
 
 /obj/item/projectile/bullet/shotgun/practice
@@ -1344,7 +1371,7 @@
 		if(isliving(target))
 			var/mob/living/injectee = target
 			admin_inject_log(original_firer, target, src, reagents.log_list(), 5)
-			reagents.trans_to_mob(injectee, 5, CHEM_BLOOD)
+			reagents.trans_to_mob(injectee, 5, CHEM_TOUCH)
 		else
 			reagents.trans_to(target, 5)
 	return TRUE

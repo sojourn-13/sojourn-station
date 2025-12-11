@@ -8,6 +8,7 @@
 	//Then add the new icon to the shared.css file in nano\css\shared.css
 
 	icon_states = list("htu_station", "station")	// Overmap icons, first one is what it looks like when unlocked second is locked, *uses shared.css* file
+	export_point_cost_mult = 1		// Default multiplier (0.5 - 4 recommended)
 
 	forced_overmap_zone = list()	// For forcing the station into a specific zone. Format: list(list(minx, maxx), list(miny, maxy))
 

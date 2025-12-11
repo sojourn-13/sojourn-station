@@ -20,6 +20,7 @@ var/const/CHURCH           	=(1<<10)
 var/const/PROSPECTORS		=(1<<11)
 var/const/INDEPENDENT		=(1<<12)
 var/const/LODGE				=(1<<13)
+var/const/SILICON			=(1<<14)
 
 var/const/ENGSEC			=(1<<0)
 

@@ -75,7 +75,8 @@
 
 	for(var/client/C in admins)
 		if(C.get_preference_value(/datum/client_preference/staff/show_debug_logs) == GLOB.PREF_SHOW)
-			to_chat(C, "DEBUG: [text]")
+			// Send debug messages with explicit type so tgui classifies them without relying on HTML parsing
+			to_chat(C, html = "<span class=\"debug_message\">DEBUG: [text]</span>", type = MESSAGE_TYPE_DEBUG)
 
 /proc/log_game(text)
 	if (config.log_game)

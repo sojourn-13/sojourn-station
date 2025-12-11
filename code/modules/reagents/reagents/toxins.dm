@@ -824,3 +824,107 @@
 		M.apply_effect(agony_amount, HALLOSS, 0)
 		if(prob(5))
 			to_chat(M, SPAN_DANGER("You feel like your insides are burning!"))
+
+/datum/reagent/toxin/boron
+	name = "Boron"
+	id = "boron"
+	description = "A toxic metalloid element."
+	taste_description = "bitterness"
+	reagent_state = SOLID
+	color = "#8B4513"
+	strength = 2
+	metabolism = REM * 0.75
+	nerve_system_accumulations = 40
+
+/datum/reagent/toxin/boron/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	..()
+	if(prob(10))
+		M.adjustBrainLoss(1)
+
+/datum/reagent/toxin/bromide
+	name = "Bromide"
+	id = "bromide"
+	description = "A toxic halogen compound."
+	taste_description = "bitter chemical"
+	reagent_state = LIQUID
+	color = "#8B0000"
+	strength = 2
+	nerve_system_accumulations = 35
+
+/datum/reagent/toxin/bromide/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	..()
+	if(prob(15))
+		M.confused = max(M.confused, 3)
+
+/datum/reagent/toxin/methyl_bromide
+	name = "Methyl Bromide"
+	id = "methyl_bromide"
+	description = "A highly toxic pesticide gas."
+	taste_description = "acrid chemical"
+	reagent_state = GAS
+	color = "#FF6347"
+	strength = 3
+	metabolism = REM * 0.5
+	nerve_system_accumulations = 50
+
+/datum/reagent/toxin/methyl_bromide/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	..()
+	if(prob(20))
+		var/datum/gas_mixture/environment = M.loc.return_air()
+		if(environment)
+			environment.adjust_gas(GAS_METHYL_BROMIDE, volume * 0.1)
+
+/datum/reagent/toxin/chlorine
+	name = "Chlorine"
+	id = "chlorine"
+	description = "A toxic halogen gas that causes severe organ damage throughout the body."
+	taste_description = "bleach"
+	reagent_state = GAS
+	color = "#C5F72D"
+	overdose = 5 // really, really bad
+	strength = 4 // Increased base toxicity
+	metabolism = REM * 0.75
+	nerve_system_accumulations = 80 // Increased nerve damage
+
+/datum/reagent/toxin/chlorine/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
+	// When ingested, chlorine still causes severe damage but slightly reduced
+	affect_blood(M, alien, effect_multiplier * 0.9) // 90% effectiveness when ingested
+
+/datum/reagent/toxin/chlorine/affect_touch(mob/living/carbon/M, alien, effect_multiplier)
+	// When touching skin, chlorine causes chemical burns and absorbs into bloodstream
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		// Direct skin damage from chemical burns
+		for(var/obj/item/organ/external/E in H.organs)
+			if(E && !BP_IS_ROBOTIC(E))
+				E.take_damage(1 * effect_multiplier, BURN) // Chemical burns on skin
+				if(prob(15 * effect_multiplier))
+					to_chat(H, SPAN_DANGER("Your [E.name] burns from chlorine exposure!"))
+	
+	// Some chlorine absorbs through skin into bloodstream (reduced effectiveness)
+	affect_blood(M, alien, effect_multiplier * 0.3) // 30% absorption through skin
+
+/datum/reagent/toxin/chlorine/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	..()
+	// Chlorine causes massive organ damage to all organs
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		
+		// Damage all internal organs severely
+		for(var/obj/item/organ/internal/I in H.internal_organs)
+			if(I && !BP_IS_ROBOTIC(I)) // Don't damage robotic organs
+				I.take_damage(5 * effect_multiplier)
+				if(prob(20 * effect_multiplier))
+					to_chat(H, SPAN_DANGER("You feel a burning sensation in your [I.name]!"))
+		
+		// Also damage external organs (skin, muscle tissue)
+		for(var/obj/item/organ/external/E in H.organs)
+			if(E && !BP_IS_ROBOTIC(E))
+				E.take_damage(2 * effect_multiplier, BRUTE) // Both brute and burn damage
+				E.take_damage(1 * effect_multiplier, BURN) // Both brute and burn damage
+	
+	// Release chlorine gas into environment
+	if(prob(15))
+		var/datum/gas_mixture/environment = M.loc.return_air()
+		if(environment)
+			environment.adjust_gas(GAS_CHLORINE, volume * 0.1)

@@ -13,6 +13,7 @@
 	glass_desc = "Are you sure this is tomato juice?"
 	nerve_system_accumulations = 0
 	common = TRUE //Everyone knows what blood looks like
+	liver_dependent = FALSE // Blood doesn't require liver processing
 
 /datum/reagent/organic/blood/initialize_data(var/newdata)
 	..()
@@ -78,6 +79,7 @@
 	glass_name = "water"
 	glass_desc = "The father of all refreshments."
 	nerve_system_accumulations = 0
+	liver_dependent = FALSE // Water doesn't require liver processing
 	var/fire_suppression_effect = 1 //19000 times this.
 	reagent_type = "Water"
 	common = TRUE //You know what water is.
@@ -221,3 +223,63 @@
 /datum/reagent/toxin/fuel/touch_mob(mob/living/L, var/amount)
 	if(istype(L))
 		L.adjust_fire_stacks(amount / 10) // Splashing people with welding fuel to make them easy to ignite!
+
+// This is only really used to poison vox.
+/datum/reagent/oxygen
+	name = "Oxygen"
+	id = "oxygen"
+	description = "An ubiquitous oxidizing agent."
+	taste_description = "nothing"
+	reagent_state = LIQUID
+	color = COLOR_GRAY80
+	scannable = FALSE  // Don't show oxygen in medical scanners
+
+/datum/reagent/carbon_monoxide
+	name = "Carbon Monoxide"
+	id = "carbon_monoxide"
+	description = "A dangerous carbon comubstion byproduct."
+	taste_description = "stale air"
+	reagent_state = LIQUID
+	color = COLOR_GRAY80
+	metabolism = 0.05 // As with helium.
+
+/datum/reagent/carbon_monoxide/affect_blood(mob/living/carbon/human/M, removed)
+	if(!istype(M))
+		return
+	var/warning_message
+	var/warning_prob = 10
+	var/dosage = volume // Simplified dosage tracking
+	if(dosage >= 3)
+		warning_message = pick("extremely dizzy","short of breath","faint","confused")
+		warning_prob = 15
+		M.adjustOxyLoss(10,20)
+		M.co2_alert = 1
+	else if(dosage >= 1.5)
+		warning_message = pick("dizzy","short of breath","faint","momentarily confused")
+		M.co2_alert = 1
+		M.adjustOxyLoss(3,5)
+	else if(dosage >= 0.25)
+		warning_message = pick("a little dizzy","short of breath")
+		warning_prob = 10
+		M.co2_alert = 0
+	else
+		M.co2_alert = 0
+	if(warning_message && prob(warning_prob))
+		to_chat(M, SPAN_WARNING("You feel [warning_message]."))
+
+/datum/reagent/helium
+	name = "Helium"
+	id = "helium"
+	description = "A noble gas. It makes your voice squeaky."
+	taste_description = "nothing"
+	reagent_state = LIQUID
+	color = COLOR_GRAY80
+	metabolism = 0.05 // So that low dosages have a chance to build up in the body.
+
+/datum/reagent/ammonia
+	name = "Ammonia"
+	id = "ammonia"
+	description = "A caustic substance commonly used in cleaning products."
+	taste_description = "cleaning products"
+	reagent_state = LIQUID
+	color = COLOR_GRAY80

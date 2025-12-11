@@ -185,7 +185,7 @@
 	user.set_machine(src)
 
 	// dat
-	var/dat = "<HTML><BODY><TT>"
+	var/dat = "<TT>"
 
 	dat += "<HR>Timer System:</hr>"
 	dat += " <b>Door [src.id] controls</b><br/>"
@@ -226,9 +226,9 @@
 			dat += "<br/><A href='?src=\ref[src];sp=1'>Activate Spray</A><br/>"
 
 	dat += "<br/><br/><a href='?src=\ref[user];mach_close=computer'>Close</a>"
-	dat += "</TT></BODY></HTML>"
+	dat += "</TT>"
 
-	user << browse(dat, "window=computer;size=400x500")
+	user << browse(HTML_SKELETON(dat), "window=computer;size=400x500")
 	onclose(user, "computer")
 	return
 

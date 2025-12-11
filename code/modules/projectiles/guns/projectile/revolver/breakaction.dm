@@ -84,31 +84,50 @@
 	caliber = CAL_50
 	max_shells = 5
 	origin_tech = list(TECH_COMBAT = 10, TECH_MATERIAL = 5)
-	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 6, MATERIAL_PLATINUM = 2)
+	matter = null
 	fire_sound = 'sound/weapons/guns/fire/12mm_revolver.ogg'
-	price_tag = 1500 // Very rare, very well made
+	price_tag = null // Very rare, very well made
 	damage_multiplier = 1.3 // Not as good as the Deckard in penetration for balance purposes, still quite good.
 	init_recoil = HANDGUN_RECOIL(0.5) // Takes no mods that assist with recoil.
 	wield_delay = 0.6 SECOND
 	wield_delay_factor = 0.3 // 30 vig, heavy gun - but still a handgun.
-	can_dual = FALSE
-	max_upgrades = 4 // Deckard on steroids, let's not get out of hand
-	blacklist_upgrades = list( // Gun already has amazing recoil control, barrels that reduce recoil interfere with the sliding recoil control mechanism.
-							  /obj/item/tool_upgrade/refinement/vibcompensator = TRUE,
-							  /obj/item/tool_upgrade/reinforcement/guard = TRUE,
-							  /obj/item/tool_upgrade/productivity/ergonomic_grip = TRUE,
-							  /obj/item/tool_upgrade/refinement/ported_barrel = TRUE,)
+	can_dual = TRUE
+	max_upgrades = 4
 	zoom_factors = list()
 	gun_parts = list(/obj/item/part/gun/frame/mateba = 1, /obj/item/part/gun/grip/wood = 1, /obj/item/part/gun/mechanism/revolver = 1, /obj/item/part/gun/barrel/kurz = 1)
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_CALIBRE_50)
 	serial_type = "SD GmbH"
+
+/obj/item/gun/projectile/revolver/rev10/mateba/worse
+	name = "\"Rhino\" autorevolver"
+	desc = "The \"Rhino\" autorevolver is a unique semiautomatic revolver chambered in .50 Kurz whose patents were acquired by Marshals for production. \
+	It seems to be a cheaper, less refined version of the Mateba, lacking its precision machining and recoil compensator. "
+	icon = 'icons/obj/guns/projectile/mateba.dmi'
+	icon_state = "mateba_silver"
+	item_state = "mateba_silver"
+	caliber = CAL_50
+	max_shells = 5
+	origin_tech = list(TECH_COMBAT = 10, TECH_MATERIAL = 5)
+	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 6, MATERIAL_PLATINUM = 2)
+	fire_sound = 'sound/weapons/guns/fire/12mm_revolver.ogg'
+	price_tag = 1500 // Cheaper than the Mateba, but still expensive.
+	damage_multiplier = 1
+	init_recoil = HANDGUN_RECOIL(0.5)
+	wield_delay = 0.4 SECOND
+	wield_delay_factor = 0.2 // 20 vig, heavy gun - but still a handgun.
+	can_dual = TRUE
+	max_upgrades = 4
+	zoom_factors = list()
+	gun_parts = list(/obj/item/part/gun/frame/mateba = 1, /obj/item/part/gun/grip/rubber = 1, /obj/item/part/gun/mechanism/revolver = 1, /obj/item/part/gun/barrel/kurz = 1)
+	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_CALIBRE_50)
+	serial_type = "NM"
 
 /obj/item/part/gun/frame/mateba
 	name = "Mateba frame"
 	desc = "A \"Mateba\" autorevolver frame. A specialized, recoil-absorbing revolver frame for a potent firearm chambered in .50 Kurz."
 	icon_state = "frame_mateba"
 	result = /obj/item/gun/projectile/revolver/rev10/mateba
-	gripvars = list(/obj/item/part/gun/grip/wood)
+	gripvars = list(/obj/item/part/gun/grip/wood, /obj/item/part/gun/grip/rubber)
 	mechanismvar = /obj/item/part/gun/mechanism/revolver
 	barrelvars = list(/obj/item/part/gun/barrel/kurz)
-	resultvars = list(/obj/item/gun/projectile/revolver/rev10/mateba)
+	resultvars = list(/obj/item/gun/projectile/revolver/rev10/mateba, /obj/item/gun/projectile/revolver/rev10/mateba/worse)

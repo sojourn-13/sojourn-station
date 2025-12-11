@@ -24,16 +24,10 @@
 	// Pre-load with one rocket
 	var/obj/item/ammo_casing/rocket/loaded_rocket = new /obj/item/ammo_casing/rocket/disposable(src)
 	rockets += loaded_rocket
-	var/scale_val = 1
-	if(!icon_scale)
-		scale_val = 1
-	else
-		scale_val = icon_scale
-	add_new_transformation(/datum/transform_type/modular, list(scale_x = scale_val, scale_y = scale_val))
 	// Ensure the correct empty/loaded icon is applied on spawn (no magazine preloaded)
 	update_icon()
 
-	
+
 /obj/item/gun/launcher/rocket/deimos/panah/update_icon()
 	if(fired)
 		icon_state = "panah_spent"
@@ -44,6 +38,8 @@
 	else
 		icon_state = "panah_unfolded"
 		item_state = "panah_unfolded"
+	if(wielded)
+		item_state += "_doble"
 
 /obj/item/gun/launcher/rocket/deimos/panah/toggle_safety(mob/living/user)
 	if(fired)
@@ -64,6 +60,7 @@
 	update_firemode()
 	update_hud_actions()
 	check_safety_cursor(user)
+
 
 /obj/item/gun/launcher/rocket/deimos/panah/Fire(atom/target, mob/living/user, params, pointblank=0, reflex=0)
 	if(safety)
@@ -171,6 +168,8 @@
 	else
 		icon_state = "golok_closed"
 		item_state = "golok_closed"
+	if(wielded)
+		item_state += "_doble"
 
 /obj/item/gun/projectile/shotgun/pump/deimos/golok/attack_self(mob/living/user as mob)
 	if(world.time >= user.next_move)
@@ -349,12 +348,8 @@
 
 /obj/item/gun/projectile/shotgun/pump/deimos/golok/New()
 	..()
-	var/scale_val = 1
-	if(!icon_scale)
-		scale_val = 1
-	else
-		scale_val = icon_scale
-	add_new_transformation(/datum/transform_type/modular, list(scale_x = scale_val, scale_y = scale_val))
+
+
 	// Ensure the correct empty/loaded icon is applied on spawn (no magazine preloaded)
 	update_icon()
 
@@ -448,12 +443,8 @@
 
 /obj/item/gun/projectile/shotgun/pump/deimos/parang/New()
 	..()
-	var/scale_val = 1
-	if(!icon_scale)
-		scale_val = 1
-	else
-		scale_val = icon_scale
-	add_new_transformation(/datum/transform_type/modular, list(scale_x = scale_val, scale_y = scale_val))
+
+
 	// Ensure the correct empty/loaded icon is applied on spawn (no magazine preloaded)
 	update_icon()
 
@@ -489,12 +480,8 @@
 
 /obj/item/gun/projectile/deimos/tombak/New()
 	..()
-	var/scale_val = 1
-	if(!icon_scale)
-		scale_val = 1
-	else
-		scale_val = icon_scale
-	add_new_transformation(/datum/transform_type/modular, list(scale_x = scale_val, scale_y = scale_val))
+
+
 	// Ensure the correct empty/loaded icon is applied on spawn (no magazine preloaded)
 	update_icon()
 
@@ -506,6 +493,8 @@
 		else
 			icon_state = base
 	item_state = icon_state
+	if(wielded)
+		item_state += "_doble"
 
 /obj/item/gun/projectile/deimos/tombak/handle_post_fire(mob/user)
 	// Let parent consume ammo, then refresh sprite
@@ -533,7 +522,7 @@
 	fire_sound = 'sound/weapons/guns/fire/sbaw.ogg'
 	reload_sound = 'sound/weapons/guns/interact/ltrifle_magin.ogg'
 	unload_sound = 'sound/weapons/guns/interact/ltrifle_magout.ogg'
-	init_recoil = FOLDING_RECOIL(1)
+	init_recoil = FOLDING_RECOIL(1.5)
 	damage_mult = 0.7
 	force = WEAPON_FORCE_PAINFUL
 	caliber = CAL_SHOTGUN
@@ -553,6 +542,8 @@
 		else
 			icon_state = base
 	item_state = icon_state
+	if(wielded)
+		item_state += "_doble"
 
 /obj/item/gun/projectile/deimos/palu/handle_post_fire(mob/user)
 	..()
@@ -560,12 +551,8 @@
 
 /obj/item/gun/projectile/deimos/palu/New()
 	..()
-	var/scale_val = 1
-	if(!icon_scale)
-		scale_val = 1
-	else
-		scale_val = icon_scale
-	add_new_transformation(/datum/transform_type/modular, list(scale_x = scale_val, scale_y = scale_val))
+
+
 	// Ensure the correct empty/loaded icon is applied on spawn (no magazine preloaded)
 	update_icon()
 
@@ -591,7 +578,7 @@
 	fire_sound = 'sound/weapons/guns/fire/sfrifle_fire.ogg'
 	reload_sound = 'sound/weapons/guns/interact/ltrifle_magin.ogg'
 	unload_sound = 'sound/weapons/guns/interact/ltrifle_magout.ogg'
-	init_recoil = CARBINE_RECOIL(1)
+	init_recoil = CARBINE_RECOIL(0.8)
 	force = WEAPON_FORCE_PAINFUL
 	var/icon_scale = 0.9
 	twohanded = FALSE
@@ -605,12 +592,8 @@
 	)
 /obj/item/gun/projectile/deimos/celurit/New()
 	..()
-	var/scale_val = 1
-	if(!icon_scale)
-		scale_val = 1
-	else
-		scale_val = icon_scale
-	add_new_transformation(/datum/transform_type/modular, list(scale_x = scale_val, scale_y = scale_val))
+
+
 	// Ensure the correct empty/loaded icon is applied on spawn (no magazine preloaded)
 	update_icon()
 
@@ -622,6 +605,8 @@
 		else
 			icon_state = base
 	item_state = icon_state
+	if(wielded)
+		item_state += "_doble"
 
 /obj/item/gun/projectile/deimos/celurit/handle_post_fire(mob/user)
 	..()
@@ -658,15 +643,11 @@
 		SEMI_AUTO_NODELAY,
 		BURST_2_ROUND
 	)
-	
+
 /obj/item/gun/projectile/deimos/keris/New()
 	..()
-	var/scale_val = 1
-	if(!icon_scale)
-		scale_val = 1
-	else
-		scale_val = icon_scale
-	add_new_transformation(/datum/transform_type/modular, list(scale_x = scale_val, scale_y = scale_val))
+
+
 	// Ensure the correct empty/loaded icon is applied on spawn (no magazine preloaded)
 	update_icon()
 
@@ -677,6 +658,8 @@
 	else
 		icon_state = base
 	item_state = icon_state
+	if(wielded)
+		item_state += "_doble"
 
 /obj/item/gun/projectile/deimos/keris/handle_post_fire(mob/user)
 	..()

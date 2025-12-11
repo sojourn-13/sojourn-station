@@ -172,8 +172,15 @@
 #define FLASH_PROTECTION_MODERATE 2
 #define FLASH_PROTECTION_MAJOR 3
 
+#define EAR_PROTECTION_VULNERABLE -2
+#define EAR_PROTECTION_REDUCED -1
+#define EAR_PROTECTION_NONE 0
+#define EAR_PROTECTION_MINOR 1
+#define EAR_PROTECTION_MODERATE 2
+#define EAR_PROTECTION_MAJOR 3
+
 #define ANIMAL_SPAWN_DELAY 5 MINUTES
-#define DRONE_SPAWN_DELAY  10 MINUTES
+#define DRONE_SPAWN_DELAY  5 MINUTES
 
 // Incapacitation flags, used by the mob/proc/incapacitated() proc
 #define INCAPACITATION_NONE 0
@@ -457,8 +464,8 @@
 #define ANIMAL	"animal"//Used for mice and any other simple animals
 #define MINISYNTH	"minisynth"//Used for drones and pAIs
 
-#define CRYOPOD_SPAWN_BONUS	20 MINUTES//Going to sleep in a cryopod takes this much off your respawn time in minutes
-#define CRYOPOD_SPAWN_BONUS_DESC	"20 minutes"	//Tells players how long they have until respawn.
+#define CRYOPOD_SPAWN_BONUS	15 //Going to sleep in a cryopod takes this much off your respawn time in minutes
+#define CRYOPOD_SPAWN_BONUS_DESC	"15 minutes"	//Tells players how long they have until respawn.
 
 #define MOVED_DROP 1
 
@@ -469,8 +476,8 @@
 
 #define ORGAN_HEALTH_MULTIPLIER 1
 #define ORGAN_REGENERATION_MULTIPLIER 0.2
-#define WOUND_BLEED_MULTIPLIER 0.035 //Bleeding wounds drip damage*this units of blood per process tick, this also cheats by doble taking, so higher numbers byond 0.1 are insanely bleedy
-#define OPEN_ORGAN_BLEED_AMOUNT 0.5 //Wounds with open, unclamped incisions bleed this many units of blood per process tick
+#define WOUND_BLEED_MULTIPLIER 0.05 //Bleeding wounds drip damage*this units of blood per process tick - increased from 0.015 to make bleeding more dangerous
+#define OPEN_ORGAN_BLEED_AMOUNT 0.5 //Wounds with open, unclamped incisions bleed this many units of blood per process tick - increased from 0.25
 
 #define HEAT_MOBIGNITE_THRESHOLD 530 //minimum amount of heat an object needs to ignite a mob when it hits the mob
 

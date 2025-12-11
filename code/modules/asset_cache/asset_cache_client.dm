@@ -26,7 +26,6 @@
 /client/proc/asset_cache_update_json()
 	if(world.time - connection_time < 10 SECONDS) //don't override the existing data file on a new connection
 		return
-
 	src << browse(json_encode(sent_assets), "file=asset_data.json&display=0")
 
 /// Blocks until all currently sending browse and browse_rsc assets have been sent.

@@ -30,6 +30,8 @@
 	var/is_hole = FALSE			// If true, turf is open to vertical transitions through it.
 								// This is a more generic way of handling open space turfs
 	var/is_wall = FALSE 	//True for wall turfs, but also true if they contain a low wall object
+	var/fluid_blocked_dirs = null
+	var/flooded = FALSE
 
 	/// How pathing algorithm will check if this turf is passable by itself (not including content checks). By default it's just density check.
 	/// WARNING: Currently to use a density shortcircuiting this does not support dense turfs with special allow through function
@@ -307,6 +309,23 @@ var/const/enterloopsanity = 100
 			if(!obj.anchored && obj.loc == src)// prevents the object from being affected if it's not currently here.
 				step_glide(obj, where, speed)
 			CHECK_TICK
+
+/turf/proc/GetFluid()
+	return locate(/obj/effect/fluid) in src
+
+/turf/proc/GetFluidDepth()
+	var/obj/effect/fluid/F = GetFluid()
+	if(F)
+		return max(0, F.fluid_amount)
+	return 0
+
+/turf/proc/CanFluidPass(dir)
+	if(density)
+		return FALSE
+	return TRUE
+
+/turf/proc/InvalidateFluidBlockers()
+	fluid_blocked_dirs = null
 
 /turf/CtrlClick(mob/user)
 	user.haul_all_objs_proc(src)

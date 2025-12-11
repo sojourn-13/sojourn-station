@@ -645,7 +645,8 @@ obj/item/pc_part/drive/disk/design/nt/concillium/plus
 	designs = list(
 		/datum/design/autolathe/ammo/shotgun_biomatter = 4,
 		/datum/design/autolathe/ammo/magnum_ammobox_biomatter = 2,
-		/datum/design/autolathe/ammo/pistol_ammobox_biomatter
+		/datum/design/autolathe/ammo/pistol_ammobox_biomatter,
+		/datum/design/autolathe/ammo/kurz_ammobox_biomatter = 4
 	)
 
 /obj/item/pc_part/drive/disk/design/nt/caustic_rounds/plus

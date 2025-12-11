@@ -420,6 +420,7 @@
 		M.emote(pick("twitch", "blink_r", "shiver"))
 	M.add_chemical_effect(CE_SPEEDBOOST, 0.5)
 	M.add_chemical_effect(CE_PULSE, 2)
+	M.add_chemical_effect(CE_HEARTRESTART, effect_multiplier) // Powerful stimulant can restart heart
 	M.nutrition = max(M.nutrition - 0.5 * effect_multiplier, 0)
 	M.stats.addTempStat(STAT_VIG, -STAT_LEVEL_EXPERT, 60 SECONDS)
 
@@ -569,5 +570,67 @@
 	M.add_chemical_effect(CE_SLOWDOWN, 1)
 	M.adjustNutrition(-25)
 
-datum/reagent/drug/nosfernium/overdose(var/mob/living/carbon/human/M, var/alien)
+/datum/reagent/drug/nosfernium/overdose(var/mob/living/carbon/human/M, var/alien)
 	M.adjustBrainLoss(5) // This is meant to be lethal. If you survive this give your doctor a pat on the back.
+
+/datum/reagent/nitrous_oxide
+	name = "Nitrous Oxide"
+	id = "nitrous_oxide"
+	description = "A chemical compound used as an anaesthetic and for pain relief."
+	taste_description = "nothing"
+	reagent_state = GAS
+	color = "#D3D3D3"
+	metabolism = REM * 10
+	overdose = REAGENTS_OVERDOSE / 3 // Even 10 is a lot of this
+	scannable = TRUE
+	nerve_system_accumulations = -10 //Sedative
+
+/datum/reagent/nitrous_oxide/affect_blood(mob/living/carbon/M, removed)
+	var/effective_dose = dose / 2
+	dose *= 0.75 // Reduce the dose to prevent buildup from little N2O
+	if(M.species?.reagent_tag == IS_SLIME)
+		return
+	if(issmall(M))
+		effective_dose *= 2
+	if(effective_dose < 1)
+		if(effective_dose == metabolism * 2 || prob(10))
+			M.emote("giggle")
+	else if(effective_dose < 1.5)
+		M.eye_blurry = max(M.eye_blurry, 10)
+		if(prob(20))
+			M.emote(pick("giggle", "laugh"))
+	else if(effective_dose < 5)
+		if(prob(50))
+			M.Weaken(2)
+		if(prob(30))
+			M.emote("giggle")
+		M.drowsyness = max(M.drowsyness, 20)
+	else
+		M.sleeping = max(M.sleeping, 20)
+		M.drowsyness = max(M.drowsyness, 60)
+	M.add_chemical_effect(CE_PULSE, -1)
+
+/datum/reagent/nitrous_oxide/xenon
+	name = "Xenon"
+	id = "xenon"
+	description = "A nontoxic gas used as a general anaesthetic."
+	taste_description = "nothing"
+	color = COLOR_GRAY80
+
+/datum/reagent/nitrous_oxide/xenon/affect_blood(mob/living/carbon/M, removed)
+	var/effective_dose = dose / 2
+	dose *= 0.75 // Reduce the dose to prevent buildup from little N2O
+	if(M.species?.reagent_tag == IS_SLIME)
+		return
+	if(issmall(M))
+		effective_dose *= 2
+	if(effective_dose < 1.5)
+		M.eye_blurry = max(M.eye_blurry, 10)
+	else if(effective_dose < 5)
+		if(prob(50))
+			M.Weaken(2)
+		M.drowsyness = max(M.drowsyness, 20)
+	else
+		M.sleeping = max(M.sleeping, 20)
+		M.drowsyness = max(M.drowsyness, 60)
+	M.add_chemical_effect(CE_PULSE, -1)

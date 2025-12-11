@@ -20,6 +20,13 @@
 #define BREATH_PERCENTAGE   (BREATH_VOLUME / CELL_VOLUME)                                    // Amount of air needed before pass out/suffocation commences.
 #define HUMAN_NEEDED_OXYGEN (MOLES_CELLSTANDARD * BREATH_PERCENTAGE * 0.16)
 #define HUMAN_HEAT_CAPACITY 280000 //J/K For 80kg person
+#define STD_BREATH_VOLUME      12 // Liters in a normal breath.
+
+// Gas -> reagent inhalation conversion tuning.
+// Fraction of each present gas (by moles) removed per successful breath for reagent conversion.
+#define BREATH_ABSORPTION_DIVISOR 6
+// How many moles of absorbed gas correspond to 1 reagent unit placed into the bloodstream.
+#define BREATHED_REAGENT_MOLES_PER_UNIT 0.001
 
 #define SOUND_MINIMUM_PRESSURE 10
 
@@ -79,6 +86,7 @@
 #define XGM_GAS_FUEL        1
 #define XGM_GAS_OXIDIZER    2
 #define XGM_GAS_CONTAMINANT 4
+#define XGM_GAS_FUSION_FUEL 8
 
 #define TANK_LEAK_PRESSURE     (30.*ONE_ATMOSPHERE) // Tank starts leaking.
 #define TANK_RUPTURE_PRESSURE  (40.*ONE_ATMOSPHERE) // Tank spills all contents into atmosphere.
@@ -96,22 +104,44 @@
 // Defines how much of certain gas do the Atmospherics tanks start with. Values are in kpa per tile (assuming 20C)
 #define ATMOSTANK_NITROGEN      90000 // A lot of N2 is needed to produce air mix, that's why we keep 90MPa of it
 #define ATMOSTANK_OXYGEN        40000 // O2 is also important for airmix, but not as much as N2 as it's only 21% of it.
-#define ATMOSTANK_CO2           25000 // CO2, PH and H2 are not critically important for station, only for toxins and alternative coolants, no need to store a lot of those.
+#define ATMOSTANK_CO2           25000
 #define ATMOSTANK_PLASMA        25000
-#define ATMOSTANK_HYDROGEN      25000
+#define ATMOSTANK_PLASMA_FUEL   15000
+#define ATMOSTANK_HYDROGEN      50000
+#define ATMOSTANK_HYDROGEN_FUEL 25000
 #define ATMOSTANK_NITROUSOXIDE  10000 // N2O doesn't have a real useful use, i guess it's on station just to allow refilling of sec's riot control canisters?
+
+#define MAX_PUMP_PRESSURE		15000	// Maximal pressure setting for pumps and vents
+#define MAX_OMNI_PRESSURE		15000	// Maximal output(s) pressure for omni devices (filters/mixers)
 
 #define ADIABATIC_EXPONENT 0.667 //Actually adiabatic exponent - 1.
 
 #define GAS_OXYGEN				"oxygen"
 #define GAS_CO2					"carbon_dioxide"
+#define GAS_CO					"carbon_monoxide"
+#define GAS_METHYL_BROMIDE		"methyl_bromide"
 #define GAS_N2O					"sleeping_agent"
 #define GAS_NITROGEN			"nitrogen"
 #define GAS_NO2					"nitrodioxide"
-#define GAS_PLASMA				"plasma"
-#define GAS_HYDROGEN            "hydrogen"
+#define GAS_NO					"nitricoxide"
+#define GAS_METHANE				"methane"
 #define GAS_ALIEN				"aliether"
+#define GAS_HYDROGEN			"hydrogen"
+#define GAS_DEUTERIUM			"deuterium"
+#define GAS_TRITIUM				"tritium"
+#define GAS_HELIUM				"helium"
+#define GAS_ARGON				"argon"
+#define GAS_KRYPTON				"krypton"
+#define GAS_NEON				"neon"
+#define GAS_XENON				"xenon"
+#define GAS_AMMONIA				"ammonia"
+#define GAS_CHLORINE			"chlorine"
+#define GAS_SULFUR				"sulfurdioxide"
 #define GAS_STEAM				"water"
+#define GAS_PLASMA				"plasma"
+#define GAS_BORON				"boron"
+#define GAS_HEAT                "heat" //Not a real gas, used for visual effects
+#define GAS_COLD                "cold" //Not a real gas, used for visual effects
 
 #define CONNECT_TYPE_REGULAR	1
 #define CONNECT_TYPE_SUPPLY		2

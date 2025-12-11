@@ -613,6 +613,8 @@
 	desc = "Can hold various military and security equipment. Even has some clamps to allow you to hold masks and hats."
 	icon_state = "security"
 	item_state = "security"
+	storage_slots = 8
+
 	can_hold = list(
 		// Personal protective equipment
 		/obj/item/clothing/head,
@@ -676,6 +678,7 @@
 		/obj/item/reagent_containers/snacks,
 		/obj/item/reagent_containers/drinks
 	)
+
 
 /obj/item/storage/belt/holding
 	name = "belt of holding"

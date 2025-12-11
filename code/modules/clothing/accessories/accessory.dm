@@ -257,11 +257,13 @@
 
 /obj/item/clothing/accessory/medal/gold/captain
 	name = "medal of exceptional statecraft"
-	desc = "A golden medal awarded exclusively to those who show distinguished duty as a premier. It signifies the codified responsibilities of the position and their undisputable qualities within it."
+	desc = "A golden medal awarded exclusively to those who show distinguished duty as a premier. \
+	It signifies the codified responsibilities of the position and their undisputable qualities within it."
 
 /obj/item/clothing/accessory/medal/gold/heroism
 	name = "medal of exceptional heroism"
-	desc = "An extremely rare golden medal awarded only by faction woners. To recieve such a medal is the highest honor and as such, very few exist. This medal is almost never awarded to anybody but commanders."
+	desc = "An extremely rare golden medal awarded only by faction owners. To recieve such a medal is the highest honor and as such, very few exist. \
+	This medal is almost never awarded to anybody but commanders."
 	icon_state = "gold_sun"
 
 /obj/item/clothing/accessory/medal/gold/valor

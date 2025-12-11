@@ -199,6 +199,9 @@
 /atom/proc/remove_air(amount)
 	return null
 
+/atom/proc/fluid_contact(obj/effect/fluid/source, depth)
+	return
+
 /atom/proc/return_air()
 	if(loc)
 		return loc.return_air()
@@ -648,7 +651,6 @@ its easier to just keep the beam vertical.
 		blood_DNA = list()
 
 	was_bloodied = TRUE
-	blood_color = "#A10808"
 	if(istype(M))
 		if (!istype(M.dna, /datum/dna))
 			M.dna = new /datum/dna(null)
@@ -671,10 +673,31 @@ its easier to just keep the beam vertical.
 /atom/proc/clean_blood()
 	if(!simulated)
 		return
+	was_bloodied = null
 	fluorescent = 0
 	if(istype(blood_DNA, /list))
 		blood_DNA = null
 		return TRUE
+
+
+// Like clean_blood but preserves the was_bloodied flag and the blood_DNA list.
+// Removes visible overlays/fluorescent state, and returns TRUE if any visible
+// blood overlays/decals were removed (so callers can update inventories/UI).
+/atom/proc/clean_blood_preserve_was()
+	if(!simulated)
+		was_bloodied = FALSE
+	// Turn off luminol/fluorescent state but do not touch was_bloodied or blood_DNA
+	if(fluorescent)
+		fluorescent = 0
+		was_bloodied = TRUE
+	// If this atom has an item-style blood overlay image, remove it
+	if(istype(src, /obj/item))
+		var/obj/item/I = src
+		if(I.blood_overlay)
+			I.cut_overlay(I.blood_overlay)
+			I.blood_overlay = null
+			was_bloodied = TRUE
+	return
 
 /atom/proc/get_global_map_pos()
 	if(!islist(global_map) || isemptylist(global_map)) return

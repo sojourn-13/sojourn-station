@@ -167,14 +167,10 @@
 	var/ear_safety = 0
 	var/stat_def = -STAT_LEVEL_ADEPT
 	if(iscarbon(M))
-		eye_safety = M.eyecheck()
 		if(ishuman(M))
-			if(istype(M:l_ear, /obj/item/clothing/ears/earmuffs) || istype(M:r_ear, /obj/item/clothing/ears/earmuffs))
-				ear_safety += 2
-			if(HULK in M.mutations)
-				ear_safety += 1
-			if(istype(M:head, /obj/item/clothing/head/helmet))
-				ear_safety += 1
+			var/mob/living/carbon/human/H = M
+			eye_safety = H.eyecheck()
+			ear_safety = H.earcheck()
 			if(M.stats.getPerk(PERK_EAR_OF_QUICKSILVER))
 				stat_def *= 2
 

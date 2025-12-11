@@ -10,6 +10,7 @@
 	offer_limit = 20
 	base_income = 1600
 	wealth = 0
+	export_point_cost_mult = 1.25
 	markup = COMMON_GOODS
 	hidden_inv_threshold = 3000
 	start_discovered = TRUE //WE KNOW WERE ARE OVERHOUNDS ARE
