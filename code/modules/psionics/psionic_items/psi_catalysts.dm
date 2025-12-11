@@ -309,6 +309,78 @@
 	tumor.organ_add_verb(stored_power)
 	resonances = "Null"
 
+//Uniquic Invoke
+/obj/item/device/psionic_catalyst/glutten
+	name = "psionic catalyst: Glutten"
+	desc = "Psionic catalysts, other worldly items not quite understood, but valuable for the powers they may grant a psion. To everyone else, they have research value in a deconstructor or may be \
+	recycled for the somewhat rare materials that make them. Holding it feels quite strange. Even to an unattuned mind, one can hear the faintly glowing object whispering, the eager voices say: \
+	The power within this catalyst is not meant for just a psionic being, \
+	The nawling hunger, the desier to gain the strangth hidden in the flesh of others, shall be grant..."
+	resonances = "Greater"
+
+/obj/item/device/psionic_catalyst/glutten/invoke_power()
+	set name = "Invoke Psionic Catalyst"
+	set desc = "Invoke the psionic potential within the catalyst, adding a copy of its power to your own."
+	set category = "Object"
+
+	if(ishuman(usr))
+		var/mob/living/carbon/human/H = usr
+
+		if(H.species.reagent_tag == IS_SYNTHETIC)
+			to_chat(H, SPAN_NOTICE("The power of Glutten can not be invoked without a hunger."))
+			return
+
+		if(H.species.reagent_tag == PERK_GLUTTEN)
+			to_chat(H, SPAN_NOTICE("Having already become awaken Glutten you can not do it once again, not yet anyways."))
+			return
+
+		var/user_is_choosing = TRUE
+		while(user_is_choosing)
+			var/action = sanitizeSafe(input(H, "Invoking Will Cause You To Be Treated As An Enemy Of The Colony. To Invoke Type Yes", "::Invoking::", "Think Carefully.", "No"))
+
+			if(get_dist(src,H) >= 2)
+				to_chat(H, SPAN_NOTICE("You can't invoke at a distence."))
+				user_is_choosing = FALSE
+				return
+
+			if(action == "YES" ||action == "Yes" || action == "Y")
+				H.stats.addPerk(PERK_GLUTTEN)
+				playsound(src.loc, 'sound/hallucinations/ghosty_wind.ogg', 25, 1)
+
+				//A monster has propigated, strike them down! Kill em!
+				H.colony_friend = FALSE
+				H.friendly_to_colony = FALSE
+
+				//Swap to a faction as well, we are not netural.
+				H.faction = "Living Dead" //Card Carp intraction
+
+				//No cheating the system. Write em all down as your new faction.
+				var/datum/genetics/mutation/spider_friend/spooder = H.unnatural_mutations.getMutation("MUTATION_SPIDER_FRIEND", FALSE)
+				if(spooder)
+					spooder.old_faction = "Living Dead"
+				var/datum/genetics/mutation/roach_friend/roachy = H.unnatural_mutations.getMutation("MUTATION_ROACH_FRIEND", FALSE)
+				if(roachy)
+					roachy.old_faction = "Living Dead"
+				var/datum/genetics/mutation/sproachder_friend/spooder_roach = H.unnatural_mutations.getMutation("MUTATION_SPROACHDER_FRIEND", FALSE)
+				if(spooder_roach)
+					spooder_roach.old_faction = "Living Dead"
+				var/datum/genetics/mutation/termite_friend/critter = H.unnatural_mutations.getMutation("MUTATION_TERMITE_FRIEND", FALSE)
+				if(critter)
+					critter.old_faction = "Living Dead"
+
+
+				to_chat(H, SPAN_NOTICE("You invoke the power of Glutten, everything in the world is your banquent and lesser beings will nash their teeth."))
+				if(H.stats.getPerk(PERK_NO_OBFUSCATION))
+					to_chat(H, SPAN_NOTICE("Even friendly robotics now fear your hunger and no longer count you as an ally of this colony."))
+
+			else
+				to_chat(H, SPAN_NOTICE("You deside not to invoke the power of Glutten."))
+
+			user_is_choosing = FALSE
+	else
+		to_chat(usr, SPAN_NOTICE("The power that is held in this catalyst rejects your invoking..."))
+
+
 // Putting this here since its easier to reference. -Kaz
 /obj/random/psi_catalyst
 	name = "random lesser psi_catalyst"
@@ -356,10 +428,19 @@
 /obj/random/psi_catalyst/debuffer/item_to_spawn()
 	return pickweight(list(
 				/obj/random/psi_catalyst = 15,
-				/obj/item/device/psionic_catalyst/needle_n_thread = 15,
-				/obj/item/device/psionic_catalyst/purify = 15,
-				/obj/item/device/psionic_catalyst/temp_regulate = 15))
+				/obj/item/device/psionic_catalyst/candle_enhancer= 15,
+				/obj/item/device/psionic_catalyst/psi_injector_enhancer = 15,
+				/obj/item/device/psionic_catalyst/psion_gas_mask = 15))
 
+//Currently only has one powerful perk.
+/obj/random/psi_catalyst/ash_wendigo
+	name = "random ash wendigo psi_catalyst"
+	icon_state = "ammo-green"
+
+/obj/random/psi_catalyst/ash_wendigo/item_to_spawn()
+	return pickweight(list(
+				/obj/random/psi_catalyst = 15,
+				/obj/item/device/psionic_catalyst/glutten = 15))
 
 
 // Psi-related lore paperwork. Not really a good place to put this so here it is. -Kaz

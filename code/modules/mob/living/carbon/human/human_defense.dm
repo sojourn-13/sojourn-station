@@ -78,6 +78,13 @@ uniquic_armor_act
 
 	unique_armor_check(P, null, null)
 
+	if(unnatural_mutations.getMutation(MUTATION_XENO_SKIN))
+		if(prob(25)) //So we dont affectively replace a racel perk
+			P.embed = FALSE
+		P.sharp = FALSE
+		P.edge = FALSE
+
+
 	var/obj/item/organ/external/organ = get_organ(def_zone)
 
 	//Shields
@@ -99,6 +106,7 @@ uniquic_armor_act
 
 		var/check_absorb = .
 		//Shrapnel
+
 		if(P.can_embed() && (check_absorb < 2) && !src.stats.getPerk(PERK_IRON_FLESH))
 			var/armor = getarmor_organ(organ, ARMOR_BULLET)
 			if(prob((10 + max(P.damage_types[BRUTE] - (armor * (3 - P.wounding_mult)), -10) * P.embed_mult))) //Good/high armor can fully protect against sharpnal
@@ -413,6 +421,10 @@ uniquic_armor_act
 			if(effective_force == 0)
 				visible_message(SPAN_DANGER("The attack has been completely negated!"))
 				return FALSE
+
+	if(unnatural_mutations.getMutation(MUTATION_XENO_SKIN))
+		I.sharp = 0
+		I.edge = 0
 
 	//If not blocked, handle broad strike attacks
 	if(((I.sharp && I.edge && user.a_intent == I_DISARM) || I.forced_broad_strike) && (!istype(I, /obj/item/tool/sword/nt/spear) || !istype(I, /obj/item/tele_spear) || !istype(I, /obj/item/tool/spear)))

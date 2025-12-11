@@ -89,6 +89,8 @@ var/datum/xenomorph/xenomorph_ai
 	melee_sharp = TRUE //claws
 	armor_divisor = 1.25
 
+	//Kitty!
+	inherent_mutations = list(MUTATION_CAT_EYES, MUTATION_XENO_EYELIDS)
 
 /mob/living/carbon/superior/xenomorph/slip(slipped_on,stun_duration=8)
 	return FALSE

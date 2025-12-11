@@ -237,6 +237,10 @@
 	if (P.is_hot() >= HEAT_MOBIGNITE_THRESHOLD)
 		IgniteMob()
 
+	if(unnatural_mutations.getMutation(MUTATION_XENO_SKIN))
+		P.sharp = 0
+		P.edge = 0
+
 	//Being hit while using a deadman switch
 	if(istype(get_active_hand(),/obj/item/device/assembly/signaler))
 		var/obj/item/device/assembly/signaler/signaler = get_active_hand()
@@ -331,6 +335,10 @@
 	//Hulk modifier
 //	if(HULK in user.mutations)
 //		effective_force *= 2
+
+	if(unnatural_mutations.getMutation(MUTATION_XENO_SKIN))
+		I.sharp = 0
+		I.edge = 0
 
 	//Apply weapon damage
 	if (damage_through_armor(effective_force, I.damtype, hit_zone, ARMOR_MELEE, I.armor_divisor, used_weapon = I, sharp = is_sharp(I), edge = has_edge(I)))

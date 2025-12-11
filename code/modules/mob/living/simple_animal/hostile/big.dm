@@ -63,7 +63,7 @@
 	bones_amount = 20
 	has_special_parts = TRUE
 	special_parts = list(/obj/item/animal_part/render_claw,/obj/item/animal_part/wolf_tooth,/obj/item/animal_part/wolf_tooth)
-	inherent_mutations = list(MUTATION_NEARSIGHTED, MUTATION_GIGANTISM, MUTATION_IMBECILE, MUTATION_NEARSIGHTED, MUTATION_RAND_UNSTABLE)
+	inherent_mutations = list(MUTATION_NEARSIGHTED, MUTATION_GIGANTISM, MUTATION_IMBECILE, MUTATION_RAND_UNSTABLE)
 	research_value = 1250
 
 /mob/living/simple/hostile/render/FindTarget()
@@ -102,6 +102,8 @@
 	poison_per_bite = 6
 	poison_type = "wasp_toxin"
 	research_value = 3750
+	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_HONEY_CRYSTALLIZATION, MUTATION_RAND_UNSTABLE)
+
 
 /mob/living/simple/hostile/render/chunks
 	name = "Chunks"

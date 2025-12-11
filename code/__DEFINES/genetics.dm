@@ -1,6 +1,5 @@
 #define MUTATION_COPY /datum/genetics/mutation/copy_mob
 #define MUTATION_MKNEWAIFUHAIR /datum/genetics/mutation/bald
-#define MUTATION_COW_SKIN /datum/genetics/mutation/cow_skin
 #define MUTATION_IMBECILE /datum/genetics/mutation/imbecile
 #define MUTATION_GIGANTISM /datum/genetics/mutation/gigantism
 #define MUTATION_DWARFISM /datum/genetics/mutation/dwarfism
@@ -22,9 +21,6 @@
 #define MUTATION_PROT_MILK /datum/genetics/mutation/milk_p
 #define MUTATION_ROBUST_MILK /datum/genetics/mutation/milk_r
 #define MUTATION_NO_PAIN /datum/genetics/mutation/painless
-#define MUTATION_ROACH_FRIEND /datum/genetics/mutation/roach_friend
-#define MUTATION_SPIDER_FRIEND /datum/genetics/mutation/spider_friend
-#define MUTATION_SPROACHDER_FRIEND /datum/genetics/mutation/sproachder_friend
 #define MUTATION_PSN_BREATH /datum/genetics/mutation/psn_breath
 #define MUTATION_CLOAKING /datum/genetics/mutation/cloaking
 #define MUTATION_GREATER_CLOAKING /datum/genetics/mutation/greater_cloaking
@@ -42,21 +38,32 @@
 #define MUTATION_S_MUSCLES /datum/genetics/mutation/sac_contents/s_muscles
 #define MUTATION_NERVES /datum/genetics/mutation/sac_contents/nerves
 #define MUTATION_S_NERVES /datum/genetics/mutation/sac_contents/s_nerves
-#define MUTATION_EYES /datum/genetics/mutation/sac_contents/eyes
-#define MUTATION_MARQUA_EYES /datum/genetics/mutation/sac_contents/marqua_eyes
 #define MUTATION_SLIME_BONE /datum/genetics/mutation/sac_contents/slime_bone
 #define MUTATION_HYPERION /datum/genetics/mutation/hyperion
-#define MUTATION_THICK_FUR /datum/genetics/mutation/thick_fur
 #define MUTATION_BAROTRAUMA /datum/genetics/mutation/barotrauma
 #define MUTATION_HONK /datum/genetics/mutation/honk
 #define MUTATION_BOTTOMLESS_BELLY /datum/genetics/mutation/bottomless_belly
 #define MUTATION_TOXIN_RESISTANCE /datum/genetics/mutation/toxin_resistance
-#define MUTATION_ECHOLOCATION /datum/genetics/mutation/echolocation
 #define MUTATION_SCREAMING /datum/genetics/mutation/screaming
-#define MUTATION_CAT_EYES /datum/genetics/mutation/cat_eyes
 #define MUTATION_REGENERATION /datum/genetics/mutation/hyperion
 #define MUTATION_RAD_PROTECTION /datum/genetics/mutation/rad_protection
 #define MUTATION_PUNCH /datum/genetics/mutation/punch
+#define MUTATION_SEASONED_MIND /datum/genetics/mutation/seasoned_mind
+#define MUTATION_SHOCK_LESS /datum/genetics/mutation/shock_less
+#define MUTATION_WURM_CRY /datum/genetics/mutation/wurm_cry
+#define MUTATION_SPARK_BREATH /datum/genetics/mutation/spark_breath
+#define MUTATION_PHASE /datum/genetics/mutation/phasing
+#define MUTATION_NO_PRINTS /datum/genetics/mutation/disability/noprints
+#define MUTATION_NO_BREATHE /datum/genetics/mutation/disability/nobreathe
+#define MUTATION_HULK /datum/genetics/mutation/disability/hulk
+#define MUTATION_MINER_SIGHT /datum/genetics/mutation/miner_sight
+#define MUTATION_HARDEN_EARS /datum/genetics/mutation/harden_ears
+//Genes for skin
+#define MUTATION_XENO_SKIN /datum/genetics/mutation/xeno_skin
+#define MUTATION_COW_SKIN /datum/genetics/mutation/cow_skin
+#define MUTATION_THICK_FUR /datum/genetics/mutation/thick_fur
+#define MUTATION_BOMB_RESIST /datum/genetics/mutation/bomb_resist
+#define MUTATION_FLAME_RETARDANT /datum/genetics/mutation/flame_retardant
 //Blood Increasers
 #define MUTATION_BLOOD_BANK /datum/genetics/mutation/blood_bank
 #define MUTATION_BLOOD_RIVER /datum/genetics/mutation/blood_river
@@ -68,20 +75,26 @@
 #define MUTATION_GENE_MENDING /datum/genetics/mutation/gene_mending
 #define MUTATION_GENE_MENDING_H /datum/genetics/mutation/gene_mending_h
 #define MUTATION_GENE_MENDING_R /datum/genetics/mutation/gene_mending_r
-
-#define MUTATION_SEASONED_MIND /datum/genetics/mutation/seasoned_mind
-#define MUTATION_SHOCK_LESS /datum/genetics/mutation/shock_less
-#define MUTATION_BOMB_RESIST /datum/genetics/mutation/bomb_resist
-#define MUTATION_TERMITE_FRIEND /datum/genetics/mutation/termite_friend
-#define MUTATION_WURM_CRY /datum/genetics/mutation/wurm_cry
-#define MUTATION_SPARK_BREATH /datum/genetics/mutation/spark_breath
-#define MUTATION_FLAME_RETARDANT /datum/genetics/mutation/flame_retardant
-#define MUTATION_PHASE /datum/genetics/mutation/phasing
-#define MUTATION_NO_PRINTS /datum/genetics/mutation/disability/noprints
-#define MUTATION_NO_BREATHE /datum/genetics/mutation/disability/nobreathe
-#define MUTATION_HULK /datum/genetics/mutation/disability/hulk
+//Genes that change faction
+#define MUTATION_ROACH_FRIEND /datum/genetics/mutation/roach_friend
+#define MUTATION_SPIDER_FRIEND /datum/genetics/mutation/spider_friend
+#define MUTATION_SPROACHDER_FRIEND /datum/genetics/mutation/sproachder_friend
 #define MUTATION_FRIENDLY /datum/genetics/mutation/friendly
-#define MUTATION_MINER_SIGHT /datum/genetics/mutation/miner_sight
+#define MUTATION_TERMITE_FRIEND /datum/genetics/mutation/termite_friend
+//Genes that affect eyes
+#define MUTATION_EYES /datum/genetics/mutation/sac_contents/eyes
+#define MUTATION_MARQUA_EYES /datum/genetics/mutation/sac_contents/marqua_eyes
+
+#define MUTATION_CAT_EYES /datum/genetics/mutation/cat_eyes
+#define MUTATION_ECHOLOCATION /datum/genetics/mutation/echolocation
+#define MUTATION_ADVANCED_EYELIDS /datum/genetics/mutation/advanced_eyelids
+#define MUTATION_XENO_EYELIDS /datum/genetics/mutation/xeno_eyelids
+//Chem Intractions Chems
+#define MUTATION_HONEY_CRYSTALLIZATION /datum/genetics/mutation/honey_crystallization
+#define MUTATION_XENO_TOX_RES /datum/genetics/mutation/xeno_tox_res
+//Gens that only intract with Frost
+#define MUTATION_BLUBBER /datum/genetics/mutation/blubber
+
 //^^^ All mutations!
 
 

@@ -13,6 +13,7 @@
 	melee_damage_upper = 50
 
 	armor = list(melee = 7, bullet = 8, energy = 1, bomb = 30, bio = 100, rad = 100)
+	inherent_mutations = list(MUTATION_CAT_EYES, MUTATION_XENO_EYELIDS, MUTATION_XENO_SKIN)
 
 	allowed_stat_modifiers = list(
 		/datum/stat_modifier/mob/living/carbon/superior/padded/xeno = 36,
@@ -42,12 +43,13 @@
 
 	armor = list(melee = 10, bullet = 11, energy = 3, bomb = 30, bio = 100, rad = 100)
 
-
 	melee_damage_lower = 40
 	melee_damage_upper = 50
 
 	move_to_delay = 1
 	turns_per_move = 12
+
+	inherent_mutations = list(MUTATION_CAT_EYES, MUTATION_XENO_EYELIDS, MUTATION_XENO_SKIN)
 
 /mob/living/carbon/superior/xenomorph/warrior/shrike/praetorian/queen/slip(var/slipped_on)
 	return FALSE
