@@ -31,8 +31,8 @@ Avoid any disks here being found or used commonly beyond an intended purpose, ot
 		/datum/design/autolathe/part/barrel/rifle = 2,
 	)
 
-// Marshal-specific disk, used by Marshals for high-end gun crafting. MOST gun parts should be here, but thankfully licenses keep it at limited-use.
-// Infinate given gun parts are mass-printed by Guild, orderable by LS, and can be taken from broken down guns. Guild can mass-produce better, but only Marshals can print high-end.
+// Marshal-specific disk, used by Rangers for high-end gun crafting. MOST gun parts should be here, but thankfully licenses keep it at limited-use.
+// Infinate given gun parts are mass-printed by Guild, orderable by LS, and can be taken from broken down guns. Guild can mass-produce better, but only Rangers can print high-end.
 /obj/item/pc_part/drive/disk/design/gun_parts/marshal
 	disk_name = "NM - \"Gunsmiths United\" firearm parts"
 	icon_state = "marshal"
@@ -59,7 +59,7 @@ Avoid any disks here being found or used commonly beyond an intended purpose, ot
 		/datum/design/autolathe/part/barrel/amr,
 	)
 
-// Bootleg-gun production stuff. Found in loot-piles, can be bought by LSS for a slightly inflated price.
+// Bootleg-gun production stuff. Found in loot-piles, can be bought by FL for a slightly inflated price.
 // Relatively useless, but might be useful for Outsiders, Prospies, and anyone wanting really cheap guns instead of paying inflated prices just for a single normal gun.
 /obj/item/pc_part/drive/disk/design/gun_parts/bootleg
 	disk_name = "No License - \"Anarchist Dream\" gun parts"
@@ -87,9 +87,9 @@ Avoid any disks here being found or used commonly beyond an intended purpose, ot
 /////////////////////
 
 // This section contains gun frame disks, including Marshal gun frame disks used to make Marshal specific guns.
-// Guns here should keep in mind that you can produce these for retail and resale at LSS, as some are going to be orderable by Cargo. Return for investment and time, really.
+// Guns here should keep in mind that you can produce these for retail and resale at FL, as some are going to be orderable by Cargo. Return for investment and time, really.
 
-// Resale disk for LSS to make and sell guns. Maybe put into piles.
+// Resale disk for FL to make and sell guns. Maybe put into piles.
 /obj/item/pc_part/drive/disk/design/gun_frames/resale
 	disk_name = "Blackmarket - \"Make-Your-Own-Gun! For ages 9+!\" gun frames"
 	icon_state = "black"
@@ -104,7 +104,7 @@ Avoid any disks here being found or used commonly beyond an intended purpose, ot
 		/datum/design/autolathe/gun_frame/grizzly,
 	)
 
-// Resale disk for LSS to make and sell guns. Higher-end frames, still have to get the parts themselves. Do NOT put this into piles.
+// Resale disk for FL to make and sell guns. Higher-end frames, still have to get the parts themselves. Do NOT put this into piles.
 /obj/item/pc_part/drive/disk/design/gun_frames/resale/high
 	disk_name = "SA - \"Resale Distributors Pack\" gun frames"
 	icon_state = "frozenstar"

@@ -2,14 +2,14 @@
 /datum/job/merchant
 	title = "Surface Operations Manager"
 	flag = MERCHANT
-	department = DEPARTMENT_LSS
+	department = DEPARTMENT_SERVICE
 	head_position = TRUE
 	aster_guild_member = TRUE
-	department_flag = LSS | COMMAND
+	department_flag = FL | COMMAND
 	faction = MAP_FACTION
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the Nadezhda Council"
+	supervisors = "the Governor and the Iskhod Council"
 	difficulty = "Medium."
 	selection_color = "#b3a68c"
 	wage = WAGE_COMMAND	//SOM now gets paid the money moola muh [redacted] -Kaz
@@ -31,7 +31,7 @@
 		STAT_MEC = 15,
 		STAT_VIG = 10
 	)
-	description = "The Surface Operations Manager coordinates the affairs of the local branch of Lonestar Shipping Solutions.<br>\
+	description = "The Surface Operations Manager coordinates the affairs of the local branch of Frontier Logistics.<br>\
 Your main objective, naturally, is to make as much money as you can. Purchase and acquire goods and sell them on for a profit.<br>\
 Your Cargo Technicians will handle most of the grunt work and your Miners will acquire minerals. They are capable - utilize them well.<br>\
 The vendors found throughout the colony are also operated by your organization. They make you money - ensure they are functional and well-stocked.<br>\
@@ -62,8 +62,8 @@ Counsel the council on directing the colony towards profitable opportunities."
 /datum/job/cargo_tech
 	title = "Cargo Technician"
 	flag = CARGOTECH
-	department = DEPARTMENT_LSS
-	department_flag = LSS
+	department = DEPARTMENT_SERVICE
+	department_flag = FL
 	faction = MAP_FACTION
 	total_positions = 4
 	spawn_positions = 4
@@ -98,7 +98,7 @@ Counsel the council on directing the colony towards profitable opportunities."
 							 /datum/computer_file/program/reports)
 
 
-	description = "The Cargo Technician forms the backbone of Lonestar Shipping Solutions, equal parts scavenger, loader and salesman.<br>\
+	description = "The Cargo Technician forms the backbone of Frontier Logistics, equal parts scavenger, loader and salesman.<br>\
 Your main duty is to keep the local company branch operational and profitable. Deliver goods, take payments and orders and buy from scavengers.<br>\
 In quieter times use your initiative. Visit departments to ask if there's anything they need and try to sell them unusual items.<br>\
 Busted lights? Broken vendors? Offer your services for a small fee. You may also find profit in the maintenance tunnels.<br>\
@@ -116,8 +116,8 @@ Avoid the deeper tunnels unless otherwise instructed, however - this domain is h
 /datum/job/mining
 	title = "Lonestar Miner"
 	flag = MINER
-	department = DEPARTMENT_LSS
-	department_flag = LSS
+	department = DEPARTMENT_SERVICE
+	department_flag = FL
 	faction = MAP_FACTION
 	total_positions = 4
 	spawn_positions = 4
@@ -131,7 +131,7 @@ Avoid the deeper tunnels unless otherwise instructed, however - this domain is h
 	disallow_species = list(FORM_BSSYNTH, FORM_CHURCHSYNTH)
 	outfit_type = /decl/hierarchy/outfit/job/cargo/mining
 
-	description = "The Miner is a professional resource procurer, acquiring valuable minerals for Lonestar Shipping Solutions.<br>\
+	description = "The Miner is a professional resource procurer, acquiring valuable minerals for Frontier Logistics.<br>\
 Your primary responsibility is to descend into the deep tunnels and dig up as much ore as you can.<br>\
 Accessed by elevator, the area contains an outpost with all the facilities to process said ore and deliver refined materials ready for use.<br>\
 Whatever you dig up will go to the cargo department and from there on it is the responsibility of others within Lonestar to sell it.<br>\

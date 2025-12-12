@@ -1,16 +1,15 @@
 
 export const departmentData = {
   heads: { name: 'Command Staff' },
-  sec: { name: 'Security - Marshals' },
+  sec: { name: 'Security - Rangers' },
   bls: { name: 'Security - Blackshield' },
-  med: { name: 'Soteria Medical' },
-  sci: { name: 'Soteria Research' },
+  med: { name: 'Vesalius-Andra Medical' },
+  sci: { name: 'Vesalius-Andra Research' },
   chr: { name: 'Church of the Absolute' },
-  sup: { name: 'Lonestar Shipping Solutions' },
+  sup: { name: 'Frontier Logistics' },
   eng: { name: 'Artificers Guild' },
   pro: { name: 'Prospector' },
   civ: { name: 'Civilian' },
   bot: { name: 'Silicon' },
   ldg: { name: 'Lodge' },
 };
-  

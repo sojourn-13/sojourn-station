@@ -17,7 +17,7 @@ list(
 */
 
 /obj/machinery/reagentgrinder/advanced
-	name = "Soteria Advanced Grinder"
+	name = "Vesalius-Andra Advanced Grinder"
 	density = TRUE
 	anchored = TRUE
 	icon = 'icons/obj/machines/grinder.dmi'
@@ -42,7 +42,7 @@ list(
 	var/list/bidon_filter = list() //Which reagents we are loading into the bidon, instead of keeping in the machine
 
 /obj/item/circuitboard/advanced_grinder
-	build_name = "Soteria Advanced Grinder"
+	build_name = "Vesalius-Andra Advanced Grinder"
 	board_type = "machine"
 	build_path = /obj/machinery/reagentgrinder/advanced
 	origin_tech = list(TECH_BIO = 1)
@@ -53,8 +53,8 @@ list(
 	)
 
 /datum/design/research/circuit/advanced_grinder
-	name = "Soteria Advanced Grinder"
-	desc = "Invented by a Soteria scientist to make their lab a little more tidy, this device is a strict upgrade to the Industrial Grinder. Supports automatic collection, and automatic dumping into a Bidon can."
+	name = "Vesalius-Andra Advanced Grinder"
+	desc = "Invented by a Vesalius-Andra scientist to make their lab a little more tidy, this device is a strict upgrade to the Industrial Grinder. Supports automatic collection, and automatic dumping into a Bidon can."
 	build_path = /obj/item/circuitboard/advanced_grinder
 	category = CAT_MEDI
 

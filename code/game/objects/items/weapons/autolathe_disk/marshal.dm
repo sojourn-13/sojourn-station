@@ -47,7 +47,7 @@
 	license = -1
 
 /obj/item/pc_part/drive/disk/design/security/marshal_guns
-	disk_name = "Marshal \"Negotiator\" Pack"
+	disk_name = "Ranger \"Negotiator\" Pack"
 	icon_state = "marshal"
 	license = 40 //1:1 with blackshield guns
 	designs = list(
@@ -77,7 +77,7 @@
 		)
 
 /obj/item/pc_part/drive/disk/design/security/marshal_ammo
-	disk_name = "Marshal \"Shoot-out\" Pack"
+	disk_name = "Ranger \"Shoot-out\" Pack"
 	icon_state = "marshal"
 	license = 30 //1:1 with blackshield guns
 	designs = list(
@@ -140,7 +140,7 @@
 // .40 Magnum
 
 /obj/item/pc_part/drive/disk/design/guns/judiciary
-	disk_name = "NM - .35 Judiciary"
+	disk_name = "IR - .35 Judiciary"
 	icon_state = "marshal"
 
 	license = 8
@@ -153,7 +153,7 @@
 	)
 
 /obj/item/pc_part/drive/disk/design/guns/liberty
-	disk_name = "NM - .40 Liberty"
+	disk_name = "IR - .40 Liberty"
 	icon_state = "marshal"
 
 	license = 8
@@ -166,7 +166,7 @@
 		)
 
 /obj/item/pc_part/drive/disk/design/guns/freedom
-	disk_name = "NM - .40 Freedom SMG"
+	disk_name = "IR - .40 Freedom SMG"
 	icon_state = "marshal"
 
 	license = 12
@@ -181,7 +181,7 @@
 // .50 Kurz Heavy Pistol
 
 /obj/item/pc_part/drive/disk/design/guns/amnesty
-	disk_name = "NM - .50 Kurz Amnesty Handgun"
+	disk_name = "IR - .50 Kurz Amnesty Handgun"
 	icon_state = "marshal"
 
 	license = 8
@@ -196,7 +196,7 @@
 // SHOTGUNS
 
 /obj/item/pc_part/drive/disk/design/guns/operator
-	disk_name = "NM - 20mm Operator Combat Shotgun"
+	disk_name = "IR - 20mm Operator Combat Shotgun"
 	icon_state = "marshal"
 
 	license = 8
@@ -210,7 +210,7 @@
 // .257 carbines
 
 /obj/item/pc_part/drive/disk/design/guns/bastard
-	disk_name = "NM - .257 \"Bastard\" Compact Machine Gun"
+	disk_name = "IR - .257 \"Bastard\" Compact Machine Gun"
 	icon_state = "marshal"
 
 	license = 8
@@ -221,7 +221,7 @@
 	)
 
 /obj/item/pc_part/drive/disk/design/guns/mamba
-	disk_name = "NM - .257 Mamba Carbine"
+	disk_name = "IR - .257 Mamba Carbine"
 	icon_state = "marshal"
 
 	license = 16
@@ -240,7 +240,7 @@
 // 7.5mm Rifles
 
 /obj/item/pc_part/drive/disk/design/guns/copperhead
-	disk_name = "NM - 7.5mm Copperhead Rifle"
+	disk_name = "IR - 7.5mm Copperhead Rifle"
 	icon_state = "marshal"
 
 	license = 16
@@ -257,7 +257,7 @@
 	)
 
 /obj/item/pc_part/drive/disk/design/guns/viper
-	disk_name = "NM - 7.5mm Viper DMR"
+	disk_name = "IR - 7.5mm Viper DMR"
 	icon_state = "marshal"
 
 	license = 16
@@ -275,7 +275,7 @@
 
 // .408 Rifles
 /obj/item/pc_part/drive/disk/design/guns/python
-	disk_name = "NM - 7.5mm Python Heavy Rifle"
+	disk_name = "IR - 7.5mm Python Heavy Rifle"
 	icon_state = "marshal"
 
 	license = 16
@@ -294,7 +294,7 @@
 //.40 Guns
 
 /obj/item/pc_part/drive/disk/design/guns/specop
-	disk_name = "NM - 10x24mm Caseless /'Spec-Op/' SMG"
+	disk_name = "IR - 10x24mm Caseless /'Spec-Op/' SMG"
 	icon_state = "marshal"
 
 	license = 10 //2 guns 2 mags and 1 box
@@ -307,7 +307,7 @@
 // Laser
 
 /obj/item/pc_part/drive/disk/design/guns/sunrise
-	disk_name = "NM - \"Sunrise\" Laser SMG"
+	disk_name = "IR - \"Sunrise\" Laser SMG"
 	icon_state = "marshal"
 
 	license = 8

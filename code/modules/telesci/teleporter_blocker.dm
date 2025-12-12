@@ -52,7 +52,7 @@
 	..()
 
 /obj/machinery/telesci_inhibitor/update_icon()
-	cut_overlays()	
+	cut_overlays()
 	if(!(stat & NOPOWER))
 		add_overlay("inhibitor-powered")
 	if(panel_open)
@@ -90,7 +90,7 @@
 // map this in places we wanna nerf incoming telesci useage. Armories and such. Just for gods sake don't spam them everywhere we are talking about HIGH security here!
 /obj/machinery/telesci_inhibitor/mini
 	name = "mini bluespace inhibition node"
-	desc = "A wall mounted ansible crystal which use area power distribution systems to cause massive interference in local bluespace fields, inhibiting teleportation. It's compact design however does not offer the full benefit of a full sized inhibitor. Developed by Soteria Research at no cost to ease Provosts concerns over SI's advancements in bluespace. A warning label clearly states that it only inhibits teleportation it does not prevent it. "
+	desc = "A wall mounted ansible crystal which use area power distribution systems to cause massive interference in local bluespace fields, inhibiting teleportation. It's compact design however does not offer the full benefit of a full sized inhibitor. Developed by Vesalius-Andra Research at no cost to ease Provosts concerns over SI's advancements in bluespace. A warning label clearly states that it only inhibits teleportation it does not prevent it. "
 	icon = 'icons/obj/telescience.dmi'
 	icon_state = "minihibitor"
 	density = 0
@@ -99,7 +99,7 @@
 	amount_extra_blocked = 0
 
 /obj/machinery/telesci_inhibitor/mini/update_icon()
-	cut_overlays()	
+	cut_overlays()
 	if(!(stat & NOPOWER))
 		add_overlay("minihibitor-powered")
 	if(panel_open)

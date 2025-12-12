@@ -96,7 +96,7 @@
 	init_firemodes = list(
 		list(mode_name = "semiauto",  mode_desc = "Fire as fast as you can pull the trigger", burst=1, fire_delay=2.5, move_delay=null, icon="semi"),
 		)
-	serial_type = "LSS"
+	serial_type = "FL"
 
 
 

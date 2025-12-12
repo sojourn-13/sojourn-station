@@ -84,7 +84,7 @@
 // SI Sword Drone
 /obj/item/bot_part/sword_part
 	name = "Sword Drone Parts"
-	desc = "Parts used for the construction of a Soteria Sword Drone."
+	desc = "Parts used for the construction of a Vesalius-Andra Sword Drone."
 
 /obj/item/bot_part/sword_part/main_frame
 	name = "Sword Drone Chassis"
@@ -108,7 +108,7 @@
 // SI Mantis Drone
 /obj/item/bot_part/mantis_part
 	name = "Mantis Drone Parts"
-	desc = "Parts used for the construction of a Soteria Mantis Drone."
+	desc = "Parts used for the construction of a Vesalius-Andra Mantis Drone."
 
 /obj/item/bot_part/mantis_part/main_frame
 	name = "Mantis Drone Chassis"
@@ -164,7 +164,7 @@
 
 /obj/item/storage/box/sword_drone_kit
 	name = "Custom Sword Drone Fabrication Kit"
-	desc = "Everything to make your own Soteria-brand Sword Drone! Tools not included."
+	desc = "Everything to make your own Vesalius-Andra-brand Sword Drone! Tools not included."
 
 /obj/item/storage/box/sword_drone_kit/populate_contents()
 	new /obj/item/bot_part/sword_part/main_frame(src)
@@ -183,7 +183,7 @@
 
 /obj/item/storage/box/mantis_drone_kit
 	name = "Custom Mantis Drone Fabrication Kit"
-	desc = "Everything to make your own Soteria-brand Mantis Drone! Tools not included."
+	desc = "Everything to make your own Vesalius-Andra-brand Mantis Drone! Tools not included."
 
 /obj/item/storage/box/mantis_drone_kit/populate_contents()
 	new /obj/item/bot_part/mantis_part/main_frame(src)

@@ -86,7 +86,7 @@
 		if(prob(1))
 			spawn_monsters(2)
 
-	else if(istype(area, /area/nadezhda/rnd))
+	else if(istype(area, /area/iskhod/rnd))
 		give_points(0.1) //Anti-Cheese
 		if(prob(10))
 			spawn_monsters(5)

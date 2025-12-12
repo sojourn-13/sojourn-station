@@ -16,7 +16,7 @@
 /tipsAndTricks/mobs/chtmant_webbing
     mobs_list = list(/mob/living/carbon/human)
     species_that_we_are = list(/datum/species/chtmant)
-    tipText = "As a cht'mant, you may find yourself a friend of spiders. You never get caught in spider webs and can create your own, but make sure not to do that in a public space or the Marshals might arrest you!"
+    tipText = "As a cht'mant, you may find yourself a friend of spiders. You never get caught in spider webs and can create your own, but make sure not to do that in a public space or the Rangers might arrest you!"
 
 /tipsAndTricks/mobs/chtmant_channle
     mobs_list = list(/mob/living/carbon/human)

@@ -122,7 +122,7 @@
 			if(catalog_browse_stage == CATALOG_BROWSE_STAGE_NONE)
 				log_debug("TGUI Catalog invalid state transition `[catalog_browse_stage]` -> CATALOG_BROWSE_STAGE_ENTRY")
 				return TRUE
- 
+
 			var/entry_id = text2path(params["entry"])
 			var/datum/catalog_entry/E = GLOB.all_catalog_entries_by_type[entry_id]
 			if(!istype(E))
@@ -142,7 +142,7 @@
 				entry_history.Remove(selected_entry)
 				// Won't create infinite history because set_selected_entry checks if we're navigating to something we're already on
 				set_selected_entry(usr, selected_entry)
-			else 
+			else
 				selected_entry = null
 				catalog_browse_stage = CATALOG_BROWSE_STAGE_LIST
 
@@ -159,7 +159,7 @@
 
 // Cooking Catalog
 /datum/tgui_module/catalog/cooking
-	name = "Lonestar (and Soteria) Presents: Victoria's Incredible Kitchen Assistant"
+	name = "Lonestar (and Vesalius-Andra) Presents: Victoria's Incredible Kitchen Assistant"
 	catalog_key = CATALOG_COOKING
 
 	front_page_name = "Victoria's Incredible Kitchen Assistant"
@@ -181,7 +181,7 @@
 /datum/tgui_module/catalog/drinks
 	name = "Drinks Catalog"
 	catalog_key = CATALOG_DRINKS
-	
+
 	front_page_name = "Neon Cocktails!"
 	front_page_desc = "Electronic handbook containing all information about cocktail craft."
 
@@ -194,11 +194,11 @@
 
 // Reagents Catalog
 /datum/tgui_module/catalog/chemistry
-	name = "Soteria Reagent Catalogue"
+	name = "Vesalius-Andra Reagent Catalogue"
 	catalog_key = CATALOG_CHEMISTRY
-	
-	front_page_name = "Soteria Reagent Catalog"
-	front_page_desc = "Welcome to the Soteria Internal Reagent Database"
+
+	front_page_name = "Vesalius-Andra Reagent Catalog"
+	front_page_desc = "Welcome to the Vesalius-Andra Internal Reagent Database"
 	front_page_icon = "moebus_logo.png"
 
 /datum/tgui_module/catalog/chemistry/ntos
@@ -212,7 +212,7 @@
 /datum/tgui_module/catalog/all
 	name = "Centcom chemCatalog"
 	catalog_key = CATALOG_ALL
-	
+
 	front_page_name = "CentCom Reagent Catalogue"
 	front_page_desc = "Electronic catalog containing all chemical reactions and reagents"
 

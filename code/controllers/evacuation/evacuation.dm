@@ -83,7 +83,7 @@ var/datum/evacuation_controller/evacuation_controller
 
 	if(emergency_evacuation)
 		for(var/area/A in GLOB.map_areas)
-			if(istype(A, /area/nadezhda/hallway))
+			if(istype(A, /area/iskhod/hallway))
 				A.readyalert()
 		if(!skip_announce)
 			evacuation_controller.evac_called.Announce(replacetext(GLOB.maps_data.emergency_shuttle_called_message, "%ETA%", "[round(get_eta()/60)] minute\s."), new_sound = sound('sound/effects/Evacuation.ogg', volume = 35))
@@ -111,7 +111,7 @@ var/datum/evacuation_controller/evacuation_controller
 	if(emergency_evacuation)
 		evac_recalled.Announce(GLOB.maps_data.emergency_shuttle_recall_message)
 		for(var/area/A in GLOB.map_areas)
-			if(istype(A, /area/nadezhda/hallway))
+			if(istype(A, /area/iskhod/hallway))
 				A.readyreset()
 		emergency_evacuation = 0
 	else

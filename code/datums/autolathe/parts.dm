@@ -225,7 +225,7 @@
 ///////////////////////////////////////
 
 // These realistically should not be in common rotation to encourage gun-part trading and specific factions building them per-order.
-// Though could be put onto rare disks loot-wise or sold via LSS. Depends how balance is needed to allow players proper gun parts.
+// Though could be put onto rare disks loot-wise or sold via FL. Depends how balance is needed to allow players proper gun parts.
 
 //Grips
 /datum/design/autolathe/part/grip/wood

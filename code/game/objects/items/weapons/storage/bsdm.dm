@@ -13,7 +13,7 @@
 	var/datum/mind/owner
 
 /obj/item/storage/bsdm/proc/can_launch()
-	return owner && (locate(/area/nadezhda/outside/lakeside) in view(get_turf(src)))
+	return owner && (locate(/area/iskhod/outside/lakeside) in view(get_turf(src)))
 
 /obj/item/storage/bsdm/attack_self(mob/user)
 	nano_ui_interact(user)

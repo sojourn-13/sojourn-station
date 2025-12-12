@@ -9,7 +9,7 @@
 	throw_range = 10
 	slot_flags = SLOT_BELT|SLOT_POCKET // QOL improvement tbh
 	req_access = list(access_heads, access_security)
-	var/boss_name = "Nadezhda Marshals" //The issuing authority. Can be VVed to make a warrant out to be from another party for whatever reason
+	var/boss_name = "Iskhod Rangers" //The issuing authority. Can be VVed to make a warrant out to be from another party for whatever reason
 	var/station_name = "Nadezhda Colony" //As above
 	var/language = LANGUAGE_COMMON //More stuff put here so it can theoretically be VVed
 	var/datum/computer_file/data/warrant/active
@@ -87,9 +87,9 @@
 			</br>
 			<b>Jurisdiction:</b> _<u>[station_name]</u>____</br>
 			</br>
-			<center><small><i>The Marshals Officer(s) bearing this Warrant are hereby authorized by the Issuer to conduct a one-time lawful search of the Suspect's person/belongings/premises and/or Department for any items and materials that could be connected to the suspected criminal charges described below, pending an investigation in progress.</br>
+			<center><small><i>The Rangers Officer(s) bearing this Warrant are hereby authorized by the Issuer to conduct a one-time lawful search of the Suspect's person/belongings/premises and/or Department for any items and materials that could be connected to the suspected criminal charges described below, pending an investigation in progress.</br>
 			</br>
-			The Marshals Officer(s) are obligated to remove any and all such items from the Suspect's posession and/or Department and file it as evidence.</br>
+			The Rangers Officer(s) are obligated to remove any and all such items from the Suspect's posession and/or Department and file it as evidence.</br>
 			</br>
 			The Suspect/Departamental staff is expected to offer full co-operation.</br>
 			</br>

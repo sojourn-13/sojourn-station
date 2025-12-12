@@ -350,7 +350,7 @@
 /obj/item/gun/energy/xray/psychic_cannon
 	name = "\"Manta-RAY\" cannon"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these items are known to vanish and reappear when left alone. \
-			An unusual gun sought after by the Soteria when it appears for both its utility and its research value. It's unknown technological function allows \
+			An unusual gun sought after by the Vesalius-Andra when it appears for both its utility and its research value. It's unknown technological function allows \
 			this weapon to use moderately high damage armor penetrating x-ray laser blasts. While a strict step up from a standard x-ray weapon in all ways, this weapon is more valued for \
 			its research points in the deconstrustive analyzer."
 	icon = 'icons/obj/guns/energy/psychiccannon.dmi'

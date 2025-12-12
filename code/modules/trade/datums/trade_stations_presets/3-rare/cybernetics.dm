@@ -3,7 +3,7 @@
 	spawn_probability = 0 //were bugged
 	name_pool = list("FTS 'PentaOptium'" = "Free Trade Station 'PentaOptium'. \"Oh, you, I think I can sell you some cybernetics.\"")
 	inventory = list(
-		"Soteria" = list(
+		"Vesalius-Andra" = list(
 			/obj/item/organ/external/robotic/moebius/l_arm,
 			/obj/item/organ/external/robotic/moebius/r_arm,
 			/obj/item/organ/external/robotic/moebius/l_leg,

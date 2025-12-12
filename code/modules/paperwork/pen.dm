@@ -25,7 +25,7 @@
 	var/colour = "black"	//what colour the ink is!
 
 /obj/item/pen/blue
-	desc = "It's a normal Soteria pen."
+	desc = "It's a normal Vesalius-Andra pen."
 	icon_state = "pen_blue"
 	colour = "blue"
 
@@ -35,7 +35,7 @@
 	colour = "red"
 
 /obj/item/pen/green
-	desc = "It's a normal Soteria pen."
+	desc = "It's a normal Vesalius-Andra pen."
 	icon_state = "pen_green"
 	colour = "green"
 

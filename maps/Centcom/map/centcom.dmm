@@ -5641,7 +5641,7 @@
 /area/centcom/evac)
 "qc" = (
 /obj/machinery/door/airlock/centcom{
-	name = "LSS Internal Affairs"
+	name = "FL Internal Affairs"
 	},
 /turf/simulated/floor/wood,
 /area/centcom/evac)

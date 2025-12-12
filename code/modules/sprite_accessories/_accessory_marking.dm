@@ -1362,52 +1362,52 @@
 		blend = ICON_MULTIPLY
 		body_parts = list(BP_L_LEG, BP_L_FOOT)
 
-//Soteria
+//Vesalius-Andra
 
 	soteria_arm_right_male
-		name = "Soteria Prosthetic Right Arm, Male"
+		name = "Vesalius-Andra Prosthetic Right Arm, Male"
 		icon_state = "soteria_r_arm_m"
 		blend = ICON_MULTIPLY
 		body_parts = list(BP_R_ARM, BP_R_HAND)
 
 	soteria_arm_left_male
-		name = "Soteria Prosthetic Left Arm, Male"
+		name = "Vesalius-Andra Prosthetic Left Arm, Male"
 		icon_state = "soteria_l_arm_m"
 		blend = ICON_MULTIPLY
 		body_parts = list(BP_L_ARM, BP_L_HAND)
 
 	soteria_leg_right_male
-		name = "Soteria Prosthetic Right Leg, Male"
+		name = "Vesalius-Andra Prosthetic Right Leg, Male"
 		icon_state = "soteria_r_leg_m"
 		blend = ICON_MULTIPLY
 		body_parts = list(BP_R_LEG, BP_R_FOOT)
 
 	soteria_leg_left_male
-		name = "Soteria Prosthetic Left Leg, Male"
+		name = "Vesalius-Andra Prosthetic Left Leg, Male"
 		icon_state = "soteria_l_leg_m"
 		blend = ICON_MULTIPLY
 		body_parts = list(BP_L_LEG, BP_L_FOOT)
 
 	soteria_arm_right_female
-		name = "Soteria Prosthetic Right Arm, Female"
+		name = "Vesalius-Andra Prosthetic Right Arm, Female"
 		icon_state = "soteria_r_arm_f"
 		blend = ICON_MULTIPLY
 		body_parts = list(BP_R_ARM, BP_R_HAND)
 
 	soteria_arm_left_female
-		name = "Soteria Prosthetic Left Arm, Female"
+		name = "Vesalius-Andra Prosthetic Left Arm, Female"
 		icon_state = "soteria_l_arm_f"
 		blend = ICON_MULTIPLY
 		body_parts = list(BP_L_ARM, BP_L_HAND)
 
 	soteria_leg_right_female
-		name = "Soteria Prosthetic Right Leg, Female"
+		name = "Vesalius-Andra Prosthetic Right Leg, Female"
 		icon_state = "soteria_r_leg_f"
 		blend = ICON_MULTIPLY
 		body_parts = list(BP_R_LEG, BP_R_FOOT)
 
 	soteria_leg_left_female
-		name = "Soteria Prosthetic Left Leg, Female"
+		name = "Vesalius-Andra Prosthetic Left Leg, Female"
 		icon_state = "soteria_l_leg_f"
 		blend = ICON_MULTIPLY
 		body_parts = list(BP_L_LEG, BP_L_FOOT)

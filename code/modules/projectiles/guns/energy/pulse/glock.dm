@@ -1,8 +1,8 @@
 /obj/item/gun/energy/glock
 	name = "SI-NM \"Galaxy\" Advanced Energy Gun"
 	desc = "The \"Galaxy\" plasma pistol is an odd sight, to say the least.. \
-	Its externals appear to be based into a modified \"Sky\" pistol frame with elements from the various Soteria energy weapons being crammed into its exterior. \
-	A collaboration between Marshals and Soteria, it appears to be a well made firearm; sporting an improved grip compared to the pistol it was based off \
+	Its externals appear to be based into a modified \"Sky\" pistol frame with elements from the various Vesalius-Andra energy weapons being crammed into its exterior. \
+	A collaboration between Rangers and Vesalius-Andra, it appears to be a well made firearm; sporting an improved grip compared to the pistol it was based off \
 	and flexibility in firemodes; sporting laser and plasma settings, as well as a less-than-lethal stun bolt setting!\
 	This one seems to be more powerful than the CRO-issue \"Starburst\" model, but uses more energy in the process of firing."
 	icon = 'icons/obj/guns/energy/galaxy.dmi'
@@ -64,8 +64,8 @@
 /obj/item/gun/energy/glock/sci
 	name = "SI-NM \"Starburst\" Advanced Energy Gun"
 	desc = "The \"Starburst\" advanced energy gun pistol is an odd sight, to say the least.. \
-	Its externals appear to be based into a modified \"Sky\" pistol frame with elements from the various Soteria energy weapons being crammed into its exterior. \
-	A collaboration between Marshals and Soteria, it appears to be a well made firearm; sporting an improved grip compared to the pistol it was based off \
+	Its externals appear to be based into a modified \"Sky\" pistol frame with elements from the various Vesalius-Andra energy weapons being crammed into its exterior. \
+	A collaboration between Rangers and Vesalius-Andra, it appears to be a well made firearm; sporting an improved grip compared to the pistol it was based off \
 	and flexibility in firemodes; sporting laser and plasma settings, as well as an ion shot setting! \
 	This one seems to be less powerful than the WO-issue \"Galaxy\" model, but still manages to pack a punch with its improved efficiency."
 	icon = 'icons/obj/guns/energy/starburst.dmi'

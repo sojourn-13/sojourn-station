@@ -228,7 +228,7 @@
 
 /obj/item/card/id/syndicate/ert/aa/marshal_ert
 	name = "Marshal Agent's ID card"
-	desc = "A specialized all access ID issued to agents of the Provost Marshal and the Nadezhda Marshals."
+	desc = "A specialized all access ID issued to agents of the Provost Marshal and the Iskhod Rangers."
 	registered_name = "Special Agent"
 	assignment = "Special Agent"
 
@@ -257,10 +257,10 @@
 	..()
 
 /obj/item/card/id/syndicate/ert/aa/auditor_ert
-	name = "LSS Auditor ID card"
+	name = "FL Auditor ID card"
 	desc = "An ID card that is for top down, with access to check out and inspect anything anyware at a moments time."
-	registered_name = "LSS Auditor"
-	assignment = "LSS Auditor"
+	registered_name = "FL Auditor"
+	assignment = "FL Auditor"
 
 /obj/item/card/id/syndicate/ert/aa/auditor_ert/New()
 	access = get_all_station_access()

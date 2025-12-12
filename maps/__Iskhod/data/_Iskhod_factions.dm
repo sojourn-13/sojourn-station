@@ -13,7 +13,7 @@
 	faxable = TRUE
 
 /datum/faction/nadezhda/marshal
-	name = "Marshals - Boris Kilmeade"
+	name = "Rangers - Boris Kilmeade"
 
 	fax_alert = "MARSHAL COMMUNIQUE"
 	fax_response = "Marshal Order"
@@ -39,10 +39,10 @@
 	stampshape = "paper_stamp-x"
 
 /datum/faction/nadezhda/soteria
-	name = "Soteria Institute - Nakharan Mkne"
+	name = "VA Biomechanics - Nakharan Mkne"
 
 	fax_alert = "SOTERIA FAX"
-	fax_response = "Soteria Transmission"
+	fax_response = "Vesalius-Andra Transmission"
 
 	color = "#e903df"
 	darkcolor = "#870481"
@@ -52,7 +52,7 @@
 	stampshape = "paper_stamp-dots"
 
 /datum/faction/nadezhda/lonestar
-	name = "Lonestar Shipping Solutions, LLC - Robert Ryan"
+	name = "Frontier Logistics, LLC - Robert Ryan"
 
 	fax_alert = "LONESTAR REQUISITION FAX"
 	fax_response = "Lonestars Reply"

@@ -221,7 +221,7 @@
 	short_desc = "You are an Inquisitor."
 	flavour_text = "A member of the clergy on duty, most likely the Prime, has done something that requires investigation and possibly disciplinary action. \
 	Your job is to uphold the doctrine of the Church, and you are empowered to Reduce or Separate even a Prime. \
-	You are not a cop, but you may assist the Marshals in tracking down a renegade clergy member if necessary."
+	You are not a cop, but you may assist the Rangers in tracking down a renegade clergy member if necessary."
 	assignedrole = "Church Inquisitor"
 	title = "Church Inquisitor"
 	stat_modifiers = list( //Literally just Marshal agent stats, I'm lazy
@@ -248,9 +248,9 @@
 	icon_state = "sleeper_1"
 	outfit = /decl/hierarchy/outfit/si_ert
 	ghost_role_perks = list(PERK_SURGICAL_MASTER, PERK_ROBOTICS_EXPERT, PERK_SI_SCI, PERK_CHEMIST, PERK_TRUE_NAME)
-	short_desc = "You are a member of the Soteria Ethics Committee."
-	flavour_text = "An accusation has been made against the Soteria Research Institute that besmirches our good name and committment to progress and the betterment of science. \
-	Identify the source of the issue and recommend resolutions if a member of Soteria is found to not acted in the best interests of the institutes mission."
+	short_desc = "You are a member of the Vesalius-Andra Ethics Committee."
+	flavour_text = "An accusation has been made against the Vesalius-Andra Research Institute that besmirches our good name and committment to progress and the betterment of science. \
+	Identify the source of the issue and recommend resolutions if a member of Vesalius-Andra is found to not acted in the best interests of the institutes mission."
 	assignedrole = "SRI Ethics Committee investigator"
 	title = "SRI Ethics Committee investigator"
 	stat_modifiers = list(

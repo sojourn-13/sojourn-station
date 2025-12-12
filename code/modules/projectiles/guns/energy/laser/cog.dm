@@ -28,23 +28,23 @@
 /obj/item/gun/energy/cog/gear
 	name = "\"Gear\" police laser carbine"
 	desc = "A Greyson Positronic design, cheap and widely produced. In the distant past this was the service rifle of low-rank police forces. Billions of copies of this gun were made. They are ubiquitous. \
-	This model has been modified by the Marshals to allow for non-lethal electrodes to be discharged as well as lasers, but at the cost of its cell-usage efficiency."
+	This model has been modified by the Iskhod Rangers to allow for non-lethal electrodes to be discharged as well as lasers, but at the cost of its cell-usage efficiency."
 	icon = 'icons/obj/guns/energy/cog_alt.dmi' // Using their proper sprite now
 	w_class = ITEM_SIZE_BULKY
-	fire_delay = 7 // Old platform improved by Marshals
+	fire_delay = 7 // Old platform improved by Rangers
 	projectile_type = /obj/item/projectile/beam/stun
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 15, MATERIAL_SILVER = 10)
 	init_firemodes = list(
 		list(mode_name="stun", mode_desc="fires a concentrated stun beam", projectile_type=/obj/item/projectile/beam/stun, charge_cost = 100, icon="stun", fire_sound='sound/weapons/energy/Taser3.ogg'),
 		list(mode_name="lethal", mode_desc="fires a concentrated laser blast", projectile_type=/obj/item/projectile/beam, charge_cost = 50, icon="kill", fire_sound='sound/weapons/energy/laser_rifle.ogg')
 	)
-	serial_type = "NM"
+	serial_type = "IR"
 	gun_tags = list(GUN_LASER, GUN_ENERGY, GUN_SCOPE)
 	allow_greyson_mods = FALSE
 
 /obj/item/gun/energy/cog/sprocket
-	name = "Soteria \"Sprocket\" laser carbine"
-	desc = "Originally a Greyson Positronic design, tinkered with by Marshals to allow nonlethal reduction of rowdy personnel, this gun has been further modified by Soteria to include a foldable stock, \
+	name = "Vesalius-Andra \"Sprocket\" laser carbine"
+	desc = "Originally a Greyson Positronic design, tinkered with by Rangers to allow nonlethal reduction of rowdy personnel, this gun has been further modified by Vesalius-Andra to include a foldable stock, \
 			making it lightweight and easy to operate by untrained personnel. The main disabler laser can neutralize the rowdiest patients at the cost of heavy cell usage."
 	icon = 'icons/obj/guns/energy/sprocket.dmi'
 	icon_state = "sprocket"
@@ -62,7 +62,7 @@
 		list(mode_name="lethal", mode_desc="Fires a concentrated laser blast", projectile_type=/obj/item/projectile/beam, charge_cost = 50, icon="kill", fire_sound='sound/weapons/energy/laser_rifle.ogg')
 	)
 	max_upgrades = 3 // Already tinkered enough, smaller frame, good stats
-	serial_type = "GP-SI"
+	serial_type = "GP-VA"
 	allow_greyson_mods = TRUE
 
 /obj/item/gun/energy/cog/sprocket/update_icon() // Necessary for the folded and unfolded states
@@ -119,5 +119,5 @@
 	)
 	twohanded = FALSE
 	init_recoil = HANDGUN_RECOIL(0.2)
-	serial_type = "GP-SI"
+	serial_type = "GP-VA"
 	allow_greyson_mods = FALSE

@@ -581,31 +581,31 @@
 
 /obj/item/toy/figure/character/moebius/cmo
 	name = "biolab overseer action figure"
-	desc = "The health of the crew is in their hands. Soteria 1/8."
+	desc = "The health of the crew is in their hands. Vesalius-Andra 1/8."
 	icon_state = "cmo"
 	toysay = "Suit sensors on, people!"
 
 /obj/item/toy/figure/character/moebius/rd
 	name = "research overseer action figure"
-	desc = "All research requests go through them. Soteria 2/8."
+	desc = "All research requests go through them. Vesalius-Andra 2/8."
 	icon_state = "rd"
 	toysay = "One day, I'll get a rubber ducky on my office..."
 
 /obj/item/toy/figure/character/moebius/md
 	name = "medical doctor action figure"
-	desc = "They'll do their best to uphold the oath. Soteria 3/8."
+	desc = "They'll do their best to uphold the oath. Vesalius-Andra 3/8."
 	icon_state = "md"
 	toysay = "You got the cash for treatment, right...?"
 
 /obj/item/toy/figure/character/moebius/psychologist
 	name = "psychologist action figure"
-	desc = "Diseases of the mind are just as deadly. Soteria 4/8."
+	desc = "Diseases of the mind are just as deadly. Vesalius-Andra 4/8."
 	icon_state = "psychologist"
 	toysay = "Just come and have a seat."
 
 /obj/item/toy/figure/character/moebius/paramedic
 	name = "lifeline technician action figure"
-	desc = "They'll go anywhere to save a life. Soteria 5/8."
+	desc = "They'll go anywhere to save a life. Vesalius-Andra 5/8."
 	icon_state = "paramedic"
 	toysay = "Your sensors are off, where are you?!"
 
@@ -617,19 +617,19 @@
 
 /obj/item/toy/figure/character/moebius/scientist
 	name = "scientist action figure"
-	desc = "Their experiments sometimes go wacky. Soteria 7/8."
+	desc = "Their experiments sometimes go wacky. Vesalius-Andra 7/8."
 	icon_state = "scientist"
 	toysay = "I swear that is just a new mutant tobacco strain I discovered, Officer..."
 
 /obj/item/toy/figure/character/moebius/roboticist
 	name = "roboticist action figure"
-	desc = "The master of machine life. Soteria 8/9."
+	desc = "The master of machine life. Vesalius-Andra 8/9."
 	icon_state = "roboticist"
 	toysay = "Alright, who wants to buy a Durand?"
 
 /obj/item/toy/figure/character/moebius/borg
 	name = "cyborg action figure"
-	desc = "A mechanical servant made by man. Soteria 9/9."
+	desc = "A mechanical servant made by man. Vesalius-Andra 9/9."
 	icon_state = "borg"
 	toysay = "I live again!"
 

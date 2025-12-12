@@ -83,7 +83,7 @@
 #define FORM_CHTMANT			"Cht'mant"
 #define FORM_CINDAR				"Cindarite"
 #define FORM_OPIFEX				"Opifex"
-#define FORM_SOTSYNTH			"Soteria Synthetic"
+#define FORM_SOTSYNTH			"Vesalius-Andra Synthetic"
 #define FORM_AGSYNTH			"Artificer Guild Synthetic"
 #define FORM_BSSYNTH			"Blackshield Synthetic"
 #define FORM_CHURCHSYNTH		"Absolute Synthetic"

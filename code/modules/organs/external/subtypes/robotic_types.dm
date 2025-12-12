@@ -201,9 +201,9 @@ obj/item/organ/external/robotic/synthskin/groin
 /obj/item/organ/external/robotic/makeshift/chest
 	default_description = /datum/organ_description/chest
 
-// Soteria
+// Vesalius-Andra
 /obj/item/organ/external/robotic/moebius
-	name = "\"Soteria\""
+	name = "\"Vesalius-Andra\""
 	desc = "Reinforced purple and white prosthesis designed for space exploration and light combat."
 	force_icon = 'icons/mob/human_races/cyberlimbs/moebius.dmi'
 	model = "moebius"
@@ -231,12 +231,12 @@ obj/item/organ/external/robotic/synthskin/groin
 	max_damage = 200
 
 /obj/item/organ/external/robotic/moebius/torso
-	name = "\"Soteria\" Torso"
+	name = "\"Vesalius-Andra\" Torso"
 	default_description = /datum/organ_description/chest
 	max_damage = 200
 
 /obj/item/organ/external/robotic/moebius/head
-	name = "\"Soteria\" Head"
+	name = "\"Vesalius-Andra\" Head"
 	default_description = /datum/organ_description/head
 	max_damage = 200
 

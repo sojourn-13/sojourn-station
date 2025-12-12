@@ -220,16 +220,16 @@ At best, this equipment is to be treated as *a* -not the- non-fighter/non-medica
 
 In fact, not all threats need the bubble shield, and it's activation, and use of it's various settings, is a decision that should rely solely on the /concerned/ command staff, starting with the Blackshield Commander and Warrant Officer.<br><br>
 
-Extraordinary events involving -but not limited to- meteor rain, bluespace, radiation storms, solar flares, or even orbital bombardment, might require a more educated approach from either Artificer or Soteria Science personel.<br><br>
+Extraordinary events involving -but not limited to- meteor rain, bluespace, radiation storms, solar flares, or even orbital bombardment, might require a more educated approach from either Artificer or Vesalius-Andra Science personel.<br><br>
 
 Typically, while the Shield Generator relies on a massive engineering effort to power it,
-it's up to Soteria Science personel to be best educated on which settings might be more advisable during a given situation,
+it's up to Vesalius-Andra Science personel to be best educated on which settings might be more advisable during a given situation,
 the final decision must swiftly be made however, and is of course, always up to the Blackshield Commander and Warrant Officer.<br><br>
 
 The truth is, most situations won't be needing the shield at all ; it's important to correctly determine if it's even necessary to use it.<br>
 Namely, amongst a variety of threats, it certainly won't stop Excelsior Infiltrators, or Giant Spider burrowing, or Hivemind Infestations.<br><br>
 
-As always, in the end, it's all up to the the all-important cooperation between medical teams from Soteria and the Church, remaining the<br> strong arm of the colony that's keeping up with our Marshals/Blackshields and Prospectors.<br><br>
+As always, in the end, it's all up to the the all-important cooperation between medical teams from Vesalius-Andra and the Church, remaining the<br> strong arm of the colony that's keeping up with our Rangers/Blackshields and Prospectors.<br><br>
 
 
 				<h2><a name="Setup">Shield Setup & upgrades Ch.1</h2><br>
@@ -240,7 +240,7 @@ As a result of this technical limitation, special attention must be put into cor
 However, if you've respected that very important step, then charged the generator, it is possible to then wrench it up and move the generator around.<br><br>
 
 NOTE: This action is strictly forbidden with the one generator from the Shield generator room.<br>
-Instead, if you need a generator to use elsewhere, seek the components and boards for a new one at Soteria Science.<br><br>
+Instead, if you need a generator to use elsewhere, seek the components and boards for a new one at Vesalius-Andra Science.<br><br>
 
 In case of emergency such as a code <b>RED</b>, at a Blackshield Commander or Warrant Officer's decision -or their obligatory joined vote- the furnished shield generator may be moved/reassembled somewhere else within the colony infrastructure,
 assuming there is an effort from active Artificers to keep up with the new engineering effort to power the generator in a new location within the colony.<br>
@@ -270,11 +270,11 @@ The generator is assembled from :
 
 Upgrading the capacitor and laser is an important task that relies on the guild.<br><br>
 
-<li>T3 parts obtained at Soteria -a super capacitor and a ultra-powered laser- should be the bare minimum.<br><br>
+<li>T3 parts obtained at Vesalius-Andra -a super capacitor and a ultra-powered laser- should be the bare minimum.<br><br>
 
-<li>T4, known as Greyson parts, are obtained trough salvage at the Greyson base -ask prospectors-, or at the space junk field, or at Soteria, if they are performing well on research and are given some platinum.<br><br>
+<li>T4, known as Greyson parts, are obtained trough salvage at the Greyson base -ask prospectors-, or at the space junk field, or at Vesalius-Andra, if they are performing well on research and are given some platinum.<br><br>
 
-<li>T5 parts, known as forged (a forged capacitor and a forged laser) are the best options, obtained trough Artificer craft, but they need T3 parts from Soteria for crafting, power tools, and some materials.<br><br>
+<li>T5 parts, known as forged (a forged capacitor and a forged laser) are the best options, obtained trough Artificer craft, but they need T3 parts from Vesalius-Andra for crafting, power tools, and some materials.<br><br>
 
 Upgrading the machine parts tremendously influences the performance of the shield, and should be a top priority in case of a situation where the shield is used.<br>
 While very modest, T3 remains an immense step over the T1 furnished.<br><br>
@@ -310,7 +310,7 @@ This allows to store enormous amounts of power right next to the generator, able
 
 The total amount of punition the bubble can take remains quite considerable even with 500MJ.<br>
 For future reference, the 100% integrity given from using a transmission coil already permits to block several of the the highest toxins assemblies possible with relative ease - and it's extremely rapid to recharge with the 2 SMES units.<br>
-Testing with 2 or 3 of the most powerful bombs Soteria can make, barely damaged the integrity to 85% - which was instantly refilled trough the performance of the built-in SMES's.<br><br>
+Testing with 2 or 3 of the most powerful bombs Vesalius-Andra can make, barely damaged the integrity to 85% - which was instantly refilled trough the performance of the built-in SMES's.<br><br>
 
 
 The generator should be constructed with a TRANSMISSION coil, but it can be given a much higher maximum stored power if you use a capacitance coil.<br>
@@ -343,7 +343,7 @@ With this in mind, consider that the Shield's equipment is furnished with 2 SMES
 it's still possible to fill them up with ease if you follow the detailed list of power sources accounted within the end of this text.<br><br>
 
 This is designed to easily withstand even the most brutal attacks from whatever is out there, including planetary bombardment.<br>
-The only condition is to really /really/ store a lot of power in advance, which means a cooperative effort from the various factions, in particular the Guild, the Soteria Institute, Lonestar, and the Church of the Absolute.<br><br>
+The only condition is to really /really/ store a lot of power in advance, which means a cooperative effort from the various factions, in particular the Guild, the VA Biomechanics, Lonestar, and the Church of the Absolute.<br><br>
 
 Hypothetically, in case of an attack with nuclear warheads, the generator should instead be fitted with a capacitance coil, wich would then require a gargantuan amount of power in order to reach acceptable levels of integrity.<br>
 For obvious reasons, this has not been tested, neither really discussed given the already extremely high performance of the current design.<br><br>
@@ -369,13 +369,13 @@ Taking any equipment such as the generator, the wrench, the furnished coils, the
 				<h2><a name="Maintenance">Powering the Generator</h2>
 There are a variety of ways to power the colony, and with it, the shield.<br>
 It's worth going over that topic in detail, since it could make a difference in case of emergency.<br><br>
-Engineering alone will have their solars, the Soteria solars, then the hydroelectric dam, their 8 diesel generators, a selection of various generators of different kinds, the turbine in atmospherics, and whatever else engine they can put together using a TEG and circulators, maybe even a supermatter in rare occasions.<br><br>
-Soteria can build a wide variety of generators depending on nearly any available resources ; mining can offer large amounts of plasma for PACMAN's or fuel tanks for more Diesels ;<br>
+Engineering alone will have their solars, the Vesalius-Andra solars, then the hydroelectric dam, their 8 diesel generators, a selection of various generators of different kinds, the turbine in atmospherics, and whatever else engine they can put together using a TEG and circulators, maybe even a supermatter in rare occasions.<br><br>
+Vesalius-Andra can build a wide variety of generators depending on nearly any available resources ; mining can offer large amounts of plasma for PACMAN's or fuel tanks for more Diesels ;<br>
 Built in numbers, each individual CAMPMAN while modest, will be running on planks of wood and prove quite efficient. Harvests from the surface trees or the xenoflora lab for mass production, or order at cargo.<br><br>
 On T3, Diesels, PACMANS, CAMPMANS and the likes of them, will have their performance significantly increased, without burning their fuel any faster.<br>
-Optimally, with a bunch of platinum and wood, Soteria can put together a group of CAMPMAN's running on T4 Greyson parts - and upgrade the guild's diesels by the same occasion.<br><br>
+Optimally, with a bunch of platinum and wood, Vesalius-Andra can put together a group of CAMPMAN's running on T4 Greyson parts - and upgrade the guild's diesels by the same occasion.<br><br>
 The church has an extremely powerful biogenerator, running on their big golden canisters of biomass, but only if they've been producing them from the junk beacon, which takes some time and effort.<br><br>
-Diesels, PACMANS, CAMPMANS and the rest of them are assembled from a board printer at Soteria, one matter bin, one micro-laser, and one capacitor.<br>
+Diesels, PACMANS, CAMPMANS and the rest of them are assembled from a board printer at Vesalius-Andra, one matter bin, one micro-laser, and one capacitor.<br>
 Their power output relies on the tier of the capacitor and laser, but the matter bin only affects the amount of fuel placed in before needing to be refilled - which remains more important than one might think at first, if you don't want to be constantly babysitting a room full of generators during an emergency situation.<br><br>
 On top of the solars and the hydroelectric dam, one of the most reliable, easy and rapid way to get a lot of power quickly on shift start, with no time-sinking preparation or special effort nor costly resources, is to upgrade the 8 diesels in the guild with T3 and to turn them on.
 The guild has a lot of fuel tanks in storage, and more can be ordered for rather cheap at cargo - this should be the default strategy if there is an emergency on shift start with too little time to make anything fancy.<br><br>				</body>
@@ -876,10 +876,10 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 		"}
 
 /obj/item/book/manual/robotics_catalogue
-	name = "Soteria Cyborg Catalogue 2652"
+	name = "Vesalius-Andra Cyborg Catalogue 2652"
 	icon_state = "book_robotics"
 	author = "Maeve Cinaed"
-	title = "Soteria Cyborg Catalogue 2652"
+	title = "Vesalius-Andra Cyborg Catalogue 2652"
 
 	dat = {"<html>
 				<head>
@@ -916,14 +916,14 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 				<p>"Hello! Thank you for picking this handy little guide up, dear reader. this piece has been a pet project
 				that i've worked on for quite some time, I'm very happy to	finally be able to place it in the hands,
 				claws, paws and grippers of my fellow Mechanists, Roboticists, Augmenticists- and any one else who
-				may be curious about the range of bots available from the Soteria Robotics Division. Piece of this
-				book have been copied from the sadly obsolete but none the less interesting 'Soteria Mechanists Handbook',
+				may be curious about the range of bots available from the Vesalius-Andra Robotics Division. Piece of this
+				book have been copied from the sadly obsolete but none the less interesting 'Vesalius-Andra Mechanists Handbook',
 				as well as 'SFPD - Identifying Illicit Machines, A comprehensive guide.' as well as a variety of other,
 				smaller manuals, handbooks and product-catalogues. While I have done my best to ensure the information
 				contained within is accurate much of it may be or become incorrect or outdated. A special thanks to my
 				Dear Friend, Patience Constance of the Iron Lords for her help filling in the blanks regarding
 				their line of customized MekaNIKA bots - provided to Nadehzda by our wonderful friends with the
-				Xanoranth Syndicate." - Dr. Cinead, Soteria Robotics Division.
+				Xanoranth Syndicate." - Dr. Cinead, Vesalius-Andra Robotics Division.
 
 				<h2><a name="Generic"> Chassis that Respect the Users Freedom</h2>
 				<center><img src="https://sojourn13.space/w/images/5/58/Generic.png"></img></center>
@@ -987,7 +987,7 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 				been made with the Iron Lords- brokered by the Xanoranth Syndicate, resulting in our obtaining quite a few
 				of these uniquely modified frames. Like most frames, these are style over substance meant to mesh neatly with
 				the 'modules' the user has available. This comes with the caveat that in addition to the frame-designs, Xanoranth
-				have provided a number of fully operational units who have been run through Soterias rigorous process of integration."
+				have provided a number of fully operational units who have been run through Vesalius-Andras rigorous process of integration."
 				</body>
 			</html>
 		"}

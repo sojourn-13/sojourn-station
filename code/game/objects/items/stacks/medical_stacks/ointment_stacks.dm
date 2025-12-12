@@ -102,9 +102,9 @@
 	fancy_icon = FALSE
 
 /obj/item/stack/medical/ointment/soteria
-	name = "Soteria branded ointment"
-	singular_name = "Soteria branded ointment"
-	desc = "Premium burn treatment ointment manufactured by the Soteria Institute. Each application is pre-treated with a specialized medical cocktail including advanced cellular regeneration compounds, pain relief agents, detoxification chemicals, and broad-spectrum antibiotics. The ointment features Soteria's signature blue coloring and comes with more applications than standard burn treatments. Hand-crafted with care by skilled Soteria Medical personnel with care and concern."
+	name = "Vesalius-Andra branded ointment"
+	singular_name = "Vesalius-Andra branded ointment"
+	desc = "Premium burn treatment ointment manufactured by the VA Biomechanics. Each application is pre-treated with a specialized medical cocktail including advanced cellular regeneration compounds, pain relief agents, detoxification chemicals, and broad-spectrum antibiotics. The ointment features Vesalius-Andra's signature blue coloring and comes with more applications than standard burn treatments. Hand-crafted with care by skilled Vesalius-Andra Medical personnel with care and concern."
 	icon_state = "sr_ointment"
 	preloaded_reagents = list("dermaline" = 2, "tramadol" = 2, "anti_toxin" = 2, "spaceacillin" = 1, "sterilizine" = 1)
 	heal_burn = 25

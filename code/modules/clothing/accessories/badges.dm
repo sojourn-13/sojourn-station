@@ -9,14 +9,14 @@
 
 /obj/item/clothing/accessory/badge
 	name = "Ranger's badge"
-	desc = "A marshal ranger badge, made from gold and set on leather."
+	desc = "A security badge, made from gold and set on leather."
 	icon_state = "badge"
 	item_state = "marshalbadge"
 	slot_flags = SLOT_BELT | SLOT_ACCESSORY_BUFFER
 	price_tag = 200
 
 	var/stored_name
-	var/badge_string = "Marshal"
+	var/badge_string = "Ranger"
 
 /obj/item/clothing/accessory/badge/old
 	name = "faded badge"
@@ -50,7 +50,7 @@
 	desc = "This glowing blue badge marks the holder as a member of security."
 	icon_state = "holobadge"
 	item_state = "holobadge"
-	badge_string = "Marshals"
+	badge_string = "Ranger"
 	var/emagged //Emagging removes Sec check.
 
 /obj/item/clothing/accessory/badge/holo/tag
@@ -58,7 +58,7 @@
 	desc = "This pair of glowing plates is meant to be attached to armor or clothing and marks the wearer as a member of security."
 	icon_state = "holotag"
 	item_state = "holotag"
-	badge_string = "Marshals"
+	badge_string = "Ranger"
 
 /obj/item/clothing/accessory/badge/holo/cord
 	icon_state = "holobadge-cord"
@@ -70,24 +70,28 @@
 	desc = "This glowing golden badge marks the holder as a member of security."
 	icon_state = "marshalbadge"
 	item_state = "marshalbadge"
+	badge_string = "Captain"
 
 /obj/item/clothing/accessory/badge/holo/inspector
 	name = "holobadge"
 	desc = "This glowing silver badge marks the holder as a member of security."
 	icon_state = "inspectorbadge"
 	item_state = "inspectorbadge"
+	badge_string = "Detective"
 
 /obj/item/clothing/accessory/badge/holo/co
 	name = "holobadge"
-	desc = "This glowing red badge marks the holder as a member of blackshield."
+	desc = "This glowing red badge marks the holder as a member of security."
 	icon_state = "sargebadge"
 	item_state = "sargebadge"
+	badge_string = "Lieutenant"
 
 /obj/item/clothing/accessory/badge/holo/warden
 	name = "holobadge"
 	desc = "This glowing cyan badge marks the holder as a member of security."
 	icon_state = "specbadge"
-	item_state = "holobadge"
+	item_state = "specbadge"
+	badge_string = "Lieutenant"
 
 /obj/item/clothing/accessory/badge/holo/attack_self(mob/user as mob)
 	if(!stored_name)
@@ -131,33 +135,39 @@
 
 
 /obj/item/clothing/accessory/badge/warden
-	name = "Supply specialist badge"
+	name = "Ranger Lieutenant's badge"
 	desc = "A silver supply specialist badge. Stamped with the words 'SS.'"
 	icon_state = "silverbadgez"
 	slot_flags = SLOT_ACCESSORY_BUFFER
 
 
 /obj/item/clothing/accessory/badge/hos
-	name = "Warrant officer's badge"
+	name = "Ranger Captain's badge"
 	desc = "An immaculately polished gold Warrant Officer badge."
 	icon_state = "goldbadge"
 	slot_flags = SLOT_ACCESSORY_BUFFER
 
 /obj/item/clothing/accessory/badge/smc
-	name = "blackshield commander's badge"
-	desc = "An immaculately polished gold blackshield commander badge."
+	name = "Ranger Captain's badge"
+	desc = "An immaculately polished gold Ranger commander badge."
 	icon_state = "goldbadge"
-	badge_string = "Blackshield"
+	badge_string = "Ranger"
 	slot_flags = SLOT_ACCESSORY_BUFFER
 
 /obj/item/clothing/accessory/badge/marshal
-	name = "Marshal Agent's badge"
-	desc = "A leather-backed gold badge displaying the crest of the Brigadier and Provost Marshal, signifying the wearer as an agent of both, carrying the full authority over both organizations."
+	name = "Ranger Inspector's badge"
+	desc = "A leather-backed gold badge displaying the crest of the Ranger, signifying the wearer as an agent carrying the full authority of the organization."
 	icon_state = "agentbadge"
-	badge_string = "Special Agent"
+	badge_string = "Inspector"
 
 /obj/item/clothing/accessory/badge/militiaagent
-	name = "blackshield specialist's badge"
-	desc = "A leather-backed gold badge displaying the crest of the Brigadier and Provost Marshal, signifying the wearer as an agent of both, carrying the full authority over both organizations."
+	name = "Ranger Inspector's's badge"
+	desc = "A leather-backed gold badge displaying the crest of the Ranger, signifying the wearer as an agent carrying the full authority of the organization."
 	icon_state = "agentbadge"
-	badge_string = "Specialist"
+	badge_string = "Inspector"
+
+/obj/item/clothing/accessory/badge/press
+	name = "press badge"
+	desc = "A badge worn by members of the press. Access to the truth not guaranteed."
+	icon_state = "pressbadge"
+	badge_string = "Press"

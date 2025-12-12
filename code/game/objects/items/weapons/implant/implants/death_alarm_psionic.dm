@@ -9,7 +9,7 @@
 /obj/item/implant/death_alarm/psionic/get_data()
 	var/data = {"
 		<b>Implant Specifications:</b><BR>
-		<b>Name:</b> Soteria \"Mind Link\" Class Psionic Lifesign Sensor<BR>
+		<b>Name:</b> Vesalius-Andra \"Mind Link\" Class Psionic Lifesign Sensor<BR>
 		<b>Life:</b> Activates upon death.<BR>
 		<b>Important Notes:</b> Alerts crew to crewmember death. Psion-compatible design.<BR>
 		<HR>

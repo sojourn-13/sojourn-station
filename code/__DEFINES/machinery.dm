@@ -40,7 +40,7 @@ var/global/defer_powernet_rebuild = 0      // True if net rebuild will be called
 #define NETWORK_CHURCH "Absolute Network"
 #define NETWORK_PROP "Prospector Network"
 #define NETWORK_GATE "Gate Network"
-#define NETWORK_CARGO "LSS Network"
+#define NETWORK_CARGO "FL Network"
 #define NETWORK_COMMAND "Command"
 #define NETWORK_ENGINE "Engine"
 #define NETWORK_ENGINEERING "Engineering"

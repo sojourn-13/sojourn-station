@@ -166,7 +166,7 @@
 		icon_state = "Hatton_box0"
 
 /obj/item/hatton_magazine/moebius
-	name = "Soteria BT \"Q-del\" gas tube"
+	name = "Vesalius-Andra BT \"Q-del\" gas tube"
 	icon_state = "Moebius_box1"
 	matter = list(MATERIAL_PLASMA = 10, MATERIAL_PLASTEEL = 2, MATERIAL_PLASTIC = 2)
 	charge = 2
@@ -200,7 +200,7 @@
 	return
 
 /obj/item/hatton/moebius
-	name = "Soteria BT \"Q-del\""
+	name = "Vesalius-Andra BT \"Q-del\""
 	desc = {"This breaching tool was reverse engineered from the \"Hatton\" design.
 	Despite the Artificer's Guild \"Hatton\" being traded on the free market through guild channels,
 	this device suffers from a wide number of reliability issues stemming from it being lathe printed."}

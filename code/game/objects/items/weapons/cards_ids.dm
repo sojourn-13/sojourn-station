@@ -257,6 +257,20 @@ var/const/NO_EMAG_ACT = -50
 	access = get_all_centcom_access()
 	..()
 
+/obj/item/card/id/silver
+	name = "silver identification card"
+	desc = "A silver card which represents service and planning."
+	icon_state = "id_silver"
+	item_state = "silver_id"
+	color = "#C0C0C0"
+
+/obj/item/card/id/press
+	name = "press identification card"
+	desc = "A card which represents the press."
+	icon_state = "id_press"
+	item_state = "press_id"
+	color = "#E0E0E0"
+
 /obj/item/card/id/gold
 	group = "golden"
 	icon_state = MATERIAL_GOLD

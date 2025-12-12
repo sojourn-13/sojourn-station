@@ -1286,7 +1286,7 @@
 			for(var/turf/simulated/floor/T in A)		//Pull a list of valid floor tiles from deepmaint
 				validtargets += T					//Add them to the list
 
-		if(istype(A, /area/nadezhda/maintenance))			//First find our maints areas
+		if(istype(A, /area/iskhod/maintenance))			//First find our maints areas
 			if(A.is_maintenance)					//Just in case were a subtype of maintenance and NOT maintenanced
 				for(var/turf/simulated/floor/T in A)
 					if(A.is_maintenance)			//Pull a list of valid floor tiles from deepmaint

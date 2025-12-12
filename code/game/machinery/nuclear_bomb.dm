@@ -571,7 +571,7 @@ var/bomb_set
 
 	// Set all areas to red alert
 	for(var/area/A in GLOB.map_areas)
-		if(istype(A, /area/nadezhda/hallway))
+		if(istype(A, /area/iskhod/hallway))
 			A.readyalert()
 
 /obj/machinery/nuclearbomb/proc/start_nuclear_sequence()

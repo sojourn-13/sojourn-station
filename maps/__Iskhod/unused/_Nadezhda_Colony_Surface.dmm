@@ -3379,8 +3379,8 @@
 /area/nadezhda/dungeon/outside/abandoned_solars)
 "ahN" = (
 /obj/structure/sign/faction/derelict1{
-	desc = "ATTENTION: This area is Soteria Institute property, all trespassers and looters will be prosecuted to the full extent of the law.";
-	name = "NOTICE: Soteria Property";
+	desc = "ATTENTION: This area is VA Biomechanics property, all trespassers and looters will be prosecuted to the full extent of the law.";
+	name = "NOTICE: Vesalius-Andra Property";
 	pixel_x = 32;
 	pixel_y = 0
 	},

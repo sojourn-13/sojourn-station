@@ -17,6 +17,6 @@
 	init_recoil = HANDGUN_RECOIL(1.1)
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_CALIBRE_50)
 	twohanded = TRUE
-	serial_type = "LSS"
+	serial_type = "FL"
 	wield_delay = 0.5 SECOND
 	wield_delay_factor = 0.5 // 50 vig

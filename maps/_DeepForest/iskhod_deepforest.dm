@@ -5,7 +5,7 @@
 #include "map/_River_Forest.dmm"
 #include "map/_River_To_Colony.dmm"
 
-/obj/map_data/nadezda_f
+/obj/map_data/iskhod_deepforest
 	name = "Deep Forest"
 	is_player_level = TRUE
 	is_contact_level = FALSE

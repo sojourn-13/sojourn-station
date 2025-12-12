@@ -113,7 +113,7 @@
 
 //Increases penetration multiplier, projectile speed. Increases fire delay. Acquired via science
 /obj/item/gun_upgrade/barrel/mag_accel
-	name = "Soteria \"Penetrator\" magnetic accelerator barrel"
+	name = "Vesalius-Andra \"Penetrator\" magnetic accelerator barrel"
 	desc = "Uses sympathetic magnetic coiling to increase exit velocity and penetration capabilities of a metal projectile. The added strain to the gun's barrel requires an additional cooldown period between shots."
 	icon_state = "Penetrator"
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_PLASTEEL = 1, MATERIAL_GOLD = 1)
@@ -134,7 +134,7 @@
 
 //Adds +10 burn damage to a bullet, lowers armor penetration, adds a constant projectile offset, increases recoil and fire delay. Acquired via science
 /obj/item/gun_upgrade/barrel/overheat
-	name = "Soteria \"Caster\" magnetic overheat barrel"
+	name = "Vesalius-Andra \"Caster\" magnetic overheat barrel"
 	desc = "Uses magnetic induction to heat the projectile of a weapon. Arguable combat effectiveness, but flashy nonetheless."
 	icon_state = "Caster"
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_PLASTEEL = 1, MATERIAL_GOLD = 1)
@@ -260,7 +260,7 @@
 	I.prefix = "Locked"
 
 /obj/item/gun_upgrade/trigger/dnalock
-	name = "Soteria \"DNA lock\" Finger Imprinter Trigger"
+	name = "Vesalius-Andra \"DNA lock\" Finger Imprinter Trigger"
 	desc = "There are many guns, but that one will be yours. Prevents others from using weapon with this trigger."
 	icon_state = "DNA_lock"
 	matter = list(MATERIAL_SILVER = 1, MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 3) //DNA stuff needs silver i guess
@@ -482,7 +482,7 @@
 
 // Double damage at the cost of more recoil and a tripled energy consumption
 /obj/item/gun_upgrade/mechanism/battery_shunt
-	name = "Soteria \"Thunder\" battery shunt"
+	name = "Vesalius-Andra \"Thunder\" battery shunt"
 	desc = "This experimental battery shunt is a cutting edge tool attachment which bypasses battery protection circuits to deliver the maximum amount of power in the shortest amount of time. For those who care more about stopping power than number of shots."
 	icon_state = "battery_shunt"
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_PLASTEEL = 1, MATERIAL_GOLD = 1, MATERIAL_URANIUM = 1)
@@ -502,7 +502,7 @@
 
 // Greatly increase firerate at the cost of lower damage
 /obj/item/gun_upgrade/mechanism/overdrive
-	name = "Soteria \"Tesla\" overdrive chip"
+	name = "Vesalius-Andra \"Tesla\" overdrive chip"
 	desc = "This experimental chip is a cutting edge tool attachment which bypasses power management protocols to dramatically increase the rate of fire at the cost of reduced stopping power."
 	icon_state = "overdrive"
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_PLASTEEL = 1, MATERIAL_GOLD = 1, MATERIAL_URANIUM = 1)
@@ -555,7 +555,7 @@
 
 // Add toxin damage to your weapon
 /obj/item/gun_upgrade/barrel/toxin_coater
-	name = "Soteria \"Black Viper\" toxin coater"
+	name = "Vesalius-Andra \"Black Viper\" toxin coater"
 	desc = "This experimental barrel coats bullets with a thin layer of toxins just before they leave the weapon. Do not lick it."
 	icon_state = "toxin_coater"
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_PLASTEEL = 1, MATERIAL_GOLD = 2)
@@ -573,7 +573,7 @@
 /* //Rad weapons runtime when they hit an object, so this is commented out.
 // Add radiation damage to your weapon
 /obj/item/gun_upgrade/barrel/isotope_diffuser
-	name = "Soteria \"Atomik\" isotope diffuser"
+	name = "Vesalius-Andra \"Atomik\" isotope diffuser"
 	desc = "This experimental barrel constantly sprays a thin mist of radioactive isotopes to make projectiles leaving the weapons deadlier, whether bullets, lasers or energy bolts. Do not put it in your mouth."
 	icon_state = "isotope_diffuser"
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_PLASTEEL = 1, MATERIAL_URANIUM = 2)

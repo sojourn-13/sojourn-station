@@ -372,30 +372,30 @@
 
 /obj/item/clothing/mask/gas/bigguy/sleekguy
 	name = "sleek grey rebreather"
-	desc = "A small, Soteria-brand rebreather designed to regulate the flux of gasses fed to its user." // take that Lonestar, no longer will you have a monopoly on cool facewear -Mus
+	desc = "A small, Vesalius-Andra-brand rebreather designed to regulate the flux of gasses fed to its user." // take that Lonestar, no longer will you have a monopoly on cool facewear -Mus
 	icon_state = "srebreath"
 
 /obj/item/clothing/mask/gas/bigguy/sleekblueguy
 	name = "sleek blue rebreather"
-	desc = "A small, Soteria-brand rebreather designed to regulate the flux of gasses fed to its user. This one is blue and has a Soteria Medical marking"
+	desc = "A small, Vesalius-Andra-brand rebreather designed to regulate the flux of gasses fed to its user. This one is blue and has a Vesalius-Andra Medical marking"
 	icon_state = "srebreath_blue"
 
 /obj/item/clothing/mask/gas/bigguy/sleekgoldguy
 	name = "sleek gold rebreather"
-	desc = "A small, Soteria-brand rebreather designed to regulate the flux of gasses fed to its user. This one is gold and has a Lonestar marking."
+	desc = "A small, Vesalius-Andra-brand rebreather designed to regulate the flux of gasses fed to its user. This one is gold and has a Lonestar marking."
 	icon_state = "srebreath_gold"
 
 /obj/item/clothing/mask/gas/bigguy/sleekorangeguy
 	name = "sleek orange rebreather"
-	desc = "A small, Soteria-brand rebreather designed to regulate the flux of gasses fed to its user. This one is orange and has a Guild marking."
+	desc = "A small, Vesalius-Andra-brand rebreather designed to regulate the flux of gasses fed to its user. This one is orange and has a Guild marking."
 	icon_state = "srebreath_orange"
 
 /obj/item/clothing/mask/gas/bigguy/sleekmarshalguy
 	name = "sleek marshal rebreather"
-	desc = "A small, Soteria-brand rebreather designed to regulate the flux of gasses fed to its user. This one carries the Marshal colors and has thicker filters."
+	desc = "A small, Vesalius-Andra-brand rebreather designed to regulate the flux of gasses fed to its user. This one carries the Marshal colors and has thicker filters."
 	icon_state = "srebreath_marshal"
 
 /obj/item/clothing/mask/gas/bigguy/sleekpurpleguy
 	name = "sleek purple rebreather"
-	desc = "A small, Soteria-brand rebreather designed to regulate the flux of gasses fed to its user. This one is purple and has a Soteria Research marking."
+	desc = "A small, Vesalius-Andra-brand rebreather designed to regulate the flux of gasses fed to its user. This one is purple and has a Vesalius-Andra Research marking."
 	icon_state = "srebreath_purple"

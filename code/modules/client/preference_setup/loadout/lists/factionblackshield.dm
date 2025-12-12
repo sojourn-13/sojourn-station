@@ -1,7 +1,7 @@
 /datum/gear/factionblackshield
 	display_name = "beret, blackshield"
 	path = /obj/item/clothing/head/rank/trooper/beret
-	allowed_roles = list(JOBS_BLACKSHIELD)
+	allowed_roles = list(JOBS_SECURITY)
 	slot = slot_head
 	sort_category = "Faction: Blackshield"
 	cost = 0

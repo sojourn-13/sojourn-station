@@ -222,7 +222,7 @@
 		var/datum/job/job = locate(href_list["select_alt_title"])
 		if (job)
 			var/choices
-			if (job.department != DEPARTMENT_LSS)
+			if (job.department != DEPARTMENT_SERVICE)
 				choices = list(job.noob_name)								// Time locks for Alt Names. Change the 0's to configure when the normal title opens up, and when the alternative ones do too.
 				if (SSjob.JobTimeAutoCheck(C.ckey, "[type]", "[job]", 0))	//<--- Change this number to establish how long a CKEY has to play a position until they're not forced a "n00b name"
 					choices += list(job.title)

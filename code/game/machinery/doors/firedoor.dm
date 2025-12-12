@@ -116,16 +116,16 @@
 			var/turf/simulated/redefined_turf = neighbor
 			var/turf_zone = redefined_turf.zone
 			tile_info[cardinal] = list(
-				FIREDOOR_TURF = redefined_turf,
-				FIREDOOR_ATMOS = FALSE,
-				FIREDOOR_ALERT = FALSE
+				redefined_turf,
+				FALSE,
+				FALSE
 			)
 			registered_zas_zones[cardinal] = turf_zone
 		else
 			tile_info[cardinal] =  list(
-				FIREDOOR_TURF = neighbor,
-				FIREDOOR_ATMOS = FALSE,
-				FIREDOOR_ALERT = FALSE
+				neighbor,
+				FALSE,
+				FALSE
 			)
 			registered_zas_zones[cardinal] = null
 	handle_unique_zone_register()

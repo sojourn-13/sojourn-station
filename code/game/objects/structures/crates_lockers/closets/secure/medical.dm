@@ -39,7 +39,7 @@
 	new /obj/item/tool/wrench(src)
 
 /obj/structure/closet/secure_closet/personal/doctor
-	name = "Soteria Doctor's locker"
+	name = "Vesalius-Andra Doctor's locker"
 	req_access = list(access_cmo)
 	access_occupy = list(access_medical_equip)
 	icon_state = "med"
@@ -87,7 +87,7 @@
 	new /obj/item/clothing/accessory/stethoscope(src)
 
 /obj/structure/closet/secure_closet/personal/paramedic
-	name = "Soteria Field Doctor's locker"
+	name = "Vesalius-Andra Field Doctor's locker"
 	req_access = list(access_cmo)
 	access_occupy = list(access_medical_equip)
 	icon_state = "med"
@@ -168,7 +168,7 @@
 	new /obj/item/clothing/suit/storage/toggle/labcoat/medspec(src)
 
 /obj/structure/closet/secure_closet/reinforced/CMO
-	name = "Soteria Biolab Overseer's locker"
+	name = "Vesalius-Andra Biolab Overseer's locker"
 	req_access = list(access_cmo)
 	icon_state = "cmo"
 

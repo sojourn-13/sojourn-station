@@ -294,7 +294,7 @@
 		brigged_since = -1
 		return 0
 	var/is_currently_brigged = 0
-	if(istype(T.loc,/area/nadezhda/security/brig))
+	if(istype(T.loc,/area/iskhod/security/brig))
 		is_currently_brigged = 1
 		if(current.GetIdCard())
 			is_currently_brigged = 0

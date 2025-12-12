@@ -291,7 +291,7 @@ Make it so steel parts fit into any gun you want but can 'break', or cause jams.
 	icon_state = "grip_black"
 	refence_for_legal = "black"
 
-/obj/item/part/gun/grip/rubber //Marshals, high-end guns
+/obj/item/part/gun/grip/rubber //Rangers, high-end guns
 	name = "rubber grip"
 	desc = "A rubber firearm grip, unattached from a firearm. For professionalism and violence of action."
 	icon_state = "grip_rubber"

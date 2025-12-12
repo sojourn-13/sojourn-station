@@ -60,7 +60,7 @@
 
 /obj/item/grenade/spawnergrenade/manhacks/junkbot
 	name = "\improper Prospie 'Eat-shit m8' lobber"
-	desc = "A shitty rapid 'build-a-bot' grenade produced by prospector salvagers using designs 'borrowed' from the Soteria, handy for a build-a-bot guard or as a disposable decoy."
+	desc = "A shitty rapid 'build-a-bot' grenade produced by prospector salvagers using designs 'borrowed' from the Vesalius-Andra, handy for a build-a-bot guard or as a disposable decoy."
 	deliveryamt = 1
 	icon_state = "screamer"
 	spawner_type = /mob/living/carbon/superior/robot/gp/synth/allied/junkbot

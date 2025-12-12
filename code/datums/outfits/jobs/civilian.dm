@@ -14,20 +14,20 @@
 	hierarchy_type = /decl/hierarchy/outfit/job/service
 
 /decl/hierarchy/outfit/job/service/bartender
-	name = OUTFIT_JOB_NAME("Lonestar - Bartender")
+	name = OUTFIT_JOB_NAME("Ivaris - Bartender")
 	uniform = /obj/item/clothing/under/rank/bartender
 	head = /obj/item/clothing/head/tophat
 	id_type = /obj/item/card/id/white
 	pda_type = /obj/item/modular_computer/pda/club_worker
 
 /decl/hierarchy/outfit/job/service/waiter
-	name = OUTFIT_JOB_NAME("Lonestar - Waiter")
+	name = OUTFIT_JOB_NAME("Ivaris - Waiter")
 	uniform = /obj/item/clothing/under/costume/job/waiter
 	id_type = /obj/item/card/id/white
 	pda_type = /obj/item/modular_computer/pda/club_worker
 
 /decl/hierarchy/outfit/job/service/chef
-	name = OUTFIT_JOB_NAME("Lonestar - Chef")
+	name = OUTFIT_JOB_NAME("Ivaris - Chef")
 	uniform = /obj/item/clothing/under/rank/chef
 	suit = /obj/item/clothing/suit/rank/chef
 	head = /obj/item/clothing/head/rank/chef
@@ -35,7 +35,7 @@
 	pda_type = /obj/item/modular_computer/pda
 
 /decl/hierarchy/outfit/job/service/gardener
-	name = OUTFIT_JOB_NAME("Lonestar - Gardener")
+	name = OUTFIT_JOB_NAME("Ivaris - Gardener")
 	uniform = /obj/item/clothing/under/rank/botanist
 	suit = /obj/item/clothing/suit/rank/botanist
 	gloves = /obj/item/clothing/gloves/botanic_leather
@@ -49,14 +49,21 @@
 
 
 /decl/hierarchy/outfit/job/service/janitor
-	name = OUTFIT_JOB_NAME("Lonestar - Janitor")
+	name = OUTFIT_JOB_NAME("Artificer - Janitor")
 	uniform = /obj/item/clothing/under/rank/janitor
 	pda_type = /obj/item/modular_computer/pda
 	shoes = /obj/item/clothing/shoes/jackboots/janitor
 	belt = /obj/item/keys/janitor
 
+/decl/hierarchy/outfit/job/service/hop
+	name = OUTFIT_JOB_NAME("Ivaris - Hospitality Manager")
+	uniform = /obj/item/clothing/under/rank/hop
+	pda_type = /obj/item/modular_computer/pda/heads/hop
+	id_type = /obj/item/card/id/silver
+	l_ear = /obj/item/device/radio/headset/headset_service/alt
+
 /decl/hierarchy/outfit/job/cargo/artist
-	name = OUTFIT_JOB_NAME("Lonestar - Artist")
+	name = OUTFIT_JOB_NAME("Ivaris - Artist")
 	uniform = /obj/item/clothing/under/rank/artist
 	suit = /obj/item/clothing/suit/artist
 	shoes = /obj/item/clothing/shoes/artist_shoes
@@ -69,3 +76,15 @@
 /decl/hierarchy/outfit/job/cargo/artist/clown/post_equip(var/mob/living/carbon/human/H)
 	..()
 	H.mutations.Add(CLUMSY)
+
+/decl/hierarchy/outfit/job/cargo/journalist
+	name = OUTFIT_JOB_NAME("Ivaris - Journalist")
+	uniform = /obj/item/clothing/under/rank/journalist
+	suit = /obj/item/clothing/suit/storage/toggle/leather/brownjacket
+	shoes = /obj/item/clothing/shoes/color/black
+	backpack_contents = list(/obj/item/clothing/accessory/badge/press = 1)
+	id_type = /obj/item/card/id/press
+	pda_type = /obj/item/modular_computer/pda
+	l_ear = /obj/item/device/radio/headset/headset_service
+	l_pocket = /obj/item/device/camera
+	r_pocket = /obj/item/device/taperecorder

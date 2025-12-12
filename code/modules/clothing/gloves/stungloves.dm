@@ -118,7 +118,7 @@
 
 /obj/item/clothing/gloves/stungloves/trauma
 	name = "SI shock gloves"
-	desc = "Soterias solution to the age old question of unruly patients. Although the uneducation might call these a flagrant ripoff of Seinemetall powergloves, those more thoughtful will find that these come equipped with sterile, autoclave safe components, \
+	desc = "Vesalius-Andras solution to the age old question of unruly patients. Although the uneducation might call these a flagrant ripoff of Seinemetall powergloves, those more thoughtful will find that these come equipped with sterile, autoclave safe components, \
 	high-power capacitors and grippy palm-pads."
 	icon_state = "sipowerglove"
 	item_state = "sipowerglove"

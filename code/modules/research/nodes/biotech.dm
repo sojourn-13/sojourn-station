@@ -298,7 +298,7 @@
 
 /datum/technology/top_biotech
 	name = "Augmentations' Biotech"
-	desc = "Body augmentations in the way of Soteria-brand prosthesis and implantable omnitools."
+	desc = "Body augmentations in the way of Vesalius-Andra-brand prosthesis and implantable omnitools."
 	tech_type = RESEARCH_BIOTECH
 
 	x = 0.7

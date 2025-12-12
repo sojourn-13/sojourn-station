@@ -343,7 +343,7 @@
 
 /datum/perk/rezsickness
 	name = "Mild Revival Sickness"
-	desc = "You've recently died and have been brought back to life, the experience leaving you weakened and thus unfit for fighting for a while. As you were revived by Soteria, you can recover a lot quicker."
+	desc = "You've recently died and have been brought back to life, the experience leaving you weakened and thus unfit for fighting for a while. As you were revived by Vesalius-Andra, you can recover a lot quicker."
 	icon_state = "revivalsickness"
 
 /datum/perk/rezsickness/mild/assign(mob/living/L)

@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/automatic/dp
 	name = "\"Pulemyot Degtyaryova\" light machinegun"
-	desc = "A cruedly made yet reliable top-loading machine gun manufactured by the local Nadezhda Marshals. It appears to have specifically been made to use spare pan-magazines from Maxims."
+	desc = "A cruedly made yet reliable top-loading machine gun manufactured by the local Iskhod Rangers. It appears to have specifically been made to use spare pan-magazines from Maxims."
 	icon = 'icons/obj/guns/projectile/dp.dmi'
 	icon_state = "dp"
 	item_state = "dp"
@@ -61,7 +61,7 @@ obj/item/gun/projectile/automatic/dp/update_icon()
 // Lighter, slower firing, more controllable, less damaging.
 /obj/item/gun/projectile/automatic/lmg/rpd
 	name = "\"Ruchnoy Pulemyot Degtyaryova\" light machinegun"
-	desc = "A crude upgrade to the Nadezhda Marshals manufactured DP machinegun. Sporting a lighter bakelite frame, a 100-round capacity, and a far more controllable fire-rate. This one seems to be shorter than the usual variants."
+	desc = "A crude upgrade to the Iskhod Rangers manufactured DP machinegun. Sporting a lighter bakelite frame, a 100-round capacity, and a far more controllable fire-rate. This one seems to be shorter than the usual variants."
 
 	icon = 'icons/obj/guns/projectile/rpd.dmi'
 	icon_base = "rpd"

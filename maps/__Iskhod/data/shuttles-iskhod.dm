@@ -12,7 +12,7 @@
 	name = "Surface Transport Shuttle Pad"
 	landmark_tag = "nav_pad_surface_transport"
 	base_turf = /turf/simulated/floor/tiled/dark/cargo
-	base_area = /area/nadezhda/security/maingate
+	base_area = /area/iskhod/security/maingate
 
 /obj/effect/shuttle_landmark/transit/surface_transport
 	name = "In transit"

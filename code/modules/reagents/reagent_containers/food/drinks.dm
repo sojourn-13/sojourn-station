@@ -462,17 +462,17 @@
 
 /obj/item/reagent_containers/drinks/mug/moebius
 	name = "\improper soteria mug"
-	desc = "A mug with a Soteria Institute logo on it. Not even your morning coffee is safe from corporate advertising."
+	desc = "A mug with a VA Biomechanics logo on it. Not even your morning coffee is safe from corporate advertising."
 	icon_state = "mug_moebius"
 
 /obj/item/reagent_containers/drinks/mug/moebius/sci
 	name = "\improper soteria research mug"
-	desc = "A mug with a Soteria Institute research department logo on it. Not even your morning coffee is safe from corporate advertising."
+	desc = "A mug with a VA Biomechanics research department logo on it. Not even your morning coffee is safe from corporate advertising."
 	icon_state = "mug_moebius_sci"
 
 /obj/item/reagent_containers/drinks/mug/moebius/bio
 	name = "\improper soteria biolabs mug"
-	desc = "A mug with a Soteria Institute biolabs department logo on it. Not even your morning coffee is safe from corporate advertising."
+	desc = "A mug with a VA Biomechanics biolabs department logo on it. Not even your morning coffee is safe from corporate advertising."
 	icon_state = "mug_moebius_bio"
 
 /obj/item/reagent_containers/drinks/mug/gold
@@ -512,17 +512,17 @@
 
 /obj/item/reagent_containers/drinks/mug/moe
 	name = "\improper soteria mug"
-	desc = "A white mug with Soteria Institute logo on it."
+	desc = "A white mug with VA Biomechanics logo on it."
 	icon_state = "mug_moe"
 
 /obj/item/reagent_containers/drinks/mug/moe/sci
 	name = "\improper soteria research mug"
-	desc = "A white mug with Soteria Institute research department logo on it."
+	desc = "A white mug with VA Biomechanics research department logo on it."
 	icon_state = "mug_moe_sci"
 
 /obj/item/reagent_containers/drinks/mug/moe/bio
 	name = "\improper soteria biolabs mug"
-	desc = "A white mug with Soteria Institute biolabs department logo on it."
+	desc = "A white mug with VA Biomechanics biolabs department logo on it."
 	icon_state = "mug_moe_bio"
 
 /obj/item/reagent_containers/drinks/mug/aster

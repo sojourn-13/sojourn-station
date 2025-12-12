@@ -802,7 +802,7 @@
 	return "Unbranded Full Body Prosthetic"
 
 /datum/species/soteria_synthetic
-	name = "Soteria Synthetic"
+	name = "Vesalius-Andra Synthetic"
 	name_plural = "synthetics"
 	default_form = FORM_SOTSYNTH
 	obligate_name = TRUE
@@ -863,7 +863,7 @@
 	spawn_flags = CAN_JOIN
 
 /datum/species/soteria_synthetic/get_bodytype()
-	return "Soteria Synthetic"
+	return "Vesalius-Andra Synthetic"
 
 /datum/species/artificer_guild_synthetic
 	name = "Artificer Guild Synthetic"

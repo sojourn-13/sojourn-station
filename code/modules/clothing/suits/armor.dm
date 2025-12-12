@@ -251,7 +251,7 @@
 
 /obj/item/clothing/suit/armor/vest/ironhammer/full
 	name = "marshal tactical unit armor"
-	desc = "An armored vest painted in Marshals colors. This one has shoulderpads and kneepads included to protect all parts of the body."
+	desc = "An armored vest painted in Rangers colors. This one has shoulderpads and kneepads included to protect all parts of the body."
 	icon_state = "armor_ih_fullbody"
 	item_state = "armor_ih_fullbody"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
@@ -638,7 +638,7 @@
 						 /obj/item/storage/toolbox)
 	flags_inv = HIDEJUMPSUIT
 
-//Soteria
+//Vesalius-Andra
 /obj/item/clothing/suit/armor/vest/soteriasuit
 	name = "'Mark II' environmental protection suit"
 	desc = "For working in hazardous environments. While its built for most environments, one of those is not space. This suit is a cheap and badly made copy of the Artificer Guilds original design. \
@@ -782,7 +782,7 @@
 
 /obj/item/clothing/suit/armor/laserproof/rnd
 	name = "soteria reflective armor vest"
-	desc = "A Soteria branded vest that excels in protecting the wearer against energy projectiles. While it is much better at defending against lasers compared to standard ablative armor it lacks as much protection against melee and bullets but can be modified more."
+	desc = "A Vesalius-Andra branded vest that excels in protecting the wearer against energy projectiles. While it is much better at defending against lasers compared to standard ablative armor it lacks as much protection against melee and bullets but can be modified more."
 	icon_state = "ablative_ironhammer"
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_PLASTIC = 20, MATERIAL_PLATINUM = 15)
 	armor_list = list(

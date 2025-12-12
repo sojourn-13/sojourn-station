@@ -95,8 +95,8 @@
 						)
 
 /datum/technology/sst
-	name = "Soteria Surface Tenstion Project"
-	desc = "The development of non-lethal weapons for Soteria Medical using GP technology."
+	name = "Vesalius-Andra Surface Tenstion Project"
+	desc = "The development of non-lethal weapons for Vesalius-Andra Medical using GP technology."
 	x = 0.6
 	y = 0.3
 	tech_type = RESEARCH_COMBAT

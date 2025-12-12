@@ -20,17 +20,17 @@
 
 /obj/item/clothing/accessory/armband/medgreen
 	name = "medical EMT armband"
-	desc = "An armband with a teal stripe signifying the Medical branch of the Soteria Institute."
+	desc = "An armband with a teal stripe signifying the Medical branch of the VA Biomechanics."
 	icon_state = "medical"
 
 /obj/item/clothing/accessory/armband/science
 	name = "science armband"
-	desc = "An armband displaying the purple color of the Research branch of the Soteria Institute."
+	desc = "An armband displaying the purple color of the Research branch of the VA Biomechanics."
 	icon_state = "rnd"
 
 /obj/item/clothing/accessory/armband
 	name = "security armband"
-	desc = "A navy blue armband signifying a position amongst the ranks of the Marshals."
+	desc = "A navy blue armband signifying a position amongst the ranks of the Rangers."
 	icon_state = "security"
 	slot = "armband"
 

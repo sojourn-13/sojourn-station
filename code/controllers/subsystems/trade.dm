@@ -435,9 +435,9 @@ SUBSYSTEM_DEF(trade)
 		*/
 
 		var/datum/transaction/T = new(credits_to_account, account.get_name(), "Special deal", station.name)
-		var/datum/transaction/TL = new(credits_to_lonestar, department_accounts[DEPARTMENT_LSS].get_name(), "Special deal", station.name)
+		var/datum/transaction/TL = new(credits_to_lonestar, department_accounts[DEPARTMENT_SERVICE].get_name(), "Special deal", station.name)
 		T.apply_to(account)
-		TL.apply_to(department_accounts[DEPARTMENT_LSS])
+		TL.apply_to(department_accounts[DEPARTMENT_SERVICE])
 		station.add_to_wealth(offer_price, TRUE)
 		offer_content["amount"] = 0
 		offer_content["price"] = 0
@@ -499,9 +499,9 @@ SUBSYSTEM_DEF(trade)
 				*/
 
 				var/datum/transaction/T = new(credits_to_account, account.get_name(), "Special deal", TS.name)
-				var/datum/transaction/TL = new(credits_to_lonestar, department_accounts[DEPARTMENT_LSS].get_name(), "Special deal", TS.name)
+				var/datum/transaction/TL = new(credits_to_lonestar, department_accounts[DEPARTMENT_SERVICE].get_name(), "Special deal", TS.name)
 				T.apply_to(account)
-				TL.apply_to(department_accounts[DEPARTMENT_LSS])
+				TL.apply_to(department_accounts[DEPARTMENT_SERVICE])
 
 				TS.add_to_wealth(offer_price, TRUE)
 				offer_content["amount"] = 0
@@ -615,7 +615,7 @@ SUBSYSTEM_DEF(trade)
 		senderBeacon.activate()
 
 		var/datum/money_account/A = account
-		var/datum/money_account/lonestar_account = department_accounts[DEPARTMENT_LSS]
+		var/datum/money_account/lonestar_account = department_accounts[DEPARTMENT_SERVICE]
 		var/datum/transaction/TA = new(cost * 0.8, account.get_name(), "Sold item", station.name)
 		var/datum/transaction/T = new(cost * 0.2, lonestar_account.get_name(), "Sold item", TRADE_SYSTEM_IC_NAME)
 		T.apply_to(lonestar_account)
@@ -678,13 +678,13 @@ SUBSYSTEM_DEF(trade)
 
 	if(account)
 		var/datum/money_account/A = account
-		var/datum/money_account/lonestar_account = department_accounts[DEPARTMENT_LSS]
+		var/datum/money_account/lonestar_account = department_accounts[DEPARTMENT_SERVICE]
 		var/datum/transaction/TA = new(cost * 0.8, account.get_name(), "Export", TRADE_SYSTEM_IC_NAME)
 		var/datum/transaction/T = new(cost * 0.2, lonestar_account.get_name(), "Export", TRADE_SYSTEM_IC_NAME)
 		T.apply_to(lonestar_account)
 		TA.apply_to(A)
 	else
-		var/datum/money_account/lonestar_account_backup = department_accounts[DEPARTMENT_LSS]
+		var/datum/money_account/lonestar_account_backup = department_accounts[DEPARTMENT_SERVICE]
 		var/datum/transaction/T_backup = new(cost, lonestar_account_backup.get_name(), "Export", TRADE_SYSTEM_IC_NAME)
 		T_backup.apply_to(lonestar_account_backup)
 
@@ -784,7 +784,7 @@ SUBSYSTEM_DEF(trade)
 	var/order_contents_info
 	var/list/goods = list()
 	var/datum/money_account/requesting_acct = requesting_account
-	var/datum/money_account/master_acct = department_accounts[DEPARTMENT_LSS]
+	var/datum/money_account/master_acct = department_accounts[DEPARTMENT_SERVICE]
 	var/is_requestor_master = (requesting_acct == master_acct) ? TRUE : FALSE
 
 	for(var/station in shopping_list)
@@ -823,7 +823,7 @@ SUBSYSTEM_DEF(trade)
 	if(order_queue.Find(order_id))
 		var/list/order = order_queue[order_id]
 
-		var/datum/money_account/master_account = department_accounts[DEPARTMENT_LSS]
+		var/datum/money_account/master_account = department_accounts[DEPARTMENT_SERVICE]
 		var/datum/money_account/requesting_account = order["requesting_acct"]
 		var/list/shopping_list = order["contents"]
 		var/list/viewable_contents = order["viewable_contents"]

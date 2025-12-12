@@ -9,12 +9,12 @@
 	var/list/dept_data = list(
 
 		list("names" = list(), "header" = "Command Staff", "flag" = COMMAND),
-		list("names" = list(), "header" = "Security - Marshals", "flag" = SECURITY),
+		list("names" = list(), "header" = "Security - Rangers", "flag" = SECURITY),
 		list("names" = list(), "header" = "Security - Blackshield", "flag" = BLACKSHIELD),
-		list("names" = list(), "header" = "Soteria Medical", "flag" = MEDICAL),
-		list("names" = list(), "header" = "Soteria Research", "flag" = SCIENCE),
+		list("names" = list(), "header" = "Vesalius-Andra Medical", "flag" = MEDICAL),
+		list("names" = list(), "header" = "Vesalius-Andra Research", "flag" = SCIENCE),
 		list("names" = list(), "header" = "Church of the Absolute", "flag" = CHURCH),
-		list("names" = list(), "header" = "Lonestar Shipping Solutions", "flag" = LSS),
+		list("names" = list(), "header" = "Frontier Logistics", "flag" = FL),
 		list("names" = list(), "header" = "Artificers Guild", "flag" = ENGINEERING),
 		list("names" = list(), "header" = "Prospector", "flag" = PROSPECTORS),
 		list("names" = list(), "header" = "Civilian", "flag" = CIVILIAN),

@@ -1,8 +1,8 @@
-// The Hydrogen Knight rig suit, handmade by Soteria roboticists and Soteria's answer to the Church's Crusader Armor
+// The Hydrogen Knight rig suit, handmade by Vesalius-Andra roboticists and Vesalius-Andra's answer to the Church's Crusader Armor
 /obj/item/rig/hydrogen_knight
 	name = "Hydrogen Knight suit control module"
 	suit_type = "hydrogen knight"
-	desc = "An armored, knight-like suit designed by Soteria's best roboticists and powered by hydrogen."
+	desc = "An armored, knight-like suit designed by Vesalius-Andra's best roboticists and powered by hydrogen."
 	icon_state = "hydrogen_knight_rig"
 	armor_list = list(melee = 50, bullet = 50, energy = 50, bomb = 70, bio = 100, rad = 100)
 	slowdown = 0 // Lot of stuff used in its construction that justify not having any slowdown while active

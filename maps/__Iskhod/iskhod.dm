@@ -1,21 +1,20 @@
-#include "area/_Nadezhda_areas.dm"
-#include "data/_Nadezhda_factions.dm"
-#include "data/_Nadezhda_Turbolifts.dm"
-#include "data/shuttles-nadezhda.dm"
+#include "area/_Iskhod_areas.dm"
+#include "data/_Iskhod_factions.dm"
+#include "data/_Iskhod_Turbolifts.dm"
+#include "data/shuttles-iskhod.dm"
 #include "data/overmap-eris.dm"
 #include "data/shuttles-eris.dm"
 #include "data/reports.dm"
 
-#include "map/_Nadezhda_Colony.dmm"
-#include "map/_Nadezhda_Solar_Area.dmm"
+#include "map/_Iskhod_Colony.dmm"
 
 /obj/map_data/eris
 	name = "Eris"
 	is_sealed = TRUE
 	height = 1
 
-/obj/map_data/nadezda //Omnie level has all three surface underground and stairs
-	name = "Nadezhda Map"
+/obj/map_data/iskhod //Omnie level has all three surface underground and stairs
+	name = "Iskhod Map"
 	is_station_level = TRUE
 	is_player_level = TRUE
 	is_contact_level = TRUE
@@ -29,15 +28,6 @@
 	name = "Admin Level"
 	is_admin_level = TRUE
 	is_accessable_level = FALSE
-	height = 1
-
-/obj/map_data/nadezda_solars
-	name = "Nadezhda Mountain Solars"
-	is_station_level = TRUE
-	is_player_level = TRUE
-	is_contact_level = TRUE
-	is_accessable_level = FALSE
-	is_sealed = TRUE
 	height = 1
 
 /obj/map_data/hunting_lodge

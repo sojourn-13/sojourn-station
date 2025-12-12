@@ -14,7 +14,7 @@
 */
 /obj/item/roach_summon
 	name = "bluespace roach beacon"
-	desc = "The result of a collaboration between Soteria and the Cht'mant hive. This beacon allow to summon a single tamed roach."
+	desc = "The result of a collaboration between Vesalius-Andra and the Cht'mant hive. This beacon allow to summon a single tamed roach."
 	icon = 'icons/obj/device.dmi'
 	icon_state = "uplink_access"
 	item_state = "uplink_access"

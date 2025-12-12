@@ -4,7 +4,7 @@
 
 /obj/item/reagent_containers/hypospray
 	name = "hypospray"
-	desc = "The Soteria medical hypospray is a sterile, air-needle autoinjector for rapid administration of drugs to patients."
+	desc = "The Vesalius-Andra medical hypospray is a sterile, air-needle autoinjector for rapid administration of drugs to patients."
 	icon = 'icons/obj/syringe.dmi'
 	item_state = "hypospray"
 	icon_state = "hypospray"
@@ -260,7 +260,7 @@
 
 /obj/item/reagent_containers/hypospray/vial
 	name = "SI medical hypospray"
-	desc = "The Soteria medical hypospray is a sterile, air-needle autoinjector for rapid administration of drugs to patients for convenience and efficiency. Uses a replaceable 30u vial and can inject through armour."
+	desc = "The Vesalius-Andra medical hypospray is a sterile, air-needle autoinjector for rapid administration of drugs to patients for convenience and efficiency. Uses a replaceable 30u vial and can inject through armour."
 	item_state = "hypo"
 	icon_state = "hypo"
 	possible_transfer_amounts = list(1,2,5,10,15,20,30)
@@ -433,7 +433,7 @@
 /obj/item/reagent_containers/hypospray/vial/combat
 	// Combat variant of the vial hypospray: different icons for loaded/empty
 	name = "SI combat hypospray"
-	desc = "The Soteria combat hypospray is a sterile, air-needle autoinjector for rapid administration of drugs to patients while under hostile fire. Uses a replaceable 30u vial and can inject through armour, in addition to being much faster than other models."
+	desc = "The Vesalius-Andra combat hypospray is a sterile, air-needle autoinjector for rapid administration of drugs to patients while under hostile fire. Uses a replaceable 30u vial and can inject through armour, in addition to being much faster than other models."
 	icon_state = "combat_hypo"
 	item_state = "combat_hypo"
 	time = 0 // faster inject time for combat variant (seconds)
@@ -464,7 +464,7 @@
 
 /obj/item/reagent_containers/hypospray/autoinjector/sugar
 	name = "autoinjector (Emergency Glucose)"
-	desc = "A Soteria proprietary injector. Meant for even the most dull-minded individuals, these are marked with a stylized symbol of a Cortical Borer. For emergencies, rogue borers, and-or diabetic shock."
+	desc = "A Vesalius-Andra proprietary injector. Meant for even the most dull-minded individuals, these are marked with a stylized symbol of a Cortical Borer. For emergencies, rogue borers, and-or diabetic shock."
 	preloaded_reagents = list("sugar" = 5)
 	can_be_refilled = FALSE
 	injtime = 5
@@ -641,7 +641,7 @@
 
 /obj/item/reagent_containers/hypospray/autoinjector/large //bigger storage, not refillable. great for medical to sell, I suppose?
 	name = "advanced autoinjector" //placeholder
-	desc = "A larger, more robust autoinjector whos design prevents refilling, but allows for much more storage. A proprietary Soteria design."
+	desc = "A larger, more robust autoinjector whos design prevents refilling, but allows for much more storage. A proprietary Vesalius-Andra design."
 	icon_state = "supeyrette" //fancy animated sprite courtesy of Guidesu.
 	item_state = "supeyrette"
 	amount_per_transfer_from_this = 10

@@ -21,7 +21,7 @@
 /datum/event/carp_migration/setup()
 	//We'll pick space tiles which have windows nearby
 	//This means that carp will only be spawned in places where someone could see them
-	var/area/spess = locate(/area/nadezhda/outside/forest) in world
+	var/area/spess = locate(/area/iskhod/outside/forest) in world
 	for (var/turf/T in spess)
 		if (!(T.z in GLOB.maps_data.station_levels))
 			continue

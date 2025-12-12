@@ -1,10 +1,10 @@
 /datum/craft_recipe/soteria
-	category = "Soteria"
+	category = "Vesalius-Andra"
 	time = 100
 	related_stats = list(STAT_BIO)
 	requiredPerk = PERK_NERD //Give me your lunch money.
 
-//Soteria healing kits
+//Vesalius-Andra healing kits
 
 // 10.03.25 - CFW - Moving to miscelaneous as a test QOL patch
 /*
@@ -19,7 +19,7 @@
 */
 
 /datum/craft_recipe/soteria/gauze
-	name = "Soteria medical gauze"
+	name = "Vesalius-Andra medical gauze"
 	result = /obj/item/stack/medical/bruise_pack/soteria
 	icon_state = "clothing"
 	steps = list(
@@ -32,7 +32,7 @@
 	)
 
 /datum/craft_recipe/soteria/ointment
-	name = "Soteria medical ointment"
+	name = "Vesalius-Andra medical ointment"
 	result = /obj/item/stack/medical/ointment/soteria
 	icon_state = "clothing"
 	steps = list(

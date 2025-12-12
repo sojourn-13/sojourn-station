@@ -104,4 +104,4 @@
 
 /obj/item/gun/energy/smg/blackshield
 	init_recoil = HANDGUN_RECOIL(0.2) //Unless you've got built-in targetting software.
-	cell_type = /obj/item/cell/medium/hyper //we're not Soteria produced, so we don't get a Soteria cell.
+	cell_type = /obj/item/cell/medium/hyper //we're not Vesalius-Andra produced, so we don't get a Vesalius-Andra cell.

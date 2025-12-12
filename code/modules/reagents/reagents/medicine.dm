@@ -900,7 +900,7 @@ We don't use this but we might find use for it. Porting it since it was updated 
 /datum/reagent/medicine/positive_ling
 	name = "Positive Paragenetic Marker"
 	id = "positiveling"
-	description = "The result of heating up Negative Paragenetic Marker in the prescence of Carrion blood. If you manage to obtain this, report the person to Marshals immediately (and discretely)."
+	description = "The result of heating up Negative Paragenetic Marker in the prescence of Carrion blood. If you manage to obtain this, report the person to Rangers immediately (and discretely)."
 	taste_description = "acid"
 	reagent_state = SOLID
 	color = "#910000"

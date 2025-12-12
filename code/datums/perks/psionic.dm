@@ -41,7 +41,7 @@
 
 /datum/perk/psi_psychology
 	name = "Mind Master"
-	desc = "Your training as a Soteria psychologist and understanding of psychiatry has given you a deep understanding of how the mind works. As a result, if you became a psion, you have an \
+	desc = "Your training as a Vesalius-Andra psychologist and understanding of psychiatry has given you a deep understanding of how the mind works. As a result, if you became a psion, you have an \
 	expanded set of powers that aid you in your work, with additional essence to use your abilities."
 	icon_state = "mindmaster"
 	copy_protected = TRUE

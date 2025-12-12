@@ -302,7 +302,7 @@
 
 /obj/machinery/vending/gym
 	name = "Club\'s Total Workout"
-	desc = "A LSS vendor that sells exercise equipment."
+	desc = "A FL vendor that sells exercise equipment."
 	product_slogans = "Usually no carcinogens!;Best sports!;Become the strongest!"
 	product_ads = "Strength!;Cheap!;There are contraindications, it is recommended to consult a medical specialist."
 	icon_state = "gym"

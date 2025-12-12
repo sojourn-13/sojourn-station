@@ -203,7 +203,7 @@ obj/item/clothing/head/beret/syndicate/verb/toggle_style()
 //Security
 /obj/item/clothing/head/rank/ironhammer
 	name = "marshal beret"
-	desc = "A stylish beret, this one has markings of the Marshals."
+	desc = "A stylish beret, this one has markings of the Rangers."
 	icon_state = "policeberet"
 
 /obj/item/clothing/head/rank/commander

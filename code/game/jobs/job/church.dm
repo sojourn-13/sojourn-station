@@ -1,5 +1,5 @@
 /datum/job/chaplain
-	title = "Prime"
+	title = "Priest"
 	flag = CHAPLAIN
 	department = DEPARTMENT_CHURCH
 	department_flag = CHURCH | COMMAND
@@ -7,7 +7,7 @@
 	head_position = 1
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the Nadezhda Council"
+	supervisors = "the Governor and the Iskhod Council"
 	difficulty = "Medium."
 	selection_color = "#ecd37d"
 	ideal_character_age = 40
@@ -43,7 +43,7 @@
 		CRUCIFORM_PRIME
 	)
 
-	description = "The Prime serves as the head of the local branch of the Church of the Absolute. <br>\
+	description = "The Priest serves as the head of the local branch of the Church of the Absolute. <br>\
 	You represent the interest of the church and its disciples within the colony - identified by the cruciform implant upon their breast.<br>\
 	Your most pressing duty is as a spiritual leader. Preach to the flock, inspire faith and strength and convert those seeking salvation.<br>\
 	While you are no trained psychologist, you can provide support and guidance to all - in times bright or dark.<br>\
@@ -57,19 +57,19 @@
 	setup_restricted = TRUE
 
 /obj/landmark/join/start/chaplain
-	name = "Prime"
+	name = "Priest"
 	icon_state = "player-black"
 	join_tag = /datum/job/chaplain
 
 /datum/job/acolyte
-	title = "Vector"
+	title = "Cardinal"
 	flag = ACOLYTE
 	department = DEPARTMENT_CHURCH
 	department_flag = CHURCH
 	faction = MAP_FACTION
 	total_positions = 6
 	spawn_positions = 4
-	supervisors = "the Prime"
+	supervisors = "the Priest"
 	difficulty = "Easy to Medium."
 	selection_color = "#ecd37d"
 	access = list(access_morgue, access_crematorium, access_maint_tunnels, access_nt_disciple)
@@ -94,9 +94,9 @@
 
 	perks = list(PERK_NEAT, PERK_GREENTHUMB, PERK_CHANNELING)
 
-	description = "The Vector serves the Prime, and more generally the church, as a disciple of the Faith.<br>\
+	description = "The Cardinal serves the Priest, and more generally the church, as a disciple of the Faith.<br>\
 	The sacred duties of operating the bioreactor and managing biomass for the church machines are your main priority.<br>\
-	You should also work to represent the Faith in a positive light to all colonists. The prime may issue you further duties and orders."
+	You should also work to represent the Faith in a positive light to all colonists. The priest may issue you further duties and orders."
 
 	duties = "Operate the bioreactor and manage biomass for the church machines.<br>\
 		Maintain areas owned by the church, keeping the facilities functional and in good order.<br>\
@@ -105,6 +105,6 @@
 	setup_restricted = TRUE
 
 /obj/landmark/join/start/acolyte
-	name = "Vector"
+	name = "Cardinal"
 	icon_state = "player-black"
 	join_tag = /datum/job/acolyte

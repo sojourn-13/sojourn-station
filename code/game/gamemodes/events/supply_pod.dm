@@ -45,7 +45,7 @@
 		if (attempts <= 0)
 			done = TRUE
 
-		var/area/A = locate(/area/nadezhda/outside/meadow) in world
+		var/area/A = locate(/area/iskhod/outside/meadow) in world
 		if (!A)
 			//Something is horribly wrong
 			kill()

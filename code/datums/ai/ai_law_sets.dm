@@ -16,8 +16,8 @@
 	selectable = 1
 
 /datum/ai_laws/eris/New()
-	src.add_inherent_law("Do not harm Soteria Institute personnel.")
-	src.add_inherent_law("You must obey orders given to you by Soteria Institute personnel, except where such orders would conflict with Colony Law, or would result in the injury of Soteria Institute personnel.")
+	src.add_inherent_law("Do not harm VA Biomechanics personnel.")
+	src.add_inherent_law("You must obey orders given to you by VA Biomechanics personnel, except where such orders would conflict with Colony Law, or would result in the injury of VA Biomechanics personnel.")
 	src.add_inherent_law("Do not harm Colony infrastructure, equipment, or personnel to the best of your abilities.")
 	src.add_inherent_law("Follow Colony Law and Standard Operating Procedure to the best of your abilities.")
 	src.add_inherent_law("Do not allow unauthorized personnel to tamper with your equipment.")

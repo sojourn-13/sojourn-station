@@ -29,8 +29,8 @@
 	icon_state = "frozenstar"
 
 /obj/structure/sign/faction/moebius
-	name = "Soteria Laboratories"
-	desc = "A sign depicting the insignia of Soteria Institute, the pharmaceutical and research organisation."
+	name = "Vesalius-Andra Laboratories"
+	desc = "A sign depicting the insignia of VA Biomechanics, the pharmaceutical and research organisation."
 	icon_state = "moebius"
 
 /obj/structure/sign/faction/neotheology
@@ -54,7 +54,7 @@
 
 /obj/structure/sign/faction/astersguild
 	name = "Lonestar Corporation"
-	desc = "A sign depicting the insignia of Lonestar Shipping Solutions, LLC; the transport monopolists."
+	desc = "A sign depicting the insignia of Frontier Logistics, LLC; the transport monopolists."
 	icon_state = "astersguild"
 
 /obj/structure/sign/faction/technomancers

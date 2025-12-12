@@ -157,7 +157,7 @@ I was too lazy to put the friendly roombas with the handmade drones, so now they
 
 /mob/living/carbon/superior/robot/gp/synth/allied/junkbot
 	name = "Prospector Junkbot"
-	desc = "A prospector forged robot, its made from spare parts, love, and duct tape. Using designs 'borrowed' from the Soteria the prospector salvagers made these bots to function as disposable shields or \
+	desc = "A prospector forged robot, its made from spare parts, love, and duct tape. Using designs 'borrowed' from the Vesalius-Andra the prospector salvagers made these bots to function as disposable shields or \
 	to gaurd specific locations since they do not wander. While lightweight, fast, and capable of a wickedly damaging slash with its armblade, they are not that durable."
 	icon_state = "junkbot"
 	health = 125
