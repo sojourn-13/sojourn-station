@@ -57,7 +57,7 @@
 
 /obj/item/gun/energy/lasercore/militia
 	name = "Blackshield \"Laser Core\" carbine"
-	desc = "A high-powered laser carbine made by H&S and modified by the Marshals. Hailed in its prime for its high power and compactness, notable improvements have been made to its energy efficiency. \
+	desc = "A high-powered laser carbine made by H&S and modified by the Rangers. Hailed in its prime for its high power and compactness, notable improvements have been made to its energy efficiency. \
 	It bears blackshield IFF stripes. This variant has a slower rate of fire."
 	icon = 'icons/obj/guns/energy/lasercore_bs.dmi'
 	icon_state = "lcore"

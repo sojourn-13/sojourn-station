@@ -32,7 +32,7 @@
 
 /obj/item/gun/projectile/automatic/drozd/NM_colony
 	name = "\"Kompleks\" SMG"
-	desc = "An excellent, fully automatic compact submachinegun. Famous for its perfomance in close quarters. Uses .40 rounds and can take a variety of pistol and SMG magazines.\nThis model of the \"Drozd\" SMG has been reclaimed and repurposed by Nadezhda Marshals, making it free of Excelsior taint."
+	desc = "An excellent, fully automatic compact submachinegun. Famous for its perfomance in close quarters. Uses .40 rounds and can take a variety of pistol and SMG magazines.\nThis model of the \"Drozd\" SMG has been reclaimed and repurposed by Iskhod Rangers, making it free of Excelsior taint."
 	icon = 'icons/obj/guns/projectile/drozd_bs.dmi'
 	icon_state = "drozd-bs"
 	item_state = "drozd-bs"

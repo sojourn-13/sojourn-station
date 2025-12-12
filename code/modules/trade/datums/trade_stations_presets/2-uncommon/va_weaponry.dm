@@ -1,9 +1,9 @@
 /datum/trade_station/si_weaponry
-	name_pool = list("SI 'Xianhao'" = "Soteria Experimental Weaponry")
+	name_pool = list("VA 'Xianhao'" = "Vesalius-Andra Experimental Weaponry")
 	spawn_always = TRUE
 	markup = COMMON_GOODS
 	icon_states = list("moe_capital", "station")
-	uid = "si_weaponry"
+	uid = "va_weaponry"
 	tree_x = 0.5
 	tree_y = 0.5
 	offer_limit = 12
@@ -18,12 +18,12 @@
 
 		// Visible goods for sale
 		"Weapons & Gear" = list(
-			/obj/item/gun/energy/sst = good_data("Soteria SST \"Abnegate\" Handgun", list(1,2), 1500),
-			/obj/item/gun/energy/sst/formatbound = good_data("Soteria SST \"Format Bound\" Handgun", list(1,2), 1750),
-			/obj/item/gun/energy/sst/humility = good_data("Soteria SST \"Humility\" Shotgun", list(1,1), 2500),
-			/obj/item/gun/energy/cog/sprocket = good_data("Soteria \"Sprocket\" Laser Carbine", list(1,2), 1000),
+			/obj/item/gun/energy/sst = good_data("Vesalius-Andra SST \"Abnegate\" Handgun", list(1,2), 1500),
+			/obj/item/gun/energy/sst/formatbound = good_data("Vesalius-Andra SST \"Format Bound\" Handgun", list(1,2), 1750),
+			/obj/item/gun/energy/sst/humility = good_data("Vesalius-Andra SST \"Humility\" Shotgun", list(1,1), 2500),
+			/obj/item/gun/energy/cog/sprocket = good_data("Vesalius-Andra \"Sprocket\" Laser Carbine", list(1,2), 1000),
 			/obj/item/gun/launcher/syringe = good_data("Syringe Gun", list(1,2), 600),
-			/obj/item/pc_part/drive/disk/design/medical = good_data("Soteria Medical Designs Disk", list(1,2), 900),
+			/obj/item/pc_part/drive/disk/design/medical = good_data("Vesalius-Andra Medical Designs Disk", list(1,2), 900),
 		)
 	)
 	hidden_inventory = list(
@@ -47,11 +47,11 @@
 		/obj/item/pc_part/drive/disk/design/deimos/launchers = offer_data("Deimos Launcher Disk", 800, 1),
 		/obj/item/pc_part/drive/disk/design/deimos/shotguns = offer_data("Deimos Shotgun Disk", 700, 1),
 		/obj/item/ammo_casing/grenade = offer_data("Grenades", 300, 3),
-		/obj/item/pc_part/drive/disk/design/medical = offer_data("Soteria Medical Disk", 800, 1),
+		/obj/item/pc_part/drive/disk/design/medical = offer_data("Vesalius-Andra Medical Disk", 800, 1),
 		/obj/item/gun/launcher/syringe= offer_data("Syringe Gun", 400, 2),
-		/obj/item/gun/energy/sst = offer_data("Soteria SST Abnegate Handgun", 1700, 1),
-		/obj/item/gun/energy/sst/humility = offer_data("Soteria SST Humility Shotgun", 2500, 1),
-		/obj/item/gun/energy/sst/systemcost = offer_data("Soteria SST System Cost LMG", 3200, 1),
-		/obj/item/gun/energy/cog/sprocket = offer_data("Soteria Sprocket Carbine", 1000, 1),
+		/obj/item/gun/energy/sst = offer_data("Vesalius-Andra SST Abnegate Handgun", 1700, 1),
+		/obj/item/gun/energy/sst/humility = offer_data("Vesalius-Andra SST Humility Shotgun", 2500, 1),
+		/obj/item/gun/energy/sst/systemcost = offer_data("Vesalius-Andra SST System Cost LMG", 3200, 1),
+		/obj/item/gun/energy/cog/sprocket = offer_data("Vesalius-Andra Sprocket Carbine", 1000, 1),
 	)
 

@@ -18,8 +18,8 @@
 
 	area_type = /area
 	protected_areas = list(/area/asteroid/rogue, /area/shuttle/mining, /area/deepmaint, /area/shuttle/escape, /area/shuttle/escape_pod1, /area/shuttle/escape_pod2, /area/shuttle/escape_pod3, \
-	/area/shuttle/escape_pod5, /area/shuttle/specops/centcom, /area/shuttle/mercenary, /area/shuttle/administration, /area/nadezhda/maintenance, \
-	/area/nadezhda/crew_quarters/sleep/cryo, /area/nadezhda/security/disposal, /area/nadezhda/security/maintpost, /area/nadezhda/rnd/anomalisolone, \
-	/area/nadezhda/rnd/anomalisoltwo, /area/nadezhda/rnd/anomalisolthree, /area/nadezhda/rnd/server)
+	/area/shuttle/escape_pod5, /area/shuttle/specops/centcom, /area/shuttle/mercenary, /area/shuttle/administration, /area/iskhod/maintenance, \
+	/area/iskhod/crew_quarters/sleep/cryo, /area/iskhod/security/disposal, /area/iskhod/security/maintpost, /area/iskhod/rnd/anomalisolone, \
+	/area/iskhod/rnd/anomalisoltwo, /area/iskhod/rnd/anomalisolthree, /area/iskhod/rnd/server)
 
 	immunity_type = "rad"

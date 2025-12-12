@@ -46,7 +46,7 @@
 	if(needs_to_be_pest_b_goned)
 		to_chat(user, "<span class='info'>Small harmful pests can be seen on the plant and in its pot.</span>")
 	if(needs_to_be_watered)
-		to_chat(user, "<span class='info'>This plant looks rather dry and seems to need some LSS Plant Mineral Water.</span>")
+		to_chat(user, "<span class='info'>This plant looks rather dry and seems to need some FL Plant Mineral Water.</span>")
 	if(remove_dead_weeds)
 		to_chat(user, "<span class='info'>This plant has some dead weeds mingling with it.</span>")
 	if(remove_dead_pets)

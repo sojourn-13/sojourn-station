@@ -1,7 +1,7 @@
 /datum/computer_file/program/chem_catalog
 	filename = "chemCatalog"
 	filedesc = "SIRC"
-	extended_desc = "Soteria Internal Reagent Catalogue - Electronic catalog containing all information about basic chemical reactions and reagents."
+	extended_desc = "Vesalius-Andra Internal Reagent Catalogue - Electronic catalog containing all information about basic chemical reactions and reagents."
 	program_icon_state = "generic"
 	program_key_state = "generic_key"
 	program_menu_icon = "flask"

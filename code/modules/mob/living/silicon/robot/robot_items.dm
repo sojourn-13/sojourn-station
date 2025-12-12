@@ -426,7 +426,7 @@
 
 /obj/item/tool/robotic_omni/surgery
 	name = "Surgery omnitool"
-	desc = "A surgery omnitool for cyborgs, uses the cyborg's own power supply to function. Essentially a less mobile version of the Soteria branded omnitool."
+	desc = "A surgery omnitool for cyborgs, uses the cyborg's own power supply to function. Essentially a less mobile version of the Vesalius-Andra branded omnitool."
 	icon_state = "medimplant"
 	tool_qualities = list(QUALITY_CLAMPING = 60,
 						  QUALITY_RETRACTING = 60,

@@ -57,7 +57,7 @@ Unused file of cryo pods that on click dont even work, these are not used and ar
 
 /obj/structure/cryopod_spawner/medical
 	outfit_type = /decl/hierarchy/outfit/job/medical/doctor
-	spawn_faction = "Soteria"
+	spawn_faction = "Vesalius-Andra"
 	spawn_role = "Doctor"
 
 	stat_modifiers = list(

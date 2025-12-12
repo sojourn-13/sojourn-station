@@ -53,7 +53,7 @@
 				"It's labelled 'Prototype: Liquid Fuels For Generators'.",
 				"It's labelled 'Eletric Welders And Cold Welding'.",
 				"It's labelled 'Improvements On Cryogenic Technologies'.",
-				"It's labelled 'The Future of the Soteria Institute'.",
+				"It's labelled 'The Future of the VA Biomechanics'.",
 				"It's labelled 'Mining Advancements using Thermal Dentation'.",
 				"It's labelled 'Bluespace Connection Lines'.",
 				"It's labelled 'Psionic Advancements'.",

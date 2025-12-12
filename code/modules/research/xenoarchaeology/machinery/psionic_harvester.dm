@@ -1,6 +1,6 @@
 /obj/machinery/psionic_harvester
 	name = "psionic harvester"
-	desc = "A Soteria built processing machine capable of breaking down an artifact and compacting it's anomalous psionic energies."
+	desc = "A Vesalius-Andra built processing machine capable of breaking down an artifact and compacting it's anomalous psionic energies."
 	icon = 'icons/obj/xenoarchaeology.dmi'
 	icon_state = "psionic_harvester"
 	anchored = 1

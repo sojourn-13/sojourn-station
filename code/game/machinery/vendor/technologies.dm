@@ -2,16 +2,16 @@
 
 /obj/machinery/vending/build_a_drone
 	name = "Build-a-Drone Kit Vendor"
-	desc = "A vendor selling customized drones for a hefty price. All profits goes to the Soteria."
+	desc = "A vendor selling customized drones for a hefty price. All profits goes to the Vesalius-Andra."
 	icon_state = "wallresearch"
 	density = FALSE
 	products = list(/obj/item/build_a_drone_kit = 20)
 	auto_price = TRUE
-	vendor_department = DEPARTMENT_SCIENCE // Soteria get paid for the drones
+	vendor_department = DEPARTMENT_SCIENCE // Vesalius-Andra get paid for the drones
 
 /obj/item/build_a_drone_kit
 	name = "build-a-drone kit"
-	desc = "A self-assembling Build-A-Drone kit designed by Soteria's Robotic Division. No refunds."
+	desc = "A self-assembling Build-A-Drone kit designed by Vesalius-Andra's Robotic Division. No refunds."
 	icon = 'icons/obj/storage/backpack.dmi'
 	icon_state = "radiopack" // Look neat and unused by anything else.
 	item_state = "electronic"

@@ -324,6 +324,10 @@
 	item_state = "headset"
 	ks2type = /obj/item/device/encryptionkey/headset_service
 
+/obj/item/device/radio/headset/headset_service/alt
+	name = "service radio headset"
+	icon_state = "srv_headset"
+
 /obj/item/device/radio/headset/headset_pro
 	name = "prospector radio headset"
 	desc = "A headset used by the prospector thugs. This has a small symbol denoting its built-in backup transmitter."

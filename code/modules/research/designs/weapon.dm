@@ -30,12 +30,12 @@
 
 /datum/design/research/item/weapon/c20r/sci
 	name = "SI C-20m \"Bullpip\" .35 SMG"
-	desc = "A Soteria copy of the Scarborough Arms C-20r equipped with a .35 barrel and capable of firing from pistol and smg magazines. Not quite as good at punching through armor nor as deadly, but still reliable and versatile none the less as its often nicknamed the bullpip. Uses .35 caliber ammunition, but the barrel can be changed out to use .40 caliber ammunition instead."
+	desc = "A Vesalius-Andra copy of the Scarborough Arms C-20r equipped with a .35 barrel and capable of firing from pistol and smg magazines. Not quite as good at punching through armor nor as deadly, but still reliable and versatile none the less as its often nicknamed the bullpip. Uses .35 caliber ammunition, but the barrel can be changed out to use .40 caliber ammunition instead."
 	build_path = /obj/item/gun/projectile/automatic/c20r/sci
 
 /datum/design/research/item/weapon/c20r/med
 	name = "SI C-20m \"MedTech\" .40 SMG"
-	desc = "A Soteria copy of the Scarborough Arms C-20r equipped with a .40 barrel and capable of firing from pistol and smg magazines. Slightly better at punching through armour and still reliable and versatile none the less as its often nicknamed the Medtech. Uses .40 caliber ammunition, but the barrel can be changed out to use .35 caliber ammunition instead."
+	desc = "A Vesalius-Andra copy of the Scarborough Arms C-20r equipped with a .40 barrel and capable of firing from pistol and smg magazines. Slightly better at punching through armour and still reliable and versatile none the less as its often nicknamed the Medtech. Uses .40 caliber ammunition, but the barrel can be changed out to use .35 caliber ammunition instead."
 	build_path = /obj/item/gun/projectile/automatic/c20r/sci/med
 
 /datum/design/research/item/weapon/centurio
@@ -119,24 +119,24 @@
 	build_path = /obj/item/clothing/suit/storage/toggle/labcoat/field
 
 /datum/design/research/item/weapon/katana
-	name = "Soteria \"Muramasa\" Katana"
+	name = "Vesalius-Andra \"Muramasa\" Katana"
 	build_path = /obj/item/tool/sword/katana/nano
 
 /datum/design/research/item/weapon/slimebaton
-	name = "Soteria xenobio baton"
+	name = "Vesalius-Andra xenobio baton"
 	build_path = /obj/item/tool/baton/slimebaton
 
 /datum/design/research/item/weapon/bluespace_dagger
-	name = "Soteria \"Displacement Dagger\""
+	name = "Vesalius-Andra \"Displacement Dagger\""
 	build_path = /obj/item/tool/knife/dagger/bluespace
 
 /datum/design/research/item/clothing/medarmor
-	name = "Soteria Medical Void Armor"
-	desc = "A suit of all purpose Soteria medical void armor. Used for operations where oxygen is a rarity and protection is needed."
+	name = "Vesalius-Andra Medical Void Armor"
+	desc = "A suit of all purpose Vesalius-Andra medical void armor. Used for operations where oxygen is a rarity and protection is needed."
 	build_path = /obj/item/clothing/suit/space/void/medarmor
 
 /datum/design/research/item/weapon/hatton
-	name = "Soteria Breaching Tool \"Q-del\""
+	name = "Vesalius-Andra Breaching Tool \"Q-del\""
 	desc = "This breaching tool was reverse engineered from the \"Hatton\" design. \
 			Despite the Artificer's Guild \"Hatton\" being traded on the free market through guild channels, \
 			this device suffers from a wide number of reliability issues stemming from it being lathe printed."
@@ -353,7 +353,7 @@
 // Misc Ammo
 
 /datum/design/research/item/ammo/hatton
-	name = "Soteria BT \"Q-del\" gas tube"
+	name = "Vesalius-Andra BT \"Q-del\" gas tube"
 	build_path = /obj/item/hatton_magazine/moebius
 
 /datum/design/research/item/ammo/rapidsyringe
@@ -408,36 +408,36 @@
 	category = CAT_GUNMODS
 
 /datum/design/research/item/weapon/weapon_upgrade/penetrator
-	name = "Soteria \"Penetrator\" magnetic accelerator barrel"
+	name = "Vesalius-Andra \"Penetrator\" magnetic accelerator barrel"
 	build_path = /obj/item/gun_upgrade/barrel/mag_accel
 
 /datum/design/research/item/weapon/weapon_upgrade/overheat
-	name = "Soteria \"Caster\" magnetic overheat barrel"
+	name = "Vesalius-Andra \"Caster\" magnetic overheat barrel"
 	build_path = /obj/item/gun_upgrade/barrel/overheat
 
 /datum/design/research/item/weapon/weapon_upgrade/battery_shunt
-	name = "Soteria \"Thunder\" battery shunt"
+	name = "Vesalius-Andra \"Thunder\" battery shunt"
 	build_path = /obj/item/gun_upgrade/mechanism/battery_shunt
 
 /datum/design/research/item/weapon/weapon_upgrade/overdrive
-	name = "Soteria \"Tesla\" overdrive chip"
+	name = "Vesalius-Andra \"Tesla\" overdrive chip"
 	build_path = /obj/item/gun_upgrade/mechanism/overdrive
 
 /datum/design/research/item/weapon/weapon_upgrade/toxin_coater
-	name = "Soteria \"Black Viper\" toxin coater"
+	name = "Vesalius-Andra \"Black Viper\" toxin coater"
 	build_path = /obj/item/gun_upgrade/barrel/toxin_coater
 
 /datum/design/research/item/weapon/weapon_upgrade/dnalock_mod
-	name = "Soteria \"DNA lock\" Finger Imprinter Trigger"
+	name = "Vesalius-Andra \"DNA lock\" Finger Imprinter Trigger"
 	build_path = /obj/item/gun_upgrade/trigger/dnalock
 
 /datum/design/research/item/weapon/weapon_upgrade/auto_eject_no_removal
-	name = "Soteria \"Faller\" Magwell Clearer"
+	name = "Vesalius-Andra \"Faller\" Magwell Clearer"
 	build_path = /obj/item/gun_upgrade/magwell/auto_eject/no_removal
 
 /*
 /datum/design/research/item/weapon/weapon_upgrade/isotope_diffuser
-	name = "Soteria \"Atomik\" isotope diffuser"
+	name = "Vesalius-Andra \"Atomik\" isotope diffuser"
 	build_path = /obj/item/gun_upgrade/barrel/isotope_diffuser
 
 /datum/design/research/item/weapon/weapon_upgrade/psionic_catalyst

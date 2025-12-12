@@ -18,7 +18,7 @@
 	display_name = "marshal uniform (default)"
 	path = /obj/item/clothing/under/rank/security
 
-/datum/gear/factionsecurity/miljacket_marshal //it's a Jacket for Marshals Commisioned by pneumo/husky and sprited/coded by Dromkii
+/datum/gear/factionsecurity/miljacket_marshal //it's a Jacket for Rangers Commisioned by pneumo/husky and sprited/coded by Dromkii
 	display_name = "marshal jacket"
 	path = /obj/item/clothing/suit/storage/toggle/miljacket_marshal
 

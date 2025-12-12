@@ -273,12 +273,12 @@
 
 /obj/item/paper/laber_camp_notice
 	name = "Mining Rights and Conservation"
-	info = {"From Artificer Guild and Soteria Xenoarch Division:
+	info = {"From Artificer Guild and Vesalius-Andra Xenoarch Division:
 	<BR>\n\tArtificer Guild:
-	<BR>\n\t\tDue to LSS mining operations and Soteria Toxin testing the labor camp might have rock falls refilling the area from time to time.
+	<BR>\n\t\tDue to FL mining operations and Vesalius-Andra Toxin testing the labor camp might have rock falls refilling the area from time to time.
 	<BR>\n\t\tWith this issue ever present, we are unable to add any power networking down into the camp.
 	<BR>\n
-	<BR>\n\tSoteria Xenoarch Division:
+	<BR>\n\tVesalius-Andra Xenoarch Division:
 	<BR>\n\t\tXenoarch may ask to use the local camp for digging out artifacts .
 	<BR>\n\t\tDeep rock scans have shown that from time to time the labor camp may have hidden weapons and tools inside the rock walls.
 	<BR>\n

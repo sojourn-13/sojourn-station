@@ -1,5 +1,5 @@
 /obj/item/circuitboard/cooking_with_jane/stove
-	build_name = "Soteria Stovetop"
+	build_name = "Vesalius-Andra Stovetop"
 	build_path = /obj/machinery/cooking_with_jane/stove
 	board_type = "machine"
 	origin_tech = list(TECH_BIO = 1)
@@ -9,7 +9,7 @@
 	)
 
 /obj/item/circuitboard/cooking_with_jane/oven
-	build_name = "Soteria Convection Oven"
+	build_name = "Vesalius-Andra Convection Oven"
 	build_path = /obj/machinery/cooking_with_jane/oven
 	board_type = "machine"
 	origin_tech = list(TECH_BIO = 1)
@@ -19,7 +19,7 @@
 	)
 
 /obj/item/circuitboard/cooking_with_jane/grill
-	build_name = "Soteria Charcoal Grill"
+	build_name = "Vesalius-Andra Charcoal Grill"
 	build_path = /obj/machinery/cooking_with_jane/grill
 	board_type = "machine"
 	origin_tech = list(TECH_BIO = 1)

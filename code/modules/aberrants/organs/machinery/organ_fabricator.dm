@@ -1,6 +1,6 @@
 /obj/machinery/autolathe/organ_fabricator
 	name = "Organ Fabricator"
-	desc = "Soteria machine for printing organs using biomass."
+	desc = "Vesalius-Andra machine for printing organs using biomass."
 	description_info = "Quick Guide to Organs:\n\n\
 						Print an organ scaffold\n\
 						Print an input, process, and output teratoma\n\

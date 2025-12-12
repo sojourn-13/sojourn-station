@@ -1,6 +1,6 @@
 /mob/living/carbon/superior/fungi
 	name = "strange fungi"
-	desc = "Is that a mushroom? Maybe it escaped from the Soteria labs? It certainly doesn't look like the usual walking mushrooms one would see in xenoflora."
+	desc = "Is that a mushroom? Maybe it escaped from the Vesalius-Andra labs? It certainly doesn't look like the usual walking mushrooms one would see in xenoflora."
 	faction = "neutral"
 	pass_flags = PASSTABLE
 	icon = 'icons/mob/mobs-domestic.dmi'

@@ -167,7 +167,7 @@
 	var/locked = TRUE
 	var/datum/money_account/machine_vendor_account //Owner of this vendomat. Used for access.
 	var/datum/money_account/earnings_account //Money flows in and out of this account.
-	var/vendor_department = DEPARTMENT_LSS  //If set, members can manage this vendomat. earnings_account is set to the department's account automatically.
+	var/vendor_department = DEPARTMENT_SERVICE  //If set, members can manage this vendomat. earnings_account is set to the department's account automatically.
 	var/buying_percentage = 0 //If set, the vendomat will accept people selling items to it, and in return will give (percentage * listed item price) in cash
 	var/scan_id = 1
 	var/auto_price = TRUE //The vendomat will automatically set prices on products if their price is not specified.

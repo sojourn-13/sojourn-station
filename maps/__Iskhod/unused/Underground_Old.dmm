@@ -14772,7 +14772,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/door/airlock/glass_medical{
-	name = "Soteria Lockerooms";
+	name = "Vesalius-Andra Lockerooms";
 	req_access = list(5)
 	},
 /turf/simulated/floor/tiled/white/cargo,
@@ -16786,7 +16786,7 @@
 /area/nadezhda/pros/foreman)
 "aRH" = (
 /obj/machinery/door/airlock/glass_medical{
-	name = "Soteria Lockerooms";
+	name = "Vesalius-Andra Lockerooms";
 	req_access = list(5)
 	},
 /obj/structure/disposalpipe/segment,
@@ -21195,7 +21195,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/door/airlock/glass{
-	name = "Soteria Meeting Room";
+	name = "Vesalius-Andra Meeting Room";
 	req_access = list(5)
 	},
 /turf/simulated/floor/tiled/white/techfloor,
@@ -22234,14 +22234,14 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/airlock/glass{
-	name = "Soteria Meeting Room";
+	name = "Vesalius-Andra Meeting Room";
 	req_access = list(5)
 	},
 /turf/simulated/floor/tiled/white/techfloor,
 /area/nadezhda/medical/medbay3)
 "bfE" = (
 /obj/machinery/door/airlock/glass{
-	name = "Soteria Showers";
+	name = "Vesalius-Andra Showers";
 	req_access = list(5)
 	},
 /turf/simulated/floor/tiled/white/cargo,
@@ -27211,7 +27211,7 @@
 	dir = 2
 	},
 /obj/machinery/door/airlock/glass{
-	name = "Soteria Showers";
+	name = "Vesalius-Andra Showers";
 	req_access = list(5)
 	},
 /turf/simulated/floor/tiled/white/cargo,
@@ -29130,7 +29130,7 @@
 /area/nadezhda/hallway/side/cavernhallway)
 "bxM" = (
 /obj/machinery/door/airlock/glass{
-	name = "Soteria Meeting Room";
+	name = "Vesalius-Andra Meeting Room";
 	req_access = list(5)
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -34361,7 +34361,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/airlock/glass{
-	name = "Soteria Meeting Room";
+	name = "Vesalius-Andra Meeting Room";
 	req_access = list(5)
 	},
 /turf/simulated/floor/tiled/white/techfloor,
@@ -45500,7 +45500,7 @@
 /area/nadezhda/command/cbo)
 "cjF" = (
 /obj/machinery/door/airlock/glass{
-	name = "Soteria Resting Area";
+	name = "Vesalius-Andra Resting Area";
 	req_access = list(5)
 	},
 /obj/structure/disposalpipe/segment{
@@ -66300,7 +66300,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/command{
-	name = "Soteria Research Overseer's Quarters";
+	name = "Vesalius-Andra Research Overseer's Quarters";
 	req_access = list(30)
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -67616,7 +67616,7 @@
 /area/nadezhda/rnd/server)
 "djJ" = (
 /obj/machinery/door/airlock/command{
-	name = "Soteria Research Overseer's Office";
+	name = "Vesalius-Andra Research Overseer's Office";
 	req_access = list(30)
 	},
 /obj/structure/cable/green{
@@ -71183,7 +71183,7 @@
 	icon_state = "1-2"
 	},
 /obj/item/device/eftpos{
-	eftpos_name = "Soteria Biolabs EFTPOS scanner"
+	eftpos_name = "Vesalius-Andra Biolabs EFTPOS scanner"
 	},
 /turf/simulated/floor/carpet/purcarpet,
 /area/nadezhda/command/cro)
@@ -86126,7 +86126,7 @@
 "qZK" = (
 /obj/structure/table/woodentable,
 /obj/item/device/eftpos{
-	eftpos_name = "Soteria Biolabs EFTPOS scanner"
+	eftpos_name = "Vesalius-Andra Biolabs EFTPOS scanner"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6

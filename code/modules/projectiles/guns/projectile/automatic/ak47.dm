@@ -47,7 +47,7 @@
 /obj/item/gun/projectile/automatic/ak47/NM_colony
 	name = "polymer \"Kalashnikov\" automatic rifle"
 	desc = " A cheap copy of the Kalashnikov pattern, shortened into a mid-length rifle and chambered in 7.5mm. \
-	This abysmal, printed copy of a Kalashnikov has been reclaimed and repurposed by Nadezhda Marshals, making it free of Excelsior taint but also unable to be deconstructed."
+	This abysmal, printed copy of a Kalashnikov has been reclaimed and repurposed by Iskhod Rangers, making it free of Excelsior taint but also unable to be deconstructed."
 	icon = 'icons/obj/guns/projectile/ak.dmi'
 	icon_state = "AK"
 	item_state = "AK"
@@ -61,7 +61,7 @@
 /obj/item/gun/projectile/automatic/ak47/NM_colony/improved
 	name = "marshal polymer \"Kalashnikov\" automatic rifle"
 	desc = " A copy of the Kalashnikov pattern, shortened into a mid-length rifle and chambered in 7.5mm. \
-	This improved version of a Kalashnikov has been reclaimed and repurposed by Nadezhda Marshals, with improvements in various aspects to make it more suitable for police use."
+	This improved version of a Kalashnikov has been reclaimed and repurposed by Iskhod Rangers, with improvements in various aspects to make it more suitable for police use."
 	icon = 'icons/obj/guns/projectile/ak_cop.dmi'
 	icon_state = "AK"
 	item_state = "AK"
@@ -110,7 +110,7 @@
 
 /obj/item/gun/projectile/automatic/ak47/saiga/NM_colony
 	name = "\"Saigini 12\" shotgun"
-	desc = "A bulked up and modified version of the Kalashnikov made to fire 20mm shotgun shells, taking magazines similar to the Sol Federation SBAW design. \nThis model of the \"Saiga\" shotgun has been reclaimed and repurposed by Nadezhda Marshals, making it free of Excelsior taint."
+	desc = "A bulked up and modified version of the Kalashnikov made to fire 20mm shotgun shells, taking magazines similar to the Sol Federation SBAW design. \nThis model of the \"Saiga\" shotgun has been reclaimed and repurposed by Iskhod Rangers, making it free of Excelsior taint."
 	icon = 'icons/obj/guns/projectile/saiga12.dmi'
 	icon_state = "saiga-bs"
 	item_state = "saiga-bs"

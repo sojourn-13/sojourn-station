@@ -16,7 +16,7 @@ It also has more matterals then it takes to craft as a way to have a sunk cost.
 	desc = "An energy shotgun that proves the oldest truth that the tallest buildings and most grand achievements are built by digging a deep foundation to set it upon. \
 	It fires a super heated blast of concentrated laser pellets in a similar fashion to the Reductor, but loses stopping power rapidly over a distance, so it is most effective at point blank range. \
 	Unlike the Reductor or Myrmidon, the secondary firing mode uses a chemical blend to fire flare rounds, offering some utility. When overclocked, the battery is turned into a rocket propelled grenade. \
-	Use with caution! This design was originally blue-printed by the Soteria Institute before cooperation with the Artificer Guild allowed regulated usage by experienced Artificers."
+	Use with caution! This design was originally blue-printed by the VA Biomechanics before cooperation with the Artificer Guild allowed regulated usage by experienced Artificers."
 	fire_sound = 'sound/weapons/energy/emitter2.ogg'
 	projectile_type = /obj/item/projectile/bullet/pellet/shotgun/energy
 	can_dual = FALSE

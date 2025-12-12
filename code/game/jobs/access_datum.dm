@@ -37,7 +37,7 @@
 /var/const/access_moebius = 5
 /datum/access/moebius
 	id = access_moebius
-	desc = "Soteria General"
+	desc = "Vesalius-Andra General"
 	region = ACCESS_REGION_RESEARCH
 
 /var/const/access_morgue = 6
@@ -187,7 +187,7 @@
 /var/const/access_rd = 30
 /datum/access/rd
 	id = access_rd
-	desc = "Soteria Research Overseer"
+	desc = "Vesalius-Andra Research Overseer"
 	region = ACCESS_REGION_RESEARCH
 
 /var/const/access_cargo = 31
@@ -247,7 +247,7 @@
 /var/const/access_cmo = 40
 /datum/access/cmo
 	id = access_cmo
-	desc = "Soteria Biolab Overseer"
+	desc = "Vesalius-Andra Biolab Overseer"
 	region = ACCESS_REGION_COMMAND
 
 /var/const/access_merchant = 41
@@ -268,7 +268,13 @@
 	desc = "Theatre"
 	region = ACCESS_REGION_GENERAL
 
-// /var/const/free_access_id = 44
+/var/const/access_library = 44
+/datum/access/library
+	id = access_library
+	desc = "Library"
+	region = ACCESS_REGION_GENERAL
+
+// /var/const/free_access_id = 47
 
 /var/const/access_surgery = 45
 /datum/access/surgery

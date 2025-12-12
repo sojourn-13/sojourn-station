@@ -101,7 +101,7 @@
 /datum/gear/factionsecurity/armoredcossackcoat
 	display_name = "jaeger hussar coat"
 	path = /obj/item/clothing/suit/greatcoat/cossackarmoredcoat
-	allowed_roles = list(JOBS_SECURITY, JOBS_BLACKSHIELD)
+	allowed_roles = list(JOBS_SECURITY, JOBS_SECURITY)
 	slot = slot_wear_suit
 	cost = 2
 

@@ -1,7 +1,7 @@
 /datum/computer_file/program/cook_catalog
 	filename = "cook_catalog"
 	filedesc = "VIKA"
-	extended_desc = "Lonestar (and Soteria) Presents: Victoria's Incredible Kitchen Assistant - an AI-generated electronic catalog for cooking."
+	extended_desc = "Frontier Logistics (and Vesalius-Andra) Presents: Victoria's Incredible Kitchen Assistant - an AI-generated electronic catalog for cooking."
 	program_icon_state = "generic"
 	program_key_state = "generic_key"
 	program_menu_icon = "cookie-bite"

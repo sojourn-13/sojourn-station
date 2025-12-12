@@ -12,7 +12,7 @@
 		list("key" = "med", "flag" = MEDICAL),
 		list("key" = "sci", "flag" = SCIENCE),
 		list("key" = "chr", "flag" = CHURCH),
-		list("key" = "sup", "flag" = LSS),
+		list("key" = "sup", "flag" = FL),
 		list("key" = "eng", "flag" = ENGINEERING),
 		list("key" = "pro", "flag" = PROSPECTORS),
 		list("key" = "civ", "flag" = CIVILIAN),
@@ -26,7 +26,7 @@
 
 		var/name = CR.get_name()
 		crew_data["name"] = name
-		
+
 		var/rank = CR.get_job()
 		crew_data["rank"] = rank
 
@@ -57,7 +57,7 @@
 			continue
 
 		manifest += list(list("name" = robot.name, "rank" = "[robot.modtype] [robot.braintype]", "departments" = list("bot")))
-	
+
 	data["manifest"] = manifest
 
 	return data

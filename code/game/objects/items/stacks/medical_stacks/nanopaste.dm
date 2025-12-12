@@ -58,7 +58,7 @@
 /obj/item/stack/sterilizer_crystal
 	name = "sterilizer crystals"
 	singular_name = "sterilizer crystal"
-	desc = "A solid, crystalized form of steralized reagents. Used by Soteria typically in making medical supplies. Or by crack-addicts who want a mouth full of cleaning solution."
+	desc = "A solid, crystalized form of steralized reagents. Used by Vesalius-Andra typically in making medical supplies. Or by crack-addicts who want a mouth full of cleaning solution."
 	icon = 'icons/obj/stack/items.dmi'
 	icon_state = "sterilizer_crystal"
 	amount = 5

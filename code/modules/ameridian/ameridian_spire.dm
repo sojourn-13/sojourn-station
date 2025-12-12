@@ -64,7 +64,7 @@
 
 /obj/structure/ameridian_crystal/spire/harvest_crystals()
 	var/obj/item/stack/material/ameridian/T = new(get_turf(src))
-	///new /obj/item/ameridian_core(T) - So SI cant sneakly get these and start their own farms without LSS or what ever
+	///new /obj/item/ameridian_core(T) - So SI cant sneakly get these and start their own farms without FL or what ever
 	T.amount = 60 //Half a stack for a rare find
 	activate_mobs_in_range(src, 7, TRUE) // Wake up the nearby golems
 	qdel(src)

@@ -1,7 +1,7 @@
 /obj/item/gun/energy/gun/nuclear
 	name = "\"EBR-IV\" Nuclear Particle Rifle"
 	desc = "A prototype of a 'self-sustaining experimental breeder rifle' powered via a built-in nuclear reactor, able to project either high powered tazer shots or deadly particle beams at the will of it's user. \
-	The user of this gun waives, releases and discharges the Soteria Institute from any and all liability, including but not \
+	The user of this gun waives, releases and discharges the VA Biomechanics from any and all liability, including but not \
 	limited to, liability arising from the negligence or fault of the entities or persons using this gun, for death, disability, personal injury, property damage, property theft, or actions of any kind which may hereafter occur."
 	icon = 'icons/obj/guns/energy/nucgun.dmi'
 	icon_state = "nucgun"

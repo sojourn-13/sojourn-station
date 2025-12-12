@@ -19,7 +19,7 @@
 
 /obj/item/storage/box/m_kit/breacher
 	name = "Breaching Hammer Kit"
-	desc = "The standard Marshal box kit, containing a single heavy-duty breaching hammer. Equally beloved by Marshals more interested in utility than firepower, and those \
+	desc = "The standard Marshal box kit, containing a single heavy-duty breaching hammer. Equally beloved by Rangers more interested in utility than firepower, and those \
 	strange enough to take such an unwieldy thing into close combat"
 
 	populate_contents()
@@ -144,7 +144,7 @@
 // Secondary kits
 /obj/item/storage/box/m_kit/taser
 	name = "Counselor Secondary kit"
-	desc = "The standard Marshal box kit containing a counselor stun gun. An all round solid sidearm to round out the Marshals non-lethal kit."
+	desc = "The standard Marshal box kit containing a counselor stun gun. An all round solid sidearm to round out the Rangers non-lethal kit."
 
 	populate_contents()
 		new /obj/item/gun/energy/taser(src)
@@ -177,7 +177,7 @@
 
 /obj/item/storage/box/m_kit/judiciary
 	name = "Judiciary Secondary Kit"
-	desc = "The standard Marshal box kit containing a Judicary .35 pistol. The staple icon of the Marshals, commonly found on most hiring posters! \
+	desc = "The standard Marshal box kit containing a Judicary .35 pistol. The staple icon of the Rangers, commonly found on most hiring posters! \
 	Known for its low recoil, ability to fit a durm magazine and being an overall reliable workhorse."
 
 	populate_contents()

@@ -129,11 +129,11 @@ GLOBAL_VAR_INIT(score_technomancer_faction_item_loss, 0)
 		else
 			if(M.antagonist.len)
 				var/area/A = get_area(M.current)
-				if(istype(A, /area/nadezhda/security/prison) || istype(A, /area/nadezhda/security/brig) || M.current.restrained())
+				if(istype(A, /area/iskhod/security/prison) || istype(A, /area/iskhod/security/brig) || M.current.restrained())
 					GLOB.captured_or_dead_antags++
 				else if(isOnAdminLevel(M.current))
 					GLOB.ironhammer_escaped_antagonists++
-			else if(M.assigned_job && M.assigned_job.department == DEPARTMENT_LSS && ishuman(M.current))
+			else if(M.assigned_job && M.assigned_job.department == DEPARTMENT_SERVICE && ishuman(M.current))
 				var/mob/living/carbon/human/H = M.current
 				guild_fingerprints += H.get_full_print()
 
@@ -144,7 +144,7 @@ GLOBAL_VAR_INIT(score_technomancer_faction_item_loss, 0)
 				L.client.escaped = TRUE
 		if(ishuman(L))
 			var/mob/living/carbon/human/H = L
-			if(H.mind && H.mind.assigned_job && H.mind.assigned_job.faction == "CEV Eris" && H.mind.assigned_job.department != DEPARTMENT_LSS && !H.mind.antagonist.len)
+			if(H.mind && H.mind.assigned_job && H.mind.assigned_job.faction == "CEV Eris" && H.mind.assigned_job.department != DEPARTMENT_SERVICE && !H.mind.antagonist.len)
 				for(var/obj/item/I in H.GetAllContents())
 					var/full_print = H.get_full_print()
 					if(full_print in guild_fingerprints)
@@ -155,7 +155,7 @@ GLOBAL_VAR_INIT(score_technomancer_faction_item_loss, 0)
 	var/min_charge = initial(HC.maxcharge) * 0.6
 
 	//calculate guild (Sojourn: Lonestar!) profits in a sane way
-	var/ending_balance = get_account_credits(department_accounts[DEPARTMENT_LSS])
+	var/ending_balance = get_account_credits(department_accounts[DEPARTMENT_SERVICE])
 	var/datum/department/guild/guild_var = new/datum/department/guild
 	GLOB.supply_profit = ending_balance - guild_var.account_initial_balance
 
@@ -221,7 +221,7 @@ GLOBAL_VAR_INIT(score_technomancer_faction_item_loss, 0)
 	GLOB.neotheology_score = GLOB.initial_neotheology_score + GLOB.score_neotheology_faction_item_loss + GLOB.neotheology_objectives_score + GLOB.grup_ritual_score + GLOB.biomatter_score + GLOB.new_neothecnology_convert_score
 
 
-	//Soteria score
+	//Vesalius-Andra score
 	GLOB.score_moebius_faction_item_loss -= GLOB.moebius_faction_item_loss * 150 //300
 	GLOB.moebius_objectives_score = GLOB.moebius_objectives_completed * 25 // ~100
 	GLOB.score_crew_dead -=	GLOB.crew_dead * 25 // ~200
@@ -230,7 +230,7 @@ GLOBAL_VAR_INIT(score_technomancer_faction_item_loss, 0)
 
 	GLOB.moebius_score = GLOB.initial_moebius_score + GLOB.score_moebius_faction_item_loss + GLOB.moebius_objectives_score + GLOB.score_crew_dead + GLOB.score_research_point_gained + GLOB.score_moebius_autopsies_mobs
 
-	//Marshals score
+	//Rangers score
 	GLOB.score_ironhammer_faction_item_loss -= 150 * GLOB.ironhammer_faction_item_loss
 	GLOB.ironhammer_objectives_score = GLOB.ironhammer_objectives_completed * 25
 	GLOB.score_antag_contracts -= GLOB.completed_antag_contracts * 30
@@ -274,7 +274,7 @@ GLOBAL_VAR_INIT(score_technomancer_faction_item_loss, 0)
 /mob/proc/scorestats()
 	var/dat = "<b>Faction Scores</b><br><hr><br>"
 
-	//Marshals
+	//Rangers
 	dat += {"
 	<u>Marshal scores</u><br>
 	<b>Base score:</b> [green_text(GLOB.initial_ironhammer_score)]<br>
@@ -283,20 +283,20 @@ GLOBAL_VAR_INIT(score_technomancer_faction_item_loss, 0)
 	<b>Antagonist contracts completed:</b> [GLOB.completed_antag_contracts] ([to_score_color(GLOB.score_antag_contracts)] Points)<br>
 	<b>Antagonists killed or captured:</b> [GLOB.captured_or_dead_antags] ([to_score_color(GLOB.captured_or_dead_antags_score)] Points)<br>
 	<b>Escaped Antagonists:</b> [GLOB.ironhammer_escaped_antagonists] ([to_score_color(GLOB.ironhammer_escaped_antagonists_score)] Points)<br>
-	<b>Marshals killed:</b> [GLOB.ironhammer_operative_dead] ([to_score_color(GLOB.ironhammer_operative_dead_score)] Points)<br>
+	<b>Rangers killed:</b> [GLOB.ironhammer_operative_dead] ([to_score_color(GLOB.ironhammer_operative_dead_score)] Points)<br>
 	<b>Final Marshal score:</b> [get_color_score(GLOB.ironhammer_score, GLOB.ironhammer_score)] Points<br><br>
 	"}
 
-	//Soteria
+	//Vesalius-Andra
 	dat += {"
-	<u>Soteria Institution scores</u><br>
+	<u>Vesalius-Andra Institution scores</u><br>
 	<b>Base score:</b> [green_text(GLOB.initial_moebius_score)]<br>
 	<b>Lost faction items:</b> [GLOB.moebius_faction_item_loss] ([to_score_color(GLOB.score_moebius_faction_item_loss)] Points)<br>
 	<b>Faction objectives completed:</b> [GLOB.moebius_objectives_completed] ([to_score_color(GLOB.moebius_objectives_score)] Points)<br>
 	<b>Dead crew:</b> [GLOB.crew_dead] ([to_score_color(GLOB.score_crew_dead)] Points)<br>
 	<b>Research points gained:</b> [GLOB.research_point_gained] ([to_score_color(GLOB.score_research_point_gained)] Points)<br>
 	<b>Autopsies performed:</b> [GLOB.moebius_autopsies_mobs.len] ([to_score_color(GLOB.score_moebius_autopsies_mobs)] Points)<br>
-	<b>Final Soteria Institution score:</b> [get_color_score(GLOB.moebius_score, GLOB.moebius_score)] Points<br><br>
+	<b>Final Vesalius-Andra Institution score:</b> [get_color_score(GLOB.moebius_score, GLOB.moebius_score)] Points<br><br>
 	"}
 
 	//Church
@@ -313,14 +313,14 @@ GLOBAL_VAR_INIT(score_technomancer_faction_item_loss, 0)
 
 	//Lonestar
 	dat += {"
-	<u>Lonestar Shipping Solutions scores</u><br>
+	<u>Frontier Logistics scores</u><br>
 	<b>Base score:</b> [green_text(GLOB.initial_guild_score)]<br>
 	<b>Lost faction items:</b> [GLOB.guild_faction_item_loss] ([to_score_color(GLOB.score_guild_faction_item_loss)] Points)<br>
 	<b>Faction objectives completed:</b> [GLOB.guild_objectives_completed] ([to_score_color(GLOB.guild_objectives_score)] Points)<br>
 	<b>Profit profits:</b> [GLOB.supply_profit] ([to_score_color(GLOB.guild_profit_score)] Points)<br>
-	<b>Crew with items distributed by the Lonestar Shipping Solutions:</b> [GLOB.guild_shared_gears] ([to_score_color(GLOB.guild_shared_gears_score)] Points)<br>
+	<b>Crew with items distributed by the Frontier Logistics:</b> [GLOB.guild_shared_gears] ([to_score_color(GLOB.guild_shared_gears_score)] Points)<br>
 	<b>Dirty areas:</b> [GLOB.dirt_areas] ([to_score_color(GLOB.score_mess)] Points)<br>
-	<b>Final Lonestar Shipping Solutions score:</b> [get_color_score(GLOB.guild_score, GLOB.guild_score)] Points<br><br><br>
+	<b>Final Frontier Logistics score:</b> [get_color_score(GLOB.guild_score, GLOB.guild_score)] Points<br><br><br>
 	"}
 
 	//Guild (Sojourn)
@@ -375,7 +375,7 @@ GLOBAL_VAR_INIT(score_technomancer_faction_item_loss, 0)
 			return GLOB.ironhammer_score
 		else if(mind.assigned_job.department == DEPARTMENT_ENGINEERING)
 			return GLOB.technomancer_score
-		else if(mind.assigned_job.department == DEPARTMENT_LSS)
+		else if(mind.assigned_job.department == DEPARTMENT_SERVICE)
 			return GLOB.guild_score
 		else if(mind.assigned_job.department == DEPARTMENT_CHURCH)
 			return GLOB.neotheology_score
@@ -392,7 +392,7 @@ GLOBAL_VAR_INIT(score_technomancer_faction_item_loss, 0)
 				. = TRUE
 			if(DEPARTMENT_ENGINEERING)
 				. = TRUE
-			if(DEPARTMENT_LSS)
+			if(DEPARTMENT_SERVICE)
 				. = TRUE
 			if(DEPARTMENT_CHURCH)
 				. = TRUE

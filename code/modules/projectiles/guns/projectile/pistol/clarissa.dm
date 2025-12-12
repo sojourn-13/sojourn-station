@@ -122,7 +122,7 @@
 	set_item_state(itemstring)
 
 /obj/item/gun/projectile/makarov/moebius
-	name = "SI HG .35 \"Malpractice\"" // SI stands for Soteria Institution
+	name = "SI HG .35 \"Malpractice\"" // SI stands for Vesalius-Andra Institution
 	desc = "A small, easily concealable, but somewhat underpowered gun produced by SI as based off the \"Little Comet\" but ended up being a copy of the \"Clarissa\" with white paint. Uses .35 rounds and is capable of firing from both pistol and smg magazines."
 	icon = 'icons/obj/guns/projectile/clarissa_white.dmi'
 	fire_sound = 'sound/weapons/guns/fire/9mm_pistol.ogg'
@@ -138,9 +138,9 @@
 								)
 
 /obj/item/gun/projectile/makarov/moebius/preloaded_cbo
-	name = "SI HG .35 \"Palliative Care\"" // SI stands for Soteria Institution
+	name = "SI HG .35 \"Palliative Care\"" // SI stands for Vesalius-Andra Institution
 	desc = "A small, easily concealable, but somewhat underpowered gun produced by SI as based off the \"Little Comet\" but ended up being a copy of the \"Clarissa\" with white paint. Uses .35 rounds and is capable of firing from both pistol and smg magazines. \
-	This one is custom made for Soteria Biolab Overseers, having an integrated silencer that cannot be removed, in addition to a laser sight for improved accuracy."
+	This one is custom made for Vesalius-Andra Biolab Overseers, having an integrated silencer that cannot be removed, in addition to a laser sight for improved accuracy."
 	icon = 'icons/obj/guns/projectile/cbo.dmi'
 	icon_state = "cbo"
 	item_state = "cbo"

@@ -222,14 +222,14 @@
 
 /obj/structure/noticeboard/medical
 	name = "Medical bulletin board"
-	desc = "A board containing vital notices and official memos for Soteria Medical"
+	desc = "A board containing vital notices and official memos for Vesalius-Andra Medical"
 	icon_state = "nboard01"
 	notices = 1
 
 /obj/structure/noticeboard/medical/New()
 	var/obj/item/paper/P = new()
 	P.name = "Preparation Log"
-	P.info = "<center><h2><b>Soteria Institute - Medical Department</b></h2><br>\
+	P.info = "<center><h2><b>VA Biomechanics - Medical Department</b></h2><br>\
 	<i>Preparation log</i><br>\
 	<small>DATE: [time2text(world.realtime, "DD/MM/YYYY")] | SI-MED-051-A</small><br>\
 	<small><i>Working Copy 3</i></small></center><hr>\
@@ -254,7 +254,7 @@
 
 /obj/structure/noticeboard/research
 	name = "Research bulletin board"
-	desc = "A board containing vital notices and official memos for the Soteria research"
+	desc = "A board containing vital notices and official memos for the Vesalius-Andra research"
 	icon_state = "nboard00"
 	notices = 1
 
@@ -290,7 +290,7 @@
 
 /obj/structure/noticeboard/prospectors/New()
 	var/obj/item/paper/P = new()
-	P.name = "Memo RE: LSS Bulk Selling"
+	P.name = "Memo RE: FL Bulk Selling"
 	P.info = "<ul><h3><u>How to deal with Cargo with many sellable items!</u></h3><hr>\
 	<li>Step 0: Get the loot \
 	<li>Step 1: Sort the loot into crates or lockers you <b>WANT</b> to bulk sell.Do <b>NOT</b> store sellables inside pouches, bags or toolboxes. Export beacons do NOT like nested items. \

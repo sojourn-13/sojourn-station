@@ -150,7 +150,7 @@ ty ilu - bear
 	narrate = "A place for behind-closed-doors meetings to get things done, or argue for hours in..."
 
 /area/nadezhda/command/armory
-	narrate = "Cleanly polished and well mantained firearms carefully set in place for the council members to peruse, when Marshals and Blackshields fail, and all hope of acquiring a firearm is lost..."
+	narrate = "Cleanly polished and well mantained firearms carefully set in place for the council members to peruse, when Rangers and Blackshields fail, and all hope of acquiring a firearm is lost..."
 
 /area/nadezhda/command/panic_room
 	narrate = "A secure vault for the command personnel unable to aid in cases of colony unrest or attacks of code red magnitude."

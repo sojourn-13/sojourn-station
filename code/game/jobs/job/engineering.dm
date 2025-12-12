@@ -1,5 +1,5 @@
 /datum/job/chief_engineer
-	title = "Guild Master"
+	title = "Guild Chief Engineer"
 	flag = GUILDMASTER
 	head_position = 1
 	department = DEPARTMENT_ENGINEERING
@@ -7,7 +7,7 @@
 	faction = MAP_FACTION
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the Nadezhda Council"
+	supervisors = "the Governor and the Iskhod Council"
 	difficulty = "Medium."
 	selection_color = "#c7b97b"
 	req_admin_notify = 1
@@ -51,27 +51,27 @@
 	Machinery across the colony is your responsibility. Let no outsiders interfere or intrude into your domain - even Command staff are no exception.<br>\
 	Treat every Guild member like your family. Keep them paid, fed and safe. You may be a part of the wider colony, but your own come first."
 
-	duties = "Manage the Guild Adepts - set tasks and areas of focus.<br>\
-	Strive to protect the rights of your Adepts, as well as their safety and health.<br>\
+	duties = "Manage the Guild Engineers - set tasks and areas of focus.<br>\
+	Strive to protect the rights of your Engineers, as well as their safety and health.<br>\
 	Conduct your own repairs and projects as required - especially when low staffed. "
 
 	perks = list(PERK_INSPIRATION, PERK_HANDYMAN)
 
 /obj/landmark/join/start/chief_engineer
-	name = "Guild Master"
+	name = "Guild Chief Engineer"
 	icon_state = "player-orange-officer"
 	join_tag = /datum/job/chief_engineer
 
 
 /datum/job/technomancer
-	title = "Guild Adept"
+	title = "Guild Engineer"
 	flag = ADEPT
 	department = DEPARTMENT_ENGINEERING
 	department_flag = ENGINEERING
 	faction = MAP_FACTION
 	total_positions = 3
 	spawn_positions = 3
-	supervisors = "the Guild Master"
+	supervisors = "the Guild Chief Engineer"
 	difficulty = "Medium."
 	selection_color = "#d5c88f"
 	wage = WAGE_PROFESSIONAL
@@ -101,7 +101,7 @@
 							 /datum/computer_file/program/camera_monitor,
 							 /datum/computer_file/program/shield_control)
 
-	description = "The Guild Adept is a member of one of the greatest engineering guilds in the galaxy, contracted to maintain this colony.<br>\
+	description = "The Guild Engineer is a member of one of the greatest engineering guilds in the galaxy, contracted to maintain this colony.<br>\
 Your main priority is ensuring the setup and maintenance of the colonies power grid. Seek guidance on this complex task if untrained.<br>\
 Outside of this, you should devote time to learning and configuring various systems. Everything can be improved and new constructs can be made.<br>\
 This upgrade culture extends to your own arsenal - mod and upgrade your tools with parts from maintenance, purchased from Lonestar or the Prospectors.<br>\
@@ -115,7 +115,7 @@ Do not let outsiders, even Command Staff, interfere with the duties of the Guild
 	perks = list(PERK_INSPIRATION, PERK_HANDYMAN)
 
 /obj/landmark/join/start/technomancer
-	name = "Guild Adept"
+	name = "Guild Engineer"
 	icon_state = "player-orange"
 	join_tag = /datum/job/technomancer
 
@@ -127,7 +127,7 @@ Do not let outsiders, even Command Staff, interfere with the duties of the Guild
 	faction = MAP_FACTION
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the Guild Master"
+	supervisors = "the Guild Chief Engineer"
 	difficulty = "Medium."
 	selection_color = "#d5c88f"
 	wage = WAGE_LABOUR_INTERN
@@ -154,8 +154,8 @@ Do not let outsiders, even Command Staff, interfere with the duties of the Guild
 							 /datum/computer_file/program/camera_monitor,
 							 /datum/computer_file/program/shield_control)
 
-	description = "The Guild Adept is a member of one of the greatest engineering guilds in the galaxy, contracted to maintain this colony.<br>\
-Your main priority is becoming just like a real Guild Adept. Seek guidance on this complex task if untrained.<br>\
+	description = "The Guild Apprentice is a member of one of the greatest engineering guilds in the galaxy, contracted to maintain this colony.<br>\
+Your main priority is becoming just like a real Guild Engineer. Seek guidance on this complex task if untrained.<br>\
 Outside of this, you should devote time to learning and configuring various systems. Everything can be improved, and new constructs can be made.<br>\
 This upgrade culture extends to your own arsenal - mod and upgrade your tools with parts from maintenance, purchased from Lonestar or the Prospectors.<br>\
 Do not let outsiders, even Command Staff, interfere with the duties of the Guild. And remember - be ready to respond to emergency calls at any time."
@@ -164,7 +164,7 @@ Do not let outsiders, even Command Staff, interfere with the duties of the Guild
 	Repair anything and anyone that needs some maintenance.<br>\
 	Respond to distress calls and patch breaches in the walls.<br>\
 	Keep every part of the colony powered, oxygenated, and ready to use.<br>\
-	Learn how to be a Guild Adept."
+	Learn how to be a Guild Engineer."
 
 	perks = list(PERK_INSPIRATION, PERK_HANDYMAN)
 

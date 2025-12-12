@@ -1,9 +1,9 @@
 // Disks formated as /designpath = pointcost , if no point cost is specified it defaults to 1.
 // To make a design unprotect use -1
 
-// Soteria
+// Vesalius-Andra
 /obj/item/pc_part/drive/disk/design/medical
-	disk_name = "Soteria Medical Designs"
+	disk_name = "Vesalius-Andra Medical Designs"
 	icon_state = "moebius"
 	license = 20
 	designs = list(
@@ -38,7 +38,7 @@
 	)
 
 /obj/item/pc_part/drive/disk/design/medical/advanced
-	disk_name = "Soteria Advanced Medical Designs"
+	disk_name = "Vesalius-Andra Advanced Medical Designs"
 	icon_state = "moebius"
 	license = 10
 	designs = list(
@@ -84,15 +84,15 @@
 
 
 /obj/item/pc_part/drive/disk/design/medical/cmo
-	disk_name = "Soteria Medical Factory"
+	disk_name = "Vesalius-Andra Medical Factory"
 	license = -1 //Same disk, but for the CBO exclusively with endless uses.
 
 /obj/item/pc_part/drive/disk/design/medical/advanced/cmo
-	disk_name = "Soteria Advanced Medical Designs Factory"
+	disk_name = "Vesalius-Andra Advanced Medical Designs Factory"
 	license = -1 //Same disk, but for the CBO exclusively with endless uses.
 
 /obj/item/pc_part/drive/disk/design/medical/surgery
-	disk_name = "Soteria Standard Organs"
+	disk_name = "Vesalius-Andra Standard Organs"
 	license = -1
 	designs = list(
 		/datum/design/organ/heart,
@@ -121,7 +121,7 @@
 	)
 
 /obj/item/pc_part/drive/disk/design/computer
-	disk_name = "Soteria Computer Parts"
+	disk_name = "Vesalius-Andra Computer Parts"
 	icon_state = "moebius"
 	license = 20
 	designs = list(
@@ -162,11 +162,11 @@
 	)
 
 /obj/item/pc_part/drive/disk/design/computer/rd
-	disk_name = "Soteria Computer Factory"
+	disk_name = "Vesalius-Andra Computer Factory"
 	license = -1
 
 /obj/item/pc_part/drive/disk/design/rped
-	disk_name = "Soteria RnD Stock Parts Designs"
+	disk_name = "Vesalius-Andra RnD Stock Parts Designs"
 	icon_state = "moebius"
 	license = 20
 	designs = list(
@@ -201,11 +201,11 @@
 	)
 
 /obj/item/pc_part/drive/disk/design/rped/rd
-	disk_name = "Soteria Stock Parts Factory"
+	disk_name = "Vesalius-Andra Stock Parts Factory"
 	license = -1
 
 /obj/item/pc_part/drive/disk/design/xenobio
-	disk_name = "Soteria Xenobio Equipment Designs"
+	disk_name = "Vesalius-Andra Xenobio Equipment Designs"
 	icon_state = "moebius"
 	license = 10
 	designs = list(
@@ -219,11 +219,11 @@
 	)
 
 /obj/item/pc_part/drive/disk/design/xenobio/rd
-	disk_name = "Soteria Xenobio Equipment Factory"
+	disk_name = "Vesalius-Andra Xenobio Equipment Factory"
 	license = -1
 
 /obj/item/pc_part/drive/disk/design/nt_bioaugment
-	disk_name = "Soteria Advanced Bioaugments Factory"
+	disk_name = "Vesalius-Andra Advanced Bioaugments Factory"
 	desc = "Advanced designs taken from the Hivemind. Not for public distribution."
 	icon_state = "data-purple"
 

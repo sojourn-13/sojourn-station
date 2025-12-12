@@ -234,7 +234,7 @@
 	default_type = /obj/item/organ/external/slime
 	default_bone_type = /obj/item/organ/internal/bone/slime
 ////SYNTHETIC////
-//Soteria
+//Vesalius-Andra
 /datum/organ_description/chest/soteria_synthetic
 	default_type = /obj/item/organ/external/robotic/moebius
 

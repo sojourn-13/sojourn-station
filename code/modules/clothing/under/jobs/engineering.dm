@@ -85,7 +85,7 @@
 		return 1
 
 /obj/item/clothing/under/rank/roboticist
-	desc = "An orange and tan Soteria jumpsuit designed for mechanical work."
+	desc = "An orange and tan Vesalius-Andra jumpsuit designed for mechanical work."
 	name = "roboticist's jumpsuit"
 	icon_state = "robotics"
 	item_state = "bl_suit"

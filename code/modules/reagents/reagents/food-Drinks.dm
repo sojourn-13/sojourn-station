@@ -1154,7 +1154,7 @@
 	taste_tag = list(TASTE_REFRESHING, TASTE_BITTER)
 	color = "#664300d3" // rgb: 102, 67, 0
 
-	glass_icon_state = "freddo_spr" // Lonestar Shipping Solutions logo and all!
+	glass_icon_state = "freddo_spr" // Frontier Logistics logo and all!
 	glass_name = "freddo espresso"
 	glass_desc = "Espresso with ice cubes poured over ice."
 	glass_center_of_mass = list("x"=15, "y"=9)
@@ -3664,7 +3664,7 @@
 /datum/reagent/ethanol/witch_brew
 	name = "Witches Brew"
 	id = "witch_brew"
-	description = "A long sit-mixed tonic that also happens to be ethanol based. The drink was made in the Soteria Research and Brewing Department to help psionics reach ballmer peak."
+	description = "A long sit-mixed tonic that also happens to be ethanol based. The drink was made in the Vesalius-Andra Research and Brewing Department to help psionics reach ballmer peak."
 	taste_description = "wool of bat and eye of newt"
 	taste_tag = list(TASTE_BUBBLY)
 	color = "#E0CE8A" // rgb(88, 81, 54)
@@ -3673,7 +3673,7 @@
 	glass_unique_appearance = TRUE
 	glass_icon_state = "witch_brew"
 	glass_name = "Witches Brew"
-	glass_desc = "A long sit-mixed tonic that also happens to be ethanol based. The drink was made in the Soteria Research and Brewing Department to help psionics reach ballmer peak."
+	glass_desc = "A long sit-mixed tonic that also happens to be ethanol based. The drink was made in the Vesalius-Andra Research and Brewing Department to help psionics reach ballmer peak."
 	price_per_unit = 2
 
 /datum/reagent/ethanol/witch_brew/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)

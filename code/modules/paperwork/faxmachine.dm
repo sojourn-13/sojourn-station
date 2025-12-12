@@ -153,8 +153,8 @@ var/last_staff_request_time = 0
             "Security Roles",
             "SI Medical",
             "SI Research",
-            "LSS Cargo",
-            "LSS Service"
+            "FL Cargo",
+            "FL Service"
         )
         var/selected_dept = input(usr, "Select department to request staff from:", "Automated Staff Request") as null|anything in dept_options
         if(selected_dept)
@@ -179,9 +179,9 @@ var/last_staff_request_time = 0
             ping_id = "medical"
         if("SI Research")
             ping_id = "science"
-        if("LSS Cargo")
+        if("FL Cargo")
             ping_id = "cargo"
-        if("LSS Service")
+        if("FL Service")
             ping_id = "service"
         if("Church")
             ping_id = "church"

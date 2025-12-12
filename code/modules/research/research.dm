@@ -271,7 +271,7 @@ Procs:
 	item_tech_req = TECH_ILLEGAL // research any contractor item and this tech will show up
 
 /datum/tech/psi
-	name = "Soteria Psionic Research"
+	name = "Vesalius-Andra Psionic Research"
 	shortname = "Psionic Tech"
 	desc = "Research into the unknown that is Psionics"
 	rare = 2

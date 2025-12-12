@@ -21,7 +21,7 @@
 	program_icon_state = "supply"
 	program_key_state = "rd_key"
 	program_menu_icon = "cart-plus"
-	extended_desc = "A trade tool, requires sending and receiving beacons."
+	extended_desc = "A program that allows for the purchase of goods from Frontier Logistics."
 	size = 21
 	available_on_ntnet = FALSE
 	requires_ntnet = TRUE
@@ -366,7 +366,7 @@
 		current_order = SStrade.build_order(account, reason, shoppinglist)
 		shoppinglist = list()
 		trade_screen = ORDER_SCREEN
-		if(account != department_accounts[DEPARTMENT_LSS])
+		if(account != department_accounts[DEPARTMENT_SERVICE])
 			orders_locked = TRUE
 			addtimer(CALLBACK(src, PROC_REF(unlock_ordering)), 10 SECONDS, TIMER_STOPPABLE)
 		return TRUE
@@ -688,7 +688,7 @@
 		.["balance"] = PRG.account.money
 		var/dept_id = PRG.account.department_id
 		if(dept_id)
-			is_all_access = (dept_id == DEPARTMENT_LSS) ? TRUE : FALSE
+			is_all_access = (dept_id == DEPARTMENT_SERVICE) ? TRUE : FALSE
 
 	.["is_all_access"] = is_all_access
 

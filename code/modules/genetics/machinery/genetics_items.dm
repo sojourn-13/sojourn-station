@@ -1,10 +1,10 @@
 /*
-=================The Soteria scanner=================
+=================The Vesalius-Andra scanner=================
 This is a bugtesting item, please forgive the memes.
 */
 /obj/item/device/scanner/gene_debug_scanner
-	name = "Soteria Debug Scanner"
-	desc = "A worryingly small device for extracting, analyzing and modifying genetic information. Never saw production in Soteria, as it was deemed too humane and convenient for regular use."
+	name = "Vesalius-Andra Debug Scanner"
+	desc = "A worryingly small device for extracting, analyzing and modifying genetic information. Never saw production in Vesalius-Andra, as it was deemed too humane and convenient for regular use."
 	icon_state = "spectrometer"
 	item_state = "analyzer"
 	origin_tech = list(TECH_BLUESPACE = 5, TECH_BIO = 10, TECH_ILLEGAL = 10)
@@ -30,7 +30,7 @@ This is a bugtesting item, please forgive the memes.
 		else if (istype(target, /obj/item/reagent_containers/snacks/meat))
 			var/obj/item/reagent_containers/snacks/meat/meat_target = target
 			held_mutations.initializeFromMeat(meat_target)
-		scan_title = "Soteria Scanner - [target]"
+		scan_title = "Vesalius-Andra Scanner - [target]"
 		scan_data = soteria_scan(held_mutations)
 		user.show_message(scan_data)
 	else if(user.a_intent == I_HURT)
@@ -134,7 +134,7 @@ This is a bugtesting item, please forgive the memes.
 
 /*
 ================="Petite" Mutagenic Scanner=================
-A more player-friendly version of the Soteria scanner, reports basic information that can tell someone what tf is up with a person's genes.
+A more player-friendly version of the Vesalius-Andra scanner, reports basic information that can tell someone what tf is up with a person's genes.
 
 */
 /obj/item/device/scanner/petite_scanner
@@ -223,7 +223,7 @@ It also resets instability to 0 so bad things don't happen.
 */
 
 /obj/item/genetics/purger
-	name = "Soteria Mutagenic Purger"
+	name = "Vesalius-Andra Mutagenic Purger"
 	desc = "An economic gene-fixer specifically made to purge mutations from the body. It takes a very long time to print."
 	icon = 'icons/obj/genetics/dna_syringes.dmi'
 	icon_state = "dna_purger_b"
@@ -475,7 +475,7 @@ Circuit boards for different Genetics Machines.
 */
 
 /obj/item/circuitboard/genetics/cloner
-	build_name = "Soteria Xenofauna Cloning Vat"
+	build_name = "Vesalius-Andra Xenofauna Cloning Vat"
 	build_path = /obj/machinery/genetics/cloner
 	board_type = "machine"
 	origin_tech = list(TECH_BIO = 6)
@@ -496,7 +496,7 @@ Circuit boards for different Genetics Machines.
 	origin_tech = list(TECH_DATA = 2, TECH_BIO = 3)
 
 /obj/item/circuitboard/genetics/gene_analyzer
-	build_name = "Soteria Genetic Analyzer"
+	build_name = "Vesalius-Andra Genetic Analyzer"
 	build_path = /obj/machinery/genetics/gene_analyzer
 	board_type = "machine"
 	origin_tech = list(TECH_DATA = 2, TECH_BIO = 3)

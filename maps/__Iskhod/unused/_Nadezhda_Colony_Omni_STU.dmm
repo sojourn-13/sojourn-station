@@ -2288,7 +2288,7 @@
 /area/nadezhda/security/tactical)
 "avU" = (
 /obj/machinery/door/airlock/multi_tile/glass{
-	name = "Marshals Brig";
+	name = "Rangers Brig";
 	req_one_access = list(63)
 	},
 /obj/machinery/door/firedoor/multi_tile,
@@ -16275,7 +16275,7 @@
 /area/nadezhda/outside/inside_colony)
 "dml" = (
 /obj/machinery/door/airlock/command{
-	name = "Soteria Research Overseer's Office";
+	name = "Vesalius-Andra Research Overseer's Office";
 	req_access = list(30)
 	},
 /obj/machinery/door/firedoor,
@@ -29121,7 +29121,7 @@
 /area/nadezhda/dungeon/outside/abandoned_solars)
 "fGH" = (
 /obj/machinery/door/airlock/command{
-	name = "Soteria Research Overseer's Office";
+	name = "Vesalius-Andra Research Overseer's Office";
 	req_access = list(30)
 	},
 /obj/machinery/door/firedoor,
@@ -36435,7 +36435,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/airlock/multi_tile/glass{
-	name = "Marshals Brig"
+	name = "Rangers Brig"
 	},
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/steel/gray_perforated,
@@ -50126,7 +50126,7 @@
 /area/nadezhda/command/panic_room)
 "jKb" = (
 /obj/machinery/power/smes/buildable{
-	RCon_tag = "Substation - Marshals";
+	RCon_tag = "Substation - Rangers";
 	charge = 5e+006;
 	output_attempt = 1;
 	output_level = 200000;
@@ -53525,7 +53525,7 @@
 /obj/item/folder/cyan,
 /obj/item/folder/cyan,
 /obj/item/device/eftpos{
-	eftpos_name = "Soteria Biolabs EFTPOS scanner"
+	eftpos_name = "Vesalius-Andra Biolabs EFTPOS scanner"
 	},
 /turf/simulated/floor/carpet/sblucarpet,
 /area/nadezhda/command/cbo)
@@ -65071,7 +65071,7 @@
 "mBG" = (
 /obj/structure/table/woodentable,
 /obj/machinery/button/remote/blast_door{
-	id = "Marshals_shutters";
+	id = "Rangers_shutters";
 	name = "Brig Lockdown";
 	req_one_access = list(63)
 	},
@@ -71146,8 +71146,8 @@
 /area/nadezhda/maintenance/undergroundfloor1east)
 "nLk" = (
 /obj/structure/sign/faction/derelict1{
-	desc = "ATTENTION: This area is Soteria Institute property, all trespassers and looters will be prosecuted to the full extent of the law.";
-	name = "NOTICE: Soteria Property";
+	desc = "ATTENTION: This area is VA Biomechanics property, all trespassers and looters will be prosecuted to the full extent of the law.";
+	name = "NOTICE: Vesalius-Andra Property";
 	pixel_x = 32
 	},
 /turf/simulated/floor/tiled/dark/techfloor_grid,
@@ -71603,7 +71603,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/airlock/maintenance_medical{
-	name = "Soteria Maintenance";
+	name = "Vesalius-Andra Maintenance";
 	req_one_access = list(5,45)
 	},
 /obj/machinery/door/blast/regular{
@@ -72916,7 +72916,7 @@
 	},
 /obj/machinery/door/airlock/multi_tile/glass{
 	dir = 2;
-	name = "Marshals Brig";
+	name = "Rangers Brig";
 	req_one_access = list(63)
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -77947,7 +77947,7 @@
 "pdo" = (
 /obj/machinery/door/airlock/multi_tile/glass{
 	dir = 2;
-	name = "Marshals Brig";
+	name = "Rangers Brig";
 	req_one_access = list(63)
 	},
 /obj/structure/cable/green{
@@ -80418,7 +80418,7 @@
 "pCG" = (
 /obj/machinery/door/firedoor/multi_tile,
 /obj/machinery/door/airlock/multi_tile/glass{
-	name = "Marshals Brig";
+	name = "Rangers Brig";
 	req_one_access = list(63)
 	},
 /obj/structure/disposalpipe/segment,
@@ -80530,7 +80530,7 @@
 	pixel_y = -32
 	},
 /obj/item/device/eftpos{
-	eftpos_name = "Soteria Biolabs EFTPOS scanner"
+	eftpos_name = "Vesalius-Andra Biolabs EFTPOS scanner"
 	},
 /obj/item/stamp/rd,
 /obj/structure/table/woodentable,
@@ -92373,7 +92373,7 @@
 "rRF" = (
 /obj/machinery/door/firedoor/multi_tile,
 /obj/machinery/door/airlock/multi_tile/glass{
-	name = "Marshals Brig";
+	name = "Rangers Brig";
 	req_one_access = list(63)
 	},
 /obj/machinery/door/blast/shutters{
@@ -95435,7 +95435,7 @@
 	})
 "swf" = (
 /obj/machinery/door/airlock/maintenance_medical{
-	name = "Soteria Maintenance";
+	name = "Vesalius-Andra Maintenance";
 	req_access = list(5)
 	},
 /obj/machinery/door/firedoor,
@@ -117351,7 +117351,7 @@
 /area/nadezhda/maintenance/undergroundfloor1west)
 "wHO" = (
 /obj/machinery/door/airlock/glass_medical{
-	name = "Soteria Lockerooms";
+	name = "Vesalius-Andra Lockerooms";
 	req_access = list(5)
 	},
 /obj/effect/decal/cleanable/dirt,

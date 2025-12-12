@@ -12,6 +12,12 @@
 	icon_state = "assistant_formal"
 	item_state = "gy_suit"
 
+/obj/item/clothing/under/rank/hop
+	desc = "A specialized uniform dedicated to the Hospitality Manager."
+	name = "hospitality manager's uniform"
+	icon_state = "hop"
+	item_state = "hop"
+
 /obj/item/clothing/under/rank/bartender
 	desc = "An expensive shirt and tie with tailored pants."
 	name = "bartender's uniform"
@@ -308,3 +314,10 @@
 	desc = "An old gorka suit painted over with Lonestar orange and black."
 	icon_state = "ls_gorka"
 	item_state = "ls_gorka"
+
+/obj/item/clothing/under/rank/journalist
+	name = "journalist's uniform"
+	desc = "A cheap but charming outfit, perfect for looking presentable while chasing a scoop."
+	icon_state = "colony"
+	item_state = "colony"
+

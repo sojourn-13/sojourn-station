@@ -6006,7 +6006,7 @@
 /area/nadezhda/hallway/surface/section2)
 "ane" = (
 /obj/machinery/door/airlock/multi_tile/glass{
-	name = "Soteria Shuttle Hangar"
+	name = "Vesalius-Andra Shuttle Hangar"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,

@@ -58,7 +58,7 @@
 	price_tag = 40
 
 /obj/item/tool/sword/katana/nano
-	name = "\improper Soteria \"Muramasa\" katana"
+	name = "\improper Vesalius-Andra \"Muramasa\" katana"
 	desc = "After an extensive binge of ancient animated recordings, a scientist decided to upgrade a recovered katana."
 	icon_state = "eutactic_katana"
 	item_state = "eutactic_katana"

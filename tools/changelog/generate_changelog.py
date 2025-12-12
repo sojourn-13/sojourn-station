@@ -98,7 +98,7 @@ def gather_commits(start: str, end: str = "HEAD") -> List[Tuple[str, str, str]]:
 
 KEYWORD_TO_TAG = [
     # gameplay/system specific
-    (re.compile(r"\btrade|trade\.dm|trade_stations|_trade_station|LSS\b", re.I), "refactor"),
+    (re.compile(r"\btrade|trade\.dm|trade_stations|_trade_station|FL\b", re.I), "refactor"),
     (re.compile(r"\bprice|export|balance|econom(y|ic)|cost\b", re.I), "balance"),
     (re.compile(r"\bfix|bug|hotfix|error|runtime|crash|loop\b", re.I), "fix"),
     (re.compile(r"\bui|ux|console|terminal|screen|interface|tmpl|tgui\b", re.I), "tweak"),

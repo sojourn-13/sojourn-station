@@ -2,7 +2,7 @@
 	name = "Absolutist Wall Obelisk"
 	desc = "The wall mounted version of the obelisk, unlike the larger version, it can remain active even without an active cruciform nearby. \
 	Despite its extended function, it requires biomatter loaded into it periodically. \
-	One of the few designs created for the church by the Greyson AI under control by the Soteria, much to Soteria's annoyance."
+	One of the few designs created for the church by the Greyson AI under control by the Vesalius-Andra, much to Vesalius-Andra's annoyance."
 	icon = 'icons/obj/neotheology_machinery.dmi'
 	icon_state = "nt_wall_obelisk"
 
@@ -85,7 +85,7 @@
 	name = "Silver Absolutist Wall Obelisk"
 	desc = "The wall mounted version of the obelisk, unlike the larger version, it can remain active even without an active cruciform nearby. \
 	Despite its extended function, it requires biomatter loaded into it periodically. \
-	One of the few designs created for the church by the Greyson AI under control by the Soteria, much to Soteria's annoyance. This one is silver, with lower damage output."
+	One of the few designs created for the church by the Greyson AI under control by the Vesalius-Andra, much to Vesalius-Andra's annoyance. This one is silver, with lower damage output."
 	icon_state = "nt_wall_obelisk_silver"
 
 	damage = 30

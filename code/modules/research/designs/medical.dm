@@ -192,7 +192,7 @@
 	category = "Medical"
 
 /datum/design/research/item/si_kit
-	name = "Empty Soteria Advanced Kit"
+	name = "Empty Vesalius-Andra Advanced Kit"
 	build_path = /obj/item/storage/firstaid/regular/si/empty
 	category = "Medical"
 
@@ -205,7 +205,7 @@
 	category = "Medical"
 
 /datum/design/research/item/medical/medimplant_sci
-	name = "Soteria Medical Omnitool"
+	name = "Vesalius-Andra Medical Omnitool"
 	desc = "An all-in-one smart medical tool implant based on the legendary Greyson Positronic model."
 	build_path = /obj/item/tool/medmultitool/medimplant/sci
 	materials = list(MATERIAL_STEEL = 5, MATERIAL_GLASS = 2, MATERIAL_PLASTIC = 5, MATERIAL_SILVER = 1)

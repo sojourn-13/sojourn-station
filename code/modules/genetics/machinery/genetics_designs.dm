@@ -3,7 +3,7 @@ Designs for various genetics components
 
 */
 /datum/design/autolathe/genetics/cloner
-	name = "Soteria Xenofauna Cloning Vat Board"
+	name = "Vesalius-Andra Xenofauna Cloning Vat Board"
 	build_path = /obj/item/circuitboard/genetics/cloner
 
 /datum/design/autolathe/genetics/clone_console
@@ -11,7 +11,7 @@ Designs for various genetics components
 	build_path = /obj/item/circuitboard/genetics/clone_console
 
 /datum/design/autolathe/genetics/purger
-	name = "Soteria Mutagenic Purger"
+	name = "Vesalius-Andra Mutagenic Purger"
 	build_path = /obj/item/genetics/purger
 	time = 100
 

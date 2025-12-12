@@ -35,7 +35,7 @@
 	icon_drape = null
 
 /obj/item/clothing/suit/storage/toggle/labcoat/chemist
-	name = "soteria chemist labcoat"
+	name = "Vesalius-Andra chemist labcoat"
 	desc = "A suit that protects against minor chemical spills. Has an orange stripe on the shoulder."
 	icon_state = "labcoat_chem_open"
 	icon_open = "labcoat_chem_open"

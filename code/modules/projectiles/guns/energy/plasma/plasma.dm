@@ -99,7 +99,7 @@
 
 /obj/item/gun/energy/plasma/super_heavy
 	name = "\"Ragefire\" Experimental Plasma Gun"
-	desc = "A \"Soteria\" brand experimental weapon that uses coolant to fire deadly plasma projectiles without needing to cool down between shots, however the gun is extremely unstable without cooling."
+	desc = "A \"Vesalius-Andra\" brand experimental weapon that uses coolant to fire deadly plasma projectiles without needing to cool down between shots, however the gun is extremely unstable without cooling."
 	icon = 'icons/obj/guns/energy/plasma.dmi'
 	icon_state = "plasma"
 	fire_sound = 'sound/weapons/energy/lasercannonfire.ogg'

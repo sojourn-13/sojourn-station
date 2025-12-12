@@ -13,7 +13,7 @@
 	var/weed_kill_str = 0
 
 /obj/item/plantspray/water
-	name = "LSS Plant Mineral Water"
+	name = "FL Plant Mineral Water"
 	desc = "A mix of both water and needed robustharvest for plant survival in enclosed spaces. Do not drink!"
 	icon_state = "bottle16"
 	toxicity = -5 //Heals plants that are toxic basiclly

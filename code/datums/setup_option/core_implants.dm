@@ -15,7 +15,7 @@
 
 /datum/category_item/setup_option/core_implant/psionic_tumor
 	name = "Psionic Organ"
-	desc = "An unusual organ implanted by the Soteria research or obtained through other methods. It is presently unknown what it is truly capable of and psions are entirely unknown outside of Nadezhda. \
+	desc = "An unusual organ implanted by the Vesalius-Andra research or obtained through other methods. It is presently unknown what it is truly capable of and psions are entirely unknown outside of Nadezhda. \
 	Those with this organ must maintain purity of their bodies, any implants, cruciforms, or synthetic limbs will be violently and painfully rejected while this organ exists in the body."
 	implant_organ_type = "psionic tumor"
 	restricted_jobs = list(
@@ -27,20 +27,20 @@
 
 /datum/category_item/setup_option/core_implant/psionic_tumor_psychiatrist
 	name = "Cultured Psionic Organ"
-	desc = "An unusual organ implanted by the Soteria research or obtained through other methods. It is presently unknown what it is truly capable of and psions are entirely unknown outside of Nadezhda. \
+	desc = "An unusual organ implanted by the Vesalius-Andra research or obtained through other methods. It is presently unknown what it is truly capable of and psions are entirely unknown outside of Nadezhda. \
 	Those with this organ must maintain purity of their bodies, any implants, cruciforms, or synthetic limbs will be violently and painfully rejected while this organ exists in the body. This \
-	particular organ is the result of development while inside the brain of someone who understands the mind intimiately, offering them expanded powers and abilities when working as a Soteria psych."
+	particular organ is the result of development while inside the brain of someone who understands the mind intimiately, offering them expanded powers and abilities when working as a Vesalius-Andra psych."
 	implant_organ_type = "cultured tumor"
 	restricted_jobs = list(
 		/datum/job/doctor,
-		/datum/job/recovery_team,
+		/datum/job/paramedic,
 		/datum/job/medstudent,
 		/datum/job/premier,
 		/datum/job/pg,
 		/datum/job/chaplain,
 		/datum/job/chief_engineer,
 		/datum/job/merchant,
-		/datum/job/smc,
+		/datum/job/swo,
 		/datum/job/swo,
 		/datum/job/cyborg, //To stop people auto dropping these
 		/datum/job/ai,
@@ -50,7 +50,7 @@
 		/datum/job/robostudent
 	) // The way to restrict this to one job could be done cleaner but this way easier so fuck it. -Kaz
 	allow_modifications = FALSE
-	restricted_depts = SECURITY | BLACKSHIELD | PROSPECTORS | ENGINEERING | CHURCH | INDEPENDENT | CIVILIAN | LSS | LODGE
+	restricted_depts = SECURITY | BLACKSHIELD | PROSPECTORS | ENGINEERING | CHURCH | INDEPENDENT | CIVILIAN | FL | LODGE
 	restricted_to_species = list(FORM_HUMAN, FORM_EXALT_HUMAN, FORM_SABLEKYNE, FORM_KRIOSAN, FORM_AKULA, FORM_MARQUA, FORM_NARAMAD, FORM_CINDAR, FORM_MYCUS, FORM_FOLKEN, FORM_CHTMANT)
 
 /datum/category_item/setup_option/core_implant/nanogate
@@ -77,14 +77,14 @@
 		/datum/job/cmo,
 		/datum/job/merchant,
 		/datum/job/rd,
-		/datum/job/smc,
+		/datum/job/swo,
 		/datum/job/swo,
 		/datum/job/cyborg, //To stop people auto dropping these
 		/datum/job/ai
 		)
 	allow_modifications = TRUE
 	restricted_to_species = list(FORM_HUMAN, FORM_EXALT_HUMAN, FORM_SABLEKYNE, FORM_KRIOSAN, FORM_AKULA, FORM_MARQUA, FORM_NARAMAD, FORM_CINDAR, FORM_AGSYNTH, FORM_UNBRANDED, FORM_FBP)
-	restricted_depts = SECURITY | BLACKSHIELD | PROSPECTORS | MEDICAL | SCIENCE | CHURCH | INDEPENDENT | CIVILIAN | LSS | LODGE
+	restricted_depts = SECURITY | BLACKSHIELD | PROSPECTORS | MEDICAL | SCIENCE | CHURCH | INDEPENDENT | CIVILIAN | FL | LODGE
 
 /datum/category_item/setup_option/core_implant/opifex_nanogate
 	name = "Opifex Nanogate"

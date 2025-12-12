@@ -327,7 +327,7 @@ var/world_topic_spam_protect_time = world.timeofday
 	s += ")"
 	s += "18+ M/HRP, Frequent Events, Evolving Storyline, RuneChat enabled."
 	s += "<br>"
-	s += "Map: Nadezhda Colony"
+	s += "Map: Iskhod Colony"
 	s += "<br>"
 	s += "Storyteller"
 

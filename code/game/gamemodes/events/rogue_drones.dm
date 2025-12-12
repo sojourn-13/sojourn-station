@@ -26,7 +26,7 @@
 	//We'll pick space tiles which have windows nearby
 	//This means that drones will only be spawned in places where someone could see them
 		//And thusly, places where they might fire into the ship
-	var/area/spess = locate(/area/nadezhda/outside/forest) in world
+	var/area/spess = locate(/area/iskhod/outside/forest) in world
 	for (var/turf/T in spess)
 		if (!(T.z in GLOB.maps_data.station_levels))
 			continue
@@ -87,6 +87,6 @@
 		num_recovered++
 
 	if(num_recovered > drones_list.len * 0.75)
-		command_announcement.Announce("Soteria drone control reports the malfunctioning wing has been recovered safely.", "Rogue drone alert")
+		command_announcement.Announce("Vesalius-Andra drone control reports the malfunctioning wing has been recovered safely.", "Rogue drone alert")
 	else
-		command_announcement.Announce("Soteria drone control registers disappointment at the loss of the drones, but the survivors have been recovered.", "Rogue drone alert")
+		command_announcement.Announce("Vesalius-Andra drone control registers disappointment at the loss of the drones, but the survivors have been recovered.", "Rogue drone alert")

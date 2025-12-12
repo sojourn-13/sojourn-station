@@ -528,7 +528,7 @@
 		usr.update_action_buttons()
 		return 1
 
-//Marshals
+//Rangers
 /obj/item/clothing/head/helmet/marshal
 	name = "marshal helmet"
 	desc = "Standard operator gear. Protects the head from impacts. Painted in marshal colors."
@@ -1112,7 +1112,7 @@
 		usr.update_action_buttons()
 		return 1
 
-//Soteria
+//Vesalius-Andra
 /obj/item/clothing/head/helmet/soteriasuit
 	name = "'Mark II' environmental protection helmet"
 	desc = "You feel like this helmet is cheap, for some reason."

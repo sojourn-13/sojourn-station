@@ -36,7 +36,7 @@
 
 /obj/item/gun/projectile/automatic/vintorez/NM_colony
 	name = "\"Val\" silenced rifle"
-	desc = "A powerful armor-piercing marksman rifle with an integrated silencer. Utilises a defunct design, but remains a popular armament. Uses 7.5mm Rifle rounds.\nThis model of the \"Vintorez\" rifle has been reclaimed and repurposed by Nadezhda Marshals, making it free of Excelsior taint."
+	desc = "A powerful armor-piercing marksman rifle with an integrated silencer. Utilises a defunct design, but remains a popular armament. Uses 7.5mm Rifle rounds.\nThis model of the \"Vintorez\" rifle has been reclaimed and repurposed by Iskhod Rangers, making it free of Excelsior taint."
 	icon = 'icons/obj/guns/projectile/vintorez_bs.dmi'
 	icon_state = "vintorez_bs"
 	item_state = "vintorez_bs"

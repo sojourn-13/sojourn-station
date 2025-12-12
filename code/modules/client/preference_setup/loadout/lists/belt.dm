@@ -37,7 +37,7 @@
 /datum/gear/belt/medbelt
 	display_name = "Medical belt Selection"
 	path = /obj/item/storage/belt/medical
-	allowed_roles = list("Soteria Doctor","Soteria Biolab Officer","Soteria Lifeline Technician")
+	allowed_roles = list("Vesalius-Andra Doctor","Vesalius-Andra Biolab Officer","Vesalius-Andra Lifeline Technician")
 	cost = 1
 
 /datum/gear/belt/medbelt/New()

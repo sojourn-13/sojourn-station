@@ -12,7 +12,7 @@
 		var/current_price = 0
 		if(A in valied_areas)
 			continue
-		if (istype(A, /area/nadezhda))
+		if (istype(A, /area/iskhod))
 			continue
 		if (A.is_dungeon_lootable)
 			continue

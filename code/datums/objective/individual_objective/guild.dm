@@ -1,7 +1,7 @@
 
 /datum/individual_objective/repossession
 	name = "Repossession"
-	req_department = list(DEPARTMENT_LSS)
+	req_department = list(DEPARTMENT_SERVICE)
 	limited_antag = TRUE
 	rarity = 4
 	var/obj/item/target
@@ -29,7 +29,7 @@
 /datum/individual_objective/museum
 	name = "It Belongs in a Museum"
 	desc = "Ensure that 3-4 oddities are exported or sold via trade beacon."
-	req_department = list(DEPARTMENT_LSS)
+	req_department = list(DEPARTMENT_SERVICE)
 
 /datum/individual_objective/museum/assign()
 	..()
@@ -48,7 +48,7 @@
 
 /datum/individual_objective/order
 	name = "Special Order"
-	req_department = list(DEPARTMENT_LSS)
+	req_department = list(DEPARTMENT_SERVICE)
 	var/obj/item/target
 
 /datum/individual_objective/order/proc/pick_candidates()
@@ -97,7 +97,7 @@
 
 /datum/individual_objective/stripping
 	name = "Stripping Operation"
-	req_department = list(DEPARTMENT_LSS)
+	req_department = list(DEPARTMENT_SERVICE)
 	limited_antag = TRUE
 	rarity = 4
 	var/price_target = 2000
@@ -139,7 +139,7 @@
 
 /datum/individual_objective/transfer
 	name = "Questionable Business"
-	req_department = list(DEPARTMENT_LSS)
+	req_department = list(DEPARTMENT_SERVICE)
 	var/datum/money_account/target
 
 /datum/individual_objective/transfer/can_assign(mob/living/L)

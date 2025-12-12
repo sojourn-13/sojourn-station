@@ -126,11 +126,11 @@ var/global/datum/computer_file/data/email_account/service/payroll/payroll_mailer
 	department_account.wage = department.get_total_budget()
 
 	department_account.department_id = department.id
-	if(department.id in DEPARTMENT_LSS)
+	if(department.id in DEPARTMENT_SERVICE)
 		department_account.can_make_accounts = TRUE
 
 	//create an entry in the account transaction log for when it was created
-	var/datum/transaction/T = new(department.account_initial_balance, department_account.owner_name, "Account creation", "Lonestar Shipping Solutions Terminal #277")
+	var/datum/transaction/T = new(department.account_initial_balance, department_account.owner_name, "Account creation", "Frontier Logistics Terminal #277")
 	T.date = "2 April, 2649"
 	T.time = "11:24"
 

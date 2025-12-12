@@ -1842,7 +1842,7 @@
 /area/nadezhda/medical/exam_room)
 "aek" = (
 /obj/machinery/door/airlock/glass_medical{
-	name = "Soteria Lockerooms";
+	name = "Vesalius-Andra Lockerooms";
 	req_access = list(5)
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -34277,7 +34277,7 @@
 /area/nadezhda/command/tcommsat/computer)
 "fnL" = (
 /obj/machinery/door/airlock/command{
-	name = "Soteria Research Overseer's Office";
+	name = "Vesalius-Andra Research Overseer's Office";
 	req_access = list(30)
 	},
 /obj/machinery/door/firedoor,
@@ -41013,7 +41013,7 @@
 /area/turret_protected/ai)
 "jKQ" = (
 /obj/machinery/door/airlock/command{
-	name = "Soteria Research Overseer's Office";
+	name = "Vesalius-Andra Research Overseer's Office";
 	req_access = list(30)
 	},
 /obj/machinery/door/firedoor,
@@ -43783,7 +43783,7 @@
 	pixel_y = -32
 	},
 /obj/item/device/eftpos{
-	eftpos_name = "Soteria Biolabs EFTPOS scanner"
+	eftpos_name = "Vesalius-Andra Biolabs EFTPOS scanner"
 	},
 /obj/item/stamp/rd,
 /obj/structure/table/woodentable,
@@ -49340,7 +49340,7 @@
 /area/nadezhda/engineering/atmos)
 "peT" = (
 /obj/machinery/power/smes/buildable{
-	RCon_tag = "Substation - Marshals";
+	RCon_tag = "Substation - Rangers";
 	charge = 5e+006;
 	output_attempt = 1;
 	output_level = 200000;
@@ -52871,7 +52871,7 @@
 "rAM" = (
 /obj/structure/table/woodentable,
 /obj/item/device/eftpos{
-	eftpos_name = "Soteria Biolabs EFTPOS scanner"
+	eftpos_name = "Vesalius-Andra Biolabs EFTPOS scanner"
 	},
 /turf/simulated/floor/carpet/sblucarpet,
 /area/nadezhda/command/cbo)

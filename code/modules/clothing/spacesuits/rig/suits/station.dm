@@ -403,7 +403,7 @@ Technomancer RIG
 /obj/item/rig/recovery_suit
 	name = "recovery team suit control module"
 	suit_type = "Recovery Team hardsuit"
-	desc = "An upgraded hardsuit designed by the Soteria for their Recovery Team division. While not as heavily armored as a proper hardsuit, the inbuilt medical systems make it highly prized. \
+	desc = "An upgraded hardsuit designed by the Vesalius-Andra for their Recovery Team division. While not as heavily armored as a proper hardsuit, the inbuilt medical systems make it highly prized. \
 	It is best suited for surviving and combating wild life, but has reasonably decent kevlar plating and impact pads to absorb bullets and energy blasts."
 	icon_state = "response_team"
 	armor_list = list(
@@ -448,8 +448,8 @@ Technomancer RIG
 /obj/item/rig/cmo
 	name = "SI 'Retainer' control module"
 	suit_type = "SI 'Retainer' hardsuit"
-	desc = "An upgraded and updated Soteria 'Reclaimer' RIGsuit made for field surgery in dangerous locations, this suit has undergone a series of upgrades to improve its utility \
-	for Soteria's resident overworked Chief Biolab Overseer.  Improved servos are paired with neural-mnemonic sensors allowing the user unmatched speed and dexterity- one can easily forget that they are even wearing the suit."
+	desc = "An upgraded and updated Vesalius-Andra 'Reclaimer' RIGsuit made for field surgery in dangerous locations, this suit has undergone a series of upgrades to improve its utility \
+	for Vesalius-Andra's resident overworked Chief Biolab Overseer.  Improved servos are paired with neural-mnemonic sensors allowing the user unmatched speed and dexterity- one can easily forget that they are even wearing the suit."
 	icon_state = "cmo_rig"
 	armor_list = list(
 		melee = 0,

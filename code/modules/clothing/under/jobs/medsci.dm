@@ -11,7 +11,7 @@
 
 /obj/item/clothing/under/rank/scientist
 	desc = "A dark navy scientist's jacket complete with navy pants. The fibre offers minor biohazard protection."
-	name = "Soteria Scientist's uniform"
+	name = "Vesalius-Andra Scientist's uniform"
 	icon_state = "science"
 	item_state = "w_suit"
 
@@ -20,7 +20,7 @@
 
 /obj/item/clothing/under/rank/chemist
 	desc = "A orange chemist's shirt complete with tan pants. The fiber offers minor biohazard protection."
-	name = "Soteria Chemist's uniform"
+	name = "Vesalius-Andra Chemist's uniform"
 	icon_state = "chemistry"
 	item_state = "chemistry"
 
@@ -31,7 +31,7 @@
  * Medical
  */
 /obj/item/clothing/under/rank/moebius_biolab_officer
-	desc = "A Biolab Overseer's outfit in Soteria Medical colors. The fiber offers minor biohazard protection."
+	desc = "A Biolab Overseer's outfit in Vesalius-Andra Medical colors. The fiber offers minor biohazard protection."
 	name = "Biolab Overseer's uniform"
 	icon_state = "cbo"
 	item_state = "cbo"
@@ -67,7 +67,7 @@
 
 /obj/item/clothing/under/rank/virologist
 	desc = "A green virologist's shirt complete with tan pants. The fiber offers minor biohazard protection."
-	name = "Soteria Virologist's uniform"
+	name = "Vesalius-Andra Virologist's uniform"
 	icon_state = "virology"
 	item_state = "w_suit"
 
@@ -75,8 +75,8 @@
 	armor_list = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 10, rad = 0)
 
 /obj/item/clothing/under/rank/medical
-	desc = "A Doctor's outfit in Soteria Medical colors. The fiber offers minor biohazard protection."
-	name = "Soteria Doctor's uniform"
+	desc = "A Doctor's outfit in Vesalius-Andra Medical colors. The fiber offers minor biohazard protection."
+	name = "Vesalius-Andra Doctor's uniform"
 	icon_state = "medical"
 	item_state = "medical"
 
@@ -130,13 +130,13 @@
 
 /obj/item/clothing/under/rank/psych
 	desc = "A calming turquoise turtleneck combined with dark blue slacks."
-	name = "Soteria psychologist's turtleneck"
+	name = "Vesalius-Andra psychologist's turtleneck"
 	icon_state = "psychturtle"
 	item_state = "b_suit"
 
 /obj/item/clothing/under/rank/paramedic
 	desc = "A jumpsuit made by soteria for their Lifeline Technicians. It's made with reinforced fiber to offer more protection for recovery operations."
-	name = "Soteria Lifeline Technician jumpsuit"
+	name = "Vesalius-Andra Lifeline Technician jumpsuit"
 	icon_state = "paramedic"
 	item_state = "paramedic"
 	permeability_coefficient = 0.50
@@ -176,8 +176,8 @@
 		return 1
 
 /obj/item/clothing/under/rank/paramedic/bdu
-	desc = "An old BDU that someone appears to have dyed in the signature colours of Soteria Medical. It is made with reinforced fibers and sterile materials."
-	name = "Soteria Lifeline Technician bdu"
+	desc = "An old BDU that someone appears to have dyed in the signature colours of Vesalius-Andra Medical. It is made with reinforced fibers and sterile materials."
+	name = "Vesalius-Andra Lifeline Technician bdu"
 	icon_state = "bdutt"
 	item_state = "bdutt"
 

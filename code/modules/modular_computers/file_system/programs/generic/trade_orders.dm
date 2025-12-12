@@ -1,6 +1,6 @@
 /datum/computer_file/program/trade/order
 	filename = "trade_orders"
-	filedesc = "LSS\'s Trade Order Requests"
+	filedesc = "FL\'s Trade Order Requests"
 	program_menu_icon = "truck-loading"
 	nanomodule_path = /datum/nano_module/program/trade/order
 	extended_desc = "Electronic handbook containing inventory information about discovered trade beacons. Trade orders can be requested using this."

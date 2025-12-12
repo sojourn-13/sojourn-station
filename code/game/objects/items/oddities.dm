@@ -153,7 +153,7 @@
 
 /obj/item/oddity/common/paper_omega
 	name = "collection of obscure reports"
-	desc = "Even the authors seem to be rather skeptical about their findings. The reports are not connected to each other, but their results are similar. The logo is faded, making it hard to tell if this was Greyson, Soteria, or an independent group."
+	desc = "Even the authors seem to be rather skeptical about their findings. The reports are not connected to each other, but their results are similar. The logo is faded, making it hard to tell if this was Greyson, Vesalius-Andra, or an independent group."
 	icon_state = "reports1"
 	prob_perk = 45 //The skeptical mind of the inker helps keep it grounded but it shows something unable to be shaken out of the mind
 	oddity_stats = list(
@@ -239,7 +239,7 @@
 
 /obj/item/oddity/common/instructional_bio
 	name = "first-aid book"
-	desc = "Instructional manual for Soteria personnel giving basic knowledge of CPR and how to deal with Unruly patients"
+	desc = "Instructional manual for Vesalius-Andra personnel giving basic knowledge of CPR and how to deal with Unruly patients"
 	icon_state = "instructional_bio"
 	prob_perk = 5 //Grounded and talked about, instructional manual for Lifeline techs
 	oddity_stats = list(
@@ -725,7 +725,7 @@
 
 /obj/item/oddity/si_bluespace_scanner
 	name = "Bluespace Tuning Device"
-	desc = "An anomalous, experimental tool produced by the Soteria Institute to get accurate readings of local and global Bluespace entropy." // It's a lie that it stabilizes Bluespace.
+	desc = "An anomalous, experimental tool produced by the VA Biomechanics to get accurate readings of local and global Bluespace entropy." // It's a lie that it stabilizes Bluespace.
 	icon_state = "si_scan"
 	item_state = "si_scan"
 	matter = list(MATERIAL_PLASTIC = 15, MATERIAL_STEEL = 10, MATERIAL_PLASMAGLASS = 2, MATERIAL_GOLD = 10, MATERIAL_SILVER = 10, MATERIAL_PLASMA = 5, MATERIAL_DIAMOND = 1)

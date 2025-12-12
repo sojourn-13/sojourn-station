@@ -138,7 +138,7 @@
 		GLOB.ironhammer_objectives_completed++
 	else if((DEPARTMENT_SCIENCE in req_department) || (DEPARTMENT_MEDICAL in req_department))
 		GLOB.moebius_objectives_completed++
-	else if(DEPARTMENT_LSS in req_department)
+	else if(DEPARTMENT_SERVICE in req_department)
 		GLOB.guild_objectives_completed++
 	else if(DEPARTMENT_ENGINEERING in req_department)
 		GLOB.technomancer_objectives_completed++

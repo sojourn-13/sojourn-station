@@ -107,10 +107,10 @@ ADMIN_VERB_ADD(/client/proc/test_MD, R_DEBUG, null)
 
 	var/default_spawn = "Cryogenic Storage"
 
-	var/allowed_jobs = list(/datum/job/premier, /datum/job/rd, /datum/job/pg, /datum/job/cmo, /datum/job/chief_engineer, /datum/job/swo, /datum/job/smc, /datum/job/foreman,
+	var/allowed_jobs = list(/datum/job/premier, /datum/job/rd, /datum/job/pg, /datum/job/cmo, /datum/job/chief_engineer, /datum/job/swo, /datum/job/swo, /datum/job/foreman,
 						/datum/job/supsec, /datum/job/inspector, /datum/job/officer, /datum/job/officerjr,
-						/datum/job/serg, /datum/job/medspec, /datum/job/trooper, /datum/job/cadet,
-						/datum/job/doctor, /datum/job/recovery_team, /datum/job/psychiatrist, /datum/job/medstudent,
+						/datum/job/supsec, /datum/job/medspec, /datum/job/officer, /datum/job/officerjr,
+						/datum/job/doctor, /datum/job/paramedic, /datum/job/psychiatrist, /datum/job/medstudent,
 						/datum/job/technomancer, /datum/job/apprentice,
 						/datum/job/cargo_tech, /datum/job/mining, /datum/job/merchant,
 						/datum/job/salvager, /datum/job/pro, /datum/job/fence,
@@ -141,17 +141,20 @@ ADMIN_VERB_ADD(/client/proc/test_MD, R_DEBUG, null)
 	var/list/usable_email_tlds = list("nad_col.org","nadezhda.scg","nadezhda.net")
 	var/path = "nadezhda"
 
-	var/access_modify_region = list(
-		ACCESS_REGION_SECURITY = list(access_hos, access_change_ids),
-		ACCESS_REGION_MEDBAY = list(access_cmo, access_change_ids),
-		ACCESS_REGION_RESEARCH = list(access_rd, access_change_ids),
-		ACCESS_REGION_ENGINEERING = list(access_ce, access_change_ids),
-		ACCESS_REGION_COMMAND = list(access_change_ids),
-		ACCESS_REGION_GENERAL = list(access_change_ids),
-		ACCESS_REGION_SUPPLY = list(access_change_ids),
-		ACCESS_REGION_CHURCH = list(access_nt_preacher, access_change_ids),
-		ACCESS_REGION_PROSPECTOR = list(access_foreman, access_change_ids)
-	)
+	var/access_modify_region
+
+/datum/maps_data/New()
+	..()
+	access_modify_region = list()
+	access_modify_region[ACCESS_REGION_SECURITY] = list(access_hos, access_change_ids)
+	access_modify_region[ACCESS_REGION_MEDBAY] = list(access_cmo, access_change_ids)
+	access_modify_region[ACCESS_REGION_RESEARCH] = list(access_rd, access_change_ids)
+	access_modify_region[ACCESS_REGION_ENGINEERING] = list(access_ce, access_change_ids)
+	access_modify_region[ACCESS_REGION_COMMAND] = list(access_change_ids)
+	access_modify_region[ACCESS_REGION_GENERAL] = list(access_change_ids)
+	access_modify_region[ACCESS_REGION_SUPPLY] = list(access_change_ids)
+	access_modify_region[ACCESS_REGION_CHURCH] = list(access_nt_preacher, access_change_ids)
+	access_modify_region[ACCESS_REGION_PROSPECTOR] = list(access_foreman, access_change_ids)
 
 /datum/maps_data/proc/character_save_path(var/slot)
 	return "/[path]/character[slot]"

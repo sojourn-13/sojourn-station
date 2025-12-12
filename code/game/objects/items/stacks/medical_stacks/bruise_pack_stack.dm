@@ -362,9 +362,9 @@
 	return ..()
 
 /obj/item/stack/medical/bruise_pack/soteria
-	name = "Soteria advanced gauze"
-	singular_name = "Soteria advanced gauze"
-	desc = "Premium sterile gauze manufactured by the Soteria Institute. Each strip is pre-treated with a specialized medical cocktail including quick-clotting agents, advanced healing compounds, detoxification chemicals, and broad-spectrum antibiotics. The gauze features Soteria's signature blue threading and comes with more applications than standard field dressings. Hand-crafted with care by skilled Soteria Medical personnel with care and concern."
+	name = "Vesalius-Andra advanced gauze"
+	singular_name = "Vesalius-Andra advanced gauze"
+	desc = "Premium sterile gauze manufactured by the VA Biomechanics. Each strip is pre-treated with a specialized medical cocktail including quick-clotting agents, advanced healing compounds, detoxification chemicals, and broad-spectrum antibiotics. The gauze features Vesalius-Andra's signature blue threading and comes with more applications than standard field dressings. Hand-crafted with care by skilled Vesalius-Andra Medical personnel with care and concern."
 	icon_state = "sr_brutepack"
 	preloaded_reagents = list("quickclot" = 1, "meralyne" = 2, "anti_toxin" = 2, "spaceacillin" = 1, "sterilizine" = 1)
 	fancy_icon = TRUE

@@ -33,7 +33,7 @@
 /*******************/
 /obj/mecha/combat/gygax/marshals
 	name = "M.A.I.D Exosuit"
-	desc = "The Marshals' Armored Incentive of Dispersal, a fancy name for a visibly aging exosuit that has visibly been collecting dust in some unused corner of the Marshals offices. \
+	desc = "The Rangers' Armored Incentive of Dispersal, a fancy name for a visibly aging exosuit that has visibly been collecting dust in some unused corner of the Rangers offices. \
 	It appears to have much lighter armor than even a standard gygax and despite still bearing the characteristic angled plates of its Gygax cousin, is unlikely to stand up under extended\
 	small-arms fire."
 	icon_state = "maid"

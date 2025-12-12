@@ -22,10 +22,10 @@
 /datum/event/ameridian_migration/setup()
 	//We'll pick space tiles which have windows nearby
 	//This means that carp will only be spawned in places where someone could see them
-	var/area/forest = locate(/area/nadezhda/outside/forest) in world
+	var/area/forest = locate(/area/iskhod/outside/forest) in world
 	if(prob(30))
 		//Deep Jungel
-		forest = locate(/area/nadezhda/outside/meadow) in world
+		forest = locate(/area/iskhod/outside/meadow) in world
 		deep_forests = TRUE
 	for (var/turf/T in forest)
 		if (!(T.z in GLOB.maps_data.station_levels) && !deep_forests)

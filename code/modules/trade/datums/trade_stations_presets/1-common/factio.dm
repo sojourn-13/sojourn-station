@@ -18,9 +18,9 @@
 	regain_stock = FALSE
 	inventory = list(
 		"Disk Designs" = list(
-			/obj/item/pc_part/drive/disk/design/misc = custom_good_nameprice("Lonestar Miscellaneous Pack", list(800, 1000)),
-			/obj/item/pc_part/drive/disk/design/robustcells = custom_good_nameprice("Lonestar Robustcells", list(800, 1000)),
-			/obj/item/pc_part/drive/disk/design/janitor = custom_good_nameprice("Lonestar Janitor Pack", list(800, 1000)),
+			/obj/item/pc_part/drive/disk/design/misc = custom_good_nameprice("Frontier Logistics Miscellaneous Pack", list(800, 1000)),
+			/obj/item/pc_part/drive/disk/design/robustcells = custom_good_nameprice("Frontier Logistics Robustcells", list(800, 1000)),
+			/obj/item/pc_part/drive/disk/design/janitor = custom_good_nameprice("Frontier Logistics Janitor Pack", list(800, 1000)),
 			/obj/item/pc_part/drive/disk/design/nonlethal_ammo = custom_good_nameprice("H&S Nonlethal Magazines Pack", list(800, 1000)),
 			/obj/item/pc_part/drive/disk/design/lethal_ammo = custom_good_nameprice("H&S Lethal Magazines Pack", list(800, 1000)),
 			/obj/item/pc_part/drive/disk/design/security = custom_good_nameprice("Security Miscellaneous Pack", list(800, 1000)),

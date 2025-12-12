@@ -16,7 +16,7 @@
 */
 
 /datum/design/research/item/greyson/cog_sprocket
-	name = "Soteria \"Sprocket\" laser carbine"
+	name = "Vesalius-Andra \"Sprocket\" laser carbine"
 	build_path = /obj/item/gun/energy/cog/sprocket
 	category = CAT_WEAPON
 

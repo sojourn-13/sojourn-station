@@ -1,6 +1,6 @@
 /mob/living/carbon/superior/handmade
 	name = "Custom-made Drone"
-	desc = "Built from the Soteria robotics division's craftsmanship, and gathered designs of Greyson positronics, each of these fully robotic automatons is a unique, handmade, heavily armored assembly."
+	desc = "Built from the Vesalius-Andra robotics division's craftsmanship, and gathered designs of Greyson positronics, each of these fully robotic automatons is a unique, handmade, heavily armored assembly."
 	icon = 'icons/mob/custom_bot.dmi' //roomba in this file was created by Toriate#0657
 	faction = "neutral"
 	pass_flags = PASSTABLE

@@ -52,7 +52,7 @@
 		/datum/design/autolathe/ammo/smg,
 		/datum/design/autolathe/ammo/smg_lethal,
 		/datum/design/autolathe/ammo/smg_magnum_40,
-		/datum/design/autolathe/ammo/smg_magnum_40_lethal, //Marshals got weapons for this, probably shouldn't be tied up only to 2 disks
+		/datum/design/autolathe/ammo/smg_magnum_40_lethal, //Rangers got weapons for this, probably shouldn't be tied up only to 2 disks
 		/datum/design/autolathe/ammo/mag_10x24, // The specific model of the Spec Ops.
 		// rifles
 		/datum/design/autolathe/ammo/lrifle_short,

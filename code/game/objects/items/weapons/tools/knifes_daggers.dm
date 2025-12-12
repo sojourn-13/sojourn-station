@@ -3,7 +3,7 @@
 
 /obj/item/tool/knife
 	name = "kitchen knife"
-	desc = "A general purpose Chef's Knife made by the Lonestar Shipping Solutions, LLC. Guaranteed to stay sharp for years to come."
+	desc = "A general purpose Chef's Knife made by the Frontier Logistics, LLC. Guaranteed to stay sharp for years to come."
 	icon = 'icons/obj/kitchen.dmi'
 	icon_state = "knife"
 	flags = CONDUCT
@@ -235,7 +235,7 @@
 	backstab_damage = 9
 
 /obj/item/tool/knife/dagger/bluespace
-	name = "\improper Soteria \"Displacement Dagger\""
+	name = "\improper Vesalius-Andra \"Displacement Dagger\""
 	desc = "A teleportation matrix attached to a dagger, for sending things you stab it into very far away."
 	icon_state = "bluespace_dagger"
 	item_state = "bluespace_dagger"

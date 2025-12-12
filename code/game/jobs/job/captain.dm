@@ -1,7 +1,7 @@
 var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 
 /datum/job/premier
-	title = "Premier"
+	title = "Governor"
 	flag = PREMIER
 	department = DEPARTMENT_COMMAND
 	head_position = TRUE
@@ -23,12 +23,12 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 
 	perks = list(PERK_SOMELLIER)
 
-	description = "The Premier is the prime mediator of the colony itself, acting as a trusted advisor amongst their peers.<br>\
-You are trusted with control of the colony primary accounts and are also able to control access within and to the colony.<br>\
-Your primary objective is to oversee council decisions, change access levels and act as both lawyer and consultant in various decisions.<br>\
-You are not the supreme leader of the colony and your word is only advisory in nature. The only person you can give legal orders to is the Steward.<br>\
-The heads of the factions which make up the council each have their own agendas. Their interests must be served to avoid issues.<br>\
-Treat your command officers with respect and listen to their council. Try not to micromanage their departments or interfere in their affairs."
+	description = "The Governor is the prime mediator of the colony itself, acting as a trusted diplomat and arbitrator of conflicts amongst their peers.<br>\
+	You are trusted with control of the colony primary accounts and are also able to control access within and to the colony.<br>\
+	Your primary objective is to oversee council decisions, change access levels and act as both lawyer and consultant in various decisions.<br>\
+	You are not the supreme leader of the colony and your word is only advisory in nature. The only person you can give legal orders to is the Steward.<br>\
+	The heads of the factions which make up the council each have their own agendas. Their interests must be served to avoid issues.<br>\
+	Treat your command officers with respect and listen to their council. Try not to micromanage their departments or interfere in their affairs."
 
 	duties = "Work between the varying interests of council members to achieve colony stability.<br>\
 	Offer advise and counsel when approached, particularly during important decisions.<br>\
@@ -62,7 +62,7 @@ Treat your command officers with respect and listen to their council. Try not to
 		return get_all_station_access()
 
 /obj/landmark/join/start/premier
-	name = "Premier"
+	name = "Governor"
 	icon_state = "player-gold-officer"
 	join_tag = /datum/job/premier
 
@@ -76,7 +76,7 @@ Treat your command officers with respect and listen to their council. Try not to
 	faction = MAP_FACTION
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the Premier"
+	supervisors = "the Governor"
 	difficulty = "Hard."
 	selection_color = "#ddddff"
 	req_admin_notify = 1
@@ -86,15 +86,15 @@ Treat your command officers with respect and listen to their council. Try not to
 	minimum_character_age = 30
 
 	health_modifier = 5
-	description = "The Steward is the loyal right-hand of the Premier. Serving as a personal guard, follow them wherever they go.<br>\
-	Your primary, and perhaps only, responsibility is to ensure the safety of the Premier at all costs - even with your own life if necessary.<br>\
+	description = "The Steward is the loyal right-hand of the Governor. Serving as a personal guard, follow them wherever they go.<br>\
+	Your primary, and perhaps only, responsibility is to ensure the safety of the Governor at all costs - even with your own life if necessary.<br>\
 	However, you are an adviser as well as a bodyguard. Discreetly inform them of mistakes. Make sure they follow the law and remain popular.<br>\
-	You may be assigned special tasks by the Premier for whatever reason. Ensure these orders are fulfilled.<br>\
+	You may be assigned special tasks by the Governor for whatever reason. Ensure these orders are fulfilled.<br>\
 	Do not embarass them, and especially do not harm their relations with faction leaders. You may not do much talking, but you have great impact."
 
-	duties = "Act as a bodyguard, adviser and confidant to the Premier.<br>\
-	Remain conscious of any potential threats to the safety of the Premier.<br>\
-	Perform tasks as assigned by the Premier - such as filling paperwork or reassigning roles.<br>\
+	duties = "Act as a bodyguard, adviser and confidant to the Governor.<br>\
+	Remain conscious of any potential threats to the safety of the Governor.<br>\
+	Perform tasks as assigned by the Governor - such as filling paperwork or reassigning roles.<br>\
 	Demonstrate true loyalty and do not let your superior down."
 
 	outfit_type = /decl/hierarchy/outfit/job/hop
