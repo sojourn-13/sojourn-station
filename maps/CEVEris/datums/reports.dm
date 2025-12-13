@@ -1,5 +1,5 @@
 //Report datums for use with the report editor and other programs.
-/* - These are eris's unused by SoJ see Maps\Iskhod\data\reports.dm for are reports
+/* - These are eris's unused by SoJ see Maps\Nadezhda\data\reports.dm for are reports
 /datum/computer_file/report/recipient/crew_transfer
 	form_name = "CTA-AG-01"
 	title = "Crew Transfer Application"
