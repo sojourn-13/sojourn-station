@@ -1532,19 +1532,19 @@ Anyone wearing it can open public church doors. You should do your best to keep 
 
 /obj/item/clothing/accessory/passcard
 	name = "general passcard"
-	desc = "A passcard issued by the Nadezhda Colony when someone gains permanent residency on Amethyn, in the Chromin 8 system."
+	desc = "A passcard issued by the Iskhod Outpost when someone gains permanent residency on Amethyn, in the Chromin 8 system."
 	icon_state = "passcard_general"
 	item_state = "general_passport"
 
 /obj/item/clothing/accessory/passcard/resident_card
 	name = "resident passcard"
-	desc = "A card issued by the Nadezhda Colony for colonists who are offered temporary residency on Amethyn, in the Chromin 8 system."
+	desc = "A card issued by the Iskhod Outpost for colonists who are offered temporary residency on Amethyn, in the Chromin 8 system."
 	icon_state = "resident_card"
 	item_state = "passport"
 
 /obj/item/clothing/accessory/passcard/work_visa
 	name = "work visa"
-	desc = "A card issued by the Nadezhda Colony for colonists who are offered residency for the purpose of work on Amethyn, in the Chromin 8 system. "
+	desc = "A card issued by the Iskhod Outpost for colonists who are offered residency for the purpose of work on Amethyn, in the Chromin 8 system. "
 	icon_state = "workvisa"
 	item_state = "pass"
 
@@ -1640,7 +1640,7 @@ Anyone wearing it can open public church doors. You should do your best to keep 
 
 /obj/item/clothing/accessory/passcard/passport_general
 	name = "passport"
-	desc = "A passport issued to Nadezhda Colonists that live on Amethyn, in the Chromin 8 system."
+	desc = "A passport issued to Iskhod Colonists that live on Amethyn, in the Chromin 8 system."
 	icon_state = "passport_general"
 	item_state = "general_passport"
 

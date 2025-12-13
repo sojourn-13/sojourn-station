@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/judiciary
 	name = "\"Judiciary\" pistol"
-	desc = "A common Nadezhda Marshal issue pistol chambered in .35. This pistol appears to be the workhorse of Rangers, a near staple found in pictures on nearly any recruiting ad. \
+	desc = "A common Iskhod Marshal issue pistol chambered in .35. This pistol appears to be the workhorse of Rangers, a near staple found in pictures on nearly any recruiting ad. \
 			By the looks of the mag-loading mechanism this firearm is strangely able to take standard, high-cap and drum magazines! Truely a marvel of engineering; even... if it feels unsteady when holding the drum."
 	icon = 'icons/obj/guns/projectile/judiciary.dmi'
 	icon_state = "judiciary"

@@ -15,7 +15,7 @@
 
 /datum/category_item/setup_option/core_implant/psionic_tumor
 	name = "Psionic Organ"
-	desc = "An unusual organ implanted by the Vesalius-Andra research or obtained through other methods. It is presently unknown what it is truly capable of and psions are entirely unknown outside of Nadezhda. \
+	desc = "An unusual organ implanted by the Vesalius-Andra research or obtained through other methods. It is presently unknown what it is truly capable of and psions are entirely unknown outside of Iskhod. \
 	Those with this organ must maintain purity of their bodies, any implants, cruciforms, or synthetic limbs will be violently and painfully rejected while this organ exists in the body."
 	implant_organ_type = "psionic tumor"
 	restricted_jobs = list(
@@ -27,7 +27,7 @@
 
 /datum/category_item/setup_option/core_implant/psionic_tumor_psychiatrist
 	name = "Cultured Psionic Organ"
-	desc = "An unusual organ implanted by the Vesalius-Andra research or obtained through other methods. It is presently unknown what it is truly capable of and psions are entirely unknown outside of Nadezhda. \
+	desc = "An unusual organ implanted by the Vesalius-Andra research or obtained through other methods. It is presently unknown what it is truly capable of and psions are entirely unknown outside of Iskhod. \
 	Those with this organ must maintain purity of their bodies, any implants, cruciforms, or synthetic limbs will be violently and painfully rejected while this organ exists in the body. This \
 	particular organ is the result of development while inside the brain of someone who understands the mind intimiately, offering them expanded powers and abilities when working as a Vesalius-Andra psych."
 	implant_organ_type = "cultured tumor"

@@ -380,7 +380,7 @@ var/const/NO_EMAG_ACT = -50
 
 /obj/item/card/id/visitor
 	icon_state = "guest"
-	desc = "An official guest pass issued by the Nadehzda colony. This one bears the mark of Nadezhda customs and has no listed expiry date."
+	desc = "An official guest pass issued by the Nadehzda colony. This one bears the mark of Iskhod customs and has no listed expiry date."
 
 //Keys
 /obj/item/keys

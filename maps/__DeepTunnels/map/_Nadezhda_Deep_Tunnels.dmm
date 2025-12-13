@@ -231,7 +231,7 @@
 /turf/simulated/floor/asteroid,
 /area/mine/hallway)
 "aS" = (
-/obj/turbolift_map_obj/turbolift_map_base/Nadezhda/Research,
+/obj/turbolift_map_obj/turbolift_map_base/Iskhod/Research,
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "9,23"
 	},
@@ -3668,7 +3668,7 @@
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/nadezhda/rnd/outpostmachineroom)
 "kc" = (
-/obj/turbolift_map_obj/turbolift_map_base/Nadezhda/Mining,
+/obj/turbolift_map_obj/turbolift_map_base/Iskhod/Mining,
 /turf/simulated/shuttle/floor/mining,
 /area/turbolift/Mining/underground)
 "kd" = (

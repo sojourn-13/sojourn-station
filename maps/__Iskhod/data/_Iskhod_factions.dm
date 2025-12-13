@@ -1,5 +1,5 @@
 /datum/faction/nadezhda
-	name = "Nadezhda High Council"
+	name = "Iskhod High Council"
 
 	fax_alert = "HIGH COUNCIL FAX"
 	fax_response = "High Council Directional Decree"

@@ -1,6 +1,6 @@
 /obj/item/gun/energy/sunrise
 	name = "\"Sunrise\" laser SMG"
-	desc = "The \"Sunrise\" laser SMG is a Nadezhda Marshal's special in terms of its creation.\
+	desc = "The \"Sunrise\" laser SMG is a Iskhod Marshal's special in terms of its creation.\
 	This once dated SMG design has been completely stripped down and shoved full of hardware from a Firestorm and Discolaser.\
 	However the parts themselves are modified to allow for the beams to keep much of their power through high-focused lenses!\
 	Etched into the guns receiver on the left side is a script \"M\" letter."

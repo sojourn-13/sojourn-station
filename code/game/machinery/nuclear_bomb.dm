@@ -607,7 +607,7 @@ var/bomb_set
 		S.lock = 0  // Unlocked during abort window
 
 	// Use priority announcement system for nuclear activation
-	priority_announcement.Announce("ATTENTION. EMERGENCY. All personnel. The Nadezhda Colony self-destruct sequence has been activated. T-Minus ten minutes to detonation. T-Minus ten minutes. The option to override automatic detonation expires in T-Minus five minutes. For your own safety, please evacuate this colony. This is not a drill.", "Emergency Announcement")
+	priority_announcement.Announce("ATTENTION. EMERGENCY. All personnel. The Iskhod Outpost self-destruct sequence has been activated. T-Minus ten minutes to detonation. T-Minus ten minutes. The option to override automatic detonation expires in T-Minus five minutes. For your own safety, please evacuate this colony. This is not a drill.", "Emergency Announcement")
 	world << sound('sound/effects/siren.ogg', volume = 75)
 
 	// Start the repeating alarm loop immediately

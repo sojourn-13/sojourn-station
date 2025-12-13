@@ -903,7 +903,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 
 /obj/item/storage/hcases/ert/blackshield
 	name = "blackshield imprinter hard case"
-	desc = "A hardcase containing a number of advanced mental imprinters. This one bears the badge of the Nadezhda Blackshield Militia."
+	desc = "A hardcase containing a number of advanced mental imprinters. This one bears the badge of the Iskhod Blackshield Militia."
 	can_hold = list(/obj/item/device/mental_imprinter, /obj/item/device/mental_imprinter)
 
 /obj/item/storage/hcases/ert/marshal/populate_contents()

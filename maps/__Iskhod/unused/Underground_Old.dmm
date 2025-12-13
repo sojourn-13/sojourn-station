@@ -32185,13 +32185,13 @@
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/quartermaster/miningdock)
 "bES" = (
-/obj/turbolift_map_obj/turbolift_map_base/Nadezhda/prospector,
+/obj/turbolift_map_obj/turbolift_map_base/Iskhod/prospector,
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "9,23"
 	},
 /area/turbolift/prospector/underground)
 "bET" = (
-/obj/turbolift_map_obj/turbolift_map_base/Nadezhda/mountaintop,
+/obj/turbolift_map_obj/turbolift_map_base/Iskhod/mountaintop,
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "9,23"
 	},
@@ -61217,7 +61217,7 @@
 	},
 /area/turbolift/ElevatorOne/underground)
 "cVa" = (
-/obj/turbolift_map_obj/turbolift_map_base/Nadezhda/ElevOne,
+/obj/turbolift_map_obj/turbolift_map_base/Iskhod/ElevOne,
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "9,23"
 	},

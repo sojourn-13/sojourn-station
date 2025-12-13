@@ -10,7 +10,7 @@
 	slot_flags = SLOT_BELT|SLOT_POCKET // QOL improvement tbh
 	req_access = list(access_heads, access_security)
 	var/boss_name = "Iskhod Rangers" //The issuing authority. Can be VVed to make a warrant out to be from another party for whatever reason
-	var/station_name = "Nadezhda Colony" //As above
+	var/station_name = "Iskhod Outpost" //As above
 	var/language = LANGUAGE_COMMON //More stuff put here so it can theoretically be VVed
 	var/datum/computer_file/data/warrant/active
 	var/output //What we give to paper parser

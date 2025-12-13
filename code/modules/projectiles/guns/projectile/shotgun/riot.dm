@@ -55,7 +55,7 @@
 /obj/item/gun/projectile/shotgun/riot/opshot
 	name = "\"Operator\" combat shotgun"
 	desc = "The \"Operator\" shotgun appears to be a well designed model of shotgun complete with a polymer grip, holographic sights and a collapsing stock.  \
-			Designed by Nadezhda Marshal gunsmiths and surplus parts of the \"Mamba\" series of firearms, this shotgun appears to be perfect for both close and medium range engagements."
+			Designed by Iskhod Marshal gunsmiths and surplus parts of the \"Mamba\" series of firearms, this shotgun appears to be perfect for both close and medium range engagements."
 	icon = 'icons/obj/guns/projectile/operator.dmi'
 	icon_state = "operator"
 	item_state = "oporator"
