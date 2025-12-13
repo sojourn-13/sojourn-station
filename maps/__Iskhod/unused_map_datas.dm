@@ -1,7 +1,7 @@
 //Graveyard of unused old main maps that are no longer in use
 
 /obj/map_data/nadezda_ues //Omnie level has all three surface underground and stairs
-	name = "Iskhod Omni Map"
+	name = "Nadezhda Omni Map"
 	is_station_level = TRUE
 	is_player_level = TRUE
 	is_contact_level = TRUE
@@ -12,7 +12,7 @@
 	digsites = "HOUSE"
 
 /obj/map_data/nadezda_s
-	name = "Iskhod Surface"
+	name = "Nadezhda Surface"
 	is_station_level = TRUE
 	is_player_level = TRUE
 	is_contact_level = TRUE
@@ -22,7 +22,7 @@
 	height = 1
 
 /obj/map_data/nadezda_u
-	name = "Iskhod Underground"
+	name = "Nadezhda Underground"
 	is_station_level = TRUE
 	is_player_level = TRUE
 	is_contact_level = TRUE
@@ -31,7 +31,7 @@
 	height = 1
 
 /obj/map_data/nadezda_e
-	name = "Iskhod Elevator and Stairs"
+	name = "Nadezhda Elevator and Stairs"
 	is_station_level = TRUE
 	is_player_level = TRUE
 	is_contact_level = TRUE
@@ -40,7 +40,7 @@
 	height = 1
 
 /obj/map_data/nadezda_labor
-	name = "Iskhod Labor Camp"
+	name = "Nadezhda Labor Camp"
 	is_station_level = TRUE
 	is_player_level = TRUE
 	is_contact_level = TRUE
