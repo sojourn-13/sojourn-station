@@ -46,7 +46,7 @@
 
 /obj/item/gun/projectile/colt/liberty
 	name = "\"Liberty\" magnum pistol"
-	desc = "A common Nadezhda Marshal issue pistol chambered in .40 Magnum. It appears to be loosely based off a Colt model, albeit with a changed slide, polymer grip and a built-in holographic sight."
+	desc = "A common Iskhod Marshal issue pistol chambered in .40 Magnum. It appears to be loosely based off a Colt model, albeit with a changed slide, polymer grip and a built-in holographic sight."
 	icon = 'icons/obj/guns/projectile/liberty.dmi'
 	icon_state = "liberty"
 	item_state = "liberty"

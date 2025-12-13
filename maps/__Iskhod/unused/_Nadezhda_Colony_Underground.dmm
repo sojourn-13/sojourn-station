@@ -30856,7 +30856,7 @@
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/quartermaster/disposaldrop)
 "cXY" = (
-/obj/turbolift_map_obj/turbolift_map_base/Nadezhda/ElevOne,
+/obj/turbolift_map_obj/turbolift_map_base/Iskhod/ElevOne,
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "9,23"
 	},
@@ -46943,7 +46943,7 @@
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/rnd/circuitlab)
 "nzK" = (
-/obj/turbolift_map_obj/turbolift_map_base/Nadezhda/mountaintop,
+/obj/turbolift_map_obj/turbolift_map_base/Iskhod/mountaintop,
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "9,23"
 	},

@@ -2,7 +2,7 @@
 	icon_states = "nt_cruiser"
 	markup = COMMON_GOODS	// dept-specific stuff should be more expensive for guild
 	name_pool = list(
-		"CAV 'Faith'" = "Church of the Absolute Vessel 'Faith': \"We are currently resupplying from Nadezhda, but we can sell a few items from our stock.\"",
+		"CAV 'Faith'" = "Church of the Absolute Vessel 'Faith': \"We are currently resupplying from Iskhod, but we can sell a few items from our stock.\"",
 		"CAV 'Hope'" = "Church of the Absolute Vessel 'Hope': \"We're in the system for the next few hours before we make a round trip to the confederacy, we're certainly willing to sell our goods.\""
 		)
 	icon_states = list("nt_frigate", "ship")

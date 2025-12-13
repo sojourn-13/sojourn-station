@@ -1229,7 +1229,7 @@
 "akr" = (
 /obj/structure/flora/ausbushes/brflowers,
 /mob/living/simple/opossum{
-	desc = "The Nadezhda basketball team mascot. - Currently scavenging for rebounds";
+	desc = "The Iskhod basketball team mascot. - Currently scavenging for rebounds";
 	name = "'Cross-em' Opossum"
 	},
 /turf/simulated/floor/asteroid/grass,
@@ -72749,7 +72749,7 @@
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "oba" = (
-/obj/turbolift_map_obj/turbolift_map_base/Nadezhda/ElevOne,
+/obj/turbolift_map_obj/turbolift_map_base/Iskhod/ElevOne,
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "9,23"
 	},
@@ -97397,7 +97397,7 @@
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/pros/prep)
 "sTL" = (
-/obj/turbolift_map_obj/turbolift_map_base/Nadezhda/mountaintop,
+/obj/turbolift_map_obj/turbolift_map_base/Iskhod/mountaintop,
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "9,23"
 	},

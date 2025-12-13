@@ -155,7 +155,7 @@
 
 	P = new()
 	P.name = "Wanted:Jack Terran"
-	P.info = "<center><b><h1>Nadezhda Colonial Security</h1></b> \
+	P.info = "<center><b><h1>Iskhod Colonial Security</h1></b> \
 				<h2>Latest wanted issues</h2>\
 				</center>\
 				<hr>\
@@ -207,7 +207,7 @@
 
 	P = new()
 	P.name = "Wanted:Jack Terran"
-	P.info = "<center><b><h1>Nadezhda Colonial Security</h1></b> \
+	P.info = "<center><b><h1>Iskhod Colonial Security</h1></b> \
 				<h2>Latest wanted issues</h2>\
 				</center>\
 				<hr>\

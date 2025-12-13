@@ -87,7 +87,7 @@
 	autoset = TRUE
 
 /obj/effect/shuttle_landmark/skipjack_colony
-	name = "Nadezhda Landing Zone"
+	name = "Iskhod Landing Zone"
 	landmark_tag = "nav_skipjack_colony"
 	base_turf = /turf/simulated/floor/asteroid/dirt
 	autoset = TRUE
@@ -148,7 +148,7 @@
 	autoset = TRUE
 
 /obj/effect/shuttle_landmark/mercshuttle_colony
-	name = "Nadezhda Landing Pad"
+	name = "Iskhod Landing Pad"
 	landmark_tag = "nav_mercshuttle_colony"
 	base_turf = /turf/simulated/floor/tiled/dark/gray_platform
 	autoset = TRUE

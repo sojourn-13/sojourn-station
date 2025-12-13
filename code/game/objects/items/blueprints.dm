@@ -48,7 +48,7 @@
 	var/area/A = get_area(usr)
 	var/text = {"
 <h2>[station_name()] blueprints</h2>
-<small>Property of Nadezhda Colony. For council members only. Store in high-secure storage.</small><hr>
+<small>Property of Iskhod Outpost. For council members only. Store in high-secure storage.</small><hr>
 "}
 	switch (get_area_type())
 		if (AREA_SPACE)

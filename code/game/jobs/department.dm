@@ -38,7 +38,7 @@
 	Command
 **************/
 /datum/department/command
-	name = "Nadezhda Council"
+	name = "Iskhod Council"
 	id = DEPARTMENT_COMMAND
 	/*
 	The command account is the ship account. It is the master account that retainer departments are paid from,
@@ -78,7 +78,7 @@
 
 
 /datum/department/civilian
-	name = "Nadezhda Contractors"
+	name = "Iskhod Contractors"
 	id = DEPARTMENT_CIVILIAN
 	account_initial_balance = 0
 	//No standing balance is kept in the account, this is just for paying gardener, janitor and actor

@@ -390,7 +390,7 @@ ADMIN_VERB_ADD(/datum/admins/proc/access_news_network, R_ADMIN, FALSE)
 			dat+="<B>[src.admincaster_feed_channel.channel_name]: </B><FONT SIZE=1>\[created by: <FONT COLOR='maroon'>[src.admincaster_feed_channel.author]</FONT>\]</FONT><HR>"
 			if(src.admincaster_feed_channel.censored)
 				dat+={"
-					<FONT COLOR='red'><B>ATTENTION: </B></FONT>This channel has been deemed as threatening to the welfare of the Nadezhda colony, and marked with a [company_name] D-Notice.<BR>
+					<FONT COLOR='red'><B>ATTENTION: </B></FONT>This channel has been deemed as threatening to the welfare of the Iskhod colony, and marked with a [company_name] D-Notice.<BR>
 					No further feed story additions are allowed while the D-Notice is in effect.<BR><BR>
 				"}
 			else
@@ -457,7 +457,7 @@ ADMIN_VERB_ADD(/datum/admins/proc/access_news_network, R_ADMIN, FALSE)
 			"}
 			if(src.admincaster_feed_channel.censored)
 				dat+={"
-					<FONT COLOR='red'><B>ATTENTION: </B></FONT>This channel has been deemed as threatening to the welfare of the Nadezhda colony, and marked with a [company_name] D-Notice.<BR>
+					<FONT COLOR='red'><B>ATTENTION: </B></FONT>This channel has been deemed as threatening to the welfare of the Iskhod colony, and marked with a [company_name] D-Notice.<BR>
 					No further feed story additions are allowed while the D-Notice is in effect.<BR><BR>
 				"}
 			else

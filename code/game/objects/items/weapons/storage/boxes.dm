@@ -818,7 +818,7 @@ Boxes with clothing on them, unable to put them back if taken out because...
 // Guild boxes, exclusively used to mass craft guild parts.
 /obj/item/storage/box/guild_manip
 	name = "box of forged manipulators"
-	desc = "A box containing four forged manipulators, the best that Nadezhda can produce."
+	desc = "A box containing four forged manipulators, the best that Iskhod can produce."
 	icon_state = "box_of_doom"
 	illustration = "guild"
 
@@ -828,7 +828,7 @@ Boxes with clothing on them, unable to put them back if taken out because...
 
 /obj/item/storage/box/guild_bin
 	name = "box of cast matter bins"
-	desc = "A box containing four cast matter bins, the best that Nadezhda can produce."
+	desc = "A box containing four cast matter bins, the best that Iskhod can produce."
 	icon_state = "box_of_doom"
 	illustration = "guild"
 
@@ -838,7 +838,7 @@ Boxes with clothing on them, unable to put them back if taken out because...
 
 /obj/item/storage/box/guild_laser
 	name = "box of perfected micro-lasers"
-	desc = "A box containing four perfected micro-lasers, the best that Nadezhda can produce."
+	desc = "A box containing four perfected micro-lasers, the best that Iskhod can produce."
 	icon_state = "box_of_doom"
 	illustration = "guild"
 
@@ -848,7 +848,7 @@ Boxes with clothing on them, unable to put them back if taken out because...
 
 /obj/item/storage/box/guild_scanner
 	name = "box of perfected scanning modules"
-	desc = "A box containing four perfected scanning modules, the best that Nadezhda can produce."
+	desc = "A box containing four perfected scanning modules, the best that Iskhod can produce."
 	icon_state = "box_of_doom"
 	illustration = "guild"
 
@@ -858,7 +858,7 @@ Boxes with clothing on them, unable to put them back if taken out because...
 
 /obj/item/storage/box/guild_capacitor
 	name = "box of ultra capacitors"
-	desc = "A box containing four ultra capacitors, the best that Nadezhda can produce."
+	desc = "A box containing four ultra capacitors, the best that Iskhod can produce."
 	icon_state = "box_of_doom"
 	illustration = "guild"
 
@@ -868,7 +868,7 @@ Boxes with clothing on them, unable to put them back if taken out because...
 
 /obj/item/storage/box/greyson_manip
 	name = "box of femto manipulators"
-	desc = "A box containing four guild-enhanced greyson manipulators, the best that Nadezhda can produce."
+	desc = "A box containing four guild-enhanced greyson manipulators, the best that Iskhod can produce."
 	icon_state = "box_of_doom"
 	illustration = "writing"
 
@@ -878,7 +878,7 @@ Boxes with clothing on them, unable to put them back if taken out because...
 
 /obj/item/storage/box/greyson_bin
 	name = "box of ultra-capacity matter bins"
-	desc = "A box containing four guild-enhanced greyson matter bins, the best that Nadezhda can produce."
+	desc = "A box containing four guild-enhanced greyson matter bins, the best that Iskhod can produce."
 	icon_state = "box_of_doom"
 	illustration = "writing"
 
@@ -888,7 +888,7 @@ Boxes with clothing on them, unable to put them back if taken out because...
 
 /obj/item/storage/box/greyson_laser
 	name = "box of micro-lensed micro-lasers"
-	desc = "A box containing four guild-enhanced greyson micro-lasers, the best that Nadezhda can produce."
+	desc = "A box containing four guild-enhanced greyson micro-lasers, the best that Iskhod can produce."
 	icon_state = "box_of_doom"
 	illustration = "writing"
 
@@ -898,7 +898,7 @@ Boxes with clothing on them, unable to put them back if taken out because...
 
 /obj/item/storage/box/greyson_scanner
 	name = "box of multi-phasic scanning modules"
-	desc = "A box containing four guild-enhanced greyson scanning modules, the best that Nadezhda can produce."
+	desc = "A box containing four guild-enhanced greyson scanning modules, the best that Iskhod can produce."
 	icon_state = "box_of_doom"
 	illustration = "writing"
 
@@ -908,7 +908,7 @@ Boxes with clothing on them, unable to put them back if taken out because...
 
 /obj/item/storage/box/greyson_capacitor
 	name = "box of hyper capacitors"
-	desc = "A box containing four guild-enhanced greyson capacitors, the best that Nadezhda can produce."
+	desc = "A box containing four guild-enhanced greyson capacitors, the best that Iskhod can produce."
 	icon_state = "box_of_doom"
 	illustration = "writing"
 

@@ -1,7 +1,7 @@
 /datum/storyteller/mime
 	config_tag = "mime"
 	name = "The Mime"
-	welcome = "Welcome to the Nadezhda colony! We hope you enjoy your stay!"
+	welcome = "Welcome to the Iskhod colony! We hope you enjoy your stay!"
 	description = "A storyteller which will not do anything."
 	votable = TRUE //For lower pops
 
