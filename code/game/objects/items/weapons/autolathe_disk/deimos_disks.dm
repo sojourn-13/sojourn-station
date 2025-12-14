@@ -12,7 +12,7 @@
 
 /obj/item/pc_part/drive/disk/design/deimos/supply_spec
 	name = "Deimos Armaments Solutions: Security Pack"
-	desc = "A disk from SI's experimental weapons manufacturing branch. Contains autolathe designs for Deimos pattern weapons. This one is intended explicitly for Nadezhda Security use only."
+	desc = "A disk from SI's experimental weapons manufacturing branch. Contains autolathe designs for Deimos pattern weapons. This one is intended explicitly for Iskhod Security use only."
 	icon_state = "deimos-marshal"
 	license = 20
 
@@ -70,7 +70,7 @@
 		/datum/design/autolathe/ammo/grenade/emp = 1,
 		/datum/design/autolathe/ammo/grenade/flash = 1,
 		/datum/design/autolathe/ammo/grenade/netshell = 1,
-		
+
 	)
 
 /obj/item/pc_part/drive/disk/design/deimos/rockets

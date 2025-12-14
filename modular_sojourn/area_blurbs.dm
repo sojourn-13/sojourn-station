@@ -34,7 +34,7 @@ ty ilu - bear
 
 
 ////////////
-//Nadezhda//
+//Iskhod//
 ////////////
 
 

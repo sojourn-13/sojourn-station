@@ -1133,7 +1133,7 @@
 
 /obj/item/clothing/suit/storage/vest/ironhammer
 	name = "webbed operator armor"
-	desc = "An armored vest that protects against some damage. This one has been done in Nadezhda Marshal colors and has various pouches and straps attached."
+	desc = "An armored vest that protects against some damage. This one has been done in Iskhod Marshal colors and has various pouches and straps attached."
 	icon_state = "webvest_ironhammer"
 	armor_list = list(
 		melee =8,

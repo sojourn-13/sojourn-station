@@ -9,7 +9,7 @@
 /datum/computer_file/report/recipient/crew_transfer/generate_fields()
 	..()
 	var/list/xo_fields = list()
-	add_field(/datum/report_field/instruction, "Nadezhda Colony - High Council")
+	add_field(/datum/report_field/instruction, "Iskhod Outpost - High Council")
 	add_field(/datum/report_field/people/from_manifest, "Name (XO)")
 	add_field(/datum/report_field/people/from_manifest, "Name (applicant)", required = 1)
 	add_field(/datum/report_field/date, "Date filed")
@@ -35,7 +35,7 @@
 /datum/computer_file/report/recipient/access_modification/generate_fields()
 	..()
 	var/list/xo_fields = list()
-	add_field(/datum/report_field/instruction, "Nadezhda Colony - High Council")
+	add_field(/datum/report_field/instruction, "Iskhod Outpost - High Council")
 	add_field(/datum/report_field/people/from_manifest, "Name (XO)")
 	add_field(/datum/report_field/people/from_manifest, "Name (applicant)", required = 1)
 	add_field(/datum/report_field/date, "Date filed")
@@ -154,7 +154,7 @@
 
 /datum/computer_file/report/recipient/docked/generate_fields()
 	..()
-	add_field(/datum/report_field/instruction, "Nadezhda Ship Visitation and Logging")
+	add_field(/datum/report_field/instruction, "Iskhod Ship Visitation and Logging")
 	add_field(/datum/report_field/instruction, "General Info")
 	add_field(/datum/report_field/date, "Date")
 	add_field(/datum/report_field/simple_text, "Vessel Name")
@@ -207,7 +207,7 @@
 	logo = "\[logo\]"
 
 /datum/computer_file/report/recipient/nt/proc/add_header()
-	add_field(/datum/report_field/simple_text, "Colony", "Nadezhda Colony")
+	add_field(/datum/report_field/simple_text, "Colony", "Iskhod Outpost")
 	add_field(/datum/report_field/date, "Date")
 	add_field(/datum/report_field/time, "Time")
 	add_field(/datum/report_field/simple_text, "Index")
@@ -454,7 +454,7 @@
 
 /datum/computer_file/report/recipient/sol/audit
 	form_name = "SCG-REP-12"
-	title = "Nadezhda Department Audit"
+	title = "Iskhod Department Audit"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/sol/audit/generate_fields()
@@ -777,7 +777,7 @@
 	add_field(/datum/report_field/instruction, "Additional Access Form")
 	add_field(/datum/report_field/simple_text, "Name:")
 	add_field(/datum/report_field/simple_text, "Rank:")
-	add_field(/datum/report_field/instruction, "Nadezhda Colony")
+	add_field(/datum/report_field/instruction, "Iskhod Outpost")
 	add_field(/datum/report_field/simple_text, "Requested Access:")
 	add_field(/datum/report_field/simple_text, "Reason:")
 	add_field(/datum/report_field/signature, "Signature of relevant Head of Staff:")
@@ -793,7 +793,7 @@
 	add_field(/datum/report_field/instruction, "Additional Access Form")
 	add_field(/datum/report_field/simple_text, "Name:")
 	add_field(/datum/report_field/simple_text, "Rank:")
-	add_field(/datum/report_field/instruction, "Nadezhda Colony")
+	add_field(/datum/report_field/instruction, "Iskhod Outpost")
 	add_field(/datum/report_field/simple_text, "From Department:")
 	add_field(/datum/report_field/simple_text, "To Department:")
 	add_field(/datum/report_field/simple_text, "Requested Position:")

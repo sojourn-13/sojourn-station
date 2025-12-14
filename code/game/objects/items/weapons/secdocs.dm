@@ -27,7 +27,7 @@
 				"It's labelled 'The Collapse of Greyson Positronics'.",
 				"It's labelled 'Wanderer - A Dossier'.",
 				"It's labelled 'Ironhammer's Legacy: Our Potential Gain'.",
-				"It's labelled 'Evaluation of Nadezhda Council Efficiency'.",
+				"It's labelled 'Evaluation of Iskhod Council Efficiency'.",
 				"It's labelled 'The Truth Behind the Bluespace Crash'.",
 				"It's labelled 'Dead Colonies - What Can Be Learnt?'.",
 				"It's labelled 'Analysis of Recovered Anomalies'.",

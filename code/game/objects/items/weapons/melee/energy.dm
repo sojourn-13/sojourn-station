@@ -229,7 +229,7 @@
 	active_throwforce = WEAPON_FORCE_LETHAL
 	active_w_class = ITEM_SIZE_HUGE
 	force = WEAPON_FORCE_NORMAL // It still is a rod even when turned off, you can still whack with it
-	throwforce = WEAPON_FORCE_PAINFUL // Not gonna matter since it will turn off on throwing, thank you psions can't have shit in Nadezhda
+	throwforce = WEAPON_FORCE_PAINFUL // Not gonna matter since it will turn off on throwing, thank you psions can't have shit in Iskhod
 	throw_speed = 3 // Same as normal spear
 	throw_range = 7
 	extended_reach = TRUE
