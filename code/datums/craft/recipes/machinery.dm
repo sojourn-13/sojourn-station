@@ -143,3 +143,13 @@
 	steps = list(
 		list(CRAFT_MATERIAL, 10, MATERIAL_STEEL)
 	)
+
+/datum/craft_recipe/machinery/wall/supermatter_alarm
+	name = "supermatter alarm frame"
+	result = /obj/item/frame/supermatter_alarm
+	icon_state = "electronic"
+	steps = list(
+		list(CRAFT_MATERIAL, 2, MATERIAL_STEEL),
+		list(CRAFT_MATERIAL, 1, MATERIAL_GLASS)
+	)
+

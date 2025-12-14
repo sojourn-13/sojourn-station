@@ -56,9 +56,11 @@
 	var/emergency_alert = "CRYSTAL DELAMINATION IMMINENT."
 	var/explosion_point = 1000
 
-	light_color = "#8A8A00"
-	var/warning_color = "#B8B800"
-	var/emergency_color = "#D9D900"
+	light_color = "#927a10"
+	var/base_color = "#927a10"
+	var/warning_color = "#c78c20"
+	var/emergency_color = "#ffd04f"
+	var/rotation_angle = 0
 
 	var/grav_pulling = 0
 	// Time in ticks between delamination ('exploding') and exploding (as in the actual boom)
@@ -93,8 +95,28 @@
 	radio = new /obj/item/device/radio{channels=list("Engineering")}(src)
 	assign_uid()
 
+	//Change fune colours
+	var/angle = rand(-180, 180)
+	var/list/color_matrix = color_rotation(angle)
+	rotation_angle = angle
+
+	color = color_matrix
+
+	var/HSV = RGBtoHSV(base_color)
+	var/RGB = HSVtoRGB(RotateHue(HSV, angle))
+	base_color = RGB
+
+	HSV = RGBtoHSV(warning_color)
+	RGB = HSVtoRGB(RotateHue(HSV, angle))
+	warning_color = RGB
+
+	HSV = RGBtoHSV(emergency_color)
+	RGB = HSVtoRGB(RotateHue(HSV, angle))
+	emergency_color = RGB
+
 
 /obj/machinery/power/supermatter/Destroy()
+	GLOB.supermatter_status.raise_event(src, FALSE) //If any alarm was still reporting on this, tell them to stop
 	qdel(radio)
 	. = ..()
 
@@ -161,6 +183,7 @@
 		//Public alerts
 		if((damage > emergency_point) && !public_alert)
 			radio.autosay("WARNING: SUPERMATTER CRYSTAL DELAMINATION IMMINENT!", "Supermatter Monitor")
+			playsound(src, 'sound/effects/matteralarm.ogg', 100, 1, extrarange = 30)
 			public_alert = 1
 		else if(safe_warned && public_alert)
 			radio.autosay(alert_msg, "Supermatter Monitor")
@@ -201,9 +224,17 @@
 		if(!istype(L, /turf/space) && (world.timeofday - lastwarning) >= WARNING_DELAY * 10)
 			announce_warning()
 	else
-		shift_light(4,initial(light_color))
+		shift_light(4,base_color)
 	if(grav_pulling)
 		supermatter_pull()
+
+	//Send state changed events
+	if (damage > warning_point)
+		if (damage > damage_archived && damage_archived < warning_point)
+			GLOB.supermatter_status.raise_event(src, TRUE)
+	if (damage < warning_point)
+		if (damage < damage_archived && damage_archived > warning_point)
+			GLOB.supermatter_status.raise_event(src, FALSE)
 
 	//Ok, get the air from the turf
 	var/datum/gas_mixture/removed = null
@@ -218,6 +249,7 @@
 		removed = env.remove(gasefficency * env.total_moles)	//Remove gas from surrounding area
 
 	if(!env || !removed || !removed.total_moles)
+		damage_archived = damage
 		damage += max((power - 15*POWER_FACTOR)/10, 0)
 	else if (grav_pulling) //If supermatter is detonating, remove all air from the zone
 		env.remove(env.total_moles)
@@ -274,6 +306,27 @@
 				H.add_side_effect("Headache", 11)
 
 	PulseRadiation(src, power, (round(sqrt(power / 2) / 2)))
+
+	var/level = LERP(0, 50, CLAMP( (damage - emergency_point) / (explosion_point - emergency_point),0,1))
+	var/list/new_color = color_contrast(level )
+	//Apply visual effects based on damage
+	if(rotation_angle != 0)
+		if(level != 0)
+			new_color = multiply_matrices(new_color, color_rotation(rotation_angle), 4, 3,3)
+		else
+			new_color = color_rotation(rotation_angle)
+
+	color = new_color
+
+	if (damage >= emergency_point && !filters.len)
+		filters = filter(type="rays", size = 64, color = "#ffd04f", factor = 0.6, density = 12)
+		animate(filters[1], time = 10 SECONDS, offset = 10, loop=-1)
+		animate(time = 10 SECONDS, offset = 0, loop=-1)
+
+		animate(filters[1], time = 2 SECONDS, size = 80, loop=-1, flags = ANIMATION_PARALLEL)
+		animate(time = 2 SECONDS, size = 10, loop=-1, flags = ANIMATION_PARALLEL)
+	else if (damage < emergency_point)
+		filters = null
 
 	power -= (power/DECAY_FACTOR)**3		//energy losses due to radiation
 
@@ -477,3 +530,6 @@
 	if(!air)
 		return 0
 	return round((air.total_moles / air.group_multiplier) / 23.1, 0.01)
+
+
+
