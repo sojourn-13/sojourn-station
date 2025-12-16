@@ -242,6 +242,11 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/machinery/alarm/monitor/isolation{
+	alarm_id = "isolation_two";
+	dir = 8;
+	pixel_x = 32
+	},
 /turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/anomalisoltwo)
 "dx" = (
@@ -251,6 +256,10 @@
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
+	},
+/obj/machinery/door/airlock/maintenance_engineering{
+	name = "Engineering Maintenance";
+	req_access = list(10)
 	},
 /turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/outpostmachineroom)
@@ -538,6 +547,10 @@
 /obj/effect/floor_decal/industrial_plant/steel_grate_warning,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/door/airlock/glass_research{
+	name = "Toxins Lab";
+	req_access = list(7)
+	},
 /turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/mixing)
 "ip" = (
@@ -576,6 +589,13 @@
 "iA" = (
 /turf/simulated/floor/tiled/techmaint,
 /area/mine/atmos)
+"iD" = (
+/obj/machinery/alarm{
+	dir = 1;
+	pixel_y = -27
+	},
+/turf/simulated/floor/industrial/grey_slates_long,
+/area/mine/processing)
 "iI" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 4
@@ -727,6 +747,10 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/machinery/door/airlock/maintenance_engineering{
+	name = "Engineering Maintenance";
+	req_access = list(10)
+	},
 /turf/simulated/floor/industrial/grey_slates_long,
 /area/mine/atmos)
 "ke" = (
@@ -852,6 +876,14 @@
 /obj/effect/window_lwall_spawn/reinforced,
 /turf/simulated/floor/plating/under,
 /area/mine/medical)
+"lY" = (
+/obj/structure/anomaly_container,
+/obj/machinery/alarm{
+	dir = 4;
+	pixel_x = -27
+	},
+/turf/simulated/floor/tiled/white/brown_platform,
+/area/iskhod/rnd/outpoststorage)
 "md" = (
 /obj/machinery/atmospherics/unary/vent_pump{
 	dir = 8
@@ -900,6 +932,10 @@
 /area/iskhod/rnd/outpostgeneral)
 "mB" = (
 /obj/machinery/vending/fitness,
+/obj/machinery/alarm{
+	dir = 1;
+	pixel_y = -27
+	},
 /turf/simulated/floor/industrial/navy_slates,
 /area/mine/prep)
 "mD" = (
@@ -934,6 +970,10 @@
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
+	},
+/obj/machinery/door/airlock/glass_mining{
+	name = "Ore Processing";
+	req_access = list(50)
 	},
 /turf/simulated/floor/industrial/grey_slates_long,
 /area/mine/processing)
@@ -1194,6 +1234,13 @@
 /obj/machinery/pipedispenser/disposal,
 /turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/mixing)
+"px" = (
+/obj/machinery/alarm{
+	dir = 1;
+	pixel_y = -27
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/mine/power)
 "pB" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/visible/black,
@@ -1209,6 +1256,11 @@
 "pJ" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_warning{
 	dir = 1
+	},
+/obj/machinery/door/airlock/multi_tile/metal/mait{
+	dir = 3;
+	name = "Mining Outpost";
+	req_access = list(48)
 	},
 /turf/simulated/floor/industrial/grey_slates_long,
 /area/mine/hallway)
@@ -1237,6 +1289,10 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
+/obj/machinery/door/airlock/glass_research{
+	name = "Toxins Lab";
+	req_access = list(7)
+	},
 /turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/mixing)
 "pW" = (
@@ -1253,6 +1309,10 @@
 /area/mine/processing)
 "pZ" = (
 /obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/maintenance_engineering{
+	name = "Engineering Maintenance";
+	req_access = list(10)
+	},
 /turf/simulated/floor/industrial/grey_slates_long,
 /area/mine/atmos)
 "qd" = (
@@ -1374,6 +1434,10 @@
 /area/iskhod/rnd/anomal)
 "rh" = (
 /obj/machinery/door/firedoor,
+/obj/effect/floor_decal/industrial_plant/steel_grate_border,
+/obj/machinery/door/airlock/glass_research{
+	name = "Medical Outpost"
+	},
 /turf/simulated/floor/tiled/white,
 /area/iskhod/rnd/outpostmedical)
 "ri" = (
@@ -1474,6 +1538,10 @@
 /area/iskhod/rnd/anomal)
 "sp" = (
 /obj/machinery/vending/cigarette,
+/obj/machinery/alarm{
+	dir = 4;
+	pixel_x = -27
+	},
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/iskhod/rnd/outpostgeneral)
 "sq" = (
@@ -1621,6 +1689,9 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/machinery/door/airlock/glass_research{
+	name = "E.A.R Study"
+	},
 /turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/misc_lab)
 "uu" = (
@@ -1701,6 +1772,10 @@
 /obj/effect/floor_decal/industrial_plant/steel_grate_border,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/door/airlock/science{
+	name = "Anomaly Research";
+	req_access = list(5)
+	},
 /turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/outpoststorage)
 "vo" = (
@@ -1836,6 +1911,13 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/mine/processing)
+"wr" = (
+/obj/machinery/alarm{
+	dir = 4;
+	pixel_x = -27
+	},
+/turf/simulated/floor/tiled/white,
+/area/iskhod/rnd/outpostmachineroom)
 "ws" = (
 /obj/machinery/atmospherics/pipe/simple/visible/red{
 	dir = 9
@@ -1953,6 +2035,11 @@
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
 	},
 /turf/simulated/floor/industrial/grey_slates_long,
 /area/mine/lockers)
@@ -2102,6 +2189,15 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/mine/power)
+"zH" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/alarm{
+	dir = 8;
+	pixel_x = 27
+	},
+/turf/simulated/floor/tiled/white,
+/area/iskhod/rnd/mixing)
 "zL" = (
 /turf/simulated/wall/iskhod,
 /area/iskhod/rnd/anomalisolfour)
@@ -2176,6 +2272,10 @@
 /obj/effect/floor_decal/industrial_plant/steel_grate_warning,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/door/airlock/glass_research{
+	name = "Toxins Lab";
+	req_access = list(7)
+	},
 /turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/mixing)
 "Bl" = (
@@ -2284,6 +2384,11 @@
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
+	},
+/obj/machinery/alarm/monitor/isolation{
+	alarm_id = "isolation_two";
+	dir = 8;
+	pixel_x = 32
 	},
 /turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/anomalisolthree)
@@ -2601,6 +2706,9 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/machinery/door/airlock/glass{
+	name = "First Aid Station"
+	},
 /turf/simulated/floor/industrial/grey_slates_long,
 /area/mine/medical)
 "FY" = (
@@ -2630,6 +2738,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
+	},
+/obj/machinery/door/airlock/science{
+	name = "Anomaly Research";
+	req_access = list(5)
 	},
 /turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/anomal)
@@ -2746,6 +2858,10 @@
 /obj/effect/floor_decal/industrial/hatch/red,
 /turf/simulated/floor/industrial/navy_slates,
 /area/mine/prep)
+"HX" = (
+/obj/map_data/iskhod_deep_tunnels,
+/turf/unsimulated/mineral/cold,
+/area/space)
 "Ib" = (
 /obj/machinery/atmospherics/unary/vent_scrubber{
 	dir = 8
@@ -2876,6 +2992,17 @@
 /obj/structure/reagent_dispensers/watertank,
 /turf/simulated/floor/industrial/navy_slates,
 /area/mine/prep)
+"JK" = (
+/obj/machinery/door/firedoor,
+/obj/effect/floor_decal/industrial_plant/steel_grate_border,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/door/airlock/science{
+	name = "Gas Storage";
+	req_access = list(5)
+	},
+/turf/simulated/floor/tiled/white/cargo,
+/area/iskhod/rnd/outpoststorage)
 "JL" = (
 /obj/machinery/atmospherics/pipe/tank/carbon_dioxide,
 /turf/simulated/floor/industrial/grey_slates_long,
@@ -3003,6 +3130,10 @@
 /area/mine/hallway)
 "Lh" = (
 /obj/structure/closet/crate,
+/obj/machinery/alarm{
+	dir = 8;
+	pixel_x = 27
+	},
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/iskhod/rnd/misc_lab)
 "Ll" = (
@@ -3015,6 +3146,10 @@
 "Lr" = (
 /obj/structure/closet/secure_closet/freezer/fridge{
 	name = "blood cooler"
+	},
+/obj/machinery/alarm{
+	dir = 8;
+	pixel_x = 27
 	},
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/mine/medical)
@@ -3031,6 +3166,10 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/machinery/door/airlock/science{
+	name = "Anomaly Research";
+	req_access = list(5)
+	},
 /turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/anomal)
 "Lz" = (
@@ -3042,6 +3181,10 @@
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
+	},
+/obj/machinery/door/airlock/maintenance_engineering{
+	name = "Engineering Maintenance";
+	req_access = list(10)
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/mine/power)
@@ -3084,6 +3227,11 @@
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
+	},
+/obj/machinery/door/airlock/external{
+	id_tag = "riso4";
+	name = "Isolation Four";
+	req_access = list(65)
 	},
 /turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/anomalisolfour)
@@ -3214,6 +3362,10 @@
 /area/mine/processing)
 "NZ" = (
 /obj/machinery/disposal,
+/obj/machinery/alarm{
+	dir = 8;
+	pixel_x = 27
+	},
 /turf/simulated/floor/industrial/navy_slates,
 /area/mine/lockers)
 "Oh" = (
@@ -3285,6 +3437,11 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 9
+	},
+/obj/machinery/door/airlock/multi_tile/metal/mait{
+	dir = 3;
+	name = "Mining Outpost";
+	req_access = list(48)
 	},
 /turf/simulated/floor/industrial/grey_slates_long,
 /area/mine/hallway)
@@ -3562,6 +3719,13 @@
 	},
 /turf/simulated/floor/industrial/grey_slates_long,
 /area/mine/prep)
+"RA" = (
+/obj/machinery/alarm{
+	dir = 8;
+	pixel_x = 27
+	},
+/turf/simulated/floor/industrial/grey_slates_long,
+/area/mine/atmos)
 "RE" = (
 /obj/structure/window/reinforced/iskhod{
 	dir = 4
@@ -3580,6 +3744,11 @@
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
+	},
+/obj/machinery/door/airlock/external{
+	id_tag = "riso3";
+	name = "Isolation Three";
+	req_access = list(65)
 	},
 /turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/anomalisolthree)
@@ -3627,6 +3796,11 @@
 "Sp" = (
 /obj/machinery/door/firedoor/multi_tile,
 /obj/effect/floor_decal/industrial_plant/steel_grate_border,
+/obj/machinery/door/airlock/multi_tile/glass{
+	dir = 4;
+	name = "Elevator Access";
+	req_access = list(48)
+	},
 /turf/simulated/floor/industrial/grey_slates_long,
 /area/mine/prep)
 "Sv" = (
@@ -3707,6 +3881,10 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/machinery/door/airlock/maintenance_engineering{
+	name = "Engineering Maintenance";
+	req_access = list(10)
+	},
 /turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/outpostmachineroom)
 "TD" = (
@@ -3745,6 +3923,14 @@
 	},
 /turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/anomalisolone)
+"Uc" = (
+/obj/machinery/portable_atmospherics/canister,
+/obj/machinery/alarm{
+	dir = 4;
+	pixel_x = -27
+	},
+/turf/simulated/floor/tiled/white/cargo,
+/area/iskhod/rnd/storage)
 "Ud" = (
 /obj/machinery/atmospherics/unary/vent_pump{
 	dir = 4
@@ -3805,6 +3991,14 @@
 "Vt" = (
 /turf/simulated/floor/industrial/grey_slates_long,
 /area/mine/atmos)
+"Vu" = (
+/obj/machinery/disposal,
+/obj/machinery/alarm{
+	dir = 4;
+	pixel_x = -27
+	},
+/turf/simulated/floor/tiled/white,
+/area/iskhod/rnd/anomal)
 "Vw" = (
 /obj/machinery/portable_atmospherics/canister/nitrogen,
 /turf/simulated/floor/tiled/white/brown_platform,
@@ -3854,6 +4048,11 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/machinery/door/airlock/external{
+	id_tag = "riso2";
+	name = "Isolation Two";
+	req_access = list(65)
+	},
 /turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/anomalisoltwo)
 "VM" = (
@@ -3893,6 +4092,11 @@
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
+	},
+/obj/machinery/alarm/monitor/isolation{
+	alarm_id = "isolation_two";
+	dir = 8;
+	pixel_x = 32
 	},
 /turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/anomalisolone)
@@ -4072,6 +4276,10 @@
 /obj/effect/floor_decal/industrial_plant/steel_grate_border,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/door/airlock/science{
+	name = "Gas Storage";
+	req_access = list(5)
+	},
 /turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/storage)
 "XJ" = (
@@ -4249,6 +4457,11 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/machinery/door/airlock/external{
+	id_tag = "riso1";
+	name = "Isolation One";
+	req_access = list(65)
+	},
 /turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/anomalisolone)
 "ZA" = (
@@ -4293,6 +4506,10 @@
 /area/mine/medical)
 "ZZ" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_warning,
+/obj/machinery/door/airlock/glass_research{
+	name = "Toxins Lab";
+	req_access = list(7)
+	},
 /turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/mixing)
 
@@ -4697,7 +4914,7 @@ Zm
 Zm
 Zm
 Zm
-Zm
+HX
 Zm
 "}
 (3,1,1) = {"
@@ -10724,7 +10941,7 @@ GG
 el
 Gl
 BX
-el
+iD
 NW
 uS
 uS
@@ -11453,14 +11670,14 @@ RG
 Rq
 Pl
 Bl
-pm
+Vu
 Bl
 RG
 fl
 Ga
 nr
 Yx
-Yx
+lY
 Yx
 Yx
 wc
@@ -11912,7 +12129,7 @@ JL
 zb
 rW
 mL
-Vt
+RA
 Vt
 Hu
 IV
@@ -12872,7 +13089,7 @@ Jb
 FJ
 wn
 rO
-vj
+JK
 lK
 rS
 og
@@ -13145,7 +13362,7 @@ nS
 lx
 Um
 jP
-jP
+px
 nS
 uS
 uS
@@ -14677,7 +14894,7 @@ sP
 sP
 sP
 sP
-dp
+wr
 dp
 QL
 Ih
@@ -18327,7 +18544,7 @@ IO
 ad
 CG
 Nq
-tc
+Uc
 tc
 rK
 rK
@@ -20343,7 +20560,7 @@ IK
 IK
 IK
 oR
-IK
+zH
 Af
 mS
 Yn

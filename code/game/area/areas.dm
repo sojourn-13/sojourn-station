@@ -104,7 +104,10 @@
 	if(!air_doors_activated)
 		air_doors_activated = 1
 		// Play alarm sound when emergency shutters close due to atmospheric alert
-		playsound(src, 'sound/machines/airalarm.ogg', 75, 0)
+		for(var/obj/machinery/alarm/A in src)
+			playsound(A, 'sound/machines/airalarm.ogg', 75, 0)
+		for(var/obj/machinery/firealarm/F in src)
+			playsound(F, 'sound/machines/airalarm.ogg', 75, 0)
 		for(var/obj/machinery/door/firedoor/D in all_doors)
 			spawn()
 				D.close()
@@ -123,7 +126,10 @@
 		updateicon()
 		mouse_opacity = 0
 		// Play alarm sound when emergency shutters close due to fire alert
-		playsound(src, 'sound/machines/airalarm.ogg', 75, 0)
+		for(var/obj/machinery/alarm/A in src)
+			playsound(A, 'sound/machines/airalarm.ogg', 75, 0)
+		for(var/obj/machinery/firealarm/F in src)
+			playsound(F, 'sound/machines/airalarm.ogg', 75, 0)
 		for(var/obj/machinery/door/firedoor/D in all_doors)
 			spawn()
 				D.close()
