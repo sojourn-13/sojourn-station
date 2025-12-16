@@ -59,9 +59,9 @@ var/list/dreams = list(
 
 //Ranks
 	"the Steward","the Warrant Officer","the Blackshield Commander","the Guild Master","the Vesalius-Andra Research Overseer",
-	"the Vesalius-Andra Biolab Overseer","the Surface Operations Manager","an Assistant","a Bartender","a Janitor","a Gardener",
+	"the Vesalius-Andra Biolab Overseer","the Quartermaster","an Assistant","a Bartender","a Janitor","a Gardener",
 	"a Prime","an Entertainer","a Chef","a Doctor","a Psychologist","a Vesalius-Andra Paramedic",
-	"a Vesalius-Andra Chemist","a Vesalius-Andra Scientist","a Vesalius-Andra Roboticist","a Cyborg","a Cargo Technician","a Lonestar Miner",
+	"a Vesalius-Andra Chemist","a Vesalius-Andra Scientist","a Vesalius-Andra Roboticist","a Cyborg","a Cargo Technician","a Mining Technician",
 	"a Guild Adept", "a Marshal Officer","a Supply Specialist","a Ranger", "the Premier",
 	"a Corpsman","a Trooper",
 
@@ -90,7 +90,7 @@ var/list/dreams = list(
     "a dark silluette",
 
 //Factions/Groups
-	"the marshals","the blackshield","the prospectors","the excelsior institute","lonestar shipping solutions",
+	"the marshals","the blackshield","the prospectors","the excelsior institute","frontier logistics",
 	"the artificers guild","the nadezhda council","mercenary groups","scavenger gangs","terrorist groups","outside forces",
 
 //Station Locations

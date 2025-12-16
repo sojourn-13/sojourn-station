@@ -699,7 +699,7 @@ var/global/list/robot_modules = list(
 //Possible todo: Discuss giving security module some kind of lethal ranged weapon
 /obj/item/robot_module/security
 	name = "security robot module"
-	channels = list("Marshal" = 1, "Blackshield" = 1)
+	channels = list("Security" = 1, "Security(I)" = 1)
 	networks = list(NETWORK_SECURITY)
 	can_be_pushed = 0
 	supported_upgrades = list(/obj/item/borg/upgrade/tasercooler,

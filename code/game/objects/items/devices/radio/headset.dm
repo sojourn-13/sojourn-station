@@ -187,7 +187,7 @@
 	desc = "Made specifically for the roboticists who cannot decide between departments."
 	icon_state = "rob_headset"
 	item_state = "headset"
-	ks2type = /obj/item/device/encryptionkey/headset_sci
+	ks2type = /obj/item/device/encryptionkey/headset_rob
 
 /obj/item/device/radio/headset/headset_med
 	name = "medical radio headset"
@@ -211,7 +211,7 @@
 	ks2type = /obj/item/device/encryptionkey/headset_com
 
 /obj/item/device/radio/headset/heads/captain
-	name = "premier's headset"
+	name = "governor's headset"
 	desc = "The headset of the arbiter and man with less power than he pretends he has."
 	icon_state = "com_headset"
 	item_state = "headset"

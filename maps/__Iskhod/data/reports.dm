@@ -502,12 +502,12 @@
 //D the Snek's magical report code, will likely never be used, but hey, I did a thing
 /datum/computer_file/report/recipient/shipping_receipt
 	form_name = "LSC-LSR-01"
-	title = "Lonestar Shipping Receipt"
+	title = "Frontier Logistics Shipping Receipt"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/shipping_receipt/generate_fields()
 	..()
-	add_field(/datum/report_field/instruction, "Lonestar Shipping Receipt")
+	add_field(/datum/report_field/instruction, "Frontier Logistics Shipping Receipt")
 	add_field(/datum/report_field/date, "Date")
 	add_field(/datum/report_field/time, "Time")
 	add_field(/datum/report_field/simple_text, "You were served by:")
@@ -517,12 +517,12 @@
 
 /datum/computer_file/report/recipient/shipping_invoice
 	form_name = "LSC-LSI-02"
-	title = "Lonestar Shipping Invoice"
+	title = "Frontier Logistics Shipping Invoice"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/shipping_invoice/generate_fields()
 	..()
-	add_field(/datum/report_field/instruction, "Lonestar Shipping Invoice")
+	add_field(/datum/report_field/instruction, "Frontier Logistics Shipping Invoice")
 	add_field(/datum/report_field/simple_text, "Employee:")
 	add_field(/datum/report_field/simple_text, "Original Price of Item/Order:")
 	add_field(/datum/report_field/simple_text, "Item/Order sold:")
@@ -533,7 +533,7 @@
 
 /datum/computer_file/report/recipient/mining_report
 	form_name = "LSC-LMR-03"
-	title = "Lonestar Mining Report"
+	title = "Frontier Logistics Mining Report"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/mining_report/generate_fields()
@@ -542,7 +542,7 @@
 	add_field(/datum/report_field/simple_text, "Mined by:")
 	add_field(/datum/report_field/pencode_text, "Detailed amount of Materials after processing:")
 	add_field(/datum/report_field/simple_text, "Total Shipping Profits of All Materials (Standard Value):")
-	add_field(/datum/report_field/simple_text, "Were all items sold via the Lonestar Cargo Shuttle?:")
+	add_field(/datum/report_field/simple_text, "Were all items sold via the Frontier Logistics Cargo Shuttle?:")
 	add_field(/datum/report_field/pencode_text, "What materials were sold to other departments?:")
 	add_field(/datum/report_field/simple_text, "Total amount of profit:")
 	add_field(/datum/report_field/simple_text, "The miner is entitled to:")

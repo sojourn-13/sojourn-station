@@ -73,7 +73,7 @@
 	siemens_coefficient = 0.5
 
 /obj/item/clothing/shoes/reinforced/medical
-	name = "soteria reinforced shoes"
+	name = "vesalius-andra reinforced shoes"
 	desc = "Slightly reinforced shoes for soteria medical personnel."
 	icon_state = "medshoes"
 	item_state = "medshoes"

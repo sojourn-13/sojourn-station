@@ -30,7 +30,7 @@
 
 /obj/structure/sign/plaque/goldplaque/grant
 	name = "solid gold research grant"
-	desc = "A golden plaque made from solid gold in the image of a research grant that the Lonestar \
+	desc = "A golden plaque made from solid gold in the image of a research grant that the Frontier Logistics \
 	took from the Vesalius-Andra after winning a boxing tournament. \
 	It's rumored that Ryan himself commissioned this in a tasteless display of bad showmanship. \
 	The craftmenship is top quality, however."

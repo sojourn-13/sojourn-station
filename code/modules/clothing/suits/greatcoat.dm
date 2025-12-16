@@ -1,6 +1,6 @@
 
 /obj/item/clothing/suit/greatcoat/cap
-	name = "premier's greatcoat"
+	name = "governor's greatcoat"
 	desc = "A green greatcoat. Makes you feel like the leader you are supposed to be."
 	icon_state = "cap_coat"  //Sprites from Eris
 	item_state = "cap_coat"

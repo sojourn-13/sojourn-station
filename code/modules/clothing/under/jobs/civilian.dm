@@ -53,7 +53,7 @@
 
 /obj/item/clothing/under/rank/captain //Alright, technically not a 'civilian' but its better then giving a .dm file for a single define.
 	desc = "An authoritative green uniform with gold flair denoting the rank of Premier."
-	name = "premier's uniform"
+	name = "governor's uniform"
 	icon_state = "captain"  //Sprites from Eris
 	item_state = "b_suit"
 
@@ -67,9 +67,9 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["premier's uniform"] = "captain"
-	options["premier's old uniform"] = "captain-old"
-	options["premier's formal uniform"] = "captain_formal"
+	options["governor's uniform"] = "captain"
+	options["governor's old uniform"] = "captain-old"
+	options["governor's formal uniform"] = "captain_formal"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
@@ -84,16 +84,16 @@
 		return 1
 
 /obj/item/clothing/under/rank/cargotech
-	name = "lonestar cargo uniform"
-	desc = "A grey and orange Lonestar jumpsuit to fit Lonestar regulations."
+	name = "frontier logistics cargo uniform"
+	desc = "A grey and orange Frontier Logistics jumpsuit to fit Frontier Logistics regulations."
 	icon_state = "cargotech"
 	item_state = "miner"
 
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
 
 /obj/item/clothing/under/rank/cargoclerk
-	name = "lonestar office uniform"
-	desc = "A grey and orange Lonestar suit to fit Lonestar regulations."
+	name = "frontier logistics office uniform"
+	desc = "A grey and orange Frontier Logistics suit to fit Frontier Logistics regulations."
 	icon_state = "cargoclerk"
 	item_state = "miner"
 
@@ -297,8 +297,8 @@
 	item_state = "artist"
 
 /obj/item/clothing/under/rank/miner
-	desc = "A snappy Lonestar jumpsuit to handle the harshness of the mines."
-	name = "lonestar miner uniform"
+	desc = "A snappy Frontier Logistics jumpsuit to handle the harshness of the mines."
+	name = "mining technician uniform"
 	icon_state = "miner"
 	item_state = "miner"
 
@@ -310,8 +310,8 @@
 	armor_list = list(melee = 1, bullet = 0, energy = 2, bomb = 0, bio = 0, rad = 5)
 
 /obj/item/clothing/under/rank/lonestar_gorka
-	name = "lonestar gorka jumpsuit"
-	desc = "An old gorka suit painted over with Lonestar orange and black."
+	name = "frontier logistics gorka jumpsuit"
+	desc = "An old gorka suit painted over with Frontier Logistics orange and black."
 	icon_state = "ls_gorka"
 	item_state = "ls_gorka"
 

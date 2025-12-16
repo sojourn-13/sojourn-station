@@ -163,7 +163,7 @@
 	icon_state = "backpack_botanical"
 
 /obj/item/storage/backpack/captain
-	name = "premier's backpack"
+	name = "governor's backpack"
 	desc = "It's a special backpack made exclusively for officers."
 	icon_state = "backpack_captain"
 
@@ -350,7 +350,7 @@
 	desc = "A green satchel for plant related work."
 
 /obj/item/storage/backpack/satchel/captain
-	name = "premier's satchel"
+	name = "governor's satchel"
 	desc = "An exclusive satchel for officers."
 	icon_state = "satchel_captain"
 

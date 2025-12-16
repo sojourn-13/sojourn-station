@@ -240,7 +240,7 @@
 
 
 /obj/item/grenade/chem_grenade/metalfoam
-	name = "Lonestar \"Stop-Space\""
+	name = "Frontier Logistics \"Stop-Space\""
 	icon_state = "foam"
 	desc = "Used for emergency sealing of air breaches."
 	can_be_modified = FALSE
@@ -286,7 +286,7 @@
 	beakers += B2
 
 /obj/item/grenade/chem_grenade/antiweed
-	name = "Lonestar \"Flora Armageddon\""
+	name = "Frontier Logistics \"Flora Armageddon\""
 	desc = "Used for purging large areas of invasive plant species. Contents under pressure. Do not directly inhale contents."
 	icon_state = "foam"
 	can_be_modified = FALSE
@@ -316,7 +316,7 @@
 	matter_reagents = list("water" = 30)
 
 /obj/item/grenade/chem_grenade/cleaner
-	name = "Lonestar \"Shit-Be-Gone\""
+	name = "Frontier Logistics \"Shit-Be-Gone\""
 	icon_state = "foam"
 	desc = "Dirt? Grime? Blood and criminal evidence? Say good-fucking-bye to all of those things with one simple throw!"
 	can_be_modified = FALSE

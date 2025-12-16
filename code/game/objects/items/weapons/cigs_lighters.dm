@@ -362,7 +362,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	preloaded_reagents = list("nicotineplus" = 5, "vodka" = 10)
 
 /obj/item/clothing/mask/smokable/cigarette/lonestar
-	name = "\improper LoneStar light cigarette"
+	name = "\improper Frontier Logistics light cigarette"
 	type_butt = /obj/item/trash/cigbutt/lonestar
 	icon_state = "lonestaroff"
 	icon_on = "lonestaron"
@@ -570,7 +570,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	icon_state = "comredbutt"
 
 /obj/item/trash/cigbutt/lonestar
-	name = "\improper LoneStar cigarette butt"
+	name = "\improper Frontier Logistics cigarette butt"
 	icon_state = "comredbutt"
 
 /obj/item/trash/cigbutt/faith

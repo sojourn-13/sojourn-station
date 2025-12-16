@@ -279,7 +279,7 @@
 
 /obj/item/clothing/mask/gas/bigguy
 	name = "compact rebreather"
-	desc = "A small, Lonestar-brand rebreather designed to regulate the flux of gasses fed to its user. Taking it off will not make you die...unless you're in a non-breathable environment." // It won't be extremely painful either. - Seb
+	desc = "A small, Frontier Logistics-brand rebreather designed to regulate the flux of gasses fed to its user. Taking it off will not make you die...unless you're in a non-breathable environment." // It won't be extremely painful either. - Seb
 	flags_inv = BLOCKFACEHAIR
 	body_parts_covered = FACE
 	icon_state = "bane"
@@ -372,7 +372,7 @@
 
 /obj/item/clothing/mask/gas/bigguy/sleekguy
 	name = "sleek grey rebreather"
-	desc = "A small, Vesalius-Andra-brand rebreather designed to regulate the flux of gasses fed to its user." // take that Lonestar, no longer will you have a monopoly on cool facewear -Mus
+	desc = "A small, Vesalius-Andra-brand rebreather designed to regulate the flux of gasses fed to its user." // take that Frontier Logistics, no longer will you have a monopoly on cool facewear -Mus
 	icon_state = "srebreath"
 
 /obj/item/clothing/mask/gas/bigguy/sleekblueguy
@@ -382,7 +382,7 @@
 
 /obj/item/clothing/mask/gas/bigguy/sleekgoldguy
 	name = "sleek gold rebreather"
-	desc = "A small, Vesalius-Andra-brand rebreather designed to regulate the flux of gasses fed to its user. This one is gold and has a Lonestar marking."
+	desc = "A small, Vesalius-Andra-brand rebreather designed to regulate the flux of gasses fed to its user. This one is gold and has a Frontier Logistics marking."
 	icon_state = "srebreath_gold"
 
 /obj/item/clothing/mask/gas/bigguy/sleekorangeguy

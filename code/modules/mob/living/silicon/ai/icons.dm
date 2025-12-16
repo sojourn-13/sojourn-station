@@ -97,7 +97,7 @@ var/list/datum/ai_icon/ai_icons
 	alive_light = "#81DDFF"
 
 /datum/ai_icon/lonestar
-	name = "Lonestar"
+	name = "Frontier Logistics"
 	alive_icon = "ai-lonestar"
 	alive_light = "#58751C"
 

@@ -209,8 +209,8 @@ var/const/NO_EMAG_ACT = -50
 	group = "centcom"
 
 /obj/item/card/id/captains_spare
-	name = "premier's spare ID"
-	desc = "A golden and pompous spare ID, for when a new premier is elected or in the shameful case an existing one lost his original badge. The most stolen item on the colony."
+	name = "governor's spare ID"
+	desc = "A golden and pompous spare ID, for when a new governoris elected or in the shameful case an existing one lost his original badge. The most stolen item on the colony."
 	icon_state = MATERIAL_GOLD
 	item_state = "gold_id"
 	registered_name = "Premier"

@@ -1,6 +1,6 @@
 /datum/trade_station/boozefood
 	name_pool = list(
-		"LTB 'Vermouth'" = "Lonestar's Trade Beacon 'Vermouth' \"Best Drinks! Best Beverages! Ingredients for your cooks! Anything that is needed for your private bars and more!"
+		"LTB 'Vermouth'" = "Frontier Logistics's Trade Beacon 'Vermouth' \"Best Drinks! Best Beverages! Ingredients for your cooks! Anything that is needed for your private bars and more!"
 	)
 	uid = "commissary"
 	tree_x = 0.42

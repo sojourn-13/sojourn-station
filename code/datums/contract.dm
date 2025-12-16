@@ -2,11 +2,11 @@ GLOBAL_LIST_EMPTY(various_antag_contracts)		// Contracts from "Various" employer
 GLOBAL_LIST_EMPTY(excel_antag_contracts)		// Excelsior contracts
 GLOBAL_LIST_EMPTY(blackshield_antag_contracts)	// Excelsior contracts
 GLOBAL_LIST_INIT(antag_item_targets,list(
-		"the premier's antique laser gun" = /obj/item/gun/energy/captain,
+		"the governor's antique laser gun" = /obj/item/gun/energy/captain,
 		"a hand teleporter" = /obj/item/hand_tele,
 		"an RCD" = /obj/item/rcd,
 		"a jetpack" = /obj/item/tank/jetpack,
-		"a premier's jumpsuit" = /obj/item/clothing/under/rank/captain,
+		"a governor's jumpsuit" = /obj/item/clothing/under/rank/captain,
 		"a functional AI" = /obj/item/device/aicard,
 		"the Guild Master's advanced voidsuit control module" = /obj/item/rig/ce,
 		"the colony blueprints" = /obj/item/blueprints,
@@ -279,7 +279,7 @@ GLOBAL_LIST_INIT(blackshield_item_targets,list(
 		"a hand teleporter" = /obj/item/hand_tele,
 		"an RCD" = /obj/item/rcd,
 		"a jetpack" = /obj/item/tank/jetpack,
-		"a premier's jumpsuit" = /obj/item/clothing/under/rank/captain,
+		"a governor's jumpsuit" = /obj/item/clothing/under/rank/captain,
 		"a functional AI" = /obj/item/device/aicard,
 		"the GM advanced voidsuit control module" = /obj/item/rig/ce,
 		"the station blueprints" = /obj/item/blueprints,
@@ -291,7 +291,7 @@ GLOBAL_LIST_INIT(blackshield_item_targets,list(
 		"a CO's jumpsuit" = /obj/item/clothing/under/rank/ih_commander,
 		"a Steward's jumpsuit" = /obj/item/clothing/under/rank/first_officer,
 		"the hypospray" = /obj/item/reagent_containers/hypospray,
-		// "the premier's pinpointer" = /obj/item/pinpointer, // DISABLED - pinpointer not available
+		// "the governor's pinpointer" = /obj/item/pinpointer, // DISABLED - pinpointer not available
 		"an ablative armor vest" = /obj/item/clothing/suit/armor/laserproof,
 		"an Ironhammer hardsuit control module" = /obj/item/rig/combat/ironhammer
 	)

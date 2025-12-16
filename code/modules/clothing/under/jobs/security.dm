@@ -9,8 +9,8 @@
  * Security
  */
 /obj/item/clothing/under/rank/warden
-	desc = "A durable supply specialist's jumpsuit, designed to provide moderate combat protection."
-	name = "supply specialist's jumpsuit"
+	desc = "A durable lieutenant's jumpsuit, designed to provide moderate combat protection."
+	name = "lieutenant's jumpsuit"
 	icon_state = "warden"
 	item_state = "r_suit"
 	siemens_coefficient = 0.8
@@ -42,13 +42,13 @@
 		return 1
 
 /obj/item/clothing/head/rank/warden
-	name = "supply specialist's helmet"
-	desc = "A distinctive red military helmet signifying a supply specialist rank."
+	name = "lieutenant's helmet"
+	desc = "A distinctive red military helmet signifying a lieutenant rank."
 	icon_state = "policehelm"
 	body_parts_covered = 0
 
 /obj/item/clothing/under/rank/security
-	name = "marshal officer's jumpsuit"
+	name = "ranger's jumpsuit"
 	desc = "A durable officer's jumpsuit, designed to provide moderate combat protection."
 	icon_state = "security"
 	item_state = "ba_suit"
@@ -91,7 +91,7 @@
 	siemens_coefficient = 0.8
 
 /obj/item/clothing/under/rank/bdu/marshal
-	name = "marshal officer's BDU"
+	name = "ranger's BDU"
 	desc = "A durable officer's Battle Dress Uniform, designed to provide moderate combat protection."
 	icon_state = "bdumarshal"
 	item_state = "bdumarshal"
@@ -210,8 +210,8 @@
  * Ironhammer Commander
  */
 /obj/item/clothing/under/rank/ih_commander
-	desc = "It's a jumpsuit worn by those few with the dedication to achieve the position of \"Warrant Officer\". It has additional armor to protect the wearer."
-	name = "warrant officer's jumpsuit"
+	desc = "It's a jumpsuit worn by those few with the dedication to achieve the position of \"Captain\". It has additional armor to protect the wearer."
+	name = "captain's jumpsuit"
 	icon_state = "hos"
 	item_state = "r_suit"
 	siemens_coefficient = 0.8
@@ -243,8 +243,8 @@
 		return 1
 
 /obj/item/clothing/head/rank/commander
-	name = "warrant officer's Hat"
-	desc = "The hat of the Warrant Officer. For showing the officers who's in charge."
+	name = "captain's Hat"
+	desc = "The hat of the Captain. For showing the officers who's in charge."
 	icon_state = "hoshat"
 	body_parts_covered = 0
 	siemens_coefficient = 0.6

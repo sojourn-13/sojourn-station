@@ -1,9 +1,9 @@
 /datum/design/autolathe/cell/large
-	name = "Lonestar \"Robustcell 2000L\""
+	name = "Frontier Logistics \"Robustcell 2000L\""
 	build_path = /obj/item/cell/large
 
 /datum/design/autolathe/cell/large/high
-	name = "Lonestar \"Robustcell 6000L\""
+	name = "Frontier Logistics \"Robustcell 6000L\""
 	build_path = /obj/item/cell/large/high
 
 /datum/design/autolathe/cell/large/excelsior
@@ -11,11 +11,11 @@
 	build_path = /obj/item/cell/large/excelsior
 
 /datum/design/autolathe/cell/medium
-	name = "Lonestar \"Robustcell 600M\""
+	name = "Frontier Logistics \"Robustcell 600M\""
 	build_path = /obj/item/cell/medium
 
 /datum/design/autolathe/cell/medium/high
-	name = "Lonestar \"Robustcell 800M\""
+	name = "Frontier Logistics \"Robustcell 800M\""
 	build_path = /obj/item/cell/medium/high
 
 /datum/design/autolathe/cell/medium/excelsior
@@ -23,11 +23,11 @@
 	build_path = /obj/item/cell/medium/excelsior
 
 /datum/design/autolathe/cell/small
-	name = "Lonestar \"Robustcell 100S\""
+	name = "Frontier Logistics \"Robustcell 100S\""
 	build_path = /obj/item/cell/small
 
 /datum/design/autolathe/cell/small/high
-	name = "Lonestar \"Robustcell 200S\""
+	name = "Frontier Logistics \"Robustcell 200S\""
 	build_path = /obj/item/cell/small/high
 
 /datum/design/autolathe/cell/small/excelsior

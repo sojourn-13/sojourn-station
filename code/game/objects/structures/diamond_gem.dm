@@ -2,7 +2,7 @@
 	name = "Fragment of Amethyn"
 	desc = "A once in the galaxy formation of diamond and anomalous materials that took four weeks of painstaking chiseling to remove from its geode prison. \
 	This object is so valuable it is literally priceless, incapable of being sold on any market due to nobody have the money to buy it. So now Ryan keeps \
-	it in the Lonestar vault as an insurance policy."
+	it in the Frontier Logistics vault as an insurance policy."
 	icon = 'icons/obj/engine.dmi'
 	icon_state = "diamond"
 	anchored = 1

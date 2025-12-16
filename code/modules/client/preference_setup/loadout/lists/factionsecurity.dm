@@ -11,15 +11,15 @@
 	path = /obj/item/clothing/suit/armor/vest/ironhammer_wintercoat
 
 /datum/gear/factionsecurity/raincloak
-	display_name = "marshal raincloak"
+	display_name = "security raincloak"
 	path = /obj/item/clothing/accessory/duster/marshal
 
 /datum/gear/factionsecurity/basic_uniform
-	display_name = "marshal uniform (default)"
+	display_name = "security uniform (default)"
 	path = /obj/item/clothing/under/rank/security
 
 /datum/gear/factionsecurity/miljacket_marshal //it's a Jacket for Rangers Commisioned by pneumo/husky and sprited/coded by Dromkii
-	display_name = "marshal jacket"
+	display_name = "security jacket"
 	path = /obj/item/clothing/suit/storage/toggle/miljacket_marshal
 
 /datum/gear/factionsecurity/snowsuitsecurity
@@ -29,25 +29,25 @@
 /datum/gear/factionsecurity/beretcommander
 	display_name = "beret, security head"
 	path = /obj/item/clothing/head/rank/commander
-	allowed_roles = list("Warrant Officer")
+	allowed_roles = list("Captain")
 	slot = slot_head
 
 /datum/gear/factionsecurity/beretwarden
-	display_name = "beret, supply specialist"
+	display_name = "beret, lieutenant"
 	path = /obj/item/clothing/head/rank/warden/beret
-	allowed_roles = list("Supply Specialist")
+	allowed_roles = list("Lieutenant")
 	slot = slot_head
 
 /datum/gear/factionsecurity/beretironhammer
 	display_name = "beret, security"
 	path = /obj/item/clothing/head/rank/ironhammer
-	allowed_roles = list("Ranger","Marshal Officer", "Marshal Officer Jr")
+	allowed_roles = list("Ranger", "Junior Ranger")
 	slot = slot_head
 
 /datum/gear/factionsecurity/capsarge
-	display_name = "cap, supply specialist"
+	display_name = "cap, lieutenant"
 	path = /obj/item/clothing/head/soft/sarge2soft
-	allowed_roles = list("Supply Specialist")
+	allowed_roles = list("Lieutenant")
 	slot = slot_head
 
 /datum/gear/factionsecurity/capofficer
@@ -71,9 +71,9 @@
 	slot = slot_head
 
 /datum/gear/factionsecurity/cloak
-	display_name = "cloak, warrant officer"
+	display_name = "cloak, captain"
 	path = /obj/item/clothing/accessory/job/cape/ihc
-	allowed_roles = list("Warrant Officer")
+	allowed_roles = list("Captain")
 	slot = slot_wear_suit
 	sort_category = "Faction: Security"
 

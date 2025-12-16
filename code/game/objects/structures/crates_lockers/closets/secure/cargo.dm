@@ -742,7 +742,7 @@
 	new /obj/item/storage/belt/utility/full(src)
 
 /obj/structure/closet/secure_closet/personal/artist
-	name = "lonestar artist's locker"
+	name = "frontier logistics artist's locker"
 	req_access = list(access_theatre)
 	access_occupy = list(access_cargo)
 	icon_state = "cargo"

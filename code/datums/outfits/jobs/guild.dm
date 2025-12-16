@@ -3,7 +3,7 @@
 	hierarchy_type = /decl/hierarchy/outfit/job/cargo
 
 /decl/hierarchy/outfit/job/cargo/merchant
-	name = OUTFIT_JOB_NAME("Lonestar - SOM")
+	name = OUTFIT_JOB_NAME("Frontier Logistics - Quartermaster")
 	uniform = /obj/item/clothing/under/rank/cargoclerk
 	shoes = /obj/item/clothing/shoes/laceup
 	glasses = /obj/item/clothing/glasses/sunglasses
@@ -14,7 +14,7 @@
 	l_ear = /obj/item/device/radio/headset/heads/merchant
 
 /decl/hierarchy/outfit/job/cargo/cargo_tech
-	name = OUTFIT_JOB_NAME("Lonestar - Cargo Technician")
+	name = OUTFIT_JOB_NAME("Frontier Logistics - Cargo Technician")
 	uniform = /obj/item/clothing/under/rank/cargotech
 	suit = /obj/item/clothing/suit/storage/cargovest
 	shoes = /obj/item/clothing/shoes/jackboots
@@ -23,7 +23,7 @@
 	pda_type = /obj/item/modular_computer/pda/cargo
 
 /decl/hierarchy/outfit/job/cargo/mining
-	name = OUTFIT_JOB_NAME("Lonestar - Lonestar Miner")
+	name = OUTFIT_JOB_NAME("Frontier Logistics - Mining Technician")
 	uniform = /obj/item/clothing/under/rank/miner
 	suit = /obj/item/clothing/suit/storage/cargovest
 	shoes = /obj/item/clothing/shoes/jackboots
@@ -38,7 +38,7 @@
 	BACKPACK_OVERRIDE_ENGINEERING
 
 /decl/hierarchy/outfit/job/cargo/mining/void
-	name = OUTFIT_JOB_NAME("Lonestar - Lonestar Miner Voidsuit")
+	name = OUTFIT_JOB_NAME("Frontier Logistics - Mining Technician Voidsuit")
 	mask = /obj/item/clothing/mask/breath
 	suit = /obj/item/clothing/suit/space/void/mining
 

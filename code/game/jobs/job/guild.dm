@@ -1,6 +1,6 @@
 //Cargo
 /datum/job/merchant
-	title = "Surface Operations Manager"
+	title = "Quartermaster"
 	flag = MERCHANT
 	department = DEPARTMENT_SERVICE
 	head_position = TRUE
@@ -31,7 +31,7 @@
 		STAT_MEC = 15,
 		STAT_VIG = 10
 	)
-	description = "The Surface Operations Manager coordinates the affairs of the local branch of Frontier Logistics.<br>\
+	description = "The Quartermaster coordinates the affairs of the local branch of Frontier Logistics.<br>\
 Your main objective, naturally, is to make as much money as you can. Purchase and acquire goods and sell them on for a profit.<br>\
 Your Cargo Technicians will handle most of the grunt work and your Miners will acquire minerals. They are capable - utilize them well.<br>\
 The vendors found throughout the colony are also operated by your organization. They make you money - ensure they are functional and well-stocked.<br>\
@@ -55,7 +55,7 @@ Counsel the council on directing the colony towards profitable opportunities."
 	perks = list(PERK_TIMEISMONEY, PERK_MARKET_PROF, PERK_BARTENDER, PERK_CHEM_CONTRABAND)
 
 /obj/landmark/join/start/merchant
-	name = "Surface Operations Manager"
+	name = "Quartermaster"
 	icon_state = "player-beige-officer"
 	join_tag = /datum/job/merchant
 
@@ -67,9 +67,9 @@ Counsel the council on directing the colony towards profitable opportunities."
 	faction = MAP_FACTION
 	total_positions = 4
 	spawn_positions = 4
-	supervisors = "the Surface Operations Manager"
+	supervisors = "the Quartermaster"
 	difficulty = "Easy."
-	alt_titles = list("Cargo Specialist", "Lonestar Sales Technician", "Lonestar Retail Assistant")
+	alt_titles = list("Cargo Specialist", "Frontier Logistics Sales Technician", "Frontier Logistics Retail Assistant")
 	selection_color = "#c3b9a6"
 	wage = WAGE_LABOUR_DUMB
 	department_account_access = TRUE
@@ -114,16 +114,16 @@ Avoid the deeper tunnels unless otherwise instructed, however - this domain is h
 	join_tag = /datum/job/cargo_tech
 
 /datum/job/mining
-	title = "Lonestar Miner"
+	title = "Mining Technician"
 	flag = MINER
 	department = DEPARTMENT_SERVICE
 	department_flag = FL
 	faction = MAP_FACTION
 	total_positions = 4
 	spawn_positions = 4
-	supervisors = "the Surface Operations Manager"
+	supervisors = "the Quartermaster"
 	difficulty = "Easy."
-	alt_titles = list("Lonestar Drill Technician", "Junior Lonestar Miner", "Lonestar Excavation Specialist")
+	alt_titles = list("Frontier Logistics Drill Technician", "Junior Frontier Logistics Miner", "Frontier Logistics Excavation Specialist")
 	selection_color = "#c3b9a6"
 	wage = WAGE_LABOUR_HAZARD //The miners union is stubborn
 	health_modifier = 5
@@ -134,7 +134,7 @@ Avoid the deeper tunnels unless otherwise instructed, however - this domain is h
 	description = "The Miner is a professional resource procurer, acquiring valuable minerals for Frontier Logistics.<br>\
 Your primary responsibility is to descend into the deep tunnels and dig up as much ore as you can.<br>\
 Accessed by elevator, the area contains an outpost with all the facilities to process said ore and deliver refined materials ready for use.<br>\
-Whatever you dig up will go to the cargo department and from there on it is the responsibility of others within Lonestar to sell it.<br>\
+Whatever you dig up will go to the cargo department and from there on it is the responsibility of others within Frontier Logistics to sell it.<br>\
 The deep tunnels are far less dangerous than the wilderness, but pack well - disappearances are not unheard of."
 
 	duties = "Dig up ores and minerals to be processed into usable material.<br>\
@@ -160,6 +160,6 @@ The deep tunnels are far less dangerous than the wilderness, but pack well - dis
 							 /datum/computer_file/program/reports)
 
 /obj/landmark/join/start/mining
-	name = "Lonestar Miner"
+	name = "Mining Technician"
 	icon_state = "player-beige"
 	join_tag = /datum/job/mining

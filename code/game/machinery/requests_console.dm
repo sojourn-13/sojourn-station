@@ -254,13 +254,13 @@ var/list/obj/machinery/requests_console/allConsoles = list()
 	departmentType = RC_ASSIST|RC_INFO
 
 /obj/machinery/requests_console/preset/command/premier
-	name = "Premier Request Console"
-	department = "Premier's Desk"
+	name = "Governor Request Console"
+	department = "Governor's Desk"
 
 /obj/machinery/requests_console/preset/command/ceo
-	name = "SOM Request Console"
-	department = "Surface Operations Manager's Desk"
-	departmentType = RC_ASSIST|RC_SUPPLY|RC_INFO //SOM should be able to get supply requests
+	name = "QM Request Console"
+	department = "Quartermaster's Desk"
+	departmentType = RC_ASSIST|RC_SUPPLY|RC_INFO //QM should be able to get supply requests
 
 /obj/machinery/requests_console/preset/command/cbo
 	name = "CBO Request Console"
@@ -275,8 +275,8 @@ var/list/obj/machinery/requests_console/allConsoles = list()
 	department = "Blackshield Commander's Desk"
 
 /obj/machinery/requests_console/preset/command/wo
-	name = "WO Request Console"
-	department = "Warrant Officer's Desk"
+	name = "Captain Request Console"
+	department = "Ranger Captain's Desk"
 
 /obj/machinery/requests_console/preset/command/prime
 	name = "Prime Request Console"

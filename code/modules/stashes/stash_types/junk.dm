@@ -19,7 +19,7 @@
 	story_type = STORY_CRIME
 	directions = DIRECTION_IMAGE
 	lore = "Dear Diary,<br>\
-That prick premier keeps doing inspections of personal lockers, claiming some idiot terrorist\
+That prick governorkeeps doing inspections of personal lockers, claiming some idiot terrorist\
 threat. I think he just wants to go poking around through my unmentionables, but still, he'll start \
 wondering where all these little odds and ends come from, or what kind of favors he can get. I'll \
 just stuff it here for now, and he can go stuff himself. %D"

@@ -191,16 +191,16 @@
 
 /obj/effect/mob_spawn/human/lonestar_ert
 	name = "deployment sleeper"
-	desc = "A sleeper, with an unconscious body inside. The occupant seems to be a Lonestar IA Agent."
+	desc = "A sleeper, with an unconscious body inside. The occupant seems to be a Frontier Logistics IA Agent."
 	mob_name = "a human"
 	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "sleeper_1"
 	outfit = /decl/hierarchy/outfit/lss_ert
 	ghost_role_perks = list(PERK_NO_OBFUSCATION, PERK_MARKET_PROF, PERK_TRUE_NAME)
 	short_desc = "You are an Internal Affairs Agent."
-	flavour_text = "Lonestar's surface operations have run into some troubles, and your job is to handle them. Speak to those involved, make decisions, keep the profits flowing."
-	assignedrole = "Lonestar Internal Affairs Agent"
-	title = "Lonestar Internal Affairs Agent"
+	flavour_text = "Frontier Logistics's surface operations have run into some troubles, and your job is to handle them. Speak to those involved, make decisions, keep the profits flowing."
+	assignedrole = "Frontier Logistics Internal Affairs Agent"
+	title = "Frontier Logistics Internal Affairs Agent"
 	stat_modifiers = list(
 		STAT_ROB = 45,
 		STAT_TGH = 45,

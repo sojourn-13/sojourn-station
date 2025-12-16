@@ -358,7 +358,7 @@
 	center_of_mass = "x=16;y=7"
 
 /obj/item/reagent_containers/drinks/flask
-	name = "premier's flask"
+	name = "governor's flask"
 	desc = "A metal flask belonging to the Premier."
 	icon_state = "flask"
 	volume = 60

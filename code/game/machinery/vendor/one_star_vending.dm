@@ -99,7 +99,7 @@
 
 /obj/machinery/vending/greyson_colony_ally
 	name = "Greyson Star Traders Vending Machine"
-	desc = "A holographic vendor made by a unknown Greyson Positronic sub-brand that owns a trading vessel, that said vessel constantly trades with lonestar and in a effort of good will by the mainframe GSTPMF Nova Greyson they have given this vendor to the colony containing greyson goods... This one sells a variety of items."
+	desc = "A holographic vendor made by a unknown Greyson Positronic sub-brand that owns a trading vessel, that said vessel constantly trades with frontier logistics and in a effort of good will by the mainframe GSTPMF Nova Greyson they have given this vendor to the colony containing greyson goods... This one sells a variety of items."
 	product_slogans = "It's a Vending Machine! Well... we think you might enjoy it?; Again thank you for saving one of our representatives! The GSTPMF Nova Greyson sends her regards to the colony."
 	product_ads = "We thank your colony for saving our Representative in the past! We hope to make more deals for tomorrow!;Hows are you doing? Hope you have a wonderful day!;We really do hope the colony fares well! Contact us anytime soon!;Some people really want to see the world shine! As do us!"
 	icon = 'icons/obj/machines/one_star/vending.dmi'

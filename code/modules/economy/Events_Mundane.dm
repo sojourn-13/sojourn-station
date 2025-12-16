@@ -85,7 +85,7 @@
 				[pick("Deadly","The last","Lost","Dead")] [pick("Starships","Warriors","outcasts")] \
 				[pick("of","from","raid","go hunting on","visit","ravage","pillage","destroy")] \
 				[pick("Moghes","Earth","Biesel","Ahdomai","S'randarr","the Void","the Edge of Space")]'.\
-				. Own it on webcast today, or visit the galactic premier on [affected_dest.name]!"
+				. Own it on webcast today, or visit the galactic governoron [affected_dest.name]!"
 
 			if(BIG_GAME_HUNTERS)
 				body += "Game hunters on [affected_dest.name] "

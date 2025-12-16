@@ -7,14 +7,14 @@
 
 //Cargo Tech
 /obj/item/clothing/head/rank/cargosoft
-	name = "lonestar cap"
-	desc = "A grey cap with the Lonestar logo on it."
+	name = "frontier logistics cap"
+	desc = "A grey cap with the Frontier Logistics logo on it."
 	icon_state = "cargosoft"
 
 //Captain
 
 /obj/item/clothing/head/rank/captain
-	name = "premier's hat"
+	name = "governor's hat"
 	icon_state = "captain"  //Sprites from Eris
 	desc = "It's good being the king."
 	item_state_slots = list(

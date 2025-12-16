@@ -316,7 +316,7 @@
 
 // Head of Departments
 /obj/item/clothing/accessory/job/cape
-	name = "premier's cloak"
+	name = "governor's cloak"
 	icon_state = "capcloak"
 	desc = "A green-ish cloak with golden lining."
 	slot_flags = SLOT_OCLOTHING | SLOT_ACCESSORY_BUFFER
@@ -417,7 +417,7 @@
 	desc = "A purple cloak with nanoleds creating sparkling bubbles."
 
 /obj/item/clothing/accessory/job/cape/guild
-	name = "lonestar cloak"
+	name = "frontier logistics cloak"
 	icon_state = "cargocloak"
 	desc = "A light-brown cloak."
 

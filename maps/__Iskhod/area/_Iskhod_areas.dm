@@ -697,14 +697,14 @@
 	area_light_color = COLOR_LIGHTING_CREW_SOFT
 
 /area/iskhod/command/cro
-	name = "\improper Research - CRO's Office"
+	name = "\improper Research - Overseer's Office"
 	icon_state = "head_quarters"
 	flags = AREA_FLAG_CRITICAL
 	sound_env = SMALL_SOFTFLOOR
 	area_light_color = COLOR_LIGHTING_CREW_SOFT
 
 /area/iskhod/command/cro/quarters
-	name = "\improper Research - CRO's Quarters"
+	name = "\improper Research - Overseer's Quarters"
 	icon_state = "head_quarters"
 	sound_env = SMALL_SOFTFLOOR
 	area_light_color = COLOR_LIGHTING_CREW_SOFT
@@ -723,14 +723,14 @@
 	area_light_color = COLOR_LIGHTING_CREW_SOFT
 
 /area/iskhod/command/cbo
-	name = "\improper Medbay - CBO's Office"
+	name = "\improper Biolab - Overseer's Office"
 	icon_state = "head_quarters"
 	flags = AREA_FLAG_CRITICAL
 	sound_env = SMALL_SOFTFLOOR
 	area_light_color = COLOR_LIGHTING_CREW_SOFT
 
 /area/iskhod/command/cbo/quarters
-	name = "\improper Medbay - CBO's Quarters"
+	name = "\improper Biolab - Overseer's Quarters"
 	icon_state = "head_quarters"
 	sound_env = SMALL_SOFTFLOOR
 	area_light_color = COLOR_LIGHTING_CREW_SOFT
@@ -761,21 +761,21 @@
 	sound_env = SMALL_SOFTFLOOR
 	area_light_color = COLOR_LIGHTING_CREW_SOFT
 
-/area/iskhod/command/prime
-	name = "Prime's Office"
+/area/iskhod/command/Priest
+	name = "Priest's Office"
 	icon_state = "head_quarters"
 	flags = AREA_FLAG_CRITICAL
 	sound_env = SMALL_SOFTFLOOR
 	area_light_color = COLOR_LIGHTING_CREW_SOFT
 
-/area/iskhod/command/prime/quarters
-	name = "Prime's Quarters"
+/area/iskhod/command/Priest/quarters
+	name = "Priest's Quarters"
 	icon_state = "head_quarters"
 	sound_env = SMALL_SOFTFLOOR
 	area_light_color = COLOR_LIGHTING_CREW_SOFT
 
 /area/iskhod/command/merchant
-	name = "\improper Lonestar - Manager's Office"
+	name = "\improper Frontier Logistics - Quartermaster's Office"
 	icon_state = "quart"
 	flags = AREA_FLAG_CRITICAL
 	sound_env = SMALL_SOFTFLOOR
@@ -1213,177 +1213,177 @@
 //MedBay
 
 /area/iskhod/medical/medbay
-	name = "\improper Medical"
+	name = "\improper Biolab - Medical"
 	icon_state = "nadezhdagreen"
 	area_light_color = COLOR_LIGHTING_SCI_BRIGHT
 
 /area/iskhod/medical/medbay
-	name = "\improper Medbay"
+	name = "\improper Biolab - Medbay"
 	icon_state = "medbay"
 	ambience = list('sound/ambience/signal.ogg')
 
 area/nadezhda/medical/medbayshowers
-	name = "\improper Medbay Showers"
+	name = "\improper Biolab - Medbay Showers"
 	icon_state = "medbay"
 	ambience = list('sound/ambience/signal.ogg')
 
 area/nadezhda/medical/medbaymeeting
-	name = "\improper Medbay Meeting Room"
+	name = "\improper Biolab - Medbay Meeting Room"
 	icon_state = "medbay"
 	ambience = list('sound/ambience/signal.ogg')
 
 //Medbay is a large area, these additional areas help level out APC load.
 /area/iskhod/medical/medbay2
-	name = "\improper Medbay Hallway Floor 2"
+	name = "\improper Biolab - Medbay Hallway Floor 2"
 	icon_state = "medbay2"
 	ambience = list('sound/ambience/signal.ogg')
 
 /area/iskhod/medical/medbay3
-	name = "\improper Medbay Hallway Floor 1 Section 1"
+	name = "\improper Biolab - Medbay Hallway Floor 1 Section 1"
 	icon_state = "medbay3"
 	ambience = list('sound/ambience/signal.ogg')
 
 /area/iskhod/medical/medbay4
-	name = "\improper Medbay Hallway Floor 1 Section 2"
+	name = "\improper Biolab - Medbay Hallway Floor 1 Section 2"
 	icon_state = "medbay4"
 	ambience = list('sound/ambience/signal.ogg')
 
 /area/iskhod/medical/biostorage
-	name = "\improper Secondary Storage"
+	name = "\improper Biolab - Secondary Storage"
 	icon_state = "medbay2"
 	ambience = list('sound/ambience/signal.ogg')
 
 /area/iskhod/medical/bathroom
-	name = "\improper Medical Bathroom"
+	name = "\improper Biolab - Medical Bathroom"
 	icon_state = "medbay2"
 
 /area/iskhod/medical/reception
-	name = "\improper Medbay Reception"
+	name = "\improper Biolab - Medbay Reception"
 	icon_state = "medbay"
 	ambience = list('sound/ambience/signal.ogg')
 
 /area/iskhod/medical/psych
-	name = "\improper Psych Room"
+	name = "\improper Biolab - Psych Room"
 	icon_state = "medbay3"
 	ambience = list('sound/ambience/signal.ogg')
 	area_light_color = COLOR_LIGHTING_CREW_SOFT
 
 /area/iskhod/medical/medbreak
-	name = "\improper Break Room"
+	name = "\improper Biolab - Break Room"
 	icon_state = "medbay3"
 	ambience = list('sound/ambience/signal.ogg')
 
 /area/iskhod/medical/medsleep
-	name = "\improper Medbay Sleeping Room"
+	name = "\improper Biolab - Medbay Sleeping Room"
 	icon_state = "medbay3"
 	ambience = list('sound/ambience/signal.ogg')
 
 /area/iskhod/medical/patients_rooms
-	name = "\improper Patient's Rooms"
+	name = "\improper Biolab - Patient's Rooms"
 	icon_state = "patients"
 
 /area/iskhod/medical/ward
-	name = "\improper Recovery Ward"
+	name = "\improper Biolab - Recovery Ward"
 	icon_state = "patients"
 
 /area/iskhod/medical/patient_a
-	name = "\improper Isolation A"
+	name = "\improper Biolab - Patient Room A"
 	icon_state = "patients"
 
 /area/iskhod/medical/patient_b
-	name = "\improper Isolation B"
+	name = "\improper Biolab - Patient Room B"
 	icon_state = "patients"
 
 /area/iskhod/medical/patient_c
-	name = "\improper Isolation C"
+	name = "\improper Biolab - Patient Room C"
 	icon_state = "patients"
 
 /area/iskhod/medical/patient_wing
-	name = "\improper Patient Wing"
+	name = "\improper Biolab - Patient Wing"
 	icon_state = "patients"
 
 /area/iskhod/medical/cmostore
-	name = "\improper Secure Storage"
+	name = "\improper Biolab - Overseer`s Storage"
 	icon_state = "CMO"
 
 /area/iskhod/medical/virology
-	name = "\improper Virology"
+	name = "\improper Biolab - Virology"
 	icon_state = "virology"
 
 /area/iskhod/medical/virologyaccess
-	name = "\improper Virology Access"
+	name = "\improper Biolab - Virology Access"
 	icon_state = "virology"
 
 /area/iskhod/medical/morgue
-	name = "\improper Morgue"
+	name = "\improper Biolab - Morgue"
 	icon_state = "morgue"
 	ambience = list('sound/ambience/ambimo1.ogg','sound/ambience/ambimo2.ogg')
 
 /area/iskhod/medical/chemistry
-	name = "\improper Chemistry"
+	name = "\improper Biolab - Chemistry"
 	icon_state = "chem"
 
 /area/iskhod/medical/surgery
-	name = "\improper Operating Theatre"
+	name = "\improper Biolab - Operating Theatre"
 	icon_state = "surgery"
 
 /area/iskhod/medical/surgery2
-	name = "\improper Operating Theatre 2"
+	name = "\improper Biolab - Operating Theatre 2"
 	icon_state = "surgery"
 
 /area/iskhod/medical/surgeryobs
-	name = "\improper Operation Observation Room"
+	name = "\improper Biolab - Operation Observation Room"
 	icon_state = "surgery"
 
 /area/iskhod/medical/surgeryprep
-	name = "\improper Pre-Op Prep Room"
+	name = "\improper Biolab - Pre-Op Prep Room"
 	icon_state = "surgery"
 
 /area/iskhod/medical/cryo
-	name = "\improper Vesalius-Andra Cryogenics Bay"
+	name = "\improper Biolab - Cryogenics Bay"
 	icon_state = "cryo"
 
 /area/iskhod/medical/exam_room
-	name = "\improper Exam Room"
+	name = "\improper Biolab - Exam Room"
 	icon_state = "exam_room"
 
 /area/iskhod/medical/genetics
-	name = "\improper Genetics Lab"
+	name = "\improper Research - Genetics Lab"
 	icon_state = "genetics"
 
 /area/iskhod/medical/genetics_cloning
-	name = "\improper Cloning Lab"
+	name = "\improper Research - Cloning Lab"
 	icon_state = "cloning"
 
 /area/iskhod/medical/sleeper
-	name = "\improper Emergency Treatment Centre"
+	name = "\improper Biolab - Emergency Treatment Centre"
 	icon_state = "exam_room"
 
 /area/iskhod/medical/chemstor
-	name = "Chemical Storage"
+	name = "\improper Biolab - Chemical Storage"
 	icon_state = "erisblue"
 	area_light_color = COLOR_LIGHTING_SCI_DARK
 
 /area/iskhod/medical/medeva
-	name = "Medical E.V.A. Storage"
+	name = "\improper Biolab - Medical E.V.A. Storage"
 	icon_state = "erisblue"
 	area_light_color = COLOR_LIGHTING_SCI_DARK
 
 /area/iskhod/medical/paramedic
-	name = "\improper Paramedic Closet"
+	name = "\improper Biolab - Paramedic Closet"
 	icon_state = "erisyellow"
 	area_light_color = COLOR_LIGHTING_SCI_DARK
 
 /area/iskhod/medical/medbay/iso
-	name = "Isolation Wing"
+	name = "\improper Biolab - Isolation Wing"
 	icon_state = "erisgreen"
 
 /area/iskhod/medical/medbay/uppercor
-	name = "Medbay Upper Coridor"
+	name = "\improper Biolab - Medbay Upper Coridor"
 	icon_state = "erisgreen"
 
 /area/iskhod/medical/organ_lab
-	name = "Organ Laboratory"
+	name = "\improper Biolab - Organ Laboratory"
 
 //Security
 
@@ -1614,7 +1614,7 @@ area/nadezhda/medical/medbaymeeting
 	icon_state = "quartoffice"
 
 /area/iskhod/quartermaster/pods
-	name = "\improper Lonestar Pod Dorms"
+	name = "\improper Frontier Logistics Pod Dorms"
 	icon_state = "quartoffice"
 
 /area/iskhod/quartermaster/storage
@@ -1669,74 +1669,78 @@ area/nadezhda/medical/medbaymeeting
 	area_light_color = COLOR_LIGHTING_SCI_BRIGHT
 
 /area/iskhod/rnd/research
-	name = "\improper Research and Development"
+	name = "\improper Research - Research and Development"
 	icon_state = "research"
 	flags = AREA_FLAG_CRITICAL
 
+/area/iskhod/rnd/research/fabrication
+	name = "\improper Research - Fabrication"
+	icon_state = "research"
+
 /area/iskhod/rnd/researchbathroom
-	name = "\improper Research Bathroom"
+	name = "\improper Research - Bathroom"
 	icon_state = "research"
 
 /area/iskhod/rnd/circuitlab
-	name = "\improper Research Circuit Lab"
+	name = "\improper Research - Circuit Lab"
 	icon_state = "research"
 
 /area/iskhod/rnd/rbreakroom
-	name = "\improper Research Breakroom"
+	name = "\improper Research - Breakroom"
 	icon_state = "research"
 
 /area/iskhod/rnd/scient
-	name = "Science Department Entrance"
+	name = "\improper Research - Department Entrance"
 	icon_state = "erisblue"
 
 /area/iskhod/rnd/docking
-	name = "\improper Research Elevator"
+	name = "\improper Research - Elevator"
 	icon_state = "research_dock"
 
 /area/iskhod/rnd/lab
-	name = "\improper Research Lab"
+	name = "\improper Research - Lab"
 	icon_state = "toxlab"
 
 /area/iskhod/rnd/chargebay
-	name = "\improper Mech Bay"
+	name = "\improper Research - Mech Bay"
 	icon_state = "mechbay"
 
 /area/iskhod/rnd/robotics
-	name = "\improper Robotics Lab"
+	name = "\improper Research - Robotics Lab"
 	icon_state = "robotics"
 	flags = AREA_FLAG_CRITICAL
 
 /area/iskhod/rnd/rdoffice
-	name = "\improper Vesalius-Andra Expedition Overseer's Office"
+	name = "\improper Research - Research Office"
 	icon_state = "head_quarters"
 
 /area/iskhod/rnd/supermatter
-	name = "\improper Supermatter Lab"
+	name = "\improper Research - Supermatter Lab"
 	icon_state = "toxlab"
 
 /area/iskhod/rnd/xenobiology
-	name = "\improper Xenobiology Lab"
+	name = "\improper Research - Xenobiology Lab"
 	icon_state = "xeno_lab"
 
 /area/iskhod/rnd/xenobiology/xenoflora_storage
-	name = "\improper Xenoflora Storage"
+	name = "\improper Research - Xenoflora Storage"
 	icon_state = "xeno_f_store"
 
 /area/iskhod/rnd/xenobiology/xenoflora
-	name = "\improper Xenoflora Lab"
+	name = "\improper Research - Xenoflora Lab"
 	icon_state = "xeno_f_lab"
 
 /area/iskhod/rnd/xenobiology/ameridian
-	name = "\improper Ameridian Lab"
+	name = "\improper Research - Ameridian Lab"
 	icon_state = "xeno_lab"
 
 /area/iskhod/rnd/storage
-	name = "\improper Toxins Storage"
+	name = "\improper Research - Toxins Storage"
 	icon_state = "toxstorage"
 	area_light_color = COLOR_LIGHTING_SCI_DARK
 
 /area/iskhod/rnd/mixing
-	name = "\improper Toxins Mixing Room"
+	name = "\improper Research - Toxins Mixing Room"
 	icon_state = "toxmix"
 
 /area/iskhod/rnd/misc_lab
@@ -1745,75 +1749,74 @@ area/nadezhda/medical/medbaymeeting
 	area_light_color = COLOR_LIGHTING_SCI_DARK
 
 /area/iskhod/rnd/server
-	name = "\improper Server Room"
+	name = "\improper Research - Server Room"
 	icon_state = "server"
 
 /area/iskhod/rnd/podbay
-	name = "Pod Bay"
+	name = "\improper Research - Pod Bay"
 	icon_state = "nadezhdablue"
 
 /area/iskhod/rnd/anomal
-	name = "Anomalous Research Laboratory"
+	name = "\improper Research - Anomalous Research Laboratory"
 	icon_state = "nadezhdablue"
 
 /area/iskhod/rnd/anomalisolone
-	name = "Anomalous Research Isolation One"
+	name = "\improper Research - Anomalous Research Isolation One"
 	flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "nadezhdagreen"
 
 /area/iskhod/rnd/anomalisoltwo
-	name = "Anomalous Research Isolation Two"
+	name = "\improper Research - Anomalous Research Isolation Two"
 	flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "nadezhdagreen"
 
 /area/iskhod/rnd/anomalisolthree
-	name = "Anomalous Research Isolation Three"
+	name = "\improper Research - Anomalous Research Isolation Three"
 	flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "nadezhdagreen"
 
 /area/iskhod/rnd/anomalisolfour
-	name = "Anomalous Research Isolation Four"
+	name = "\improper Research - Anomalous Research Isolation Four"
 	flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "nadezhdagreen"
 
 /area/iskhod/rnd/anomalisolfive
-	name = "Anomalous Research Isolation Five"
+	name = "\improper Research - Anomalous Research Isolation Five"
 	flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "nadezhdagreen"
 
 /area/iskhod/rnd/outpostgeneral
-	name = "Anomalous Research Outpost General"
+	name = "\improper Research - Anomalous Research Outpost General"
 	flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "erisgreen"
 
 /area/iskhod/rnd/outpostbotany
-	name = "Anomalous Research Outpost Botany"
+	name = "\improper Research - Anomalous Research Outpost Botany"
 	flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "erisblue"
 
 /area/iskhod/rnd/outpostmachineroom
-	name = "Anomalous Research Outpost Machine Rooms"
+	name = "\improper Research - Anomalous Research Outpost Machine Rooms"
 	flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "erisblue"
 
 /area/iskhod/rnd/outpostbreakroom
-	name = "Anomalous Research Outpost Break Room"
+	name = "\improper Research - Anomalous Research Outpost Break Room"
 	flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "erisblue"
 
 /area/iskhod/rnd/outpostmedical
-	name = "Anomalous Research Outpost Medstation"
+	name = "\improper Research - Anomalous Research Outpost Medstation"
 	flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "erisblue"
 
 /area/iskhod/rnd/outpoststorage
-	name = "Anomalous Research Outpost Storage"
+	name = "\improper Research - Anomalous Research Outpost Storage"
 	flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "erisgreen"
 
-
 /area/iskhod/rnd/server
-	name = "\improper Research Server Room"
+	name = "\improper Research - Server Room"
 	flags = AREA_FLAG_RAD_SHIELDED
 	icon_state = "server"
 
@@ -1838,7 +1841,7 @@ area/nadezhda/medical/medbaymeeting
 	dynamic_lighting = FALSE
 
 /area/iskhod/pros/proelav
-	name = "\improper Lonestar Surface Elevator"
+	name = "\improper Frontier Logistics Surface Elevator"
 	icon_state = "erisgreen"
 
 /area/iskhod/pros/prostorage

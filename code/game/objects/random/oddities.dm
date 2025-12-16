@@ -182,7 +182,7 @@
 				/obj/item/device/radio/headset/uplink = 1))
 
 /obj/random/lonestar_oddities
-	name = "lonestar curios"
+	name = "frontier logistics curios"
 	icon_state = "techloot-grey"
 	spawn_nothing_percentage = 0
 

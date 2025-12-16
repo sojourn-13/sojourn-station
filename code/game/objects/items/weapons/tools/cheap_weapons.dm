@@ -1,7 +1,7 @@
 //Shitty loadout weapons
 /obj/item/tool/cheap
 	name = "cheap sword"
-	desc = "A sword of acceptable quality, mass-produced by Lonestar. It's no work art, but it's sharp enough to get the job done."
+	desc = "A sword of acceptable quality, mass-produced by Frontier Logistics. It's no work art, but it's sharp enough to get the job done."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "cheap_sword"
 	item_state = "cheap_sword"
@@ -31,7 +31,7 @@
 
 /obj/item/tool/cheap/axe
 	name = "cheap tomahawk"
-	desc = "A tomahawk of acceptable quality, mass-produced by Lonestar. Just expensive enough to be called tactical."
+	desc = "A tomahawk of acceptable quality, mass-produced by Frontier Logistics. Just expensive enough to be called tactical."
 	icon_state = "cheap_axe"
 	item_state = "cheap_axe"
 	structure_damage_factor = STRUCTURE_DAMAGE_WEAK
@@ -39,7 +39,7 @@
 
 /obj/item/tool/cheap/katana
 	name = "cheap katana"
-	desc = "A katana of acceptable quality, mass-produced by Lonestar. Easily their best-selling product from this lineup."
+	desc = "A katana of acceptable quality, mass-produced by Frontier Logistics. Easily their best-selling product from this lineup."
 	icon_state = "katana_old"
 	item_state = "katana"
 	force = WEAPON_FORCE_DANGEROUS
@@ -47,7 +47,7 @@
 
 /obj/item/tool/cheap/spear
 	name = "cheap spear"
-	desc = "A spear of acceptable quality, mass-produced by Lonestar. Place sharp end towards enemy."
+	desc = "A spear of acceptable quality, mass-produced by Frontier Logistics. Place sharp end towards enemy."
 	icon_state = "cheap_spear"
 	item_state = "cheap_spear"
 	w_class = ITEM_SIZE_HUGE
@@ -70,14 +70,14 @@
 
 /obj/item/tool/cheap/saber
 	name = "cheap saber"
-	desc = "A saber of acceptable quality, mass-produced by Lonestar. Probably not fit for parrying, but why not give it a try?"
+	desc = "A saber of acceptable quality, mass-produced by Frontier Logistics. Probably not fit for parrying, but why not give it a try?"
 	icon_state = "cheap_saber"
 	item_state = "cutlass"
 
 //Complex cheap weapon arts
 /obj/item/tool/cheap/rapier
 	name = "cheap cinq rapier"
-	desc = "A mass-produced copy of a cinq rapier by Lonestar. Is unable to be used for parrying but has some techniques."
+	desc = "A mass-produced copy of a cinq rapier by Frontier Logistics. Is unable to be used for parrying but has some techniques."
 	icon_state = "cheap_rapier"
 	item_state = "katana"
 	force = WEAPON_FORCE_NORMAL

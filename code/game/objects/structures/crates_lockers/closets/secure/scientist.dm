@@ -1,5 +1,5 @@
 /obj/structure/closet/secure_closet/personal/scientist
-	name = "soteria scientist's locker"
+	name = "vesalius-andra scientist's locker"
 	req_access = list(access_rd)
 	access_occupy = list(access_tox_storage)
 	icon_state = "science"
@@ -25,7 +25,7 @@
 	new /obj/item/device/science_tool(src)
 
 /obj/structure/closet/secure_closet/personal/robo
-	name = "soteria roboticist's locker"
+	name = "vesalius-andra roboticist's locker"
 	req_access = list(access_rd)
 	access_occupy = list(access_robotics)
 	icon_state = "science"
@@ -52,7 +52,7 @@
 
 
 /obj/structure/closet/secure_closet/reinforced/RD
-	name = "soteria research overseer's locker"
+	name = "vesalius-andra research overseer's locker"
 	req_access = list(access_rd)
 	icon_state = "rd"
 

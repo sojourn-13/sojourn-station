@@ -42,7 +42,7 @@
 	new /obj/item/device/scanner/health(src)
 
 /obj/item/storage/firstaid/regular/si
-	name = "soteria branded first-aid kit"
+	name = "vesalius-andra branded first-aid kit"
 	desc = "A soteria-branded emergency medical kit for those serious boo-boos. Contains more advanced and more expensive gauze and salves."
 	icon_state = "purplefirstaid"
 	item_state = "firstaid-purplefirstaid"
@@ -297,7 +297,7 @@
 	new /obj/item/stack/medical/bruise_pack/advanced(src)
 
 /obj/item/storage/firstaid/surgery/si
-	name = "soteria advanced surgery kit"
+	name = "vesalius-andra advanced surgery kit"
 	desc = "Contains tools for surgery. Has precise foam fitting for safe transport of highly advanced tools."
 	icon_state = "surgery_box_SI"
 	item_state = "combat_surgery_kit"

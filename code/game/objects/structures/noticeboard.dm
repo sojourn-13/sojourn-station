@@ -305,14 +305,14 @@
 	update_icon()
 
 /obj/structure/noticeboard/lonestar_service
-	name = "Lonestar Shipping bulletin board"
-	desc = "A board containing vital notices and official memos for Lonestar-Service Employees"
+	name = "Frontier Logistics Shipping bulletin board"
+	desc = "A board containing vital notices and official memos for Frontier Logistics-Service Employees"
 	icon_state = "nboard00"
 	notices = 0
 
 /obj/structure/noticeboard/lonestar_supply
-	name = "Lonestar Shipping bulletin board"
-	desc = "A board containing vital notices and official memos for Lonestar-Supply Employees"
+	name = "Frontier Logistics Shipping bulletin board"
+	desc = "A board containing vital notices and official memos for Frontier Logistics-Supply Employees"
 	icon_state = "nboard00"
 	notices = 3
 
