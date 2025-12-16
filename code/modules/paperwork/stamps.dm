@@ -19,7 +19,7 @@
 	var/yminus	= -3	//Ditto for Y
 
 /obj/item/stamp/captain
-	name = "premier's rubber stamp"
+	name = "governor's rubber stamp"
 	icon_state = "stamp-cap"
 	xplus = 0
 	yminus = -1
@@ -29,7 +29,7 @@
 	icon_state = "stamp-hop"
 
 /obj/item/stamp/hos
-	name = "warrant officer's rubber stamp"
+	name = "ranger captain's rubber stamp"
 	icon_state = "stamp-hos"
 
 /obj/item/stamp/hos2
@@ -37,23 +37,23 @@
 	icon_state = "stamp-bsc"
 
 /obj/item/stamp/warden
-	name = "supply specialist's rubber stamp"
+	name = "lieutenant's rubber stamp"
 	icon_state = "stamp-spec"
 
 /obj/item/stamp/ce
-	name = "guild master's rubber stamp"
+	name = "guild chief engineer's rubber stamp"
 	icon_state = "stamp-ce"
 
 /obj/item/stamp/pr
-	name = "prime's rubber stamp"
+	name = "priest's rubber stamp"
 	icon_state = "stamp-pr"
 
 /obj/item/stamp/rd
-	name = "chief research overseer's rubber stamp"
+	name = "vesalius-andra research overseer's rubber stamp"
 	icon_state = "stamp-rd"
 
 /obj/item/stamp/cmo
-	name = "chief biolab overseer's rubber stamp"
+	name = "vesalius-andra biolab overseer's rubber stamp"
 	icon_state = "stamp-cmo"
 
 /obj/item/stamp/denied
@@ -67,7 +67,7 @@
 	stamp_flags = STAMP_GENERIC
 
 /obj/item/stamp/qm
-	name = "surface operations manager's stamp"
+	name = "quartermaster's stamp"
 	icon_state = "stamp-qm"
 
 /obj/item/stamp/fr
@@ -81,7 +81,7 @@
 	stamp_flags = STAMP_ADMIN
 
 /obj/item/stamp/cc/nm
-	name = "marshal official's stamp"
+	name = "nadezhda rangers official's stamp"
 
 /obj/item/stamp/cc/bs
 	name = "blackshield official's stamp"
@@ -93,10 +93,10 @@
 	name = "prospector's official mark"
 
 /obj/item/stamp/cc/si
-	name = "soteria's official seal"
+	name = "vesalius-andra's official seal"
 
 /obj/item/stamp/cc/ls
-	name = "lonestar official's stamp"
+	name = "frontier logistics official's stamp"
 
 /obj/item/stamp/cc/guilg
 	name = "artificers guild official's stamp"

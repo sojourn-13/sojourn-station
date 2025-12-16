@@ -107,7 +107,7 @@
 	melee_sharp = TRUE //Eswords and welders
 /*
 /mob/living/carbon/superior/human/colony_allie/lonestar_merc
-	name = "Lonestar Corporate Infantryman"
+	name = "Frontier Logistics Corporate Infantryman"
 	desc = "A private vatborn from lonestar, Well paid and Geared this veteran soldier is armed with a Laser Carbine ready to anihilate any threat to the Corporation, He Seems To be an Veteran Fighter."
 	icon_state = "LSCICarb"
 	icon_dead = "LSCICarb_dead"
@@ -135,8 +135,8 @@
 	min_bodytemperature = 0
 
 /mob/living/carbon/superior/human/colony_allie/lonestar_breacher_merc
-	name = "Lonestar Corporate Breacher"
-	desc = "A Private Vatborn Soldier from Lonestar Well paid and Geared This veteran soldier is armed with An Advanced Laser Handgun Set to kill while on his other hand he is wearing a charged Power Fist, He seems to be an Veteran Fighter."
+	name = "Frontier Logistics Corporate Breacher"
+	desc = "A Private Vatborn Soldier from Frontier Logistics Well paid and Geared This veteran soldier is armed with An Advanced Laser Handgun Set to kill while on his other hand he is wearing a charged Power Fist, He seems to be an Veteran Fighter."
 	icon_state = "LSCIRvMp"
 	icon_dead = "LSCIRvMp_dead"
 	rapid = 1

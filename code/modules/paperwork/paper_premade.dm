@@ -45,7 +45,7 @@
 	info = {"<B>Roles:</B>
 	<BR>\nThe Ranger is basically the investigator and prosecutor.
 	<BR>\nThe Staff Assistant can perform these functions with written authority from the Ranger.
-	<BR>\nThe warrant officer/blackshield commander/premier is ct as the judicial authority.
+	<BR>\nThe warrant officer/blackshield commander/governoris ct as the judicial authority.
 	<BR>\nThe Marshal Officers (or if none present blackshield troopers) are responsible for executing warrants, security during trial, and prisoner transport.
 	<BR>\n
 	<BR>\n<B>Investigative Phase:</B>

@@ -775,7 +775,7 @@
 	area_light_color = COLOR_LIGHTING_CREW_SOFT
 
 /area/iskhod/command/merchant
-	name = "\improper Lonestar - Manager's Office"
+	name = "Quartermaster's Office"
 	icon_state = "quart"
 	flags = AREA_FLAG_CRITICAL
 	sound_env = SMALL_SOFTFLOOR
@@ -1614,7 +1614,7 @@ area/nadezhda/medical/medbaymeeting
 	icon_state = "quartoffice"
 
 /area/iskhod/quartermaster/pods
-	name = "\improper Lonestar Pod Dorms"
+	name = "\improper Frontier Logistics Pod Dorms"
 	icon_state = "quartoffice"
 
 /area/iskhod/quartermaster/storage
@@ -1838,7 +1838,7 @@ area/nadezhda/medical/medbaymeeting
 	dynamic_lighting = FALSE
 
 /area/iskhod/pros/proelav
-	name = "\improper Lonestar Surface Elevator"
+	name = "\improper Frontier Logistics Surface Elevator"
 	icon_state = "erisgreen"
 
 /area/iskhod/pros/prostorage

@@ -99,16 +99,16 @@
 // Super-Class Cells
 // Better than vendor items but not as good as the best maint loot, to encourage scavenging
 /datum/uplink_item/item/ammo/cell/small
-	name = "Lonestar \"Robustcell 300S\""
+	name = "Frontier Logistics \"Robustcell 300S\""
 	item_cost = 2
 	path = /obj/item/cell/small/super
 
 /datum/uplink_item/item/ammo/cell/medium
-	name = "Lonestar \"Robustcell 1000M\""
+	name = "Frontier Logistics \"Robustcell 1000M\""
 	item_cost = 3
 	path = /obj/item/cell/medium/super
 
 /datum/uplink_item/item/ammo/cell/large
-	name = "Lonestar \"Robustcell 16000L\""
+	name = "Frontier Logistics \"Robustcell 16000L\""
 	item_cost = 4
 	path = /obj/item/cell/large/super

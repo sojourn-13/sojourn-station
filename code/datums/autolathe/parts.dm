@@ -49,11 +49,11 @@
 	build_path = /obj/item/stock_parts/subspace/amplifier
 
 /datum/design/autolathe/part/laserguide
-	name = "Lonestar \"Guiding Light\" laser guide"
+	name = "Frontier Logistics \"Guiding Light\" laser guide"
 	build_path = /obj/item/tool_upgrade/refinement/laserguide
 
 /datum/design/autolathe/part/diamondblade
-	name = "Lonestar \"Gleaming Edge\": Diamond blade"
+	name = "Frontier Logistics \"Gleaming Edge\": Diamond blade"
 	build_path = /obj/item/tool_upgrade/productivity/diamond_blade
 
 /datum/design/autolathe/part/stick

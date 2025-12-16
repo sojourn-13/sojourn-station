@@ -15,7 +15,7 @@
 	min_cold_protection_temperature = SPACE_SUIT_MIN_COLD_PROTECTION_TEMPERATURE
 
 /obj/item/clothing/head/hood/winter/captain
-	name = "premier's winter hood"
+	name = "governor's winter hood"
 	armor_list = list(melee = 20, bullet = 15, energy = 10, bomb = 15, bio = 0, rad = 0)
 
 /obj/item/clothing/head/hood/winter/security

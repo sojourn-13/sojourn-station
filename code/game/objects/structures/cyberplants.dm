@@ -1,5 +1,5 @@
 /obj/structure/cyberplant
-	name = "Lonestar \"FluorescEnt\""
+	name = "Frontier Logistics \"FluorescEnt\""
 	desc = "A holographic plant powered by a nuclear battery. Doesn't need much upkeep."
 	icon = 'icons/obj/cyberplants.dmi'
 	icon_state = "holopot"

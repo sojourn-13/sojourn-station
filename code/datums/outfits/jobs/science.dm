@@ -33,6 +33,7 @@
 
 /decl/hierarchy/outfit/job/science/roboticist
 	name = OUTFIT_JOB_NAME("Vesalius-Andra - Roboticist")
+	l_ear = /obj/item/device/radio/headset/headset_rob
 	uniform = /obj/item/clothing/under/rank/roboticist
 	suit = /obj/item/clothing/suit/storage/rank/robotech_jacket
 	belt = /obj/item/storage/belt/utility/roboticist
@@ -46,6 +47,7 @@
 
 /decl/hierarchy/outfit/job/science/robostudent
 	name = OUTFIT_JOB_NAME("Vesalius-Andra - Robotics Intern")
+	l_ear = /obj/item/device/radio/headset/headset_rob
 	uniform = /obj/item/clothing/under/rank/roboticist
 	suit = /obj/item/clothing/suit/storage/rank/robotech_jacket
 	belt = /obj/item/storage/belt/utility/roboticist

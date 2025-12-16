@@ -34,7 +34,7 @@ const rank2icon = {
   Freelancer: 'user',
   Journalist: 'newspaper',
   Visitor: 'user',
-  // Lonestar
+  // Frontier Logistics
   'Chief Executive Officer': ['user-tie', 'box-open'],
   Bartender: 'cocktail',
   Barkeep: 'glass-whiskey',
@@ -55,11 +55,11 @@ const rank2icon = {
   'Sanitation Technician': 'soap',
   'Cargo Technician': 'box-open',
   'Cargo Specialist': 'box-open',
-  'Lonestar Sales Technician': 'box-open',
-  'Lonestar Retail Assistant': ['box-open', 'school'],
-  'Lonestar Miner': 'hard-hat',
-  'Lonestar Drill Technician': 'hard-hat',
-  'Junior Lonestar Miner': 'hard-hat',
+  'Frontier Logistics Sales Technician': 'box-open',
+  'Frontier Logistics Retail Assistant': ['box-open', 'school'],
+  'Frontier Logistics Miner': 'hard-hat',
+  'Frontier Logistics Drill Technician': 'hard-hat',
+  'Junior Frontier Logistics Miner': 'hard-hat',
   // Guild
   'Guild Master': ['user-tie', 'toolbox'],
   'Guild Adept': 'toolbox',

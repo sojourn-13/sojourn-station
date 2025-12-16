@@ -1,8 +1,8 @@
 //BIG CELLS - for APC, borgs and machinery.
 
 /obj/item/cell/large
-	name = "Lonestar \"Robustcell 2000L\""
-	desc = "Lonestar branded rechargeable L-standardized power cell. This one is the cheapest you can find."
+	name = "Frontier Logistics \"Robustcell 2000L\""
+	desc = "Frontier Logistics branded rechargeable L-standardized power cell. This one is the cheapest you can find."
 	icon_state = "b_st"
 	maxcharge = 2000
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 3, MATERIAL_SILVER = 3)
@@ -10,24 +10,24 @@
 	price_tag = 150
 
 /obj/item/cell/large/high
-	name = "Lonestar \"Robustcell 6000L\""
-	desc = "Lonestar branded rechargeable L-standardized power cell. Popular and reliable version."
+	name = "Frontier Logistics \"Robustcell 6000L\""
+	desc = "Frontier Logistics branded rechargeable L-standardized power cell. Popular and reliable version."
 	icon_state = "b_hi"
 	origin_tech = list(TECH_POWER = 2)
 	maxcharge = 6000
 	price_tag = 200
 
 /obj/item/cell/large/super
-	name = "Lonestar \"Robustcell 16000L\""
-	desc = "Lonestar branded rechargeable L-standardized power cell. This industrial version can store even more energy."
+	name = "Frontier Logistics \"Robustcell 16000L\""
+	desc = "Frontier Logistics branded rechargeable L-standardized power cell. This industrial version can store even more energy."
 	icon_state = "b_sup"
 	origin_tech = list(TECH_POWER = 5)
 	maxcharge = 16000
 	price_tag = 250
 
 /obj/item/cell/large/hyper
-	name = "Lonestar \"Robustcell-X 20000L\""
-	desc = "Lonestar-brand rechargeable L-standardized power cell. This is the top of the class most advanced version of cell on the market."
+	name = "Frontier Logistics \"Robustcell-X 20000L\""
+	desc = "Frontier Logistics-brand rechargeable L-standardized power cell. This is the top of the class most advanced version of cell on the market."
 	icon_state = "b_hy"
 	origin_tech = list(TECH_POWER = 6)
 	maxcharge = 20000
@@ -49,7 +49,7 @@
 
 /obj/item/cell/large/moebius
 	name = "Vesalius-Andra \"Power-Geyser 2000L\""
-	desc = "VA Biomechanics-brand rechargeable L-standardized power cell. This one is as cheap as Lonestar models, yet improved in all senses."
+	desc = "VA Biomechanics-brand rechargeable L-standardized power cell. This one is as cheap as Frontier Logistics models, yet improved in all senses."
 	icon_state = "meb_b_st"
 	maxcharge = 2000
 	price_tag = 200
@@ -152,8 +152,8 @@
 //MEDIUM CELLS - for energy weapons and large devices
 
 /obj/item/cell/medium
-	name = "Lonestar \"Robustcell 600M\""
-	desc = "Lonestar branded rechargeable M-standardized power cell. This one is the cheapest you can find."
+	name = "Frontier Logistics \"Robustcell 600M\""
+	desc = "Frontier Logistics branded rechargeable M-standardized power cell. This one is the cheapest you can find."
 	icon_state = "m_st"
 	w_class = ITEM_SIZE_SMALL
 	force = WEAPON_FORCE_HARMLESS
@@ -169,8 +169,8 @@
 	starts_max_charge = FALSE
 
 /obj/item/cell/medium/high
-	name = "Lonestar \"Robustcell 800M\""
-	desc = "Lonestar branded rechargeable M-standardized power cell. Popular and reliable version."
+	name = "Frontier Logistics \"Robustcell 800M\""
+	desc = "Frontier Logistics branded rechargeable M-standardized power cell. Popular and reliable version."
 	icon_state = "m_hi"
 	origin_tech = list(TECH_POWER = 2)
 	maxcharge = 800
@@ -181,16 +181,16 @@
 	starts_max_charge = FALSE
 
 /obj/item/cell/medium/super
-	name = "Lonestar \"Robustcell 1000M\""
-	desc = "Lonestar-brand rechargeable M-standardized power cell. This industrial version can store even more energy."
+	name = "Frontier Logistics \"Robustcell 1000M\""
+	desc = "Frontier Logistics-brand rechargeable M-standardized power cell. This industrial version can store even more energy."
 	icon_state = "m_sup"
 	origin_tech = list(TECH_POWER = 5)
 	maxcharge = 1000
 	price_tag = 170
 
 /obj/item/cell/medium/hyper
-	name = "Lonestar \"Robustcell-X 1600M\""
-	desc = "Lonestar branded rechargeable M-standardized power cell. This is the top of the class most advanced version of cell on the market."
+	name = "Frontier Logistics \"Robustcell-X 1600M\""
+	desc = "Frontier Logistics branded rechargeable M-standardized power cell. This is the top of the class most advanced version of cell on the market."
 	icon_state = "m_hy"
 	origin_tech = list(TECH_POWER = 6)
 	maxcharge = 1600
@@ -216,7 +216,7 @@
 
 /obj/item/cell/medium/moebius
 	name = "Vesalius-Andra \"Power-Geyser 800M\""
-	desc = "Vesalius-Andra branded rechargeable M-standardized power cell. This one is as cheap as Lonestar models come."
+	desc = "Vesalius-Andra branded rechargeable M-standardized power cell. This one is as cheap as Frontier Logistics models come."
 	icon_state = "meb_m_st"
 	maxcharge = 800
 	price_tag = 140
@@ -305,8 +305,8 @@
 //SMALL CELLS - for small devices, such as flashlights, analyzers and HUDs.
 
 /obj/item/cell/small
-	name = "Lonestar \"Robustcell 100S\""
-	desc = "Lonestar branded rechargeable S-standardized power cell. This one is the cheapest you can find."
+	name = "Frontier Logistics \"Robustcell 100S\""
+	desc = "Frontier Logistics branded rechargeable S-standardized power cell. This one is the cheapest you can find."
 	icon_state = "s_st"
 	w_class = ITEM_SIZE_TINY
 	force = WEAPON_FORCE_HARMLESS
@@ -322,8 +322,8 @@
 	starts_max_charge = FALSE
 
 /obj/item/cell/small/high
-	name = "Lonestar \"Robustcell 200S\""
-	desc = "Lonestar branded rechargeable S-standardized power cell. Popular and reliable version."
+	name = "Frontier Logistics \"Robustcell 200S\""
+	desc = "Frontier Logistics branded rechargeable S-standardized power cell. Popular and reliable version."
 	icon_state = "s_hi"
 	origin_tech = list(TECH_POWER = 2)
 	maxcharge = 200
@@ -334,16 +334,16 @@
 	starts_max_charge = FALSE
 
 /obj/item/cell/small/super
-	name = "Lonestar \"Robustcell 300S\""
-	desc = "Lonestar branded rechargeable S-standardized power cell. This industrial version can store even more energy."
+	name = "Frontier Logistics \"Robustcell 300S\""
+	desc = "Frontier Logistics branded rechargeable S-standardized power cell. This industrial version can store even more energy."
 	icon_state = "s_sup"
 	origin_tech = list(TECH_POWER = 5)
 	maxcharge = 300
 	price_tag = 75
 
 /obj/item/cell/small/hyper
-	name = "Lonestar \"Robustcell-X 500S\""
-	desc = "Lonestar branded rechargeable S-standardized power cell. This is the top of the class most advanced version of cell on the market."
+	name = "Frontier Logistics \"Robustcell-X 500S\""
+	desc = "Frontier Logistics branded rechargeable S-standardized power cell. This is the top of the class most advanced version of cell on the market."
 	icon_state = "s_hy"
 	origin_tech = list(TECH_POWER = 6)
 	maxcharge = 500
@@ -365,7 +365,7 @@
 
 /obj/item/cell/small/moebius
 	name = "Vesalius-Andra \"Power-Geyser 120S\""
-	desc = "VA Biomechanics branded rechargeable S-standardized power cell. This one is cheap, yet better than Lonestar models for same price."
+	desc = "VA Biomechanics branded rechargeable S-standardized power cell. This one is cheap, yet better than Frontier Logistics models for same price."
 	icon_state = "meb_s_st"
 	maxcharge = 120
 	price_tag = 60

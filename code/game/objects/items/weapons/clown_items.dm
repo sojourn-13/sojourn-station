@@ -134,7 +134,7 @@
 	reagent_storage = 25 //we can clean 5 more tiles before needing more water
 
 /obj/item/soap/deluxe/New()
-	desc = "A deluxe Lonestar-brand bar of soap. Smells of [pick("lavender", "vanilla", "strawberry", "chocolate" ,"space")]."
+	desc = "A deluxe Frontier Logistics-brand bar of soap. Smells of [pick("lavender", "vanilla", "strawberry", "chocolate" ,"space")]."
 	..()
 
 /obj/item/soap/church

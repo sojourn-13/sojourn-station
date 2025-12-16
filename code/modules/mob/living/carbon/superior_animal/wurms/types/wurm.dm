@@ -28,7 +28,7 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/carbon/superior/wurm/osmium,
 */
 /mob/living/carbon/superior/wurm
 	name = "wurm youngling"
-	desc = "A plasma eating wurm capable of firing volatile globs of electric acid if they spot prey. Hated by lonestar miners as many do not know it is there until they are hit by acid. This one is merely a youngling and not nearly as dangerous as an adult."
+	desc = "A plasma eating wurm capable of firing volatile globs of electric acid if they spot prey. Hated by mining technicians as many do not know it is there until they are hit by acid. This one is merely a youngling and not nearly as dangerous as an adult."
 	icon = 'icons/mob/mobs-monster.dmi'
 	speak_emote = list("clicks")
 	icon_state = "worm_hiding"

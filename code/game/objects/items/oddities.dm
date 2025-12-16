@@ -651,7 +651,7 @@
 	perk = PERK_BLACKBOX_INSIGHT
 
 /obj/item/oddity/bath
-	name = "Lonestar Smelling Salts"
+	name = "Frontier Logistics Smelling Salts"
 	desc = "A bottle of water that smells a lot of pork and cocaine. This will kick you back into your seat but don't expect your brain to like it much."
 	icon_state = "cursed_hog"
 	random_stats = FALSE
@@ -765,8 +765,8 @@
 	price_tag = 3200 //So we have a reason for stealing it
 	perk = PERK_CHEMIST
 
-//Lonestar
-//Oddities that are only orderable through Lonestar cargo
+//Frontier Logistics
+//Oddities that are only orderable through Frontier Logistics cargo
 
 /obj/item/oddity/ls
 	prob_perk = 0
@@ -876,7 +876,7 @@
 		STAT_ROB = 2
 	)
 
-//Lonestar Clothing Oddities
+//Frontier Logistics Clothing Oddities
 //for oddities that double as clothes
 
 /obj/item/oddity/ls/silk_cloak
@@ -891,7 +891,7 @@
 		STAT_COG = 2
 	)
 
-//Lonestar Weapon Oddities
+//Frontier Logistics Weapon Oddities
 //oddities that double as weapons
 
 /obj/item/oddity/ls/kriosan_sword
@@ -914,7 +914,7 @@
 		STAT_ROB = 7
 	)
 
-//Lonestar Misc Oddities
+//Frontier Logistics Misc Oddities
 //Primarily for gimmicks that aren't weapon or clothing related
 
 /obj/item/oddity/ls/newton_odd
@@ -1012,7 +1012,7 @@
 		to_chat(user,("<span class='info'> The [src] clicks! Neat.</span>"))
 		inert = TRUE
 
-//Lonestar Special
+//Frontier Logistics Special
 //For unique oddities that don't fit into other categories
 
 /obj/item/oddity/rare/openedpuzzlebox

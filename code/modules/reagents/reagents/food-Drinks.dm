@@ -3109,7 +3109,7 @@
 	glass_center_of_mass = list("x"=16, "y"=12)
 	price_per_unit = 0.25
 
-/datum/reagent/ethanol/schnapps // Inside the hacked vendor, only exist since Lonestar sells to Kriosan Space and this is a highly requested drink there
+/datum/reagent/ethanol/schnapps // Inside the hacked vendor, only exist since Frontier Logistics sells to Kriosan Space and this is a highly requested drink there
 	name = "Jaeger Schnapps"
 	id = "schnapps"
 	description = "A crystal clear glass that stings your senses with sub-par berries and acrid spirits. Finally, some real schnapps."

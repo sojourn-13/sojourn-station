@@ -7,35 +7,35 @@
 	vessel = null
 
 /area/mine/prep
-	name = "Lonestar Mining Prep"
+	name = "Frontier Logistics Mining Prep"
 	ship_area = TRUE
 
 /area/mine/processing
-	name = "Lonestar Ore Processing"
+	name = "Frontier Logistics Ore Processing"
 	ship_area = TRUE
 
 /area/mine/hallway
-	name = "Lonestar General"
+	name = "Frontier Logistics General"
 	ship_area = TRUE
 
 /area/mine/medical
-	name = "Lonestar Triage"
+	name = "Frontier Logistics Triage"
 	ship_area = TRUE
 
 /area/mine/livingarea
-	name = "Lonestar Quarters"
+	name = "Frontier Logistics Quarters"
 	ship_area = TRUE
 
 /area/mine/atmos
-	name = "Lonestar Atmos"
+	name = "Frontier Logistics Atmos"
 	ship_area = TRUE
 
 /area/mine/power
-	name = "Lonestar Machine Room"
+	name = "Frontier Logistics Machine Room"
 	ship_area = TRUE
 
 /area/mine/lockers
-	name = "Lonestar Locker Room"
+	name = "Frontier Logistics Locker Room"
 	ship_area = TRUE
 
 /area/mine/explored

@@ -661,6 +661,7 @@
 #include "code\game\area\areas.dm"
 #include "code\game\area\asteroid_areas.dm"
 #include "code\game\area\Space Station 13 areas.dm"
+#include "code\game\area\Iskhod_areas.dm"
 #include "code\game\core\atom\Transform.dm"
 #include "code\game\core\matrix\Transform.dm"
 #include "code\game\dna\dna2.dm"

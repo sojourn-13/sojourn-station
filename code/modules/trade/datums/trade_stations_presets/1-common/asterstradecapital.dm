@@ -30,7 +30,7 @@
 			/obj/item/device/lighting/toggleable/flashlight,
 			/obj/item/device/lighting/toggleable/flashlight/heavy,
 			/obj/item/device/lightreplacer,
-			/obj/item/tool/omnitool = good_data("Lonestar \"Munchkin 5000\"", list(1, 3), 1000),
+			/obj/item/tool/omnitool = good_data("Frontier Logistics \"Munchkin 5000\"", list(1, 3), 1000),
 			/obj/item/tool/crowbar,
 			/obj/item/tool/screwdriver,
 			/obj/item/tool/shovel,
@@ -50,7 +50,7 @@
 			/obj/item/storage/bag/sheetsnatcher,
 			/obj/item/storage/bag/chemistry
 		),
-		"Lonestar Cells" = list(
+		"Frontier Logistics Cells" = list(
 			/obj/item/cell/small,
 			/obj/item/cell/small/high,
 			/obj/item/cell/small/super,
@@ -61,7 +61,7 @@
 			/obj/item/cell/large/high,
 			/obj/item/cell/large/super
 		),
-		"Lonestar Grenade" = list(
+		"Frontier Logistics Grenade" = list(
 			/obj/item/grenade/chem_grenade/antiweed,
 			/obj/item/grenade/chem_grenade/cleaner,
 			/obj/item/grenade/chem_grenade/metalfoam

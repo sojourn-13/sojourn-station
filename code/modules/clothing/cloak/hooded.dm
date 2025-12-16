@@ -124,8 +124,8 @@
 	allowed = list (/obj/item/gun/projectile, /obj/item/gun/energy, /obj/item/device/flash, /obj/item/pen, /obj/item/paper, /obj/item/device/lighting/toggleable/flashlight,/obj/item/tank/emergency_oxygen, /obj/item/storage/fancy/cigarettes, /obj/item/storage/box/matches, /obj/item/reagent_containers/drinks/flask)
 
 /obj/item/clothing/suit/hooded/wintercoat/captain
-	name = "premier's winter coat"
-	desc = "A heavy premier's jacket designed for cold environments. Hidden armor plating is sewn into it."
+	name = "governor's winter coat"
+	desc = "A heavy governor's jacket designed for cold environments. Hidden armor plating is sewn into it."
 	icon_state = "coatcaptain"
 	item_state_slots = list(slot_r_hand_str = "coatcaptain", slot_l_hand_str = "coatcaptain")
 	armor_list = list(melee = 5, bullet = 3, energy = 2, bomb = 15, bio = 0, rad = 0)

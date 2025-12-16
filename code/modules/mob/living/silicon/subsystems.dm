@@ -108,7 +108,7 @@
 
 /mob/living/silicon/verb/show_cook_catalog()
 	set name = "Show VIKA Catalog"
-	set desc = "Open Lonestar (and Vesalius-Andra) Presents: Victoria's Incredible Kitchen Assistant."
+	set desc = "Open Frontier Logistics (and Vesalius-Andra) Presents: Victoria's Incredible Kitchen Assistant."
 	set category = "Silicon Commands"
 
 	open_subsystem(/datum/tgui_module/catalog/cooking/silicon)

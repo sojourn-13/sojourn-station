@@ -104,7 +104,7 @@
 	description = "The Guild Engineer is a member of one of the greatest engineering guilds in the galaxy, contracted to maintain this colony.<br>\
 Your main priority is ensuring the setup and maintenance of the colonies power grid. Seek guidance on this complex task if untrained.<br>\
 Outside of this, you should devote time to learning and configuring various systems. Everything can be improved and new constructs can be made.<br>\
-This upgrade culture extends to your own arsenal - mod and upgrade your tools with parts from maintenance, purchased from Lonestar or the Prospectors.<br>\
+This upgrade culture extends to your own arsenal - mod and upgrade your tools with parts from maintenance, purchased from Frontier Logistics or the Prospectors.<br>\
 Do not let outsiders, even Command Staff, interfere with the duties of the Guild. And remember - be ready to respond to emergency calls at any time."
 
 	duties = "Start up the solars and generators.<br>\
@@ -157,7 +157,7 @@ Do not let outsiders, even Command Staff, interfere with the duties of the Guild
 	description = "The Guild Apprentice is a member of one of the greatest engineering guilds in the galaxy, contracted to maintain this colony.<br>\
 Your main priority is becoming just like a real Guild Engineer. Seek guidance on this complex task if untrained.<br>\
 Outside of this, you should devote time to learning and configuring various systems. Everything can be improved, and new constructs can be made.<br>\
-This upgrade culture extends to your own arsenal - mod and upgrade your tools with parts from maintenance, purchased from Lonestar or the Prospectors.<br>\
+This upgrade culture extends to your own arsenal - mod and upgrade your tools with parts from maintenance, purchased from Frontier Logistics or the Prospectors.<br>\
 Do not let outsiders, even Command Staff, interfere with the duties of the Guild. And remember - be ready to respond to emergency calls at any time."
 
 	duties = "Start up the solars and generators.<br>\

@@ -130,7 +130,7 @@
 	new /obj/item/clothing/glasses/hud/health(src)
 
 /obj/structure/closet/secure_closet/personal/orderly
-	name = "soteria Lifeline Technician locker"
+	name = "vesalius-andra Lifeline Technician locker"
 	req_access = list(access_cmo)
 	access_occupy = list(access_orderly)
 	icon_state = "traumateam"
@@ -168,7 +168,7 @@
 	new /obj/item/clothing/suit/storage/toggle/labcoat/medspec(src)
 
 /obj/structure/closet/secure_closet/reinforced/CMO
-	name = "Vesalius-Andra Biolab Overseer's locker"
+	name = "vesalius-andra biolab overseer's locker"
 	req_access = list(access_cmo)
 	icon_state = "cmo"
 

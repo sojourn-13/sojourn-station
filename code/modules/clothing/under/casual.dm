@@ -361,7 +361,7 @@
 //Role:premier-turtlenecks
 
 /obj/item/clothing/under/turtleneck/premier
-	name = "premier turtleneck"
+	name = "governorturtleneck"
 	desc = "A green turtleneck complete with black pants and golden buckle."
 	icon_state = "tn_premier"
 	item_state = "tn_premier"

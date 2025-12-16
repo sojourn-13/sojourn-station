@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/revolver/longboi
 	name = "\"Long\" revolver"
-	desc = "A novelty revolver made by the Lonestar with an incredously long barrel favored by those with more sense and style, its extended barrel gives it incredible recoil control but inexplicably reduces stopping power and penetration. \
+	desc = "A novelty revolver made by the Frontier Logistics with an incredously long barrel favored by those with more sense and style, its extended barrel gives it incredible recoil control but inexplicably reduces stopping power and penetration. \
 	Uses .50 Kurz."
 	icon = 'icons/obj/guns/projectile/Long_Revolver.dmi'
 	icon_state = "longRevolver"

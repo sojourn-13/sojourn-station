@@ -12,7 +12,7 @@
 	BACKPACK_OVERRIDE_SECURITY
 
 /decl/hierarchy/outfit/job/security/swo
-	name = OUTFIT_JOB_NAME("Marshal - Warrant Officer")
+	name = OUTFIT_JOB_NAME("Iskhod Rangers - Captain")
 	l_ear = /obj/item/device/radio/headset/heads/hos/bowman
 	uniform = /obj/item/clothing/under/rank/ih_commander
 	suit = /obj/item/clothing/suit/armor/hos
@@ -25,7 +25,7 @@
 	backpack_contents = list(/obj/item/storage/hcases/ammo/ih/wo = 1)
 
 /decl/hierarchy/outfit/job/security/gunserg
-	name = OUTFIT_JOB_NAME("Marshal - Supply Specialist")
+	name = OUTFIT_JOB_NAME("Iskhod Rangers - Lieutenant")
 	uniform = /obj/item/clothing/under/rank/warden
 	suit = /obj/item/clothing/suit/armor/vest/ironhammer
 	head = /obj/item/clothing/head/rank/warden/beret
@@ -35,7 +35,7 @@
 	backpack_contents = list(/obj/item/storage/hcases/ammo/ih/spec_officer = 1)
 
 /decl/hierarchy/outfit/job/security/inspector
-	name = OUTFIT_JOB_NAME("Marshal - Ranger")
+	name = OUTFIT_JOB_NAME("Iskhod Rangers - Detective")
 	head = /obj/item/clothing/head/rank/inspector
 	uniform = /obj/item/clothing/under/rank/inspector
 	suit = /obj/item/clothing/suit/storage/rank/insp_trench
@@ -54,7 +54,7 @@
 	backpack_overrides.Cut()
 
 /decl/hierarchy/outfit/job/security/ihoper
-	name = OUTFIT_JOB_NAME("Marshal - Marshal Officer")
+	name = OUTFIT_JOB_NAME("Iskhod Rangers - Ranger")
 	l_pocket = /obj/item/device/flash
 	uniform = /obj/item/clothing/under/rank/security
 	mask = /obj/item/clothing/mask/balaclava/tactical
@@ -65,4 +65,4 @@
 
 //same as normal officer but different name
 /decl/hierarchy/outfit/job/security/ihoper/jr
-	name = OUTFIT_JOB_NAME("Marshal - Jr. Marshal Officer")
+	name = OUTFIT_JOB_NAME("Iskhod Rangers - Junior Ranger")

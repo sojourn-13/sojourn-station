@@ -1,5 +1,5 @@
 /obj/item/tool/omnitool
-	name = "\improper Lonestar \"Munchkin 5000\""
+	name = "\improper Frontier Logistics \"Munchkin 5000\""
 	desc = "A fuel-powered monster of a tool. Its welder part is the most advanced one, capable of welding things without harmful glow and sparks, so no protection needed. The complexity of this tool means that regular maintenance is required."
 	icon_state = "omnitool"
 	max_health = 200

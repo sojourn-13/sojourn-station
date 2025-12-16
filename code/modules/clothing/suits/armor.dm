@@ -245,13 +245,13 @@
 */
 
 /obj/item/clothing/suit/armor/vest/ironhammer
-	name = "marshal armor vest"
-	desc = "An armored vest that protects against some damage. This one has been done in marshal security colors. Not designed for serious operations."
+	name = "security armor vest"
+	desc = "An armored vest that protects against some damage. This one has been done in security colors. Not designed for serious operations."
 	icon_state = "armor_ironhammer"
 
 /obj/item/clothing/suit/armor/vest/ironhammer/full
-	name = "marshal tactical unit armor"
-	desc = "An armored vest painted in Rangers colors. This one has shoulderpads and kneepads included to protect all parts of the body."
+	name = "security tactical unit armor"
+	desc = "An armored vest painted in Security colors. This one has shoulderpads and kneepads included to protect all parts of the body."
 	icon_state = "armor_ih_fullbody"
 	item_state = "armor_ih_fullbody"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
@@ -284,7 +284,7 @@
 
 /obj/item/clothing/suit/armor/vest/ironhammer_wintercoat //pieced together thanks to Rebel's Supply spec coat - Dongels
 	name = "security armored coat"
-	desc = "An armored winter coat with vest that protects against some damage. This one has been done in marshal security colors. Not designed for serious operations. You're pretty sure the coat is just thick enough to keep warm, and that's all. Why you would want that on a planet like Amethyn is beyond thought."
+	desc = "An armored winter coat with vest that protects against some damage. This one has been done in security colors. Not designed for serious operations. You're pretty sure the coat is just thick enough to keep warm, and that's all. Why you would want that on a planet like Amethyn is beyond thought."
 	icon_state = "coatsecurity_long"
 
 ////////////
@@ -553,7 +553,7 @@
 
 /obj/item/clothing/suit/armor/vest/custodian
 	name = "custodian armor"
-	desc = "Someone's gotta clean this mess. While this armor is technically church property, Lonestar custodians often use it on loan to protect themselves from the colonies various dangerous pests."
+	desc = "Someone's gotta clean this mess. While this armor is technically church property, Frontier Logistics custodians often use it on loan to protect themselves from the colonies various dangerous pests."
 	icon_state = "custodian"
 	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
@@ -691,8 +691,8 @@
 	slowdown = 0.20 // Heavier since it now covers more of the body //actually who thought this was acceptable? .6 on specialized gear is ridiculous.
 
 /obj/item/clothing/suit/armor/bulletproof/ironhammer
-	name = "marshal bulletproof suit"
-	desc = "A bulky vest that excels in protecting the wearer against high-velocity solid projectiles with added shoulderpads and kneepads for extra coverage produced by Seinemetall Defense GmbH."
+	name = "security bulletproof suit"
+	desc = "A bulky vest that excels in protecting the wearer against high-velocity solid projectiles with added shoulderpads and kneepads for extra coverage."
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	stiffness = LIGHT_STIFFNESS
 	slowdown = 0.2 // Heavier since it now covers more of the body
@@ -781,7 +781,7 @@
 			return PROJECTILE_CONTINUE // complete projectile permutation
 
 /obj/item/clothing/suit/armor/laserproof/rnd
-	name = "soteria reflective armor vest"
+	name = "vesalius-andra reflective armor vest"
 	desc = "A Vesalius-Andra branded vest that excels in protecting the wearer against energy projectiles. While it is much better at defending against lasers compared to standard ablative armor it lacks as much protection against melee and bullets but can be modified more."
 	icon_state = "ablative_ironhammer"
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_PLASTIC = 20, MATERIAL_PLATINUM = 15)

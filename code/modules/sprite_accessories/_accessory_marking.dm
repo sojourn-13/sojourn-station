@@ -1212,52 +1212,52 @@
 		blend = ICON_MULTIPLY
 		body_parts = list(BP_L_LEG, BP_L_FOOT)
 
-//Lonestar Movement Lock
+//Frontier Logistics Movement Lock
 
 	lonestar_arm_right_male
-		name = "Lonestar Prosthetic Right Arm, Male"
+		name = "Frontier Logistics Prosthetic Right Arm, Male"
 		icon_state = "lonestar_r_arm_m"
 		blend = ICON_MULTIPLY
 		body_parts = list(BP_R_ARM, BP_R_HAND)
 
 	lonestar_arm_left_male
-		name = "Lonestar Prosthetic Left Arm, Male"
+		name = "Frontier Logistics Prosthetic Left Arm, Male"
 		icon_state = "lonestar_l_arm_m"
 		blend = ICON_MULTIPLY
 		body_parts = list(BP_L_ARM, BP_L_HAND)
 
 	lonestar_leg_right_male
-		name = "Lonestar Prosthetic Right Leg, Male"
+		name = "Frontier Logistics Prosthetic Right Leg, Male"
 		icon_state = "lonestar_r_leg_m"
 		blend = ICON_MULTIPLY
 		body_parts = list(BP_R_LEG, BP_R_FOOT)
 
 	lonestar_leg_left_male
-		name = "Lonestar Prosthetic Left Leg, Male"
+		name = "Frontier Logistics Prosthetic Left Leg, Male"
 		icon_state = "lonestar_l_leg_m"
 		blend = ICON_MULTIPLY
 		body_parts = list(BP_L_LEG, BP_L_FOOT)
 
 	lonestar_arm_right_female
-		name = "Lonestar Prosthetic Right Arm, Female"
+		name = "Frontier Logistics Prosthetic Right Arm, Female"
 		icon_state = "lonestar_r_arm_f"
 		blend = ICON_MULTIPLY
 		body_parts = list(BP_R_ARM, BP_R_HAND)
 
 	lonestar_arm_left_female
-		name = "Lonestar Prosthetic Left Arm, Female"
+		name = "Frontier Logistics Prosthetic Left Arm, Female"
 		icon_state = "lonestar_l_arm_f"
 		blend = ICON_MULTIPLY
 		body_parts = list(BP_L_ARM, BP_L_HAND)
 
 	lonestar_leg_right_female
-		name = "Lonestar Prosthetic Right Leg, Female"
+		name = "Frontier Logistics Prosthetic Right Leg, Female"
 		icon_state = "lonestar_r_leg_f"
 		blend = ICON_MULTIPLY
 		body_parts = list(BP_R_LEG, BP_R_FOOT)
 
 	lonestar_leg_left_female
-		name = "Lonestar Prosthetic Left Leg, Female"
+		name = "Frontier Logistics Prosthetic Left Leg, Female"
 		icon_state = "lonestar_l_leg_f"
 		blend = ICON_MULTIPLY
 		body_parts = list(BP_L_LEG, BP_L_FOOT)

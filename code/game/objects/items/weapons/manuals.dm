@@ -343,7 +343,7 @@ With this in mind, consider that the Shield's equipment is furnished with 2 SMES
 it's still possible to fill them up with ease if you follow the detailed list of power sources accounted within the end of this text.<br><br>
 
 This is designed to easily withstand even the most brutal attacks from whatever is out there, including planetary bombardment.<br>
-The only condition is to really /really/ store a lot of power in advance, which means a cooperative effort from the various factions, in particular the Guild, the VA Biomechanics, Lonestar, and the Church of the Absolute.<br><br>
+The only condition is to really /really/ store a lot of power in advance, which means a cooperative effort from the various factions, in particular the Guild, the VA Biomechanics, Frontier Logistics, and the Church of the Absolute.<br><br>
 
 Hypothetically, in case of an attack with nuclear warheads, the generator should instead be fitted with a capacitance coil, wich would then require a gargantuan amount of power in order to reach acceptable levels of integrity.<br>
 For obvious reasons, this has not been tested, neither really discussed given the already extremely high performance of the current design.<br><br>
@@ -953,7 +953,7 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 				pioneer in the field of automated recursive repair solutions, Xion has never once allowed the galaxy to forget that
 				they designed the first ever repair drone - A claim supported by little more than a resemblance in their more modern
 				designs. With a preference for such nimble, spidery bots their abject failure to dislodge Zeng-Hu from their position
-				as the premier creators of automated flying machines should not go without saying - Though some will claim preference
+				as the governorcreators of automated flying machines should not go without saying - Though some will claim preference
 				for 'eyebot' style drones these bots were sadly an economic failure in their time.
 
 				<h2><a name="Miss M"> Manmade horrors never looked so friendly</h2>

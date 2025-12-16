@@ -177,7 +177,7 @@
 	give_discount_points = FALSE
 
 /obj/machinery/vending/powermat
-	name = "Lonestar Power-Mat"
+	name = "Frontier Logistics Power-Mat"
 	desc = "Trust is power, and there's no power you can trust like Robustcell."
 	product_slogans = "Trust is power, and there's no cell you can trust like Robustcell.;No battery is stronger nor lasts longer.;One that Lasts!;You can't top the copper top!;Tesla doesn't have anything on us!;Don't believe the competitors, Our cells last longer!"
 	product_ads = "Robust!;Trustworthy!;Durable!;Robustcell - For your power needs!;Better than the others!;Stronger than the others!"
@@ -204,7 +204,7 @@
 					/obj/item/cell/small/super = 300)
 
 /obj/machinery/vending/printomat
-	name = "Lonestar Print-Mat"
+	name = "Frontier Logistics Print-Mat"
 	desc = "Everything you can imagine (not really) on a disc! Print your own gun TODAY."
 	product_slogans = "Print your own gun TODAY!;The future is NOW!;Can't stop the industrial revolution!;Everything you can imagine, RIGHT HERE!;Don't copy that floppy!;Who needs dreams when you can print everything you need?"
 	product_ads = "Almost free!;Print it yourself!;Don't copy that floppy!;Industrial Revolution!;Future!;Print your dreams TODAY!;Cheap and reliable!"

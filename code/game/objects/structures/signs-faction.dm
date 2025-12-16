@@ -53,7 +53,7 @@
 	icon_state = "wall_cross_gold"
 
 /obj/structure/sign/faction/astersguild
-	name = "Lonestar Corporation"
+	name = "Frontier Logistics Corporation"
 	desc = "A sign depicting the insignia of Frontier Logistics, LLC; the transport monopolists."
 	icon_state = "astersguild"
 

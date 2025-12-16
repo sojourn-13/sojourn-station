@@ -53,8 +53,8 @@
 	)
 
 /obj/item/clothing/suit/storage/cargovest
-	name = "lonestar hazard vest"
-	desc = "A Lonestar hazard vest in grey and orange to be used in work zones."
+	name = "frontier logistics hazard vest"
+	desc = "A Frontier Logistics hazard vest in grey and orange to be used in work zones."
 	icon_state = "cargovest"
 	item_state = "hazard"
 	blood_overlay_type = "armor"
@@ -130,8 +130,8 @@
 
 //Civillian
 /obj/item/clothing/suit/storage/toggle/club
-	name = "surface operations manager's jacket"
-	desc = "A well tailored and rich jacket for the Surface Operations Manager."
+	name = "quartermaster's jacket"
+	desc = "A well tailored and rich jacket for the Quartermaster."
 	icon_state = "cm_coat"
 	item_state = "cm_coat"
 	icon_open = "cm_coat_open"

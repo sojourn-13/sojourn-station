@@ -228,7 +228,7 @@ export const Word = (props: { uiControl: MetaUIControlProps }) => {
           <Box>[row] - New table row.</Box>
           <Box>[cell] - New table cell.</Box>
           <Box>[logo] - Inserts corporate logo image.</Box>
-          <Box>[logolonestar] - Inserts Lonestar Logo</Box>
+          <Box>[logolonestar] - Inserts Frontier Logistics Logo</Box>
         </Box>
       ) : (
         <TextArea

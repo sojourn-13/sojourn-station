@@ -7,7 +7,7 @@
 	cost = 0
 
 /datum/gear/suit/hell_apron
-	display_name = "lonestar black apron"
+	display_name = "frontier logistics black apron"
 	path = /obj/item/clothing/suit/storage/helltaker_apron
 
 /datum/gear/suit/bunnysuit
