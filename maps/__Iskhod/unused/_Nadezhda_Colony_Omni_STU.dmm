@@ -717,7 +717,7 @@
 	name = "\improper Outdoors - Pad"
 	})
 "aeX" = (
-/obj/structure/low_wall,
+/obj/structure/low_wall/iskhod,
 /obj/machinery/light/small{
 	dir = 1
 	},
@@ -2126,7 +2126,7 @@
 /turf/simulated/floor/tiled/white/cargo,
 /area/nadezhda/hallway/side/f2section1)
 "aun" = (
-/obj/structure/low_wall,
+/obj/structure/low_wall/iskhod,
 /obj/machinery/door/blast/shutters/glass{
 	id = "section5";
 	name = "glass shutter"
@@ -6277,7 +6277,7 @@
 /turf/simulated/floor/tiled/techmaint_panels,
 /area/nadezhda/hallway/side/f2section1)
 "bll" = (
-/obj/structure/low_wall,
+/obj/structure/low_wall/iskhod,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/camera/network/plasma_tag,
 /turf/simulated/floor/tiled/white/gray_perforated,
@@ -15692,7 +15692,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1west)
 "dfD" = (
-/obj/structure/low_wall,
+/obj/structure/low_wall/iskhod,
 /turf/simulated/floor/plating,
 /area/nadezhda/security/range{
 	name = "\improper Blackshield - Firing Range"
@@ -17161,7 +17161,7 @@
 /turf/simulated/wall/r_wall,
 /area/nadezhda/security/triage_blackshield)
 "dtF" = (
-/obj/structure/low_wall,
+/obj/structure/low_wall/iskhod,
 /obj/item/storage/bag/trash,
 /obj/item/storage/bag/trash,
 /turf/simulated/floor/asteroid/dirt,
@@ -17510,7 +17510,7 @@
 /turf/simulated/floor/tiled/dark/cyancorner,
 /area/nadezhda/crew_quarters/sleep/cryo2)
 "dxr" = (
-/obj/structure/low_wall,
+/obj/structure/low_wall/iskhod,
 /obj/machinery/door/blast/shutters/glass{
 	id = "section2";
 	name = "glass shutter"
@@ -32169,7 +32169,7 @@
 /turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/engineering/atmos)
 "gku" = (
-/obj/structure/low_wall,
+/obj/structure/low_wall/iskhod,
 /mob/living/simple/jungle_bird,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/maingate{
@@ -35545,7 +35545,7 @@
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/dungeon/outside/abandoned_solars)
 "gRG" = (
-/obj/structure/low_wall,
+/obj/structure/low_wall/iskhod,
 /obj/machinery/door/blast/shutters/glass{
 	id = "section9";
 	name = "glass shutter"
@@ -41326,7 +41326,7 @@
 /turf/simulated/wall/r_wall,
 /area/nadezhda/rnd/docking)
 "hZa" = (
-/obj/structure/low_wall,
+/obj/structure/low_wall/iskhod,
 /obj/structure/railing{
 	dir = 4
 	},
@@ -48651,7 +48651,7 @@
 	},
 /area/nadezhda/command/tcommsat/computer)
 "jvx" = (
-/obj/structure/low_wall,
+/obj/structure/low_wall/iskhod,
 /obj/machinery/door/blast/shutters/glass{
 	id = "section7";
 	name = "glass shutter"
@@ -49586,7 +49586,7 @@
 	},
 /area/shuttle/rocinante_shuttle_area)
 "jEf" = (
-/obj/structure/low_wall,
+/obj/structure/low_wall/iskhod,
 /turf/simulated/floor/plating,
 /area/nadezhda/outside/inside_colony)
 "jEl" = (
@@ -55024,7 +55024,7 @@
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/hallway/main/stairwell)
 "kFk" = (
-/obj/structure/low_wall,
+/obj/structure/low_wall/iskhod,
 /obj/machinery/door/blast/shutters/glass{
 	id = "section3";
 	name = "glass shutter"
@@ -57670,7 +57670,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "leB" = (
-/obj/structure/low_wall,
+/obj/structure/low_wall/iskhod,
 /mob/living/simple/jungle_bird,
 /turf/simulated/floor/plating,
 /area/nadezhda/outside/lakeside)
@@ -59232,7 +59232,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "luk" = (
-/obj/structure/low_wall,
+/obj/structure/low_wall/iskhod,
 /turf/simulated/floor/plating,
 /area/nadezhda/outside/lakeside)
 "luo" = (
@@ -61070,7 +61070,7 @@
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "lOv" = (
-/obj/structure/low_wall,
+/obj/structure/low_wall/iskhod,
 /obj/machinery/door/blast/shutters/glass{
 	id = "section";
 	name = "glass shutter"
@@ -64092,7 +64092,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "mrk" = (
-/obj/structure/low_wall,
+/obj/structure/low_wall/iskhod,
 /obj/machinery/door/blast/shutters/glass{
 	id = "section10";
 	name = "glass shutter"
@@ -67928,10 +67928,6 @@
 "nee" = (
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/crew_quarters/dorm1)
-"nef" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/white,
-/area/nadezhda/medical/virology)
 "neh" = (
 /obj/structure/dogbed{
 	desc = "A bed made especially for smaller sized pets.";
@@ -71028,7 +71024,7 @@
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/command/courtroom)
 "nKo" = (
-/obj/structure/low_wall,
+/obj/structure/low_wall/iskhod,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/camera/network/plasma_tag{
@@ -77118,7 +77114,7 @@
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/command/prime)
 "oRW" = (
-/obj/structure/low_wall,
+/obj/structure/low_wall/iskhod,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 10
 	},
@@ -79263,7 +79259,7 @@
 /turf/simulated/floor/carpet/sblucarpet,
 /area/nadezhda/medical/sleeper)
 "ppU" = (
-/obj/structure/low_wall,
+/obj/structure/low_wall/iskhod,
 /obj/machinery/door/blast/shutters/glass{
 	id = "section8";
 	name = "glass shutter"
@@ -82186,9 +82182,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1north)
-"pTD" = (
-/turf/simulated/floor/tiled/white,
-/area/nadezhda/medical/virology)
 "pTS" = (
 /obj/random/closet_maintloot/low_chance,
 /turf/simulated/floor/tiled/steel/gray_perforated,
@@ -84494,7 +84487,7 @@
 /turf/simulated/floor/reinforced/nitrogen,
 /area/nadezhda/engineering/atmos)
 "qsM" = (
-/obj/structure/low_wall,
+/obj/structure/low_wall/iskhod,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/maingate{
 	name = "\improper Outdoors - Pad"
@@ -86812,7 +86805,7 @@
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/hallway/surface/section1)
 "qPK" = (
-/obj/structure/low_wall,
+/obj/structure/low_wall/iskhod,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/white/gray_perforated,
@@ -88382,9 +88375,6 @@
 "rev" = (
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/armoryshop)
-"reB" = (
-/turf/simulated/floor/tiled/white,
-/area/nadezhda/medical/virology)
 "reI" = (
 /obj/effect/floor_decal/corner_techfloor_grid,
 /obj/effect/floor_decal/border/techfloor{
@@ -92863,7 +92853,7 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest)
 "rWj" = (
-/obj/structure/low_wall,
+/obj/structure/low_wall/iskhod,
 /obj/machinery/door/blast/shutters/glass{
 	id = "section4";
 	name = "glass shutter"
@@ -92941,7 +92931,7 @@
 /turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/rnd/xenobiology/ameridian)
 "rXb" = (
-/obj/structure/low_wall,
+/obj/structure/low_wall/iskhod,
 /turf/simulated/floor/plating,
 /area/nadezhda/engineering/construction)
 "rXi" = (
@@ -95069,7 +95059,7 @@
 /turf/simulated/floor/plating,
 /area/nadezhda/security/tactical_blackshield)
 "ssA" = (
-/obj/structure/low_wall,
+/obj/structure/low_wall/iskhod,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/inside_colony)
 "ssB" = (
@@ -96186,7 +96176,7 @@
 /turf/simulated/wall/r_wall,
 /area/nadezhda/command/tcommsat/computer)
 "sGE" = (
-/obj/structure/low_wall/church,
+/obj/structure/low_wall/iskhod/church,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/absolutism/vectorrooms)
 "sGF" = (
@@ -96897,7 +96887,7 @@
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/eris/crew_quarters/plasma_tag)
 "sOo" = (
-/obj/structure/low_wall,
+/obj/structure/low_wall/iskhod,
 /obj/item/material/shard,
 /turf/simulated/floor/plating,
 /area/nadezhda/maintenance/undergroundfloor1west)
@@ -104907,9 +104897,6 @@
 	},
 /turf/simulated/floor/tiled/steel/danger,
 /area/nadezhda/engineering/workshop)
-"utF" = (
-/turf/simulated/floor/tiled/white,
-/area/nadezhda/medical/virology)
 "utH" = (
 /obj/effect/spider/stickyweb,
 /turf/simulated/floor/tiled/techmaint,
@@ -105539,7 +105526,7 @@
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/nadezhda/maintenance/guild)
 "uzo" = (
-/obj/structure/low_wall,
+/obj/structure/low_wall/iskhod,
 /obj/item/material/shard,
 /obj/item/material/shard,
 /turf/simulated/floor/asteroid/grass,
@@ -106073,9 +106060,6 @@
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/medical/reception)
-"uDX" = (
-/turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/security/armory_blackshield)
 "uEd" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -107106,7 +107090,7 @@
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "uNU" = (
-/obj/structure/low_wall,
+/obj/structure/low_wall/iskhod,
 /turf/simulated/floor/tiled/white/gray_perforated,
 /area/eris/crew_quarters/plasma_tag)
 "uNZ" = (
@@ -117241,7 +117225,7 @@
 /turf/simulated/floor/tiled/steel/bluecorner,
 /area/nadezhda/security/tactical_blackshield)
 "wGz" = (
-/obj/structure/low_wall,
+/obj/structure/low_wall/iskhod,
 /obj/machinery/door/blast/shutters/glass{
 	id = "section6";
 	name = "glass shutter"
@@ -119091,9 +119075,6 @@
 	},
 /turf/simulated/floor/tiled/dark/danger,
 /area/turret_protected/ai_upload)
-"xbR" = (
-/turf/simulated/floor/tiled/white,
-/area/nadezhda/medical/virology)
 "xbT" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /turf/simulated/floor/tiled/dark/cargo,
@@ -119298,7 +119279,7 @@
 	name = "Science Expedition prep"
 	})
 "xdz" = (
-/obj/structure/low_wall,
+/obj/structure/low_wall/iskhod,
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/security/range{
 	name = "\improper Blackshield - Firing Range"
@@ -153067,10 +153048,10 @@ opv
 nXz
 nCb
 qLp
-utF
+aps
 kZG
-xbR
-nef
+aps
+cWm
 gyB
 gtc
 jpE
@@ -153269,7 +153250,7 @@ hBd
 dxK
 lsA
 qLp
-reB
+aps
 mUB
 qGu
 feH
@@ -153471,7 +153452,7 @@ nMG
 fnY
 wIR
 qLp
-pTD
+aps
 bLv
 iRF
 chZ
@@ -154483,8 +154464,8 @@ ttK
 qLp
 jEL
 dll
-xbR
-xbR
+aps
+aps
 pyS
 mRW
 lzM
@@ -181690,7 +181671,7 @@ hSx
 eEn
 grK
 nPp
-uDX
+eMJ
 hCr
 slu
 wpL
@@ -182094,7 +182075,7 @@ hSx
 eEn
 hRg
 nRk
-uDX
+eMJ
 xwc
 ydE
 wpL

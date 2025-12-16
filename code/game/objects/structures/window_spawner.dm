@@ -10,7 +10,7 @@
 	density = 1
 	anchored = 1.0
 	var/win_path = /obj/structure/window/basic/full
-	var/wall_path = /obj/structure/low_wall
+	var/wall_path = /obj/structure/low_wall/iskhod
 	var/activated = FALSE
 
 

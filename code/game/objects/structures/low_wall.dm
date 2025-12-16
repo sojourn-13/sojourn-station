@@ -52,6 +52,11 @@
 	wall_color = "#FFFFFF"
 	icon_state = "church"
 
+//new iskhod tileset
+/obj/structure/low_wall/iskhod
+	name = "Iskhod low wall"
+	wall_color = "#FFFFFF"
+	icon_state = "iskhod"
 
 //Low walls mark the turf they're on as a wall.  This is vital for floor icon updating code
 /obj/structure/low_wall/New()

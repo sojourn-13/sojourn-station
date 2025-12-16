@@ -1586,7 +1586,7 @@
 /turf/simulated/floor/industrial/grey_slates_long,
 /area/mine/prep)
 "sI" = (
-/obj/structure/low_wall,
+/obj/structure/low_wall/iskhod,
 /turf/simulated/floor/asteroid{
 	temperature = 253.15
 	},
@@ -1873,7 +1873,7 @@
 /turf/simulated/floor/tiled/white,
 /area/iskhod/rnd/outpostmachineroom)
 "we" = (
-/obj/structure/low_wall,
+/obj/structure/low_wall/iskhod,
 /obj/machinery/power/apc{
 	dir = 8;
 	name = "West APC";
