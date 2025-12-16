@@ -5353,6 +5353,12 @@
 	},
 /turf/space,
 /area/space)
+"bVL" = (
+/obj/machinery/atmospherics/pipe/simple/heat_exchanging{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/dark,
+/area/space)
 "bVR" = (
 /obj/structure/toilet{
 	dir = 1
@@ -13070,7 +13076,7 @@
 /turf/simulated/floor/tiled/dark/cargo,
 /area/iskhod/quartermaster/supplydock)
 "eCz" = (
-/turf/space,
+/turf/simulated/floor/tiled/dark,
 /area/space)
 "eCI" = (
 /obj/machinery/atmospherics/binary/pump{
@@ -18572,6 +18578,12 @@
 /obj/structure/morgue,
 /turf/simulated/floor/industrial/black_large_slates_fixed,
 /area/iskhod/medical/morgue)
+"gDZ" = (
+/obj/machinery/atmospherics/pipe/simple/heat_exchanging{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/dark,
+/area/space)
 "gEo" = (
 /obj/structure/table/woodentable,
 /obj/item/trash/candle,
@@ -25712,7 +25724,7 @@
 /obj/effect/window_lwall_spawn/reinforced,
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/turf/space,
+/turf/simulated/floor/tiled/dark,
 /area/iskhod/crew_quarters/hydroponics)
 "jjd" = (
 /obj/machinery/door/firedoor,
@@ -25847,7 +25859,7 @@
 /obj/effect/window_lwall_spawn/reinforced,
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/turf/space,
+/turf/simulated/floor/tiled/dark,
 /area/iskhod/crew_quarters/hydroponics)
 "jkQ" = (
 /obj/machinery/papershredder,
@@ -28902,7 +28914,7 @@
 /area/space)
 "kpc" = (
 /obj/machinery/computer/general_air_control/supermatter_core{
-	sensors = list("SM_sensor" = "Tank");
+	sensors = list("SM_sensor"="Tank");
 	output_tag = "SM_out";
 	name = "Supermatter Supply Control";
 	input_tag = "SM_in";
@@ -30413,7 +30425,7 @@
 	id_tag = "toilet11";
 	name = "Patient Restrooms"
 	},
-/turf/space,
+/turf/simulated/floor/tiled/dark,
 /area/iskhod/medical/bathroom)
 "kSU" = (
 /turf/simulated/floor/industrial/black_large_slates,
@@ -38212,7 +38224,7 @@
 "nQY" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /obj/machinery/door/firedoor,
-/turf/space,
+/turf/simulated/floor/tiled/dark,
 /area/iskhod/crew_quarters/hydroponics)
 "nRn" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_border,
@@ -52922,7 +52934,7 @@
 /obj/effect/floor_decal/corner_kafel/white{
 	dir = 4
 	},
-/turf/space,
+/turf/simulated/floor/tiled/dark,
 /area/iskhod/crew_quarters/bar)
 "tgN" = (
 /obj/machinery/light/small{
@@ -59483,7 +59495,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/space,
+/turf/simulated/floor/tiled/dark,
 /area/iskhod/hallway/main/stairwell)
 "vBi" = (
 /obj/machinery/surveillance_pod,
@@ -119654,7 +119666,7 @@ rPY
 rPY
 rPY
 rPY
-ltT
+bVL
 aFe
 "}
 (63,1,2) = {"
@@ -119856,7 +119868,7 @@ rPY
 rPY
 rPY
 rPY
-jgw
+gDZ
 aFe
 "}
 (64,1,2) = {"
@@ -120058,7 +120070,7 @@ rPY
 rPY
 rPY
 rPY
-ltT
+bVL
 aFe
 "}
 (65,1,2) = {"
@@ -120260,7 +120272,7 @@ rPY
 rPY
 rPY
 rPY
-jgw
+gDZ
 aFe
 "}
 (66,1,2) = {"
@@ -120462,7 +120474,7 @@ rPY
 rPY
 rPY
 rPY
-ltT
+bVL
 aFe
 "}
 (67,1,2) = {"
@@ -120664,7 +120676,7 @@ rPY
 rPY
 rPY
 rPY
-jgw
+gDZ
 aFe
 "}
 (68,1,2) = {"
@@ -120866,7 +120878,7 @@ rPY
 rPY
 rPY
 rPY
-ltT
+bVL
 aFe
 "}
 (69,1,2) = {"
@@ -121068,7 +121080,7 @@ rPY
 rPY
 rPY
 rPY
-jgw
+gDZ
 aFe
 "}
 (70,1,2) = {"
@@ -121270,7 +121282,7 @@ rPY
 rPY
 rPY
 rPY
-ltT
+bVL
 aFe
 "}
 (71,1,2) = {"
@@ -121472,7 +121484,7 @@ rPY
 rPY
 rPY
 rPY
-jgw
+gDZ
 aFe
 "}
 (72,1,2) = {"
@@ -121674,7 +121686,7 @@ rPY
 rPY
 rPY
 rPY
-ltT
+bVL
 aFe
 "}
 (73,1,2) = {"
@@ -121876,7 +121888,7 @@ rPY
 rPY
 rPY
 rPY
-jgw
+gDZ
 aFe
 "}
 (74,1,2) = {"
@@ -122078,7 +122090,7 @@ rPY
 rPY
 rPY
 rPY
-ltT
+bVL
 aFe
 "}
 (75,1,2) = {"
@@ -122280,7 +122292,7 @@ rPY
 rPY
 rPY
 rPY
-jgw
+gDZ
 aFe
 "}
 (76,1,2) = {"
@@ -122482,7 +122494,7 @@ rPY
 rPY
 rPY
 rPY
-ltT
+bVL
 aFe
 "}
 (77,1,2) = {"
@@ -122684,7 +122696,7 @@ rPY
 rPY
 rPY
 rPY
-jgw
+gDZ
 aFe
 "}
 (78,1,2) = {"
@@ -122886,7 +122898,7 @@ rPY
 rPY
 rPY
 rPY
-ltT
+bVL
 aFe
 "}
 (79,1,2) = {"
@@ -123088,7 +123100,7 @@ rPY
 rPY
 rPY
 rPY
-jgw
+gDZ
 aFe
 "}
 (80,1,2) = {"
@@ -123290,7 +123302,7 @@ rPY
 rPY
 rPY
 rPY
-ltT
+bVL
 aFe
 "}
 (81,1,2) = {"
@@ -123492,7 +123504,7 @@ rPY
 rPY
 rPY
 rPY
-jgw
+gDZ
 aFe
 "}
 (82,1,2) = {"
@@ -123694,7 +123706,7 @@ rPY
 rPY
 rPY
 rPY
-ltT
+bVL
 aFe
 "}
 (83,1,2) = {"
@@ -123896,7 +123908,7 @@ rPY
 rPY
 rPY
 rPY
-jgw
+gDZ
 aFe
 "}
 (84,1,2) = {"
@@ -124098,7 +124110,7 @@ rPY
 rPY
 rPY
 rPY
-ltT
+bVL
 aFe
 "}
 (85,1,2) = {"
@@ -124300,7 +124312,7 @@ rPY
 rPY
 rPY
 rPY
-jgw
+gDZ
 aFe
 "}
 (86,1,2) = {"
@@ -124502,7 +124514,7 @@ rPY
 rPY
 rPY
 rPY
-ltT
+bVL
 aFe
 "}
 (87,1,2) = {"
@@ -124704,7 +124716,7 @@ rPY
 rPY
 rPY
 rPY
-jgw
+gDZ
 aFe
 "}
 (88,1,2) = {"
@@ -124906,7 +124918,7 @@ rPY
 rPY
 rPY
 rPY
-ltT
+bVL
 aFe
 "}
 (89,1,2) = {"
@@ -125108,7 +125120,7 @@ rPY
 rPY
 rPY
 rPY
-jgw
+gDZ
 aFe
 "}
 (90,1,2) = {"
@@ -125310,7 +125322,7 @@ rPY
 rPY
 rPY
 rPY
-ltT
+bVL
 aFe
 "}
 (91,1,2) = {"
@@ -125512,7 +125524,7 @@ rPY
 rPY
 rPY
 rPY
-jgw
+gDZ
 aFe
 "}
 (92,1,2) = {"
@@ -125714,7 +125726,7 @@ rPY
 rPY
 rPY
 rPY
-ltT
+bVL
 aFe
 "}
 (93,1,2) = {"
@@ -125916,7 +125928,7 @@ rPY
 rPY
 rPY
 rPY
-jgw
+gDZ
 aFe
 "}
 (94,1,2) = {"
@@ -126118,7 +126130,7 @@ rPY
 rPY
 rPY
 rPY
-ltT
+bVL
 aFe
 "}
 (95,1,2) = {"
@@ -126320,7 +126332,7 @@ rPY
 rPY
 rPY
 rPY
-jgw
+gDZ
 aFe
 "}
 (96,1,2) = {"
@@ -126522,7 +126534,7 @@ rPY
 rPY
 rPY
 rPY
-ltT
+bVL
 aFe
 "}
 (97,1,2) = {"
@@ -126724,7 +126736,7 @@ rPY
 rPY
 rPY
 rPY
-jgw
+gDZ
 aFe
 "}
 (98,1,2) = {"
@@ -126926,7 +126938,7 @@ rPY
 rPY
 rPY
 rPY
-ltT
+bVL
 aFe
 "}
 (99,1,2) = {"
@@ -127128,7 +127140,7 @@ rPY
 rPY
 rPY
 rPY
-jgw
+gDZ
 aFe
 "}
 (100,1,2) = {"
@@ -127330,7 +127342,7 @@ rPY
 rPY
 rPY
 rPY
-ltT
+bVL
 aFe
 "}
 (101,1,2) = {"
@@ -127532,7 +127544,7 @@ rPY
 rPY
 rPY
 rPY
-jgw
+gDZ
 aFe
 "}
 (102,1,2) = {"
@@ -127734,7 +127746,7 @@ rPY
 rPY
 rPY
 rPY
-ltT
+bVL
 aFe
 "}
 (103,1,2) = {"
@@ -127936,7 +127948,7 @@ rPY
 rPY
 rPY
 rPY
-jgw
+gDZ
 aFe
 "}
 (104,1,2) = {"
