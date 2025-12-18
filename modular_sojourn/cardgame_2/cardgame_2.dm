@@ -482,31 +482,27 @@
 
 /obj/item/card_carp/peltlice
 	name = "Pelt Lice"
-	desc = "A swarm of black crawling insects \
-	Place over a pelt, killing the pelt, and removing it from the game H1/P1. Requires 1 Pelt. Pelt."
+	desc = "A swarm of black crawling insects, H1/P1. Requires 1 Pelt. Pelt."
 	icon_state = "card_dots"
 	current_health = 1
 
 /obj/item/card_carp/silverfish
 	name = "Silverfish"
-	desc = "Large shimmering bugs the hunger in the eyes leads them to treasers unseen by others. \
-	Place over a pelt, killing the pelt, and removing it from the game H1/P0. Requires 1 Pelt. Pelt."
+	desc = "Large shimmering bugs, the hunger in the eyes leads them to treasers unseen by others, H1/P0. Requires 1 Pelt. Pelt. Looter."
 	icon_state = "card_dots"
 	current_health = 1
 
 /obj/item/card_carp/flees
 	name = "Flees"
-	desc = "Jumping, small and feared by even the strongest animals. \
-	Place over a pelt, killing the pelt, and removing it from the game H2/P0. Requires 1 Pelt. Pelt. Feasting. Bloodless"
+	desc = "Jumping, small and feared by even the strongest animals, H2/P0. Requires 1 Pelt. Pelt. Feasting. Bloodless."
 	icon_state = "card_dots"
 	current_health = 2
 
 /obj/item/card_carp/moth
 	name = "Clothes Moths"
-	desc = "Winged fluffy insects that hunt at night for delights that no others dare tare into. \
-	Place over a pelt, killing the pelt, and removing it from the game H2/P0. Requires 1 Pelt. Pelt. Chime. Bloodless. Flying. Shreader"
+	desc = "Winged fluffy insects that hunt at night for delights that no others dare tare into, H4/P0. Requires 1 Pelt. Pelt. Chime. Bloodless. Flying. Shreader."
 	icon_state = "card_dots"
-	current_health = 2
+	current_health = 4
 
 /////////////////////////////
 ///    TERRAIN CARDS     ////
