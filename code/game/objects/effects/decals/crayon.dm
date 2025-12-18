@@ -1039,6 +1039,10 @@
 		if(istype(carpy, /obj/item/card_carp/pupa)) superiormob =  /mob/living/carbon/superior/roach/roachling
 		if(istype(carpy, /obj/item/card_carp/cockroach)) superiormob = /mob/living/carbon/superior/roach
 		if(istype(carpy, /obj/item/card_carp/stinkbug)) superiormob = /mob/living/carbon/superior/roach/toxic
+		if(istype(carpy, /obj/item/card_carp/silverfish)) superiormob = /mob/living/carbon/superior/roach/tank
+		if(istype(carpy, /obj/item/card_carp/moth)) superiormob = /mob/living/carbon/superior/roach/golden //WHAT COULD THIS MEAN???? - Trilby
+		if(istype(carpy, /obj/item/card_carp/peltlice)) superiormob = /mob/living/carbon/superior/roach/nanite
+
 		//termites for ants
 		if(istype(carpy, /obj/item/card_carp/ant) || istype(carpy, /obj/item/card_carp/peltlice)) superiormob = /mob/living/carbon/superior/termite_colony/iron
 		if(istype(carpy, /obj/item/card_carp/antqueen)) superiormob = /mob/living/carbon/superior/termite_colony/diamond
