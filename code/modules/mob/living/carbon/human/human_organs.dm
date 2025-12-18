@@ -94,6 +94,8 @@
 			stance_damage -= 3
 		if (r_hand && iscan)
 			stance_damage -= 3
+		if (unnatural_mutations.getMutation(MUTATION_STABLE_BALANCE))
+			stance_damage -= 5
 		stance_damage = max(stance_damage, 0)
 
 	// standing is poor

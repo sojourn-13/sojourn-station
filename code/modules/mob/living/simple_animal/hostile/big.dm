@@ -104,7 +104,6 @@
 	research_value = 3750
 	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_HONEY_CRYSTALLIZATION, MUTATION_RAND_UNSTABLE)
 
-
 /mob/living/simple/hostile/render/chunks
 	name = "Chunks"
 	desc = "An absolute unit of a primal render. Somehow maintains his speed despite being severely malformed and ugly as sin."

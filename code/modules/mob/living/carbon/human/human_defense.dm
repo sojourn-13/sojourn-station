@@ -131,13 +131,15 @@ uniquic_armor_act
 	if(!dir) // Same turf as the source
 		return
 
-	var/r_dir = reverse_dir[dir]
-	var/hit_dirs = (r_dir in cardinal) ? r_dir : list(r_dir & NORTH|SOUTH, r_dir & EAST|WEST)
+	if(!unnatural_mutations.getMutation(MUTATION_STABLE_BALANCE))
 
-	if(hit_zone == BP_R_LEG || hit_zone == BP_L_LEG)
-		if(prob(60 - stats.getStat(STAT_TGH)))
-			step(src, pick(cardinal - hit_dirs))
-			visible_message(SPAN_WARNING("[src] stumbles around."))
+		var/r_dir = reverse_dir[dir]
+		var/hit_dirs = (r_dir in cardinal) ? r_dir : list(r_dir & NORTH|SOUTH, r_dir & EAST|WEST)
+
+		if(hit_zone == BP_R_LEG || hit_zone == BP_L_LEG)
+			if(prob((5 + damage) - stats.getStat(STAT_TGH)))
+				step(src, pick(cardinal - hit_dirs))
+				visible_message(SPAN_WARNING("[src] stumbles around."))
 
 /mob/living/carbon/human/stun_effect_act(var/stun_amount, var/agony_amount, var/def_zone)
 

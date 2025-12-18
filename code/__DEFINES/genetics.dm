@@ -58,6 +58,8 @@
 #define MUTATION_HULK /datum/genetics/mutation/disability/hulk
 #define MUTATION_MINER_SIGHT /datum/genetics/mutation/miner_sight
 #define MUTATION_HARDEN_EARS /datum/genetics/mutation/harden_ears
+#define MUTATION_RECOIL_STABLE_HANDS /datum/genetics/mutation/stable_hands
+#define MUTATION_STABLE_BALANCE /datum/genetics/mutation/stable_balance
 //Genes for skin
 #define MUTATION_XENO_SKIN /datum/genetics/mutation/xeno_skin
 #define MUTATION_COW_SKIN /datum/genetics/mutation/cow_skin

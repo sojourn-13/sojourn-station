@@ -2081,6 +2081,7 @@
 #include "code\modules\genetics\mutations\punch.dm"
 #include "code\modules\genetics\mutations\rad_protection.dm"
 #include "code\modules\genetics\mutations\rand_instability.dm"
+#include "code\modules\genetics\mutations\recoil.dm"
 #include "code\modules\genetics\mutations\roach_blood.dm"
 #include "code\modules\genetics\mutations\screaming.dm"
 #include "code\modules\genetics\mutations\seasoned_mind.dm"

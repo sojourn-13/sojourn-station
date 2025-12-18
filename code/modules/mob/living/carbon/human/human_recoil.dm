@@ -6,6 +6,9 @@
 	if(MOVING_DELIBERATELY(src) || src.stats.getPerk(PERK_SURE_STEP))
 		base_recoil -= 3
 
+	if(unnatural_mutations.getMutation(MUTATION_RECOIL_STABLE_HANDS))
+		base_recoil -= 2
+
 	var/mob/living/carbon/human/H = src
 	var/suit_stiffness = 0
 	var/uniform_stiffness = 0
