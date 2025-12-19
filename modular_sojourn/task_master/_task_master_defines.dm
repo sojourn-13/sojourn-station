@@ -14,4 +14,11 @@
 #define SLIP_N_DIE /datum/task_master/task/slip_n_die
 #define SLAB_CLEARER /datum/task_master/task/slab_clearer
 #define SHEATH_ARTS /datum/task_master/task/sheath_arts
+#define FLOOR_FIXER /datum/task_master/task/floor_fixer
+#define BUTTER_MAKER /datum/task_master/task/butter_maker
+#define BOTTLER /datum/task_master/task/bottler
+#define SCRAPPER /datum/task_master/task/scrapper
+#define BUTCHERING /datum/task_master/task/butchering
+
+// Perk Exclusive Tasks
 #define MAP_CRAFTING /datum/task_master/task/map_crafting

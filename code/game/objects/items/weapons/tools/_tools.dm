@@ -44,7 +44,6 @@
 	var/allow_decimal_stock = TRUE
 	var/delete_when_empty = TRUE
 
-
 	//Variables used for tool degradation
 	var/degradation = 0.8 //If nonzero, the health of the tool decreases by this amount after each tool operation
 	health = 0		// Health of a tool.
@@ -74,7 +73,6 @@
 	var/workspeed = 1	//Worktimes are divided by this
 
 	var/spawn_full = TRUE
-
 
 /******************************
 	/* Core Procs */
@@ -114,8 +112,6 @@
 	if(use_fuel_cost)
 		consume_fuel(get_fuel(), forced = TRUE)
 
-
-
 //For killing processes like hot spots
 /obj/item/tool/Destroy()
 	STOP_PROCESSING(SSobj, src)
@@ -149,7 +145,6 @@
 		if(use_power_cost && passive_power_cost)
 			if(!cell?.checked_use(passive_power_cost))
 				turn_off()
-
 
 //Cell reload
 /obj/item/tool/MouseDrop(over_object)
@@ -732,7 +727,6 @@
 				else
 					C = locate(/obj/item/cell) in contents
 
-
 				if(user)
 					to_chat(user, SPAN_DANGER("You overload the cell in the [src]!"))
 				C.explode()
@@ -741,10 +735,6 @@
 
 				update_icon()
 				return
-
-
-
-
 
 /******************************
 	/* Data and Checking */
@@ -781,7 +771,6 @@
 	for(var/i in L)
 		L[i] = image(icon = 'icons/mob/radial/tools.dmi', icon_state = i)
 	return show_radial_menu(user, use_on ? use_on : user, L, tooltips = TRUE, require_near = TRUE, custom_check = CB)
-
 
 /obj/item/tool/proc/turn_on(var/mob/user)
 	if(use_power_cost)
@@ -833,13 +822,6 @@
 		icon_state = initial(item_state)
 	update_icon()
 	update_wear_icon()
-
-
-
-
-
-
-
 
 /*********************
 	Resource Consumption
@@ -927,7 +909,6 @@
 		return TRUE
 	return FALSE
 
-
 /obj/item/tool/proc/consume_stock(number)
 	if(stock >= number)
 		stock -= number
@@ -936,7 +917,6 @@
 
 	if(delete_when_empty && stock <= 0)
 		qdel(src)
-
 
 /***************************
 	Tool Upgrades
@@ -961,7 +941,6 @@
 	hitcost = initial(hitcost)
 	stunforce = initial(stunforce)
 	agonyforce = initial(agonyforce)
-
 
 	extra_bulk = initial(extra_bulk)
 	item_flags = initial(item_flags)
@@ -1243,7 +1222,6 @@
 //Used by adhesive tools to stick an item to stuff
 /obj/item/tool/proc/stick(obj/item/target, mob/user)
 	return
-
 
 /obj/item/tool/admin_debug
 	name = "Electric Boogaloo 3000"

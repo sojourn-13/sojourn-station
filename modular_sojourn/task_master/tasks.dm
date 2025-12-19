@@ -12,7 +12,6 @@
 	//Pulled up from worker for easier refencing and debugging
 	var/mob/living/forwards_refence
 
-
 	//Name of the Task
 	var/name = "Unknown Task"
 
@@ -20,7 +19,6 @@
 
 	//The key of the object, used to search for it easily. Often matches the Macro text.
 	var/key = "DEFAULT"
-
 
 	//Used for some tasks to gain levels for said task
 	var/value = 0
@@ -39,7 +37,6 @@
 
 	//The text displayed to a player when they gain a learnt task.
 	var/gain_text
-
 
 /datum/task_master/task/self_value
 	name = "Self Motivation"
@@ -233,3 +230,63 @@
 	level_thresholds = 1 //1 -> 1.5 -> 2.25 -> 3.75 ect ect
 	alt_scaling_number = 1.5
 	unlocked = FALSE
+
+/datum/task_master/task/floor_fixer
+	name = "Floor Fixer"
+	key = "FLOOR_FIXER"
+	desc = "Pooring cement to make floors shows that there is always room to grow."
+	gain_text = "Fresh cement, leads to freshened skills."
+	level_thresholds = 1 //1 -> 1.5 -> 2.25 -> 3.75 ect ect
+	alt_scaling_number = 1.5
+	unlocked = FALSE
+
+/datum/task_master/task/floor_fixer/activate_affect()
+	forwards_refence.stats.add_Stat_cap(STAT_MEC, (level + 1))
+
+/datum/task_master/task/butter_maker
+	name = "Butter Artist"
+	key = "BUTTER_MAKER"
+	desc = "Making butter by hand is an art that you are slowly mastering."
+	gain_text = "Small improvements made each turn, each plunge, each craft."
+	level_thresholds = 1 //1 -> 2 -> 4 -> 8 ect ect
+	alt_scaling_number = 2
+	unlocked = FALSE
+
+/datum/task_master/task/butter_maker/activate_affect()
+	forwards_refence.stats.add_Stat_cap(STAT_TGH, (level + 1))
+
+/datum/task_master/task/bottler
+	name = "Brew Bottler"
+	key = "BOTTLER"
+	desc = "Pooring drinks into bottles is a refined skill to not spill."
+	gain_text = "More steady pours, less loss of fizz, less spills."
+	level_thresholds = 1 //1 -> 2 -> 4 -> 8 ect ect
+	alt_scaling_number = 2
+	unlocked = FALSE
+
+/datum/task_master/task/bottler/activate_affect()
+	forwards_refence.stats.add_Stat_cap(STAT_ROB, (level + 1))
+
+/datum/task_master/task/scrapper
+	name = "Pile sorter"
+	key = "SCRAPPER"
+	desc = "Working with piles allows you to move them a bit faster and easyer."
+	gain_text = "A hit here, a pull on this, and it all falls together."
+	level_thresholds = 1 //1 -> 2 -> 4 -> 8 ect ect
+	alt_scaling_number = 2
+	unlocked = FALSE
+
+/datum/task_master/task/scrapper/activate_affect()
+	forwards_refence.stats.add_Stat_cap(STAT_VIV, (level + 1))
+
+/datum/task_master/task/butchering
+	name = "Butchering"
+	key = "BUTCHERING"
+	desc = "A few small cuts to drain the blood, a few strong pulls to remove the guts."
+	gain_text = "The dead before your skilled hands turn into lively materals."
+	level_thresholds = 1 //1 -> 2 -> 4 -> 8 ect ect
+	alt_scaling_number = 2
+	unlocked = FALSE
+
+/datum/task_master/task/butchering/activate_affect()
+	forwards_refence.stats.add_Stat_cap(STAT_BIO, (level + 1))

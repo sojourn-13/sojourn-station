@@ -1,10 +1,10 @@
-/mob/living/carbon/superior/proc/harvest(mob/user)
+/mob/living/carbon/superior/proc/harvest(mob/living/user)
 	drop_embedded()
 	var/actual_meat_amount = max(1,(meat_amount/2))
 	var/actual_leather_amount = max(0,(leather_amount/2))
 	var/actual_bones_amount = max(0,(bones_amount/2))
 
-	if(ishuman(user))
+	if(isliving(user))
 		if(user.stats.getPerk(PERK_BUTCHER)) // Master Butcher will now give full amounts defined in the creature's variables. Otherwise, it's only half, and no special items.
 			actual_leather_amount = max(0,(leather_amount))
 			actual_meat_amount = max(1,(meat_amount))
@@ -38,8 +38,8 @@
 			blood_effect.update_icon()
 			qdel(src)
 		else
-			if(ishuman(user))
-				if(user.stats.getPerk(PERK_BUTCHER))
+			if(isliving(user))
+				if(user.stats.getPerk(PERK_BUTCHER) || prob(user.learnt_tasks.get_task_mastery_level("BUTCHERING")))
 					if(user != src)
 						user.visible_message(SPAN_DANGER("[user] butchers \the [src] cleanly!"))
 					var/obj/effect/decal/cleanable/blood/blood_effect = new/obj/effect/decal/cleanable/blood/splatter(get_turf(src))
@@ -50,6 +50,10 @@
 				if(user != src)
 					user.visible_message(SPAN_DANGER("[user] butchers \the [src] messily!"))
 				gib()
+
+	if(isliving(user))
+		user.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/butchering, "BUTCHERING", skill_gained = 1, learner = user)
+
 
 /mob/living/carbon/superior/update_lying_buckled_and_verb_status()
 	lying_prev = lying
@@ -133,7 +137,7 @@
 /mob/living/carbon/superior/attackby(obj/item/I, mob/living/user, params)
 	activate_ai() //If were attacked by something and havent woken up yet. Were awake now >:T
 	if (meat_type && (stat == DEAD) && (QUALITY_CUTTING in I.tool_qualities) && user.a_intent ==  I_HELP)
-		if (I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_CUTTING, FAILCHANCE_NORMAL, required_stat = STAT_BIO))
+		if (I.use_tool(user, src, WORKTIME_NORMAL - user.learnt_tasks.get_task_mastery_level("BUTCHERING"), QUALITY_CUTTING, FAILCHANCE_NORMAL - user.learnt_tasks.get_task_mastery_level("BUTCHERING"), required_stat = STAT_BIO))
 			harvest(user)
 	else
 

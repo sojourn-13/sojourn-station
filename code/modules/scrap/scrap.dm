@@ -309,6 +309,7 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 		visible_message("<span class='notice'><span style='color:orange'>A pile of refined scrap is found beneath the [src]!</span>")
 	qdel(src)
 
+//Super easy task to farm for super minior gains
 /obj/structure/scrap/attackby(obj/item/W, mob/living/carbon/human/user)
 	if(user.a_intent != I_HURT)
 		user.setClickCooldown(DEFAULT_QUICK_COOLDOWN)
@@ -316,7 +317,7 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 		var/tool_type = W.get_tool_type(user, usable_qualities, src)
 		switch(tool_type)
 			if(QUALITY_SHOVELING)
-				if(W.use_tool(user, src, WORKTIME_NORMAL, QUALITY_SHOVELING, FAILCHANCE_VERY_EASY, required_stat = STAT_ROB, forced_sound = "rummage"))
+				if(W.use_tool(user, src, WORKTIME_NORMAL - user.learnt_tasks.get_task_mastery_level("SCRAPPER"), QUALITY_SHOVELING, FAILCHANCE_VERY_EASY - user.learnt_tasks.get_task_mastery_level("SCRAPPER"), required_stat = STAT_ROB, forced_sound = "rummage"))
 					user.visible_message(SPAN_NOTICE("[user] [pick(ways)] \the [src]."))
 					user.do_attack_animation(src)
 					if(user.stats.getPerk(PERK_JUNKBORN))
@@ -326,10 +327,13 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 					dig_out_lump(user.loc, 0)
 					shuffle_loot()
 					clear_if_empty()
+					user.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/butter_maker, "SCRAPPER", skill_gained = 0.1, learner = user)
+
 			if(QUALITY_HAMMERING)
-				if(W.use_tool(user,src, WORKTIME_EXTREMELY_LONG, QUALITY_HAMMERING, FAILCHANCE_HARD, required_stat = STAT_ROB, forced_sound = "rummage"))
+				if(W.use_tool(user,src, WORKTIME_EXTREMELY_LONG - user.learnt_tasks.get_task_mastery_level("SCRAPPER"), QUALITY_HAMMERING, FAILCHANCE_HARD - user.learnt_tasks.get_task_mastery_level("SCRAPPER"), required_stat = STAT_ROB, forced_sound = "rummage"))
 					user.visible_message(SPAN_NOTICE("[user] compacts \the [src] into a solid mass!"))
 					make_cube()
+					user.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/butter_maker, "SCRAPPER", skill_gained = 0.2, learner = user)
 
 /obj/structure/scrap/large
 	name = "large scrap pile"
