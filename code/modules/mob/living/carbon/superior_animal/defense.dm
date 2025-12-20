@@ -137,7 +137,7 @@
 /mob/living/carbon/superior/attackby(obj/item/I, mob/living/user, params)
 	activate_ai() //If were attacked by something and havent woken up yet. Were awake now >:T
 	if (meat_type && (stat == DEAD) && (QUALITY_CUTTING in I.tool_qualities) && user.a_intent ==  I_HELP)
-		if (I.use_tool(user, src, WORKTIME_NORMAL - user.learnt_tasks.get_task_mastery_level("BUTCHERING"), QUALITY_CUTTING, FAILCHANCE_NORMAL - user.learnt_tasks.get_task_mastery_level("BUTCHERING"), required_stat = STAT_BIO))
+		if (I.use_tool(user, src, WORKTIME_NORMAL - user.learnt_tasks.get_task_mastery_level("BUTCHERING"), harvesting_tool, FAILCHANCE_NORMAL - user.learnt_tasks.get_task_mastery_level("BUTCHERING"), required_stat = harvesting_stat))
 			harvest(user)
 	else
 

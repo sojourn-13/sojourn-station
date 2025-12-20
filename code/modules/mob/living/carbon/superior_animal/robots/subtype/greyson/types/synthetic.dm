@@ -39,6 +39,35 @@
 	stats.changeStat(STAT_TGH, 10)
 	stats.changeStat(STAT_MEC, 25)
 
+/mob/living/carbon/superior/robot/gp/synth/combative
+	name = "Greyson Positronic FBP-SEC Heavy Unit"
+	desc = "A full body positronic, tasked with carrying out a variety of duties. \
+	This unit has a set of heavy armor and agumentation-shield as well as a set of arm blades."
+	icon = 'icons/mob/mobs-humanoid.dmi'
+	icon_state = "nanotrasen_combative"
+	attacktext = "synth_armblade_attack_flick"
+	cleaning = FALSE
+
+
+	//Legitly the mob's stats. If this is unfair to the player then its 100% unfair to the mob!
+	//Even has less armor and hp then a human in basic gear! (other then E gun stuff.)
+	melee_damage_lower = WEAPON_FORCE_BRUTAL
+	melee_damage_upper = WEAPON_FORCE_BRUTAL
+	armor_divisor = ARMOR_PEN_MODERATE
+
+	//Different things
+	can_block = TRUE
+	health_point_to_block = 0.8 //When missing 20% of hp start blocking
+	health = 180 * GREYSONROBUST_HEALTH_MOD
+	maxHealth = 180 * GREYSONROBUST_HEALTH_MOD
+	//We get heavy engery armor rather then bullet/melee as thats what GP interaly uses most, cog lasers.
+	armor = list(melee = 9, bullet = 7, energy = 11, bomb = 80, bio = 100, rad = 100)
+
+/mob/living/carbon/superior/robot/gp/synth/combative/New()
+	..()
+	stats.changeStat(STAT_TGH, 35)
+	stats.changeStat(STAT_MEC, 25)
+
 /mob/living/carbon/superior/robot/gp/synth/epistol
 	name = "Greyson Positronic FBP-SEC Mark I Unit"
 	desc = "A full body positronic, tasked with carrying out security duty without emotion, remorse, or questions. \
