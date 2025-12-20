@@ -2464,6 +2464,7 @@
 #include "code\modules\mob\living\carbon\superior_animal\robots\subtype\church\types\knight.dm"
 #include "code\modules\mob\living\carbon\superior_animal\robots\subtype\church\types\pawn.dm"
 #include "code\modules\mob\living\carbon\superior_animal\robots\subtype\church\types\rook.dm"
+#include "code\modules\mob\living\carbon\superior_animal\robots\subtype\forgotten\subtypes.dm"
 #include "code\modules\mob\living\carbon\superior_animal\robots\subtype\greyson\greyson.dm"
 #include "code\modules\mob\living\carbon\superior_animal\robots\subtype\greyson\types\custodian.dm"
 #include "code\modules\mob\living\carbon\superior_animal\robots\subtype\greyson\types\data_star.dm"

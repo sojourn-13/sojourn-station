@@ -174,8 +174,13 @@
 	var/attack_sound_chance = 100
 	var/attack_sound_volume = 90
 
+	//Harvesting vars
+
+	var/harvesting_tool = QUALITY_CUTTING
+	var/harvesting_stat = STAT_BIO
 	var/meat_type = /obj/item/reagent_containers/snacks/meat/roachmeat
 	var/meat_amount = 3
+
 	//Lodge related products
 	var/leather_amount = 0 //The amount of leather sheets dropped.
 	var/bones_amount = 0 //The amount of bone sheets dropped.

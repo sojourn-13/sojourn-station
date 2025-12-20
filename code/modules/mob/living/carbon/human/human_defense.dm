@@ -732,8 +732,8 @@ uniquic_armor_act
 			/obj/machinery/power/os_turret,
 			/mob/living/simple/hostile/megafauna/hivemind_tyrant,
 			/mob/living/simple/hostile/megafauna/one_star,
-			/mob/living/simple/hostile/republicon,
-			/mob/living/carbon/superior/sentinal_seeker,
+			/mob/living/carbon/superior/robot/forgotton,
+			/mob/living/carbon/superior/robot/forgotton/sentinal_seeker,
 			/mob/living/carbon/superior/roach/elektromagnetisch, //beep boop
 			/mob/living/carbon/superior/roach/nanite,
 			/mob/living/simple/hostile/naniteswarm,
