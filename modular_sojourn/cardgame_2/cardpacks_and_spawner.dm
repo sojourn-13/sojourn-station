@@ -54,7 +54,8 @@
 				/obj/item/card_carp/sparrow = 1,
 				/obj/item/card_carp/bat = 1,
 				/obj/item/card_carp/kangaroorat = 1,
-				/obj/item/card_carp/turkey_vulture = 1
+				/obj/item/card_carp/turkey_vulture = 1,
+				/obj/item/card_carp/moth = 1
 				))
 
 /obj/random/card_carp/rare
@@ -76,7 +77,8 @@
 				/obj/item/card_carp/ratking = 1,
 				/obj/item/card_carp/packrat = 1,
 				/obj/item/card_carp/chipmunk = 1,
-				/obj/item/card_carp/fieldmice = 1
+				/obj/item/card_carp/fieldmice = 1,
+				/obj/item/card_carp/flees = 1
 				))
 
 /obj/random/card_carp/terrain
@@ -98,12 +100,15 @@
 
 /obj/random/card_carp/pelt/item_to_spawn()
 	return pickweight(list(
-				/obj/item/card_carp/rpelt = 1,
-				/obj/item/card_carp/dpelt = 1,
-				/obj/item/card_carp/pinepelt = 1,
+				/obj/item/card_carp/rpelt = 2,
+				/obj/item/card_carp/dpelt = 2,
+				/obj/item/card_carp/pinepelt = 2,
+				/obj/item/card_carp/tanningpelt = 2,
 				/obj/item/card_carp/peltlice = 1,
-				/obj/item/card_carp/tanningpelt = 1,
-				/obj/item/card_carp/gpelt = 1
+				/obj/item/card_carp/flees = 1,
+				/obj/item/card_carp/moth = 1,
+				/obj/item/card_carp/silverfish = 1,
+				/obj/item/card_carp/gpelt = 2
 				))
 
 /obj/item/pack_card_carp

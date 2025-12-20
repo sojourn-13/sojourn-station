@@ -16,6 +16,13 @@
 /obj/item/cardholder/proc/draw_card(mob/user)
 	var/turf/T = get_turf(src)
 	if(endless)
+		//If we have main deck cards in a side deck then we have a 10% chance to pull them.
+		if(contents && prob(10))
+			card_target = pick(contents)
+			card_target.loc = T
+			card_target = /obj/item/card_carp //so we have vars
+			return
+
 		new card_target(T)
 		return
 	if(!contents)
@@ -33,6 +40,12 @@
 		if(card_eater) //Putting squirls back in their box
 			user.visible_message(SPAN_NOTICE("[user] puts \the [card] into \the [src]."), SPAN_NOTICE("You put \the [card] into \the [src]."))
 			qdel(card)
+			return
+		//silly mechanic for maindeck cards in a side deck (scarry)
+		if(card.late_fodder && endless)
+			user.remove_from_mob(card)
+			src.contents += card
+			user.visible_message(SPAN_NOTICE("[user] puts \the [card] into \the [src]."), SPAN_NOTICE("You put \the [card] into \the [src]."))
 			return
 		if(card.cant_box && endless) //Putting squirls back in their box
 			user.visible_message(SPAN_NOTICE("[user] puts \the [card] into \the [src]."), SPAN_NOTICE("You put \the [card] into \the [src]."))
@@ -57,21 +70,21 @@
 
 /obj/item/cardholder/rabbit
 	name = "rabbit card box"
-	desc = "A box of cards that only have rabbit CarpCarpCo Cards. The second most commonly used side deck for most players, rabbits are H1/P0 with kinship and frail."
+	desc = "A box of cards that only have rabbit CarpCarpCo Cards. A hybrid of blood and bone for those that fear a long running game, replacing squirrels by giving H1/P0 rabbits with kinship and frail."
 	card_target =  /obj/item/card_carp/rabbit
 	icon_state = "folly_deck"
 	endless = TRUE
 
 /obj/item/cardholder/ratbox
 	name = "rat card box"
-	desc = "A box of cards that only have rat CarpCarpCo Cards. An unusual choice for a side deck, replacing squirrels by giving H1/P1 rats that cannot give blood."
+	desc = "A box of cards that only have rat CarpCarpCo Cards. The second most commonly used side deck for most players, replacing squirrels by giving H1/P1 rats that cannot give blood."
 	card_target =  /obj/item/card_carp/rat
 	icon_state = "folly_deck"
 	endless = TRUE
 
 /obj/item/cardholder/beebox
 	name = "beebox card box"
-	desc = "A box of cards that only have bee CarpCarpCo Cards. An unusual choice for a side deck, replacing squirrels by giving H1/P0 bee cards that cannot give bones."
+	desc = "A box of cards that only have bee CarpCarpCo Cards. An unusual choice for a side deck, replacing squirrels by giving H1/P0 beebox cards that cannot give bones but will increase damage of other cards."
 	card_target =  /obj/item/card_carp/beebox
 	icon_state = "folly_deck"
 	endless = TRUE
