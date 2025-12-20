@@ -84,6 +84,13 @@
 			remaining_ablative *= 0.8
 			armor *= 0.8
 
+		//We give 25% armor, if armor reduction, then we recover a bit of armor. Order Of Operations
+		if(stats.getPerk(PERK_BOLUS_ARMOR))
+			ablative_armor *= 1.25
+			remaining_ablative *= 1.25
+			armor *= 1.25
+
+
 	for(var/dmg_type in dmg_types)
 		var/dmg = dmg_types[dmg_type]
 		if(dmg)

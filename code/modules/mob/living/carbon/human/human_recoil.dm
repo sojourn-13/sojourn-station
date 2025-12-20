@@ -20,6 +20,16 @@
 	if(H.back)
 		back_stiffness = H.back.stiffness
 
+	//Bolus helps counter this
+	if(src.stats.getPerk(PERK_BOLUS_EQUI_AID))
+		var/datum/perk/cooldown/bolus_momentiums/TA = src.stats.getPerk(PERK_BOLUS_EQUI_AID)
+		if(suit_stiffness)
+			suit_stiffness = suit_stiffness / TA.stage
+		if(uniform_stiffness)
+			uniform_stiffness = uniform_stiffness / TA.stage
+		if(back_stiffness)
+			back_stiffness = back_stiffness / TA.stage
+
 	base_recoil += back_stiffness + suit_stiffness + suit_stiffness * uniform_stiffness // Wearing it under actual armor, or anything too thick is extremely uncomfortable.
 
 	if(usr.stats.getPerk(PERK_PERFECT_SHOT))

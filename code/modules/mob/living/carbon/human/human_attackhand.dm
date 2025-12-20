@@ -222,9 +222,9 @@
 
 			var/real_damage = stat_damage
 			real_damage += attack.get_unarmed_damage(H)
-			real_damage *= cqc_damage_multiplier
+			real_damage *= H.cqc_damage_multiplier
 			real_damage += H.punch_damage_increase
-			stat_damage *= cqc_damage_multiplier
+			stat_damage *= H.cqc_damage_multiplier
 
 			if(HULK in H.mutations)
 				real_damage *= 2 // Hulks do twice the damage
@@ -253,6 +253,7 @@
 
 			// Finally, apply damage to target
 			damage_through_armor(real_damage, (attack.deal_halloss ? HALLOSS : BRUTE), affecting, ARMOR_MELEE, sharp = attack.sharp, edge = attack.edge)
+
 			hit_impact(real_damage, get_step(H, src))
 
 		if(I_DISARM)

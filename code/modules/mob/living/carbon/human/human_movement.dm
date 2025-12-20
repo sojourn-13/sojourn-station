@@ -77,6 +77,22 @@
 		if(back && !src.stats.getPerk(PERK_SECOND_SKIN))
 			tally += back.slowdown
 
+		//Boluses dont punish the user if they are getting boons, unlike other perks
+		if(src.stats.getPerk(PERK_BOLUS_EQUI_AID))
+			var/datum/perk/cooldown/bolus_momentiums/TA = stats.getPerk(PERK_BOLUS_EQUI_AID)
+			if(wear_suit && !src.stats.getPerk(PERK_SECOND_SKIN))
+				if(wear_suit.slowdown >= 0.1)
+					tally -= wear_suit.slowdown / TA.stage
+			if(shoes)
+				if(shoes.slowdown >= 0.1)
+					tally -= shoes.slowdown / TA.stage
+			if(back && !src.stats.getPerk(PERK_SECOND_SKIN))
+				if(wear_suit.slowdown >= 0.1)
+					tally -= back.slowdown / TA.stage
+			//Do this here to save on checks
+			if(r_hand?.slowdown_hold + l_hand?.slowdown_hold > 0)
+				tally -= (r_hand?.slowdown_hold + l_hand?.slowdown_hold) /  TA.stage
+
 	//tally += min((shock_stage / 100) * 3, 3) //Scales from 0 to 3 over 0 to 100 shock stage
 	//Soj edit - Are painkillers dont just magically make us faster
 	var/pain_effecting = (get_dynamic_pain() - get_painkiller())

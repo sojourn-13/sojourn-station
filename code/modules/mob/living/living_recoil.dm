@@ -40,6 +40,13 @@
 		var/mob/living/carbon/human/H = src
 		if(H.head)
 			offset += H.head.obscuration
+
+			//The Aid of a Bolus designed to reduce the penitalies of equipment
+			if(H.stats.getPerk(PERK_BOLUS_EQUI_AID))
+				var/datum/perk/cooldown/bolus_momentiums/TA = H.stats.getPerk(PERK_BOLUS_EQUI_AID)
+				offset -= H.head.obscuration / TA.stage
+
+
 		offset -= CLAMP(H.stats.getStat(STAT_VIG), 0, STAT_LEVEL_PROF) * 0.1 // Up to max -6 offset
 
 	offset = round(offset)
