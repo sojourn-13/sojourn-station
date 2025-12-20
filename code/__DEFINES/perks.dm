@@ -279,3 +279,13 @@
 #define PERK_STILLPONT_BURN /datum/perk/cooldown/stillpoint_burn
 #define PERK_STILLPONT_TREMER /datum/perk/cooldown/stillpoint_tremer
 
+///////////////
+//Bolus perks//
+///////////////
+#define PERK_BOLUS_WEAKEN /datum/perk/cooldown/bolus_weaken
+#define PERK_BOLUS_ARMOR /datum/perk/cooldown/bolus_armor
+#define PERK_BOLUS_EQUI_AID /datum/perk/cooldown/bolus_momentiums
+#define PERK_BOLUS_AID /datum/perk/cooldown/bolus_healing
+#define PERK_BOLUS_REVIVE /datum/perk/cooldown/bolus_revive
+#define PERK_BOLUS_CQC /datum/perk/cooldown/bolus_cqc
+
