@@ -17,6 +17,14 @@
 	Blood costs may NOT be paid using cards not on the field or in the discard pile.<BR>\n\
 	Bone costs may ONLY be paid using cards in the discard pile. All players share the same bone pile, allowing for bones to be paid using either player's discard counter/bone pile.<BR>\n\
 
+	Pelt Cards:<BR>\n\
+	Pelt Costing Cards place over a pelt, that is used to play said card, and do not move.<BR>\n\
+	Pelts under another playing card is active unless otherwise stated. <BR>\n\
+	Pelts that are covered can not be used for playing a card unless otherwise stated.<BR>\n\
+	Cards that are covering a pelt are attacked in Attacking unless otherwise stated.<BR>\n\
+	Playing a card ontop of a pelt is not counted as movement.<BR>\n\
+	When a Pelt is covered, overdamage passes to the pelt before the card behind.<BR>\n\
+
 	Attacking:<BR>\n\
 	When a player ends their turn, all cards from left to right act. Left to right is determined by the attacking players position.<BR>\n\
 	Any card in the back row capable of moving to the first row does so, moving first and then attacking. Cards in the back row cannot attack.<BR>\n\
@@ -55,63 +63,67 @@
 /obj/item/card_carp/index
 	name = "Index-Effects: CardCarp"
 	desc = "Card Effects:<BR>\n\
-	Flying - Cards with flying ignore blockers, obstacles, and pelts unless that card is capable of blocking flyers. Having flying does not give a card the ability to block other flyers.<BR>\n\
-	Destructive - All cards with destructive kill all cards of the same kin type when dying. I.E. a crab with destructive kills all other crabs. Type is determined by matching words in the name.<BR>\n\
+	Anti-Avian - If an Flying card attacks over this card, deal 1 damage to the card after its attack.<BR>\n\
+	Blood Donor - This card when sacrificed counts as three blood rather then one.<BR>\n\
+	Bloodless - This card can not be used for blood in summaning or playing other cards.<BR>\n\
+	Boneless - When this card dies, place it back into the box it was drawn from.<BR>\n\
+	Chime - When this card dies, the owner of this card draws one card from a deck of their choice.<BR>\n\
+	Cornered - Only attacks if the player that has payed for this card is losing by scale damage or if an posing card can attack.<BR>\n\
 	Deathtouch - On attack, any card it is facing is considered killed unless otherwise stated.<BR>\n\
-	Eternal - This card does not die when used as a sacrifice for blood.<BR>\n\
-	Thorns - When attacked deal one damage back to the card that attacked them.<BR>\n\
-	Stinky - This card reduces any opposing cards power by 1.<BR>\n\
 	Defender - This card can block cards with flying.<BR>\n\
-	Prong Strike - This card attacks twice, dealing damage and attacking on the left and right side of the card. Prong Strike prevents attacking the card directly opposing this card. If a prong \
-	strike creatures attack would go off the grid it deals no damage and is negated.<BR>\n\
-	Tri Strike - As prong strike, but also attacks the opposing card.<BR>\n\
-	Toxic - On death, all cards attacking it die.<BR>\n\
-	Guard - If an unoccupied space would be attacked by an opposing card, this card moves to that space and blocks that attack. This effect may happen mutiple times until all attacks are resolved or \
-	the guarding card is dead. May only move and protect against Flying when the same card has the Defender effect.<BR>\n\
+	Destructive - All cards with destructive kill all cards of the same kin type when dying. I.E. a crab with destructive kills all other crabs. Type is determined by matching words in the name.<BR>\n\
+	Eternal - This card does not die when used as a sacrifice for blood.<BR>\n\
+	Feasting - Deals 1 damage to any card under it, if no card under then deal 1 damage to self unless otherwise stated. \
+	Does not trigger Toxic, Thorns. This affect is blocked if covered card is Stinky<BR>\n\
+	Flying - Cards with flying ignore blockers, obstacles, and pelts unless that card is capable of blocking flyers. Having flying does not give a card the ability to block other flyers.<BR>\n\
 	Fortune - As long as this card remains on the field, all players draw an additional card when ever they may draw a card. The additional card may be chosen from the main or fodder deck. Fortune \
 	cards do not stack with other fortune cards.<BR>\n\
 	Frail - If this card attacks and deals damage to either a player or another card, it dies.<BR>\n\
 	Generous - When this card is played, the owner may draw a card of their choice from either deck.<BR>\n\
-	Undying - When this card dies, instead of being placed in the owner's discard pile, it is returned to the owner's hand.<BR>\n\
-	Chime - When this card dies, the owner of this card draws one card from a deck of their choice.<BR>\n\
-	Blood Donor - This card when sacrificed counts as three blood rather then one.<BR>\n\
-	Boneless - When this card dies, place it back into the box it was drawn from.<BR>\n\
-	Bloodless - This card can not be used for blood in summaning or playing other cards.<BR>\n\
-	Pelt - Pelt cards may be placed on any position on either players board when played. Pelt cards do not move but otherwise follow the same rules as other cards. Pelt cards cannot be sacrificed \
-	for blood and are added to the discard pile upon death.<BR>\n\
-	Cornered - Only attacks if the player that has payed for this card is losing by scale damage or if an posing card can attack.<BR>\n\
-	Terrain - For this cards affects see Rules Card.<BR>\n\
-	Anti-Avian - If an Flying card attacks over this card, deal 1 damage to the card after its attack.<BR>\n\
+	Guard - If an unoccupied space would be attacked by an opposing card, this card moves to that space and blocks that attack. This effect may happen mutiple times until all attacks are resolved or \
+	the guarding card is dead. May only move and protect against Flying when the same card has the Defender effect.<BR>\n\
+	Kinship - This card gains power equal to the amount of cards sharing the same type currently on the field under that player's control. Each card can only add 1 power, no matter how many matching \
+	types they have, unless otherwise stated. Kinship cards do not count themselves for the purposes of gaining power.<BR>\n\
+	Looter - Turn start who ever played the cards cost may chose to add a card from the gardyard back into the deck it was drawn from unless otherwise stated. \
+	Pelt - Pelt cards may be placed on any position on either players board when played. Pelt cards do not move but otherwise follow the same rules as other cards. \
+	for blood and are added to the discard pile upon death. See Pelt section in rules for more context<BR>\n\
+	Prong Strike - This card attacks twice, dealing damage and attacking on the left and right side of the card. Prong Strike prevents attacking the card directly opposing this card. If a prong \
+	strike creatures attack would go off the grid it deals no damage and is negated.<BR>\n\
 	Rivalry - This card loses power equal to the amount of cards sharing the same type currently on the field under that player's control. Each card can only remove 1 power, no matter how many matching \
 	types they have, unless otherwise stated. Rivalry cards do not count themselves for the purposes of losing power.<BR>\n\
-	Kinship - This card gains power equal to the amount of cards sharing the same type currently on the field under that player's control. Each card can only add 1 power, no matter how many matching \
-	types they have, unless otherwise stated. Kinship cards do not count themselves for the purposes of gaining power."
+	Stinky - This card reduces any opposing cards power by 1.<BR>\n\
+	Sponsor - This increases the attack power of the nerest card to its right when attacking another card. If card is Blood Donor then this affect damage to other Player<BR>\n\
+	Shreader - If attacking a card with the Pelt Effects, deal two additonal damage.<BR>\n\
+	Terrain - For this cards affects see Rules Card.<BR>\n\
+	Thorns - When attacked deal one damage back to the card that attacked them.<BR>\n\
+	Toxic - On death, all cards attacking it die.<BR>\n\
+	Tri Strike - As prong strike, but also attacks the opposing card.<BR>\n\
+	Undying - When this card dies, instead of being placed in the owner's discard pile, it is returned to the owner's hand."
 
 /obj/item/card_carp/index/adved
 	name = "Vol II Index-Effects: CardCarp"
 	desc = "Card Effects:<BR>\n\
-	Mending - After every attacking phase, remove or add one damage to the scale. If scale is already at midway then do not add or remove damage.<BR>\n\
-	Fast Ageing - After dealing damage to a player or card, remove one health from this card.<BR>\n\
-	Slowish - This card will always attack last, if more then one slowish card is present, they attack from left to right act.<BR>\n\
-	Fastish - This card will always attack first, if more then one first card is present, they attack from left to right act.<BR>\n\
-	Reflectes - This card only attack if hit first.<BR>\n\
-	Opportunistic - This card may attack in any order it pleases regardless of other card modifers.<BR>\n\
-	Grace - If this card is not in the second row, the player who played its price, can not lose the game.<BR>\n\
-	Cowardly - If attacked, the damage is delt to the player that payed its price rather then card, unless it would be enough to lose from.<BR>\n\
-	Bounded - On death deal one damage to player that payed its price.<BR>\n\
-	Upheaval - When moving into an the second row and hitting a card, move the card back to the second lane if then deal moved card damage, \
-	if a card is behind the striked card, move it back into the player that paid that cards price.<BR>\n\
 	Aduit - When this card dies, if the total damage of the every card in any row is even, half the damage on the scale, if odd, both players draw two cards from fodder deck.<BR>\n\
+	Bounded - On death deal one damage to player that payed its price.<BR>\n\
+	Confliction - If a card has the same has conflicting effects, then the player may choice what effect to use over one.  \
+	If the card has the same effects more then once it only counts as one, unless otherwise stated.<BR>\n\
+	Conqueror - If attacking a card with the Terrian Effects, deal two additonal damage.<BR>\n\
+	Cowardly - If attacked, the damage is delt to the player that payed its price rather then card, unless it would be enough to lose from.<BR>\n\
+	Fast Ageing - After dealing damage to a player or card, remove one health from this card.<BR>\n\
+	Fastish - This card will always attack first, if more then one first card is present, they attack from left to right act.<BR>\n\
+	Fodder - On death move this card directly back into the fodder deck. Failer to do so will result in a unstopable three damage.<BR>\n\
+	Grace - If this card is not in the second row, the player who played its price, can not lose the game.<BR>\n\
 	Hermit - If attacking a player, deal zero damage.<BR>\n\
 	Hunter - If attacking a player, deal one damage additional damage.<BR>\n\
-	Shreader - If attacking a card with the Pelt Effects, deal two additonal damage.<BR>\n\
-	Conqueror - If attacking a card with the Terrian Effects, deal two additonal damage.<BR>\n\
+	Mending - After every attacking phase, remove or add one damage to the scale. If scale is already at midway then do not add or remove damage.<BR>\n\
+	Opportunistic - This card may attack in any order it pleases regardless of other card modifers.<BR>\n\
+	Reflectes - This card only attack if hit first.<BR>\n\
 	Sickly - Well not in the grave yard, can be used as bone(s). When used as bone(s) the player that is using the bone(s) of this card take one damage and add it to their deck.<BR>\n\
-	Traitor - If in any row on game end, move to the winners deck. Winner may decline this card if they so chose.<BR>\n\
-	Fodder - On death move this card directly back into the fodder deck. Failer to do so will result in a unstopable three damage.<BR>\n\
+	Slowish - This card will always attack last, if more then one slowish card is present, they attack from left to right act.<BR>\n\
 	Starvation - At the start of the players turn that played the price of this card, deal one damage unblockable to any one card of their choice.<BR>\n\
-	Confliction - If a card has the same has conflicting effects, then the player may choice what effect to use over one.  \
-	If the card has the same effects more then once it only counts as one, unless otherwise stated."
+	Traitor - If in any row on game end, move to the winners deck. Winner may decline this card if they so chose.<BR>\n\
+	Upheaval - When moving into an the second row and hitting a card, move the card back to the second lane if then deal moved card damage, \
+	if a card is behind the striked card, move it back into the player that paid that cards price."
 
 /obj/item/card_carp/examine(mob/user)
 	..()
@@ -141,7 +153,7 @@
 
 /obj/item/card_carp/beebox
 	name = "Bee Box"
-	desc = "A lively nest of stingers and honey. H1/P0. Boneless"
+	desc = "A lively nest of stingers and honey. H1/P0. Boneless, Sponsor"
 	icon_state = "card_beebox"
 	cant_box = TRUE
 	current_health = 1
@@ -162,7 +174,7 @@
 
 /obj/item/card_carp/shell
 	name = "Shell"
-	desc = "A robotic shell, serves little purpose. H1/P0. Boneless. Boneless. Anti-Avian."
+	desc = "A robotic shell, serves little purpose. H1/P0. Boneless. Anti-Avian."
 	icon_state = "card_squirls"
 	cant_box = TRUE
 	current_health = 1
@@ -173,7 +185,8 @@
 
 /obj/item/card_carp/moon
 	name = "Moon"
-	desc = "The moon, a celestal body unbound by normal means of attacking. H40/P1. Defender. Takes up all rows on the owner's side. Deals 1 damage to all cards on the opposing side. Cannot hit opposing player as long as 1 card is capable of blocking."
+	desc = "The moon, a celestal body unbound by normal means of attacking. H40/P1. Defender. Takes up all rows on the owner's side. Deals 1 damage to all cards on the opposing side. \
+	Cannot hit opposing player as long as 1 card is capable of blocking."
 	icon_state = "card_moon"
 	current_health = 40
 
@@ -439,39 +452,57 @@
 
 /obj/item/card_carp/rpelt
 	name = "Rabbit Pelt"
-	desc = "A small pelt of a rabbit. H3/P0. Requires 2 bones. Pelt. Defender."
+	desc = "A small pelt of a rabbit. H3/P0. Requires 2 bones. Pelt. Defender. Bloodless."
 	icon_state = "card_rabbit_pelt"
 	current_health = 3
 
 /obj/item/card_carp/tanningpelt
 	name = "Tanning Pelt"
-	desc = "A small pelt reaking of tan. H1/P0. Requires 2 bones. Pelt. Defender. Stinky"
+	desc = "A small pelt reaking of tan. H1/P0. Requires 2 bones. Pelt. Defender. Stinky. Bloodless."
 	icon_state = "card_rabbit_pelt"
 	current_health = 1
 
 /obj/item/card_carp/pinepelt
 	name = "Porcupine Pelt"
-	desc = "A small pelt of a porcupine still has its quills. H3/P0. Requires 4 bones. Pelt. Defender, Thorns."
+	desc = "A small pelt of a porcupine still has its quills. H3/P0. Requires 4 bones. Pelt. Defender, Thorns. Bloodless."
 	icon_state = "card_wolf_pelt"
 	current_health = 3
 
 /obj/item/card_carp/dpelt
 	name = "Deer Pelt"
-	desc = "A medium pelt of a deer. H5/P0. Requires 4 bones. Pelt. Defender."
+	desc = "A medium pelt of a deer. H5/P0. Requires 4 bones. Pelt. Defender. Bloodless."
 	icon_state = "card_wolf_pelt"
 	current_health = 5
 
 /obj/item/card_carp/gpelt
 	name = "Gilded Pelt"
-	desc = "A gilded pelt, layered in fine gold. H10/P0. Requires 6 bones. Pelt. Defender."
+	desc = "A gilded pelt, layered in fine gold. H10/P0. Requires 6 bones. Pelt. Defender. Bloodless."
 	icon_state = "card_pelt"
 	current_health = 10
 
 /obj/item/card_carp/peltlice
 	name = "Pelt Lice"
-	desc = "Place over a pelt, killing the pelt, and removing it from the game H1/P1. Requires 1 Pelt. Pelt."
-	icon_state = "card_rabbit_pelt"
+	desc = "A swarm of black crawling insects, H1/P1. Requires 1 Pelt. Pelt."
+	icon_state = "card_dots"
 	current_health = 1
+
+/obj/item/card_carp/silverfish
+	name = "Silverfish"
+	desc = "Large shimmering bugs, the hunger in the eyes leads them to treasers unseen by others, H1/P0. Requires 1 Pelt. Pelt. Looter."
+	icon_state = "card_dots"
+	current_health = 1
+
+/obj/item/card_carp/flees
+	name = "Flees"
+	desc = "Jumping, small and feared by even the strongest animals, H2/P0. Requires 1 Pelt. Pelt. Feasting. Bloodless."
+	icon_state = "card_dots"
+	current_health = 2
+
+/obj/item/card_carp/moth
+	name = "Clothes Moths"
+	desc = "Winged fluffy insects that hunt at night for delights that no others dare tare into, H4/P0. Requires 1 Pelt. Pelt. Chime. Bloodless. Flying. Shreader."
+	icon_state = "card_dots"
+	current_health = 4
 
 /////////////////////////////
 ///    TERRAIN CARDS     ////
