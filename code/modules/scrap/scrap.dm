@@ -327,13 +327,13 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 					dig_out_lump(user.loc, 0)
 					shuffle_loot()
 					clear_if_empty()
-					user.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/butter_maker, "SCRAPPER", skill_gained = 0.1, learner = user)
+					user.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/scrapper, "SCRAPPER", skill_gained = 0.1, learner = user)
 
 			if(QUALITY_HAMMERING)
 				if(W.use_tool(user,src, WORKTIME_EXTREMELY_LONG - user.learnt_tasks.get_task_mastery_level("SCRAPPER"), QUALITY_HAMMERING, FAILCHANCE_HARD - user.learnt_tasks.get_task_mastery_level("SCRAPPER"), required_stat = STAT_ROB, forced_sound = "rummage"))
 					user.visible_message(SPAN_NOTICE("[user] compacts \the [src] into a solid mass!"))
 					make_cube()
-					user.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/butter_maker, "SCRAPPER", skill_gained = 0.2, learner = user)
+					user.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/scrapper, "SCRAPPER", skill_gained = 0.2, learner = user)
 
 /obj/structure/scrap/large
 	name = "large scrap pile"
