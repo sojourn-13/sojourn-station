@@ -1,7 +1,7 @@
 /obj/machinery/mineral/ore_crusher
 	name = "rock crusher"
 	desc = "A retro-fitted kitchen processer retooled for crushing rocks. Somehow more safe then normale ones. \
-	Takes only rocks and sand for sifting."
+	Takes only rocks, ores and sand for sifting."
 	icon = 'icons/obj/machines/mining_machines.dmi'
 	icon_state = "processor"
 	density = TRUE
@@ -25,74 +25,99 @@
 		if(need_power)
 			apc = A.apc
 
+//The way it eats power is directly off the net. I.e it will drain the SMES or take priotiry if running a generator
 /obj/machinery/mineral/ore_crusher/Process()
 	if(ore_loaded && ore_type)
 
 		if(apc && need_power && ore_type)
 			if(apc.terminal.powernet.avail < active_power_usage)
+				icon_state = "processor"
 				return
 
 		ore_loaded--
 		icon_state = "processor1"
-		switch(ore_type)
-			if("Rock")
-				active_power_usage = 750 //750ws per stone crushed
-				new /obj/item/stack/ore/glass/dust(get_turf(src))
-				if(prob(50))
-					new /obj/random/material_ore_small(get_turf(src))
-			//Sand dosnt cost much power as its more like sifting
-			if(ORE_SAND)
-				active_power_usage = 75
-				new /obj/item/stack/ore/glass/dust(get_turf(src))
-				if(prob(30))
-					new /obj/random/material_ore_small(get_turf(src))
-			//Real Materals get different costs based on how hard they are
-			if(ORE_IRON)
-				active_power_usage = 1000 //1kws per iron dusted
-				new /obj/item/stack/ore/iron/dust(get_turf(src))
-				if(prob(30))
-					new /obj/random/material_ore_small(get_turf(src))
-			if(ORE_CARBON)
-				active_power_usage = 700
-				new /obj/item/stack/ore/coal/dust(get_turf(src))
-				if(prob(30))
-					new /obj/random/material_ore_small(get_turf(src))
-			if(ORE_PLASMA)
-				active_power_usage = 200
-				new /obj/item/stack/ore/plasma/dust(get_turf(src))
-				if(prob(30))
-					new /obj/random/material_ore_small(get_turf(src))
-			if(ORE_SILVER)
-				active_power_usage = 500
-				new /obj/item/stack/ore/silver/dust(get_turf(src))
-				if(prob(30))
-					new /obj/random/material_ore_small(get_turf(src))
-			if(ORE_GOLD)
-				active_power_usage = 500
-				new /obj/item/stack/ore/gold/dust(get_turf(src))
-				if(prob(30))
-					new /obj/random/material_ore_small(get_turf(src))
-			if(ORE_URANIUM)
-				active_power_usage = 1300
-				new /obj/item/stack/ore/uranium/dust(get_turf(src))
-				if(prob(30))
-					new /obj/random/material_ore_small(get_turf(src))
-			if(ORE_DIAMOND)
-				active_power_usage = 1450
-				new /obj/item/stack/ore/diamond/dust(get_turf(src))
-				if(prob(30))
-					new /obj/random/material_ore_small(get_turf(src))
-			if(ORE_HYDROGEN)
-				active_power_usage = 2450
-				new /obj/item/stack/ore/hydrogen/dust(get_turf(src))
-				if(prob(30))
-					new /obj/random/material_ore_small(get_turf(src))
-			if(ORE_PLATINUM)
-				active_power_usage = 1800
-				new /obj/item/stack/ore/osmium/dust(get_turf(src))
-				if(prob(30))
-					new /obj/random/material_ore_small(get_turf(src))
-		apc.terminal.powernet.draw_power(active_power_usage)
+		crush_rock()
+
+		//We have lots of ore to process, lets speed that up
+		if(ore_loaded > 50)
+			ore_loaded -= 5
+			crush_rock()
+			crush_rock()
+			crush_rock()
+			crush_rock()
+			crush_rock()
+		//QoL for massive amounts of ore, like when you dig up stacks of sand or rocks.
+		if(ore_loaded > 150)
+			ore_loaded -= 5
+			crush_rock()
+			crush_rock()
+			crush_rock()
+			crush_rock()
+			crush_rock()
+
+	if(!ore_loaded)
+		icon_state = "processor"
+
+/obj/machinery/mineral/ore_crusher/proc/crush_rock()
+	switch(ore_type)
+		if("Rock")
+			active_power_usage = 750 //750ws per stone crushed
+			new /obj/item/stack/ore/glass/dust(get_turf(src))
+			if(prob(50))
+				new /obj/random/material_ore_small(get_turf(src))
+		//Sand dosnt cost much power as its more like sifting
+		if(ORE_SAND)
+			active_power_usage = 75
+			new /obj/item/stack/ore/glass/dust(get_turf(src))
+			if(prob(30))
+				new /obj/random/material_ore_small(get_turf(src))
+		//Real Materals get different costs based on how hard they are
+		if(ORE_IRON)
+			active_power_usage = 1000 //1kws per iron dusted
+			new /obj/item/stack/ore/iron/dust(get_turf(src))
+			if(prob(30))
+				new /obj/random/material_ore_small(get_turf(src))
+		if(ORE_CARBON)
+			active_power_usage = 700
+			new /obj/item/stack/ore/coal/dust(get_turf(src))
+			if(prob(30))
+				new /obj/random/material_ore_small(get_turf(src))
+		if(ORE_PLASMA)
+			active_power_usage = 200
+			new /obj/item/stack/ore/plasma/dust(get_turf(src))
+			if(prob(30))
+				new /obj/random/material_ore_small(get_turf(src))
+		if(ORE_SILVER)
+			active_power_usage = 500
+			new /obj/item/stack/ore/silver/dust(get_turf(src))
+			if(prob(30))
+				new /obj/random/material_ore_small(get_turf(src))
+		if(ORE_GOLD)
+			active_power_usage = 500
+			new /obj/item/stack/ore/gold/dust(get_turf(src))
+			if(prob(30))
+				new /obj/random/material_ore_small(get_turf(src))
+		if(ORE_URANIUM)
+			active_power_usage = 1300
+			new /obj/item/stack/ore/uranium/dust(get_turf(src))
+			if(prob(30))
+				new /obj/random/material_ore_small(get_turf(src))
+		if(ORE_DIAMOND)
+			active_power_usage = 1450
+			new /obj/item/stack/ore/diamond/dust(get_turf(src))
+			if(prob(30))
+				new /obj/random/material_ore_small(get_turf(src))
+		if(ORE_HYDROGEN)
+			active_power_usage = 2450
+			new /obj/item/stack/ore/hydrogen/dust(get_turf(src))
+			if(prob(30))
+				new /obj/random/material_ore_small(get_turf(src))
+		if(ORE_PLATINUM)
+			active_power_usage = 1800
+			new /obj/item/stack/ore/osmium/dust(get_turf(src))
+			if(prob(30))
+				new /obj/random/material_ore_small(get_turf(src))
+	apc.terminal.powernet.draw_power(active_power_usage)
 
 
 	var/turf/T = get_step(src, output_direction)
@@ -100,29 +125,25 @@
 		for(var/obj/item/stack/ore/O in src?.loc?.contents)
 			O.forceMove(T)
 
-	if(!ore_loaded)
-		icon_state = "processor"
-
-
 /obj/machinery/mineral/ore_crusher/attackby(obj/item/W, mob/user)
 
 	//Base rock needs its own fancy check
 	if(W.type == /obj/item/stack/ore || W.type == /obj/item/stack/ore/slag)
 		if(!ore_type == "Rock" && ore_loaded)
-			to_chat(user, SPAN_WARNING("[src] is already processing ore!"))
+			to_chat(user, SPAN_WARNING("[src] is already processing a different type of ore!"))
 			return
 		var/obj/item/stack/ore/R = W
 		active_power_usage = 1200
 		ore_type = "Rock"
-		ore_loaded = R.amount
+		ore_loaded += R.amount
 		to_chat(user, SPAN_NOTICE("You load [R.amount], rocks and stones into [src]"))
 		R.use(R.amount)
 		return
 
 	if(istype(W, /obj/item/stack/ore))
 		var/obj/item/stack/ore/R = W
-		if(!ore_type == R.material && ore_loaded)
-			to_chat(user, SPAN_WARNING("[src] is already processing ore!"))
+		if(!(ore_type == R.material) && ore_loaded)
+			to_chat(user, SPAN_WARNING("[src] is already processing a different type of ore!"))
 			return
 		if(R.dust)
 			to_chat(user, SPAN_NOTICE("[R] is already processed."))
@@ -131,7 +152,7 @@
 		ore_type = R.material
 		if(!ore_type)
 			ore_type = "Rock"
-		ore_loaded = R.amount
+		ore_loaded += R.amount
 		to_chat(user, SPAN_NOTICE("You load [R.amount], rocks and stones into [src]"))
 		R.use(R.amount)
 		return
