@@ -30,3 +30,28 @@
 	prefix = "Lambertian"
 
 	description = "This one is covered in a silvery-white sheen, improving it's ability to resist energy attacks and pain, as well as mitigating flashes."
+
+/datum/stat_modifier/mob/living/carbon/superior/roach_hierarchy
+
+	prefix = "Usurper"
+
+	description = "A roach that has higher standing then its hierarchy ranking."
+
+
+/datum/stat_modifier/mob/living/carbon/superior/roach_hierarchy/remove()
+
+	. = ..()
+
+	if (isroach(holder))
+		var/mob/living/carbon/superior/roach/usurper = holder
+
+		usurper.hierarchy += 2
+
+/datum/stat_modifier/mob/living/carbon/superior/roach_hierarchy/apply_to(atom/target)
+
+	. = ..()
+
+	if (isroach(holder))
+		var/mob/living/carbon/superior/roach/usurper = holder
+
+		usurper.hierarchy -= 2

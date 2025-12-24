@@ -21,6 +21,7 @@
 	var/change_tele_to_mob = 25
 	var/chance_tele_to_eat = 25
 	var/chance_tele_to_random = 10
+	hierarchy = 7 //We teleport around and shimmer, of course others would follow are orders
 
 /mob/living/carbon/superior/roach/bluespace/Initialize(mapload)
 	. = ..()

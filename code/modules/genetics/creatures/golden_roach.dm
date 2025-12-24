@@ -14,12 +14,14 @@
 	friendly_to_colony = TRUE
 	inherent_mutations = list()
 	sanity_damage = 0 //they are peaceful thus not damaging sanity
+	hierarchy = -3
 
 /mob/living/carbon/superior/roach/golden/blattin
 	name = "Adept Blattin"
 	desc = "Adept Blattin is a golden roach, an special and harmless breed that was made by soteria to be pets and in general help with the trash problem without being a nuisance to the colony. \
 	But this one was adopted by the guild and being called 'Adept Blattin'. \
 	A valuable member of the Artificer's Guild."
+	hierarchy = 15 //The Precious Jade of the guild
 
 /obj/item/roach_egg/gold
 	name = "roach egg"
@@ -28,7 +30,6 @@
 	icon_state = "gold_egg"
 	preloaded_reagents = list("egg" = 9)
 	spawn_type = /mob/living/carbon/superior/roach/roachling_gold
-
 
 /mob/living/carbon/superior/roach/roachling_gold
 	name = "Golden Roachling"
@@ -59,7 +60,7 @@
 	colony_friend = TRUE
 	friendly_to_colony = TRUE
 	inherent_mutations = list()
-
+	hierarchy = -3
 
 /mob/living/carbon/superior/roach/roachling_gold/Life()
 	.=..()

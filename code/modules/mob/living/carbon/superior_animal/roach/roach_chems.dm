@@ -89,6 +89,31 @@
 	else
 		M.add_chemical_effect(CE_TOXIN, od_toxicity)
 
+/datum/reagent/toxin/diplopterum/on_mob_add(mob/living/L)
+	..()
+	if(istype(L, /mob/living/carbon/superior/roach))
+		var/mob/living/carbon/superior/roach/bug = L
+		//Increase armor slightly
+		for(var/key in bug.armor)
+			if(key == "melee")
+				bug.armor[key] += 0.5
+			if(key == "bullet")
+				bug.armor[key] += 0.3
+			if(key == "energy")
+				bug.armor[key] += 0.1
+
+/datum/reagent/toxin/diplopterum/on_mob_delete(mob/living/L)
+	..()
+	if(istype(L, /mob/living/carbon/superior/roach))
+		var/mob/living/carbon/superior/roach/bug = L
+		for(var/key in bug.armor)
+			if(key == "melee")
+				bug.armor[key] -= 0.5
+			if(key == "bullet")
+				bug.armor[key] -= 0.3
+			if(key == "energy")
+				bug.armor[key] -= 0.1
+
 /datum/reagent/toxin/seligitillin
 	name = "Seligitillin"
 	id = "seligitillin"
@@ -134,6 +159,23 @@
 	if(istype(L))
 		L.take_damage(dose/2, FALSE, TOX)
 
+/datum/reagent/toxin/seligitillin/on_mob_add(mob/living/L)
+	..()
+	if(istype(L, /mob/living/carbon/superior/roach))
+		var/mob/living/carbon/superior/roach/bug = L
+		//Increase max hp for a bit
+		bug.maxHealth += 15 + bug.hierarchy
+		bug.health += 15 + bug.hierarchy
+		bug.updatehealth()
+
+/datum/reagent/toxin/seligitillin/on_mob_delete(mob/living/L)
+	..()
+	if(istype(L, /mob/living/carbon/superior/roach))
+		var/mob/living/carbon/superior/roach/bug = L
+		bug.maxHealth -= 15 + bug.hierarchy
+		bug.health -= 15 + bug.hierarchy
+		bug.updatehealth()
+
 /datum/reagent/toxin/starkellin
 	name = "Starkellin"
 	id = "starkellin"
@@ -170,6 +212,8 @@
 		return
 	M.stats.addTempStat(STAT_ROB, -STAT_LEVEL_BASIC, STIM_TIME, "starkellin_w")
 	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_BASIC, STIM_TIME, "starkellin_w")
+
+// Starkellin makes roaches move slighly faster, this in in life.dm for roaches
 
 /datum/reagent/toxin/gewaltine
 	name = "Gewaltine"
@@ -211,6 +255,21 @@
 
 /datum/reagent/toxin/gewaltine/overdose(mob/living/carbon/M, alien)
 	M.adjustCloneLoss(2)
+
+/datum/reagent/toxin/gewaltine/on_mob_add(mob/living/L)
+	..()
+	if(istype(L, /mob/living/carbon/superior/roach))
+		var/mob/living/carbon/superior/roach/bug = L
+		//Increase damage
+		bug.melee_damage_lower += 2
+		bug.melee_damage_upper += 3
+
+/datum/reagent/toxin/gewaltine/on_mob_delete(mob/living/L)
+	..()
+	if(istype(L, /mob/living/carbon/superior/roach))
+		var/mob/living/carbon/superior/roach/bug = L
+		bug.melee_damage_lower -= 2
+		bug.melee_damage_upper -= 3
 
 /datum/reagent/toxin/fuhrerole
 	name = "Fuhrerole"
@@ -262,3 +321,26 @@
 /datum/reagent/toxin/fuhrerole/overdose(mob/living/carbon/M, alien)
 	M.add_chemical_effect(CE_SPEECH_VOLUME, rand(3,4))
 	M.adjustBrainLoss(0.5)
+
+/datum/reagent/toxin/fuhrerole/on_mob_add(mob/living/L)
+	..()
+	if(istype(L, /mob/living/carbon/superior/roach))
+		var/mob/living/carbon/superior/roach/bug = L
+		//Increase damage AND hp, AND makes baby roaches grow faster
+		bug.melee_damage_lower += 2
+		bug.melee_damage_upper += 3
+		bug.armor_divisor += 0.1
+		bug.maxHealth += 15 + bug.hierarchy
+		bug.health += 15 + bug.hierarchy
+		bug.updatehealth()
+
+/datum/reagent/toxin/fuhrerole/on_mob_delete(mob/living/L)
+	..()
+	if(istype(L, /mob/living/carbon/superior/roach))
+		var/mob/living/carbon/superior/roach/bug = L
+		bug.melee_damage_lower -= 2
+		bug.melee_damage_upper -= 3
+		bug.armor_divisor -= 0.1
+		bug.maxHealth += 15 + bug.hierarchy
+		bug.health += 15 + bug.hierarchy
+		bug.updatehealth()

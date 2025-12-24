@@ -22,6 +22,7 @@
 		/datum/stat_modifier/mob/living/carbon/superior/lambertian = 16,
 		/datum/stat_modifier/mob/living/carbon/superior/durable = 42,
 		/datum/stat_modifier/mob/living/speed/flat/positive/low = 9,
+		/datum/stat_modifier/mob/living/carbon/superior/roach_hierarchy = 1,
 	)
 
 	meat_type = /obj/item/reagent_containers/snacks/meat/roachmeat
@@ -55,6 +56,7 @@
 	var/taming_window = 30 //How long you have to tame this roach, once it's pacified.
 	eating_time = 2 MINUTES // how long it will take to eat/lay egg
 	var/busy_start_time // when it started eating/laying egg
+	var/give_up_timer // when we give up on eating a target do to being stuck
 
 	var/atom/eat_target // target that the roach wants to eat
 	var/fed = 0 // roach gets fed after eating a corpse
@@ -71,6 +73,8 @@
 
 	inherent_mutations = list(MUTATION_ROACH_BLOOD, MUTATION_DEAF, MUTATION_TOURETTES, MUTATION_EPILEPSY)
 	fancy_attack_overlay = "roach_attack_flick"
+
+	var/hierarchy = 2
 
 /mob/living/carbon/superior/roach/New()
 	..()
