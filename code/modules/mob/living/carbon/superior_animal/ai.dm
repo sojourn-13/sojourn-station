@@ -25,7 +25,6 @@
 		if(get_dist(src, thing) <= viewRange)
 			list_to_return += thing
 	return list_to_return*/
-
 /mob/living/carbon/superior/proc/findTarget(prioritizeCurrent = FALSE)
 
 	if (prioritizeCurrent)
@@ -35,34 +34,27 @@
 
 	var/list/filteredTargets = list()
 	var/turf/our_turf = get_turf(src)
-	if(our_turf)
-		for(var/atom/A in view(src, viewRange))
-			if(ismob(A))
-				var/mob/living/L = A
-				if(isValidAttackTarget(L))
-					if(L.target_dummy && prioritize_dummies)
-						return L // Early return is great for performance
-					filteredTargets += L
+	if(!our_turf)
+		return FALSE
 
-			else if(istype(A, /obj/machinery/tesla_turret))
-				var/obj/machinery/tesla_turret/T = A
-				if(isValidAttackTarget(T))
-					filteredTargets += T
+	// Mobs
+	for(var/mob/living/L in view(src, viewRange))
+		if(isValidAttackTarget(L))
+			if(L.target_dummy && prioritize_dummies) //We are target before anyone, quick return
+				return L
+			filteredTargets += L
 
-			else if(istype(A, /obj/machinery/porta_turret))
-				var/obj/machinery/porta_turret/T = A
-				if(isValidAttackTarget(T))
-					filteredTargets += T
+	for(var/obj/machinery/A in view(src, viewRange))
 
-			else if(istype(A, /obj/machinery/power/os_turret))
-				var/obj/machinery/power/os_turret/T = A
-				if(isValidAttackTarget(T))
-					filteredTargets += T
+		// Turrets
+		if(istype(A, /obj/machinery/tesla_turret) || istype(A, /obj/machinery/porta_turret) || istype(A, /obj/machinery/power/os_turret))
+			if(isValidAttackTarget(A))
+				filteredTargets += A
 
-			else if(istype(A, /obj/mecha))
-				var/obj/mecha/M = A
-				if(isValidAttackTarget(M))
-					filteredTargets += M
+	// Mechas
+	for(var/obj/mecha/M in view(src, viewRange))
+		if(isValidAttackTarget(M))
+			filteredTargets += M
 
 	var/atom/filteredTarget = safepick(getTargets(filteredTargets, src))
 
