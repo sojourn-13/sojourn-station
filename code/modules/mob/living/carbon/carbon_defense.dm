@@ -24,9 +24,11 @@
 		weapon_sharp = 0
 		weapon_edge = 0
 
-	if(unnatural_mutations.getMutation(MUTATION_XENO_SKIN))
-		weapon_sharp = 0
-		weapon_edge = 0
+	//If for some reason we do not have mutations, null are attack!
+	if(unnatural_mutations)
+		if(unnatural_mutations.getMutation(MUTATION_XENO_SKIN))
+			weapon_sharp = 0
+			weapon_edge = 0
 
 	hit_impact(effective_force, get_step(user, src), hit_zone)
 	damage_through_armor(effective_force, I.damtype, hit_zone, ARMOR_MELEE, armor_divisor = I.armor_divisor, used_weapon = I, sharp = weapon_sharp, edge = weapon_edge)
