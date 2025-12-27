@@ -15,8 +15,10 @@
 	parent = null
 	return ..()
 
-
 /datum/reagents/metabolism/proc/metabolize()
+	if(!reagent_list.len) //If we dont have reagents in system, just dont.
+		return
+
 	expose_temperature(parent.bodytemperature, 0.25)
 
 	var/metabolism_type = 0 //non-human mobs

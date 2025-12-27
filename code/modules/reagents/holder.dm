@@ -540,9 +540,6 @@
 	return trans_to_holder(target.reagents, amount, multiplier, copy)
 
 /datum/reagents/proc/expose_temperature(temperature, coeff=0.02)
-	if(temperature == chem_temp)
-		handle_reactions()
-		return //We are the same temp just do the reaction check and thats it!
 	var/temp_delta = (temperature - chem_temp) * coeff
 	if(temp_delta > 0)
 		chem_temp = min(chem_temp + max(temp_delta, 1), temperature)
@@ -550,6 +547,7 @@
 		chem_temp = max(chem_temp + min(temp_delta, -1), temperature)
 	chem_temp = round(chem_temp)
 	handle_reactions()
+
 
 //Returns the average specific heat for all reagents currently in this holder.
 /datum/reagents/proc/specific_heat()
