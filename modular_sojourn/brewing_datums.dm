@@ -438,7 +438,6 @@
 	brewed_amount = 1 //Every 5u is 1 psionic point so this gives you 6 points
 	price_tag_setter = 1000 //Fast and easy also not useful for anyone without psionics
 
-
 //Church exclusive brews
 /datum/brewing_product/ntcahors
 	reagent_to_brew = "ntcahors"

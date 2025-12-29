@@ -55,14 +55,19 @@
 		else
 			break
 	if(churns_done >= churns_needed)
-		cycle_completed()
+		cycle_completed(user)
 
-
-/obj/structure/churn/proc/cycle_completed()
+/obj/structure/churn/proc/cycle_completed(mob/user)
 	churns_done = 0
 	reagents.remove_reagent("milk", milk_requirement, 1)
 	reagents.remove_reagent("sodiumchloride", salt_needed, 1)
-	new /obj/item/reagent_containers/snacks/butterstick(src.loc)
+	var/obj/item/reagent_containers/snacks/butterstick/butter = new /obj/item/reagent_containers/snacks/butterstick(src.loc)
+	if(user)
+		var/mob/living/maker = user
+		var/level = maker.learnt_tasks.get_task_mastery_level("BUTTER_MAKER")
+		maker.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/butter_maker, "BUTTER_MAKER", skill_gained = 1, learner = user)
+		butter.slices_num += round(level * 0.24) //Level 3+ gives more butter slices
+		butter.price_tag += level
 
 //Remove and reset
 /obj/structure/churn/proc/clear_out()

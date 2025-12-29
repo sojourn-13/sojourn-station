@@ -35,7 +35,7 @@
 
 	if(istype(I, /obj/item/bottle_kit))
 		var/obj/item/bottle_kit/BK = I
-		bottle(BK.glass_colour)
+		bottle(BK.glass_colour, user)
 
 	if(istype(I, /obj/item/reagent_containers/snacks/grown))
 		produce_list = list(I)
@@ -213,7 +213,7 @@
 
 	return ready
 
-/obj/structure/fermentation_keg/proc/bottle(glass_colour)
+/obj/structure/fermentation_keg/proc/bottle(glass_colour, mob/user)
 	if(ready_for_bottleing)
 
 		ready_for_bottleing = FALSE
@@ -225,13 +225,21 @@
 			if(!glass_colour)
 				glass_colour = "brew_bottle"
 
+
+
+			var/mob/living/bottler = user
+			var/task_level = bottler.learnt_tasks.get_task_mastery_level("BOTTLER")
 			var/bottlecaps
 			for(bottlecaps=0, bottlecaps<selected_recipe.brewed_amount, bottlecaps++)
 				var/obj/item/reagent_containers/drinks/bottle/small/brewing_bottle/bottle_made = new /obj/item/reagent_containers/drinks/bottle/small/brewing_bottle(get_turf(src))
 				bottle_made.icon_state = "[glass_colour]"
-				bottle_made.reagents.add_reagent("[selected_recipe.reagent_to_brew]", selected_recipe.bottled_brew_amount)
+				bottle_made.reagents.add_reagent("[selected_recipe.reagent_to_brew]", selected_recipe.bottled_brew_amount+task_level)
 				bottle_made.icon_state_full = "[glass_colour]"
 				bottle_made.icon_state_empty = "[glass_colour]_empty"
+				bottler.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/bottler, "BOTTLER", skill_gained = 0.1, learner = user)
+				if(task_level > 5) //at 5 we get a free extra, at 11 we get 2 free extra, 21 = 3 ect ect
+					bottlecaps -= 0.1
+
 
 		if(selected_recipe.alt_brew_item)
 			var/items_given

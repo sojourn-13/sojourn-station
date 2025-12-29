@@ -3,7 +3,6 @@
 	matter = list()
 	var/matter_chances = list()	//List of lists: list(material_name, chance, amount)
 
-
 /obj/item/trash/material/Initialize()
 	. = ..()
 	if(!matter)
@@ -13,9 +12,6 @@
 		if(prob(L[2]))
 			matter |= L[1]
 			matter[L[1]] += max(0, L[3] + rand(-2,2))
-
-
-
 
 /obj/item/trash/material/metal
 	name = "scrap metal"
@@ -34,7 +30,6 @@
 	. = ..()
 	icon_state = "metal[rand(4)]"
 
-
 /obj/item/trash/material/circuit
 	name = "burnt circuit"
 	desc = "A burnt circuit that can be recycled in an autolathe."
@@ -52,7 +47,6 @@
 /obj/item/trash/material/circuit/Initialize()
 	. = ..()
 	icon_state = "circuit[rand(3)]"
-
 
 /obj/item/trash/material/device
 	name = "broken device"
