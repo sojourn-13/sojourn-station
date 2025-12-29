@@ -128,11 +128,12 @@
 	heating_products = list("radium", "ammonia", "sulfur", "nutriment")
 
 /datum/reagent/toxin/seligitillin/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	var/mob/living/carbon/human/H = M
-	for(var/obj/item/organ/external/E in H.organs)
-		for(var/datum/wound/W in E.wounds)
-			if(W.internal)
-				W.heal_damage(1 * effect_multiplier)
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		for(var/obj/item/organ/external/E in H.organs)
+			for(var/datum/wound/W in E.wounds)
+				if(W.internal)
+					W.heal_damage(1 * effect_multiplier)
 	if(M.species?.reagent_tag == IS_CHTMANT)
 		M.heal_organ_damage(0, 0.6 * effect_multiplier, 0, 3 * effect_multiplier)
 		return
