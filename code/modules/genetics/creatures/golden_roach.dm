@@ -6,7 +6,7 @@
 	blattedin_revives_left = 0
 	meat_amount = 4
 	eating_time = 1 MINUTES
-	snacker = TRUE
+//	snacker = TRUE
 	clone_difficulty = CLONE_EASY
 	can_burrow = FALSE
 	faction = "neutral"
@@ -53,7 +53,7 @@
 	life_cycles_before_sleep = 800 //We need more time to eat
 	probability_egg_laying = 0 //We are too young to lay eggs!
 	var/amount_grown = 0
-	snacker = TRUE
+//	snacker = TRUE
 	can_burrow = FALSE
 	faction = "neutral"
 	colony_friend = TRUE

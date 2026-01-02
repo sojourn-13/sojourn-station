@@ -25,7 +25,6 @@
 		if(get_dist(src, thing) <= viewRange)
 			list_to_return += thing
 	return list_to_return*/
-
 /mob/living/carbon/superior/proc/findTarget(prioritizeCurrent = FALSE)
 
 	if (prioritizeCurrent)
@@ -34,42 +33,28 @@
 				return //if we already have a target_mob and we want to not untarget, lets just return
 
 	var/list/filteredTargets = list()
-
 	var/turf/our_turf = get_turf(src)
-	if (our_turf) //If we're not in anything, continue
-		var/list/inview = view(src, viewRange)
+	if(!our_turf)
+		return FALSE
 
-		for(var/obj/item/item_clearing in inview) //removes all items from are list this should make mobs target faster
-			inview -= item_clearing
+	// Mobs
+	for(var/mob/living/L in view(src, viewRange))
+		if(isValidAttackTarget(L))
+			if(L.target_dummy && prioritize_dummies) //We are target before anyone, quick return
+				return L
+			filteredTargets += L
 
-		for(var/mob/living/target_mob in inview) //as anything : Removed do optimization
-			if(isValidAttackTarget(target_mob))
-				if(target_mob.target_dummy && prioritize_dummies) //Target me over anyone else
-					return target_mob
-				filteredTargets += target_mob
-			inview -= target_mob
+	for(var/obj/machinery/A in view(src, viewRange))
 
-		for(var/obj/machinery/tesla_turret/tesla_turret in view(src, viewRange))
-			if(isValidAttackTarget(tesla_turret))
-				filteredTargets += tesla_turret
-			inview -= tesla_turret
+		// Turrets
+		if(istype(A, /obj/machinery/tesla_turret) || istype(A, /obj/machinery/porta_turret) || istype(A, /obj/machinery/power/os_turret))
+			if(isValidAttackTarget(A))
+				filteredTargets += A
 
-		for(var/obj/machinery/porta_turret/porta_turret in view(src, viewRange))
-			if(isValidAttackTarget(porta_turret))
-				filteredTargets += porta_turret
-			inview -= porta_turret
-
-		for(var/obj/machinery/power/os_turret/os_turret in view(src, viewRange))
-			if(isValidAttackTarget(os_turret))
-				filteredTargets += os_turret
-			inview -= os_turret
-
-		for(var/obj/mecha/M in GLOB.mechas_list)
-			//As goofy as this looks its more optimized as were not looking at every mech outside are z-level if they are around us. - Trilby
-			if(M.z == z)
-				if(get_dist(src, M) <= viewRange)
-					if(isValidAttackTarget(M))
-						filteredTargets += M
+	// Mechas
+	for(var/obj/mecha/M in view(src, viewRange))
+		if(isValidAttackTarget(M))
+			filteredTargets += M
 
 	var/atom/filteredTarget = safepick(getTargets(filteredTargets, src))
 

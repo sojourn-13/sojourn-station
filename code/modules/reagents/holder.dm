@@ -8,7 +8,6 @@
 	var/atom/my_atom = null
 	var/rotating = FALSE
 
-
 /datum/reagents/New(var/max = 100, atom/A = null)
 	..()
 	maximum_volume = max
@@ -43,16 +42,15 @@
 				liquid++
 			if(GAS)
 				gas++
+
 	if(solid >= liquid)
 		if(solid >= gas)
 			return SOLID
-		else
-			return GAS
-	else
-		if(liquid >= gas)
-			return LIQUID
-		else
-			return GAS
+		return GAS
+
+	if(liquid >= gas)
+		return LIQUID
+	return GAS
 
 /datum/reagents/Destroy()
 	. = ..()
@@ -109,8 +107,8 @@
 	for(var/datum/reagent/R in reagent_list)
 		if(R.volume < MINIMUM_CHEMICAL_VOLUME)
 			del_reagent(R.id)
-		else
-			total_volume += R.volume
+			continue
+		total_volume += R.volume
 	return
 
 /datum/reagents/proc/handle_reactions()
@@ -549,6 +547,7 @@
 		chem_temp = max(chem_temp + min(temp_delta, -1), temperature)
 	chem_temp = round(chem_temp)
 	handle_reactions()
+
 
 //Returns the average specific heat for all reagents currently in this holder.
 /datum/reagents/proc/specific_heat()

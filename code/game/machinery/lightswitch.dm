@@ -39,9 +39,7 @@
 		next_check = world.time + 10 SECONDS // Each 10 seconds it checks if anyone is in the area, but also whether the light wasn't switched on recently.
 		if(area.are_living_present())
 			if(!on)
-				spawn(0)
-					if(!on)
-						dramatic_turning()
+				dramatic_turning()
 			else
 				next_check = world.time + 30 MINUTES
 		else
@@ -71,11 +69,10 @@
 
 	slow_turning_on = TRUE
 
-	for(var/obj/machinery/light/L in area)
+	for(var/obj/machinery/light/L in area.contents)
 		L.seton(L.has_power())
 		if(prob(1)) //We have good lights that dont flicker
 			L.flicker(rand(1, 3))
-		sleep(10)
 
 		if(forceful_toggle)
 			forceful_toggle = FALSE
@@ -91,7 +88,7 @@
 	if(play_sound)
 		playsound(src, 'sound/machines/button.ogg', 100, 1, 0)
 
-	for(var/obj/machinery/light_switch/L in area)
+	for(var/obj/machinery/light_switch/L in area.contents)
 		L.on = on_
 		L.update_icon()
 
