@@ -50,7 +50,6 @@
 
 	return ..()
 
-
 ///////////////////
 //Bluecross Perks//
 ///////////////////
@@ -93,6 +92,11 @@
 		holder.stats.add_Stat_cap(stat, -30)
 	..()
 
+
+////////////////////
+//Forst Bird Perks//
+////////////////////
+
 /datum/perk/ally_armor_adder
 	name = "Rally Cry"
 	desc = "Call to arms, Call to protect and Call to victory, increases armor and damage done by same faction creatures."
@@ -118,11 +122,17 @@
 	user.stats.addPerk(PERK_ARMOR_UP)
 	return ..()
 
+////////////////////
+//Stillpoint Perks//
+////////////////////
+
 /datum/perk/stillpoint_charge
 	name = "Augment: Stillpoint Charge Bank"
 	desc = "Advanced storage unit that is the princeable of Stillpoints power, has an inbuilt micro AI with an artificial EGO."
 	gain_text = "A robotic voice informs you on how to use the Charge Bank. Quite handy."
 	lose_text = "A robotic voice lists off reasons your a villainess person, before frying itself."
+	icon_state = "oxyrushnanites"
+
 	var/charge = 0
 	active = FALSE
 	passivePerk = FALSE
@@ -172,6 +182,8 @@ datum/perk/stillpoint_charge/activate()
 	desc = "A Stillpoint Supportive Entropy, When holding onto a living being, active this perk to give said being armor - Costs 500 Charge from a Charge Bank"
 	gain_text = "A robotic voice informs you on how to use the Statis Armor Gen. Quite handy."
 	lose_text = "A robotic voice lists off reasons your a villainess person, before locking away this feature."
+	icon_state = "resiliance"
+
 	active = FALSE
 	passivePerk = FALSE
 
@@ -203,4 +215,5 @@ datum/perk/stillpoint_charge/activate()
 	else
 		to_chat(usr, SPAN_NOTICE("Without proper supporting aguments you are unable to activate this."))
 	return ..()
+
 

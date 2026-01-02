@@ -712,6 +712,7 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 	allow_greyson_mods = initial(allow_greyson_mods)
 	color = initial(color)
 	sharp = initial(sharp)
+	edge = initial(edge)
 	extended_reach = initial(extended_reach)
 	no_swing = initial(no_swing)
 	LAZYNULL(name_prefixes)

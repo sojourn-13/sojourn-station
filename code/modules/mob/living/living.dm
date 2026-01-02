@@ -951,10 +951,23 @@ default behaviour is:
 	blood_splatter(src,src)
 
 /mob/living/proc/eyecheck()
-	return 0
+	var/total_protection = 0
+
+	if(unnatural_mutations.getMutation(MUTATION_XENO_EYELIDS))
+		total_protection += 2
+
+	if(unnatural_mutations.getMutation(MUTATION_ADVANCED_EYELIDS))
+		total_protection += 1
+
+	return total_protection
 
 /mob/living/proc/earcheck()
-	return 0
+	var/total_protection = 0
+
+	if(unnatural_mutations.getMutation(MUTATION_HARDEN_EARS))
+		total_protection += 2
+
+	return total_protection
 
 /mob/living/verb/show_tasks()
 	set name		= "Show tasks"

@@ -747,6 +747,12 @@
 	constant_metabolism = TRUE
 
 /datum/reagent/toxin/xenotoxin/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+
+	if(M.unnatural_mutations.getMutation(MUTATION_XENO_TOX_RES))
+		addiction_chance = 0
+		nerve_system_accumulations = 10
+		return
+
 	M.stats.addTempStat(STAT_MEC, -STAT_LEVEL_ADEPT * effect_multiplier, STIM_TIME, "xeno_toxin")
 	M.stats.addTempStat(STAT_BIO, -STAT_LEVEL_ADEPT * effect_multiplier, STIM_TIME, "xeno_toxin")
 	M.stats.addTempStat(STAT_COG, -STAT_LEVEL_ADEPT * effect_multiplier, STIM_TIME, "xeno_toxin")
@@ -765,6 +771,11 @@
 		M.shake_animation(8)
 
 /datum/reagent/toxin/xenotoxin/overdose(mob/living/carbon/M, alien)
+	if(M.unnatural_mutations.getMutation(MUTATION_XENO_TOX_RES))
+		M.adjustBrainLoss(0.1)
+		M.slurring = max(M.slurring, 5)
+		return
+
 	M.adjustBrainLoss(2)
 	M.slurring = max(M.slurring, 30)
 	if(prob(5))

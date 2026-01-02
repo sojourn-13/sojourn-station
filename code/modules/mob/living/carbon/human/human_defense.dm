@@ -78,6 +78,13 @@ uniquic_armor_act
 
 	unique_armor_check(P, null, null)
 
+	if(unnatural_mutations.getMutation(MUTATION_XENO_SKIN))
+		if(prob(25)) //So we dont affectively replace a racel perk
+			P.embed = FALSE
+		P.sharp = FALSE
+		P.edge = FALSE
+
+
 	var/obj/item/organ/external/organ = get_organ(def_zone)
 
 	//Shields
@@ -99,6 +106,7 @@ uniquic_armor_act
 
 		var/check_absorb = .
 		//Shrapnel
+
 		if(P.can_embed() && (check_absorb < 2) && !src.stats.getPerk(PERK_IRON_FLESH))
 			var/armor = getarmor_organ(organ, ARMOR_BULLET)
 			if(prob((10 + max(P.damage_types[BRUTE] - (armor * (3 - P.wounding_mult)), -10) * P.embed_mult))) //Good/high armor can fully protect against sharpnal
@@ -123,13 +131,15 @@ uniquic_armor_act
 	if(!dir) // Same turf as the source
 		return
 
-	var/r_dir = reverse_dir[dir]
-	var/hit_dirs = (r_dir in cardinal) ? r_dir : list(r_dir & NORTH|SOUTH, r_dir & EAST|WEST)
+	if(!unnatural_mutations.getMutation(MUTATION_STABLE_BALANCE))
 
-	if(hit_zone == BP_R_LEG || hit_zone == BP_L_LEG)
-		if(prob(60 - stats.getStat(STAT_TGH)))
-			step(src, pick(cardinal - hit_dirs))
-			visible_message(SPAN_WARNING("[src] stumbles around."))
+		var/r_dir = reverse_dir[dir]
+		var/hit_dirs = (r_dir in cardinal) ? r_dir : list(r_dir & NORTH|SOUTH, r_dir & EAST|WEST)
+
+		if(hit_zone == BP_R_LEG || hit_zone == BP_L_LEG)
+			if(prob((5 + damage) - stats.getStat(STAT_TGH)))
+				step(src, pick(cardinal - hit_dirs))
+				visible_message(SPAN_WARNING("[src] stumbles around."))
 
 /mob/living/carbon/human/stun_effect_act(var/stun_amount, var/agony_amount, var/def_zone)
 
@@ -413,6 +423,10 @@ uniquic_armor_act
 			if(effective_force == 0)
 				visible_message(SPAN_DANGER("The attack has been completely negated!"))
 				return FALSE
+
+	if(unnatural_mutations.getMutation(MUTATION_XENO_SKIN))
+		I.sharp = 0
+		I.edge = 0
 
 	//If not blocked, handle broad strike attacks
 	if(((I.sharp && I.edge && user.a_intent == I_DISARM) || I.forced_broad_strike) && (!istype(I, /obj/item/tool/sword/nt/spear) || !istype(I, /obj/item/tele_spear) || !istype(I, /obj/item/tool/spear)))
