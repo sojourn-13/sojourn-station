@@ -27,6 +27,7 @@
 
 	var/list/nanite_swarms = list()
 	var/max_swarms = 5
+	hierarchy = 2
 
 /mob/living/carbon/superior/roach/nanite/UnarmedAttack(atom/A, proximity)
 	. = ..()

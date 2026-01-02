@@ -23,6 +23,7 @@
 	melee_damage_lower = 5
 	melee_damage_upper = 7 //Weaker than hunter
 	armor_divisor = 1
+	hierarchy = 3
 
 /mob/living/carbon/superior/roach/glowing/UnarmedAttack(var/atom/A, var/proximity)
 	. = ..()

@@ -33,6 +33,7 @@
 	inherent_mutations = list(MUTATION_ROACH_BLOOD, MUTATION_ROACH_FRIEND, MUTATION_DEAF, MUTATION_TOURETTES, MUTATION_EPILEPSY)
 	fancy_attack_shading = "#FFFFED"
 	research_value = 150
+	hierarchy = 5
 
 
 /mob/living/carbon/superior/roach/fuhrer/bullet_act(var/obj/item/projectile/P)
@@ -92,9 +93,6 @@ reinforcements left it will attempt to evacuate*/
 			//for (var/obj/structure/burrow/B in range(20, loc))
 			for (var/obj/structure/burrow/B in find_nearby_burrows())
 				B.distress(TRUE)
-
-
-
 
 		//If no distress calls available, sound a retreat instead
 		else if (retreat_calls)

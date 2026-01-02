@@ -21,12 +21,17 @@
 	probability_egg_laying = 95 //We are the quickest are we dont want to waste eggs!
 	var/amount_grown = 0
 	var/big_boss = FALSE
+	hierarchy = 1
 
 
 /mob/living/carbon/superior/roach/roachling/Life()
 	.=..()
 	if(!stat)
 		amount_grown += rand(0,2) // Roachling growing up
+
+		if(reagents.has_reagent("fuhrerole"))
+			amount_grown += rand(1,2) // Roachling growing up faster
+
 
 		if(amount_grown >= 50) // Old enough to turn into an adult
 			var/spawn_type
