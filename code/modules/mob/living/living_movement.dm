@@ -4,7 +4,7 @@
 
 	if(entanglement)
 		//We first shake off are entanglement
-		entanglement -= floor(entanglement * 0.45)
+		entanglement -= round(entanglement * 0.45)
 		//If we are ever negitive or less then 1 then dont bother
 		if(entanglement < 1)
 			entanglement = 0
