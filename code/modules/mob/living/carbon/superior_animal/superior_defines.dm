@@ -329,6 +329,9 @@
 	var/block_cooldown_timer = 0
 	var/block_cooldown = 0.9 SECONDS //Window where you can deal more damage well a mob is blocking
 
+	move_intent = /decl/move_intent/run_nodelay
+	move_intents = list(/decl/move_intent/run_nodelay, /decl/move_intent/walk)
+
 //SoJ edit
 /obj/effect/effect/melee/mob_melee_animation
 	icon = 'modular_sojourn/attacks.dmi'

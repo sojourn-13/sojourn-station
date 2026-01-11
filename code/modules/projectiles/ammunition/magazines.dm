@@ -1017,6 +1017,11 @@
 	name = "speed loader (12mm high-velocity)"
 	ammo_type = /obj/item/ammo_casing/kurtz_50/hv
 
+/obj/item/ammo_magazine/speed_loader_kurtz_50/entanglement
+	name = "speed loader (12mm entanglement)"
+	ammo_type = /obj/item/ammo_casing/kurtz_50/entanglement
+
+
 //////// RIFLE SPEEDLOADERS ////////
 
 /obj/item/ammo_magazine/speed_loader_rifle_75

@@ -27,3 +27,13 @@
 /decl/move_intent/run/Initialize()
 	. = ..()
 	move_delay = 3.5
+
+//Used for mobs
+/decl/move_intent/run_nodelay
+	name = "Run (No delay)"
+	flags = MOVE_INTENT_EXERTIVE | MOVE_INTENT_QUICK
+	hud_icon_state = "running"
+
+/decl/move_intent/run_nodelay/Initialize()
+	. = ..()
+	move_delay = 0

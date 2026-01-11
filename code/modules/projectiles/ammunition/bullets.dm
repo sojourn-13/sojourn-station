@@ -525,6 +525,17 @@ obj/item/ammo_casing/heavy_rifle_408/bluespace
 	caliber = CAL_50
 	projectile_type = /obj/item/projectile/beam/weak/kurtz_50
 
+/obj/item/ammo_casing/kurtz_50/entanglement
+	desc = "An exspensive bullet, 12mm entanglement bullet casing."
+	caliber = CAL_50
+	shell_color = "e"
+	projectile_type = /obj/item/projectile/bullet/kurtz_50/entanglement
+	icon_state = "magnum_c_e"
+	spent_icon = "magnum_c_e-spent"
+
+/obj/item/ammo_casing/kurtz_50/entanglement/prespawned
+	amount = 6
+
 //// .60-06 ////
 /obj/item/ammo_casing/antim
 	name = "shell casing"

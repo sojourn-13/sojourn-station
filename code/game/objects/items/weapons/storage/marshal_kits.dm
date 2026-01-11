@@ -194,7 +194,7 @@
 		new /obj/item/gun/projectile/revolver/deckard(src)
 		new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber/pepperball(src)
 		new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber/pepperball(src)
-		new /obj/item/ammo_magazine/speed_loader_kurtz_50(src)
+		new /obj/item/ammo_magazine/speed_loader_kurtz_50/entanglement(src)
 		new /obj/item/ammo_magazine/speed_loader_kurtz_50(src)
 		new /obj/item/clothing/accessory/holster/armpit(src)
 
@@ -227,7 +227,7 @@
 	populate_contents()
 		new /obj/item/gun/projectile/revolver/rev10/mateba(src)
 		new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber/pepperball(src)
-		new /obj/item/ammo_magazine/speed_loader_kurtz_50(src)
+		new /obj/item/ammo_magazine/speed_loader_kurtz_50/entanglement(src)
 		new /obj/item/ammo_magazine/speed_loader_kurtz_50(src)
 		new /obj/item/clothing/accessory/holster/armpit(src)
 
