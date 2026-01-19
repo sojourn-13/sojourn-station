@@ -113,7 +113,7 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 
 	var/area/my_area = get_area(src.loc)
 
-	if(my_area.name == "Dungeon" || my_area.name == "GP Automated Scrap Yard")
+	if(my_area.is_gp)
 		loot_list += list(
 			/obj/item/stack/os_cash = 0.5,
 			/obj/random/cloth/greyson_clothing/low_chance = 0.1,

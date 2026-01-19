@@ -94,6 +94,7 @@
 	name = "GP Automated Scrap Yard"
 	icon_state = "yellow"
 	dynamic_lighting = 0
+	is_gp = TRUE
 
 // Main mining outpost
 /area/outpost/mining_main

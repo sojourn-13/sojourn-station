@@ -8,6 +8,7 @@
 	var/has_late_game_spawned_for_folks = FALSE
 	var/level_of_threat = 0
 	var/robo_deaths = 0
+	is_gp = TRUE
 
 /area/crawler/Entered(A)
 	..()

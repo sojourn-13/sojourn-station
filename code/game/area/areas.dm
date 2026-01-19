@@ -24,6 +24,8 @@
 	var/static_environ
 	var/prevent_ship_area = FALSE //Used to make sure even if this area is in a station map level, that it will not be turned into a ship area.
 
+	var/is_gp = FALSE
+
 /**
  * Called when an area loads
  */
