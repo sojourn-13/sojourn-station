@@ -110,14 +110,12 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 	if(loot_generated)
 		return
 	loot_generated = TRUE
-	if(!big_item)
-		make_big_loot()
 
 	var/area/my_area = get_area(src.loc)
 
 	if(my_area.name == "Dungeon" || my_area.name == "GP Automated Scrap Yard")
 		loot_list += list(
-			/obj/item/stack/os_cash = 1,
+			/obj/item/stack/os_cash = 0.5,
 			/obj/random/cloth/greyson_clothing/low_chance = 0.1,
 			/obj/item/clothing/mask/smokable/cigarette/os = 0.2,
 			/obj/item/reagent_containers/drinks/os_coffee = 0.2,
@@ -130,6 +128,9 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 			/obj/item/reagent_containers/snacks/openable/os_heart = 0.01,
 			/obj/item/reagent_containers/snacks/openable/os_liver = 0.01
 		)
+
+	if(!big_item)
+		make_big_loot()
 
 	var/amt = rand(loot_min, loot_max)
 	for(var/x in 1 to amt)
