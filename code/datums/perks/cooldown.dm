@@ -292,12 +292,17 @@
 	active = FALSE
 	passivePerk = FALSE
 
+	var/backupcall_parrent = FALSE
+
 //We override parrent do to always ticking down even on death.
 /datum/perk/cooldown/bluespace_bellclock/on_process()
 	SHOULD_CALL_PARENT(TRUE)
 
 	if((timestamp_start + perk_lifetime) < world.time)
 		holder.stats.removePerk(type)
+
+	if(backupcall_parrent)
+		..()
 
 /datum/perk/cooldown/bluespace_bellclock/assign(mob/living/carbon/human/H)
 	..()
