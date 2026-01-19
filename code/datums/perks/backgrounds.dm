@@ -222,10 +222,11 @@ This is NOT for racial-specific perks, but rather specifically for general backg
 		H.metabolism_effects.calculate_nsa()
 	..()
 
+//Allows you to have way more information on things, as well as some intractions with other mechanics
 /datum/perk/no_obfuscation
 	name = "Exact Values"
 	desc = "Unlike most people you can fully visualize your own stats, owing to your greater grasp of the concepts. \
-	This is in addition to knowing exactly how likely you were to fail after failing some tasks. \
+	This is in addition to knowing exactly how likely you were to fail after failing some tasks, as well as gain information on hidden mechanics of the world. \
 	This ability does not extend to medical matters, wounds or similar. "
 	icon_state = "obfuscation_ranking"
 

@@ -129,3 +129,40 @@
 		/obj/item/clothing/under/iron_lock_security = 70,
 		/obj/item/clothing/head/os_cap/nova = 45,
 		)
+
+//GP Scrap yard vendor
+/obj/machinery/vending/one_star/scrapyard
+	name = "Greyson Contractor Vending Machine"
+	desc = "A holographic vendor made by Greyson Positronic. This one sells a variety of food, and some tools."
+	icon_state = "vendor_items"
+	icon_vend = "vendor_printing"
+	vendor_department = DEPARTMENT_GREYSON
+	product_slogans = "It's a Vending Machine!;We all eat lunch from a Vending Machine!"
+	product_ads = "You must be the new guy!;Hows is your child doing?;Real Meals!;Some people say its not real food but many quite like and many think you will to!"
+
+	icon_state = "vendor_food"
+
+	products = list(
+		/obj/item/clothing/mask/smokable/cigarette/os = 24,
+		/obj/item/reagent_containers/drinks/os_coffee = 24,
+		/obj/item/reagent_containers/snacks/openable/os_soypack = 6,
+		/obj/item/reagent_containers/snacks/openable/candy/os = 6,
+		/obj/item/reagent_containers/snacks/openable/mre/os = 6,
+		/obj/item/reagent_containers/snacks/os_paste = 3,
+		/obj/item/tool/shovel/onestar_shovel = 3,
+		/obj/item/gun/projectile/rivet = 3,
+		/obj/item/ammo_magazine/magnum_40 = 9
+		)
+
+	prices = list(
+		/obj/item/clothing/mask/smokable/cigarette/os = 5,
+		/obj/item/reagent_containers/drinks/os_coffee = 7,
+		/obj/item/reagent_containers/snacks/openable/os_soypack = 60,
+		/obj/item/reagent_containers/snacks/openable/candy/os = 50,
+		/obj/item/reagent_containers/snacks/openable/mre/os = 65,
+		/obj/item/reagent_containers/snacks/os_paste = 80,
+		/obj/item/tool/shovel/onestar_shovel = 35,
+		/obj/item/gun/projectile/rivet = 120,
+		/obj/item/ammo_magazine/magnum_40 = 5
+		)
+
