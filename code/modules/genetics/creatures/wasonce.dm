@@ -168,8 +168,8 @@ Has ability of every roach.
 				var/obj/item/implant/core_implant/cruciform/CI
 				CI = captive.get_core_implant(/obj/item/implant/core_implant/cruciform)
 				if(CI && CI.active)
-					if(CI.power >= 0.8) //Do to being blocking being eighted
-						CI.power -= 0.8
+					if(CI.power >= 1.8) //Do to being blocking being eighted
+						CI.power -= 1.8
 						break
 
 			if(captive.species.reagent_tag == IS_SYNTHETIC && (captive.getBruteLoss() < 300))
