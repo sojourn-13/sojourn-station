@@ -74,6 +74,7 @@
 
 //Chaos intraction
 //Another complx mob that has quite a few bells and whistles!
+//Can not be blocked by church shin, as its affect is to not actively harming the churchie
 /mob/living/carbon/superior/psi/pus_maggot/ash_wendigo/attackby(obj/item/I, mob/user)
 	..()
 	if(GLOB.chaos_level >= 2)

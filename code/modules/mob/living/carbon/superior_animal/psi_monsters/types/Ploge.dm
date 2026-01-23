@@ -78,6 +78,15 @@
 
 	var/mob/living/carbon/human/H = target
 	if(istype(H))
+
+		if(H.stats.getPerk(PERK_SHIN_DEEMAINTS))
+			var/obj/item/implant/core_implant/cruciform/CI
+			CI = H.get_core_implant(/obj/item/implant/core_implant/cruciform)
+			if(CI && CI.active)
+				if(CI.power >= 2)
+					CI.power -= 2
+					return
+
 		if(prob(100 - H.stats.getStat(STAT_VIG)))
 			H.Weaken(4)
 			to_chat(H, SPAN_WARNING("A horrifying roar of primal soul-less terror sears through your mind!"))

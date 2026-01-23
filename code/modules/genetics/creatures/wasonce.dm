@@ -111,7 +111,20 @@ Has ability of every roach.
 		if(ishuman(L))
 			H = L
 		if(H)
+
 			if (H.paralysis || H.sleeping || H.resting || H.lying || H.weakened)
+				//Likely the most useful power to block
+				if(H.stats.getPerk(PERK_SHIN_DEEMAINTS))
+					var/obj/item/implant/core_implant/cruciform/CI
+					CI = H.get_core_implant(/obj/item/implant/core_implant/cruciform)
+					message_admins("CI && CI.active = [CI] && [CI.active]")
+					if(CI && CI.active)
+						message_admins("CI.power = [CI.power]")
+						if(CI.power >= 8) //Do to being blocking being eighted
+							CI.power -= 8
+							. = ..()
+							return
+
 				H.visible_message(SPAN_DANGER("\the [src] absorbs \the [L] into its mass!"))
 				H.loc = src
 				maxHealth += 250

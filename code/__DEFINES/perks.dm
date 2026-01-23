@@ -111,6 +111,7 @@
 #define PERK_SANITYBOOST /datum/perk/sanityboost
 #define PERK_COMMUNITY_SAINTS /datum/perk/community_of_saints
 #define PERK_CHANNELING /datum/perk/channeling
+#define PERK_SHIN_DEEMAINTS /datum/perk/shin_deemaints
 
 
 #define PERK_REZ_SICKNESS /datum/perk/rezsickness
