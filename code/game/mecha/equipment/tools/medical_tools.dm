@@ -75,6 +75,10 @@
 	if(occupant)
 		occupant_message("The sleeper is already occupied")
 		return
+	if(target.stats.getPerk(PERK_BLUESPACE_BELLCLOCK))
+		to_chat(usr, SPAN_WARNING("Do [target]'s current state of tracking going into a mecha is forbidden."))
+		return
+
 	for(var/mob/living/carbon/slime/M in range(1,target))
 		if(M.Victim == target)
 			occupant_message("[target] will not fit into the sleeper because they have a slime latched onto their head.")

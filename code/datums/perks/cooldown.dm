@@ -335,6 +335,17 @@
 		linked_z = 1
 
 /datum/perk/cooldown/bluespace_bellclock/remove()
+	//Prevents teleportation issues that are quite "common"
+	if(istype(holder.loc, /obj/machinery/sleeper))
+		var/obj/machinery/sleeper/S = holder.loc
+		S.go_out()
+	if(istype(holder.loc, /obj/structure/closet))
+		var/obj/structure/closet/C = holder.loc
+		C.break_open()
+	if(istype(holder.loc, /obj/machinery/bodyscanner))
+		var/obj/machinery/bodyscanner/BS = holder.loc
+		BS.go_out()
+
 	if(isturf(linked))
 		go_to_bluespace(holder.loc, 6, TRUE, holder, linked)
 	else
