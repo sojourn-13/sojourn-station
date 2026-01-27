@@ -39,8 +39,8 @@
 		if(!ranged)
 			stop_automated_movement = 1
 			stance = HOSTILE_STANCE_ATTACKING
-			set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-			walk_to(src, target_mob, 1, move_to_delay)
+			set_glide_size(DELAY2GLIDESIZE(movement_delay()))
+			walk_to(src, target_mob, 1, movement_delay())
 			moved = 1
 		if(ranged)
 			stop_automated_movement = 1
@@ -48,8 +48,8 @@
 				stance = HOSTILE_STANCE_ATTACKING
 				return //We do a safty return
 			else
-				set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-				walk_to(src, target_mob, 4, move_to_delay)
+				set_glide_size(DELAY2GLIDESIZE(movement_delay()))
+				walk_to(src, target_mob, 4, movement_delay())
 			stance = HOSTILE_STANCE_ATTACKING
 
 	if(stance == HOSTILE_STANCE_ATTACKING)
@@ -61,8 +61,8 @@
 			if(get_dist(src, target_mob) <= 6)
 				OpenFire(target_mob)
 			else
-				set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-				walk_to(src, target_mob, 4, move_to_delay)
+				set_glide_size(DELAY2GLIDESIZE(movement_delay()))
+				walk_to(src, target_mob, 4, movement_delay())
 				OpenFire(target_mob)
 
 	//random movement
@@ -81,7 +81,7 @@
 		visible_emote(emote_see)
 
 	if((following) && !(findTarget())) // Are we following someone and not attacking something?
-		walk_to(src, following, follow_distance, move_to_delay) // Follow the mob referenced in 'following' and stand almost next to them.
+		walk_to(src, following, follow_distance, movement_delay()) // Follow the mob referenced in 'following' and stand almost next to them.
 
 	if(!following && !(findTarget())) // Stop following
 		walk_to(src, 0)

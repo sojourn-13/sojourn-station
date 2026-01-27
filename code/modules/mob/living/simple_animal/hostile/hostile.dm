@@ -115,14 +115,14 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 			if(ranged)
 				if(prob(45))
 					stance = HOSTILE_STANCE_ATTACKING
-					set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-					SSmove_manager.move_to(src, target, 1, move_to_delay)
+					set_glide_size(DELAY2GLIDESIZE(movement_delay()))
+					SSmove_manager.move_to(src, target, 1, movement_delay())
 				else
 					OpenFire(target)
 			else
 				stance = HOSTILE_STANCE_ATTACKING
-				set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-				SSmove_manager.move_to(src, target, 1, move_to_delay)
+				set_glide_size(DELAY2GLIDESIZE(movement_delay()))
+				SSmove_manager.move_to(src, target, 1, movement_delay())
 	return FALSE
 
 /mob/living/simple/hostile/proc/DestroyPathToTarget()

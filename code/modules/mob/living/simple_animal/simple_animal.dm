@@ -124,6 +124,9 @@
 
 	mob_classification = CLASSIFICATION_ORGANIC
 
+	move_intent = /decl/move_intent/run_nodelay
+	move_intents = list(/decl/move_intent/run_nodelay, /decl/move_intent/walk)
+
 /mob/living/simple/proc/beg(atom/thing, atom/holder)
 	visible_emote("gazes longingly at [holder]'s [thing]")
 
@@ -676,9 +679,9 @@
 
 				if (istype(movement_target.loc, /turf))
 					if (stat != DEAD)
-						SSmove_manager.move_to(src, movement_target, 0, seek_move_delay)//Stand ontop of food
+						SSmove_manager.move_to(src, movement_target, 0, movement_delay())//Stand ontop of food
 				else if (stat != DEAD)
-					SSmove_manager.move_to(src,movement_target.loc,1, seek_move_delay)//Don't stand ontop of people
+					SSmove_manager.move_to(src,movement_target.loc,1, movement_delay())//Don't stand ontop of people
 
 
 

@@ -47,9 +47,9 @@
 					if (eat_target)
 						give_up_timer = world.time
 						busy = MOVING_TO_TARGET
-						set_glide_size(DELAY2GLIDESIZE(move_to_delay))
+						set_glide_size(DELAY2GLIDESIZE(movement_delay()))
 						if (stat != DEAD)
-							SSmove_manager.move_to(src, eat_target, 1, move_to_delay)
+							SSmove_manager.move_to(src, eat_target, 1, movement_delay())
 						return
 					//We are hurt, eat one of are own of a lower rank to heal and make more young
 					if(health < maxHealth * 0.8)
@@ -59,10 +59,10 @@
 								R.death() //Respect the hierarchy, allow your death to feed those higher then you
 								eat_target = R
 								busy = MOVING_TO_TARGET
-								set_glide_size(DELAY2GLIDESIZE(move_to_delay))
+								set_glide_size(DELAY2GLIDESIZE(movement_delay()))
 								give_up_timer = world.time
 								if (stat != DEAD)
-									SSmove_manager.move_to(src, eat_target, 1, move_to_delay)
+									SSmove_manager.move_to(src, eat_target, 1, movement_delay())
 								break
 
 				else if(prob(probability_egg_laying)) // chance to lay an egg

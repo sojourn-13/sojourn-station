@@ -338,6 +338,14 @@
 	sharp = TRUE
 	recoil = 16
 
+/obj/item/projectile/bullet/kurtz_50/entanglement
+	name = "entanglement bullet"
+	damage_types = list(BRUTE = 15)
+	embed = FALSE
+	can_ricochet = FALSE
+	step_delay = 0.75
+	recoil = 12
+	entanglement_level = 2
 
 //Carbines and rifles
 //*********************************//

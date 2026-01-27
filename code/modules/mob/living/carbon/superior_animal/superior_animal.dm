@@ -304,9 +304,9 @@
 	if(ranged)
 		stop_automated_movement = TRUE
 		stance = HOSTILE_STANCE_ATTACKING
-		set_glide_size(DELAY2GLIDESIZE(move_to_delay))
+		set_glide_size(DELAY2GLIDESIZE(movement_delay()))
 		if (stat != DEAD)
-			SSmove_manager.move_to(src, targetted_mob, calculated_walk, move_to_delay) //lets get a little closer than our optimal range
+			SSmove_manager.move_to(src, targetted_mob, calculated_walk, movement_delay()) //lets get a little closer than our optimal range
 
 		if (delayed > 0)
 			if (!(retarget_rush_timer > world.time)) //Only true if the timer is less than the world.time
@@ -319,9 +319,9 @@
 	else if (!ranged)
 		stop_automated_movement = TRUE
 		stance = HOSTILE_STANCE_ATTACKING
-		set_glide_size(DELAY2GLIDESIZE(move_to_delay))
+		set_glide_size(DELAY2GLIDESIZE(movement_delay()))
 		if (stat != DEAD)
-			SSmove_manager.move_to(src, targetted_mob, 1, move_to_delay)
+			SSmove_manager.move_to(src, targetted_mob, 1, movement_delay())
 	handle_attacking_stance(targetted_mob, already_destroying_surroundings, can_see, ran_see_check)
 
 /mob/living/carbon/superior/proc/handle_attacking_stance(var/atom/targetted_mob, var/already_destroying_surroundings = FALSE, can_see = TRUE, ran_see_check = FALSE)
@@ -416,7 +416,7 @@
 		if(!ranged)
 			prepareAttackOnTarget()
 			if (stat != DEAD)
-				SSmove_manager.move_to(src, targetted, 1, move_to_delay)
+				SSmove_manager.move_to(src, targetted, 1, movement_delay())
 		else if(ranged)
 
 			var/distance = (get_dist(src, targetted))
@@ -450,12 +450,12 @@
 
 			if (advancement_timer <= world.time)  //we dont want to prematurely end a advancing walk
 				if (stat != DEAD)
-					SSmove_manager.move_to(src, targetted, calculated_walk, move_to_delay) //we still want to reset our walk
-				set_glide_size(DELAY2GLIDESIZE(move_to_delay))
+					SSmove_manager.move_to(src, targetted, calculated_walk, movement_delay()) //we still want to reset our walk
+				set_glide_size(DELAY2GLIDESIZE(movement_delay()))
 	else
 		prepareAttackOnTarget()
 		if (stat != DEAD)
-			SSmove_manager.move_to(src, targetted_mob, 1, move_to_delay)
+			SSmove_manager.move_to(src, targetted_mob, 1, movement_delay())
 
 /mob/living/carbon/superior/proc/get_turf_at_edge_of_viewRange(var/atom/target, view_range = viewRange)
 	var/turf/viewrange_edge = get_turf(src)
@@ -580,7 +580,7 @@
 			if (following)
 				if (!target_mob) // Are we following someone and not attacking something?
 					if (stat != DEAD)
-						SSmove_manager.move_to(src, following, follow_distance, move_to_delay) // Follow the mob referenced in 'following' and stand almost next to them.
+						SSmove_manager.move_to(src, following, follow_distance, movement_delay()) // Follow the mob referenced in 'following' and stand almost next to them.
 			else if (!target_mob && last_followed)
 				SSmove_manager.stop_looping(src)
 				last_followed = null // this exists so we only stop the following once, no need to constantly end our walk
@@ -702,7 +702,7 @@
 		if (advance_steps <= 0)
 			advance_steps = 1 //1 is minimum
 		if (stat != DEAD)
-			SSmove_manager.move_to(src, target, advance_steps, move_to_delay) //advance forward, forcing us to pathfind
+			SSmove_manager.move_to(src, target, advance_steps, movement_delay()) //advance forward, forcing us to pathfind
 		advancement_timer = (world.time += advancement_increment) // we dont want this overridden instantly
 
 /mob/living/carbon/superior/CanPass(atom/mover)

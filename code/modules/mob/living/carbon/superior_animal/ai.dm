@@ -352,7 +352,7 @@
 			if (retaliation_type)
 				if (retaliation_type & APPROACH_ATTACKER)
 					if (stat != DEAD)
-						INVOKE_ASYNC(SSmove_manager, /datum/controller/subsystem/move_manager/proc/move_to, src, target_location, (comfy_range - comfy_distance), move_to_delay)
+						INVOKE_ASYNC(SSmove_manager, /datum/controller/subsystem/move_manager/proc/move_to, src, target_location, (comfy_range - comfy_distance), movement_delay())
 
 
 /mob/living/carbon/superior/proc/movement_tech()
