@@ -213,6 +213,22 @@
 
 		flick("wood_load", hopper_insert)
 
+	if(istype(used_item, /obj/item/stack/ore/coal))
+		var/obj/item/stack/ore/coalstack = used_item
+		var/used_sheets = min(coalstack.get_amount(), (wood_maximum - stored_wood))
+		if(!used_sheets)
+			to_chat(user, SPAN_NOTICE("The grill's hopper is full."))
+			return
+		to_chat(user, SPAN_NOTICE("You add [used_sheets] coal lump[used_sheets>1?"s":""] into the grill's hopper."))
+		if(!coalstack.use(used_sheets))
+			qdel(coalstack)	// Protects against weirdness
+		stored_wood += used_sheets
+		if(prob(5))
+			src.visible_message(SPAN_DANGER("The Grill exclaims: \"OM NOM NOM~! YUMMIE~~!\""))
+
+		flick("coal_load", hopper_insert)
+
+
 		return
 
 

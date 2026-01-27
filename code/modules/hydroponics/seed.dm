@@ -56,6 +56,7 @@
 	var/splat_type = /obj/effect/decal/cleanable/fruit_smudge // Graffiti decal.
 	var/has_mob_product
 	var/force_layer
+	var/fruit_dried_type
 
 /datum/seed/New()
 
@@ -790,9 +791,11 @@
 			if(get_trait(TRAIT_PRODUCT_COLOUR))
 				if(!ismob(product))
 					product.color = get_trait(TRAIT_PRODUCT_COLOUR)
-					if(istype(product,/obj/item/reagent_containers))
+					if(istype(product,/obj/item/reagent_containers/snacks))
 						var/obj/item/reagent_containers/snacks/food = product
 						food.filling_color = get_trait(TRAIT_PRODUCT_COLOUR)
+						if(fruit_dried_type)
+							food.dried_type = fruit_dried_type
 
 			if(mysterious)
 				product.name += "?"
@@ -846,9 +849,11 @@
 		if(get_trait(TRAIT_PRODUCT_COLOUR))
 			if(!ismob(product))
 				product.color = get_trait(TRAIT_PRODUCT_COLOUR)
-				if(istype(product,/obj/item/reagent_containers))
+				if(istype(product,/obj/item/reagent_containers/snacks))
 					var/obj/item/reagent_containers/snacks/food = product
 					food.filling_color = get_trait(TRAIT_PRODUCT_COLOUR)
+					if(fruit_dried_type)
+						food.dried_type = fruit_dried_type
 		if(mysterious)
 			product.name += "?"
 			product.desc += " On second thought, something about this one looks strange."

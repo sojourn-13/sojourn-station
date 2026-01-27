@@ -60,6 +60,18 @@
 	matter = list(MATERIAL_BIOMATTER = 3)
 	junk_food = TRUE
 
+/obj/item/reagent_containers/snacks/candy/pistachios_pack/homemade
+	name = "homemade pistachios pack"
+	desc = "A packet of pistachios, naturally salty. A somewhat healthy light snack."
+	icon_state = "pistachios_pack"
+	taste_tag = list(SALTY_FOOD)
+	trash = /obj/item/trash/pistachios
+	nutriment_amt = 1
+	nutriment_desc = list("pistachios" = 3, "protein" = 2, "sodiumchloride" = 1)
+	preloaded_reagents = list("nutriment" = 3, "sodiumchloride" = 2, "protein" = 1)
+	matter = list(MATERIAL_BIOMATTER = 3)
+	junk_food = FALSE
+
 /obj/item/reagent_containers/snacks/candy/sunflowerseeds
 	name = "sunflower fried seed pack"
 	desc = "Bag of sunflower seeds that have been baked and salted for people that like to chew their food for way to long."
@@ -70,6 +82,17 @@
 	nutriment_desc = list("nutriment" = 2, "protein" = 1, "preservatives" = 2)
 	matter = list(MATERIAL_BIOMATTER = 3)
 	junk_food = TRUE
+
+/obj/item/reagent_containers/snacks/candy/sunflowerseeds/homemade
+	name = "sunflower baked seed pack"
+	desc = "Bag of fresh sunflower seeds that have been baked for people that like to chew their food for way to long."
+	icon_state = "semki_pack"
+	taste_tag = list(FLOURY_FOOD)
+	trash = /obj/item/trash/semki
+	nutriment_amt = 1
+	nutriment_desc = list("nutriment" = 2, "protein" = 2)
+	matter = list(MATERIAL_BIOMATTER = 3)
+	junk_food = FALSE
 
 /obj/item/reagent_containers/snacks/candy/energybar
 	name = "energy bar"
@@ -224,7 +247,14 @@
 	nutriment_desc = list("dried raisins" = 6)
 	nutriment_amt = 6
 	matter = list(MATERIAL_BIOMATTER = 6)
+	preloaded_reagents = list("nutriment" = 3, "sugar" = 5)
 	junk_food = TRUE
+
+/obj/item/reagent_containers/snacks/openable/no_raisin/homemade
+	name = "Homemade Raisins"
+	taste_tag = list(VEGAN_FOOD)
+	preloaded_reagents = list("nutriment" = 3)
+	junk_food = FALSE
 
 /obj/item/reagent_containers/snacks/openable/spacetwinkie
 	name = "Space Twinkie"
