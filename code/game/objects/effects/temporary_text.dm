@@ -97,7 +97,7 @@
 	duration = 30 //in deciseconds
 	randomdir = FALSE
 	txt_color = "#D93FC4"  // Same as the flame
-	txt = "Don't use both hands, your from is all wrong! Correct it this insistence!"
+	txt = "Don't use both hands, you're form is all wrong! Correct it this insistence!"
 	max_tilt = 30
 	min_tilt = -30
 
@@ -105,7 +105,7 @@
 	duration = 10 //in deciseconds
 	randomdir = FALSE
 	txt_color = "#D93FC4"  // Same as the flame
-	txt = "Wrong Wrong Wrong! Your doing it all wrong!"
+	txt = "Wrong Wrong Wrong! You're doing it all wrong!"
 	max_tilt = 30
 	min_tilt = -30
 
@@ -129,7 +129,7 @@
 	duration = 10 //in deciseconds
 	randomdir = FALSE
 	txt_color = "#D93FC4"  // Same as the flame
-	txt = "You incompident fool! SWING that rapier now! Fire now! Do anything useful!"
+	txt = "You incompetent fool! SWING that rapier now! Fire now! Do anything useful!"
 	max_tilt = 30
 	min_tilt = -30
 
