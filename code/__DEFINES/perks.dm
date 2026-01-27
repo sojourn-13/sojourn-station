@@ -270,6 +270,7 @@
 #define PERK_JUDGMENT_HASTE /datum/perk/cooldown/judgment_haste
 
 
+#define PERK_IGA /datum/perk/cooldown/ignis_gladius_artium
 ////////////////////
 //Stillpoint perks//
 ////////////////////
