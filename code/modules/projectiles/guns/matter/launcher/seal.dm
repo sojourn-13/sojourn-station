@@ -21,10 +21,23 @@
 	item_loader = /obj/item/flame/candle
 
 	swing_icon_mod = "_sun_branch"
-	icon = 'icons/obj/weapons-blades.dmi'
+	icon = 'icons/obj/guns/matter/seal.dmi'
 	icon_state = "seal"
 	item_state = "seal"
 	item_text = "Candles"
+
+	item_icons = list(
+		icon_l_hand = 'icons/mob/items/lefthand_guns.dmi',
+		icon_r_hand = 'icons/mob/items/righthand_guns.dmi',
+		)
+
+/obj/item/gun/matter/seal/examine(user)
+	. = ..()
+
+	if(isliving(user))
+		var/mob/living/L = user
+		if(L.stats.getPerk(PERK_SIDE_LOADING))
+			to_chat(L, SPAN_NOTICE("[name] is eligible for sideloading.")) // Feedback that we can do this
 
 /obj/item/gun/matter/seal/consume_next_projectile()
 	if(stored_matter < projectile_cost)
@@ -45,6 +58,13 @@
 			if(!wielded)
 				//We just fired a shot increase are movement a lot!
 				IGA.ammo_shots += 1
+
+		//So useful! an extra shot!
+		if(H.stats.getPerk(PERK_SIDE_LOADING))
+			var/otherhands_object = H.get_inactive_hand()
+			if(istype(otherhands_object, /obj/item/flame/candle))
+				var/obj/item/flame/candle/C = otherhands_object
+				attackby(C, H)
 
 		if(wielded && fae)
 			if(prob(20) && IGA.sezionatura >= 2)

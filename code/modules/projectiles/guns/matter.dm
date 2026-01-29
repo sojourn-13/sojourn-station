@@ -17,14 +17,16 @@
 		if(M.use(amount))
 			stored_matter += amount
 		to_chat(user, "<span class='notice'>You load [amount] [matter_type] into \the [src].</span>")
-		return
+		return TRUE
 
-	if(item_loader)
+	if(item_loader && max_stored_matter > stored_matter)
 		if(istype(I, item_loader) && user.canUnEquip(I))
 			user.drop_from_inventory(I)
 			qdel(I)
 			stored_matter += item_amount
-			return
+			if(stored_matter > max_stored_matter)
+				stored_matter = max_stored_matter
+			return TRUE
 
 	..()
 

@@ -15,7 +15,8 @@
 	if(stats.getPerk(PERK_IGA))
 		var/datum/perk/cooldown/ignis_gladius_artium/IGA = stats.getPerk(PERK_IGA)
 		tally -= IGA.sezionatura / 100
-		tally -= IGA.ammo_shots
-		IGA.ammo_shots -= 1
+		if(IGA.ammo_shots > 0)
+			tally -= IGA.ammo_shots
+			IGA.ammo_shots -= 1
 
 	return tally
