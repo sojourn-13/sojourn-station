@@ -44,7 +44,7 @@
 			/obj/item/device/lighting/toggleable/lantern/fae = good_data("\"Fae\" Lantern", list(4, 6), 2000), //Fae accually just shouldnt be printable
 			/obj/item/gun/matter/seal = good_data("\"Seal\" waxworks rapier", list(4, 6), 3500),
 			//obj/item/clothing = good_data("\"Candelabra\" xxxx", list(4, 6), 1000),
-			//obj/item/clothing = good_data("\"Waxy Gaze\" xxxx", list(4, 6), 2500),
+			/obj/item/clothing/head/waxy_gaze = good_data("\"Waxy Gaze\" Tipped Hat", list(4, 6), 2500),
 			//obj/item/clothing = good_data("\"Saint Wix's Grand Design\" xxxx", list(1, 1), 7500)
 		)
 	)

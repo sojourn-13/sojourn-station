@@ -42,11 +42,15 @@
 /obj/item/gun/matter/seal/consume_next_projectile()
 	if(stored_matter < projectile_cost)
 		return null
+	var/proj_to_shoot = projectile_type
 	if(ishuman(loc))
 		var/mob/living/carbon/human/H = loc
 		var/fae = FALSE
+		var/hat = FALSE
 		if(istype(H.belt, /obj/item/device/lighting/toggleable/lantern/fae))
 			fae = TRUE
+		if(istype(H.head, /obj/item/clothing/head/waxy_gaze))
+			hat = TRUE
 
 		var/datum/perk/cooldown/ignis_gladius_artium/IGA = H.stats.getPerk(PERK_IGA)
 		if(!IGA)
@@ -57,7 +61,11 @@
 		else
 			if(!wielded)
 				//We just fired a shot increase are movement a lot!
-				IGA.ammo_shots += 1
+				//We we are waring the hat get an extra step out of it
+				IGA.ammo_shots += 1 + hat
+				if(hat && IGA.sezionatura >= 25)
+					//Upgrade are shot to be more powerful
+					proj_to_shoot = /obj/item/projectile/plasma/light
 
 		//So useful! an extra shot!
 		if(H.stats.getPerk(PERK_SIDE_LOADING))
@@ -80,18 +88,21 @@
 				H.sanity.changeLevel(-15)
 
 	stored_matter -= projectile_cost
-	return new projectile_type(src)
+	return new proj_to_shoot(src)
 
 
 /obj/item/gun/matter/seal/resolve_attackby(atom/target, mob/user, params)
 	var/glasses = FALSE
 	var/fae = FALSE
+	var/hat = FALSE
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
 		if(istype(H.glasses, /obj/item/clothing/glasses/firefly_glasses))
 			glasses = TRUE
 		if(istype(H.belt, /obj/item/device/lighting/toggleable/lantern/fae))
 			fae = TRUE
+		if(istype(H.head, /obj/item/clothing/head/waxy_gaze))
+			hat = TRUE
 
 	if(isliving(target) && ishuman(user))
 		var/mob/living/M = target
@@ -110,6 +121,17 @@
 					force += IGA.ammo_shots
 					force += IGA.sezionatura / 10
 
+					//New target new candle to cut down
+					if(IGA.sezionatura >= 35 && hat && M.health >= M.maxHealth)
+						stored_matter += 1
+						if(stored_matter > max_stored_matter)
+							Fire(M, user, pointblank=glasses)
+							stored_matter = max_stored_matter
+						else
+							playsound(src, 'sound/items/matchstrike.ogg', 20, 1, 1)
+							M.adjust_fire_stacks(1 + glasses)
+							M.IgniteMob()
+
 					if(IGA.sezionatura >= 15)
 						M.adjust_fire_stacks(2 + glasses)
 						M.IgniteMob()
@@ -117,10 +139,15 @@
 						if(stored_matter > 0)
 							M.adjust_fire_stacks(1)
 							stored_matter -= 0.1
+						//Debuff the enemy!
+						if(hat && !M.stats.getPerk(PERK_BLOOD_LUST) && !M.stats.getPerk(PERK_CONTEMPT_GAZE))
+							M.emote("glare")
+							playsound(src, 'sound/items/cigs_lighters/inhale.ogg', 20, 1, 1)
+							M.stats.addPerk(PERK_CONTEMPT_GAZE)
 
 					//Seal down their movements
 					if(IGA.sezionatura >= 10 && stored_matter > 0)
-						M.entanglement += 1.5 + glasses + (IGA.sezionatura / 100)
+						M.entanglement += 1.5 + glasses + (IGA.sezionatura / 100) + (hat * 0.5)
 						playsound(src, 'sound/items/smoking.ogg', 20, 1, 1)
 						stored_matter -= 0.1
 
@@ -179,6 +206,10 @@
 									force += clamp(IGA.sezionatura, 10 + M.fire_stacks, 1)
 									if(glasses)
 										force += min(IGA.sezionatura, 3)
+									if(hat)
+										Fire(M, user, pointblank=glasses)
+										playsound(src, 'sound/items/cigs_lighters/matchstick_lit.ogg', 20, 1, 1)
+
 
 						else
 							if(stored_matter > 3 && IGA.sezionatura >= 7 && M.fire_stacks > 2 && M.fire_stacks < 5)
@@ -199,14 +230,14 @@
 						if(M.fire_stacks > 0)
 							M.adjust_fire_stacks(-1)
 						M.handle_fire()
-						M.fireloss += min(IGA.sezionatura, 10 + M.fire_stacks)
+						M.fireloss += min(IGA.sezionatura, 10 + M.fire_stacks + hat)
 						if(glasses)
-							M.fireloss += min(IGA.sezionatura, 3)
+							M.fireloss += min(IGA.sezionatura, 3 + hat)
 					else
 						//We cant heal fixed damage if we are a human
-						force += min(IGA.sezionatura, 10 + M.fire_stacks)
+						force += min(IGA.sezionatura, 10 + M.fire_stacks + hat)
 						if(glasses)
-							force += min(IGA.sezionatura, 3)
+							force += min(IGA.sezionatura, 3 + hat)
 
 			//If we have a fea then try and tell us that we are stupid and wrong
 			if(wielded && fae)
