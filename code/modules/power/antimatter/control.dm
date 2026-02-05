@@ -234,6 +234,16 @@
 /obj/machinery/power/am_control_unit/proc/toggle_power()
 	active = !active
 	var/alert_msg = "Antimatter Engine [active ? "starting up.":"shutting down."]"
+	for(var/obj/machinery/am_shielding/ams in linked_shielding)
+		if(ams.icon_state == "core_inactive" || \
+			ams.icon_state == "core_active" || \
+			ams.icon_state == "core_activating" || \
+			ams.icon_state == "core_activated" || \
+			ams.icon_state == "core_desactivating")
+			continue
+		else
+			ams.update_icon()
+
 	if(active)
 		use_power = 2
 		visible_message("The [src.name] starts up.")
