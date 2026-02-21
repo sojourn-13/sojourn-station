@@ -324,6 +324,15 @@
 	if(locate(/obj/effect/overlay/wallrot) in src)
 		to_chat(user, SPAN_WARNING("There is fungus growing on [src]."))
 
+	if(isliving(user))
+		var/mob/living/L = user
+		if(L.stats.getPerk(PERK_NO_OBFUSCATION))
+			var/damage_needed = material.hardness
+			if(reinf_material.hardness)
+				damage_needed += reinf_material.hardness
+			to_chat(usr, SPAN_NOTICE("To deal damage to this wall section you will need a weapon that deals over [damage_needed] structural force. \
+			This assessment does not account for Wall Rot or Projectile Damage"))
+
 //Damage
 
 /turf/simulated/wall/melt()
