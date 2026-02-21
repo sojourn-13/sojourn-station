@@ -333,7 +333,7 @@
 
 //Fae Lure Breakdown
 /datum/breakdown/negative/fae_lure
-	name = "Psionic Recovery"
+	name = "Fae Chimming"
 	duration = 0
 	restore_sanity_post = 300
 
