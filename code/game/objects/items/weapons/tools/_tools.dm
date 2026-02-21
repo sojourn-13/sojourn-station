@@ -285,6 +285,8 @@
 
 	data["max_upgrades"] = max_upgrades
 
+	data["structure_damage_factor"] = structure_damage_factor
+
 	var/list/attachments = list()
 	for(var/atom/A in item_upgrades)
 		var/datum/asset/spritesheet_batched/tool_upgrades/T = get_asset_datum(/datum/asset/spritesheet_batched/tool_upgrades)

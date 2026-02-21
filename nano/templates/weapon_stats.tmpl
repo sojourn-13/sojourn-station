@@ -85,10 +85,16 @@
 				{{:helper.displayBar(data.force, 0, data.force_max, '', data.force)}}
 			</div>
 		<div class="itemLabel">
-			Armor penetration:
+			Armor Divisor:
 		</div>
 			<div class="itemContent">
 				{{:helper.displayBar(data.armor_divisor, 0, 100, '', data.armor_divisor + '%')}}
+			</div>
+		<div class="itemLabel">
+			Structure Damage Factor:
+		</div>
+			<div class="itemContent">
+				{{:helper.displayBar(data.structure_damage_factor, 0, 100, '', data.structure_damage_factor + '%')}}
 			</div>
 
 		{{if data.caliber}}
@@ -194,6 +200,13 @@
 			</div>
 				<div class="itemContent">
 					{{:data.projectile_recoil}}
+				</div>
+
+			<div class="itemLabel">
+				Structure Damage:
+			</div>
+				<div class="itemContent">
+					{{:data.get_structure_damage}}
 				</div>
 		</div>
 	</div>

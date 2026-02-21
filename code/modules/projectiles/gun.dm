@@ -1133,7 +1133,8 @@
 	var/list/melee_stats = list()
 
 	melee_stats += list(list("name" = "Melee Capabilities", "type" = "ProgressBar", "value" = force, "max" = initial(force) * 10))
-	melee_stats += list(list( "name" = "Armor Divisor", "type" = "AnimatedNumber", "value" = armor_divisor, "max" = 10))
+	melee_stats += list(list("name" = "Armor Divisor", "type" = "AnimatedNumber", "value" = armor_divisor, "max" = 10))
+	melee_stats += list(list("name" = "Structure Damage Factor", "type" = "AnimatedNumber", "value" = structure_damage_factor, "max" = 10))
 
 	stats["Physical Details"] = melee_stats
 
@@ -1206,6 +1207,8 @@
 	data += list(list("name" = "Overall Pain", "type" = "String", "value" = (P.get_pain_damage()) * proj_agony_multiplier))
 	data += list(list("name" = "Wound Scale", "type" = "String", "value" = P.wounding_mult + wound_mult_addition))
 	data += list(list("name" = "Recoil Multiplier", "type" = "String", "value" = P.recoil))
+	data += list(list("name" = "Structure Damage", "type" = "String", "value" = P.get_structure_damage()))
+
 
 	return data
 

@@ -218,6 +218,20 @@
 		if (!(Proj.testing))
 			burn(500)
 
+	//Projectiles get increased buffs against walls and such, this is to simulate punch through
+	if(reinf_material)
+		if(proj_damage > material.hardness * 0.5 + reinf_material.hardness * 0.5)
+			proj_damage -= (material.hardness * 0.5) + (reinf_material.hardness * 0.5)
+		else
+			return //If we dont deal damage just stop the whole thing
+	else
+		if(proj_damage > material.hardness * 0.5)
+			proj_damage -= (material.hardness * 0.5)
+		else
+			return //If we dont deal damage just stop the whole thing
+
+
+
 	if(Proj.can_ricochet && proj_damage != 0 && (src.x != Proj.starting.x) && (src.y != Proj.starting.y))
 		var/ricochetchance = 1
 		if(proj_damage <= 60)
@@ -239,10 +253,14 @@
 				new /obj/effect/sparks(get_turf(Proj))
 			return PROJECTILE_CONTINUE // complete projectile permutation
 
+	//Below commit is left for archival reasons, it is a bit outdated in numbers
+
 	//cut some projectile damage here and not in projectile.dm, because we need not to all things what are using get_str_dam() becomes thin and weak.
 	//in general, bullets have 35-95 damage, and they are plased in ~30 bullets magazines, so 50*30 = 150, but plasteel walls have only 400 hp =|
 	//but you may also increase materials thickness or etc.
-	proj_damage = round(Proj.get_structure_damage() / 3)//Yo may replace 3 to 5-6 to make walls fucking stronk as a Poland
+	//proj_damage = round(Proj.get_structure_damage() / 3)//Yo may replace 3 to 5-6 to make walls fucking stronk as a Poland
+
+	//We do not use the above as now hardness acts as an armor in a more proper way
 
 	//cap the amount of damage, so that things like emitters can't destroy walls in one hit.
 	var/damage_taken = 0
