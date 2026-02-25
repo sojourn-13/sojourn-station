@@ -149,6 +149,35 @@
 	icon_state = "tree"
 	pixel_x = -45
 	pixel_y = -16
+	var/walnut_growth = 0
+	var/seeks = 0
+	var/seeks_needed = 10
+
+/obj/structure/flora/tree/jungle/Initialize()
+	..()
+	if(prob(65))
+		walnut_growth = rand(1, 5)
+
+/obj/structure/flora/tree/jungle/attack_hand(mob/user as mob)
+	if(isliving(user))
+		var/mob/living/L = user
+		if(walnut_growth)
+			var/seek_delay = max(rand(25, 30) - L.learnt_tasks.get_task_mastery_level("WALNUT_SEEKER"), 6)
+			while(seeks < seeks_needed)
+				seek_delay = max(rand(25, 30) - L.learnt_tasks.get_task_mastery_level("WALNUT_SEEKER"), 6)
+				if(do_after(user, seek_delay))
+					L.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/walnut_seeker, "WALNUT_SEEKER", skill_gained = 0.5, learner = L)
+					seeks += 0.5 + L.learnt_tasks.get_task_mastery_level("WALNUT_SEEKER")
+				else
+					seeks = 0
+					break
+			if(seeks >= seeks_needed)
+				seeks = 0
+				walnut_growth -= 1
+				visible_message(SPAN_NOTICE("[L] plucks a hidden mushroom walnut from the [src]."))
+				var/obj/item/bolus_craftable/mushroom_walnut/mw = new var/obj/item/bolus_craftable/mushroom_walnut(L.loc)
+				L.put_in_hands(mw)
+	..()
 
 /obj/structure/flora/tree/jungle/baracade
 	name = "fallen tree"
@@ -202,6 +231,34 @@
 	icon_state = "tree"
 	pixel_x = -30
 	pixel_y = -16
+	var/walnut_growth = 0
+	var/seeks = 0
+	var/seeks_needed = 10
+
+/obj/structure/flora/tree/jungle_small/Initialize()
+	..()
+	if(prob(25))
+		walnut_growth = rand(0, 3)
+
+/obj/structure/flora/tree/jungle_small/attack_hand(mob/user as mob)
+	if(isliving(user))
+		var/mob/living/L = user
+		if(walnut_growth)
+			var/seek_delay = max(rand(15, 20) - L.learnt_tasks.get_task_mastery_level("WALNUT_SEEKER"), 3)
+			while(seeks < seeks_needed)
+				seek_delay = max(rand(15, 20) - L.learnt_tasks.get_task_mastery_level("WALNUT_SEEKER"), 3)
+				if(do_after(user, seek_delay))
+					L.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/walnut_seeker, "WALNUT_SEEKER", skill_gained = 0.5, learner = L)
+					seeks += 1 + L.learnt_tasks.get_task_mastery_level("WALNUT_SEEKER")
+				else
+					seeks = 0
+					break
+			if(seeks >= seeks_needed)
+				seeks = 0
+				walnut_growth -= 1
+				var/obj/item/bolus_craftable/mushroom_walnut/mw = new var/obj/item/bolus_craftable/mushroom_walnut(L.loc)
+				L.put_in_hands(mw)
+	..()
 
 /obj/structure/flora/tree/jungle_small/variant1
 	icon = 'icons/obj/flora/jungletreesmall.dmi'
