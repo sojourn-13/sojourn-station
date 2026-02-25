@@ -175,7 +175,7 @@
 				seeks = 0
 				walnut_growth -= 1
 				visible_message(SPAN_NOTICE("[L] plucks a hidden mushroom walnut from the [src]."))
-				var/obj/item/bolus_craftable/mushroom_walnut/mw = new var/obj/item/bolus_craftable/mushroom_walnut(L.loc)
+				var/obj/item/bolus_craftable/mushroom_walnut/mw = new /obj/item/bolus_craftable/mushroom_walnut(L.loc)
 				L.put_in_hands(mw)
 	..()
 
@@ -256,7 +256,7 @@
 			if(seeks >= seeks_needed)
 				seeks = 0
 				walnut_growth -= 1
-				var/obj/item/bolus_craftable/mushroom_walnut/mw = new var/obj/item/bolus_craftable/mushroom_walnut(L.loc)
+				var/obj/item/bolus_craftable/mushroom_walnut/mw = new /obj/item/bolus_craftable/mushroom_walnut(L.loc)
 				L.put_in_hands(mw)
 	..()
 
