@@ -111,7 +111,18 @@ Has ability of every roach.
 		if(ishuman(L))
 			H = L
 		if(H)
+
 			if (H.paralysis || H.sleeping || H.resting || H.lying || H.weakened)
+				//Likely the most useful power to block
+				if(H.stats.getPerk(PERK_SHIN_DEEMAINTS))
+					var/obj/item/implant/core_implant/cruciform/CI
+					CI = H.get_core_implant(/obj/item/implant/core_implant/cruciform)
+					if(CI && CI.active)
+						if(CI.power >= 8) //Do to being blocking being eighted
+							CI.power -= 8
+							. = ..()
+							return
+
 				H.visible_message(SPAN_DANGER("\the [src] absorbs \the [L] into its mass!"))
 				H.loc = src
 				maxHealth += 250
@@ -151,6 +162,15 @@ Has ability of every roach.
 		var/datum/genetics/mutation/injecting_mutation = new fail_mutation_path()
 		injector.addMutation(injecting_mutation)
 		for(var/mob/living/carbon/human/captive in captives)
+
+			//Block injecting mutations into are captive(s) if even once of us has this.
+			if(captive.stats.getPerk(PERK_SHIN_DEEMAINTS))
+				var/obj/item/implant/core_implant/cruciform/CI
+				CI = captive.get_core_implant(/obj/item/implant/core_implant/cruciform)
+				if(CI && CI.active)
+					if(CI.power >= 1.8) //Do to being blocking being eighted
+						CI.power -= 1.8
+						break
 
 			if(captive.species.reagent_tag == IS_SYNTHETIC && (captive.getBruteLoss() < 300))
 				to_chat(captive, SPAN_DANGER(pick("The immense strength of the creature is crushing. Wasn't... Flesh supposed to be weak?")))

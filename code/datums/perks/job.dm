@@ -154,7 +154,6 @@
 	desc = "Your cruciform is more than just a symbol of faith. Should you ever perish, it will perform an emergency revival and stablization that restores your body and casts light, calls for help and restores your cruciforms faith, during which you'll be unconscious. Restores a large amount of blood for non-synthetics."
 	icon_state = "regrowth" // https://game-icons.net/1x1/delapouite/stump-regrowth.html
 
-
 /datum/perk/community_of_saints
 	name = "Community of the Saints"
 	desc = "Your cruciform connects you to all other believers, but such connection can be distracting as well as beneficial. You take 25% longer to complete all tool-based actions that aren't instantaneous."
@@ -164,6 +163,14 @@
 	name = "Channeling"
 	desc = "You know how to channel spiritual energy during rituals. You gain additional skill points \
 			during group rituals, and have an increased regeneration of cruciform energy."
+	icon_state = "channeling"
+
+/datum/perk/shin_deemaints
+	name = "Shin (心) - Procuration Proxy"
+	desc = "Cor et mens fulgentes." // "A shining heart and mind"
+	//Little bit of feedback if we lose the perk, its easy to lose per say, but still a toggle
+	gain_text = "A protective flame burns inside you."
+	lose_text = "The flame holds back from once again from protecting."
 	icon_state = "channeling"
 
 //End of church perks

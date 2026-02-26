@@ -125,6 +125,7 @@
 //Fancy Chaos level attack upgrades
 
 //Memory: the shadow fella, when they attack teleport behind the person, regardless of whats in are way, (like walls n stuff)
+//Can not be blocked by church shin, as its affect is to not actively harming the churchie
 /mob/living/carbon/superior/psi/memory/UnarmedAttack(atom/A, proximity)
 	. = ..()
 
@@ -143,6 +144,18 @@
 	if(GLOB.chaos_level >= 2)
 		if(ishuman(A))
 			var/mob/living/carbon/human/H = A
+
+			//Church blocking happens before psionic blocking
+			if(H.stats.getPerk(PERK_SHIN_DEEMAINTS))
+				var/obj/item/implant/core_implant/cruciform/CI
+				CI = H.get_core_implant(/obj/item/implant/core_implant/cruciform)
+
+				if(CI && CI.active)
+					if(CI.power >= 3)
+						CI.power -= 3
+						. = ..()
+						return
+
 			if(!H.psi_blocking > 0)
 				if(istype(H.head, /obj/item/clothing)) //We only knock off hats
 					var/obj/item/clothing/hat = H.head
@@ -155,6 +168,18 @@
 	if(GLOB.chaos_level >= 2)
 		if(ishuman(A))
 			var/mob/living/carbon/human/H = A
+
+			//Church blocking happens before psionic blocking
+			if(H.stats.getPerk(PERK_SHIN_DEEMAINTS))
+				var/obj/item/implant/core_implant/cruciform/CI
+				CI = H.get_core_implant(/obj/item/implant/core_implant/cruciform)
+
+				if(CI && CI.active)
+					if(CI.power >= 5)
+						CI.power -= 5
+						. = ..()
+						return
+
 			if(!H.psi_blocking > 0)
 				if(!istype(H.head, /obj/item/clothing) && !repeat_attack) //if we dont have a hat we attack again!
 					UnarmedAttack(A,proximity,TRUE)
@@ -165,6 +190,16 @@
 	if(GLOB.chaos_level >= 2)
 		if(ishuman(A))
 			var/mob/living/carbon/human/H = A
+
+			//Church blocking happens before psionic blocking
+			if(H.stats.getPerk(PERK_SHIN_DEEMAINTS))
+				var/obj/item/implant/core_implant/cruciform/CI
+				CI = H.get_core_implant(/obj/item/implant/core_implant/cruciform)
+				if(CI && CI.active)
+					if(CI.power >= 5)
+						CI.power -= 5
+						. = ..()
+						return
 
 			if(!H.psi_blocking > 0)
 				if(!H.wear_mask)
@@ -188,6 +223,17 @@
 	if(GLOB.chaos_level >= 2)
 		if(ishuman(A))
 			var/mob/living/carbon/human/H = A
+
+			//Church blocking happens before psionic blocking
+			if(H.stats.getPerk(PERK_SHIN_DEEMAINTS))
+				var/obj/item/implant/core_implant/cruciform/CI
+				CI = H.get_core_implant(/obj/item/implant/core_implant/cruciform)
+				if(CI && CI.active)
+					if(CI.power >= 3)
+						CI.power -= 3
+						. = ..()
+						return
+
 			var/knock_out_of_hand = TRUE
 			if(!H.psi_blocking > 0)
 				if(H.has_shield())

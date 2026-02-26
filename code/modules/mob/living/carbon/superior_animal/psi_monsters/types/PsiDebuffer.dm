@@ -98,6 +98,8 @@
 		var/mob/living/carbon/human/H = A
 		var/obj/item/organ/internal/psionic_tumor/PT = H.random_organ_by_process(BP_PSION)
 
+
+
 		//Yoink, this is baseline
 		if(prob(75) && PT)
 			if(PT && PT.psi_points > 0)
@@ -113,6 +115,11 @@
 			var/obj/item/implant/core_implant/cruciform/CI
 			CI = H.get_core_implant(/obj/item/implant/core_implant/cruciform)
 			if(CI)
+				if(H.stats.getPerk(PERK_SHIN_DEEMAINTS))
+					if(CI.power >= 2)
+						CI.power -= 2
+						return
+
 				CI.power -= GLOB.chaos_level
 				visible_message(SPAN_DANGER("[src] takes a deep breath well holding on [H.name]'s chest!"))
 				to_chat(H, "[src] attacks leave you short of breath.")
@@ -172,7 +179,8 @@
 				CI = H.get_core_implant(/obj/item/implant/core_implant/cruciform)
 				if(CI && CI.active)
 					CI.power += GLOB.chaos_level
-					if(CI.power > CI.max_power)
+														//Sure over power us! >:3c
+					if(CI.power > CI.max_power && !H.stats.getPerk(PERK_SHIN_DEEMAINTS))
 						CI.power = 0
 
 	..()

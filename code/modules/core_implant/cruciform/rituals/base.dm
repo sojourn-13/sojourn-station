@@ -304,3 +304,18 @@
 		CI.restore_power(10)
 
 		return TRUE
+
+/datum/ritual/cruciform/base/anti_deepmaints_mechanics //"Erm these cool mechanics that you painstakingly coded? Well to bad im churchie B) I play on easy mode"
+	name = "Procuration Proxy" //Has to be done like this to make the book work, as 心 isnt reconised as a character
+	phrase = "Cor et mens fulgentes." //"A shining heart and mind"
+	desc = "Shin (心) Procuration Proxy- A litany that will channel the users Faith into a powerful enhancement of the mind and body, limiting Unholy Powers affects. \
+	When preventing an Unholy Power's attack will drain some Faith, lacking proper Faith will cancle the Shin (心) - Procuration Proxy protection."
+	power = 10
+	ignore_stuttering = TRUE
+
+/datum/ritual/cruciform/base/anti_deepmaints_mechanics/perform(mob/living/carbon/human/H, obj/item/implant/core_implant/cruciform/C)
+	if(H.stats.getPerk(PERK_SHIN_DEEMAINTS))
+		H.stats.removePerk(PERK_SHIN_DEEMAINTS)
+	else
+		H.stats.addPerk(PERK_SHIN_DEEMAINTS)
+		return TRUE
