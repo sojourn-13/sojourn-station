@@ -27,14 +27,9 @@
 
 	atmos_canpass = CANPASS_NEVER
 
-
-
 /obj/machinery/smartfridge/secure
 	name = "\improper Secure SmartFridge"
 	is_secure = 1
-
-
-
 
 /*******************
 *   Seed Storage
@@ -63,7 +58,6 @@
 	desc = "The panel says anyone may take what they like."
 	req_one_access = null
 
-
 /*******************
 *   Xenobio Slime Fridge
 ********************/
@@ -78,8 +72,6 @@
 	if(istype(O,/obj/item/slime_potion))
 		return 1
 	return 0
-
-
 
 /*******************
 *   Chemistry Medicine Storage
@@ -189,11 +181,17 @@
 				S.name = "dried [S.name]"
 				S.color = "#AAAAAA"
 			else
-				var/D = S.dried_type
+				//Assume we are an item
+				var/obj/item/D = S.dried_type
 				D = new D(src)
 				if (istype(D, /obj/item/reagent_containers/snacks))
 					var/obj/item/reagent_containers/snacks/SD = D
 					SD.dry = TRUE //So we dont get stuck in an endless loop of drying, transforming and drying again
+				else
+					D.forceMove(drop_location())
+					SStgui.update_uis(src)
+
+
 				qdel(S)
 		else
 			drying_something = TRUE

@@ -247,8 +247,6 @@
 	set_trait(TRAIT_IDEAL_HEAT, 298)
 	set_trait(TRAIT_IDEAL_LIGHT, 7)
 
-
-
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Apples/varieties.
 /datum/seed/apple
@@ -260,7 +258,6 @@
 	kitchen_tag = "apple"
 	//Random no research
 	companions = list("grass", "lime")
-
 
 /datum/seed/apple/New()
 	..()
@@ -287,6 +284,7 @@
 	mutants = null
 	chems = list("applejuice" = list(1,10), "gold" = list(1,5))
 	kitchen_tag = "goldapple"
+	fruit_dried_type = /obj/item/stack/ore/gold
 
 /datum/seed/apple/gold/New()
 	..()
@@ -516,7 +514,6 @@
 	mutants = null
 	chems = list("nutriment" = list(1), "stoxin" = list(3,3), "space_drugs" = list(1,25))
 
-
 /datum/seed/mushroom/hallucinogenic/strong/New()
 	..()
 	set_trait(TRAIT_PRODUCTION,1)
@@ -587,6 +584,7 @@
 	mutants = list("metalcap")
 	kitchen_tag = "towercap"
 	companions = list("metal cap")
+	fruit_dried_type = /obj/item/stack/ore/coal/small
 
 /datum/seed/mushroom/towercap/New()
 	..()
@@ -606,6 +604,7 @@
 	mutants = null
 	evolutions = list("plasmacap"=list("plasma"))
 	companions = list("tower cap")
+	fruit_dried_type = /obj/item/stack/ore/slag
 
 /datum/seed/mushroom/towercap/metalcap/New()
 	..()
@@ -620,12 +619,12 @@
 	materials = list(MATERIAL_PLASTEEL = 1)
 	evolutions = null
 	origin_tech = list(TECH_MATERIAL = 2, TECH_PLASMA = 2)
+	fruit_dried_type = /obj/item/stack/ore/coal/dust
 
 /datum/seed/mushroom/towercap/metalcap/plasmacap/New()
 	..()
 	set_trait(TRAIT_PRODUCT_COLOUR,"#FF0066")
 	set_trait(TRAIT_PLANT_COLOUR,  "#46B543")
-
 
 /datum/seed/mushroom/glowshroom
 	name = "glowshroom"
@@ -654,6 +653,7 @@
 	display_name = "plastellium"
 	mutants = null
 	chems = list("plasticide" = list(1,10))
+	fruit_dried_type = /obj/item/stack/material/plastic
 
 /datum/seed/mushroom/plastic/New()
 	..()
@@ -738,8 +738,6 @@
 		"mutagen",
 		"chloralhydrate"
 		)
-
-
 
 	var/new_chem = pick(possible_chems)
 	chems[new_chem] = list(rand(1,5),rand(5,10))
@@ -828,6 +826,7 @@
 	display_name = "sunflowers"
 	kitchen_tag = "sunflower"
 	companions = list("tomato", "blue tomato", "chili", "corn")
+	fruit_dried_type = /obj/item/reagent_containers/snacks/candy/sunflowerseeds
 
 /datum/seed/flower/sunflower/New()
 	..()
@@ -849,6 +848,7 @@
 	chems = list("nutriment" = list(1,10), "sugar" = list(1,5), "grapejuice" = list(10,10))
 	kitchen_tag = "grape"
 	companions = list("tower cap", "strawberries")
+	fruit_dried_type = /obj/item/reagent_containers/snacks/openable/no_raisin/homemade
 
 /datum/seed/grapes/New()
 	..()
@@ -884,6 +884,7 @@
 	chems = list("nutriment" = list(1,10))
 	//0 research done random plant
 	companions = list("tower cap")
+	fruit_dried_type = /obj/item/reagent_containers/snacks/candy/pistachios_pack/homemade
 
 /datum/seed/peanuts/New()
 	..()
