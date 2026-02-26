@@ -6,6 +6,10 @@
 	var/projectile_cost = 1
 	var/projectile_type
 
+	var/item_loader
+	var/item_amount = 1
+	var/item_text
+
 /obj/item/gun/matter/attackby(obj/item/I, mob/user)
 	var/obj/item/stack/material/M = I
 	if(istype(M) && M.material.name == matter_type)
@@ -13,8 +17,18 @@
 		if(M.use(amount))
 			stored_matter += amount
 		to_chat(user, "<span class='notice'>You load [amount] [matter_type] into \the [src].</span>")
-	else
-		..()
+		return TRUE
+
+	if(item_loader && max_stored_matter > stored_matter)
+		if(istype(I, item_loader) && user.canUnEquip(I))
+			user.drop_from_inventory(I)
+			qdel(I)
+			stored_matter += item_amount
+			if(stored_matter > max_stored_matter)
+				stored_matter = max_stored_matter
+			return TRUE
+
+	..()
 
 /obj/item/gun/matter/consume_next_projectile()
 	if(stored_matter < projectile_cost)
@@ -24,4 +38,7 @@
 
 /obj/item/gun/matter/examine(user)
 	. = ..()
-	to_chat(user, "It holds [stored_matter]/[max_stored_matter] [matter_type].")
+	if(matter_type)
+		to_chat(user, "It holds [stored_matter]/[max_stored_matter] [matter_type].")
+	if(item_text)
+		to_chat(user, "It holds [stored_matter]/[max_stored_matter] [item_text].")

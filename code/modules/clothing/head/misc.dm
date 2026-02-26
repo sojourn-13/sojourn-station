@@ -657,9 +657,7 @@ obj/item/clothing/head/sunhat/verb/toggle_style()
 	icon_state = "general_hood"
 	item_state = "general_hood"
 
-
 /obj/item/clothing/head/hev
-
 	name = "Hazardous Enviroment Protection suit helmet"
 	desc = "A hood that comes with the hazardous protection suit."
 	icon_state = "rad"
@@ -688,3 +686,10 @@ obj/item/clothing/head/sunhat/verb/toggle_style()
 	min_cold_protection_temperature = SPACE_HELMET_MIN_COLD_PROTECTION_TEMPERATURE
 	unacidable = TRUE
 	price_tag = 1000
+
+
+/obj/item/clothing/head/waxy_gaze
+	name = "\"Waxy Gaze\" wide brim"
+	desc = "A red wide brim hat made by hand, woven with fine silks and threads each thread dipped in candle wax."
+	icon_state = "waxy_gaze"
+	item_state = "waxy_gaze"
