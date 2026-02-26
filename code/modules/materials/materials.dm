@@ -121,7 +121,7 @@ var/list/name_to_material
 	var/list/window_options = list()
 
 	// Damage values.
-	var/hardness = 60            // Prob of wall destruction by hulk, used for edge damage in weapons.
+	var/hardness = 10            // Prob of wall destruction by hulk, used for edge damage in weapons.
 	var/weight = 20              // Determines blunt damage/throwforce for weapons.
 
 	// Noise when someone is faceplanted onto a table made of this material.
@@ -277,7 +277,7 @@ var/list/name_to_material
 	opacity = 0.4
 	shard_type = SHARD_SHARD
 	tableslam_noise = 'sound/effects/Glasshit.ogg'
-	hardness = 100
+	hardness = 50
 	stack_origin_tech = list(TECH_MATERIAL = 6)
 
 /material/durasteel
@@ -286,7 +286,7 @@ var/list/name_to_material
 	icon_colour = "#6EA7BE"
 	integrity = 600
 	melting_point = 7000
-	hardness = 100
+	hardness = 50
 	weight = 28
 	explosion_resistance = 75
 	stack_origin_tech = list(TECH_MATERIAL = 8)
@@ -296,7 +296,7 @@ var/list/name_to_material
 	stack_type = /obj/item/stack/material/gold
 	icon_colour = "#EDD12F"
 	weight = 24
-	hardness = 40
+	hardness = 20
 	stack_origin_tech = list(TECH_MATERIAL = 4)
 	sheet_singular_name = "ingot"
 	sheet_plural_name = "ingots"
@@ -310,7 +310,7 @@ var/list/name_to_material
 	stack_type = /obj/item/stack/material/silver
 	icon_colour = "#D1E6E3"
 	weight = 22
-	hardness = 50
+	hardness = 30
 	stack_origin_tech = list(TECH_MATERIAL = 3)
 	sheet_singular_name = "ingot"
 	sheet_plural_name = "ingots"
@@ -322,7 +322,7 @@ var/list/name_to_material
 	icon_base = "stone"
 	icon_colour = "#FC2BC5"
 	shard_type = SHARD_SHARD
-	hardness = 30
+	hardness = 10
 	stack_origin_tech = list(TECH_MATERIAL = 2, TECH_PLASMA = 2)
 	door_icon_base = "stone"
 	sheet_singular_name = "crystal"
@@ -353,7 +353,7 @@ var/list/name_to_material
 	icon_colour = "#D9C179"
 	shard_type = SHARD_STONE_PIECE
 	weight = 22
-	hardness = 55
+	hardness = 20
 	door_icon_base = "stone"
 	sheet_singular_name = "brick"
 	sheet_plural_name = "bricks"
@@ -362,7 +362,7 @@ var/list/name_to_material
 	name = MATERIAL_MARBLE
 	icon_colour = "#AAAAAA"
 	weight = 26
-	hardness = 100
+	hardness = 30
 	integrity = 201 //hack to stop kitchen benches being flippable, todo: refactor into weight system
 	stack_type = /obj/item/stack/material/marble
 
@@ -390,7 +390,7 @@ var/list/name_to_material
 	icon_reinf = "reinf_over"
 	icon_colour = PLASTEEL_COLOUR//"#777777"
 	explosion_resistance = 25
-	hardness = 80
+	hardness = 25
 	weight = 23
 	stack_origin_tech = list(TECH_MATERIAL = 2)
 	hitsound = 'sound/weapons/genhit.ogg'
@@ -412,7 +412,7 @@ var/list/name_to_material
 	integrity = 100
 	shard_type = SHARD_SHARD
 	tableslam_noise = 'sound/effects/Glasshit.ogg'
-	hardness = 30
+	hardness = 5
 	weight = 15
 	door_icon_base = "stone"
 	destruction_desc = "shatters"
@@ -517,7 +517,7 @@ var/list/name_to_material
 	return 1
 
 /material/glass/proc/is_reinforced()
-	return (hardness > 35) //todo
+	return (hardness > 5) //todo
 
 /material/glass/reinforced
 	name = MATERIAL_RGLASS
@@ -529,7 +529,7 @@ var/list/name_to_material
 	integrity = 100
 	shard_type = SHARD_SHARD
 	tableslam_noise = 'sound/effects/Glasshit.ogg'
-	hardness = 40
+	hardness = 10
 	weight = 30
 	stack_origin_tech = "materials=2"
 	composite_material = list(MATERIAL_STEEL = 1,MATERIAL_GLASS = 1)
@@ -551,6 +551,7 @@ var/list/name_to_material
 	created_window_full = /obj/structure/window/plasmabasic/full
 	wire_product = null
 	rod_product = /obj/item/stack/material/glass/plasmarglass
+	hardness = 15
 
 /material/glass/plasma/reinforced
 	name = MATERIAL_RPLASMAGLASS
@@ -560,7 +561,7 @@ var/list/name_to_material
 	composite_material = list() //todo
 	created_window = /obj/structure/window/reinforced/plasma
 	created_window_full = /obj/structure/window/reinforced/plasma/full
-	hardness = 40
+	hardness = 20
 	weight = 30
 	//composite_material = list() //todo
 	rod_product = null
@@ -572,7 +573,7 @@ var/list/name_to_material
 	icon_base = "solid"
 	icon_reinf = "reinf_over"
 	icon_colour = "#CCCCCC"
-	hardness = 10
+	hardness = 5
 	weight = 12
 	melting_point = T0C+371 //assuming heat resistant plastic
 	stack_origin_tech = list(TECH_MATERIAL = 3)
@@ -645,7 +646,7 @@ var/list/name_to_material
 	explosion_resistance = 2
 	shard_type = SHARD_SPLINTER
 	shard_can_repair = 0 // you can't weld splinters back into planks
-	hardness = 15
+	hardness = 10
 	weight = 18
 	melting_point = T0C+300 //okay, not melting in this case, but hot enough to destroy wood
 	ignition_point = T0C+288

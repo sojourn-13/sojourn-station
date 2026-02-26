@@ -60,12 +60,9 @@
 	add_fingerprint(user)
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	var/rotting = (locate(/obj/effect/overlay/wallrot) in src)
-	if (HULK in user.mutations)
-		if (rotting || !prob(material.hardness))
-			success_smash(user)
-		else
-			fail_smash(user)
-			return 1
+	if (HULK in user.mutations && !user.a_intent == I_HELP)
+		take_damage(75)
+		return TRUE
 
 	try_touch(user, rotting)
 
@@ -82,13 +79,21 @@
 		return
 
 	if(rotting)
-		return success_smash(user)
+		damage *= 2.5 //If we are rotting then deal more damage
 
 	if(reinf_material)
-		if(damage >= max(material.hardness,reinf_material.hardness))
-			return success_smash(user)
-	else if(damage >= material.hardness)
-		return success_smash(user)
+		if(damage - (material.hardness + reinf_material.hardness) > 0)
+			take_damage(damage - (material.hardness + reinf_material.hardness))
+			to_chat(user, SPAN_DANGER("You hit the wall with all your might leaving some damage!"))
+			user.do_attack_animation(src)
+			return
+		else
+			return fail_smash(user)
+	else if(damage > material.hardness)
+		take_damage(damage - material.hardness)
+		to_chat(user, SPAN_DANGER("You hit the wall with all your might leaving some damage!"))
+		user.do_attack_animation(src)
+		return
 	return fail_smash(user)
 
 /turf/simulated/wall/attackby(obj/item/I, mob/user)
@@ -232,24 +237,31 @@
 		return
 
 	else if(!istype(I,/obj/item/rcd) && !istype(I, /obj/item/reagent_containers))
+
 		if(!I.force)
 			return attack_hand(user)
+
 		var/attackforce = I.force*I.structure_damage_factor
-		var/dam_threshhold = material.integrity
-		if(reinf_material)
-			dam_threshhold = CEILING(max(dam_threshhold,reinf_material.integrity) * 0.5, 1)
-		var/dam_prob = min(100,material.hardness*1.5)
+
 		if (locate(/obj/effect/overlay/wallrot) in src)
-			dam_prob *= 0.5 //Rot makes reinforced walls breakable
-		if(dam_prob < 100 && attackforce > (dam_threshhold/10))
-			playsound(src, hitsound, 80, 1)
-			if(!prob(dam_prob))
-				visible_message(SPAN_DANGER("\The [user] attacks \the [src] with \the [I] and it [material.destruction_desc]!"))
-				dismantle_wall(1)
-			else
-				visible_message(SPAN_DANGER("\The [user] attacks \the [src] with \the [I]!"))
+			attackforce *= 2.5 //Rot makes breaking walls way easyer
+
+		if(reinf_material)
+			if(attackforce > material.hardness + reinf_material.hardness)
+				take_damage(attackforce - (material.hardness + reinf_material.hardness))
+				playsound(src, hitsound, 80, 1)
+				to_chat(user, SPAN_DANGER("You hit the wall with [I] leaving some damage!"))
+				user.do_attack_animation(src)
+				return
 		else
-			visible_message(SPAN_DANGER("\The [user] attacks \the [src] with \the [I], but it bounces off!"))
+			if(attackforce > material.hardness)
+				take_damage(attackforce - material.hardness)
+				playsound(src, hitsound, 80, 1)
+				to_chat(user, SPAN_DANGER("You hit the wall with [I] leaving some damage!"))
+				user.do_attack_animation(src)
+				return
+
+		visible_message(SPAN_DANGER("\The [user] attacks \the [src] with \the [I], but it bounces off!"))
 		user.do_attack_animation(src)
 		return
 

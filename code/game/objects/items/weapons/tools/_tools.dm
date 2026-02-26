@@ -223,6 +223,7 @@
 	if (extra_bulk)
 		item_stats += list(list( "name" = "Extra Volume", "type" = "AnimatedNumber", "value" = extra_bulk ))
 	item_stats += list(list( "name" = "Armor Divisor", "type" = "AnimatedNumber", "value" = armor_divisor, "max" = 10))
+	item_stats += list(list( "name" = "Structure Damage Mult", "type" = "AnimatedNumber", "value" = structure_damage_factor, "max" = 10))
 
 	stats["Item Stats"] = item_stats
 
