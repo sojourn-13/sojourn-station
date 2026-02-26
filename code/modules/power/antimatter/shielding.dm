@@ -115,8 +115,19 @@
 	var/turf/T
 	for(var/direction  in cardinal) // Check the four directions
 		T = get_step(src, direction) // Get the turf
-		if(locate(/obj/machinery/am_shielding, T) || locate(/obj/machinery/power/am_control_unit, T)) // Check if there's shielding on that turf
-			dir_sum += direction // Add the direction to the value.
+		var/obj/machinery/am_shielding/ams = locate(/obj/machinery/am_shielding, T)
+		if(ams || locate(/obj/machinery/power/am_control_unit, T)) // Check if there's shielding on that turf
+			if(ams)
+				if(ams.icon_state == "core_inactive" || \
+				ams.icon_state == "core_active" || \
+				ams.icon_state == "core_activating" || \
+				ams.icon_state == "core_activated" || \
+				ams.icon_state == "core_desactivating")
+					continue
+				else
+					dir_sum += direction
+			else
+				dir_sum += direction // Add the direction to the value.
 	icon_state = "shield_[dir_sum]" // Update the icon
 
 	if(core_check()) // Check if we can become a core.
