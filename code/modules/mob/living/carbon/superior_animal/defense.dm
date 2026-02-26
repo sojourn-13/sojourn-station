@@ -4,7 +4,7 @@
 	var/actual_leather_amount = max(0,(leather_amount/2))
 	var/actual_bones_amount = max(0,(bones_amount/2))
 
-	if(isliving(user))
+	if(isliving(user) && user != src)
 		if(user.stats.getPerk(PERK_BUTCHER)) // Master Butcher will now give full amounts defined in the creature's variables. Otherwise, it's only half, and no special items.
 			actual_leather_amount = max(0,(leather_amount))
 			actual_meat_amount = max(1,(meat_amount))
@@ -38,7 +38,7 @@
 			blood_effect.update_icon()
 			qdel(src)
 		else
-			if(isliving(user))
+			if(isliving(user) && user != src)
 				if(user.stats.getPerk(PERK_BUTCHER) || prob(user.learnt_tasks.get_task_mastery_level("BUTCHERING")))
 					if(user != src)
 						user.visible_message(SPAN_DANGER("[user] butchers \the [src] cleanly!"))
@@ -51,7 +51,7 @@
 					user.visible_message(SPAN_DANGER("[user] butchers \the [src] messily!"))
 				gib()
 
-	if(isliving(user))
+	if(isliving(user) && user != src)
 		user.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/butchering, "BUTCHERING", skill_gained = 1, learner = user)
 
 
