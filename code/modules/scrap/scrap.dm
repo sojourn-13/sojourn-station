@@ -105,6 +105,10 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 		if(prob(66))
 			big_item.make_old()
 		qdel(CATCH)
+	else
+		//25% to get a scrap geo
+		if(prob(25))
+			big_item = new/obj/item/scrap_geo(src)
 
 /obj/structure/scrap/proc/try_make_loot()
 	if(loot_generated)
