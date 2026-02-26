@@ -73,7 +73,7 @@
 			data["all_centcom_access"] = all_centcom_access
 		else
 			var/list/regions = list()
-			for(var/i = 1; i <= 7; i++)
+			for(var/i = 1; i <= 9; i++)
 				var/list/accesses = list()
 				for(var/access in get_region_accesses(i))
 					if (get_access_desc(access))
