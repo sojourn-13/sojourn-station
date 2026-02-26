@@ -38,7 +38,7 @@
 			blood_effect.update_icon()
 			qdel(src)
 		else
-			if(isliving(user))
+			if(isliving(user) && user != src)
 				if(user.stats.getPerk(PERK_BUTCHER) || prob(user.learnt_tasks.get_task_mastery_level("BUTCHERING")))
 					if(user != src)
 						user.visible_message(SPAN_DANGER("[user] butchers \the [src] cleanly!"))
