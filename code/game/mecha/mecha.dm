@@ -1331,6 +1331,11 @@ assassination method if you time it right*/
 		log_append_to_last("Permission denied.")
 		return
 
+	var/mob/living/L = user
+	if(L.stats.getPerk(PERK_BLUESPACE_BELLCLOCK))
+		to_chat(user, SPAN_WARNING("Do [L]'s current state of tracking going into a mecha is forbidden."))
+		return
+
 	var/passed
 	if(dna)
 		if(user.dna.unique_enzymes == dna)

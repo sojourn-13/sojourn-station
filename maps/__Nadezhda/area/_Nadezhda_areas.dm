@@ -318,6 +318,7 @@
 	dynamic_lighting = TRUE
 	requires_power = FALSE
 	flags = AREA_FLAG_RAD_SHIELDED
+	is_gp = TRUE
 
 /area/nadezhda/outside/one_star/fo_outside
 	name = "Greyson Grounds"

@@ -90,6 +90,12 @@
 	requires_power = FALSE
 	dynamic_lighting = 0
 
+/area/outpost/gp_scrap_yard
+	name = "GP Automated Scrap Yard"
+	icon_state = "yellow"
+	dynamic_lighting = 0
+	is_gp = TRUE
+
 // Main mining outpost
 /area/outpost/mining_main
 	icon_state = "outpost_mine_main"

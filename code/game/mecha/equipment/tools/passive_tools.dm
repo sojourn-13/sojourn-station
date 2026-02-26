@@ -504,6 +504,11 @@
 		to_chat(usr, SPAN_DANGER("You can't reach the passenger compartment from here."))
 		return
 
+	var/mob/living/L = usr
+	if(L.stats.getPerk(PERK_BLUESPACE_BELLCLOCK))
+		to_chat(usr, SPAN_WARNING("Do [L]'s current state of tracking going into a mecha is forbidden."))
+		return
+
 	if(iscarbon(usr))
 		var/mob/living/carbon/C = usr
 		if(C.handcuffed)
