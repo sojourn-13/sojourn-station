@@ -13,7 +13,7 @@
 	if(CE_SLOWDOWN in chem_effects)
 		tally += chem_effects[CE_SLOWDOWN]
 	if(MOVING_QUICKLY(src))
-		tally -= unique_armor_check(src, src, 0)
+		tally -= unique_armor_check(src, src, 0, "shoes")
 	if(isturf(loc))
 		var/turf/T = loc
 		if(T.get_lumcount() < 0.6)

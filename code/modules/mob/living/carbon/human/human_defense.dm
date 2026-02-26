@@ -76,7 +76,8 @@ uniquic_armor_act
 	if(!has_organ(def_zone))
 		return PROJECTILE_FORCE_MISS //if they don't have the organ in question then the projectile just passes by.
 
-	unique_armor_check(P, null, null)
+	unique_armor_check(P, null, null, "shoes") //Charges shoes if we have them
+	unique_armor_check(P, null, null, "wear_suit")
 
 	if(unnatural_mutations.getMutation(MUTATION_XENO_SKIN))
 		if(prob(25)) //So we dont affectively replace a racel perk
@@ -392,7 +393,9 @@ uniquic_armor_act
 
 	visible_message("<span class='danger'>[src] has been [LAZYPICK(I.attack_verb) || "attacked"] in the  [affecting.name] with [I.name] by [user]!</span>")
 
-	var/EF = unique_armor_check(I, user, effective_force)
+	unique_armor_check(I, user, effective_force, "shoes") //Charges shoes if we have them
+
+	var/EF = unique_armor_check(I, user, effective_force, "wear_suit")
 	if(EF)
 		effective_force = EF
 
@@ -700,133 +703,157 @@ uniquic_armor_act
 //soj edit
 //This atm only has 1 armor in it thus its coding is trash and snowflake
 //user
-/mob/living/carbon/human/proc/unique_armor_check(atom/A, mob/user, EF)
-	//message_admins("unique_armor_check(A [A] user [user]) EF [EF]")
-	if(istype(shoes, /obj/item/clothing/shoes/crimsoncross_warp))
-		//message_admins("SHOES FOUND!!!!")
-		var/obj/item/clothing/shoes/crimsoncross_warp/CW = shoes
-		CW.harm_charge += EF
-		if(0<CW.harm_charge && !EF)
-			CW.squeaking = CW.harm_charge * 0.002 //ENDLESS growth after all
-			var/fear = sanity.level
-			if(fear > 0)
-				fear = fear / sanity.max_level
-				if(fear != 1)
-					fear += 1
-				//So that sanity
-				//message_admins("fear1 [fear]")
-				fear += (fear * sanity.level / sanity.max_level)
-				//message_admins("fear2 [fear]")
-				fear += (fear * sanity.level / sanity.max_level)
-				//message_admins("fear3 [fear]")
-			//Mile stones for increase penitles for speed reduction
-			if(CW.harm_charge >= 1200)
-				fear += 3
-			if(CW.harm_charge >= 800)
-				fear += 2
-			if(CW.harm_charge >= 400)
-				fear += 1
-			CW.harm_charge -= (CW.squeaking * 2) * fear //Higher sanity = more draw!
-			CW.drain = (CW.squeaking * 2) * fear //Feedback for a perk (and debugging!)
-			return CW.squeaking
-	//We at this moment only have one outfit that we check and its by path for now.
-	if(istype(wear_suit,/obj/item/clothing/suit/crimsoncross_regaloutfit))
-		//message_admins("Suit found")
-		//We hate you synth, please die!
-		if(has_synthetics())
-			//message_admins("Synth found, plz directly die!")
-			return EF //Foolishness
-		var/en_passant = FALSE //Used for tracking if we are attacked by something we dislike
-		//message_admins("bluecross_regaloutfit (Pass)")
-		//Hopefully this is all the types of things that are robotic and harm - likely isnt, oh well
-		var/list/mobs_we_hitless = list(
-			/mob/living/carbon/superior/robot,
-			/mob/living/simple/hostile/hivebot,
-			/obj/machinery/porta_turret,
-			/obj/machinery/power/os_turret,
-			/mob/living/simple/hostile/megafauna/hivemind_tyrant,
-			/mob/living/simple/hostile/megafauna/one_star,
-			/mob/living/carbon/superior/robot/forgotton,
-			/mob/living/carbon/superior/robot/forgotton/sentinal_seeker,
-			/mob/living/carbon/superior/roach/elektromagnetisch, //beep boop
-			/mob/living/carbon/superior/roach/nanite,
-			/mob/living/simple/hostile/naniteswarm,
-			/mob/living/simple/hostile/commanded/nanomachine,
-			/mob/living/simple/hostile/viscerator,
-			/mob/living/silicon,
-			/mob/living/simple/hostile/hivemind,
-			/mob/living/simple/hostile/retaliate/malf_drone
-			)
-		if(A)
-			if(istype(A, /obj/item/projectile))
-				//message_admins("bluecross_regaloutfit proj pass")
-				var/obj/item/projectile/Proj = A
-				if(Proj.original_firer)
-					//message_admins("bluecross_regaloutfit Proj Pass - [Proj.original_firer]")
-					for(var/MWH in mobs_we_hitless)
-						//message_admins("[MWH] vs [Proj.original_firer]")
-						if(istype(Proj.original_firer, MWH))
-							//message_admins("bluecross_regaloutfit Proj Pass - [Proj.original_firer] !!!!!!")
-							en_passant = TRUE
-							break
-					if(ishuman(Proj.original_firer))
-						var/mob/living/carbon/human/H = Proj.original_firer
+/mob/living/carbon/human/proc/unique_armor_check(atom/A, mob/user, EF, type)
+	//message_admins("unique_armor_check(A [A] user [user]) EF [EF], type [type]")
+	switch(type)
+		if("shoes")
+			//We dont return so we are shoved in shoes for optimization (speggie code)
+			if(istype(wear_mask, /obj/item/clothing/mask/church_veil))
+				var/obj/item/implant/core_implant/cruciform/CI = src.get_core_implant(/obj/item/implant/core_implant/cruciform, FALSE)
+				if(CI)
+					if(istype(A, /obj/item/projectile))
+						//message_admins("bluecross_regaloutfit proj pass")
+						var/obj/item/projectile/Proj = A
+						for(var/dmg_type in Proj.damage_types)
+							if(type != HALLOSS) //No cheesing with fake not real damage
+								EF += Proj.damage_types[dmg_type]
+					if(EF > 0)
+						//Allows slight overflowing
+						if(CI.active && CI.power < CI.max_power * 1.25)
+							var/faith_to_give = round(EF * 0.1)
+							CI.power += faith_to_give
+			if(istype(shoes, /obj/item/clothing/shoes/crimsoncross_warp))
+				//message_admins("SHOES FOUND!!!!")
+				var/obj/item/clothing/shoes/crimsoncross_warp/CW = shoes
+				if(istype(A, /obj/item/projectile))
+					//message_admins("bluecross_regaloutfit proj pass")
+					var/obj/item/projectile/Proj = A
+					for(var/dmg_type in Proj.damage_types)
+						if(type != HALLOSS) //No cheesing with fake not real damage
+							EF += Proj.damage_types[dmg_type]
+				CW.harm_charge += EF
+				if(0<CW.harm_charge && !EF)
+					CW.squeaking = CW.harm_charge * 0.002 //ENDLESS growth after all
+					var/fear = sanity.level
+					if(fear > 0)
+						fear = fear / sanity.max_level
+						if(fear != 1)
+							fear += 1
+						//So that sanity
+						//message_admins("fear1 [fear]")
+						fear += (fear * sanity.level / sanity.max_level)
+						//message_admins("fear2 [fear]")
+						fear += (fear * sanity.level / sanity.max_level)
+						//message_admins("fear3 [fear]")
+					//Mile stones for increase penitles for speed reduction
+					if(CW.harm_charge >= 1200)
+						fear += 3
+					if(CW.harm_charge >= 800)
+						fear += 2
+					if(CW.harm_charge >= 400)
+						fear += 1
+					CW.harm_charge -= (CW.squeaking * 2) * fear //Higher sanity = more draw!
+					CW.drain = (CW.squeaking * 2) * fear //Feedback for a perk (and debugging!)
+					return CW.squeaking
+			//We at this moment only have one outfit that we check and its by path for now.
+		if("wear_suit")
+			if(istype(wear_suit,/obj/item/clothing/suit/crimsoncross_regaloutfit))
+				//message_admins("Suit found")
+				//We hate you synth, please die!
+				if(has_synthetics())
+					//message_admins("Synth found, plz directly die!")
+					return EF //Foolishness
+				var/en_passant = FALSE //Used for tracking if we are attacked by something we dislike
+				//message_admins("bluecross_regaloutfit (Pass)")
+				//Hopefully this is all the types of things that are robotic and harm - likely isnt, oh well
+				var/list/mobs_we_hitless = list(
+					/mob/living/carbon/superior/robot,
+					/mob/living/simple/hostile/hivebot,
+					/obj/machinery/porta_turret,
+					/obj/machinery/power/os_turret,
+					/mob/living/simple/hostile/megafauna/hivemind_tyrant,
+					/mob/living/simple/hostile/megafauna/one_star,
+					/mob/living/carbon/superior/robot/forgotton,
+					/mob/living/carbon/superior/robot/forgotton/sentinal_seeker,
+					/mob/living/carbon/superior/roach/elektromagnetisch, //beep boop
+					/mob/living/carbon/superior/roach/nanite,
+					/mob/living/simple/hostile/naniteswarm,
+					/mob/living/simple/hostile/commanded/nanomachine,
+					/mob/living/simple/hostile/viscerator,
+					/mob/living/silicon,
+					/mob/living/simple/hostile/hivemind,
+					/mob/living/simple/hostile/retaliate/malf_drone
+					)
+				if(A)
+					if(istype(A, /obj/item/projectile))
+						//message_admins("bluecross_regaloutfit proj pass")
+						var/obj/item/projectile/Proj = A
+						if(Proj.original_firer)
+							//message_admins("bluecross_regaloutfit Proj Pass - [Proj.original_firer]")
+							for(var/MWH in mobs_we_hitless)
+								//message_admins("[MWH] vs [Proj.original_firer]")
+								if(istype(Proj.original_firer, MWH))
+									//message_admins("bluecross_regaloutfit Proj Pass - [Proj.original_firer] !!!!!!")
+									en_passant = TRUE
+									break
+							if(ishuman(Proj.original_firer))
+								var/mob/living/carbon/human/H = Proj.original_firer
+								if(H.has_synthetics())
+									//message_admins("bluecross_regaloutfit Proj Pass")
+									en_passant = TRUE
+							if(en_passant)
+								//message_admins("unique_armor_check en_passant ranged")
+								//message_admins("prj ranged [Proj.penetrating]")
+								Proj.armor_divisor *= 0.5
+								Proj.check_armour = ARMOR_MELEE //Foolishness
+								Proj.fire_stacks = 0   //No witches here
+								Proj.wounding_mult = 1 //Foolishness!
+								if(Proj.damage_types[BRUTE])
+									//message_admins("prj BRUTE [Proj.damage_types[BRUTE]] Pre")
+									Proj.damage_types[BRUTE] *= 0.15
+									//message_admins("prj BRUTE [Proj.damage_types[BRUTE]] Post")
+								if(Proj.damage_types[BURN])
+									//message_admins("prj BURN [Proj.damage_types[BURN]] Pre")
+									Proj.damage_types[BURN] *= 0.15
+									//message_admins("prj BURN [Proj.damage_types[BURN]] Post")
+								//message_admins("prj ranged [Proj.penetrating]")
+
+							else
+								//message_admins("unique_armor_check en_passant ranged")
+								//message_admins("prj ranged [Proj.penetrating]")
+								Proj.armor_divisor *= 2
+								if(Proj.damage_types[BRUTE])
+									//message_admins("prj BRUTE [Proj.damage_types[BRUTE]] Pre")
+									Proj.damage_types[BRUTE] *= 1.5
+									//message_admins("prj BRUTE [Proj.damage_types[BRUTE]] Post")
+								if(Proj.damage_types[BURN])
+									//message_admins("prj BURN [Proj.damage_types[BURN]] Post")
+									Proj.damage_types[BURN] *= 2
+								//message_admins("prj ranged [Proj.penetrating]")
+
+						return EF
+				if(EF)
+					if(ishuman(user))
+						var/mob/living/carbon/human/H = user
 						if(H.has_synthetics())
-							//message_admins("bluecross_regaloutfit Proj Pass")
-							en_passant = TRUE
+							EF *= 0.25
+						else
+							EF *= 3 //Viva!!
+						return EF
+					if(user)
+						for(var/MWH in mobs_we_hitless)
+							//message_admins("[MWH] vs [mobs_we_hitless]")
+							if(istype(user, MWH))
+								//message_admins("bluecross_regaloutfit Proj Melee - [mobs_we_hitless] !!!!!!")
+								en_passant = TRUE
+								break
+
 					if(en_passant)
-						//message_admins("unique_armor_check en_passant ranged")
-						//message_admins("prj ranged [Proj.penetrating]")
-						Proj.armor_divisor *= 0.5
-						Proj.check_armour = ARMOR_MELEE //Foolishness
-						Proj.fire_stacks = 0   //No witches here
-						Proj.wounding_mult = 1 //Foolishness!
-						if(Proj.damage_types[BRUTE])
-							//message_admins("prj BRUTE [Proj.damage_types[BRUTE]] Pre")
-							Proj.damage_types[BRUTE] *= 0.15
-							//message_admins("prj BRUTE [Proj.damage_types[BRUTE]] Post")
-						if(Proj.damage_types[BURN])
-							//message_admins("prj BURN [Proj.damage_types[BURN]] Pre")
-							Proj.damage_types[BURN] *= 0.15
-							//message_admins("prj BURN [Proj.damage_types[BURN]] Post")
-						//message_admins("prj ranged [Proj.penetrating]")
-
+						EF *= 0.15
 					else
-						//message_admins("unique_armor_check en_passant ranged")
-						//message_admins("prj ranged [Proj.penetrating]")
-						Proj.armor_divisor *= 2
-						if(Proj.damage_types[BRUTE])
-							//message_admins("prj BRUTE [Proj.damage_types[BRUTE]] Pre")
-							Proj.damage_types[BRUTE] *= 1.5
-							//message_admins("prj BRUTE [Proj.damage_types[BRUTE]] Post")
-						if(Proj.damage_types[BURN])
-							//message_admins("prj BURN [Proj.damage_types[BURN]] Post")
-							Proj.damage_types[BURN] *= 2
-						//message_admins("prj ranged [Proj.penetrating]")
+						EF *= 3 //Viva!!
 
-				return EF
-		if(EF)
-			if(ishuman(user))
-				var/mob/living/carbon/human/H = user
-				if(H.has_synthetics())
-					EF *= 0.25
-				else
-					EF *= 3 //Viva!!
-				return EF
-			if(user)
-				for(var/MWH in mobs_we_hitless)
-					//message_admins("[MWH] vs [mobs_we_hitless]")
-					if(istype(user, MWH))
-						//message_admins("bluecross_regaloutfit Proj Melee - [mobs_we_hitless] !!!!!!")
-						en_passant = TRUE
-						break
-
-			if(en_passant)
-				EF *= 0.15
-			else
-				EF *= 3 //Viva!!
-
-			return EF
+					return EF
 
 
 /mob/living/carbon/human/proc/has_synthetics()
