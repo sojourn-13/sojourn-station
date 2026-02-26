@@ -586,23 +586,24 @@
 /mob/living/simple/proc/harvest(mob/living/user)
 	var/actual_meat_amount = max(1,(meat_amount/2))
 	drop_embedded()
-	if(user.stats.getPerk(PERK_BUTCHER))
-		var/actual_leather_amount = max(0,(leather_amount/2))
-		if(actual_leather_amount > 0 && (stat == DEAD))
-			for(var/i=0;i<actual_leather_amount;i++)
-				new /obj/item/stack/material/leather(get_turf(src))
+	if(user != src)
+		if(user.stats.getPerk(PERK_BUTCHER))
+			var/actual_leather_amount = max(0,(leather_amount/2))
+			if(actual_leather_amount > 0 && (stat == DEAD))
+				for(var/i=0;i<actual_leather_amount;i++)
+					new /obj/item/stack/material/leather(get_turf(src))
 
-		var/actual_bones_amount = max(0,(bones_amount/2))
-		if(actual_bones_amount > 0 && (stat == DEAD))
-			for(var/i=0;i<actual_bones_amount;i++)
-				new /obj/item/stack/material/bone(get_turf(src))
+			var/actual_bones_amount = max(0,(bones_amount/2))
+			if(actual_bones_amount > 0 && (stat == DEAD))
+				for(var/i=0;i<actual_bones_amount;i++)
+					new /obj/item/stack/material/bone(get_turf(src))
 
-		if(has_special_parts && has_rare_parts && prob(50))
-			for(var/animal_part in rare_parts)
-				new animal_part(get_turf(src))
-		else
-			for(var/animal_part in special_parts)
-				new animal_part(get_turf(src))
+			if(has_special_parts && has_rare_parts && prob(50))
+				for(var/animal_part in rare_parts)
+					new animal_part(get_turf(src))
+			else
+				for(var/animal_part in special_parts)
+					new animal_part(get_turf(src))
 
 	if(meat_type && actual_meat_amount > 0 && (stat == DEAD))
 		for(var/i=0;i<actual_meat_amount;i++)
@@ -627,7 +628,7 @@
 			else
 				gib()
 
-	if(isliving(user))
+	if(isliving(user) && user != src)
 		user.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/butchering, "BUTCHERING", skill_gained = 1, learner = user)
 
 //Code to handle finding and nomming nearby food items
