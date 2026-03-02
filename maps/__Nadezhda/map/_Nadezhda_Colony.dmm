@@ -7534,6 +7534,18 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/white_large_slates,
 /area/nadezhda/maintenance/surfaceeast)
+"bvc" = (
+/obj/effect/floor_decal/industrial/danger{
+	dir = 8;
+	tag = "icon-danger (WEST)"
+	},
+/obj/effect/decal/cleanable/rubble,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small,
+/turf/simulated/floor/industrial/green_large_slates,
+/area/nadezhda/maintenance{
+	name = "Residential District Maintenance"
+	})
 "bve" = (
 /obj/structure/table/rack/shelf,
 /obj/item/storage/pouch/engineering_tools,
@@ -10080,6 +10092,9 @@
 	id_tag = "ceodoor";
 	name = "Surface Operations Manager's Office";
 	req_access = list(41)
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 1
 	},
 /turf/simulated/floor/carpet,
 /area/nadezhda/command/merchant)
@@ -30135,6 +30150,17 @@
 	},
 /turf/simulated/floor/tiled/dark/cargo,
 /area/nadezhda/quartermaster/miningdock)
+"fDN" = (
+/obj/structure/catwalk,
+/obj/structure/catwalk,
+/obj/structure/cable/cyan{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/light/small,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/maintenance/undergroundfloor2north)
 "fDO" = (
 /obj/effect/floor_decal/steeldecal/steel_decals_central6{
 	pixel_y = 8
@@ -36177,6 +36203,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/absolutism/skyyard)
+"gLb" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small,
+/turf/simulated/floor/industrial/concrete_bricks,
+/area/nadezhda/maintenance{
+	name = "Residential District Maintenance"
+	})
 "gLd" = (
 /obj/machinery/camera/network/medbay{
 	dir = 8
@@ -36256,6 +36289,16 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/nadezhda/maintenance/undergroundfloor2north)
+"gLX" = (
+/obj/effect/overlay/water,
+/obj/effect/overlay/water/top,
+/obj/random/scrap/sparse_weighted,
+/obj/machinery/light/small,
+/turf/simulated/floor/beach/water/jungledeep{
+	desc = "Filthy, stinking bilge water.";
+	name = "murky water"
+	},
+/area/nadezhda/maintenance/undergroundfloor1north)
 "gMa" = (
 /obj/structure/barricade,
 /obj/item/stack/ore/glass/dust,
@@ -52053,6 +52096,11 @@
 "jGm" = (
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/maintenance/undergroundfloor1east)
+"jGn" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small,
+/turf/simulated/floor/industrial/navy_large_slates,
+/area/nadezhda/maintenance/undergroundfloor2north)
 "jGo" = (
 /obj/structure/table/rack/shelf,
 /obj/item/tool/shovel,
@@ -63814,6 +63862,13 @@
 /obj/structure/flora/small/grassa1,
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest)
+"lUS" = (
+/obj/structure/grille,
+/obj/machinery/light/small,
+/turf/simulated/floor/industrial/concrete_bricks,
+/area/nadezhda/maintenance{
+	name = "Residential District Maintenance"
+	})
 "lUU" = (
 /obj/structure/table/bench/wooden,
 /turf/simulated/floor/wood_old,
@@ -93925,6 +93980,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/pros/prep)
+"ruh" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small,
+/turf/simulated/floor/industrial/green_large_slates,
+/area/nadezhda/maintenance{
+	name = "Residential District Maintenance"
+	})
 "rul" = (
 /obj/structure/table/standard,
 /obj/item/deck/cards,
@@ -94035,6 +94097,7 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
+/obj/machinery/light/small,
 /turf/simulated/floor/industrial/bricks,
 /area/nadezhda/maintenance{
 	name = "Residential District Maintenance"
@@ -101302,6 +101365,7 @@
 /obj/random/closet_tech/low_chance,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small,
+/obj/machinery/light/small,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/nadezhda/maintenance/undergroundfloor1west)
 "sLR" = (
@@ -108360,6 +108424,16 @@
 /obj/effect/spider/stickyweb,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/ornate,
+/area/nadezhda/maintenance/undergroundfloor1west)
+"ubK" = (
+/obj/structure/catwalk,
+/obj/structure/cable/cyan{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/light/small,
+/turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1west)
 "uca" = (
 /obj/effect/floor_decal/industrial/outline,
@@ -136001,7 +136075,7 @@ wne
 tVT
 gfF
 tVT
-tVT
+gZV
 toi
 hyw
 hyw
@@ -137241,7 +137315,7 @@ aDd
 toi
 toi
 tVT
-tzj
+ubK
 toi
 mFQ
 mOc
@@ -147110,7 +147184,7 @@ vtB
 nFD
 vtB
 vtB
-xFA
+gLX
 uyF
 cZb
 uyF
@@ -178415,7 +178489,7 @@ cZb
 cZb
 jdE
 dfE
-gRx
+jGn
 jdE
 cZb
 jdE
@@ -186288,7 +186362,7 @@ kRg
 qVC
 qVC
 qVC
-fvA
+fDN
 jdE
 cZb
 cZb
@@ -195891,7 +195965,7 @@ cZb
 cZb
 rWi
 sGr
-ngT
+bvc
 rWi
 rWi
 rWi
@@ -196074,7 +196148,7 @@ cZb
 cZb
 rWi
 wSf
-wSf
+gLb
 rWi
 cZb
 cZb
@@ -197104,7 +197178,7 @@ cZb
 rWi
 plK
 plK
-gsU
+lUS
 rWi
 wsa
 icr
@@ -199729,7 +199803,7 @@ cZb
 cZb
 rWi
 plK
-plK
+ruh
 rWi
 oAr
 vUf
