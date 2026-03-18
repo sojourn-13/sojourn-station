@@ -374,7 +374,7 @@ ADMIN_VERB_ADD(/client/proc/enable_profiler, R_DEBUG, FALSE)
 
 	// Give profiler access
 	world.SetConfig("APP/admin", ckey, "role=admin")
-	to_chat(src, "Press <a href='?debug=profile'>here</a> to access profiler panel. It will replace verb panel, and you may have to wait a couple of seconds for it to display.")
+	to_chat(src, "Press <a href='byond://?debug=profile'>here</a> to access profiler panel. It will replace verb panel, and you may have to wait a couple of seconds for it to display.")
 
 ADMIN_VERB_ADD(/client/proc/kill_air, R_DEBUG, FALSE)
 /client/proc/kill_air() // -- TLE

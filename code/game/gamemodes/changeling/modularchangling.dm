@@ -192,7 +192,7 @@ var/list/datum/power/carrion/powerinstances = list()
 					body += "<font size='2'><font color = 'red'><b>"+helptext+"</b></font></font><BR>"
 					if(!ownsthis)
 					{
-						body += "<a href='?src=\ref[organ];P="+power+"'>Evolve</a>"
+						body += "<a href='byond://?src=\ref[organ];P="+power+"'>Evolve</a>"
 					}
 					body += "</td><td align='center'>";
 					body += "</td></tr></table>";

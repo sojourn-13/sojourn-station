@@ -83,35 +83,35 @@ datum/preferences
 /datum/category_item/player_setup_item/physical/furry/content(var/mob/user)
 	. += "<style>span.color_holder_box{display: inline-block; width: 20px; height: 8px; border:1px solid #000; padding: 0px;}</style>"
 
-	. += "<b>Blood Color:</b> <a href='?src=\ref[src];blood_color=1'><span class='color_holder_box' style='background-color:[pref.blood_color]'></span></a>"
-	. += "<a href='?src=\ref[src];blood_reset=1'>&#707;</a>"
+	. += "<b>Blood Color:</b> <a href='byond://?src=\ref[src];blood_color=1'><span class='color_holder_box' style='background-color:[pref.blood_color]'></span></a>"
+	. += "<a href='byond://?src=\ref[src];blood_reset=1'>&#707;</a>"
 	. += "<br>"
 	var/counter
 	. += "<b>Ears:</b><br>"
-	. += "Type: <a href='?src=\ref[src];ears_type=1'>[pref.ears_style]</a><br>"
+	. += "Type: <a href='byond://?src=\ref[src];ears_type=1'>[pref.ears_style]</a><br>"
 	if(GLOB.ears_styles_list[pref.ears_style])
 		for(counter = 1, counter <= GLOB.ears_styles_list[pref.ears_style]?:colored_layers, counter++)
-			. += "<a href='?src=\ref[src];ears_color=[counter]'><span class='color_holder_box' style='background-color:[pref.ears_colors[counter]]'></span></a>"
+			. += "<a href='byond://?src=\ref[src];ears_color=[counter]'><span class='color_holder_box' style='background-color:[pref.ears_colors[counter]]'></span></a>"
 	. += "<br>"
 	. += "<b>Tail:</b><br>"
-	. += "Type: <a href='?src=\ref[src];tail_type=1'>[pref.tail_style]</a><br>"
+	. += "Type: <a href='byond://?src=\ref[src];tail_type=1'>[pref.tail_style]</a><br>"
 	if(GLOB.tail_styles_list[pref.tail_style])
 		for(counter = 1, counter <= GLOB.tail_styles_list[pref.tail_style]?:colored_layers, counter++)
-			. += "<a href='?src=\ref[src];tail_color=[counter]'><span class='color_holder_box' style='background-color:[pref.tail_colors[counter]]'></span></a>"
+			. += "<a href='byond://?src=\ref[src];tail_color=[counter]'><span class='color_holder_box' style='background-color:[pref.tail_colors[counter]]'></span></a>"
 	. += "<br>"
 	. += "<b>Wings:</b><br>"
-	. += "Type: <a href='?src=\ref[src];wings_type=1'>[pref.wings_style]</a><br>"
+	. += "Type: <a href='byond://?src=\ref[src];wings_type=1'>[pref.wings_style]</a><br>"
 	if(GLOB.wings_styles_list[pref.wings_style])
 		for(counter = 1, counter <= GLOB.wings_styles_list[pref.wings_style]?:colored_layers, counter++)
-			. += "<a href='?src=\ref[src];wings_color=[counter]'><span class='color_holder_box' style='background-color:[pref.wings_colors[counter]]'></span></a>"
+			. += "<a href='byond://?src=\ref[src];wings_color=[counter]'><span class='color_holder_box' style='background-color:[pref.wings_colors[counter]]'></span></a>"
 	. += "<br>"
 	. += "<b>Markings:</b><br>"
-	. += "<a href='?src=\ref[src];marking_add=1'>Add Marking</a><br>"
+	. += "<a href='byond://?src=\ref[src];marking_add=1'>Add Marking</a><br>"
 	for(counter = pref.body_markings.len, counter >= 1, counter--)
 		. += "<a [counter >= pref.body_markings.len ? "" : "href='?src=\ref[src];marking_up=[counter]'"]>&#708;</a>"
 		. += "<a [counter <= 1 ? "" : "href='?src=\ref[src];marking_down=[counter]'"]>&#709;</a>"
-		. += "<a href='?src=\ref[src];marking_color=[counter]'><span class='color_holder_box' style='background-color:[pref.body_markings[pref.body_markings[counter]]]'></span></a>"
-		. += "<a href='?src=\ref[src];marking=[counter]'>[pref.body_markings[counter]]</a><br>"
+		. += "<a href='byond://?src=\ref[src];marking_color=[counter]'><span class='color_holder_box' style='background-color:[pref.body_markings[pref.body_markings[counter]]]'></span></a>"
+		. += "<a href='byond://?src=\ref[src];marking=[counter]'>[pref.body_markings[counter]]</a><br>"
 
 /datum/category_item/player_setup_item/physical/furry/OnTopic(var/href,var/list/href_list, var/mob/user)
 	pref.categoriesChanged = "Furry"
