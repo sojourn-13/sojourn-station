@@ -198,7 +198,7 @@
 			if (info)
 				html += "<p><i>This paper is written in [language.name].</i></p>"
 			else
-				html += "<p><i>You are writing in <a href='?src=\ref[src];change_language=1'>[language]</a>.</i></p>"
+				html += "<p><i>You are writing in <a href='byond://?src=\ref[src];change_language=1'>[language]</a>.</i></p>"
 		else
 			html += "<p style=\"color: red;\"><i>This paper is written in a language you don't understand.</i></p>"
 			body = language.scramble(info, user.languages)
@@ -332,8 +332,8 @@
 	info_links = info
 	var/i = 0
 	for(i = 1, i<=fields, i++)
-		addtofield(i, "<font face=\"[deffont]\"><A href='?src=\ref[src];write=[i]'>write</A></font>", 1)
-	info_links = info_links + "<font face=\"[deffont]\"><A href='?src=\ref[src];write=end'>write</A></font>"
+		addtofield(i, "<font face=\"[deffont]\"><a href='byond://?src=\ref[src];write=[i]'>write</A></font>", 1)
+	info_links = info_links + "<font face=\"[deffont]\"><a href='byond://?src=\ref[src];write=end'>write</A></font>"
 
 
 /obj/item/paper/proc/clearpaper()

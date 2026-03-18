@@ -200,7 +200,7 @@
 	HTML += "Identity-lock: "
 	if(idlock)
 		var/obj/item/card/id/id = idlock.resolve()
-		HTML+= "[id.name] | <A href='?src=\ref[src];id-lock=TRUE'>Reset</a><br>"
+		HTML+= "[id.name] | <a href='byond://?src=\ref[src];id-lock=TRUE'>Reset</a><br>"
 	else
 		HTML += "None | Reset<br>"
 
@@ -215,21 +215,21 @@
 	if((can_clone && config.allow_ic_printing) || debug)
 		HTML += "Here you can load script for your assembly.<br>"
 		if(!cloning)
-			HTML += " <A href='?src=\ref[src];print=load'>Load Program</a> "
+			HTML += " <a href='byond://?src=\ref[src];print=load'>Load Program</a> "
 		else
 			HTML += " Load Program"
 		if(!program)
 			HTML += " [fast_clone ? "Print" : "Begin Printing"] Assembly"
 		else if(cloning)
-			HTML += " <A href='?src=\ref[src];print=cancel'>Cancel Print</a>"
+			HTML += " <a href='byond://?src=\ref[src];print=cancel'>Cancel Print</a>"
 		else
-			HTML += " <A href='?src=\ref[src];print=print'>[fast_clone ? "Print" : "Begin Printing"] Assembly</a>"
+			HTML += " <a href='byond://?src=\ref[src];print=print'>[fast_clone ? "Print" : "Begin Printing"] Assembly</a>"
 
 		HTML += "<br><hr>"
 	HTML += "Categories:"
 	for(var/category in SScircuit.circuit_fabricator_recipe_list)
 		if(category != current_category)
-			HTML += " <a href='?src=\ref[src];category=[category]'>[category]</a> "
+			HTML += " <a href='byond://?src=\ref[src];category=[category]'>[category]</a> "
 		else // Bold the button if it's already selected.
 			HTML += " <b>[category]</b> "
 	HTML += "<hr>"
@@ -244,7 +244,7 @@
 			if((initial(IC.spawn_flags) & IC_SPAWN_RESEARCH) && (!(initial(IC.spawn_flags) & IC_SPAWN_DEFAULT)) && !upgraded)
 				can_build = FALSE
 		if(can_build)
-			HTML += "<a href='?src=\ref[src];build=[path]'>[initial(O.name)]</a>: [initial(O.desc)]<br>"
+			HTML += "<a href='byond://?src=\ref[src];build=[path]'>[initial(O.name)]</a>: [initial(O.desc)]<br>"
 		else
 			HTML += "<s>[initial(O.name)]</s>: [initial(O.desc)]<br>"
 

@@ -95,5 +95,5 @@
 
 	var/mob/living/L = get(computer, /mob/living)
 	if(L)
-		var/open_app_link = "<a href='?src=\ref[src];chat_open=1'>Open Email Client</a>"
+		var/open_app_link = "<a href='byond://?src=\ref[src];chat_open=1'>Open Email Client</a>"
 		received_message.notify_mob(L, computer, open_app_link)

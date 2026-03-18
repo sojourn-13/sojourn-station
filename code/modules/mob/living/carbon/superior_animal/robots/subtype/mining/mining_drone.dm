@@ -169,14 +169,14 @@
 /mob/living/carbon/superior/robot/mining/proc/handle_ui()
 	var/dat = ""
 	dat += "[name]<BR>"
-	dat += "<A href='?src=\ref[src];close=1'>Close</A><BR>"
-	dat += "<A href='?src=\ref[src];refresh=1'>Refresh</A><BR><BR>"
+	dat += "<a href='byond://?src=\ref[src];close=1'>Close</A><BR>"
+	dat += "<a href='byond://?src=\ref[src];refresh=1'>Refresh</A><BR><BR>"
 
 	dat += "Status: <BR>"
 	if(!client)
-		dat += "- <A href='?src=\ref[src];togglemode=[WANDER_MODE]'>[(mining_modes & WANDER_MODE) ? "Wandering" : "Not Wandering"].</A><BR>"
-		dat += "- <A href='?src=\ref[src];togglemode=[GATHER_MODE]'>[(mining_modes & GATHER_MODE) ? "Gathering" : "Not Gathering"].</A><BR>"
-		dat += "- <A href='?src=\ref[src];togglemode=[MINER_MODE]'>[(mining_modes & MINER_MODE) ? "Mining" : "Not Mining"].</A><BR>"
+		dat += "- <a href='byond://?src=\ref[src];togglemode=[WANDER_MODE]'>[(mining_modes & WANDER_MODE) ? "Wandering" : "Not Wandering"].</A><BR>"
+		dat += "- <a href='byond://?src=\ref[src];togglemode=[GATHER_MODE]'>[(mining_modes & GATHER_MODE) ? "Gathering" : "Not Gathering"].</A><BR>"
+		dat += "- <a href='byond://?src=\ref[src];togglemode=[MINER_MODE]'>[(mining_modes & MINER_MODE) ? "Mining" : "Not Mining"].</A><BR>"
 	else
 		dat += "- Advanced AI detected.<BR>"
 	dat += "<BR>"
@@ -193,7 +193,7 @@
 		if(ore_amount > 0)
 			dat += "- [ore_amount] of [ore_name]\s.<BR>"
 	if(contents.len)
-		dat += "<A href='?src=\ref[src];dropore=1'>Empty Storage Compartment.</A><BR>"
+		dat += "<a href='byond://?src=\ref[src];dropore=1'>Empty Storage Compartment.</A><BR>"
 
 	return HTML_SKELETON_TITLE(name,dat)
 

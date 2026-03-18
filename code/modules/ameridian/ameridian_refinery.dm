@@ -147,19 +147,19 @@
 
 	var/dat = ""
 	dat += "Ameridian Refinery<BR>"
-	dat += "<A href='?src=\ref[src];close=1'>Close</A><BR>"
-	dat += "<A href='?src=\ref[src];refresh=1'>Refresh</A><BR><BR>"
+	dat += "<a href='byond://?src=\ref[src];close=1'>Close</A><BR>"
+	dat += "<a href='byond://?src=\ref[src];refresh=1'>Refresh</A><BR><BR>"
 	dat += "Current quantity of solid ameridian : [get_solid_ameridian()].<BR>"
 	if(get_solid_ameridian())
-		dat += "<A href='?src=\ref[src];process=1'>Process Crystals</A><BR>"
-		dat += "<A href='?src=\ref[src];eject=1'>Eject Crystals</A><BR>"
+		dat += "<a href='byond://?src=\ref[src];process=1'>Process Crystals</A><BR>"
+		dat += "<a href='byond://?src=\ref[src];eject=1'>Eject Crystals</A><BR>"
 	else
 		dat += "<BR><BR>"
 	dat += "Current quantity of liquid ameridian : [get_liquid_ameridian()]/[reagents.maximum_volume].<BR>"
 
 	if(Container)
 		if(get_liquid_ameridian())
-			dat += "<A href='?src=\ref[src];transfer=1'>Transfer to connected Bidon</A><BR>"
+			dat += "<a href='byond://?src=\ref[src];transfer=1'>Transfer to connected Bidon</A><BR>"
 		else
 			dat += "<BR>"
 		dat += "Current Bidon Capacity : [Container.reagents.total_volume]/[Container.reagents.maximum_volume].<BR>"

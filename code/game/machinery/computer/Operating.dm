@@ -34,7 +34,7 @@
 
 	user.set_machine(src)
 	var/dat = ""
-	dat += "<A HREF='?src=\ref[user];mach_close=op'>Close</A><br><br>" //| <A HREF='?src=\ref[user];update=1'>Update</A>"
+	dat += "<a href='byond://?src=\ref[user];mach_close=op'>Close</A><br><br>" //| <a href='byond://?src=\ref[user];update=1'>Update</A>"
 	if(table && (table.check_victim()))
 		victim = table.victim
 		var/internal_health

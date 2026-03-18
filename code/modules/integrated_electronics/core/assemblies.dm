@@ -79,7 +79,7 @@
 		to_chat(user, SPAN_NOTICE("The maintenance panel [opened ? "can be" : "is"] <b>screwed</b> in place."))
 
 	if((isobserver(user) && ckeys_allowed_to_scan[user.ckey]) || is_admin(user))
-		to_chat(user, "You can <a href='?src=\ref[src];ghostscan=1'>scan</a> this circuit.")
+		to_chat(user, "You can <a href='byond://?src=\ref[src];ghostscan=1'>scan</a> this circuit.")
 
 	for(var/obj/item/integrated_circuit/I in assembly_components)
 		I.external_examine(user)
@@ -196,11 +196,11 @@
 
 		// Non-inbuilt circuits come after inbuilt circuits
 		else
-			components += "<div class='segmented-control'><a href='?src=\ref[src];component=\ref[circuit];change_pos=1' style='text-decoration:none;'>[remove_num]</a>"
+			components += "<div class='segmented-control'><a href='byond://?src=\ref[src];component=\ref[circuit];change_pos=1' style='text-decoration:none;'>[remove_num]</a>"
 			if (circuit == circuit_pins)
 				components += "<a class='active' href='?src=\ref[src];component=\ref[circuit]'>[circuit.displayed_name]</a></div>\n"
 			else
-				components += "<a href='?src=\ref[src];component=\ref[circuit]'>[circuit.displayed_name]</a></div>\n"
+				components += "<a href='byond://?src=\ref[src];component=\ref[circuit]'>[circuit.displayed_name]</a></div>\n"
 
 			remove_num++
 
@@ -350,8 +350,8 @@
 		for(var/activator in circuit_pins.activators)
 			HTML += "<tr><td colspan='1'>"
 			io = activator
-			var/ACTIVATORS = "<div class='segmented-control'><a href='?src=\ref[circuit_pins];act=wire;pin=\ref[io]'><i class='codicon codicon-symbol-event fit-in-button'></i>[io]</a>"
-			ACTIVATORS += "<a href='?src=\ref[circuit_pins];act=data;pin=\ref[io]'>[io.data?"\<PULSE OUT\>":"\<PULSE IN\>"]</a></div>\n"
+			var/ACTIVATORS = "<div class='segmented-control'><a href='byond://?src=\ref[circuit_pins];act=wire;pin=\ref[io]'><i class='codicon codicon-symbol-event fit-in-button'></i>[io]</a>"
+			ACTIVATORS += "<a href='byond://?src=\ref[circuit_pins];act=data;pin=\ref[io]'>[io.data?"\<PULSE OUT\>":"\<PULSE IN\>"]</a></div>\n"
 
 			if(io.linked.len)
 				ACTIVATORS += "<ul>"

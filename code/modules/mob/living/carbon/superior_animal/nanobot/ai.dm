@@ -74,27 +74,27 @@
 /mob/living/carbon/superior/nanobot/proc/handle_ui()
 	var/dat = ""
 	dat += "[name]<BR>"
-	dat += "<A href='?src=\ref[src];close=1'>Close</A><BR>"
-	dat += "<A href='?src=\ref[src];refresh=1'>Refresh</A><BR><BR>"
+	dat += "<a href='byond://?src=\ref[src];close=1'>Close</A><BR>"
+	dat += "<a href='byond://?src=\ref[src];refresh=1'>Refresh</A><BR><BR>"
 
 	dat += "Status: <BR>"
-	dat += "- Following : <A href='?src=\ref[src];setfollow=1'>[following ? "[following]" : "None"]</A><BR>"
-	dat += "- - <A href='?src=\ref[src];adduser=1'>Add User</A> | <A href='?src=\ref[src];removeuser=1'>Remove User</A><BR>"
+	dat += "- Following : <a href='byond://?src=\ref[src];setfollow=1'>[following ? "[following]" : "None"]</A><BR>"
+	dat += "- - <a href='byond://?src=\ref[src];adduser=1'>Add User</A> | <a href='byond://?src=\ref[src];removeuser=1'>Remove User</A><BR>"
 	if(ai_flag & AUTODOC_MODE) // Is Autodoc Mode installed?
-		dat += "- Autodoc Mode : <A href='?src=\ref[src];autodoc=1'>[medbot ? "Active" : "Inactive"]</A><BR>"
+		dat += "- Autodoc Mode : <a href='byond://?src=\ref[src];autodoc=1'>[medbot ? "Active" : "Inactive"]</A><BR>"
 
 	if(ai_flag & RADIO_MODE) // Is Radio Mode installed?
-		dat += "- Radio Mode : <A href='?src=\ref[src];radio=1'>[Radio.broadcasting ? "Active" : "Inactive"]</A><BR>"
+		dat += "- Radio Mode : <a href='byond://?src=\ref[src];radio=1'>[Radio.broadcasting ? "Active" : "Inactive"]</A><BR>"
 
 	if(ai_flag & CONSOLE_MODE)
 		dat += "- Console : "
 		if(Console)
-			dat += "<A href='?src=\ref[src];console=1'>[Console.loc != src ? "Deployed" : "Retracted"]</A><BR>"
+			dat += "<a href='byond://?src=\ref[src];console=1'>[Console.loc != src ? "Deployed" : "Retracted"]</A><BR>"
 		else
 			dat += "- ERROR : No Console Detected.<BR>"
 
 	if(ai_flag & FOOD_MODE) // Is Food Mode installed?
-		dat += "- Food Mode : <A href='?src=\ref[src];food=1'>Dispense Food</A><BR>"
+		dat += "- Food Mode : <a href='byond://?src=\ref[src];food=1'>Dispense Food</A><BR>"
 
 	return HTML_SKELETON_TITLE(name,dat)
 
