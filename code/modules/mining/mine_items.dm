@@ -55,6 +55,69 @@
 	brightness_on = 3			// luminosity when on
 	turn_on_sound = 'sound/effects/Custom_flare.ogg'
 
+/obj/item/device/lighting/toggleable/lantern/fae
+	name = "\"Fae\" Lantern"
+	icon_state = "fea"
+	desc = "A lantern that glows a soft hue, with a small crafted being seemingly traped inside glowing."
+	brightness_on = 4			// luminosity when on
+	light_color = "#FFD9E5" //Super light pink
+
+/obj/item/device/lighting/toggleable/lantern/fae/examine(mob/user)
+	..()
+	//Your staring into an crafted fae, with otherwordly power. This is clearly a bad idea!
+	if(brightness_on < 6)
+		if(ishuman(user))
+			var/mob/living/carbon/human/H = user
+			var/obj/item/organ/internal/psionic_tumor/PT = H.first_organ_by_process(BP_PSION)
+			var/obj/item/implant/core_implant/cruciform/CI
+			CI = H.get_core_implant(/obj/item/implant/core_implant/cruciform)
+			if(CI && CI.active) //Forced compassion
+				if(CI.power >= 6)
+					CI.power -= 6
+					to_chat(user, SPAN_NOTICE("The [src] burns brighter and more lively as it feeds off some of your stored faith."))
+					brightness_on += 1
+
+			//If your smart you relise that this is a fake fae and cant give it food
+			if(PT.psi_points >= 6 && H.stats.getStat(STAT_COG) < 60)
+				to_chat(user, SPAN_NOTICE("The [src] looks to be starving, then for a moment it flashes brightly as it starts to eat some of your psionic energy."))
+				PT.psi_points -= 6
+				brightness_on += 1
+
+/obj/item/device/lighting/toggleable/lantern/fae/resolve_attackby(atom/target, mob/user)
+	var/glasses = FALSE
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		if(istype(H.glasses, /obj/item/clothing/glasses/firefly_glasses))
+			glasses = TRUE
+
+	if(isliving(target) && isliving(user))
+		var/mob/living/M = target
+		var/mob/living/U = user
+
+		if(M.stat != DEAD)
+			var/datum/perk/cooldown/ignis_gladius_artium/IGA = U.stats.getPerk(PERK_IGA)
+			if(!IGA)
+				U.stats.addPerk(PERK_IGA)
+				playsound(src, 'sound/items/glitch.ogg', 20, 1, 1) //The fea is upset
+				U.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+				U.do_attack_animation(M)
+			else
+				IGA.perk_lifetime += 1 SECONDS
+				IGA.sezionatura += 1
+				U.setClickCooldown(DEFAULT_ATTACK_COOLDOWN - min(IGA.sezionatura, 4))
+				U.do_attack_animation(M)
+				force = min(M.fire_stacks + 1, 10 + glasses)
+
+				if(IGA.sezionatura >= 15)
+					M.adjust_fire_stacks(brightness_on + glasses)
+					M.IgniteMob()
+					//We are dosing the enemy in flames this is advanced movement that we are not trained in.
+					IGA.sezionatura -= 5 - glasses
+
+	.=..()
+
+	force = 0
+
 /*****************************Pickaxe********************************/
 
 

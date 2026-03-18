@@ -331,6 +331,43 @@
 			return TRUE
 	return FALSE
 
+//Fae Lure Breakdown
+/datum/breakdown/negative/fae_lure
+	name = "Fae Chimming"
+	duration = 0
+	restore_sanity_post = 300
+
+	start_messages = list(
+		"A cacophony of grating anger pierces your ears!",
+		"You're racked with pain emanating from the center of your skull, you can hardly hear a thing."
+	)
+
+	end_messages = list(
+		"The splitting pain in your head eases, your hearing returns."
+	)
+
+/datum/breakdown/negative/fae_lure/occur()
+	if(ishuman(holder.owner))
+		var/mob/living/carbon/human/T = holder.owner
+		T.ear_deaf += 30
+
+		var/datum/perk/cooldown/ignis_gladius_artium/IGA = T.stats.getPerk(PERK_IGA)
+		if(IGA)
+			IGA.sezionatura = IGA.sezionatura / 50
+			IGA.perk_lifetime -= 30 SECONDS
+
+		if(!T.stats.getPerk(PERK_BLOOD_LUST))
+			T.stats.addPerk(PERK_CONTEMPT_GAZE)
+	..()
+
+/datum/breakdown/negative/fae_lure/can_occur()
+	if(ishuman(holder.owner)) // Check if it's an actual mob and not a wall
+		var/mob/living/carbon/human/H = holder.owner
+		if(istype(H.belt, /obj/item/device/lighting/toggleable/lantern/fae))
+			return TRUE
+	return FALSE
+
+
 //Disabled bad ones
 
 /* - Shit breakdown - disabled until it is reworked to be in specific circumstances.

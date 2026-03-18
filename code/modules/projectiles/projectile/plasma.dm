@@ -27,6 +27,13 @@
 	armor_divisor = 0.65
 	recoil = 7
 
+/obj/item/projectile/plasma/super_light
+	name = "flame bolt"
+	damage_types = list(BURN = 15)
+	armor_divisor = 0.65
+	recoil = 5
+	fire_stacks = 3 //We trade in raw power for flame stacking
+
 /obj/item/projectile/plasma/heavy
 	name = "heavy plasma bolt"
 

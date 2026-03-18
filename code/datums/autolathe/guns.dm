@@ -554,3 +554,11 @@
 /datum/design/autolathe/gun/bipod_mod
 	name = "H&S \"Stand\" bipod"
 	build_path = /obj/item/gun_upgrade/underbarrel/bipod
+
+
+//Saint of Wax Branch
+
+//We are a plasma weapon techinnally
+/datum/design/autolathe/gun/plasma/seal
+	name = "\"Seal\"  waxworks rapier"
+	build_path = /obj/item/gun/matter/seal
