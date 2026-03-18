@@ -13,6 +13,7 @@
 		new /obj/item/storage/backpack/sport/neotheology(src)
 	else
 		new /obj/item/storage/backpack/satchel/neotheology(src)
+	new /obj/item/clothing/mask/church_veil(src)
 	new /obj/item/clothing/under/rank/preacher(src)
 	new /obj/item/device/radio/headset/church(src)
 	new /obj/item/storage/belt/utility/neotheology(src)

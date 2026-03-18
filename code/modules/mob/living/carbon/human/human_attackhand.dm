@@ -327,7 +327,8 @@
 	user.do_attack_animation(src)
 
 	//reduced damage
-	var/RD = unique_armor_check(null, user, damage)
+	unique_armor_check(null, user, damage, "shoes") //Charges shoes if we have them
+	var/RD = unique_armor_check(null, user, damage, "wear_suit")
 	if(RD)
 		damage = RD
 

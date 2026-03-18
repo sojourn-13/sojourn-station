@@ -191,3 +191,16 @@
 	desc = "A skull-pattern bandana with nanotech lining. Can be worn on the head or face."
 	icon_state = "bandskull"
 	item_state = "bandskull"
+
+//Does its magic on defence
+/obj/item/clothing/mask/church_veil
+	name = "Absolute nylo veil"
+	desc = "An Absolute's New Testament veil, crafted from thin sheets of mimicry fracsilkie-ium, reinforced with interwoven durasteel fibers. \
+	Its fibers shimmer when the wearer is striked giving them faith."
+	icon_state = "church_veil"
+	item_state = "church_veil"
+	flags_inv = HIDEFACE
+	body_parts_covered = 0
+	//The biomatter is high do to mimicry of fracsilkie-ium (its made up [frac]tal [silk](y)[ie] [ium])
+	matter = list(MATERIAL_BIOMATTER = 75, MATERIAL_DURASTEEL = 0.1, MATERIAL_GOLD = 0.1, MATERIAL_SILVER = 0.1)
+	price_tag = 1200
