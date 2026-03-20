@@ -868,3 +868,33 @@
 	//Makes everything you do slower
 	M.add_chemical_effect(CE_SLOWDOWN, 1.5)
 	M.add_chemical_effect(CE_ATTACK_COOLDOWN, 2)
+
+//mushroon toxin
+/datum/reagent/toxin/mushroom_vial
+	name = "Stachybotrys Chartarum Vial"
+	id = "mushroom_vial"
+	description = "A highly toxic mold essence that destablizes and slows the motor cortex of most living creatures."
+	taste_mult = 10
+	reagent_state = LIQUID
+	color = "#CF3600"
+	strength = 0.25
+	metabolism = REM
+	nerve_system_accumulations = 80
+	sanity_gain = -3
+
+/datum/reagent/toxin/mushroom_vial/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
+	..()
+	//Makes everything you do slower
+	M.add_chemical_effect(CE_SLOWDOWN, 1.5)
+	M.add_chemical_effect(CE_ATTACK_COOLDOWN, 2)
+	M.entanglement += 1
+
+/datum/reagent/toxin/mushroom_vial/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	..()
+	//Makes everything you do slower
+	M.add_chemical_effect(CE_SLOWDOWN, 1.1)
+	M.add_chemical_effect(CE_ATTACK_COOLDOWN, 1)
+	M.entanglement += 0.9
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		H.sanity.remove_insight(1)

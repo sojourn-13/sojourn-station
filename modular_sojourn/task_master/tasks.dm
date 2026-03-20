@@ -290,3 +290,14 @@
 
 /datum/task_master/task/butchering/activate_affect()
 	forwards_refence.stats.add_Stat_cap(STAT_BIO, (level + 1))
+
+/datum/task_master/task/walnut_seeker
+	name = "Towercap Walnut Seeker"
+	key = "WALNUT_SEEKER"
+	desc = "When large towercaps grow in good soil, small hard walnuts grow along it."
+	gain_text = "Findig patterns with Towercap Trees is quite easy."
+	level_thresholds = 1 //1 -> 2 -> 4 -> 8 ect ect
+	alt_scaling_number = 1
+	unlocked = FALSE
+
+//no boons for walnut seeker by itself, it does a few intractions tho

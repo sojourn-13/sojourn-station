@@ -2008,3 +2008,29 @@
 	preloaded_reagents = list("ph_tea" = 10, "water" = 10)
 	matter = list(MATERIAL_BIOMATTER = 5)
 	cooked = TRUE
+
+//Funky walnut meal
+
+/obj/item/reagent_containers/snacks/tree_walnut
+	name = "elder towercap walnut"
+	desc = "A soft and chewy salty tree seed."
+	icon_state = "towercap_walnut"
+	taste_tag = list(SALTY_FOOD)
+	nutriment_desc = list("earthy" = 1)
+	nutriment_amt = 1
+	bitesize = 5
+	preloaded_reagents = list("protein" = 3)
+	matter = list(MATERIAL_BIOMATTER = 8)
+	cooked = TRUE
+	var/proper_drained = FALSE
+
+/obj/item/reagent_containers/snacks/tree_walnut/On_Consume(var/mob/eater, var/mob/feeder = null)
+	..()
+	if(proper_drained)
+		if(ishuman(eater))
+			var/mob/living/carbon/human/H = eater
+			H.sanity.insight += 1 //Eating a 100 = 1 level, the power creep!
+
+
+
+
