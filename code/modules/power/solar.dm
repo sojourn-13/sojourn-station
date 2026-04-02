@@ -422,17 +422,17 @@
 	t += "<B><span class='highlight'>Tracking:</span></B><div class='statusDisplay'>"
 	switch(track)
 		if(0)
-			t += "<span class='linkOn'>Off</span> <A href='?src=\ref[src];track=1'>Timed</A> <A href='?src=\ref[src];track=2'>Auto</A><BR>"
+			t += "<span class='linkOn'>Off</span> <a href='byond://?src=\ref[src];track=1'>Timed</A> <a href='byond://?src=\ref[src];track=2'>Auto</A><BR>"
 		if(1)
-			t += "<A href='?src=\ref[src];track=0'>Off</A> <span class='linkOn'>Timed</span> <A href='?src=\ref[src];track=2'>Auto</A><BR>"
+			t += "<a href='byond://?src=\ref[src];track=0'>Off</A> <span class='linkOn'>Timed</span> <a href='byond://?src=\ref[src];track=2'>Auto</A><BR>"
 		if(2)
-			t += "<A href='?src=\ref[src];track=0'>Off</A> <A href='?src=\ref[src];track=1'>Timed</A> <span class='linkOn'>Auto</span><BR>"
+			t += "<a href='byond://?src=\ref[src];track=0'>Off</A> <a href='byond://?src=\ref[src];track=1'>Timed</A> <span class='linkOn'>Auto</span><BR>"
 	t += "Tracking Rate: [rate_control(src,"tdir","[trackrate] deg/h ([trackrate<0 ? "CCW" : "CW"])",1,30,180)]</div><BR>"
 	t += "<B><span class='highlight'>Connected devices:</span></B><div class='statusDisplay'>"
-	t += "<A href='?src=\ref[src];search_connected=1'>Search for devices</A><BR>"
+	t += "<a href='byond://?src=\ref[src];search_connected=1'>Search for devices</A><BR>"
 	t += "Solar panels : [connected_panels.len] connected<BR>"
 	t += "Solar tracker : [connected_tracker ? "<span class='good'>Found</span>" : "<span class='bad'>Not found</span>"]</div><BR>"
-	t += "<A href='?src=\ref[src];close=1'>Close</A>"
+	t += "<a href='byond://?src=\ref[src];close=1'>Close</A>"
 	var/datum/browser/popup = new(user, "solar", name)
 	popup.set_content(t)
 	popup.open()
@@ -612,7 +612,7 @@
 	mistake.</p><p>That's all to it, be safe, be green!</p>"
 
 /proc/rate_control(var/S, var/V, var/C, var/Min=1, var/Max=5, var/Limit=null) //How not to name vars
-	var/href = "<A href='?src=\ref[S];rate control=1;[V]"
+	var/href = "<a href='byond://?src=\ref[S];rate control=1;[V]"
 	var/rate = "[href]=-[Max]'>-</A>[href]=-[Min]'>-</A> [(C?C : 0)] [href]=[Min]'>+</A>[href]=[Max]'>+</A>"
 	if(Limit) return "[href]=-[Limit]'>-</A>"+rate+"[href]=[Limit]'>+</A>"
 	return rate

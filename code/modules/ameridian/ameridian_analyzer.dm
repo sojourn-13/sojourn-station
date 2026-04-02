@@ -123,16 +123,16 @@
 
 	var/dat = ""
 	dat += "Liquid Ameridian Analyzer<BR>"
-	dat += "<A href='?src=\ref[src];close=1'>Close</A><BR>"
-	dat += "<A href='?src=\ref[src];refresh=1'>Refresh</A><BR><BR>"
+	dat += "<a href='byond://?src=\ref[src];close=1'>Close</A><BR>"
+	dat += "<a href='byond://?src=\ref[src];refresh=1'>Refresh</A><BR><BR>"
 	if(Container)
 		dat += "Current quantity of liquid ameridian : [get_bidon_ameridian()].<BR><BR>"
 		if(!analyzing)
-			dat += "<A href='?src=\ref[src];start=1'>Start Analyzing.</A><BR><BR>"
+			dat += "<a href='byond://?src=\ref[src];start=1'>Start Analyzing.</A><BR><BR>"
 		else
 			dat += "Analyzing ameridian sample...<BR>"
 			dat += "Current stored points : [points].<BR>"
-			dat += "<A href='?src=\ref[src];stop=1'>Stop Analyzing.</A><BR>"
+			dat += "<a href='byond://?src=\ref[src];stop=1'>Stop Analyzing.</A><BR>"
 	else
 		dat += "No bidon detected. Please connect a bidon."
 

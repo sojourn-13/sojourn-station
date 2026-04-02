@@ -111,58 +111,58 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 	. += "<style>span.color_holder_box{display: inline-block; width: 20px; height: 8px; border:1px solid #000; padding: 0px;}</style>"
 	. += "<hr>"
 	. += "<table><tr style='vertical-align:top; width: 100%'><td width=65%><b>Body</b> "
-	. += "(<a href='?src=\ref[src];random=1'>&reg;</A>)"
+	. += "(<a href='byond://?src=\ref[src];random=1'>&reg;</A>)"
 	. += "<br>"
 	var/speciesstring
 	var/datum/species/cspecies = global.all_species[pref.species]
-	speciesstring = "<b>Species:</b> <a href='?src=\ref[src];select_species=[cspecies.name]'>[cspecies.name]</a>"
+	speciesstring = "<b>Species:</b> <a href='byond://?src=\ref[src];select_species=[cspecies.name]'>[cspecies.name]</a>"
 	. += speciesstring
 	. += "<br>"
 	var/formstring = ""
 	var/datum/species_form/cform = GLOB.all_species_form_list[pref.species_form]
 	if(istype(cform) && cform.variants && cform.variants.len && !cspecies.obligate_form)
-		formstring = "<a href='?src=\ref[src];select_form_variant=[cform.name]'>&#707;</a>" + formstring
+		formstring = "<a href='byond://?src=\ref[src];select_form_variant=[cform.name]'>&#707;</a>" + formstring
 	while(istype(cform))
 		var/mode = (!cform.variantof || cform.name == cform.variantof) ? "select_form=1" : "select_variant=[cform.variantof]"
 		var/prefix = ""
 		if(cform.name == cspecies.default_form && cspecies.obligate_form)
 			mode = "reset_form=1"
 			prefix = "&#8634; "
-		formstring = "<a href='?src=\ref[src];[mode]'>[prefix][cform.name]</a>" + formstring
+		formstring = "<a href='byond://?src=\ref[src];[mode]'>[prefix][cform.name]</a>" + formstring
 		if(cform.name == cform.variantof || cform.name == cspecies.default_form && cspecies.obligate_form) break
 		cform = GLOB.all_species_form_list[cform.variantof]
 	formstring = "<b>Form:</b> " + formstring
 	. += formstring
 	. += "<br>"
-	. += "<b>Hair:</b> <a href='?src=\ref[src];cycle_hair=right'>&lt;&lt;</a><a href='?src=\ref[src];cycle_hair=left'>&gt;&gt;</a><a href='?src=\ref[src];hair_style=1'>[pref.h_style]</a>"
+	. += "<b>Hair:</b> <a href='byond://?src=\ref[src];cycle_hair=right'>&lt;&lt;</a><a href='byond://?src=\ref[src];cycle_hair=left'>&gt;&gt;</a><a href='byond://?src=\ref[src];hair_style=1'>[pref.h_style]</a>"
 	if(has_flag(mob_species_form, HAS_HAIR_COLOR))
-		. += "<a href='?src=\ref[src];hair_color=1'><span class='color_holder_box' style='background-color:[pref.hair_color]'></span></a>"
+		. += "<a href='byond://?src=\ref[src];hair_color=1'><span class='color_holder_box' style='background-color:[pref.hair_color]'></span></a>"
 	. += "<br>"
 
-	. += "<b>Gradient:</B><a href='?src=\ref[src];grad_style=1'>[pref.grad_style]</a>"
-	. += "<a href='?src=\ref[src];grad_color=1'><span class='color_holder_box' style='background-color:[pref.grad_color]'></span></a>"
+	. += "<b>Gradient:</B><a href='byond://?src=\ref[src];grad_style=1'>[pref.grad_style]</a>"
+	. += "<a href='byond://?src=\ref[src];grad_color=1'><span class='color_holder_box' style='background-color:[pref.grad_color]'></span></a>"
 	. += "<br>"
 
-	. += "<b>Facial:</b> <a href='?src=\ref[src];cycle_facial_hair=right'>&lt;&lt;</a><a href='?src=\ref[src];cycle_facial_hair=left'>&gt;&gt;</a><a href='?src=\ref[src];facial_style=1'>[pref.f_style]</a>"
+	. += "<b>Facial:</b> <a href='byond://?src=\ref[src];cycle_facial_hair=right'>&lt;&lt;</a><a href='byond://?src=\ref[src];cycle_facial_hair=left'>&gt;&gt;</a><a href='byond://?src=\ref[src];facial_style=1'>[pref.f_style]</a>"
 	if(has_flag(mob_species_form, HAS_HAIR_COLOR))
-		. += "<a href='?src=\ref[src];facial_color=1'><span class='color_holder_box' style='background-color:[pref.facial_color]'></span></a>"
+		. += "<a href='byond://?src=\ref[src];facial_color=1'><span class='color_holder_box' style='background-color:[pref.facial_color]'></span></a>"
 	. += "<br>"
 
 	if(has_flag(mob_species_form, HAS_EYE_COLOR))
-		. += "<b>Eyes: </b><a href='?src=\ref[src];eye_color=1'><span class='color_holder_box' style='background-color:[pref.eyes_color]'></span></a><br>"
+		. += "<b>Eyes: </b><a href='byond://?src=\ref[src];eye_color=1'><span class='color_holder_box' style='background-color:[pref.eyes_color]'></span></a><br>"
 
 	if(has_flag(mob_species_form, HAS_SKIN_COLOR))
-		. += "<b>Body Color: </b><a href='?src=\ref[src];skin_color=1'><span class='color_holder_box' style='background-color:[pref.skin_color]'></span></a><br>"
+		. += "<b>Body Color: </b><a href='byond://?src=\ref[src];skin_color=1'><span class='color_holder_box' style='background-color:[pref.skin_color]'></span></a><br>"
 	else if(has_flag(mob_species_form, HAS_SKIN_TONE))
-		. += "<b>Skin Tone: </b><a href='?src=\ref[src];skin_tone=1'>[-pref.s_tone + 35]/220</a><br>"
+		. += "<b>Skin Tone: </b><a href='byond://?src=\ref[src];skin_tone=1'>[-pref.s_tone + 35]/220</a><br>"
 
-	. += "<b>Scale:</b> <a href='?src=\ref[src];scale_effect=1'>[pref.scale_effect+100]%</a><br>"
+	. += "<b>Scale:</b> <a href='byond://?src=\ref[src];scale_effect=1'>[pref.scale_effect+100]%</a><br>"
 
 	. += "</td><td style = 'text-align:center;' width = 35%><b>Preview</b><br>"
 	. += "<div style ='padding-bottom:-2px;' class='statusDisplay'><img src=previewicon.png width=[pref.preview_icon.Width()] height=[pref.preview_icon.Height()]></div>"
-	. += "<br><a href='?src=\ref[src];cycle_bg=1'>Cycle background</a>"
-	. += "<br><a href='?src=\ref[src];toggle_preview_value=[EQUIP_PREVIEW_LOADOUT]'>[pref.equip_preview_mob & EQUIP_PREVIEW_LOADOUT ? "Hide loadout" : "Show loadout"]</a>"
-	. += "<br><a href='?src=\ref[src];toggle_preview_value=[EQUIP_PREVIEW_JOB]'>[pref.equip_preview_mob & EQUIP_PREVIEW_JOB ? "Hide job gear" : "Show job gear"]</a>"
+	. += "<br><a href='byond://?src=\ref[src];cycle_bg=1'>Cycle background</a>"
+	. += "<br><a href='byond://?src=\ref[src];toggle_preview_value=[EQUIP_PREVIEW_LOADOUT]'>[pref.equip_preview_mob & EQUIP_PREVIEW_LOADOUT ? "Hide loadout" : "Show loadout"]</a>"
+	. += "<br><a href='byond://?src=\ref[src];toggle_preview_value=[EQUIP_PREVIEW_JOB]'>[pref.equip_preview_mob & EQUIP_PREVIEW_JOB ? "Hide job gear" : "Show job gear"]</a>"
 	. += "</td></tr></table>"
 
 

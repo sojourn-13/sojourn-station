@@ -86,7 +86,7 @@
 		dat += "<b>Energy cell</b>: None<br>"
 
 	if(!locked)
-		dat += "<b><A href='?src=\ref[src];toggle_field=1'>[suspension_field ? "Disable" : "Enable"] field</a></b><br>"
+		dat += "<b><a href='byond://?src=\ref[src];toggle_field=1'>[suspension_field ? "Disable" : "Enable"] field</a></b><br>"
 	else
 		dat += "Swipe ID to unlock.<br>"
 
@@ -94,7 +94,7 @@
 	if(!locked)
 		dat += "<b>Select field mode</b><br>"
 		for(var/mode in field_modes)
-			var/mode_str = "<a href='?src=\ref[src];select_field=[mode]'>[field_modes[mode]]</a>"
+			var/mode_str = "<a href='byond://?src=\ref[src];select_field=[mode]'>[field_modes[mode]]</a>"
 			if(field_type == mode)
 				mode_str = "<b>[mode_str]</b>"
 			dat += mode_str
@@ -107,11 +107,11 @@
 	dat += "<hr>"
 	dat += "<font color='blue'><b>Always wear safety gear and consult a field manual before operation.</b></font><br>"
 	if(!locked)
-		dat += "<A href='?src=\ref[src];lock=1'>Lock console</A><br>"
+		dat += "<a href='byond://?src=\ref[src];lock=1'>Lock console</A><br>"
 	else
 		dat += "<br>"
-	dat += "<A href='?src=\ref[src];refresh=1'>Refresh console</A><br>"
-	dat += "<A href='?src=\ref[src];close=1'>Close console</A>"
+	dat += "<a href='byond://?src=\ref[src];refresh=1'>Refresh console</A><br>"
+	dat += "<a href='byond://?src=\ref[src];close=1'>Close console</A>"
 	user << browse(HTML_SKELETON(dat), "window=suspension;size=500x400")
 	onclose(user, "suspension")
 

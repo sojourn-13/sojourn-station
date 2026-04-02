@@ -47,24 +47,24 @@
 			if(!requestonly)
 				if(shuttle.can_launch())
 					if(shuttle.at_station())
-						dat += "<A href='?src=\ref[src];send=1'>Send away</A>"
+						dat += "<a href='byond://?src=\ref[src];send=1'>Send away</A>"
 					else
-						dat += "<A href='?src=\ref[src];send=1'>Request supply shuttle</A>"
+						dat += "<a href='byond://?src=\ref[src];send=1'>Request supply shuttle</A>"
 				else if (shuttle.can_cancel())
-					dat += "<A href='?src=\ref[src];cancel_send=1'>Cancel request</A>"
+					dat += "<a href='byond://?src=\ref[src];cancel_send=1'>Cancel request</A>"
 				else
 					dat += "*Shuttle is busy*"
 			dat += "<BR>\n<BR>"
 		if(!requestonly)
 			dat += "<HR>\n"
 			dat += "<b>Guild Credits: [get_account_credits(department_accounts[DEPARTMENT_LSS])][CREDS]</b><BR><BR>"
-		dat += "<A href='?src=\ref[src];order=categories'>[requestonly ? "Request" : "Order"] items</A><BR>"
+		dat += "<a href='byond://?src=\ref[src];order=categories'>[requestonly ? "Request" : "Order"] items</A><BR>"
 		if(!requestonly)
-			dat += "<A href='?src=\ref[src];viewmes=1'>View messages</A><BR>"
-			dat += "<A href='?src=\ref[src];viewaccount=\ref[department_accounts[DEPARTMENT_LSS]]'>View banking data</A><BR>"
+			dat += "<a href='byond://?src=\ref[src];viewmes=1'>View messages</A><BR>"
+			dat += "<a href='byond://?src=\ref[src];viewaccount=\ref[department_accounts[DEPARTMENT_LSS]]'>View banking data</A><BR>"
 		dat += {"
-		<A href='?src=\ref[src];viewrequests=1'>View requests</A><BR>
-		<A href='?src=\ref[src];vieworders=1'>View orders</A>"}
+		<a href='byond://?src=\ref[src];viewrequests=1'>View requests</A><BR>
+		<a href='byond://?src=\ref[src];vieworders=1'>View orders</A>"}
 	user << browse(HTML_SKELETON(dat), "window=computer;size=575x450")
 	onclose(user, "computer")
 	return
@@ -90,12 +90,12 @@
 				temp = "For safety reasons the automated supply shuttle cannot transport live organisms, classified nuclear weaponry or homing beacons."
 			else
 				shuttle.launch(src)
-				temp = "Initiating launch sequence. \[<span class='warning'><A href='?src=\ref[src];force_send=1'>Force Launch</A></span>\]"
+				temp = "Initiating launch sequence. \[<span class='warning'><a href='byond://?src=\ref[src];force_send=1'>Force Launch</A></span>\]"
 		else
 			shuttle.launch(src)
 			temp = "The supply shuttle has been called and will arrive in approximately [round(SSsupply.movetime/600,1)] minutes."
 			post_signal("supply")
-		temp += "<BR><BR><A href='?src=\ref[src];mainmenu=1'>OK</A>"
+		temp += "<BR><BR><a href='byond://?src=\ref[src];mainmenu=1'>OK</A>"
 	if(href_list["viewmes"])
 		if(SSsupply.centcom_message)
 			temp += "Latest message: <BR><BR>"
@@ -103,13 +103,13 @@
 			temp += "<BR>"
 		else
 			temp += "Can not find any messages from Commercial barge. <BR>"
-		temp += "<BR><BR><A href='?src=\ref[src];mainmenu=1'>OK</A>"
+		temp += "<BR><BR><a href='byond://?src=\ref[src];mainmenu=1'>OK</A>"
 	if(href_list["viewaccount"])
 		var/datum/money_account/account = locate(href_list["viewaccount"]) in all_money_accounts
 		if(!account)
 			updateUsrDialog()
 			return
-		temp = "<A href='?src=\ref[src];mainmenu=1'>Main Menu</a><HR><BR>"
+		temp = "<a href='byond://?src=\ref[src];mainmenu=1'>Main Menu</a><HR><BR>"
 		temp += "<b>[account.get_name()]</b><br>"
 		temp += "Account number: #[account.account_number]<br>"
 		temp += "Balance: [num2text(account.money, 12)][CREDS]<br>"
@@ -131,7 +131,7 @@
 			temp += "<td>[T.source_terminal]</td>"
 			temp += "</tr>"
 		temp += "</table><br>"
-		temp += "<A href='?src=\ref[src];viewaccount=\ref[account]'>Refresh</A>"
+		temp += "<a href='byond://?src=\ref[src];viewaccount=\ref[account]'>Refresh</A>"
 	if (href_list["force_send"])
 		shuttle.force_launch(src)
 	if (href_list["cancel_send"])
@@ -145,19 +145,19 @@
 			//all_supply_groups
 			//Request what?
 			last_viewed_group = "categories"
-			temp += "<A href='?src=\ref[src];mainmenu=1'>Main Menu</A><HR><BR>"
+			temp += "<a href='byond://?src=\ref[src];mainmenu=1'>Main Menu</A><HR><BR>"
 			temp += "<b>Select a category</b><BR><BR>"
 			for(var/supply_group_name in all_supply_groups )
-				temp += "<A href='?src=\ref[src];order=[supply_group_name]'>[supply_group_name]</A><BR>"
+				temp += "<a href='byond://?src=\ref[src];order=[supply_group_name]'>[supply_group_name]</A><BR>"
 		else
 			last_viewed_group = href_list["order"]
-			temp += "<A href='?src=\ref[src];order=categories'>Back to all categories</A><HR><BR>"
+			temp += "<a href='byond://?src=\ref[src];order=categories'>Back to all categories</A><HR><BR>"
 			temp += "<b>Request from: [last_viewed_group]</b><BR><BR>"
 			for(var/supply_name in SSsupply.supply_packs)
 				var/datum/supply_pack/N = SSsupply.supply_packs[supply_name]
 				if((N.hidden && !hacked) || (N.contraband && !can_order_contraband) || N.group != last_viewed_group)
 					continue
-				temp += "<A href='?src=\ref[src];doorder=[supply_name]'>[supply_name]</A> Cost: [N.cost]<BR>"
+				temp += "<a href='byond://?src=\ref[src];doorder=[supply_name]'>[supply_name]</A> Cost: [N.cost]<BR>"
 				//Have to send the type instead of a reference to the obj because it would get caught by GC
 	else if (href_list["doorder"])
 		if(world.time < reqtime)
@@ -184,9 +184,9 @@
 		O.generateRequisition(loc)
 		reqtime = (world.time + 5) % 1e5
 		temp = "Order request placed.<BR>"
-		temp += "<BR><A href='?src=\ref[src];order=[last_viewed_group]'>Back</A> | <A href='?src=\ref[src];mainmenu=1'>Main Menu</A>"
+		temp += "<BR><a href='byond://?src=\ref[src];order=[last_viewed_group]'>Back</A> | <a href='byond://?src=\ref[src];mainmenu=1'>Main Menu</A>"
 		if(!requestonly)
-			temp += " | <A href='?src=\ref[src];confirmorder=[O.id]'>Authorize Order</A>"
+			temp += " | <a href='byond://?src=\ref[src];confirmorder=[O.id]'>Authorize Order</A>"
 	else if(href_list["confirmorder"])
 		//Find the correct supply_order datum
 		var/ordernum = text2num(href_list["confirmorder"])
@@ -198,13 +198,13 @@
 			temp = "Not enough credits.<BR>"
 		else if (error == ERRORCODE_INVALID)
 			temp = "Invalid Request<br>"
-		temp += "<BR><A href='?src=\ref[src];viewrequests=1'>Back</A> <A href='?src=\ref[src];mainmenu=1'>Main Menu</A>"
+		temp += "<BR><a href='byond://?src=\ref[src];viewrequests=1'>Back</A> <a href='byond://?src=\ref[src];mainmenu=1'>Main Menu</A>"
 	else if (href_list["vieworders"])
 		temp = "Current approved orders: <BR><BR>"
 		for(var/S in SSsupply.shoppinglist)
 			var/datum/supply_order/SO = S
-			temp += "#[SO.id] - [SO.object.name] ordered by [SO.orderer][SO.reason ? " ([SO.reason])":""]<BR>"// <A href='?src=\ref[src];cancelorder=[S]'>(Cancel)</A><BR>"
-		temp += "<BR><A href='?src=\ref[src];mainmenu=1'>OK</A>"
+			temp += "#[SO.id] - [SO.object.name] ordered by [SO.orderer][SO.reason ? " ([SO.reason])":""]<BR>"// <a href='byond://?src=\ref[src];cancelorder=[S]'>(Cancel)</A><BR>"
+		temp += "<BR><a href='byond://?src=\ref[src];mainmenu=1'>OK</A>"
 	/*
 	//Cancelling already authorised orders gets messy, disabled for now
 	//Just don't authorise it til you're sure
@@ -215,8 +215,8 @@
 		temp += "Canceled: [remove_supply.object.name]<BR><BR><BR>"
 		for(var/S in SSsupply.requestlist)
 			var/datum/supply_order/SO = S
-			temp += "[SO.object.name] approved by [SO.orderedby][SO.comment ? " ([SO.comment])":""] <A href='?src=\ref[src];cancelorder=[S]'>(Cancel)</A><BR>"
-		temp += "<BR><A href='?src=\ref[src];mainmenu=1'>OK</A>"
+			temp += "[SO.object.name] approved by [SO.orderedby][SO.comment ? " ([SO.comment])":""] <a href='byond://?src=\ref[src];cancelorder=[S]'>(Cancel)</A><BR>"
+		temp += "<BR><a href='byond://?src=\ref[src];mainmenu=1'>OK</A>"
 	*/
 	else if (href_list["viewrequests"])
 		temp = "Current requests: <BR><BR>"
@@ -224,11 +224,11 @@
 			var/datum/supply_order/SO = S
 			temp += "#[SO.id] - [SO.object.name] requested by [SO.orderer] "
 			if(!requestonly)
-				temp += "<A href='?src=\ref[src];confirmorder=[SO.id]'>Approve</A> "
-			temp += "<A href='?src=\ref[src];rreq=[SO.id]'>Remove</A><BR>"
+				temp += "<a href='byond://?src=\ref[src];confirmorder=[SO.id]'>Approve</A> "
+			temp += "<a href='byond://?src=\ref[src];rreq=[SO.id]'>Remove</A><BR>"
 		if(!requestonly)
-			temp += "<BR><A href='?src=\ref[src];clearreq=1'>Clear list</A>"
-		temp += "<BR><A href='?src=\ref[src];mainmenu=1'>OK</A>"
+			temp += "<BR><a href='byond://?src=\ref[src];clearreq=1'>Clear list</A>"
+		temp += "<BR><a href='byond://?src=\ref[src];mainmenu=1'>OK</A>"
 	else if (href_list["rreq"])
 		var/ordernum = text2num(href_list["rreq"])
 		temp = "Invalid Request.<BR>"
@@ -238,11 +238,11 @@
 				SSsupply.requestlist.Cut(i,i+1)
 				temp = "Request removed.<BR>"
 				break
-		temp += "<BR><A href='?src=\ref[src];viewrequests=1'>Back</A> <A href='?src=\ref[src];mainmenu=1'>Main Menu</A>"
+		temp += "<BR><a href='byond://?src=\ref[src];viewrequests=1'>Back</A> <a href='byond://?src=\ref[src];mainmenu=1'>Main Menu</A>"
 	else if (href_list["clearreq"])
 		SSsupply.requestlist.Cut()
 		temp = "List cleared.<BR>"
-		temp += "<BR><A href='?src=\ref[src];mainmenu=1'>OK</A>"
+		temp += "<BR><a href='byond://?src=\ref[src];mainmenu=1'>OK</A>"
 	else if (href_list["mainmenu"])
 		temp = null
 	add_fingerprint(usr)

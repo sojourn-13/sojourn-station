@@ -158,9 +158,9 @@
 	if(L)
 		// Deliberately not using real_host, we want to ping our parent program, not our computer
 		if(istype(host, /datum/computer_file/program/email_client))
-			received_message.notify_mob(L, real_host, "<a href='?src=\ref[host];chat_open=1;'>Open Email</a>")
+			received_message.notify_mob(L, real_host, "<a href='byond://?src=\ref[host];chat_open=1;'>Open Email</a>")
 		else
-			received_message.notify_mob(L, real_host, "<a href='?src=\ref[src];open=1;'>Open Email</a>")
+			received_message.notify_mob(L, real_host, "<a href='byond://?src=\ref[src];open=1;'>Open Email</a>")
 		log_and_message_admins("[usr] received email from [received_message.source]. \n Message title: [received_message.title]. \n [received_message.stored_data]")
 
 /datum/tgui_module/email_client/ui_data(mob/user)

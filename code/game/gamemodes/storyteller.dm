@@ -189,7 +189,7 @@ GLOBAL_DATUM(storyteller, /datum/storyteller)
 
 /proc/storyteller_button()
 	if(GLOB.storyteller)
-		return "<a href='?src=\ref[GLOB.storyteller];panel=1'>\[STORY\]</a>"
+		return "<a href='byond://?src=\ref[GLOB.storyteller];panel=1'>\[STORY\]</a>"
 	else
 		return "<s>\[STORY\]</s>"
 

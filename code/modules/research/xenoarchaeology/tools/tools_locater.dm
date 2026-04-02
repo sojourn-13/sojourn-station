@@ -74,7 +74,7 @@
 				<A href='byond://?src=\ref[src];freq=10'>+</A><BR>
 				"}
 
-	dat += "<A href='?src=\ref[src];close=1'>Close</a><br>"
+	dat += "<a href='byond://?src=\ref[src];close=1'>Close</a><br>"
 	user << browse(HTML_SKELETON(dat),"window=locater;size=300x150")
 	onclose(user, "locater")
 

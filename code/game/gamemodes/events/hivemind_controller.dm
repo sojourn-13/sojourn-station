@@ -69,7 +69,7 @@ GLOBAL_VAR_INIT(hivemind_panel, new /datum/hivemind_panel)
 
 /datum/hivemind_panel/proc/main_interact()
 	var/data = "<center><font size='3'><b>HIVEMIND PANEL v0.2</b></font></center>"
-	data += "<table><tr><td><a href='?src=\ref[src];refresh=1'>\[REFRESH\]</a>"
+	data += "<table><tr><td><a href='byond://?src=\ref[src];refresh=1'>\[REFRESH\]</a>"
 
 	if(hive_mind_ai)
 		data += "<br>Hivemind [hive_mind_ai.name] [hive_mind_ai.surname] is active."
@@ -80,91 +80,91 @@ GLOBAL_VAR_INIT(hivemind_panel, new /datum/hivemind_panel)
 			for(var/obj/machinery/hivemind_machine/node/hmn in hive_mind_ai.hives)
 				data += "<br>Nodes Locations: [hmn.name]: Jump-to [admin_jump_link(hmn, hmn)]"
 		data += "<br>Areas count: [GLOB.hivemind_areas.len] \
-		<a href='?src=\ref[src];area_list_interact=1'>\[DETAILS\]</a>"
+		<a href='byond://?src=\ref[src];area_list_interact=1'>\[DETAILS\]</a>"
 		data += "<br>Mobs count: [GLOB.hivemind_mobs.len] \
-		<a href='?src=\ref[src];mob_list_interact=1'>\[DETAILS\]</a>"
+		<a href='byond://?src=\ref[src];mob_list_interact=1'>\[DETAILS\]</a>"
 
 		data += "<br>Give Hivemind Points: \
-		<a href='?src=\ref[src];give_points=1'>\[Give\]</a>"
+		<a href='byond://?src=\ref[src];give_points=1'>\[Give\]</a>"
 	else
 		data += "<br>Hivemind is not active. Yet."
-		data += "<br>Name: [_name] <a href='?src=\ref[src];set_name=1'>\[SET\]</a>"
-		data += "<br>Surname: [_surname] <a href='?src=\ref[src];set_surname=1'>\[SET\]</a>"
-	data += "<br><a href='?src=\ref[src];spawn_hive=1'>\[SPAWN\]</a>"
-	data += "<br><a href='?src=\ref[src];kill_hive=1'>\[PURGE\]</a>"
-	data += "<br><a href='?src=\ref[src];really_kill_hive=1'>\[HARDCORE PURGE\]</a>"
+		data += "<br>Name: [_name] <a href='byond://?src=\ref[src];set_name=1'>\[SET\]</a>"
+		data += "<br>Surname: [_surname] <a href='byond://?src=\ref[src];set_surname=1'>\[SET\]</a>"
+	data += "<br><a href='byond://?src=\ref[src];spawn_hive=1'>\[SPAWN\]</a>"
+	data += "<br><a href='byond://?src=\ref[src];kill_hive=1'>\[PURGE\]</a>"
+	data += "<br><a href='byond://?src=\ref[src];really_kill_hive=1'>\[HARDCORE PURGE\]</a>"
 	data += "<br><br>EMP mult Info: 1 is default, 0 disables. Past 1 has emps deal bonus damage, negative numbers heals on emp."
 	data += "<br>Hivemind EMP Mult: [GLOB.hive_data_float["hivemind_emp_mult"]] \
-	<a href='?src=\ref[src];change_emp_mult=1'>\[SET\]</a>"
+	<a href='byond://?src=\ref[src];change_emp_mult=1'>\[SET\]</a>"
 
 	if(GLOB.hive_data_bool["maximum_existing_mobs"])
 		data += "<br>Controlled mob limit: [GLOB.hive_data_float["maximum_existing_mobs"]] \
-		<a href='?src=\ref[src];toggle_mob_limit=1'>\[DISABLE\]</a>	\
-		<a href='?src=\ref[src];set_mob_limit=1'>\[SET\]</a>"
+		<a href='byond://?src=\ref[src];toggle_mob_limit=1'>\[DISABLE\]</a>	\
+		<a href='byond://?src=\ref[src];set_mob_limit=1'>\[SET\]</a>"
 	else
-		data += "<br>Mob limit disabled.<a href='?src=\ref[src];toggle_mob_limit=1'>\[ENABLE\]</a>"
+		data += "<br>Mob limit disabled.<a href='byond://?src=\ref[src];toggle_mob_limit=1'>\[ENABLE\]</a>"
 
 	if(GLOB.hive_data_float["maximum_controlled_areas"])
 		data += "<br>Controlled area limit: [GLOB.hive_data_float["maximum_controlled_areas"]]"
 	else
 		data += "<br>Area limit disabled."
-	data += "<a href='?src=\ref[src];set_area_limit=1'>\[SET\]</a>"
+	data += "<a href='byond://?src=\ref[src];set_area_limit=1'>\[SET\]</a>"
 
 	if(hive_mind_ai)
 		data += "<br>Cover Spawn Chance (Per Wire Spread): [GLOB.hive_data_float["hivemind_cover_spawn_odds"]]/[hive_mind_ai.evo_level]%  \
-		<a href='?src=\ref[src];cover_odds=1'>\[SET\]</a>"
+		<a href='byond://?src=\ref[src];cover_odds=1'>\[SET\]</a>"
 
 		data += "<br>Mob Spawn Chance (Per Wire Spread): [GLOB.hive_data_float["hivemind_mob_spawn_odds"]]+[hive_mind_ai.evo_level]%  \
-		<a href='?src=\ref[src]mob_odds=1'>\[SET\]</a>"
+		<a href='byond://?src=\ref[src]mob_odds=1'>\[SET\]</a>"
 
 		data += "<br>Machine Spawn Chance (Per Wire Spread): [GLOB.hive_data_float["hivemind_machine_spawn_odds"]]-[hive_mind_ai.evo_level]%  \
-		<a href='?src=\ref[src];machine_odds=1'>\[SET\]</a>"
+		<a href='byond://?src=\ref[src];machine_odds=1'>\[SET\]</a>"
 	else
 		data += "<br>Cover Spawn Chance (Per Wire Spread): [GLOB.hive_data_float["hivemind_cover_spawn_odds"]]/1%  \
-		<a href='?src=\ref[src];cover_odds=1'>\[SET\]</a>"
+		<a href='byond://?src=\ref[src];cover_odds=1'>\[SET\]</a>"
 
 		data += "<br>Mob Spawn Chance (Per Wire Spread): [GLOB.hive_data_float["hivemind_mob_spawn_odds"]]+1%  \
-		<a href='?src=\ref[src]mob_odds=1'>\[SET\]</a>"
+		<a href='byond://?src=\ref[src]mob_odds=1'>\[SET\]</a>"
 
 		data += "<br>Machine Spawn Chance (Per Wire Spread): [GLOB.hive_data_float["hivemind_machine_spawn_odds"]]-1%  \
-		<a href='?src=\ref[src];machine_odds=1'>\[SET\]</a>"
+		<a href='byond://?src=\ref[src];machine_odds=1'>\[SET\]</a>"
 
 	data += "<br>Core oddity drop chance: [GLOB.hive_data_float["core_oddity_drop_chance"]] \
-	<a href='?src=\ref[src];rig_gacha=1'>\[SET\]</a>"
+	<a href='byond://?src=\ref[src];rig_gacha=1'>\[SET\]</a>"
 
 	data += "<br>How Long before Gibbing Humans? (0 is disabled): [GLOB.hive_data_float["gibbing_warning_timer"]] \
-	<a href='?src=\ref[src];set_gibbing_warning_timer=1'>\[SET\]</a>"
+	<a href='byond://?src=\ref[src];set_gibbing_warning_timer=1'>\[SET\]</a>"
 
 	data += "<br><br>(Note: If enabled spread through burrows is also enabled)\
 	<br>Spread through maints burrows: [GLOB.hive_data_bool["spread_maints_burrows"] ? "Enabled" : "Disabled"]\
-	<a href='?src=\ref[src];toggle_maint_burrow=1'>\[TOGGLE\]</a>"
+	<a href='byond://?src=\ref[src];toggle_maint_burrow=1'>\[TOGGLE\]</a>"
 
 	data += "<br>Spread through normal burrows (I.E borrows in hallways and departments.): [GLOB.hive_data_bool["spread_trough_burrows"] ? "Enabled" : "Disabled"] \
-	<a href='?src=\ref[src];toggle_burrow=1'>\[TOGGLE\]</a>"
+	<a href='byond://?src=\ref[src];toggle_burrow=1'>\[TOGGLE\]</a>"
 
 	data += "<br><br>Spread on z level below: [GLOB.hive_data_bool["spread_on_lower_z_level"] ? "Enabled" : "Disabled"] \
-	<a href='?src=\ref[src];toggle_gravity_spread=1'>\[TOGGLE\]</a>"
+	<a href='byond://?src=\ref[src];toggle_gravity_spread=1'>\[TOGGLE\]</a>"
 
 	data += "<br>Teleport core when damaged: [GLOB.hive_data_bool["teleport_core_when_damaged"] ? "Enabled" : "Disabled"] \
-	<a href='?src=\ref[src];toggle_core_teleportation=1'>\[TOGGLE\]</a>"
+	<a href='byond://?src=\ref[src];toggle_core_teleportation=1'>\[TOGGLE\]</a>"
 
 	data += "<br>Allow tyrant spawn: [GLOB.hive_data_bool["allow_tyrant_spawn"] ? "Enabled" : "Disabled"] \
-	<a href='?src=\ref[src];toggle_tyrant_spawn=1'>\[TOGGLE\]</a>"
+	<a href='byond://?src=\ref[src];toggle_tyrant_spawn=1'>\[TOGGLE\]</a>"
 
 	data += "<br>Tyrant death kills hive: [GLOB.hive_data_bool["tyrant_death_kills_hive"] ? "Enabled" : "Disabled"] \
-	<a href='?src=\ref[src];toggle_tyrant_gameover=1'>\[TOGGLE\]</a>"
+	<a href='byond://?src=\ref[src];toggle_tyrant_gameover=1'>\[TOGGLE\]</a>"
 
 	data += "<br>All Church To Inquisitors: [GLOB.hive_data_bool["all_church_to_battle"] ? "Enabled" : "Disabled"] \
-	<a href='?src=\ref[src];toggle_inquisitors=1'>\[TOGGLE\]</a>"
+	<a href='byond://?src=\ref[src];toggle_inquisitors=1'>\[TOGGLE\]</a>"
 
 	data += "<br>Spawn hivemind events regardles of pop and with a threat scale of 1: [GLOB.hive_data_bool["pop_lock"] ? "Enabled" : "Disabled"] \
-	<a href='?src=\ref[src];toggle_pop_lock=1'>\[TOGGLE\]</a>"
+	<a href='byond://?src=\ref[src];toggle_pop_lock=1'>\[TOGGLE\]</a>"
 
 	data += "<br>Reveal hiveminds location after 10 minutes: [GLOB.hive_data_bool["reveal_location"] ? "Enabled" : "Disabled"] \
-	<a href='?src=\ref[src];toggle_reveal_location=1'>\[TOGGLE\]</a>"
+	<a href='byond://?src=\ref[src];toggle_reveal_location=1'>\[TOGGLE\]</a>"
 
 	data += "<br>Prevent Blob Events below 4 pop: [GLOB.hive_data_bool["slime_pop_lock"] ? "Enabled" : "Disabled"] \
-	<a href='?src=\ref[src];toggle_slime_pop_lock=1'>\[TOGGLE\]</a>"
+	<a href='byond://?src=\ref[src];toggle_slime_pop_lock=1'>\[TOGGLE\]</a>"
 
 	data += "</td></tr></table>"
 	usr << browse(HTML_SKELETON(data), "window=hive_main;size=600x600")

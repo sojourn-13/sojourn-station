@@ -110,8 +110,8 @@
 	var/dat = ""
 	dat += "<head><title>Liquid Ameridian Processor</title></head>"
 	dat += "Liquid Ameridian Processor<BR>"
-	dat += "<A href='?src=\ref[src];close=1'>Close</A><BR>"
-	dat += "<A href='?src=\ref[src];refresh=1'>Refresh</A><BR><BR>"
+	dat += "<a href='byond://?src=\ref[src];close=1'>Close</A><BR>"
+	dat += "<a href='byond://?src=\ref[src];refresh=1'>Refresh</A><BR><BR>"
 	if(Container)
 		dat += "Current quantity of liquid ameridian : [get_bidon_ameridian()].<BR><BR>"
 		dat += mats_list_html()
@@ -177,11 +177,11 @@
 	for(var/list/L in outputs)
 		dat += "[L["name"]], cost : [L["cost"] / cost_modifier] Liquid Ameridian.<BR>"
 		dat += "- Print : "
-		dat += "[check_bidon_ameridian((L["cost"]/cost_modifier)*1) ? "<A href='?src=\ref[src];material=[L["path"]];cost=[L["cost"]/cost_modifier];amount=1'>x1</A>" : "Not enough liquid ameridian"]"
-		dat += "[check_bidon_ameridian((L["cost"]/cost_modifier)*5) ? ", <A href='?src=\ref[src];material=[L["path"]];cost=[L["cost"]/cost_modifier];amount=5'>x5</A>" : ""]"
-		dat += "[check_bidon_ameridian((L["cost"]/cost_modifier)*10) ? ", <A href='?src=\ref[src];material=[L["path"]];cost=[L["cost"]/cost_modifier];amount=10'>x10</A>" : ""]"
-		dat += "[check_bidon_ameridian((L["cost"]/cost_modifier)*20) ? ", <A href='?src=\ref[src];material=[L["path"]];cost=[L["cost"]/cost_modifier];amount=20'>x20</A>" : ""]"
-		dat += "[check_bidon_ameridian((L["cost"]/cost_modifier)*60) ? ", <A href='?src=\ref[src];material=[L["path"]];cost=[L["cost"]/cost_modifier];amount=60'>x60</A>" : ""]"
-		dat += "[check_bidon_ameridian((L["cost"]/cost_modifier)*120) ? ", <A href='?src=\ref[src];material=[L["path"]];cost=[L["cost"]/cost_modifier];amount=120'>x120</A>" : ""]"
+		dat += "[check_bidon_ameridian((L["cost"]/cost_modifier)*1) ? "<a href='byond://?src=\ref[src];material=[L["path"]];cost=[L["cost"]/cost_modifier];amount=1'>x1</A>" : "Not enough liquid ameridian"]"
+		dat += "[check_bidon_ameridian((L["cost"]/cost_modifier)*5) ? ", <a href='byond://?src=\ref[src];material=[L["path"]];cost=[L["cost"]/cost_modifier];amount=5'>x5</A>" : ""]"
+		dat += "[check_bidon_ameridian((L["cost"]/cost_modifier)*10) ? ", <a href='byond://?src=\ref[src];material=[L["path"]];cost=[L["cost"]/cost_modifier];amount=10'>x10</A>" : ""]"
+		dat += "[check_bidon_ameridian((L["cost"]/cost_modifier)*20) ? ", <a href='byond://?src=\ref[src];material=[L["path"]];cost=[L["cost"]/cost_modifier];amount=20'>x20</A>" : ""]"
+		dat += "[check_bidon_ameridian((L["cost"]/cost_modifier)*60) ? ", <a href='byond://?src=\ref[src];material=[L["path"]];cost=[L["cost"]/cost_modifier];amount=60'>x60</A>" : ""]"
+		dat += "[check_bidon_ameridian((L["cost"]/cost_modifier)*120) ? ", <a href='byond://?src=\ref[src];material=[L["path"]];cost=[L["cost"]/cost_modifier];amount=120'>x120</A>" : ""]"
 		dat += ".<BR><BR>"
 	return dat

@@ -700,7 +700,7 @@ ADMIN_VERB_ADD(/client/proc/SDQL2_query, R_DEBUG, FALSE)
 
 /proc/SDQL_print(object, list/text_list)
 	if (is_proper_datum(object))
-		text_list += "<A HREF='?_src_=vars;Vars=\ref[object]'>\ref[object]</A>"
+		text_list += "<a href='byond://?_src_=vars;Vars=\ref[object]'>\ref[object]</A>"
 		if(istype(object, /atom))
 			var/atom/a = object
 

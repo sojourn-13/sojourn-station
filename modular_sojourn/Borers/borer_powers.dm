@@ -669,14 +669,14 @@
 	if (delete && temphtml) //Window in buffer but its just simple message, so nothing
 		delete = delete
 	else if (!delete && temphtml) //Window in buffer - its a menu, dont add clear message
-		dat = text("[]<BR><BR><A href='?src=\ref[];clear=1'>Main Menu</A>", temphtml, src)
+		dat = text("[]<BR><BR><a href='byond://?src=\ref[];clear=1'>Main Menu</A>", temphtml, src)
 	else
 		if (host) //are we inside?
 			dat = format_host_data(get_host_data())
 		else
 			dat = SPAN_WARNING("This is a bug.")
 
-	dat += text("<BR><A href='?src=\ref[];mach_close=scanconsole'>Close</A>", src)
+	dat += text("<BR><a href='byond://?src=\ref[];mach_close=scanconsole'>Close</A>", src)
 	src << browse(HTML_SKELETON(dat), "window=scanconsole;size=430x600")
 	return
 

@@ -59,13 +59,13 @@ GLOBAL_LIST_EMPTY(buildholders)
 #define ADMIN_VERB_ADD(path, rights, keep)\
 	world/registrate_verbs() {..(); cmd_registrate_verb(path, rights, keep);}
 
-#define ADMIN_QUE(user) "(<a href='?_src_=holder;adminmoreinfo=[REF(user)]'>?</a>)"
-#define ADMIN_FLW(user) "(<a href='?_src_=holder;adminplayerobservefollow=[REF(user)]'>FLW</a>)"
-#define ADMIN_PP(user) "(<a href='?_src_=holder;adminplayeropts=[REF(user)]'>PP</a>)"
-#define ADMIN_VV(atom) "(<a href='?_src_=vars;Vars=[REF(atom)]'>VV</a>)"
-#define ADMIN_SM(user) "(<a href='?_src_=holder;subtlemessage=[REF(user)]'>SM</a>)"
-#define ADMIN_TP(user) "(<a href='?_src_=holder;contractor=[REF(user)]'>TP</a>)"
-#define ADMIN_JMP(src) "(<a href='?_src_=holder;adminplayerobservecoodjump=1;X=[src.x];Y=[src.y];Z=[src.z]'>JMP</a>)"
+#define ADMIN_QUE(user) "(<a href='byond://?_src_=holder;adminmoreinfo=[REF(user)]'>?</a>)"
+#define ADMIN_FLW(user) "(<a href='byond://?_src_=holder;adminplayerobservefollow=[REF(user)]'>FLW</a>)"
+#define ADMIN_PP(user) "(<a href='byond://?_src_=holder;adminplayeropts=[REF(user)]'>PP</a>)"
+#define ADMIN_VV(atom) "(<a href='byond://?_src_=vars;Vars=[REF(atom)]'>VV</a>)"
+#define ADMIN_SM(user) "(<a href='byond://?_src_=holder;subtlemessage=[REF(user)]'>SM</a>)"
+#define ADMIN_TP(user) "(<a href='byond://?_src_=holder;contractor=[REF(user)]'>TP</a>)"
+#define ADMIN_JMP(src) "(<a href='byond://?_src_=holder;adminplayerobservecoodjump=1;X=[src.x];Y=[src.y];Z=[src.z]'>JMP</a>)"
 #define COORD(src) "[src ? src.Admin_Coordinates_Readable() : "nonexistent location"]"
 #define AREACOORD(src) "[src ? src.Admin_Coordinates_Readable(TRUE) : "nonexistent location"]"
 

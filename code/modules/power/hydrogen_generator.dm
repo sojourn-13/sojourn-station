@@ -182,20 +182,20 @@
 /obj/machinery/power/hydrogen_gen/proc/handle_ui()
 	var/dat = ""
 	dat += "Hydrogen Generator<BR>"
-	dat += "<A href='?src=\ref[src];close=1'>Close</A><BR>"
-	dat += "<A href='?src=\ref[src];refresh=1'>Refresh</A><BR><BR>"
+	dat += "<a href='byond://?src=\ref[src];close=1'>Close</A><BR>"
+	dat += "<a href='byond://?src=\ref[src];refresh=1'>Refresh</A><BR><BR>"
 
 	dat += "Status: [(active?"Active":"Standby")] <BR>"
-	dat += "<A href='?src=\ref[src];togglestatus=1'>Toggle Status</A><BR><BR>"
+	dat += "<a href='byond://?src=\ref[src];togglestatus=1'>Toggle Status</A><BR><BR>"
 
 	dat += "Fuel : "
 	if(!fuel_cell)
 		dat += "No hydrogen fuel cell detected.<BR>"
 	else
-		dat += "<A href='?src=\ref[src];ejectfuel=1'>Eject</A><BR>"
+		dat += "<a href='byond://?src=\ref[src];ejectfuel=1'>Eject</A><BR>"
 		dat += "- Current amount of fuel : [fuel_cell.plasma]/[fuel_cell.max_plasma]<BR>"
 		dat += "- Power Level: [power_output]/[max_power_output] <BR>"
-		dat += "- <A href='?src=\ref[src];strengthdown=1'>--</A>|<A href='?src=\ref[src];strengthup=1'>++</A><BR><BR>"
+		dat += "- <a href='byond://?src=\ref[src];strengthdown=1'>--</A>|<a href='byond://?src=\ref[src];strengthup=1'>++</A><BR><BR>"
 		dat += "- Current Power Output : [(power_gen * power_output)/1000] KW.<BR>"
 
 	return HTML_SKELETON_TITLE("Hydrogen Generator",dat)
