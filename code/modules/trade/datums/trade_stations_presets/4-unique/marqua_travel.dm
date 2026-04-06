@@ -20,7 +20,9 @@
 	inventory = list(
 		"Disks" = list(
 			/obj/item/pc_part/drive/disk/design/sun_branch = good_data("Sun Branch Disk", list(4, 6), 1200),
-			/obj/item/pc_part/drive/disk/design/stamped_branch = good_data("Stamp Branch Disk", list(80, 90), 600)
+			/obj/item/pc_part/drive/disk/design/stamped_branch = good_data("Stamp Branch Disk", list(80, 90), 600),
+			//Dont buy this disk, its incompleted basically
+			/obj/item/pc_part/drive/disk/design/saint_branch = good_data("Saint of Wax Branch Disk (Incompleted)", list(-100, -90), 7200)
 		)
 	)
 	hidden_inventory = list(
@@ -36,6 +38,14 @@
 			/obj/item/clothing/suit/stamped_suit = good_data("\"Wired\" Executive Suit", list(4, 6), 800),
 			/obj/item/clothing/glasses/stamped_lens = good_data("\"Stamped\" lens", list(6, 8), 500),
 			/obj/item/ammo_magazine/stamp_10x24 = good_data("\"Spring-Lock\" Stamp Mag", list(6, 8), 500),
+		),
+		"Saint of Wax Branch Pre-Printed" = list(
+			//Im really bad at sprites so untill I can get someone to design one ill just be making the sword
+			/obj/item/device/lighting/toggleable/lantern/fae = good_data("\"Fae\" Lantern", list(4, 6), 2000), //Fae accually just shouldnt be printable
+			/obj/item/gun/matter/seal = good_data("\"Seal\" waxworks rapier", list(4, 6), 3500),
+			//obj/item/clothing = good_data("\"Candelabra\" xxxx", list(4, 6), 1000),
+			/obj/item/clothing/head/waxy_gaze = good_data("\"Waxy Gaze\" Tipped Hat", list(4, 6), 2500),
+			//obj/item/clothing = good_data("\"Saint Wix's Grand Design\" xxxx", list(1, 1), 7500)
 		)
 	)
 	offer_types = list(

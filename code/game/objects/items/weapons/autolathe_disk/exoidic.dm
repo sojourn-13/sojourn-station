@@ -25,3 +25,13 @@
 		/datum/design/autolathe/gun/stamp_smg = 4,
 		/datum/design/autolathe/ammo/stamped_mag = 0.5
 	)
+
+//Saint of Wax Branch
+/obj/item/pc_part/drive/disk/design/saint_branch
+	disk_name = "Saint of Wax Branch Disk (Incompleted)"
+	icon_state = "waxworks_branch_disk"
+	license = 12
+	designs = list(
+		/datum/design/autolathe/gun/plasma/seal = 10,
+		/datum/design/autolathe/clothing/waxy_gaze = 2
+	)

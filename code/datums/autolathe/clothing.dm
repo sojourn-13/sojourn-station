@@ -59,6 +59,11 @@
 	name = "\"Firefly\" Glasses"
 	build_path = /obj/item/clothing/glasses/firefly_glasses
 
+//Saint of Wax Branch
+/datum/design/autolathe/clothing/waxy_gaze
+	name = "\"Waxy Gaze\" wide brim"
+	build_path = /obj/item/clothing/head/waxy_gaze
+
 //Stamp Branch
 /datum/design/autolathe/clothing/stamped_wired_suit
 	name = "\"Wired\" Executive Suit"
