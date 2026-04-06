@@ -687,9 +687,9 @@ obj/item/clothing/head/sunhat/verb/toggle_style()
 	unacidable = TRUE
 	price_tag = 1000
 
-
 /obj/item/clothing/head/waxy_gaze
 	name = "\"Waxy Gaze\" wide brim"
 	desc = "A red wide brim hat made by hand, woven with fine silks and threads each thread dipped in candle wax."
 	icon_state = "waxy_gaze"
 	item_state = "waxy_gaze"
+	matter = list(MATERIAL_SILK = 15, MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 3, MATERIAL_GOLD = 2)

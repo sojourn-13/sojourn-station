@@ -30,9 +30,8 @@
 /obj/item/pc_part/drive/disk/design/saint_branch
 	disk_name = "Saint of Wax Branch Disk (Incompleted)"
 	icon_state = "waxworks_branch_disk"
-	desc = "A disk containing a incompleted designs. Whatever is printable is a fraction of the potional."
-
 	license = 12
 	designs = list(
-		/datum/design/autolathe/gun/plasma/seal = 12
+		/datum/design/autolathe/gun/plasma/seal = 10,
+		/datum/design/autolathe/clothing/waxy_gaze = 2
 	)
