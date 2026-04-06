@@ -19,6 +19,7 @@
 #define BOTTLER /datum/task_master/task/bottler
 #define SCRAPPER /datum/task_master/task/scrapper
 #define BUTCHERING /datum/task_master/task/butchering
+#define WALNUT_SEEKER /datum/task_master/task/walnut_seeker
 
 // Perk Exclusive Tasks
 #define MAP_CRAFTING /datum/task_master/task/map_crafting

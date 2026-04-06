@@ -65,6 +65,37 @@
 	strangth = 45
 	bolus_alinement = "Still"
 
+/obj/item/bolus_craftable/mushroom_walnut
+	name = "Mushroom Walnut"
+	desc = "A hard mushroom that holds seeds for trees that no longer exist."
+	icon_state = "walnut"
+	price_tag = 60
+	strangth = 15
+	bolus_alinement = "Still"
+	reagent_flags = DRAWABLE
+
+/obj/item/bolus_craftable/mushroom_walnut/Initialize()
+	. = ..()
+	create_reagents(0.1)
+	reagents.add_reagent("mushroom_vial", 0.1)
+
+/obj/item/bolus_craftable/mushroom_walnut/attackby(obj/item/I, mob/user)
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	var/list/usable_qualities = list(QUALITY_HAMMERING)
+	var/tool_type = I.get_tool_type(user, usable_qualities, src)
+	if(tool_type==QUALITY_HAMMERING)
+		var/obj/item/reagent_containers/snacks/tree_walnut/tw = new /obj/item/reagent_containers/snacks/tree_walnut(user.loc)
+		if(!reagents.has_reagent("mushroom_vial"))
+			tw.proper_drained = TRUE
+		else
+			tw.reagents.add_reagent("mushroom_vial", 0.1)
+
+		visible_message(SPAN_NOTICE("[user] carefully whacks [src] with [I] breaking the hard shell apart."))
+		user.drop_from_inventory(src)
+		qdel(src)
+
+	..()
+
 ////////////////////////////
 /// Those locked in time ///
 ////////////////////////////
