@@ -13,13 +13,20 @@
 	armor_divisor = ARMOR_PEN_DEEP
 	price_tag = 300
 	matter = list(MATERIAL_BIOMATTER = 25, MATERIAL_STEEL = 5)
+	var/embed_mult_nt = 0.05
 
 /obj/item/tool/sword/nt/equipped(mob/living/M)
 	. = ..()
 	if(is_held() && is_neotheology_disciple(M))
-		embed_mult = 0.05
+		embed_mult = embed_mult_nt
 	else
 		embed_mult = initial(embed_mult)
+
+/obj/item/tool/sword/nt/refresh_upgrades()
+	..()
+	if(is_held() && isliving(loc))
+		if(is_neotheology_disciple(loc))
+			embed_mult = embed_mult_nt
 
 /obj/item/tool/sword/nt/shortsword
 	name = "short sword"
@@ -59,6 +66,34 @@
 	armor_divisor = ARMOR_PEN_MASSIVE
 	price_tag = 120
 	matter = list(MATERIAL_BIOMATTER = 5, MATERIAL_STEEL = 1)
+
+/obj/item/tool/knife/neotritual
+	name = "absolutism ritual knife"
+	desc = "The sweet embrace of mercy, for relieving the soul from a tortured vessel."
+	icon = 'icons/obj/weapons.dmi'
+	icon_state = "neot-knife"
+	item_state = "knife"
+	matter = list(MATERIAL_PLASTEEL = 4, MATERIAL_PLASTIC = 1)
+	force = WEAPON_FORCE_PAINFUL
+	tool_qualities = list(QUALITY_CUTTING = 30,  QUALITY_WIRE_CUTTING = 10, QUALITY_SCREW_DRIVING = 5)
+	max_upgrades = 3
+	embed_mult = 6
+	price_tag = 24
+
+/obj/item/tool/knife/neotritual/implant
+
+/obj/item/tool/knife/neotritual/equipped(mob/living/M)
+	. = ..()
+	if(is_held() && is_neotheology_disciple(M))
+		embed_mult = 0.05
+	else
+		embed_mult = initial(embed_mult)
+
+/obj/item/tool/knife/neotritual/refresh_upgrades()
+	..()
+	if(is_held() && isliving(loc))
+		if(is_neotheology_disciple(loc))
+			embed_mult = 0.05
 
 /obj/item/tool/spear/halberd
 	name = "halberd"
@@ -125,22 +160,22 @@
 	else
 		extend()
 
+/obj/item/tool/sword/nt/scourge/refresh_upgrades()
+	..()
+	if(extended)
+		force += force_extended
+		armor_divisor += armor_divisor_extended
+		agony += agony_extended
+		slot_flags = null
+		w_class = ITEM_SIZE_HUGE
+
 /obj/item/tool/sword/nt/scourge/proc/extend()
 	extended = TRUE
-	force += (force_extended - initial(force))
-	armor_divisor += (armor_divisor_extended - initial(armor_divisor))
-	agony += (agony_extended - initial(agony))
-	slot_flags = null
-	w_class = ITEM_SIZE_HUGE
 	refresh_upgrades() //it's also sets all to default
 	update_icon()
 
 /obj/item/tool/sword/nt/scourge/proc/unextend()
 	extended = FALSE
-	w_class = initial(w_class)
-	agony = initial(agony)
-	slot_flags = initial(slot_flags)
-	armor_divisor = initial(armor_divisor)
 	refresh_upgrades() //it's also sets all to default
 	update_icon()
 
@@ -154,9 +189,7 @@
 /obj/item/tool/sword/nt/scourge/apply_hit_effect(mob/living/carbon/human/target, mob/living/user, hit_zone)
 	. = ..()
 	if(ishuman(target))
-		var/mob/living/carbon/human/O = target
 		target.stun_effect_act(stun, agony, hit_zone, src)
-		O.say(pick("LORD", "MERCY", "SPARE", "ME", "HAVE", "PLEASE"))
 
 /obj/item/tool/sword/nt/spear
 	name = "spear"
@@ -177,16 +210,10 @@
 	extended_reach = TRUE
 	push_attack = TRUE
 	matter = list(MATERIAL_BIOMATTER = 20, MATERIAL_PLASTEEL = 10) // More expensive, high-end spear
-
-/obj/item/tool/sword/nt/spear/equipped(mob/living/W)
-	. = ..()
-	if(is_held() && is_neotheology_disciple(W))
-		embed_mult = 0.2
-	else
-		embed_mult = initial(embed_mult)
+	embed_mult_nt = 0.2
 
 /obj/item/tool/sword/nt/spear/dropped(mob/living/W)
-	embed_mult = 600
+	refresh_upgrades()
 	..()
 
 /obj/item/tool/sword/nt/spear/on_embed(mob/user)
