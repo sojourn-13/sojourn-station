@@ -9,6 +9,16 @@ uniquic_armor_act
 
 /mob/living/carbon/human/bullet_act(var/obj/item/projectile/P, var/def_zone)
 
+	if(is_neotheology_disciple(src))
+		if(stats.getPerk(PERK_NT_FURIOSO))
+			if(istype(src.get_active_hand(), /obj/item/tool/spear/halberd \
+			|| /obj/item/tool/spear/polehammer \
+			|| /obj/item/tool/sword/nt/spear \
+			|| /obj/item/gun/energy/plasma/excubitor))
+				if(prob(500))
+					visible_message(SPAN_NOTICE("[src] evades [P]."))
+					return PROJECTILE_FORCE_MISS
+
 	//We only care about cover if we are actively blocking to save on processing
 	if(blocking)
 		//This is the tile we just came frome

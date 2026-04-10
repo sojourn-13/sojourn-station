@@ -41,6 +41,44 @@
 	price_tag = 300
 	matter = list(MATERIAL_BIOMATTER = 25, MATERIAL_STEEL = 5)
 
+/obj/item/tool/sword/nt/shortsword/resolve_attackby(atom/target, mob/user, relay = FALSE)
+
+	if(is_neotheology_disciple(user))
+		if(isliving(target))
+			var/mob/living/M = target
+			var/mob/living/U = user
+			var/obj/item/implant/core_implant/cruciform/CI = U.get_core_implant()
+			if(CI)
+				if(M.stat != DEAD)
+					var/datum/perk/cooldown/nt_swords/sword_arts = U.stats.getPerk(PERK_NT_SWORDS)
+					if(!sword_arts && CI.power > CI.max_power * 0.25)
+						CI.power -= 10
+						U.stats.addPerk(PERK_NT_SWORDS)
+					else
+						if(CI.power > CI.max_power * 0.25)
+							CI.power -= 2
+							sword_arts.swings += 1
+							force += clamp(0, sword_arts.swings / 5, 10)
+							armor_divisor += min(0, sword_arts.swings / 10, 2)
+							var/datum/perk/cooldown/nt_furioso/furioso = U.stats.getPerk(PERK_NT_FURIOSO)
+							if(furioso && !relay)
+								for(var/mob/living/L in view(1, U))
+									if(L.stat == DEAD || L == target)
+										continue
+									if(L.faction != U.faction \
+									&& L.colony_friend != U.colony_friend \
+									&& L.friendly_to_colony != U.friendly_to_colony)
+										resolve_attackby(L, U, TRUE)
+										var/obj/effect/effect/melee/mob_melee_animation/RS = new(get_turf(L))
+										RS.dir = dir
+										flick("synth_armblade_attack_flick", RS) //Best we got
+										QDEL_IN(RS, 2 SECONDS)
+								CI.power += sword_arts.swings / 10
+
+	.=..()
+
+	refresh_upgrades()
+
 /obj/item/tool/sword/nt/longsword
 	name = "longsword"
 	desc = "A saintly looking longsword, recommended by experienced crusaders. \
@@ -55,45 +93,43 @@
 
 /obj/item/tool/sword/nt/longsword/implant
 
-/obj/item/tool/knife/dagger/nt
-	name = "dagger"
-	desc = "A saintly looking dagger, may the absolute have mercy. \
-	It bears a tau cross marking it as produced by the Church of the Absolute's New Testament weapons division."
-	icon = 'icons/obj/nt_melee.dmi'
-	icon_state = "nt_dagger"
-	item_state = "nt_dagger"
-	force = WEAPON_FORCE_PAINFUL
-	armor_divisor = ARMOR_PEN_MASSIVE
-	price_tag = 120
-	matter = list(MATERIAL_BIOMATTER = 5, MATERIAL_STEEL = 1)
+/obj/item/tool/sword/nt/longsword/resolve_attackby(atom/target, mob/user, relay = FALSE)
 
-/obj/item/tool/knife/neotritual
-	name = "absolutism ritual knife"
-	desc = "The sweet embrace of mercy, for relieving the soul from a tortured vessel."
-	icon = 'icons/obj/weapons.dmi'
-	icon_state = "neot-knife"
-	item_state = "knife"
-	matter = list(MATERIAL_PLASTEEL = 4, MATERIAL_PLASTIC = 1)
-	force = WEAPON_FORCE_PAINFUL
-	tool_qualities = list(QUALITY_CUTTING = 30,  QUALITY_WIRE_CUTTING = 10, QUALITY_SCREW_DRIVING = 5)
-	max_upgrades = 3
-	embed_mult = 6
-	price_tag = 24
+	if(is_neotheology_disciple(user))
+		if(isliving(target))
+			var/mob/living/M = target
+			var/mob/living/U = user
+			var/obj/item/implant/core_implant/cruciform/CI = U.get_core_implant()
+			if(CI)
+				if(M.stat != DEAD)
+					var/datum/perk/cooldown/nt_swords/sword_arts = U.stats.getPerk(PERK_NT_SWORDS)
+					if(!sword_arts && CI.power > CI.max_power * 0.25)
+						CI.power -= 10
+						U.stats.addPerk(PERK_NT_SWORDS)
+					else
+						if(CI.power > CI.max_power * 0.25)
+							CI.power -= 2
+							sword_arts.swings += 1
+							force += clamp(0, sword_arts.swings / 5, 15)
+							armor_divisor += min(0, sword_arts.swings / 10, 2.5)
+							var/datum/perk/cooldown/nt_furioso/furioso = U.stats.getPerk(PERK_NT_FURIOSO)
+							if(furioso && !relay)
+								for(var/mob/living/L in view(2, U))
+									if(L.stat == DEAD || L == target)
+										continue
+									if(L.faction != U.faction \
+									&& L.colony_friend != U.colony_friend \
+									&& L.friendly_to_colony != U.friendly_to_colony)
+										resolve_attackby(L, U, TRUE)
+										var/obj/effect/effect/melee/mob_melee_animation/RS = new(get_turf(L))
+										RS.dir = dir
+										flick("synth_armblade_attack_flick", RS) //Best we got
+										QDEL_IN(RS, 2 SECONDS)
+								CI.power += sword_arts.swings / 10
 
-/obj/item/tool/knife/neotritual/implant
+	.=..()
 
-/obj/item/tool/knife/neotritual/equipped(mob/living/M)
-	. = ..()
-	if(is_held() && is_neotheology_disciple(M))
-		embed_mult = 0.05
-	else
-		embed_mult = initial(embed_mult)
-
-/obj/item/tool/knife/neotritual/refresh_upgrades()
-	..()
-	if(is_held() && isliving(loc))
-		if(is_neotheology_disciple(loc))
-			embed_mult = 0.05
+	refresh_upgrades()
 
 /obj/item/tool/spear/halberd
 	name = "halberd"
@@ -558,3 +594,42 @@
 	throwforce = WEAPON_FORCE_BRUTAL / (1 + 100 / ROB_throwing_damage) + initial(throwforce)
 	..()
 
+/obj/item/tool/knife/dagger/nt
+	name = "dagger"
+	desc = "A saintly looking dagger, may the absolute have mercy. \
+	It bears a tau cross marking it as produced by the Church of the Absolute's New Testament weapons division."
+	icon = 'icons/obj/nt_melee.dmi'
+	icon_state = "nt_dagger"
+	item_state = "nt_dagger"
+	force = WEAPON_FORCE_PAINFUL
+	armor_divisor = ARMOR_PEN_MASSIVE
+	price_tag = 120
+	matter = list(MATERIAL_BIOMATTER = 5, MATERIAL_STEEL = 1)
+
+/obj/item/tool/knife/neotritual
+	name = "absolutism ritual knife"
+	desc = "The sweet embrace of mercy, for relieving the soul from a tortured vessel."
+	icon = 'icons/obj/weapons.dmi'
+	icon_state = "neot-knife"
+	item_state = "knife"
+	matter = list(MATERIAL_PLASTEEL = 4, MATERIAL_PLASTIC = 1)
+	force = WEAPON_FORCE_PAINFUL
+	tool_qualities = list(QUALITY_CUTTING = 30,  QUALITY_WIRE_CUTTING = 10, QUALITY_SCREW_DRIVING = 5)
+	max_upgrades = 3
+	embed_mult = 6
+	price_tag = 24
+
+/obj/item/tool/knife/neotritual/implant
+
+/obj/item/tool/knife/neotritual/equipped(mob/living/M)
+	. = ..()
+	if(is_held() && is_neotheology_disciple(M))
+		embed_mult = 0.05
+	else
+		embed_mult = initial(embed_mult)
+
+/obj/item/tool/knife/neotritual/refresh_upgrades()
+	..()
+	if(is_held() && isliving(loc))
+		if(is_neotheology_disciple(loc))
+			embed_mult = 0.05
