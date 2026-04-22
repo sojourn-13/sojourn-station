@@ -160,7 +160,7 @@
 /area/nadezhda/outside/one_star/fo_internal)
 "bt" = (
 /obj/structure/table/onestar,
-/obj/item/clothing/gloves/thick/ablasive/iron_lock_security,
+/obj/item/clothing/gloves/thick/ablative/iron_lock_security,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/outside/one_star/fo_internal)
 "bu" = (
@@ -6279,7 +6279,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/item/clothing/shoes/ablasive/iron_lock_security,
+/obj/item/clothing/shoes/ablative/iron_lock_security,
 /turf/simulated/floor/carpet/purcarpet,
 /area/nadezhda/outside/one_star/fo_internal)
 "XF" = (
