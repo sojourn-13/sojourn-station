@@ -38,7 +38,7 @@
 
 	offer_types = list(
 		/obj/item/pc_part/drive/disk/design/onestar/stockparts = offer_data("GP Stockparts Disk", 500, 1),
-		/obj/item/pc_part/drive/disk/design/onestar/armor = offer_data("GP ablative Armor Disk", 500, 1),
+		/obj/item/pc_part/drive/disk/design/onestar/armor = offer_data("GP Ablative Armor Disk", 500, 1),
 		/obj/item/pc_part/drive/disk/design/onestar/spring = offer_data("GP Spring Disk", 2000, 1),
 		/obj/item/pc_part/drive/disk/design/onestar/rivet = offer_data("GP Rivet Disk", 2000, 1),
 		/obj/item/pc_part/drive/disk/design/onestar/rebar = offer_data("GP Rebar Disk", 2000, 1),
