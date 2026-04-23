@@ -626,7 +626,10 @@
 				new blood_from_harvest(get_turf(src))
 				qdel(src)
 			else
-				gib()
+				if(cant_gib)
+					qdel(src)
+				else
+					gib()
 
 	if(isliving(user) && user != src)
 		user.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/butchering, "BUTCHERING", skill_gained = 1, learner = user)

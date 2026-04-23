@@ -131,8 +131,11 @@
 								else if (istype(M, /mob/living/carbon/superior) && (M.icon)) // Eating a spider or roach
 									// Gib victim
 									var/mob/living/carbon/superior/tasty = M
-									M.gib(null, FALSE)
-									gibs(targetTurf, null, /obj/effect/gibspawner/generic, fleshcolor, bloodcolor)
+									if(M.cant_gib)
+										qdel(M)
+									else
+										M.gib(null, FALSE)
+										gibs(targetTurf, null, /obj/effect/gibspawner/generic, fleshcolor, bloodcolor)
 									// End message
 									src.visible_message(SPAN_WARNING("\The [src] finishes eating \the [eat_target], leaving only bones."))
 									// Get fed
