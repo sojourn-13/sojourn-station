@@ -105,10 +105,10 @@
 	name = "Marshal Ablative Armor Crate"
 	contains = list(/obj/item/clothing/suit/armor/laserproof,
 					/obj/item/clothing/suit/armor/laserproof,
-					/obj/item/clothing/shoes/ablasive,
-					/obj/item/clothing/shoes/ablasive,
-					/obj/item/clothing/gloves/thick/ablasive,
-					/obj/item/clothing/gloves/thick/ablasive,
+					/obj/item/clothing/shoes/ablative,
+					/obj/item/clothing/shoes/ablative,
+					/obj/item/clothing/gloves/thick/ablative,
+					/obj/item/clothing/gloves/thick/ablative,
 					/obj/item/clothing/head/helmet/laserproof,
 					/obj/item/clothing/head/helmet/laserproof)
 	cost = 2800

@@ -341,7 +341,7 @@
 	populate_contents()
 		new /obj/item/clothing/suit/armor/vest/ablative/militia(src)
 		new /obj/item/clothing/head/helmet/laserproof/militia(src)
-		new /obj/item/clothing/gloves/thick/ablasive/militia(src)
+		new /obj/item/clothing/gloves/thick/ablative/militia(src)
 
 /obj/item/storage/box/bs_kit/standard_armor_corpsman
 	name = "\improper Standard Corpsman Armor Kit"

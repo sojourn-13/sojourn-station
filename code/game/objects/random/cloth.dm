@@ -302,7 +302,7 @@
 				/obj/item/clothing/gloves/boxing/green = 1,
 				/obj/item/clothing/gloves/boxing/yellow = 1,
 				/obj/item/clothing/gloves/captain = 1,
-				/obj/item/clothing/gloves/thick/ablasive = 2,
+				/obj/item/clothing/gloves/thick/ablative = 2,
 				/obj/item/clothing/gloves/color = 3,
 				/obj/item/clothing/gloves/color/blue = 3,
 				/obj/item/clothing/gloves/color/brown = 3,
@@ -375,7 +375,7 @@
 				/obj/item/clothing/shoes/leather = 14,
 				/obj/item/clothing/shoes/aerostatic_boots = 10,
 				/obj/item/clothing/shoes/render = 10,
-				/obj/item/clothing/shoes/ablasive = 8,
+				/obj/item/clothing/shoes/ablative = 8,
 				/obj/item/clothing/shoes/reinforced = 14,
 				/obj/item/clothing/shoes/workboots = 4,
 				/obj/item/clothing/shoes/track_shoes = 3))
@@ -491,8 +491,8 @@
 /obj/random/cloth/greyson_clothing/item_to_spawn()
 	return pickweight(list(/obj/item/clothing/under/os_jumpsuit = 8,
 				/obj/item/clothing/under/iron_lock_security = 5,
-				/obj/item/clothing/shoes/ablasive/iron_lock_security = 1,
-				/obj/item/clothing/gloves/thick/ablasive/iron_lock_security  = 1,
+				/obj/item/clothing/shoes/ablative/iron_lock_security = 1,
+				/obj/item/clothing/gloves/thick/ablative/iron_lock_security  = 1,
 				/obj/item/clothing/head/soft/iron_lock_security = 1,
 				/obj/item/clothing/head/helmet/laserproof/iron_lock_security = 1,
 				/obj/item/clothing/suit/armor/vest/iron_lock_security = 1,

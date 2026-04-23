@@ -342,6 +342,6 @@
 		bug.melee_damage_lower -= 2
 		bug.melee_damage_upper -= 3
 		bug.armor_divisor -= 0.1
-		bug.maxHealth += 15 + bug.hierarchy
-		bug.health += 15 + bug.hierarchy
+		bug.maxHealth -= 15 + bug.hierarchy
+		bug.health -= 15 + bug.hierarchy
 		bug.updatehealth()
