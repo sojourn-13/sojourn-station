@@ -32,6 +32,12 @@
 /datum/perk/cooldown/nt_swords/assign(mob/living/L)
 	..()
 
+	if(L.stats.getPerk(PERK_NT_SHIELD) \
+	&& L.stats.getPerk(PERK_NT_DAGGER) \
+	&& L.stats.getPerk(PERK_NT_HAMMER) \
+	&& L.stats.getPerk(PERK_NT_SPEARS))
+		L.stats.addPerk(PERK_NT_FURIOSO)
+
 /datum/perk/cooldown/nt_shield
 	name = "Fractal Weapon Art: Parentheses"
 	desc = "The strangest of the Fractal Weapon Arts as the main use of the shield is to draw aggression to the user, or for defense \
@@ -44,6 +50,11 @@
 
 /datum/perk/cooldown/nt_shield/assign(mob/living/L)
 	..()
+	if(L.stats.getPerk(PERK_NT_SWORDS) \
+	&& L.stats.getPerk(PERK_NT_DAGGER) \
+	&& L.stats.getPerk(PERK_NT_HAMMER) \
+	&& L.stats.getPerk(PERK_NT_SPEARS))
+		L.stats.addPerk(PERK_NT_FURIOSO)
 
 /datum/perk/cooldown/nt_dagger
 	name = "Fractal Weapon Art: Mult Point"
@@ -56,6 +67,12 @@
 
 /datum/perk/cooldown/nt_dagger/assign(mob/living/L)
 	..()
+
+	if(L.stats.getPerk(PERK_NT_SWORDS) \
+	&& L.stats.getPerk(PERK_NT_SHIELD) \
+	&& L.stats.getPerk(PERK_NT_HAMMER) \
+	&& L.stats.getPerk(PERK_NT_SPEARS))
+		L.stats.addPerk(PERK_NT_FURIOSO)
 
 /datum/perk/cooldown/nt_spears
 	name = "Fractal Weapon Art: Subtracted Battle"
@@ -70,6 +87,12 @@
 /datum/perk/cooldown/nt_spears/assign(mob/living/L)
 	..()
 
+	if(L.stats.getPerk(PERK_NT_SWORDS) \
+	&& L.stats.getPerk(PERK_NT_DAGGER) \
+	&& L.stats.getPerk(PERK_NT_SHIELD) \
+	&& L.stats.getPerk(PERK_NT_HAMMER))
+		L.stats.addPerk(PERK_NT_FURIOSO)
+
 /datum/perk/cooldown/nt_hammer
 	name = "Fractal Weapon Art: Fraction Heave"
 	desc = "The Fraction Heave Fractal Weapon Art leaves much to be desired, its finality and uninteresting movements leave many \
@@ -82,6 +105,12 @@
 
 /datum/perk/cooldown/nt_hammer/assign(mob/living/L)
 	..()
+
+	if(L.stats.getPerk(PERK_NT_SWORDS) \
+	&& L.stats.getPerk(PERK_NT_DAGGER) \
+	&& L.stats.getPerk(PERK_NT_SHIELD) \
+	&& L.stats.getPerk(PERK_NT_SPEARS))
+		L.stats.addPerk(PERK_NT_FURIOSO)
 
 /datum/perk/cooldown/nt_furioso
 	name = "Prime Weapon Art: Furioso Calculation"

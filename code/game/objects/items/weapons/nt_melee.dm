@@ -41,7 +41,7 @@
 	price_tag = 300
 	matter = list(MATERIAL_BIOMATTER = 25, MATERIAL_STEEL = 5)
 
-/obj/item/tool/sword/nt/shortsword/resolve_attackby(atom/target, mob/user, relay = FALSE)
+/obj/item/tool/sword/nt/shortsword/resolve_attackby(atom/target, mob/user, relay = TRUE)
 
 	if(is_neotheology_disciple(user))
 		if(isliving(target))
@@ -60,19 +60,19 @@
 							sword_arts.swings += 1
 							force += clamp(0, sword_arts.swings / 5, 10)
 							armor_divisor += min(0, sword_arts.swings / 10, 2)
-							var/datum/perk/cooldown/nt_furioso/furioso = U.stats.getPerk(PERK_NT_FURIOSO)
-							if(furioso && !relay)
-								for(var/mob/living/L in view(1, U))
+							if(U.stats.getPerk(PERK_NT_FURIOSO) && relay)
+								for(var/mob/living/L in range(2, U))
 									if(L.stat == DEAD || L == target)
 										continue
 									if(L.faction != U.faction \
 									&& L.colony_friend != U.colony_friend \
 									&& L.friendly_to_colony != U.friendly_to_colony)
-										resolve_attackby(L, U, TRUE)
+										resolve_attackby(L, U, FALSE)
 										var/obj/effect/effect/melee/mob_melee_animation/RS = new(get_turf(L))
 										RS.dir = dir
 										flick("synth_armblade_attack_flick", RS) //Best we got
 										QDEL_IN(RS, 2 SECONDS)
+										break
 								CI.power += sword_arts.swings / 10
 
 	.=..()
@@ -93,7 +93,7 @@
 
 /obj/item/tool/sword/nt/longsword/implant
 
-/obj/item/tool/sword/nt/longsword/resolve_attackby(atom/target, mob/user, relay = FALSE)
+/obj/item/tool/sword/nt/longsword/resolve_attackby(atom/target, mob/user, relay = TRUE)
 
 	if(is_neotheology_disciple(user))
 		if(isliving(target))
@@ -112,19 +112,19 @@
 							sword_arts.swings += 1
 							force += clamp(0, sword_arts.swings / 5, 15)
 							armor_divisor += min(0, sword_arts.swings / 10, 2.5)
-							var/datum/perk/cooldown/nt_furioso/furioso = U.stats.getPerk(PERK_NT_FURIOSO)
-							if(furioso && !relay)
-								for(var/mob/living/L in view(2, U))
+							if(U.stats.getPerk(PERK_NT_FURIOSO) && relay)
+								for(var/mob/living/L in range(2, U))
 									if(L.stat == DEAD || L == target)
 										continue
 									if(L.faction != U.faction \
 									&& L.colony_friend != U.colony_friend \
 									&& L.friendly_to_colony != U.friendly_to_colony)
-										resolve_attackby(L, U, TRUE)
+										resolve_attackby(L, U, relay = FALSE)
 										var/obj/effect/effect/melee/mob_melee_animation/RS = new(get_turf(L))
 										RS.dir = dir
 										flick("synth_armblade_attack_flick", RS) //Best we got
 										QDEL_IN(RS, 2 SECONDS)
+										break
 								CI.power += sword_arts.swings / 10
 
 	.=..()
@@ -150,6 +150,27 @@
 	price_tag = 600
 	matter = list(MATERIAL_BIOMATTER = 60, MATERIAL_STEEL = 8, MATERIAL_WOOD = 10, MATERIAL_PLASTEEL = 2)
 
+/obj/item/tool/spear/halberd/resolve_attackby(atom/target, mob/user, relay = FALSE)
+
+	if(is_neotheology_disciple(user))
+		if(isliving(target))
+			var/mob/living/M = target
+			var/mob/living/U = user
+			var/obj/item/implant/core_implant/cruciform/CI = U.get_core_implant()
+			if(CI)
+				if(M.stat != DEAD)
+					var/datum/perk/cooldown/nt_spears/spear_arts = U.stats.getPerk(PERK_NT_SPEARS)
+					if(!spear_arts && CI.power > CI.max_power * 0.25)
+						CI.power -= 10
+						U.stats.addPerk(PERK_NT_SPEARS)
+					else
+						if(CI.power > CI.max_power * 0.25)
+							CI.power -= 2
+							spear_arts.swings += 1
+
+	.=..()
+	refresh_upgrades()
+
 /obj/item/tool/spear/polehammer
 	name = "polehammer"
 	desc = "This weapon of ancient design appears to be a spear-hammer hybrid. \
@@ -170,6 +191,43 @@
 	price_tag = 600
 	tool_qualities = list(QUALITY_HAMMERING = 15) //Able to help make baracades and hammer out cracks.
 	matter = list(MATERIAL_BIOMATTER = 50, MATERIAL_STEEL = 6, MATERIAL_WOOD = 12, MATERIAL_PLASTEEL = 4)
+
+
+/obj/item/tool/spear/polehammer/resolve_attackby(atom/target, mob/user, relay = FALSE)
+
+	if(is_neotheology_disciple(user))
+		if(isliving(target))
+			var/mob/living/M = target
+			var/mob/living/U = user
+			var/obj/item/implant/core_implant/cruciform/CI = U.get_core_implant()
+			if(CI)
+				if(M.stat != DEAD)
+					var/datum/perk/cooldown/nt_spears/spear_arts = U.stats.getPerk(PERK_NT_SPEARS)
+					var/datum/perk/cooldown/nt_hammer/hammer_arts = U.stats.getPerk(PERK_NT_HAMMER)
+					if(!spear_arts && CI.power > CI.max_power * 0.25)
+						CI.power -= 10
+						U.stats.addPerk(PERK_NT_SPEARS)
+					else
+						if(CI.power > CI.max_power * 0.25)
+							CI.power -= 2
+							spear_arts.swings += 1
+					if(!hammer_arts && CI.power > CI.max_power * 0.25)
+						CI.power -= 10
+						U.stats.addPerk(PERK_NT_HAMMER)
+					else
+						if(CI.power > CI.max_power * 0.25)
+							CI.power -= 2
+							hammer_arts.swings += 1
+							if(prob(hammer_arts.swings * 5))
+								M.entanglement += clamp(1, hammer_arts.swings * 0.25, 3)
+							if(U.stats.getPerk(PERK_NT_FURIOSO))
+								CI.power += hammer_arts.swings * 0.25
+								force += clamp(0, hammer_arts.swings / 5, 3)
+								armor_divisor += min(0, hammer_arts.swings / 10, 1)
+
+
+	.=..()
+	refresh_upgrades()
 
 /obj/item/tool/sword/nt/scourge
 	name = "scourge"
@@ -248,6 +306,27 @@
 	matter = list(MATERIAL_BIOMATTER = 20, MATERIAL_PLASTEEL = 10) // More expensive, high-end spear
 	embed_mult_nt = 0.2
 
+/obj/item/tool/sword/nt/spear/resolve_attackby(atom/target, mob/user, relay = FALSE)
+
+	if(is_neotheology_disciple(user))
+		if(isliving(target))
+			var/mob/living/M = target
+			var/mob/living/U = user
+			var/obj/item/implant/core_implant/cruciform/CI = U.get_core_implant()
+			if(CI)
+				if(M.stat != DEAD)
+					var/datum/perk/cooldown/nt_spears/spear_arts = U.stats.getPerk(PERK_NT_SPEARS)
+					if(!spear_arts && CI.power > CI.max_power * 0.25)
+						CI.power -= 10
+						U.stats.addPerk(PERK_NT_SPEARS)
+					else
+						if(CI.power > CI.max_power * 0.25)
+							CI.power -= 1
+							spear_arts.swings += 1
+
+	.=..()
+	refresh_upgrades()
+
 /obj/item/tool/sword/nt/spear/dropped(mob/living/W)
 	refresh_upgrades()
 	..()
@@ -318,6 +397,34 @@
 		item_state = initial(item_state)
 	..()
 
+/obj/item/tool/sword/nt/flanged/resolve_attackby(atom/target, mob/user, relay = FALSE)
+
+	if(is_neotheology_disciple(user))
+		if(isliving(target))
+			var/mob/living/M = target
+			var/mob/living/U = user
+			var/obj/item/implant/core_implant/cruciform/CI = U.get_core_implant()
+			if(CI)
+				if(M.stat != DEAD)
+					var/datum/perk/cooldown/nt_hammer/hammer_arts = U.stats.getPerk(PERK_NT_HAMMER)
+					if(!hammer_arts && CI.power > CI.max_power * 0.25)
+						CI.power -= 10
+						U.stats.addPerk(PERK_NT_HAMMER)
+					else
+						if(CI.power > CI.max_power * 0.25)
+							CI.power -= 2
+							hammer_arts.swings += 1
+							if(prob(hammer_arts.swings * 5))
+								M.entanglement += clamp(1, hammer_arts.swings * 0.25, 8)
+							if(U.stats.getPerk(PERK_NT_FURIOSO))
+								CI.power += hammer_arts.swings * 0.25
+								force += clamp(0, hammer_arts.swings / 5, 8)
+								armor_divisor += min(0, hammer_arts.swings / 10, 2)
+
+
+	.=..()
+	refresh_upgrades()
+
 /obj/item/tool/sword/nt/warhammer
 	name = "warhammer"
 	desc = "A saintly looking warhammer, designed to knock back attackers when held in both hands. \
@@ -344,6 +451,34 @@
 		var/throwdir = get_dir(user,target)
 		target.throw_at(get_edge_target_turf(target, throwdir),whack_speed,whack_speed)
 	..()
+
+/obj/item/tool/sword/nt/warhammer/resolve_attackby(atom/target, mob/user, relay = FALSE)
+
+	if(is_neotheology_disciple(user))
+		if(isliving(target))
+			var/mob/living/M = target
+			var/mob/living/U = user
+			var/obj/item/implant/core_implant/cruciform/CI = U.get_core_implant()
+			if(CI)
+				if(M.stat != DEAD)
+					var/datum/perk/cooldown/nt_hammer/hammer_arts = U.stats.getPerk(PERK_NT_HAMMER)
+					if(!hammer_arts && CI.power > CI.max_power * 0.25)
+						CI.power -= 10
+						U.stats.addPerk(PERK_NT_HAMMER)
+					else
+						if(CI.power > CI.max_power * 0.25)
+							CI.power -= 2
+							hammer_arts.swings += 1
+							if(prob(hammer_arts.swings * 10))
+								M.entanglement += clamp(1, hammer_arts.swings * 0.5, 10)
+							if(U.stats.getPerk(PERK_NT_FURIOSO))
+								CI.power += hammer_arts.swings * 0.25
+								force += clamp(0, hammer_arts.swings / 5, 12)
+								armor_divisor += min(0, hammer_arts.swings / 10, 3)
+
+
+	.=..()
+	refresh_upgrades()
 
 /obj/item/tool/sword/nt/power
 	name = "\"Vexilar\" forceblade"
@@ -402,6 +537,46 @@
 	if (switched_on)
 		return heat
 
+/obj/item/tool/sword/nt/power/resolve_attackby(atom/target, mob/user, relay = TRUE)
+
+	if(is_neotheology_disciple(user))
+		if(isliving(target))
+			var/mob/living/M = target
+			var/mob/living/U = user
+			var/obj/item/implant/core_implant/cruciform/CI = U.get_core_implant()
+			if(CI)
+				if(M.stat != DEAD)
+					var/datum/perk/cooldown/nt_swords/sword_arts = U.stats.getPerk(PERK_NT_SWORDS)
+					if(!sword_arts && CI.power > CI.max_power * 0.25)
+						CI.power -= 10
+						U.stats.addPerk(PERK_NT_SWORDS)
+					else
+						if(CI.power > CI.max_power * 0.25)
+							CI.power -= 3
+							sword_arts.swings += 1
+							force += clamp(0, sword_arts.swings / 5, 35)
+							armor_divisor += min(0, sword_arts.swings / 10, 4)
+							if(switched_on) //We drain *so much*
+								CI.power -= 2
+								force += clamp(0, sword_arts.swings / 5, 3)
+								armor_divisor += min(0, sword_arts.swings / 10, 0.5)
+							if(U.stats.getPerk(PERK_NT_FURIOSO) && relay)
+								for(var/mob/living/L in view(2, U))
+									if(L.stat == DEAD || L == target)
+										continue
+									if(L.faction != U.faction \
+									&& L.colony_friend != U.colony_friend \
+									&& L.friendly_to_colony != U.friendly_to_colony)
+										resolve_attackby(L, U, FALSE)
+										var/obj/effect/effect/melee/mob_melee_animation/RS = new(get_turf(L))
+										RS.dir = dir
+										flick("synth_armblade_attack_flick", RS) //Best we got
+										QDEL_IN(RS, 2 SECONDS)
+								CI.power += sword_arts.swings / 20 //Recover less, we are that powerful
+	.=..()
+
+	refresh_upgrades()
+
 /obj/item/shield/riot/nt
 	name = "NT Greatshield"
 	desc = "A saintly looking shield, let the Absolute protect you. \
@@ -437,6 +612,30 @@
 		/obj/item/book/ritual/cruciform,
 		/obj/item/stack/thrown/nt/verutum
 		)
+
+/obj/item/shield/riot/nt/resolve_attackby(atom/target, mob/user, relay = FALSE)
+
+	if(is_neotheology_disciple(user))
+		if(isliving(target))
+			var/mob/living/M = target
+			var/mob/living/U = user
+			var/obj/item/implant/core_implant/cruciform/CI = U.get_core_implant()
+			if(CI)
+				if(M.stat != DEAD)
+					var/datum/perk/cooldown/nt_shield/shield_arts = U.stats.getPerk(PERK_NT_SHIELD)
+					if(!shield_arts && CI.power > CI.max_power * 0.25)
+						CI.power -= 10
+						U.stats.addPerk(PERK_NT_SHIELD)
+					else
+						if(CI.power > CI.max_power * 0.25)
+							CI.power -= 2
+							shield_arts.swings += 1
+							force += clamp(0, shield_arts.swings / 2, U.getarmorablative())
+							if(U.stats.getPerk(PERK_NT_FURIOSO))
+								CI.power += shield_arts.swings / 5
+
+	.=..()
+	refresh_upgrades()
 
 /obj/item/shield/riot/nt/New()
 	container = new /obj/item/storage/internal(src)
@@ -500,6 +699,30 @@
 		/obj/item/stack/thrown/nt/verutum
 		)
 
+/obj/item/shield/buckler/nt/resolve_attackby(atom/target, mob/user, relay = FALSE)
+
+	if(is_neotheology_disciple(user))
+		if(isliving(target))
+			var/mob/living/M = target
+			var/mob/living/U = user
+			var/obj/item/implant/core_implant/cruciform/CI = U.get_core_implant()
+			if(CI)
+				if(M.stat != DEAD)
+					var/datum/perk/cooldown/nt_shield/shield_arts = U.stats.getPerk(PERK_NT_SHIELD)
+					if(!shield_arts && CI.power > CI.max_power * 0.25)
+						CI.power -= 2
+						U.stats.addPerk(PERK_NT_SHIELD)
+					else
+						if(CI.power > CI.max_power * 0.25)
+							CI.power -= 1
+							shield_arts.swings += 1
+							force += clamp(0, shield_arts.swings / 5, U.getarmorablative())
+							if(U.stats.getPerk(PERK_NT_FURIOSO))
+								CI.power += shield_arts.swings / 5
+
+	.=..()
+	refresh_upgrades()
+
 /obj/item/shield/buckler/nt/New()
 	container = new /obj/item/storage/internal(src)
 	container.storage_slots = storage_slots
@@ -549,6 +772,43 @@
 	effective_faction = list("psi_monster", "hive") // The Vexilar Forceblade has this quality and since crusaders are usually only called against a hivemind, the sword should reflect that
 	damage_mult = 1.2 //20% damage buff when purging the ABOMINATION
 	price_tag = 10000
+
+/obj/item/tool/sword/crusader/resolve_attackby(atom/target, mob/user, relay = TRUE)
+
+	if(is_neotheology_disciple(user))
+		if(isliving(target))
+			var/mob/living/M = target
+			var/mob/living/U = user
+			var/obj/item/implant/core_implant/cruciform/CI = U.get_core_implant()
+			if(CI)
+				if(M.stat != DEAD)
+					var/datum/perk/cooldown/nt_swords/sword_arts = U.stats.getPerk(PERK_NT_SWORDS)
+					if(!sword_arts && CI.power > CI.max_power * 0.25)
+						CI.power -= 10
+						U.stats.addPerk(PERK_NT_SWORDS)
+					else
+						if(CI.power > CI.max_power * 0.25)
+							CI.power -= 1
+							sword_arts.swings += 1
+							force += clamp(0, sword_arts.swings / 5, 50)
+							armor_divisor += min(0, sword_arts.swings / 10, 10)
+							if(U.stats.getPerk(PERK_NT_FURIOSO) && relay)
+								for(var/mob/living/L in view(2, U))
+									if(L.stat == DEAD || L == target)
+										continue
+									if(L.faction != U.faction \
+									&& L.colony_friend != U.colony_friend \
+									&& L.friendly_to_colony != U.friendly_to_colony)
+										resolve_attackby(L, U, FALSE)
+										var/obj/effect/effect/melee/mob_melee_animation/RS = new(get_turf(L))
+										RS.dir = dir
+										flick("synth_armblade_attack_flick", RS) //Best we got
+										QDEL_IN(RS, 2 SECONDS)
+								CI.power += sword_arts.swings / 10
+
+	.=..()
+
+	refresh_upgrades()
 
 //Throwables
 
@@ -606,6 +866,44 @@
 	price_tag = 120
 	matter = list(MATERIAL_BIOMATTER = 5, MATERIAL_STEEL = 1)
 
+
+/obj/item/tool/knife/dagger/nt/resolve_attackby(atom/target, mob/user, relay = TRUE)
+
+	if(is_neotheology_disciple(user))
+		if(isliving(target))
+			var/mob/living/M = target
+			var/mob/living/U = user
+			var/obj/item/implant/core_implant/cruciform/CI = U.get_core_implant()
+			if(CI)
+				if(M.stat != DEAD)
+					var/datum/perk/cooldown/nt_dagger/dagger_arts = U.stats.getPerk(PERK_NT_DAGGER)
+					if(!dagger_arts && CI.power > CI.max_power * 0.25)
+						CI.power -= 10
+						U.stats.addPerk(PERK_NT_DAGGER)
+					else
+						if(CI.power > CI.max_power * 0.25)
+							if(relay)
+								var/obj/effect/effect/melee/mob_melee_animation/RS = new(get_turf(M))
+								RS.dir = dir
+								flick("synth_armblade_attack_flick", RS) //Best we got
+								QDEL_IN(RS, 2 SECONDS)
+								resolve_attackby(M, U, FALSE)
+								M.updatehealth()
+							CI.power += 1 //We give power for are arts
+							dagger_arts.swings += 1
+							if(U.stats.getPerk(PERK_NT_FURIOSO) && relay)
+								var/obj/effect/effect/melee/mob_melee_animation/RS = new(get_turf(M))
+								RS.dir = dir
+								flick("synth_armblade_attack_flick", RS) //Best we got
+								QDEL_IN(RS, 2 SECONDS)
+								resolve_attackby(M, U, FALSE)
+								M.updatehealth()
+								if(M.health <= 0)
+									CI.power += dagger_arts.swings / 2
+	.=..()
+
+	refresh_upgrades()
+
 /obj/item/tool/knife/neotritual
 	name = "absolutism ritual knife"
 	desc = "The sweet embrace of mercy, for relieving the soul from a tortured vessel."
@@ -633,3 +931,40 @@
 	if(is_held() && isliving(loc))
 		if(is_neotheology_disciple(loc))
 			embed_mult = 0.05
+
+/obj/item/tool/knife/neotritual/resolve_attackby(atom/target, mob/user, relay = TRUE)
+
+	if(is_neotheology_disciple(user))
+		if(isliving(target))
+			var/mob/living/M = target
+			var/mob/living/U = user
+			var/obj/item/implant/core_implant/cruciform/CI = U.get_core_implant()
+			if(CI)
+				if(M.stat != DEAD)
+					var/datum/perk/cooldown/nt_dagger/dagger_arts = U.stats.getPerk(PERK_NT_DAGGER)
+					if(!dagger_arts && CI.power > CI.max_power * 0.25)
+						CI.power -= 10
+						U.stats.addPerk(PERK_NT_DAGGER)
+					else
+						if(CI.power > CI.max_power * 0.25)
+							if(!relay)
+								var/obj/effect/effect/melee/mob_melee_animation/RS = new(get_turf(M))
+								RS.dir = dir
+								flick("synth_armblade_attack_flick", RS) //Best we got
+								QDEL_IN(RS, 2 SECONDS)
+								resolve_attackby(M, U, FALSE)
+								M.updatehealth()
+							CI.power += 1 //We give power for are arts
+							dagger_arts.swings += 1
+							if(U.stats.getPerk(PERK_NT_FURIOSO) && relay)
+								var/obj/effect/effect/melee/mob_melee_animation/RS = new(get_turf(M))
+								RS.dir = dir
+								flick("synth_armblade_attack_flick", RS) //Best we got
+								QDEL_IN(RS, 2 SECONDS)
+								resolve_attackby(M, U, FALSE)
+								M.updatehealth()
+								if(M.health <= 0)
+									CI.power += dagger_arts.swings / 2
+	.=..()
+
+	refresh_upgrades()
