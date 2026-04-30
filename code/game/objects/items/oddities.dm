@@ -17,11 +17,10 @@
 	var/random_stats = TRUE //Do we randomize the stats at all on spawn?
 	var/list/oddity_stats  //This is are stat field form cog to vig and were we put are value
 	var/sanity_value = 1
-	var/datum/perk/oddity/perk //This is so we can link a perk into the oddity
+	var/datum/perk/perk //This is so we can link a perk into the oddity
 	var/prob_perk = 40 //how likely it is to role a perk - if prek isnt present, out of 100
 	var/min_stats = 1 //The lowest amount it can give when randomizing
 	var/kill_stats = FALSE
-
 
 /obj/item/oddity/Initialize()
 	. = ..()
@@ -34,6 +33,9 @@
 		upgraded_oddity_rolling()
 	else
 		oddity_rolling()
+
+	if(perk)
+		perk = new perk()
 
 /obj/item/oddity/proc/oddity_rolling()
 	if(!perk && prob(prob_perk))
