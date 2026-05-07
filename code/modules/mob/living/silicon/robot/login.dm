@@ -1,10 +1,8 @@
 /mob/living/silicon/robot/Login()
-	..()
-/* Soj Edit, for some reasont this makes issues
 	. = ..()
 	if(!. || !client)
 		return FALSE
-*/
+
 	regenerate_icons()
 	update_hud()
 	show_laws(0)

@@ -1,52 +1,42 @@
 GLOBAL_VAR_INIT(random_parallax, pick("space0", "space1", "space2", "space3", "space4", "space5", "space6"))
 
-/obj/parallax_screen
+/atom/movable/screen/parallax
 	icon = 'icons/parallax.dmi'
-
-/obj/parallax_screen/New()
-	icon_state = GLOB.random_parallax
-
-/obj/parallax
+	icon_state = "space0"
 	name = "parallax"
 	mouse_opacity = 0
 	blend_mode = BLEND_MULTIPLY
 	plane = PLANE_SPACE_PARALLAX
-//	invisibility = 101
-	anchored = 1
 	var/mob/owner
-	var/obj/parallax_screen/parallax_screen
-	var/list/layers = list()
 
-/obj/parallax/New(mob/M)
+/atom/movable/screen/parallax/New(mob/M)
 	owner = M
-	owner.parallax = src
-	parallax_screen = new /obj/parallax_screen
-	parallax_screen.plane = plane
-	add_overlay(parallax_screen)
+	owner.parallax += src
+	SSevent.all_parallaxes += src
+	icon_state = GLOB.random_parallax
 	update()
 	..(null)
 
-/obj/parallax/Destroy()
+/atom/movable/screen/parallax/Destroy()
+	owner = null
+	SSevent.all_parallaxes -= src
+	return ..()
 
-	if (owner)
-		owner.parallax = null
-		owner = null
-
-	QDEL_NULL(parallax_screen)
-
-	. = ..()
-
-/obj/parallax/proc/update() //This proc updates your parallax (duh). If your view has been altered by binoculars, admin fuckery, and so on. We need to make the space bigger by applying a matrix transform to it. This is hardcoded for now.
+/**
+ * This proc updates your parallax (duh). If your view has been altered by binoculars, admin fuckery, and so on.
+ * We need to make the space bigger by applying a matrix transform to it. This is hardcoded for now.
+ */
+/atom/movable/screen/parallax/proc/update()
 	if(!owner || !owner.client)
 		return
-	cut_overlays()
 	var/turf/T = get_turf(owner.client.eye)
-	screen_loc = "CENTER:[-224-(T&&T.x)],CENTER:[-224-(T&&T.y)]"
-	var/view = owner.client.view
-	var/matrix/M = matrix() //create matrix for transformation
-	if(view != world.view) //Not bigger than world view. We don't need transforming
-		var/toscale = view //How many extra tiles we need to fill with parallax. EG. Their view is 8. World view is 7. So one extra tile is needed.
-		switch(view) //If you change these values, I need to know! ~Kmc
+	if(!T)
+		return
+	screen_loc = "CENTER:[-224-T.x],CENTER:[-224-T.y]"
+	var/matrix/M = matrix()	//create matrix for transformation
+	if(owner.client.view != world.view)	//Not bigger than world view. We don't need transforming
+		var/toscale = owner.client.view	//How many extra tiles we need to fill with parallax. EG. Their view is 8. World view is 7. So one extra tile is needed.
+		switch(owner.client.view)
 			if(8)
 				toscale = 1.2
 			if(9)
@@ -64,35 +54,37 @@ GLOBAL_VAR_INIT(random_parallax, pick("space0", "space1", "space2", "space3", "s
 			if(128)
 				toscale = 4
 		M.Scale(toscale)
-		src.transform = M
 	else
 		M.Scale(1)
-		src.transform = M
-	add_overlay(parallax_screen)
+	transform = M
 
-/obj/parallax/update_plane()
+/atom/movable/screen/parallax/update_icon(new_icon_state)
+	icon_state = new_icon_state
+
+/atom/movable/screen/parallax/update_plane()
 	return
 
-/obj/parallax/set_plane(var/np)
+/atom/movable/screen/parallax/set_plane(np)
 	plane = np
 
-
+// Mob stuff
 /mob
-	var/obj/parallax/parallax
+	var/atom/movable/screen/parallax/parallax
 
-/mob/Move(NewLoc, Dir = 0, step_x = 0, step_y = 0, var/glide_size_override = 0)
+/mob/Move(NewLoc, Dir = 0, step_x = 0, step_y = 0, glide_size_override = 0)
 	. = ..()
-	if(. && parallax)
-		parallax.update()
+	if(.)
+		parallax?.update()
 
-/mob/forceMove(atom/destination, var/special_event, glide_size_override=0)
+/mob/forceMove(atom/destination, special_event, glide_size_override=0)
 	. = ..()
-	if(. && parallax)
-		parallax.update()
+	if(.)
+		parallax?.update()
 
 
-/mob/Login()
-	if(!parallax)
+/mob/proc/MakeParallax(force = FALSE)
+	if(!parallax || force)
 		parallax = new(src)
-	client.screen += parallax
-	..()
+		var/atom/movable/screen/parallax/oldpara = locate() in client.screen
+		qdel(oldpara)
+	client.screen |= parallax

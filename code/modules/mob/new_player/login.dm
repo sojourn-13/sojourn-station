@@ -2,12 +2,8 @@
 	var/client/my_client // Need to keep track of this ourselves, since by the time Logout() is called the client has already been nulled
 
 /mob/new_player/Login()
-	..()
-/* Soj Edit, for some reasont this makes issues
-	. = ..()
-	if(!. || !client)
-		return FALSE
-*/
+	if(!client)
+		return
 
 	update_Login_details()	//handles setting lastKnownIP and computer_id for use by the ban systems as well as checking for multikeying
 
@@ -16,15 +12,17 @@
 		mind.active = TRUE
 		mind.current = src
 
-	// . = ..()
-	// if(!. || !client)
-	// 	return FALSE
+	if(!loc)
+		Move(locate(/area/misc/start))
+
+	// we get a hud in the parent proc, a hud is neccessary for ma2html which character previews rely on
+	if(!. || !client)
+		return FALSE
 
 	if(join_motd)
 		to_chat(src, "<div class=\"motd\">[join_motd]</div>")
 	to_chat(src, "<div class='info'>Game ID: <div class='danger'>[game_id]</div></div>")
 
-	loc = null
 	my_client = client
 	sight |= SEE_TURFS
 	GLOB.player_list |= src
