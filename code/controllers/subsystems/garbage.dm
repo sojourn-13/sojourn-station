@@ -202,7 +202,7 @@ SUBSYSTEM_DEF(garbage)
 				var/datum/qdel_item/I = items[type]
 
 				var/message = "## TESTING: GC: -- [text_ref(D)] | [type] was unable to be GC'd --"
-				message = "[message] (ref count of [refcount(D)])"
+				message = "[message] (ref count of [text_ref(D)])"
 				log_world(message)
 				#ifdef TESTING
 				for(var/c in admins) //Using testing() here would fill the logs with ADMIN_VV garbage
