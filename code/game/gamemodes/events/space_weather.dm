@@ -1,5 +1,7 @@
 //Ported from Eris, and not at all tested or activated. Used for refences
 
+/*
+
 /datum/storyevent/bluespace_storm
 	id = "bluespace_storm"
 	name = "Bluespace storm"
@@ -338,3 +340,7 @@
 /datum/event/interphase/end()
 	command_announcement.Announce("The bluespace interphase stabilized itself.", "Bluespace Interphase")
 	SSevent.change_parallax(GLOB.random_parallax)
+
+
+*/
+
