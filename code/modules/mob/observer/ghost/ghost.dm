@@ -210,22 +210,33 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 /mob/observer/ghost/verb/reenter_corpse()
 	set category = "Ghost"
 	set name = "Re-enter Corpse"
-	if(!client)	return
-	client.destroy_UI()
 
-	if(!(mind && mind.current && can_reenter_corpse))
-		to_chat(src, "<span class='warning'>You have no body.</span>")
+	if(!client)
 		return
-	if(mind.current.key && copytext(mind.current.key,1,2)!="@")	//makes sure we don't accidentally kick any clients
-		to_chat(usr, "<span class='warning'>Another consciousness is in your body... it is resisting you.</span>")
+
+	if(!mind || QDELETED(mind.current))
+		to_chat(src, SPAN_WARNING("You have no body."))
 		return
-	stop_following()
-	mind.current.ajourn=0
+	if(!can_reenter_corpse)
+		to_chat(src, SPAN_WARNING("You cannot re-enter your body."))
+		return
+	if(mind.current.key && mind.current.key[1] != "@") //makes sure we don't accidentally kick any clients
+		to_chat(usr, SPAN_WARNING("Another consciousness is in your body...It is resisting you."))
+		return
+
+	client.destroy_UI()
+	SSnano.user_transferred(src, mind.current) // Transfer NanoUIs.
+	SStgui.on_transfer(src, mind.current) // Transfer TUIs.
+	stop_following(no_message = TRUE)
 	mind.current.key = key
 	mind.current.teleop = null
 	if(!admin_ghosted)
 		announce_ghost_joinleave(mind, 0, "They now occupy their body again.")
 	mind.current.client.init_verbs()
+
+	if(mind.current.stat == DEAD)
+		to_chat(src, SPAN_WARNING("To leave your body again use the Ghost verb."))
+
 	return 1
 
 /mob/observer/ghost/verb/toggle_medHUD()
@@ -338,9 +349,10 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	to_chat(src, "<span class='notice'>Now following \the [following]</span>")
 	move_to_turf(following, following.loc, following.loc)
 
-/mob/observer/ghost/proc/stop_following()
+/mob/observer/ghost/proc/stop_following(no_message = FALSE)
 	if(following)
-		to_chat(src, "<span class='notice'>No longer following \the [following]</span>")
+		if(!no_message)
+			to_chat(src, "<span class='notice'>No longer following \the [following]</span>")
 		GLOB.moved_event.unregister(following, src)
 		GLOB.dir_set_event.unregister(following, src)
 		GLOB.destroyed_event.unregister(following, src)
