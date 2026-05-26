@@ -183,7 +183,7 @@
 	if(!drinking_glass_cooldown)
 		to_chat(user, "<span class='info'>Swipe ID card to access a box of spare Drinking Glasses.</span>")
 
-	if(!reroll_cooldown)
+	if(!reroll_on_cooldown)
 		to_chat(user, "<span class='info'>Use a deny stamp to reroll the current Client's unresonable requests.</span>")
 
 
