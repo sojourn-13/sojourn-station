@@ -155,7 +155,8 @@
 	/datum/reagent/drink/blueberryjuice,
 	/datum/reagent/drink/strawberryjuice,
 	/datum/reagent/ethanol/combat_brew,
-	/datum/reagent/ethanol/eye_lid
+	/datum/reagent/ethanol/eye_lid,
+	/datum/reagent/ethanol/witch_brew //Only gotton via brewing system, little unfair to get
 	)
 	var/allowed_drinks = null
 	//Cooldowns
