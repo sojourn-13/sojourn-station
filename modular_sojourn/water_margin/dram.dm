@@ -41,8 +41,12 @@
 	if(internal_code)
 		message += "Internal Code: <span class='bold'>[internal_code]</span>.\n"
 
-	if(free_processes)
+	if(free_processes > 0)
 		message += "Processes before Side-Affects: [free_processes].\n"
+
+	if(0 > free_processes)
+		message += "Processes with Side-Affects: [free_processes].\n"
+
 
 	if(damage_brute || damage_fire)
 		message += "Current Lethality value: [damage_brute + damage_fire].\n"
@@ -66,14 +70,18 @@
 		if(internal_code == external_code)
 			var/mob/living/carbon/human/H = user
 			H.sanity.change_max_level(sanity_max_level_editor)
-			H.sanity.level_change_cap += sanity_level_change_cap_editor
-			H.sanity.insight_passive_gain_multiplier += insight_passive_gain_multiplier_editor
 			H.sanity.insight_rest_threshold += insight_rest_threshold_editor
-			H.apply_damage(damage_brute, BRUTE)
-			H.apply_damage(damage_fire, BURN)
 			to_chat(user, SPAN_NOTICE("The dram goes down smoothly allowing a breakthough in emotional stablization."))
+
 			if(damage_fire + damage_brute > 20)
 				to_chat(user, SPAN_NOTICE("After a moment the dram starts to burn your insides well also rapidly expanding your blood vessels!"))
+
+			if(0 >= free_processes)
+				H.sanity.level_change_cap += sanity_level_change_cap_editor
+				H.sanity.insight_passive_gain_multiplier += insight_passive_gain_multiplier_editor
+				H.apply_damage(damage_brute, BRUTE)
+				H.apply_damage(damage_fire, BURN)
+
 		else
 			to_chat(user, SPAN_NOTICE("After slowly consuming the dram nothing happens."))
 
