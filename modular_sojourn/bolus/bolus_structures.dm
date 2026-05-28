@@ -80,7 +80,7 @@
 
 /obj/structure/bolus/cellose
 	name = "Bluespace Cellose Scanner"
-	desc = "A Modifed scanner searching through logs for branches of in a super potion lost in bluespace. Runs on its own power bank."
+	desc = "A Modifed scanner searching through logs for branches in a super potion lost in bluespace. Runs on its own power bank."
 
 	icon_state = "analyser"
 	price_tag = 120 //Useless to most people
@@ -153,7 +153,7 @@
 
 /obj/structure/bolus/roller
 	name = "Mossifier Roller"
-	desc = "A barrel filled with watery moss covered in bluespace dust and bluespace shard spikes, its handle is moves with easy."
+	desc = "A barrel filled with watery moss covered in bluespace dust and bluespace shard spikes, its handle moves with easy."
 
 	icon_state = "motor_old"
 	price_tag = 120 //Useless to most people
@@ -306,7 +306,7 @@
 		if(!turntable(user))
 			break
 		if(do_after(user, waves_delay))
-			reagents.remove_reagent("water", rand(1, 2), 1)
+			reagents.remove_reagent(liquid_workings, rand(1, 2), 1)
 			waves_done += 1
 			if(prob(waves_done/12))
 				cycle_completed()
