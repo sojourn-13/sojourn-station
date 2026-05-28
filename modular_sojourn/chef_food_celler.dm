@@ -155,7 +155,8 @@
 	/datum/reagent/drink/blueberryjuice,
 	/datum/reagent/drink/strawberryjuice,
 	/datum/reagent/ethanol/combat_brew,
-	/datum/reagent/ethanol/eye_lid
+	/datum/reagent/ethanol/eye_lid,
+	/datum/reagent/ethanol/witch_brew //Only gotton via brewing system, little unfair to get
 	)
 	var/allowed_drinks = null
 	//Cooldowns
@@ -183,7 +184,7 @@
 	if(!drinking_glass_cooldown)
 		to_chat(user, "<span class='info'>Swipe ID card to access a box of spare Drinking Glasses.</span>")
 
-	if(!reroll_cooldown)
+	if(!reroll_on_cooldown)
 		to_chat(user, "<span class='info'>Use a deny stamp to reroll the current Client's unresonable requests.</span>")
 
 
@@ -212,14 +213,14 @@
 			to_chat(user, "<span class='info'>The micro-AI beeps red, not allowing a non-requested drinks to be stored.</span>")
 		return
 	if(istype(I, /obj/item/card/id) && !drinking_glass_cooldown)
-		to_chat(user, "<span class='info'>You swipe the ID over the mico-AI's scanner leading to it dropping a box of drinking glasses at your feet.</span>")
+		to_chat(user, "<span class='info'>You swipe the ID over the micro-AI's scanner leading to it dropping a box of drinking glasses at your feet.</span>")
 		new /obj/item/storage/box/drinkingglasses(user.loc)
 		drinking_glass_cooldown = TRUE
 		addtimer(CALLBACK(src, PROC_REF(cooldown_clearer_glasses)), cooldown_timer_glasses)
 		cooldown_timer_glasses *= 2 //Dobles in wait time every use. 30->60->120->ect
 		return
 	if(istype(I, /obj/item/stamp/denied) && !reroll_on_cooldown)
-		to_chat(user, "<span class='info'>You hold up the [I] mico-AI's scanner making it flash red a few times before printing out a set of new orders.</span>")
+		to_chat(user, "<span class='info'>You hold up [I] to micro-AI's scanner making it flash red a few times before printing out a set of new orders.</span>")
 		reroll_drink(user)
 		reroll_food(user)
 		reroll_on_cooldown = TRUE
@@ -282,7 +283,7 @@
 		requested_food = pick(allowed_foods)
 
 	if(user)
-		to_chat(user, "<span class='info'>The Cellar's mico-AI prints out a new request for [requested_food].</span>")
+		to_chat(user, "<span class='info'>The Cellar's mico-AI prints out a new request for [requested_food.name].</span>")
 
 //Everything to do with drinks!
 /obj/structure/celler/proc/cooldown_clearer_glasses()
@@ -314,7 +315,7 @@
 		requested_drink = pick(allowed_drinks)
 
 	if(user)
-		to_chat(user, "<span class='info'>The Cellar's mico-AI prints out a new request for [get_reagent_name_by_id(requested_drink)].</span>")
+		to_chat(user, "<span class='info'>The Cellar's mico-AI prints out a new request for [requested_drink.name].</span>")
 
 
 
