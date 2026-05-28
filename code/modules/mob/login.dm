@@ -93,3 +93,4 @@
 		client.fullscreen_check()
 		client.init_verbs()
 		update_action_buttons()
+	return TRUE

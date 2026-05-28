@@ -16,6 +16,7 @@
 		Move(locate(/area/misc/start))
 
 	// we get a hud in the parent proc, a hud is neccessary for ma2html which character previews rely on
+	. = ..()
 	if(!. || !client)
 		return FALSE
 
