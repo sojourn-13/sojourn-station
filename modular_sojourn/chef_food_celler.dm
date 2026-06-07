@@ -205,7 +205,7 @@
 		for(var/datum/reagent/R in DG.reagents.reagent_list)
 			to_chat(user, "<span class='info'>R.volume [R.volume] - R = [R] (R.name = [R.name]) RD = [requested_drink.name]</span>")
 
-			if(R.volume >= 30 && R.name == requested_drink.name)
+			if(R.volume >= 29.75 && R.name == requested_drink.name)
 				celler_request_drink_completed(DG, user, R.volume)
 				drink_success = TRUE
 				break
