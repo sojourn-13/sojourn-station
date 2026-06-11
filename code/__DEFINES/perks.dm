@@ -270,8 +270,16 @@
 //Church Cooldown
 #define PERK_JUDGMENT_HASTE /datum/perk/cooldown/judgment_haste
 
-
+// Weapon Arts
 #define PERK_IGA /datum/perk/cooldown/ignis_gladius_artium
+
+#define PERK_NT_SWORDS /datum/perk/cooldown/nt_swords
+#define PERK_NT_SHIELD /datum/perk/cooldown/nt_shield
+#define PERK_NT_DAGGER /datum/perk/cooldown/nt_dagger
+#define PERK_NT_HAMMER /datum/perk/cooldown/nt_hammer
+#define PERK_NT_SPEARS /datum/perk/cooldown/nt_spears
+#define PERK_NT_FURIOSO /datum/perk/cooldown/nt_furioso
+
 ////////////////////
 //Stillpoint perks//
 ////////////////////

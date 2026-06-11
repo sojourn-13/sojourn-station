@@ -19,4 +19,13 @@
 			tally -= IGA.ammo_shots
 			IGA.ammo_shots -= 1
 
+	if(stats.getPerk(PERK_NT_SPEARS))
+		var/datum/perk/cooldown/nt_spears/spear_arts = stats.getPerk(PERK_NT_SPEARS)
+		if(spear_arts.swings)
+			tally -= 0.5
+			spear_arts.swings -= 1
+			if(stats.getPerk(PERK_NT_FURIOSO) && prob(25 * spear_arts.swings) && spear_arts.swings >= 1)
+				tally -= 0.5
+
+
 	return tally
