@@ -69,6 +69,19 @@
 
 	else if(istype(target,/obj/effect/decal/cleanable))
 		to_chat(user, "<span class='notice'>You scrub \the [target.name] out.</span>")
+
+		if(istype(target,/obj/effect/decal/cleanable/cobweb) || istype(target,/obj/effect/decal/cleanable/cobweb2))
+			//Cleaning even these smaller webs will build up the malice
+			if(isliving(user))
+				var/mob/living/L = user
+				var/datum/perk/cooldown/malice_of_weeve/MW = L.stats.getPerk(PERK_MALICE_WEEVE)
+				if(!MW) //Are malice will exstend to you
+					L.stats.addPerk(PERK_MALICE_WEEVE)
+					MW = user.stats.getPerk(PERK_MALICE_WEEVE)
+				MW.gruges += 0.25
+				MW.malice += 0.25
+				MW.perk_lifetime += 1 SECONDS
+
 		qdel(target)
 		return
 	else if(istype(target,/turf))
