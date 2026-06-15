@@ -38,6 +38,7 @@
 	// var/datum/action/innate/perk/perk_action
 	var/cooldown_time = 0
 	var/perk_shared_ability
+	var/perk_item_decay = 1
 
 /datum/perk/New()
 	..()

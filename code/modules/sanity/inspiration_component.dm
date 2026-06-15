@@ -30,7 +30,7 @@
 	if(kill_stats)
 		self_destroy = TRUE
 	if(new_perk)
-		perk = new_perk
+		perk = new new_perk()
 	else
 		var/obj/item/oddity/father = parent
 		perk = father.perk
@@ -141,6 +141,10 @@
 		if(usr.stats?.getPerk(PERK_STALKER))
 			var/datum/perk/oddity/OD = GLOB.all_perks[perk]
 			to_chat(user, SPAN_NOTICE("Instinct tells you more about this anomaly: <span style='color:orange'>[OD]. [OD.desc]</span>"))
+
+		if(perk.perk_item_decay == 1)
+			to_chat(user, SPAN_NOTICE("Instinct tells you that this strange aura will soon fade away, likely after just one use.</span>"))
+
 
 	if(self_destroy)
 		to_chat(user, SPAN_NOTICE("<span style='color:angelsay'>An unstable decaying aura radiates from this one. It seems this type will one be usable once...</span>"))
