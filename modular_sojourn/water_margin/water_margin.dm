@@ -246,23 +246,23 @@
 		var/obj/item/culivation_dram/CD = dram
 		if(reagents.get_reagent_amount("iron"))
 			reagents.remove_reagent("iron", rand(1, 2), 1)
-			CD.internal_code += span_purple("▌")
 			CD.internal_code += span_green("▌")
+			CD.internal_code += span_red("▌")
 
 		if(reagents.get_reagent_amount("potassium"))
 			reagents.remove_reagent("potassium", rand(1, 2), 1)
-			CD.internal_code += span_blue("▌")
 			CD.internal_code += span_red("▌")
+			CD.internal_code += span_blue("▌")
 
 		if(reagents.get_reagent_amount("radium"))
 			reagents.remove_reagent("radium", rand(1, 2), 1)
-			CD.internal_code += span_red("▌")
+			CD.internal_code += span_blue("▌")
 			CD.internal_code += span_purple("▌")
 
 		if(reagents.get_reagent_amount("acetone"))
 			reagents.remove_reagent("acetone", rand(1, 2), 1)
-			CD.internal_code += span_red("▌")
-			CD.internal_code += span_blue("▌")
+			CD.internal_code += span_purple("▌")
+			CD.internal_code += span_green("▌")
 
 		if(reagents.get_reagent_amount("imidazoline"))
 			reagents.remove_reagent("imidazoline", rand(1, 2), 1)
@@ -280,20 +280,20 @@
 	var/the_message = ""
 
 	if(reagents.get_reagent_amount("iron"))
-		the_message += span_purple("▌")
 		the_message += span_green("▌")
+		the_message += span_red("▌")
 
 	if(reagents.get_reagent_amount("potassium"))
-		the_message += span_blue("▌")
 		the_message += span_red("▌")
+		the_message += span_blue("▌")
 
 	if(reagents.get_reagent_amount("radium"))
-		the_message += span_red("▌")
+		the_message += span_blue("▌")
 		the_message += span_purple("▌")
 
 	if(reagents.get_reagent_amount("acetone"))
-		the_message += span_red("▌")
-		the_message += span_blue("▌")
+		the_message += span_purple("▌")
+		the_message += span_green("▌")
 
 	if(reagents.get_reagent_amount("imidazoline"))
 		the_message += span_green("▌")

@@ -77,10 +77,11 @@
 				to_chat(user, SPAN_NOTICE("After a moment the dram starts to burn your insides well also rapidly expanding your blood vessels!"))
 
 			if(0 >= free_processes)
-				H.sanity.level_change_cap += sanity_level_change_cap_editor
-				H.sanity.insight_passive_gain_multiplier += insight_passive_gain_multiplier_editor
 				H.apply_damage(damage_brute, BRUTE)
 				H.apply_damage(damage_fire, BURN)
+
+			H.sanity.level_change_cap += sanity_level_change_cap_editor
+			H.sanity.insight_passive_gain_multiplier += insight_passive_gain_multiplier_editor
 
 		else
 			to_chat(user, SPAN_NOTICE("After slowly consuming the dram nothing happens."))

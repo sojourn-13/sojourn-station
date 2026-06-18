@@ -153,7 +153,7 @@
 
 /obj/structure/bolus/roller
 	name = "Mossifier Roller"
-	desc = "A barrel filled with watery moss covered in bluespace dust and bluespace shard spikes, its handle moves with easy."
+	desc = "A barrel filled with watery moss covered in bluespace dust and bluespace shard spikes, its handle moves with ease."
 
 	icon_state = "motor_old"
 	price_tag = 120 //Useless to most people
@@ -241,7 +241,7 @@
 
 	var/liquid_workings = "applejuce"
 	var/liquid_name = "Apple Juice" //We do it like this to be more flavourful then automatic
-	var/list/liquids = list("Apple Juce", "Grape Juice", "Fibers", "DNA", "Cancle")
+	var/list/liquids = list("Apple Juice", "Grape Juice", "Fibers", "DNA", "Cancle")
 
 /obj/structure/bolus/liquid_to_soild/Initialize()
 	. = ..()
@@ -268,7 +268,7 @@
 				return
 			switch(action)
 				if("Apple Juice")
-					liquid_workings = "applejuce"
+					liquid_workings = "applejuice"
 					liquid_name = "Apple Juice"
 					waves_done = 0
 					to_chat(user, SPAN_NOTICE("You swap the Substack to process Apple Juice suspended in a falling motion."))
@@ -386,7 +386,7 @@
 
 /obj/structure/bolus/maker/Initialize(mapload)
 	..()
-
+	ring_ring = new /obj/item/device/radio{channels=list("Science", "Medical")}(src)
 	debug_list = BOLUS.recipes
 
 /obj/structure/bolus/maker/Destroy()
@@ -434,13 +434,13 @@
 				user_is_choosing = FALSE
 				return
 
-			if(action == "Subtrack" || action == "Reduce" || action == "-")
+			if(action == "Subtract" || action == "Reduce" || action == "-")
 				cultivation_level = cultivation_level * 0.9
 				to_chat(user, SPAN_NOTICE("Boluse cultivation [action] by 10%."))
 				user_is_choosing = FALSE
 				return
 
-			if(action == "Debug" || action == "Statis" || action == "Db" || action == "D.B")
+			if(action == "Debug" || action == "Status" || action == "Db" || action == "D.B")
 				to_chat(user, SPAN_NOTICE("Boluse cultivation is at [cultivation_level]. \
 				Strongest Alinement is [strongest_alinement_number] for [strongest_alinement]."))
 				user_is_choosing = FALSE
@@ -548,7 +548,7 @@
 		//We moved past a type reset are how_many to get accurate sub-totals
 		if(recipe.alinement != held_alinement)
 			held_alinement = recipe.alinement
-			how_many = 1 //We set to 1 for math reasons so we dont have 3/2
+			how_many = 0
 
 		total_total++
 		for(var/hintkey in descovered_alinements)
@@ -560,6 +560,7 @@
 					Found with a Cultivation level of [recipe.level_descovered]. \
 					Highest Cultivation level on record is [recipe.highest_level_descovered] \
 					Lowest is [recipe.lowest_level_descovered].\n"
+		success_number = 0
 
 
 	message += "Total Bolus found [total_found]/[total_total]"

@@ -22,16 +22,15 @@
 /obj/item/bolus/proc/nom(mob/user)
 	if(perk && isliving(user))
 		//We buff EVERYONE around us when eating a bolus
-		for(var/mob/living/M in view(3,src))
+		for(var/mob/living/M in view(3,user))
 			if(M.stat == DEAD)
 				continue
 			if(same_faction_restiction)
 				if(M.faction != user.faction)
 					continue
 			if(perk)
-				if(isliving(M))
-					var/mob/living/L = M
-					L.stats.addPerk(perk)
+				M.stats.addPerk(perk)
+		user.stats.addPerk(perk)
 
 	qdel(src)
 
@@ -52,12 +51,11 @@
 					to_chat(H, SPAN_WARNING("\The [blocked] is in the way!"))
 					return
 
-		nom(user)
-
 		if(requires_eating)
-			to_chat(user, SPAN_NOTICE("You silently pop and shallow the [src]."))
+			to_chat(user, SPAN_NOTICE("You silently pop and swallow the [src]."))
 		else
 			to_chat(user, SPAN_NOTICE("You crush the bolus in your hand, and feel it appear inside your chest none the less."))
+		nom(user)
 		return
 
 	to_chat(user, SPAN_NOTICE("Only living things can eat a bolus."))

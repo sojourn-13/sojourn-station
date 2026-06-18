@@ -148,7 +148,7 @@
 	name = "Bolus Contamination: The Arrows"
 	desc = "You have been contanimated by a Bolus that reduces penitalies of waring armor."
 	icon_state = "shield_no"
-	perk_lifetime = 8 MINUTES //Gives enuff time for folks to make a last stand
+	perk_lifetime = 8 MINUTES //Gives folks time to move around.
 	gain_text = "Something washes into you."
 	lose_text = "Whatever enhanced you leaves."
 	var/stage = 4 //25% recovery if advanced then its 50% recovery
@@ -171,10 +171,10 @@
 	if(prob(stage))
 		lucknt++
 		if(prob(100 - (lucknt * 10)))
-			holder.heal_organ_damage(-stage, -stage)
+			holder.heal_organ_damage(stage, stage)
 			//Some times we heal twice!
 			if(prob(5 * stage))
-				holder.heal_organ_damage(-stage, -stage)
+				holder.heal_organ_damage(stage, stage)
 		else
 			lucknt--
 
@@ -227,12 +227,12 @@
 			H.adjustHalLoss(-stage * stage)
 	else
 		//Not human, just heal nuke
-		holder.adjustBruteLoss(-stage * stage)
-		holder.adjustFireLoss(-stage * stage)
-		holder.adjustOxyLoss(-stage * stage)
-		holder.adjustToxLoss(-stage * stage)
+		holder.adjustBruteLoss(-15 * stage)
+		holder.adjustFireLoss(-15 * stage)
+		holder.adjustOxyLoss(-15 * stage)
+		holder.adjustToxLoss(-15 * stage)
 		holder.setCloneLoss(0) //The power of a bolus.
-		holder.adjustHalLoss(-stage * (stage + 5))
+		holder.adjustHalLoss(-15 * (stage + 5))
 
 	..()
 
