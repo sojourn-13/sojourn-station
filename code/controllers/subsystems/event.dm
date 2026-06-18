@@ -19,7 +19,7 @@ SUBSYSTEM_DEF(event)
 	var/list/datum/event/finished_events = list()
 
 	var/list/datum/event/all_events
-
+	var/list/all_parallaxes = list()	// For parallax changes due to space weather
 
 //Subsystem procs
 /datum/controller/subsystem/event/Initialize(start_timeofday)
@@ -32,6 +32,7 @@ SUBSYSTEM_DEF(event)
 	active_events = SSevent.active_events
 	finished_events = SSevent.finished_events
 	all_events = SSevent.all_events
+	all_parallaxes = SSevent.all_parallaxes
 
 /datum/controller/subsystem/event/fire(resumed = FALSE)
 	if (!resumed)
@@ -57,9 +58,11 @@ SUBSYSTEM_DEF(event)
 
 	finished_events += E
 
-
-
 	log_debug("Event '[name]' has completed at [stationtime2text()].")
+
+/datum/controller/subsystem/event/proc/change_parallax(new_parallax)
+	for(var/atom/movable/screen/parallax/P in all_parallaxes)
+		P.update_icon(new_parallax)
 
 /datum/controller/subsystem/event/proc/RoundEnd()
 	if(!report_at_round_end)

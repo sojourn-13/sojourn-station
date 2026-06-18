@@ -172,7 +172,6 @@
 		info["name"] = M.name == M.real_name ? M.name : "[M.name] ([M.real_name])"
 		info["role"] = M.mind ? (M.mind.assigned_role ? M.mind.assigned_role : "No role") : "No mind"
 		info["antag"] = M.mind ? (M.mind.antagonist.len ? "Antag" : "Not antag") : "No mind"
-		info["hasbeenrev"] = M.mind ? M.mind.has_been_rev : "No mind"
 		info["stat"] = M.stat
 		info["type"] = M.type
 		if(isliving(M))

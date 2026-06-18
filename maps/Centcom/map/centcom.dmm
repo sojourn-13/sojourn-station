@@ -5688,8 +5688,8 @@
 /area/space)
 "qI" = (
 /obj/map_data/admin,
-/turf/space,
-/area/space)
+/turf/misc/start,
+/area/misc/start)
 "qM" = (
 /obj/structure/table/steel_reinforced,
 /obj/item/oddity/blackbox_nanoforge,

@@ -404,6 +404,7 @@
 
 /obj/item/organ/internal/rejuvenate()
 	status = null
+	current_blood = initial(current_blood)
 	for(var/datum/component/comp as anything in GetComponents(/datum/component))
 		istype(comp, /datum/component/internal_wound) ? remove_wound(comp) : qdel(comp)
 

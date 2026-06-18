@@ -84,7 +84,7 @@
 					for(var/obj/objects in H.contents)
 						if(istype(objects, /obj/item/organ))
 							continue
-						if(istype(objects, /obj/parallax))
+						if(istype(objects, /atom/movable/screen/parallax))
 							continue
 						if(istype(objects, /obj/item/grab))
 							continue

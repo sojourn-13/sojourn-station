@@ -53,7 +53,8 @@
 		if (holder.stats && holder.stats.perks)
 			holder.stats.perks -= src
 		if (!((QDELETED(holder)) || (QDESTROYING(holder)))) //since this can happen during the destroy of the holder
-			to_chat(holder, SPAN_NOTICE("[lose_text]"))
+			if(length(lose_text))
+				to_chat(holder, SPAN_NOTICE("[lose_text]"))
 	holder = null
 
 	// if(perk_action)
@@ -74,7 +75,8 @@
 		SHOULD_CALL_PARENT(TRUE)
 		holder = L
 		RegisterSignal(holder, COMSIG_MOB_LIFE, PROC_REF(on_process))
-		to_chat(holder, SPAN_NOTICE("[gain_text]"))
+		if(length(gain_text))
+			to_chat(holder, SPAN_NOTICE("[gain_text]"))
 		// if(perk_action)
 		// 	perk_action.Grant(holder)
 		return TRUE

@@ -1,10 +1,7 @@
 /mob/observer/ghost/Login()
-	..()
-/* Soj Edit, for some reasont this makes issues
 	. = ..()
 	if(!. || !client)
 		return FALSE
-*/
 
 	if(isAdminGhostAI(src))
 		has_unlimited_silicon_privilege = TRUE

@@ -185,6 +185,9 @@
 	update_momentum()
 
 /mob/living/carbon/human/proc/update_momentum()
+	if(QDELETED(src))
+		deltimer(momentum_reduction_timer)
+		return
 	if(momentum_speed)
 		momentum_reduction_timer = addtimer(CALLBACK(src, PROC_REF(calc_momentum)), 1 SECONDS, TIMER_STOPPABLE)
 	else
