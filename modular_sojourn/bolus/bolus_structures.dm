@@ -107,7 +107,7 @@
 	if(istype(I, /obj/item/reagent_containers/snacks/grown))
 		if(I.reagents.get_reagent_amount("woodpulp"))
 			to_chat(user, "<span class='info'>The [src] silently eats the [I] making a happy plinking sound.</span>")
-			planks += rand(10, 15)
+			planks += rand(50, 75)
 			qdel(I)
 		else
 			to_chat(user, "<span class='info'>The [src] seems to not think that [I] is not a suitable log.</span>")
@@ -123,7 +123,7 @@
 	..()
 
 /obj/structure/bolus/cellose/proc/turntable(mob/user)
-	if(planks)
+	if(planks > 0)
 		return TRUE
 	to_chat(user, SPAN_NOTICE("The [src] needs more tower cap logs to scan."))
 	return FALSE

@@ -105,7 +105,7 @@
 //This one is uniquic
 /obj/item/bolus/agro/nom(mob/user)
 	if(isliving(user))
-		for(var/mob/M in view(5,src))
+		for(var/mob/M in view(5,user))
 			if(M.stat == DEAD)
 				continue
 			if(M.faction == M.faction)
@@ -192,13 +192,18 @@
 			var/obj/item/implant/core_implant/I = John.get_core_implant(/obj/item/implant/core_implant/cruciform)
 			var/obj/item/organ/internal/psionic_tumor/PT = John.random_organ_by_process(BP_PSION)
 
-			if(!I || PT || !I.active || !I.wearer)
+			if(I)
+				if(!I.active && !I.wearer)
+					to_chat(John, SPAN_NOTICE("The Bolus seems to have no affect on you, likely do to you inactive \
+					cruciform. Hopefully those around you have felt the power of the Bolus in your sted."))
+					stage += 5 //Heroism!
+
+			if(!I && !PT)
 				to_chat(John, SPAN_NOTICE("The Bolus seems to have no affect on you, likely do to you missing a psionic implant \
 				or a cruciform. Hopefully those around you have felt the power of the Bolus in your sted."))
 				stage += 5 //Heroism!
 
-
-		for(var/mob/living/carbon/human/H in view(5,src))
+		for(var/mob/living/carbon/human/H in view(5,user))
 			if(H.stat == DEAD)
 				continue
 			if(H.faction != H.faction)
