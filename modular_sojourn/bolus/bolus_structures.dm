@@ -537,6 +537,7 @@
 	var/held_alinement = "ERROR"
 
 	var/message = "Made F.O.L Bolus Index:\n"
+	var/last_found = "404"
 
 
 	for(var/path in typesof(/datum/bolus_crafting))
@@ -547,8 +548,11 @@
 
 		//We moved past a type reset are how_many to get accurate sub-totals
 		if(recipe.alinement != held_alinement)
+			if((held_alinement != "Will" && held_alinement != "ERROR") && success_number)
+				message += "Following Stats for [held_alinement]: [success_number]/[how_many] descovered!\n"
 			held_alinement = recipe.alinement
 			how_many = 0
+			success_number = 0
 
 		total_total++
 		for(var/hintkey in descovered_alinements)
@@ -556,12 +560,14 @@
 				how_many++
 				if(recipe.found)
 					success_number++
-					message += "Following Stats for Bolus [success_number]/[how_many] for [recipe.alinement] alinement. \
+					message += "Following Stats a [recipe.alinement] alinement Bolus. \
 					Found with a Cultivation level of [recipe.level_descovered]. \
 					Highest Cultivation level on record is [recipe.highest_level_descovered] \
 					Lowest is [recipe.lowest_level_descovered].\n"
-		success_number = 0
+					last_found = recipe.alinement
 
+	if((last_found != "404" && last_found != "Will") && success_number)
+		message += "Following Stats for [last_found]: [success_number]/[how_many] descovered!\n"
 
 	message += "Total Bolus found [total_found]/[total_total]"
 
