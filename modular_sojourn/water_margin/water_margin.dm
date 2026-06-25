@@ -76,7 +76,7 @@
 	name = "O-992 M.P Coral Anex-1b.v921" //Outlawed Mind Papges
 	desc = "When Collecting The Fallen Stars Of The Mind: A collection of last brain scans mapped onto graybrain matter."
 	icon_state = "pod"
-	the_super_message = "Reactents:\nWater (G),\nSilver (R),\nSodiumchloride(B),\nAlkysine(P).\nEnhancers = Cerebrix (Will add an additional G, R, B, P when processing a Reactent)"
+	the_super_message = "Reactents:\nWater (G),\nCarbon (R),\nSodiumchloride(B),\nAlkysine(P).\nEnhancers = Cerebrix (Will add an additional G, R, B, P when processing a Reactent)"
 
 /obj/structure/classics/chapters/culivation(obj/item/dram)
 	if(istype(dram, /obj/item/culivation_dram))
@@ -90,8 +90,8 @@
 				reagents.remove_reagent("psi_juice", rand(1, 2), 1)
 				CD.internal_code += span_green("▌")
 
-		if(reagents.get_reagent_amount("silver"))
-			reagents.remove_reagent("silver", rand(1, 2), 1)
+		if(reagents.get_reagent_amount("carbon"))
+			reagents.remove_reagent("carbon", rand(1, 2), 1)
 			CD.internal_code += span_red("▌")
 
 			if(reagents.get_reagent_amount("psi_juice"))
@@ -130,7 +130,7 @@
 		if(reagents.get_reagent_amount("psi_juice"))
 			the_message += span_green("▌")
 
-	if(reagents.get_reagent_amount("silver"))
+	if(reagents.get_reagent_amount("carbon"))
 		the_message += span_red("▌")
 
 		if(reagents.get_reagent_amount("psi_juice"))
@@ -391,21 +391,20 @@
 	name = "HQOMA Lozenges Effloresced E.G.O::Dark Sky Under One Eye" //HeadQuarters Of Mental Affairs
 	desc = "When Adorning The Streets With Your Cerebrospinal Fluid: The last emotions condensed and made into liquid."
 	icon_state = "stillifer"
-	the_super_message = "Reactents:\nEthanol (RPBB),\nLithium (BPBB),\nMercury(RRBB),\nSilicon(GGBR),\nSodium(PPGB)."
+	the_super_message = "Reactents:\nEthanol (PBB),\nLithium (PBB),\nMercury(RRBB),\nSilicon(GBR),\nSodium(PGB)\n Enhancers = Silver(Will add 1 Code-To-Match token, will add 1 Processes before Side-Affects, will prevent this process from using a Processes before Side-Affects token)."
 
 /obj/structure/classics/stars/culivation(obj/item/dram)
 	if(istype(dram, /obj/item/culivation_dram))
 		var/obj/item/culivation_dram/CD = dram
+		var/saved_by_silver = FALSE
 		if(reagents.get_reagent_amount("ethanol"))
 			reagents.remove_reagent("ethanol", rand(1, 2), 1)
-			CD.internal_code += span_red("▌")
 			CD.internal_code += span_purple("▌")
 			CD.internal_code += span_blue("▌")
 			CD.internal_code += span_blue("▌")
 
 		if(reagents.get_reagent_amount("lithium"))
 			reagents.remove_reagent("lithium", rand(1, 2), 1)
-			CD.internal_code += span_blue("▌")
 			CD.internal_code += span_purple("▌")
 			CD.internal_code += span_blue("▌")
 			CD.internal_code += span_blue("▌")
@@ -420,23 +419,29 @@
 		if(reagents.get_reagent_amount("silicon"))
 			reagents.remove_reagent("silicon", rand(1, 2), 1)
 			CD.internal_code += span_green("▌")
-			CD.internal_code += span_green("▌")
 			CD.internal_code += span_blue("▌")
 			CD.internal_code += span_red("▌")
 
 		if(reagents.get_reagent_amount("sodium"))
 			reagents.remove_reagent("sodium", rand(1, 2), 1)
 			CD.internal_code += span_purple("▌")
-			CD.internal_code += span_purple("▌")
 			CD.internal_code += span_green("▌")
 			CD.internal_code += span_blue("▌")
 
-		if(CD.free_processes <= 0)
-			CD.insight_rest_threshold_editor += 5 - CD.free_processes
-			CD.damage_fire += 5 - CD.free_processes
-			CD.damage_brute += 5 - CD.free_processes
+		if(reagents.get_reagent_amount("silver"))
+			reagents.remove_reagent("silver", rand(1, 2), 1)
+			saved_by_silver = TRUE
+			CD.exstend_internal_code(1)
+			CD.free_processes += 1
 
-		CD.free_processes -= 1
+		if(!saved_by_silver)
+
+			if(CD.free_processes <= 0 )
+				CD.insight_rest_threshold_editor += 5 - CD.free_processes
+				CD.damage_fire += 5 - CD.free_processes
+				CD.damage_brute += 5 - CD.free_processes
+
+			CD.free_processes -= 1
 
 /obj/structure/classics/stars/dry_culivation()
 	var/the_message = ""

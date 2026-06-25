@@ -33,6 +33,13 @@
 		current_langth += 1
 		external_code += pick(span_green("▌"), span_red("▌"), span_blue("▌"), span_purple("▌"))
 
+/obj/item/culivation_dram/proc/exstend_internal_code(var/num)
+	var/code_added = 0
+
+	while(code_added < num)
+		code_added += 1
+		external_code += pick(span_green("▌"), span_red("▌"), span_blue("▌"), span_purple("▌"))
+
 /obj/item/culivation_dram/examine(mob/user)
 	..()
 
