@@ -43,3 +43,36 @@
 					melee_damage_upper = melee_damage_upper_save
 					forceMove(starter)
 					dir = reverse_direction(M.dir)
+
+/mob/living/carbon/superior/spider/UnarmedAttack(atom/A, proximity, allow_attack_build = TRUE)
+	if(isliving(A))
+		var/mob/living/L = A
+		var/datum/perk/cooldown/malice_of_weeve/MW = L.stats.getPerk(PERK_MALICE_WEEVE)
+		if(MW) //Are malice will exstend to you
+
+			//We deal more damage, inject more toxins and bite harder through armor
+			melee_damage_lower += MW.gruges
+			melee_damage_upper += MW.gruges
+			if(poison_type)
+				poison_per_bite += MW.gruges
+			armor_divisor += MW.malice
+
+			..() //Do are things
+
+			//We are taking gruges and malice to harden areself, improving are combative captablities!
+			//Basically this allows for spiders to slowly self buff themselfs by taking out mobs that build up MW
+			if(MW.gruges > 0.25)
+				MW.gruges -= 0.05
+			if(MW.malice > 0.5)
+				MW.malice -= 0.025
+
+			melee_damage_lower -= MW.gruges
+			melee_damage_upper -= MW.gruges
+			if(poison_type)
+				poison_per_bite -= MW.gruges
+			armor_divisor -= MW.malice
+
+		else
+			..()
+	else
+		..()

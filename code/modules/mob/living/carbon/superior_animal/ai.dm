@@ -132,6 +132,10 @@
 	target_mob = null
 	target_location = null
 
+//Used in cases where we are checking perks, currently only checked when mob is living
+/mob/living/carbon/superior/proc/uniquic_isValidAttackTarget(atom/O)
+	return FALSE
+
 /mob/living/carbon/superior/proc/isValidAttackTarget(atom/O)
 
 //Soj optimizations: Faster returns rather then mega returns
@@ -144,6 +148,9 @@
 		//If we are standing well below crit, then it is still a threat
 		if(L.health <= (ishuman(L) ? HEALTH_THRESHOLD_CRIT : 0) && resting)
 			return FALSE
+		//Uniquic overrides factions and attack same unless uniquic incorperates those aspects.
+		if(uniquic_isValidAttackTarget(L))
+			return TRUE
 		if((!attack_same && (L.faction == faction)) || (L in friends)) //just cuz your a friend dosnt mean it magically will no longer attack same
 			return FALSE
 		if(L.friendly_to_colony && friendly_to_colony) //If are target and areselfs have the friendly to colony tag, used for chtmant protection
