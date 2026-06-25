@@ -3599,6 +3599,8 @@
 #include "modular_sojourn\task_master\human_helper.dm"
 #include "modular_sojourn\task_master\task_helpers.dm"
 #include "modular_sojourn\task_master\tasks.dm"
+#include "modular_sojourn\water_margin\dram.dm"
+#include "modular_sojourn\water_margin\water_margin.dm"
 #include "tgs_dmapi\tgs.dm"
 #include "tgs_dmapi\code\tgs_event_handler.dm"
 #include "tgs_dmapi\code\world.dm"

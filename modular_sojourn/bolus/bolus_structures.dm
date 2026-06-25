@@ -1,7 +1,7 @@
 /obj/structure/bolus
 	name = "Bolus materal contructor frame"
 	desc = "A frame for making a bolus stucture, useless to anyone without the blueprints, materals and time to contruct it."
-	density = FALSE //Small stucture you can walk around or over it basically
+	density = TRUE
 	throwpass = TRUE //Dont block thorwing we are smoll
 	anchored = TRUE
 	icon = 'modular_sojourn/bolus_icons.dmi'
@@ -80,7 +80,7 @@
 
 /obj/structure/bolus/cellose
 	name = "Bluespace Cellose Scanner"
-	desc = "A Modifed scanner searching through logs for branches of in a super potion lost in bluespace. Runs on its own power bank."
+	desc = "A Modifed scanner searching through logs for branches in a super potion lost in bluespace. Runs on its own power bank."
 
 	icon_state = "analyser"
 	price_tag = 120 //Useless to most people
@@ -107,7 +107,7 @@
 	if(istype(I, /obj/item/reagent_containers/snacks/grown))
 		if(I.reagents.get_reagent_amount("woodpulp"))
 			to_chat(user, "<span class='info'>The [src] silently eats the [I] making a happy plinking sound.</span>")
-			planks += rand(10, 15)
+			planks += rand(50, 75)
 			qdel(I)
 		else
 			to_chat(user, "<span class='info'>The [src] seems to not think that [I] is not a suitable log.</span>")
@@ -123,7 +123,7 @@
 	..()
 
 /obj/structure/bolus/cellose/proc/turntable(mob/user)
-	if(planks)
+	if(planks > 0)
 		return TRUE
 	to_chat(user, SPAN_NOTICE("The [src] needs more tower cap logs to scan."))
 	return FALSE
@@ -153,7 +153,7 @@
 
 /obj/structure/bolus/roller
 	name = "Mossifier Roller"
-	desc = "A barrel filled with watery moss covered in bluespace dust and bluespace shard spikes, its handle is moves with easy."
+	desc = "A barrel filled with watery moss covered in bluespace dust and bluespace shard spikes, its handle moves with ease."
 
 	icon_state = "motor_old"
 	price_tag = 120 //Useless to most people
@@ -241,7 +241,7 @@
 
 	var/liquid_workings = "applejuce"
 	var/liquid_name = "Apple Juice" //We do it like this to be more flavourful then automatic
-	var/list/liquids = list("Apple Juce", "Grape Juice", "Fibers", "DNA", "Cancle")
+	var/list/liquids = list("Apple Juice", "Grape Juice", "Fibers", "DNA", "Cancle")
 
 /obj/structure/bolus/liquid_to_soild/Initialize()
 	. = ..()
@@ -268,7 +268,7 @@
 				return
 			switch(action)
 				if("Apple Juice")
-					liquid_workings = "applejuce"
+					liquid_workings = "applejuice"
 					liquid_name = "Apple Juice"
 					waves_done = 0
 					to_chat(user, SPAN_NOTICE("You swap the Substack to process Apple Juice suspended in a falling motion."))
@@ -306,7 +306,7 @@
 		if(!turntable(user))
 			break
 		if(do_after(user, waves_delay))
-			reagents.remove_reagent("water", rand(1, 2), 1)
+			reagents.remove_reagent(liquid_workings, rand(1, 2), 1)
 			waves_done += 1
 			if(prob(waves_done/12))
 				cycle_completed()
@@ -386,7 +386,7 @@
 
 /obj/structure/bolus/maker/Initialize(mapload)
 	..()
-
+	ring_ring = new /obj/item/device/radio{channels=list("Science", "Medical")}(src)
 	debug_list = BOLUS.recipes
 
 /obj/structure/bolus/maker/Destroy()
@@ -434,13 +434,13 @@
 				user_is_choosing = FALSE
 				return
 
-			if(action == "Subtrack" || action == "Reduce" || action == "-")
+			if(action == "Subtract" || action == "Reduce" || action == "-")
 				cultivation_level = cultivation_level * 0.9
 				to_chat(user, SPAN_NOTICE("Boluse cultivation [action] by 10%."))
 				user_is_choosing = FALSE
 				return
 
-			if(action == "Debug" || action == "Statis" || action == "Db" || action == "D.B")
+			if(action == "Debug" || action == "Status" || action == "Db" || action == "D.B")
 				to_chat(user, SPAN_NOTICE("Boluse cultivation is at [cultivation_level]. \
 				Strongest Alinement is [strongest_alinement_number] for [strongest_alinement]."))
 				user_is_choosing = FALSE
@@ -537,6 +537,7 @@
 	var/held_alinement = "ERROR"
 
 	var/message = "Made F.O.L Bolus Index:\n"
+	var/last_found = "404"
 
 
 	for(var/path in typesof(/datum/bolus_crafting))
@@ -547,8 +548,11 @@
 
 		//We moved past a type reset are how_many to get accurate sub-totals
 		if(recipe.alinement != held_alinement)
+			if((held_alinement != "Will" && held_alinement != "ERROR") && success_number)
+				message += "Following Stats for [held_alinement]: [success_number]/[how_many] descovered!\n"
 			held_alinement = recipe.alinement
-			how_many = 1 //We set to 1 for math reasons so we dont have 3/2
+			how_many = 0
+			success_number = 0
 
 		total_total++
 		for(var/hintkey in descovered_alinements)
@@ -556,11 +560,14 @@
 				how_many++
 				if(recipe.found)
 					success_number++
-					message += "Following Stats for Bolus [success_number]/[how_many] for [recipe.alinement] alinement. \
+					message += "Following Stats a [recipe.alinement] alinement Bolus. \
 					Found with a Cultivation level of [recipe.level_descovered]. \
 					Highest Cultivation level on record is [recipe.highest_level_descovered] \
 					Lowest is [recipe.lowest_level_descovered].\n"
+					last_found = recipe.alinement
 
+	if((last_found != "404" && last_found != "Will") && success_number)
+		message += "Following Stats for [last_found]: [success_number]/[how_many] descovered!\n"
 
 	message += "Total Bolus found [total_found]/[total_total]"
 

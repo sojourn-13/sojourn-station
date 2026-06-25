@@ -69,6 +69,7 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 	var/insight_gain_multiplier = 1
 	var/insight_rest_gain_multiplier = 1
 	var/insight_rest = 0
+	var/insight_rest_threshold = 100
 	var/max_insight_rest = 1
 	var/resting = 0
 	var/max_resting = INFINITY
@@ -361,7 +362,7 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 	if(!(type in desires))
 		amount /= 16
 	give_insight_rest(amount)
-	if(insight_rest >= 100)
+	if(insight_rest >= insight_rest_threshold)
 		insight_rest = 0
 		finish_rest()
 
@@ -675,3 +676,5 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 //Soj Edit
 /datum/sanity/proc/change_max_level(amount)
 	max_level += amount
+	if(20 > max_level)
+		max_level = 20

@@ -25,7 +25,7 @@ Min and Max's should be fine to be weaved but alinements can not!
 	var/found = FALSE
 	var/level_descovered = 0
 	var/highest_level_descovered = 0
-	var/lowest_level_descovered = 0
+	var/lowest_level_descovered = 1000
 
 var/global/datum/bolus_manager/BOLUS = new
 //More Tracking and hint stuff
