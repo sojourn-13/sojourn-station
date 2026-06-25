@@ -1,7 +1,7 @@
 /obj/structure/bolus
 	name = "Bolus materal contructor frame"
 	desc = "A frame for making a bolus stucture, useless to anyone without the blueprints, materals and time to contruct it."
-	density = FALSE //Small stucture you can walk around or over it basically
+	density = TRUE
 	throwpass = TRUE //Dont block thorwing we are smoll
 	anchored = TRUE
 	icon = 'modular_sojourn/bolus_icons.dmi'

@@ -1,7 +1,7 @@
 /obj/structure/dram_spawner
 	name = "Dram Treasure Box"
 	desc = "Slowly produces Culivated Dram's. Simply swipe any stamp to vend one. Also has a Dram recycler."
-	density = FALSE //Small stucture you can walk around or over it basically
+	density = TRUE
 	throwpass = TRUE //Dont block thorwing we are smoll
 	anchored = TRUE
 	icon = 'modular_sojourn/bolus_icons.dmi' //Same things as this as im really bad at spriting
@@ -391,7 +391,7 @@
 	name = "HQOMA Lozenges Effloresced E.G.O::Dark Sky Under One Eye" //HeadQuarters Of Mental Affairs
 	desc = "When Adorning The Streets With Your Cerebrospinal Fluid: The last emotions condensed and made into liquid."
 	icon_state = "stillifer"
-	the_super_message = "Reactents:\nEthanol (PBB),\nLithium (PBB),\nMercury(RRBB),\nSilicon(GBR),\nSodium(PGB)\n Enhancers = Silver(Will add 1 Code-To-Match token, will add 1 Processes before Side-Affects, will prevent this process from using a Processes before Side-Affects token)."
+	the_super_message = "Reactents:\nEthanol (PBB),\nLithium (PBB),\nMercury(RRBB),\nSilicon(GBR),\nSodium(PGB)\nEnhancers = Silver(Will add 1 Code-To-Match token, will add 1 Processes before Side-Affects, will prevent this process from using a Processes before Side-Affects token)"
 
 /obj/structure/classics/stars/culivation(obj/item/dram)
 	if(istype(dram, /obj/item/culivation_dram))
