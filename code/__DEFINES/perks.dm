@@ -265,6 +265,8 @@
 #define PERK_ARMOR_REDUCTION /datum/perk/cooldown/armor_reduction
 #define PERK_ARMOR_UP /datum/perk/cooldown/armor_up
 #define PERK_CONTEMPT_GAZE /datum/perk/cooldown/contempt_gaze
+
+#define PERK_WEALTH_INDEX /datum/perk/cooldown/wealth_index
 //Anti-art
 #define PERK_ARTIST_NO /datum/perk/cooldown/artist_no
 //Church Cooldown

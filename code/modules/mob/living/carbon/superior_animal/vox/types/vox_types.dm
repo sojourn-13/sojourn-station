@@ -337,20 +337,24 @@
 
 	DEFAULT_QUEUE_OR_CALL_VERB(VERB_CALLBACK(src, PROC_REF(_pointed), A))
 
-	usr.visible_message("<b>[src]</b> points to [A]")
+	visible_message("<b>[src]</b> points to [A]")
 	if(timeout >= world.time)
 		return
 
 	//Small cooldown to prevent lag
-	timeout = world.time + 5 SECONDS
+	timeout = world.time + 90 SECONDS
 
 	if(isliving(A))
+		var/mob/living/L = A
 		for(var/mob/living/carbon/superior/vox/V in oview(6, src))
 			V.loseTarget(TRUE,TRUE)
-			V.react_to_attack(A,src,A)
-	if(ishuman(A))
-		var/mob/living/carbon/superior/H = A
-		H.stats.addPerk(PERK_ARMOR_REDUCTION)
+			V.react_to_attack(L,src,L)
+		L.stats.addPerk(PERK_ARMOR_REDUCTION)
+
+/mob/living/carbon/superior/vox/scout/findTarget()
+	. = ..()
+	if(isliving(.))
+		pointed(.)
 
    //Ciriklo Pig Jockey
 /mob/living/carbon/superior/vox/pigjockey

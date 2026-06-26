@@ -194,6 +194,7 @@ casingtype = /obj/item/ammo_casing/a75/spent
 	rounds_left = 8
 	mag_type = /obj/item/cell/small/high/depleted
 	mags_left = 1
+	var/cooldown_targeting = 0
 
 /mob/living/carbon/superior/human/voidwolf/elite/captain/attackby(var/obj/item/O as obj, var/mob/user as mob)
 	if(prob(block_chance) || moved)
@@ -216,6 +217,30 @@ casingtype = /obj/item/ammo_casing/a75/spent
 /mob/living/carbon/superior/human/voidwolf/elite/captain/Initialize()
 	..()
 	icon_state = "reaver_cap_elite"
+
+/mob/living/carbon/superior/human/voidwolf/elite/captain/findTarget()
+	. = ..()
+	if(isliving(.))
+		var/mob/living/L = .
+		var/price = SStrade.get_price(L) / 800 //We dont need crazy high values, but we are 20% better are valueing the target
+		if(!L.stats.getPerk(PERK_WEALTH_INDEX))
+			if(price > 20)
+				L.stats.addPerk(PERK_WEALTH_INDEX)
+				var/datum/perk/cooldown/wealth_index/WI = L.stats.getPerk(PERK_WEALTH_INDEX)
+				WI.wealth = price
+		else
+			var/datum/perk/cooldown/wealth_index/WI = L.stats.getPerk(PERK_WEALTH_INDEX)
+			WI.wealth = price //Allows you to lower or raise index pricing when re-found by a voidwolf captain
+
+			if(price > 50 && cooldown_targeting < world.time)
+				cooldown_targeting += world.time + 90 SECONDS
+
+				DEFAULT_QUEUE_OR_CALL_VERB(VERB_CALLBACK(src, PROC_REF(_pointed), L))
+				visible_message("<b>[src]</b> points to [L], and whispers something into an earpierce")
+
+				for(var/mob/living/carbon/superior/human/voidwolf/VW in oview(4, src)) //We are blind
+					VW.loseTarget(TRUE,TRUE)
+					VW.react_to_attack(L,src,L)
 
 
 /mob/living/carbon/superior/human/voidwolf/elite/Initialize()

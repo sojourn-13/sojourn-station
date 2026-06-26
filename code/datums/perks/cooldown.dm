@@ -194,6 +194,17 @@
 
 	..()
 
+//Does nothing on its own used as a tracker for voidwolfs
+/datum/perk/cooldown/wealth_index
+	name = "Valued Target"
+	desc = "The voidwolfs have marked you as their next treaser, eather your gear or your organs are of high value to them."
+	gain_text = "The feeling of greedy eyes caluating your worthy falls apond you."
+	lose_text = null
+	active = FALSE
+	passivePerk = TRUE
+	perk_lifetime = 10 MINUTES
+	var/wealth = 0
+
 /datum/perk/cooldown/stillpoint_rupture
 	name = "Stillpoint Style: Entropy Mark of Rupture"
 	desc = "You where slashed by a Stillpoint weapon that after the timer will deal built up damage all at once."
