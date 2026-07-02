@@ -98,3 +98,14 @@
 	// #####	ALIGNING LAYOUTS TO SCREEN    #####
 	navigationPanel.setAlignment(HUD_HORIZONTAL_EAST_INSIDE_ALIGNMENT, HUD_VERTICAL_SOUTH_INSIDE_ALIGNMENT)
 	postBuildUI()
+
+////////////////////////////////////////////
+
+/datum/interface/AI_Eris/ErisOptimized
+	mobtype = /mob/living/silicon/ai
+	styleName = "ErisOptimized"
+
+// Simplified version of AI HUD accessible to humans. Used in surveillance_pod.dm
+/datum/interface/AI_Simple/ErisOptimized
+	mobtype = /mob/observer/eye/pod
+	styleName = "ErisOptimized"
