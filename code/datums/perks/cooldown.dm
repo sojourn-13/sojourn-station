@@ -420,3 +420,13 @@
 		S.blocking_slowdown -= 1
 		S.adjustBruteLoss(5)
 	..()
+
+/datum/perk/cooldown/malice_of_weeve
+	name = "Malice of the Weevers"
+	desc = "Gruges stacked up by spider nurses and their children."
+	icon_state = "spidergaze"
+	perk_lifetime = 10 MINUTES //We dont forgive with easy
+	gain_text = null
+	lose_text = null
+	var/gruges = 0
+	var/malice = 0
