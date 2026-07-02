@@ -6,7 +6,7 @@ var/list/ventcrawl_machinery = list(
 // Vent crawling whitelisted items, whoo
 // What are these for? Antags mostly,and allowing mice to steal small things
 /mob/living/var/list/can_enter_vent_with = list(
-	/obj/parallax,
+	/atom/movable/screen/parallax,
 	/obj/item/implant,
 	/obj/item/device/radio/borg,
 	/obj/item/holder,

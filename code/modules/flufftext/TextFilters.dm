@@ -45,7 +45,7 @@ proc/NewStutter(phrase,stunned)
 
 		//Search for dipthongs (two letters that make one sound.)
 		var/first_sound = copytext(word,1,3)
-		var/first_letter = copytext(word,1,2)
+		var/first_letter = word[1]
 		if(lowertext(first_sound) in list("ch","th","sh"))
 			first_letter = first_sound
 

@@ -2,3 +2,8 @@
 	name = "command"
 	oxygen = MOLES_O2STANDARD
 	nitrogen = MOLES_N2STANDARD
+
+/turf/misc/start
+	name = "start area"
+	icon = 'icons/turf/space.dmi'
+	icon_state = "bluespace"

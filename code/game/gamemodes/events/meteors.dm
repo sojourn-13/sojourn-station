@@ -453,6 +453,18 @@ disabled
 	..()
 	explosion(src.loc, 1, 2, 3, 4, 0)
 
+/obj/effect/meteor/dust/glass
+	name = "glass shard"
+	meteordrop = /obj/item/material/shard
+
+/obj/effect/meteor/dust/rods
+	name = "steel rod"
+	meteordrop = /obj/item/stack/rods
+
+/obj/effect/meteor/dust/metal
+	name = "steel wreck"
+	meteordrop = /obj/item/stack/material/steel
+
 //Flaming meteor
 /obj/effect/meteor/flaming
 	name = "flaming meteor"

@@ -63,7 +63,6 @@
 	/// Cameras currently tracking this mob. Needed for garbage collection.
 	var/list/tracking_cameras = list()
 
-	var/ajourn = 0
 	var/seer = 0 //for cult//Carbon, probably Human
 
 	var/druggy = 0			//Carbon
