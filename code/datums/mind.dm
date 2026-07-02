@@ -36,21 +36,12 @@
 	var/mob/living/original	//TODO: remove.not used in any meaningful way ~Carn. First I'll need to tweak the way silicon-mobs handle minds.
 	var/active = FALSE
 
-
-
 	var/memory
-
 	var/assigned_role
 	var/role_alt_title
 	var/list/antagonist = list()
 
 	var/datum/job/assigned_job
-
-
-	var/has_been_rev = FALSE	//Tracks if this mind has been a rev or not
-
-	var/rev_cooldown = 0
-
 	// the world.time since the mob has been brigged, or -1 if not at all
 	var/brigged_since = -1
 
@@ -64,13 +55,11 @@
 
 	var/last_activity = 0
 
-
 	/*
 		The world time when this mind was last in a mob, controlled by a client which did something.
 		Only updated once per minute, set by the inactivity subsystem
 		If this is 0, the mind has never had a cliented mob
 	*/
-
 	var/creation_time = 0 //World time when this datum was New'd. Useful to tell how long since a character spawned
 
 /datum/mind/New(key)
@@ -84,6 +73,7 @@
 	if(current)					//remove ourself from our old body's mind variable
 		current.mind = null
 
+		SStgui.on_transfer(current, new_character)
 		SSnano.user_transferred(current, new_character) // transfer active NanoUI instances to new user
 	if(new_character.mind)		//remove any mind currently in our new body's mind variable
 		new_character.mind.current = null
@@ -129,8 +119,8 @@
 	var/output = "<B>[current.real_name]'s Memory</B><HR>"
 	output += memory
 
-	for(var/datum/antagonist/A in antagonist)
-		if(!A.objectives.len)
+	for(var/datum/antagonist/A as anything in antagonist)
+		if(!length(A.objectives))
 			break
 		if(A.faction)
 			output += "<br><b>Your [A.faction.name] faction objectives:</b>"
@@ -315,8 +305,6 @@
 	//faction =       null //Uncommenting this causes a compile error due to 'undefined type', fucked if I know.
 	role_alt_title =  null
 	initial_account = null
-	has_been_rev =    0
-	rev_cooldown =    0
 	brigged_since =   -1
 
 //Antagonist role check

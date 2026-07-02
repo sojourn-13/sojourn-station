@@ -89,7 +89,7 @@
 	if(length(text)==1)
 		text=uppertext(text)
 	else
-		var/cap = copytext(text,1,2)
+		var/cap = text[1]
 		cap = uppertext(cap)
 		cap += copytext(text,2,length(text)+1)
 		text=cap

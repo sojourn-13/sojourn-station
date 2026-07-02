@@ -33,12 +33,25 @@
 /obj/effect/spider/Crossed(atom/movable/AM)
 	if(isliving(AM))
 		var/mob/living/L = AM
-		if(L.on_fire && prob(50)) //it's 50/50 so a single burning spider won't ignite the entire nest, and a single burning web won't ignite a whole swarm of spiders
-			ignite()
+		//Do we have a gruge against us? If so then lets stack it up
+		var/datum/perk/cooldown/malice_of_weeve/MW = L.stats.getPerk(PERK_MALICE_WEEVE)
+		if(MW)
+			MW.malice += 0.05 //You walk in are turf?
+
+		if(!burning)
+			if(L.on_fire && prob(50)) //it's 50/50 so a single burning spider won't ignite the entire nest, and a single burning web won't ignite a whole swarm of spiders
+				ignite()
+				if(MW)
+					MW.gruges += 1 //You burn are homes?
 			return
+
 		if(burning && prob(50))
 			L.adjust_fire_stacks(2)
 			L.IgniteMob()
+			if(MW)
+				if(MW.gruges + MW.malice > 3)
+					L.adjust_fire_stacks(1) //The webs cry out as they burn your flesh
+
 	if(istype(AM, /obj/item/projectile))
 		var/obj/item/projectile/proj = AM
 		if(BURN in proj.damage_types)
@@ -87,6 +100,13 @@
 			attack_ignite(user)
 			damage = 15
 
+	if(isliving(user))
+		var/mob/living/L = user
+		var/datum/perk/cooldown/malice_of_weeve/MW = L.stats.getPerk(PERK_MALICE_WEEVE)
+		if(MW) //The spiders have not forgiven you yet.
+			MW.malice += 0.1 //Your hurting are home
+
+
 	health -= damage
 	healthCheck()
 
@@ -97,6 +117,16 @@
 	visible_message("<span class='warning'>\The [src] bursts into flame!</span>")
 	ignite()
 
+	//Burning down the nests is a quick way to stack gruges and malice...
+	if(isliving(user))
+		var/mob/living/L = user
+		var/datum/perk/cooldown/malice_of_weeve/MW = L.stats.getPerk(PERK_MALICE_WEEVE)
+		if(!MW) //Are malice will exstend to you
+			L.stats.addPerk(PERK_MALICE_WEEVE)
+			MW = L.stats.getPerk(PERK_MALICE_WEEVE)
+		MW.gruges += 0.5
+		MW.malice += 0.5
+		MW.perk_lifetime += 5 SECONDS
 
 /obj/effect/spider/bullet_act(var/obj/item/projectile/Proj)
 	..()

@@ -62,6 +62,8 @@ Securing and unsecuring the flask is a long and hard task, and a failure when un
 	START_PROCESSING(SSobj, src)
 
 /obj/item/gun/hydrogen/Destroy()
+	UnregisterSignal(src, COMSIG_HEAT_VENT)
+	UnregisterSignal(src, COMSIG_HEAT_OVERHEAT)
 	STOP_PROCESSING(SSobj, src)
 	..()
 

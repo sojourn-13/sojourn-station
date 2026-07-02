@@ -35,18 +35,32 @@
 //expects an atom containing the reagents used to clean the turf
 /turf/proc/clean(atom/source, mob/user)
 	var/amt = 0  // Amount of filth collected (for holy vacuum cleaner)
+	var/spider_webs = 0
 	if(source.reagents.has_reagent("water", 1) || source.reagents.has_reagent("cleaner", 1) || source.reagents.has_reagent("holywater", 1) || source.reagents.has_reagent("sterilizine", 1))
 		clean_blood()
 		for(var/obj/effect/O in src)
 			if(istype(O,/obj/effect/decal/cleanable) || istype(O,/obj/effect/overlay) && !istype(O,/obj/effect/overlay/water))
 				amt++
+
+				if(istype(O,/obj/effect/decal/cleanable/cobweb) || istype(O,/obj/effect/decal/cleanable/cobweb2))
+					spider_webs++
+
 				qdel(O)
 		if(user && user.stats)
 			if(user.stats.getPerk(PERK_NEAT))
 				if(ishuman(user))
 					var/mob/living/carbon/human/H = user
 					if(H.sanity)
-						H.sanity.changeLevel(0.5)
+						H.sanity.changeLevel(0.5 * amt)
+			//Cleaning even these smaller webs will build up the malice
+			if(spider_webs)
+				var/datum/perk/cooldown/malice_of_weeve/MW = user.stats.getPerk(PERK_MALICE_WEEVE)
+				if(!MW) //Are malice will exstend to you
+					user.stats.addPerk(PERK_MALICE_WEEVE)
+					MW = user.stats.getPerk(PERK_MALICE_WEEVE)
+				MW.gruges += 0.25 * spider_webs
+				MW.malice += 0.25 * spider_webs
+				MW.perk_lifetime += 1 SECONDS * spider_webs
 	else
 		to_chat(user, SPAN_WARNING("\The [source] is too dry to wash that."))
 	source.reagents.trans_to_turf(src, 1, 10)	//10 is the multiplier for the reaction effect. probably needed to wet the floor properly.

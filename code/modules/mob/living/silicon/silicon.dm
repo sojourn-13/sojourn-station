@@ -274,7 +274,8 @@
 		winset(client, null, "mainwindow.macro=borgmacro hotkey_toggle.is-checked=false input.focus=true")
 */
 
-	winset(client, null, "mainwindow.macro=borgmacro hotkey_toggle.is-checked=false input.focus=true")
+	if(client)
+		winset(client, null, "mainwindow.macro=borgmacro hotkey_toggle.is-checked=false input.focus=true")
 
 /mob/living/silicon/verb/set_flavor()
 	set name = "Set Flavour Text"

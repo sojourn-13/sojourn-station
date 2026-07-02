@@ -6,6 +6,7 @@
 	desc = "After seeing the death of many acquaintances and friends, witnessing death doesn't shock you as much as before. \
 			Halves sanity loss from seeing people die."
 	icon_state = "survivor" // https://game-icons.net/1x1/lorc/one-eyed.html
+	perk_item_decay = 3
 
 /datum/perk/oddity/survivor/assign(mob/living/L)
 	if(..() && ishuman(holder))
@@ -23,6 +24,7 @@
 	desc = "You know just what to say to people and are able to inspire the best - or even worst - in others. \
 			People around you regain their sanity quicker."
 	icon_state = "inspiringpresence"
+	perk_item_decay = 3
 
 /datum/perk/oddity/inspiring/assign(mob/living/L)
 	if(..())
@@ -80,18 +82,21 @@
 	desc = "The latent effects of an oddity have granted you an insight into firing bullets faster than anyone else; a shame it doesn't make you immune to recoil."
 	gain_text = "Your trigger finger feels more relaxed than ever..."
 	icon_state = "dual_shot" // https://game-icons.net/1x1/delapouite/bullet-impacts.html
+	perk_item_decay = 2
 
 /datum/perk/oddity/balls_of_plasteel
 	name = "True Grit"
 	desc = "Pain comes and goes, you feel as though can withstand far worse than ever before."
 	gain_text = "Pain is merely weakness leaving the body."
 	icon_state = "golem" // https://game-icons.net
+	perk_item_decay = 2
 
 /datum/perk/oddity/fast_walker
 	name = "Springheel"
 	desc = "You're sure of your movements now, slow and steady may win the race but you can prove them wrong."
 	gain_text = "You feel your pace quickening, your thoughts barely catching up with your stride..."
 	icon_state = "fast" // https://game-icons.net/1x1/delapouite/fast-forward-button.html
+	perk_item_decay = 2
 
 /datum/perk/oddity/fast_walker/assign(mob/living/L)
 	..()
@@ -201,12 +206,14 @@
 	desc = "The secret of the lounge lizards! Your body adapts to eating the worse kind of food in existence, allowing you to draw an exceptional amount of nutrition from snack foods. More so \
 	it passively heals you like tricord, with pure toxins healing you the most. Rejoice trash mammals!"
 	passivePerk = TRUE
+	perk_item_decay = 3
 
 /datum/perk/oddity/sharp_mind
 	name = "Sharpened Mind"
 	desc = "Narrowing in and extrapolating the inner workings of the world has never felt so much easier."
 	gain_text = "The mind can over come any puzzle thrown at it!"
 	icon_state = "brain"
+	perk_item_decay = 3
 
 /datum/perk/oddity/sharp_mind/assign(mob/living/L)
 	..()
@@ -225,6 +232,7 @@
 	desc = "You're more keenly aware of your own abilities for combat. You feel more confident on your punches thrown, a bit tougher against those thrown at you, and you're starting to get the hang of shooting that one bulky gun..."
 	gain_text = "The blood pumps, the muscles harden, and your trigger finger feels easier than ever..."
 	icon_state = "muscular"
+	perk_item_decay = 3
 
 /datum/perk/oddity/strangth/assign(mob/living/L)
 	..()
@@ -242,6 +250,7 @@
 	name = "Will of Iron"
 	desc = "The body is able to succumb to many negative affects but the mind can simply ignore them. Getting addicted to things is much harder and you can stomach more chemicals."
 	icon_state = "ironpill" // https://game-icons.net/1x1/lorc/underdose.html
+	perk_item_decay = 2
 
 /datum/perk/oddity/iron_will/assign(mob/living/L)
 	..()
@@ -263,6 +272,7 @@
 	name = "Will to Power"
 	desc = "The mind protects the body by imposing limits to prevent severe harm to the self. With enough focus, you can push yourself past that limit."
 	icon_state = "ironpill" // https://game-icons.net/1x1/lorc/underdose.html
+	perk_item_decay = 2
 
 /datum/perk/oddity/mind_of_matter/assign(mob/living/L)
 	..()
@@ -281,6 +291,7 @@
 	gain_text = "Reloading with a simple mind is almost second nature..."
 	lose_text = "The reloading from the side is more complicated..."
 	icon_state = "plus_one" // https://game-icons.net/1x1/lorc/gears.html
+	perk_item_decay = 2
 
 /datum/perk/oddity/side_loading/assign(mob/living/L)
 	..()
@@ -344,6 +355,7 @@
 	var/healing_power = 0.1
 	var/cooldown = 1 SECONDS // Just to make sure that perk don't go berserk.
 	var/initial_time
+	perk_item_decay = 3
 
 /datum/perk/nt_oddity/holy_light/assign(mob/living/L)
 	..()
