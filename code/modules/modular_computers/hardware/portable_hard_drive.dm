@@ -69,6 +69,11 @@
 		/datum/computer_file/program/coin_miner/disk //Fancy anticheat verson
 	)
 
+/obj/item/pc_part/drive/disk/adv/coin/random_size
+	default_files = list(
+		/datum/computer_file/program/coin_miner/disk/random_size
+	)
+
 /obj/item/pc_part/drive/disk/Initialize()
 	. = ..()
 	w_class = ITEM_SIZE_SMALL
