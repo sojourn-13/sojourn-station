@@ -51,12 +51,14 @@
 	..()
 
 /obj/item/storage/sheath/non_church
-	name = "sheath_0"
+	name = "sheath"
 	desc = "Made to store swords."
+	base_icon_state = "general_sheath"
+	base_item_state = "general_sheath"
 
 /obj/item/storage/sheath/non_church/general
-	name = "sword sheath"
-	desc = "A leathery-like sheath made to store blades."
+	name = "LSS cheap sheath"
+	desc = "A leathery-like sheath made to store LSS brand blades. Putting any real blade inside would cut right through..."
 	base_icon_state = "general_sheath"
 	base_item_state = "general_sheath"
 
