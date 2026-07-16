@@ -35,6 +35,11 @@
 
 	if(SStrade.discovered_stations)
 		var/choice = input(user,"What station to send mail to?") as null|anything in SStrade.discovered_stations
+
+		if(get_dist(src,user) >= 2)
+			to_chat(user, SPAN_NOTICE("Your a little to far away to do this."))
+			return
+
 		target_station = choice
 
 //A fast way to rapidly pump money into trade stations, all be it unfocused
@@ -61,6 +66,7 @@
 				var/obj/item/spacecash/ewallet/EW = new /obj/item/spacecash/ewallet(src.loc)
 				to_chat(user, "<span class='info'>Out from the bottom prints out bit of credit</span>")
 				EW.worth += rand(5, 25)
+			GLOB.mail_sent_score++
 
 		qdel(M)
 
