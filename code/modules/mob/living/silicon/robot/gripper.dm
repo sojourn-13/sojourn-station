@@ -233,7 +233,8 @@
 		/obj/item/spacecash,
 		/obj/item/coin,
 		/obj/item/device/toner,
-		/obj/item/pc_part/drive/disk
+		/obj/item/pc_part/drive/disk,
+		/obj/item/mail
 		)
 
 /obj/item/gripper/research //A general usage gripper, used for toxins/robotics/xenobio/etc
