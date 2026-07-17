@@ -619,6 +619,30 @@
 	. = ..()
 	if(.) playsound(user.loc, 'sound/weapons/Genhit.ogg', 50, 1)
 
+/obj/item/shield/riot/crusader/resolve_attackby(atom/target, mob/user, relay = FALSE)
+
+	if(is_neotheology_disciple(user))
+		if(isliving(target))
+			var/mob/living/M = target
+			var/mob/living/U = user
+			var/obj/item/implant/core_implant/cruciform/CI = U.get_core_implant()
+			if(CI)
+				if(M.stat != DEAD)
+					var/datum/perk/cooldown/nt_shield/shield_arts = U.stats.getPerk(PERK_NT_SHIELD)
+					if(!shield_arts && CI.power > CI.max_power * 0.25)
+						CI.power -= 3
+						U.stats.addPerk(PERK_NT_SHIELD)
+					else
+						if(CI.power > CI.max_power * 0.1)
+							CI.power -= 2
+							shield_arts.swings += 1
+							force += clamp(0, shield_arts.swings, U.getarmorablative())
+							if(U.stats.getPerk(PERK_NT_FURIOSO))
+								CI.power += shield_arts.swings
+
+	.=..()
+	refresh_upgrades()
+
 /*
  * Energy Shield
  */

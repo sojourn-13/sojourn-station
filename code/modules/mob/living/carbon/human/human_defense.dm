@@ -9,6 +9,17 @@ uniquic_armor_act
 
 /mob/living/carbon/human/bullet_act(var/obj/item/projectile/P, var/def_zone)
 
+	if(is_neotheology_disciple(src))
+		var/datum/perk/cooldown/nt_spears/spear_arts = stats.getPerk(PERK_NT_SPEARS)
+		if(stats.getPerk(PERK_NT_FURIOSO) && stats.getPerk(PERK_NT_SPEARS))
+			if(istype(src.get_active_hand(), /obj/item/tool/spear/halberd \
+			|| /obj/item/tool/spear/polehammer \
+			|| /obj/item/tool/sword/nt/spear \
+			|| /obj/item/gun/energy/plasma/excubitor))
+				if(prob(spear_arts.swings * 2))
+					visible_message(SPAN_NOTICE("[src] evades [P]."))
+					return PROJECTILE_FORCE_MISS
+
 	//We only care about cover if we are actively blocking to save on processing
 	if(blocking)
 		//This is the tile we just came frome
@@ -220,6 +231,12 @@ uniquic_armor_act
 				tgt = 1
 			total += clamp(0, round(tgt/(12 + item_punishment)), 10)
 
+		//We get a little bit of ablative armor from are church perk if we are actively blocking. Dosnt require shield in hand.
+		if(stats.getPerk(PERK_NT_SHIELD))
+			total += 1
+			if(stats.getPerk(PERK_NT_FURIOSO))
+				total += 1
+
 	if(stats.getPerk(PERK_OVERBREATH))
 		var/health_deficiency = (maxHealth - health)
 		//Anti-scaling, as with this perk your nullifing slowdown ontop of giving a speed boost
@@ -237,7 +254,6 @@ uniquic_armor_act
 		var/slown_down = movement_delay()
 		if(slown_down > 0)
 			total += slown_down * 0.5 //Anti-Scaling as you can get a lot of slowdown fast
-
 
 	return total
 

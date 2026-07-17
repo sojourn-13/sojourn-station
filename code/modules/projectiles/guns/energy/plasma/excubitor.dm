@@ -43,3 +43,24 @@
 	else
 		return new projectile_type(src)
 
+
+/obj/item/gun/energy/plasma/excubitor/resolve_attackby(atom/target, mob/user, relay = FALSE)
+
+	if(is_neotheology_disciple(user))
+		if(isliving(target))
+			var/mob/living/M = target
+			var/mob/living/U = user
+			var/obj/item/implant/core_implant/cruciform/CI = U.get_core_implant()
+			if(CI)
+				if(M.stat != DEAD)
+					var/datum/perk/cooldown/nt_spears/spear_arts = U.stats.getPerk(PERK_NT_SPEARS)
+					if(!spear_arts && CI.power > CI.max_power * 0.25)
+						CI.power -= 10
+						U.stats.addPerk(PERK_NT_SPEARS)
+					else
+						if(CI.power > CI.max_power * 0.25)
+							CI.power -= 1
+							spear_arts.swings += 1
+
+	.=..()
+	refresh_upgrades()

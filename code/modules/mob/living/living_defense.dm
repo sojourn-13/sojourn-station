@@ -90,6 +90,11 @@
 			remaining_ablative *= 1.25
 			armor *= 1.25
 
+		if(stats.getPerk(PERK_NT_SHIELD))
+			var/datum/perk/cooldown/nt_shield/shield_arts = stats.getPerk(PERK_NT_SHIELD)
+			armor += min(2, shield_arts.swings * 0.25)
+			if(stats.getPerk(PERK_NT_FURIOSO))
+				armor += min(6, shield_arts.swings * 0.25)
 
 	for(var/dmg_type in dmg_types)
 		var/dmg = dmg_types[dmg_type]

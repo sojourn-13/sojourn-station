@@ -143,28 +143,6 @@
 	tool_qualities = list(QUALITY_CUTTING = 20,  QUALITY_WIRE_CUTTING = 15)
 	price_tag = 14
 
-/obj/item/tool/knife/neotritual
-	name = "absolutism ritual knife"
-	desc = "The sweet embrace of mercy, for relieving the soul from a tortured vessel."
-	icon = 'icons/obj/weapons.dmi'
-	icon_state = "neot-knife"
-	item_state = "knife"
-	matter = list(MATERIAL_PLASTEEL = 4, MATERIAL_PLASTIC = 1)
-	force = WEAPON_FORCE_PAINFUL
-	tool_qualities = list(QUALITY_CUTTING = 30,  QUALITY_WIRE_CUTTING = 10, QUALITY_SCREW_DRIVING = 5)
-	max_upgrades = 3
-	embed_mult = 6
-	price_tag = 24
-
-/obj/item/tool/knife/neotritual/implant
-
-/obj/item/tool/knife/neotritual/equipped(mob/living/H)
-	. = ..()
-	if(is_held() && is_neotheology_disciple(H))
-		embed_mult = 0.05
-	else
-		embed_mult = initial(embed_mult)
-
 /obj/item/tool/knife/tacknife
 	name = "tactical knife"
 	desc = "You'd be killing loads of people if this was Medal of Valor: Heroes of Space."
