@@ -143,6 +143,14 @@
 			/obj/item/storage/lunchbox/cat = good_data("Cat Lunchbox", list(1, 10), 30),
 			/obj/item/contraband/poster,
 			/obj/item/device/eftpos
+		),
+		"LSS Cheap Weapons" = list(
+			/obj/item/tool/cheap,
+			/obj/item/tool/cheap/axe,
+			/obj/item/tool/cheap/katana,
+			/obj/item/tool/cheap/saber,
+			/obj/item/tool/cheap/rapier,
+			/obj/item/storage/sheath/non_church/general
 		)
 	)
 
