@@ -130,7 +130,7 @@
 	desc = "A mass-produced copy of a stiletto by Lonestar with a long slender blade and needle-like point, primarily intended as a thrusting and stabbing weapon. \
 	Has some techniques for slowing down enemys and rapidly attacking."
 	icon = 'icons/obj/weapons.dmi'
-	icon_state = "stiletto"
+	icon_state = "stiletto_cheap"
 	item_state = "dagger"
 	tool_qualities = list(QUALITY_CUTTING = 5, QUALITY_SCREW_DRIVING = 5)
 	matter = list(MATERIAL_PLASTEEL = 2, MATERIAL_STEEL = 1)
@@ -140,6 +140,7 @@
 	var/weaken_timer = 0
 	var/relay_hit_amount = 2
 	var/refundmechanic = 0
+	no_swing = TRUE
 
 /obj/item/tool/cheap/stiletto/resolve_attackby(atom/target, mob/user)
 
@@ -166,6 +167,12 @@
 					refundmechanic = world.time + 35 SECONDS
 					if(L.faction == M.faction && L.stat != DEAD)
 						relay_hit_amount -= 1
+						var/obj/effect/effect/S = new(get_turf(M))
+						S.layer = ABOVE_ALL_MOB_LAYER
+						S.dir = user.dir
+						S.icon = 'modular_sojourn/attacks.dmi'
+						flick("stiletto", S)
+						QDEL_IN(S, 2 SECONDS)
 						playsound(usr.loc, 'sound/items/drop/axe.ogg', 50, 1, -3)
 						resolve_attackby(L, user)
 

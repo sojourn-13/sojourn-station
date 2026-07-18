@@ -913,6 +913,7 @@
 	item_state = "nt_dagger"
 	matter = list(MATERIAL_PLASTEEL = 2, MATERIAL_SILVER = 1)
 	price_tag = 150
+	no_swing = TRUE
 
 /obj/item/tool/knife/dagger/stiletto/resolve_attackby(atom/target, mob/user)
 
@@ -947,6 +948,12 @@
 						refundmechanic = world.time + 25 SECONDS
 						if(L.faction == M.faction && L.stat != DEAD)
 							relay_hit_amount -= 1
+							var/obj/effect/effect/S = new(get_turf(M))
+							S.dir = user.dir
+							S.icon = 'modular_sojourn/attacks.dmi'
+							S.layer = ABOVE_ALL_MOB_LAYER
+							flick("stiletto", S)
+							QDEL_IN(S, 2 SECONDS)
 							if(CI.power <= 5)
 								relay_hit_amount -= 1
 								CI.power += 1
@@ -990,6 +997,12 @@
 						refundmechanic = world.time + 25 SECONDS
 						if(L.faction == M.faction && L.stat != DEAD)
 							relay_hit_amount -= 1
+							var/obj/effect/effect/S = new(get_turf(M))
+							S.dir = user.dir
+							S.icon = 'modular_sojourn/attacks.dmi'
+							S.layer = ABOVE_ALL_MOB_LAYER
+							flick("stiletto", S)
+							QDEL_IN(S, 2 SECONDS)
 							playsound(usr.loc, 'sound/items/drop/axe.ogg', 50, 1, -3)
 							resolve_attackby(L, user)
 
