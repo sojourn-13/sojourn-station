@@ -289,3 +289,54 @@
 		var/trans = reagents.trans_to_mob(target, rand(1,3)*reagent_modifier, CHEM_BLOOD)
 		admin_inject_log(user, target, src, reagents.log_list(), trans)
 		to_chat(user, SPAN_NOTICE("You inject [trans] units of the solution. [src] now contains [src.reagents.total_volume] units."))
+
+/obj/item/tool/knife/dagger/stiletto
+	name = "stiletto"
+	desc = "A specialized dagger with a long slender blade and needle-like point, primarily intended as a thrusting and stabbing weapon. \
+	Has some techniques for slowing down enemys and rapidly attacking."
+	icon = 'icons/obj/weapons.dmi'
+	icon_state = "stiletto_cheap"
+	item_state = "dagger"
+	tool_qualities = list(QUALITY_CUTTING = 5, QUALITY_SCREW_DRIVING = 5)
+	matter = list(MATERIAL_PLASTEEL = 2, MATERIAL_STEEL = 1)
+	force = WEAPON_FORCE_NORMAL
+	backstab_damage = WEAPON_FORCE_DANGEROUS
+	armor_divisor = ARMOR_PEN_MASSIVE
+	throwforce = WEAPON_FORCE_DANGEROUS
+	price_tag = 120
+	var/weaken_timer = 0
+	var/relay_hit_amount = 2
+	var/refundmechanic = 0
+
+/obj/item/tool/knife/dagger/stiletto/resolve_attackby(atom/target, mob/user)
+
+	if(relay_hit_amount != 2 && refundmechanic > world.time)
+		refundmechanic = world.time + 10 SECONDS
+	else
+		relay_hit_amount = 2
+
+	if(ismob(target))
+		var/mob/living/M = target
+		if(M.stat != DEAD)
+			M.entanglement += 1
+			if(M.stat == UNCONSCIOUS || M.lying || M.sleeping)
+				armor_divisor = ARMOR_PEN_MAX
+				force += 7
+				playsound(usr.loc, 'sound/items/drop/knife.ogg', 50, 1, -3)
+			if(M.entanglement >=  7 && weaken_timer < world.time)
+				M.Weaken(3)
+				playsound(usr.loc, 'sound/items/drop/herb.ogg', 50, 1, -3)
+				weaken_timer = world.time + 10 SECONDS
+				M.entanglement -= 5
+			if(M.entanglement >=  3 && refundmechanic < world.time)
+				for(var/mob/living/L in oview(user, 2))
+					refundmechanic = world.time + 25 SECONDS
+					if(L.faction == M.faction && L.stat != DEAD)
+						relay_hit_amount -= 1
+						playsound(usr.loc, 'sound/items/drop/axe.ogg', 50, 1, -3)
+						resolve_attackby(L, user)
+
+	refresh_upgrades()
+
+
+	.=..()

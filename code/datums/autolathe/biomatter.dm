@@ -209,6 +209,10 @@
 	name = "NT Dagger"
 	build_path = /obj/item/tool/knife/dagger/nt
 
+/datum/design/autolathe/sword/nt_stiletto
+	name = "NT Mercy Stiletto"
+	build_path = /obj/item/tool/knife/dagger/nt
+
 /datum/design/autolathe/sword/nt_halberd
 	name = "NT Halberd"
 	build_path = /obj/item/tool/spear/halberd

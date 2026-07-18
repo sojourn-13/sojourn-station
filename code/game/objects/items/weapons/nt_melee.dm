@@ -904,6 +904,100 @@
 
 	refresh_upgrades()
 
+/obj/item/tool/knife/dagger/stiletto/nt
+	name = "NT Mercy Stiletto"
+	desc = "A specialized silver dagger with a long slender blade and needle-like point, primarily intended as a thrusting and stabbing weapon. \
+	Has some techniques for slowing down enemys and rapidly attacking."
+	icon = 'icons/obj/nt_melee.dmi'
+	icon_state = "nt_stiletto"
+	item_state = "nt_dagger"
+	matter = list(MATERIAL_PLASTEEL = 2, MATERIAL_SILVER = 1)
+	price_tag = 150
+
+/obj/item/tool/knife/dagger/stiletto/resolve_attackby(atom/target, mob/user)
+
+	if(is_neotheology_disciple(user))
+		var/mob/living/U = user
+		var/obj/item/implant/core_implant/cruciform/CI = U.get_core_implant()
+		var/datum/perk/cooldown/nt_dagger/dagger_arts = U.stats.getPerk(PERK_NT_DAGGER)
+
+		if(!dagger_arts && CI.power > CI.max_power * 0.25)
+			CI.power -= 12
+			U.stats.addPerk(PERK_NT_DAGGER)
+
+		if(ismob(target))
+			var/mob/living/M = target
+			if(M.stat != DEAD)
+				M.entanglement += 1
+				if(U.stats.getPerk(PERK_NT_FURIOSO))
+					M.entanglement += 1 + max(4, round(dagger_arts.swings / 5))
+				if(M.stat == UNCONSCIOUS || M.lying || M.sleeping)
+					armor_divisor = ARMOR_PEN_MAX
+					force += 7 + max(7, round(dagger_arts.swings / 3))
+					CI.power -= 1
+					playsound(usr.loc, 'sound/items/drop/knife.ogg', 50, 1, -3)
+				if(M.entanglement >=  7 && weaken_timer < world.time)
+					M.Weaken(3 + max(3, round(dagger_arts.swings / 5)))
+					CI.power -= 1
+					playsound(usr.loc, 'sound/items/drop/herb.ogg', 50, 1, -3)
+					weaken_timer = world.time + 10 SECONDS
+					M.entanglement -= 5 -  max(4, round(dagger_arts.swings / 2))
+				if(M.entanglement >=  3 && refundmechanic < world.time)
+					for(var/mob/living/L in oview(user, 2))
+						refundmechanic = world.time + 25 SECONDS
+						if(L.faction == M.faction && L.stat != DEAD)
+							relay_hit_amount -= 1
+							if(CI.power <= 5)
+								relay_hit_amount -= 1
+								CI.power += 1
+							else
+								CI.power -= 5
+							playsound(usr.loc, 'sound/items/drop/axe.ogg', 50, 1, -3)
+							resolve_attackby(L, user)
+
+		if(relay_hit_amount <= 2 && refundmechanic > world.time)
+			refundmechanic = world.time + 10 SECONDS
+		else
+			relay_hit_amount = 2
+			relay_hit_amount += max(2, round(dagger_arts.swings / 10))
+			if(U.stats.getPerk(PERK_NT_FURIOSO))
+				relay_hit_amount += 1
+				CI.power += 5
+
+	//Normal default non-church intractions
+	else
+
+		if(relay_hit_amount != 2 && refundmechanic > world.time)
+			refundmechanic = world.time + 10 SECONDS
+		else
+			relay_hit_amount = 2
+
+		if(ismob(target))
+			var/mob/living/M = target
+			if(M.stat != DEAD)
+				M.entanglement += 1
+				if(M.stat == UNCONSCIOUS || M.lying || M.sleeping)
+					armor_divisor = ARMOR_PEN_MAX
+					force += 7
+					playsound(usr.loc, 'sound/items/drop/knife.ogg', 50, 1, -3)
+				if(M.entanglement >=  7 && weaken_timer < world.time)
+					M.Weaken(3)
+					playsound(usr.loc, 'sound/items/drop/herb.ogg', 50, 1, -3)
+					weaken_timer = world.time + 10 SECONDS
+					M.entanglement -= 5
+				if(M.entanglement >=  3 && refundmechanic < world.time)
+					for(var/mob/living/L in oview(user, 2))
+						refundmechanic = world.time + 25 SECONDS
+						if(L.faction == M.faction && L.stat != DEAD)
+							relay_hit_amount -= 1
+							playsound(usr.loc, 'sound/items/drop/axe.ogg', 50, 1, -3)
+							resolve_attackby(L, user)
+
+	refresh_upgrades()
+
+
+	.=..()
+
 /obj/item/tool/knife/neotritual
 	name = "absolutism ritual knife"
 	desc = "The sweet embrace of mercy, for relieving the soul from a tortured vessel."
