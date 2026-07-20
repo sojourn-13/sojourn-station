@@ -1,8 +1,6 @@
 /*
-	Radiation storm is a really severe event that forces everyone to flee into maintenance or a similar
-	shielded area. Anyone caught outside a shielded area will recieve lethal doses of radiation,
-	and will die without medical attention
-
+	Mail Overflow: A small and harmless event that can rapidly give trade ships value and trade
+	If lots of mailpiles are mapped into the map then could cause lag.
 */
 
 /datum/storyevent/mail_overflow

@@ -37,7 +37,7 @@
 		var/choice = input(user,"What station to send mail to?") as null|anything in SStrade.discovered_stations
 
 		if(get_dist(src,user) >= 2)
-			to_chat(user, SPAN_NOTICE("Your a little to far away to do this."))
+			to_chat(user, SPAN_NOTICE("You're a little too far away to do this."))
 			return
 
 		target_station = choice
@@ -94,7 +94,7 @@
 
 /obj/item/mail
 	name = "outgoing mail"
-	desc = "A small packet of boring mail, has anti-tampering systems that track thief and a protected wrapper around it."
+	desc = "A small packet of boring mail, has anti-tampering systems that track theif and a protected wrapper around it."
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "deliverycrateSmall"
 	w_class = ITEM_SIZE_NORMAL
@@ -137,7 +137,7 @@
 
 			if("Weight")
 				if(get_dist(src,user) >= 2)
-					to_chat(user, SPAN_NOTICE("Your a little to far away to do this."))
+					to_chat(user, SPAN_NOTICE("You're a little too far away to do this."))
 					user_is_choosing = FALSE
 					return
 
@@ -145,7 +145,7 @@
 
 			if("Postage Type")
 				if(get_dist(src,user) >= 2)
-					to_chat(user, SPAN_NOTICE("Your a little to far away to do this."))
+					to_chat(user, SPAN_NOTICE("You're a little too far away to do this."))
 					user_is_choosing = FALSE
 					return
 				mail_type_stamp = input(user, "Mail Stamp", "Type", ) as null|anything in packet_types
