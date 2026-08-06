@@ -62,6 +62,22 @@
 
 	cost = 12500
 
+/datum/technology/psi_chem
+	name = "Psionic Chemical Production A-33.2v11 Beta" //A for applications
+	desc = "High-tech experimental uses of chemical synthetizations with psionic stabilization"
+	tech_type = RESEARCH_PSI
+
+	x = 0.1
+	y = 0.3
+	icon = "psi_bottle"
+
+	required_technologies = list()
+	required_tech_levels = list(RESEARCH_PSI = 1, RESEARCH_BIOTECH = 7)
+
+	unlocks_designs = list(	/datum/design/research/item/psionic_space_cleaner_mixer,
+							/datum/design/research/item/psionic_injector)
+
+	cost = 3500
 
 /*
 /datum/technology/psi_wand_basic
