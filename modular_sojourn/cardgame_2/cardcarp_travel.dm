@@ -1,5 +1,5 @@
 /obj/item/travel_token
-	name = "CardCarp's Travel Card Ticket"
+	name = "CardCarp's Travel Card Token"
 	desc = "A complex looking device that has a preloaded card jammed inside giving it a single use self teleportation to a local beacon that has been pre-linked.\
 	CardCarp's workshop has taken great langths to ensure all players as well as place many warning stickers that its verson of teleporation is completely safe; \
 	and to hold onto any items as anything dropped well being teleported will be lost."
@@ -15,7 +15,7 @@
 /obj/item/travel_token/attackby(obj/o, mob/user as mob)
 	if(istype(o, /obj/item/card_carp))
 		linked_beacon = user.loc
-		to_chat(user, "<span class='info'>The device scans the card linking the device to your location.</span>")
+		to_chat(user, "<span class='info'>The device scans the card, linking the device to your location.</span>")
 		playsound(src,'sound/bureaucracy/stamp.ogg',40,1)
 	else
 		..()
@@ -33,7 +33,7 @@
 		backup = user.loc
 		cardcarp_travel(user)
 	else
-		to_chat(user, "<span class='info'>The device beeps a moment before warning giving a warning about no linked location.</span>")
+		to_chat(user, "<span class='info'>The device beeps before giving a warning about no linked location.</span>")
 
 
 /obj/item/travel_token/proc/cardcarp_travel(mob/M)
@@ -54,16 +54,16 @@
 	var/turf/source = get_turf(linked_beacon) //Just in case its a locker or other wierdness
 	if(source)
 		M.loc = source
-		to_chat(M, "<span class='info'>In a instance you find yourself back at the location where you synced the beacon...</span>")
+		to_chat(M, "<span class='info'>In an instance you find yourself back at the location where you synced the card...</span>")
 		used = TRUE
 		qdel(src)
 		return
 	if(backup)//Should in theory never need to be used
 		var/papertype_helper = pick("Cardstock 160-325","Index 163-255","Book 75-148","A4 210-297","Folio 8.5-13)") //types of paper
 		to_chat(M, "<span class='info'>...The eyes of something looking at you states objectively \"A little lost, somewhere you shouldn't be. \
-		Worring. Well this time [papertype_helper] has allowed me to get you back to where you need to go...\".</span>")
+		Worrying. Well this time [papertype_helper] has allowed me to get you back to where you need to go...\".</span>")
 		M.loc = backup
-		to_chat(M, "<span class='info'>In a instance you find yourself back at the same place?</span>")
+		to_chat(M, "<span class='info'>In an instance you find yourself back at the same place?</span>")
 	else
 		to_chat(M, "<span class='info'>The path back is no longer, as the planet and its stars no longer can find you.</span>")
 	used = TRUE

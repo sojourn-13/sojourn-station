@@ -174,7 +174,6 @@
 					/obj/item/storage/hcases/cardcarp = 20,
 					/obj/item/card_carp = 50,
 					/obj/item/card_carp/index = 50,
-					/obj/item/travel_token = 10,
 					/obj/item/clothing/under/dodgeball_blue = 5,
 					/obj/item/clothing/under/dodgeball_red = 5
 					)
@@ -220,7 +219,6 @@
 					/obj/item/storage/hcases/cardcarp = 20,
 					/obj/item/card_carp = 1,
 					/obj/item/card_carp/index = 1,
-					/obj/item/travel_token = 120,
 					/obj/item/clothing/under/dodgeball_blue = 15,
 					/obj/item/clothing/under/dodgeball_red = 15)
 
@@ -268,7 +266,6 @@
 					/obj/item/storage/hcases/cardcarp = 4,
 					/obj/item/card_carp = 4,
 					/obj/item/card_carp/index = 4,
-					/obj/item/travel_token = 0,
 					/obj/item/clothing/under/dodgeball_blue = 3,
 					/obj/item/clothing/under/dodgeball_red = 3
 					)
@@ -313,7 +310,6 @@
 					/obj/item/storage/hcases/cardcarp = 0,
 					/obj/item/card_carp = 0,
 					/obj/item/card_carp/index = 0,
-					/obj/item/travel_token = 0,
 					/obj/item/clothing/under/dodgeball_blue = 0,
 					/obj/item/clothing/under/dodgeball_red = 0)
 	always_open = TRUE

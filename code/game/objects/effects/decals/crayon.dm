@@ -1092,7 +1092,7 @@
 
 		//Easy to make on mass seeings how its a useful item
 		if(istype(carpy, /obj/item/card_carp/beebox))
-			to_chat(M, "<span class='warning'>In an instent the card folds itself into travel token...</span>")
+			to_chat(M, "<span class='warning'>In an instent the card folds itself a into travel token...</span>")
 
 			new /obj/item/travel_token(carpy.loc)
 			M.sanity.changeLevel(1)
