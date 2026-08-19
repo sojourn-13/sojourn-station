@@ -43,7 +43,6 @@
 	icon_state = "gun-grey-low"
 	spawn_nothing_percentage = 80
 
-
 /obj/random/gun_normal
 	name = "random normal gun"
 	icon_state = "gun-green"
@@ -94,7 +93,6 @@
 	name = "low chance random normal gun"
 	icon_state = "gun-green-low"
 	spawn_nothing_percentage = 80
-
 
 /obj/random/gun_combat
 	name = "random assault weapon"
@@ -197,7 +195,6 @@
 	name = "low chance random cheap energy weapon"
 	icon_state = "gun-blue-low"
 	spawn_nothing_percentage = 80
-
 
 /obj/random/gun_handmade
 	name = "random handmade gun weapon"
@@ -381,6 +378,33 @@
 /obj/random/dungeon_armor_mods/low_chance
 	name = "low chance random armor mod"
 	icon_state = "gun-red-low"
+	spawn_nothing_percentage = 80
+
+//Pistols only
+
+/obj/random/gun_pistol
+	name = "random gun pistol (low end)"
+	icon_state = "gun-green"
+	spawn_nothing_percentage = 10
+
+/obj/random/gun_pistol/always_spawn
+	name = "random always spawn gun pistol (low end)"
+	spawn_nothing_percentage = 0
+
+/obj/random/gun_pistol/item_to_spawn()
+	return pickweight(list(/obj/item/gun/projectile/clarissa = 5,
+				/obj/item/gun/projectile/clarissa/preloaded = 5,
+				/obj/item/gun/projectile/giskard = 3,
+				/obj/item/gun/projectile/olivaw = 1,
+				/obj/item/gun/projectile/makarov = 0.25,
+				/obj/item/gun/projectile/mk58/wood = 0.5,
+				/obj/item/gun/projectile/mk58 = 1,
+				/obj/item/gun/projectile/basilisk = 0.05,
+				/obj/item/gun/projectile/colt = 1))
+
+/obj/random/gun_pistol/low_chance
+	name = "low chance random gun pistol (low end)"
+	icon_state = "gun-green-low"
 	spawn_nothing_percentage = 80
 
 //Gun parts spawners - Wasn't sure where tf to put these, they're here for orgnizations sake.

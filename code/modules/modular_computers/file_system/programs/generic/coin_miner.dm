@@ -22,6 +22,12 @@
 	clone_able = FALSE
 	copy_cat = TRUE //Were unable to be imported or exported hardware wise, as were already pre-downloaded somehow onto a disk.
 
+/datum/computer_file/program/coin_miner/disk/random_size
+
+/datum/computer_file/program/coin_miner/disk/random_size/New(var/obj/item/modular_computer/comp = null)
+	size = rand(1, 11)
+	..()
+
 /datum/nano_module/program/coin_miner
 	name = "Key-Authenticated Zipped K-oin"
 

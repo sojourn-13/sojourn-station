@@ -1413,6 +1413,7 @@
 #include "code\game\objects\random\melee.dm"
 #include "code\game\objects\random\oddities.dm"
 #include "code\game\objects\random\packs.dm"
+#include "code\game\objects\random\pens.dm"
 #include "code\game\objects\random\pouches.dm"
 #include "code\game\objects\random\powercells.dm"
 #include "code\game\objects\random\prosthesis.dm"
