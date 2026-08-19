@@ -96,6 +96,64 @@
 	if(prob(95) && ranged)
 		ranged = FALSE
 
+/mob/living/carbon/superior/human/voidwolf/UnarmedAttack(atom/A, proximity, allow_attack_build = TRUE)
+	if(isliving(A))
+		var/mob/living/L = A
+		var/datum/perk/cooldown/wealth_index/WI = L.stats.getPerk(PERK_WEALTH_INDEX)
+		if(WI)
+			var/damage_increase_melee = clamp(0, round(WI.wealth/12), 10)
+			var/ad_increase = clamp(0, round(WI.wealth/42), 3)
+			melee_damage_lower += damage_increase_melee
+			melee_damage_upper += damage_increase_melee
+
+			armor_divisor += ad_increase
+			..() //Do are things
+
+			melee_damage_lower -= damage_increase_melee
+			melee_damage_upper -= damage_increase_melee
+			armor_divisor -= ad_increase
+
+			if(WI.wealth >= 50)
+				L.entanglement += 1
+
+			if(WI.wealth >= 5)
+				//Rare intraction to have voidwolfs instently kill a solo target or cuff folks when they crit them
+				L.damage_through_armor(clamp(5,rand(WI.wealth/5,WI.wealth), 25), HALLOSS, BP_HEAD, ARMOR_MELEE)
+				if(ishuman(L))
+					var/mob/living/carbon/human/KO = L
+					KO.handle_shock()
+		else
+			..()
+	else
+		..()
+
+/mob/living/carbon/superior/human/voidwolf/loseTarget()
+	var/atom/targetted_mob = (target_mob?.resolve())
+
+	if(isliving(targetted_mob))
+		var/mob/living/L = targetted_mob
+		if(L.stat != CONSCIOUS && L.stat != DEAD)
+			if(L in range(1, src))
+				var/saved = FALSE
+				for(var/mob/living/carbon/human/H in oview(6, src))
+					if(H.stat != CONSCIOUS)
+						continue
+					else
+						saved = TRUE
+				if(!saved)
+					visible_message("<b>[src]</b> looks down at [L], and with a flick of their wrist puts an end to [L]'s life.")
+					L.death()
+				else
+					if(ishuman(L))
+						//Randsom
+						visible_message("<b>[src]</b> looks down at [L], and with deft movements applies simple zipties cuff.")
+						var/obj/item/handcuffs/zips = new /obj/item/handcuffs/zipties(src.loc)
+						//If we cant cuff em, kill em that simple
+						if(!zips.place_handcuffs(L, src, 0))
+							visible_message("<b>[src]</b> looks down at [L], puts an end to [L]'s life after failing to apply the zipties.")
+							L.death()
+
+	..()
 
 /mob/living/carbon/superior/human/voidwolf/fieldtech
 	name = "Void Wolf Field Tech"
@@ -214,6 +272,8 @@
 	move_and_attack = TRUE
 
 	times_to_get_stat_modifiers = 2 //two prefixes
+	research_value = 1500
+	var/cooldown_targeting = 0
 
 /mob/living/carbon/superior/human/voidwolf/captain/New()
 	..()
@@ -223,3 +283,29 @@
 	moved = TRUE
 	if(!weakened && stat == CONSCIOUS)
 		attemptAttackOnTarget()
+
+/mob/living/carbon/superior/human/voidwolf/captain/findTarget()
+	. = ..()
+	if(isliving(.))
+		var/mob/living/L = .
+		var/price = SStrade.get_price(L) / 1000 //We dont need crazy high values
+		if(!L.stats.getPerk(PERK_WEALTH_INDEX))
+			if(price > 20)
+				L.stats.addPerk(PERK_WEALTH_INDEX)
+				var/datum/perk/cooldown/wealth_index/WI = L.stats.getPerk(PERK_WEALTH_INDEX)
+				WI.wealth = price
+		else
+			var/datum/perk/cooldown/wealth_index/WI = L.stats.getPerk(PERK_WEALTH_INDEX)
+			WI.wealth = price //Allows you to lower or raise index pricing when re-found by a voidwolf captain
+
+			if(price > 50 && cooldown_targeting < world.time)
+				cooldown_targeting += world.time + 90 SECONDS
+
+				DEFAULT_QUEUE_OR_CALL_VERB(VERB_CALLBACK(src, PROC_REF(_pointed), L))
+				visible_message("<b>[src]</b> points to [L], and whispers something into an earpierce")
+
+				for(var/mob/living/carbon/superior/human/voidwolf/VW in oview(4, src)) //We are blind
+					VW.loseTarget(TRUE,TRUE)
+					VW.react_to_attack(L,src,L)
+
+
