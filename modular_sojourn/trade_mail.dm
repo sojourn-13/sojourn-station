@@ -125,7 +125,7 @@
 				var/barcode_code = sanitizeSafe(input(user, "Placing Barcode Stamp", "Barcode"))
 
 				if(get_dist(src,user) >= 2)
-					to_chat(user, SPAN_NOTICE("Your a little to far away to do this."))
+					to_chat(user, SPAN_NOTICE("You're a little too far away to do this."))
 					user_is_choosing = FALSE
 					return
 
