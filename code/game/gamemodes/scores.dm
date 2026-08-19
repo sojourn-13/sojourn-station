@@ -79,6 +79,7 @@ GLOBAL_VAR_INIT(score_guild_faction_item_loss, 0)
 
 GLOBAL_VAR_INIT(supply_profit, 0)
 GLOBAL_VAR_INIT(guild_profit_score, 0)
+GLOBAL_VAR_INIT(mail_sent_score, 0)
 
 GLOBAL_VAR_INIT(guild_shared_gears_score, 0)
 GLOBAL_VAR_INIT(guild_shared_gears, 0)
@@ -247,7 +248,7 @@ GLOBAL_VAR_INIT(score_technomancer_faction_item_loss, 0)
 	GLOB.guild_shared_gears_score = GLOB.guild_shared_gears * 30 // ~150-300
 	GLOB.score_mess -= GLOB.dirt_areas * 25 //~250
 
-	GLOB.guild_score = GLOB.initial_guild_score + GLOB.guild_objectives_score + GLOB.guild_profit_score + GLOB.score_mess
+	GLOB.guild_score = GLOB.initial_guild_score + GLOB.guild_objectives_score + GLOB.guild_profit_score + GLOB.score_mess + GLOB.mail_sent_score
 
 
 	for(var/mob/E in GLOB.player_list)
@@ -319,6 +320,7 @@ GLOBAL_VAR_INIT(score_technomancer_faction_item_loss, 0)
 	<b>Faction objectives completed:</b> [GLOB.guild_objectives_completed] ([to_score_color(GLOB.guild_objectives_score)] Points)<br>
 	<b>Profit profits:</b> [GLOB.supply_profit] ([to_score_color(GLOB.guild_profit_score)] Points)<br>
 	<b>Crew with items distributed by the Lonestar Shipping Solutions:</b> [GLOB.guild_shared_gears] ([to_score_color(GLOB.guild_shared_gears_score)] Points)<br>
+	<b>Mail Correctly Sent:</b> [GLOB.mail_sent_score] ([to_score_color(GLOB.mail_sent_score)] Points)<br>
 	<b>Dirty areas:</b> [GLOB.dirt_areas] ([to_score_color(GLOB.score_mess)] Points)<br>
 	<b>Final Lonestar Shipping Solutions score:</b> [get_color_score(GLOB.guild_score, GLOB.guild_score)] Points<br><br><br>
 	"}
