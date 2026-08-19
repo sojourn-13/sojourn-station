@@ -934,6 +934,17 @@
 
 /obj/item/tool/knife/neotritual/resolve_attackby(atom/target, mob/user, relay = TRUE)
 
+	var/credit_kill = FALSE
+	if(isliving(user) && isliving(target))
+		var/mob/living/L = target
+		//message_admins("user is living, A is living")
+		var/mob/living/ritual_arts = user
+		var/tasklevel = (ritual_arts.learnt_tasks.get_task_mastery_level("RITUAL_ARTS"))
+		force += tasklevel
+		if(L.stat != DEAD)
+			credit_kill = TRUE
+		//message_admins("tasklevel [tasklevel]")
+
 	if(is_neotheology_disciple(user))
 		if(isliving(target))
 			var/mob/living/M = target
@@ -968,3 +979,24 @@
 	.=..()
 
 	refresh_upgrades()
+
+	if(isliving(user) && isliving(target))
+		var/mob/living/L = target
+		if(L.stat == DEAD && credit_kill)
+			//message_admins("user is living, A is living")
+			var/mob/living/ritual_arts = user
+			//message_admins("melee arts")
+			ritual_arts.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/ritual_arts, "RITUAL_ARTS", skill_gained = 1, learner = ritual_arts)
+			var/tasklevel = (ritual_arts.learnt_tasks.get_task_mastery_level("RITUAL_ARTS"))
+			if(tasklevel)
+				if(ishuman(ritual_arts))
+					var/mob/living/carbon/human/H = ritual_arts
+					H.sanity.changeLevel(tasklevel*10)
+					var/obj/item/organ/internal/psionic_tumor/PT = H.random_organ_by_process(BP_PSION)
+					if(PT)
+						if(PT.max_psi_points > PT.psi_points)
+							PT.psi_points += tasklevel
+				var/obj/item/implant/core_implant/cruciform/CI = ritual_arts.get_core_implant()
+				if(CI)
+					if(CI.power < CI.max_power)
+						CI.power += tasklevel
