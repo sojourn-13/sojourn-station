@@ -3175,6 +3175,7 @@
 #include "code\modules\reagents\reagent_containers\glass.dm"
 #include "code\modules\reagents\reagent_containers\hypospray.dm"
 #include "code\modules\reagents\reagent_containers\pill.dm"
+#include "code\modules\reagents\reagent_containers\replenishing.dm"
 #include "code\modules\reagents\reagent_containers\spray.dm"
 #include "code\modules\reagents\reagent_containers\syringes.dm"
 #include "code\modules\reagents\reagent_containers\food\cans.dm"
