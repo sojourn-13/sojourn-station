@@ -1548,6 +1548,19 @@
 /obj/structure/reagent_dispensers/bidon,
 /turf/simulated/floor/tiled/steel,
 /area/mine/processing)
+"eJ" = (
+/obj/structure/table/standard,
+/obj/machinery/button/remote/airlock{
+	id = "rdor2";
+	name = "Door Bolt Control";
+	pixel_x = -25;
+	specialfunctions = 4
+	},
+/obj/machinery/atmospherics/unary/vent_scrubber{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/gray_perforated,
+/area/nadezhda/rnd/outpostgeneral)
 "eL" = (
 /obj/machinery/conveyor/south{
 	id = "mining_internal"
@@ -3116,6 +3129,13 @@
 /obj/structure/catwalk,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/rnd/outpostmachineroom)
+"iI" = (
+/obj/structure/classics/stars,
+/obj/effect/floor_decal/industrial/danger{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/rnd/outpostgeneral)
 "iJ" = (
 /obj/machinery/portable_atmospherics/canister/air,
 /turf/simulated/floor/tiled/white/brown_platform,
@@ -6177,10 +6197,10 @@
 /turf/simulated/floor/tiled/cafe,
 /area/mine/livingarea)
 "pL" = (
-/obj/machinery/light/small{
-	dir = 1
+/obj/structure/bed/chair{
+	dir = 4
 	},
-/turf/simulated/floor/tiled/white/cargo,
+/turf/simulated/floor/tiled/dark,
 /area/nadezhda/rnd/outpostgeneral)
 "pM" = (
 /obj/structure/toilet{
@@ -6307,6 +6327,9 @@
 /area/nadezhda/rnd/outpostgeneral)
 "qc" = (
 /obj/structure/closet,
+/obj/machinery/light/small{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/white/gray_perforated,
 /area/nadezhda/rnd/outpostgeneral)
 "qd" = (
@@ -6383,41 +6406,38 @@
 /turf/simulated/floor/tiled/white/techfloor,
 /area/nadezhda/rnd/outpostgeneral)
 "qp" = (
-/obj/structure/table/standard,
-/obj/machinery/button/remote/airlock{
-	id = "rdor1";
-	name = "Door Bolt Control";
-	pixel_x = -25;
-	specialfunctions = 4
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 6
 	},
-/turf/simulated/floor/tiled/white/gray_perforated,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/white/cargo,
 /area/nadezhda/rnd/outpostgeneral)
 "qq" = (
-/obj/structure/sink{
-	dir = 4;
-	pixel_x = 11
+/obj/machinery/atmospherics/unary/vent_pump{
+	dir = 8
 	},
-/turf/simulated/floor/tiled/white/gray_perforated,
+/obj/structure/closet/crate/freezer,
+/obj/item/reagent_containers/blood/BPlus,
+/obj/item/reagent_containers/glass/bottle/protein,
+/obj/item/reagent_containers/glass/bottle/protein,
+/obj/item/reagent_containers/glass/bottle/nutriment,
+/obj/item/reagent_containers/glass/bottle/nutriment,
+/obj/item/reagent_containers/blood/APlus,
+/turf/simulated/floor/tiled/dark,
 /area/nadezhda/rnd/outpostgeneral)
 "qr" = (
-/obj/structure/table/standard,
-/obj/machinery/button/remote/airlock{
-	id = "rdor2";
-	name = "Door Bolt Control";
-	pixel_x = -25;
-	specialfunctions = 4
+/obj/structure/bed/chair{
+	dir = 1
 	},
-/turf/simulated/floor/tiled/white/gray_perforated,
+/turf/simulated/floor/tiled/dark,
 /area/nadezhda/rnd/outpostgeneral)
 "qs" = (
-/obj/structure/table/standard,
-/obj/machinery/button/remote/airlock{
-	id = "rdor3";
-	name = "Door Bolt Control";
-	pixel_x = -25;
-	specialfunctions = 4
+/obj/machinery/atmospherics/unary/vent_scrubber{
+	dir = 4
 	},
-/turf/simulated/floor/tiled/white/gray_perforated,
+/turf/simulated/floor/tiled/dark,
 /area/nadezhda/rnd/outpostgeneral)
 "qt" = (
 /obj/effect/floor_decal/industrial/danger,
@@ -6537,20 +6557,22 @@
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/rnd/anomalisolone)
 "qF" = (
-/obj/machinery/door/airlock/science{
-	id_tag = "rdor1";
-	name = "Rest Pod 1";
-	req_access = list(5)
-	},
-/turf/simulated/floor/tiled/techmaint_cargo,
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply,
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
+/turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
 "qG" = (
-/obj/machinery/door/airlock/science{
-	id_tag = "rdor2";
-	name = "Rest Pod 2";
-	req_access = list(5)
+/obj/structure/table/standard,
+/obj/machinery/button/remote/airlock{
+	id = "rdor1";
+	name = "Door Bolt Control";
+	pixel_x = -25;
+	specialfunctions = 4
 	},
-/turf/simulated/floor/tiled/techmaint_cargo,
+/obj/machinery/atmospherics/unary/vent_scrubber{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/gray_perforated,
 /area/nadezhda/rnd/outpostgeneral)
 "qH" = (
 /obj/machinery/computer/area_atmos/area,
@@ -6688,9 +6710,11 @@
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
 "rc" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
@@ -7448,12 +7472,10 @@
 /turf/simulated/mineral/random/high_chance,
 /area/mine/unexplored)
 "sW" = (
-/obj/machinery/door/airlock/science{
-	id_tag = "rdor3";
-	name = "Rest Pod 3";
-	req_access = list(5)
-	},
-/turf/simulated/floor/tiled/techmaint_cargo,
+/obj/machinery/door/airlock/glass_medical,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/turf/simulated/floor/tiled/white/gray_perforated,
 /area/nadezhda/rnd/outpostgeneral)
 "sX" = (
 /obj/structure/sink{
@@ -8211,6 +8233,13 @@
 /obj/random/cluster/golem/low_chance,
 /turf/simulated/floor/asteroid,
 /area/mine/unexplored)
+"vm" = (
+/obj/structure/table/glass,
+/obj/effect/floor_decal/corner_techfloor_grid,
+/obj/item/storage/box/beakers,
+/obj/item/storage/fancy/vials,
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/rnd/outpostgeneral)
 "vn" = (
 /obj/random/traps/low_chance,
 /turf/simulated/floor/asteroid,
@@ -8338,6 +8367,15 @@
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
+"xZ" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/rnd/outpostgeneral)
 "ya" = (
 /obj/structure/lattice,
 /obj/structure/flora/ausbushes/fernybush,
@@ -8404,6 +8442,16 @@
 /obj/item/reagent_containers/glass/plastic_jug,
 /obj/item/reagent_containers/glass/plastic_jug,
 /turf/simulated/floor/tiled/white/brown_perforated,
+/area/nadezhda/rnd/outpostgeneral)
+"zu" = (
+/obj/machinery/door/airlock/science{
+	id_tag = "rdor1";
+	name = "Rest Pod 1";
+	req_access = list(5)
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/turf/simulated/floor/tiled/techmaint_cargo,
 /area/nadezhda/rnd/outpostgeneral)
 "zy" = (
 /turf/unsimulated/mask,
@@ -8635,6 +8683,12 @@
 /obj/machinery/atmospherics/pipe/simple/visible/yellow,
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/nadezhda/rnd/mixing)
+"Ed" = (
+/obj/structure/classics/pages,
+/obj/structure/table/glass,
+/obj/effect/floor_decal/industrial/danger,
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/rnd/outpostgeneral)
 "Eh" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
@@ -8887,6 +8941,12 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/steel/danger,
 /area/mine/hallway)
+"It" = (
+/obj/structure/classics/records,
+/obj/structure/table/glass,
+/obj/effect/floor_decal/industrial/danger,
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/rnd/outpostgeneral)
 "Iz" = (
 /obj/structure/lattice,
 /obj/structure/flora/ausbushes/pointybush,
@@ -8907,6 +8967,16 @@
 "Jk" = (
 /turf/simulated/floor/asteroid,
 /area/nadezhda/quartermaster/mining_dreg)
+"Jo" = (
+/obj/machinery/door/airlock/science{
+	id_tag = "rdor2";
+	name = "Rest Pod 2";
+	req_access = list(5)
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/turf/simulated/floor/tiled/techmaint_cargo,
+/area/nadezhda/rnd/outpostgeneral)
 "JH" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -8983,6 +9053,16 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/rnd/mixing)
+"Kz" = (
+/obj/structure/sink{
+	dir = 4;
+	pixel_x = 11
+	},
+/obj/machinery/atmospherics/unary/vent_pump{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white/gray_perforated,
+/area/nadezhda/rnd/outpostgeneral)
 "KK" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/camera/network/mining{
@@ -9121,6 +9201,13 @@
 /obj/machinery/atmospherics/unary/vent_scrubber,
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
+"NZ" = (
+/obj/structure/sink{
+	dir = 4;
+	pixel_x = 11
+	},
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/rnd/outpostgeneral)
 "Ol" = (
 /obj/structure/catwalk,
 /obj/structure/window/reinforced/plasma{
@@ -9173,11 +9260,11 @@
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/rnd/outpostgeneral)
 "OV" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 10
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 10
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 1
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
@@ -9212,6 +9299,16 @@
 	},
 /turf/simulated/floor/plating,
 /area/nadezhda/rnd/outpostgeneral)
+"PN" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/danger{
+	dir = 4
+	},
+/obj/structure/classics/chapters,
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/rnd/outpostgeneral)
 "PS" = (
 /obj/machinery/atmospherics/unary/vent_scrubber{
 	dir = 8
@@ -9222,9 +9319,21 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/steel/danger,
 /area/mine/hallway)
+"Qk" = (
+/obj/machinery/chemical_dispenser,
+/obj/effect/floor_decal/industrial/danger,
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/rnd/outpostgeneral)
 "Qt" = (
 /obj/effect/floor_decal/industrial/danger,
 /turf/simulated/floor/tiled/white/gray_perforated,
+/area/nadezhda/rnd/outpostgeneral)
+"Qw" = (
+/obj/structure/classics/letters,
+/obj/effect/floor_decal/industrial/danger{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark,
 /area/nadezhda/rnd/outpostgeneral)
 "Qy" = (
 /obj/machinery/atmospherics/pipe/simple/visible/yellow{
@@ -9249,6 +9358,27 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
 /turf/simulated/floor/tiled/steel/danger,
 /area/mine/hallway)
+"QH" = (
+/obj/machinery/camera/network/research{
+	dir = 4
+	},
+/obj/structure/extinguisher_cabinet{
+	pixel_x = -27
+	},
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/rnd/outpostgeneral)
+"QK" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/item/paper_bin,
+/obj/item/pen,
+/obj/structure/table/glass,
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/rnd/outpostgeneral)
 "QN" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/industrial/hatch/blue,
@@ -9469,6 +9599,12 @@
 	},
 /turf/simulated/floor/tiled/white/cargo,
 /area/nadezhda/rnd/mixing)
+"Un" = (
+/obj/machinery/camera/network/research{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/nadezhda/rnd/outpostgeneral)
 "Up" = (
 /obj/machinery/space_heater,
 /turf/simulated/floor/tiled/steel/brown_platform,
@@ -9733,6 +9869,13 @@
 /obj/effect/window_lwall_spawn/smartspawnplasma,
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/nadezhda/rnd/mixing)
+"ZT" = (
+/obj/structure/table/standard,
+/obj/structure/dram_spawner,
+/obj/effect/floor_decal/industrial/danger,
+/obj/item/stamp,
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/rnd/outpostgeneral)
 
 (1,1,1) = {"
 aa
@@ -13556,11 +13699,11 @@ oa
 oy
 oS
 mY
+pM
+qb
+qG
 ih
-ih
-ih
-ih
-jN
+jH
 ra
 jH
 ih
@@ -13758,12 +13901,12 @@ oa
 oy
 oT
 mY
-pM
-qb
+iD
+iD
 qp
-ih
-tX
-ra
+zu
+kZ
+qF
 jH
 tm
 jH
@@ -13960,11 +14103,11 @@ oa
 oy
 oU
 mY
-pL
-iD
-iD
-qF
-jH
+sb
+qc
+Kz
+ih
+jN
 OV
 kZ
 kZ
@@ -14162,12 +14305,12 @@ oa
 oy
 oV
 mY
-sb
-qc
-qq
 ih
-jH
-jH
+ih
+ih
+ih
+tX
+ra
 jH
 jH
 jH
@@ -14364,12 +14507,12 @@ ob
 oJ
 oW
 mY
+pM
+qb
+eJ
 ih
-ih
-ih
-ih
-Xq
 jH
+ra
 Sr
 ih
 ih
@@ -14566,12 +14709,12 @@ oc
 oz
 oX
 mY
-pM
-qb
-qr
-ih
-jH
-jH
+iD
+iD
+qp
+Jo
+kZ
+qF
 jH
 ih
 aF
@@ -14768,12 +14911,12 @@ od
 oA
 oY
 mY
-pL
-iD
-iD
-qG
-jH
-jH
+sb
+qc
+Kz
+ih
+Xq
+ra
 jH
 ih
 aG
@@ -14970,12 +15113,12 @@ oe
 tq
 oZ
 mY
-sb
-qc
-qq
+ih
+ih
+ih
 ih
 jH
-jH
+ra
 jH
 ih
 aG
@@ -15172,12 +15315,12 @@ mY
 mY
 mY
 mY
-ih
-ih
-ih
-ih
-jN
+Qw
+PN
+iI
+qN
 jH
+ra
 jH
 ih
 aG
@@ -15372,14 +15515,14 @@ un
 jz
 jz
 ih
-ih
-ih
-pM
-qb
+ZT
+QH
+XA
+XA
 qs
-ih
+qN
 jH
-jH
+ra
 jH
 ih
 dL
@@ -15574,14 +15717,14 @@ iu
 iu
 um
 ih
-ih
-ih
-pL
-iD
-iD
+Qk
+qr
+XA
+XA
+xZ
 sW
-jH
-jH
+kZ
+qF
 jH
 ih
 tI
@@ -15776,15 +15919,15 @@ iu
 iu
 uH
 ih
-ih
-ih
-sb
-qc
+It
+XA
+XA
+pL
 qq
-ih
-tk
+qN
 jH
-jH
+ra
+Un
 ih
 ti
 ti
@@ -15978,14 +16121,14 @@ uw
 uC
 uI
 ih
-ih
-ih
-ih
-ih
-ih
-ih
-jN
+Ed
+XA
+NZ
+QK
+vm
+qN
 jH
+ra
 jH
 ih
 ti
@@ -16180,14 +16323,14 @@ YJ
 uD
 vh
 YJ
+qN
+qN
 ih
 ih
+qN
 ih
-ih
-ih
-ih
-jH
-xX
+jN
+ra
 jH
 ih
 ih

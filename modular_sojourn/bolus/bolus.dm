@@ -22,16 +22,15 @@
 /obj/item/bolus/proc/nom(mob/user)
 	if(perk && isliving(user))
 		//We buff EVERYONE around us when eating a bolus
-		for(var/mob/living/M in view(3,src))
+		for(var/mob/living/M in view(3,user))
 			if(M.stat == DEAD)
 				continue
 			if(same_faction_restiction)
 				if(M.faction != user.faction)
 					continue
 			if(perk)
-				if(isliving(M))
-					var/mob/living/L = M
-					L.stats.addPerk(perk)
+				M.stats.addPerk(perk)
+		user.stats.addPerk(perk)
 
 	qdel(src)
 
@@ -52,12 +51,11 @@
 					to_chat(H, SPAN_WARNING("\The [blocked] is in the way!"))
 					return
 
-		nom(user)
-
 		if(requires_eating)
-			to_chat(user, SPAN_NOTICE("You silently pop and shallow the [src]."))
+			to_chat(user, SPAN_NOTICE("You silently pop and swallow the [src]."))
 		else
 			to_chat(user, SPAN_NOTICE("You crush the bolus in your hand, and feel it appear inside your chest none the less."))
+		nom(user)
 		return
 
 	to_chat(user, SPAN_NOTICE("Only living things can eat a bolus."))
@@ -107,7 +105,7 @@
 //This one is uniquic
 /obj/item/bolus/agro/nom(mob/user)
 	if(isliving(user))
-		for(var/mob/M in view(5,src))
+		for(var/mob/M in view(5,user))
 			if(M.stat == DEAD)
 				continue
 			if(M.faction == M.faction)
@@ -194,13 +192,18 @@
 			var/obj/item/implant/core_implant/I = John.get_core_implant(/obj/item/implant/core_implant/cruciform)
 			var/obj/item/organ/internal/psionic_tumor/PT = John.random_organ_by_process(BP_PSION)
 
-			if(!I || PT || !I.active || !I.wearer)
+			if(I)
+				if(!I.active && !I.wearer)
+					to_chat(John, SPAN_NOTICE("The Bolus seems to have no affect on you, likely do to you inactive \
+					cruciform. Hopefully those around you have felt the power of the Bolus in your sted."))
+					stage += 5 //Heroism!
+
+			if(!I && !PT)
 				to_chat(John, SPAN_NOTICE("The Bolus seems to have no affect on you, likely do to you missing a psionic implant \
 				or a cruciform. Hopefully those around you have felt the power of the Bolus in your sted."))
 				stage += 5 //Heroism!
 
-
-		for(var/mob/living/carbon/human/H in view(5,src))
+		for(var/mob/living/carbon/human/H in view(5,user))
 			if(H.stat == DEAD)
 				continue
 			if(H.faction != H.faction)
