@@ -29,6 +29,10 @@
 		if(user.get_active_hand())
 			var/obj/A = user.get_active_hand()
 			A.make_young()
+			//Done like this so that way VV-40 dosnt work to replace max charge
+			if(istype(A, /obj/item/cell))
+				var/obj/item/cell/C = A
+				C.maxcharge = initial(C.maxcharge)
 			to_chat(user, "You focus on the [A], restoring it to its former glory.")
 		else
 			to_chat(user, "You must hold an item in your active hand to restore it.")
