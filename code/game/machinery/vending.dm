@@ -181,6 +181,11 @@
 	var/no_criminals = FALSE //If true, the machine asks if you're wanted by security when you try to order.
 	var/alt_currency_path	// If set, this machine will only take items of the given path as currency.
 
+	//These only relate to SELLING items not buying.
+	var/sub_department_setter = DEPARTMENT_LSS
+	var/sub_department_fee = 0.15 //% of how much is given to sub departments if set
+
+
 /obj/machinery/vending/New()
 	..()
 	wires = new(src)
@@ -331,9 +336,11 @@
 		machine_vendor_account = null
 		vendor_department = null
 		earnings_account = null
+		sub_department_fee = 0
 		return 1
 	if (!emagged)
 		emagged = 1
+		sub_department_fee = 0
 		to_chat(user, "You short out the product lock on \the [src]")
 		return 1
 
@@ -637,8 +644,22 @@
  * Called after the money has already been taken from the customer.
  */
 /obj/machinery/vending/proc/credit_purchase(target)
-	var/datum/transaction/T = new(currently_vending.price, target, "Purchase of [currently_vending.product_name]", src)
-	T.apply_to(earnings_account)
+	var/costs_for_item = round(currently_vending.price) //So no fun maths to douplicate credits out of thin air
+	var/money_to_sub = round(costs_for_item - 0.51 * sub_department_fee) //We ALWAYS lose a credit as a transaction fee. (Prevents magic money with rounding)
+	if(money_to_sub && sub_department_setter && sub_department_setter != vendor_department)
+
+
+		var/datum/transaction/T = new(costs_for_item - money_to_sub, target, "Purchase of [currently_vending.product_name]", src)
+		T.apply_to(earnings_account)
+
+		var/datum/transaction/S = new(money_to_sub, target, "Purchase free from vender", src)
+		S.apply_to(department_accounts[sub_department_setter])
+
+	else
+		var/datum/transaction/T = new(costs_for_item, target, "Purchase of [currently_vending.product_name]", src)
+		T.apply_to(earnings_account)
+		message_admins("No fee")
+
 
 /obj/machinery/vending/attack_ai(mob/user as mob)
 	return attack_hand(user)
@@ -1024,6 +1045,8 @@
 	//No.
 	give_discounts = FALSE
 	give_discount_points = FALSE
+	//We hate local busnesses
+	sub_department_fee = 0.20
 
 /obj/machinery/vending/custom/verb/remodel()
 	set name = "Remodel Vendomat"
