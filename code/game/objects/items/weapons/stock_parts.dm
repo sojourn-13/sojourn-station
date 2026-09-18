@@ -24,7 +24,7 @@
 	else
 		message += "This part not not be fixed or tuned with basic tools, and must be eather reprinted from scratch or repaired by some other means."
 
-	if(user?.stats?.getPerk(PERK_NO_OBFUSCATION))
+	if(user.stats?.getPerk(PERK_NO_OBFUSCATION))
 
 		message += "\n This parts current rating is [rating] with an initial rating of [initial(rating)]."
 
@@ -40,7 +40,7 @@
 
 	if(repair_tool)
 
-		if(user?.stats?.getStat(STAT_COG) + user?.stats?.getStat(STAT_MEC)  <= (20 * initial(rating) + 1 + (3 * (I.w_class + I.extra_bulk))) || user?.stats?.getPerk(PERK_HANDYMAN))
+		if(user.stats?.getStat(STAT_COG) + user.stats?.getStat(STAT_MEC)  <= (20 * initial(rating) + 1 + (3 * (I.w_class + I.extra_bulk))) || user.stats?.getPerk(PERK_HANDYMAN))
 			to_chat(user, SPAN_NOTICE("Repairing or tuning this part is a bit to complex for your skills at this time."))
 			return
 
