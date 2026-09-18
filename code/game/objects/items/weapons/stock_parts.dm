@@ -35,8 +35,8 @@
 //Small repairs done to stockparts
 /obj/item/stock_parts/attackby(obj/item/I, mob/user)
 
-	//Done in a bit of a wierd way to give people notice messages,\
-	  and prevent spam of chat if your clicking parts with non-proper tools
+	//Done in a bit of a wierd way to give people notice messages,
+	//and prevent spam of chat if your clicking parts with non-proper tools
 
 	if(repair_tool)
 
