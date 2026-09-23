@@ -3593,6 +3593,7 @@
 #include "modular_sojourn\Borers\__ADMIN SHIT\objective.dm"
 #include "modular_sojourn\Borers\__ADMIN SHIT\organs.dm"
 #include "modular_sojourn\Borers\__ADMIN SHIT\roleset.dm"
+#include "modular_sojourn\cardgame_2\cardcarp_travel.dm"
 #include "modular_sojourn\cardgame_2\cardgame_2.dm"
 #include "modular_sojourn\cardgame_2\cardholder.dm"
 #include "modular_sojourn\cardgame_2\cardpacks_and_spawner.dm"
