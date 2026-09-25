@@ -73,6 +73,7 @@ Has ability of every roach.
 	pixel_x = -16  // For some reason it doesn't work when I overload them in class definition, so here it is.
 	pixel_y = -16
 
+	stats.addPerk(PERK_KAISER_ARMOR)
 
 /mob/living/carbon/superior/roach/kaiser/handle_ai()
 	. = ..()
@@ -97,6 +98,30 @@ Has ability of every roach.
 			L.damage_through_armor(damage, TOX, attack_flag = ARMOR_BIO)
 			playsound(src, 'sound/voice/insect_battle_screeching.ogg', 30, 1, -3)
 			L.visible_message(SPAN_DANGER("\the [src] globs up some glowing bile all over \the [L]!"))
+		var/datum/perk/cooldown/a_kaisers_decisive_strike/DS = L.stats.getPerk(PERK_A_KAISERS_DECISIVE_STRIKE)
+		if(DS)
+			var/obj/effect/effect/melee/swing/S = new(get_turf(L))
+			var/_dir = get_dir(src, L)
+			if(src == get_turf(L))
+				_dir = src.dir
+			S.dir = _dir
+			DS.strikes += 1
+			flick("kaisers_swing[DS.strikes]", S)
+			QDEL_IN(S, 2 SECONDS)
+			L.damage_through_armor(DS.strikes * 5, BRUTE, attack_flag = ARMOR_MELEE) //10->15->20 no AD
+			if(DS.strikes > 3)
+				//Ketch are breath
+				adjustOxyLoss(-100)
+				//The swings dose flames and sooths burns
+				adjustFireLoss(-10)
+				//The contraction of sinew closes bleeding wounds
+				adjustBruteLoss(-30)
+				//The rush of movement removes toxic build up in key joints
+				adjustToxLoss(-5)
+				updatehealth()
+				L.stats.removePerk(PERK_A_KAISERS_DECISIVE_STRIKE)
+		else
+			L.stats.addPerk(PERK_A_KAISERS_DECISIVE_STRIKE)
 
 // SUPPORT ABILITIES
 /mob/living/carbon/superior/roach/kaiser/proc/gas_attack()
@@ -200,4 +225,83 @@ Has ability of every roach.
 	moved = TRUE
 	if(!weakened && stat == CONSCIOUS)
 		attemptAttackOnTarget()
+
+//Armor stuff below
+
+/mob/living/carbon/superior/roach/kaiser/getarmor(def_zone, type)
+	if(stats.getPerk(PERK_KAISER_ARMOR))
+		var/datum/perk/adaptive_exoskeleton/KA = stats.getPerk(PERK_KAISER_ARMOR)
+		var/return_type = KA.armor[type] //Are we sure this is are strongest armor?
+		if(KA.armor[type] < armor[type] && KA.armor[type] > 0) //If are armor is below zero then use that, as we are weakened by the Dawn Branch or Saints Of Wax Branch
+			return_type = armor[type]  //Seems are base armoe is better, use that.
+		KA.cap_check()
+		return return_type
+	return armor[type]
+
+/mob/living/carbon/superior/roach/kaiser/bullet_act(obj/item/projectile/proj)
+
+	if(stats.getPerk(PERK_KAISER_ARMOR))
+		var/datum/perk/adaptive_exoskeleton/KA = stats.getPerk(PERK_KAISER_ARMOR)
+		if(istype(proj,/obj/item/projectile/beam) || istype(proj,/obj/item/projectile/ion) || istype(proj,/obj/item/projectile/plasma))
+			if (!proj.testing)
+				KA.armor[ARMOR_ENERGY] += proj.force * 0.001
+		else
+			if (!proj.testing)
+				KA.armor[ARMOR_BULLET] += proj.force * 0.001
+
+		if(istype(proj,/obj/item/projectile/plasma/super_light))
+			var/obj/item/projectile/plasma/super_light/seal = proj
+			if(findtext(seal.shot_from, "waxworks rapier")) //Most arcana tag type to ever exists
+				//Aim for the heart!
+				KA.armor[ARMOR_ENERGY] -= 5 + (proj.force * 0.001)
+	..()
+
+/mob/living/carbon/superior/roach/kaiser/standard_weapon_hit_effects(obj/item/I, mob/living/user, var/effective_force, var/hit_zone)
+	if(..())
+		if(stats.getPerk(PERK_KAISER_ARMOR))
+			var/datum/perk/adaptive_exoskeleton/KA = stats.getPerk(PERK_KAISER_ARMOR)
+			KA.armor[ARMOR_MELEE] += effective_force * 0.01
+			//Weapons designed to fight the night untill dawn breaks
+			if(istype(I, /obj/item/gun/matter/seal) \
+			|| istype(I, /obj/item/tool/sword/midday) \
+			|| istype(I, /obj/item/tool/sword/sun_set) \
+			|| istype(I, /obj/item/tool/sword/dawn))
+				KA.armor[ARMOR_MELEE] -= 0.5 + (effective_force * 0.01) //Undo what we added and then subtract a further amount
+
+/mob/living/carbon/superior/roach/kaiser/react_to_attack(var/mob/living/carbon/superior/source = src, var/obj/item/attacked_with, var/atom/attacker, params)
+	..()
+	if(attacked_with && (isprojectile(attacked_with)))
+		var/obj/item/projectile/Proj = attacked_with
+		if(!Proj.testing)
+			if(Proj.silenced && prob(80)) //Gives silenced weapons more use
+				return
+			if(isliving(attacker))
+				var/mob/living/L = attacker
+				if(L.faction == faction || L.faction=="sproachder")
+					if(!L.stats.getPerk(PERK_ROACH_ADHERENCE))
+						say(pick(",o Misstake?", ",o Adherence, Propriety?", ",o Traitor?"))
+						L.stats.addPerk(PERK_ROACH_ADHERENCE)
+						return
+					var/datum/perk/cooldown/roach_adherence/RA = L.stats.getPerk(PERK_ROACH_ADHERENCE)
+					RA.warnings += 1
+					if(RA.warnings <= 2)
+						say(pick(",o Stop, Before, To, Late.", ",o Warning.", ",o Begone, Flee."))
+					if(RA.warnings == 3)
+						say(pick(",o Scour every corner, swarm every height, and take flight for [L.real_name] is a traitor! Feast. Indulgence. Rend Their Flesh!"))
+
+	if(isliving(attacker))
+		var/mob/living/L = attacker
+		if(L.faction == faction || L.faction=="sproachder")
+			if(!L.stats.getPerk(PERK_ROACH_ADHERENCE))
+				say(pick(",o Misstake?", ",o Adherence, Propriety?", ",o Traitor?"))
+				L.stats.addPerk(PERK_ROACH_ADHERENCE)
+				return
+			var/datum/perk/cooldown/roach_adherence/RA = L.stats.getPerk(PERK_ROACH_ADHERENCE)
+			RA.warnings += 1
+			if(RA.warnings <= 2)
+				say(pick(",o Stop, Before, To, Late.", ",o Warning.", ",o Begone, Flee."))
+			if(RA.warnings == 3)
+				say(pick(",o Scour every corner, swarm every height, and take flight for [L.real_name] is a traitor! Feast. Indulgence. Rend Their Flesh!"))
+	return
+
 
