@@ -124,3 +124,58 @@
 	update_icon()
 	icon_state = "cheap_rapier"
 	..()
+
+/obj/item/tool/cheap/stiletto
+	name = "stiletto"
+	desc = "A mass-produced copy of a stiletto by Lonestar with a long slender blade and needle-like point, primarily intended as a thrusting and stabbing weapon. \
+	Has some techniques for slowing down enemys and rapidly attacking."
+	icon = 'icons/obj/weapons.dmi'
+	icon_state = "stiletto_cheap"
+	item_state = "dagger"
+	tool_qualities = list(QUALITY_CUTTING = 5, QUALITY_SCREW_DRIVING = 5)
+	matter = list(MATERIAL_PLASTEEL = 2, MATERIAL_STEEL = 1)
+	force = WEAPON_FORCE_NORMAL
+	armor_divisor = ARMOR_PEN_MASSIVE
+	throwforce = WEAPON_FORCE_DANGEROUS
+	var/weaken_timer = 0
+	var/relay_hit_amount = 2
+	var/refundmechanic = 0
+	no_swing = TRUE
+
+/obj/item/tool/cheap/stiletto/resolve_attackby(atom/target, mob/user)
+
+	if(relay_hit_amount != 2 && refundmechanic > world.time)
+		refundmechanic = world.time + 15 SECONDS
+	else
+		relay_hit_amount = 2
+
+	if(ismob(target))
+		var/mob/living/M = target
+		if(M.stat != DEAD)
+			M.entanglement += 1
+			if(M.stat == UNCONSCIOUS || M.lying || M.sleeping)
+				armor_divisor = ARMOR_PEN_MAX
+				force += 5
+				playsound(usr.loc, 'sound/items/drop/knife.ogg', 50, 1, -3)
+			if(M.entanglement >=  9 && weaken_timer < world.time)
+				M.Weaken(2)
+				playsound(usr.loc, 'sound/items/drop/herb.ogg', 50, 1, -3)
+				weaken_timer = world.time + 10 SECONDS
+				M.entanglement -= 6
+			if(M.entanglement >=  5 && refundmechanic < world.time)
+				for(var/mob/living/L in oview(user, 2))
+					refundmechanic = world.time + 35 SECONDS
+					if(L.faction == M.faction && L.stat != DEAD)
+						relay_hit_amount -= 1
+						var/obj/effect/effect/S = new(get_turf(M))
+						S.layer = ABOVE_ALL_MOB_LAYER
+						S.dir = user.dir
+						S.icon = 'modular_sojourn/attacks.dmi'
+						flick("stiletto", S)
+						QDEL_IN(S, 2 SECONDS)
+						playsound(usr.loc, 'sound/items/drop/axe.ogg', 50, 1, -3)
+						resolve_attackby(L, user)
+
+	refresh_upgrades()
+
+	.=..()

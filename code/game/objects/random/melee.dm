@@ -16,7 +16,8 @@
 				/obj/item/tool/sword/saber = 0.2,
 				/obj/item/tool/sword/katana = 0.2,
 				/obj/item/tool/knife/butch = 2,
-				/obj/item/tool/knife/dagger = 0.8))
+				/obj/item/tool/knife/dagger = 0.8,
+				/obj/item/tool/knife/dagger/stiletto = 0.05))
 
 /obj/random/knife/low_chance
 	name = "low chance random knife"

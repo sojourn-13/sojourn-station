@@ -150,6 +150,7 @@
 			/obj/item/tool/cheap/katana,
 			/obj/item/tool/cheap/saber,
 			/obj/item/tool/cheap/rapier,
+			/obj/item/tool/cheap/stiletto,
 			/obj/item/storage/sheath/non_church/general
 		)
 	)
