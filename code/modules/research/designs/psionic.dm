@@ -21,11 +21,25 @@
 	category = CAT_CLOTHING
 
 /datum/design/research/item/psionic_pouch
-	name = "Woven Pouch C-7v89" //Plasma - Low Risk
+	name = "Woven Pouch C-7v89" //Cloth
 	desc = "A stablized experimental pouch design to assist Psions in every day life."
 	build_path = /obj/item/storage/pouch/medium_generic/psionic
 	materials = list(MATERIAL_PLASMA = 8, MATERIAL_DIAMOND = 2, MATERIAL_SILVER = 4, MATERIAL_GOLD = 2)
 	category = CAT_CLOTHING
+
+/datum/design/research/item/psionic_injector
+	name = "HAI - \"Stablizer\" Type E-2.3v1: IA | D+ | QC" //Hypospray-Emergency- InAprovaline, Dexalin[PLUS], QuickClot
+	desc = "An experimental synthesizing system, this autoinjector slowly produce Inaprovaline, Dexalin+, and QuickClot"
+	build_path = /obj/item/reagent_containers/hypospray/autoinjector/replenishing/stablizer
+	materials = list(MATERIAL_PLASMA = 1, MATERIAL_DIAMOND = 0.1, MATERIAL_SILVER = 0.1, MATERIAL_GOLD = 0.1)
+	category = "Medical"
+
+/datum/design/research/item/psionic_space_cleaner_mixer
+	name = "SCM - \"Janny\" Type C: Spray Bottle" // Space Cleaner Mixer, Cleaning
+	desc = "An experimental synthesizing system, this spray bottle slowly produce Cleaner, Water, and Ammonia"
+	build_path = /obj/item/reagent_containers/spray/replenishing/space_cleaner_mixer
+	materials = list(MATERIAL_PLASMA = 2, MATERIAL_SILVER = 0.1, MATERIAL_GOLD = 0.1)
+	category = "Medical"
 
 /datum/design/research/item/clothing/tinfoil
 	name = "Blue-Ink Psionic Shielding Apparatus"

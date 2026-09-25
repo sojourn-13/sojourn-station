@@ -141,7 +141,7 @@
 		if(1)
 			item_type = "bowl"
 			if(prob(33))
-				new_item = new /obj/item/reagent_containers/glass/replenishing(src.loc)
+				new_item = new /obj/item/reagent_containers/glass/replenishing/xenoarch(src.loc)
 			else
 				new_item = new /obj/item/reagent_containers/glass/beaker(src.loc)
 			new_item.icon = 'icons/obj/xenoarchaeology.dmi'
@@ -153,7 +153,7 @@
 		if(2)
 			item_type = "urn"
 			if(prob(33))
-				new_item = new /obj/item/reagent_containers/glass/replenishing(src.loc)
+				new_item = new /obj/item/reagent_containers/glass/replenishing/xenoarch(src.loc)
 			else
 				new_item = new /obj/item/reagent_containers/glass/beaker(src.loc)
 			new_item.icon = 'icons/obj/xenoarchaeology.dmi'

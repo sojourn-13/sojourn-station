@@ -1,19 +1,12 @@
-
-
-
 //endless reagents!
-/obj/item/reagent_containers/glass/replenishing
-	var/spawning_id
+/obj/item/reagent_containers/glass/replenishing/xenoarch
+	spawning_reagent_amount = 0.3
 
-/obj/item/reagent_containers/glass/replenishing/New()
+/obj/item/reagent_containers/glass/replenishing/xenoarch/New()
+	if(!spawning_id)
+		spawning_id = pick("blood","lube","stoxin","ethanol","ice","glycerol","fuel","cleaner")
+		spawning_reagent_amount = pick(0.3, 0.1, 0.15, 0.2, 0.5)
 	..()
-	START_PROCESSING(SSobj, src)
-	spawning_id = pick("blood","lube","stoxin","ethanol","ice","glycerol","fuel","cleaner")
-
-/obj/item/reagent_containers/glass/replenishing/Process()
-	reagents.add_reagent(spawning_id, 0.3)
-
-
 
 //a talking gas mask!
 /obj/item/clothing/mask/gas/poltergeist

@@ -426,8 +426,5 @@
 	desc = "One of the church's most sacred relics, discovered by Augustine on a pilgrimage at the height of the Church's power. It fills eternally with the Church's healing sacremental wine. The wine in this cup is said to be the presence of the Absolute itself; it is only to be drunk in the most holy of ceremonies or the most dire of emergencies. To do otherwise is dire blasphemy."
 	icon_state = "holy_chalice"
 	price_tag = 8000
-
-/obj/item/reagent_containers/glass/replenishing/chalice/New()
-	..()
-	START_PROCESSING(SSobj, src)
-	spawning_id = pick("ntcahors")
+	spawning_id = "ntcahors"
+	spawning_reagent_amount = 0.1
