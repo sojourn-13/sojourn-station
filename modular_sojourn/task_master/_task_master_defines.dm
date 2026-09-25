@@ -13,7 +13,11 @@
 #define PARCORE /datum/task_master/task/parcours
 #define SLIP_N_DIE /datum/task_master/task/slip_n_die
 #define SLAB_CLEARER /datum/task_master/task/slab_clearer
+
+//Weapon Arts/Styles
 #define SHEATH_ARTS /datum/task_master/task/sheath_arts
+#define RITUAL_ARTS /datum/task_master/task/ritual_arts
+
 #define FLOOR_FIXER /datum/task_master/task/floor_fixer
 #define BUTTER_MAKER /datum/task_master/task/butter_maker
 #define BOTTLER /datum/task_master/task/bottler
