@@ -38501,6 +38501,16 @@
 	},
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/command/prime)
+"hhg" = (
+/obj/structure/mailpile,
+/obj/effect/floor_decal/industrial/box/corners{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/box/corners{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/quartermaster/office)
 "hht" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood/wild3,
@@ -59552,11 +59562,8 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/rnd/xenobiology)
 "ldc" = (
-/obj/structure/bed/chair/office/light,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/device/radio/intercom{
-	pixel_y = 24
-	},
+/obj/structure/bed/chair/office/light,
 /turf/simulated/floor/tiled/steel/monofloor{
 	dir = 4
 	},
@@ -63348,6 +63355,13 @@
 /obj/item/towel,
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/nadezhda/command/gmaster)
+"lQt" = (
+/obj/structure/disposalpipe/segment,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/steel/monofloor{
+	dir = 4
+	},
+/area/nadezhda/security/vacantoffice2)
 "lQw" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -88853,12 +88867,11 @@
 /turf/simulated/floor/rock/manmade/road,
 /area/nadezhda/outside/inside_colony)
 "que" = (
-/obj/machinery/button/windowtint{
-	id = "VOffice";
-	pixel_y = 38
+/obj/effect/decal/cleanable/dirt,
+/obj/item/device/radio/intercom{
+	pixel_y = 24
 	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
+/obj/structure/mailpile,
 /turf/simulated/floor/tiled/steel/monofloor{
 	dir = 4
 	},
@@ -91356,6 +91369,18 @@
 /obj/machinery/light/small,
 /turf/simulated/floor/industrial/ornate,
 /area/nadezhda/maintenance/undergroundfloor2west)
+"qTs" = (
+/obj/machinery/button/windowtint{
+	id = "VOffice";
+	pixel_y = 38
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/mailshoot,
+/turf/simulated/floor/tiled/steel/monofloor{
+	dir = 4
+	},
+/area/nadezhda/security/vacantoffice2)
 "qTv" = (
 /obj/machinery/camera/motion/security,
 /turf/simulated/floor/greengrid,
@@ -91513,6 +91538,7 @@
 	pixel_y = 32
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/table/standard,
 /turf/simulated/floor/tiled/steel/monofloor{
 	dir = 4
 	},
@@ -130493,8 +130519,12 @@
 	dir = 1;
 	pixel_y = -24
 	},
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/steel,
+/obj/structure/mailshoot,
+/obj/effect/floor_decal/industrial/box/corners{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/box/corners,
+/turf/simulated/floor/tiled/dark,
 /area/nadezhda/quartermaster/office)
 "ycf" = (
 /obj/structure/table/standard,
@@ -197127,7 +197157,7 @@ ggO
 ggO
 ged
 deb
-xBZ
+hhg
 kFn
 sDT
 mft
@@ -237858,9 +237888,9 @@ gBD
 gBD
 gBD
 gBD
-gBD
-oGo
+wTF
 oWy
+hfY
 pWr
 uDo
 iAB
@@ -238060,9 +238090,9 @@ gBD
 gBD
 gBD
 gBD
-gBD
-oGo
+wTF
 oIt
+hfY
 wPS
 sVl
 jOI
@@ -238262,9 +238292,9 @@ gBD
 gBD
 gBD
 gBD
-gBD
-oGo
+wTF
 uIb
+hfY
 wPS
 hfY
 giT
@@ -238464,9 +238494,9 @@ gBD
 gBD
 gBD
 gBD
-gBD
-oGo
+wTF
 mes
+lQt
 eLO
 ude
 wpq
@@ -238666,9 +238696,9 @@ gBD
 gBD
 gBD
 gBD
-gBD
-oGo
-que
+wTF
+qTs
+hfY
 hfY
 bvu
 ltz
@@ -238868,9 +238898,9 @@ gBD
 gBD
 gBD
 gBD
-gBD
-oGo
+wTF
 qVf
+hfY
 sVl
 hfY
 jdi
@@ -239070,8 +239100,8 @@ gBD
 gBD
 gBD
 gBD
-gBD
-oGo
+wTF
+que
 ldc
 xYQ
 ayF
@@ -239272,7 +239302,7 @@ gBD
 gBD
 gBD
 gBD
-gBD
+wTF
 oGo
 oGo
 oGo
