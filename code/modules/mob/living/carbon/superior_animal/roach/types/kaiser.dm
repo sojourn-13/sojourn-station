@@ -279,29 +279,31 @@ Has ability of every roach.
 				var/mob/living/L = attacker
 				if(L.faction == faction || L.faction=="sproachder")
 					if(!L.stats.getPerk(PERK_ROACH_ADHERENCE))
-						say(pick(",o Misstake?", ",o Adherence, Propriety?", ",o Traitor?"))
+						ra_warnings(pick(",o Misstake?", ",o Adherence, Propriety?", ",o Traitor?"))
 						L.stats.addPerk(PERK_ROACH_ADHERENCE)
 						return
 					var/datum/perk/cooldown/roach_adherence/RA = L.stats.getPerk(PERK_ROACH_ADHERENCE)
 					RA.warnings += 1
 					if(RA.warnings <= 2)
-						say(pick(",o Stop, Before, To, Late.", ",o Warning.", ",o Begone, Flee."))
+						ra_warnings(pick(",o Stop, Before, To, Late.", ",o Warning.", ",o Begone, Flee."))
 					if(RA.warnings == 3)
-						say(pick(",o Scour every corner, swarm every height, and take flight for [L.real_name] is a traitor! Feast. Indulgence. Rend Their Flesh!"))
+						ra_warnings(pick(",o Scour every corner, swarm every height, and take flight for [L.real_name] is a traitor! Feast. Indulgence. Rend Their Flesh!"))
 
 	if(isliving(attacker))
 		var/mob/living/L = attacker
 		if(L.faction == faction || L.faction=="sproachder")
 			if(!L.stats.getPerk(PERK_ROACH_ADHERENCE))
-				say(pick(",o Misstake?", ",o Adherence, Propriety?", ",o Traitor?"))
+				ra_warnings(pick(",o Misstake?", ",o Adherence, Propriety?", ",o Traitor?"))
 				L.stats.addPerk(PERK_ROACH_ADHERENCE)
 				return
 			var/datum/perk/cooldown/roach_adherence/RA = L.stats.getPerk(PERK_ROACH_ADHERENCE)
 			RA.warnings += 1
 			if(RA.warnings <= 2)
-				say(pick(",o Stop, Before, To, Late.", ",o Warning.", ",o Begone, Flee."))
+				ra_warnings(pick(",o Stop, Before, To, Late.", ",o Warning.", ",o Begone, Flee."))
 			if(RA.warnings == 3)
-				say(pick(",o Scour every corner, swarm every height, and take flight for [L.real_name] is a traitor! Feast. Indulgence. Rend Their Flesh!"))
+				ra_warnings(pick(",o Scour every corner, swarm every height, and take flight for [L.real_name] is a traitor! Feast. Indulgence. Rend Their Flesh!"))
 	return
 
+/mob/living/carbon/superior/roach/kaiser/proc/ra_warnings(message = "")
+	say(message)
 
