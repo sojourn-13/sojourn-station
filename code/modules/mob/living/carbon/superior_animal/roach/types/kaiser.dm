@@ -269,32 +269,7 @@ Has ability of every roach.
 				KA.armor[ARMOR_MELEE] -= 0.5 + (effective_force * 0.01) //Undo what we added and then subtract a further amount
 
 /mob/living/carbon/superior/roach/kaiser/react_to_attack(var/mob/living/carbon/superior/source = src, var/obj/item/attacked_with, var/atom/attacker, params)
-	// ..() // BRUTE FORCED COPY to prevent a linter error
-	if (attacked_with && (isprojectile(attacked_with)))
-		var/obj/item/projectile/Proj = attacked_with
-		if (Proj.testing) //sanity
-			return FALSE
-
-	if (!react_to_attack)
-		return FALSE
-
-	if (attacker && !target_mob) //no target? target this guy
-		if (isValidAttackTarget(attacker))
-			var/atom/new_target = attacker
-			var/atom/new_target_location = get_turf(attacker)
-			var/distance = (get_dist(src, attacker))
-			if (distance > viewRange) // are they out of our viewrange? TODO: maybe add a see/hear check
-				new_target_location = target_outside_of_view_range(attacker, distance) //this is where we think they might be
-			target_mob = WEAKREF(new_target)
-			target_location = WEAKREF(new_target_location)
-
-			lost_sight = TRUE //not sure if this is necessary
-
-			if (retaliation_type)
-				if (retaliation_type & APPROACH_ATTACKER)
-					if (stat != DEAD)
-						INVOKE_ASYNC(SSmove_manager, /datum/controller/subsystem/move_manager/proc/move_to, src, target_location, (comfy_range - comfy_distance), movement_delay())
-
+	..()
 	if(attacked_with && (isprojectile(attacked_with)))
 		var/obj/item/projectile/Proj = attacked_with
 		if(!Proj.testing)
@@ -304,15 +279,15 @@ Has ability of every roach.
 				var/mob/living/L = attacker
 				if(L.faction == faction || L.faction=="sproachder")
 					if(!L.stats.getPerk(PERK_ROACH_ADHERENCE))
-						say(pick(",o Misstake?", ",o Adherence, Propriety?", ",o Traitor?"))
+						INVOKE_ASYNC(src, PROC_REF(say), pick(",o Misstake?", ",o Adherence, Propriety?", ",o Traitor?"))
 						L.stats.addPerk(PERK_ROACH_ADHERENCE)
 						return
 					var/datum/perk/cooldown/roach_adherence/RA = L.stats.getPerk(PERK_ROACH_ADHERENCE)
 					RA.warnings += 1
 					if(RA.warnings <= 2)
-						say(pick(",o Stop, Before, To, Late.", ",o Warning.", ",o Begone, Flee."))
+						INVOKE_ASYNC(src, PROC_REF(say), pick(",o Stop, Before, To, Late.", ",o Warning.", ",o Begone, Flee."))
 					if(RA.warnings == 3)
-						say(pick(",o Scour every corner, swarm every height, and take flight for [L.real_name] is a traitor! Feast. Indulgence. Rend Their Flesh!"))
+						INVOKE_ASYNC(src, PROC_REF(say), pick(",o Scour every corner, swarm every height, and take flight for [L.real_name] is a traitor! Feast. Indulgence. Rend Their Flesh!"))
 
 	if(isliving(attacker) && !istype(attacked_with, /obj/item/stack/medical)) //Assume medical gear is good, but not syringes
 		if(attacked_with)
@@ -321,13 +296,13 @@ Has ability of every roach.
 		var/mob/living/L = attacker
 		if(L.faction == faction || L.faction=="sproachder")
 			if(!L.stats.getPerk(PERK_ROACH_ADHERENCE))
-				say(pick(",o Misstake?", ",o Adherence, Propriety?", ",o Traitor?"))
+				INVOKE_ASYNC(src, PROC_REF(say), pick(",o Misstake?", ",o Adherence, Propriety?", ",o Traitor?"))
 				L.stats.addPerk(PERK_ROACH_ADHERENCE)
 				return
 			var/datum/perk/cooldown/roach_adherence/RA = L.stats.getPerk(PERK_ROACH_ADHERENCE)
 			RA.warnings += 1
 			if(RA.warnings <= 2)
-				say(pick(",o Stop, Before, To, Late.", ",o Warning.", ",o Begone, Flee."))
+				INVOKE_ASYNC(src, PROC_REF(say), pick(",o Stop, Before, To, Late.", ",o Warning.", ",o Begone, Flee."))
 			if(RA.warnings == 3)
-				say(pick(",o Scour every corner, swarm every height, and take flight for [L.real_name] is a traitor! Feast. Indulgence. Rend Their Flesh!"))
+				INVOKE_ASYNC(src, PROC_REF(say), pick(",o Scour every corner, swarm every height, and take flight for [L.real_name] is a traitor! Feast. Indulgence. Rend Their Flesh!"))
 	return
