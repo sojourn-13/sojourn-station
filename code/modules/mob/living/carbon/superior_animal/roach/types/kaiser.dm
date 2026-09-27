@@ -270,6 +270,7 @@ Has ability of every roach.
 
 /mob/living/carbon/superior/roach/kaiser/react_to_attack(var/mob/living/carbon/superior/source = src, var/obj/item/attacked_with, var/atom/attacker, params)
 	..()
+	SHOULD_NOT_SLEEP(FALSE) //We DO have some sleeps do to say radio code, this is *fine*
 	if(attacked_with && (isprojectile(attacked_with)))
 		var/obj/item/projectile/Proj = attacked_with
 		if(!Proj.testing)
@@ -279,31 +280,30 @@ Has ability of every roach.
 				var/mob/living/L = attacker
 				if(L.faction == faction || L.faction=="sproachder")
 					if(!L.stats.getPerk(PERK_ROACH_ADHERENCE))
-						ra_warnings(pick(",o Misstake?", ",o Adherence, Propriety?", ",o Traitor?"))
+						say(pick(",o Misstake?", ",o Adherence, Propriety?", ",o Traitor?"))
 						L.stats.addPerk(PERK_ROACH_ADHERENCE)
 						return
 					var/datum/perk/cooldown/roach_adherence/RA = L.stats.getPerk(PERK_ROACH_ADHERENCE)
 					RA.warnings += 1
 					if(RA.warnings <= 2)
-						ra_warnings(pick(",o Stop, Before, To, Late.", ",o Warning.", ",o Begone, Flee."))
+						say(pick(",o Stop, Before, To, Late.", ",o Warning.", ",o Begone, Flee."))
 					if(RA.warnings == 3)
-						ra_warnings(pick(",o Scour every corner, swarm every height, and take flight for [L.real_name] is a traitor! Feast. Indulgence. Rend Their Flesh!"))
+						say(pick(",o Scour every corner, swarm every height, and take flight for [L.real_name] is a traitor! Feast. Indulgence. Rend Their Flesh!"))
 
-	if(isliving(attacker))
+	if(isliving(attacker) && !istype(attacked_with, /obj/item/stack/medical)) //Assume medical gear is good, but not syringes
+		if(attacked_with)
+			if(attacked_with.force <= 0)
+				return //If its not deadly or harmful dont react to it
 		var/mob/living/L = attacker
 		if(L.faction == faction || L.faction=="sproachder")
 			if(!L.stats.getPerk(PERK_ROACH_ADHERENCE))
-				ra_warnings(pick(",o Misstake?", ",o Adherence, Propriety?", ",o Traitor?"))
+				say(pick(",o Misstake?", ",o Adherence, Propriety?", ",o Traitor?"))
 				L.stats.addPerk(PERK_ROACH_ADHERENCE)
 				return
 			var/datum/perk/cooldown/roach_adherence/RA = L.stats.getPerk(PERK_ROACH_ADHERENCE)
 			RA.warnings += 1
 			if(RA.warnings <= 2)
-				ra_warnings(pick(",o Stop, Before, To, Late.", ",o Warning.", ",o Begone, Flee."))
+				say(pick(",o Stop, Before, To, Late.", ",o Warning.", ",o Begone, Flee."))
 			if(RA.warnings == 3)
-				ra_warnings(pick(",o Scour every corner, swarm every height, and take flight for [L.real_name] is a traitor! Feast. Indulgence. Rend Their Flesh!"))
+				say(pick(",o Scour every corner, swarm every height, and take flight for [L.real_name] is a traitor! Feast. Indulgence. Rend Their Flesh!"))
 	return
-
-/mob/living/carbon/superior/roach/kaiser/proc/ra_warnings(message = "")
-	say(message)
-
