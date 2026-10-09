@@ -523,6 +523,20 @@ obj/item/storage/fancy/cigar/attackby(obj/item/W, mob/user)
 		reagents.trans_to_obj(C, (reagents.total_volume/contents.len))
 	..()
 
+//Nothing to fancy
+/obj/item/storage/fancy/cigar/tributary
+	name = "immissario cigar case"
+	desc = "A case for holding your cigars when you are not smoking them, made of steel bound in red leather and designed to hold only classy cigars. Fancy!"
+	icon_state = "cigarcase"
+	item_state = "tributary"
+	icon_type = "cigar"
+
+/obj/item/storage/fancy/cigar/tributary/populate_contents()
+	for(var/i in 1 to storage_slots)
+		new /obj/item/clothing/mask/smokable/cigarette/cigar/tributary(src)
+	create_reagents(15 * storage_slots)
+	update_icon()
+
 /*
  * Vial Box
  */
