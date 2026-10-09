@@ -491,7 +491,7 @@ obj/item/storage/fancy/cigar/attackby(obj/item/W, mob/user)
 	if(open)
 		icon_state = "[initial(icon_state)][contents.len]"
 	else
-		icon_state = "cigarcase"
+		icon_state = "[initial(icon_state)]"
 	return
 
 /obj/item/storage/fancy/cigar/attack(mob/living/carbon/M as mob, mob/living/carbon/user as mob)
@@ -527,9 +527,9 @@ obj/item/storage/fancy/cigar/attackby(obj/item/W, mob/user)
 /obj/item/storage/fancy/cigar/tributary
 	name = "immissario cigar case"
 	desc = "A case for holding your cigars when you are not smoking them, made of steel bound in red leather and designed to hold only classy cigars. Fancy!"
-	icon_state = "cigarcase"
-	item_state = "tributary"
-	icon_type = "cigar"
+	icon_state = "tributary"
+	item_state = "cigarcase"
+	icon_type = "tributary"
 
 /obj/item/storage/fancy/cigar/tributary/populate_contents()
 	for(var/i in 1 to storage_slots)
