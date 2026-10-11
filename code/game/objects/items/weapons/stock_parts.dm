@@ -391,6 +391,52 @@
 	matter = list(MATERIAL_PLASTIC = 3, MATERIAL_GLASS = 1)
 	price_tag = 700
 
+//advanced greyson positronic stock parts (rating 6)
+
+/obj/item/stock_parts/capacitor/one_star/advanced
+	name = "Greyson Positronic hyper capacitor"
+	desc = "A hyper-high capacity capacitor used in the construction of a variety of devices."
+	icon_state = "one_capacitor_advanced"
+	origin_tech = list(TECH_POWER = 14, TECH_MATERIAL = 11)
+	rating = 6
+	matter = null
+	price_tag = 350
+
+/obj/item/stock_parts/scanning_module/one_star/advanced
+	name = "Greyson Positronic phase scanning module"
+	desc = "A compact, high resolution phasic scanning module used in the construction of certain devices."
+	icon_state = "one_scan_module_advanced"
+	origin_tech = list(TECH_MAGNET = 13)
+	rating = 6
+	matter = null
+	price_tag = 350
+
+/obj/item/stock_parts/manipulator/one_star/advanced
+	name = "Greyson Positronic pico manipulator"
+	desc = "A tiny little manipulator used in the construction of certain devices."
+	icon_state = "one_mani_advanced"
+	origin_tech = list(TECH_MATERIAL = 10, TECH_DATA = 12)
+	rating = 6
+	matter = null
+	price_tag = 350
+
+/obj/item/stock_parts/micro_laser/one_star/advanced
+	name = "Greyson Positronic ultra-micro-laser"
+	icon_state = "one_laser_advanced"
+	desc = "A tiny laser used in certain devices."
+	origin_tech = list(TECH_MAGNET = 11)
+	rating = 6
+	matter = null
+	price_tag = 350
+
+/obj/item/stock_parts/matter_bin/one_star/advanced
+	name = "Greyson Positronic supper matter bin"
+	desc = "A container for hold compressed matter awaiting re-construction."
+	icon_state = "one_matter_advanced"
+	origin_tech = list(TECH_MATERIAL = 11)
+	rating = 6
+	matter = null
+	price_tag = 350
 
 // Subspace stock parts
 
