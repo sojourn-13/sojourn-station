@@ -690,14 +690,14 @@
 	desc = "A small artistic statue made of cut shards of obsidian glued together to make a model of volcano it was harvested from."
 	icon_state = "dark_statue"
 	oddity_stats = list(
-		STAT_TGH = 11
+		STAT_ROB = 11
 	)
 	price_tag = 275
 
 /obj/item/oddity/common/gloves_statue
 	name = "No ? Statue Pozostała przestrzeń" // Remaining space "Remaining space"
 	desc = "A statue with a dark base, the plaque saying \"A set of gloves\" they seem to be out of season. \
-	The model number has been scratched off making finding a set bonus for these impossable."
+	The model number has been scratched off making finding a set bonus for these impossible."
 	icon_state = "gloves_statue"
 	oddity_stats = list(
 		STAT_MED = 11
