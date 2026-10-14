@@ -918,7 +918,7 @@
 	wearer_move_delay = world.time + ai_controlled_move_delay
 
 	cell.use(aimove_power_usage * CELLRATE)
-	wearer.DoMove(direction, user)
+	step(wearer, direction) //Not as safe as DoMove, but will work with dead bodies as its running around with a corps
 
 // This returns the rig if you are contained inside one, but not if you are wearing it
 /atom/proc/get_rig()
