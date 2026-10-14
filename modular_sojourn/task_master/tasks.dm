@@ -301,3 +301,15 @@
 	unlocked = FALSE
 
 //no boons for walnut seeker by itself, it does a few intractions tho
+
+//Complex tasks
+/datum/task_master/task/ritual_arts
+	name = "Ritual Style"
+	key = "RITUAL_ARTS"
+	desc = "An art form that requires a once living medium to complete."
+	gain_text = "Bladework of ritual blade is uncannily easy to learn..."
+	level_thresholds = 10 // 10->20->40->80 ect
+	alt_scaling_number = 2
+	unlocked = FALSE
+
+//no boons for ritual style by itself, it does a few intractions tho

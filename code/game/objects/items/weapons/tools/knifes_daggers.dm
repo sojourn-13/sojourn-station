@@ -115,6 +115,42 @@
 	backstab_damage = 14
 	price_tag = 7
 
+/obj/item/tool/knife/ritual/resolve_attackby(atom/A as mob|obj|turf|area, mob/user, proximity, params)
+	var/credit_kill = FALSE
+	if(isliving(user) && isliving(A))
+		var/mob/living/L = A
+		//message_admins("user is living, A is living")
+		var/mob/living/ritual_arts = user
+		var/tasklevel = (ritual_arts.learnt_tasks.get_task_mastery_level("RITUAL_ARTS"))
+		force += tasklevel
+		if(L.stat != DEAD)
+			credit_kill = TRUE
+		//message_admins("tasklevel [tasklevel]")
+
+	.=..()
+	refresh_upgrades()
+
+	if(isliving(user) && isliving(A))
+		var/mob/living/L = A
+		if(L.stat == DEAD && credit_kill)
+			//message_admins("user is living, A is living")
+			var/mob/living/ritual_arts = user
+			//message_admins("melee arts")
+			ritual_arts.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/ritual_arts, "RITUAL_ARTS", skill_gained = 1, learner = ritual_arts)
+			var/tasklevel = (ritual_arts.learnt_tasks.get_task_mastery_level("RITUAL_ARTS"))
+			if(tasklevel)
+				if(ishuman(ritual_arts))
+					var/mob/living/carbon/human/H = ritual_arts
+					H.sanity.changeLevel(tasklevel*10)
+					var/obj/item/organ/internal/psionic_tumor/PT = H.random_organ_by_process(BP_PSION)
+					if(PT)
+						if(PT.max_psi_points > PT.psi_points)
+							PT.psi_points += tasklevel
+				var/obj/item/implant/core_implant/cruciform/CI = ritual_arts.get_core_implant()
+				if(CI)
+					if(CI.power < CI.max_power)
+						CI.power += tasklevel
+
 /obj/item/tool/knife/ritual/sickle
 	name = "bloodletter"
 	desc = "A ritual knife, its latent unearthly energies partly awoken by forces unknown. \
@@ -196,6 +232,43 @@
 	embed_mult = 0.6
 	max_upgrades = 4
 	price_tag = 300 // Fancy expensive paper weight.
+
+//Counts for Ritual Arts
+/obj/item/tool/knife/dagger/ceremonial/resolve_attackby(atom/A as mob|obj|turf|area, mob/user, proximity, params)
+	var/credit_kill = FALSE
+	if(isliving(user) && isliving(A))
+		var/mob/living/L = A
+		//message_admins("user is living, A is living")
+		var/mob/living/ritual_arts = user
+		var/tasklevel = (ritual_arts.learnt_tasks.get_task_mastery_level("RITUAL_ARTS"))
+		force += tasklevel
+		if(L.stat != DEAD)
+			credit_kill = TRUE
+		//message_admins("tasklevel [tasklevel]")
+
+	.=..()
+	refresh_upgrades()
+
+	if(isliving(user) && isliving(A))
+		var/mob/living/L = A
+		if(L.stat == DEAD && credit_kill)
+			//message_admins("user is living, A is living")
+			var/mob/living/ritual_arts = user
+			//message_admins("melee arts")
+			ritual_arts.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/ritual_arts, "RITUAL_ARTS", skill_gained = 1, learner = ritual_arts)
+			var/tasklevel = (ritual_arts.learnt_tasks.get_task_mastery_level("RITUAL_ARTS"))
+			if(tasklevel)
+				if(ishuman(ritual_arts))
+					var/mob/living/carbon/human/H = ritual_arts
+					H.sanity.changeLevel(tasklevel*10)
+					var/obj/item/organ/internal/psionic_tumor/PT = H.random_organ_by_process(BP_PSION)
+					if(PT)
+						if(PT.max_psi_points > PT.psi_points)
+							PT.psi_points += tasklevel
+				var/obj/item/implant/core_implant/cruciform/CI = ritual_arts.get_core_implant()
+				if(CI)
+					if(CI.power < CI.max_power)
+						CI.power += tasklevel
 
 /obj/item/tool/knife/dagger/heirloom_knife
 	name = "heirloom dagger"
