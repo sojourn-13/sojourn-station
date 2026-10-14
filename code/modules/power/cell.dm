@@ -46,7 +46,8 @@
 
 /obj/item/cell/Process()
 	charge_tick--
-	if(charge_tick > 0) return 0
+	if(charge_tick > 0)
+		return 0
 	charge_tick = recharge_time
 	give(maxcharge * autorecharge_rate)
 
@@ -75,11 +76,14 @@
 
 	var/cell_amt = power * CELLRATE
 
+	if(prob(0.02))
+		cell_degrade()
+
 	return use(cell_amt) / CELLRATE
 
 /obj/item/cell/update_icon()
 	var/charge_status
-	var/c = charge/maxcharge
+	var/c = charge/initial(maxcharge)
 	if (c >=0.95)
 		charge_status = 100
 	else if (c >=0.75)
@@ -106,7 +110,7 @@
 	return FALSE
 
 /obj/item/cell/proc/percent()		// return % charge of cell
-	return 100.0*charge/maxcharge
+	return 100.0*charge/initial(maxcharge)
 
 /obj/item/cell/proc/fully_charged()
 	return (charge == maxcharge)
@@ -140,6 +144,10 @@
 	var/used = min(charge, amount)
 	charge -= used
 	update_icon()
+
+	if(prob(0.05))
+		cell_degrade()
+
 	return used
 
 // Checks if the specified amount can be provided. If it can, it removes the amount
@@ -151,7 +159,7 @@
 	return 1
 
 // recharge the cell
-/obj/item/cell/proc/give(var/amount)
+/obj/item/cell/proc/give(var/amount, degrade = TRUE)
 	if(rigged && amount > 0)
 		explode()
 		return 0
@@ -159,6 +167,11 @@
 	if(maxcharge < amount)	return 0
 	var/amount_used = min(maxcharge-charge,amount)
 	charge += amount_used
+
+	//slowly we degrade, slowly we lose are maxium.
+	if(prob(0.1) && degrade && charge != maxcharge)
+		cell_degrade()
+
 	update_icon()
 	return amount_used
 
@@ -289,3 +302,10 @@
 
 /obj/item/cell/get_cell()
 	return src
+
+//Slowly we degrade, losing maxium charge
+/obj/item/cell/proc/cell_degrade()
+	if(maxcharge <= 0)
+		maxcharge = 1
+	else
+		maxcharge -= 0.5
