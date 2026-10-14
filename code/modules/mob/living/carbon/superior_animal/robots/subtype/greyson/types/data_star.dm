@@ -6,17 +6,6 @@ GLOBAL_LIST_INIT(data_star_data_bool, list(
 	"ALLOW_MUlTABLE_DATA_STAR_SPAWNING"			= FALSE))
 
 
-//We are fancy and addaptive...
-#define PERK_DATA_COLLECTOR /datum/perk/data_collector
-
-/datum/perk/data_collector
-	name = "Augment: Data Collection Armor Plating"
-	desc = "The pinical of GP Adaptive Armor plating has been installed into you, hopefully you can interface with it for it to function."
-	gain_text = "You are implanted with some high tech stuff!"
-	lose_text = "You can no longer implanted with high tech."
-	var/list/armor = list(melee = -10, bullet = -10, energy = -10, bomb = -10, bio = 100, rad = 100) //Starting wise we are less then armorless
-
-
 // backround information!
 
 /*
@@ -337,7 +326,7 @@ This monster is borderline unkillable and will make players upset
 
 	if(stats.getPerk(PERK_DATA_COLLECTOR))
 		var/datum/perk/data_collector/DC = stats.getPerk(PERK_DATA_COLLECTOR)
-		if(istype(proj,/obj/item/projectile/beam) || istype(proj,/obj/item/projectile/ion))
+		if(istype(proj,/obj/item/projectile/beam) || istype(proj,/obj/item/projectile/ion)  || istype(proj,/obj/item/projectile/plasma))
 			if (!proj.testing)
 				DC.armor[ARMOR_ENERGY] += proj.force * 0.001
 		else
@@ -689,6 +678,22 @@ This monster is borderline unkillable and will make players upset
 			return_type = armor[type]  //Seems are all around data armor is better, use that. After all that cant be edited.
 		return return_type
 	return armor[type]
+
+
+/mob/living/carbon/superior/robot/gp/true_boss_data_star/attack_generic(mob/user, damage, attack_message, damagetype = BRUTE, attack_flag = ARMOR_MELEE, sharp = FALSE, edge = FALSE)
+
+	//Useless to collect this data, it deals no damage...
+	if(!damage || !istype(user))
+		return
+
+	//Easy data to collect
+	if(stats.getPerk(PERK_DATA_COLLECTOR))
+		var/datum/perk/data_collector/DC = stats.getPerk(PERK_DATA_COLLECTOR)
+		var/damage_subtracted = damage - DC.armor[attack_flag]
+		if(damage > 0)
+			DC.armor[attack_flag] += damage_subtracted * 0.005
+
+	..()
 
 
 //Not a mob to be just lmao testing on live
