@@ -72,3 +72,7 @@
 
 /obj/item/stack/os_cash/full
 	amount = 1000
+
+/obj/item/stack/os_cash/mail_reward
+	rand_min = 1
+	rand_max = 2
