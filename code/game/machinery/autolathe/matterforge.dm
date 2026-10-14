@@ -379,6 +379,7 @@
 
 	if(!current_design)
 		next_file()
+	DegradeParts(cycle = "laser")
 
 /obj/machinery/matter_nanoforge/proc/check_craftable_amount_by_material(datum/design/design, material)
 	return stored_material[MATERIAL_COMPRESSED_MATTER] / max(1, SANITIZE_LATHE_COST(design.materials[MATERIAL_COMPRESSED_MATTER])) // loaded material / required material
@@ -443,6 +444,7 @@
 	else
 		working = FALSE
 	update_icon()
+	DegradeParts(cycle = "laser")
 
 /obj/machinery/matter_nanoforge/proc/eject(amount)
 
@@ -486,6 +488,7 @@
 
 	//The stored material gets the amount (whole+remainder) subtracted
 	stored_material[MATERIAL_COMPRESSED_MATTER] -= amount
+	DegradeParts(cycle = "matter")
 
 /obj/machinery/matter_nanoforge/proc/abort()
 	if(working)
@@ -494,6 +497,7 @@
 	paused = TRUE
 	working = FALSE
 	update_icon()
+	DegradeParts(cycle = "all")
 
 //Finishing current construction
 /obj/machinery/matter_nanoforge/proc/finish_construction()
@@ -507,9 +511,11 @@
 	current_design = null
 	print_post()
 	next_file()
+	DegradeParts(cycle = "all")
 
 /obj/machinery/matter_nanoforge/proc/consume_materials(datum/design/design)
 	stored_material[MATERIAL_COMPRESSED_MATTER] = max(0, stored_material[MATERIAL_COMPRESSED_MATTER] - (design.materials[MATERIAL_COMPRESSED_MATTER] * mat_efficiency))
+	DegradeParts(cycle = "matter")
 	return TRUE
 
 #undef ERR_OK
@@ -586,6 +592,44 @@
 
 	speed = initial(speed) + man_rating + las_rating
 	mat_efficiency = max(0.2, 1.0 - (man_rating * 0.1))
+
+// Slowly are parts degrade, jam and otherwise fail us.
+/obj/machinery/matter_nanoforge/DegradeParts(var/cycle = "all")
+	..()
+
+	if(cycle == "all" || cycle == "matter")
+
+		for(var/obj/item/stock_parts/matter_bin/MB in component_parts)
+			if(MB.rating == 0) //Cant allow this to devide by 0
+				MB.rating = -0.1 //Soft-lock are rating to a negitive state in terms of degrading parts
+			if(prob(2/MB.rating)) //Once we get to -0.1 its prob(-number) aka cant degrade further.
+				MB.rating -= pick(0.035, 0.025, 0.01, 0.1, 0.05, 0.05, 0.05, 0.05)
+				if(MB.rating == 0) //Again check this, dont let anything devide by 0
+					MB.rating = -0.1
+				RefreshParts() //We degraded, reflect that at once
+
+	if(cycle == "all" || cycle == "manip")
+
+		for(var/obj/item/stock_parts/manipulator/M in component_parts)
+			if(M.rating == 0)
+				M.rating = -0.1
+			if(prob(3/M.rating))
+				M.rating -= pick(0.035, 0.025, 0.01, 0.1, 0.05, 0.05, 0.05, 0.05)
+				if(M.rating == 0)
+					M.rating = -0.1
+				RefreshParts()
+
+	if(cycle == "all" || cycle == "laser")
+
+		for(var/obj/item/stock_parts/micro_laser/M in component_parts)
+			if(M.rating == 0)
+				M.rating = -0.1
+			if(prob(3/M.rating))
+				M.rating -= pick(0.035, 0.025, 0.01, 0.1, 0.05, 0.05, 0.05, 0.05)
+				if(M.rating == 0)
+					M.rating = -0.1
+				RefreshParts()
+
 
 /obj/machinery/matter_nanoforge/proc/print_pre()
 	flick("[initial(icon_state)]_start", src)

@@ -394,6 +394,7 @@
 	disk = inserted_disk
 	to_chat(user, SPAN_NOTICE("You insert \the [inserted_disk] into [src]."))
 	update_static_data_for_all_viewers()
+	DegradeParts(cycle = "laser")
 
 
 /obj/machinery/autolathe/proc/insert_beaker(mob/living/user, obj/item/reagent_containers/glass/beaker)
@@ -467,6 +468,7 @@
 		user.put_in_active_hand(disk)
 
 	disk = null
+	DegradeParts(cycle = "laser")
 
 /obj/machinery/autolathe/AltClick(mob/living/user)
 	if(user.incapacitated())
@@ -537,6 +539,7 @@
 
 	for(var/obj/O in eating.GetAllContents(includeSelf = TRUE))
 		var/list/_matter = O.get_matter()
+		DegradeParts(cycle = "manip")
 		if(_matter)
 			for(var/material in _matter)
 				if(material in unsuitable_materials)
@@ -711,9 +714,6 @@
 	if(!eatstack.use(used_sheets))
 		qdel(eatstack)	// Protects against weirdness
 
-
-
-
 /obj/machinery/autolathe/proc/queue_design(datum/computer_file/binary/design/design_file, amount=1)
 	if(!design_file || !amount)
 		return
@@ -729,8 +729,11 @@
 	if(!current_file)
 		next_file()
 
+	DegradeParts(cycle = "laser")
+
 /obj/machinery/autolathe/proc/clear_queue()
 	queue.Cut()
+	DegradeParts(cycle = "laser")
 
 /obj/machinery/autolathe/proc/check_craftable_amount_by_material(datum/design/design, material)
 	return stored_material[material] / max(1, SANITIZE_LATHE_COST(design.materials[material])) // loaded material / required material
@@ -879,6 +882,7 @@
 	for(var/reagent in design.chemicals)
 		container.reagents.remove_reagent(reagent, design.chemicals[reagent])
 
+	DegradeParts(cycle = "matter")
 	return TRUE
 
 
@@ -893,6 +897,7 @@
 	else
 		working = FALSE
 	update_icon()
+	DegradeParts(cycle = "laser")
 
 /obj/machinery/autolathe/proc/special_process()
 	return
@@ -945,7 +950,7 @@
 
 	//The stored material gets the amount (whole+remainder) subtracted
 	stored_material[material] -= amount
-
+	DegradeParts(cycle = "matter")
 
 /obj/machinery/autolathe/on_deconstruction()
 	for(var/mat in stored_material)
@@ -984,8 +989,42 @@
 	speed = initial(speed) + man_rating + las_rating
 	mat_efficiency = max(max_efficiency, 1.0 - (man_rating * 0.1))
 
+// Slowly are parts degrade, jam and otherwise fail us.
+/obj/machinery/autolathe/DegradeParts(var/cycle = "all")
+	..()
 
+	if(cycle == "all" || cycle == "matter")
 
+		for(var/obj/item/stock_parts/matter_bin/MB in component_parts)
+			if(MB.rating == 0) //Cant allow this to devide by 0
+				MB.rating = -0.1 //Soft-lock are rating to a negitive state in terms of degrading parts
+			if(prob(2/MB.rating)) //Once we get to -0.1 its prob(-number) aka cant degrade further.
+				MB.rating -= pick(0.035, 0.025, 0.01, 0.1, 0.05, 0.05, 0.05, 0.05)
+				if(MB.rating == 0) //Again check this, dont let anything devide by 0
+					MB.rating = -0.1
+				RefreshParts() //We degraded, reflect that at once
+
+	if(cycle == "all" || cycle == "manip")
+
+		for(var/obj/item/stock_parts/manipulator/M in component_parts)
+			if(M.rating == 0)
+				M.rating = -0.1
+			if(prob(3/M.rating))
+				M.rating -= pick(0.035, 0.025, 0.01, 0.1, 0.05, 0.05, 0.05, 0.05)
+				if(M.rating == 0)
+					M.rating = -0.1
+				RefreshParts()
+
+	if(cycle == "all" || cycle == "laser")
+
+		for(var/obj/item/stock_parts/micro_laser/M in component_parts)
+			if(M.rating == 0)
+				M.rating = -0.1
+			if(prob(3/M.rating))
+				M.rating -= pick(0.035, 0.025, 0.01, 0.1, 0.05, 0.05, 0.05, 0.05)
+				if(M.rating == 0)
+					M.rating = -0.1
+				RefreshParts()
 
 //Cancels the current construction
 /obj/machinery/autolathe/proc/abort()
@@ -995,6 +1034,7 @@
 	paused = TRUE
 	working = FALSE
 	update_icon()
+	DegradeParts(cycle = "all")
 
 //Finishing current construction
 /obj/machinery/autolathe/proc/finish_construction()
@@ -1015,6 +1055,7 @@
 	print_post()
 	next_file()
 
+	DegradeParts(cycle = "all")
 
 
 //Second level autolathe
