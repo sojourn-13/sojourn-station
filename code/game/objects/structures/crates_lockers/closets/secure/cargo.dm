@@ -601,6 +601,7 @@
 	gain_rng()
 
 	new /obj/item/device/radio/headset/heads/foreman(src)
+	new /obj/item/storage/fancy/cigar/tributary(src)
 	new /obj/item/clothing/accessory/cape/prospie(src)
 	new /obj/item/clothing/accessory/halfcape/foreman(src)
 	switch(bag_cache)
@@ -716,6 +717,12 @@
 		new /obj/item/grenade/spawnergrenade/manhacks/junkbot(src)
 	if(prob(20))
 		new /obj/item/grenade/spawnergrenade/manhacks/junkbot(src)
+	if(prob(10))
+		new /obj/item/clothing/mask/smokable/cigarette/scav(src)
+	if(prob(15))
+		new /obj/item/clothing/mask/smokable/cigarette/scav(src)
+	if(prob(1))
+		new /obj/item/clothing/mask/smokable/cigarette/cigar/tributary(src) //Connections
 
 
 /obj/structure/closet/secure_closet/reinforced/foreman/fence //essentially just a modified foreman locker. This is fine for now.
@@ -740,6 +747,12 @@
 	new /obj/item/tool/knife/dagger(src)
 	new /obj/item/device/radio/off(src)
 	new /obj/item/storage/belt/utility/full(src)
+	if(prob(30))
+		new /obj/item/clothing/mask/smokable/cigarette/scav(src)
+	if(prob(20))
+		new /obj/item/clothing/mask/smokable/cigarette/scav(src)
+	if(prob(5))
+		new /obj/item/clothing/mask/smokable/cigarette/cigar/tributary(src) //Connections
 
 /obj/structure/closet/secure_closet/personal/artist
 	name = "lonestar artist's locker"

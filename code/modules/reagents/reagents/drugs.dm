@@ -401,6 +401,103 @@
 	M.adjustOxyLoss(1)
 	M.add_chemical_effect(CE_TOXIN, 1)
 
+/datum/reagent/drug/lightworks
+	name = "Lavoro di luce"
+	id = "lightworks"
+	description = "A stimulant extracted from Spelafili's tobacco plants."
+	taste_description = "fine tobacco"
+	reagent_state = LIQUID
+	color = "#181818"
+	overdose = REAGENTS_OVERDOSE
+	addiction_chance = 0
+	sanity_gain = 0.9
+	nerve_system_accumulations = 15
+	var/gave_melee_boost = FALSE
+
+/datum/reagent/drug/lightworks/affect_ingest(mob/living/carbon/M, alien, effect_multiplier) // If you smoke it normally...or drink it liquid
+	..()
+	if(M.stats.getPerk(PERK_CHAINGUN_SMOKER))
+		M.add_chemical_effect(CE_ANTITOX, 10)
+		M.heal_organ_damage(0.2, 0.2)
+
+	if(M.stats.getPerk(PERK_PROSPECTOR_CONDITIONING))
+		M.add_chemical_effect(CE_ATTACK_COOLDOWN, -0.5)
+		if(ishuman(M))
+			var/mob/living/carbon/human/H = M
+			H.recoil -= 0.5
+			if(!gave_melee_boost)
+				//Can stack with lightworksplus for 25% and 5 damage
+				H.cqc_damage_multiplier += 0.10
+				H.punch_damage_increase += 2
+				gave_melee_boost = TRUE
+
+	if(M.stats.getPerk(PERK_JUNKBORN))
+		M.stats.addTempStat(STAT_MEC, STAT_LEVEL_BASIC, STIM_TIME, "lightworks")
+		M.stats.addTempStat(STAT_BIO, STAT_LEVEL_BASIC, STIM_TIME, "lightworks")
+		M.stats.addTempStat(STAT_COG, STAT_LEVEL_BASIC, STIM_TIME, "lightworks")
+		if(ishuman(M))
+			var/mob/living/carbon/human/H = M
+			H.recoil -= 2
+
+/datum/reagent/drug/lightworks/on_mob_delete(mob/living/L)
+	if(ishuman(L))
+		var/mob/living/carbon/human/H = L
+		if(gave_melee_boost)
+			H.cqc_damage_multiplier -= 0.10
+			H.punch_damage_increase -= 2
+			gave_melee_boost = FALSE // Just in case
+	..()
+
+/datum/reagent/drug/lightworksplus
+	name = "Lavoro di luce"
+	id = "lightworksplus"
+	description = "A stimulant extracted from Spelafili's tobacco plants and processed for high proformance."
+	taste_description = "luxury tobacco"
+	reagent_state = LIQUID
+	color = "#181818"
+	overdose = REAGENTS_OVERDOSE
+	addiction_chance = 0
+	sanity_gain = 0.9
+	nerve_system_accumulations = 15
+	var/gave_melee_boost = FALSE
+
+/datum/reagent/drug/lightworksplus/affect_ingest(mob/living/carbon/M, alien, effect_multiplier) // If you smoke it normally...or drink it liquid
+	..()
+	if(M.stats.getPerk(PERK_CHAINGUN_SMOKER))
+		M.add_chemical_effect(CE_ANTITOX, 10)
+		M.heal_organ_damage(0.2, 0.2)
+
+	if(M.stats.getPerk(PERK_PROSPECTOR_CONDITIONING))
+		//Can stack with basics for -2 ATK CD reduction
+		M.add_chemical_effect(CE_ATTACK_COOLDOWN, -1)
+		if(ishuman(M))
+			var/mob/living/carbon/human/H = M
+			H.recoil -= 1
+			if(!gave_melee_boost)
+				//Can stack with lightworks for 25% and 5 damage
+				H.cqc_damage_multiplier += 0.15
+				H.punch_damage_increase += 3
+				gave_melee_boost = TRUE
+
+	if(M.stats.getPerk(PERK_JUNKBORN))
+		//No stacking with basics for stats
+		M.stats.addTempStat(STAT_MEC, STAT_LEVEL_ADEPT, STIM_TIME, "lightworks")
+		M.stats.addTempStat(STAT_BIO, STAT_LEVEL_ADEPT, STIM_TIME, "lightworks")
+		M.stats.addTempStat(STAT_COG, STAT_LEVEL_ADEPT, STIM_TIME, "lightworks")
+		if(ishuman(M))
+			var/mob/living/carbon/human/H = M
+			H.recoil -= 4
+
+
+/datum/reagent/drug/lightworksplus/on_mob_delete(mob/living/L)
+	if(ishuman(L))
+		var/mob/living/carbon/human/H = L
+		if(gave_melee_boost)
+			H.cqc_damage_multiplier -= 0.15
+			H.punch_damage_increase -= 3
+			gave_melee_boost = FALSE // Just in case
+	..()
+
 /datum/reagent/drug/hyperzine
 	name = "Hyperzine"
 	id = "hyperzine"
