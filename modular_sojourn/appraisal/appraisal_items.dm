@@ -1,0 +1,362 @@
+/obj/item/appraisal
+	name = "cargo appraisal item"
+	desc = "An item that your meant to apprase, but this one seems to be appraisalable..."
+	icon = 'modular_sojourn/appraisal/appraisalsprites.dmi'
+	icon_state = "bottler_box"
+	w_class = ITEM_SIZE_NORMAL
+	matter = list(MATTER_STEEL = 10, MATTER_GLASS = 10)
+	var/is_counterfeit = FALSE
+	var/appraised_value = 1
+	var/min_value = 20
+	price_tag = 10
+
+/obj/item/appraisal/proc/appraisal_value()
+	return
+
+/obj/item/appraisal/proc/is_counterfeit()
+	return
+
+/obj/item/appraisal/get_item_cost(export)
+	var/true_price = appraisal_value()
+	var/failer_rate = appraised_value / true_price
+	message_admins("TP = [true_price] FR = [failer_rate] | [appraised_value] / [true_price]")
+	if(failer_rate > 1.25 || failer_rate < 0.65)
+		price_tag = min_value
+		message_admins("Failer Rate out of bonds")
+
+	else
+		price_tag = round(true_price * failer_rate) //Over rating gives spare credits well under rating will under sell the item
+		if(failer_rate == 1)
+			//flawless boost
+			message_admins("Flawless boost pre [price_tag]")
+			price_tag += round(min_value * 2.5)
+			message_admins("Flawless boost post [price_tag]")
+
+	. = ..()
+
+/obj/item/appraisal/royal_brush
+	name = "Krosian Royal-Grade:tm: Hair Brush"
+	desc = "A Krosian Royal-Grade brush. Royal brushes."
+	icon_state = "brush"
+	var/bone_type
+	var/bristle_count
+	var/broken_bristles = 0
+	var/fake_silk_pad
+	var/stone_handle
+	var/screws
+	var/broken_pad
+	var/rusted_screw
+	var/yellowed_bone
+	var/handle_damage
+
+	var/list/branch_options = list()
+
+	var/list/pad_options = list()
+	min_value = 45
+
+
+/obj/item/appraisal/royal_brush/Initialize(mapload)
+	. = ..()
+	bone_type = pick("render", "buffalo", "bovine")
+	bristle_count = pick(22, 38, 50, 30, 42, 56, 18)
+	if(prob(70) && bristle_count)
+		broken_bristles = rand(0, round(bristle_count/6))
+	fake_silk_pad = prob(35)
+	stone_handle = prob(40)
+	screws = pick("brass", "tin", "bronze", "copper")
+	broken_pad = prob(25)
+	rusted_screw = prob(60)
+	yellowed_bone = prob(80)
+	handle_damage = prob(90)
+	is_counterfeit = is_counterfeit()
+
+	//Done like this so we can have compacted branches
+	branch_options["Handle"] = "handle"
+	branch_options["Bristle Count"] = "bristle"
+	branch_options["Screws"] = "screws"
+	branch_options["Brush Pad"] = "pad"
+	branch_options["Give Appraisal"] = "appraisal"
+
+	//Pad has a few options
+	pad_options["Brush Pad Material"] = "pad_mat"
+	pad_options["Brush Pad Condition"] = "pad_condition"
+	pad_options["Cancle"] = "cancle"
+
+
+	branch_options["Cancle"] = "cancle"
+
+
+/obj/item/appraisal/royal_brush/is_counterfeit()
+	if(fake_silk_pad)
+		return TRUE
+	if(stone_handle)
+		return TRUE
+	if(screws != "brass")
+		return TRUE
+	//Three values are faked, rest are real
+	if(bristle_count == 22 || bristle_count == 18 || bristle_count == 56)
+		return TRUE
+	return FALSE
+
+/obj/item/appraisal/royal_brush/attack_self(mob/user)
+	..()
+	var/check_choice = input(user,"What do you want to look at?") as null|anything in branch_options
+
+	switch(check_choice)
+		if("cancle")
+			return
+		if("Brush Pad")
+			check_choice = input(user,"What about the pad needs to be checked?") as null|anything in pad_options
+			switch(check_choice)
+				if("cancle")
+					return
+				if("Brush Pad Material")
+					if(fake_silk_pad)
+						to_chat(user, "<span class='info'>The pad has a rough texture.</span>")
+					else
+						to_chat(user, "<span class='info'>The pad has a soft silky texture.</span>")
+					if(broken_pad)
+						to_chat(user, "<span class='info'>The pad has noticeable degration and is bearly holding onto the frame.</span>")
+					return
+
+				if("Brush Pad Condition")
+					if(broken_pad)
+						to_chat(user, "<span class='info'>The pad has a lot of fryed stitching and has noticeable degradation.</span>")
+					else
+						to_chat(user, "<span class='info'>The pad is well fitted, showing no signs of degradation or damage.</span>")
+					return
+
+		if("Screws")
+			to_chat(user, "<span class='info'>The [screws] screws hold the frame tightly together.</span>")
+			if(rusted_screw)
+				to_chat(user, "<span class='info'>The screws have signs of rusting, stripping or other grime.</span>")
+			return
+
+		if("Bristle Count")
+			to_chat(user, "<span class='info'>The bristle count of this brush is [bristle_count] with [broken_bristles] broken or missing bristles.</span>")
+			return
+
+		if("Handle")
+			if(stone_handle)
+				to_chat(user, "<span class='info'>The handle appears to be made out of a plaster then bone. [yellowed_bone ? "The plaster is still quite white and reflects some light." : "The plaster has yellowed over time."] \
+				[handle_damage ? "The plaster has held up over time showing no visable signs of damage." : "The plaster has many cracks and scratches, a few flakes are missing as well."]</span>")
+				return
+			else
+				to_chat(user, "<span class='info'>The [bone_type] handle [yellowed_bone ? "has been well preserved leading to its white sheen." : "has been yellowed over time to a noticeable degree."] \
+				[handle_damage ? "The [bone_type] handle has no noticeable damages or structural issues." : "The handle has signs of stress, flexing fittings and parts are warn away from use."]</span>")
+				return
+
+		if("Give Appraisal")
+			appraised_value = input(user,"What do you think this brush is worth?") as num|null
+			if(appraised_value < 0 || !appraised_value)
+				appraised_value = 1 //Keep it possitive
+			return
+
+/obj/item/appraisal/royal_brush/appraisal_value()
+	var/value = 40
+
+	if(is_counterfeit)
+		value -= 40
+	switch(bristle_count)
+		if(50)
+			value += 150
+		if(38)
+			value += 100
+		if(22)
+			value += 60
+
+	switch(bone_type)
+		if("render")
+			value += 120
+		if("buffalo")
+			value += 40
+		if("bovine")
+			value += 10
+
+	value -= broken_bristles * 2
+	if(broken_pad)
+		value -= 20
+	if(rusted_screw)
+		value -= 5
+	if(yellowed_bone || !handle_damage)
+		value -= 40
+	return max(min_value, value)
+
+/obj/item/appraisal/tttk
+	name = "Tact-Tract-Travel Kit"
+	desc = "A pre-packed travel kit. Uses Cryo-Seal tech to preserve and maintain a stable enviroment inside. \
+	Travel Kits fell out of common use after many complaints about its inablity to clean or groom."
+	icon_state = "travel_kit"
+	var/has_eye_drops = FALSE
+	var/has_comb = FALSE
+	var/shampoo_brand
+	var/factory_line
+	var/soap_color
+	var/soap_weight
+	var/toothbrush_type
+	var/towel_color
+	var/towel_size
+	var/mirror_frame
+	var/mirror_size
+	var/towel_damaged
+	var/soap_damaged
+	var/razor_damaged
+	var/shampoo_damaged
+	var/toothbrush_damaged
+	var/mirror_cracked
+	var/mirror_dirty
+	is_counterfeit = FALSE
+	appraised_value = 1
+
+	var/list/branch_options = list()
+	var/list/contents_options = list()
+	var/list/towel_options = list()
+	var/list/mirror_options = list()
+	min_value = 60
+
+/obj/item/appraisal/tttk/Initialize(mapload)
+	. = ..()
+	has_eye_drops = !prob(33)
+	has_comb = !prob(33)
+	shampoo_brand = pick("ShaBubble", "Bubble-Buddy", "Sapple's Sam Shampoo", "NELLY Corp. 5-in-1", "ShampooCo", "HairInc Hygiene")
+	factory_line = rand(1, 15)
+	soap_color = pick("blue", "white", "green", "teal", "yellow", "red")
+	soap_weight = pick(15, 15, 18, 10, 12, 7)
+	toothbrush_type = pick("toothbrush", "toothbrush", "normal brush")
+	towel_color = pick("white", "white", "yellow")
+	towel_size = pick(3, 4, 6, 2, 5, 8)
+	mirror_frame = pick("silver", "copper", "iron", "bone", "wooden", "glass", "lead", "brass")
+	mirror_size = pick(3, 4, 6, 2, 5, 8)
+	towel_damaged = prob(25)
+	soap_damaged = prob(5)
+	razor_damaged = prob(60)
+	shampoo_damaged = prob(20)
+	toothbrush_damaged = prob(1)
+	mirror_cracked = prob(50)
+	mirror_dirty = prob(10)
+	is_counterfeit = is_counterfeit()
+
+	branch_options["Kit Contents"] = "contents"
+	branch_options["Towel"] = "towel"
+	branch_options["Mirror"] = "mirror"
+	branch_options["Factory Line"] = "batch"
+	branch_options["Give Appraisal"] = "appraisal"
+	branch_options["Cancel"] = "cancel"
+
+	contents_options["Soap"] = "soap"
+	contents_options["Shampoo"] = "shampoo"
+	contents_options["Toothbrush"] = "toothbrush"
+	contents_options["Razor Blades"] = "razor"
+	contents_options["Eye Drops and Comb"] = "limited"
+	contents_options["Cancel"] = "cancel"
+
+	towel_options["Towel Color"] = "towel_color"
+	towel_options["Towel Size"] = "towel_size"
+	towel_options["Towel Condition"] = "towel_condition"
+	towel_options["Cancel"] = "cancel"
+
+	mirror_options["Frame and Size"] = "mirror_details"
+	mirror_options["Mirror Condition"] = "mirror_condition"
+	mirror_options["Cancel"] = "cancel"
+
+/obj/item/appraisal/tttk/proc/damaged_product_count()
+	var/count = 0
+	if(towel_damaged)
+		count++
+	if(soap_damaged)
+		count++
+	if(razor_damaged)
+		count++
+	if(shampoo_damaged)
+		count++
+	if(toothbrush_damaged)
+		count++
+	if(mirror_cracked || mirror_dirty)
+		count++
+	return count
+
+/obj/item/appraisal/tttk/is_counterfeit()
+	if((has_eye_drops || !has_comb) || (!has_eye_drops || has_comb))
+		return TRUE
+	if(damaged_product_count())
+		return TRUE
+	if(!(shampoo_brand in list("ShaBubble", "Bubble-Buddy", "Sapple's Sam Shampoo", "NELLY Corp. 5-in-1")))
+		return TRUE
+	if(factory_line < 1 || factory_line > 12)
+		return TRUE
+	if(!(soap_color in list("blue", "white", "green", "teal")) || soap_weight != 15)
+		return TRUE
+	if(toothbrush_type != "toothbrush" || towel_color != "white" || !(towel_size in list(3, 4, 6)))
+		return TRUE
+	if(!(mirror_frame in list("silver", "copper", "iron")) || !(mirror_size in list(3, 4, 6)))
+		return TRUE
+	return FALSE
+
+/obj/item/appraisal/tttk/attack_self(mob/user)
+	..()
+	var/check_choice = input(user, "What do you want to inspect?") as null|anything in branch_options
+	switch(check_choice)
+		if("Cancel")
+			return
+		if("Kit Contents")
+			var/contents_choice = input(user, "Which contents do you want to check?") as null|anything in contents_options
+			switch(contents_choice)
+				if("Cancel")
+					return
+				if("Soap")
+					to_chat(user, "<span class='info'>The soap is [soap_color] and weighs [soap_weight]g. [soap_damaged ? "It is dryed and poorly wrapped." : "It is soft and properly wrapped."]</span>")
+				if("Shampoo")
+					to_chat(user, "<span class='info'>The shampoo packet is marked [shampoo_brand]. [shampoo_damaged ? "The shampoo packet is leaky." : "The shampoo packet is clean and full."]</span>")
+				if("Toothbrush")
+					to_chat(user, "<span class='info'>The kit contains a [toothbrush_type]. [toothbrush_damaged ? "Its bristles are falling out." : "It appears to be in good condition."]</span>")
+				if("Razor Blades")
+					to_chat(user, "<span class='info'>The kit [razor_damaged ? "has rusted and nicked razor blades, some seem rather dull as well." : "has a complete, undamaged set of dulled razor blades."]</span>")
+				if("Eye Drops and Comb")
+					to_chat(user, "<span class='info'>[has_eye_drops ? "Eye drops are present." : "This kit lacks any eye drops."] [has_comb ? "A comb is present." : "This kit lacks a comb."].</span>")
+			return
+		if("Towel")
+			var/towel_choice = input(user, "What about the towel do you want to check?") as null|anything in towel_options
+			switch(towel_choice)
+				if("Cancel")
+					return
+				if("Towel Color")
+					to_chat(user, "<span class='info'>The towel is [towel_color].</span>")
+				if("Towel Size")
+					to_chat(user, "<span class='info'>The towel measures [towel_size] inches. Useless to accually dry anyone off.</span>")
+				if("Towel Condition")
+					to_chat(user, "<span class='info'>[towel_damaged ? "The towel is stained, torn, or otherwise damaged." : "The towel is clean and well preserved."]</span>")
+			return
+		if("Mirror")
+			var/mirror_choice = input(user, "What about the mirror do you want to check?") as null|anything in mirror_options
+			switch(mirror_choice)
+				if("cancel")
+					return
+				if("Frame and Size")
+					to_chat(user, "<span class='info'>The mirror has a [mirror_frame] frame and measures [mirror_size] inches.</span>")
+				if("Mirror Condition")
+					to_chat(user, "<span class='info'>[mirror_cracked ? "The mirror is cracked." : "The glass is not cracked."]</span>")
+					to_chat(user, "<span class='info'>[mirror_dirty ? "The mirror is stained or dusty." : "The mirror is clean."]</span>")
+			return
+		if("Factory Line")
+			to_chat(user, "<span class='info'>The package is marked factory line [factory_line].</span>")
+			return
+		if("Give Appraisal")
+			appraised_value = input(user, "What do you think this travel kit is worth?") as num|null
+			if(appraised_value < 0 || !appraised_value)
+				appraised_value = 1
+			return
+
+/obj/item/appraisal/tttk/appraisal_value()
+	var/value = 120
+	if(is_counterfeit) // less so counterfiet pre say and more so used/opened
+		value = 80
+	if(has_eye_drops && has_comb)
+		value += 150
+	if(shampoo_brand == "NELLY Corp. 5-in-1") //huge
+		value += 200
+	if(mirror_frame == "silver")
+		value += 120
+	else if(!(shampoo_brand in list("ShaBubble", "Bubble-Buddy", "Sapple's Sam Shampoo")))
+		value -= 20 //Cheaper shampoo means less value
+	value -= damaged_product_count() * 10
+	return max(min_value, value)
