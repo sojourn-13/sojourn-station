@@ -19,28 +19,28 @@
 /obj/item/appraisal/get_item_cost(export)
 	var/true_price = appraisal_value()
 
-	if(appraised_value <= 0 || !appraised_value || 1250 >= appraised_value) //Lets not make it do stupidly wrong math
+	if(appraised_value <= 0 || !appraised_value || appraised_value >= 1250) //Lets not make it do stupidly wrong math
 		appraised_value = 1 //Keep it possitive
 
 	var/failer_rate = appraised_value / true_price
-	message_admins("TP = [true_price] FR = [failer_rate] | [appraised_value] / [true_price]")
+	//message_admins("TP = [true_price] FR = [failer_rate] | [appraised_value] / [true_price]")
 	if(failer_rate > 1.25 || failer_rate < 0.65)
 		price_tag = min_value
-		message_admins("Failer Rate out of bonds")
+		//message_admins("Failer Rate out of bonds")
 
 	else
 		price_tag = round(true_price * failer_rate) //Over rating gives spare credits well under rating will under sell the item
 		if(failer_rate == 1)
 			//flawless boost
-			message_admins("Flawless boost pre [price_tag]")
+			//message_admins("Flawless boost pre [price_tag]")
 			price_tag += round(min_value * 2.5)
-			message_admins("Flawless boost post [price_tag]")
+			//message_admins("Flawless boost post [price_tag]")
 
 	. = ..()
 
 /obj/item/appraisal/royal_brush
-	name = "Krosian Royal-Grade:tm: Hair Brush"
-	desc = "A Krosian Royal-Grade brush. Royal brushes."
+	name = "Kriosan Royal-Grade:tm: Hair Brush"
+	desc = "A Kriosan Royal-Grade brush. No longer produced by the Heir of the Korsian House of Knen Arnehom." //cut up germxn words "worker" and "bone"
 	icon_state = "brush"
 	var/bone_type
 	var/bristle_count
@@ -280,7 +280,7 @@
 	return count
 
 /obj/item/appraisal/tttk/is_counterfeit()
-	if((has_eye_drops || !has_comb) || (!has_eye_drops || has_comb))
+	if((has_eye_drops && !has_comb) || (!has_eye_drops && has_comb))
 		return TRUE
 	if(damaged_product_count())
 		return TRUE
@@ -365,7 +365,6 @@
 	value -= damaged_product_count() * 10
 	return max(min_value, value)
 
-//Easy one few things to keep track of and high value.
 /obj/item/appraisal/music_box
 	name = "Occult Clockwork Music Box"
 	desc = "A small, music box with a hand-cranked mechanism. \
@@ -375,30 +374,53 @@
 	var/gear_material
 	var/gear_worn
 	var/tune
+	var/reel_damaged
 	var/case_material
 	var/case_damaged
+	var/case_lining
 	var/winding_key_present
+	var/key_worn
 	var/list/inspection_options = list()
+	var/list/clockwork_options = list()
+	var/list/reel_options = list()
+	var/list/case_options = list()
 	min_value = 50
 
 /obj/item/appraisal/music_box/Initialize(mapload)
 	. = ..()
 	maker_mark = pick("Big Brass Bands", "Branch Brass", "DOLL Makers", "Unmarked") //DOLL = Digital Operations Logic Listers
-	gear_material = pick("brass", "brass", "steel")
+	gear_material = pick("brass", "brass", "steel", "steel", "steel")
 	gear_worn = prob(65)
 	tune = pick("The 1st Hand", "Tinker's Construct", "Wind Chimes on the City Streets", "Dreams of Brass")
-	case_material = pick("rosewood", "walnut", "lacquered tin")
+	reel_damaged = prob(25)
+	case_material = pick("rosewood", "walnut", "lacquered tin", "lacquered tin", "lacquered tin")
 	case_damaged = prob(45)
+	case_lining = pick("red velvet", "blue velvet", "faded silk", "cotton", "cotton", "cotton", "none", "none", "none")
 	winding_key_present = !prob(15)
+	if(winding_key_present)
+		key_worn = prob(25)
 	is_counterfeit = is_counterfeit()
 
 	inspection_options["Maker's Mark"] = "mark"
 	inspection_options["Clockwork"] = "mechanism"
-	inspection_options["Tune"] = "tune"
+	inspection_options["Music Reel"] = "reel"
 	inspection_options["Case"] = "case"
-	inspection_options["Winding Key"] = "key"
 	inspection_options["Give Appraisal"] = "appraisal"
 	inspection_options["Cancel"] = "cancel"
+
+	clockwork_options["Gear Material"] = "gear_material"
+	clockwork_options["Gear Condition"] = "gear_condition"
+	clockwork_options["Winding Key"] = "key"
+	clockwork_options["Cancel"] = "cancel"
+
+	reel_options["Tune"] = "tune"
+	reel_options["Reel Condition"] = "reel_condition"
+	reel_options["Cancel"] = "cancel"
+
+	case_options["Case Material"] = "case_material"
+	case_options["Case Condition"] = "case_condition"
+	case_options["Interior Lining"] = "case_lining"
+	case_options["Cancel"] = "cancel"
 
 /obj/item/appraisal/music_box/is_counterfeit()
 	return maker_mark != "DOLL Makers" || gear_material != "brass"
@@ -412,13 +434,36 @@
 		if("Maker's Mark")
 			to_chat(user, "<span class='info'>The maker's mark reads '[maker_mark]'.</span>")
 		if("Clockwork")
-			to_chat(user, "<span class='info'>The gears are [gear_material]. [gear_worn ? "They grind and catch as they turn." : "They turn smoothly without catching."]</span>")
-		if("Tune")
-			to_chat(user, "<span class='info'>The music box plays '[tune]', according to the small reel inside.</span>")
+			var/clockwork_choice = input(user, "What part of the clockwork do you want to inspect?") as null|anything in clockwork_options
+			switch(clockwork_choice)
+				if("Cancel")
+					return
+				if("Gear Material")
+					to_chat(user, "<span class='info'>The gears are made of [gear_material].</span>")
+				if("Gear Condition")
+					to_chat(user, "<span class='info'>[gear_worn ? "The gears grind and catch as they turn." : "The gears turn smoothly without catching."]</span>")
+				if("Winding Key")
+					to_chat(user, "<span class='info'>[!winding_key_present ? "The winding key is missing." : key_worn ? "The winding key is present, but its teeth are worn." : "The winding key is present and in good condition."]</span>")
+		if("Music Reel")
+			var/reel_choice = input(user, "What do you want to inspect about the music reel?") as null|anything in reel_options
+			switch(reel_choice)
+				if("Cancel")
+					return
+				if("Tune")
+					to_chat(user, "<span class='info'>The music box plays '[tune]', according to the small reel inside.</span>")
+				if("Reel Condition")
+					to_chat(user, "<span class='info'>[reel_damaged ? "The music reel is bent and its pins are uneven, making the tune falter." : "The music reel is straight and its pins are evenly set."]</span>")
 		if("Case")
-			to_chat(user, "<span class='info'>The case is made of [case_material]. [case_damaged ? "Its finish is scratched and the corners are chipped." : "Its outer case has no signs of damages."]</span>")
-		if("Winding Key")
-			to_chat(user, "<span class='info'>[winding_key_present ? "The winding key is present." : "The winding key is missing."]</span>")
+			var/case_choice = input(user, "What do you want to inspect about the case?") as null|anything in case_options
+			switch(case_choice)
+				if("Cancel")
+					return
+				if("Case Material")
+					to_chat(user, "<span class='info'>The case is made of [case_material].</span>")
+				if("Case Condition")
+					to_chat(user, "<span class='info'>[case_damaged ? "Its finish is scratched and the corners are chipped." : "The outer case has no signs of damage."]</span>")
+				if("Interior Lining")
+					to_chat(user, "<span class='info'>The inside of the case is lined with [case_lining].</span>")
 		if("Give Appraisal")
 			appraised_value = input(user, "What do you think this music box is worth?") as num|null
 			if(appraised_value <= 0 || !appraised_value)
@@ -434,10 +479,160 @@
 		value += 90
 	else if(case_material == "walnut")
 		value += 40
+	if(case_lining == "red velvet")
+		value += 50
+	else if(case_lining == "blue velvet")
+		value += 40
+	else if(case_lining == "faded silk")
+		value += 25
+	else if(case_lining == "none")
+		value -= 10
 	if(gear_worn)
 		value -= 30
+	if(reel_damaged)
+		value -= 25
 	if(case_damaged)
 		value -= 35
 	if(!winding_key_present)
 		value -= 30
+	else if(key_worn)
+		value -= 15
+	return max(min_value, value)
+
+//Simple and easy one to quickly do to learn the system
+/obj/item/appraisal/fish_food
+	name = "can of fish pet food"
+	desc = "A can of unpleasant fish scraps formulated for pets. Unhealthy and lacks any nutritional value for anything that isn't a fish."
+	icon = 'icons/obj/food.dmi'
+	icon_state = "ration_can"
+	var/brand
+	var/batch_code
+	var/fish_contents
+	var/net_weight
+	var/dent_count
+	var/rusted
+	var/opened
+	var/label_damaged
+	var/seal_bloated
+	var/best_before
+	var/list/inspection_options = list()
+	var/list/label_options = list()
+	var/list/can_options = list()
+	var/list/contents_options = list()
+	min_value = 20
+
+/obj/item/appraisal/fish_food/Initialize(mapload)
+	. = ..()
+	brand = pick("Guppy Grub", "Guppy Grub", "Mealtide", "Carp-E-Yum", "Unmarked")
+	batch_code = rand(900, 9999)
+	fish_contents = pick("glowfin scraps", "ice-carp offcuts", "void-eel viscera", "Titan kelp-koi mince", "phoron reef-guppy mash")
+	net_weight = pick(250, 250, 300, 300, 300, 350, 400)
+	dent_count = pick(0, 0, 1, 1, 2, 2, 3)
+	rusted = prob(20)
+	opened = prob(10)
+	label_damaged = prob(35)
+	seal_bloated = !opened && prob(8)
+	best_before = pick("still in date", "recently expired", "long expired")
+	is_counterfeit = is_counterfeit()
+	if(opened)
+		icon_state = "ration_can_open"
+
+	inspection_options["Brand and Label"] = "label"
+	inspection_options["Can Condition"] = "can"
+	inspection_options["Seal and Contents"] = "contents"
+	inspection_options["Give Appraisal"] = "appraisal"
+	inspection_options["Cancel"] = "cancel"
+
+	label_options["Brand"] = "brand"
+	label_options["Batch Code"] = "batch"
+	label_options["Label Condition"] = "label_condition"
+	label_options["Cancel"] = "cancel"
+
+	can_options["Dents"] = "dents"
+	can_options["Rust"] = "rust"
+	can_options["Cancel"] = "cancel"
+
+	contents_options["Seal"] = "seal"
+	contents_options["Net Weight"] = "weight"
+	contents_options["Fish Contents"] = "fish"
+	contents_options["Best-Before Date"] = "date"
+	contents_options["Cancel"] = "cancel"
+
+/obj/item/appraisal/fish_food/is_counterfeit()
+	return brand == "Unmarked" || !(net_weight in list(250, 300)) || batch_code < 1000 || batch_code > 8999
+
+/obj/item/appraisal/fish_food/attack_self(mob/user)
+	..()
+	var/check_choice = input(user, "What would you like to inspect?") as null|anything in inspection_options
+	switch(check_choice)
+		if("Cancel")
+			return
+		if("Brand and Label")
+			var/label_choice = input(user, "What part of the label do you want to inspect?") as null|anything in label_options
+			switch(label_choice)
+				if("Cancel")
+					return
+				if("Brand")
+					to_chat(user, "<span class='info'>The can is branded '[brand]'.</span>")
+				if("Batch Code")
+					to_chat(user, "<span class='info'>The printed batch code is [batch_code].</span>")
+				if("Label Condition")
+					to_chat(user, "<span class='info'>[label_damaged ? "The label is torn, stained, and difficult to read." : "The label is intact and legible."]</span>")
+			return
+		if("Can Condition")
+			var/can_choice = input(user, "What do you want to check on the can?") as null|anything in can_options
+			switch(can_choice)
+				if("Cancel")
+					return
+				if("Dents")
+					to_chat(user, "<span class='info'>The can has [dent_count] noticeable dents.</span>")
+				if("Rust")
+					to_chat(user, "<span class='info'>[rusted ? "Rust freckles the can, especially around the rim." : "The can has no visible rust."]</span>")
+			return
+		if("Seal and Contents")
+			var/contents_choice = input(user, "What do you want to inspect?") as null|anything in contents_options
+			switch(contents_choice)
+				if("Cancel")
+					return
+				if("Seal")
+					to_chat(user, "<span class='info'>[opened ? "The lid has been torn open and the factory seal is broken." : "The factory seal appears [seal_bloated ? "swollen and unsafe" : "intact"]."]</span>")
+				if("Net Weight")
+					to_chat(user, "<span class='info'>The can is stamped with a net weight of [net_weight]g.</span>")
+				if("Fish Contents")
+					to_chat(user, "<span class='info'>The label lists [fish_contents].</span>")
+				if("Best-Before Date")
+					to_chat(user, "<span class='info'>The can is [best_before].</span>")
+			return
+		if("Give Appraisal")
+			appraised_value = input(user, "What do you think this can of pet food is worth?") as num|null
+			if(appraised_value <= 0 || !appraised_value)
+				appraised_value = 1
+
+/obj/item/appraisal/fish_food/appraisal_value()
+	var/value = is_counterfeit ? 20 : 35
+	if(brand == "Carp-E-Yum")
+		value += 10
+	if(net_weight == 300)
+		value += 25
+	else if(net_weight == 250)
+		value += 15
+	if(batch_code >= 7100 && batch_code <= 7199)
+		value += 25
+	if(fish_contents == "glowfin scraps")
+		value -= 20
+	else if(fish_contents == "ice-carp offcuts")
+		value += 10
+	value -= dent_count * 6
+	if(rusted)
+		value -= 12
+	if(label_damaged)
+		value -= 8
+	if(seal_bloated)
+		value -= 25
+	if(best_before == "recently expired")
+		value -= 10
+	else if(best_before == "long expired")
+		value -= 20
+	if(opened)
+		value = min_value
 	return max(min_value, value)
