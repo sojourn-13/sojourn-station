@@ -36,3 +36,17 @@
 	<BR><hr><b>EXPORT PAYOUT</b>
 	<BR>If your estimate is below 65% or above 125% of the true value, payout is the 60-credit minimum.
 	<BR>Otherwise, payout is your estimate, rounded to a whole credit. An exact appraisal adds a 150-credit accuracy bonus."}
+
+/obj/item/paper/music_box_ag
+	name = "Occult Clockwork Music Box Appraisal Guide"
+	info = {"<center><b>OCCULT CLOCKWORK MUSIC BOX</b><br><b>APPRAISAL FIELD GUIDE</b></center><hr>
+	<b>BASE VALUE:</b> 100 credits for a genuine box, or 50 credits if counterfeit.
+	<BR><b>COUNTERFEIT CHECK:</b> The box is counterfeit if the maker's mark is not DOLL Makers or its gears are not brass.
+	<BR><b>GEARS:</b> add 70 credits for brass gears.
+	<BR><b>RARE TUNE:</b> add 120 credits for 'The 1st Hand'. Other tunes do not change the value.
+	<BR><b>CASE:</b> add 90 credits for rosewood or 40 for walnut. Lacquered tin adds no value.
+	<BR><b>WEAR:</b> subtract 30 credits for worn gears, 35 for a damaged case, and 30 if the winding key is missing.
+	<BR><b>VALUE FLOOR:</b> final appraised value cannot be less than 50 credits.
+	<BR><hr><b>EXPORT PAYOUT</b>
+	<BR>If your estimate is below 65% or above 125% of the true value, payout is the 50-credit minimum.
+	<BR>Otherwise, payout is your estimate, rounded to a whole credit. An exact appraisal adds a 125-credit accuracy bonus."}

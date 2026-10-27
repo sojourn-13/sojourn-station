@@ -18,6 +18,10 @@
 
 /obj/item/appraisal/get_item_cost(export)
 	var/true_price = appraisal_value()
+
+	if(appraised_value <= 0 || !appraised_value || 1250 >= appraised_value) //Lets not make it do stupidly wrong math
+		appraised_value = 1 //Keep it possitive
+
 	var/failer_rate = appraised_value / true_price
 	message_admins("TP = [true_price] FR = [failer_rate] | [appraised_value] / [true_price]")
 	if(failer_rate > 1.25 || failer_rate < 0.65)
@@ -148,7 +152,7 @@
 
 		if("Give Appraisal")
 			appraised_value = input(user,"What do you think this brush is worth?") as num|null
-			if(appraised_value < 0 || !appraised_value)
+			if(appraised_value <= 0 || !appraised_value)
 				appraised_value = 1 //Keep it possitive
 			return
 
@@ -342,7 +346,7 @@
 			return
 		if("Give Appraisal")
 			appraised_value = input(user, "What do you think this travel kit is worth?") as num|null
-			if(appraised_value < 0 || !appraised_value)
+			if(appraised_value <= 0 || !appraised_value)
 				appraised_value = 1
 			return
 
@@ -359,4 +363,81 @@
 	else if(!(shampoo_brand in list("ShaBubble", "Bubble-Buddy", "Sapple's Sam Shampoo")))
 		value -= 20 //Cheaper shampoo means less value
 	value -= damaged_product_count() * 10
+	return max(min_value, value)
+
+//Easy one few things to keep track of and high value.
+/obj/item/appraisal/music_box
+	name = "Occult Clockwork Music Box"
+	desc = "A small, music box with a hand-cranked mechanism. \
+	The music it could play is not meant for the ears, but for something greater."
+	icon_state = "occult"
+	var/maker_mark
+	var/gear_material
+	var/gear_worn
+	var/tune
+	var/case_material
+	var/case_damaged
+	var/winding_key_present
+	var/list/inspection_options = list()
+	min_value = 50
+
+/obj/item/appraisal/music_box/Initialize(mapload)
+	. = ..()
+	maker_mark = pick("Big Brass Bands", "Branch Brass", "DOLL Makers", "Unmarked") //DOLL = Digital Operations Logic Listers
+	gear_material = pick("brass", "brass", "steel")
+	gear_worn = prob(65)
+	tune = pick("The 1st Hand", "Tinker's Construct", "Wind Chimes on the City Streets", "Dreams of Brass")
+	case_material = pick("rosewood", "walnut", "lacquered tin")
+	case_damaged = prob(45)
+	winding_key_present = !prob(15)
+	is_counterfeit = is_counterfeit()
+
+	inspection_options["Maker's Mark"] = "mark"
+	inspection_options["Clockwork"] = "mechanism"
+	inspection_options["Tune"] = "tune"
+	inspection_options["Case"] = "case"
+	inspection_options["Winding Key"] = "key"
+	inspection_options["Give Appraisal"] = "appraisal"
+	inspection_options["Cancel"] = "cancel"
+
+/obj/item/appraisal/music_box/is_counterfeit()
+	return maker_mark != "DOLL Makers" || gear_material != "brass"
+
+/obj/item/appraisal/music_box/attack_self(mob/user)
+	..()
+	var/check_choice = input(user, "What would you like to inspect?") as null|anything in inspection_options
+	switch(check_choice)
+		if("Cancel")
+			return
+		if("Maker's Mark")
+			to_chat(user, "<span class='info'>The maker's mark reads '[maker_mark]'.</span>")
+		if("Clockwork")
+			to_chat(user, "<span class='info'>The gears are [gear_material]. [gear_worn ? "They grind and catch as they turn." : "They turn smoothly without catching."]</span>")
+		if("Tune")
+			to_chat(user, "<span class='info'>The music box plays '[tune]', according to the small reel inside.</span>")
+		if("Case")
+			to_chat(user, "<span class='info'>The case is made of [case_material]. [case_damaged ? "Its finish is scratched and the corners are chipped." : "Its outer case has no signs of damages."]</span>")
+		if("Winding Key")
+			to_chat(user, "<span class='info'>[winding_key_present ? "The winding key is present." : "The winding key is missing."]</span>")
+		if("Give Appraisal")
+			appraised_value = input(user, "What do you think this music box is worth?") as num|null
+			if(appraised_value <= 0 || !appraised_value)
+				appraised_value = 1
+
+/obj/item/appraisal/music_box/appraisal_value()
+	var/value = is_counterfeit ? 50 : 100
+	if(gear_material == "brass")
+		value += 70
+	if(tune == "The 1st Hand")
+		value += 120
+	if(case_material == "rosewood")
+		value += 90
+	else if(case_material == "walnut")
+		value += 40
+	if(gear_worn)
+		value -= 30
+	if(case_damaged)
+		value -= 35
+	if(!winding_key_present)
+		value -= 30
 	return max(min_value, value)
