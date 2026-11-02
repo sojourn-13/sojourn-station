@@ -102,3 +102,13 @@
 	. = ..()
 
 	playsound(src, 'sound/voice/insect_battle_screeching.ogg', 30, 1, -3)
+
+/mob/living/carbon/superior/roach/uniquic_isValidAttackTarget(atom/O)
+	//Normal isliving checks to not over-ride them.
+	if(isliving(O))
+		var/mob/living/L = O
+		var/datum/perk/cooldown/roach_adherence/RA = L.stats.getPerk(PERK_ROACH_ADHERENCE)
+		if(RA)
+			//Traitor,
+			if(L.faction == faction && RA.warnings >= 3)
+				return TRUE

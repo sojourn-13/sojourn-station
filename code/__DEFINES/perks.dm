@@ -267,6 +267,7 @@
 #define PERK_CONTEMPT_GAZE /datum/perk/cooldown/contempt_gaze
 #define PERK_WEALTH_INDEX /datum/perk/cooldown/wealth_index
 #define PERK_MALICE_WEEVE /datum/perk/cooldown/malice_of_weeve
+#define PERK_ROACH_ADHERENCE /datum/perk/cooldown/roach_adherence
 //Anti-art
 #define PERK_ARTIST_NO /datum/perk/cooldown/artist_no
 //Church Cooldown
@@ -281,6 +282,20 @@
 #define PERK_NT_HAMMER /datum/perk/cooldown/nt_hammer
 #define PERK_NT_SPEARS /datum/perk/cooldown/nt_spears
 #define PERK_NT_FURIOSO /datum/perk/cooldown/nt_furioso
+
+////////////////////
+//GP perks//////////
+////////////////////
+
+//We are fancy and addaptive...
+#define PERK_DATA_COLLECTOR /datum/perk/data_collector
+
+////////////////////
+//Kaiser perks//////
+////////////////////
+
+#define PERK_A_KAISERS_DECISIVE_STRIKE /datum/perk/cooldown/a_kaisers_decisive_strike
+#define PERK_KAISER_ARMOR /datum/perk/adaptive_exoskeleton
 
 ////////////////////
 //Stillpoint perks//
