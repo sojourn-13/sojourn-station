@@ -3581,6 +3581,8 @@
 #include "modular_sojourn\trade_mail.dm"
 #include "modular_sojourn\anomalies\equipable_anomalies.dm"
 #include "modular_sojourn\anomalies\stalker_anomalies.dm"
+#include "modular_sojourn\appraisal\appraisal_guides.dm"
+#include "modular_sojourn\appraisal\appraisal_items.dm"
 #include "modular_sojourn\bolus\bolus.dm"
 #include "modular_sojourn\bolus\bolus_crafting_datums.dm"
 #include "modular_sojourn\bolus\bolus_crafting_items.dm"
