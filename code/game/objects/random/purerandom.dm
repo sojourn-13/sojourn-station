@@ -139,6 +139,7 @@
 				/obj/random/gun_parts/frames = 1,
 				/obj/random/soft_drink = 0.1,
 				/obj/random/drinking_glasses = 0.1,
+				/obj/random/appraisal/quarter = 0.2,
 				//obj/item/clothing/accessory/badge/marshal = 0.1, //Antag item
 				/obj/item/stash_spawner = 12))
 

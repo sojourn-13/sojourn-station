@@ -152,6 +152,10 @@
 			/obj/item/tool/cheap/rapier,
 			/obj/item/tool/cheap/stiletto,
 			/obj/item/storage/sheath/non_church/general
+		),
+		"Appraisal Requests" = list(
+			/obj/item/storage/box/appraisal = good_data("Box of Items to Appraise", list(35, 50), 150),
+			/obj/item/clipboard/ag = good_data("Appraise Guides", list(1, 10), 10),
 		)
 	)
 

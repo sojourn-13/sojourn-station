@@ -38,6 +38,36 @@
 
 	. = ..()
 
+/obj/item/storage/box/appraisal/populate_contents()
+	new /obj/random/appraisal(src)
+	new /obj/random/appraisal(src)
+	new /obj/random/appraisal(src)
+	new /obj/random/appraisal/half(src)
+	new /obj/random/appraisal/half(src)
+	new /obj/random/appraisal/quarter(src)
+	new /obj/random/appraisal/quarter(src)
+
+/obj/random/appraisal
+	name = "random appraisal"
+	icon_state = "ammo-green"
+	spawn_nothing_percentage = 0
+
+/obj/random/appraisal/item_to_spawn()
+	return pickweight(list(
+				/obj/item/appraisal/royal_brush = 4,
+				/obj/item/appraisal/tttk = 2,
+				/obj/item/appraisal/music_box = 0.1,
+				/obj/item/appraisal/fish_food = 10))
+
+
+/obj/random/appraisal/half
+	name = "random appraisal 50/50"
+	spawn_nothing_percentage = 50
+
+/obj/random/appraisal/quarter
+	name = "random appraisal 1/4"
+	spawn_nothing_percentage = 75
+
 /obj/item/appraisal/royal_brush
 	name = "Kriosan Royal-Grade:tm: Hair Brush"
 	desc = "A Kriosan Royal-Grade brush. No longer produced by the Heir of the Korsian House of Knen Arnehom." //cut up germxn words "worker" and "bone"

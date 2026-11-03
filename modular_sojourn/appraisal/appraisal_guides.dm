@@ -73,3 +73,13 @@
 	<BR><hr><b>EXPORT PAYOUT</b>
 	<BR>If your estimate is below 65% or above 125% of the true value, payout is the 20-credit minimum.
 	<BR>Otherwise, payout is your estimate, rounded to a whole credit. An exact appraisal adds a 50-credit accuracy bonus."}
+
+/obj/item/clipboard/ag
+
+/obj/item/clipboard/ag/New()
+	. = ..()
+	new /obj/item/paper/krg_hb_ag (src)
+	new /obj/item/paper/tttk_ag (src)
+	new /obj/item/paper/music_box_ag (src)
+	new /obj/item/paper/fish_food_ag (src)
+	update_icon()
