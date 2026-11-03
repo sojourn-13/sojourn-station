@@ -200,6 +200,12 @@
 		rating = max(rating - degrade, 1)
 
 
+/obj/item/stock_parts/make_young()
+	oldified = TRUE //Done so we always refresh down the chain.
+	.=..()
+	if (.)
+		rating = initial(rating)
+
 /obj/item/stack/material/make_old()
 	return
 
