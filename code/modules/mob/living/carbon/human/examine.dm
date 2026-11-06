@@ -180,6 +180,10 @@
 	if(wear_id)
 		msg += "[He] [is] wearing \icon[wear_id] <a href='byond://?src=\ref[user];lookitem=\ref[wear_id]'>\a [wear_id]</a>.\n"
 
+	if(client)
+		if(client.prefs.headshot_link != null)
+			if(!(wear_mask && (wear_mask.flags_inv&HIDEFACE)) && !(head && (head.flags_inv&HIDEFACE)))
+				msg += "<a href='byond://?src=\ref[src];view_headshot=1'>View headshot</a>\n"
 	//Jitters
 	if(is_jittery)
 		if(jitteriness >= 300)
