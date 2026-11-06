@@ -389,6 +389,18 @@ var/list/rank_prefix = list(\
 
 /mob/living/carbon/human/Topic(href, href_list)
 
+	if(href_list["view_headshot"])
+		if(!ismob(usr) || !client)
+			return
+		if(!valid_headshot_link(null, client.prefs.headshot_link, TRUE))
+			return
+		var/mob/user = usr
+		var/list/dat = list("<img src='[client.prefs.headshot_link]' width='250px' height='250px'>")
+		var/datum/browser/popup = new(user, "headshot", "<div align='center'>[src]'s Headshot</div>", 360, 375)
+		popup.set_content(dat.Join())
+		popup.open()
+		return
+
 	if (href_list["refresh"])
 		if((machine)&&(in_range(src, usr)))
 			show_inv(machine)

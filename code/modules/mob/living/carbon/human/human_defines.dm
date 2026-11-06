@@ -104,6 +104,8 @@
 	var/gen_record = ""
 	var/exploit_record = ""
 
+	var/headshot_link = null
+
 	var/stance_damage = 0 //Whether this mob's ability to stand has been affected
 
 	var/identifying_gender = null // In case the human identifies as another gender than it's biological

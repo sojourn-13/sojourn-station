@@ -11,6 +11,7 @@
 	var/custom_species = "Human"
 	var/species_aan = ""
 	var/species_color = "#0000CC"
+	var/headshot_link
 
 /datum/category_item/player_setup_item/physical/basic
 	name = "Basic"
@@ -30,6 +31,8 @@
 	from_file(S["species_aan"], pref.species_aan)
 	from_file(S["custom_species"], pref.custom_species)
 	from_file(S["species_color"], pref.species_color)
+	from_file(S["headshot_link"], pref.headshot_link)
+
 
 /datum/category_item/player_setup_item/physical/basic/save_character(var/savefile/S)
 	to_file(S["gender"],					pref.gender)
@@ -45,6 +48,7 @@
 	to_file(S["species_aan"], pref.species_aan)
 	to_file(S["custom_species"], pref.custom_species)
 	to_file(S["species_color"], pref.species_color)
+	to_file(S["headshot_link"], pref.headshot_link)
 
 /datum/category_item/player_setup_item/physical/basic/sanitize_character()
 	var/datum/species/S = all_species[pref.species ? pref.species : SPECIES_HUMAN]
@@ -119,6 +123,10 @@
 	. += "<b>Blood Type:</b> <a href='byond://?src=\ref[src];blood_type=1'>[pref.b_type]</a><br>"
 	. += "<b>Needs Glasses:</b> <a href='byond://?src=\ref[src];disabilities=[NEARSIGHTED]'><b>[pref.disabilities & NEARSIGHTED ? "Yes" : "No"]</b></a><br>"
 	. += "<b>Spawn Point</b>: <a href='byond://?src=\ref[src];spawnpoint=1'>[pref.spawnpoint]</a><br>"
+
+	. += "<b>Headshot:</b> <a href='byond://?src=\ref[src];headshot=1'>Change</a>"
+	if(pref.headshot_link != null)
+		. += "<br><img src='[pref.headshot_link]' width='100px' height='100px'>"
 
 	. = jointext(.,null)
 
@@ -234,4 +242,52 @@
 			pref.species_color = new_color
 			return TOPIC_REFRESH
 
+	else if (href_list["headshot"])
+		to_chat(user, "<span class='notice'>Please use a relatively SFW image of the head and shoulder area to maintain immersion level. Lastly, ["<span class='bold'>do not use a real life photo or use any image that is less than serious.</span>"]</span>")
+		to_chat(user, "<span class='notice'>If the photo doesn't show up properly in-game, ensure that it's a direct image link that opens properly in a browser.</span>")
+		to_chat(user, "<span class='notice'>Keep in mind that the photo will be downsized to 250x250 pixels, so the more square the photo, the better it will look.</span>")
+		to_chat(user, "<span class='notice'>To remove a Headshot type in null or clear.</span>")
+		var/new_headshot_link = input(user, "Input the headshot link (https, hosts: gyazo, discord, lensdump, imgbox, catbox):", "Headshot", pref.headshot_link) as text|null
+		if(!new_headshot_link || new_headshot_link == "null" || new_headshot_link == "clear")
+			pref.headshot_link = null
+			return
+		if(!valid_headshot_link(user, new_headshot_link))
+			return
+		pref.headshot_link = new_headshot_link
+		to_chat(user, "<span class='notice'>Successfully updated headshot picture</span>")
+		log_game("[user] has set their Headshot image to '[pref.headshot_link]'.")
+
 	return ..()
+
+/proc/valid_headshot_link(mob/user, value, silent = FALSE)
+	var/static/link_regex = regex("i.gyazo.com|a.l3n.co|b.l3n.co|c.l3n.co|images2.imgbox.com|thumbs2.imgbox.com|files.catbox.moe") //gyazo, discord, lensdump, imgbox, catbox
+	var/static/list/valid_extensions = list("jpg", "png", "jpeg") // Regex works fine, if you know how it works
+
+	if(!length(value))
+		return FALSE
+
+	var/find_index = findtext(value, "https://")
+	if(find_index != 1)
+		if(!silent)
+			to_chat(user, "<span class='warning'>Your link must be https!</span>")
+		return FALSE
+
+	if(!findtext(value, "."))
+		if(!silent)
+			to_chat(user, "<span class='warning'>Invalid link!</span>")
+		return FALSE
+	var/list/value_split = splittext(value, ".")
+
+	// extension will always be the last entry
+	var/extension = value_split[length(value_split)]
+	if(!(extension in valid_extensions))
+		if(!silent)
+			to_chat(usr, "<span class='warning'>The image must be one of the following extensions: '[english_list(valid_extensions)]'</span>")
+		return FALSE
+
+	find_index = findtext(value, link_regex)
+	if(find_index != 9)
+		if(!silent)
+			to_chat(usr, "<span class='warning'>The image must be hosted on one of the following sites: 'Gyazo, Lensdump, Imgbox, Catbox'</span>")
+		return FALSE
+	return TRUE
