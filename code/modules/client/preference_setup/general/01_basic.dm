@@ -247,15 +247,16 @@
 		to_chat(user, "<span class='notice'>If the photo doesn't show up properly in-game, ensure that it's a direct image link that opens properly in a browser.</span>")
 		to_chat(user, "<span class='notice'>Keep in mind that the photo will be downsized to 250x250 pixels, so the more square the photo, the better it will look.</span>")
 		to_chat(user, "<span class='notice'>To remove a Headshot type in null or clear.</span>")
-		var/new_headshot_link = input(user, "Input the headshot link (https, hosts: gyazo, discord, lensdump, imgbox, catbox):", "Headshot", pref.headshot_link) as text|null
+		var/new_headshot_link = tgui_input_text(user, "Input the headshot link (https, hosts: gyazo, discord, lensdump, imgbox, catbox):", "Headshot", pref.headshot_link) as text|null
 		if(!new_headshot_link || new_headshot_link == "null" || new_headshot_link == "clear")
 			pref.headshot_link = null
-			return
+			return TOPIC_REFRESH
 		if(!valid_headshot_link(user, new_headshot_link))
 			return
 		pref.headshot_link = new_headshot_link
 		to_chat(user, "<span class='notice'>Successfully updated headshot picture</span>")
 		log_game("[user] has set their Headshot image to '[pref.headshot_link]'.")
+		return TOPIC_REFRESH
 
 	return ..()
 
