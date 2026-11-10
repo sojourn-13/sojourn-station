@@ -29,8 +29,9 @@
 		add_overlay(lid)
 
 	if(reagents?.total_volume)
+		var/filling_colour = BlendRGB(reagents.get_color(), glass_shading, glass_shading_shift)
 		var/mutable_appearance/filling = mutable_appearance('icons/obj/reagentfillings.dmi', "[icon_state][get_filling_state()]")
-		filling.color = reagents.get_color()
+		filling.color = filling_colour
 		add_overlay(filling)
 
 	if(label_text || (preloaded_reagents && display_label))
@@ -206,6 +207,7 @@
 	possible_transfer_amounts = list(10,20,30,60,100,120,200)
 	volume = 200
 	unacidable = 0
+	glass_shading_shift = 0
 
 /obj/item/reagent_containers/glass/bucket/attackby(var/obj/D, mob/user as mob)
 
