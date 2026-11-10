@@ -2,7 +2,7 @@
 
 /obj/item/reagent_containers/glass/bottle
 	name = "bottle"
-	desc = "A small bottle."
+	desc = "A small bottle. Unlike beakers or other glassware the reinforced bottle block some level of light making reagents inside look tinted."
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "bottle"
 	item_state = "atoxinbottle"
@@ -12,6 +12,8 @@
 	filling_states = "20;60;100"
 	label_icon_state = "label_bottle"
 	var/force_label = FALSE // if we force a label appear on the sprite, needed for chemmaster bottles
+	var/filling_icon = "bottle"
+	glass_shading = "#7CB4D9"
 
 /obj/item/reagent_containers/glass/bottle/update_icon()
 	cut_overlays()
@@ -22,16 +24,17 @@
 		add_overlay(lid)
 
 	if(reagents.total_volume)
+		var/filling_colour = BlendRGB(reagents.get_color(), glass_shading, 0.35)
 		if(label_text || force_label || (preloaded_reagents && display_label))
-			var/mutable_appearance/filling = mutable_appearance('icons/obj/reagentfillings.dmi', "[icon_state]_labeled-[get_filling_state()]")
-			filling.color = reagents.get_color()
+			var/mutable_appearance/filling = mutable_appearance('icons/obj/reagentfillings.dmi', "[filling_icon]_labeled-[get_filling_state()]")
+			filling.color = filling_colour
 			add_overlay(filling)
 		else
-			var/mutable_appearance/filling = mutable_appearance('icons/obj/reagentfillings.dmi', "[icon_state]-[get_filling_state()]")
-			filling.color = reagents.get_color()
+			var/mutable_appearance/filling = mutable_appearance('icons/obj/reagentfillings.dmi', "[filling_icon]-[get_filling_state()]")
+			filling.color = filling_colour
 			add_overlay(filling)
 
-	if(label_text)
+	if(label_text || force_label || (preloaded_reagents && display_label))
 		var/label_icon = label_icon_state ? label_icon_state : "label_[icon_state]"
 		var/mutable_appearance/label = mutable_appearance(icon, label_icon)
 		add_overlay(label)
@@ -41,6 +44,7 @@
 	if(preloaded_reagents)
 		if(!has_lid())
 			toggle_lid()
+
 /obj/item/reagent_containers/glass/bottle/potion
 	name = "elegant bottle"
 	desc = "A bottle with a much more robust and refined look to it."
@@ -48,6 +52,7 @@
 	item_state = "potion"
 	label_icon_state = "label_potion"
 	filling_states = "10;20;40;50;60"
+	filling_icon = "potion"
 
 /obj/item/reagent_containers/glass/bottle/tincture
 	name = "tincture bottle"
@@ -56,6 +61,7 @@
 	item_state = "tincture"
 	label_icon_state = "label_tincture"
 	filling_states = "3;5;10;15;25;27;30;35;40;45;55;60"
+	filling_icon = "tincture"
 
 /obj/item/reagent_containers/glass/bottle/inaprovaline
 	name = "Inaprovaline bottle"

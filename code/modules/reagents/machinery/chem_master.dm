@@ -344,11 +344,25 @@
 		P.icon_state = bottlesprite
 		if(bottlesprite == "potion")
 			P.filling_states = "10;20;40;50;60"
+			P.filling_icon = "[bottlesprite]"
+			P.label_icon_state = "label_[bottlesprite]"
 		if(bottlesprite == "tincture")
 			P.filling_states = "3;5;10;15;20;25;27;30;35;40;45;50;55;60"
-		P.label_icon_state = "label_[bottlesprite]"
+			P.filling_icon = "[bottlesprite]"
+			P.label_icon_state = "label_[bottlesprite]"
 		P.matter = list()
 		reagents.trans_to_obj(P,60)
+		switch(bottlesprite)
+			if("bottler")
+				P.glass_shading = "#94071A"
+			if("bottley")
+				P.glass_shading = "#DEB63D"
+			if("bottleg")
+				P.glass_shading = "#59C135"
+			if("bottlew")
+				P.glass_shading = "#D4D4D2"
+			if("bottlebl")
+				P.glass_shading = "#414141"
 		if(P.name != " bottle")		// it can be named "bottle" if you create a bottle with no reagents in buffer (it doesn't work without a space in the name, trust me)
 			P.force_label = TRUE	// if this isn't the case we force a label on the sprite
 		P.toggle_lid()

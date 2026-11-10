@@ -48,6 +48,9 @@
 		/obj/machinery/electrolyzer
 		)
 
+	var/glass_shading = "#7CB4D9"
+	var/glass_shading_shift = 0.35 //We shift 35% to match are glass
+
 /obj/item/reagent_containers/glass/Initialize()
 	. = ..()
 	base_name = name

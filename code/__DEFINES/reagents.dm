@@ -5,7 +5,7 @@
 #define ADV_STIM_TIME 6 SECONDS
 
 //list of available bottle sprites, holding 60u bottles that hold just about any chem
-#define BOTTLE_SPRITES list("bottle", "potion", "tincture")
+#define BOTTLE_SPRITES list("bottle", "potion", "tincture", "bottler", "bottleg", "bottley", "bottlew", "bottlebl")
 
 //Pill bottles themselfs
 #define PILL_BOTTLE_MODELS list("pill_canister", "pill_lred", "pill_dred", \
