@@ -550,6 +550,16 @@
 						GB.def_zone = BP_CHEST
 						GB.original_firer = user
 
+		//Small scaling for a weapon thats already p-good
+		var/safty_math = ((user.health - user.maxHealth) * -1)
+		safty_math = round(safty_math)
+		if(safty_math <= 0)
+			safty_math = 1
+		safty_math = safty_math / 4
+		GemDamage_Boost = safty_math * 1.5 //Assuming 100 HP, little past 55 damage = full GemDamage_Boost
+		if(GemDamage_Boost > 20)
+			GemDamage_Boost = 20 //We cap at 30 damage a shot for balance reasons
+
 		if(!GemCooldown)
 			GemCooldown = TRUE
 			addtimer(CALLBACK(src, PROC_REF(clear_cooldown)), GemCooldown_timer)
