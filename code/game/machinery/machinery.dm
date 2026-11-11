@@ -464,3 +464,7 @@ Class Procs:
 	. = ..()
 	for(var/atom/movable/i in component_parts)
 		. += SStrade.get_new_cost(i)
+
+// Used currently for autolathens to lose effecenty
+/obj/machinery/proc/DegradeParts()
+	return

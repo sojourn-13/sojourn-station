@@ -6,6 +6,7 @@
 	w_class = ITEM_SIZE_SMALL
 	price_tag = 100
 	var/rating = 1
+	var/repair_tool = QUALITY_SCREW_DRIVING
 
 /obj/item/stock_parts/New()
 	src.pixel_x = rand(-5.0, 5)
@@ -14,6 +15,83 @@
 
 /obj/item/stock_parts/get_item_cost(export)
 	. = ..() * rating
+
+/obj/item/stock_parts/examine(mob/user)
+	..()
+	var/message = null
+	if(repair_tool)
+		message += "This part could be fixed or tuned with a tool that has [repair_tool]"
+	else
+		message += "This part not not be fixed or tuned with basic tools, and must be eather reprinted from scratch or repaired by some other means."
+
+	if(user.stats?.getPerk(PERK_NO_OBFUSCATION))
+
+		message += "\n This parts current rating is [rating] with an initial rating of [initial(rating)]."
+
+
+	if(message)
+		to_chat(user, "<span class='info'>[message]</span>")
+
+//Small repairs done to stockparts
+/obj/item/stock_parts/attackby(obj/item/I, mob/user)
+
+	//Done in a bit of a wierd way to give people notice messages,
+	//and prevent spam of chat if your clicking parts with non-proper tools
+
+	if(repair_tool)
+
+		if(user.stats?.getStat(STAT_COG) + user.stats?.getStat(STAT_MEC)  <= (20 * initial(rating) + 1 + (3 * (I.w_class + I.extra_bulk))) || user.stats?.getPerk(PERK_HANDYMAN))
+			to_chat(user, SPAN_NOTICE("Repairing or tuning this part is a bit to complex for your skills at this time."))
+			return
+
+		var/list/usable_qualities = list(repair_tool)
+		var/tool_type = I.get_tool_type(user, usable_qualities, src)
+
+		switch(tool_type)
+
+			if(QUALITY_BOLT_TURNING)
+				if(rating > initial(rating))
+					to_chat(user, SPAN_NOTICE("You can not tune up or repair [src] anymore then it already is."))
+					return TRUE
+				if(I.use_tool(user, src, WORKTIME_FAST, QUALITY_BOLT_TURNING, FAILCHANCE_EASY,  required_stat = STAT_MEC))
+					to_chat(user, SPAN_NOTICE("You carefully bolt down and adjust lose bits of \the [src] with [I]."))
+					playsound(src.loc, 'sound/items/Ratchet.ogg', 75, 1)
+					rating += 0.25
+					if(rating >= initial(rating) && 120 >= user.stats.getStat(STAT_MEC) + user.stats.getStat(STAT_COG))
+						rating -= 0.2
+						to_chat(user, SPAN_NOTICE("You overtune tighten the part together slightly to much"))
+					return TRUE
+
+			if(WORKSOUND_PULSING)
+				if(rating > initial(rating))
+					to_chat(user, SPAN_NOTICE("You can not tune up or repair [src] anymore then it already is."))
+					return TRUE
+				if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_HARD, required_stat = STAT_MEC))
+					to_chat(user, SPAN_NOTICE("You slowly and carefully repair connections and reset \the [src] with [I]."))
+					rating += 0.25
+					if(rating >= initial(rating) && 120 >= user.stats.getStat(STAT_MEC) + user.stats.getStat(STAT_COG))
+						rating -= 0.2
+						to_chat(user, SPAN_NOTICE("You run a few debug tests at the end that didn't seem to fully clear."))
+					return TRUE
+
+			if(QUALITY_SCREW_DRIVING)
+				if(rating > initial(rating))
+					to_chat(user, SPAN_NOTICE("You can not tune up or repair [src] anymore then it already is."))
+					return TRUE
+				var/used_sound = pick('sound/machines/Custom_screwdriveropen.ogg', 'sound/machines/Custom_screwdriverclose.ogg')
+				if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC, instant_finish_tier = 30, forced_sound = used_sound))
+					rating += 0.25
+					to_chat(user, SPAN_NOTICE("You quick fasten and rescrew in any lose bits of \the [src] with [I]."))
+					if(rating >= initial(rating) && 120 >= user.stats.getStat(STAT_MEC) + user.stats.getStat(STAT_COG))
+						rating -= 0.2
+						to_chat(user, SPAN_NOTICE("You screw the part a little to tight."))
+					return TRUE
+
+			if(ABORT_CHECK)
+				return
+
+	else
+		..()
 
 //Rank 1
 
@@ -24,6 +102,7 @@
 	origin_tech = list(TECH_MATERIAL = 1)
 	matter = list(MATERIAL_GLASS = 3)
 	price_tag = 30
+	repair_tool = null
 
 /obj/item/stock_parts/capacitor
 	name = "capacitor"
@@ -32,6 +111,7 @@
 	origin_tech = list(TECH_POWER = 1)
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 1, MATERIAL_GLASS = 1)
 	price_tag = 30
+	repair_tool = WORKSOUND_PULSING
 
 /obj/item/stock_parts/scanning_module
 	name = "scanning module"
@@ -40,6 +120,7 @@
 	origin_tech = list(TECH_MAGNET = 1)
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 1, MATERIAL_GLASS = 1)
 	price_tag = 30
+	repair_tool = WORKSOUND_PULSING
 
 /obj/item/stock_parts/manipulator
 	name = "micro-manipulator"
@@ -64,6 +145,7 @@
 	origin_tech = list(TECH_MATERIAL = 1)
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 1)
 	price_tag = 30
+	repair_tool = QUALITY_BOLT_TURNING
 
 //Rank 2
 
@@ -344,7 +426,7 @@
 	matter = list(MATERIAL_PLASTIC = 3, MATERIAL_GLASS = 1)
 	price_tag = 100
 
-//alien stock parts (rating 6)
+//alien stock parts (rating 6) - all its repairs are done by pulsing the fancy rocks and brass compontents
 
 /obj/item/stock_parts/capacitor/alien_capacitor
 	name = "Exothermic Seal"
@@ -354,6 +436,7 @@
 	rating = 6
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 1, MATERIAL_GLASS = 3)
 	price_tag = 700
+	repair_tool = WORKSOUND_PULSING
 
 /obj/item/stock_parts/scanning_module/alien
 	name = "Optical receptor"
@@ -363,6 +446,7 @@
 	rating = 6
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 1)
 	price_tag = 700
+	repair_tool = WORKSOUND_PULSING
 
 /obj/item/stock_parts/manipulator/alien
 	name = "Gripper"
@@ -372,6 +456,7 @@
 	rating = 6
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2)
 	price_tag = 700
+	repair_tool = WORKSOUND_PULSING
 
 /obj/item/stock_parts/micro_laser/alien
 	name = "Pico-emitter"
@@ -381,6 +466,7 @@
 	rating = 6
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 1)
 	price_tag = 700
+	repair_tool = WORKSOUND_PULSING
 
 /obj/item/stock_parts/matter_bin/alien
 	name = "Receptacle"
@@ -390,9 +476,11 @@
 	rating = 6
 	matter = list(MATERIAL_PLASTIC = 3, MATERIAL_GLASS = 1)
 	price_tag = 700
+	repair_tool = WORKSOUND_PULSING
 
 
 // Subspace stock parts
+// Cant be repaired do to being to fancy!
 
 /obj/item/stock_parts/subspace/ansible
 	name = "subspace ansible"
@@ -401,6 +489,7 @@
 	origin_tech = list(TECH_DATA = 3, TECH_MAGNET = 5 ,TECH_MATERIAL = 4, TECH_BLUESPACE = 2)
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_GLASS = 1, MATERIAL_SILVER = 2)
 	price_tag = 150
+	repair_tool = null
 
 /obj/item/stock_parts/subspace/filter
 	name = "hyperwave filter"
@@ -409,6 +498,7 @@
 	origin_tech = list(TECH_DATA = 4, TECH_MAGNET = 2)
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_GLASS = 1, MATERIAL_SILVER = 1)
 	price_tag = 100
+	repair_tool = null
 
 /obj/item/stock_parts/subspace/amplifier
 	name = "subspace amplifier"
@@ -417,6 +507,7 @@
 	origin_tech = list(TECH_DATA = 3, TECH_MAGNET = 4, TECH_MATERIAL = 4, TECH_BLUESPACE = 2)
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_GLASS = 1, MATERIAL_SILVER = 1)
 	price_tag = 100
+	repair_tool = null
 
 /obj/item/stock_parts/subspace/treatment
 	name = "subspace treatment disk"
@@ -425,6 +516,7 @@
 	origin_tech = list(TECH_DATA = 3, TECH_MAGNET = 2, TECH_MATERIAL = 5, TECH_BLUESPACE = 2)
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_GLASS = 1, MATERIAL_SILVER = 1)
 	price_tag = 100
+	repair_tool = null
 
 /obj/item/stock_parts/subspace/analyzer
 	name = "subspace wavelength analyzer"
@@ -433,6 +525,7 @@
 	origin_tech = list(TECH_DATA = 3, TECH_MAGNET = 4, TECH_MATERIAL = 4, TECH_BLUESPACE = 2)
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_GLASS = 1, MATERIAL_SILVER = 1)
 	price_tag = 100
+	repair_tool = null
 
 /obj/item/stock_parts/subspace/crystal
 	name = "ansible crystal"
@@ -441,6 +534,7 @@
 	origin_tech = list(TECH_MAGNET = 4, TECH_MATERIAL = 4, TECH_BLUESPACE = 2)
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_GLASS = 1, MATERIAL_SILVER = 2)
 	price_tag = 150
+	repair_tool = null
 
 /obj/item/stock_parts/subspace/transmitter
 	name = "subspace transmitter"
@@ -449,6 +543,7 @@
 	origin_tech = list(TECH_MAGNET = 5, TECH_MATERIAL = 5, TECH_BLUESPACE = 3)
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_GLASS = 1, MATERIAL_SILVER = 1)
 	price_tag = 100
+	repair_tool = null
 
 //Blackshield stock parts
 
@@ -458,3 +553,4 @@
 	desc = "A parts kit developed from the commissioned STS-30s from Blackshield, for the purpose of converting more to the pattern."
 	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_PLASTIC = 3)
 	price_tag = 100
+	repair_tool = null
