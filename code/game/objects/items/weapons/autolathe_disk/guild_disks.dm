@@ -24,6 +24,10 @@
 		/datum/design/autolathe/part/sensor_prox,
 		/datum/design/autolathe/part/camera_assembly,
 		/datum/design/autolathe/part/laserguide,
+		/datum/design/autolathe/part/superwire,
+		/datum/design/autolathe/part/wirehack,
+		/datum/design/autolathe/part/tubes_n_washers,
+		/datum/design/autolathe/part/fuelrebait,
 		/datum/design/autolathe/container/hcase_parts,
 		/datum/design/autolathe/container/hcase_engi,
 	)
@@ -85,6 +89,10 @@
 		/datum/design/autolathe/part/expansion,
 		/datum/design/autolathe/part/spikes,
 		/datum/design/autolathe/part/dampener,
+		/datum/design/autolathe/part/superwire,
+		/datum/design/autolathe/part/wirehack,
+		/datum/design/autolathe/part/tubes_n_washers,
+		/datum/design/autolathe/part/fuelrebait,
 		/datum/design/research/item/weapon/toolmod/antistaining,
 		/datum/design/research/item/weapon/toolmod/vibcompensator,
 		/datum/design/research/item/weapon/toolmod/compensatedbarrel,
@@ -123,6 +131,8 @@
 		/datum/design/autolathe/container/hcase_engi,
 		/datum/design/autolathe/circuit/smartfridge,
 		/datum/design/autolathe/circuit/smartfridge/disk,
+		/datum/design/autolathe/part/superwire,
+		/datum/design/autolathe/part/wirehack,
 	)
 
 /obj/item/pc_part/drive/disk/design/logistics
@@ -232,6 +242,10 @@
 		/datum/design/autolathe/part/expansion,
 		/datum/design/autolathe/part/spikes,
 		/datum/design/autolathe/part/dampener,
+		/datum/design/autolathe/part/superwire,
+		/datum/design/autolathe/part/wirehack,
+		/datum/design/autolathe/part/tubes_n_washers,
+		/datum/design/autolathe/part/fuelrebait,
 		/datum/design/research/item/weapon/toolmod/antistaining,
 		/datum/design/research/item/weapon/toolmod/vibcompensator,
 		/datum/design/research/item/weapon/toolmod/compensatedbarrel,
@@ -280,6 +294,10 @@
 	/datum/design/autolathe/misc/bulb,
 	/datum/design/autolathe/misc/bulb_spot,
 	/datum/design/autolathe/misc/bulb_powersaver,
+	/datum/design/autolathe/part/superwire,
+	/datum/design/autolathe/part/wirehack,
+	/datum/design/autolathe/part/tubes_n_washers,
+	/datum/design/autolathe/part/fuelrebait,
 	)
 
 /obj/item/pc_part/drive/disk/design/powerwork/factory
@@ -355,6 +373,10 @@
 	/datum/design/autolathe/part/expansion,
 	/datum/design/autolathe/part/spikes,
 	/datum/design/autolathe/part/dampener,
+	/datum/design/autolathe/part/superwire,
+	/datum/design/autolathe/part/wirehack,
+	/datum/design/autolathe/part/tubes_n_washers,
+	/datum/design/autolathe/part/fuelrebait,
 	/datum/design/research/item/weapon/toolmod/antistaining,
 	/datum/design/research/item/weapon/toolmod/vibcompensator,
 	/datum/design/research/item/weapon/toolmod/compensatedbarrel,

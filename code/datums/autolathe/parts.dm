@@ -132,6 +132,22 @@
 	name = "Oxyjet Canister"
 	build_path = /obj/item/tool_upgrade/productivity/oxyjet
 
+/datum/design/autolathe/part/superwire
+	name = "LV Wire Converter Spool" // Low Volt
+	build_path = /obj/item/tool_upgrade/augment/superwire
+
+/datum/design/autolathe/part/wirehack
+	name = "Battery Underclock Augment"
+	build_path = /obj/item/tool_upgrade/augment/wirehack
+
+/datum/design/autolathe/part/tubes_n_washers
+	name = "Fuel Tank Fittings"
+	build_path = /obj/item/tool_upgrade/augment/tubes_n_washers
+
+/datum/design/autolathe/part/fuelrebait
+	name = "Fuel Densifer"
+	build_path = /obj/item/tool_upgrade/augment/fuelrebait
+
 //Excelsior shit
 /datum/design/autolathe/excelsior/laser
 	name = "excelsior micro-laser"

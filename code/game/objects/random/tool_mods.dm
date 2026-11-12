@@ -26,6 +26,13 @@
 	/obj/item/tool_upgrade/augment/spikes = 1,
 	//obj/item/tool_upgrade/augment/hammer_addon = 0.75,
 	/obj/item/tool_upgrade/augment/dampener = 0.5,
+
+	// Rarer do to being not as good as other mods, commonly found on disks ect
+	/obj/item/tool_upgrade/augment/superwire = 0.05,
+	/obj/item/tool_upgrade/augment/wirehack = 0.15,
+	/obj/item/tool_upgrade/augment/tubes_n_washers = 0.05,
+	/obj/item/tool_upgrade/augment/fuelrebait = 0.15,
+
 	/obj/item/tool_upgrade/reinforcement/rubbermesh = 0.5,
 	/obj/item/tool_upgrade/productivity/booster = 0.5))
 

@@ -1014,3 +1014,71 @@
 	GUN_UPGRADE_OVERCHARGE_RATE = pick(1.2,1.1,0,0.9,0.8)
 	)
 	I.prefix = "artistic"
+
+/obj/item/tool_upgrade/augment/superwire
+	name = "LV wire converter spool" //Low Volt
+	desc = "A spool of LV hyper wire, used to replace cheaper resistent coils for longer lasting battery life. The wires are only rated for power tools rather then machines or firearms."
+	icon_state = "superwire"
+	matter = list(MATERIAL_GOLD = 1, MATERIAL_SILVER = 1, MATERIAL_PLASTIC = 3)
+	price_tag = 125
+
+/obj/item/tool_upgrade/augment/superwire/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.tool_upgrades = list(
+	UPGRADE_POWERCOST_MULT = 0.85,
+	UPGRADE_DEGRADATION_MULT = 0.95
+	)
+	I.prefix = "spooled"
+	I.req_fuel_cell = REQ_CELL
+
+/obj/item/tool_upgrade/augment/wirehack
+	name = "battery underclock augment"
+	desc = "A janky wire coil and plastic board that covers over a battery port to underclock tools without losing much in terms of speed at the cost of rapidly burning out internals. Unable to be used in mechines and firearms."
+	icon_state = "wirehack"
+	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 1)
+	price_tag = 15
+
+/obj/item/tool_upgrade/augment/wirehack/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.tool_upgrades = list(
+	UPGRADE_POWERCOST_MULT = 0.75,
+	UPGRADE_DEGRADATION_MULT = 1.45
+	)
+	I.prefix = "rewired"
+	I.req_fuel_cell = REQ_CELL
+
+/obj/item/tool_upgrade/augment/tubes_n_washers
+	name = "fuel tank fittings"
+	desc = "A set of interal tubes and washers for gas tanks that prevents fumes and leaks."
+	icon_state = "tubes_n_washers"
+	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 3)
+	price_tag = 25
+
+/obj/item/tool_upgrade/augment/tubes_n_washers/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.tool_upgrades = list(
+	UPGRADE_FUELCOST_MULT = 0.85,
+	UPGRADE_DEGRADATION_MULT = 0.95
+	)
+	I.prefix = "airtight"
+	I.req_fuel_cell = REQ_FUEL
+
+/obj/item/tool_upgrade/augment/fuelrebait
+	name = "fuel densifer"
+	desc = "A cheaply made synthesizer that takes exhaust from the tools and reconverts it back into fuel."
+	icon_state = "fuelrebait"
+	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 1)
+	price_tag = 15
+
+/obj/item/tool_upgrade/augment/fuelrebait/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.tool_upgrades = list(
+	UPGRADE_FUELCOST_MULT = 0.75,
+	UPGRADE_DEGRADATION_MULT = 1.45
+	)
+	I.prefix = "eco"
+	I.req_fuel_cell = REQ_FUEL
