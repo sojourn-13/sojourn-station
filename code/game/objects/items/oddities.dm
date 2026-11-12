@@ -557,8 +557,8 @@
 		STAT_TGH = 8,
 		STAT_VIG = 8,
 		STAT_BIO = 8,
-		STAT_ROB = 8,
-		STAT_VIG = 8
+		STAT_COG = 8,
+		STAT_MEC = 8
 	)
 	perk = PERK_GUNSLINGER
 
@@ -664,6 +664,45 @@
 	)
 	price_tag = 1000
 	perk = PERK_FAILING_MIND //You sure will get brain damage if you get anywhere near this
+
+
+/obj/item/oddity/common/redacted_clipboard
+	name = "Redacted Research Notes"
+	desc = "A collection of different research papers put together, a sizeable hole with bits of blood cover the rusted shut clipboard holding everything together.."
+	icon_state = "redacted_clipboard"
+	oddity_stats = list(
+		STAT_COG = 8,
+		STAT_VIG = 8
+	)
+
+/obj/item/oddity/common/mini_statue
+	name = "Golden Candle Statue"
+	desc = "A red wax candle with a fools gold holder encased in a cut peridot gemstone. \
+	The plaque describes how the candle is denied its one purpose as it is unable to be lit..."
+	icon_state = "mini_statue"
+	oddity_stats = list(
+		STAT_TGH = 11
+	)
+	price_tag = 450
+
+/obj/item/oddity/common/dark_statue
+	name = "Obsidian Statue"
+	desc = "A small artistic statue made of cut shards of obsidian glued together to make a model of volcano it was harvested from."
+	icon_state = "dark_statue"
+	oddity_stats = list(
+		STAT_ROB = 11
+	)
+	price_tag = 275
+
+/obj/item/oddity/common/gloves_statue
+	name = "No ? Statue Pozostała przestrzeń" // Remaining space "Remaining space"
+	desc = "A statue with a dark base, the plaque saying \"A set of gloves\" they seem to be out of season. \
+	The model number has been scratched off making finding a set bonus for these impossible."
+	icon_state = "gloves_statue"
+	oddity_stats = list(
+		STAT_MED = 11
+	)
+	price_tag = 100
 
 //A randomized oddity with random stats, meant for artist job project
 /obj/item/oddity/artwork
