@@ -504,7 +504,15 @@
 	build_path = /obj/item/ammo_magazine/ammobox/kurtz_50/lethal
 	materials = list(MATERIAL_STEEL = 12)
 
+/datum/design/autolathe/ammo/kurtz_splitter
+	name = "ammunition pile (12mm splitter)"
+	build_path = /obj/item/ammo_casing/kurtz_50/splitter/prespawned
+	materials = list(MATERIAL_STEEL = 20)
 
+/datum/design/autolathe/ammo/kurtz_entanglement
+	name = "ammunition pile (12mm entanglement)"
+	build_path = /obj/item/ammo_casing/kurtz_50/entanglement/prespawned
+	materials = list(MATERIAL_STEEL = 30)
 //6mm Carbine
 
 /datum/design/autolathe/ammo/lrifle

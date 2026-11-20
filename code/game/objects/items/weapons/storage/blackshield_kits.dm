@@ -288,6 +288,7 @@
 		new /obj/item/gun/projectile/revolver/rev10/mateba(src)
 		new /obj/item/ammo_magazine/speed_loader_kurtz_50(src)
 		new /obj/item/ammo_magazine/speed_loader_kurtz_50(src)
+		new /obj/item/ammo_magazine/speed_loader_kurtz_50/splitter(src)
 		new /obj/item/clothing/accessory/holster/leg(src)
 
 /obj/item/storage/box/bs_kit/gemini
@@ -298,6 +299,7 @@
 		new /obj/item/gun/projectile/lamia/gemini(src)
 		new /obj/item/ammo_magazine/kurtz_50(src)
 		new /obj/item/ammo_magazine/kurtz_50(src)
+		new /obj/item/ammo_magazine/speed_loader_kurtz_50/splitter(src)
 		new /obj/item/clothing/accessory/holster/leg(src)
 
 // Armor Kits

@@ -208,6 +208,23 @@
 				<div class="itemContent">
 					{{:data.get_structure_damage}}
 				</div>
+
+		{{if data.projectile_steel_rain != 0}}
+			<div class="itemLabel">
+				Projectile Additional Projectiles:
+			</div>
+			<div class="itemContent">
+				 {{:data.projectile_steel_rain}}
+			</div>
+
+		{{if data.projectile_entanglement != 0}}
+			<div class="itemLabel">
+				Projectile Entanglement:
+			</div>
+			<div class="itemContent">
+				 {{:data.projectile_entanglement}}x
+			</div>
+
 		</div>
 	</div>
 {{/if}}

@@ -72,6 +72,8 @@
 			"8 points, 6 ammo: 12mm ammo pile" = list(8, /obj/item/ammo_casing/kurtz_50/prespawned),
 			"8 points: EMPTY 12mm heavy pistol magazine" = list(8, /obj/item/ammo_magazine/kurtz_50/empty),
 			"10 points, 6 ammo: 12mm speedloader" = list(10, /obj/item/ammo_magazine/speed_loader_kurtz_50),
+			"12 points, 6 ammo: Splitter 12mm ammo pile" = list(12, /obj/item/ammo_casing/kurtz_50/splitter/prespawned),
+			"14 points, 6 ammo: Splitter 12mm ammo pile" = list(14, /obj/item/ammo_casing/kurtz_50/entanglement/prespawned),
 			"26 points, 24 ammo: 12mm ammo packet" = list(26, /obj/item/ammo_magazine/ammobox/kurtz_50) // Same price for all packets, except 4 less ammo
 			),
 		CAL_SHOTGUN = list(

@@ -1208,6 +1208,10 @@
 	data += list(list("name" = "Wound Scale", "type" = "String", "value" = P.wounding_mult + wound_mult_addition))
 	data += list(list("name" = "Recoil Multiplier", "type" = "String", "value" = P.recoil))
 	data += list(list("name" = "Structure Damage", "type" = "String", "value" = P.get_structure_damage()))
+	if(P.steel_rain)
+		data += list(list("name" = "Additional Bullets Projectiles", "type" = "String", "value" = P.steel_rain))
+	if(P.entanglement_level)
+		data += list(list("name" = "Entanglement", "type" = "String", "value" = P.entanglement_level))
 
 
 	return data
@@ -1224,6 +1228,9 @@
 	data["armoured_damage_10"] = min(0, (((P.get_total_damage() * damage_multiplier) + get_total_damage_adjust()) - (10 / (P.armor_divisor + penetration_multiplier))) * P.wounding_mult)
 	data["armoured_damage_15"] = min(0, (((P.get_total_damage() * damage_multiplier) + get_total_damage_adjust()) - (15 / (P.armor_divisor + penetration_multiplier))) * P.wounding_mult)
 	data["projectile_recoil"] = P.recoil
+	data["projectile_steel_rain"] = P.steel_rain
+	data["projectile_entanglement"] = P.entanglement_level
+
 	qdel(P)
 	return data
 
