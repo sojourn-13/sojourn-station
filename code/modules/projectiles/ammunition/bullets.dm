@@ -506,6 +506,17 @@ obj/item/ammo_casing/heavy_rifle_408/bluespace
 	icon_state = "lrifle_c_p"
 	spent_icon = "lrifle_c_p-spent"
 
+/obj/item/ammo_casing/kurtz_50/splitter
+	desc = "A 12mm bullet splitter casing."
+	caliber = CAL_50
+	projectile_type = /obj/item/projectile/bullet/kurtz_50/splitter
+	shell_color = "splitter"
+	icon_state = "lrifle_c_splitter"
+	spent_icon = "lrifle_c_splitter-spent"
+
+/obj/item/ammo_casing/kurtz_50/splitter/prespawned
+	amount = 6
+
 /obj/item/ammo_casing/kurtz_50/hv
 	desc = "A 12mm high-velocity bullet casing."
 	caliber = CAL_50
@@ -526,7 +537,7 @@ obj/item/ammo_casing/heavy_rifle_408/bluespace
 	projectile_type = /obj/item/projectile/beam/weak/kurtz_50
 
 /obj/item/ammo_casing/kurtz_50/entanglement
-	desc = "An exspensive bullet, 12mm entanglement bullet casing."
+	desc = "An exspensive compact bullet, 12mm entanglement bullet casing."
 	caliber = CAL_50
 	shell_color = "e"
 	projectile_type = /obj/item/projectile/bullet/kurtz_50/entanglement

@@ -184,6 +184,11 @@ GLOBAL_LIST_EMPTY(all_crafting_station_recipes)
 	point_cost = 8
 	result = /obj/item/ammo_casing/kurtz_50/prespawned
 
+/datum/recipe_crafting_station/ammo/twelve_mm/ammo_pile_splitter
+	name = "12mm splitter ammo pile"
+	point_cost = 14
+	result = /obj/item/ammo_casing/kurtz_50/splitter/prespawned
+
 /datum/recipe_crafting_station/ammo/twelve_mm/ammo_pile_entanglement
 	name = "12mm entanglement ammo pile"
 	point_cost = 16

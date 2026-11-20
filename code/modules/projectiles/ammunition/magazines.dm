@@ -995,7 +995,10 @@
 	var/count = 0
 	for(var/obj/item/ammo_casing/AC in stored_ammo)
 		count++
-		add_overlay("slmagnum_[AC.shell_color]-[count]")
+		if(max_ammo == 5)
+			add_overlay("slmagnum_[AC.shell_color]-[count+1]")
+		else
+			add_overlay("slmagnum_[AC.shell_color]-[count]")
 
 /obj/item/ammo_magazine/speed_loader_kurtz_50/practice
 	name = "speed loader (12mm practice)"
@@ -1016,6 +1019,10 @@
 /obj/item/ammo_magazine/speed_loader_kurtz_50/highvelocity
 	name = "speed loader (12mm high-velocity)"
 	ammo_type = /obj/item/ammo_casing/kurtz_50/hv
+
+/obj/item/ammo_magazine/speed_loader_kurtz_50/splitter
+	name = "speed loader (12mm splitter)"
+	ammo_type = /obj/item/ammo_casing/kurtz_50/splitter
 
 /obj/item/ammo_magazine/speed_loader_kurtz_50/entanglement
 	name = "speed loader (12mm entanglement)"

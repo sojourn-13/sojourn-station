@@ -88,6 +88,7 @@
 		/datum/design/autolathe/ammo/kurtz_ammobox,
 		/datum/design/autolathe/ammo/kurtz_ammobox_rubber,
 		/datum/design/autolathe/ammo/kurtz_ammobox_lethal,
+		/datum/design/autolathe/ammo/kurtz_entanglement = 4,
 		/datum/design/autolathe/ammo/kurtz_ammobox_practice = 0,
 	) // Ammo can on misc disk
 
@@ -129,6 +130,7 @@
 		/datum/design/autolathe/ammo/c10x24 = 3,
 		/datum/design/autolathe/ammo/mag_10x24 = 1,
 		/datum/design/autolathe/ammo/box_10x24 = 5,
+		/datum/design/autolathe/ammo/kurtz_splitter = 2,
 		/datum/design/autolathe/ammo/lrifle_drum = 2,
 		/datum/design/autolathe/ammo/lrifle_drum_empty = 1,
 		/datum/design/autolathe/ammo/lrifle_belt_empty = 0,

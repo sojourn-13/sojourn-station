@@ -338,6 +338,19 @@
 	sharp = TRUE
 	recoil = 16
 
+/obj/item/projectile/bullet/kurtz_50/splitter
+	icon_state = "bullet_krutz"
+	damage_types = list(BRUTE = 20)
+	armor_divisor = 0.7
+	wounding_mult = WOUNDING_WIDE
+	can_ricochet = TRUE
+	embed = TRUE
+	step_delay = 0.65
+	affective_damage_range = 3
+	affective_ap_range = 3
+	recoil = 12
+	steel_rain = 1
+
 /obj/item/projectile/bullet/kurtz_50/entanglement
 	name = "entanglement bullet"
 	damage_types = list(BRUTE = 15)
