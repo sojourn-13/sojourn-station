@@ -84,15 +84,16 @@
 		to_chat(user, SPAN_NOTICE("You can't work with [src] while its running!"))
 		return
 
-	if(default_deconstruction(I,user))
-		return
-
 	if(default_part_replacement(I,user))
 		return
 
-	var/list/usable_qualities = list(QUALITY_BOLT_TURNING)
+	var/list/usable_qualities = list(QUALITY_BOLT_TURNING, QUALITY_SCREW_DRIVING)
+
+	if(panel_open)
+		usable_qualities += QUALITY_PRYING
 
 	var/tool_type = I.get_tool_type(user, usable_qualities, src)
+
 	switch(tool_type)
 		if(QUALITY_BOLT_TURNING)
 			if(istype(get_turf(src), /turf/space) && !anchored)
@@ -105,6 +106,22 @@
 					connect_to_network()
 				else
 					disconnect_from_network()
+
+		if(QUALITY_PRYING)
+			if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_HARD, required_stat = STAT_MEC))
+				to_chat(user, SPAN_NOTICE("You remove the components of \the [src] with [I]."))
+				dismantle()
+			return TRUE
+
+		if(QUALITY_SCREW_DRIVING)
+			var/used_sound = panel_open ? 'sound/machines/Custom_screwdriveropen.ogg' :  'sound/machines/Custom_screwdriverclose.ogg'
+			if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC, instant_finish_tier = 30, forced_sound = used_sound))
+				updateUsrDialog()
+				panel_open = !panel_open
+				to_chat(user, SPAN_NOTICE("You [panel_open ? "open" : "close"] the maintenance hatch of \the [src] with [I]."))
+				update_icon()
+			return TRUE
+
 		if(ABORT_CHECK)
 			return
 

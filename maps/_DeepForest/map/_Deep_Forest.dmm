@@ -14786,6 +14786,7 @@
 "jNX" = (
 /obj/item/frame/apc,
 /obj/item/circuitboard/apc,
+/obj/random/powercell/large_safe_lonestar,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/prepper/vault/floor2)
 "jNY" = (
@@ -19631,6 +19632,7 @@
 /obj/item/circuitboard/apc,
 /obj/item/material/shard/shrapnel/scrap,
 /obj/item/trash/material/circuit,
+/obj/random/powercell/large_safe_lonestar,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/prepper/vault/floor5)
 "nbN" = (
@@ -33196,6 +33198,7 @@
 /obj/random/powercell,
 /obj/random/powercell,
 /obj/machinery/light/small,
+/obj/random/powercell/large_safe_lonestar,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "vVt" = (
