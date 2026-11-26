@@ -89,6 +89,7 @@ var/list/mob_hat_cache = list()
 	message_admins("<span class='adminnotice'>[key_name_admin(possessor)] has taken control of \the [src].</span>")
 	log_admin("[key_name(possessor)] took control of \the [src].")
 	transfer_personality(possessor.client)
+	check_HUD()
 	qdel(possessor)
 	return 1
 
@@ -137,6 +138,7 @@ var/list/mob_hat_cache = list()
 
 	if(station_drone)
 		GLOB.drones |= src
+	check_HUD()
 
 /mob/living/silicon/robot/drone/init()
 	aiCamera = new/obj/item/device/camera/siliconcam/drone_camera(src)
@@ -148,6 +150,7 @@ var/list/mob_hat_cache = list()
 	flavor_text = "It's a tiny little repair drone. The casing is stamped with an corporate logo and the subscript: '[company_name] Recursive Repair Systems: Fixing Tomorrow's Problem, Today!'"
 	playsound(src.loc, 'sound/machines/twobeep.ogg', 50, 0)
 	recalibrate_hotkeys()
+	check_HUD()
 
 //Redefining some robot procs...
 /mob/living/silicon/robot/drone/SetName(pickedName as text)
@@ -336,6 +339,7 @@ var/list/mob_hat_cache = list()
 	GLOB.living_mob_list |= R //Were infact alive
 	R.death_notified = FALSE //un-notifie us!
 	R.notify_ai(ROBOT_NOTIFICATION_NEW_UNIT) //Tell our big brother were back in action!
+	check_HUD()
 	return  //for safty!
 
 /mob/living/silicon/robot/drone/proc/request_player()
@@ -355,6 +359,7 @@ var/list/mob_hat_cache = list()
 	to_chat(src, "<b>Systems rebooted</b>. Loading base pattern maintenance protocol... <b>loaded</b>.")
 	full_law_reset()
 	welcome_drone()
+	check_HUD()
 
 /mob/living/silicon/robot/drone/proc/welcome_drone()
 	if(controlling_ai)
@@ -389,7 +394,7 @@ var/list/mob_hat_cache = list()
 /mob/living/silicon/robot/drone/construction/updateicon()
 	cut_overlays()
 	if(stat == CONSCIOUS)
-		add_overlay("eyes-[module_sprites[icontype]]")
+		add_overlay("eyes-[icon_state]")
 
 /proc/too_many_active_drones()
 	var/drones = 0
