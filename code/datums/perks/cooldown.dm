@@ -441,3 +441,63 @@
 	lose_text = null
 	var/gruges = 0
 	var/malice = 0
+
+
+//Lot of the affects are in kaiser.dm with its melee
+/datum/perk/cooldown/a_kaisers_decisive_strike
+	name = "Kaisers Warning Strikes"
+	desc = "A mark left from a powerful roach, a warning that the next few strikes will be increasingly powerful."
+	icon_state = "strike"
+	perk_lifetime = 1 MINUTES //let us lose intrest in are prey with ease
+	gain_text = null
+	lose_text = null
+	var/strikes = 1 //We start with are first strike primed
+
+//The strike leaves one realing in recoil
+/datum/perk/cooldown/a_kaisers_decisive_strike/on_process()
+	if(ishuman(holder))
+		var/mob/living/carbon/human/H = holder
+		H.recoil += 0.2 * strikes
+	..()
+
+//Weaken them, denie them any quarter
+/datum/perk/cooldown/a_kaisers_decisive_strike/assign()
+	..()
+	if(isanimal(holder))
+		var/mob/living/simple/A = holder
+		A.melee_damage_lower -= 3
+		A.melee_damage_upper -= 3
+		A.adjustBruteLoss(15)
+
+	if(issuperioranimal(holder))
+		var/mob/living/carbon/superior/S = holder
+		S.melee_damage_lower -= 3
+		S.melee_damage_upper -= 3
+		S.blocking_slowdown += 3
+		S.adjustBruteLoss(15)
+
+//Recovery of their ails, the strike was landed or the foe has left, may even have won that battle
+/datum/perk/cooldown/a_kaisers_decisive_strike/remove(mob/living/L)
+	if(isanimal(holder))
+		var/mob/living/simple/A = L
+		A.melee_damage_lower += 3
+		A.melee_damage_upper += 3
+		A.adjustBruteLoss(15)
+
+	if(issuperioranimal(holder))
+		var/mob/living/carbon/superior/S = L
+		S.melee_damage_lower += 3
+		S.melee_damage_upper += 3
+		S.blocking_slowdown -= 3
+		S.adjustBruteLoss(15)
+	..()
+
+/datum/perk/cooldown/roach_adherence
+	name = "Marked for Consumption"
+	desc = "You have been marked for roachkind to attack and feast apond."
+	icon_state = "traitor"
+	perk_lifetime = 3 MINUTES //We dont forgive with easy
+	gain_text = "March. March. Consume."
+	lose_text = null
+	var/warnings = 0
+
