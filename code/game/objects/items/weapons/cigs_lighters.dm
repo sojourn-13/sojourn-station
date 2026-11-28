@@ -110,6 +110,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	var/weldermes = "USER lights NAME with FLAME"
 	var/ignitermes = "USER lights NAME with FLAME"
 //	preloaded_reagents = list("nicotineplus" = 5)
+	var/transfer_amount = 0.2
 
 /obj/item/clothing/mask/smokable/Initialize()
 	reagent_flags |= NO_REACT // so it doesn't react until you light it
@@ -139,7 +140,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		if(reagents && reagents.total_volume) // check if it has any reagents at all
 			if(ishuman(loc))
 				if (src == C.wear_mask && C.check_has_mouth()) // if it's in the human/monkey mouth, transfer reagents to the mob
-					reagents.trans_to_mob(C, REM, CHEM_INGEST, 0.2) // Most of it is not inhaled... balance reasons.
+					reagents.trans_to_mob(C, REM, CHEM_INGEST, transfer_amount) // Most of it is not inhaled... balance reasons.
 			else // else just remove some of the reagents
 				reagents.remove_any(REM)
 
@@ -417,6 +418,17 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	type_butt = /obj/item/trash/cigbutt/faith/orange
 	preloaded_reagents = list("nicotine" = 5, "orangejuice" = 5)
 
+/obj/item/clothing/mask/smokable/cigarette/scav
+	name = "\improper Ritagli light cigarette"
+	desc = "A cigarette produced by Cacciatore Delle Discariche growery under the subsidiary Spelafili, \
+	the leaves are designed and pattened for work that makes someone covered in oil or blood."
+	icon_state = "scavoff"
+	icon_on = "scavon"
+	icon_off = "scavoff"
+	type_butt = /obj/item/trash/cigbutt/scav
+	preloaded_reagents = list("nicotine" = 5, "lightworks" = 5)
+	transfer_amount = 10 //Make sure to get it all in one drag, everything after is for looks
+
 /obj/item/clothing/mask/smokable/cigarette/attackby(obj/item/W as obj, mob/user as mob)
 	..()
 
@@ -511,6 +523,19 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	preloaded_reagents = list("nicotineplus" = 20)
 	quality_multiplier = 3
 
+/obj/item/clothing/mask/smokable/cigarette/cigar/tributary
+	name = "premium tributary cigar"
+	desc = "A cigar produced by Cacciatore Delle Discariche growery under the subsidiary Spelafili, \
+	the leaves are designed and pattened for work that makes someone covered in oil or blood."
+	icon_state = "cigaroff"
+	icon_on = "cigaron"
+	icon_off = "cigaroff"
+	smoketime = 1100
+	chem_volume = 35
+	preloaded_reagents = list("nicotineplus" = 10, "lightworksplus" = 25)
+	quality_multiplier = 3
+	transfer_amount = 5
+
 /obj/item/trash/cigbutt
 	name = "\improper Roach Eyes cigarette butt"
 	desc = "A decayed cigarette butt."
@@ -591,6 +616,9 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 
 /obj/item/trash/cigbutt/faith/green
 	icon_state = "faithgreenbutt"
+
+/obj/item/trash/cigbutt/scav
+	icon_state = "scavbutt"
 
 /obj/item/trash/cigbutt/New()
 	..()
